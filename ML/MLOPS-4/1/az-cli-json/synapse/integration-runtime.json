@@ -1,0 +1,264 @@
+{
+    "command_group": "az synapse integration-runtime",
+    "description": "Manage Synapse's integration runtimes.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az synapse integration-runtime create",
+            "summary": "Create an integration runtime.",
+            "syntax": "az synapse integration-runtime create --name\n                                      --resource-group\n                                      --type {Managed, SelfHosted}\n                                      --workspace-name\n                                      [--compute-type {ComputeOptimized, General, MemoryOptimized}]\n                                      [--core-count]\n                                      [--description]\n                                      [--if-match]\n                                      [--location]\n                                      [--no-wait]\n                                      [--time-to-live]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g",
+                "--type",
+                "--workspace-name"
+            ],
+            "optional_parameters": [
+                "--compute-type",
+                "--core-count",
+                "--description",
+                "--if-match",
+                "--location -l",
+                "--no-wait",
+                "--time-to-live"
+            ],
+            "examples": [
+                "az synapse integration-runtime create --workspace-name testsynapseworkspace --resource-group rg \\\n  --name testintegrationruntime --type Managed"
+            ]
+        },
+        {
+            "name": "az synapse integration-runtime delete",
+            "summary": "Delete an integration runtime.",
+            "syntax": "az synapse integration-runtime delete [--ids]\n                                      [--name]\n                                      [--no-wait]\n                                      [--resource-group]\n                                      [--subscription]\n                                      [--workspace-name]\n                                      [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--workspace-name",
+                "--yes -y"
+            ],
+            "examples": [
+                "az synapse integration-runtime delete --workspace-name testsynapseworkspace --resource-group rg \\\n  --name testintegrationruntime"
+            ]
+        },
+        {
+            "name": "az synapse integration-runtime get-connection-info",
+            "summary": "Get the integration runtime connection infomation.",
+            "syntax": "az synapse integration-runtime get-connection-info [--ids]\n                                                   [--name]\n                                                   [--resource-group]\n                                                   [--subscription]\n                                                   [--workspace-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--workspace-name"
+            ],
+            "examples": [
+                "az synapse integration-runtime get-connection-info --workspace-name testsynapseworkspace --resource-group rg \\\n  --name selfhostedintegrationruntime"
+            ]
+        },
+        {
+            "name": "az synapse integration-runtime get-monitoring-data",
+            "summary": "Get metric data for a self-hosted integration runtime.",
+            "syntax": "az synapse integration-runtime get-monitoring-data [--ids]\n                                                   [--name]\n                                                   [--resource-group]\n                                                   [--subscription]\n                                                   [--workspace-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--workspace-name"
+            ],
+            "examples": [
+                "az synapse integration-runtime get-monitoring-data --workspace-name testsynapseworkspace --resource-group rg \\\n  --name selfhostedintegrationruntime"
+            ]
+        },
+        {
+            "name": "az synapse integration-runtime get-status",
+            "summary": "Gets detailed status information for an integration runtime.",
+            "syntax": "az synapse integration-runtime get-status [--ids]\n                                          [--name]\n                                          [--resource-group]\n                                          [--subscription]\n                                          [--workspace-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--workspace-name"
+            ],
+            "examples": [
+                "az synapse integration-runtime get-status --workspace-name testsynapseworkspace --resource-group rg \\\n  --name selfhostedintegrationruntime"
+            ]
+        },
+        {
+            "name": "az synapse integration-runtime list",
+            "summary": "List integration runtimes.",
+            "syntax": "az synapse integration-runtime list --resource-group\n                                    --workspace-name",
+            "required_parameters": [
+                "--resource-group -g",
+                "--workspace-name"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az synapse integration-runtime list --workspace-name testsynapseworkspace --resource-group rg"
+            ]
+        },
+        {
+            "name": "az synapse integration-runtime list-auth-key",
+            "summary": "Get keys for a self-hosted integration runtime.",
+            "syntax": "az synapse integration-runtime list-auth-key --name\n                                             --resource-group\n                                             --workspace-name",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g",
+                "--workspace-name"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az synapse integration-runtime list-auth-key --workspace-name testsynapseworkspace --resource-group rg \\\n  --name selfhostedintegrationruntime"
+            ]
+        },
+        {
+            "name": "az synapse integration-runtime regenerate-auth-key",
+            "summary": "Regenerate self-hosted integration runtime key.",
+            "syntax": "az synapse integration-runtime regenerate-auth-key [--ids]\n                                                   [--key-name {authKey1, authKey2}]\n                                                   [--name]\n                                                   [--resource-group]\n                                                   [--subscription]\n                                                   [--workspace-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--key-name",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--workspace-name"
+            ],
+            "examples": [
+                "az synapse integration-runtime regenerate-auth-key --workspace-name testsynapseworkspace --resource-group rg \\\n  --name selfhostedintegrationruntime --key-name authKey1"
+            ]
+        },
+        {
+            "name": "az synapse integration-runtime show",
+            "summary": "Get an integration runtime.",
+            "syntax": "az synapse integration-runtime show [--ids]\n                                    [--if-none-match]\n                                    [--name]\n                                    [--resource-group]\n                                    [--subscription]\n                                    [--workspace-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--if-none-match",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--workspace-name"
+            ],
+            "examples": [
+                "az synapse integration-runtime show --workspace-name testsynapseworkspace --resource-group rg \\\n  --name testintegrationruntime"
+            ]
+        },
+        {
+            "name": "az synapse integration-runtime start",
+            "summary": "Start an SSIS integration runtime.",
+            "syntax": "az synapse integration-runtime start [--ids]\n                                     [--name]\n                                     [--no-wait]\n                                     [--resource-group]\n                                     [--subscription]\n                                     [--workspace-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--workspace-name"
+            ],
+            "examples": [
+                "az synapse integration-runtime start --workspace-name testsynapseworkspace --resource-group rg \\\n  --name testintegrationruntime"
+            ]
+        },
+        {
+            "name": "az synapse integration-runtime stop",
+            "summary": "Stop an SSIS integration runtime.",
+            "syntax": "az synapse integration-runtime stop [--ids]\n                                    [--name]\n                                    [--no-wait]\n                                    [--resource-group]\n                                    [--subscription]\n                                    [--workspace-name]\n                                    [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--workspace-name",
+                "--yes -y"
+            ],
+            "examples": [
+                "az synapse integration-runtime stop --workspace-name testsynapseworkspace --resource-group rg \\\n  --name testintegrationruntime"
+            ]
+        },
+        {
+            "name": "az synapse integration-runtime sync-credentials",
+            "summary": "Synchronize credentials among integration runtime nodes.",
+            "syntax": "az synapse integration-runtime sync-credentials [--ids]\n                                                [--name]\n                                                [--resource-group]\n                                                [--subscription]\n                                                [--workspace-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--workspace-name"
+            ],
+            "examples": [
+                "az synapse integration-runtime sync-credentials --workspace-name testsynapseworkspace --resource-group rg \\\n  --name selfhostedintegrationruntime"
+            ]
+        },
+        {
+            "name": "az synapse integration-runtime update",
+            "summary": "Update an integration runtime.",
+            "syntax": "az synapse integration-runtime update --auto-update {Off, On}\n                                      --update-delay-offset\n                                      [--ids]\n                                      [--name]\n                                      [--resource-group]\n                                      [--subscription]\n                                      [--workspace-name]",
+            "required_parameters": [
+                "--auto-update",
+                "--update-delay-offset"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--workspace-name"
+            ],
+            "examples": [
+                "az synapse integration-runtime update --workspace-name testsynapseworkspace --resource-group rg \\\n  --name testintegrationruntime --auto-update On --update-delay-offset '\"PT03H\"'"
+            ]
+        },
+        {
+            "name": "az synapse integration-runtime upgrade",
+            "summary": "Upgrade self-hosted integration runtime.",
+            "syntax": "az synapse integration-runtime upgrade [--ids]\n                                       [--name]\n                                       [--resource-group]\n                                       [--subscription]\n                                       [--workspace-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--workspace-name"
+            ],
+            "examples": [
+                "az synapse integration-runtime upgrade --workspace-name testsynapseworkspace --resource-group rg \\\n  --name testintegrationruntime"
+            ]
+        },
+        {
+            "name": "az synapse integration-runtime wait",
+            "summary": "Place the CLI in a waiting state until a condition of a integration runtime is met.",
+            "syntax": "az synapse integration-runtime wait --name\n                                    --resource-group\n                                    --workspace-name\n                                    [--created]\n                                    [--custom]\n                                    [--deleted]\n                                    [--exists]\n                                    [--if-none-match]\n                                    [--interval]\n                                    [--timeout]\n                                    [--updated]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g",
+                "--workspace-name"
+            ],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--if-none-match",
+                "--interval",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

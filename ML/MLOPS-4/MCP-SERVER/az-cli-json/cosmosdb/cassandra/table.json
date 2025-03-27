@@ -1,0 +1,102 @@
+{
+    "command_group": "az cosmosdb cassandra table",
+    "description": "Manage Azure Cosmos DB Cassandra tables.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az cosmosdb cassandra table create",
+            "summary": "Create an Cassandra table under an Azure Cosmos DB Cassandra keyspace.",
+            "syntax": "az cosmosdb cassandra table create --account-name\n                                   --keyspace-name\n                                   --name\n                                   --resource-group\n                                   --schema\n                                   [--analytical-storage-ttl]\n                                   [--max-throughput]\n                                   [--throughput]\n                                   [--ttl]",
+            "required_parameters": [
+                "--account-name -a",
+                "--keyspace-name -k",
+                "--name -n",
+                "--resource-group -g",
+                "--schema"
+            ],
+            "optional_parameters": [
+                "--analytical-storage-ttl",
+                "--max-throughput",
+                "--throughput",
+                "--ttl"
+            ],
+            "examples": [
+                "az cosmosdb cassandra table create -g MyResourceGroup -a MyAccount -k MyKeyspace -n MyTable --schema @indexes-file.json --throughput \"500\" --ttl 1000"
+            ]
+        },
+        {
+            "name": "az cosmosdb cassandra table delete",
+            "summary": "Delete the Cassandra table under an Azure Cosmos DB Cassandra keyspace.",
+            "syntax": "az cosmosdb cassandra table delete --account-name\n                                   --keyspace-name\n                                   --name\n                                   --resource-group\n                                   [--yes]",
+            "required_parameters": [
+                "--account-name -a",
+                "--keyspace-name -k",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--yes -y"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az cosmosdb cassandra table exists",
+            "summary": "Checks if an Azure Cosmos DB Cassandra table exists.",
+            "syntax": "az cosmosdb cassandra table exists --account-name\n                                   --keyspace-name\n                                   --name\n                                   --resource-group",
+            "required_parameters": [
+                "--account-name -a",
+                "--keyspace-name -k",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az cosmosdb cassandra table list",
+            "summary": "List the Cassandra tables under an Azure Cosmos DB Cassandra keyspace.",
+            "syntax": "az cosmosdb cassandra table list --account-name\n                                 --keyspace-name\n                                 --resource-group",
+            "required_parameters": [
+                "--account-name -a",
+                "--keyspace-name -k",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az cosmosdb cassandra table list --account-name MyAccount --keyspace-name MyKeyspace --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az cosmosdb cassandra table show",
+            "summary": "Show the details of a Cassandra table under an Azure Cosmos DB Cassandra keyspace.",
+            "syntax": "az cosmosdb cassandra table show --account-name\n                                 --keyspace-name\n                                 --name\n                                 --resource-group",
+            "required_parameters": [
+                "--account-name -a",
+                "--keyspace-name -k",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az cosmosdb cassandra table update",
+            "summary": "Update an Cassandra table under an Azure Cosmos DB Cassandra keyspace.",
+            "syntax": "az cosmosdb cassandra table update --account-name\n                                   --keyspace-name\n                                   --name\n                                   --resource-group\n                                   [--analytical-storage-ttl]\n                                   [--schema]\n                                   [--ttl]",
+            "required_parameters": [
+                "--account-name -a",
+                "--keyspace-name -k",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--analytical-storage-ttl",
+                "--schema",
+                "--ttl"
+            ],
+            "examples": [
+                "az cosmosdb cassandra table update --account-name MyAccount --keyspace-name MyKeyspace --name MyTable --resource-group MyResourceGroup --schema @indexes-file.json"
+            ]
+        }
+    ]
+}

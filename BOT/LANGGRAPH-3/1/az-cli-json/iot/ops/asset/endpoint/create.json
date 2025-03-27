@@ -1,0 +1,48 @@
+{
+    "command_group": "az iot ops asset endpoint create",
+    "description": "Create asset endpoint profiles.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az iot ops asset endpoint create opcua",
+            "summary": "Create an asset endpoint profile for an OPCUA connector.",
+            "syntax": "az iot ops asset endpoint create opcua --instance\n                                       --name\n                                       --resource-group\n                                       --ta\n                                       [--accept-untrusted-certs {false, true}]\n                                       [--app]\n                                       [--default-publishing-int]\n                                       [--default-queue-size]\n                                       [--default-sampling-int]\n                                       [--ig]\n                                       [--ka]\n                                       [--location]\n                                       [--pass-ref]\n                                       [--pr]\n                                       [--rad {false, true}]\n                                       [--security-mode {none, sign, signAndEncrypt}]\n                                       [--security-policy {Aes128_Sha256_RsaOaep, Aes256_Sha256_RsaPss, Basic128Rsa15, Basic256, Basic256Sha256, none}]\n                                       [--session-keep-alive]\n                                       [--session-reconnect-backoff]\n                                       [--session-reconnect-period]\n                                       [--session-timeout]\n                                       [--slt]\n                                       [--smi]\n                                       [--tags]\n                                       [--ur]\n                                       [--user-ref]",
+            "required_parameters": [
+                "--instance",
+                "--name -n",
+                "--resource-group -g",
+                "--ta --target-address"
+            ],
+            "optional_parameters": [
+                "--accept-untrusted-certs --auc",
+                "--app --application",
+                "--default-publishing-int --dpi",
+                "--default-queue-size --dqs",
+                "--default-sampling-int --dsi",
+                "--ig --instance-resource-group",
+                "--ka --keep-alive",
+                "--location -l",
+                "--pass-ref --password-ref",
+                "--pr",
+                "--rad --run-asset-discovery",
+                "--security-mode --sm",
+                "--security-policy --sp",
+                "--session-keep-alive --ska",
+                "--session-reconnect-backoff --srb",
+                "--session-reconnect-period --srp",
+                "--session-timeout --st",
+                "--slt --subscription-life-time",
+                "--smi --subscription-max-items",
+                "--tags",
+                "--ur --username-reference",
+                "--user-ref --username-ref"
+            ],
+            "examples": [
+                "az iot ops asset endpoint create opcua --name myprofile -g myresourcegroup --instance myinstance --target-address opc.tcp://opcplc-000000:50000",
+                "az iot ops asset endpoint create opcua --name myprofile -g myresourcegroup --instance myinstance --instance-resource-group myinstanceresourcegroup --target-address opc.tcp://opcplc-000000:50000",
+                "az iot ops asset endpoint create opcua --name myprofile -g myresourcegroup --instance myinstance --target-address opc.tcp://opcplc-000000:50000 --username-ref myusername --password-ref mypassword",
+                "az iot ops asset endpoint create opcua --name myprofile -g myresourcegroup --instance myinstance --target-address opc.tcp://opcplc-000000:50000 --accept-untrusted-certs --application myopcuaconnector --default-publishing-int 1000 --default-queue-size 1 --default-sampling-int 1000 --keep-alive 10000 --run-asset-discovery --security-mode sign --security-policy Basic256 --session-keep-alive 10000 --session-reconnect-backoff 10000 --session-reconnect-period 2000 --session-timeout 60000 --subscription-life-time 60000 --subscription-max-items 1000"
+            ]
+        }
+    ]
+}

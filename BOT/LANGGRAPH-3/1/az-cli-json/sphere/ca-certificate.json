@@ -1,0 +1,72 @@
+{
+    "command_group": "az sphere ca-certificate",
+    "description": "Manage certificates in your resource group and catalog.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az sphere ca-certificate download",
+            "summary": "Download the certificate for your catalog.",
+            "syntax": "az sphere ca-certificate download --catalog\n                                  --output-file\n                                  --resource-group\n                                  [--name]",
+            "required_parameters": [
+                "--catalog -c",
+                "--output-file -of",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--name -n"
+            ],
+            "examples": [
+                "az sphere ca-certificate download --resource-group MyResourceGroup --catalog MyCatalog --output-file myCert.cer",
+                "az sphere ca-certificate download --resource-group MyResourceGroup --catalog MyCatalog --name 2E7A0AF370ABC439901BBB37AF38B97 --output-file myCert.cer"
+            ]
+        },
+        {
+            "name": "az sphere ca-certificate download-chain",
+            "summary": "Download the certificate chain for your catalog as a PKCS#7 \".p7b\" file.",
+            "syntax": "az sphere ca-certificate download-chain --catalog\n                                        --output-file\n                                        --resource-group\n                                        [--name]",
+            "required_parameters": [
+                "--catalog -c",
+                "--output-file -of",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--name -n"
+            ],
+            "examples": [
+                "az sphere ca-certificate download-chain --resource-group MyResourceGroup --catalog MyCatalog --name 2E7A0AF370ABC439901BBB37AF38B97 --output-file myCertChain.p7b",
+                "az sphere ca-certificate download-chain --resource-group MyResourceGroup --catalog MyCatalog --output-file myCertChain.p7b"
+            ]
+        },
+        {
+            "name": "az sphere ca-certificate download-proof",
+            "summary": "Download a proof-of-possession certificate for your catalog for use with a provided code.",
+            "syntax": "az sphere ca-certificate download-proof --catalog\n                                        --output-file\n                                        --resource-group\n                                        --verification-code\n                                        [--name]",
+            "required_parameters": [
+                "--catalog -c",
+                "--output-file -of",
+                "--resource-group -g",
+                "--verification-code -v"
+            ],
+            "optional_parameters": [
+                "--name -n"
+            ],
+            "examples": [
+                "az sphere ca-certificate download-proof --resource-group MyResourceGroup --catalog MyCatalog --name 2E7A0AF370ABC439901BBB37AF38B97 --verification-code 3304517c557a3375e --output-file myCert.cer",
+                "az sphere ca-certificate download-proof --resource-group MyResourceGroup --catalog MyCatalog --verification-code 3304517c557a3375e --output-file myCert.cer"
+            ]
+        },
+        {
+            "name": "az sphere ca-certificate list",
+            "summary": "List all certificates in your resource group and catalog.",
+            "syntax": "az sphere ca-certificate list --catalog\n                              --resource-group",
+            "required_parameters": [
+                "--catalog -c",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az sphere ca-certificate list --resource-group MyResourceGroup --catalog MyCatalog"
+            ]
+        }
+    ]
+}

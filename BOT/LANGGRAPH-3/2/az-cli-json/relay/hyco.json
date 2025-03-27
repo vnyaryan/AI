@@ -1,0 +1,95 @@
+{
+    "command_group": "az relay hyco",
+    "description": "Manage Azure Relay Service Hybrid Connection and Authorization Rule.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az relay hyco create",
+            "summary": "Create the Relay Service Hybrid Connection.",
+            "syntax": "az relay hyco create --name\n                     --namespace-name\n                     --resource-group\n                     [--requires-client-authorization {0, 1, f, false, n, no, t, true, y, yes}]\n                     [--user-metadata]",
+            "required_parameters": [
+                "--name -n",
+                "--namespace-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--requires-client-authorization -c",
+                "--user-metadata"
+            ],
+            "examples": [
+                "az relay hyco create --resource-group myresourcegroup --namespace-name mynamespace --name myhyco"
+            ]
+        },
+        {
+            "name": "az relay hyco delete",
+            "summary": "Deletes the Relay Service Hybrid Connection.",
+            "syntax": "az relay hyco delete [--ids]\n                     [--name]\n                     [--namespace-name]\n                     [--resource-group]\n                     [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--namespace-name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az relay hyco delete --resource-group myresourcegroup --namespace-name mynamespace --name myhyco"
+            ]
+        },
+        {
+            "name": "az relay hyco list",
+            "summary": "List the Hybrid Connection by Relay Service Namespace.",
+            "syntax": "az relay hyco list --namespace-name\n                   --resource-group\n                   [--max-items]\n                   [--next-token]",
+            "required_parameters": [
+                "--namespace-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az relay hyco list --resource-group myresourcegroup --namespace-name mynamespace"
+            ]
+        },
+        {
+            "name": "az relay hyco show",
+            "summary": "Shows the Relay Service Hybrid Connection Details.",
+            "syntax": "az relay hyco show [--ids]\n                   [--name]\n                   [--namespace-name]\n                   [--resource-group]\n                   [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--namespace-name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az relay hyco show --resource-group myresourcegroup --namespace-name mynamespace --name myhyco"
+            ]
+        },
+        {
+            "name": "az relay hyco update",
+            "summary": "Updates the Relay Service Hybrid Connection.",
+            "syntax": "az relay hyco update [--add]\n                     [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                     [--ids]\n                     [--name]\n                     [--namespace-name]\n                     [--remove]\n                     [--requires-client-authorization {0, 1, f, false, n, no, t, true, y, yes}]\n                     [--resource-group]\n                     [--set]\n                     [--status {Active, Disabled, ReceiveDisabled, SendDisabled}]\n                     [--subscription]\n                     [--user-metadata]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--force-string",
+                "--ids",
+                "--name -n",
+                "--namespace-name",
+                "--remove",
+                "--requires-client-authorization -r",
+                "--resource-group -g",
+                "--set",
+                "--status",
+                "--subscription",
+                "--user-metadata"
+            ],
+            "examples": [
+                "az relay hyco update --resource-group myresourcegroup --namespace-name mynamespace --name myhyco"
+            ]
+        }
+    ]
+}

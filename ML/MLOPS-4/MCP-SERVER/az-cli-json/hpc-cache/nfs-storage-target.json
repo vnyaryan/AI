@@ -1,0 +1,40 @@
+{
+    "command_group": "az hpc-cache nfs-storage-target",
+    "description": "Commands to create hpc cache nfs storage target.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az hpc-cache nfs-storage-target add",
+            "summary": "Create or update a nfs Storage Target. This operation is allowed at any time, but if the Cache is down or unhealthy, the actual creation/modification of the Storage Target may be delayed until the Cache is healthy again.",
+            "syntax": "az hpc-cache nfs-storage-target add --cache-name\n                                    --junction\n                                    --name\n                                    --nfs3-target\n                                    --nfs3-usage-model\n                                    --resource-group",
+            "required_parameters": [
+                "--cache-name",
+                "--junction",
+                "--name",
+                "--nfs3-target",
+                "--nfs3-usage-model",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az hpc-cache nfs-storage-target add --resource-group \"scgroup\" --cache-name \"sc1\" --name \"st1\" --nfs3-target 10.7.0.24 --nfs3-usage-model WRITE_AROUND --junction namespace-path=\"/nt2\" nfs-export=\"/export/a\" target-path=\"/1\" --junction namespace-path=\"/nt3\" nfs-export=\"/export/b\""
+            ]
+        },
+        {
+            "name": "az hpc-cache nfs-storage-target update",
+            "summary": "Create or update a nfs Storage Target. This operation is allowed at any time, but if the Cache is down or unhealthy, the actual creation/modification of the Storage Target may be delayed until the Cache is healthy again.",
+            "syntax": "az hpc-cache nfs-storage-target update --cache-name\n                                       --name\n                                       --resource-group\n                                       [--junction]\n                                       [--nfs3-target]\n                                       [--nfs3-usage-model]",
+            "required_parameters": [
+                "--cache-name",
+                "--name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--junction",
+                "--nfs3-target",
+                "--nfs3-usage-model"
+            ],
+            "examples": []
+        }
+    ]
+}

@@ -1,0 +1,88 @@
+{
+    "command_group": "az sentinel automation-rule",
+    "description": "Manage automation rule with sentinel.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az sentinel automation-rule create",
+            "summary": "Create the automation rule.",
+            "syntax": "az sentinel automation-rule create --automation-rule-name\n                                   --resource-group\n                                   --workspace-name\n                                   [--actions]\n                                   [--display-name]\n                                   [--etag]\n                                   [--order]\n                                   [--triggering-logic]",
+            "required_parameters": [
+                "--automation-rule-name --name -n",
+                "--resource-group -g",
+                "--workspace-name -w"
+            ],
+            "optional_parameters": [
+                "--actions",
+                "--display-name",
+                "--etag",
+                "--order",
+                "--triggering-logic"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az sentinel automation-rule delete",
+            "summary": "Delete the automation rule.",
+            "syntax": "az sentinel automation-rule delete [--automation-rule-name]\n                                   [--ids]\n                                   [--resource-group]\n                                   [--subscription]\n                                   [--workspace-name]\n                                   [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--automation-rule-name --name -n",
+                "--ids",
+                "--resource-group -g",
+                "--subscription",
+                "--workspace-name -w",
+                "--yes -y"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az sentinel automation-rule list",
+            "summary": "Get all automation rules.",
+            "syntax": "az sentinel automation-rule list --resource-group\n                                 --workspace-name",
+            "required_parameters": [
+                "--resource-group -g",
+                "--workspace-name -w"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az sentinel automation-rule show",
+            "summary": "Get the automation rule.",
+            "syntax": "az sentinel automation-rule show [--automation-rule-name]\n                                 [--ids]\n                                 [--resource-group]\n                                 [--subscription]\n                                 [--workspace-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--automation-rule-name --name -n",
+                "--ids",
+                "--resource-group -g",
+                "--subscription",
+                "--workspace-name -w"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az sentinel automation-rule update",
+            "summary": "Update the automation rule.",
+            "syntax": "az sentinel automation-rule update [--actions]\n                                   [--add]\n                                   [--automation-rule-name]\n                                   [--display-name]\n                                   [--etag]\n                                   [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                   [--ids]\n                                   [--order]\n                                   [--remove]\n                                   [--resource-group]\n                                   [--set]\n                                   [--subscription]\n                                   [--triggering-logic]\n                                   [--workspace-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--actions",
+                "--add",
+                "--automation-rule-name --name -n",
+                "--display-name",
+                "--etag",
+                "--force-string",
+                "--ids",
+                "--order",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--subscription",
+                "--triggering-logic",
+                "--workspace-name -w"
+            ],
+            "examples": []
+        }
+    ]
+}

@@ -1,0 +1,44 @@
+{
+    "command_group": "az repos policy work-item-linking",
+    "description": "Manage work item linking policy.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az repos policy work-item-linking create",
+            "summary": "Create work item linking policy.",
+            "syntax": "az repos policy work-item-linking create --blocking {false, true}\n                                         --branch\n                                         --enabled {false, true}\n                                         --repository-id\n                                         [--branch-match-type {exact, prefix}]\n                                         [--detect {false, true}]\n                                         [--org]\n                                         [--project]",
+            "required_parameters": [
+                "--blocking",
+                "--branch",
+                "--enabled",
+                "--repository-id"
+            ],
+            "optional_parameters": [
+                "--branch-match-type",
+                "--detect",
+                "--org --organization",
+                "--project -p"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az repos policy work-item-linking update",
+            "summary": "Update work item linking policy.",
+            "syntax": "az repos policy work-item-linking update --id\n                                         [--blocking {false, true}]\n                                         [--branch]\n                                         [--branch-match-type {exact, prefix}]\n                                         [--detect {false, true}]\n                                         [--enabled {false, true}]\n                                         [--org]\n                                         [--project]\n                                         [--repository-id]",
+            "required_parameters": [
+                "--id --policy-id"
+            ],
+            "optional_parameters": [
+                "--blocking",
+                "--branch",
+                "--branch-match-type",
+                "--detect",
+                "--enabled",
+                "--org --organization",
+                "--project -p",
+                "--repository-id"
+            ],
+            "examples": []
+        }
+    ]
+}

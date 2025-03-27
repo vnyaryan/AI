@@ -1,0 +1,145 @@
+{
+    "command_group": "az network dns record-set srv",
+    "description": "Manage DNS SRV records.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az network dns record-set srv add-record",
+            "summary": "Add an SRV record.",
+            "syntax": "az network dns record-set srv add-record --port\n                                         --priority\n                                         --record-set-name\n                                         --resource-group\n                                         --target\n                                         --weight\n                                         --zone-name\n                                         [--if-none-match]",
+            "required_parameters": [
+                "--port -r",
+                "--priority -p",
+                "--record-set-name -n",
+                "--resource-group -g",
+                "--target -t",
+                "--weight -w",
+                "--zone-name -z"
+            ],
+            "optional_parameters": [
+                "--if-none-match"
+            ],
+            "examples": [
+                "az network dns record-set srv add-record -g MyResourceGroup -z www.mysite.com \\\n    -n MyRecordSet -t webserver.mysite.com -r 8081 -p 10 -w 10"
+            ]
+        },
+        {
+            "name": "az network dns record-set srv create",
+            "summary": "Create an SRV record set.",
+            "syntax": "az network dns record-set srv create --name\n                                     --resource-group\n                                     --zone-name\n                                     [--if-match]\n                                     [--if-none-match]\n                                     [--metadata]\n                                     [--target-resource]\n                                     [--tm-profile]\n                                     [--ttl]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g",
+                "--zone-name -z"
+            ],
+            "optional_parameters": [
+                "--if-match",
+                "--if-none-match",
+                "--metadata",
+                "--target-resource",
+                "--tm-profile --traffic-management-profile",
+                "--ttl"
+            ],
+            "examples": [
+                "az network dns record-set srv create -g MyResourceGroup -z www.mysite.com -n MyRecordSet --metadata owner=WebTeam"
+            ]
+        },
+        {
+            "name": "az network dns record-set srv delete",
+            "summary": "Delete an SRV record set.",
+            "syntax": "az network dns record-set srv delete [--ids]\n                                     [--if-match]\n                                     [--name]\n                                     [--resource-group]\n                                     [--subscription]\n                                     [--yes]\n                                     [--zone-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--if-match",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y",
+                "--zone-name -z"
+            ],
+            "examples": [
+                "az network dns record-set srv delete -g MyResourceGroup -z www.mysite.com -n MyRecordSet"
+            ]
+        },
+        {
+            "name": "az network dns record-set srv list",
+            "summary": "List SRV record sets in a zone.",
+            "syntax": "az network dns record-set srv list --resource-group\n                                   --zone-name\n                                   [--max-items]\n                                   [--next-token]\n                                   [--recordsetnamesuffix]\n                                   [--top]",
+            "required_parameters": [
+                "--resource-group -g",
+                "--zone-name -z"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token",
+                "--recordsetnamesuffix",
+                "--top"
+            ],
+            "examples": [
+                "az network dns record-set srv list -g MyResourceGroup -z www.mysite.com"
+            ]
+        },
+        {
+            "name": "az network dns record-set srv remove-record",
+            "summary": "Remove an SRV record from its record set.",
+            "syntax": "az network dns record-set srv remove-record --port\n                                            --priority\n                                            --record-set-name\n                                            --resource-group\n                                            --target\n                                            --weight\n                                            --zone-name\n                                            [--keep-empty-record-set]",
+            "required_parameters": [
+                "--port -r",
+                "--priority -p",
+                "--record-set-name -n",
+                "--resource-group -g",
+                "--target -t",
+                "--weight -w",
+                "--zone-name -z"
+            ],
+            "optional_parameters": [
+                "--keep-empty-record-set"
+            ],
+            "examples": [
+                "az network dns record-set srv remove-record -g MyResourceGroup -z www.mysite.com \\\n    -n MyRecordSet -t webserver.mysite.com -r 8081 -p 10 -w 10"
+            ]
+        },
+        {
+            "name": "az network dns record-set srv show",
+            "summary": "Get an SRV record set.",
+            "syntax": "az network dns record-set srv show [--ids]\n                                   [--name]\n                                   [--resource-group]\n                                   [--subscription]\n                                   [--zone-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--zone-name -z"
+            ],
+            "examples": [
+                "az network dns record-set srv show -g MyResourceGroup -z www.mysite.com -n MyRecordSet"
+            ]
+        },
+        {
+            "name": "az network dns record-set srv update",
+            "summary": "Update an SRV record set.",
+            "syntax": "az network dns record-set srv update [--add]\n                                     [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                     [--ids]\n                                     [--if-match]\n                                     [--if-none-match]\n                                     [--metadata]\n                                     [--name]\n                                     [--remove]\n                                     [--resource-group]\n                                     [--set]\n                                     [--subscription]\n                                     [--target-resource]\n                                     [--tm-profile]\n                                     [--zone-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--force-string",
+                "--ids",
+                "--if-match",
+                "--if-none-match",
+                "--metadata",
+                "--name -n",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--subscription",
+                "--target-resource",
+                "--tm-profile --traffic-management-profile",
+                "--zone-name -z"
+            ],
+            "examples": [
+                "az network dns record-set srv update -g MyResourceGroup -z www.mysite.com -n MyRecordSet --metadata owner=WebTeam"
+            ]
+        }
+    ]
+}

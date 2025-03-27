@@ -1,0 +1,50 @@
+{
+    "command_group": "az vm monitor metrics",
+    "description": "Manage metrics for a vm.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az vm monitor metrics list-definitions",
+            "summary": "List the metric definitions for a VM.",
+            "syntax": "az vm monitor metrics list-definitions --name\n                                       --resource-group\n                                       [--namespace]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--namespace"
+            ],
+            "examples": [
+                "az vm monitor metrics list-definitions --name MyIDVirtualMachine --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az vm monitor metrics tail",
+            "summary": "List the metric values for a VM.",
+            "syntax": "az vm monitor metrics tail --name\n                           --resource-group\n                           [--aggregation {Average, Count, Maximum, Minimum, None, Total}]\n                           [--dimension]\n                           [--end-time]\n                           [--filter]\n                           [--interval]\n                           [--metadata]\n                           [--metrics]\n                           [--namespace]\n                           [--offset]\n                           [--orderby]\n                           [--start-time]\n                           [--top]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--aggregation",
+                "--dimension",
+                "--end-time",
+                "--filter",
+                "--interval",
+                "--metadata",
+                "--metrics",
+                "--namespace",
+                "--offset",
+                "--orderby",
+                "--start-time",
+                "--top"
+            ],
+            "examples": [
+                "az vm monitor metrics tail --name myVM -g myRG --metric \"Percentage CPU\"",
+                "az vm monitor metrics tail --name myVM -g myRG --metric \"Percentage CPU\" --start-time 2019-12-18T00:00:00Z",
+                "az vm monitor metrics tail --name myVM -g myRG --metrics \"Per Disk Read Bytes/sec\" --filter \"SlotId eq '*'\""
+            ]
+        }
+    ]
+}

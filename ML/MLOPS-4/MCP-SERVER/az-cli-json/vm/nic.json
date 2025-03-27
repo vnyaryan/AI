@@ -1,0 +1,83 @@
+{
+    "command_group": "az vm nic",
+    "description": "Manage network interfaces. See also `az network nic`.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az vm nic add",
+            "summary": "Add existing NICs to a VM.",
+            "syntax": "az vm nic add --nics\n              --resource-group\n              --vm-name\n              [--primary-nic]",
+            "required_parameters": [
+                "--nics",
+                "--resource-group -g",
+                "--vm-name"
+            ],
+            "optional_parameters": [
+                "--primary-nic"
+            ],
+            "examples": [
+                "az vm nic add -g MyResourceGroup --vm-name MyVm --nics nic_name1 nic_name2"
+            ]
+        },
+        {
+            "name": "az vm nic list",
+            "summary": "List the NICs available on a VM.",
+            "syntax": "az vm nic list --resource-group\n               --vm-name",
+            "required_parameters": [
+                "--resource-group -g",
+                "--vm-name"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az vm nic list -g MyResourceGroup --vm-name MyVm"
+            ]
+        },
+        {
+            "name": "az vm nic remove",
+            "summary": "Remove NICs from a VM.",
+            "syntax": "az vm nic remove --nics\n                 --resource-group\n                 --vm-name\n                 [--primary-nic]",
+            "required_parameters": [
+                "--nics",
+                "--resource-group -g",
+                "--vm-name"
+            ],
+            "optional_parameters": [
+                "--primary-nic"
+            ],
+            "examples": [
+                "az vm nic remove -g MyResourceGroup --vm-name MyVm --nics nic_name1 nic_name2"
+            ]
+        },
+        {
+            "name": "az vm nic set",
+            "summary": "Configure settings of a NIC attached to a VM.",
+            "syntax": "az vm nic set --nics\n              --resource-group\n              --vm-name\n              [--primary-nic]",
+            "required_parameters": [
+                "--nics",
+                "--resource-group -g",
+                "--vm-name"
+            ],
+            "optional_parameters": [
+                "--primary-nic"
+            ],
+            "examples": [
+                "az vm nic set -g MyResourceGroup --vm-name MyVm --nic nic_name1 nic_name2 --primary-nic nic_name2",
+                "az vm nic set --nics nic_name1 nic_name2 --primary-nic nic_name2 --resource-group MyResourceGroup --vm-name MyVm"
+            ]
+        },
+        {
+            "name": "az vm nic show",
+            "summary": "Display information for a NIC attached to a VM.",
+            "syntax": "az vm nic show --nic\n               --resource-group\n               --vm-name",
+            "required_parameters": [
+                "--nic",
+                "--resource-group -g",
+                "--vm-name"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az vm nic show -g MyResourceGroup --vm-name MyVm --nic nic_name1"
+            ]
+        }
+    ]
+}

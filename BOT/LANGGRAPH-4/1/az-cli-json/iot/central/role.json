@@ -1,0 +1,40 @@
+{
+    "command_group": "az iot central role",
+    "description": "Manage and configure roles for an IoT Central application.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az iot central role list",
+            "summary": "Get the list of roles for an IoT Central application.",
+            "syntax": "az iot central role list --app-id\n                         [--api-version {2022-06-30-preview, 2022-07-31}]\n                         [--central-api-uri]\n                         [--token]",
+            "required_parameters": [
+                "--app-id -n"
+            ],
+            "optional_parameters": [
+                "--api-version --av",
+                "--central-api-uri --central-dns-suffix",
+                "--token"
+            ],
+            "examples": [
+                "az iot central role list --app-id {appid}"
+            ]
+        },
+        {
+            "name": "az iot central role show",
+            "summary": "Get the details of a role by ID.",
+            "syntax": "az iot central role show --app-id\n                         --role-id\n                         [--api-version {2022-06-30-preview, 2022-07-31}]\n                         [--central-api-uri]\n                         [--token]",
+            "required_parameters": [
+                "--app-id -n",
+                "--role-id -r"
+            ],
+            "optional_parameters": [
+                "--api-version --av",
+                "--central-api-uri --central-dns-suffix",
+                "--token"
+            ],
+            "examples": [
+                "az iot central role show --app-id {appid} --role-id {roleId}"
+            ]
+        }
+    ]
+}

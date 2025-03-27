@@ -1,0 +1,25 @@
+{
+    "command_group": "az vmware datastore disk-pool-volume",
+    "description": "Manage disk pool volume resource.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az vmware datastore disk-pool-volume create",
+            "summary": "Create a VMFS datastore in a private cloud cluster using Microsoft.StoragePool provided iSCSI target.",
+            "syntax": "az vmware datastore disk-pool-volume create --cluster\n                                            --datastore-name\n                                            --lun-name\n                                            --private-cloud\n                                            --resource-group\n                                            --target-id\n                                            [--mount-option {ATTACH, MOUNT}]\n                                            [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]",
+            "required_parameters": [
+                "--cluster --cluster-name",
+                "--datastore-name --name -n",
+                "--lun-name",
+                "--private-cloud -c",
+                "--resource-group -g",
+                "--target-id"
+            ],
+            "optional_parameters": [
+                "--mount-option",
+                "--no-wait"
+            ],
+            "examples": []
+        }
+    ]
+}

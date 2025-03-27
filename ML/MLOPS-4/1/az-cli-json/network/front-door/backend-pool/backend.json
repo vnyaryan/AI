@@ -1,0 +1,81 @@
+{
+    "command_group": "az network front-door backend-pool backend",
+    "description": "Manage backends of Front Door backend pools.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az network front-door backend-pool backend add",
+            "summary": "Add a backend to a Front Door backend pool.",
+            "syntax": "az network front-door backend-pool backend add --address\n                                               --front-door-name\n                                               --pool-name\n                                               --resource-group\n                                               [--approval-message]\n                                               [--backend-host-header]\n                                               [--disabled {false, true}]\n                                               [--http-port]\n                                               [--https-port]\n                                               [--priority]\n                                               [--private-link-alias]\n                                               [--private-link-location]\n                                               [--private-link-resource-id]\n                                               [--weight]",
+            "required_parameters": [
+                "--address",
+                "--front-door-name -f",
+                "--pool-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--approval-message --private-link-approval-message",
+                "--backend-host-header",
+                "--disabled",
+                "--http-port",
+                "--https-port",
+                "--priority",
+                "--private-link-alias",
+                "--private-link-location",
+                "--private-link-resource-id --resource-id",
+                "--weight"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az network front-door backend-pool backend list",
+            "summary": "List backends of a Front Door backend pool.",
+            "syntax": "az network front-door backend-pool backend list --front-door-name\n                                                --pool-name\n                                                --resource-group",
+            "required_parameters": [
+                "--front-door-name -f",
+                "--pool-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az network front-door backend-pool backend remove",
+            "summary": "Remove a backend from a Front Door backend pool.",
+            "syntax": "az network front-door backend-pool backend remove --front-door-name\n                                                  --index\n                                                  --pool-name\n                                                  --resource-group",
+            "required_parameters": [
+                "--front-door-name -f",
+                "--index",
+                "--pool-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az network front-door backend-pool backend update",
+            "summary": "Update a backend to a Front Door backend pool.",
+            "syntax": "az network front-door backend-pool backend update --front-door-name\n                                                  --index\n                                                  --pool-name\n                                                  --resource-group\n                                                  [--address]\n                                                  [--approval-message]\n                                                  [--backend-host-header]\n                                                  [--disabled {false, true}]\n                                                  [--http-port]\n                                                  [--https-port]\n                                                  [--priority]\n                                                  [--private-link-alias]\n                                                  [--private-link-location]\n                                                  [--private-link-resource-id]\n                                                  [--weight]",
+            "required_parameters": [
+                "--front-door-name -f",
+                "--index",
+                "--pool-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--address",
+                "--approval-message --private-link-approval-message",
+                "--backend-host-header",
+                "--disabled",
+                "--http-port",
+                "--https-port",
+                "--priority",
+                "--private-link-alias",
+                "--private-link-location",
+                "--private-link-resource-id --resource-id",
+                "--weight"
+            ],
+            "examples": []
+        }
+    ]
+}

@@ -1,0 +1,75 @@
+{
+    "command_group": "az iot hub message-enrichment",
+    "description": "Manage message enrichments for endpoints of an IoT Hub.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az iot hub message-enrichment create",
+            "summary": "Create a message enrichment for chosen endpoints in your IoT Hub.",
+            "syntax": "az iot hub message-enrichment create --endpoints\n                                     --key\n                                     --name\n                                     --value\n                                     [--resource-group]",
+            "required_parameters": [
+                "--endpoints -e",
+                "--key -k",
+                "--name -n",
+                "--value -v"
+            ],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az iot hub message-enrichment create --key key --value value --endpoints events -n {iothub_name}"
+            ]
+        },
+        {
+            "name": "az iot hub message-enrichment delete",
+            "summary": "Delete a message enrichment in your IoT hub (by key).",
+            "syntax": "az iot hub message-enrichment delete --key\n                                     [--ids]\n                                     [--name]\n                                     [--resource-group]\n                                     [--subscription]",
+            "required_parameters": [
+                "--key -k"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az iot hub message-enrichment delete --key test -n {iothub_name}"
+            ]
+        },
+        {
+            "name": "az iot hub message-enrichment list",
+            "summary": "Get information on all message enrichments for your IoT Hub.",
+            "syntax": "az iot hub message-enrichment list [--ids]\n                                   [--name]\n                                   [--resource-group]\n                                   [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az iot hub message-enrichment list -n {iothub_name}"
+            ]
+        },
+        {
+            "name": "az iot hub message-enrichment update",
+            "summary": "Update a message enrichment in your IoT hub (by key).",
+            "syntax": "az iot hub message-enrichment update --endpoints\n                                     --key\n                                     --value\n                                     [--ids]\n                                     [--name]\n                                     [--resource-group]\n                                     [--subscription]",
+            "required_parameters": [
+                "--endpoints -e",
+                "--key -k",
+                "--value -v"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az iot hub message-enrichment update --key {key} --value {value} --endpoints NewEndpoint1 NewEndpoint2 -n {iothub_name}"
+            ]
+        }
+    ]
+}

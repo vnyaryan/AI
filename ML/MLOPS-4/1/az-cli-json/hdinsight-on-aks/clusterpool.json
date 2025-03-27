@@ -1,0 +1,130 @@
+{
+    "command_group": "az hdinsight-on-aks clusterpool",
+    "description": "Clusterpool operations.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az hdinsight-on-aks clusterpool create",
+            "summary": "Create a cluster pool.",
+            "syntax": "az hdinsight-on-aks clusterpool create --cluster-pool-name\n                                       --resource-group\n                                       [--api-server-authorized-ip-ranges]\n                                       [--availability-zones]\n                                       [--cluster-pool-version]\n                                       [--enable-log-analytics {0, 1, f, false, n, no, t, true, y, yes}]\n                                       [--la-workspace-id]\n                                       [--location]\n                                       [--managed-rg-name]\n                                       [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                       [--outbound-type {loadBalancer, userDefinedRouting}]\n                                       [--private-server-enabled {0, 1, f, false, n, no, t, true, y, yes}]\n                                       [--subnet-id]\n                                       [--tags]\n                                       [--workernode-size]",
+            "required_parameters": [
+                "--cluster-pool-name --name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--api-server-authorized-ip-ranges --api-server-ip-ranges",
+                "--availability-zones",
+                "--cluster-pool-version --version",
+                "--enable-log-analytics",
+                "--la-workspace-id --log-analytic-workspace-id",
+                "--location -l",
+                "--managed-rg-name",
+                "--no-wait",
+                "--outbound-type",
+                "--private-server-enabled",
+                "--subnet-id",
+                "--tags",
+                "--workernode-size"
+            ],
+            "examples": [
+                "az hdinsight-on-aks clusterpool create -g {RG} -n {poolName} -l {westus3} --workernode-size {Standard_E4s_v3} --version {1.1}"
+            ]
+        },
+        {
+            "name": "az hdinsight-on-aks clusterpool delete",
+            "summary": "Delete a Cluster Pool.",
+            "syntax": "az hdinsight-on-aks clusterpool delete [--cluster-pool-name]\n                                       [--ids]\n                                       [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                       [--resource-group]\n                                       [--subscription]\n                                       [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--cluster-pool-name --name -n",
+                "--ids",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az hdinsight-on-aks clusterpool delete -g {RG} -n {poolName}"
+            ]
+        },
+        {
+            "name": "az hdinsight-on-aks clusterpool list",
+            "summary": "List the list of Cluster Pools within a Subscription.",
+            "syntax": "az hdinsight-on-aks clusterpool list [--max-items]\n                                     [--next-token]\n                                     [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az hdinsight-on-aks clusterpool list -g {RG}",
+                "az hdinsightonaks clusterpool list"
+            ]
+        },
+        {
+            "name": "az hdinsight-on-aks clusterpool show",
+            "summary": "Get a cluster pool.",
+            "syntax": "az hdinsight-on-aks clusterpool show [--cluster-pool-name]\n                                     [--ids]\n                                     [--resource-group]\n                                     [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--cluster-pool-name --name -n",
+                "--ids",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az hdinsight-on-aks clusterpool show -g {RG} -n {poolName}"
+            ]
+        },
+        {
+            "name": "az hdinsight-on-aks clusterpool update",
+            "summary": "Update a cluster pool.",
+            "syntax": "az hdinsight-on-aks clusterpool update [--add]\n                                       [--api-server-authorized-ip-ranges]\n                                       [--cluster-pool-name]\n                                       [--cluster-pool-version]\n                                       [--compute-profile]\n                                       [--enable-log-analytics {0, 1, f, false, n, no, t, true, y, yes}]\n                                       [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                       [--ids]\n                                       [--la-workspace-id]\n                                       [--managed-rg-name]\n                                       [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                       [--outbound-type {loadBalancer, userDefinedRouting}]\n                                       [--remove]\n                                       [--resource-group]\n                                       [--set]\n                                       [--subnet-id]\n                                       [--subscription]\n                                       [--tags]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--api-server-authorized-ip-ranges --api-server-ip-ranges",
+                "--cluster-pool-name --name -n",
+                "--cluster-pool-version --version",
+                "--compute-profile",
+                "--enable-log-analytics",
+                "--force-string",
+                "--ids",
+                "--la-workspace-id --log-analytic-workspace-id",
+                "--managed-rg-name",
+                "--no-wait",
+                "--outbound-type",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--subnet-id",
+                "--subscription",
+                "--tags"
+            ],
+            "examples": [
+                "az hdinsight-on-aksclusterpool update -g {RG} -n {poolName} --enable-log-analytics --log-analytic-workspace-id {\"/subscriptions/00000000-0000-0000-0000-000000000000/resourcegroups/RG/providers/microsoft.operationalinsights/workspaces/yourworkspace\"}"
+            ]
+        },
+        {
+            "name": "az hdinsight-on-aks clusterpool wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az hdinsight-on-aks clusterpool wait [--cluster-pool-name]\n                                     [--created]\n                                     [--custom]\n                                     [--deleted]\n                                     [--exists]\n                                     [--ids]\n                                     [--interval]\n                                     [--resource-group]\n                                     [--subscription]\n                                     [--timeout]\n                                     [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--cluster-pool-name --name -n",
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

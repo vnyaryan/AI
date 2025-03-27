@@ -1,0 +1,77 @@
+{
+    "command_group": "az network vnet-gateway nat-rule",
+    "description": "Manage nat rule in a virtual network gateway.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az network vnet-gateway nat-rule add",
+            "summary": "Add nat rule in a virtual network gateway.",
+            "syntax": "az network vnet-gateway nat-rule add --external-mappings\n                                     --gateway-name\n                                     --internal-mappings\n                                     --name\n                                     --resource-group\n                                     [--ip-config-id]\n                                     [--mode {EgressSnat, IngressSnat}]\n                                     [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                     [--type {Dynamic, Static}]",
+            "required_parameters": [
+                "--external-mappings",
+                "--gateway-name",
+                "--internal-mappings",
+                "--name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--ip-config-id",
+                "--mode",
+                "--no-wait",
+                "--type"
+            ],
+            "examples": [
+                "az network vnet-gateway nat-rule add --resource-group MyResourceGroup --gateway-name MyVnetGateway --name Nat --internal-mappings 10.4.0.0/24 --external-mappings 192.168.21.0/24"
+            ]
+        },
+        {
+            "name": "az network vnet-gateway nat-rule list",
+            "summary": "List nat rule for a virtual network gateway.",
+            "syntax": "az network vnet-gateway nat-rule list --gateway-name\n                                      --resource-group",
+            "required_parameters": [
+                "--gateway-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az network vnet-gateway nat-rule list --resource-group MyResourceGroup --gateway-name MyVnetGateway"
+            ]
+        },
+        {
+            "name": "az network vnet-gateway nat-rule remove",
+            "summary": "Remove nat rule from a virtual network gateway.",
+            "syntax": "az network vnet-gateway nat-rule remove --gateway-name\n                                        --name\n                                        --resource-group\n                                        [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]",
+            "required_parameters": [
+                "--gateway-name",
+                "--name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--no-wait"
+            ],
+            "examples": [
+                "az network vnet-gateway nat-rule remove --resource-group MyResourceGroup --gateway-name MyVnetGateway --name Nat"
+            ]
+        },
+        {
+            "name": "az network vnet-gateway nat-rule wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az network vnet-gateway nat-rule wait [--created]\n                                      [--custom]\n                                      [--deleted]\n                                      [--exists]\n                                      [--gateway-name]\n                                      [--ids]\n                                      [--interval]\n                                      [--resource-group]\n                                      [--subscription]\n                                      [--timeout]\n                                      [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--gateway-name",
+                "--ids",
+                "--interval",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

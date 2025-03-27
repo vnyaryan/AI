@@ -1,0 +1,23 @@
+{
+    "command_group": "az dns-resolver policy virtual-network",
+    "description": "Manage vnets relevant to dns resolver policy resources.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az dns-resolver policy virtual-network list-dns-resolver-policy",
+            "summary": "Lists DNS resolver policy resource IDs linked to a virtual network.",
+            "syntax": "az dns-resolver policy virtual-network list-dns-resolver-policy --resource-group\n                                                                --virtual-network-name\n                                                                [--max-items]\n                                                                [--next-token]",
+            "required_parameters": [
+                "--resource-group -g",
+                "--virtual-network-name"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az dns-resolver policy virtual-network list-dns-resolver-policy --resource-group sampleResourceGroup --virtual-network-name sampleVirtualNetwork"
+            ]
+        }
+    ]
+}

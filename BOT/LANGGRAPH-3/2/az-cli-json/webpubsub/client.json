@@ -1,0 +1,23 @@
+{
+    "command_group": "az webpubsub client",
+    "description": "Commands to manage client connections.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az webpubsub client start",
+            "summary": "Start a interactive client connection.",
+            "syntax": "az webpubsub client start --hub-name\n                          [--ids]\n                          [--name]\n                          [--resource-group]\n                          [--subscription]\n                          [--user-id]",
+            "required_parameters": [
+                "--hub-name"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--user-id"
+            ],
+            "examples": []
+        }
+    ]
+}

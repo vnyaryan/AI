@@ -1,0 +1,119 @@
+{
+    "command_group": "az dynatrace monitor tag-rule",
+    "description": "Manage dynatrace monitor tag-rule.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az dynatrace monitor tag-rule create",
+            "summary": "Create a tag rule.",
+            "syntax": "az dynatrace monitor tag-rule create --monitor-name\n                                     --name\n                                     --resource-group\n                                     [--log-rules]\n                                     [--metric-rules]\n                                     [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]",
+            "required_parameters": [
+                "--monitor-name",
+                "--name --rule-set-name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--log-rules",
+                "--metric-rules",
+                "--no-wait"
+            ],
+            "examples": [
+                "az dynatrace monitor tag-rule create -g rg --monitor-name monitor -n default --log-rules \"{send-aad-logs:enabled,send-subscription-logs:enabled,send-activity-logs:enabled,filtering-tags:[{name:env,value:prod,action:include},{name:env,value:dev,action:exclude}]}\" --metric-rules \"{sending-metrics:enabled,filtering-tags:[{name:env,value:prod,action:include}]}\""
+            ]
+        },
+        {
+            "name": "az dynatrace monitor tag-rule delete",
+            "summary": "Delete a tag rule.",
+            "syntax": "az dynatrace monitor tag-rule delete [--ids]\n                                     [--monitor-name]\n                                     [--name]\n                                     [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                     [--resource-group]\n                                     [--subscription]\n                                     [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--monitor-name",
+                "--name --rule-set-name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az dynatrace monitor tag-rule delete -g rg --monitor-name monitor -n default -y"
+            ]
+        },
+        {
+            "name": "az dynatrace monitor tag-rule list",
+            "summary": "List all tag rule by monitor name.",
+            "syntax": "az dynatrace monitor tag-rule list --monitor-name\n                                   --resource-group\n                                   [--max-items]\n                                   [--next-token]",
+            "required_parameters": [
+                "--monitor-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az dynatrace monitor tag-rule list -g rg --monitor-name monitor"
+            ]
+        },
+        {
+            "name": "az dynatrace monitor tag-rule show",
+            "summary": "Show a tag rule.",
+            "syntax": "az dynatrace monitor tag-rule show [--ids]\n                                   [--monitor-name]\n                                   [--name]\n                                   [--resource-group]\n                                   [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--monitor-name",
+                "--name --rule-set-name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az dynatrace monitor tag-rule show -g rg --monitor-name monitor -n default"
+            ]
+        },
+        {
+            "name": "az dynatrace monitor tag-rule update",
+            "summary": "Update a TagRule.",
+            "syntax": "az dynatrace monitor tag-rule update [--add]\n                                     [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                     [--ids]\n                                     [--log-rules]\n                                     [--metric-rules]\n                                     [--monitor-name]\n                                     [--name]\n                                     [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                     [--remove]\n                                     [--resource-group]\n                                     [--set]\n                                     [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--force-string",
+                "--ids",
+                "--log-rules",
+                "--metric-rules",
+                "--monitor-name",
+                "--name --rule-set-name -n",
+                "--no-wait",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--subscription"
+            ],
+            "examples": [
+                "az dynatrace monitor tag-rule delete -g rg --monitor-name monitor -n default -y"
+            ]
+        },
+        {
+            "name": "az dynatrace monitor tag-rule wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az dynatrace monitor tag-rule wait [--created]\n                                   [--custom]\n                                   [--deleted]\n                                   [--exists]\n                                   [--ids]\n                                   [--interval]\n                                   [--monitor-name]\n                                   [--name]\n                                   [--resource-group]\n                                   [--subscription]\n                                   [--timeout]\n                                   [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--monitor-name",
+                "--name --rule-set-name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

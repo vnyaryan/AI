@@ -1,0 +1,21 @@
+{
+    "command_group": "az iot du account private-link-resource",
+    "description": "Device Update account private link resource management.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az iot du account private-link-resource list",
+            "summary": "List private link resources supported by the account.",
+            "syntax": "az iot du account private-link-resource list --account\n                                             [--resource-group]",
+            "required_parameters": [
+                "--account -n"
+            ],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az iot du account private-link-resource list -n {account_name}"
+            ]
+        }
+    ]
+}

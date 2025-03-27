@@ -1,0 +1,144 @@
+{
+    "command_group": "az networkcloud kubernetescluster",
+    "description": "Manage Kubernetes cluster.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az networkcloud kubernetescluster create",
+            "summary": "Create a new Kubernetes cluster or update the properties of the existing one.",
+            "syntax": "az networkcloud kubernetescluster create --control-plane-node-configuration\n                                         --extended-location\n                                         --initial-agent-pool-configurations\n                                         --kubernetes-cluster-name\n                                         --kubernetes-version\n                                         --network-configuration\n                                         --resource-group\n                                         [--aad-configuration]\n                                         [--admin-username]\n                                         [--generate-ssh-keys {0, 1, f, false, n, no, t, true, y, yes}]\n                                         [--location]\n                                         [--managed-resource-group-configuration]\n                                         [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                         [--ssh-dest-key-path]\n                                         [--ssh-key-values]\n                                         [--tags]",
+            "required_parameters": [
+                "--control-plane-node-configuration",
+                "--extended-location",
+                "--initial-agent-pool-configurations",
+                "--kubernetes-cluster-name --name -n",
+                "--kubernetes-version",
+                "--network-configuration",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--aad-configuration",
+                "--admin-username",
+                "--generate-ssh-keys",
+                "--location -l",
+                "--managed-resource-group-configuration",
+                "--no-wait",
+                "--ssh-dest-key-path",
+                "--ssh-key-values",
+                "--tags"
+            ],
+            "examples": [
+                "az networkcloud kubernetescluster create --name \"kubernetesClusterName\" --resource-group \"resourceGroupName\" --location \"location\" --kubernetes-version \"1.XX.Y\" --extended-location name=\"/subscriptions/123e4567-e89b-12d3-a456-426655440000/resourceGroups/resourceGroupName/providers/Microsoft.ExtendedLocation/customLocations/clusterExtendedLocationName\" type=CustomLocation --aad-configuration admin-group-object-ids=[\"f110271b-XXXX-4163-9b99-214d91660f0e\"] --admin-username \"azureuser\" --ssh-key-values \"ssh-rsa AAAAB3NzaC1yc2EAAAADAQAt5SjWU= admin@vm\" --initial-agent-pool-configurations \"[{count:1,mode:'System',name:'systemPool-1',vmSkuName:'NC-XXXXX',agentOptions:{hugepagesCount:96,hugepagesSize:1G},upgradeSettings:{maxSurge:'10%'},adminUsername:'azureuser',ssh-key-values:['ssh-rsa AAAAB3NzaC1yc2EAAAADAQAt5SjWU= admin@vm']}]\" --control-plane-node-configuration count=1 vmSkuName='NC-YYYYY' adminUsername='azureuser' ssh-key-values=\"['ssh-rsa AAAAB3NzaC1yc2EAAAADAQAt5SjWU= admin@vm']\" --network-configuration cloud-services-network-id=\"/subscriptions/123e4567-e89b-12d3-a456-426655440000/resourceGroups/resourceGroupName/providers/Microsoft.NetworkCloud/cloudServicesNetworks/cloudServicesNetworkName\" cni-network-id=\"/subscriptions/123e4567-e89b-12d3-a456-426655440000/resourceGroups/resourceGroupName/providers/Microsoft.NetworkCloud/l3Networks/l3NetworkName\" pod-cidrs=[\"10.244.0.0/16\"] service-cidrs=[\"10.96.0.0/16\"] dns-service-ip=\"10.96.0.10\" attached-network-configuration.l2-networks=\"[{networkId:'/subscriptions/123e4567-e89b-12d3-a456-426655440000/resourceGroups/resourceGroupName/providers/Microsoft.NetworkCloud/l2Networks/l2NetworkName',pluginType:'DPDK'}]\" attached-network-configuration.l3-networks=\"[{networkId:'/subscriptions/123e4567-e89b-12d3-a456-426655440000/resourceGroups/resourceGroupName/providers/Microsoft.NetworkCloud/l3Networks/l3NetworkName',pluginType:'SRIOV',ipamEnabled:'False'}]\" attached-network-configuration.trunked-networks=\"[{networkId:'/subscriptions/123e4567-e89b-12d3-a456-426655440000/resourceGroups/resourceGroupName/providers/Microsoft.NetworkCloud/trunkedNetworks/trunkedNetworkName',pluginType:'MACVLAN'}]\" bgp-service-load-balancer-configuration.bgp-advertisements=\"[{advertiseToFabric:'True',communities:['64512:100'],ipAddressPools:['pool1'],peers:['peer1']}]\" bgp-service-load-balancer-configuration.fabric-peering-enabled=\"True\" bgp-service-load-balancer-configuration.bgp-peers=\"[{bfdEnabled:'False',bgpMultiHop:'False',holdTime:'P300s',keepAliveTime:'P300s',myAsn:64512,name:'peer1',peerAddress:'203.0.113.254',peerAsn:64497,peerPort:179}]\" bgp-service-load-balancer-configuration.ip-address-pools=\"[{addresses:['198.51.102.0/24'],autoAssign:'True',name:'pool1',onlyUseHostIps:'True'}]\""
+            ]
+        },
+        {
+            "name": "az networkcloud kubernetescluster delete",
+            "summary": "Delete the provided Kubernetes cluster.",
+            "syntax": "az networkcloud kubernetescluster delete [--ids]\n                                         [--kubernetes-cluster-name]\n                                         [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                         [--resource-group]\n                                         [--subscription]\n                                         [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--kubernetes-cluster-name --name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az networkcloud kubernetescluster delete --name \"kubernetesClusterName\" --resource-group \"resourceGroupName\""
+            ]
+        },
+        {
+            "name": "az networkcloud kubernetescluster list",
+            "summary": "List Kubernetes clusters in the provided subscription.",
+            "syntax": "az networkcloud kubernetescluster list [--max-items]\n                                       [--next-token]\n                                       [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az networkcloud kubernetescluster list",
+                "az networkcloud kubernetescluster list --resource-group \"resourceGroupName\""
+            ]
+        },
+        {
+            "name": "az networkcloud kubernetescluster restart-node",
+            "summary": "Restart a targeted node of a Kubernetes cluster.",
+            "syntax": "az networkcloud kubernetescluster restart-node --node-name\n                                               [--ids]\n                                               [--kubernetes-cluster-name]\n                                               [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                               [--resource-group]\n                                               [--subscription]",
+            "required_parameters": [
+                "--node-name"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--kubernetes-cluster-name --name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az networkcloud kubernetescluster restart-node --node-name \"nodeName\" --kubernetes-cluster-name \"kubernetesClusterName\" --resource-group \"resourceGroupName\""
+            ]
+        },
+        {
+            "name": "az networkcloud kubernetescluster show",
+            "summary": "Get properties of the provided the Kubernetes cluster.",
+            "syntax": "az networkcloud kubernetescluster show [--ids]\n                                       [--kubernetes-cluster-name]\n                                       [--resource-group]\n                                       [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--kubernetes-cluster-name --name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az networkcloud kubernetescluster show --name \"kubernetesClusterName\" --resource-group \"resourceGroupName\""
+            ]
+        },
+        {
+            "name": "az networkcloud kubernetescluster update",
+            "summary": "Update the properties of the provided Kubernetes cluster, or update the tags associated with the Kubernetes cluster. Properties and tag updates can be done independently.",
+            "syntax": "az networkcloud kubernetescluster update [--control-plane-node-configuration]\n                                         [--generate-ssh-keys {0, 1, f, false, n, no, t, true, y, yes}]\n                                         [--ids]\n                                         [--kubernetes-cluster-name]\n                                         [--kubernetes-version]\n                                         [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                         [--resource-group]\n                                         [--ssh-dest-key-path]\n                                         [--ssh-key-values]\n                                         [--subscription]\n                                         [--tags]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--control-plane-node-configuration",
+                "--generate-ssh-keys",
+                "--ids",
+                "--kubernetes-cluster-name --name -n",
+                "--kubernetes-version",
+                "--no-wait",
+                "--resource-group -g",
+                "--ssh-dest-key-path",
+                "--ssh-key-values",
+                "--subscription",
+                "--tags"
+            ],
+            "examples": [
+                "az networkcloud kubernetescluster update --name \"kubernetesClusterName\" --resource-group \"resourceGroupName\" --kubernetes-version \"1.25.4\" --control-plane-node-configuration count=\"3\" --tags key1=\"myvalue1\" key2=\"myvalue2\"",
+                "az networkcloud kubernetescluster update --name \"kubernetesClusterName\" --resource-group \"resourceGroupName\" --ssh-key-values 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgt5SjWU= admin@vm'",
+                "az networkcloud kubernetescluster update --name \"kubernetesClusterName\" --resource-group \"resourceGroupName\" --control-plane-node-configuration ssh-key-values=\"['ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgt5SjWU= admin@vm']\""
+            ]
+        },
+        {
+            "name": "az networkcloud kubernetescluster wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az networkcloud kubernetescluster wait [--created]\n                                       [--custom]\n                                       [--deleted]\n                                       [--exists]\n                                       [--ids]\n                                       [--interval]\n                                       [--kubernetes-cluster-name]\n                                       [--resource-group]\n                                       [--subscription]\n                                       [--timeout]\n                                       [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--kubernetes-cluster-name --name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

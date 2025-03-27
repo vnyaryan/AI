@@ -1,0 +1,92 @@
+{
+    "command_group": "az akshybrid nodepool",
+    "description": "Manage nodepools in a provisioned cluster.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az akshybrid nodepool add",
+            "summary": "Adds a nodepool in the provisioned cluster.",
+            "syntax": "az akshybrid nodepool add --cluster-name\n                          --name\n                          --resource-group\n                          [--location]\n                          [--no-wait]\n                          [--node-count]\n                          [--node-vm-size]\n                          [--os-sku]\n                          [--os-type]\n                          [--tags]",
+            "required_parameters": [
+                "--cluster-name",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--location -l",
+                "--no-wait",
+                "--node-count -c",
+                "--node-vm-size",
+                "--os-sku",
+                "--os-type",
+                "--tags"
+            ],
+            "examples": [
+                "az akshybrid nodepool add --name \"samplenodepool\" --cluster-name \"samplecluster\" --resource-group \"sample-rg\""
+            ]
+        },
+        {
+            "name": "az akshybrid nodepool delete",
+            "summary": "Deletes the nodepool in the provisioned cluster.",
+            "syntax": "az akshybrid nodepool delete --cluster-name\n                             --name\n                             --resource-group\n                             [--no-wait]\n                             [--yes]",
+            "required_parameters": [
+                "--cluster-name",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--no-wait",
+                "--yes -y"
+            ],
+            "examples": [
+                "az akshybrid nodepool delete --name \"samplenodepool\" --cluster-name \"samplecluster\" --resource-group \"sample-rg\""
+            ]
+        },
+        {
+            "name": "az akshybrid nodepool list",
+            "summary": "Lists all the nodepools in the provisioned cluster.",
+            "syntax": "az akshybrid nodepool list --cluster-name\n                           --resource-group",
+            "required_parameters": [
+                "--cluster-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az akshybrid nodepool list --cluster-name \"samplecluster\" --resource-group \"sample-rg\""
+            ]
+        },
+        {
+            "name": "az akshybrid nodepool scale",
+            "summary": "Scales the nodepool in the provisioned cluster .",
+            "syntax": "az akshybrid nodepool scale --cluster-name\n                            --name\n                            --resource-group\n                            [--no-wait]\n                            [--node-count]\n                            [--node-vm-size]\n                            [--yes]",
+            "required_parameters": [
+                "--cluster-name",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--no-wait",
+                "--node-count -c",
+                "--node-vm-size",
+                "--yes -y"
+            ],
+            "examples": [
+                "az akshybrid nodepool scale --name \"samplenodepool\" --cluster-name \"samplecluster\" --resource-group \"sample-rg\" --node-count 3 --node-vm-size \"Standard_A2_v2\""
+            ]
+        },
+        {
+            "name": "az akshybrid nodepool show",
+            "summary": "Gets the nodepool in the provisioned cluster.",
+            "syntax": "az akshybrid nodepool show --cluster-name\n                           --name\n                           --resource-group",
+            "required_parameters": [
+                "--cluster-name",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az akshybrid nodepool show --name \"samplenodepool\" --cluster-name \"samplecluster\" --resource-group \"sample-rg\""
+            ]
+        }
+    ]
+}

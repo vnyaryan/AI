@@ -1,0 +1,93 @@
+{
+    "command_group": "az automanage configuration-profile version",
+    "description": "Manage configuration profile version.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az automanage configuration-profile version create",
+            "summary": "Create a configuration profile version.",
+            "syntax": "az automanage configuration-profile version create --configuration-profile-name\n                                                   --name\n                                                   --resource-group\n                                                   [--configuration]\n                                                   [--location]\n                                                   [--tags]",
+            "required_parameters": [
+                "--configuration-profile-name --profile-name",
+                "--name --version-name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--configuration",
+                "--location -l",
+                "--tags"
+            ],
+            "examples": [
+                "az automanage configuration-profile version create --profile-name {profile_name} -g {rg} -n {version_name} --configuration '{\"Antimalware/Enable\":false}'"
+            ]
+        },
+        {
+            "name": "az automanage configuration-profile version delete",
+            "summary": "Delete a configuration profile version.",
+            "syntax": "az automanage configuration-profile version delete [--configuration-profile-name]\n                                                   [--ids]\n                                                   [--name]\n                                                   [--resource-group]\n                                                   [--subscription]\n                                                   [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--configuration-profile-name --profile-name",
+                "--ids",
+                "--name --version-name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az automanage configuration-profile version delete --profile-name {profile_name} -g {rg} -n {version_name}"
+            ]
+        },
+        {
+            "name": "az automanage configuration-profile version list",
+            "summary": "List configuration profile versions for a configuration profile.",
+            "syntax": "az automanage configuration-profile version list --configuration-profile-name\n                                                 --resource-group",
+            "required_parameters": [
+                "--configuration-profile-name --profile-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az automanage configuration-profile version list --profile-name {profile_name} -g {rg}"
+            ]
+        },
+        {
+            "name": "az automanage configuration-profile version show",
+            "summary": "Get information about a configuration profile version.",
+            "syntax": "az automanage configuration-profile version show [--configuration-profile-name]\n                                                 [--ids]\n                                                 [--name]\n                                                 [--resource-group]\n                                                 [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--configuration-profile-name --profile-name",
+                "--ids",
+                "--name --version-name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az automanage configuration-profile version show --profile-name {profile_name} -g {rg} -n {version_name}"
+            ]
+        },
+        {
+            "name": "az automanage configuration-profile version update",
+            "summary": "Update a configuration profile version.",
+            "syntax": "az automanage configuration-profile version update [--add]\n                                                   [--configuration]\n                                                   [--configuration-profile-name]\n                                                   [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                                   [--ids]\n                                                   [--name]\n                                                   [--remove]\n                                                   [--resource-group]\n                                                   [--set]\n                                                   [--subscription]\n                                                   [--tags]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--configuration",
+                "--configuration-profile-name --profile-name",
+                "--force-string",
+                "--ids",
+                "--name --version-name -n",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--subscription",
+                "--tags"
+            ],
+            "examples": [
+                "az automanage configuration-profile version update --profile-name {profile_name} -g {rg} -n {version_name} --configuration '{\"Antimalware/Enable\":true}'"
+            ]
+        }
+    ]
+}

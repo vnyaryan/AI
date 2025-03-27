@@ -1,0 +1,40 @@
+{
+    "command_group": "az iot device registration",
+    "description": "Manage IoT device registrations for the IoT Device Provisioning Service.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az iot device registration create",
+            "summary": "Register an IoT device with the IoT Device Provisioning Service.",
+            "syntax": "az iot device registration create --registration-id\n                                  [--auth-type {key, login}]\n                                  [--certificate-file-path]\n                                  [--ck]\n                                  [--dps-name]\n                                  [--enrollment-group-id]\n                                  [--host]\n                                  [--id-scope]\n                                  [--key]\n                                  [--key-file-path]\n                                  [--login]\n                                  [--pass]\n                                  [--payload]\n                                  [--resource-group]",
+            "required_parameters": [
+                "--registration-id --rid"
+            ],
+            "optional_parameters": [
+                "--auth-type",
+                "--certificate-file-path --cp",
+                "--ck --compute-key",
+                "--dps-name -n",
+                "--enrollment-group-id --gid --group-id",
+                "--host --provisioning-host",
+                "--id-scope --scope",
+                "--key --symmetric-key",
+                "--key-file-path --kp",
+                "--login -l",
+                "--pass --passphrase",
+                "--payload",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az iot device registration create -n {dps_name} --rid {registration_id}",
+                "az iot device registration create -n {dps_name} --rid {registration_id} --gid {group_enrollment_id}",
+                "az iot device registration create --id-scope {id_scope} --rid {registration_id} --key {symmetric_key}",
+                "az iot device registration create --id-scope {id_scope} --rid {registration_id} --gid {group_enrollment_id} --key {symmetric_key} --ck",
+                "az iot device registration create --id-scope {id_scope} --rid {registration_id} --key {symmetric_key}",
+                "az iot device registration create --id-scope {id_scope} --rid {registration_id} --cp {certificate_file} --kp {key_file}",
+                "az iot device registration create --id-scope {id_scope} --rid {registration_id} --cp {certificate_file} --kp {key_file} --pass {passphrase}",
+                "az iot device registration create --id-scope {id_scope} --rid {registration_id} --cp {certificate_file} --kp {key_file}"
+            ]
+        }
+    ]
+}

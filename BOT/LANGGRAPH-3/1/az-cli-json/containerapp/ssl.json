@@ -1,0 +1,27 @@
+{
+    "command_group": "az containerapp ssl",
+    "description": "Upload certificate to a managed environment, add hostname to an app in that environment, and bind the certificate to the hostname.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az containerapp ssl upload",
+            "summary": "Upload certificate to a managed environment, add hostname to an app in that environment, and bind the certificate to the hostname.",
+            "syntax": "az containerapp ssl upload --certificate-file\n                           --environment\n                           --hostname\n                           [--certificate-name]\n                           [--ids]\n                           [--location]\n                           [--name]\n                           [--password]\n                           [--resource-group]\n                           [--subscription]",
+            "required_parameters": [
+                "--certificate-file -f",
+                "--environment -e",
+                "--hostname"
+            ],
+            "optional_parameters": [
+                "--certificate-name -c",
+                "--ids",
+                "--location -l",
+                "--name -n",
+                "--password -p",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        }
+    ]
+}

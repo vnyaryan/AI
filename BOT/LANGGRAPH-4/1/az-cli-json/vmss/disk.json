@@ -1,0 +1,47 @@
+{
+    "command_group": "az vmss disk",
+    "description": "Manage data disks of a VMSS.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az vmss disk attach",
+            "summary": "Attach managed data disks to a scale set or its instances.",
+            "syntax": "az vmss disk attach [--caching {None, ReadOnly, ReadWrite}]\n                    [--disk]\n                    [--ids]\n                    [--instance-id]\n                    [--lun]\n                    [--resource-group]\n                    [--size-gb]\n                    [--sku {PremiumV2_LRS, Premium_LRS, Premium_ZRS, StandardSSD_LRS, StandardSSD_ZRS, Standard_LRS, UltraSSD_LRS}]\n                    [--subscription]\n                    [--vmss-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--caching",
+                "--disk",
+                "--ids",
+                "--instance-id",
+                "--lun",
+                "--resource-group -g",
+                "--size-gb -z",
+                "--sku",
+                "--subscription",
+                "--vmss-name"
+            ],
+            "examples": [
+                "az vmss disk attach --disk {disk} --instance-id 0 --resource-group MyResourceGroup",
+                "az vmss disk attach --vmss-name MyVmss --resource-group MyResourceGroup --size-gb 50"
+            ]
+        },
+        {
+            "name": "az vmss disk detach",
+            "summary": "Detach managed data disks from a scale set or its instances.",
+            "syntax": "az vmss disk detach --lun\n                    [--ids]\n                    [--instance-id]\n                    [--resource-group]\n                    [--subscription]\n                    [--vmss-name]",
+            "required_parameters": [
+                "--lun"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--instance-id",
+                "--resource-group -g",
+                "--subscription",
+                "--vmss-name"
+            ],
+            "examples": [
+                "az vmss disk detach --instance-id 0 --lun {lun} --resource-group MyResourceGroup"
+            ]
+        }
+    ]
+}

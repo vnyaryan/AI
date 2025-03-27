@@ -1,0 +1,42 @@
+{
+    "command_group": "az postgres flexible-server advanced-threat-protection-setting",
+    "description": "Manage advanced threat protection setting for a PostgreSQL flexible server.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az postgres flexible-server advanced-threat-protection-setting show",
+            "summary": "Get advanced threat protection settings for a PostgreSL flexible server.",
+            "syntax": "az postgres flexible-server advanced-threat-protection-setting show [--ids]\n                                                                    [--resource-group]\n                                                                    [--server-name]\n                                                                    [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--resource-group -g",
+                "--server-name -s",
+                "--subscription"
+            ],
+            "examples": [
+                "az postgres flexible-server advanced-threat-protection-setting show --resource-group testGroup --server-name testserver",
+                "az postgres flexible-server advanced-threat-protection-setting show --subscription testSubscription --resource-group testGroup --server-name testserver",
+                "az postgres flexible-server advanced-threat-protection-setting show --ids /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/testGroup/providers/Microsoft.DBforPostgreSQL/flexibleServers/testServer"
+            ]
+        },
+        {
+            "name": "az postgres flexible-server advanced-threat-protection-setting update",
+            "summary": "Updates advanced threat protection setting state for a flexible server.",
+            "syntax": "az postgres flexible-server advanced-threat-protection-setting update --state {Disabled, Enabled}\n                                                                      [--ids]\n                                                                      [--resource-group]\n                                                                      [--server-name]\n                                                                      [--subscription]",
+            "required_parameters": [
+                "--state"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--resource-group -g",
+                "--server-name -s",
+                "--subscription"
+            ],
+            "examples": [
+                "az postgres flexible-server advanced-threat-protection-setting update --resource-group testGroup --server-name testserver --state Enabled",
+                "az postgres flexible-server advanced-threat-protection-setting update --resource-group testGroup --server-name testserver --state Disabled"
+            ]
+        }
+    ]
+}

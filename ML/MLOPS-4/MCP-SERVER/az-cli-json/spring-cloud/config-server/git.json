@@ -1,0 +1,29 @@
+{
+    "command_group": "az spring-cloud config-server git",
+    "description": "Commands to manage Config Server git property in Azure Spring Cloud.",
+    "status": "Deprecated",
+    "commands": [
+        {
+            "name": "az spring-cloud config-server git set",
+            "summary": "Set git property of Config Server, will totally override the old one.",
+            "syntax": "az spring-cloud config-server git set --name\n                                      --resource-group\n                                      --uri\n                                      [--defer]\n                                      [--host-key]\n                                      [--host-key-algorithm]\n                                      [--label]\n                                      [--password]\n                                      [--private-key]\n                                      [--search-paths]\n                                      [--strict-host-key-checking]\n                                      [--username]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g",
+                "--uri"
+            ],
+            "optional_parameters": [
+                "--defer",
+                "--host-key",
+                "--host-key-algorithm",
+                "--label",
+                "--password",
+                "--private-key",
+                "--search-paths",
+                "--strict-host-key-checking",
+                "--username"
+            ],
+            "examples": []
+        }
+    ]
+}

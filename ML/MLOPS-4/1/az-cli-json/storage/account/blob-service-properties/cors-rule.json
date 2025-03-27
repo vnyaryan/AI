@@ -1,0 +1,54 @@
+{
+    "command_group": "az storage account blob-service-properties cors-rule",
+    "description": "Manage the Cross-Origin Resource Sharing (CORS) rules of a storage account's blob service properties.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az storage account blob-service-properties cors-rule add",
+            "summary": "Add a CORS rule for a storage account.",
+            "syntax": "az storage account blob-service-properties cors-rule add --account-name\n                                                         --allowed-methods\n                                                         --allowed-origins\n                                                         --max-age\n                                                         [--allowed-headers]\n                                                         [--exposed-headers]\n                                                         [--resource-group]",
+            "required_parameters": [
+                "--account-name -n",
+                "--allowed-methods --methods",
+                "--allowed-origins --origins",
+                "--max-age --max-age-in-seconds"
+            ],
+            "optional_parameters": [
+                "--allowed-headers",
+                "--exposed-headers",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az storage account blob-service-properties cors-rule add --account-name mystorageaccount --resource-group myresourcegroup --allowed-origins \"http://*.contoso.com\" --allowed-methods PUT GET --max-age 200"
+            ]
+        },
+        {
+            "name": "az storage account blob-service-properties cors-rule clear",
+            "summary": "Clear all CORS rules for a storage account.",
+            "syntax": "az storage account blob-service-properties cors-rule clear --account-name\n                                                           [--resource-group]",
+            "required_parameters": [
+                "--account-name -n"
+            ],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az storage account blob-service-properties cors-rule clear --account-name mystorageaccount --resource-group myresourcegroup"
+            ]
+        },
+        {
+            "name": "az storage account blob-service-properties cors-rule list",
+            "summary": "List all CORS rules of a storage account's blob service properties.",
+            "syntax": "az storage account blob-service-properties cors-rule list --account-name\n                                                          [--resource-group]",
+            "required_parameters": [
+                "--account-name -n"
+            ],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az storage account blob-service-properties cors-rule list --account-name mystorageaccount --resource-group myresourcegroup"
+            ]
+        }
+    ]
+}

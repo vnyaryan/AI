@@ -1,0 +1,255 @@
+{
+    "command_group": "az networkcloud baremetalmachine",
+    "description": "Manage bare metal machine.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az networkcloud baremetalmachine cordon",
+            "summary": "Cordon the provided bare metal machine's Kubernetes node.",
+            "syntax": "az networkcloud baremetalmachine cordon [--bare-metal-machine-name]\n                                        [--evacuate {False, True}]\n                                        [--ids]\n                                        [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                        [--resource-group]\n                                        [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--bare-metal-machine-name --name -n",
+                "--evacuate",
+                "--ids",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az networkcloud baremetalmachine cordon --evacuate \"True\" --bare-metal-machine-name \"bareMetalMachineName\" --resource-group \"resourceGroupName\""
+            ]
+        },
+        {
+            "name": "az networkcloud baremetalmachine list",
+            "summary": "List bare metal machines in the provided resource group or subscription.",
+            "syntax": "az networkcloud baremetalmachine list [--max-items]\n                                      [--next-token]\n                                      [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az networkcloud baremetalmachine list --resource-group \"resourceGroupName\"",
+                "az networkcloud baremetalmachine list"
+            ]
+        },
+        {
+            "name": "az networkcloud baremetalmachine power-off",
+            "summary": "Power off the provided bare metal machine.",
+            "syntax": "az networkcloud baremetalmachine power-off [--bare-metal-machine-name]\n                                           [--ids]\n                                           [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                           [--resource-group]\n                                           [--skip-shutdown {False, True}]\n                                           [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--bare-metal-machine-name --name -n",
+                "--ids",
+                "--no-wait",
+                "--resource-group -g",
+                "--skip-shutdown",
+                "--subscription"
+            ],
+            "examples": [
+                "az networkcloud baremetalmachine power-off --bare-metal-machine-name \"bareMetalMachineName\" --skip-shutdown \"True\" --resource-group \"resourceGroupName\""
+            ]
+        },
+        {
+            "name": "az networkcloud baremetalmachine reimage",
+            "summary": "Reimage the provided bare metal machine.",
+            "syntax": "az networkcloud baremetalmachine reimage [--bare-metal-machine-name]\n                                         [--ids]\n                                         [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                         [--resource-group]\n                                         [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--bare-metal-machine-name --name -n",
+                "--ids",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az networkcloud baremetalmachine reimage --bare-metal-machine-name \"bareMetalMachineName\" --resource-group \"resourceGroupName\""
+            ]
+        },
+        {
+            "name": "az networkcloud baremetalmachine replace",
+            "summary": "Replace the provided bare metal machine.",
+            "syntax": "az networkcloud baremetalmachine replace [--bare-metal-machine-name]\n                                         [--bmc-credentials]\n                                         [--bmc-mac-address]\n                                         [--boot-mac-address]\n                                         [--ids]\n                                         [--machine-name]\n                                         [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                         [--resource-group]\n                                         [--serial-number]\n                                         [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--bare-metal-machine-name --name -n",
+                "--bmc-credentials",
+                "--bmc-mac-address",
+                "--boot-mac-address",
+                "--ids",
+                "--machine-name",
+                "--no-wait",
+                "--resource-group -g",
+                "--serial-number",
+                "--subscription"
+            ],
+            "examples": [
+                "az networkcloud baremetalmachine replace --bare-metal-machine-name \"bareMetalMachineName\" --bmc-credentials password=\"{password}\" username=\"bmcuser\" --bmc-mac-address \"00:00:4f:00:57:ad\" --boot-mac-address \"00:00:4e:00:58:af\" --machine-name \"name\" --serial-number \"BM1219XXX\" --resource-group \"resourceGroupName\""
+            ]
+        },
+        {
+            "name": "az networkcloud baremetalmachine restart",
+            "summary": "Restart the provided bare metal machine.",
+            "syntax": "az networkcloud baremetalmachine restart [--bare-metal-machine-name]\n                                         [--ids]\n                                         [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                         [--resource-group]\n                                         [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--bare-metal-machine-name --name -n",
+                "--ids",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az networkcloud baremetalmachine restart --bare-metal-machine-name \"bareMetalMachineName\" --resource-group \"resourceGroupName\""
+            ]
+        },
+        {
+            "name": "az networkcloud baremetalmachine run-command",
+            "summary": "Run the command or the script on the provided bare metal machine. The URL to storage account with the command execution results and the command exit code can be retrieved from the operation status API once available.",
+            "syntax": "az networkcloud baremetalmachine run-command --limit-time-seconds\n                                             --script\n                                             [--arguments]\n                                             [--bare-metal-machine-name]\n                                             [--ids]\n                                             [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                             [--output-directory]\n                                             [--resource-group]\n                                             [--subscription]",
+            "required_parameters": [
+                "--limit-time-seconds",
+                "--script"
+            ],
+            "optional_parameters": [
+                "--arguments",
+                "--bare-metal-machine-name --name -n",
+                "--ids",
+                "--no-wait",
+                "--output-directory",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az networkcloud baremetalmachine run-command --bare-metal-machine-name \"bareMetalMachineName\" --arguments \"--argument1\" \"argument2\" --limit-time-seconds 60 --script \"cHdkCg==\" --resource-group \"resourceGroupName\""
+            ]
+        },
+        {
+            "name": "az networkcloud baremetalmachine run-data-extract",
+            "summary": "Run one or more data extractions on the provided bare metal machine. The URL to storage account with the command execution results and the command exit code can be retrieved from the operation status API once available.",
+            "syntax": "az networkcloud baremetalmachine run-data-extract --commands\n                                                  --limit-time-seconds\n                                                  [--bare-metal-machine-name]\n                                                  [--ids]\n                                                  [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                                  [--output-directory]\n                                                  [--resource-group]\n                                                  [--subscription]",
+            "required_parameters": [
+                "--commands",
+                "--limit-time-seconds"
+            ],
+            "optional_parameters": [
+                "--bare-metal-machine-name --name -n",
+                "--ids",
+                "--no-wait",
+                "--output-directory",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az networkcloud baremetalmachine run-data-extract --bare-metal-machine-name \"bareMetalMachineName\" --limit-time-seconds 360 --commands \"[{arguments:['SysInfo','TTYLog'],command:'hardware-support-data-collection'}]\" --resource-group \"resourceGroupName\""
+            ]
+        },
+        {
+            "name": "az networkcloud baremetalmachine run-read-command",
+            "summary": "Run one or more read-only commands on the provided bare metal machine. The URL to storage account with the command execution results and the command exit code can be retrieved from the operation status API once available.",
+            "syntax": "az networkcloud baremetalmachine run-read-command --commands\n                                                  --limit-time-seconds\n                                                  [--bare-metal-machine-name]\n                                                  [--ids]\n                                                  [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                                  [--output-directory]\n                                                  [--resource-group]\n                                                  [--subscription]",
+            "required_parameters": [
+                "--commands",
+                "--limit-time-seconds"
+            ],
+            "optional_parameters": [
+                "--bare-metal-machine-name --name -n",
+                "--ids",
+                "--no-wait",
+                "--output-directory",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az networkcloud baremetalmachine run-read-command --bare-metal-machine-name \"bareMetalMachineName\" --limit-time-seconds 60 --commands '[{\"command\":\"kubectl get\",\"arguments\":[\"pods\",\"-A\"]},{\"command\":\"ping\", \"arguments\":[\"192.168.0.99\",\"-c\",\"3\"]}]' --resource-group \"resourceGroupName\""
+            ]
+        },
+        {
+            "name": "az networkcloud baremetalmachine show",
+            "summary": "Get properties of the provided bare metal machine.",
+            "syntax": "az networkcloud baremetalmachine show [--bare-metal-machine-name]\n                                      [--ids]\n                                      [--resource-group]\n                                      [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--bare-metal-machine-name --name -n",
+                "--ids",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az networkcloud baremetalmachine show --bare-metal-machine-name \"bareMetalMachineName\" --resource-group \"resourceGroupName\""
+            ]
+        },
+        {
+            "name": "az networkcloud baremetalmachine start",
+            "summary": "Start the provided bare metal machine.",
+            "syntax": "az networkcloud baremetalmachine start [--bare-metal-machine-name]\n                                       [--ids]\n                                       [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                       [--resource-group]\n                                       [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--bare-metal-machine-name --name -n",
+                "--ids",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az networkcloud baremetalmachine start --bare-metal-machine-name \"bareMetalMachineName\" --resource-group \"resourceGroupName\""
+            ]
+        },
+        {
+            "name": "az networkcloud baremetalmachine uncordon",
+            "summary": "Uncordon the provided bare metal machine's Kubernetes node.",
+            "syntax": "az networkcloud baremetalmachine uncordon [--bare-metal-machine-name]\n                                          [--ids]\n                                          [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                          [--resource-group]\n                                          [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--bare-metal-machine-name --name -n",
+                "--ids",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az networkcloud baremetalmachine uncordon --bare-metal-machine-name \"bareMetalMachineName\" --resource-group \"resourceGroupName\""
+            ]
+        },
+        {
+            "name": "az networkcloud baremetalmachine update",
+            "summary": "Update properties of the provided bare metal machine, or update tags associated with the bare metal machine. Properties and tag updates can be done independently.",
+            "syntax": "az networkcloud baremetalmachine update [--bare-metal-machine-name]\n                                        [--ids]\n                                        [--machine-details]\n                                        [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                        [--resource-group]\n                                        [--subscription]\n                                        [--tags]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--bare-metal-machine-name --name -n",
+                "--ids",
+                "--machine-details",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--tags"
+            ],
+            "examples": [
+                "az networkcloud baremetalmachine update --bare-metal-machine-name \"bareMetalMachineName\" --machine-details \"machinedetails\" --tags key1=\"myvalue1\" key2=\"myvalue2\" --resource-group \"resourceGroupName\""
+            ]
+        },
+        {
+            "name": "az networkcloud baremetalmachine wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az networkcloud baremetalmachine wait [--bare-metal-machine-name]\n                                      [--created]\n                                      [--custom]\n                                      [--deleted]\n                                      [--exists]\n                                      [--ids]\n                                      [--interval]\n                                      [--resource-group]\n                                      [--subscription]\n                                      [--timeout]\n                                      [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--bare-metal-machine-name --name -n",
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

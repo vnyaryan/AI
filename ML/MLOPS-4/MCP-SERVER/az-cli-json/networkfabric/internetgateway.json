@@ -1,0 +1,75 @@
+{
+    "command_group": "az networkfabric internetgateway",
+    "description": "Manage Internet Gateway Resource.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az networkfabric internetgateway list",
+            "summary": "List all Internet Gateways in the provided resource group or subscription.",
+            "syntax": "az networkfabric internetgateway list [--max-items]\n                                      [--next-token]\n                                      [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az networkfabric internetgateway list --resource-group \"example-rg\"",
+                "az networkfabric internetgateway list --subscription \"<subscriptionId>\""
+            ]
+        },
+        {
+            "name": "az networkfabric internetgateway show",
+            "summary": "Show details of the provided Internet Gateway resource.",
+            "syntax": "az networkfabric internetgateway show [--ids]\n                                      [--resource-group]\n                                      [--resource-name]\n                                      [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--resource-group -g",
+                "--resource-name",
+                "--subscription"
+            ],
+            "examples": [
+                "az networkfabric internetgateway show --resource-group \"example-rg\" --resource-name \"example-internetgateway\""
+            ]
+        },
+        {
+            "name": "az networkfabric internetgateway update",
+            "summary": "Update the Internet Gateway resource.",
+            "syntax": "az networkfabric internetgateway update [--ids]\n                                        [--internet-gateway-rule-id]\n                                        [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                        [--resource-group]\n                                        [--resource-name]\n                                        [--subscription]\n                                        [--tags]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--internet-gateway-rule-id",
+                "--no-wait",
+                "--resource-group -g",
+                "--resource-name",
+                "--subscription",
+                "--tags"
+            ],
+            "examples": [
+                "az networkfabric internetgateway update --resource-group \"example-rg\" --resource-name \"example-internetgateway\" --internet-gateway-rule-id \"/subscriptions/xxxxx-xxxx-xxxx-xxxx-xxxxx/resourcegroups/example-rg/providers/Microsoft.ManagedNetworkFabric/internetGatewayRules/example-internetGatewayRule\""
+            ]
+        },
+        {
+            "name": "az networkfabric internetgateway wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az networkfabric internetgateway wait [--created]\n                                      [--custom]\n                                      [--deleted]\n                                      [--exists]\n                                      [--ids]\n                                      [--interval]\n                                      [--resource-group]\n                                      [--resource-name]\n                                      [--subscription]\n                                      [--timeout]\n                                      [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--resource-group -g",
+                "--resource-name",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

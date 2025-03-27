@@ -1,0 +1,132 @@
+{
+    "command_group": "az staticwebapp",
+    "description": "Manage static apps.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az staticwebapp create",
+            "summary": "Create a static app. To provide content to the static web app and integrate with a Github repo, provide the Github repository URL (--source) and a branch (--branch). If the repo is under a Github organization, please ensure that the Azure CLI Github App has access to the organization. Access can be requested in the browser when using the \"--login-with-github\" argument. Access must be granted by the organization's admin.",
+            "syntax": "az staticwebapp create --name\n                       --resource-group\n                       [--api-location]\n                       [--app-location]\n                       [--branch]\n                       [--location]\n                       [--login-with-ado]\n                       [--login-with-github]\n                       [--no-wait]\n                       [--output-location]\n                       [--sku {Dedicated, Free, Standard}]\n                       [--source]\n                       [--tags]\n                       [--token]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--api-location",
+                "--app-location",
+                "--branch -b",
+                "--location -l",
+                "--login-with-ado",
+                "--login-with-github",
+                "--no-wait",
+                "--output-location",
+                "--sku",
+                "--source -s",
+                "--tags",
+                "--token -t"
+            ],
+            "examples": [
+                "az staticwebapp create -n MyStaticAppName -g MyExistingRg -s https://github.com/JohnDoe/my-first-static-web-app -l WestUs2 -b master -t MyAccessToken",
+                "az staticwebapp create -n MyStaticAppName -g MyExistingRg -s https://github.com/JohnDoe/my-first-static-web-app -l WestUs2 -b master --login-with-github",
+                "az staticwebapp create -n MyStaticAppName -g MyExistingRg"
+            ]
+        },
+        {
+            "name": "az staticwebapp delete",
+            "summary": "Delete a static app.",
+            "syntax": "az staticwebapp delete --name\n                       [--no-wait]\n                       [--resource-group]\n                       [--yes]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--no-wait",
+                "--resource-group -g",
+                "--yes -y"
+            ],
+            "examples": [
+                "az staticwebapp delete -n MyStaticAppName -g MyRg"
+            ]
+        },
+        {
+            "name": "az staticwebapp disconnect",
+            "summary": "Disconnect source control to enable connecting to a different repo.",
+            "syntax": "az staticwebapp disconnect --name\n                           [--no-wait]\n                           [--resource-group]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--no-wait",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az staticwebapp disconnect -n MyStaticAppName"
+            ]
+        },
+        {
+            "name": "az staticwebapp list",
+            "summary": "List all static app resources in a subscription, or in resource group if provided.",
+            "syntax": "az staticwebapp list [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az staticwebapp list"
+            ]
+        },
+        {
+            "name": "az staticwebapp reconnect",
+            "summary": "Connect to a repo and branch following a disconnect command.",
+            "syntax": "az staticwebapp reconnect --branch\n                          --name\n                          --source\n                          [--login-with-github]\n                          [--no-wait]\n                          [--resource-group]\n                          [--token]",
+            "required_parameters": [
+                "--branch -b",
+                "--name -n",
+                "--source -s"
+            ],
+            "optional_parameters": [
+                "--login-with-github",
+                "--no-wait",
+                "--resource-group -g",
+                "--token -t"
+            ],
+            "examples": [
+                "az staticwebapp reconnect -n MyStaticAppName --source MyGitHubRepo -b master --token MyAccessToken",
+                "az staticwebapp reconnect -n MyStaticAppName --source MyGitHubRepo -b master --login-with-github"
+            ]
+        },
+        {
+            "name": "az staticwebapp show",
+            "summary": "Show details of a static app.",
+            "syntax": "az staticwebapp show --name\n                     [--resource-group]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az staticwebapp show -n MyStaticAppName"
+            ]
+        },
+        {
+            "name": "az staticwebapp update",
+            "summary": "Update a static app. Return the app updated.",
+            "syntax": "az staticwebapp update --name\n                       [--branch]\n                       [--no-wait]\n                       [--resource-group]\n                       [--sku {Dedicated, Free, Standard}]\n                       [--source]\n                       [--tags]\n                       [--token]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--branch -b",
+                "--no-wait",
+                "--resource-group -g",
+                "--sku",
+                "--source -s",
+                "--tags",
+                "--token -t"
+            ],
+            "examples": [
+                "az staticwebapp update -n MyStaticAppName --sku Standard"
+            ]
+        }
+    ]
+}

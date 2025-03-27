@@ -1,0 +1,97 @@
+{
+    "command_group": "az monitor data-collection endpoint",
+    "description": "Manage data collection endpoint for monitor control service.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az monitor data-collection endpoint create",
+            "summary": "Create a data collection endpoint.",
+            "syntax": "az monitor data-collection endpoint create --data-collection-endpoint-name\n                                           --public-network-access\n                                           --resource-group\n                                           [--description]\n                                           [--identity]\n                                           [--kind]\n                                           [--location]\n                                           [--tags]",
+            "required_parameters": [
+                "--data-collection-endpoint-name --name -n",
+                "--public-network-access",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--description",
+                "--identity",
+                "--kind",
+                "--location -l",
+                "--tags"
+            ],
+            "examples": [
+                "az monitor data-collection endpoint create -g \"myResourceGroup\" -l \"eastus2euap\" --name \"myCollectionEndpoint\" --public-network-access \"Enabled\""
+            ]
+        },
+        {
+            "name": "az monitor data-collection endpoint delete",
+            "summary": "Delete a data collection endpoint.",
+            "syntax": "az monitor data-collection endpoint delete [--data-collection-endpoint-name]\n                                           [--ids]\n                                           [--resource-group]\n                                           [--subscription]\n                                           [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--data-collection-endpoint-name --name -n",
+                "--ids",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az monitor data-collection endpoint delete --name \"myCollectionEndpoint\" --resource-group \"myResourceGroup\""
+            ]
+        },
+        {
+            "name": "az monitor data-collection endpoint list",
+            "summary": "List all data collection endpoints in the specified subscription.",
+            "syntax": "az monitor data-collection endpoint list [--max-items]\n                                         [--next-token]\n                                         [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az monitor data-collection endpoint list --resource-group \"myResourceGroup\"",
+                "az monitor data-collection endpoint list"
+            ]
+        },
+        {
+            "name": "az monitor data-collection endpoint show",
+            "summary": "Get the specified data collection endpoint.",
+            "syntax": "az monitor data-collection endpoint show [--data-collection-endpoint-name]\n                                         [--ids]\n                                         [--resource-group]\n                                         [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--data-collection-endpoint-name --name -n",
+                "--ids",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az monitor data-collection endpoint show --name \"myCollectionEndpoint\" --resource-group \"myResourceGroup\""
+            ]
+        },
+        {
+            "name": "az monitor data-collection endpoint update",
+            "summary": "Update a data collection endpoint.",
+            "syntax": "az monitor data-collection endpoint update [--add]\n                                           [--data-collection-endpoint-name]\n                                           [--description]\n                                           [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                           [--identity]\n                                           [--ids]\n                                           [--kind]\n                                           [--public-network-access]\n                                           [--remove]\n                                           [--resource-group]\n                                           [--set]\n                                           [--subscription]\n                                           [--tags]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--data-collection-endpoint-name --name -n",
+                "--description",
+                "--force-string",
+                "--identity",
+                "--ids",
+                "--kind",
+                "--public-network-access",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--subscription",
+                "--tags"
+            ],
+            "examples": [
+                "az monitor data-collection endpoint update --tags tag1=\"A\" tag2=\"B\" tag3=\"C\" --name \"myCollectionEndpoint\" --resource-group \"myResourceGroup\""
+            ]
+        }
+    ]
+}

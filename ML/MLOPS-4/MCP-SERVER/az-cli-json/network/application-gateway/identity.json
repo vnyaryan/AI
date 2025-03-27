@@ -1,0 +1,72 @@
+{
+    "command_group": "az network application-gateway identity",
+    "description": "Manage the managed service identity of an application gateway.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az network application-gateway identity assign",
+            "summary": "Assign a managed service identity to an application gateway.",
+            "syntax": "az network application-gateway identity assign --gateway-name\n                                               --identity\n                                               --resource-group\n                                               [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]",
+            "required_parameters": [
+                "--gateway-name",
+                "--identity",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--no-wait"
+            ],
+            "examples": [
+                "az network application-gateway identity assign -g MyResourceGroup --gateway-name ag1 --identity /subscriptions/*-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.ManagedIdentity/userAssignedIdentities/id1"
+            ]
+        },
+        {
+            "name": "az network application-gateway identity remove",
+            "summary": "Remove the managed service identity of an application-gateway.",
+            "syntax": "az network application-gateway identity remove [--gateway-name]\n                                               [--ids]\n                                               [--no-wait]\n                                               [--resource-group]\n                                               [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--gateway-name",
+                "--ids",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az network application-gateway identity remove -g MyResourceGroup --gateway-name ag1"
+            ]
+        },
+        {
+            "name": "az network application-gateway identity show",
+            "summary": "Show the managed service identity of an application gateway.",
+            "syntax": "az network application-gateway identity show --gateway-name\n                                             --resource-group",
+            "required_parameters": [
+                "--gateway-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az network application-gateway identity show -g MyResourceGroup --gateway-name ag1"
+            ]
+        },
+        {
+            "name": "az network application-gateway identity wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az network application-gateway identity wait [--created]\n                                             [--custom]\n                                             [--deleted]\n                                             [--exists]\n                                             [--gateway-name]\n                                             [--ids]\n                                             [--interval]\n                                             [--resource-group]\n                                             [--subscription]\n                                             [--timeout]\n                                             [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--gateway-name",
+                "--ids",
+                "--interval",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

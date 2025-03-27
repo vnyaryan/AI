@@ -1,0 +1,70 @@
+{
+    "command_group": "az vmware workload-network dhcp server",
+    "description": "Commands to manage a DHCP (Data Host Configuration Protocol) workload network.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az vmware workload-network dhcp server create",
+            "summary": "Create DHCP by ID in a private cloud workload network.",
+            "syntax": "az vmware workload-network dhcp server create --dhcp\n                                              --private-cloud\n                                              --resource-group\n                                              [--display-name]\n                                              [--lease-time]\n                                              [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                              [--revision]\n                                              [--server-address]",
+            "required_parameters": [
+                "--dhcp --name -n",
+                "--private-cloud -c",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--display-name",
+                "--lease-time",
+                "--no-wait",
+                "--revision",
+                "--server-address"
+            ],
+            "examples": [
+                "az vmware workload-network dhcp server create --resource-group group1 --private-cloud cloud1 --dhcp dhcp1 --display-name dhcpConfigurations1 --revision 1 --server-address 40.1.5.1/24 --lease-time 86400"
+            ]
+        },
+        {
+            "name": "az vmware workload-network dhcp server delete",
+            "summary": "Delete DHCP by ID in a private cloud workload network.",
+            "syntax": "az vmware workload-network dhcp server delete [--dhcp]\n                                              [--ids]\n                                              [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                              [--private-cloud]\n                                              [--resource-group]\n                                              [--subscription]\n                                              [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--dhcp --name -n",
+                "--ids",
+                "--no-wait",
+                "--private-cloud -c",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az vmware workload-network dhcp server delete --resource-group group1 --private-cloud cloud1 --dhcp dhcp1"
+            ]
+        },
+        {
+            "name": "az vmware workload-network dhcp server update",
+            "summary": "Update DHCP by ID in a private cloud workload network.",
+            "syntax": "az vmware workload-network dhcp server update [--add]\n                                              [--dhcp]\n                                              [--display-name]\n                                              [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                              [--ids]\n                                              [--lease-time]\n                                              [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                              [--private-cloud]\n                                              [--remove]\n                                              [--resource-group]\n                                              [--revision]\n                                              [--server-address]\n                                              [--set]\n                                              [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--dhcp --name -n",
+                "--display-name",
+                "--force-string",
+                "--ids",
+                "--lease-time",
+                "--no-wait",
+                "--private-cloud -c",
+                "--remove",
+                "--resource-group -g",
+                "--revision",
+                "--server-address",
+                "--set",
+                "--subscription"
+            ],
+            "examples": [
+                "az vmware workload-network dhcp server update --resource-group group1 --private-cloud cloud1 --dhcp dhcp1 --display-name dhcpConfigurations1 --revision 1 --server-address 40.1.5.1/24 --lease-time 86400"
+            ]
+        }
+    ]
+}

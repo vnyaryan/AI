@@ -1,0 +1,63 @@
+{
+    "command_group": "az postgres flexible-server long-term-retention",
+    "description": "Manage flexible server long-term-retention backups.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az postgres flexible-server long-term-retention list",
+            "summary": "List all the long-term-retention backups for a given server.",
+            "syntax": "az postgres flexible-server long-term-retention list --name\n                                                     --resource-group",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az postgres flexible-server long-term-retention list -g resource-group-name -n server-name"
+            ]
+        },
+        {
+            "name": "az postgres flexible-server long-term-retention pre-check",
+            "summary": "Performs all the checks that are needed for the subsequent long-term-retention backup operation to succeed.",
+            "syntax": "az postgres flexible-server long-term-retention pre-check --backup-name\n                                                          --name\n                                                          --resource-group",
+            "required_parameters": [
+                "--backup-name -b",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az postgres flexible-server long-term-retention pre-check -g resource-group-name -b backup-name -n server-name"
+            ]
+        },
+        {
+            "name": "az postgres flexible-server long-term-retention show",
+            "summary": "Show the details of a specific long-term-retention backup for a given server.",
+            "syntax": "az postgres flexible-server long-term-retention show --backup-name\n                                                     --name\n                                                     --resource-group",
+            "required_parameters": [
+                "--backup-name -b",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az postgres flexible-server long-term-retention show -g resource-group-name -n server-name -b backup-name"
+            ]
+        },
+        {
+            "name": "az postgres flexible-server long-term-retention start",
+            "summary": "Start long-term-retention backup for a flexible server. SAS URL parameter refers to the container SAS URL, inside the storage account, where the backups will be uploaded.",
+            "syntax": "az postgres flexible-server long-term-retention start --backup-name\n                                                      --name\n                                                      --resource-group\n                                                      --sas-url",
+            "required_parameters": [
+                "--backup-name -b",
+                "--name -n",
+                "--resource-group -g",
+                "--sas-url -u"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az postgres flexible-server long-term-retention start -g resource-group-name -b backup-name -n server-name -u <sas-url>"
+            ]
+        }
+    ]
+}

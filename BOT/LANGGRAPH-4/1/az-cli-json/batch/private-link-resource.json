@@ -1,0 +1,32 @@
+{
+    "command_group": "az batch private-link-resource",
+    "description": "Manage Batch account private Link Resources.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az batch private-link-resource list",
+            "summary": "List all of the private link resources in the specified account.",
+            "syntax": "az batch private-link-resource list --account-name\n                                    --resource-group\n                                    [--maxresults]",
+            "required_parameters": [
+                "--account-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--maxresults"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az batch private-link-resource show",
+            "summary": "Get information about the specified private link resource.",
+            "syntax": "az batch private-link-resource show --account-name\n                                    --name\n                                    --resource-group",
+            "required_parameters": [
+                "--account-name",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        }
+    ]
+}

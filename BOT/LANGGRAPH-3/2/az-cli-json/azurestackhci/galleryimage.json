@@ -1,0 +1,80 @@
+{
+    "command_group": "az azurestackhci galleryimage",
+    "description": "Please use 'az azurestackhci image' instead of 'az azurestackhci galleryimage'.",
+    "status": "Experimental",
+    "commands": [
+        {
+            "name": "az azurestackhci galleryimage create",
+            "summary": "Please use 'az azurestackhci image create' instead of 'az azurestackhci galleryimage create'.",
+            "syntax": "az azurestackhci galleryimage create --name\n                                     --resource-group\n                                     [--extended-location]\n                                     [--image-path]\n                                     [--location]\n                                     [--offer]\n                                     [--os-type {Linux, Windows}]\n                                     [--publisher]\n                                     [--sku]\n                                     [--storagepath-id]\n                                     [--tags]\n                                     [--version]",
+            "required_parameters": [
+                "--name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--extended-location",
+                "--image-path",
+                "--location -l",
+                "--offer",
+                "--os-type",
+                "--publisher",
+                "--sku",
+                "--storagepath-id",
+                "--tags",
+                "--version"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az azurestackhci galleryimage delete",
+            "summary": "Please use 'az azurestackhci image delete' instead of 'az azurestackhci galleryimage delete'.",
+            "syntax": "az azurestackhci galleryimage delete [--ids]\n                                     [--name]\n                                     [--resource-group]\n                                     [--subscription]\n                                     [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az azurestackhci galleryimage list",
+            "summary": "Please use 'az azurestackhci image list' instead of 'az azurestackhci galleryimage list'.",
+            "syntax": "az azurestackhci galleryimage list [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az azurestackhci galleryimage show",
+            "summary": "Please use 'az azurestackhci image show' instead of 'az azurestackhci galleryimage show'.",
+            "syntax": "az azurestackhci galleryimage show [--ids]\n                                   [--name]\n                                   [--resource-group]\n                                   [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az azurestackhci galleryimage update",
+            "summary": "Please use 'az azurestackhci image update' instead of 'az azurestackhci galleryimage update'.",
+            "syntax": "az azurestackhci galleryimage update [--ids]\n                                     [--name]\n                                     [--resource-group]\n                                     [--subscription]\n                                     [--tags]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name",
+                "--resource-group -g",
+                "--subscription",
+                "--tags"
+            ],
+            "examples": []
+        }
+    ]
+}

@@ -1,0 +1,35 @@
+{
+    "command_group": "az security atp cosmosdb",
+    "description": "View and manage Advanced Threat Protection settings for Cosmos DB accounts.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az security atp cosmosdb show",
+            "summary": "Display Advanced Threat Protection settings for an Azure Cosmos DB account.",
+            "syntax": "az security atp cosmosdb show --cosmosdb-account\n                              --resource-group",
+            "required_parameters": [
+                "--cosmosdb-account",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az security atp cosmosdb show --resource-group MyResourceGroup --cosmosdb-account MyCosmosDbAccount"
+            ]
+        },
+        {
+            "name": "az security atp cosmosdb update",
+            "summary": "Toggle status of Advanced Threat Protection for an Azure Cosmos DB account.",
+            "syntax": "az security atp cosmosdb update --cosmosdb-account\n                                --is-enabled {false, true}\n                                --resource-group",
+            "required_parameters": [
+                "--cosmosdb-account",
+                "--is-enabled",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az security atp cosmosdb update --resource-group MyResourceGroup --cosmosdb-account MyCosmosDbAccount --is-enabled true",
+                "az security atp cosmosdb update --resource-group MyResourceGroup --cosmosdb-account MyCosmosDbAccount --is-enabled false"
+            ]
+        }
+    ]
+}

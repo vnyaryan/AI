@@ -1,0 +1,152 @@
+{
+    "command_group": "az signalr",
+    "description": "Manage Azure SignalR Service.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az signalr create",
+            "summary": "Creates a SignalR Service.",
+            "syntax": "az signalr create --name\n                  --resource-group\n                  --sku\n                  [--allowed-origins]\n                  [--default-action {Allow, Deny}]\n                  [--enable-message-logs {false, true}]\n                  [--location]\n                  [--service-mode {Classic, Default, Serverless}]\n                  [--tags]\n                  [--unit-count]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g",
+                "--sku"
+            ],
+            "optional_parameters": [
+                "--allowed-origins -a",
+                "--default-action",
+                "--enable-message-logs",
+                "--location -l",
+                "--service-mode",
+                "--tags",
+                "--unit-count"
+            ],
+            "examples": [
+                "az signalr create -n MySignalR -g MyResourceGroup --sku Premium_P1",
+                "az signalr create -n MySignalR -g MyResourceGroup --sku Premium_P1 --unit-count 1 --service-mode Serverless --enable-message-logs True"
+            ]
+        },
+        {
+            "name": "az signalr delete",
+            "summary": "Deletes a SignalR Service.",
+            "syntax": "az signalr delete [--ids]\n                  [--name]\n                  [--resource-group]\n                  [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az signalr delete -n MySignalR -g MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az signalr list",
+            "summary": "Lists all the SignalR Service under the current subscription.",
+            "syntax": "az signalr list [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az signalr list -o table",
+                "az signalr list -g MySignalR -o table"
+            ]
+        },
+        {
+            "name": "az signalr restart",
+            "summary": "Restart an existing SignalR Service.",
+            "syntax": "az signalr restart [--ids]\n                   [--name]\n                   [--resource-group]\n                   [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az signalr restart -n MySignalR -g MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az signalr show",
+            "summary": "Get the details of a SignalR Service.",
+            "syntax": "az signalr show [--ids]\n                [--name]\n                [--resource-group]\n                [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az signalr show -n MySignalR -g MyResourceGroup --query sku"
+            ]
+        },
+        {
+            "name": "az signalr start",
+            "summary": "Start an existing SignalR Service.",
+            "syntax": "az signalr start [--ids]\n                 [--name]\n                 [--resource-group]\n                 [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az signalr start -n MySignalR -g MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az signalr stop",
+            "summary": "Stop an existing SignalR Service.",
+            "syntax": "az signalr stop [--ids]\n                [--name]\n                [--resource-group]\n                [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az signalr stop -n MySignalR -g MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az signalr update",
+            "summary": "Update an existing SignalR Service.",
+            "syntax": "az signalr update [--add]\n                  [--allowed-origins]\n                  [--client-cert-enabled {false, true}]\n                  [--default-action {Allow, Deny}]\n                  [--disable-local-auth {false, true}]\n                  [--enable-message-logs {false, true}]\n                  [--force-string]\n                  [--ids]\n                  [--name]\n                  [--region-endpoint-enabled {false, true}]\n                  [--remove]\n                  [--resource-group]\n                  [--service-mode {Classic, Default, Serverless}]\n                  [--set]\n                  [--sku]\n                  [--subscription]\n                  [--tags]\n                  [--unit-count]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--allowed-origins -a",
+                "--client-cert-enabled",
+                "--default-action",
+                "--disable-local-auth",
+                "--enable-message-logs",
+                "--force-string",
+                "--ids",
+                "--name -n",
+                "--region-endpoint-enabled",
+                "--remove",
+                "--resource-group -g",
+                "--service-mode",
+                "--set",
+                "--sku",
+                "--subscription",
+                "--tags",
+                "--unit-count"
+            ],
+            "examples": [
+                "az signalr update -n MySignalR -g MyResourceGroup --sku Standard_S1 --unit-count 50",
+                "az signalr update -n MySignalR -g MyResourceGroup --service-mode Serverless",
+                "az signalr update -n MySignalR -g MyResourceGroup --enable-message-logs True",
+                "az signalr update -n MySignalR -g MyResourceGroup --client-cert-enabled False",
+                "az signalr update -n MySignalR -g MyResourceGroup --disable-local-auth True",
+                "az signalr update -n MySignalR -g MyResourceGroup --region-endpoint-enabled False"
+            ]
+        }
+    ]
+}

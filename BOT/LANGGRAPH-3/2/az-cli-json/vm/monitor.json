@@ -1,0 +1,6 @@
+{
+    "command_group": "az vm monitor",
+    "description": "Manage monitor aspect for a vm.",
+    "status": "GA",
+    "commands": []
+}

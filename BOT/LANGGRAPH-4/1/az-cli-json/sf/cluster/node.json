@@ -1,0 +1,37 @@
+{
+    "command_group": "az sf cluster node",
+    "description": "Manage the node instance of a cluster.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az sf cluster node add",
+            "summary": "Add nodes to a node type in a cluster.",
+            "syntax": "az sf cluster node add --cluster-name\n                       --node-type\n                       --nodes-to-add\n                       --resource-group",
+            "required_parameters": [
+                "--cluster-name -c",
+                "--node-type",
+                "--nodes-to-add --number-of-nodes-to-add",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az sf cluster node add -g group-name -c cluster1 --number-of-nodes-to-add 2 --node-type 'nt1'"
+            ]
+        },
+        {
+            "name": "az sf cluster node remove",
+            "summary": "Remove nodes from a node type in a cluster.",
+            "syntax": "az sf cluster node remove --cluster-name\n                          --node-type\n                          --nodes-to-remove\n                          --resource-group",
+            "required_parameters": [
+                "--cluster-name -c",
+                "--node-type",
+                "--nodes-to-remove --number-of-nodes-to-remove",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az sf cluster node remove -g group-name -c cluster1 --node-type 'nt1' --number-of-nodes-to-remove 2"
+            ]
+        }
+    ]
+}

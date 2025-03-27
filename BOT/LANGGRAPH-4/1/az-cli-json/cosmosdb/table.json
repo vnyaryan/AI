@@ -1,0 +1,131 @@
+{
+    "command_group": "az cosmosdb table",
+    "description": "Manage Table resources of Azure Cosmos DB account.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az cosmosdb table create",
+            "summary": "Create an Table under an Azure Cosmos DB account.",
+            "syntax": "az cosmosdb table create --account-name\n                         --name\n                         --resource-group\n                         [--max-throughput]\n                         [--throughput]",
+            "required_parameters": [
+                "--account-name -a",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--max-throughput",
+                "--throughput"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az cosmosdb table delete",
+            "summary": "Delete the Table under an Azure Cosmos DB account.",
+            "syntax": "az cosmosdb table delete --account-name\n                         --name\n                         --resource-group\n                         [--yes]",
+            "required_parameters": [
+                "--account-name -a",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--yes -y"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az cosmosdb table exists",
+            "summary": "Checks if an Azure Cosmos DB table exists.",
+            "syntax": "az cosmosdb table exists --account-name\n                         --name\n                         --resource-group",
+            "required_parameters": [
+                "--account-name -a",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az cosmosdb table list",
+            "summary": "List the Tables under an Azure Cosmos DB account.",
+            "syntax": "az cosmosdb table list --account-name\n                       --resource-group",
+            "required_parameters": [
+                "--account-name -a",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az cosmosdb table restore",
+            "summary": "Restore a deleted table within the same account.",
+            "syntax": "az cosmosdb table restore --account-name\n                          --resource-group\n                          --table-name\n                          [--disable-ttl]\n                          [--restore-timestamp]",
+            "required_parameters": [
+                "--account-name -a",
+                "--resource-group -g",
+                "--table-name -n"
+            ],
+            "optional_parameters": [
+                "--disable-ttl",
+                "--restore-timestamp -t"
+            ],
+            "examples": [
+                "az cosmosdb table restore --resource-group resource_group --account-name database_account_name --table-name name_of_table_needs_to_be_restored --restore-timestamp 2020-07-13T16:03:41+0000"
+            ]
+        },
+        {
+            "name": "az cosmosdb table restore",
+            "summary": "Restore a deleted table within the same account.",
+            "syntax": "az cosmosdb table restore --account-name\n                          --resource-group\n                          --table-name\n                          [--disable-ttl {false, true}]\n                          [--restore-timestamp]",
+            "required_parameters": [
+                "--account-name -a",
+                "--resource-group -g",
+                "--table-name -n"
+            ],
+            "optional_parameters": [
+                "--disable-ttl",
+                "--restore-timestamp -t"
+            ],
+            "examples": [
+                "az cosmosdb table restore --resource-group resource_group --account-name database_account_name --table-name name_of_table_needs_to_be_restored --restore-timestamp 2020-07-13T16:03:41+0000"
+            ]
+        },
+        {
+            "name": "az cosmosdb table retrieve-latest-backup-time",
+            "summary": "Retrieves latest restorable timestamp for the given table in given region.",
+            "syntax": "az cosmosdb table retrieve-latest-backup-time --account-name\n                                              --location\n                                              --resource-group\n                                              --table-name",
+            "required_parameters": [
+                "--account-name -a",
+                "--location -l",
+                "--resource-group -g",
+                "--table-name -n"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az cosmosdb table retrieve-latest-backup-time",
+            "summary": "Retrieves latest restorable timestamp for the given table in given region.",
+            "syntax": "az cosmosdb table retrieve-latest-backup-time --account-name\n                                              --location\n                                              --resource-group\n                                              --table-name",
+            "required_parameters": [
+                "--account-name -a",
+                "--location -l",
+                "--resource-group -g",
+                "--table-name -n"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az cosmosdb table show",
+            "summary": "Show the details of a Table under an Azure Cosmos DB account.",
+            "syntax": "az cosmosdb table show --account-name\n                       --name\n                       --resource-group",
+            "required_parameters": [
+                "--account-name -a",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        }
+    ]
+}

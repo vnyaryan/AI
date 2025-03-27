@@ -1,0 +1,6 @@
+{
+    "command_group": "az stack-hci",
+    "description": "Manage Azure Stack HCI.",
+    "status": "GA",
+    "commands": []
+}

@@ -1,0 +1,6 @@
+{
+    "command_group": "az webapp webjob",
+    "description": "Allows management operations for webjobs on a web app.",
+    "status": "GA",
+    "commands": []
+}

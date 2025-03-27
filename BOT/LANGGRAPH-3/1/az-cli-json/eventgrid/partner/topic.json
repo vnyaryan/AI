@@ -1,0 +1,85 @@
+{
+    "command_group": "az eventgrid partner topic",
+    "description": "Manage partner topics.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az eventgrid partner topic activate",
+            "summary": "Activate a partner topic.",
+            "syntax": "az eventgrid partner topic activate [--ids]\n                                    [--name]\n                                    [--resource-group]\n                                    [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az eventgrid partner topic activate -g rg1 -n partnertopic1"
+            ]
+        },
+        {
+            "name": "az eventgrid partner topic deactivate",
+            "summary": "Deactivate a partner topic.",
+            "syntax": "az eventgrid partner topic deactivate [--ids]\n                                      [--name]\n                                      [--resource-group]\n                                      [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az eventgrid partner topic deactivate -g rg1 -n partnertopic1"
+            ]
+        },
+        {
+            "name": "az eventgrid partner topic delete",
+            "summary": "Delete a partner topic.",
+            "syntax": "az eventgrid partner topic delete [--ids]\n                                  [--name]\n                                  [--resource-group]\n                                  [--subscription]\n                                  [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az eventgrid partner topic delete -g rg1 --name partnertopic1"
+            ]
+        },
+        {
+            "name": "az eventgrid partner topic list",
+            "summary": "List available partner topics.",
+            "syntax": "az eventgrid partner topic list [--odata-query]\n                                [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--odata-query",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az eventgrid partner topic list",
+                "az eventgrid partner topic list -g rg1",
+                "az eventgrid partner topic list -g rg1 --odata-query \"Contains(name, 'XYZ')\"",
+                "az eventgrid partner topic list -g rg1 --odata-query \"NOT (name eq 'name1')\""
+            ]
+        },
+        {
+            "name": "az eventgrid partner topic show",
+            "summary": "Get the details of a partner topic.",
+            "syntax": "az eventgrid partner topic show [--ids]\n                                [--name]\n                                [--resource-group]\n                                [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az eventgrid partner topic show -g rg1 -n partnertopic1",
+                "az eventgrid partner topic show --ids /subscriptions/{SubID}/resourceGroups/{RG}/providers/Microsoft.EventGrid/partnetopics/topic1"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,57 @@
+{
+    "command_group": "az pipelines release",
+    "description": "Manage releases.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az pipelines release create",
+            "summary": "Request (create) a release.",
+            "syntax": "az pipelines release create [--artifact-metadata-list]\n                            [--definition-id]\n                            [--definition-name]\n                            [--description]\n                            [--detect {false, true}]\n                            [--open]\n                            [--org]\n                            [--project]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--artifact-metadata-list",
+                "--definition-id",
+                "--definition-name",
+                "--description",
+                "--detect",
+                "--open",
+                "--org --organization",
+                "--project -p"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az pipelines release list",
+            "summary": "List release results.",
+            "syntax": "az pipelines release list [--definition-id]\n                          [--detect {false, true}]\n                          [--max-created-time]\n                          [--min-created-time]\n                          [--org]\n                          [--project]\n                          [--source-branch]\n                          [--status]\n                          [--top]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--definition-id",
+                "--detect",
+                "--max-created-time",
+                "--min-created-time",
+                "--org --organization",
+                "--project -p",
+                "--source-branch",
+                "--status",
+                "--top"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az pipelines release show",
+            "summary": "Get the details of a release.",
+            "syntax": "az pipelines release show --id\n                          [--detect {false, true}]\n                          [--open]\n                          [--org]\n                          [--project]",
+            "required_parameters": [
+                "--id"
+            ],
+            "optional_parameters": [
+                "--detect",
+                "--open",
+                "--org --organization",
+                "--project -p"
+            ],
+            "examples": []
+        }
+    ]
+}

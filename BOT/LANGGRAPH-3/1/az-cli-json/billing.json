@@ -1,0 +1,6 @@
+{
+    "command_group": "az billing",
+    "description": "Manage Azure Billing.",
+    "status": "GA",
+    "commands": []
+}

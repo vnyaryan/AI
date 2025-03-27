@@ -1,0 +1,43 @@
+{
+    "command_group": "az webapp auth twitter",
+    "description": "Manage webapp authentication and authorization of the Twitter identity provider.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az webapp auth twitter show",
+            "summary": "Show the authentication settings for the Twitter identity provider.",
+            "syntax": "az webapp auth twitter show [--ids]\n                            [--name]\n                            [--resource-group]\n                            [--slot]\n                            [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--slot -s",
+                "--subscription"
+            ],
+            "examples": [
+                "az webapp auth twitter show --name MyWebApp --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az webapp auth twitter update",
+            "summary": "Update the consumer key and consumer secret for the Twitter identity provider.",
+            "syntax": "az webapp auth twitter update [--consumer-key]\n                              [--consumer-secret]\n                              [--consumer-secret-setting-name]\n                              [--ids]\n                              [--name]\n                              [--resource-group]\n                              [--slot]\n                              [--subscription]\n                              [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--consumer-key",
+                "--consumer-secret",
+                "--consumer-secret-setting-name --secret-setting",
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--slot -s",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az webapp auth twitter update  -g myResourceGroup --name MyWebApp \\\n  --consumer-key my-client-id --consumer-secret very_secret_password"
+            ]
+        }
+    ]
+}

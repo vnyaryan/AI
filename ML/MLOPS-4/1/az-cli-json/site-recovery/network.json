@@ -1,0 +1,37 @@
+{
+    "command_group": "az site-recovery network",
+    "description": "Manage network.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az site-recovery network list",
+            "summary": "List the networks available for a fabric.",
+            "syntax": "az site-recovery network list --fabric-name\n                              --resource-group\n                              --vault-name\n                              [--max-items]\n                              [--next-token]",
+            "required_parameters": [
+                "--fabric-name",
+                "--resource-group -g",
+                "--vault-name"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az site-recovery network show",
+            "summary": "Get the details of a network.",
+            "syntax": "az site-recovery network show [--fabric-name]\n                              [--ids]\n                              [--name]\n                              [--resource-group]\n                              [--subscription]\n                              [--vault-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--fabric-name",
+                "--ids",
+                "--name --network-name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--vault-name"
+            ],
+            "examples": []
+        }
+    ]
+}

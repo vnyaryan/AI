@@ -1,0 +1,92 @@
+{
+    "command_group": "az mysql server ad-admin",
+    "description": "Manage a MySQL server's Active Directory administrator.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az mysql server ad-admin create",
+            "summary": "Create an Active Directory administrator for MySQL server.",
+            "syntax": "az mysql server ad-admin create --resource-group\n                                --server-name\n                                [--display-name]\n                                [--no-wait]\n                                [--object-id]",
+            "required_parameters": [
+                "--resource-group -g",
+                "--server-name -s"
+            ],
+            "optional_parameters": [
+                "--display-name -u",
+                "--no-wait",
+                "--object-id -i"
+            ],
+            "examples": [
+                "az mysql server ad-admin create --server-name testsvr -g testgroup --display-name username@domain.com --object-id 1FCD6583-267B-4484-BF9B-507E4B62DE79"
+            ]
+        },
+        {
+            "name": "az mysql server ad-admin delete",
+            "summary": "Delete an Active Directory Administrator for MySQL server.",
+            "syntax": "az mysql server ad-admin delete [--ids]\n                                [--resource-group]\n                                [--server-name]\n                                [--subscription]\n                                [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--resource-group -g",
+                "--server-name -s",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az mysql server ad-admin delete --server-name testsvr -g testgroup"
+            ]
+        },
+        {
+            "name": "az mysql server ad-admin list",
+            "summary": "List all Active Directory Administrators for MySQL server.",
+            "syntax": "az mysql server ad-admin list [--ids]\n                              [--resource-group]\n                              [--server-name]\n                              [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--resource-group -g",
+                "--server-name -s",
+                "--subscription"
+            ],
+            "examples": [
+                "az mysql server ad-admin list --server-name testsvr -g testgroup"
+            ]
+        },
+        {
+            "name": "az mysql server ad-admin show",
+            "summary": "Get Active Directory Administrator information for a MySQL server.",
+            "syntax": "az mysql server ad-admin show [--ids]\n                              [--resource-group]\n                              [--server-name]\n                              [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--resource-group -g",
+                "--server-name -s",
+                "--subscription"
+            ],
+            "examples": [
+                "az mysql server ad-admin show --server-name testsvr -g testgroup"
+            ]
+        },
+        {
+            "name": "az mysql server ad-admin wait",
+            "summary": "Place the CLI in a waiting state until a condition of the MySQL server Active Directory Administrator is met.",
+            "syntax": "az mysql server ad-admin wait [--created]\n                              [--custom]\n                              [--deleted]\n                              [--exists]\n                              [--ids]\n                              [--interval]\n                              [--resource-group]\n                              [--server-name]\n                              [--subscription]\n                              [--timeout]\n                              [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--resource-group -g",
+                "--server-name -s",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": [
+                "az mysql server ad-admin wait --server-name testsvr -g testgroup --created"
+            ]
+        }
+    ]
+}

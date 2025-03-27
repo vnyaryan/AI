@@ -1,0 +1,517 @@
+{
+    "command_group": "az containerapp",
+    "description": "Manage Azure Container Apps.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az containerapp browse",
+            "summary": "Open a containerapp in the browser, if possible.",
+            "syntax": "az containerapp browse [--ids]\n                       [--name]\n                       [--resource-group]\n                       [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az containerapp browse -n my-containerapp -g MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az containerapp create",
+            "summary": "Create a container app.",
+            "syntax": "az containerapp create --name\n                       --resource-group\n                       [--allow-insecure {false, true}]\n                       [--args]\n                       [--command]\n                       [--container-name]\n                       [--cpu]\n                       [--dal]\n                       [--dapr-app-id]\n                       [--dapr-app-port]\n                       [--dapr-app-protocol {grpc, http}]\n                       [--dapr-http-max-request-size]\n                       [--dapr-http-read-buffer-size]\n                       [--dapr-log-level {debug, error, info, warn}]\n                       [--enable-dapr {false, true}]\n                       [--env-vars]\n                       [--environment]\n                       [--exposed-port]\n                       [--image]\n                       [--ingress {external, internal}]\n                       [--max-replicas]\n                       [--memory]\n                       [--min-replicas]\n                       [--no-wait]\n                       [--registry-identity]\n                       [--registry-password]\n                       [--registry-server]\n                       [--registry-username]\n                       [--revision-suffix]\n                       [--revisions-mode {multiple, single}]\n                       [--scale-rule-auth]\n                       [--scale-rule-http-concurrency]\n                       [--scale-rule-metadata]\n                       [--scale-rule-name]\n                       [--scale-rule-type]\n                       [--secret-volume-mount]\n                       [--secrets]\n                       [--system-assigned]\n                       [--tags]\n                       [--target-port]\n                       [--termination-grace-period]\n                       [--transport {auto, http, http2, tcp}]\n                       [--user-assigned]\n                       [--workload-profile-name]\n                       [--yaml]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--allow-insecure",
+                "--args",
+                "--command",
+                "--container-name",
+                "--cpu",
+                "--dal --dapr-enable-api-logging",
+                "--dapr-app-id",
+                "--dapr-app-port",
+                "--dapr-app-protocol",
+                "--dapr-http-max-request-size --dhmrs",
+                "--dapr-http-read-buffer-size --dhrbs",
+                "--dapr-log-level",
+                "--enable-dapr",
+                "--env-vars",
+                "--environment",
+                "--exposed-port",
+                "--image -i",
+                "--ingress",
+                "--max-replicas",
+                "--memory",
+                "--min-replicas",
+                "--no-wait",
+                "--registry-identity",
+                "--registry-password",
+                "--registry-server",
+                "--registry-username",
+                "--revision-suffix",
+                "--revisions-mode",
+                "--scale-rule-auth --sra",
+                "--scale-rule-http-concurrency --scale-rule-tcp-concurrency --srhc --srtc",
+                "--scale-rule-metadata --srm",
+                "--scale-rule-name --srn",
+                "--scale-rule-type --srt",
+                "--secret-volume-mount",
+                "--secrets -s",
+                "--system-assigned",
+                "--tags",
+                "--target-port",
+                "--termination-grace-period --tgp",
+                "--transport",
+                "--user-assigned",
+                "--workload-profile-name -w",
+                "--yaml"
+            ],
+            "examples": [
+                "az containerapp create -n my-containerapp -g MyResourceGroup \\\n    --image myregistry.azurecr.io/my-app:v1.0 --environment MyContainerappEnv \\\n    --ingress external --target-port 80 \\\n    --registry-server myregistry.azurecr.io --registry-username myregistry --registry-password $REGISTRY_PASSWORD \\\n    --query properties.configuration.ingress.fqdn",
+                "az containerapp create -n my-containerapp -g MyResourceGroup \\\n    --image nginx --environment MyContainerappEnv \\\n    --cpu 0.5 --memory 1.0Gi \\\n    --min-replicas 4 --max-replicas 8",
+                "az containerapp create -n my-containerapp -g MyResourceGroup \\\n    --image my-app:v1.0 --environment MyContainerappEnv \\\n    --secrets mysecret=secretvalue1 anothersecret=\"secret value 2\" \\\n    --env-vars GREETING=\"Hello, world\" SECRETENV=secretref:anothersecret",
+                "az containerapp create -n my-containerapp -g MyResourceGroup \\\n    --environment MyContainerappEnv \\\n    --yaml \"path/to/yaml/file.yml\"",
+                "az containerapp create -n myapp -g mygroup --environment myenv --image nginx \\\n    --scale-rule-name my-http-rule \\\n    --scale-rule-http-concurrency 50",
+                "az containerapp create -n my-containerapp -g MyResourceGroup \\\n    --image my-queue-processor --environment MyContainerappEnv \\\n    --min-replicas 4 --max-replicas 8 \\\n    --scale-rule-name queue-based-autoscaling \\\n    --scale-rule-type azure-queue \\\n    --scale-rule-metadata \"accountName=mystorageaccountname\" \\\n                          \"cloud=AzurePublicCloud\" \\\n                          \"queueLength\": \"5\" \"queueName\": \"foo\" \\\n    --scale-rule-auth \"connection=my-connection-string-secret-name\"",
+                "az containerapp create -n my-containerapp -g MyResourceGroup \\\n    --image my-app:v1.0 --environment MyContainerappEnv \\\n    --secrets mysecret=secretvalue1 anothersecret=\"secret value 2\" \\\n    --secret-volume-mount \"mnt/secrets\""
+            ]
+        },
+        {
+            "name": "az containerapp create",
+            "summary": "Create a container app.",
+            "syntax": "az containerapp create --name\n                       --resource-group\n                       [--allow-insecure {false, true}]\n                       [--args]\n                       [--artifact]\n                       [--bind]\n                       [--branch]\n                       [--build-env-vars]\n                       [--command]\n                       [--container-name]\n                       [--context-path]\n                       [--cpu]\n                       [--customized-keys]\n                       [--dal]\n                       [--dapr-app-id]\n                       [--dapr-app-port]\n                       [--dapr-app-protocol {grpc, http}]\n                       [--dapr-http-max-request-size]\n                       [--dapr-http-read-buffer-size]\n                       [--dapr-log-level {debug, error, info, warn}]\n                       [--enable-dapr {false, true}]\n                       [--enable-java-agent {false, true}]\n                       [--enable-java-metrics {false, true}]\n                       [--env-vars]\n                       [--environment]\n                       [--environment-type {connected, managed}]\n                       [--exposed-port]\n                       [--image]\n                       [--ingress {external, internal}]\n                       [--max-inactive-revisions]\n                       [--max-replicas]\n                       [--memory]\n                       [--min-replicas]\n                       [--no-wait]\n                       [--registry-identity]\n                       [--registry-password]\n                       [--registry-server]\n                       [--registry-username]\n                       [--repo]\n                       [--revision-suffix]\n                       [--revisions-mode {labels, multiple, single}]\n                       [--runtime {generic, java}]\n                       [--scale-rule-auth]\n                       [--scale-rule-http-concurrency]\n                       [--scale-rule-identity]\n                       [--scale-rule-metadata]\n                       [--scale-rule-name]\n                       [--scale-rule-type]\n                       [--secret-volume-mount]\n                       [--secrets]\n                       [--service-principal-client-id]\n                       [--service-principal-client-secret]\n                       [--service-principal-tenant-id]\n                       [--source]\n                       [--system-assigned]\n                       [--tags]\n                       [--target-label]\n                       [--target-port]\n                       [--termination-grace-period]\n                       [--token]\n                       [--transport {auto, http, http2, tcp}]\n                       [--user-assigned]\n                       [--workload-profile-name]\n                       [--yaml]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--allow-insecure",
+                "--args",
+                "--artifact",
+                "--bind",
+                "--branch -b",
+                "--build-env-vars",
+                "--command",
+                "--container-name",
+                "--context-path",
+                "--cpu",
+                "--customized-keys",
+                "--dal --dapr-enable-api-logging",
+                "--dapr-app-id",
+                "--dapr-app-port",
+                "--dapr-app-protocol",
+                "--dapr-http-max-request-size --dhmrs",
+                "--dapr-http-read-buffer-size --dhrbs",
+                "--dapr-log-level",
+                "--enable-dapr",
+                "--enable-java-agent",
+                "--enable-java-metrics",
+                "--env-vars",
+                "--environment",
+                "--environment-type",
+                "--exposed-port",
+                "--image -i",
+                "--ingress",
+                "--max-inactive-revisions",
+                "--max-replicas",
+                "--memory",
+                "--min-replicas",
+                "--no-wait",
+                "--registry-identity",
+                "--registry-password",
+                "--registry-server",
+                "--registry-username",
+                "--repo",
+                "--revision-suffix",
+                "--revisions-mode",
+                "--runtime",
+                "--scale-rule-auth --sra",
+                "--scale-rule-http-concurrency --scale-rule-tcp-concurrency --srhc --srtc",
+                "--scale-rule-identity --sri",
+                "--scale-rule-metadata --srm",
+                "--scale-rule-name --srn",
+                "--scale-rule-type --srt",
+                "--secret-volume-mount",
+                "--secrets -s",
+                "--service-principal-client-id --sp-cid",
+                "--service-principal-client-secret --sp-sec",
+                "--service-principal-tenant-id --sp-tid",
+                "--source",
+                "--system-assigned",
+                "--tags",
+                "--target-label",
+                "--target-port",
+                "--termination-grace-period --tgp",
+                "--token",
+                "--transport",
+                "--user-assigned",
+                "--workload-profile-name -w",
+                "--yaml"
+            ],
+            "examples": [
+                "az containerapp create -n my-containerapp -g MyResourceGroup \\\n    --image myregistry.azurecr.io/my-app:v1.0 --environment MyContainerappEnv \\\n    --ingress external --target-port 80 \\\n    --registry-server myregistry.azurecr.io --registry-username myregistry --registry-password $REGISTRY_PASSWORD \\\n    --query properties.configuration.ingress.fqdn",
+                "az containerapp create -n my-containerapp -g MyResourceGroup \\\n    --image nginx --environment MyContainerappEnv \\\n    --cpu 0.5 --memory 1.0Gi \\\n    --min-replicas 4 --max-replicas 8",
+                "az containerapp create -n my-containerapp -g MyResourceGroup \\\n    --image my-app:v1.0 --environment MyContainerappEnv \\\n    --secrets mysecret=secretvalue1 anothersecret=\"secret value 2\" \\\n    --env-vars GREETING=\"Hello, world\" SECRETENV=secretref:anothersecret",
+                "az containerapp create -n my-containerapp -g MyResourceGroup \\\n    --environment MyContainerappEnv \\\n    --yaml \"path/to/yaml/file.yml\"",
+                "az containerapp create -n myapp -g mygroup --environment myenv --image nginx \\\n    --scale-rule-name my-http-rule \\\n    --scale-rule-http-concurrency 50",
+                "az containerapp create -n my-containerapp -g MyResourceGroup \\\n    --image my-queue-processor --environment MyContainerappEnv \\\n    --min-replicas 4 --max-replicas 8 \\\n    --scale-rule-name queue-based-autoscaling \\\n    --scale-rule-type azure-queue \\\n    --scale-rule-metadata \"accountName=mystorageaccountname\" \\\n                          \"cloud=AzurePublicCloud\" \\\n                          \"queueLength=5\" \"queueName=foo\" \\\n    --scale-rule-auth \"connection=my-connection-string-secret-name\"",
+                "az containerapp create -n my-containerapp -g MyResourceGroup \\\n    --image my-queue-processor --environment MyContainerappEnv \\\n    --user-assigned myUserIdentityResourceId --min-replicas 4 --max-replicas 8 \\\n    --scale-rule-name queue-based-autoscaling \\\n    --scale-rule-type azure-queue \\\n    --scale-rule-metadata \"accountName=mystorageaccountname\" \\\n                          \"cloud=AzurePublicCloud\" \\\n                          \"queueLength=5\" \"queueName=foo\" \\\n    --scale-rule-identity myUserIdentityResourceId",
+                "az containerapp create -n my-containerapp -g MyResourceGroup \\\n    --image my-app:v1.0 --environment MyContainerappEnv \\\n    --secrets mysecret=secretvalue1 anothersecret=\"secret value 2\" \\\n    --secret-volume-mount \"mnt/secrets\"",
+                "az containerapp create -n my-containerapp -g MyResourceGroup \\\n    --image my-app:v1.0 --environment MyContainerappConnectedEnv \\\n    --environment-type connected",
+                "az containerapp create -n my-containerapp -g MyResourceGroup \\\n--environment MyContainerappEnv --registry-server MyRegistryServer \\\n--registry-user MyRegistryUser --registry-pass MyRegistryPass \\\n--repo https://github.com/myAccount/myRepo",
+                "az containerapp create -n my-containerapp -g MyResourceGroup \\\n--environment MyContainerappEnv --registry-server MyRegistryServer \\\n--registry-user MyRegistryUser --registry-pass MyRegistryPass \\\n--source .",
+                "az containerapp create -n my-containerapp -g MyResourceGroup \\\n    --image my-app:v1.0 --environment MyContainerappEnv \\\n    --enable-java-metrics",
+                "az containerapp create -n my-containerapp -g MyResourceGroup \\\n    --image my-app:v1.0 --environment MyContainerappEnv \\\n    --enable-java-agent"
+            ]
+        },
+        {
+            "name": "az containerapp debug",
+            "summary": "Open an SSH-like interactive shell within a container app debug console.",
+            "syntax": "az containerapp debug --name\n                      --resource-group\n                      [--container]\n                      [--replica]\n                      [--revision]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--container",
+                "--replica",
+                "--revision"
+            ],
+            "examples": [
+                "az containerapp debug -n MyContainerapp -g MyResourceGroup --revision MyRevision --replica MyReplica --container MyContainer"
+            ]
+        },
+        {
+            "name": "az containerapp delete",
+            "summary": "Delete a container app.",
+            "syntax": "az containerapp delete [--ids]\n                       [--name]\n                       [--no-wait]\n                       [--resource-group]\n                       [--subscription]\n                       [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az containerapp delete -g MyResourceGroup -n MyContainerapp"
+            ]
+        },
+        {
+            "name": "az containerapp delete",
+            "summary": "Delete a container app.",
+            "syntax": "az containerapp delete [--ids]\n                       [--name]\n                       [--no-wait]\n                       [--resource-group]\n                       [--subscription]\n                       [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az containerapp delete -g MyResourceGroup -n MyContainerapp"
+            ]
+        },
+        {
+            "name": "az containerapp exec",
+            "summary": "Open an SSH-like interactive shell within a container app replica.",
+            "syntax": "az containerapp exec --name\n                     --resource-group\n                     [--command]\n                     [--container]\n                     [--replica]\n                     [--revision]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--command",
+                "--container",
+                "--replica",
+                "--revision"
+            ],
+            "examples": [
+                "az containerapp exec -n my-containerapp -g MyResourceGroup",
+                "az containerapp exec -n my-containerapp -g MyResourceGroup --replica MyReplica --revision MyRevision",
+                "az containerapp exec -n my-containerapp -g MyResourceGroup --command bash"
+            ]
+        },
+        {
+            "name": "az containerapp list",
+            "summary": "List container apps.",
+            "syntax": "az containerapp list [--environment]\n                     [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--environment",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az containerapp list",
+                "az containerapp list -g MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az containerapp list",
+            "summary": "List container apps.",
+            "syntax": "az containerapp list [--environment]\n                     [--environment-type {connected, managed}]\n                     [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--environment",
+                "--environment-type",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az containerapp list",
+                "az containerapp list -g MyResourceGroup",
+                "az containerapp list --environment-type connected"
+            ]
+        },
+        {
+            "name": "az containerapp list-usages",
+            "summary": "List usages of subscription level quotas in specific region.",
+            "syntax": "az containerapp list-usages --location",
+            "required_parameters": [
+                "--location -l"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az containerapp list-usages -l eastus"
+            ]
+        },
+        {
+            "name": "az containerapp show",
+            "summary": "Show details of a container app.",
+            "syntax": "az containerapp show [--ids]\n                     [--name]\n                     [--resource-group]\n                     [--show-secrets]\n                     [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--show-secrets",
+                "--subscription"
+            ],
+            "examples": [
+                "az containerapp show -n my-containerapp -g MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az containerapp show",
+            "summary": "Show details of a container app.",
+            "syntax": "az containerapp show [--ids]\n                     [--name]\n                     [--resource-group]\n                     [--show-secrets]\n                     [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--show-secrets",
+                "--subscription"
+            ],
+            "examples": [
+                "az containerapp show -n my-containerapp -g MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az containerapp show-custom-domain-verification-id",
+            "summary": "Show the verification id for binding app or environment custom domains.",
+            "syntax": "az containerapp show-custom-domain-verification-id",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "examples": [
+                "az containerapp show-custom-domain-verification-id",
+                "az containerapp show-custom-domain-verification-id"
+            ]
+        },
+        {
+            "name": "az containerapp up",
+            "summary": "Create or update a container app as well as any associated resources (ACR, resource group, container apps environment, GitHub Actions, etc.).",
+            "syntax": "az containerapp up --name\n                   [--branch]\n                   [--browse]\n                   [--context-path]\n                   [--env-vars]\n                   [--environment]\n                   [--image]\n                   [--ingress {external, internal}]\n                   [--location]\n                   [--logs-workspace-id]\n                   [--logs-workspace-key]\n                   [--registry-password]\n                   [--registry-server]\n                   [--registry-username]\n                   [--repo]\n                   [--resource-group]\n                   [--service-principal-client-id]\n                   [--service-principal-client-secret]\n                   [--service-principal-tenant-id]\n                   [--source]\n                   [--target-port]\n                   [--token]\n                   [--workload-profile-name]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--branch -b",
+                "--browse",
+                "--context-path",
+                "--env-vars",
+                "--environment",
+                "--image -i",
+                "--ingress",
+                "--location -l",
+                "--logs-workspace-id",
+                "--logs-workspace-key",
+                "--registry-password",
+                "--registry-server",
+                "--registry-username",
+                "--repo",
+                "--resource-group -g",
+                "--service-principal-client-id --sp-cid",
+                "--service-principal-client-secret --sp-sec",
+                "--service-principal-tenant-id --sp-tid",
+                "--source",
+                "--target-port",
+                "--token",
+                "--workload-profile-name -w"
+            ],
+            "examples": [
+                "az containerapp up -n my-containerapp --repo https://github.com/myAccount/myRepo",
+                "az containerapp up -n my-containerapp --source .",
+                "az containerapp up -n my-containerapp --image myregistry.azurecr.io/myImage:myTag",
+                "az containerapp up -n my-containerapp --image myregistry.azurecr.io/myImage:myTag --ingress external --target-port 80 --environment MyEnv"
+            ]
+        },
+        {
+            "name": "az containerapp up",
+            "summary": "Create or update a container app as well as any associated resources (ACR, resource group, container apps environment, GitHub Actions, etc.).",
+            "syntax": "az containerapp up --name\n                   [--artifact]\n                   [--branch]\n                   [--browse]\n                   [--build-env-vars]\n                   [--connected-cluster-id]\n                   [--context-path]\n                   [--custom-location]\n                   [--env-vars]\n                   [--environment]\n                   [--image]\n                   [--ingress {external, internal}]\n                   [--location]\n                   [--logs-workspace-id]\n                   [--logs-workspace-key]\n                   [--registry-identity]\n                   [--registry-password]\n                   [--registry-server]\n                   [--registry-username]\n                   [--repo]\n                   [--resource-group]\n                   [--revisions-mode {labels, multiple, single}]\n                   [--service-principal-client-id]\n                   [--service-principal-client-secret]\n                   [--service-principal-tenant-id]\n                   [--source]\n                   [--system-assigned]\n                   [--target-label]\n                   [--target-port]\n                   [--token]\n                   [--user-assigned]\n                   [--workload-profile-name]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--artifact",
+                "--branch -b",
+                "--browse",
+                "--build-env-vars",
+                "--connected-cluster-id",
+                "--context-path",
+                "--custom-location",
+                "--env-vars",
+                "--environment",
+                "--image -i",
+                "--ingress",
+                "--location -l",
+                "--logs-workspace-id",
+                "--logs-workspace-key",
+                "--registry-identity",
+                "--registry-password",
+                "--registry-server",
+                "--registry-username",
+                "--repo",
+                "--resource-group -g",
+                "--revisions-mode",
+                "--service-principal-client-id --sp-cid",
+                "--service-principal-client-secret --sp-sec",
+                "--service-principal-tenant-id --sp-tid",
+                "--source",
+                "--system-assigned",
+                "--target-label",
+                "--target-port",
+                "--token",
+                "--user-assigned",
+                "--workload-profile-name -w"
+            ],
+            "examples": [
+                "az containerapp up -n my-containerapp --repo https://github.com/myAccount/myRepo",
+                "az containerapp up -n my-containerapp --source .",
+                "az containerapp up -n my-containerapp --image myregistry.azurecr.io/myImage:myTag",
+                "az containerapp up -n my-containerapp --image myregistry.azurecr.io/myImage:myTag --ingress external --target-port 80 --environment MyEnv",
+                "az containerapp up -n my-containerapp --image myregistry.azurecr.io/myImage:myTag --connected-cluster-id MyConnectedClusterResourceId",
+                "az containerapp up -n my-containerapp --image myregistry.azurecr.io/myImage:myTag --environment MyConnectedEnvironmentId"
+            ]
+        },
+        {
+            "name": "az containerapp update",
+            "summary": "Update a container app. In multiple revisions mode, create a new revision based on the latest revision.",
+            "syntax": "az containerapp update [--args]\n                       [--command]\n                       [--container-name]\n                       [--cpu]\n                       [--ids]\n                       [--image]\n                       [--max-replicas]\n                       [--memory]\n                       [--min-replicas]\n                       [--name]\n                       [--no-wait]\n                       [--remove-all-env-vars]\n                       [--remove-env-vars]\n                       [--replace-env-vars]\n                       [--resource-group]\n                       [--revision-suffix]\n                       [--scale-rule-auth]\n                       [--scale-rule-http-concurrency]\n                       [--scale-rule-metadata]\n                       [--scale-rule-name]\n                       [--scale-rule-type]\n                       [--secret-volume-mount]\n                       [--set-env-vars]\n                       [--subscription]\n                       [--tags]\n                       [--termination-grace-period]\n                       [--workload-profile-name]\n                       [--yaml]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--args",
+                "--command",
+                "--container-name",
+                "--cpu",
+                "--ids",
+                "--image -i",
+                "--max-replicas",
+                "--memory",
+                "--min-replicas",
+                "--name -n",
+                "--no-wait",
+                "--remove-all-env-vars",
+                "--remove-env-vars",
+                "--replace-env-vars",
+                "--resource-group -g",
+                "--revision-suffix",
+                "--scale-rule-auth --sra",
+                "--scale-rule-http-concurrency --scale-rule-tcp-concurrency --srhc --srtc",
+                "--scale-rule-metadata --srm",
+                "--scale-rule-name --srn",
+                "--scale-rule-type --srt",
+                "--secret-volume-mount",
+                "--set-env-vars",
+                "--subscription",
+                "--tags",
+                "--termination-grace-period --tgp",
+                "--workload-profile-name -w",
+                "--yaml"
+            ],
+            "examples": [
+                "az containerapp update -n my-containerapp -g MyResourceGroup \\\n    --image myregistry.azurecr.io/my-app:v2.0",
+                "az containerapp update -n my-containerapp -g MyResourceGroup \\\n    --cpu 0.5 --memory 1.0Gi \\\n    --min-replicas 4 --max-replicas 8",
+                "az containerapp update -n myapp -g mygroup \\\n    --scale-rule-name my-http-rule \\\n    --scale-rule-http-concurrency 50",
+                "az containerapp update -n myapp -g mygroup \\\n    --scale-rule-name my-custom-rule \\\n    --scale-rule-type my-custom-type \\\n    --scale-rule-metadata key=value key2=value2 \\\n    --scale-rule-auth triggerparam=secretref triggerparam=secretref"
+            ]
+        },
+        {
+            "name": "az containerapp update",
+            "summary": "Update a container app. In multiple revisions mode, create a new revision based on the latest revision.",
+            "syntax": "az containerapp update [--args]\n                       [--artifact]\n                       [--bind]\n                       [--build-env-vars]\n                       [--command]\n                       [--container-name]\n                       [--cpu]\n                       [--customized-keys]\n                       [--enable-java-agent {false, true}]\n                       [--enable-java-metrics {false, true}]\n                       [--ids]\n                       [--image]\n                       [--max-inactive-revisions]\n                       [--max-replicas]\n                       [--memory]\n                       [--min-replicas]\n                       [--name]\n                       [--no-wait]\n                       [--remove-all-env-vars]\n                       [--remove-env-vars]\n                       [--replace-env-vars]\n                       [--resource-group]\n                       [--revision-suffix]\n                       [--revisions-mode {labels, multiple, single}]\n                       [--runtime {generic, java}]\n                       [--scale-rule-auth]\n                       [--scale-rule-http-concurrency]\n                       [--scale-rule-identity]\n                       [--scale-rule-metadata]\n                       [--scale-rule-name]\n                       [--scale-rule-type]\n                       [--secret-volume-mount]\n                       [--set-env-vars]\n                       [--source]\n                       [--subscription]\n                       [--tags]\n                       [--target-label]\n                       [--termination-grace-period]\n                       [--unbind]\n                       [--workload-profile-name]\n                       [--yaml]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--args",
+                "--artifact",
+                "--bind",
+                "--build-env-vars",
+                "--command",
+                "--container-name",
+                "--cpu",
+                "--customized-keys",
+                "--enable-java-agent",
+                "--enable-java-metrics",
+                "--ids",
+                "--image -i",
+                "--max-inactive-revisions",
+                "--max-replicas",
+                "--memory",
+                "--min-replicas",
+                "--name -n",
+                "--no-wait",
+                "--remove-all-env-vars",
+                "--remove-env-vars",
+                "--replace-env-vars",
+                "--resource-group -g",
+                "--revision-suffix",
+                "--revisions-mode",
+                "--runtime",
+                "--scale-rule-auth --sra",
+                "--scale-rule-http-concurrency --scale-rule-tcp-concurrency --srhc --srtc",
+                "--scale-rule-identity --sri",
+                "--scale-rule-metadata --srm",
+                "--scale-rule-name --srn",
+                "--scale-rule-type --srt",
+                "--secret-volume-mount",
+                "--set-env-vars",
+                "--source",
+                "--subscription",
+                "--tags",
+                "--target-label",
+                "--termination-grace-period --tgp",
+                "--unbind",
+                "--workload-profile-name -w",
+                "--yaml"
+            ],
+            "examples": [
+                "az containerapp update -n my-containerapp -g MyResourceGroup \\\n    --image myregistry.azurecr.io/my-app:v2.0",
+                "az containerapp update -n my-containerapp -g MyResourceGroup \\\n    --cpu 0.5 --memory 1.0Gi \\\n    --min-replicas 4 --max-replicas 8",
+                "az containerapp update -n myapp -g mygroup \\\n    --scale-rule-name my-http-rule \\\n    --scale-rule-http-concurrency 50",
+                "az containerapp update -n myapp -g mygroup \\\n    --scale-rule-name my-custom-rule \\\n    --scale-rule-type my-custom-type \\\n    --scale-rule-metadata key=value key2=value2 \\\n    --scale-rule-auth triggerparam=secretref triggerparam=secretref",
+                "az containerapp update -n my-containerapp -g MyResourceGroup --source .",
+                "az containerapp update -n my-containerapp -g MyResourceGroup \\\n    --enable-java-metrics",
+                "az containerapp update -n my-containerapp -g MyResourceGroup \\\n    --enable-java-agent",
+                "az containerapp update -n my-containerapp -g MyResourceGroup \\\n    --runtime generic"
+            ]
+        }
+    ]
+}

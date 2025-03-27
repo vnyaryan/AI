@@ -1,0 +1,93 @@
+{
+    "command_group": "az ml registry",
+    "description": "Manage Azure ML registries.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az ml registry create",
+            "summary": "Create a registry.",
+            "syntax": "az ml registry create --resource-group\n                      [--display-name]\n                      [--file]\n                      [--name]\n                      [--no-wait]\n                      [--public-network-access]\n                      [--set]\n                      [--tags]",
+            "required_parameters": [
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--display-name",
+                "--file -f",
+                "--name -n",
+                "--no-wait",
+                "--public-network-access",
+                "--set",
+                "--tags"
+            ],
+            "examples": [
+                "az ml registry create --resource-group my-resource-group --file registry.yml"
+            ]
+        },
+        {
+            "name": "az ml registry delete",
+            "summary": "Delete a given registry.",
+            "syntax": "az ml registry delete [--name]\n                      [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az ml registry delete --resource-group my-resource-group --name my-registry-name"
+            ]
+        },
+        {
+            "name": "az ml registry list",
+            "summary": "List all the registries in a subscription or resource group.",
+            "syntax": "az ml registry list [--max-results]\n                    [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--max-results -r",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az ml registry list",
+                "az ml registry list --subscription my-subscription-id",
+                "az ml registry list --resource-group my-resource-group --subscription my-subscription-id",
+                "az ml registry list --query \"[].{Name:name}\"  --output table --resource-group my-resource-group"
+            ]
+        },
+        {
+            "name": "az ml registry show",
+            "summary": "Show details for a registry.",
+            "syntax": "az ml registry show --name\n                    --resource-group",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az ml registry show --resource-group my-resource-group --subscription my-subscription-id --name my-registry-name"
+            ]
+        },
+        {
+            "name": "az ml registry update",
+            "summary": "Update a registry.",
+            "syntax": "az ml registry update --resource-group\n                      [--add]\n                      [--display-name]\n                      [--file]\n                      [--force-string]\n                      [--name]\n                      [--no-wait]\n                      [--public-network-access]\n                      [--remove]\n                      [--set]\n                      [--tags]",
+            "required_parameters": [
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--add",
+                "--display-name",
+                "--file -f",
+                "--force-string",
+                "--name -n",
+                "--no-wait",
+                "--public-network-access",
+                "--remove",
+                "--set",
+                "--tags"
+            ],
+            "examples": [
+                "az ml registry update --resource-group my-resource-group --file registry.yml --tags tag=value",
+                "az ml registry update --resource-group my-resource-group --name myRegistry --set tags.tag=value"
+            ]
+        }
+    ]
+}

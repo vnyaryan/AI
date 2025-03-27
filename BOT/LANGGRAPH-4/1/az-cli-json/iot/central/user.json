@@ -1,0 +1,101 @@
+{
+    "command_group": "az iot central user",
+    "description": "Manage and configure IoT Central users.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az iot central user create",
+            "summary": "Add a user to the application.",
+            "syntax": "az iot central user create --app-id\n                           --assignee\n                           --role\n                           [--api-version {2022-06-30-preview, 2022-07-31}]\n                           [--central-api-uri]\n                           [--email]\n                           [--object-id]\n                           [--org-id]\n                           [--tenant-id]\n                           [--token]",
+            "required_parameters": [
+                "--app-id -n",
+                "--assignee --user-id",
+                "--role -r"
+            ],
+            "optional_parameters": [
+                "--api-version --av",
+                "--central-api-uri --central-dns-suffix",
+                "--email",
+                "--object-id --oid",
+                "--org-id --organization-id",
+                "--tenant-id --tnid",
+                "--token"
+            ],
+            "examples": [
+                "az iot central user create --user-id {userId} --app-id {appId} --email {emailAddress} --role admin",
+                "az iot central user create --user-id {userId} --app-id {appId} --tenant-id {tenantId} --object-id {objectId} --role operator"
+            ]
+        },
+        {
+            "name": "az iot central user delete",
+            "summary": "Delete a user from the application.",
+            "syntax": "az iot central user delete --app-id\n                           --assignee\n                           [--api-version {2022-06-30-preview, 2022-07-31}]\n                           [--central-api-uri]\n                           [--token]",
+            "required_parameters": [
+                "--app-id -n",
+                "--assignee --user-id"
+            ],
+            "optional_parameters": [
+                "--api-version --av",
+                "--central-api-uri --central-dns-suffix",
+                "--token"
+            ],
+            "examples": [
+                "az iot central user delete --app-id {appid} --user-id {userId}"
+            ]
+        },
+        {
+            "name": "az iot central user list",
+            "summary": "Get list of users for an IoT Central application.",
+            "syntax": "az iot central user list --app-id\n                         [--api-version {2022-06-30-preview, 2022-07-31}]\n                         [--central-api-uri]\n                         [--token]",
+            "required_parameters": [
+                "--app-id -n"
+            ],
+            "optional_parameters": [
+                "--api-version --av",
+                "--central-api-uri --central-dns-suffix",
+                "--token"
+            ],
+            "examples": [
+                "az iot central user list --app-id {appid}"
+            ]
+        },
+        {
+            "name": "az iot central user show",
+            "summary": "Get the details of a user by ID.",
+            "syntax": "az iot central user show --app-id\n                         --assignee\n                         [--api-version {2022-06-30-preview, 2022-07-31}]\n                         [--central-api-uri]\n                         [--token]",
+            "required_parameters": [
+                "--app-id -n",
+                "--assignee --user-id"
+            ],
+            "optional_parameters": [
+                "--api-version --av",
+                "--central-api-uri --central-dns-suffix",
+                "--token"
+            ],
+            "examples": [
+                "az iot central user show --app-id {appid} --user-id {userId}"
+            ]
+        },
+        {
+            "name": "az iot central user update",
+            "summary": "Update roles for a user in the application.",
+            "syntax": "az iot central user update --app-id\n                           --assignee\n                           [--api-version {2022-06-30-preview, 2022-07-31}]\n                           [--central-api-uri]\n                           [--email]\n                           [--object-id]\n                           [--roles]\n                           [--tenant-id]\n                           [--token]",
+            "required_parameters": [
+                "--app-id -n",
+                "--assignee --user-id"
+            ],
+            "optional_parameters": [
+                "--api-version --av",
+                "--central-api-uri --central-dns-suffix",
+                "--email",
+                "--object-id --oid",
+                "--roles",
+                "--tenant-id --tnid",
+                "--token"
+            ],
+            "examples": [
+                "az iot central user update --user-id {userId} --app-id {appId} --roles \"org1\\admin\""
+            ]
+        }
+    ]
+}

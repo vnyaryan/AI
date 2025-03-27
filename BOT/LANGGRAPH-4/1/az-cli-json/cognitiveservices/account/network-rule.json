@@ -1,0 +1,56 @@
+{
+    "command_group": "az cognitiveservices account network-rule",
+    "description": "Manage network rules.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az cognitiveservices account network-rule add",
+            "summary": "Add a network rule.",
+            "syntax": "az cognitiveservices account network-rule add --name\n                                              --resource-group\n                                              [--ip-address]\n                                              [--subnet]\n                                              [--vnet-name]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--ip-address",
+                "--subnet",
+                "--vnet-name"
+            ],
+            "examples": [
+                "az cognitiveservices account network-rule add -g myRg --name MyAccount --ip-address 23.45.1.0/24",
+                "az cognitiveservices account network-rule add -g myRg --name MyAccount --vnet myvnet --subnet mysubnet"
+            ]
+        },
+        {
+            "name": "az cognitiveservices account network-rule list",
+            "summary": "List network rules.",
+            "syntax": "az cognitiveservices account network-rule list --name\n                                               --resource-group",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az cognitiveservices account network-rule list --name MyAccount --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az cognitiveservices account network-rule remove",
+            "summary": "Remove a network rule.",
+            "syntax": "az cognitiveservices account network-rule remove --name\n                                                 --resource-group\n                                                 [--ip-address]\n                                                 [--subnet]\n                                                 [--vnet-name]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--ip-address",
+                "--subnet",
+                "--vnet-name"
+            ],
+            "examples": [
+                "az cognitiveservices account network-rule remove --name MyAccount --resource-group MyResourceGroup --subnet mysubnet",
+                "az cognitiveservices account network-rule remove --name MyAccount --ip-address 23.45.1.0/24 --resource-group MyResourceGroup"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,45 @@
+{
+    "command_group": "az ad group owner",
+    "description": "Manage group owners.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az ad group owner add",
+            "summary": "Add a group owner.",
+            "syntax": "az ad group owner add --group\n                      --owner-object-id",
+            "required_parameters": [
+                "--group -g",
+                "--owner-object-id"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az ad group owner add --group MyGroupDisplayName --owner-object-id xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+            ]
+        },
+        {
+            "name": "az ad group owner list",
+            "summary": "List group owners.",
+            "syntax": "az ad group owner list --group",
+            "required_parameters": [
+                "--group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az ad group owner list --group MyGroupDisplayName"
+            ]
+        },
+        {
+            "name": "az ad group owner remove",
+            "summary": "Remove a group owner.",
+            "syntax": "az ad group owner remove --group\n                         --owner-object-id",
+            "required_parameters": [
+                "--group -g",
+                "--owner-object-id"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az ad group owner remove --group MyGroupDisplayName --owner-object-id xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+            ]
+        }
+    ]
+}

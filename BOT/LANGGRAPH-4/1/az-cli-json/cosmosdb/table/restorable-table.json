@@ -1,0 +1,35 @@
+{
+    "command_group": "az cosmosdb table restorable-table",
+    "description": "Manage different versions of tables that are restorable in Azure Cosmos DB account.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az cosmosdb table restorable-table list",
+            "summary": "List all the versions of all the tables that were created / modified / deleted in the given restorable account.",
+            "syntax": "az cosmosdb table restorable-table list --instance-id\n                                        --location\n                                        [--end-time]\n                                        [--start-time]",
+            "required_parameters": [
+                "--instance-id -i",
+                "--location -l"
+            ],
+            "optional_parameters": [
+                "--end-time -e",
+                "--start-time -s"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az cosmosdb table restorable-table list",
+            "summary": "List all the versions of all the tables that were created / modified / deleted in the given restorable account.",
+            "syntax": "az cosmosdb table restorable-table list --instance-id\n                                        --location\n                                        [--end-time]\n                                        [--start-time]",
+            "required_parameters": [
+                "--instance-id -i",
+                "--location -l"
+            ],
+            "optional_parameters": [
+                "--end-time -e",
+                "--start-time -s"
+            ],
+            "examples": []
+        }
+    ]
+}

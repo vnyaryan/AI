@@ -1,0 +1,733 @@
+{
+    "command_group": "az functionapp connection update",
+    "description": "Update a functionapp connection.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az functionapp connection update app-insights",
+            "summary": "Update a functionapp to app-insights connection.",
+            "syntax": "az functionapp connection update app-insights [--appconfig-id]\n                                              [--client-type {dotnet, dotnet-internal, go, java, nodejs, none, python}]\n                                              [--connection]\n                                              [--connstr-props]\n                                              [--customized-keys]\n                                              [--id]\n                                              [--name]\n                                              [--no-wait]\n                                              [--opt-out {auth, configinfo, publicnetwork}]\n                                              [--resource-group]\n                                              [--secret]\n                                              [--vault-id]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--appconfig-id",
+                "--client-type",
+                "--connection",
+                "--connstr-props",
+                "--customized-keys",
+                "--id",
+                "--name -n",
+                "--no-wait",
+                "--opt-out",
+                "--resource-group -g",
+                "--secret",
+                "--vault-id"
+            ],
+            "examples": [
+                "az functionapp connection update app-insights -g FuncAppRG -n MyFunctionApp --connection MyConnection --client-type dotnet",
+                "az functionapp connection update app-insights --id /subscriptions/{subscription}/resourceGroups/{source_resource_group}/providers/Microsoft.Web/sites/{site}/providers/Microsoft.ServiceLinker/linkers/{linker} --client-type dotnet"
+            ]
+        },
+        {
+            "name": "az functionapp connection update appconfig",
+            "summary": "Update a functionapp to appconfig connection.",
+            "syntax": "az functionapp connection update appconfig [--appconfig-id]\n                                           [--client-type {dotnet, dotnet-internal, java, nodejs, none, python}]\n                                           [--connection]\n                                           [--connstr-props]\n                                           [--customized-keys]\n                                           [--id]\n                                           [--name]\n                                           [--no-wait]\n                                           [--opt-out {auth, configinfo, publicnetwork}]\n                                           [--private-endpoint {false, true}]\n                                           [--resource-group]\n                                           [--secret]\n                                           [--service-principal]\n                                           [--system-identity]\n                                           [--user-identity]\n                                           [--vault-id]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--appconfig-id",
+                "--client-type",
+                "--connection",
+                "--connstr-props",
+                "--customized-keys",
+                "--id",
+                "--name -n",
+                "--no-wait",
+                "--opt-out",
+                "--private-endpoint",
+                "--resource-group -g",
+                "--secret",
+                "--service-principal",
+                "--system-identity",
+                "--user-identity",
+                "--vault-id"
+            ],
+            "examples": [
+                "az functionapp connection update appconfig -g FuncAppRG -n MyFunctionApp --connection MyConnection --client-type dotnet",
+                "az functionapp connection update appconfig --id /subscriptions/{subscription}/resourceGroups/{source_resource_group}/providers/Microsoft.Web/sites/{site}/providers/Microsoft.ServiceLinker/linkers/{linker} --client-type dotnet"
+            ]
+        },
+        {
+            "name": "az functionapp connection update cognitiveservices",
+            "summary": "Update a functionapp to cognitiveservices connection.",
+            "syntax": "az functionapp connection update cognitiveservices [--appconfig-id]\n                                                   [--client-type {dotnet, none, python}]\n                                                   [--connection]\n                                                   [--connstr-props]\n                                                   [--customized-keys]\n                                                   [--id]\n                                                   [--name]\n                                                   [--no-wait]\n                                                   [--opt-out {auth, configinfo, publicnetwork}]\n                                                   [--resource-group]\n                                                   [--secret]\n                                                   [--service-principal]\n                                                   [--system-identity]\n                                                   [--user-identity]\n                                                   [--vault-id]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--appconfig-id",
+                "--client-type",
+                "--connection",
+                "--connstr-props",
+                "--customized-keys",
+                "--id",
+                "--name -n",
+                "--no-wait",
+                "--opt-out",
+                "--resource-group -g",
+                "--secret",
+                "--service-principal",
+                "--system-identity",
+                "--user-identity",
+                "--vault-id"
+            ],
+            "examples": [
+                "az functionapp connection update cognitiveservices -g FuncAppRG -n MyFunctionApp --connection MyConnection --client-type dotnet",
+                "az functionapp connection update cognitiveservices --id /subscriptions/{subscription}/resourceGroups/{source_resource_group}/providers/Microsoft.Web/sites/{site}/providers/Microsoft.ServiceLinker/linkers/{linker} --client-type dotnet"
+            ]
+        },
+        {
+            "name": "az functionapp connection update confluent-cloud",
+            "summary": "Update a functionapp to confluent-cloud connection.",
+            "syntax": "az functionapp connection update confluent-cloud --connection\n                                                 [--appconfig-id]\n                                                 [--bootstrap-server]\n                                                 [--client-type {dotnet, dotnet-internal, go, java, none, python, springBoot}]\n                                                 [--customized-keys]\n                                                 [--kafka-key]\n                                                 [--kafka-secret]\n                                                 [--name]\n                                                 [--no-wait]\n                                                 [--opt-out {auth, configinfo, publicnetwork}]\n                                                 [--resource-group]\n                                                 [--schema-key]\n                                                 [--schema-registry]\n                                                 [--schema-secret]\n                                                 [--source-id]\n                                                 [--vault-id]",
+            "required_parameters": [
+                "--connection"
+            ],
+            "optional_parameters": [
+                "--appconfig-id",
+                "--bootstrap-server",
+                "--client-type",
+                "--customized-keys",
+                "--kafka-key",
+                "--kafka-secret",
+                "--name -n",
+                "--no-wait",
+                "--opt-out",
+                "--resource-group -g",
+                "--schema-key",
+                "--schema-registry",
+                "--schema-secret",
+                "--source-id",
+                "--vault-id"
+            ],
+            "examples": [
+                "az functionapp connection update confluent-cloud -g FuncAppRG -n MyFunctionApp --connection MyConnection --client python",
+                "az functionapp connection update confluent-cloud -g FuncAppRG -n MyFunctionApp --connection MyConnection --bootstrap-server xxx.eastus.azure.confluent.cloud:9092 --kafka-key Name --kafka-secret Secret",
+                "az functionapp connection update confluent-cloud -g FuncAppRG -n MyFunctionApp --connection MyConnection_schema --client python",
+                "az functionapp connection update confluent-cloud -g FuncAppRG -n MyFunctionApp --connection MyConnection_schema --schema-registry https://xxx.eastus.azure.confluent.cloud --schema-key Name --schema-secret Secret"
+            ]
+        },
+        {
+            "name": "az functionapp connection update cosmos-cassandra",
+            "summary": "Update a functionapp to cosmos-cassandra connection.",
+            "syntax": "az functionapp connection update cosmos-cassandra [--appconfig-id]\n                                                  [--client-type {dotnet, dotnet-internal, go, java, nodejs, none, python, springBoot}]\n                                                  [--connection]\n                                                  [--connstr-props]\n                                                  [--customized-keys]\n                                                  [--id]\n                                                  [--name]\n                                                  [--no-wait]\n                                                  [--opt-out {auth, configinfo, publicnetwork}]\n                                                  [--private-endpoint {false, true}]\n                                                  [--resource-group]\n                                                  [--secret]\n                                                  [--service-endpoint {false, true}]\n                                                  [--service-principal]\n                                                  [--system-identity]\n                                                  [--user-identity]\n                                                  [--vault-id]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--appconfig-id",
+                "--client-type",
+                "--connection",
+                "--connstr-props",
+                "--customized-keys",
+                "--id",
+                "--name -n",
+                "--no-wait",
+                "--opt-out",
+                "--private-endpoint",
+                "--resource-group -g",
+                "--secret",
+                "--service-endpoint",
+                "--service-principal",
+                "--system-identity",
+                "--user-identity",
+                "--vault-id"
+            ],
+            "examples": [
+                "az functionapp connection update cosmos-cassandra -g FuncAppRG -n MyFunctionApp --connection MyConnection --client-type dotnet",
+                "az functionapp connection update cosmos-cassandra --id /subscriptions/{subscription}/resourceGroups/{source_resource_group}/providers/Microsoft.Web/sites/{site}/providers/Microsoft.ServiceLinker/linkers/{linker} --client-type dotnet"
+            ]
+        },
+        {
+            "name": "az functionapp connection update cosmos-gremlin",
+            "summary": "Update a functionapp to cosmos-gremlin connection.",
+            "syntax": "az functionapp connection update cosmos-gremlin [--appconfig-id]\n                                                [--client-type {dotnet, dotnet-internal, java, nodejs, none, php, python}]\n                                                [--connection]\n                                                [--connstr-props]\n                                                [--customized-keys]\n                                                [--id]\n                                                [--name]\n                                                [--no-wait]\n                                                [--opt-out {auth, configinfo, publicnetwork}]\n                                                [--private-endpoint {false, true}]\n                                                [--resource-group]\n                                                [--secret]\n                                                [--service-endpoint {false, true}]\n                                                [--service-principal]\n                                                [--system-identity]\n                                                [--user-identity]\n                                                [--vault-id]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--appconfig-id",
+                "--client-type",
+                "--connection",
+                "--connstr-props",
+                "--customized-keys",
+                "--id",
+                "--name -n",
+                "--no-wait",
+                "--opt-out",
+                "--private-endpoint",
+                "--resource-group -g",
+                "--secret",
+                "--service-endpoint",
+                "--service-principal",
+                "--system-identity",
+                "--user-identity",
+                "--vault-id"
+            ],
+            "examples": [
+                "az functionapp connection update cosmos-gremlin -g FuncAppRG -n MyFunctionApp --connection MyConnection --client-type dotnet",
+                "az functionapp connection update cosmos-gremlin --id /subscriptions/{subscription}/resourceGroups/{source_resource_group}/providers/Microsoft.Web/sites/{site}/providers/Microsoft.ServiceLinker/linkers/{linker} --client-type dotnet"
+            ]
+        },
+        {
+            "name": "az functionapp connection update cosmos-mongo",
+            "summary": "Update a functionapp to cosmos-mongo connection.",
+            "syntax": "az functionapp connection update cosmos-mongo [--appconfig-id]\n                                              [--client-type {dotnet, dotnet-internal, go, java, nodejs, none, springBoot}]\n                                              [--connection]\n                                              [--connstr-props]\n                                              [--customized-keys]\n                                              [--id]\n                                              [--name]\n                                              [--no-wait]\n                                              [--opt-out {auth, configinfo, publicnetwork}]\n                                              [--private-endpoint {false, true}]\n                                              [--resource-group]\n                                              [--secret]\n                                              [--service-endpoint {false, true}]\n                                              [--service-principal]\n                                              [--system-identity]\n                                              [--user-identity]\n                                              [--vault-id]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--appconfig-id",
+                "--client-type",
+                "--connection",
+                "--connstr-props",
+                "--customized-keys",
+                "--id",
+                "--name -n",
+                "--no-wait",
+                "--opt-out",
+                "--private-endpoint",
+                "--resource-group -g",
+                "--secret",
+                "--service-endpoint",
+                "--service-principal",
+                "--system-identity",
+                "--user-identity",
+                "--vault-id"
+            ],
+            "examples": [
+                "az functionapp connection update cosmos-mongo -g FuncAppRG -n MyFunctionApp --connection MyConnection --client-type dotnet",
+                "az functionapp connection update cosmos-mongo --id /subscriptions/{subscription}/resourceGroups/{source_resource_group}/providers/Microsoft.Web/sites/{site}/providers/Microsoft.ServiceLinker/linkers/{linker} --client-type dotnet"
+            ]
+        },
+        {
+            "name": "az functionapp connection update cosmos-sql",
+            "summary": "Update a functionapp to cosmos-sql connection.",
+            "syntax": "az functionapp connection update cosmos-sql [--appconfig-id]\n                                            [--client-type {dotnet, dotnet-internal, java, nodejs, none, python, springBoot}]\n                                            [--connection]\n                                            [--connstr-props]\n                                            [--customized-keys]\n                                            [--id]\n                                            [--name]\n                                            [--no-wait]\n                                            [--opt-out {auth, configinfo, publicnetwork}]\n                                            [--private-endpoint {false, true}]\n                                            [--resource-group]\n                                            [--secret]\n                                            [--service-endpoint {false, true}]\n                                            [--service-principal]\n                                            [--system-identity]\n                                            [--user-identity]\n                                            [--vault-id]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--appconfig-id",
+                "--client-type",
+                "--connection",
+                "--connstr-props",
+                "--customized-keys",
+                "--id",
+                "--name -n",
+                "--no-wait",
+                "--opt-out",
+                "--private-endpoint",
+                "--resource-group -g",
+                "--secret",
+                "--service-endpoint",
+                "--service-principal",
+                "--system-identity",
+                "--user-identity",
+                "--vault-id"
+            ],
+            "examples": [
+                "az functionapp connection update cosmos-sql -g FuncAppRG -n MyFunctionApp --connection MyConnection --client-type dotnet",
+                "az functionapp connection update cosmos-sql --id /subscriptions/{subscription}/resourceGroups/{source_resource_group}/providers/Microsoft.Web/sites/{site}/providers/Microsoft.ServiceLinker/linkers/{linker} --client-type dotnet"
+            ]
+        },
+        {
+            "name": "az functionapp connection update cosmos-table",
+            "summary": "Update a functionapp to cosmos-table connection.",
+            "syntax": "az functionapp connection update cosmos-table [--appconfig-id]\n                                              [--client-type {dotnet, dotnet-internal, java, nodejs, none, python, springBoot}]\n                                              [--connection]\n                                              [--connstr-props]\n                                              [--customized-keys]\n                                              [--id]\n                                              [--name]\n                                              [--no-wait]\n                                              [--opt-out {auth, configinfo, publicnetwork}]\n                                              [--private-endpoint {false, true}]\n                                              [--resource-group]\n                                              [--secret]\n                                              [--service-endpoint {false, true}]\n                                              [--service-principal]\n                                              [--system-identity]\n                                              [--user-identity]\n                                              [--vault-id]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--appconfig-id",
+                "--client-type",
+                "--connection",
+                "--connstr-props",
+                "--customized-keys",
+                "--id",
+                "--name -n",
+                "--no-wait",
+                "--opt-out",
+                "--private-endpoint",
+                "--resource-group -g",
+                "--secret",
+                "--service-endpoint",
+                "--service-principal",
+                "--system-identity",
+                "--user-identity",
+                "--vault-id"
+            ],
+            "examples": [
+                "az functionapp connection update cosmos-table -g FuncAppRG -n MyFunctionApp --connection MyConnection --client-type dotnet",
+                "az functionapp connection update cosmos-table --id /subscriptions/{subscription}/resourceGroups/{source_resource_group}/providers/Microsoft.Web/sites/{site}/providers/Microsoft.ServiceLinker/linkers/{linker} --client-type dotnet"
+            ]
+        },
+        {
+            "name": "az functionapp connection update eventhub",
+            "summary": "Update a functionapp to eventhub connection.",
+            "syntax": "az functionapp connection update eventhub [--appconfig-id]\n                                          [--client-type {dotnet, dotnet-internal, go, java, kafka-springBoot, nodejs, none, python, springBoot}]\n                                          [--connection]\n                                          [--connstr-props]\n                                          [--customized-keys]\n                                          [--id]\n                                          [--name]\n                                          [--no-wait]\n                                          [--opt-out {auth, configinfo, publicnetwork}]\n                                          [--private-endpoint {false, true}]\n                                          [--resource-group]\n                                          [--secret]\n                                          [--service-endpoint {false, true}]\n                                          [--service-principal]\n                                          [--system-identity]\n                                          [--user-identity]\n                                          [--vault-id]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--appconfig-id",
+                "--client-type",
+                "--connection",
+                "--connstr-props",
+                "--customized-keys",
+                "--id",
+                "--name -n",
+                "--no-wait",
+                "--opt-out",
+                "--private-endpoint",
+                "--resource-group -g",
+                "--secret",
+                "--service-endpoint",
+                "--service-principal",
+                "--system-identity",
+                "--user-identity",
+                "--vault-id"
+            ],
+            "examples": [
+                "az functionapp connection update eventhub -g FuncAppRG -n MyFunctionApp --connection MyConnection --client-type dotnet",
+                "az functionapp connection update eventhub --id /subscriptions/{subscription}/resourceGroups/{source_resource_group}/providers/Microsoft.Web/sites/{site}/providers/Microsoft.ServiceLinker/linkers/{linker} --client-type dotnet"
+            ]
+        },
+        {
+            "name": "az functionapp connection update fabric-sql",
+            "summary": "Update a functionapp to fabric-sql connection.",
+            "syntax": "az functionapp connection update fabric-sql [--appconfig-id]\n                                            [--client-type {dotnet, go, java, none, php, python}]\n                                            [--connection]\n                                            [--connstr-props]\n                                            [--customized-keys]\n                                            [--id]\n                                            [--name]\n                                            [--no-wait]\n                                            [--opt-out {auth, configinfo, publicnetwork}]\n                                            [--resource-group]\n                                            [--system-identity]\n                                            [--user-identity]\n                                            [--vault-id]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--appconfig-id",
+                "--client-type",
+                "--connection",
+                "--connstr-props",
+                "--customized-keys",
+                "--id",
+                "--name -n",
+                "--no-wait",
+                "--opt-out",
+                "--resource-group -g",
+                "--system-identity",
+                "--user-identity",
+                "--vault-id"
+            ],
+            "examples": [
+                "az functionapp connection update fabric-sql -g FuncAppRG -n MyFunctionApp --connection MyConnection --client-type dotnet",
+                "az functionapp connection update fabric-sql --id /subscriptions/{subscription}/resourceGroups/{source_resource_group}/providers/Microsoft.Web/sites/{site}/providers/Microsoft.ServiceLinker/linkers/{linker} --client-type dotnet"
+            ]
+        },
+        {
+            "name": "az functionapp connection update keyvault",
+            "summary": "Update a functionapp to keyvault connection.",
+            "syntax": "az functionapp connection update keyvault [--appconfig-id]\n                                          [--client-type {dotnet, dotnet-internal, java, nodejs, none, python, springBoot}]\n                                          [--connection]\n                                          [--connstr-props]\n                                          [--customized-keys]\n                                          [--id]\n                                          [--name]\n                                          [--no-wait]\n                                          [--opt-out {auth, configinfo, publicnetwork}]\n                                          [--private-endpoint {false, true}]\n                                          [--resource-group]\n                                          [--service-endpoint {false, true}]\n                                          [--service-principal]\n                                          [--system-identity]\n                                          [--user-identity]\n                                          [--vault-id]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--appconfig-id",
+                "--client-type",
+                "--connection",
+                "--connstr-props",
+                "--customized-keys",
+                "--id",
+                "--name -n",
+                "--no-wait",
+                "--opt-out",
+                "--private-endpoint",
+                "--resource-group -g",
+                "--service-endpoint",
+                "--service-principal",
+                "--system-identity",
+                "--user-identity",
+                "--vault-id"
+            ],
+            "examples": [
+                "az functionapp connection update keyvault -g FuncAppRG -n MyFunctionApp --connection MyConnection --client-type dotnet",
+                "az functionapp connection update keyvault --id /subscriptions/{subscription}/resourceGroups/{source_resource_group}/providers/Microsoft.Web/sites/{site}/providers/Microsoft.ServiceLinker/linkers/{linker} --client-type dotnet"
+            ]
+        },
+        {
+            "name": "az functionapp connection update mysql",
+            "summary": "Update a functionapp to mysql connection.",
+            "syntax": "az functionapp connection update mysql [--appconfig-id]\n                                       [--client-type {django, dotnet, dotnet-internal, go, java, nodejs, none, php, python, ruby, springBoot}]\n                                       [--connection]\n                                       [--connstr-props]\n                                       [--customized-keys]\n                                       [--id]\n                                       [--name]\n                                       [--no-wait]\n                                       [--opt-out {auth, configinfo, publicnetwork}]\n                                       [--private-endpoint {false, true}]\n                                       [--resource-group]\n                                       [--secret]\n                                       [--service-endpoint {false, true}]\n                                       [--vault-id]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--appconfig-id",
+                "--client-type",
+                "--connection",
+                "--connstr-props",
+                "--customized-keys",
+                "--id",
+                "--name -n",
+                "--no-wait",
+                "--opt-out",
+                "--private-endpoint",
+                "--resource-group -g",
+                "--secret",
+                "--service-endpoint",
+                "--vault-id"
+            ],
+            "examples": [
+                "az functionapp connection update mysql -g FuncAppRG -n MyFunctionApp --connection MyConnection --client-type dotnet",
+                "az functionapp connection update mysql --id /subscriptions/{subscription}/resourceGroups/{source_resource_group}/providers/Microsoft.Web/sites/{site}/providers/Microsoft.ServiceLinker/linkers/{linker} --client-type dotnet"
+            ]
+        },
+        {
+            "name": "az functionapp connection update mysql-flexible",
+            "summary": "Update a functionapp to mysql-flexible connection.",
+            "syntax": "az functionapp connection update mysql-flexible [--appconfig-id]\n                                                [--client-type {django, dotnet, dotnet-internal, go, java, nodejs, none, php, python, ruby, springBoot}]\n                                                [--connection]\n                                                [--connstr-props]\n                                                [--customized-keys]\n                                                [--id]\n                                                [--name]\n                                                [--no-wait]\n                                                [--opt-out {auth, configinfo, publicnetwork}]\n                                                [--private-endpoint {false, true}]\n                                                [--resource-group]\n                                                [--secret]\n                                                [--service-principal]\n                                                [--system-identity]\n                                                [--user-identity]\n                                                [--vault-id]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--appconfig-id",
+                "--client-type",
+                "--connection",
+                "--connstr-props",
+                "--customized-keys",
+                "--id",
+                "--name -n",
+                "--no-wait",
+                "--opt-out",
+                "--private-endpoint",
+                "--resource-group -g",
+                "--secret",
+                "--service-principal",
+                "--system-identity",
+                "--user-identity",
+                "--vault-id"
+            ],
+            "examples": [
+                "az functionapp connection update mysql-flexible -g FuncAppRG -n MyFunctionApp --connection MyConnection --client-type dotnet",
+                "az functionapp connection update mysql-flexible --id /subscriptions/{subscription}/resourceGroups/{source_resource_group}/providers/Microsoft.Web/sites/{site}/providers/Microsoft.ServiceLinker/linkers/{linker} --client-type dotnet"
+            ]
+        },
+        {
+            "name": "az functionapp connection update postgres",
+            "summary": "Update a functionapp to postgres connection.",
+            "syntax": "az functionapp connection update postgres [--appconfig-id]\n                                          [--client-type {django, dotnet, dotnet-internal, go, java, nodejs, none, php, python, ruby, springBoot}]\n                                          [--connection]\n                                          [--connstr-props]\n                                          [--customized-keys]\n                                          [--id]\n                                          [--name]\n                                          [--no-wait]\n                                          [--opt-out {auth, configinfo, publicnetwork}]\n                                          [--private-endpoint {false, true}]\n                                          [--resource-group]\n                                          [--secret]\n                                          [--service-endpoint {false, true}]\n                                          [--service-principal]\n                                          [--system-identity]\n                                          [--user-identity]\n                                          [--vault-id]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--appconfig-id",
+                "--client-type",
+                "--connection",
+                "--connstr-props",
+                "--customized-keys",
+                "--id",
+                "--name -n",
+                "--no-wait",
+                "--opt-out",
+                "--private-endpoint",
+                "--resource-group -g",
+                "--secret",
+                "--service-endpoint",
+                "--service-principal",
+                "--system-identity",
+                "--user-identity",
+                "--vault-id"
+            ],
+            "examples": [
+                "az functionapp connection update postgres -g FuncAppRG -n MyFunctionApp --connection MyConnection --client-type dotnet",
+                "az functionapp connection update postgres --id /subscriptions/{subscription}/resourceGroups/{source_resource_group}/providers/Microsoft.Web/sites/{site}/providers/Microsoft.ServiceLinker/linkers/{linker} --client-type dotnet"
+            ]
+        },
+        {
+            "name": "az functionapp connection update postgres-flexible",
+            "summary": "Update a functionapp to postgres-flexible connection.",
+            "syntax": "az functionapp connection update postgres-flexible [--appconfig-id]\n                                                   [--client-type {django, dotnet, dotnet-internal, go, java, nodejs, none, php, python, ruby, springBoot}]\n                                                   [--connection]\n                                                   [--connstr-props]\n                                                   [--customized-keys]\n                                                   [--id]\n                                                   [--name]\n                                                   [--no-wait]\n                                                   [--opt-out {auth, configinfo, publicnetwork}]\n                                                   [--resource-group]\n                                                   [--secret]\n                                                   [--service-principal]\n                                                   [--system-identity]\n                                                   [--user-identity]\n                                                   [--vault-id]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--appconfig-id",
+                "--client-type",
+                "--connection",
+                "--connstr-props",
+                "--customized-keys",
+                "--id",
+                "--name -n",
+                "--no-wait",
+                "--opt-out",
+                "--resource-group -g",
+                "--secret",
+                "--service-principal",
+                "--system-identity",
+                "--user-identity",
+                "--vault-id"
+            ],
+            "examples": [
+                "az functionapp connection update postgres-flexible -g FuncAppRG -n MyFunctionApp --connection MyConnection --client-type dotnet",
+                "az functionapp connection update postgres-flexible --id /subscriptions/{subscription}/resourceGroups/{source_resource_group}/providers/Microsoft.Web/sites/{site}/providers/Microsoft.ServiceLinker/linkers/{linker} --client-type dotnet"
+            ]
+        },
+        {
+            "name": "az functionapp connection update redis",
+            "summary": "Update a functionapp to redis connection.",
+            "syntax": "az functionapp connection update redis [--appconfig-id]\n                                       [--client-type {dotnet, dotnet-internal, go, java, nodejs, none, python, springBoot}]\n                                       [--connection]\n                                       [--connstr-props]\n                                       [--customized-keys]\n                                       [--id]\n                                       [--name]\n                                       [--no-wait]\n                                       [--opt-out {auth, configinfo, publicnetwork}]\n                                       [--private-endpoint {false, true}]\n                                       [--resource-group]\n                                       [--secret]\n                                       [--service-principal]\n                                       [--system-identity]\n                                       [--user-identity]\n                                       [--vault-id]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--appconfig-id",
+                "--client-type",
+                "--connection",
+                "--connstr-props",
+                "--customized-keys",
+                "--id",
+                "--name -n",
+                "--no-wait",
+                "--opt-out",
+                "--private-endpoint",
+                "--resource-group -g",
+                "--secret",
+                "--service-principal",
+                "--system-identity",
+                "--user-identity",
+                "--vault-id"
+            ],
+            "examples": [
+                "az functionapp connection update redis -g FuncAppRG -n MyFunctionApp --connection MyConnection --client-type dotnet",
+                "az functionapp connection update redis --id /subscriptions/{subscription}/resourceGroups/{source_resource_group}/providers/Microsoft.Web/sites/{site}/providers/Microsoft.ServiceLinker/linkers/{linker} --client-type dotnet"
+            ]
+        },
+        {
+            "name": "az functionapp connection update redis-enterprise",
+            "summary": "Update a functionapp to redis-enterprise connection.",
+            "syntax": "az functionapp connection update redis-enterprise [--appconfig-id]\n                                                  [--client-type {dotnet, dotnet-internal, go, java, nodejs, none, python, springBoot}]\n                                                  [--connection]\n                                                  [--connstr-props]\n                                                  [--customized-keys]\n                                                  [--id]\n                                                  [--name]\n                                                  [--no-wait]\n                                                  [--opt-out {auth, configinfo, publicnetwork}]\n                                                  [--resource-group]\n                                                  [--secret]\n                                                  [--vault-id]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--appconfig-id",
+                "--client-type",
+                "--connection",
+                "--connstr-props",
+                "--customized-keys",
+                "--id",
+                "--name -n",
+                "--no-wait",
+                "--opt-out",
+                "--resource-group -g",
+                "--secret",
+                "--vault-id"
+            ],
+            "examples": [
+                "az functionapp connection update redis-enterprise -g FuncAppRG -n MyFunctionApp --connection MyConnection --client-type dotnet",
+                "az functionapp connection update redis-enterprise --id /subscriptions/{subscription}/resourceGroups/{source_resource_group}/providers/Microsoft.Web/sites/{site}/providers/Microsoft.ServiceLinker/linkers/{linker} --client-type dotnet"
+            ]
+        },
+        {
+            "name": "az functionapp connection update servicebus",
+            "summary": "Update a functionapp to servicebus connection.",
+            "syntax": "az functionapp connection update servicebus [--appconfig-id]\n                                            [--client-type {dotnet, dotnet-internal, go, java, nodejs, none, python, springBoot}]\n                                            [--connection]\n                                            [--connstr-props]\n                                            [--customized-keys]\n                                            [--id]\n                                            [--name]\n                                            [--no-wait]\n                                            [--opt-out {auth, configinfo, publicnetwork}]\n                                            [--private-endpoint {false, true}]\n                                            [--resource-group]\n                                            [--secret]\n                                            [--service-endpoint {false, true}]\n                                            [--service-principal]\n                                            [--system-identity]\n                                            [--user-identity]\n                                            [--vault-id]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--appconfig-id",
+                "--client-type",
+                "--connection",
+                "--connstr-props",
+                "--customized-keys",
+                "--id",
+                "--name -n",
+                "--no-wait",
+                "--opt-out",
+                "--private-endpoint",
+                "--resource-group -g",
+                "--secret",
+                "--service-endpoint",
+                "--service-principal",
+                "--system-identity",
+                "--user-identity",
+                "--vault-id"
+            ],
+            "examples": [
+                "az functionapp connection update servicebus -g FuncAppRG -n MyFunctionApp --connection MyConnection --client-type dotnet",
+                "az functionapp connection update servicebus --id /subscriptions/{subscription}/resourceGroups/{source_resource_group}/providers/Microsoft.Web/sites/{site}/providers/Microsoft.ServiceLinker/linkers/{linker} --client-type dotnet"
+            ]
+        },
+        {
+            "name": "az functionapp connection update signalr",
+            "summary": "Update a functionapp to signalr connection.",
+            "syntax": "az functionapp connection update signalr [--appconfig-id]\n                                         [--client-type {dotnet, dotnet-internal, none}]\n                                         [--connection]\n                                         [--connstr-props]\n                                         [--customized-keys]\n                                         [--id]\n                                         [--name]\n                                         [--no-wait]\n                                         [--opt-out {auth, configinfo, publicnetwork}]\n                                         [--private-endpoint {false, true}]\n                                         [--resource-group]\n                                         [--secret]\n                                         [--service-principal]\n                                         [--system-identity]\n                                         [--user-identity]\n                                         [--vault-id]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--appconfig-id",
+                "--client-type",
+                "--connection",
+                "--connstr-props",
+                "--customized-keys",
+                "--id",
+                "--name -n",
+                "--no-wait",
+                "--opt-out",
+                "--private-endpoint",
+                "--resource-group -g",
+                "--secret",
+                "--service-principal",
+                "--system-identity",
+                "--user-identity",
+                "--vault-id"
+            ],
+            "examples": [
+                "az functionapp connection update signalr -g FuncAppRG -n MyFunctionApp --connection MyConnection --client-type dotnet",
+                "az functionapp connection update signalr --id /subscriptions/{subscription}/resourceGroups/{source_resource_group}/providers/Microsoft.Web/sites/{site}/providers/Microsoft.ServiceLinker/linkers/{linker} --client-type dotnet"
+            ]
+        },
+        {
+            "name": "az functionapp connection update sql",
+            "summary": "Update a functionapp to sql connection.",
+            "syntax": "az functionapp connection update sql [--appconfig-id]\n                                     [--client-type {django, dotnet, dotnet-internal, go, java, nodejs, none, php, python, ruby, springBoot}]\n                                     [--connection]\n                                     [--connstr-props]\n                                     [--customized-keys]\n                                     [--id]\n                                     [--name]\n                                     [--no-wait]\n                                     [--opt-out {auth, configinfo, publicnetwork}]\n                                     [--private-endpoint {false, true}]\n                                     [--resource-group]\n                                     [--secret]\n                                     [--service-endpoint {false, true}]\n                                     [--service-principal]\n                                     [--system-identity]\n                                     [--user-identity]\n                                     [--vault-id]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--appconfig-id",
+                "--client-type",
+                "--connection",
+                "--connstr-props",
+                "--customized-keys",
+                "--id",
+                "--name -n",
+                "--no-wait",
+                "--opt-out",
+                "--private-endpoint",
+                "--resource-group -g",
+                "--secret",
+                "--service-endpoint",
+                "--service-principal",
+                "--system-identity",
+                "--user-identity",
+                "--vault-id"
+            ],
+            "examples": [
+                "az functionapp connection update sql -g FuncAppRG -n MyFunctionApp --connection MyConnection --client-type dotnet",
+                "az functionapp connection update sql --id /subscriptions/{subscription}/resourceGroups/{source_resource_group}/providers/Microsoft.Web/sites/{site}/providers/Microsoft.ServiceLinker/linkers/{linker} --client-type dotnet"
+            ]
+        },
+        {
+            "name": "az functionapp connection update storage-blob",
+            "summary": "Update a functionapp to storage-blob connection.",
+            "syntax": "az functionapp connection update storage-blob [--appconfig-id]\n                                              [--client-type {dotnet, dotnet-internal, java, nodejs, none, python, springBoot}]\n                                              [--connection]\n                                              [--connstr-props]\n                                              [--customized-keys]\n                                              [--id]\n                                              [--name]\n                                              [--no-wait]\n                                              [--opt-out {auth, configinfo, publicnetwork}]\n                                              [--private-endpoint {false, true}]\n                                              [--resource-group]\n                                              [--secret]\n                                              [--service-endpoint {false, true}]\n                                              [--service-principal]\n                                              [--system-identity]\n                                              [--user-identity]\n                                              [--vault-id]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--appconfig-id",
+                "--client-type",
+                "--connection",
+                "--connstr-props",
+                "--customized-keys",
+                "--id",
+                "--name -n",
+                "--no-wait",
+                "--opt-out",
+                "--private-endpoint",
+                "--resource-group -g",
+                "--secret",
+                "--service-endpoint",
+                "--service-principal",
+                "--system-identity",
+                "--user-identity",
+                "--vault-id"
+            ],
+            "examples": [
+                "az functionapp connection update storage-blob -g FuncAppRG -n MyFunctionApp --connection MyConnection --client-type dotnet",
+                "az functionapp connection update storage-blob --id /subscriptions/{subscription}/resourceGroups/{source_resource_group}/providers/Microsoft.Web/sites/{site}/providers/Microsoft.ServiceLinker/linkers/{linker} --client-type dotnet"
+            ]
+        },
+        {
+            "name": "az functionapp connection update storage-file",
+            "summary": "Update a functionapp to storage-file connection.",
+            "syntax": "az functionapp connection update storage-file [--appconfig-id]\n                                              [--client-type {dotnet, dotnet-internal, java, nodejs, none, php, python, ruby, springBoot}]\n                                              [--connection]\n                                              [--connstr-props]\n                                              [--customized-keys]\n                                              [--id]\n                                              [--name]\n                                              [--no-wait]\n                                              [--opt-out {auth, configinfo, publicnetwork}]\n                                              [--private-endpoint {false, true}]\n                                              [--resource-group]\n                                              [--secret]\n                                              [--service-endpoint {false, true}]\n                                              [--vault-id]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--appconfig-id",
+                "--client-type",
+                "--connection",
+                "--connstr-props",
+                "--customized-keys",
+                "--id",
+                "--name -n",
+                "--no-wait",
+                "--opt-out",
+                "--private-endpoint",
+                "--resource-group -g",
+                "--secret",
+                "--service-endpoint",
+                "--vault-id"
+            ],
+            "examples": [
+                "az functionapp connection update storage-file -g FuncAppRG -n MyFunctionApp --connection MyConnection --client-type dotnet",
+                "az functionapp connection update storage-file --id /subscriptions/{subscription}/resourceGroups/{source_resource_group}/providers/Microsoft.Web/sites/{site}/providers/Microsoft.ServiceLinker/linkers/{linker} --client-type dotnet"
+            ]
+        },
+        {
+            "name": "az functionapp connection update storage-queue",
+            "summary": "Update a functionapp to storage-queue connection.",
+            "syntax": "az functionapp connection update storage-queue [--appconfig-id]\n                                               [--client-type {dotnet, dotnet-internal, java, nodejs, none, python, springBoot}]\n                                               [--connection]\n                                               [--connstr-props]\n                                               [--customized-keys]\n                                               [--id]\n                                               [--name]\n                                               [--no-wait]\n                                               [--opt-out {auth, configinfo, publicnetwork}]\n                                               [--private-endpoint {false, true}]\n                                               [--resource-group]\n                                               [--secret]\n                                               [--service-endpoint {false, true}]\n                                               [--service-principal]\n                                               [--system-identity]\n                                               [--user-identity]\n                                               [--vault-id]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--appconfig-id",
+                "--client-type",
+                "--connection",
+                "--connstr-props",
+                "--customized-keys",
+                "--id",
+                "--name -n",
+                "--no-wait",
+                "--opt-out",
+                "--private-endpoint",
+                "--resource-group -g",
+                "--secret",
+                "--service-endpoint",
+                "--service-principal",
+                "--system-identity",
+                "--user-identity",
+                "--vault-id"
+            ],
+            "examples": [
+                "az functionapp connection update storage-queue -g FuncAppRG -n MyFunctionApp --connection MyConnection --client-type dotnet",
+                "az functionapp connection update storage-queue --id /subscriptions/{subscription}/resourceGroups/{source_resource_group}/providers/Microsoft.Web/sites/{site}/providers/Microsoft.ServiceLinker/linkers/{linker} --client-type dotnet"
+            ]
+        },
+        {
+            "name": "az functionapp connection update storage-table",
+            "summary": "Update a functionapp to storage-table connection.",
+            "syntax": "az functionapp connection update storage-table [--appconfig-id]\n                                               [--client-type {dotnet, dotnet-internal, java, nodejs, none, python}]\n                                               [--connection]\n                                               [--connstr-props]\n                                               [--customized-keys]\n                                               [--id]\n                                               [--name]\n                                               [--no-wait]\n                                               [--opt-out {auth, configinfo, publicnetwork}]\n                                               [--private-endpoint {false, true}]\n                                               [--resource-group]\n                                               [--secret]\n                                               [--service-endpoint {false, true}]\n                                               [--service-principal]\n                                               [--system-identity]\n                                               [--user-identity]\n                                               [--vault-id]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--appconfig-id",
+                "--client-type",
+                "--connection",
+                "--connstr-props",
+                "--customized-keys",
+                "--id",
+                "--name -n",
+                "--no-wait",
+                "--opt-out",
+                "--private-endpoint",
+                "--resource-group -g",
+                "--secret",
+                "--service-endpoint",
+                "--service-principal",
+                "--system-identity",
+                "--user-identity",
+                "--vault-id"
+            ],
+            "examples": [
+                "az functionapp connection update storage-table -g FuncAppRG -n MyFunctionApp --connection MyConnection --client-type dotnet",
+                "az functionapp connection update storage-table --id /subscriptions/{subscription}/resourceGroups/{source_resource_group}/providers/Microsoft.Web/sites/{site}/providers/Microsoft.ServiceLinker/linkers/{linker} --client-type dotnet"
+            ]
+        },
+        {
+            "name": "az functionapp connection update webpubsub",
+            "summary": "Update a functionapp to webpubsub connection.",
+            "syntax": "az functionapp connection update webpubsub [--appconfig-id]\n                                           [--client-type {dotnet, dotnet-internal, java, nodejs, none, python}]\n                                           [--connection]\n                                           [--connstr-props]\n                                           [--customized-keys]\n                                           [--id]\n                                           [--name]\n                                           [--no-wait]\n                                           [--opt-out {auth, configinfo, publicnetwork}]\n                                           [--private-endpoint {false, true}]\n                                           [--resource-group]\n                                           [--secret]\n                                           [--service-principal]\n                                           [--system-identity]\n                                           [--user-identity]\n                                           [--vault-id]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--appconfig-id",
+                "--client-type",
+                "--connection",
+                "--connstr-props",
+                "--customized-keys",
+                "--id",
+                "--name -n",
+                "--no-wait",
+                "--opt-out",
+                "--private-endpoint",
+                "--resource-group -g",
+                "--secret",
+                "--service-principal",
+                "--system-identity",
+                "--user-identity",
+                "--vault-id"
+            ],
+            "examples": [
+                "az functionapp connection update webpubsub -g FuncAppRG -n MyFunctionApp --connection MyConnection --client-type dotnet",
+                "az functionapp connection update webpubsub --id /subscriptions/{subscription}/resourceGroups/{source_resource_group}/providers/Microsoft.Web/sites/{site}/providers/Microsoft.ServiceLinker/linkers/{linker} --client-type dotnet"
+            ]
+        }
+    ]
+}

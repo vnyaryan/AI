@@ -1,0 +1,62 @@
+{
+    "command_group": "az sql mi ad-admin",
+    "description": "Manage a managed instance's Active Directory administrator.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az sql mi ad-admin create",
+            "summary": "Creates a new managed instance Active Directory administrator.",
+            "syntax": "az sql mi ad-admin create --display-name\n                          --managed-instance\n                          --object-id\n                          --resource-group",
+            "required_parameters": [
+                "--display-name -u",
+                "--managed-instance --mi",
+                "--object-id -i",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az sql mi ad-admin delete",
+            "summary": "Deletes an existing managed instance Active Directory Administrator.",
+            "syntax": "az sql mi ad-admin delete [--ids]\n                          [--managed-instance]\n                          [--resource-group]\n                          [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--managed-instance --mi",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az sql mi ad-admin list",
+            "summary": "Returns a list of managed instance Active Directory Administrators.",
+            "syntax": "az sql mi ad-admin list [--ids]\n                        [--managed-instance]\n                        [--resource-group]\n                        [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--managed-instance --mi",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az sql mi ad-admin update",
+            "summary": "Updates an existing managed instance Active Directory administrator.",
+            "syntax": "az sql mi ad-admin update --display-name\n                          --object-id\n                          [--ids]\n                          [--managed-instance]\n                          [--resource-group]\n                          [--subscription]",
+            "required_parameters": [
+                "--display-name -u",
+                "--object-id -i"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--managed-instance --mi",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        }
+    ]
+}

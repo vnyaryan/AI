@@ -1,0 +1,36 @@
+{
+    "command_group": "az hdinsight host",
+    "description": "Manage HDInsight cluster's virtual hosts.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az hdinsight host list",
+            "summary": "List the hosts of the specified HDInsight cluster.",
+            "syntax": "az hdinsight host list --cluster-name\n                       --resource-group",
+            "required_parameters": [
+                "--cluster-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az hdinsight host list --resource-group MyResourceGroup --cluster-name MyCluster"
+            ]
+        },
+        {
+            "name": "az hdinsight host restart",
+            "summary": "Restart the specific hosts of the specified HDInsight cluster.",
+            "syntax": "az hdinsight host restart --cluster-name\n                          --host-names\n                          --resource-group\n                          [--yes]",
+            "required_parameters": [
+                "--cluster-name",
+                "--host-names",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--yes -y"
+            ],
+            "examples": [
+                "az hdinsight host restart --resource-group MyResourceGroup --cluster-name MyCluster --host-names hostname1 hostname2"
+            ]
+        }
+    ]
+}

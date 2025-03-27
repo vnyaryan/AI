@@ -1,0 +1,95 @@
+{
+    "command_group": "az containerapp env telemetry otlp",
+    "description": "Commands to manage otlp settings for the container apps environment.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az containerapp env telemetry otlp add",
+            "summary": "Add container apps environment telemetry otlp settings.",
+            "syntax": "az containerapp env telemetry otlp add --endpoint\n                                       --name\n                                       --otlp-name\n                                       --resource-group\n                                       [--enable-open-telemetry-logs {false, true}]\n                                       [--enable-open-telemetry-metrics {false, true}]\n                                       [--enable-open-telemetry-traces {false, true}]\n                                       [--headers]\n                                       [--insecure {false, true}]\n                                       [--no-wait]",
+            "required_parameters": [
+                "--endpoint -e",
+                "--name -n",
+                "--otlp-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--enable-open-telemetry-logs -l",
+                "--enable-open-telemetry-metrics -m",
+                "--enable-open-telemetry-traces -t",
+                "--headers",
+                "--insecure",
+                "--no-wait"
+            ],
+            "examples": [
+                "az containerapp env telemetry otlp add -n MyContainerappEnvironment -g MyResourceGroup \\\n    --otlp-name otlpName --endpoint otlpEndpoint --insecure false --headers api-key=apiKey \\\n    --enable-open-telemetry-traces true --enable-open-telemetry-logs true --enable-open-telemetry-metrics true"
+            ]
+        },
+        {
+            "name": "az containerapp env telemetry otlp list",
+            "summary": "List container apps environment telemetry otlp settings.",
+            "syntax": "az containerapp env telemetry otlp list --name\n                                        --resource-group",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az containerapp env telemetry otlp list -n MyContainerappEnvironment -g MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az containerapp env telemetry otlp remove",
+            "summary": "Remove container apps environment telemetry otlp settings.",
+            "syntax": "az containerapp env telemetry otlp remove --name\n                                          --otlp-name\n                                          --resource-group\n                                          [--no-wait]\n                                          [--yes]",
+            "required_parameters": [
+                "--name -n",
+                "--otlp-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--no-wait",
+                "--yes -y"
+            ],
+            "examples": [
+                "az containerapp env telemetry otlp remove -n MyContainerappEnvironment -g MyResourceGroup \\\n    --otlp-name otlpName"
+            ]
+        },
+        {
+            "name": "az containerapp env telemetry otlp show",
+            "summary": "Show container apps environment telemetry otlp settings.",
+            "syntax": "az containerapp env telemetry otlp show --name\n                                        --otlp-name\n                                        --resource-group",
+            "required_parameters": [
+                "--name -n",
+                "--otlp-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az containerapp env telemetry otlp show -n MyContainerappEnvironment -g MyResourceGroup \\\n    --otlp-name otlpName"
+            ]
+        },
+        {
+            "name": "az containerapp env telemetry otlp update",
+            "summary": "Update container apps environment telemetry otlp settings.",
+            "syntax": "az containerapp env telemetry otlp update --name\n                                          --otlp-name\n                                          --resource-group\n                                          [--enable-open-telemetry-logs {false, true}]\n                                          [--enable-open-telemetry-metrics {false, true}]\n                                          [--enable-open-telemetry-traces {false, true}]\n                                          [--endpoint]\n                                          [--headers]\n                                          [--insecure {false, true}]\n                                          [--no-wait]",
+            "required_parameters": [
+                "--name -n",
+                "--otlp-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--enable-open-telemetry-logs -l",
+                "--enable-open-telemetry-metrics -m",
+                "--enable-open-telemetry-traces -t",
+                "--endpoint -e",
+                "--headers",
+                "--insecure",
+                "--no-wait"
+            ],
+            "examples": [
+                "az containerapp env telemetry otlp update -n MyContainerappEnvironment -g MyResourceGroup \\\n    --otlp-name otlpName --endpoint otlpEndpoint --insecure false --headers api-key=apiKey \\\n    --enable-open-telemetry-traces true --enable-open-telemetry-logs true --enable-open-telemetry-metrics true"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,53 @@
+{
+    "command_group": "az monitor activity-log alert action-group",
+    "description": "",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az monitor activity-log alert action-group add",
+            "summary": "Add action groups to this activity log alert rule. It can also be used to overwrite existing webhook properties of particular action groups.",
+            "syntax": "az monitor activity-log alert action-group add --action-group\n                                               [--activity-log-alert-name]\n                                               [--add]\n                                               [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                               [--ids]\n                                               [--remove]\n                                               [--reset {0, 1, f, false, n, no, t, true, y, yes}]\n                                               [--resource-group]\n                                               [--set]\n                                               [--strict {0, 1, f, false, n, no, t, true, y, yes}]\n                                               [--subscription]\n                                               [--webhook-properties]",
+            "required_parameters": [
+                "--action-group -a"
+            ],
+            "optional_parameters": [
+                "--activity-log-alert-name --name -n",
+                "--add",
+                "--force-string",
+                "--ids",
+                "--remove",
+                "--reset",
+                "--resource-group -g",
+                "--set",
+                "--strict",
+                "--subscription",
+                "--webhook-properties -w"
+            ],
+            "examples": [
+                "az monitor activity-log alert action-group add -n AlertName -g ResourceGroup \\\n--action /subscriptions/{SubID}/resourceGroups/{ResourceGroup}/providers/microsoft.insight\ns/actionGroups/{ActionGroup} \\\n--webhook-properties usage=test owner=jane",
+                "az monitor activity-log alert action-group add -n AlertName -g ResourceGroup \\\n-a /subscriptions/{SubID}/resourceGroups/{ResourceGroup}/providers/microsoft.insights/acti\nonGroups/{ActionGroup} \\\n--webhook-properties usage=test owner=john",
+                "az monitor activity-log alert action-group add -n AlertName -g ResourceGroup \\\n-a /subscriptions/{SubID}/resourceGroups/{ResourceGroup}/providers/microsoft.insights/acti\nonGroups/{ActionGroup}",
+                "az monitor activity-log alert action-group add -n AlertName -g ResourceGroup --strict \\\n--action-group ResourceIDList"
+            ]
+        },
+        {
+            "name": "az monitor activity-log alert action-group remove",
+            "summary": "Remove action groups from this activity log alert rule.",
+            "syntax": "az monitor activity-log alert action-group remove --action-group\n                                                  [--activity-log-alert-name]\n                                                  [--add]\n                                                  [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                                  [--ids]\n                                                  [--remove]\n                                                  [--resource-group]\n                                                  [--set]\n                                                  [--subscription]",
+            "required_parameters": [
+                "--action-group -a"
+            ],
+            "optional_parameters": [
+                "--activity-log-alert-name --name -n",
+                "--add",
+                "--force-string",
+                "--ids",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--subscription"
+            ],
+            "examples": []
+        }
+    ]
+}

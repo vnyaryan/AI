@@ -1,0 +1,323 @@
+{
+    "command_group": "az ml datastore",
+    "description": "Commands for managing and using datastores with the Azure ML Workspace.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az ml datastore attach-adls",
+            "summary": "Attach an ADLS datastore.",
+            "syntax": "az ml datastore attach-adls --client-id\n                            --client-secret\n                            --name\n                            --store-name\n                            --tenant-id\n                            [--adls-resource-group]\n                            [--adls-subscription-id]\n                            [--authority-url]\n                            [--grant-workspace-msi-access]\n                            [--include-secret]\n                            [--output-metadata-file]\n                            [--path]\n                            [--resource-group]\n                            [--resource-url]\n                            [--subscription-id]\n                            [--workspace-name]",
+            "required_parameters": [
+                "--client-id",
+                "--client-secret",
+                "--name -n",
+                "--store-name -c",
+                "--tenant-id"
+            ],
+            "optional_parameters": [
+                "--adls-resource-group",
+                "--adls-subscription-id",
+                "--authority-url",
+                "--grant-workspace-msi-access",
+                "--include-secret",
+                "--output-metadata-file -t",
+                "--path",
+                "--resource-group -g",
+                "--resource-url",
+                "--subscription-id",
+                "--workspace-name -w"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az ml datastore attach-adls-gen2",
+            "summary": "Attach a ADLS Gen2 datastore.",
+            "syntax": "az ml datastore attach-adls-gen2 --account-name\n                                 --client-id\n                                 --client-secret\n                                 --file-system\n                                 --name\n                                 --tenant-id\n                                 [--adlsgen2-account-resource-group]\n                                 [--adlsgen2-account-subscription-id]\n                                 [--authority-url]\n                                 [--endpoint]\n                                 [--grant-workspace-msi-access]\n                                 [--include-secret]\n                                 [--output-metadata-file]\n                                 [--path]\n                                 [--protocol]\n                                 [--resource-group]\n                                 [--resource-url]\n                                 [--subscription-id]\n                                 [--workspace-name]",
+            "required_parameters": [
+                "--account-name -a",
+                "--client-id",
+                "--client-secret",
+                "--file-system -c",
+                "--name -n",
+                "--tenant-id"
+            ],
+            "optional_parameters": [
+                "--adlsgen2-account-resource-group",
+                "--adlsgen2-account-subscription-id",
+                "--authority-url",
+                "--endpoint",
+                "--grant-workspace-msi-access",
+                "--include-secret",
+                "--output-metadata-file -t",
+                "--path",
+                "--protocol",
+                "--resource-group -g",
+                "--resource-url",
+                "--subscription-id",
+                "--workspace-name -w"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az ml datastore attach-blob",
+            "summary": "Attach a blob storage datastore.",
+            "syntax": "az ml datastore attach-blob --account-name\n                            --container-name\n                            --name\n                            [--account-key]\n                            [--endpoint]\n                            [--grant-workspace-msi-access]\n                            [--include-secret]\n                            [--output-metadata-file]\n                            [--path]\n                            [--protocol]\n                            [--resource-group]\n                            [--sas-token]\n                            [--storage-account-resource-group]\n                            [--storage-account-subscription-id]\n                            [--subscription-id]\n                            [--workspace-name]",
+            "required_parameters": [
+                "--account-name -a",
+                "--container-name -c",
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--account-key -k",
+                "--endpoint",
+                "--grant-workspace-msi-access",
+                "--include-secret",
+                "--output-metadata-file -t",
+                "--path",
+                "--protocol",
+                "--resource-group -g",
+                "--sas-token",
+                "--storage-account-resource-group",
+                "--storage-account-subscription-id",
+                "--subscription-id",
+                "--workspace-name -w"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az ml datastore attach-dbfs",
+            "summary": "Attach a Databricks File System datastore.",
+            "syntax": "az ml datastore attach-dbfs --name\n                            [--output-metadata-file]\n                            [--path]\n                            [--resource-group]\n                            [--subscription-id]\n                            [--workspace-name]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--output-metadata-file -t",
+                "--path",
+                "--resource-group -g",
+                "--subscription-id",
+                "--workspace-name -w"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az ml datastore attach-file",
+            "summary": "Attach a file share datastore.",
+            "syntax": "az ml datastore attach-file --account-name\n                            --name\n                            --share-name\n                            [--account-key]\n                            [--endpoint]\n                            [--include-secret]\n                            [--output-metadata-file]\n                            [--path]\n                            [--protocol]\n                            [--resource-group]\n                            [--sas-token]\n                            [--subscription-id]\n                            [--workspace-name]",
+            "required_parameters": [
+                "--account-name -a",
+                "--name -n",
+                "--share-name -c"
+            ],
+            "optional_parameters": [
+                "--account-key -k",
+                "--endpoint",
+                "--include-secret",
+                "--output-metadata-file -t",
+                "--path",
+                "--protocol",
+                "--resource-group -g",
+                "--sas-token",
+                "--subscription-id",
+                "--workspace-name -w"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az ml datastore attach-mysqldb",
+            "summary": "Attach an Azure MySQL datastore.",
+            "syntax": "az ml datastore attach-mysqldb --database-name\n                               --name\n                               --password\n                               --server-name\n                               --user-id\n                               [--endpoint]\n                               [--include-secret]\n                               [--output-metadata-file]\n                               [--path]\n                               [--port]\n                               [--resource-group]\n                               [--subscription-id]\n                               [--workspace-name]",
+            "required_parameters": [
+                "--database-name -d",
+                "--name -n",
+                "--password -p",
+                "--server-name",
+                "--user-id -u"
+            ],
+            "optional_parameters": [
+                "--endpoint",
+                "--include-secret",
+                "--output-metadata-file -t",
+                "--path",
+                "--port",
+                "--resource-group -g",
+                "--subscription-id",
+                "--workspace-name -w"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az ml datastore attach-psqldb",
+            "summary": "Attach an Azure PostgreSQL datastore.",
+            "syntax": "az ml datastore attach-psqldb --database-name\n                              --name\n                              --password\n                              --server-name\n                              --user-id\n                              [--endpoint]\n                              [--enforce-ssl]\n                              [--include-secret]\n                              [--output-metadata-file]\n                              [--path]\n                              [--port]\n                              [--resource-group]\n                              [--subscription-id]\n                              [--workspace-name]",
+            "required_parameters": [
+                "--database-name -d",
+                "--name -n",
+                "--password -p",
+                "--server-name",
+                "--user-id -u"
+            ],
+            "optional_parameters": [
+                "--endpoint",
+                "--enforce-ssl",
+                "--include-secret",
+                "--output-metadata-file -t",
+                "--path",
+                "--port",
+                "--resource-group -g",
+                "--subscription-id",
+                "--workspace-name -w"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az ml datastore attach-sqldb",
+            "summary": "Attach an Azure SQL datastore.",
+            "syntax": "az ml datastore attach-sqldb --database-name\n                             --name\n                             --server-name\n                             [--authority-url]\n                             [--client-id]\n                             [--client-secret]\n                             [--endpoint]\n                             [--grant-workspace-msi-access]\n                             [--include-secret]\n                             [--output-metadata-file]\n                             [--password]\n                             [--path]\n                             [--resource-group]\n                             [--resource-url]\n                             [--sql-resource-group]\n                             [--sql-subscription-id]\n                             [--subscription-id]\n                             [--tenant-id]\n                             [--username]\n                             [--workspace-name]",
+            "required_parameters": [
+                "--database-name -d",
+                "--name -n",
+                "--server-name"
+            ],
+            "optional_parameters": [
+                "--authority-url",
+                "--client-id",
+                "--client-secret",
+                "--endpoint",
+                "--grant-workspace-msi-access",
+                "--include-secret",
+                "--output-metadata-file -t",
+                "--password",
+                "--path",
+                "--resource-group -g",
+                "--resource-url",
+                "--sql-resource-group",
+                "--sql-subscription-id",
+                "--subscription-id",
+                "--tenant-id",
+                "--username",
+                "--workspace-name -w"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az ml datastore detach",
+            "summary": "Detach a datastore by name.",
+            "syntax": "az ml datastore detach --name\n                       [--output-metadata-file]\n                       [--path]\n                       [--resource-group]\n                       [--subscription-id]\n                       [--workspace-name]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--output-metadata-file -t",
+                "--path",
+                "--resource-group -g",
+                "--subscription-id",
+                "--workspace-name -w"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az ml datastore download",
+            "summary": "Download files from a Datastore.",
+            "syntax": "az ml datastore download --name\n                         --target-path\n                         [--hide-progress]\n                         [--output-metadata-file]\n                         [--overwrite]\n                         [--path]\n                         [--prefix]\n                         [--resource-group]\n                         [--subscription-id]\n                         [--workspace-name]",
+            "required_parameters": [
+                "--name -n",
+                "--target-path -d"
+            ],
+            "optional_parameters": [
+                "--hide-progress",
+                "--output-metadata-file -t",
+                "--overwrite",
+                "--path",
+                "--prefix -p",
+                "--resource-group -g",
+                "--subscription-id",
+                "--workspace-name -w"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az ml datastore list",
+            "summary": "List datastores in the workspace.",
+            "syntax": "az ml datastore list [--include-secret]\n                     [--output-metadata-file]\n                     [--path]\n                     [--resource-group]\n                     [--subscription-id]\n                     [--workspace-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--include-secret",
+                "--output-metadata-file -t",
+                "--path",
+                "--resource-group -g",
+                "--subscription-id",
+                "--workspace-name -w"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az ml datastore set-default",
+            "summary": "Set the workspace default datastore by name.",
+            "syntax": "az ml datastore set-default --name\n                            [--output-metadata-file]\n                            [--path]\n                            [--resource-group]\n                            [--subscription-id]\n                            [--workspace-name]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--output-metadata-file -t",
+                "--path",
+                "--resource-group -g",
+                "--subscription-id",
+                "--workspace-name -w"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az ml datastore show",
+            "summary": "Show a single datastore by name.",
+            "syntax": "az ml datastore show --name\n                     [--include-secret]\n                     [--output-metadata-file]\n                     [--path]\n                     [--resource-group]\n                     [--subscription-id]\n                     [--workspace-name]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--include-secret",
+                "--output-metadata-file -t",
+                "--path",
+                "--resource-group -g",
+                "--subscription-id",
+                "--workspace-name -w"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az ml datastore show-default",
+            "summary": "Show the workspace default datastore.",
+            "syntax": "az ml datastore show-default [--include-secret]\n                             [--output-metadata-file]\n                             [--path]\n                             [--resource-group]\n                             [--subscription-id]\n                             [--workspace-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--include-secret",
+                "--output-metadata-file -t",
+                "--path",
+                "--resource-group -g",
+                "--subscription-id",
+                "--workspace-name -w"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az ml datastore upload",
+            "summary": "Upload files to a Datastore.",
+            "syntax": "az ml datastore upload --name\n                       --src-path\n                       [--hide-progress]\n                       [--output-metadata-file]\n                       [--overwrite]\n                       [--path]\n                       [--resource-group]\n                       [--subscription-id]\n                       [--target-path]\n                       [--workspace-name]",
+            "required_parameters": [
+                "--name -n",
+                "--src-path -p"
+            ],
+            "optional_parameters": [
+                "--hide-progress",
+                "--output-metadata-file -t",
+                "--overwrite",
+                "--path",
+                "--resource-group -g",
+                "--subscription-id",
+                "--target-path -u",
+                "--workspace-name -w"
+            ],
+            "examples": []
+        }
+    ]
+}

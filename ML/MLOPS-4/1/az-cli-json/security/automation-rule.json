@@ -1,0 +1,22 @@
+{
+    "command_group": "az security automation-rule",
+    "description": "Creates security automation rule.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az security automation-rule create",
+            "summary": "Creates security automation rule.",
+            "syntax": "az security automation-rule create --expected-value\n                                   --operator\n                                   --property-j-path\n                                   --property-type",
+            "required_parameters": [
+                "--expected-value",
+                "--operator",
+                "--property-j-path",
+                "--property-type"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az security automation-rule create --expected-value 'High' --operator 'Equals' --property-j-path 'properties.metadata.severity' --property-type 'string'"
+            ]
+        }
+    ]
+}

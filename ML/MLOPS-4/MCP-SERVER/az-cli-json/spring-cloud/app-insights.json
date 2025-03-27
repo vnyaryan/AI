@@ -1,0 +1,38 @@
+{
+    "command_group": "az spring-cloud app-insights",
+    "description": "Commands to management Application Insights in Azure Spring Cloud.",
+    "status": "Deprecated",
+    "commands": [
+        {
+            "name": "az spring-cloud app-insights show",
+            "summary": "Show Application Insights settings.",
+            "syntax": "az spring-cloud app-insights show --name\n                                  --resource-group",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az spring-cloud app-insights update",
+            "summary": "Update Application Insights settings.",
+            "syntax": "az spring-cloud app-insights update --name\n                                    --resource-group\n                                    [--app-insights]\n                                    [--app-insights-key]\n                                    [--disable {false, true}]\n                                    [--no-wait]\n                                    [--sampling-rate]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--app-insights",
+                "--app-insights-key",
+                "--disable",
+                "--no-wait",
+                "--sampling-rate"
+            ],
+            "examples": [
+                "az spring-cloud app-insights update -n MyService -g MyResourceGroup --app-insights-key \"MyConnectionString\" --sampling-rate 100",
+                "az spring-cloud app-insights update -n MyService -g MyResourceGroup --disable"
+            ]
+        }
+    ]
+}

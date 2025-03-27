@@ -1,0 +1,50 @@
+{
+    "command_group": "az devops security group membership",
+    "description": "Manage memberships for security groups.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az devops security group membership add",
+            "summary": "Add membership.",
+            "syntax": "az devops security group membership add --group-id\n                                        --member-id\n                                        [--detect {false, true}]\n                                        [--org]",
+            "required_parameters": [
+                "--group-id",
+                "--member-id"
+            ],
+            "optional_parameters": [
+                "--detect",
+                "--org --organization"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az devops security group membership list",
+            "summary": "List memberships for a group or user.",
+            "syntax": "az devops security group membership list --id\n                                         [--detect {false, true}]\n                                         [--org]\n                                         [--relationship {memberof, members}]",
+            "required_parameters": [
+                "--id"
+            ],
+            "optional_parameters": [
+                "--detect",
+                "--org --organization",
+                "--relationship"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az devops security group membership remove",
+            "summary": "Remove membership.",
+            "syntax": "az devops security group membership remove --group-id\n                                           --member-id\n                                           [--detect {false, true}]\n                                           [--org]\n                                           [--yes]",
+            "required_parameters": [
+                "--group-id",
+                "--member-id"
+            ],
+            "optional_parameters": [
+                "--detect",
+                "--org --organization",
+                "--yes -y"
+            ],
+            "examples": []
+        }
+    ]
+}

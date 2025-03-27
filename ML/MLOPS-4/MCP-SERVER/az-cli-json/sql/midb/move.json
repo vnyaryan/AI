@@ -1,0 +1,98 @@
+{
+    "command_group": "az sql midb move",
+    "description": "Start, complete, cancel and list managed database move operations.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az sql midb move cancel",
+            "summary": "Cancel managed database move operation.",
+            "syntax": "az sql midb move cancel --dest-mi\n                        [--dest-resource-group]\n                        [--dest-sub-id]\n                        [--ids]\n                        [--managed-instance]\n                        [--name]\n                        [--no-wait]\n                        [--resource-group]\n                        [--subscription]",
+            "required_parameters": [
+                "--dest-mi"
+            ],
+            "optional_parameters": [
+                "--dest-resource-group --dest-rg",
+                "--dest-sub-id --dest-subscription-id",
+                "--ids",
+                "--managed-instance --mi",
+                "--name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az sql midb move cancel --name mydb --resource-group MyResourceGroup --managed-instance MyInstance --dest-mi DestinationInstance --dest-rg DestinationResourceGroup --dest-sub-id DestinationSubscriptionId",
+                "az sql midb move cancel --name mydb --resource-group MyResourceGroup --managed-instance MyInstance --dest-mi DestinationInstance --dest-rg DestinationResourceGroup",
+                "az sql midb move cancel --name mydb --resource-group MyResourceGroup --managed-instance MyInstance --dest-mi DestinationInstance"
+            ]
+        },
+        {
+            "name": "az sql midb move complete",
+            "summary": "Complete managed database move operation.",
+            "syntax": "az sql midb move complete --dest-mi\n                          [--dest-resource-group]\n                          [--dest-sub-id]\n                          [--ids]\n                          [--managed-instance]\n                          [--name]\n                          [--no-wait]\n                          [--resource-group]\n                          [--subscription]",
+            "required_parameters": [
+                "--dest-mi"
+            ],
+            "optional_parameters": [
+                "--dest-resource-group --dest-rg",
+                "--dest-sub-id --dest-subscription-id",
+                "--ids",
+                "--managed-instance --mi",
+                "--name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az sql midb move complete --name mydb --resource-group MyResourceGroup --managed-instance MyInstance --dest-mi DestinationInstance --dest-rg DestinationResourceGroup --dest-sub-id DestinationSubscriptionId",
+                "az sql midb move complete --name mydb --resource-group MyResourceGroup --managed-instance MyInstance --dest-mi DestinationInstance --dest-rg DestinationResourceGroup",
+                "az sql midb move complete --name mydb --resource-group MyResourceGroup --managed-instance MyInstance --dest-mi DestinationInstance"
+            ]
+        },
+        {
+            "name": "az sql midb move list",
+            "summary": "List managed database move operations.",
+            "syntax": "az sql midb move list [--dest-mi]\n                      [--dest-resource-group]\n                      [--ids]\n                      [--latest]\n                      [--managed-instance]\n                      [--name]\n                      [--resource-group]\n                      [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--dest-mi",
+                "--dest-resource-group --dest-rg",
+                "--ids",
+                "--latest --only-latest-per-database",
+                "--managed-instance --mi",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az sql midb move list --resource-group MyResourceGroup --managed-instance MyInstance",
+                "az sql midb move list --name mydb --resource-group MyResourceGroup --managed-instance MyInstance",
+                "az sql midb move list --name mydb --resource-group MyResourceGroup --managed-instance MyInstance --latest",
+                "az sql midb move list --resource-group MyResourceGroup --managed-instance MyInstance --dest-mi DestinationInstance"
+            ]
+        },
+        {
+            "name": "az sql midb move start",
+            "summary": "Start managed database move operation.",
+            "syntax": "az sql midb move start --dest-mi\n                       [--dest-resource-group]\n                       [--dest-sub-id]\n                       [--ids]\n                       [--managed-instance]\n                       [--name]\n                       [--no-wait]\n                       [--resource-group]\n                       [--subscription]",
+            "required_parameters": [
+                "--dest-mi"
+            ],
+            "optional_parameters": [
+                "--dest-resource-group --dest-rg",
+                "--dest-sub-id --dest-subscription-id",
+                "--ids",
+                "--managed-instance --mi",
+                "--name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az sql midb move start --name mydb --resource-group MyResourceGroup --managed-instance MyInstance --dest-mi DestinationInstance --dest-rg DestinationResourceGroup --dest-sub-id DestinationSubscriptionId",
+                "az sql midb move start --name mydb --resource-group MyResourceGroup --managed-instance MyInstance --dest-mi DestinationInstance --dest-rg DestinationResourceGroup",
+                "az sql midb move start --name mydb --resource-group MyResourceGroup --managed-instance MyInstance --dest-mi DestinationInstance"
+            ]
+        }
+    ]
+}

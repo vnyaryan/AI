@@ -1,0 +1,137 @@
+{
+    "command_group": "az iot central job",
+    "description": "Manage and configure jobs for an IoT Central application.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az iot central job create",
+            "summary": "Create and execute a job via its job definition.",
+            "syntax": "az iot central job create --app-id\n                          --content\n                          --group-id\n                          --job-id\n                          [--api-version {2022-07-31}]\n                          [--batch]\n                          [--batch-type {number, percentage}]\n                          [--cancellation-threshold]\n                          [--cancellation-threshold-batch]\n                          [--cancellation-threshold-type {number, percentage}]\n                          [--central-api-uri]\n                          [--desc]\n                          [--job-name]\n                          [--token]",
+            "required_parameters": [
+                "--app-id -n",
+                "--content -k",
+                "--group-id -g",
+                "--job-id -j"
+            ],
+            "optional_parameters": [
+                "--api-version --av",
+                "--batch -b",
+                "--batch-type --bt",
+                "--cancellation-threshold --cth",
+                "--cancellation-threshold-batch --ctb",
+                "--cancellation-threshold-type --ctt",
+                "--central-api-uri --central-dns-suffix",
+                "--desc --description",
+                "--job-name",
+                "--token"
+            ],
+            "examples": [
+                "az iot central job create --app-id {appid} --job-id {jobId} --group-id {groupId} --job-name {jobName} --content {creationJSONPath}",
+                "az iot central job create --app-id {appid} --job-id {jobId} --group-id {groupId} --job-name {jobName} --content {creationJSONPath} --batch {jobBatchValue} --batch-type {jobBatchType}",
+                "az iot central job create --app-id {appid} --job-id {jobId} --group-id {groupId} --job-name {jobName} --content {creationJSONPath} --cancellation-threshold {jobCancellationThresholdValue} --cancellation-threshold-type {jobCancellationThresholdType} --description {jobDesc}"
+            ]
+        },
+        {
+            "name": "az iot central job get-devices",
+            "summary": "Get job device statuses.",
+            "syntax": "az iot central job get-devices --app-id\n                               --job-id\n                               [--api-version {2022-07-31}]\n                               [--central-api-uri]\n                               [--token]",
+            "required_parameters": [
+                "--app-id -n",
+                "--job-id -j"
+            ],
+            "optional_parameters": [
+                "--api-version --av",
+                "--central-api-uri --central-dns-suffix",
+                "--token"
+            ],
+            "examples": [
+                "az iot central job get-devices --app-id {appid} --job-id {jobId}"
+            ]
+        },
+        {
+            "name": "az iot central job list",
+            "summary": "Get the list of jobs for an IoT Central application.",
+            "syntax": "az iot central job list --app-id\n                        [--api-version {2022-07-31}]\n                        [--central-api-uri]\n                        [--token]",
+            "required_parameters": [
+                "--app-id -n"
+            ],
+            "optional_parameters": [
+                "--api-version --av",
+                "--central-api-uri --central-dns-suffix",
+                "--token"
+            ],
+            "examples": [
+                "az iot central job list --app-id {appid}"
+            ]
+        },
+        {
+            "name": "az iot central job rerun",
+            "summary": "Re-run a job on all failed devices.",
+            "syntax": "az iot central job rerun --app-id\n                         --job-id\n                         --rerun-id\n                         [--api-version {2022-07-31}]\n                         [--central-api-uri]\n                         [--token]",
+            "required_parameters": [
+                "--app-id -n",
+                "--job-id -j",
+                "--rerun-id"
+            ],
+            "optional_parameters": [
+                "--api-version --av",
+                "--central-api-uri --central-dns-suffix",
+                "--token"
+            ],
+            "examples": [
+                "az iot central job rerun --app-id {appid} --job-id {jobId} --rerun-id {rerunId}"
+            ]
+        },
+        {
+            "name": "az iot central job resume",
+            "summary": "Resume a stopped job.",
+            "syntax": "az iot central job resume --app-id\n                          --job-id\n                          [--api-version {2022-07-31}]\n                          [--central-api-uri]\n                          [--token]",
+            "required_parameters": [
+                "--app-id -n",
+                "--job-id -j"
+            ],
+            "optional_parameters": [
+                "--api-version --av",
+                "--central-api-uri --central-dns-suffix",
+                "--token"
+            ],
+            "examples": [
+                "az iot central job resume --app-id {appid} --job-id {jobId}"
+            ]
+        },
+        {
+            "name": "az iot central job show",
+            "summary": "Get the details of a job by ID.",
+            "syntax": "az iot central job show --app-id\n                        --job-id\n                        [--api-version {2022-07-31}]\n                        [--central-api-uri]\n                        [--token]",
+            "required_parameters": [
+                "--app-id -n",
+                "--job-id -j"
+            ],
+            "optional_parameters": [
+                "--api-version --av",
+                "--central-api-uri --central-dns-suffix",
+                "--token"
+            ],
+            "examples": [
+                "az iot central job show --app-id {appid} --job-id {jobId}"
+            ]
+        },
+        {
+            "name": "az iot central job stop",
+            "summary": "Stop a running job.",
+            "syntax": "az iot central job stop --app-id\n                        --job-id\n                        [--api-version {2022-07-31}]\n                        [--central-api-uri]\n                        [--token]",
+            "required_parameters": [
+                "--app-id -n",
+                "--job-id -j"
+            ],
+            "optional_parameters": [
+                "--api-version --av",
+                "--central-api-uri --central-dns-suffix",
+                "--token"
+            ],
+            "examples": [
+                "az iot central job stop --app-id {appid} --job-id {jobId}"
+            ]
+        }
+    ]
+}

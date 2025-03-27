@@ -1,0 +1,34 @@
+{
+    "command_group": "az sentinel entity-query template",
+    "description": "Manage entity query template with sentinel.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az sentinel entity-query template list",
+            "summary": "Get all entity query templates.",
+            "syntax": "az sentinel entity-query template list --resource-group\n                                       --workspace-name\n                                       [--kind {Activity}]",
+            "required_parameters": [
+                "--resource-group -g",
+                "--workspace-name -w"
+            ],
+            "optional_parameters": [
+                "--kind"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az sentinel entity-query template show",
+            "summary": "Get an entity query.",
+            "syntax": "az sentinel entity-query template show [--entity-query-template-id]\n                                       [--ids]\n                                       [--resource-group]\n                                       [--subscription]\n                                       [--workspace-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--entity-query-template-id --name -n",
+                "--ids",
+                "--resource-group -g",
+                "--subscription",
+                "--workspace-name -w"
+            ],
+            "examples": []
+        }
+    ]
+}

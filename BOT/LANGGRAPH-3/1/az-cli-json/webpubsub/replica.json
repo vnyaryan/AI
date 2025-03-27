@@ -1,0 +1,141 @@
+{
+    "command_group": "az webpubsub replica",
+    "description": "Manage replica settings.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az webpubsub replica create",
+            "summary": "Create a replica of Webpubsub Service.",
+            "syntax": "az webpubsub replica create --name\n                            --replica-name\n                            --resource-group\n                            --sku\n                            [--location]\n                            [--tags]\n                            [--unit-count]",
+            "required_parameters": [
+                "--name -n",
+                "--replica-name",
+                "--resource-group -g",
+                "--sku"
+            ],
+            "optional_parameters": [
+                "--location -l",
+                "--tags",
+                "--unit-count"
+            ],
+            "examples": [
+                "az webpubsub replica create --sku Premium_P1 -l eastus --replica-name MyReplica --name MyWebPubSub -g MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az webpubsub replica delete",
+            "summary": "Delete a replica of WebPubSub Service.",
+            "syntax": "az webpubsub replica delete [--ids]\n                            [--name]\n                            [--replica-name]\n                            [--resource-group]\n                            [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--replica-name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az webpubsub replica delete --replica-name MyReplica --name MyWebPubSub -g MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az webpubsub replica list",
+            "summary": "List replicas of Webpubsub Service.",
+            "syntax": "az webpubsub replica list --name\n                          --resource-group",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az webpubsub replica list --name MyWebPubSub -g MyResourceGroup -o table"
+            ]
+        },
+        {
+            "name": "az webpubsub replica restart",
+            "summary": "Restart a replica of WebPubSub Service.",
+            "syntax": "az webpubsub replica restart [--ids]\n                             [--name]\n                             [--replica-name]\n                             [--resource-group]\n                             [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--replica-name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az webpubsub replica restart --replica-name MyReplica --name MyWebPubSub -g MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az webpubsub replica show",
+            "summary": "Show the details of a replica.",
+            "syntax": "az webpubsub replica show [--ids]\n                          [--name]\n                          [--replica-name]\n                          [--resource-group]\n                          [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--replica-name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az webpubsub replica show --replica-name MyReplica --name MyWebPubSub -g MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az webpubsub replica start",
+            "summary": "Start a replica of WebPubSub Service.",
+            "syntax": "az webpubsub replica start [--ids]\n                           [--name]\n                           [--replica-name]\n                           [--resource-group]\n                           [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--replica-name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az webpubsub replica start --replica-name MyReplica --name MyWebPubSub -g MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az webpubsub replica stop",
+            "summary": "Stop a replica of WebPubSub Service.",
+            "syntax": "az webpubsub replica stop [--ids]\n                          [--name]\n                          [--replica-name]\n                          [--resource-group]\n                          [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--replica-name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az webpubsub replica stop --replica-name MyReplica --name MyWebPubSub -g MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az webpubsub replica update",
+            "summary": "Update a replica of Webpubsub Service.",
+            "syntax": "az webpubsub replica update --name\n                            --replica-name\n                            --resource-group\n                            [--add]\n                            [--force-string]\n                            [--region-endpoint-enabled {false, true}]\n                            [--remove]\n                            [--set]\n                            [--unit-count]",
+            "required_parameters": [
+                "--name -n",
+                "--replica-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--add",
+                "--force-string",
+                "--region-endpoint-enabled",
+                "--remove",
+                "--set",
+                "--unit-count"
+            ],
+            "examples": [
+                "az webpubsub replica update --replica-name MyReplica --name MyWebPubSub -g MyResourceGroup --region-endpoint-enabled true",
+                "az webpubsub replica update --replica-name MyReplica --name MyWebPubSub -g MyResourceGroup --unit-count 2"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,89 @@
+{
+    "command_group": "az eventhubs eventhub consumer-group",
+    "description": "Manage Azure Event Hubs consumergroup.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az eventhubs eventhub consumer-group create",
+            "summary": "Create an Event Hubs consumer group as a nested resource within a Namespace.",
+            "syntax": "az eventhubs eventhub consumer-group create --consumer-group-name\n                                            --eventhub-name\n                                            --namespace-name\n                                            --resource-group\n                                            [--user-metadata]",
+            "required_parameters": [
+                "--consumer-group-name --name -n",
+                "--eventhub-name",
+                "--namespace-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--user-metadata"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az eventhubs eventhub consumer-group delete",
+            "summary": "Delete a consumer group from the specified Event Hub and resource group.",
+            "syntax": "az eventhubs eventhub consumer-group delete [--consumer-group-name]\n                                            [--eventhub-name]\n                                            [--ids]\n                                            [--namespace-name]\n                                            [--resource-group]\n                                            [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--consumer-group-name --name -n",
+                "--eventhub-name",
+                "--ids",
+                "--namespace-name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az eventhubs eventhub consumer-group list",
+            "summary": "List all the consumer groups in a Namespace. An empty feed is returned if no consumer group exists in the Namespace.",
+            "syntax": "az eventhubs eventhub consumer-group list --eventhub-name\n                                          --namespace-name\n                                          --resource-group\n                                          [--max-items]\n                                          [--next-token]\n                                          [--skip]\n                                          [--top]",
+            "required_parameters": [
+                "--eventhub-name",
+                "--namespace-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token",
+                "--skip",
+                "--top"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az eventhubs eventhub consumer-group show",
+            "summary": "Get a description for the specified consumer group.",
+            "syntax": "az eventhubs eventhub consumer-group show [--consumer-group-name]\n                                          [--eventhub-name]\n                                          [--ids]\n                                          [--namespace-name]\n                                          [--resource-group]\n                                          [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--consumer-group-name --name -n",
+                "--eventhub-name",
+                "--ids",
+                "--namespace-name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az eventhubs eventhub consumer-group update",
+            "summary": "Update an Event Hubs consumer group as a nested resource within a Namespace.",
+            "syntax": "az eventhubs eventhub consumer-group update [--add]\n                                            [--consumer-group-name]\n                                            [--eventhub-name]\n                                            [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                            [--ids]\n                                            [--namespace-name]\n                                            [--remove]\n                                            [--resource-group]\n                                            [--set]\n                                            [--subscription]\n                                            [--user-metadata]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--consumer-group-name --name -n",
+                "--eventhub-name",
+                "--force-string",
+                "--ids",
+                "--namespace-name",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--subscription",
+                "--user-metadata"
+            ],
+            "examples": []
+        }
+    ]
+}

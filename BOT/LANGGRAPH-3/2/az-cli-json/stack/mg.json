@@ -1,0 +1,144 @@
+{
+    "command_group": "az stack mg",
+    "description": "Manage Deployment Stacks at management group.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az stack mg create",
+            "summary": "Create or update a deployment stack at management group scope.",
+            "syntax": "az stack mg create --action-on-unmanage {deleteAll, deleteResources, detachAll}\n                   --deny-settings-mode {denyDelete, denyWriteAndDelete, none}\n                   --location\n                   --management-group-id\n                   --name\n                   [--bse {false, true}]\n                   [--cs]\n                   [--deny-settings-excluded-actions]\n                   [--deny-settings-excluded-principals]\n                   [--deployment-subscription]\n                   [--description]\n                   [--no-wait]\n                   [--parameters]\n                   [--query-string]\n                   [--tags]\n                   [--template-file]\n                   [--template-spec]\n                   [--template-uri]\n                   [--yes]",
+            "required_parameters": [
+                "--action-on-unmanage --aou",
+                "--deny-settings-mode --dm",
+                "--location -l",
+                "--management-group-id -m",
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--bse --bypass-stack-out-of-sync-error",
+                "--cs --deny-settings-apply-to-child-scopes",
+                "--deny-settings-excluded-actions --ea",
+                "--deny-settings-excluded-principals --ep",
+                "--deployment-subscription --ds",
+                "--description",
+                "--no-wait",
+                "--parameters -p",
+                "--query-string -q",
+                "--tags",
+                "--template-file -f",
+                "--template-spec -s",
+                "--template-uri -u",
+                "--yes"
+            ],
+            "examples": [
+                "az stack mg create --name StackName --management-group-id myMg --template-file simpleTemplate.json --location westus2 --description description --deny-settings-mode None --action-on-unmanage detachAll",
+                "az stack mg create --name StackName --management-group-id myMg --action-on-unmanage deleteResources --template-file simpleTemplate.json --parameters simpleTemplateParams.json --location westus2 --description description --deny-settings-mode None",
+                "az stack mg create --name StackName --management-group-id myMg --template-spec TemplateSpecResourceIDWithVersion --location westus2 --description description --deny-settings-mode None --action-on-unmanage deleteResources",
+                "az stack mg create --name StackName --management-group-id myMg --action-on-unmanage deleteAll --template-file simple.bicep --location westus2 --description description --deny-settings-mode None",
+                "az stack mg create --name StackName --management-group-id myMg --template-file simpleTemplate.json --location westus --description description --parameters simpleTemplateParams.json value1=foo value2=bar --deny-settings-mode None --action-on-unmanage deleteResources",
+                "az stack mg create --name StackName --management-group-id myMg --template-file azuredeploy.json --parameters @params.json --parameters https://mysite/params.json --parameters MyValue=This MyArray=@array.json --location westus --deny-settings-mode None --action-on-unmanage deleteResources",
+                "az stack mg create --name StackName --management-group-id myMg --template-file azuredeploy.json --deny-settings-mode denyDelete --deny-settings-excluded-actions Microsoft.Compute/virtualMachines/write --deny-settings-excluded-principals \"test1 test2\" --location westus --action-on-unmanage deleteResources",
+                "az stack mg create --name StackName --management-group-id myMg --template-file azuredeploy.json --deny-settings-mode denyDelete --deny-settings-excluded-actions Microsoft.Compute/virtualMachines/write --deny-settings-apply-to-child-scopes --location westus --action-on-unmanage deleteResources"
+            ]
+        },
+        {
+            "name": "az stack mg delete",
+            "summary": "Delete specified deployment stack from management group scope.",
+            "syntax": "az stack mg delete --action-on-unmanage {deleteAll, deleteResources, detachAll}\n                   --management-group-id\n                   [--bse {false, true}]\n                   [--id]\n                   [--name]\n                   [--yes]",
+            "required_parameters": [
+                "--action-on-unmanage --aou",
+                "--management-group-id -m"
+            ],
+            "optional_parameters": [
+                "--bse --bypass-stack-out-of-sync-error",
+                "--id",
+                "--name -n",
+                "--yes"
+            ],
+            "examples": [
+                "az stack mg delete --name StackName --management-group-id myMg --action-on-unmanage detachAll",
+                "az stack mg delete --id /providers/Microsoft.Management/managementGroups/myMg/providers/Microsoft.Resources/deploymentStacks/StackName --management-group-id myMg --action-on-unmanage deleteAll"
+            ]
+        },
+        {
+            "name": "az stack mg export",
+            "summary": "Export the template used to create the deployment stack.",
+            "syntax": "az stack mg export --management-group-id\n                   [--id]\n                   [--name]",
+            "required_parameters": [
+                "--management-group-id -m"
+            ],
+            "optional_parameters": [
+                "--id",
+                "--name -n"
+            ],
+            "examples": [
+                "az stack mg export --name StackName --management-group-id myMg",
+                "az stack mg export --id /providers/Microsoft.Management/managementGroups/myMg/providers/Microsoft.Resources/deploymentStacks/StackName --management-group-id myMg"
+            ]
+        },
+        {
+            "name": "az stack mg list",
+            "summary": "List all deployment stacks in management group.",
+            "syntax": "az stack mg list --management-group-id",
+            "required_parameters": [
+                "--management-group-id -m"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az stack mg list --management-group-id myMg"
+            ]
+        },
+        {
+            "name": "az stack mg show",
+            "summary": "Get specified deployment stack from management group scope.",
+            "syntax": "az stack mg show --management-group-id\n                 [--id]\n                 [--name]",
+            "required_parameters": [
+                "--management-group-id -m"
+            ],
+            "optional_parameters": [
+                "--id",
+                "--name -n"
+            ],
+            "examples": [
+                "az stack mg show --name StackName --management-group-id myMg",
+                "az stack mg show --id /providers/Microsoft.Management/managementGroups/myMg/providers/Microsoft.Resources/deploymentStacks/StackName --management-group-id myMg"
+            ]
+        },
+        {
+            "name": "az stack mg validate",
+            "summary": "Validate a deployment stack at management group scope.",
+            "syntax": "az stack mg validate --action-on-unmanage {deleteAll, deleteResources, detachAll}\n                     --deny-settings-mode {denyDelete, denyWriteAndDelete, none}\n                     --location\n                     --management-group-id\n                     --name\n                     [--bse {false, true}]\n                     [--cs]\n                     [--deny-settings-excluded-actions]\n                     [--deny-settings-excluded-principals]\n                     [--deployment-subscription]\n                     [--description]\n                     [--parameters]\n                     [--query-string]\n                     [--tags]\n                     [--template-file]\n                     [--template-spec]\n                     [--template-uri]",
+            "required_parameters": [
+                "--action-on-unmanage --aou",
+                "--deny-settings-mode --dm",
+                "--location -l",
+                "--management-group-id -m",
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--bse --bypass-stack-out-of-sync-error",
+                "--cs --deny-settings-apply-to-child-scopes",
+                "--deny-settings-excluded-actions --ea",
+                "--deny-settings-excluded-principals --ep",
+                "--deployment-subscription --ds",
+                "--description",
+                "--parameters -p",
+                "--query-string -q",
+                "--tags",
+                "--template-file -f",
+                "--template-spec -s",
+                "--template-uri -u"
+            ],
+            "examples": [
+                "az stack mg validate --name StackName --management-group-id myMg --template-file simpleTemplate.json --location westus2 --description description --deny-settings-mode None --action-on-unmanage detachAll",
+                "az stack mg validate --name StackName --management-group-id myMg --action-on-unmanage deleteResources --template-file simpleTemplate.json --parameters simpleTemplateParams.json --location westus2 --description description --deny-settings-mode None",
+                "az stack mg validate --name StackName --management-group-id myMg --template-spec TemplateSpecResourceIDWithVersion --location westus2 --description description --deny-settings-mode None --action-on-unmanage deleteResources",
+                "az stack mg validate --name StackName --management-group-id myMg --action-on-unmanage deleteAll --template-file simple.bicep --location westus2 --description description --deny-settings-mode None",
+                "az stack mg validate --name StackName --management-group-id myMg --template-file simpleTemplate.json --location westus --description description --parameters simpleTemplateParams.json value1=foo value2=bar --deny-settings-mode None --action-on-unmanage deleteResources",
+                "az stack mg validate --name StackName --management-group-id myMg --template-file azuredeploy.json --parameters @params.json --parameters https://mysite/params.json --parameters MyValue=This MyArray=@array.json --location westus --deny-settings-mode None --action-on-unmanage deleteResources",
+                "az stack mg validate --name StackName --management-group-id myMg --template-file azuredeploy.json --deny-settings-mode denyDelete --deny-settings-excluded-actions Microsoft.Compute/virtualMachines/write --deny-settings-excluded-principals \"test1 test2\" --location westus --action-on-unmanage deleteResources",
+                "az stack mg validate --name StackName --management-group-id myMg --template-file azuredeploy.json --deny-settings-mode denyDelete --deny-settings-excluded-actions Microsoft.Compute/virtualMachines/write --deny-settings-apply-to-child-scopes --location westus --action-on-unmanage deleteResources"
+            ]
+        }
+    ]
+}

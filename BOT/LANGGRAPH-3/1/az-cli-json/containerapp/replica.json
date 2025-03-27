@@ -1,0 +1,89 @@
+{
+    "command_group": "az containerapp replica",
+    "description": "Manage container app replicas.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az containerapp replica count",
+            "summary": "Count of a container app's replica(s).",
+            "syntax": "az containerapp replica count --name\n                              --resource-group\n                              [--revision]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--revision"
+            ],
+            "examples": [
+                "az containerapp replica count -n my-containerapp -g MyResourceGroup --revision MyRevision",
+                "az containerapp replica count -n my-containerapp -g MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az containerapp replica list",
+            "summary": "List a container app revision's replica.",
+            "syntax": "az containerapp replica list --name\n                             --resource-group\n                             [--revision]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--revision"
+            ],
+            "examples": [
+                "az containerapp replica list -n my-containerapp -g MyResourceGroup",
+                "az containerapp replica list -n my-containerapp -g MyResourceGroup --revision MyRevision"
+            ]
+        },
+        {
+            "name": "az containerapp replica list",
+            "summary": "List a container app revision's replica.",
+            "syntax": "az containerapp replica list --name\n                             --resource-group\n                             [--revision]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--revision"
+            ],
+            "examples": [
+                "az containerapp replica list -n my-containerapp -g MyResourceGroup",
+                "az containerapp replica list -n my-containerapp -g MyResourceGroup --revision MyRevision"
+            ]
+        },
+        {
+            "name": "az containerapp replica show",
+            "summary": "Show a container app replica.",
+            "syntax": "az containerapp replica show --name\n                             --replica\n                             --resource-group\n                             [--revision]",
+            "required_parameters": [
+                "--name -n",
+                "--replica",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--revision"
+            ],
+            "examples": [
+                "az containerapp replica show -n my-containerapp -g MyResourceGroup --replica MyReplica",
+                "az containerapp replica show -n my-containerapp -g MyResourceGroup --replica MyReplica --revision MyRevision"
+            ]
+        },
+        {
+            "name": "az containerapp replica show",
+            "summary": "Show a container app replica.",
+            "syntax": "az containerapp replica show --name\n                             --replica\n                             --resource-group\n                             [--revision]",
+            "required_parameters": [
+                "--name -n",
+                "--replica",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--revision"
+            ],
+            "examples": [
+                "az containerapp replica show -n my-containerapp -g MyResourceGroup --replica MyReplica",
+                "az containerapp replica show -n my-containerapp -g MyResourceGroup --replica MyReplica --revision MyRevision"
+            ]
+        }
+    ]
+}

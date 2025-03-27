@@ -1,0 +1,80 @@
+{
+    "command_group": "az peering registered-prefix",
+    "description": "Peering registered-prefix.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az peering registered-prefix create",
+            "summary": "Creates a new registered prefix with the specified name under the given subscription, resource group and peering.",
+            "syntax": "az peering registered-prefix create --peering-name\n                                    --registered-prefix-name\n                                    --resource-group\n                                    [--prefix]",
+            "required_parameters": [
+                "--peering-name",
+                "--registered-prefix-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--prefix"
+            ],
+            "examples": [
+                "az peering registered-prefix create --peering-name \"peeringName\" --prefix \"10.22.20.0/24\" --registered-prefix-name \"registeredPrefixName\" --resource-group \"rgName\""
+            ]
+        },
+        {
+            "name": "az peering registered-prefix delete",
+            "summary": "Deletes an existing registered prefix with the specified name under the given subscription, resource group and peering.",
+            "syntax": "az peering registered-prefix delete --peering-name\n                                    --registered-prefix-name\n                                    --resource-group",
+            "required_parameters": [
+                "--peering-name",
+                "--registered-prefix-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az peering registered-prefix delete --peering-name \"peeringName\" --registered-prefix-name \"registeredPrefixName\" --resource-group \"rgName\""
+            ]
+        },
+        {
+            "name": "az peering registered-prefix list",
+            "summary": "Lists all registered prefixes under the given subscription, resource group and peering.",
+            "syntax": "az peering registered-prefix list --peering-name\n                                  --resource-group",
+            "required_parameters": [
+                "--peering-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az peering registered-prefix list --peering-name \"peeringName\" --resource-group \"rgName\""
+            ]
+        },
+        {
+            "name": "az peering registered-prefix show",
+            "summary": "Gets an existing registered prefix with the specified name under the given subscription, resource group and peering.",
+            "syntax": "az peering registered-prefix show --peering-name\n                                  --registered-prefix-name\n                                  --resource-group",
+            "required_parameters": [
+                "--peering-name",
+                "--registered-prefix-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az peering registered-prefix show --peering-name \"peeringName\" --registered-prefix-name \"registeredPrefixName\" --resource-group \"rgName\""
+            ]
+        },
+        {
+            "name": "az peering registered-prefix update",
+            "summary": "Creates a new registered prefix with the specified name under the given subscription, resource group and peering.",
+            "syntax": "az peering registered-prefix update --peering-name\n                                    --registered-prefix-name\n                                    --resource-group\n                                    [--prefix]",
+            "required_parameters": [
+                "--peering-name",
+                "--registered-prefix-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--prefix"
+            ],
+            "examples": [
+                "az peering registered-prefix update --peering-name \"peeringName\" --prefix \"10.22.20.0/24\" --registered-prefix-name \"registeredPrefixName\" --resource-group \"rgName\""
+            ]
+        }
+    ]
+}

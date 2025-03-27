@@ -1,0 +1,6 @@
+{
+    "command_group": "az storage-actions",
+    "description": "Manage StorageActions.",
+    "status": "Preview",
+    "commands": []
+}

@@ -1,0 +1,32 @@
+{
+    "command_group": "az mesh deployment",
+    "description": "Manage Service Fabric Mesh deployments.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az mesh deployment create",
+            "summary": "Create a Service Fabric Mesh application.",
+            "syntax": "az mesh deployment create --resource-group\n                          [--input-yaml-files]\n                          [--mode]\n                          [--name]\n                          [--no-wait]\n                          [--parameters]\n                          [--template-file]\n                          [--template-uri]",
+            "required_parameters": [
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--input-yaml-files",
+                "--mode",
+                "--name -n",
+                "--no-wait",
+                "--parameters",
+                "--template-file",
+                "--template-uri"
+            ],
+            "examples": [
+                "az mesh deployment create --resource-group mygroup --template-uri https://seabreezequickstart.blob.core.windows.net/templates/quickstart/sbz_rp.linux.json",
+                "az mesh deployment create --resource-group mygroup --template-file ./appTemplate.json",
+                "az mesh deployment create --resource-group mygroup --input-yaml-files ./app.yaml,./network.yaml",
+                "az mesh deployment create --resource-group mygroup --input-yaml-files ./app.yaml,./network.yaml --parameters ../params.yaml",
+                "az mesh deployment create --resource-group mygroup --input-yaml-files ./app.yaml,./network.yaml --parameters \"params.json\"",
+                "az mesh deployment create --resource-group mygroup --input-yaml-files ./app.yaml,./network.yaml --parameters \"{ 'location' : {'value' : 'eastus'}, 'myparam' : {'value' : 'myvalue'} }\""
+            ]
+        }
+    ]
+}

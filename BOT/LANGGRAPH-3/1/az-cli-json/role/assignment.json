@@ -1,0 +1,93 @@
+{
+    "command_group": "az role assignment",
+    "description": "Manage role assignments.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az role assignment create",
+            "summary": "Create a new role assignment for a user, group, or service principal.",
+            "syntax": "az role assignment create --role\n                          --scope\n                          [--assignee]\n                          [--assignee-object-id]\n                          [--assignee-principal-type {ForeignGroup, Group, ServicePrincipal, User}]\n                          [--condition]\n                          [--condition-version]\n                          [--description]\n                          [--name]",
+            "required_parameters": [
+                "--role",
+                "--scope"
+            ],
+            "optional_parameters": [
+                "--assignee",
+                "--assignee-object-id",
+                "--assignee-principal-type",
+                "--condition",
+                "--condition-version",
+                "--description",
+                "--name -n"
+            ],
+            "examples": [
+                "az role assignment create --assignee sp_name --role Reader --scope /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/MyResourceGroup/providers/Microsoft.Compute/virtualMachines/MyVm",
+                "az role assignment create --role Owner --scope /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/MyResourceGroup/providers/Microsoft.Storage/storageAccounts/MyStorageAccount --assignee \"John.Doe@Contoso.com\" --description \"Role assignment foo to check on bar\" --condition \"@Resource[Microsoft.Storage/storageAccounts/blobServices/containers:Name] stringEquals 'foo'\" --condition-version \"2.0\"",
+                "az role assignment create --assignee-object-id 00000000-0000-0000-0000-000000000000 --assignee-principal-type ServicePrincipal --role Reader --scope /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/MyResourceGroup --name 00000000-0000-0000-0000-000000000000"
+            ]
+        },
+        {
+            "name": "az role assignment delete",
+            "summary": "Delete role assignments.",
+            "syntax": "az role assignment delete [--assignee]\n                          [--ids]\n                          [--include-inherited]\n                          [--resource-group]\n                          [--role]\n                          [--scope]\n                          [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--assignee",
+                "--ids",
+                "--include-inherited",
+                "--resource-group -g",
+                "--role",
+                "--scope",
+                "--yes -y"
+            ],
+            "examples": [
+                "az role assignment delete --role Reader --scope /subscriptions/00000000-0000-0000-0000-000000000000",
+                "az role assignment delete --assignee 00000000-0000-0000-0000-000000000000 --scope /subscriptions/00000000-0000-0000-0000-000000000000"
+            ]
+        },
+        {
+            "name": "az role assignment list",
+            "summary": "List role assignments.",
+            "syntax": "az role assignment list [--all]\n                        [--assignee]\n                        [--include-classic-administrators {false, true}]\n                        [--include-groups]\n                        [--include-inherited]\n                        [--resource-group]\n                        [--role]\n                        [--scope]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--all",
+                "--assignee",
+                "--include-classic-administrators",
+                "--include-groups",
+                "--include-inherited",
+                "--resource-group -g",
+                "--role",
+                "--scope"
+            ],
+            "examples": [
+                "az role assignment list --role Reader --scope /subscriptions/00000000-0000-0000-0000-000000000000",
+                "az role assignment list --assignee 00000000-0000-0000-0000-000000000000 --scope /subscriptions/00000000-0000-0000-0000-000000000000"
+            ]
+        },
+        {
+            "name": "az role assignment list-changelogs",
+            "summary": "List changelogs for role assignments.",
+            "syntax": "az role assignment list-changelogs [--end-time]\n                                   [--start-time]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--end-time",
+                "--start-time"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az role assignment update",
+            "summary": "Update an existing role assignment for a user, group, or service principal.",
+            "syntax": "az role assignment update --role-assignment",
+            "required_parameters": [
+                "--role-assignment"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az role assignment update --role-assignment assignment.json",
+                "az role assignment update --role-assignment '{\n    \"canDelegate\": null,\n    \"condition\": \"@Resource[Microsoft.Storage/storageAccounts/blobServices/containers:Name] stringEquals '\"'\"'foo'\"'\"'\",\n    \"conditionVersion\": \"2.0\",\n    \"description\": \"Role assignment foo to check on bar\",\n    \"id\": \"/subscriptions/00000001-0000-0000-0000-000000000000/resourceGroups/rg1/providers/Microsoft.Authorization/roleAssignments/3eabdd43-375b-4dbd-8dc4-04acd15ce56b\",\n    \"name\": \"3eabdd43-375b-4dbd-8dc4-04acd15ce56b\",\n    \"principalId\": \"00000002-0000-0000-0000-000000000000\",\n    \"principalType\": \"User\",\n    \"resourceGroup\": \"rg1\",\n    \"roleDefinitionId\": \"/subscriptions/00000001-0000-0000-0000-000000000000/providers/Microsoft.Authorization/roleDefinitions/acdd72a7-3385-48ef-bd42-f606fba81ae7\",\n    \"scope\": \"/subscriptions/00000001-0000-0000-0000-000000000000/resourceGroups/rg1\",\n    \"type\": \"Microsoft.Authorization/roleAssignments\"\n}'"
+            ]
+        }
+    ]
+}

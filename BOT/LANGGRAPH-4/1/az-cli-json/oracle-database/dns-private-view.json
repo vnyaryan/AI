@@ -1,0 +1,22 @@
+{
+    "command_group": "az oracle-database dns-private-view",
+    "description": "DNS Private View.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az oracle-database dns-private-view list",
+            "summary": "List DnsPrivateView resources by Location.",
+            "syntax": "az oracle-database dns-private-view list --location\n                                         [--max-items]\n                                         [--next-token]",
+            "required_parameters": [
+                "--location -l"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az oracle-database dns-private-view list --location <location>"
+            ]
+        }
+    ]
+}

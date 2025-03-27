@@ -1,0 +1,67 @@
+{
+    "command_group": "az cdn profile-migration",
+    "description": "Classic cdn profile migration operations.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az cdn profile-migration abort",
+            "summary": "Abort the migration to Azure Frontdoor Premium/Standard.",
+            "syntax": "az cdn profile-migration abort [--ids]\n                               [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                               [--profile-name]\n                               [--resource-group]\n                               [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--no-wait",
+                "--profile-name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az cdn profile-migration check-compatibility",
+            "summary": "Checks if CDN profile can be migrated to Azure Frontdoor(Standard/Premium) profile.",
+            "syntax": "az cdn profile-migration check-compatibility [--ids]\n                                             [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                             [--profile-name]\n                                             [--resource-group]\n                                             [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--no-wait",
+                "--profile-name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az cdn profile-migration commit",
+            "summary": "Commit the migrated Azure Frontdoor(Standard/Premium) profile.",
+            "syntax": "az cdn profile-migration commit [--ids]\n                                [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                [--profile-name]\n                                [--resource-group]\n                                [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--no-wait",
+                "--profile-name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az cdn profile-migration migrate",
+            "summary": "Migrate the CDN profile to Azure Frontdoor(Standard/Premium) profile. This step prepares the profile for migration and will be followed by Commit to finalize the migration.",
+            "syntax": "az cdn profile-migration migrate [--identity-type {None, SystemAssigned, SystemAssigned, UserAssigned, UserAssigned}]\n                                 [--ids]\n                                 [--migration-endpoint-mappings]\n                                 [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                 [--profile-name]\n                                 [--resource-group]\n                                 [--sku {Custom_Verizon, Premium_AzureFrontDoor, Premium_Verizon, StandardPlus_955BandWidth_ChinaCdn, StandardPlus_AvgBandWidth_ChinaCdn, StandardPlus_ChinaCdn, Standard_955BandWidth_ChinaCdn, Standard_Akamai, Standard_AvgBandWidth_ChinaCdn, Standard_AzureFrontDoor, Standard_ChinaCdn, Standard_Microsoft, Standard_Verizon}]\n                                 [--subscription]\n                                 [--user-assigned-identities]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--identity-type",
+                "--ids",
+                "--migration-endpoint-mappings",
+                "--no-wait",
+                "--profile-name",
+                "--resource-group -g",
+                "--sku",
+                "--subscription",
+                "--user-assigned-identities"
+            ],
+            "examples": []
+        }
+    ]
+}

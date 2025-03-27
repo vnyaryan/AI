@@ -1,0 +1,83 @@
+{
+    "command_group": "az sql instance-failover-group",
+    "description": "Manage SQL Instance Failover Groups.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az sql instance-failover-group create",
+            "summary": "Creates an instance failover group between two connected managed instances.",
+            "syntax": "az sql instance-failover-group create --mi\n                                      --name\n                                      --partner-mi\n                                      --partner-resource-group\n                                      --resource-group\n                                      [--failover-policy {Automatic, Manual}]\n                                      [--grace-period]\n                                      [--secondary-type]",
+            "required_parameters": [
+                "--mi --source-mi",
+                "--name -n",
+                "--partner-mi",
+                "--partner-resource-group",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--failover-policy",
+                "--grace-period",
+                "--secondary-type"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az sql instance-failover-group delete",
+            "summary": "Deletes a failover group.",
+            "syntax": "az sql instance-failover-group delete --location\n                                      --name\n                                      --resource-group",
+            "required_parameters": [
+                "--location -l",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az sql instance-failover-group set-primary",
+            "summary": "Set the primary of the instance failover group by failing over all databases from the current primary managed instance.",
+            "syntax": "az sql instance-failover-group set-primary --location\n                                           --name\n                                           --resource-group\n                                           [--allow-data-loss]",
+            "required_parameters": [
+                "--location -l",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--allow-data-loss"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az sql instance-failover-group show",
+            "summary": "Gets a failover group.",
+            "syntax": "az sql instance-failover-group show --location\n                                    --name\n                                    --resource-group",
+            "required_parameters": [
+                "--location -l",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az sql instance-failover-group update",
+            "summary": "Updates the instance failover group.",
+            "syntax": "az sql instance-failover-group update --location\n                                      --name\n                                      --resource-group\n                                      [--add]\n                                      [--failover-policy {Automatic, Manual}]\n                                      [--force-string]\n                                      [--grace-period]\n                                      [--remove]\n                                      [--secondary-type]\n                                      [--set]",
+            "required_parameters": [
+                "--location -l",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--add",
+                "--failover-policy",
+                "--force-string",
+                "--grace-period",
+                "--remove",
+                "--secondary-type",
+                "--set"
+            ],
+            "examples": []
+        }
+    ]
+}

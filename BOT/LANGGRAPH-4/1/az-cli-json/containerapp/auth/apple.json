@@ -1,0 +1,42 @@
+{
+    "command_group": "az containerapp auth apple",
+    "description": "Manage containerapp authentication and authorization of the Apple identity provider.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az containerapp auth apple show",
+            "summary": "Show the authentication settings for the Apple identity provider.",
+            "syntax": "az containerapp auth apple show [--ids]\n                                [--name]\n                                [--resource-group]\n                                [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az containerapp auth apple show --name my-containerapp --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az containerapp auth apple update",
+            "summary": "Update the client id and client secret for the Apple identity provider.",
+            "syntax": "az containerapp auth apple update [--client-id]\n                                  [--client-secret]\n                                  [--client-secret-name]\n                                  [--ids]\n                                  [--name]\n                                  [--resource-group]\n                                  [--scopes]\n                                  [--subscription]\n                                  [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--client-id",
+                "--client-secret",
+                "--client-secret-name",
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--scopes",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az containerapp auth apple update  -g myResourceGroup --name my-containerapp \\\n  --client-id my-client-id --client-secret very_secret_password"
+            ]
+        }
+    ]
+}

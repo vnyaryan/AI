@@ -1,0 +1,91 @@
+{
+    "command_group": "az spring config-server git repo",
+    "description": "Commands to manage Config Server git repository in Azure Spring Apps.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az spring config-server git repo add",
+            "summary": "Add a new repository of git property of Config Server.",
+            "syntax": "az spring config-server git repo add --repo-name\n                                     --resource-group\n                                     --service\n                                     --uri\n                                     [--defer]\n                                     [--host-key]\n                                     [--host-key-algorithm]\n                                     [--host-key-check]\n                                     [--label]\n                                     [--password]\n                                     [--pattern]\n                                     [--private-key]\n                                     [--search-paths]\n                                     [--username]",
+            "required_parameters": [
+                "--repo-name",
+                "--resource-group -g",
+                "--service -s",
+                "--uri"
+            ],
+            "optional_parameters": [
+                "--defer",
+                "--host-key",
+                "--host-key-algorithm",
+                "--host-key-check --strict-host-key-checking",
+                "--label",
+                "--password",
+                "--pattern",
+                "--private-key",
+                "--search-paths",
+                "--username"
+            ],
+            "examples": [
+                "az spring config-server git repo add -s MyService -g MyResourceGroup --uri UrlOfGitRepository --repo-name GitRepoName"
+            ]
+        },
+        {
+            "name": "az spring config-server git repo list",
+            "summary": "List all repositories of git property of Config Server.",
+            "syntax": "az spring config-server git repo list --resource-group\n                                      --service\n                                      [--defer]",
+            "required_parameters": [
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [
+                "--defer"
+            ],
+            "examples": [
+                "az spring config-server git repo list -s MyService -g MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az spring config-server git repo remove",
+            "summary": "Remove an existing repository of git property of Config Server.",
+            "syntax": "az spring config-server git repo remove --repo-name\n                                        --resource-group\n                                        --service\n                                        [--defer]\n                                        [--yes]",
+            "required_parameters": [
+                "--repo-name",
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [
+                "--defer",
+                "--yes -y"
+            ],
+            "examples": [
+                "az spring config-server git repo remove -s MyService -g MyResourceGroup --repo-name GitRepoName"
+            ]
+        },
+        {
+            "name": "az spring config-server git repo update",
+            "summary": "Override an existing repository of git property of Config Server, will totally override the old one.",
+            "syntax": "az spring config-server git repo update --repo-name\n                                        --resource-group\n                                        --service\n                                        [--defer]\n                                        [--host-key]\n                                        [--host-key-algorithm]\n                                        [--host-key-check]\n                                        [--label]\n                                        [--password]\n                                        [--pattern]\n                                        [--private-key]\n                                        [--search-paths]\n                                        [--uri]\n                                        [--username]",
+            "required_parameters": [
+                "--repo-name",
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [
+                "--defer",
+                "--host-key",
+                "--host-key-algorithm",
+                "--host-key-check --strict-host-key-checking",
+                "--label",
+                "--password",
+                "--pattern",
+                "--private-key",
+                "--search-paths",
+                "--uri",
+                "--username"
+            ],
+            "examples": [
+                "az spring config-server git repo update -s MyService -g MyResourceGroup --uri UrlOfGitRepository --repo-name GitRepoName --label LabelOfGitRepository"
+            ]
+        }
+    ]
+}

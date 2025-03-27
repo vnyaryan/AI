@@ -1,0 +1,55 @@
+{
+    "command_group": "az sphere deployment",
+    "description": "Manage deployments in your resource group and catalog.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az sphere deployment create",
+            "summary": "Create a deployment.",
+            "syntax": "az sphere deployment create --catalog\n                            --device-group\n                            --images\n                            --product\n                            --resource-group",
+            "required_parameters": [
+                "--catalog -c",
+                "--device-group -dg",
+                "--images -i",
+                "--product -p",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az sphere deployment create --resource-group MyResourceGroup --catalog MyCatalog --product MyProduct --device-group MyDeviceGroup --images 25b91eed-1996-4049-ab9f-70982b87ad58",
+                "az sphere deployment create --resource-group MyResourceGroup --catalog MyCatalog --product MyProduct --device-group MyDeviceGroup --images 25b91eed-1996-4049-ab9f-70982b87ad58 48ecb7b3-c296-49cb-8dec-5fdaea0abb62"
+            ]
+        },
+        {
+            "name": "az sphere deployment list",
+            "summary": "List all deployments.",
+            "syntax": "az sphere deployment list --catalog\n                          --device-group\n                          --product\n                          --resource-group",
+            "required_parameters": [
+                "--catalog -c",
+                "--device-group -dg",
+                "--product -p",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az sphere deployment list --resource-group MyResourceGroup --catalog MyCatalog --product MyProduct --device-group MyDeviceGroup"
+            ]
+        },
+        {
+            "name": "az sphere deployment show",
+            "summary": "Show details of a deployment.",
+            "syntax": "az sphere deployment show --catalog\n                          --deployment-id\n                          --device-group\n                          --product\n                          --resource-group",
+            "required_parameters": [
+                "--catalog -c",
+                "--deployment-id -di",
+                "--device-group -dg",
+                "--product -p",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az sphere deployment show --resource-group MyResourceGroup --catalog MyCatalog --product MyProduct --device-group MyDeviceGroup --deployment-id 5422a862-cfc7-4cb8-a2d7-7ba71873b7b6"
+            ]
+        }
+    ]
+}

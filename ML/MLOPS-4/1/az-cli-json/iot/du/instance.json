@@ -1,0 +1,118 @@
+{
+    "command_group": "az iot du instance",
+    "description": "Device Update instance management.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az iot du instance create",
+            "summary": "Create a Device Update instance.",
+            "syntax": "az iot du instance create --account\n                          --instance\n                          --iothub-ids\n                          [--diagnostics-storage-id]\n                          [--enable-diagnostics {false, true}]\n                          [--no-wait]\n                          [--resource-group]\n                          [--tags]",
+            "required_parameters": [
+                "--account -n",
+                "--instance -i",
+                "--iothub-ids"
+            ],
+            "optional_parameters": [
+                "--diagnostics-storage-id",
+                "--enable-diagnostics",
+                "--no-wait",
+                "--resource-group -g",
+                "--tags"
+            ],
+            "examples": [
+                "az iot du instance create -n {account_name} -i {instance_name} --iothub-ids {iothub_resource_id}",
+                "az iot du instance create -n {account_name} -i {instance_name} --iothub-ids {iothub_resource_id} --enable-diagnostics --diagnostics-storage-id {storage_account_resource_id} --tags a=b"
+            ]
+        },
+        {
+            "name": "az iot du instance delete",
+            "summary": "Delete a Device Update instance.",
+            "syntax": "az iot du instance delete --account\n                          --instance\n                          [--no-wait]\n                          [--resource-group]\n                          [--yes {false, true}]",
+            "required_parameters": [
+                "--account -n",
+                "--instance -i"
+            ],
+            "optional_parameters": [
+                "--no-wait",
+                "--resource-group -g",
+                "--yes -y"
+            ],
+            "examples": [
+                "az iot du instance delete -n {account_name} -i {instance_name}",
+                "az iot du instance delete -n {account_name} -i {instance_name} -y"
+            ]
+        },
+        {
+            "name": "az iot du instance list",
+            "summary": "List Device Update instances.",
+            "syntax": "az iot du instance list --account\n                        [--resource-group]",
+            "required_parameters": [
+                "--account -n"
+            ],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az iot du instance list -n {account_name}"
+            ]
+        },
+        {
+            "name": "az iot du instance show",
+            "summary": "Show a Device Update instance.",
+            "syntax": "az iot du instance show --account\n                        --instance\n                        [--resource-group]",
+            "required_parameters": [
+                "--account -n",
+                "--instance -i"
+            ],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az iot du instance show -n {account_name} -i {instance_name}"
+            ]
+        },
+        {
+            "name": "az iot du instance update",
+            "summary": "Update a Device Update instance.",
+            "syntax": "az iot du instance update --account\n                          --instance\n                          [--add]\n                          [--force-string]\n                          [--no-wait]\n                          [--remove]\n                          [--resource-group]\n                          [--set]",
+            "required_parameters": [
+                "--account -n",
+                "--instance -i"
+            ],
+            "optional_parameters": [
+                "--add",
+                "--force-string",
+                "--no-wait",
+                "--remove",
+                "--resource-group -g",
+                "--set"
+            ],
+            "examples": [
+                "az iot du instance update -n {account_name} -i {instance_name} --set tags.env='test'",
+                "az iot du instance update -n {account_name} -i {instance_name} --set enableDiagnostics=true diagnosticStorageProperties.resourceId={storage_account_resource_id}"
+            ]
+        },
+        {
+            "name": "az iot du instance wait",
+            "summary": "Block until a desired instance resource state has been met.",
+            "syntax": "az iot du instance wait --account\n                        --instance\n                        [--created]\n                        [--custom]\n                        [--deleted]\n                        [--exists]\n                        [--interval]\n                        [--resource-group]\n                        [--timeout]\n                        [--updated]",
+            "required_parameters": [
+                "--account -n",
+                "--instance -i"
+            ],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--interval",
+                "--resource-group -g",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": [
+                "az iot du instance wait -n {account_name} -i {instance_name} --deleted"
+            ]
+        }
+    ]
+}

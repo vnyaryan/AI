@@ -1,0 +1,6 @@
+{
+    "command_group": "az logic",
+    "description": "Manage logic.",
+    "status": "GA",
+    "commands": []
+}

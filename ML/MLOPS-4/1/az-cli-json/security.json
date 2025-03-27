@@ -1,0 +1,6 @@
+{
+    "command_group": "az security",
+    "description": "Manage your security posture with Microsoft Defender for Cloud.",
+    "status": "GA",
+    "commands": []
+}

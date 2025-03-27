@@ -1,0 +1,49 @@
+{
+    "command_group": "az bot msteams",
+    "description": "Manage the Microsoft Teams Channel on a bot.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az bot msteams create",
+            "summary": "Create the Microsoft Teams Channel on a bot.",
+            "syntax": "az bot msteams create --name\n                      --resource-group\n                      [--add-disabled {false, true}]\n                      [--calling-web-hook]\n                      [--enable-calling {false, true}]\n                      [--location]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--add-disabled",
+                "--calling-web-hook",
+                "--enable-calling",
+                "--location -l"
+            ],
+            "examples": [
+                "az bot msteams create -n botName -g MyResourceGroup --enable-calling\n--calling-web-hook https://www.myapp.com/"
+            ]
+        },
+        {
+            "name": "az bot msteams delete",
+            "summary": "Delete the Microsoft Teams Channel on a bot.",
+            "syntax": "az bot msteams delete --name\n                      --resource-group",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az bot msteams show",
+            "summary": "Get details of the Microsoft Teams Channel on a bot.",
+            "syntax": "az bot msteams show --name\n                    --resource-group\n                    [--with-secrets {false, true}]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--with-secrets"
+            ],
+            "examples": []
+        }
+    ]
+}

@@ -1,0 +1,124 @@
+{
+    "command_group": "az devcenter admin plan-member",
+    "description": "Manage plan members.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az devcenter admin plan-member create",
+            "summary": "Create a dev center plan member resource.",
+            "syntax": "az devcenter admin plan-member create --member-id\n                                      --member-name\n                                      --member-type {Group, User}\n                                      --plan-name\n                                      --resource-group\n                                      [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                      [--tags]\n                                      [--tier]",
+            "required_parameters": [
+                "--member-id",
+                "--member-name --name -n",
+                "--member-type",
+                "--plan-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--no-wait",
+                "--tags",
+                "--tier"
+            ],
+            "examples": [
+                "az devcenter admin plan-member create --name \"d702f662-b3f2-4796-9e8c-13c22378ced3\" --plan-name \"ContosoPlan\" --resource-group \"rg1\" --tags CostCode=\"12345\" --member-id \"d702f662-b3f2-4796-9e8c-13c22378ced3\" --member-type \"User\"",
+                "az devcenter admin plan-member create --name \"d702f662-b3f2-4796-9e8c-13c22378ced3\" --plan-name \"ContosoPlan\" --resource-group \"rg1\" --tags CostCode=\"12345\" --member-id \"d702f662-b3f2-4796-9e8c-13c22378ced3\" --member-type \"Group\""
+            ]
+        },
+        {
+            "name": "az devcenter admin plan-member delete",
+            "summary": "Delete a dev center plan member.",
+            "syntax": "az devcenter admin plan-member delete [--ids]\n                                      [--member-name]\n                                      [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                      [--plan-name]\n                                      [--resource-group]\n                                      [--subscription]\n                                      [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--member-name --name -n",
+                "--no-wait",
+                "--plan-name",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az devcenter admin plan-member delete --name \"d702f662-b3f2-4796-9e8c-13c22378ced3\" --plan-name \"ContosoPlan\" --resource-group \"rg1\""
+            ]
+        },
+        {
+            "name": "az devcenter admin plan-member list",
+            "summary": "List all of the members assigned to a devcenter plan.",
+            "syntax": "az devcenter admin plan-member list --plan-name\n                                    --resource-group\n                                    [--max-items]\n                                    [--next-token]",
+            "required_parameters": [
+                "--plan-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az devcenter admin plan-member list  --plan-name \"ContosoPlan\" --resource-group \"rg1\""
+            ]
+        },
+        {
+            "name": "az devcenter admin plan-member show",
+            "summary": "Get a devcenter plan member.",
+            "syntax": "az devcenter admin plan-member show [--ids]\n                                    [--member-name]\n                                    [--plan-name]\n                                    [--resource-group]\n                                    [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--member-name --name -n",
+                "--plan-name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az devcenter admin plan-member show --name \"d702f662-b3f2-4796-9e8c-13c22378ced3\" --plan-name \"ContosoPlan\" --resource-group \"rg1\""
+            ]
+        },
+        {
+            "name": "az devcenter admin plan-member update",
+            "summary": "Update a devcenter plan member resource.",
+            "syntax": "az devcenter admin plan-member update [--add]\n                                      [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                      [--ids]\n                                      [--member-id]\n                                      [--member-name]\n                                      [--member-type {Group, User}]\n                                      [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                      [--plan-name]\n                                      [--remove]\n                                      [--resource-group]\n                                      [--set]\n                                      [--subscription]\n                                      [--tags]\n                                      [--tier]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--force-string",
+                "--ids",
+                "--member-id",
+                "--member-name --name -n",
+                "--member-type",
+                "--no-wait",
+                "--plan-name",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--subscription",
+                "--tags",
+                "--tier"
+            ],
+            "examples": [
+                "az devcenter admin plan-member update --name \"d702f662-b3f2-4796-9e8c-13c22378ced3\" --plan-name \"ContosoPlan\" --resource-group \"rg1\" --tags CostCode=\"12345\""
+            ]
+        },
+        {
+            "name": "az devcenter admin plan-member wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az devcenter admin plan-member wait [--created]\n                                    [--custom]\n                                    [--deleted]\n                                    [--exists]\n                                    [--ids]\n                                    [--interval]\n                                    [--member-name]\n                                    [--plan-name]\n                                    [--resource-group]\n                                    [--subscription]\n                                    [--timeout]\n                                    [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--member-name --name -n",
+                "--plan-name",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

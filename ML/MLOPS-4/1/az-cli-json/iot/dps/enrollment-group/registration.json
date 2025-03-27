@@ -1,0 +1,54 @@
+{
+    "command_group": "az iot dps enrollment-group registration",
+    "description": "Manage service-side device registrations for an enrollment group in an Azure IoT Hub Device Provisioning Service.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az iot dps enrollment-group registration delete",
+            "summary": "Delete a device registration for an enrollment group in an Azure IoT Hub Device Provisioning Service.",
+            "syntax": "az iot dps enrollment-group registration delete --registration-id\n                                                [--auth-type {key, login}]\n                                                [--dps-name]\n                                                [--etag]\n                                                [--login]\n                                                [--resource-group]",
+            "required_parameters": [
+                "--registration-id --rid"
+            ],
+            "optional_parameters": [
+                "--auth-type",
+                "--dps-name -n",
+                "--etag -e",
+                "--login -l",
+                "--resource-group -g"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az iot dps enrollment-group registration list",
+            "summary": "List device registrations for an enrollment group in an Azure IoT Hub Device Provisioning Service.",
+            "syntax": "az iot dps enrollment-group registration list --eid\n                                              [--auth-type {key, login}]\n                                              [--dps-name]\n                                              [--login]\n                                              [--resource-group]\n                                              [--top]",
+            "required_parameters": [
+                "--eid --enrollment-id --gid --group-id"
+            ],
+            "optional_parameters": [
+                "--auth-type",
+                "--dps-name -n",
+                "--login -l",
+                "--resource-group -g",
+                "--top"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az iot dps enrollment-group registration show",
+            "summary": "Get a device registration for an enrollment group in an Azure IoT Hub Device Provisioning Service.",
+            "syntax": "az iot dps enrollment-group registration show --registration-id\n                                              [--auth-type {key, login}]\n                                              [--dps-name]\n                                              [--login]\n                                              [--resource-group]",
+            "required_parameters": [
+                "--registration-id --rid"
+            ],
+            "optional_parameters": [
+                "--auth-type",
+                "--dps-name -n",
+                "--login -l",
+                "--resource-group -g"
+            ],
+            "examples": []
+        }
+    ]
+}

@@ -1,0 +1,45 @@
+{
+    "command_group": "az acr identity",
+    "description": "Manage service (managed) identities for a container registry.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az acr identity assign",
+            "summary": "Assign a managed identity to a container registry.",
+            "syntax": "az acr identity assign --identities\n                       --name\n                       [--resource-group]",
+            "required_parameters": [
+                "--identities",
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az acr identity remove",
+            "summary": "Remove a managed identity from a container registry.",
+            "syntax": "az acr identity remove --identities\n                       --name\n                       [--resource-group]",
+            "required_parameters": [
+                "--identities",
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az acr identity show",
+            "summary": "Show the container registry's identity details.",
+            "syntax": "az acr identity show --name\n                     [--resource-group]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": []
+        }
+    ]
+}

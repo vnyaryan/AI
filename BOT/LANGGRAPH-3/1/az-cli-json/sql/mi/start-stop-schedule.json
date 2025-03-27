@@ -1,0 +1,94 @@
+{
+    "command_group": "az sql mi start-stop-schedule",
+    "description": "Manage the managed instance's start stop schedule.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az sql mi start-stop-schedule create",
+            "summary": "Create the managed instance's Start/Stop schedule.",
+            "syntax": "az sql mi start-stop-schedule create --managed-instance\n                                     --resource-group\n                                     [--description]\n                                     [--schedule-list]\n                                     [--timezone-id]",
+            "required_parameters": [
+                "--managed-instance --mi",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--description",
+                "--schedule-list",
+                "--timezone-id"
+            ],
+            "examples": [
+                "az sql mi start-stop-schedule create --mi miName -g resourceGroup --subscription subscriptionId --schedule-list \"[{'startDay':'Monday','startTime':'10:00 AM','stopDay':'Monday','stopTime':'12:00 AM'}]\""
+            ]
+        },
+        {
+            "name": "az sql mi start-stop-schedule delete",
+            "summary": "Delete the managed instance's Start/Stop schedule.",
+            "syntax": "az sql mi start-stop-schedule delete [--ids]\n                                     [--managed-instance]\n                                     [--resource-group]\n                                     [--subscription]\n                                     [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--managed-instance --mi",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az sql mi start-stop-schedule delete --ids resourceId\naz sql mi start-stop-schedule delete --mi miName -g resourceGroup --subscription subscriptionId"
+            ]
+        },
+        {
+            "name": "az sql mi start-stop-schedule list",
+            "summary": "List the managed instance's Start/Stop schedules.",
+            "syntax": "az sql mi start-stop-schedule list [--ids]\n                                   [--managed-instance]\n                                   [--resource-group]\n                                   [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--managed-instance --mi",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az sql mi start-stop-schedule list --ids resourceId\naz sql mi start-stop-schedule list --mi miName -g resourceGroup --subscription subscriptionId"
+            ]
+        },
+        {
+            "name": "az sql mi start-stop-schedule show",
+            "summary": "Get the managed instance's Start/Stop schedule.",
+            "syntax": "az sql mi start-stop-schedule show [--ids]\n                                   [--managed-instance]\n                                   [--resource-group]\n                                   [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--managed-instance --mi",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az sql mi start-stop-schedule show --ids resourceId\naz sql mi start-stop-schedule show --mi miName -g resourceGroup --subscription subscriptionId"
+            ]
+        },
+        {
+            "name": "az sql mi start-stop-schedule update",
+            "summary": "Update the managed instance's Start/Stop schedule.",
+            "syntax": "az sql mi start-stop-schedule update [--add]\n                                     [--description]\n                                     [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                     [--ids]\n                                     [--managed-instance]\n                                     [--remove]\n                                     [--resource-group]\n                                     [--schedule-list]\n                                     [--set]\n                                     [--subscription]\n                                     [--timezone-id]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--description",
+                "--force-string",
+                "--ids",
+                "--managed-instance --mi",
+                "--remove",
+                "--resource-group -g",
+                "--schedule-list",
+                "--set",
+                "--subscription",
+                "--timezone-id"
+            ],
+            "examples": [
+                "az sql mi start-stop-schedule update --ids resourceId --schedule-list \"[{'startDay':'Monday','startTime':'10:00 AM','stopDay':'Monday','stopTime':'12:00 AM'}]\"\naz sql mi start-stop-schedule update --mi miName -g resourceGroup --subscription subscriptionId --schedule-list \"[{'startDay':'Monday','startTime':'10:00 AM','stopDay':'Monday','stopTime':'12:00 AM'}]\"",
+                "az sql mi start-stop-schedule update --ids resourceId --add schedule_list \"{'startDay':'Monday','startTime':'10:00 AM','stopDay':'Monday','stopTime':'12:00 AM'}\"",
+                "az sql mi start-stop-schedule update --ids resourceId --remove schedule_list index(0 based)"
+            ]
+        }
+    ]
+}

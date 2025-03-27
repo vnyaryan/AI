@@ -1,0 +1,223 @@
+{
+    "command_group": "az dynatrace monitor",
+    "description": "Manage dynatrace monitor.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az dynatrace monitor create",
+            "summary": "Create a monitor resource.",
+            "syntax": "az dynatrace monitor create --monitor-name\n                            --resource-group\n                            [--environment]\n                            [--identity]\n                            [--location]\n                            [--monitoring-status {Disabled, Enabled}]\n                            [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                            [--plan-data]\n                            [--subscription-status {Active, Suspended}]\n                            [--tags]\n                            [--user-info]",
+            "required_parameters": [
+                "--monitor-name --name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--environment",
+                "--identity",
+                "--location -l",
+                "--monitoring-status",
+                "--no-wait",
+                "--plan-data",
+                "--subscription-status",
+                "--tags",
+                "--user-info"
+            ],
+            "examples": [
+                "az dynatrace monitor create -g rg -n monitor --user-info \"{first-name:Alice,last-name:Bobab,email-address:Alice@microsoft.com,phone-number:1234567890,country:US}\" --plan-data \"{usage-type:committed,billing-cycle:Monthly,plan-details:azureportalintegration_privatepreview@TIDhjdtn7tfnxcy,effective-date:2022-08-20}\" --environment \"{single-sign-on:{aad-domains:['abc']}}\""
+            ]
+        },
+        {
+            "name": "az dynatrace monitor delete",
+            "summary": "Delete a monitor resource.",
+            "syntax": "az dynatrace monitor delete [--ids]\n                            [--monitor-name]\n                            [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                            [--resource-group]\n                            [--subscription]\n                            [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--monitor-name --name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az dynatrace monitor delete -n monitor -g rg -y"
+            ]
+        },
+        {
+            "name": "az dynatrace monitor get-metric-status",
+            "summary": "Get metric status.",
+            "syntax": "az dynatrace monitor get-metric-status [--ids]\n                                       [--monitor-name]\n                                       [--resource-group]\n                                       [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--monitor-name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az dynatrace monitor get-metric-status --resource-group rgDynatrace --monitor-name fhcjxnxumkdlgpwanewtkdnyuz"
+            ]
+        },
+        {
+            "name": "az dynatrace monitor get-sso-detail",
+            "summary": "Get the SSO configuration details from the partner.",
+            "syntax": "az dynatrace monitor get-sso-detail --monitor-name\n                                    --resource-group\n                                    [--user-principal]",
+            "required_parameters": [
+                "--monitor-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--user-principal"
+            ],
+            "examples": [
+                "az dynatrace monitor get-sso-detail -g rg --monitor-name monitor  --user-principal Alice@microsoft.com"
+            ]
+        },
+        {
+            "name": "az dynatrace monitor get-vm-host-payload",
+            "summary": "Return the payload that need to be passed in the request body for installing Dynatrace agent on a VM.",
+            "syntax": "az dynatrace monitor get-vm-host-payload --monitor-name\n                                         --resource-group",
+            "required_parameters": [
+                "--monitor-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az dynatrace monitor get-vm-host-payload -g rg --monitor-name monitor"
+            ]
+        },
+        {
+            "name": "az dynatrace monitor list",
+            "summary": "List all monitor resource by monitor name in a resource group.",
+            "syntax": "az dynatrace monitor list --resource-group\n                          [--max-items]\n                          [--next-token]",
+            "required_parameters": [
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az dynatrace monitor list -g rg --monitor-name monitor"
+            ]
+        },
+        {
+            "name": "az dynatrace monitor list-app-service",
+            "summary": "Get list of app services with dynatrace PaaS OneAgent enabled.",
+            "syntax": "az dynatrace monitor list-app-service --monitor-name\n                                      --resource-group\n                                      [--max-items]\n                                      [--next-token]",
+            "required_parameters": [
+                "--monitor-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az dynatrace monitor list-app-service -g rg --monitor-name monitor"
+            ]
+        },
+        {
+            "name": "az dynatrace monitor list-host",
+            "summary": "List the compute resources currently being monitored by the dynatrace resource.",
+            "syntax": "az dynatrace monitor list-host --monitor-name\n                               --resource-group\n                               [--max-items]\n                               [--next-token]",
+            "required_parameters": [
+                "--monitor-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az dynatrace monitor list-host -g rg --monitor-name monitor"
+            ]
+        },
+        {
+            "name": "az dynatrace monitor list-linkable-environment",
+            "summary": "Get all the dynatrace environments that a user can link a azure resource to.",
+            "syntax": "az dynatrace monitor list-linkable-environment --monitor-name\n                                               --resource-group\n                                               [--max-items]\n                                               [--next-token]\n                                               [--region]\n                                               [--tenant-id]\n                                               [--user-principal]",
+            "required_parameters": [
+                "--monitor-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token",
+                "--region",
+                "--tenant-id",
+                "--user-principal"
+            ],
+            "examples": [
+                "az dynatrace monitor list-linkable-environment -g rg --monitor-name monitor --user-principal Alice@microsoft.com --region eastus2euap"
+            ]
+        },
+        {
+            "name": "az dynatrace monitor list-monitored-resource",
+            "summary": "List the resources currently being monitored by the dynatrace monitor resource.",
+            "syntax": "az dynatrace monitor list-monitored-resource --monitor-name\n                                             --resource-group\n                                             [--max-items]\n                                             [--next-token]",
+            "required_parameters": [
+                "--monitor-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az dynatrace monitor list-monitored-resource -g rg --monitor-name monitor"
+            ]
+        },
+        {
+            "name": "az dynatrace monitor show",
+            "summary": "Show a monitor resource.",
+            "syntax": "az dynatrace monitor show [--ids]\n                          [--monitor-name]\n                          [--resource-group]\n                          [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--monitor-name --name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az dynatrace monitor show -g rg -n monitor"
+            ]
+        },
+        {
+            "name": "az dynatrace monitor update",
+            "summary": "Update a MonitorResource.",
+            "syntax": "az dynatrace monitor update [--ids]\n                            [--monitor-name]\n                            [--resource-group]\n                            [--subscription]\n                            [--tags]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--monitor-name --name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--tags"
+            ],
+            "examples": [
+                "az dynatrace monitor update -g {rg} -n {monitor} --tags {{env:dev}}"
+            ]
+        },
+        {
+            "name": "az dynatrace monitor wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az dynatrace monitor wait [--created]\n                          [--custom]\n                          [--deleted]\n                          [--exists]\n                          [--ids]\n                          [--interval]\n                          [--monitor-name]\n                          [--resource-group]\n                          [--subscription]\n                          [--timeout]\n                          [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--monitor-name --name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

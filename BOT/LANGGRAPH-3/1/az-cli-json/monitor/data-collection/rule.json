@@ -1,0 +1,118 @@
+{
+    "command_group": "az monitor data-collection rule",
+    "description": "Manage data collection rule for monitor control service.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az monitor data-collection rule create",
+            "summary": "Create a data collection rule.",
+            "syntax": "az monitor data-collection rule create --data-collection-rule-name\n                                       --resource-group\n                                       [--agent-settings]\n                                       [--data-collection-endpoint-id]\n                                       [--data-flows]\n                                       [--data-sources]\n                                       [--description]\n                                       [--destinations]\n                                       [--identity]\n                                       [--kind]\n                                       [--location]\n                                       [--references]\n                                       [--rule-file]\n                                       [--stream-declarations]\n                                       [--tags]",
+            "required_parameters": [
+                "--data-collection-rule-name --name --rule-name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--agent-settings",
+                "--data-collection-endpoint-id --endpoint-id",
+                "--data-flows",
+                "--data-sources",
+                "--description",
+                "--destinations",
+                "--identity",
+                "--kind",
+                "--location -l",
+                "--references",
+                "--rule-file",
+                "--stream-declarations",
+                "--tags"
+            ],
+            "examples": [
+                "az monitor data-collection rule create --resource-group \"myResourceGroup\" --location \"eastus\" --name \"myCollectionRule\" --rule-file \"C:\\samples\\dcrEx1.json\""
+            ]
+        },
+        {
+            "name": "az monitor data-collection rule delete",
+            "summary": "Delete a data collection rule.",
+            "syntax": "az monitor data-collection rule delete [--data-collection-rule-name]\n                                       [--delete-associations {0, 1, f, false, n, no, t, true, y, yes}]\n                                       [--ids]\n                                       [--resource-group]\n                                       [--subscription]\n                                       [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--data-collection-rule-name --name --rule-name -n",
+                "--delete-associations",
+                "--ids",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az monitor data-collection rule delete --name \"myCollectionRule\" --resource-group \"myResourceGroup\""
+            ]
+        },
+        {
+            "name": "az monitor data-collection rule list",
+            "summary": "List all data collection rules in the specified resource group. And Lists all data collection rules in the specified subscription.",
+            "syntax": "az monitor data-collection rule list [--max-items]\n                                     [--next-token]\n                                     [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az monitor data-collection rule list --resource-group \"myResourceGroup\"",
+                "az monitor data-collection rule list"
+            ]
+        },
+        {
+            "name": "az monitor data-collection rule show",
+            "summary": "Return the specified data collection rule.",
+            "syntax": "az monitor data-collection rule show [--data-collection-rule-name]\n                                     [--ids]\n                                     [--resource-group]\n                                     [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--data-collection-rule-name --name --rule-name -n",
+                "--ids",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az monitor data-collection rule show --name \"myCollectionRule\" --resource-group \"myResourceGroup\""
+            ]
+        },
+        {
+            "name": "az monitor data-collection rule update",
+            "summary": "Update a data collection rule.",
+            "syntax": "az monitor data-collection rule update [--add]\n                                       [--agent-settings]\n                                       [--data-collection-endpoint-id]\n                                       [--data-collection-rule-name]\n                                       [--data-flows]\n                                       [--data-flows-raw]\n                                       [--data-sources]\n                                       [--description]\n                                       [--destinations]\n                                       [--extensions]\n                                       [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                       [--identity]\n                                       [--ids]\n                                       [--kind]\n                                       [--log-analytics]\n                                       [--monitor-metrics]\n                                       [--performance-counters]\n                                       [--references]\n                                       [--remove]\n                                       [--resource-group]\n                                       [--set]\n                                       [--stream-declarations]\n                                       [--subscription]\n                                       [--syslog]\n                                       [--tags]\n                                       [--windows-event-logs]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--agent-settings",
+                "--data-collection-endpoint-id --endpoint-id",
+                "--data-collection-rule-name --name --rule-name -n",
+                "--data-flows --data-flows-remain",
+                "--data-flows-raw",
+                "--data-sources",
+                "--description",
+                "--destinations",
+                "--extensions",
+                "--force-string",
+                "--identity",
+                "--ids",
+                "--kind",
+                "--log-analytics",
+                "--monitor-metrics",
+                "--performance-counters",
+                "--references",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--stream-declarations",
+                "--subscription",
+                "--syslog",
+                "--tags",
+                "--windows-event-logs"
+            ],
+            "examples": [
+                "az monitor data-collection rule update --resource-group \"myResourceGroup\" --name \"myCollectionRule\" --data-flows destinations=\"centralWorkspace\" streams=\"Microsoft-Perf\" streams=\"Microsoft-Syslog\" streams=\"Microsoft-WindowsEvent\" --log-analytics name=\"centralWorkspace\" resource-id=\"/subscriptions/703362b3-f278-4e4b-9179- c76eaf41ffc2/resourceGroups/myResourceGroup/providers/Microsoft.OperationalInsights/workspac es/centralTeamWorkspace\" --performance-counters name=\"appTeamExtraCounters\" counter- specifiers=\"\\Process(_Total)\\Thread Count\" sampling-frequency=30 streams=\"Microsoft-Perf\" --syslog name=\"cronSyslog\" facility-names=\"cron\" log-levels=\"Debug\" log-levels=\"Critical\" log-levels=\"Emergency\" streams=\"Microsoft-Syslog\" --windows-event-logs name=\"cloudSecurityTeamEvents\" streams=\"Microsoft-WindowsEvent\" x-path-queries=\"Security!\""
+            ]
+        }
+    ]
+}

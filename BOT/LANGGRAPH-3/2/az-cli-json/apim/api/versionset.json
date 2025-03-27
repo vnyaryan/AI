@@ -1,0 +1,98 @@
+{
+    "command_group": "az apim api versionset",
+    "description": "Manage Azure API Management API Version Set.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az apim api versionset create",
+            "summary": "Creates a Api Version Set.",
+            "syntax": "az apim api versionset create --display-name\n                              --resource-group\n                              --service-name\n                              --versioning-scheme\n                              [--description]\n                              [--if-match]\n                              [--version-header-name]\n                              [--version-query-name]\n                              [--version-set-id]",
+            "required_parameters": [
+                "--display-name",
+                "--resource-group -g",
+                "--service-name -n",
+                "--versioning-scheme"
+            ],
+            "optional_parameters": [
+                "--description",
+                "--if-match",
+                "--version-header-name",
+                "--version-query-name",
+                "--version-set-id"
+            ],
+            "examples": [
+                "az apim api versionset create --resource-group MyResourceGroup --service-name MyServiceName --version-set-id MyVersionSetId --display-name MyDisplayName --versioning-scheme \"Header\" --description MyDescription --version-header-name MyHeaderName",
+                "az apim api versionset create --resource-group MyResourceGroup --service-name MyServiceName --version-set-id MyVersionSetId --display-name MyDisplayName --versioning-scheme \"Query\" --description MyDescription --version-query-name MyQueryName"
+            ]
+        },
+        {
+            "name": "az apim api versionset delete",
+            "summary": "Deletes specific Api Version Set.",
+            "syntax": "az apim api versionset delete --resource-group\n                              --service-name\n                              --version-set-id\n                              [--if-match]",
+            "required_parameters": [
+                "--resource-group -g",
+                "--service-name -n",
+                "--version-set-id"
+            ],
+            "optional_parameters": [
+                "--if-match"
+            ],
+            "examples": [
+                "az apim api versionset delete --resource-group MyResourceGroup --service-name MyServiceName --version-set-id MyVersionSetId"
+            ]
+        },
+        {
+            "name": "az apim api versionset list",
+            "summary": "Lists a collection of API Version Sets in the specified service instance.",
+            "syntax": "az apim api versionset list --resource-group\n                            --service-name",
+            "required_parameters": [
+                "--resource-group -g",
+                "--service-name -n"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az apim api versionset list --resource-group MyResourceGroup --service-name MyServiceName"
+            ]
+        },
+        {
+            "name": "az apim api versionset show",
+            "summary": "Gets the details of the Api Version Set specified by its identifier.",
+            "syntax": "az apim api versionset show --resource-group\n                            --service-name\n                            --version-set-id",
+            "required_parameters": [
+                "--resource-group -g",
+                "--service-name -n",
+                "--version-set-id"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az apim api versionset show --resource-group MyResourceGroup --service-name MyServiceName --version-set-id MyVersionSetId"
+            ]
+        },
+        {
+            "name": "az apim api versionset update",
+            "summary": "Updates the details of the Api VersionSet specified by its identifier.",
+            "syntax": "az apim api versionset update --resource-group\n                              --service-name\n                              --version-set-id\n                              [--add]\n                              [--description]\n                              [--display-name]\n                              [--force-string]\n                              [--if-match]\n                              [--remove]\n                              [--set]\n                              [--version-header-name]\n                              [--version-query-name]\n                              [--versioning-scheme]",
+            "required_parameters": [
+                "--resource-group -g",
+                "--service-name -n",
+                "--version-set-id"
+            ],
+            "optional_parameters": [
+                "--add",
+                "--description",
+                "--display-name",
+                "--force-string",
+                "--if-match",
+                "--remove",
+                "--set",
+                "--version-header-name",
+                "--version-query-name",
+                "--versioning-scheme"
+            ],
+            "examples": [
+                "az apim api versionset update --resource-group MyResourceGroup --service-name MyServiceName --version-set-id MyVersionSetId --display-name MyNewDisplayName --description MyNewDescription",
+                "az apim api versionset update --resource-group MyResourceGroup --service-name MyServiceName --version-set-id MyVersionSetId --versioning-scheme \"Query\" --version-query-name MyNewQueryName"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,20 @@
+{
+    "command_group": "az batch pool supported-images",
+    "description": "Query information on VM images supported by Azure Batch service.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az batch pool supported-images list",
+            "summary": "Lists all Virtual Machine Images supported by the Azure Batch service.",
+            "syntax": "az batch pool supported-images list [--account-endpoint]\n                                    [--account-key]\n                                    [--account-name]\n                                    [--filter]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account-endpoint",
+                "--account-key",
+                "--account-name",
+                "--filter"
+            ],
+            "examples": []
+        }
+    ]
+}

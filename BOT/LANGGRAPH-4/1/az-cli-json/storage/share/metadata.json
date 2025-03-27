@@ -1,0 +1,43 @@
+{
+    "command_group": "az storage share metadata",
+    "description": "Manage the metadata of a file share.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az storage share metadata show",
+            "summary": "Return all user-defined metadata for the specified share.",
+            "syntax": "az storage share metadata show --name\n                               [--account-key]\n                               [--account-name]\n                               [--connection-string]\n                               [--file-endpoint]\n                               [--sas-token]\n                               [--snapshot]\n                               [--timeout]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--account-key",
+                "--account-name",
+                "--connection-string",
+                "--file-endpoint",
+                "--sas-token",
+                "--snapshot",
+                "--timeout"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az storage share metadata update",
+            "summary": "Set one or more user-defined name-value pairs for the specified share.",
+            "syntax": "az storage share metadata update --name\n                                 [--account-key]\n                                 [--account-name]\n                                 [--connection-string]\n                                 [--file-endpoint]\n                                 [--metadata]\n                                 [--sas-token]\n                                 [--timeout]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--account-key",
+                "--account-name",
+                "--connection-string",
+                "--file-endpoint",
+                "--metadata",
+                "--sas-token",
+                "--timeout"
+            ],
+            "examples": []
+        }
+    ]
+}

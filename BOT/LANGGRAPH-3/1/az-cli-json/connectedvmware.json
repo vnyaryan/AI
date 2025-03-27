@@ -1,0 +1,6 @@
+{
+    "command_group": "az connectedvmware",
+    "description": "Commands to manage Connected VMware.",
+    "status": "GA",
+    "commands": []
+}

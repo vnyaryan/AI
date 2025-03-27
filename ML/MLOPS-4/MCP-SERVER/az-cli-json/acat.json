@@ -1,0 +1,43 @@
+{
+    "command_group": "az acat",
+    "description": "Manage App Compliance Automation Tool reports.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az acat onboard",
+            "summary": "Onboard given subscriptions to Microsoft.AppComplianceAutomation provider.",
+            "syntax": "az acat onboard --subscription-ids\n                [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]",
+            "required_parameters": [
+                "--subscription-ids"
+            ],
+            "optional_parameters": [
+                "--no-wait"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az acat quick-evaluation",
+            "summary": "Trigger quick evaluation for the given subscriptions.",
+            "syntax": "az acat quick-evaluation --resource-ids\n                         [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]",
+            "required_parameters": [
+                "--resource-ids"
+            ],
+            "optional_parameters": [
+                "--no-wait"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az acat trigger-evaluation",
+            "summary": "Trigger quick evaluation for the given subscriptions.",
+            "syntax": "az acat trigger-evaluation --resource-ids\n                           [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]",
+            "required_parameters": [
+                "--resource-ids"
+            ],
+            "optional_parameters": [
+                "--no-wait"
+            ],
+            "examples": []
+        }
+    ]
+}

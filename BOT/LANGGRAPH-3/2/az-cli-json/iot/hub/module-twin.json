@@ -1,0 +1,71 @@
+{
+    "command_group": "az iot hub module-twin",
+    "description": "Manage IoT device module twin configuration.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az iot hub module-twin replace",
+            "summary": "Replace a module twin definition with target json.",
+            "syntax": "az iot hub module-twin replace --device-id\n                               --json\n                               --module-id\n                               [--auth-type {key, login}]\n                               [--etag]\n                               [--hub-name]\n                               [--login]\n                               [--resource-group]",
+            "required_parameters": [
+                "--device-id -d",
+                "--json -j",
+                "--module-id -m"
+            ],
+            "optional_parameters": [
+                "--auth-type",
+                "--etag -e",
+                "--hub-name -n",
+                "--login -l",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az iot hub module-twin replace -d {device_id} -n {iothub_name} -m {module_name} -j ../mymodtwin.json"
+            ]
+        },
+        {
+            "name": "az iot hub module-twin show",
+            "summary": "Show a module twin definition.",
+            "syntax": "az iot hub module-twin show --device-id\n                            --module-id\n                            [--auth-type {key, login}]\n                            [--hub-name]\n                            [--login]\n                            [--resource-group]",
+            "required_parameters": [
+                "--device-id -d",
+                "--module-id -m"
+            ],
+            "optional_parameters": [
+                "--auth-type",
+                "--hub-name -n",
+                "--login -l",
+                "--resource-group -g"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az iot hub module-twin update",
+            "summary": "Update module twin desired properties and tags.",
+            "syntax": "az iot hub module-twin update --device-id\n                              --module-id\n                              [--add]\n                              [--auth-type {key, login}]\n                              [--desired]\n                              [--etag]\n                              [--force-string]\n                              [--hub-name]\n                              [--login]\n                              [--remove]\n                              [--resource-group]\n                              [--set]\n                              [--tags]",
+            "required_parameters": [
+                "--device-id -d",
+                "--module-id -m"
+            ],
+            "optional_parameters": [
+                "--add",
+                "--auth-type",
+                "--desired",
+                "--etag -e",
+                "--force-string",
+                "--hub-name -n",
+                "--login -l",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--tags"
+            ],
+            "examples": [
+                "az iot hub module-twin update -n {iothub_name} -d {device_id} -m {module_id} --desired '{\"conditions\":{\"temperature\":{\"warning\":70, \"critical\":100}}}'",
+                "az iot hub module-twin update -n {iothub_name} -d {device_id} -m {module_id} --tags '{\"country\": \"USA\"}'",
+                "az iot hub module-twin update -n {iothub_name} -d {device_id} -m {module_id} --tags /path/to/file",
+                "az iot hub module-twin update -n {iothub_name} -d {device_id} -m {module_id} --desired '{\"condition\":{\"temperature\":{\"critical\": null}}}'"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,21 @@
+{
+    "command_group": "az orbital operation-result",
+    "description": "Result of a long running async operation.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az orbital operation-result show",
+            "summary": "Return operation results.",
+            "syntax": "az orbital operation-result show [--ids]\n                                 [--location]\n                                 [--name]\n                                 [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                 [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--location -l",
+                "--name --operation-id -n",
+                "--no-wait",
+                "--subscription"
+            ],
+            "examples": []
+        }
+    ]
+}

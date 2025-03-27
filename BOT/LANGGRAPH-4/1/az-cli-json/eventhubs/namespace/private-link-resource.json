@@ -1,0 +1,21 @@
+{
+    "command_group": "az eventhubs namespace private-link-resource",
+    "description": "Manage eventhubs namespace private link resources .",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az eventhubs namespace private-link-resource show",
+            "summary": "List lists of resources that supports Privatelinks.",
+            "syntax": "az eventhubs namespace private-link-resource show --namespace-name\n                                                  --resource-group\n                                                  [--max-items]\n                                                  [--next-token]",
+            "required_parameters": [
+                "--namespace-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": []
+        }
+    ]
+}

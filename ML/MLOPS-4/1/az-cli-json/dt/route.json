@@ -1,0 +1,69 @@
+{
+    "command_group": "az dt route",
+    "description": "Manage and configure event routes.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az dt route create",
+            "summary": "Add an event route to a Digital Twins instance.",
+            "syntax": "az dt route create --dt-name\n                   --en\n                   --rn\n                   [--filter]\n                   [--resource-group]",
+            "required_parameters": [
+                "--dt-name --dtn -n",
+                "--en --endpoint-name",
+                "--rn --route-name"
+            ],
+            "optional_parameters": [
+                "--filter",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az dt route create -n {instance_or_hostname} --endpoint-name {endpoint_name} --route-name {route_name}",
+                "az dt route create -n {instance_or_hostname} --endpoint-name {endpoint_name} --route-name {route_name} --filter \"type = 'Microsoft.DigitalTwins.Twin.Create'\""
+            ]
+        },
+        {
+            "name": "az dt route delete",
+            "summary": "Remove an event route from a Digital Twins instance.",
+            "syntax": "az dt route delete --dt-name\n                   --rn\n                   [--resource-group]",
+            "required_parameters": [
+                "--dt-name --dtn -n",
+                "--rn --route-name"
+            ],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az dt route delete -n {instance_or_hostname} --route-name {route_name}"
+            ]
+        },
+        {
+            "name": "az dt route list",
+            "summary": "List the configured event routes of a Digital Twins instance.",
+            "syntax": "az dt route list --dt-name\n                 [--resource-group]",
+            "required_parameters": [
+                "--dt-name --dtn -n"
+            ],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az dt route list -n {instance_or_hostname}"
+            ]
+        },
+        {
+            "name": "az dt route show",
+            "summary": "Show details of an event route configured on a Digital Twins instance.",
+            "syntax": "az dt route show --dt-name\n                 --rn\n                 [--resource-group]",
+            "required_parameters": [
+                "--dt-name --dtn -n",
+                "--rn --route-name"
+            ],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az dt route show -n {instance_or_hostname} --route-name {route_name}"
+            ]
+        }
+    ]
+}

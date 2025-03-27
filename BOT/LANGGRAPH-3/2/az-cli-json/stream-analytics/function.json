@@ -1,0 +1,144 @@
+{
+    "command_group": "az stream-analytics function",
+    "description": "Manage function with stream analytics.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az stream-analytics function create",
+            "summary": "Create a function or replaces an already existing function under an existing streaming job.",
+            "syntax": "az stream-analytics function create --function-name\n                                    --job-name\n                                    --resource-group\n                                    [--if-match]\n                                    [--if-none-match]\n                                    [--properties]",
+            "required_parameters": [
+                "--function-name --name -n",
+                "--job-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--if-match",
+                "--if-none-match",
+                "--properties"
+            ],
+            "examples": [
+                "az stream-analytics function create --properties \"{\\\"type\\\":\\\"Scalar\\\",\\\"properties\\\":{\\\"binding\\\":{\\\"type\\\":\\\"Microsoft.StreamAnalytics/JavascriptUdf\\\",\\\"properties\\\":{\\\"script\\\":\\\"function (x, y) { return x + y; }\\\"}},\\\"inputs\\\":[{\\\"dataType\\\":\\\"Any\\\"}],\\\"output\\\":{\\\"dataType\\\":\\\"Any\\\"}}}\" --function-name \"function8197\" --job-name \"sj8653\" --resource-group \"sjrg1637\"",
+                "az stream-analytics function create --properties \"{\\\"type\\\":\\\"Scalar\\\",\\\"properties\\\":{\\\"binding\\\":{\\\"type\\\":\\\"Microsoft.MachineLearning/WebService\\\",\\\"properties\\\":{\\\"apiKey\\\":\\\"someApiKey==\\\",\\\"batchSize\\\":1000,\\\"endpoint\\\":\\\"someAzureMLEndpointURL\\\",\\\"inputs\\\":{\\\"name\\\":\\\"input1\\\",\\\"columnNames\\\":[{\\\"name\\\":\\\"tweet\\\",\\\"dataType\\\":\\\"string\\\",\\\"mapTo\\\":0}]},\\\"outputs\\\":[{\\\"name\\\":\\\"Sentiment\\\",\\\"dataType\\\":\\\"string\\\"}]}},\\\"inputs\\\":[{\\\"dataType\\\":\\\"nvarchar(max)\\\"}],\\\"output\\\":{\\\"dataType\\\":\\\"nvarchar(max)\\\"}}}\" --function-name \"function588\" --job-name \"sj9093\" --resource-group \"sjrg7\""
+            ]
+        },
+        {
+            "name": "az stream-analytics function delete",
+            "summary": "Delete a function from the streaming job.",
+            "syntax": "az stream-analytics function delete --function-name\n                                    --job-name\n                                    --resource-group\n                                    [--yes]",
+            "required_parameters": [
+                "--function-name --name -n",
+                "--job-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--yes -y"
+            ],
+            "examples": [
+                "az stream-analytics function delete --name \"function8197\" --job-name \"sj8653\" --resource-group \"sjrg1637\""
+            ]
+        },
+        {
+            "name": "az stream-analytics function inspect",
+            "summary": "Retrieve the default definition of a function based on the parameters specified.",
+            "syntax": "az stream-analytics function inspect --function-name\n                                     --job-name\n                                     --resource-group\n                                     [--ml-properties]",
+            "required_parameters": [
+                "--function-name --name -n",
+                "--job-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--ml-properties"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az stream-analytics function list",
+            "summary": "List all of the functions under the specified streaming job.",
+            "syntax": "az stream-analytics function list --job-name\n                                  --resource-group\n                                  [--select]",
+            "required_parameters": [
+                "--job-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--select"
+            ],
+            "examples": [
+                "az stream-analytics function list --job-name \"sj8653\" --resource-group \"sjrg1637\""
+            ]
+        },
+        {
+            "name": "az stream-analytics function show",
+            "summary": "Get details about the specified function.",
+            "syntax": "az stream-analytics function show --function-name\n                                  --job-name\n                                  --resource-group",
+            "required_parameters": [
+                "--function-name --name -n",
+                "--job-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az stream-analytics function show --name \"function8197\" --job-name \"sj8653\" --resource-group \"sjrg1637\"",
+                "az stream-analytics function show --name \"function588\" --job-name \"sj9093\" --resource-group \"sjrg7\""
+            ]
+        },
+        {
+            "name": "az stream-analytics function test",
+            "summary": "Test if the information provided for a function is valid. This can range from testing the connection to the underlying web service behind the function or making sure the function code provided is syntactically correct.",
+            "syntax": "az stream-analytics function test --function-name\n                                  --job-name\n                                  --resource-group\n                                  [--no-wait]\n                                  [--properties]",
+            "required_parameters": [
+                "--function-name --name -n",
+                "--job-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--no-wait",
+                "--properties"
+            ],
+            "examples": [
+                "az stream-analytics function test --function-name \"function8197\" --job-name \"sj8653\" --resource-group \"sjrg1637\"",
+                "az stream-analytics function test --function-name \"function588\" --job-name \"sj9093\" --resource-group \"sjrg7\""
+            ]
+        },
+        {
+            "name": "az stream-analytics function update",
+            "summary": "Update an existing function under an existing streaming job. This can be used to partially update (ie. update one or two properties) a function without affecting the rest the job or function definition.",
+            "syntax": "az stream-analytics function update --function-name\n                                    --job-name\n                                    --resource-group\n                                    [--if-match]\n                                    [--properties]",
+            "required_parameters": [
+                "--function-name --name -n",
+                "--job-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--if-match",
+                "--properties"
+            ],
+            "examples": [
+                "az stream-analytics function update --properties \"{\\\"type\\\":\\\"Scalar\\\",\\\"properties\\\":{\\\"binding\\\":{\\\"type\\\":\\\"Microsoft.StreamAnalytics/JavascriptUdf\\\",\\\"properties\\\":{\\\"script\\\":\\\"function (a, b) { return a * b; }\\\"}}}}\" --function-name \"function8197\" --job-name \"sj8653\" --resource-group \"sjrg1637\"",
+                "az stream-analytics function update --properties \"{\\\"type\\\":\\\"Scalar\\\",\\\"properties\\\":{\\\"binding\\\":{\\\"type\\\":\\\"Microsoft.MachineLearning/WebService\\\",\\\"properties\\\":{\\\"batchSize\\\":5000}}}}\" --function-name \"function588\" --job-name \"sj9093\" --resource-group \"sjrg7\""
+            ]
+        },
+        {
+            "name": "az stream-analytics function wait",
+            "summary": "Place the CLI in a waiting state until a condition of the stream-analytics function is met.",
+            "syntax": "az stream-analytics function wait --function-name\n                                  --job-name\n                                  --resource-group\n                                  [--created]\n                                  [--custom]\n                                  [--deleted]\n                                  [--exists]\n                                  [--interval]\n                                  [--timeout]\n                                  [--updated]",
+            "required_parameters": [
+                "--function-name --name -n",
+                "--job-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--interval",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": [
+                "az stream-analytics function wait --name \"function588\" --job-name \"sj9093\" --resource-group \"sjrg7\" --created"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,118 @@
+{
+    "command_group": "az network manager group",
+    "description": "Manage networkgroup with network.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az network manager group create",
+            "summary": "Create a network group.",
+            "syntax": "az network manager group create --name\n                                --network-manager-name\n                                --resource-group\n                                [--description]\n                                [--if-match]",
+            "required_parameters": [
+                "--name --network-group-name -n",
+                "--network-manager-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--description",
+                "--if-match"
+            ],
+            "examples": [
+                "az network manager group create --name \"TestNetworkGroup\" --network-manager-name \"testNetworkManager\" --description \"A sample group\" --resource-group \"rg1\""
+            ]
+        },
+        {
+            "name": "az network manager group delete",
+            "summary": "Delete a network group.",
+            "syntax": "az network manager group delete [--force {0, 1, f, false, n, no, t, true, y, yes}]\n                                [--ids]\n                                [--name]\n                                [--network-manager-name]\n                                [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                [--resource-group]\n                                [--subscription]\n                                [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--force",
+                "--ids",
+                "--name --network-group-name -n",
+                "--network-manager-name",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az network manager group delete --name \"TestNetworkGroup\" --network-manager-name \"testNetworkManager\" --resource-group \"rg1\" --force"
+            ]
+        },
+        {
+            "name": "az network manager group list",
+            "summary": "List the specified network group.",
+            "syntax": "az network manager group list --network-manager-name\n                              --resource-group\n                              [--max-items]\n                              [--next-token]\n                              [--skip-token]\n                              [--top]",
+            "required_parameters": [
+                "--network-manager-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token",
+                "--skip-token",
+                "--top"
+            ],
+            "examples": [
+                "az network manager group list --network-manager-name \"testNetworkManager\" --resource-group \"rg1\""
+            ]
+        },
+        {
+            "name": "az network manager group show",
+            "summary": "Get the specified network group.",
+            "syntax": "az network manager group show [--ids]\n                              [--name]\n                              [--network-manager-name]\n                              [--resource-group]\n                              [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --network-group-name -n",
+                "--network-manager-name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az network manager group show --name \"TestNetworkGroup\" --network-manager-name \"testNetworkManager\" --resource-group \"rg1\""
+            ]
+        },
+        {
+            "name": "az network manager group update",
+            "summary": "Update a network group.",
+            "syntax": "az network manager group update [--add]\n                                [--description]\n                                [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                [--ids]\n                                [--if-match]\n                                [--name]\n                                [--network-manager-name]\n                                [--remove]\n                                [--resource-group]\n                                [--set]\n                                [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--description",
+                "--force-string",
+                "--ids",
+                "--if-match",
+                "--name --network-group-name -n",
+                "--network-manager-name",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az network manager group wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az network manager group wait [--created]\n                              [--custom]\n                              [--deleted]\n                              [--exists]\n                              [--ids]\n                              [--interval]\n                              [--name]\n                              [--network-manager-name]\n                              [--resource-group]\n                              [--subscription]\n                              [--timeout]\n                              [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--name --network-group-name -n",
+                "--network-manager-name",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

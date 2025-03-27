@@ -1,0 +1,21 @@
+{
+    "command_group": "az vmware addon",
+    "description": "Commands to manage addons for a private cloud.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az vmware addon list",
+            "summary": "List addons in a private cloud.",
+            "syntax": "az vmware addon list --private-cloud\n                     --resource-group\n                     [--max-items]\n                     [--next-token]",
+            "required_parameters": [
+                "--private-cloud -c",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": []
+        }
+    ]
+}

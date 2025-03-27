@@ -1,0 +1,111 @@
+{
+    "command_group": "az eventgrid partner namespace channel",
+    "description": "Manage partner channels.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az eventgrid partner namespace channel create",
+            "summary": "Create a new channel for a partner namespace.",
+            "syntax": "az eventgrid partner namespace channel create --channel-type {PartnerDestination, PartnerTopic}\n                                              --destination-rg\n                                              --destination-sub-id\n                                              --name\n                                              --partner-namespace-name\n                                              --resource-group\n                                              [--aad-app-id]\n                                              [--aad-tenant-id]\n                                              [--act-exp-date]\n                                              [--ed-serv-cont]\n                                              [--endpoint-url]\n                                              [--event-type-kind {inline}]\n                                              [--inline-event-type]\n                                              [--message-for-activation]\n                                              [--partner-destination-name]\n                                              [--partner-topic-name]\n                                              [--partner-topic-source]",
+            "required_parameters": [
+                "--channel-type",
+                "--destination-rg",
+                "--destination-sub-id",
+                "--name -n",
+                "--partner-namespace-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--aad-app-id --azure-active-directory-application-id-or-uri",
+                "--aad-tenant-id --azure-active-directory-tenant-id",
+                "--act-exp-date --activation-expiration-date",
+                "--ed-serv-cont --endpoint-service-context",
+                "--endpoint-url",
+                "--event-type-kind",
+                "--inline-event-type",
+                "--message-for-activation",
+                "--partner-destination-name --pr-dest-n",
+                "--partner-topic-name",
+                "--partner-topic-source"
+            ],
+            "examples": [
+                "az eventgrid partner namespace channel create -g rg1 --name channel1 \\\n  --channel-type PartnerDestination --partner-namespace-name namespace1 \\\n  --partner-destination-name destination1 --destination-sub-id e14e31c8-0ce7-4ff5-be5b-dd2b2a3f3535 --destination-rg rg2",
+                "az eventgrid partner namespace channel create -g rg1 --name channel1 \\\n  --channel-type PartnerTopic --partner-namespace-name namespace1 \\\n  --partner-topic-name topic1 \\\n   --destination-sub-id e14e31c8-0ce7-4ff5-be5b-dd2b2a3f3535 --destination-rg rg2 \\\n  --partner-topic-source /subscriptions/1b3b4501-23b9-4790-c31b-ddbd88d72123/resourceGroups/rg2/providers/Microsoft.Storage/storageAccounts/stgaccountname \\\n  --inline-event-type eventkey1 description=\"My event type.\" \\\n  --inline-event-type eventkey2 description=\"My second event type.\""
+            ]
+        },
+        {
+            "name": "az eventgrid partner namespace channel delete",
+            "summary": "Delete a partner namespace.",
+            "syntax": "az eventgrid partner namespace channel delete [--ids]\n                                              [--name]\n                                              [--partner-namespace-name]\n                                              [--resource-group]\n                                              [--subscription]\n                                              [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--partner-namespace-name",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az eventgrid partner namespace channel delete -g rg1 --partner-namespace-name partnernamespace1 --name channelname1"
+            ]
+        },
+        {
+            "name": "az eventgrid partner namespace channel list",
+            "summary": "List available partner channels.",
+            "syntax": "az eventgrid partner namespace channel list --partner-namespace-name\n                                            --resource-group\n                                            [--odata-query]",
+            "required_parameters": [
+                "--partner-namespace-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--odata-query"
+            ],
+            "examples": [
+                "az eventgrid partner namespace channel list -g rg1 --partner-namespace-name partnernamespace1",
+                "az eventgrid partner namespace channel list -g rg1 --partner-namespace-name partnernamespace1  --odata-query \"Contains(name, 'XYZ')\""
+            ]
+        },
+        {
+            "name": "az eventgrid partner namespace channel show",
+            "summary": "Get the details of a channel under a partner namespace.",
+            "syntax": "az eventgrid partner namespace channel show [--ids]\n                                            [--name]\n                                            [--partner-namespace-name]\n                                            [--resource-group]\n                                            [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--partner-namespace-name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az eventgrid partner namespace channel show -g rg1 --partner-namespace-name partnernamespace1 --name channelname1",
+                "az eventgrid partner namespace channel show --ids /subscriptions/{SubID}/resourceGroups/{RG}/providers/Microsoft.EventGrid/partnenamespaces/partnernamespace1/channels/channelName1"
+            ]
+        },
+        {
+            "name": "az eventgrid partner namespace channel update",
+            "summary": "Update the details of a channel under a partner namespace.",
+            "syntax": "az eventgrid partner namespace channel update [--aad-app-id]\n                                              [--aad-tenant-id]\n                                              [--act-exp-date]\n                                              [--endpoint-base-url]\n                                              [--endpoint-url]\n                                              [--event-type-kind {inline}]\n                                              [--ids]\n                                              [--inline-event-type]\n                                              [--name]\n                                              [--partner-namespace-name]\n                                              [--resource-group]\n                                              [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--aad-app-id --azure-active-directory-application-id-or-uri",
+                "--aad-tenant-id --azure-active-directory-tenant-id",
+                "--act-exp-date --activation-expiration-date",
+                "--endpoint-base-url",
+                "--endpoint-url",
+                "--event-type-kind",
+                "--ids",
+                "--inline-event-type",
+                "--name -n",
+                "--partner-namespace-name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az eventgrid partner namespace channel update -g rg1 \\\n  --partner-namespace-name partnernamespace1 \\\n  --name channelname1 \\\n  --activation-expiration-date 2022-06-14T05:37:51.272Z \\",
+                "az eventgrid partner namespace channel update -g rg1 \\\n  --partner-namespace-name partnernamespace1 \\\n  --name channelname1 \\\n  --event-type-kind inline --inline-event-type eventtype1 documentation-url=https://www.microsoft.com"
+            ]
+        }
+    ]
+}

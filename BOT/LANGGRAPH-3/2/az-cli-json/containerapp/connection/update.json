@@ -1,0 +1,779 @@
+{
+    "command_group": "az containerapp connection update",
+    "description": "Update a containerapp connection.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az containerapp connection update app-insights",
+            "summary": "Update a containerapp to app-insights connection.",
+            "syntax": "az containerapp connection update app-insights [--appconfig-id]\n                                               [--client-type {dotnet, dotnet-internal, go, java, nodejs, none, python}]\n                                               [--connection]\n                                               [--connstr-props]\n                                               [--container]\n                                               [--customized-keys]\n                                               [--id]\n                                               [--name]\n                                               [--no-wait]\n                                               [--opt-out {auth, configinfo, publicnetwork}]\n                                               [--resource-group]\n                                               [--secret]\n                                               [--vault-id]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--appconfig-id",
+                "--client-type",
+                "--connection",
+                "--connstr-props",
+                "--container -c",
+                "--customized-keys",
+                "--id",
+                "--name -n",
+                "--no-wait",
+                "--opt-out",
+                "--resource-group -g",
+                "--secret",
+                "--vault-id"
+            ],
+            "examples": [
+                "az containerapp connection update app-insights -g ContainerAppRG -n MyContainerApp --connection MyConnection --client-type dotnet",
+                "az containerapp connection update app-insights --id /subscriptions/{subscription}/resourceGroups/{source_resource_group}/providers/Microsoft.Web/sites/{site}/providers/Microsoft.ServiceLinker/linkers/{linker} --client-type dotnet"
+            ]
+        },
+        {
+            "name": "az containerapp connection update appconfig",
+            "summary": "Update a containerapp to appconfig connection.",
+            "syntax": "az containerapp connection update appconfig [--appconfig-id]\n                                            [--client-type {dotnet, dotnet-internal, java, nodejs, none, python}]\n                                            [--connection]\n                                            [--connstr-props]\n                                            [--container]\n                                            [--customized-keys]\n                                            [--id]\n                                            [--name]\n                                            [--no-wait]\n                                            [--opt-out {auth, configinfo, publicnetwork}]\n                                            [--private-endpoint {false, true}]\n                                            [--resource-group]\n                                            [--secret]\n                                            [--service-principal]\n                                            [--system-identity]\n                                            [--user-identity]\n                                            [--vault-id]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--appconfig-id",
+                "--client-type",
+                "--connection",
+                "--connstr-props",
+                "--container -c",
+                "--customized-keys",
+                "--id",
+                "--name -n",
+                "--no-wait",
+                "--opt-out",
+                "--private-endpoint",
+                "--resource-group -g",
+                "--secret",
+                "--service-principal",
+                "--system-identity",
+                "--user-identity",
+                "--vault-id"
+            ],
+            "examples": [
+                "az containerapp connection update appconfig -g ContainerAppRG -n MyContainerApp --connection MyConnection --client-type dotnet",
+                "az containerapp connection update appconfig --id /subscriptions/{subscription}/resourceGroups/{source_resource_group}/providers/Microsoft.Web/sites/{site}/providers/Microsoft.ServiceLinker/linkers/{linker} --client-type dotnet"
+            ]
+        },
+        {
+            "name": "az containerapp connection update cognitiveservices",
+            "summary": "Update a containerapp to cognitiveservices connection.",
+            "syntax": "az containerapp connection update cognitiveservices [--appconfig-id]\n                                                    [--client-type {dotnet, none, python}]\n                                                    [--connection]\n                                                    [--connstr-props]\n                                                    [--container]\n                                                    [--customized-keys]\n                                                    [--id]\n                                                    [--name]\n                                                    [--no-wait]\n                                                    [--opt-out {auth, configinfo, publicnetwork}]\n                                                    [--resource-group]\n                                                    [--secret]\n                                                    [--service-principal]\n                                                    [--system-identity]\n                                                    [--user-identity]\n                                                    [--vault-id]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--appconfig-id",
+                "--client-type",
+                "--connection",
+                "--connstr-props",
+                "--container -c",
+                "--customized-keys",
+                "--id",
+                "--name -n",
+                "--no-wait",
+                "--opt-out",
+                "--resource-group -g",
+                "--secret",
+                "--service-principal",
+                "--system-identity",
+                "--user-identity",
+                "--vault-id"
+            ],
+            "examples": [
+                "az containerapp connection update cognitiveservices -g ContainerAppRG -n MyContainerApp --connection MyConnection --client-type dotnet",
+                "az containerapp connection update cognitiveservices --id /subscriptions/{subscription}/resourceGroups/{source_resource_group}/providers/Microsoft.Web/sites/{site}/providers/Microsoft.ServiceLinker/linkers/{linker} --client-type dotnet"
+            ]
+        },
+        {
+            "name": "az containerapp connection update confluent-cloud",
+            "summary": "Update a containerapp to confluent-cloud connection.",
+            "syntax": "az containerapp connection update confluent-cloud --connection\n                                                  [--appconfig-id]\n                                                  [--bootstrap-server]\n                                                  [--client-type {dotnet, dotnet-internal, go, java, none, python, springBoot}]\n                                                  [--customized-keys]\n                                                  [--kafka-key]\n                                                  [--kafka-secret]\n                                                  [--name]\n                                                  [--no-wait]\n                                                  [--opt-out {auth, configinfo, publicnetwork}]\n                                                  [--resource-group]\n                                                  [--schema-key]\n                                                  [--schema-registry]\n                                                  [--schema-secret]\n                                                  [--source-id]\n                                                  [--vault-id]",
+            "required_parameters": [
+                "--connection"
+            ],
+            "optional_parameters": [
+                "--appconfig-id",
+                "--bootstrap-server",
+                "--client-type",
+                "--customized-keys",
+                "--kafka-key",
+                "--kafka-secret",
+                "--name -n",
+                "--no-wait",
+                "--opt-out",
+                "--resource-group -g",
+                "--schema-key",
+                "--schema-registry",
+                "--schema-secret",
+                "--source-id",
+                "--vault-id"
+            ],
+            "examples": [
+                "az containerapp connection update confluent-cloud -g ContainerAppRG -n MyContainerApp --connection MyConnection --client python",
+                "az containerapp connection update confluent-cloud -g ContainerAppRG -n MyContainerApp --connection MyConnection --bootstrap-server xxx.eastus.azure.confluent.cloud:9092 --kafka-key Name --kafka-secret Secret",
+                "az containerapp connection update confluent-cloud -g ContainerAppRG -n MyContainerApp --connection MyConnection_schema --client python",
+                "az containerapp connection update confluent-cloud -g ContainerAppRG -n MyContainerApp --connection MyConnection_schema --schema-registry https://xxx.eastus.azure.confluent.cloud --schema-key Name --schema-secret Secret"
+            ]
+        },
+        {
+            "name": "az containerapp connection update containerapp",
+            "summary": "Update a containerapp-to-containerapp connection.",
+            "syntax": "az containerapp connection update containerapp [--appconfig-id]\n                                               [--client-type {django, dotnet, dotnet-internal, go, java, nodejs, none, php, python, ruby, springBoot}]\n                                               [--connection]\n                                               [--connstr-props]\n                                               [--container]\n                                               [--customized-keys]\n                                               [--id]\n                                               [--name]\n                                               [--no-wait]\n                                               [--opt-out {auth, configinfo, publicnetwork}]\n                                               [--resource-group]\n                                               [--vault-id]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--appconfig-id",
+                "--client-type",
+                "--connection",
+                "--connstr-props",
+                "--container -c",
+                "--customized-keys",
+                "--id",
+                "--name -n",
+                "--no-wait",
+                "--opt-out",
+                "--resource-group -g",
+                "--vault-id"
+            ],
+            "examples": [
+                "az containerapp connection update containerapp -g ContainerAppRG -n MyContainerApp --connection MyConnection --client-type dotnet",
+                "az containerapp connection update containerapp --id /subscriptions/{subscription}/resourceGroups/{source_resource_group}/providers/Microsoft.Web/sites/{site}/providers/Microsoft.ServiceLinker/linkers/{linker} --client-type dotnet"
+            ]
+        },
+        {
+            "name": "az containerapp connection update cosmos-cassandra",
+            "summary": "Update a containerapp to cosmos-cassandra connection.",
+            "syntax": "az containerapp connection update cosmos-cassandra [--appconfig-id]\n                                                   [--client-type {dotnet, dotnet-internal, go, java, nodejs, none, python, springBoot}]\n                                                   [--connection]\n                                                   [--connstr-props]\n                                                   [--container]\n                                                   [--customized-keys]\n                                                   [--id]\n                                                   [--name]\n                                                   [--no-wait]\n                                                   [--opt-out {auth, configinfo, publicnetwork}]\n                                                   [--private-endpoint {false, true}]\n                                                   [--resource-group]\n                                                   [--secret]\n                                                   [--service-endpoint {false, true}]\n                                                   [--service-principal]\n                                                   [--system-identity]\n                                                   [--user-identity]\n                                                   [--vault-id]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--appconfig-id",
+                "--client-type",
+                "--connection",
+                "--connstr-props",
+                "--container -c",
+                "--customized-keys",
+                "--id",
+                "--name -n",
+                "--no-wait",
+                "--opt-out",
+                "--private-endpoint",
+                "--resource-group -g",
+                "--secret",
+                "--service-endpoint",
+                "--service-principal",
+                "--system-identity",
+                "--user-identity",
+                "--vault-id"
+            ],
+            "examples": [
+                "az containerapp connection update cosmos-cassandra -g ContainerAppRG -n MyContainerApp --connection MyConnection --client-type dotnet",
+                "az containerapp connection update cosmos-cassandra --id /subscriptions/{subscription}/resourceGroups/{source_resource_group}/providers/Microsoft.Web/sites/{site}/providers/Microsoft.ServiceLinker/linkers/{linker} --client-type dotnet"
+            ]
+        },
+        {
+            "name": "az containerapp connection update cosmos-gremlin",
+            "summary": "Update a containerapp to cosmos-gremlin connection.",
+            "syntax": "az containerapp connection update cosmos-gremlin [--appconfig-id]\n                                                 [--client-type {dotnet, dotnet-internal, java, nodejs, none, php, python}]\n                                                 [--connection]\n                                                 [--connstr-props]\n                                                 [--container]\n                                                 [--customized-keys]\n                                                 [--id]\n                                                 [--name]\n                                                 [--no-wait]\n                                                 [--opt-out {auth, configinfo, publicnetwork}]\n                                                 [--private-endpoint {false, true}]\n                                                 [--resource-group]\n                                                 [--secret]\n                                                 [--service-endpoint {false, true}]\n                                                 [--service-principal]\n                                                 [--system-identity]\n                                                 [--user-identity]\n                                                 [--vault-id]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--appconfig-id",
+                "--client-type",
+                "--connection",
+                "--connstr-props",
+                "--container -c",
+                "--customized-keys",
+                "--id",
+                "--name -n",
+                "--no-wait",
+                "--opt-out",
+                "--private-endpoint",
+                "--resource-group -g",
+                "--secret",
+                "--service-endpoint",
+                "--service-principal",
+                "--system-identity",
+                "--user-identity",
+                "--vault-id"
+            ],
+            "examples": [
+                "az containerapp connection update cosmos-gremlin -g ContainerAppRG -n MyContainerApp --connection MyConnection --client-type dotnet",
+                "az containerapp connection update cosmos-gremlin --id /subscriptions/{subscription}/resourceGroups/{source_resource_group}/providers/Microsoft.Web/sites/{site}/providers/Microsoft.ServiceLinker/linkers/{linker} --client-type dotnet"
+            ]
+        },
+        {
+            "name": "az containerapp connection update cosmos-mongo",
+            "summary": "Update a containerapp to cosmos-mongo connection.",
+            "syntax": "az containerapp connection update cosmos-mongo [--appconfig-id]\n                                               [--client-type {dotnet, dotnet-internal, go, java, nodejs, none, springBoot}]\n                                               [--connection]\n                                               [--connstr-props]\n                                               [--container]\n                                               [--customized-keys]\n                                               [--id]\n                                               [--name]\n                                               [--no-wait]\n                                               [--opt-out {auth, configinfo, publicnetwork}]\n                                               [--private-endpoint {false, true}]\n                                               [--resource-group]\n                                               [--secret]\n                                               [--service-endpoint {false, true}]\n                                               [--service-principal]\n                                               [--system-identity]\n                                               [--user-identity]\n                                               [--vault-id]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--appconfig-id",
+                "--client-type",
+                "--connection",
+                "--connstr-props",
+                "--container -c",
+                "--customized-keys",
+                "--id",
+                "--name -n",
+                "--no-wait",
+                "--opt-out",
+                "--private-endpoint",
+                "--resource-group -g",
+                "--secret",
+                "--service-endpoint",
+                "--service-principal",
+                "--system-identity",
+                "--user-identity",
+                "--vault-id"
+            ],
+            "examples": [
+                "az containerapp connection update cosmos-mongo -g ContainerAppRG -n MyContainerApp --connection MyConnection --client-type dotnet",
+                "az containerapp connection update cosmos-mongo --id /subscriptions/{subscription}/resourceGroups/{source_resource_group}/providers/Microsoft.Web/sites/{site}/providers/Microsoft.ServiceLinker/linkers/{linker} --client-type dotnet"
+            ]
+        },
+        {
+            "name": "az containerapp connection update cosmos-sql",
+            "summary": "Update a containerapp to cosmos-sql connection.",
+            "syntax": "az containerapp connection update cosmos-sql [--appconfig-id]\n                                             [--client-type {dotnet, dotnet-internal, java, nodejs, none, python, springBoot}]\n                                             [--connection]\n                                             [--connstr-props]\n                                             [--container]\n                                             [--customized-keys]\n                                             [--id]\n                                             [--name]\n                                             [--no-wait]\n                                             [--opt-out {auth, configinfo, publicnetwork}]\n                                             [--private-endpoint {false, true}]\n                                             [--resource-group]\n                                             [--secret]\n                                             [--service-endpoint {false, true}]\n                                             [--service-principal]\n                                             [--system-identity]\n                                             [--user-identity]\n                                             [--vault-id]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--appconfig-id",
+                "--client-type",
+                "--connection",
+                "--connstr-props",
+                "--container -c",
+                "--customized-keys",
+                "--id",
+                "--name -n",
+                "--no-wait",
+                "--opt-out",
+                "--private-endpoint",
+                "--resource-group -g",
+                "--secret",
+                "--service-endpoint",
+                "--service-principal",
+                "--system-identity",
+                "--user-identity",
+                "--vault-id"
+            ],
+            "examples": [
+                "az containerapp connection update cosmos-sql -g ContainerAppRG -n MyContainerApp --connection MyConnection --client-type dotnet",
+                "az containerapp connection update cosmos-sql --id /subscriptions/{subscription}/resourceGroups/{source_resource_group}/providers/Microsoft.Web/sites/{site}/providers/Microsoft.ServiceLinker/linkers/{linker} --client-type dotnet"
+            ]
+        },
+        {
+            "name": "az containerapp connection update cosmos-table",
+            "summary": "Update a containerapp to cosmos-table connection.",
+            "syntax": "az containerapp connection update cosmos-table [--appconfig-id]\n                                               [--client-type {dotnet, dotnet-internal, java, nodejs, none, python, springBoot}]\n                                               [--connection]\n                                               [--connstr-props]\n                                               [--container]\n                                               [--customized-keys]\n                                               [--id]\n                                               [--name]\n                                               [--no-wait]\n                                               [--opt-out {auth, configinfo, publicnetwork}]\n                                               [--private-endpoint {false, true}]\n                                               [--resource-group]\n                                               [--secret]\n                                               [--service-endpoint {false, true}]\n                                               [--service-principal]\n                                               [--system-identity]\n                                               [--user-identity]\n                                               [--vault-id]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--appconfig-id",
+                "--client-type",
+                "--connection",
+                "--connstr-props",
+                "--container -c",
+                "--customized-keys",
+                "--id",
+                "--name -n",
+                "--no-wait",
+                "--opt-out",
+                "--private-endpoint",
+                "--resource-group -g",
+                "--secret",
+                "--service-endpoint",
+                "--service-principal",
+                "--system-identity",
+                "--user-identity",
+                "--vault-id"
+            ],
+            "examples": [
+                "az containerapp connection update cosmos-table -g ContainerAppRG -n MyContainerApp --connection MyConnection --client-type dotnet",
+                "az containerapp connection update cosmos-table --id /subscriptions/{subscription}/resourceGroups/{source_resource_group}/providers/Microsoft.Web/sites/{site}/providers/Microsoft.ServiceLinker/linkers/{linker} --client-type dotnet"
+            ]
+        },
+        {
+            "name": "az containerapp connection update eventhub",
+            "summary": "Update a containerapp to eventhub connection.",
+            "syntax": "az containerapp connection update eventhub [--appconfig-id]\n                                           [--client-type {dotnet, dotnet-internal, go, java, kafka-springBoot, nodejs, none, python, springBoot}]\n                                           [--connection]\n                                           [--connstr-props]\n                                           [--container]\n                                           [--customized-keys]\n                                           [--id]\n                                           [--name]\n                                           [--no-wait]\n                                           [--opt-out {auth, configinfo, publicnetwork}]\n                                           [--private-endpoint {false, true}]\n                                           [--resource-group]\n                                           [--secret]\n                                           [--service-endpoint {false, true}]\n                                           [--service-principal]\n                                           [--system-identity]\n                                           [--user-identity]\n                                           [--vault-id]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--appconfig-id",
+                "--client-type",
+                "--connection",
+                "--connstr-props",
+                "--container -c",
+                "--customized-keys",
+                "--id",
+                "--name -n",
+                "--no-wait",
+                "--opt-out",
+                "--private-endpoint",
+                "--resource-group -g",
+                "--secret",
+                "--service-endpoint",
+                "--service-principal",
+                "--system-identity",
+                "--user-identity",
+                "--vault-id"
+            ],
+            "examples": [
+                "az containerapp connection update eventhub -g ContainerAppRG -n MyContainerApp --connection MyConnection --client-type dotnet",
+                "az containerapp connection update eventhub --id /subscriptions/{subscription}/resourceGroups/{source_resource_group}/providers/Microsoft.Web/sites/{site}/providers/Microsoft.ServiceLinker/linkers/{linker} --client-type dotnet"
+            ]
+        },
+        {
+            "name": "az containerapp connection update fabric-sql",
+            "summary": "Update a containerapp to fabric-sql connection.",
+            "syntax": "az containerapp connection update fabric-sql [--appconfig-id]\n                                             [--client-type {dotnet, go, java, none, php, python}]\n                                             [--connection]\n                                             [--connstr-props]\n                                             [--container]\n                                             [--customized-keys]\n                                             [--id]\n                                             [--name]\n                                             [--no-wait]\n                                             [--opt-out {auth, configinfo, publicnetwork}]\n                                             [--resource-group]\n                                             [--system-identity]\n                                             [--user-identity]\n                                             [--vault-id]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--appconfig-id",
+                "--client-type",
+                "--connection",
+                "--connstr-props",
+                "--container -c",
+                "--customized-keys",
+                "--id",
+                "--name -n",
+                "--no-wait",
+                "--opt-out",
+                "--resource-group -g",
+                "--system-identity",
+                "--user-identity",
+                "--vault-id"
+            ],
+            "examples": [
+                "az containerapp connection update fabric-sql -g ContainerAppRG -n MyContainerApp --connection MyConnection --client-type dotnet",
+                "az containerapp connection update fabric-sql --id /subscriptions/{subscription}/resourceGroups/{source_resource_group}/providers/Microsoft.Web/sites/{site}/providers/Microsoft.ServiceLinker/linkers/{linker} --client-type dotnet"
+            ]
+        },
+        {
+            "name": "az containerapp connection update keyvault",
+            "summary": "Update a containerapp to keyvault connection.",
+            "syntax": "az containerapp connection update keyvault [--appconfig-id]\n                                           [--client-type {dotnet, dotnet-internal, java, nodejs, none, python, springBoot}]\n                                           [--connection]\n                                           [--connstr-props]\n                                           [--container]\n                                           [--customized-keys]\n                                           [--id]\n                                           [--name]\n                                           [--no-wait]\n                                           [--opt-out {auth, configinfo, publicnetwork}]\n                                           [--private-endpoint {false, true}]\n                                           [--resource-group]\n                                           [--service-endpoint {false, true}]\n                                           [--service-principal]\n                                           [--system-identity]\n                                           [--user-identity]\n                                           [--vault-id]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--appconfig-id",
+                "--client-type",
+                "--connection",
+                "--connstr-props",
+                "--container -c",
+                "--customized-keys",
+                "--id",
+                "--name -n",
+                "--no-wait",
+                "--opt-out",
+                "--private-endpoint",
+                "--resource-group -g",
+                "--service-endpoint",
+                "--service-principal",
+                "--system-identity",
+                "--user-identity",
+                "--vault-id"
+            ],
+            "examples": [
+                "az containerapp connection update keyvault -g ContainerAppRG -n MyContainerApp --connection MyConnection --client-type dotnet",
+                "az containerapp connection update keyvault --id /subscriptions/{subscription}/resourceGroups/{source_resource_group}/providers/Microsoft.Web/sites/{site}/providers/Microsoft.ServiceLinker/linkers/{linker} --client-type dotnet"
+            ]
+        },
+        {
+            "name": "az containerapp connection update mysql",
+            "summary": "Update a containerapp to mysql connection.",
+            "syntax": "az containerapp connection update mysql [--appconfig-id]\n                                        [--client-type {django, dotnet, dotnet-internal, go, java, nodejs, none, php, python, ruby, springBoot}]\n                                        [--connection]\n                                        [--connstr-props]\n                                        [--container]\n                                        [--customized-keys]\n                                        [--id]\n                                        [--name]\n                                        [--no-wait]\n                                        [--opt-out {auth, configinfo, publicnetwork}]\n                                        [--private-endpoint {false, true}]\n                                        [--resource-group]\n                                        [--secret]\n                                        [--service-endpoint {false, true}]\n                                        [--vault-id]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--appconfig-id",
+                "--client-type",
+                "--connection",
+                "--connstr-props",
+                "--container -c",
+                "--customized-keys",
+                "--id",
+                "--name -n",
+                "--no-wait",
+                "--opt-out",
+                "--private-endpoint",
+                "--resource-group -g",
+                "--secret",
+                "--service-endpoint",
+                "--vault-id"
+            ],
+            "examples": [
+                "az containerapp connection update mysql -g ContainerAppRG -n MyContainerApp --connection MyConnection --client-type dotnet",
+                "az containerapp connection update mysql --id /subscriptions/{subscription}/resourceGroups/{source_resource_group}/providers/Microsoft.Web/sites/{site}/providers/Microsoft.ServiceLinker/linkers/{linker} --client-type dotnet"
+            ]
+        },
+        {
+            "name": "az containerapp connection update mysql-flexible",
+            "summary": "Update a containerapp to mysql-flexible connection.",
+            "syntax": "az containerapp connection update mysql-flexible [--appconfig-id]\n                                                 [--client-type {django, dotnet, dotnet-internal, go, java, nodejs, none, php, python, ruby, springBoot}]\n                                                 [--connection]\n                                                 [--connstr-props]\n                                                 [--container]\n                                                 [--customized-keys]\n                                                 [--id]\n                                                 [--name]\n                                                 [--no-wait]\n                                                 [--opt-out {auth, configinfo, publicnetwork}]\n                                                 [--private-endpoint {false, true}]\n                                                 [--resource-group]\n                                                 [--secret]\n                                                 [--service-principal]\n                                                 [--system-identity]\n                                                 [--user-identity]\n                                                 [--vault-id]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--appconfig-id",
+                "--client-type",
+                "--connection",
+                "--connstr-props",
+                "--container -c",
+                "--customized-keys",
+                "--id",
+                "--name -n",
+                "--no-wait",
+                "--opt-out",
+                "--private-endpoint",
+                "--resource-group -g",
+                "--secret",
+                "--service-principal",
+                "--system-identity",
+                "--user-identity",
+                "--vault-id"
+            ],
+            "examples": [
+                "az containerapp connection update mysql-flexible -g ContainerAppRG -n MyContainerApp --connection MyConnection --client-type dotnet",
+                "az containerapp connection update mysql-flexible --id /subscriptions/{subscription}/resourceGroups/{source_resource_group}/providers/Microsoft.Web/sites/{site}/providers/Microsoft.ServiceLinker/linkers/{linker} --client-type dotnet"
+            ]
+        },
+        {
+            "name": "az containerapp connection update postgres",
+            "summary": "Update a containerapp to postgres connection.",
+            "syntax": "az containerapp connection update postgres [--appconfig-id]\n                                           [--client-type {django, dotnet, dotnet-internal, go, java, nodejs, none, php, python, ruby, springBoot}]\n                                           [--connection]\n                                           [--connstr-props]\n                                           [--container]\n                                           [--customized-keys]\n                                           [--id]\n                                           [--name]\n                                           [--no-wait]\n                                           [--opt-out {auth, configinfo, publicnetwork}]\n                                           [--private-endpoint {false, true}]\n                                           [--resource-group]\n                                           [--secret]\n                                           [--service-endpoint {false, true}]\n                                           [--service-principal]\n                                           [--system-identity]\n                                           [--user-identity]\n                                           [--vault-id]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--appconfig-id",
+                "--client-type",
+                "--connection",
+                "--connstr-props",
+                "--container -c",
+                "--customized-keys",
+                "--id",
+                "--name -n",
+                "--no-wait",
+                "--opt-out",
+                "--private-endpoint",
+                "--resource-group -g",
+                "--secret",
+                "--service-endpoint",
+                "--service-principal",
+                "--system-identity",
+                "--user-identity",
+                "--vault-id"
+            ],
+            "examples": [
+                "az containerapp connection update postgres -g ContainerAppRG -n MyContainerApp --connection MyConnection --client-type dotnet",
+                "az containerapp connection update postgres --id /subscriptions/{subscription}/resourceGroups/{source_resource_group}/providers/Microsoft.Web/sites/{site}/providers/Microsoft.ServiceLinker/linkers/{linker} --client-type dotnet"
+            ]
+        },
+        {
+            "name": "az containerapp connection update postgres-flexible",
+            "summary": "Update a containerapp to postgres-flexible connection.",
+            "syntax": "az containerapp connection update postgres-flexible [--appconfig-id]\n                                                    [--client-type {django, dotnet, dotnet-internal, go, java, nodejs, none, php, python, ruby, springBoot}]\n                                                    [--connection]\n                                                    [--connstr-props]\n                                                    [--container]\n                                                    [--customized-keys]\n                                                    [--id]\n                                                    [--name]\n                                                    [--no-wait]\n                                                    [--opt-out {auth, configinfo, publicnetwork}]\n                                                    [--resource-group]\n                                                    [--secret]\n                                                    [--service-principal]\n                                                    [--system-identity]\n                                                    [--user-identity]\n                                                    [--vault-id]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--appconfig-id",
+                "--client-type",
+                "--connection",
+                "--connstr-props",
+                "--container -c",
+                "--customized-keys",
+                "--id",
+                "--name -n",
+                "--no-wait",
+                "--opt-out",
+                "--resource-group -g",
+                "--secret",
+                "--service-principal",
+                "--system-identity",
+                "--user-identity",
+                "--vault-id"
+            ],
+            "examples": [
+                "az containerapp connection update postgres-flexible -g ContainerAppRG -n MyContainerApp --connection MyConnection --client-type dotnet",
+                "az containerapp connection update postgres-flexible --id /subscriptions/{subscription}/resourceGroups/{source_resource_group}/providers/Microsoft.Web/sites/{site}/providers/Microsoft.ServiceLinker/linkers/{linker} --client-type dotnet"
+            ]
+        },
+        {
+            "name": "az containerapp connection update redis",
+            "summary": "Update a containerapp to redis connection.",
+            "syntax": "az containerapp connection update redis [--appconfig-id]\n                                        [--client-type {dotnet, dotnet-internal, go, java, nodejs, none, python, springBoot}]\n                                        [--connection]\n                                        [--connstr-props]\n                                        [--container]\n                                        [--customized-keys]\n                                        [--id]\n                                        [--name]\n                                        [--no-wait]\n                                        [--opt-out {auth, configinfo, publicnetwork}]\n                                        [--private-endpoint {false, true}]\n                                        [--resource-group]\n                                        [--secret]\n                                        [--vault-id]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--appconfig-id",
+                "--client-type",
+                "--connection",
+                "--connstr-props",
+                "--container -c",
+                "--customized-keys",
+                "--id",
+                "--name -n",
+                "--no-wait",
+                "--opt-out",
+                "--private-endpoint",
+                "--resource-group -g",
+                "--secret",
+                "--vault-id"
+            ],
+            "examples": [
+                "az containerapp connection update redis -g ContainerAppRG -n MyContainerApp --connection MyConnection --client-type dotnet",
+                "az containerapp connection update redis --id /subscriptions/{subscription}/resourceGroups/{source_resource_group}/providers/Microsoft.Web/sites/{site}/providers/Microsoft.ServiceLinker/linkers/{linker} --client-type dotnet"
+            ]
+        },
+        {
+            "name": "az containerapp connection update redis-enterprise",
+            "summary": "Update a containerapp to redis-enterprise connection.",
+            "syntax": "az containerapp connection update redis-enterprise [--appconfig-id]\n                                                   [--client-type {dotnet, dotnet-internal, go, java, nodejs, none, python, springBoot}]\n                                                   [--connection]\n                                                   [--connstr-props]\n                                                   [--container]\n                                                   [--customized-keys]\n                                                   [--id]\n                                                   [--name]\n                                                   [--no-wait]\n                                                   [--opt-out {auth, configinfo, publicnetwork}]\n                                                   [--resource-group]\n                                                   [--secret]\n                                                   [--vault-id]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--appconfig-id",
+                "--client-type",
+                "--connection",
+                "--connstr-props",
+                "--container -c",
+                "--customized-keys",
+                "--id",
+                "--name -n",
+                "--no-wait",
+                "--opt-out",
+                "--resource-group -g",
+                "--secret",
+                "--vault-id"
+            ],
+            "examples": [
+                "az containerapp connection update redis-enterprise -g ContainerAppRG -n MyContainerApp --connection MyConnection --client-type dotnet",
+                "az containerapp connection update redis-enterprise --id /subscriptions/{subscription}/resourceGroups/{source_resource_group}/providers/Microsoft.Web/sites/{site}/providers/Microsoft.ServiceLinker/linkers/{linker} --client-type dotnet"
+            ]
+        },
+        {
+            "name": "az containerapp connection update servicebus",
+            "summary": "Update a containerapp to servicebus connection.",
+            "syntax": "az containerapp connection update servicebus [--appconfig-id]\n                                             [--client-type {dotnet, dotnet-internal, go, java, nodejs, none, python, springBoot}]\n                                             [--connection]\n                                             [--connstr-props]\n                                             [--container]\n                                             [--customized-keys]\n                                             [--id]\n                                             [--name]\n                                             [--no-wait]\n                                             [--opt-out {auth, configinfo, publicnetwork}]\n                                             [--private-endpoint {false, true}]\n                                             [--resource-group]\n                                             [--secret]\n                                             [--service-endpoint {false, true}]\n                                             [--service-principal]\n                                             [--system-identity]\n                                             [--user-identity]\n                                             [--vault-id]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--appconfig-id",
+                "--client-type",
+                "--connection",
+                "--connstr-props",
+                "--container -c",
+                "--customized-keys",
+                "--id",
+                "--name -n",
+                "--no-wait",
+                "--opt-out",
+                "--private-endpoint",
+                "--resource-group -g",
+                "--secret",
+                "--service-endpoint",
+                "--service-principal",
+                "--system-identity",
+                "--user-identity",
+                "--vault-id"
+            ],
+            "examples": [
+                "az containerapp connection update servicebus -g ContainerAppRG -n MyContainerApp --connection MyConnection --client-type dotnet",
+                "az containerapp connection update servicebus --id /subscriptions/{subscription}/resourceGroups/{source_resource_group}/providers/Microsoft.Web/sites/{site}/providers/Microsoft.ServiceLinker/linkers/{linker} --client-type dotnet"
+            ]
+        },
+        {
+            "name": "az containerapp connection update signalr",
+            "summary": "Update a containerapp to signalr connection.",
+            "syntax": "az containerapp connection update signalr [--appconfig-id]\n                                          [--client-type {dotnet, dotnet-internal, none}]\n                                          [--connection]\n                                          [--connstr-props]\n                                          [--container]\n                                          [--customized-keys]\n                                          [--id]\n                                          [--name]\n                                          [--no-wait]\n                                          [--opt-out {auth, configinfo, publicnetwork}]\n                                          [--private-endpoint {false, true}]\n                                          [--resource-group]\n                                          [--secret]\n                                          [--service-principal]\n                                          [--system-identity]\n                                          [--user-identity]\n                                          [--vault-id]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--appconfig-id",
+                "--client-type",
+                "--connection",
+                "--connstr-props",
+                "--container -c",
+                "--customized-keys",
+                "--id",
+                "--name -n",
+                "--no-wait",
+                "--opt-out",
+                "--private-endpoint",
+                "--resource-group -g",
+                "--secret",
+                "--service-principal",
+                "--system-identity",
+                "--user-identity",
+                "--vault-id"
+            ],
+            "examples": [
+                "az containerapp connection update signalr -g ContainerAppRG -n MyContainerApp --connection MyConnection --client-type dotnet",
+                "az containerapp connection update signalr --id /subscriptions/{subscription}/resourceGroups/{source_resource_group}/providers/Microsoft.Web/sites/{site}/providers/Microsoft.ServiceLinker/linkers/{linker} --client-type dotnet"
+            ]
+        },
+        {
+            "name": "az containerapp connection update sql",
+            "summary": "Update a containerapp to sql connection.",
+            "syntax": "az containerapp connection update sql [--appconfig-id]\n                                      [--client-type {django, dotnet, dotnet-internal, go, java, nodejs, none, php, python, ruby, springBoot}]\n                                      [--connection]\n                                      [--connstr-props]\n                                      [--container]\n                                      [--customized-keys]\n                                      [--id]\n                                      [--name]\n                                      [--no-wait]\n                                      [--opt-out {auth, configinfo, publicnetwork}]\n                                      [--private-endpoint {false, true}]\n                                      [--resource-group]\n                                      [--secret]\n                                      [--service-endpoint {false, true}]\n                                      [--service-principal]\n                                      [--system-identity]\n                                      [--user-identity]\n                                      [--vault-id]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--appconfig-id",
+                "--client-type",
+                "--connection",
+                "--connstr-props",
+                "--container -c",
+                "--customized-keys",
+                "--id",
+                "--name -n",
+                "--no-wait",
+                "--opt-out",
+                "--private-endpoint",
+                "--resource-group -g",
+                "--secret",
+                "--service-endpoint",
+                "--service-principal",
+                "--system-identity",
+                "--user-identity",
+                "--vault-id"
+            ],
+            "examples": [
+                "az containerapp connection update sql -g ContainerAppRG -n MyContainerApp --connection MyConnection --client-type dotnet",
+                "az containerapp connection update sql --id /subscriptions/{subscription}/resourceGroups/{source_resource_group}/providers/Microsoft.Web/sites/{site}/providers/Microsoft.ServiceLinker/linkers/{linker} --client-type dotnet"
+            ]
+        },
+        {
+            "name": "az containerapp connection update storage-blob",
+            "summary": "Update a containerapp to storage-blob connection.",
+            "syntax": "az containerapp connection update storage-blob [--appconfig-id]\n                                               [--client-type {dotnet, dotnet-internal, java, nodejs, none, python, springBoot}]\n                                               [--connection]\n                                               [--connstr-props]\n                                               [--container]\n                                               [--customized-keys]\n                                               [--id]\n                                               [--name]\n                                               [--no-wait]\n                                               [--opt-out {auth, configinfo, publicnetwork}]\n                                               [--private-endpoint {false, true}]\n                                               [--resource-group]\n                                               [--secret]\n                                               [--service-endpoint {false, true}]\n                                               [--service-principal]\n                                               [--system-identity]\n                                               [--user-identity]\n                                               [--vault-id]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--appconfig-id",
+                "--client-type",
+                "--connection",
+                "--connstr-props",
+                "--container -c",
+                "--customized-keys",
+                "--id",
+                "--name -n",
+                "--no-wait",
+                "--opt-out",
+                "--private-endpoint",
+                "--resource-group -g",
+                "--secret",
+                "--service-endpoint",
+                "--service-principal",
+                "--system-identity",
+                "--user-identity",
+                "--vault-id"
+            ],
+            "examples": [
+                "az containerapp connection update storage-blob -g ContainerAppRG -n MyContainerApp --connection MyConnection --client-type dotnet",
+                "az containerapp connection update storage-blob --id /subscriptions/{subscription}/resourceGroups/{source_resource_group}/providers/Microsoft.Web/sites/{site}/providers/Microsoft.ServiceLinker/linkers/{linker} --client-type dotnet"
+            ]
+        },
+        {
+            "name": "az containerapp connection update storage-file",
+            "summary": "Update a containerapp to storage-file connection.",
+            "syntax": "az containerapp connection update storage-file [--appconfig-id]\n                                               [--client-type {dotnet, dotnet-internal, java, nodejs, none, php, python, ruby, springBoot}]\n                                               [--connection]\n                                               [--connstr-props]\n                                               [--container]\n                                               [--customized-keys]\n                                               [--id]\n                                               [--name]\n                                               [--no-wait]\n                                               [--opt-out {auth, configinfo, publicnetwork}]\n                                               [--private-endpoint {false, true}]\n                                               [--resource-group]\n                                               [--secret]\n                                               [--service-endpoint {false, true}]\n                                               [--vault-id]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--appconfig-id",
+                "--client-type",
+                "--connection",
+                "--connstr-props",
+                "--container -c",
+                "--customized-keys",
+                "--id",
+                "--name -n",
+                "--no-wait",
+                "--opt-out",
+                "--private-endpoint",
+                "--resource-group -g",
+                "--secret",
+                "--service-endpoint",
+                "--vault-id"
+            ],
+            "examples": [
+                "az containerapp connection update storage-file -g ContainerAppRG -n MyContainerApp --connection MyConnection --client-type dotnet",
+                "az containerapp connection update storage-file --id /subscriptions/{subscription}/resourceGroups/{source_resource_group}/providers/Microsoft.Web/sites/{site}/providers/Microsoft.ServiceLinker/linkers/{linker} --client-type dotnet"
+            ]
+        },
+        {
+            "name": "az containerapp connection update storage-queue",
+            "summary": "Update a containerapp to storage-queue connection.",
+            "syntax": "az containerapp connection update storage-queue [--appconfig-id]\n                                                [--client-type {dotnet, dotnet-internal, java, nodejs, none, python, springBoot}]\n                                                [--connection]\n                                                [--connstr-props]\n                                                [--container]\n                                                [--customized-keys]\n                                                [--id]\n                                                [--name]\n                                                [--no-wait]\n                                                [--opt-out {auth, configinfo, publicnetwork}]\n                                                [--private-endpoint {false, true}]\n                                                [--resource-group]\n                                                [--secret]\n                                                [--service-endpoint {false, true}]\n                                                [--service-principal]\n                                                [--system-identity]\n                                                [--user-identity]\n                                                [--vault-id]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--appconfig-id",
+                "--client-type",
+                "--connection",
+                "--connstr-props",
+                "--container -c",
+                "--customized-keys",
+                "--id",
+                "--name -n",
+                "--no-wait",
+                "--opt-out",
+                "--private-endpoint",
+                "--resource-group -g",
+                "--secret",
+                "--service-endpoint",
+                "--service-principal",
+                "--system-identity",
+                "--user-identity",
+                "--vault-id"
+            ],
+            "examples": [
+                "az containerapp connection update storage-queue -g ContainerAppRG -n MyContainerApp --connection MyConnection --client-type dotnet",
+                "az containerapp connection update storage-queue --id /subscriptions/{subscription}/resourceGroups/{source_resource_group}/providers/Microsoft.Web/sites/{site}/providers/Microsoft.ServiceLinker/linkers/{linker} --client-type dotnet"
+            ]
+        },
+        {
+            "name": "az containerapp connection update storage-table",
+            "summary": "Update a containerapp to storage-table connection.",
+            "syntax": "az containerapp connection update storage-table [--appconfig-id]\n                                                [--client-type {dotnet, dotnet-internal, java, nodejs, none, python}]\n                                                [--connection]\n                                                [--connstr-props]\n                                                [--container]\n                                                [--customized-keys]\n                                                [--id]\n                                                [--name]\n                                                [--no-wait]\n                                                [--opt-out {auth, configinfo, publicnetwork}]\n                                                [--private-endpoint {false, true}]\n                                                [--resource-group]\n                                                [--secret]\n                                                [--service-endpoint {false, true}]\n                                                [--service-principal]\n                                                [--system-identity]\n                                                [--user-identity]\n                                                [--vault-id]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--appconfig-id",
+                "--client-type",
+                "--connection",
+                "--connstr-props",
+                "--container -c",
+                "--customized-keys",
+                "--id",
+                "--name -n",
+                "--no-wait",
+                "--opt-out",
+                "--private-endpoint",
+                "--resource-group -g",
+                "--secret",
+                "--service-endpoint",
+                "--service-principal",
+                "--system-identity",
+                "--user-identity",
+                "--vault-id"
+            ],
+            "examples": [
+                "az containerapp connection update storage-table -g ContainerAppRG -n MyContainerApp --connection MyConnection --client-type dotnet",
+                "az containerapp connection update storage-table --id /subscriptions/{subscription}/resourceGroups/{source_resource_group}/providers/Microsoft.Web/sites/{site}/providers/Microsoft.ServiceLinker/linkers/{linker} --client-type dotnet"
+            ]
+        },
+        {
+            "name": "az containerapp connection update webpubsub",
+            "summary": "Update a containerapp to webpubsub connection.",
+            "syntax": "az containerapp connection update webpubsub [--appconfig-id]\n                                            [--client-type {dotnet, dotnet-internal, java, nodejs, none, python}]\n                                            [--connection]\n                                            [--connstr-props]\n                                            [--container]\n                                            [--customized-keys]\n                                            [--id]\n                                            [--name]\n                                            [--no-wait]\n                                            [--opt-out {auth, configinfo, publicnetwork}]\n                                            [--private-endpoint {false, true}]\n                                            [--resource-group]\n                                            [--secret]\n                                            [--service-principal]\n                                            [--system-identity]\n                                            [--user-identity]\n                                            [--vault-id]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--appconfig-id",
+                "--client-type",
+                "--connection",
+                "--connstr-props",
+                "--container -c",
+                "--customized-keys",
+                "--id",
+                "--name -n",
+                "--no-wait",
+                "--opt-out",
+                "--private-endpoint",
+                "--resource-group -g",
+                "--secret",
+                "--service-principal",
+                "--system-identity",
+                "--user-identity",
+                "--vault-id"
+            ],
+            "examples": [
+                "az containerapp connection update webpubsub -g ContainerAppRG -n MyContainerApp --connection MyConnection --client-type dotnet",
+                "az containerapp connection update webpubsub --id /subscriptions/{subscription}/resourceGroups/{source_resource_group}/providers/Microsoft.Web/sites/{site}/providers/Microsoft.ServiceLinker/linkers/{linker} --client-type dotnet"
+            ]
+        }
+    ]
+}

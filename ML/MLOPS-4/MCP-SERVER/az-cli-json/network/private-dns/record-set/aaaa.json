@@ -1,0 +1,128 @@
+{
+    "command_group": "az network private-dns record-set aaaa",
+    "description": "Manage Private DNS AAAA records.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az network private-dns record-set aaaa add-record",
+            "summary": "Add an AAAA record.",
+            "syntax": "az network private-dns record-set aaaa add-record --ipv6-address\n                                                  --record-set-name\n                                                  --resource-group\n                                                  --zone-name",
+            "required_parameters": [
+                "--ipv6-address -a",
+                "--record-set-name -n",
+                "--resource-group -g",
+                "--zone-name -z"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az network private-dns record-set aaaa add-record -g MyResourceGroup -z www.mysite.com \\\n    -n MyRecordSet -a MyIpv6Address"
+            ]
+        },
+        {
+            "name": "az network private-dns record-set aaaa create",
+            "summary": "Create an empty AAAA record set.",
+            "syntax": "az network private-dns record-set aaaa create --name\n                                              --resource-group\n                                              --zone-name\n                                              [--metadata]\n                                              [--ttl]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g",
+                "--zone-name -z"
+            ],
+            "optional_parameters": [
+                "--metadata",
+                "--ttl"
+            ],
+            "examples": [
+                "az network private-dns record-set aaaa create -g MyResourceGroup -z www.mysite.com -n MyRecordSet"
+            ]
+        },
+        {
+            "name": "az network private-dns record-set aaaa delete",
+            "summary": "Delete an AAAA record set and all associated records.",
+            "syntax": "az network private-dns record-set aaaa delete [--ids]\n                                              [--if-match]\n                                              [--name]\n                                              [--resource-group]\n                                              [--subscription]\n                                              [--yes]\n                                              [--zone-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--if-match",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y",
+                "--zone-name -z"
+            ],
+            "examples": [
+                "az network private-dns record-set aaaa delete -g MyResourceGroup -z www.mysite.com -n MyRecordSet"
+            ]
+        },
+        {
+            "name": "az network private-dns record-set aaaa list",
+            "summary": "List all AAAA record sets in a zone.",
+            "syntax": "az network private-dns record-set aaaa list --resource-group\n                                            --zone-name\n                                            [--max-items]\n                                            [--next-token]",
+            "required_parameters": [
+                "--resource-group -g",
+                "--zone-name -z"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az network private-dns record-set aaaa list -g MyResourceGroup -z www.mysite.com"
+            ]
+        },
+        {
+            "name": "az network private-dns record-set aaaa remove-record",
+            "summary": "Remove AAAA record from its record set.",
+            "syntax": "az network private-dns record-set aaaa remove-record --ipv6-address\n                                                     --record-set-name\n                                                     --resource-group\n                                                     --zone-name\n                                                     [--keep-empty-record-set]",
+            "required_parameters": [
+                "--ipv6-address -a",
+                "--record-set-name -n",
+                "--resource-group -g",
+                "--zone-name -z"
+            ],
+            "optional_parameters": [
+                "--keep-empty-record-set"
+            ],
+            "examples": [
+                "az network private-dns record-set aaaa remove-record -g MyResourceGroup -z www.mysite.com \\\n    -n MyRecordSet -a MyIpv6Address"
+            ]
+        },
+        {
+            "name": "az network private-dns record-set aaaa show",
+            "summary": "Get the details of an AAAA record set.",
+            "syntax": "az network private-dns record-set aaaa show [--ids]\n                                            [--name]\n                                            [--resource-group]\n                                            [--subscription]\n                                            [--zone-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--zone-name -z"
+            ],
+            "examples": [
+                "az network private-dns record-set aaaa show -g MyResourceGroup -z www.mysite.com -n MyRecordSet"
+            ]
+        },
+        {
+            "name": "az network private-dns record-set aaaa update",
+            "summary": "Update an AAAA record set.",
+            "syntax": "az network private-dns record-set aaaa update [--add]\n                                              [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                              [--ids]\n                                              [--if-match]\n                                              [--metadata]\n                                              [--name]\n                                              [--remove]\n                                              [--resource-group]\n                                              [--set]\n                                              [--subscription]\n                                              [--zone-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--force-string",
+                "--ids",
+                "--if-match",
+                "--metadata",
+                "--name -n",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--subscription",
+                "--zone-name -z"
+            ],
+            "examples": [
+                "az network private-dns record-set aaaa update -g MyResourceGroup -z www.mysite.com -n MyRecordSet --metadata owner=WebTeam"
+            ]
+        }
+    ]
+}

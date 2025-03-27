@@ -1,0 +1,115 @@
+{
+    "command_group": "az networkcloud cluster metricsconfiguration",
+    "description": "Manage cluster's metrics configuration.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az networkcloud cluster metricsconfiguration create",
+            "summary": "Create the metrics configuration of the provided cluster.",
+            "syntax": "az networkcloud cluster metricsconfiguration create --cluster-name\n                                                    --collection-interval\n                                                    --extended-location\n                                                    --resource-group\n                                                    [--enabled-metrics]\n                                                    [--location]\n                                                    [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                                    [--tags]",
+            "required_parameters": [
+                "--cluster-name",
+                "--collection-interval",
+                "--extended-location",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--enabled-metrics",
+                "--location -l",
+                "--no-wait",
+                "--tags"
+            ],
+            "examples": [
+                "az networkcloud cluster metricsconfiguration create --cluster-name \"clusterName\" --extended-location name=\"/subscriptions/subscriptionId/resourceGroups/resourceGroupName/providers/Microsoft.ExtendedLocation/customLocations/clusterExtendedLocationName\" type=\"CustomLocation\" --location \"location\" --collection-interval 15 --enabled-metrics \"metric1\" \"metric2\" --tags key1=\"myvalue1\" key2=\"myvalue2\" --resource-group \"resourceGroupName\""
+            ]
+        },
+        {
+            "name": "az networkcloud cluster metricsconfiguration delete",
+            "summary": "Delete the metrics configuration of the provided cluster.",
+            "syntax": "az networkcloud cluster metricsconfiguration delete [--cluster-name]\n                                                    [--ids]\n                                                    [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                                    [--resource-group]\n                                                    [--subscription]\n                                                    [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--cluster-name",
+                "--ids",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az networkcloud cluster metricsconfiguration delete --cluster-name \"clusterName\" --resource-group \"resourceGroupName\""
+            ]
+        },
+        {
+            "name": "az networkcloud cluster metricsconfiguration list",
+            "summary": "List metrics configurations of the cluster.",
+            "syntax": "az networkcloud cluster metricsconfiguration list --cluster-name\n                                                  --resource-group\n                                                  [--max-items]\n                                                  [--next-token]",
+            "required_parameters": [
+                "--cluster-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az networkcloud cluster metricsconfiguration list --cluster-name \"clusterName\" --resource-group \"resourceGroupName\""
+            ]
+        },
+        {
+            "name": "az networkcloud cluster metricsconfiguration show",
+            "summary": "Get metrics configuration of the provided cluster.",
+            "syntax": "az networkcloud cluster metricsconfiguration show [--cluster-name]\n                                                  [--ids]\n                                                  [--resource-group]\n                                                  [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--cluster-name",
+                "--ids",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az networkcloud cluster metricsconfiguration show --cluster-name \"clusterName\" --resource-group \"resourceGroupName\""
+            ]
+        },
+        {
+            "name": "az networkcloud cluster metricsconfiguration update",
+            "summary": "Update properties of metrics configuration for the provided cluster, or update the tags associated with it. Properties and tag updates can be done independently.",
+            "syntax": "az networkcloud cluster metricsconfiguration update [--cluster-name]\n                                                    [--collection-interval]\n                                                    [--enabled-metrics]\n                                                    [--ids]\n                                                    [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                                    [--resource-group]\n                                                    [--subscription]\n                                                    [--tags]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--cluster-name",
+                "--collection-interval",
+                "--enabled-metrics",
+                "--ids",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--tags"
+            ],
+            "examples": [
+                "az networkcloud cluster metricsconfiguration update --cluster-name \"clusterName\" --collection-interval 15 --enabled-metrics \"metric1\" \"metric2\" --tags key1=\"myvalue1\" key2=\"myvalue2\" --resource-group \"resourceGroupName\""
+            ]
+        },
+        {
+            "name": "az networkcloud cluster metricsconfiguration wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az networkcloud cluster metricsconfiguration wait [--cluster-name]\n                                                  [--created]\n                                                  [--custom]\n                                                  [--deleted]\n                                                  [--exists]\n                                                  [--ids]\n                                                  [--interval]\n                                                  [--metrics-configuration-name]\n                                                  [--resource-group]\n                                                  [--subscription]\n                                                  [--timeout]\n                                                  [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--cluster-name",
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--metrics-configuration-name --name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

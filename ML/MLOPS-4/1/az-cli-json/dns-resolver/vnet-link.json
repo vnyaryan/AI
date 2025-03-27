@@ -1,0 +1,123 @@
+{
+    "command_group": "az dns-resolver vnet-link",
+    "description": "Manage vnet link with dns resolver.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az dns-resolver vnet-link create",
+            "summary": "Create a virtual network link to a DNS forwarding ruleset.",
+            "syntax": "az dns-resolver vnet-link create --id\n                                 --name\n                                 --resource-group\n                                 --ruleset-name\n                                 [--if-match]\n                                 [--if-none-match]\n                                 [--metadata]\n                                 [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]",
+            "required_parameters": [
+                "--id",
+                "--name --virtual-network-link-name -n",
+                "--resource-group -g",
+                "--ruleset-name"
+            ],
+            "optional_parameters": [
+                "--if-match",
+                "--if-none-match",
+                "--metadata",
+                "--no-wait"
+            ],
+            "examples": [
+                "az dns-resolver vnet-link create --ruleset-name \"sampleDnsForwardingRuleset\" --metadata additionalProp1=\"value1\" --id \"/subscriptions/0403cfa9-9659-4f33-9f30-1f191c51d111/resourceG roups/sampleVnetResourceGroupName/providers/Microsoft.Network/virtualNetworks/sampleVirtualN etwork\" --resource-group \"sampleResourceGroup\" --name \"sampleVirtualNetworkLink\""
+            ]
+        },
+        {
+            "name": "az dns-resolver vnet-link delete",
+            "summary": "Deletes a virtual network link to a DNS forwarding ruleset. WARNING: This operation cannot be undone.",
+            "syntax": "az dns-resolver vnet-link delete [--ids]\n                                 [--if-match]\n                                 [--name]\n                                 [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                 [--resource-group]\n                                 [--ruleset-name]\n                                 [--subscription]\n                                 [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--if-match",
+                "--name --virtual-network-link-name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--ruleset-name",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az dns-resolver vnet-link delete --ruleset-name \"sampleDnsForwardingRuleset\" --resource- group \"sampleResourceGroup\" --name \"sampleVirtualNetworkLink\""
+            ]
+        },
+        {
+            "name": "az dns-resolver vnet-link list",
+            "summary": "Lists virtual network links to a DNS forwarding ruleset.",
+            "syntax": "az dns-resolver vnet-link list --resource-group\n                               --ruleset-name\n                               [--max-items]\n                               [--next-token]\n                               [--top]",
+            "required_parameters": [
+                "--resource-group -g",
+                "--ruleset-name"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token",
+                "--top"
+            ],
+            "examples": [
+                "az dns-resolver vnet-link list --ruleset-name \"sampleDnsForwardingRuleset\" --resource-group \"sampleResourceGroup\""
+            ]
+        },
+        {
+            "name": "az dns-resolver vnet-link show",
+            "summary": "Gets properties of a virtual network link to a DNS forwarding ruleset.",
+            "syntax": "az dns-resolver vnet-link show [--ids]\n                               [--name]\n                               [--resource-group]\n                               [--ruleset-name]\n                               [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --virtual-network-link-name -n",
+                "--resource-group -g",
+                "--ruleset-name",
+                "--subscription"
+            ],
+            "examples": [
+                "az dns-resolver vnet-link show --ruleset-name \"sampleDnsForwardingRuleset\" --resource-group \"sampleResourceGroup\" --name \"sampleVirtualNetworkLink\""
+            ]
+        },
+        {
+            "name": "az dns-resolver vnet-link update",
+            "summary": "Updates a virtual network link to a DNS forwarding ruleset.",
+            "syntax": "az dns-resolver vnet-link update [--add]\n                                 [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                 [--ids]\n                                 [--if-match]\n                                 [--metadata]\n                                 [--name]\n                                 [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                 [--remove]\n                                 [--resource-group]\n                                 [--ruleset-name]\n                                 [--set]\n                                 [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--force-string",
+                "--ids",
+                "--if-match",
+                "--metadata",
+                "--name --virtual-network-link-name -n",
+                "--no-wait",
+                "--remove",
+                "--resource-group -g",
+                "--ruleset-name",
+                "--set",
+                "--subscription"
+            ],
+            "examples": [
+                "az dns-resolver vnet-link update --ruleset-name \"sampleDnsForwardingRuleset\" --metadata additionalProp1=\"value1\" --resource-group \"sampleResourceGroup\" --name \"sampleVirtualNetworkLink\""
+            ]
+        },
+        {
+            "name": "az dns-resolver vnet-link wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az dns-resolver vnet-link wait [--created]\n                               [--custom]\n                               [--deleted]\n                               [--exists]\n                               [--ids]\n                               [--interval]\n                               [--name]\n                               [--resource-group]\n                               [--ruleset-name]\n                               [--subscription]\n                               [--timeout]\n                               [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--name --virtual-network-link-name -n",
+                "--resource-group -g",
+                "--ruleset-name",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

@@ -1,0 +1,38 @@
+{
+    "command_group": "az automanage configuration-profile-assignment vm report",
+    "description": "Manage report within a given VM configuration profile assignment.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az automanage configuration-profile-assignment vm report list",
+            "summary": "List reports within a given VM configuration profile assignment.",
+            "syntax": "az automanage configuration-profile-assignment vm report list --assignment-name\n                                                              --resource-group\n                                                              --vm-name",
+            "required_parameters": [
+                "--assignment-name --configuration-profile-assignment-name",
+                "--resource-group -g",
+                "--vm-name"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az automanage configuration-profile-assignment vm report list --assignment-name default -g {rg} --vm-name {vm_name}"
+            ]
+        },
+        {
+            "name": "az automanage configuration-profile-assignment vm report show",
+            "summary": "Get information about a report associated with a VM configuration profile assignment run.",
+            "syntax": "az automanage configuration-profile-assignment vm report show [--assignment-name]\n                                                              [--ids]\n                                                              [--name]\n                                                              [--resource-group]\n                                                              [--subscription]\n                                                              [--vm-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--assignment-name --configuration-profile-assignment-name",
+                "--ids",
+                "--name --report-name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--vm-name"
+            ],
+            "examples": [
+                "az automanage configuration-profile-assignment vm report show -n {report_name} --assignment-name default -g {rg} --vm-name {vm_name}"
+            ]
+        }
+    ]
+}

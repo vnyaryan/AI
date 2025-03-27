@@ -1,0 +1,148 @@
+{
+    "command_group": "az dms",
+    "description": "Manage Azure Data Migration Service (classic) instances.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az dms check-name",
+            "summary": "Check if a given DMS instance name is available in a given region as well as the name's validity.",
+            "syntax": "az dms check-name --location\n                  --name",
+            "required_parameters": [
+                "--location -l",
+                "--name -n"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az dms check-name --location westus2 --name MyService"
+            ]
+        },
+        {
+            "name": "az dms check-status",
+            "summary": "Perform a health check and return the status of the service and virtual machine size.",
+            "syntax": "az dms check-status --name\n                    --resource-group",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az dms check-status --name MyService --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az dms create",
+            "summary": "Create an instance of the Azure Database Migration Service (classic).",
+            "syntax": "az dms create --location\n              --name\n              --resource-group\n              --sku-name\n              --subnet\n              [--no-wait]\n              [--tags]",
+            "required_parameters": [
+                "--location -l",
+                "--name -n",
+                "--resource-group -g",
+                "--sku-name",
+                "--subnet"
+            ],
+            "optional_parameters": [
+                "--no-wait",
+                "--tags"
+            ],
+            "examples": [
+                "az dms create -l westus -n mydms -g myresourcegroup --sku-name Basic_2vCores --subnet /subscriptions/{vnetSubscriptionId}/resourceGroups/{vnetResourceGroup}/providers/Microsoft.Network/virtualNetworks/{vnetName}/subnets/{subnetName} --tags tagName1=tagValue1 tagWithNoValue"
+            ]
+        },
+        {
+            "name": "az dms delete",
+            "summary": "Delete an instance of the Azure Database Migration Service (classic).",
+            "syntax": "az dms delete --name\n              --resource-group\n              [--delete-running-tasks]\n              [--no-wait]\n              [--yes]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--delete-running-tasks",
+                "--no-wait",
+                "--yes -y"
+            ],
+            "examples": [
+                "az dms delete --name MyService --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az dms list",
+            "summary": "List the DMS instances within your currently configured subscription (to set this use \"az account set\"). If provided, only show the instances within a given resource group.",
+            "syntax": "az dms list [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az dms list",
+                "az dms list -g myresourcegroup"
+            ]
+        },
+        {
+            "name": "az dms list-skus",
+            "summary": "List the SKUs that are supported by the Azure Database Migration Service (classic).",
+            "syntax": "az dms list-skus",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az dms show",
+            "summary": "Show the details for an instance of the Azure Database Migration Service (classic).",
+            "syntax": "az dms show --name\n            --resource-group",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az dms start",
+            "summary": "Start an instance of the Azure Database Migration Service (classic). It can then be used to run data migrations.",
+            "syntax": "az dms start --name\n             --resource-group\n             [--no-wait]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--no-wait"
+            ],
+            "examples": [
+                "az dms start --name MyService --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az dms stop",
+            "summary": "Stop an instance of the Azure Database Migration Service (classic). While stopped, it can't be used to run data migrations and the owner won't be billed.",
+            "syntax": "az dms stop --name\n            --resource-group\n            [--no-wait]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--no-wait"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az dms wait",
+            "summary": "Place the CLI in a waiting state until a condition of the DMS instance is met.",
+            "syntax": "az dms wait --name\n            --resource-group\n            [--created]\n            [--custom]\n            [--deleted]\n            [--exists]\n            [--interval]\n            [--timeout]\n            [--updated]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--interval",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

@@ -1,0 +1,92 @@
+{
+    "command_group": "az automation python3-package",
+    "description": "Python3-package.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az automation python3-package create",
+            "summary": "Create or Update the python 3 package identified by package name.",
+            "syntax": "az automation python3-package create --automation-account-name\n                                     --content-link\n                                     --name\n                                     --resource-group\n                                     [--tags]",
+            "required_parameters": [
+                "--automation-account-name",
+                "--content-link",
+                "--name --package-name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--tags"
+            ],
+            "examples": [
+                "az automation python3-package create --automation-account-name \"MyAutomationAccount\" --resource-group \"MyResourceGroup\" --name \"PackageName\" --content-link \"uri=https://PackageUri.com\""
+            ]
+        },
+        {
+            "name": "az automation python3-package delete",
+            "summary": "Delete the python 3 package by name.",
+            "syntax": "az automation python3-package delete [--automation-account-name]\n                                     [--ids]\n                                     [--name]\n                                     [--resource-group]\n                                     [--subscription]\n                                     [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--automation-account-name",
+                "--ids",
+                "--name --package-name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az automation python3-package delete --automation-account-name \"MyAutomationAccount\" --resource-group \"MyResourceGroup\" --name \"PackageName\""
+            ]
+        },
+        {
+            "name": "az automation python3-package list",
+            "summary": "Retrieve a list of python 3 packages.",
+            "syntax": "az automation python3-package list --automation-account-name\n                                   --resource-group",
+            "required_parameters": [
+                "--automation-account-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az automation python3-package list --automation-account-name \"MyAutomationAccount\" --resource-group \"MyResourceGroup\""
+            ]
+        },
+        {
+            "name": "az automation python3-package show",
+            "summary": "Retrieve the python 3 package identified by package name.",
+            "syntax": "az automation python3-package show [--automation-account-name]\n                                   [--ids]\n                                   [--name]\n                                   [--resource-group]\n                                   [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--automation-account-name",
+                "--ids",
+                "--name --package-name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az automation python3-package show --automation-account-name \"MyAutomationAccount\" --resource-group \"MyResourceGroup\" --name \"PackageName\""
+            ]
+        },
+        {
+            "name": "az automation python3-package update",
+            "summary": "Create or Update the python 3 package identified by package name.",
+            "syntax": "az automation python3-package update [--add]\n                                     [--automation-account-name]\n                                     [--content-link]\n                                     [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                     [--ids]\n                                     [--name]\n                                     [--remove]\n                                     [--resource-group]\n                                     [--set]\n                                     [--subscription]\n                                     [--tags]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--automation-account-name",
+                "--content-link",
+                "--force-string",
+                "--ids",
+                "--name --package-name -n",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--subscription",
+                "--tags"
+            ],
+            "examples": [
+                "az automation python3-package update --automation-account-name \"MyAutomationAccount\" --resource-group \"MyResourceGroup\" --name \"PackageName\" --content-link \"uri=https://PackageUri.com\""
+            ]
+        }
+    ]
+}

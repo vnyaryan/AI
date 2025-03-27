@@ -1,0 +1,186 @@
+{
+    "command_group": "az appconfig feature",
+    "description": "Manage feature flags stored in an App Configuration store.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az appconfig feature delete",
+            "summary": "Delete feature flag.",
+            "syntax": "az appconfig feature delete [--auth-mode {key, login}]\n                            [--connection-string]\n                            [--endpoint]\n                            [--feature]\n                            [--key]\n                            [--label]\n                            [--name]\n                            [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--auth-mode",
+                "--connection-string",
+                "--endpoint",
+                "--feature",
+                "--key",
+                "--label",
+                "--name -n",
+                "--yes -y"
+            ],
+            "examples": [
+                "az appconfig feature delete -n MyAppConfiguration --feature color --label MyLabel --yes",
+                "az appconfig feature delete --connection-string Endpoint=https://contoso.azconfig.io;Id=xxx;Secret=xxx --feature color --label MyLabel",
+                "az appconfig feature delete --endpoint https://myappconfiguration.azconfig.io --feature color --auth-mode login",
+                "az appconfig feature delete -n MyAppConfiguration --key .appconfig.featureflag/MyApp1:Beta --yes"
+            ]
+        },
+        {
+            "name": "az appconfig feature disable",
+            "summary": "Disable a feature flag to turn it OFF for use.",
+            "syntax": "az appconfig feature disable [--auth-mode {key, login}]\n                             [--connection-string]\n                             [--endpoint]\n                             [--feature]\n                             [--key]\n                             [--label]\n                             [--name]\n                             [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--auth-mode",
+                "--connection-string",
+                "--endpoint",
+                "--feature",
+                "--key",
+                "--label",
+                "--name -n",
+                "--yes -y"
+            ],
+            "examples": [
+                "az appconfig feature disable -n MyAppConfiguration --feature color --label test",
+                "az appconfig feature disable --connection-string Endpoint=https://contoso.azconfig.io;Id=xxx;Secret=xxx --feature color --label test --yes",
+                "az appconfig feature disable -n MyAppConfiguration --key .appconfig.featureflag/MyApp1:Beta"
+            ]
+        },
+        {
+            "name": "az appconfig feature enable",
+            "summary": "Enable a feature flag to turn it ON for use.",
+            "syntax": "az appconfig feature enable [--auth-mode {key, login}]\n                            [--connection-string]\n                            [--endpoint]\n                            [--feature]\n                            [--key]\n                            [--label]\n                            [--name]\n                            [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--auth-mode",
+                "--connection-string",
+                "--endpoint",
+                "--feature",
+                "--key",
+                "--label",
+                "--name -n",
+                "--yes -y"
+            ],
+            "examples": [
+                "az appconfig feature enable -n MyAppConfiguration --feature color --label test",
+                "az appconfig feature enable --connection-string Endpoint=https://contoso.azconfig.io;Id=xxx;Secret=xxx --feature color --label test --yes",
+                "az appconfig feature enable -n MyAppConfiguration --key .appconfig.featureflag/MyApp1:Beta"
+            ]
+        },
+        {
+            "name": "az appconfig feature list",
+            "summary": "List feature flags.",
+            "syntax": "az appconfig feature list [--all]\n                          [--auth-mode {key, login}]\n                          [--connection-string]\n                          [--endpoint]\n                          [--feature]\n                          [--fields {conditions, description, key, label, last_modified, locked, name, state}]\n                          [--key]\n                          [--label]\n                          [--name]\n                          [--top]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--all",
+                "--auth-mode",
+                "--connection-string",
+                "--endpoint",
+                "--feature",
+                "--fields",
+                "--key",
+                "--label",
+                "--name -n",
+                "--top -t"
+            ],
+            "examples": [
+                "az appconfig feature list -n MyAppConfiguration",
+                "az appconfig feature list -n MyAppConfiguration --label \\0",
+                "az appconfig feature list --feature color --connection-string Endpoint=https://contoso.azconfig.io;Id=xxx;Secret=xxx --label v1.*",
+                "az appconfig feature list --connection-string Endpoint=https://contoso.azconfig.io;Id=xxx;Secret=xxx --fields key state conditions",
+                "az appconfig feature list --connection-string Endpoint=https://contoso.azconfig.io;Id=xxx;Secret=xxx  --top 150",
+                "az appconfig feature list --label test,prod,\\0 -n MyAppConfiguration",
+                "az appconfig feature list -n MyAppConfiguration --key .appconfig.featureflag/MyApp1*"
+            ]
+        },
+        {
+            "name": "az appconfig feature lock",
+            "summary": "Lock a feature flag to prohibit write operations.",
+            "syntax": "az appconfig feature lock [--auth-mode {key, login}]\n                          [--connection-string]\n                          [--endpoint]\n                          [--feature]\n                          [--key]\n                          [--label]\n                          [--name]\n                          [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--auth-mode",
+                "--connection-string",
+                "--endpoint",
+                "--feature",
+                "--key",
+                "--label",
+                "--name -n",
+                "--yes -y"
+            ],
+            "examples": [
+                "az appconfig feature lock -n MyAppConfiguration --feature color --label test",
+                "az appconfig feature lock --connection-string Endpoint=https://contoso.azconfig.io;Id=xxx;Secret=xxx --feature color --label test --yes",
+                "az appconfig feature lock -n MyAppConfiguration --key .appconfig.featureflag/MyApp1:Beta"
+            ]
+        },
+        {
+            "name": "az appconfig feature set",
+            "summary": "Set a feature flag.",
+            "syntax": "az appconfig feature set [--auth-mode {key, login}]\n                         [--connection-string]\n                         [--description]\n                         [--endpoint]\n                         [--feature]\n                         [--key]\n                         [--label]\n                         [--name]\n                         [--requirement-type {all, any}]\n                         [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--auth-mode",
+                "--connection-string",
+                "--description",
+                "--endpoint",
+                "--feature",
+                "--key",
+                "--label",
+                "--name -n",
+                "--requirement-type",
+                "--yes -y"
+            ],
+            "examples": [
+                "az appconfig feature set -n MyAppConfiguration --feature color --label MyLabel",
+                "az appconfig feature set --connection-string Endpoint=https://contoso.azconfig.io;Id=xxx;Secret=xxx --feature color --description \"This is a colorful feature\"",
+                "az appconfig feature set --endpoint https://myappconfiguration.azconfig.io --feature color --label MyLabel --auth-mode login",
+                "az appconfig feature set -n MyAppConfiguration --feature Beta --key .appconfig.featureflag/MyApp1:Beta"
+            ]
+        },
+        {
+            "name": "az appconfig feature show",
+            "summary": "Show all attributes of a feature flag.",
+            "syntax": "az appconfig feature show [--auth-mode {key, login}]\n                          [--connection-string]\n                          [--endpoint]\n                          [--feature]\n                          [--fields {conditions, description, key, label, last_modified, locked, name, state}]\n                          [--key]\n                          [--label]\n                          [--name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--auth-mode",
+                "--connection-string",
+                "--endpoint",
+                "--feature",
+                "--fields",
+                "--key",
+                "--label",
+                "--name -n"
+            ],
+            "examples": [
+                "az appconfig feature show -n MyAppConfiguration --feature color --label MyLabel",
+                "az appconfig feature show --connection-string Endpoint=https://contoso.azconfig.io;Id=xxx;Secret=xxx --feature color --fields key locked conditions state",
+                "az appconfig feature show --endpoint https://myappconfiguration.azconfig.io --feature color --auth-mode login",
+                "az appconfig feature show -n MyAppConfiguration --key .appconfig.featureflag/MyApp1:Beta"
+            ]
+        },
+        {
+            "name": "az appconfig feature unlock",
+            "summary": "Unlock a feature to gain write operations.",
+            "syntax": "az appconfig feature unlock [--auth-mode {key, login}]\n                            [--connection-string]\n                            [--endpoint]\n                            [--feature]\n                            [--key]\n                            [--label]\n                            [--name]\n                            [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--auth-mode",
+                "--connection-string",
+                "--endpoint",
+                "--feature",
+                "--key",
+                "--label",
+                "--name -n",
+                "--yes -y"
+            ],
+            "examples": [
+                "az appconfig feature unlock -n MyAppConfiguration --feature color --label test",
+                "az appconfig feature unlock --connection-string Endpoint=https://contoso.azconfig.io;Id=xxx;Secret=xxx --feature color --label test --yes",
+                "az appconfig feature unlock -n MyAppConfiguration --key .appconfig.featureflag/MyApp1:Beta"
+            ]
+        }
+    ]
+}

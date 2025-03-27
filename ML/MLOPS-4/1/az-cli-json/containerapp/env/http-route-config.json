@@ -1,0 +1,80 @@
+{
+    "command_group": "az containerapp env http-route-config",
+    "description": "Commands to manage environment level http routing.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az containerapp env http-route-config create",
+            "summary": "Create a new http route config.",
+            "syntax": "az containerapp env http-route-config create --http-route-config-name\n                                             --name\n                                             --resource-group\n                                             --yaml",
+            "required_parameters": [
+                "--http-route-config-name -r",
+                "--name -n",
+                "--resource-group -g",
+                "--yaml"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az containerapp env http-route-config create -g MyResourceGroup -n MyEnvironment -r configname --yaml config.yaml"
+            ]
+        },
+        {
+            "name": "az containerapp env http-route-config delete",
+            "summary": "Delete a http route config.",
+            "syntax": "az containerapp env http-route-config delete --http-route-config-name\n                                             --name\n                                             --resource-group\n                                             [--yes]",
+            "required_parameters": [
+                "--http-route-config-name -r",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--yes -y"
+            ],
+            "examples": [
+                "az containerapp env http-route-config delete -g MyResourceGroup -n MyEnvironment -r configname"
+            ]
+        },
+        {
+            "name": "az containerapp env http-route-config list",
+            "summary": "List the http route configs in the environment.",
+            "syntax": "az containerapp env http-route-config list --name\n                                           --resource-group",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az containerapp env http-route-config list -g MyResourceGroup -n MyEnvironment"
+            ]
+        },
+        {
+            "name": "az containerapp env http-route-config show",
+            "summary": "Show a http route config.",
+            "syntax": "az containerapp env http-route-config show --http-route-config-name\n                                           --name\n                                           --resource-group",
+            "required_parameters": [
+                "--http-route-config-name -r",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az containerapp env http-route-config show -g MyResourceGroup -n MyEnvironment -r configname"
+            ]
+        },
+        {
+            "name": "az containerapp env http-route-config update",
+            "summary": "Update a http route config.",
+            "syntax": "az containerapp env http-route-config update --http-route-config-name\n                                             --name\n                                             --resource-group\n                                             --yaml",
+            "required_parameters": [
+                "--http-route-config-name -r",
+                "--name -n",
+                "--resource-group -g",
+                "--yaml"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az containerapp env http-route-config update -g MyResourceGroup -n MyEnvironment -r configname --yaml config.yaml"
+            ]
+        }
+    ]
+}

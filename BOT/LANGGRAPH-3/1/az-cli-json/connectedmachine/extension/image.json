@@ -1,0 +1,38 @@
+{
+    "command_group": "az connectedmachine extension image",
+    "description": "Manage VM extension metadata available for Azure Arc-Enabled Servers.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az connectedmachine extension image list",
+            "summary": "List all Extension versions based on location, publisher, extensionType.",
+            "syntax": "az connectedmachine extension image list --extension-type\n                                         --location\n                                         --publisher",
+            "required_parameters": [
+                "--extension-type --type",
+                "--location -l",
+                "--publisher -p"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az connectedmachine extension image list --publisher microsoft.azure.monitor --extension-type azuremonitorlinuxagent --location eastus"
+            ]
+        },
+        {
+            "name": "az connectedmachine extension image show",
+            "summary": "Get an Extension Metadata based on location, publisher, extensionType and version.",
+            "syntax": "az connectedmachine extension image show [--extension-type]\n                                         [--ids]\n                                         [--location]\n                                         [--name]\n                                         [--publisher]\n                                         [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--extension-type --type",
+                "--ids",
+                "--location -l",
+                "--name --version -n",
+                "--publisher -p",
+                "--subscription"
+            ],
+            "examples": [
+                "az connectedmachine extension image show --publisher microsoft.azure.monitor --extension-type azuremonitorlinuxagent --location eastus --version 1.9.1"
+            ]
+        }
+    ]
+}

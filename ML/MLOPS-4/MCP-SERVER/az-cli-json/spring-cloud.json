@@ -1,0 +1,6 @@
+{
+    "command_group": "az spring-cloud",
+    "description": "Commands to manage Azure Spring Cloud.",
+    "status": "Deprecated",
+    "commands": []
+}

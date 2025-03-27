@@ -1,0 +1,40 @@
+{
+    "command_group": "az appservice domain",
+    "description": "Manage custom domains.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az appservice domain create",
+            "summary": "Create and purchase a custom domain.",
+            "syntax": "az appservice domain create --contact-info\n                            --hostname\n                            --resource-group\n                            [--accept-terms]\n                            [--auto-renew]\n                            [--dryrun]\n                            [--privacy]\n                            [--tags]",
+            "required_parameters": [
+                "--contact-info -c",
+                "--hostname -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--accept-terms",
+                "--auto-renew -a",
+                "--dryrun",
+                "--privacy -p",
+                "--tags"
+            ],
+            "examples": [
+                "az appservice domain create -g MyResourceGroup --hostname MyCustomDomain.com --contact-info=@'C:/path_to_contact_info.json' --accept-terms",
+                "az appservice domain create -g MyResourceGroup --hostname MyCustomDomain.com --contact-info=@'C:/path_to_contact_info.json' --dryrun"
+            ]
+        },
+        {
+            "name": "az appservice domain show-terms",
+            "summary": "Show the legal terms for purchasing and creating a custom domain.",
+            "syntax": "az appservice domain show-terms --hostname",
+            "required_parameters": [
+                "--hostname -n"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az appservice domain show-terms --hostname MyCustomDomain.com"
+            ]
+        }
+    ]
+}

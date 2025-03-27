@@ -1,0 +1,250 @@
+{
+    "command_group": "az cdn endpoint",
+    "description": "Manage CDN endpoints.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az cdn endpoint create",
+            "summary": "Create a new CDN endpoint with the specified endpoint name under the specified subscription, resource group and profile.",
+            "syntax": "az cdn endpoint create --endpoint-name\n                       --origin\n                       --profile-name\n                       --resource-group\n                       [--content-types-to-compress]\n                       [--default-origin-group]\n                       [--delivery-policy]\n                       [--enable-compression {0, 1, f, false, n, no, t, true, y, yes}]\n                       [--geo-filters]\n                       [--location]\n                       [--no-http {0, 1, f, false, n, no, t, true, y, yes}]\n                       [--no-https {0, 1, f, false, n, no, t, true, y, yes}]\n                       [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                       [--optimization-type {DynamicSiteAcceleration, GeneralMediaStreaming, GeneralWebDelivery, LargeFileDownload, VideoOnDemandMediaStreaming}]\n                       [--origin-groups]\n                       [--origin-host-header]\n                       [--origin-path]\n                       [--probe-path]\n                       [--query-string-caching-behavior {BypassCaching, IgnoreQueryString, NotSet, UseQueryString}]\n                       [--tags]\n                       [--url-signing-keys]\n                       [--web-application-firewall-policy-link]",
+            "required_parameters": [
+                "--endpoint-name --name -n",
+                "--origin",
+                "--profile-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--content-types-to-compress",
+                "--default-origin-group",
+                "--delivery-policy",
+                "--enable-compression",
+                "--geo-filters",
+                "--location -l",
+                "--no-http",
+                "--no-https",
+                "--no-wait",
+                "--optimization-type",
+                "--origin-groups",
+                "--origin-host-header",
+                "--origin-path",
+                "--probe-path",
+                "--query-string-caching-behavior",
+                "--tags",
+                "--url-signing-keys",
+                "--web-application-firewall-policy-link"
+            ],
+            "examples": [
+                "az cdn endpoint create -g group -n endpoint --profile-name profile --origin www.example.com",
+                "az cdn endpoint create -g group -n endpoint --profile-name profile --origin www.example.com 88 4444",
+                "az cdn endpoint create -g group -n endpoint --profile-name profile --origin www.example.com 80 443 /subscriptions/subid/resourcegroups/rg1/providers/Microsoft.Network/privateLinkServices/pls1 eastus \"Please approve this request\"",
+                "az cdn endpoint create -g group -n endpoint --profile-name profile --origin www.example.com --no-http --enable-compression",
+                "az cdn endpoint create -g group -n endpoint --profile-name profile --origin www.example.com --enable-compression --content-types-to-compress text/plain text/html"
+            ]
+        },
+        {
+            "name": "az cdn endpoint delete",
+            "summary": "Delete an existing CDN endpoint with the specified endpoint name under the specified subscription, resource group and profile.",
+            "syntax": "az cdn endpoint delete [--endpoint-name]\n                       [--ids]\n                       [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                       [--profile-name]\n                       [--resource-group]\n                       [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--endpoint-name --name -n",
+                "--ids",
+                "--no-wait",
+                "--profile-name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az cdn endpoint delete -g group -n endpoint --profile-name profile-name"
+            ]
+        },
+        {
+            "name": "az cdn endpoint list",
+            "summary": "List existing CDN endpoints.",
+            "syntax": "az cdn endpoint list --profile-name\n                     --resource-group\n                     [--max-items]\n                     [--next-token]",
+            "required_parameters": [
+                "--profile-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az cdn endpoint list -g group --profile-name profile-name"
+            ]
+        },
+        {
+            "name": "az cdn endpoint load",
+            "summary": "Pre-loads a content to CDN. Available for Verizon Profiles.",
+            "syntax": "az cdn endpoint load --content-paths\n                     [--endpoint-name]\n                     [--ids]\n                     [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                     [--profile-name]\n                     [--resource-group]\n                     [--subscription]",
+            "required_parameters": [
+                "--content-paths"
+            ],
+            "optional_parameters": [
+                "--endpoint-name --name -n",
+                "--ids",
+                "--no-wait",
+                "--profile-name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az cdn endpoint load -g group -n endpoint --profile-name profile-name --content-paths '/scripts/app.js' '/styles/main.css'"
+            ]
+        },
+        {
+            "name": "az cdn endpoint name-exists",
+            "summary": "Check the availability of a resource name. This is needed for resources where name is globally unique, such as a CDN endpoint.",
+            "syntax": "az cdn endpoint name-exists --name\n                            [--type {Microsoft.Cdn/Profiles/AfdEndpoints, Microsoft.Cdn/Profiles/Endpoints}]",
+            "required_parameters": [
+                "--name"
+            ],
+            "optional_parameters": [
+                "--type"
+            ],
+            "examples": [
+                "az cdn name-exists --name contoso"
+            ]
+        },
+        {
+            "name": "az cdn endpoint purge",
+            "summary": "Removes a content from CDN.",
+            "syntax": "az cdn endpoint purge --content-paths\n                      [--endpoint-name]\n                      [--ids]\n                      [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                      [--profile-name]\n                      [--resource-group]\n                      [--subscription]",
+            "required_parameters": [
+                "--content-paths"
+            ],
+            "optional_parameters": [
+                "--endpoint-name --name -n",
+                "--ids",
+                "--no-wait",
+                "--profile-name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az cdn endpoint purge -g group -n endpoint --profile-name profile-name --content-paths '/scripts/app.js' '/styles/*'"
+            ]
+        },
+        {
+            "name": "az cdn endpoint show",
+            "summary": "Get an existing CDN endpoint with the specified endpoint name under the specified subscription, resource group and profile.",
+            "syntax": "az cdn endpoint show [--endpoint-name]\n                     [--ids]\n                     [--profile-name]\n                     [--resource-group]\n                     [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--endpoint-name --name -n",
+                "--ids",
+                "--profile-name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az cdn endpoint start",
+            "summary": "Starts an existing CDN endpoint that is on a stopped state.",
+            "syntax": "az cdn endpoint start [--endpoint-nameendpoint-name]\n                      [--ids]\n                      [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                      [--profile-name]\n                      [--resource-group]\n                      [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--endpoint-nameendpoint-name --name -n",
+                "--ids",
+                "--no-wait",
+                "--profile-name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az cdn endpoint start -g group -n endpoint --profile-name profile-name"
+            ]
+        },
+        {
+            "name": "az cdn endpoint stop",
+            "summary": "Stops an existing running CDN endpoint.",
+            "syntax": "az cdn endpoint stop [--endpoint-name]\n                     [--ids]\n                     [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                     [--profile-name]\n                     [--resource-group]\n                     [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--endpoint-name --name -n",
+                "--ids",
+                "--no-wait",
+                "--profile-name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az cdn endpoint stop -g group -n endpoint --profile-name profile-name"
+            ]
+        },
+        {
+            "name": "az cdn endpoint update",
+            "summary": "Update an existing CDN endpoint with the specified endpoint name under the specified subscription, resource group and profile. Only tags can be updated after creating an endpoint. To update origins, use the Update Origin operation. To update origin groups, use the Update Origin group operation. To update custom domains, use the Update Custom Domain operation.",
+            "syntax": "az cdn endpoint update [--content-types-to-compress]\n                       [--default-origin-group]\n                       [--delivery-policy]\n                       [--enable-compression {0, 1, f, false, n, no, t, true, y, yes}]\n                       [--endpoint-name]\n                       [--geo-filters]\n                       [--ids]\n                       [--no-http {0, 1, f, false, n, no, t, true, y, yes}]\n                       [--no-https {0, 1, f, false, n, no, t, true, y, yes}]\n                       [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                       [--optimization-type {DynamicSiteAcceleration, GeneralMediaStreaming, GeneralWebDelivery, LargeFileDownload, VideoOnDemandMediaStreaming}]\n                       [--origin-host-header]\n                       [--origin-path]\n                       [--probe-path]\n                       [--profile-name]\n                       [--query-string-caching-behavior {BypassCaching, IgnoreQueryString, NotSet, UseQueryString}]\n                       [--resource-group]\n                       [--subscription]\n                       [--tags]\n                       [--url-signing-keys]\n                       [--web-application-firewall-policy-link]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--content-types-to-compress",
+                "--default-origin-group",
+                "--delivery-policy",
+                "--enable-compression",
+                "--endpoint-name --name -n",
+                "--geo-filters",
+                "--ids",
+                "--no-http",
+                "--no-https",
+                "--no-wait",
+                "--optimization-type",
+                "--origin-host-header",
+                "--origin-path",
+                "--probe-path",
+                "--profile-name",
+                "--query-string-caching-behavior",
+                "--resource-group -g",
+                "--subscription",
+                "--tags",
+                "--url-signing-keys",
+                "--web-application-firewall-policy-link"
+            ],
+            "examples": [
+                "az cdn endpoint update -g group -n endpoint --profile-name profile --no-http",
+                "az cdn endpoint update -g group -n endpoint --profile-name profile --enable-compression"
+            ]
+        },
+        {
+            "name": "az cdn endpoint validate-custom-domain",
+            "summary": "Validates the custom domain mapping to ensure it maps to the correct CDN endpoint in DNS.",
+            "syntax": "az cdn endpoint validate-custom-domain --host-name\n                                       [--endpoint-name]\n                                       [--ids]\n                                       [--profile-name]\n                                       [--resource-group]\n                                       [--subscription]",
+            "required_parameters": [
+                "--host-name"
+            ],
+            "optional_parameters": [
+                "--endpoint-name --name -n",
+                "--ids",
+                "--profile-name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az cdn endpoint validate-custom-domain -g group -n endpoint --profile-name profile-name --host-name www.contoso.com"
+            ]
+        },
+        {
+            "name": "az cdn endpoint wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az cdn endpoint wait [--created]\n                     [--custom]\n                     [--deleted]\n                     [--endpoint-name]\n                     [--exists]\n                     [--ids]\n                     [--interval]\n                     [--profile-name]\n                     [--resource-group]\n                     [--subscription]\n                     [--timeout]\n                     [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--endpoint-name --name -n",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--profile-name",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

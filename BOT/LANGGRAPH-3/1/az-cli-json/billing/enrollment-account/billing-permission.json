@@ -1,0 +1,21 @@
+{
+    "command_group": "az billing enrollment-account billing-permission",
+    "description": "Manage enrollment account billing permission.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az billing enrollment-account billing-permission list",
+            "summary": "List the billing permissions the caller has on an enrollment account.",
+            "syntax": "az billing enrollment-account billing-permission list --billing-account-name\n                                                      --enrollment-account-name\n                                                      [--max-items]\n                                                      [--next-token]",
+            "required_parameters": [
+                "--billing-account-name",
+                "--enrollment-account-name"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": []
+        }
+    ]
+}

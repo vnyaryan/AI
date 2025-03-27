@@ -1,0 +1,80 @@
+{
+    "command_group": "az containerapp env dapr-component",
+    "description": "Commands to manage Dapr components for the Container Apps environment.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az containerapp env dapr-component init",
+            "summary": "Initializes Dapr components and dev services for an environment.",
+            "syntax": "az containerapp env dapr-component init --name\n                                        --resource-group\n                                        [--pubsub]\n                                        [--statestore]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--pubsub",
+                "--statestore"
+            ],
+            "examples": [
+                "az containerapp env dapr-component init -g MyResourceGroup --name MyEnvironment",
+                "az containerapp env dapr-component init -g MyResourceGroup --name MyEnvironment --statestore postgres --pubsub kafka"
+            ]
+        },
+        {
+            "name": "az containerapp env dapr-component list",
+            "summary": "List Dapr components for an environment.",
+            "syntax": "az containerapp env dapr-component list --name\n                                        --resource-group",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az containerapp env dapr-component list -g MyResourceGroup --name MyEnvironment"
+            ]
+        },
+        {
+            "name": "az containerapp env dapr-component remove",
+            "summary": "Remove a Dapr component from an environment.",
+            "syntax": "az containerapp env dapr-component remove --dapr-component-name\n                                          --name\n                                          --resource-group",
+            "required_parameters": [
+                "--dapr-component-name",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az containerapp env dapr-component remove -g MyResourceGroup --dapr-component-name MyDaprComponentName --name MyEnvironment"
+            ]
+        },
+        {
+            "name": "az containerapp env dapr-component set",
+            "summary": "Create or update a Dapr component.",
+            "syntax": "az containerapp env dapr-component set --dapr-component-name\n                                       --name\n                                       --resource-group\n                                       --yaml",
+            "required_parameters": [
+                "--dapr-component-name",
+                "--name -n",
+                "--resource-group -g",
+                "--yaml"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az containerapp env dapr-component set -g MyResourceGroup --name MyEnv --yaml MyYAMLPath --dapr-component-name MyDaprComponentName"
+            ]
+        },
+        {
+            "name": "az containerapp env dapr-component show",
+            "summary": "Show the details of a Dapr component.",
+            "syntax": "az containerapp env dapr-component show --dapr-component-name\n                                        --name\n                                        --resource-group",
+            "required_parameters": [
+                "--dapr-component-name",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az containerapp env dapr-component show -g MyResourceGroup --dapr-component-name MyDaprComponentName --name MyEnvironment"
+            ]
+        }
+    ]
+}

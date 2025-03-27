@@ -1,0 +1,104 @@
+{
+    "command_group": "az network firewall policy rule-collection-group draft collection rule",
+    "description": "Manage and configure the rule of a filter collection in the rule collection group of Azure firewall policy.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az network firewall policy rule-collection-group draft collection rule add",
+            "summary": "Add a rule into an Azure firewall policy draft rule collection.",
+            "syntax": "az network firewall policy rule-collection-group draft collection rule add --collection-name\n                                                                           --name\n                                                                           --policy-name\n                                                                           --resource-group\n                                                                           --rule-collection-group-name\n                                                                           --rule-type {ApplicationRule, NatRule, NetworkRule}\n                                                                           [--add]\n                                                                           [--description]\n                                                                           [--dest-addr]\n                                                                           [--dest-ipg]\n                                                                           [--destination-fqdns]\n                                                                           [--destination-ports]\n                                                                           [--enable-tls-insp {0, 1, f, false, n, no, t, true, y, yes}]\n                                                                           [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                                                           [--fqdn-tags]\n                                                                           [--ip-protocols]\n                                                                           [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                                                           [--protocols]\n                                                                           [--remove]\n                                                                           [--set]\n                                                                           [--source-addresses]\n                                                                           [--source-ip-groups]\n                                                                           [--target-fqdns]\n                                                                           [--target-urls]\n                                                                           [--translated-address]\n                                                                           [--translated-fqdn]\n                                                                           [--translated-port]\n                                                                           [--web-categories]",
+            "required_parameters": [
+                "--collection-name",
+                "--name -n",
+                "--policy-name",
+                "--resource-group -g",
+                "--rule-collection-group-name",
+                "--rule-type"
+            ],
+            "optional_parameters": [
+                "--add",
+                "--description",
+                "--dest-addr --destination-addresses",
+                "--dest-ipg --destination-ip-groups",
+                "--destination-fqdns",
+                "--destination-ports",
+                "--enable-tls-insp --enable-tls-inspection",
+                "--force-string",
+                "--fqdn-tags",
+                "--ip-protocols",
+                "--no-wait",
+                "--protocols",
+                "--remove",
+                "--set",
+                "--source-addresses",
+                "--source-ip-groups",
+                "--target-fqdns",
+                "--target-urls",
+                "--translated-address",
+                "--translated-fqdn",
+                "--translated-port",
+                "--web-categories"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az network firewall policy rule-collection-group draft collection rule remove",
+            "summary": "Remove a rule from an Azure firewall policy rule collection draft.",
+            "syntax": "az network firewall policy rule-collection-group draft collection rule remove --collection-name\n                                                                              --name\n                                                                              --policy-name\n                                                                              --resource-group\n                                                                              --rule-collection-group-name\n                                                                              [--add]\n                                                                              [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                                                              [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                                                              [--remove]\n                                                                              [--set]",
+            "required_parameters": [
+                "--collection-name",
+                "--name -n",
+                "--policy-name",
+                "--resource-group -g",
+                "--rule-collection-group-name"
+            ],
+            "optional_parameters": [
+                "--add",
+                "--force-string",
+                "--no-wait",
+                "--remove",
+                "--set"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az network firewall policy rule-collection-group draft collection rule update",
+            "summary": "Update a rule of an Azure firewall policy rule collection.",
+            "syntax": "az network firewall policy rule-collection-group draft collection rule update --collection-name\n                                                                              --name\n                                                                              --policy-name\n                                                                              --resource-group\n                                                                              --rule-collection-group-name\n                                                                              [--add]\n                                                                              [--description]\n                                                                              [--dest-addr]\n                                                                              [--dest-ipg]\n                                                                              [--destination-fqdns]\n                                                                              [--destination-ports]\n                                                                              [--enable-tls-insp {0, 1, f, false, n, no, t, true, y, yes}]\n                                                                              [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                                                              [--fqdn-tags]\n                                                                              [--ip-protocols]\n                                                                              [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                                                              [--protocols]\n                                                                              [--remove]\n                                                                              [--set]\n                                                                              [--source-addresses]\n                                                                              [--source-ip-groups]\n                                                                              [--target-fqdns]\n                                                                              [--target-urls]\n                                                                              [--translated-address]\n                                                                              [--translated-fqdn]\n                                                                              [--translated-port]\n                                                                              [--web-categories]",
+            "required_parameters": [
+                "--collection-name",
+                "--name -n",
+                "--policy-name",
+                "--resource-group -g",
+                "--rule-collection-group-name"
+            ],
+            "optional_parameters": [
+                "--add",
+                "--description",
+                "--dest-addr --destination-addresses",
+                "--dest-ipg --destination-ip-groups",
+                "--destination-fqdns",
+                "--destination-ports",
+                "--enable-tls-insp --enable-tls-inspection",
+                "--force-string",
+                "--fqdn-tags",
+                "--ip-protocols",
+                "--no-wait",
+                "--protocols",
+                "--remove",
+                "--set",
+                "--source-addresses",
+                "--source-ip-groups",
+                "--target-fqdns",
+                "--target-urls",
+                "--translated-address",
+                "--translated-fqdn",
+                "--translated-port",
+                "--web-categories"
+            ],
+            "examples": [
+                "az network firewall policy rule-collection-group draft collection rule update -g {rg} --policy-\nname {policy} --rule-collection-group-name {rcg} --collection-name {cn} -n {rule_name}\n--target-fqdns XXX"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,90 @@
+{
+    "command_group": "az spring container-registry",
+    "description": "(Enterprise Tier Only) Commands to manage Container Registry Resource.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az spring container-registry create",
+            "summary": "Create a container registry.",
+            "syntax": "az spring container-registry create --resource-group\n                                    --service\n                                    [--name]\n                                    [--no-wait]\n                                    [--password]\n                                    [--server]\n                                    [--username]",
+            "required_parameters": [
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [
+                "--name -n",
+                "--no-wait",
+                "--password",
+                "--server",
+                "--username"
+            ],
+            "examples": [
+                "az spring container-registry create --name my-acr --server test.azurecr.io --username test --password xxx --service clitest --resource-group cli"
+            ]
+        },
+        {
+            "name": "az spring container-registry delete",
+            "summary": "Delete a container registry.",
+            "syntax": "az spring container-registry delete --name\n                                    --resource-group\n                                    --service\n                                    [--no-wait]\n                                    [--yes]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [
+                "--no-wait",
+                "--yes -y"
+            ],
+            "examples": [
+                "az spring container-registry delete --name my-acr --service clitest --resource-group cli"
+            ]
+        },
+        {
+            "name": "az spring container-registry list",
+            "summary": "List all container registries.",
+            "syntax": "az spring container-registry list --resource-group\n                                  --service",
+            "required_parameters": [
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az spring container-registry list --service clitest --resource-group cli"
+            ]
+        },
+        {
+            "name": "az spring container-registry show",
+            "summary": "Show a container registry.",
+            "syntax": "az spring container-registry show --resource-group\n                                  --service\n                                  [--name]",
+            "required_parameters": [
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [
+                "--name -n"
+            ],
+            "examples": [
+                "az spring container-registry show --name my-acr --service clitest --resource-group cli"
+            ]
+        },
+        {
+            "name": "az spring container-registry update",
+            "summary": "Update a container registry.",
+            "syntax": "az spring container-registry update --resource-group\n                                    --service\n                                    [--name]\n                                    [--no-wait]\n                                    [--password]\n                                    [--server]\n                                    [--username]",
+            "required_parameters": [
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [
+                "--name -n",
+                "--no-wait",
+                "--password",
+                "--server",
+                "--username"
+            ],
+            "examples": [
+                "az spring container-registry update --name my-acr --server test.azurecr.io --username test --password xxx --service clitest --resource-group cli"
+            ]
+        }
+    ]
+}

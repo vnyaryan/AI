@@ -1,0 +1,138 @@
+{
+    "command_group": "az dedicated-hsm",
+    "description": "Manage dedicated hsm with hardware security modules.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az dedicated-hsm create",
+            "summary": "Create a dedicated HSM in the specified subscription.",
+            "syntax": "az dedicated-hsm create --name\n                        --resource-group\n                        [--location]\n                        [--mgmt-network-interfaces]\n                        [--mgmt-network-subnet]\n                        [--network-interfaces]\n                        [--no-wait]\n                        [--sku {SafeNet Luna Network HSM A790, payShield10K_LMK1_CPS250, payShield10K_LMK1_CPS2500, payShield10K_LMK1_CPS60, payShield10K_LMK2_CPS250, payShield10K_LMK2_CPS2500, payShield10K_LMK2_CPS60}]\n                        [--stamp-id]\n                        [--subnet]\n                        [--tags]\n                        [--zones]",
+            "required_parameters": [
+                "--name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--location -l",
+                "--mgmt-network-interfaces -m",
+                "--mgmt-network-subnet",
+                "--network-interfaces -i",
+                "--no-wait",
+                "--sku",
+                "--stamp-id",
+                "--subnet",
+                "--tags",
+                "--zones"
+            ],
+            "examples": [
+                "az dedicated-hsm create --name \"hsm1\" --location \"westus\" --network-interfaces private-ip-address=\"1.0.0.1\" --subnet id=\"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/hsm-group/providers/Microsoft.Network/virtualNetworks/stamp01/subnets/stamp01\" --stamp-id \"stamp01\" --sku \"SafeNet Luna Network HSM A790\" --tags Dept=\"hsm\" Environment=\"dogfood\" --resource-group \"hsm-group\"",
+                "az dedicated-hsm create --name \"hsm1\" --location \"westus\" --mgmt-network-interfaces private-ip-address=\"1.0.0.1\" --mgmt-network-subnet id=\"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/hsm-group/providers/Microsoft.Network/virtualNetworks/stamp01/subnets/stamp01\" --stamp-id \"stamp01\" --sku \"payShield10K_LMK1_CPS60\" --tags Dept=\"hsm\" Environment=\"dogfood\" --resource-group \"hsm-group\"",
+                "az dedicated-hsm create --name \"hsm1\" --location \"westus\" --network-interfaces private-ip-address=\"1.0.0.2\" --subnet id=\"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/hsm-group/providers/Microsoft.Network/virtualNetworks/stamp01/subnets/stamp01\" --mgmt-network-interfaces private-ip-address=\"1.0.0.1\" --mgmt-network-subnet id=\"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/hsm-group/providers/Microsoft.Network/virtualNetworks/stamp01/subnets/stamp01\" --stamp-id \"stamp02\" --sku \"payShield10K_LMK1_CPS60\" --tags Dept=\"hsm\" Environment=\"dogfood\" --resource-group \"hsm-group\""
+            ]
+        },
+        {
+            "name": "az dedicated-hsm delete",
+            "summary": "Deletes the specified Azure Dedicated HSM.",
+            "syntax": "az dedicated-hsm delete [--ids]\n                        [--name]\n                        [--no-wait]\n                        [--resource-group]\n                        [--subscription]\n                        [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az dedicated-hsm delete --name \"hsm1\" --resource-group \"hsm-group\""
+            ]
+        },
+        {
+            "name": "az dedicated-hsm list",
+            "summary": "The List operation gets information about the dedicated hsms associated with the subscription and within the specified resource group. And The List operation gets information about the dedicated HSMs associated with the subscription.",
+            "syntax": "az dedicated-hsm list [--resource-group]\n                      [--top]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--resource-group -g",
+                "--top"
+            ],
+            "examples": [
+                "az dedicated-hsm list --resource-group \"hsm-group\"",
+                "az dedicated-hsm list --resource-group \"hsm-group\"",
+                "az dedicated-hsm list",
+                "az dedicated-hsm list"
+            ]
+        },
+        {
+            "name": "az dedicated-hsm list-outbound-network-dependency-endpoint",
+            "summary": "Gets a list of egress endpoints (network endpoints of all outbound dependencies) in the specified dedicated hsm resource. The operation returns properties of each egress endpoint.",
+            "syntax": "az dedicated-hsm list-outbound-network-dependency-endpoint --name\n                                                           --resource-group",
+            "required_parameters": [
+                "--name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az dedicated-hsm list-outbound-network-dependency-endpoint --name \"hsm1\" --resource-group \"hsm-group\""
+            ]
+        },
+        {
+            "name": "az dedicated-hsm show",
+            "summary": "Gets the specified Azure dedicated HSM.",
+            "syntax": "az dedicated-hsm show [--ids]\n                      [--name]\n                      [--resource-group]\n                      [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az dedicated-hsm show --name \"hsm1\" --resource-group \"hsm-group\"",
+                "az dedicated-hsm show --name \"hsm1\" --resource-group \"hsm-group\"",
+                "az dedicated-hsm show --name \"hsm1\" --resource-group \"hsm-group\""
+            ]
+        },
+        {
+            "name": "az dedicated-hsm update",
+            "summary": "Update a dedicated HSM in the specified subscription.",
+            "syntax": "az dedicated-hsm update [--ids]\n                        [--name]\n                        [--no-wait]\n                        [--resource-group]\n                        [--subscription]\n                        [--tags]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--tags"
+            ],
+            "examples": [
+                "az dedicated-hsm update --name \"hsm1\" --tags Dept=\"hsm\" Environment=\"dogfood\" Slice=\"A\" --resource-group \"hsm-group\"",
+                "az dedicated-hsm update --name \"hsm1\" --tags Dept=\"hsm\" Environment=\"dogfood\" Slice=\"A\" --resource-group \"hsm-group\""
+            ]
+        },
+        {
+            "name": "az dedicated-hsm wait",
+            "summary": "Place the CLI in a waiting state until a condition of the dedicated-hsm is met.",
+            "syntax": "az dedicated-hsm wait [--created]\n                      [--custom]\n                      [--deleted]\n                      [--exists]\n                      [--ids]\n                      [--interval]\n                      [--name]\n                      [--resource-group]\n                      [--subscription]\n                      [--timeout]\n                      [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--name",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": [
+                "az dedicated-hsm wait --name \"hsm1\" --resource-group \"hsm-group\" --created",
+                "az dedicated-hsm wait --name \"hsm1\" --resource-group \"hsm-group\" --updated",
+                "az dedicated-hsm wait --name \"hsm1\" --resource-group \"hsm-group\" --deleted"
+            ]
+        }
+    ]
+}

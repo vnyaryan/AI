@@ -1,0 +1,79 @@
+{
+    "command_group": "az network perimeter logging-configuration",
+    "description": "Manage Network Security Perimeter Logging Configuration.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az network perimeter logging-configuration create",
+            "summary": "Create NSP logging configuration.",
+            "syntax": "az network perimeter logging-configuration create --perimeter-name\n                                                  --resource-group\n                                                  [--enabled-log-categories]\n                                                  [--logging-configuration-name]\n                                                  [--version]",
+            "required_parameters": [
+                "--perimeter-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--enabled-log-categories",
+                "--logging-configuration-name --name -n",
+                "--version"
+            ],
+            "examples": [
+                "az network perimeter logging-configuration create --perimeter-name nsp1 --resource-group rg1 --enabled-log-categories \"[NspPublicInboundPerimeterRulesDenied,NspPublicOutboundPerimeterRulesDenied]\""
+            ]
+        },
+        {
+            "name": "az network perimeter logging-configuration delete",
+            "summary": "Delete NSP Logging configuration.",
+            "syntax": "az network perimeter logging-configuration delete [--ids]\n                                                  [--logging-configuration-name]\n                                                  [--perimeter-name]\n                                                  [--resource-group]\n                                                  [--subscription]\n                                                  [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--logging-configuration-name --name -n",
+                "--perimeter-name",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az network perimeter logging-configuration delete --resource-group rg1 --perimeter-name nsp1"
+            ]
+        },
+        {
+            "name": "az network perimeter logging-configuration show",
+            "summary": "Get NSP logging configuration.",
+            "syntax": "az network perimeter logging-configuration show [--ids]\n                                                [--logging-configuration-name]\n                                                [--perimeter-name]\n                                                [--resource-group]\n                                                [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--logging-configuration-name --name -n",
+                "--perimeter-name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az network perimeter logging-configuration show --resource-group rg1 --perimeter-name nsp1"
+            ]
+        },
+        {
+            "name": "az network perimeter logging-configuration update",
+            "summary": "Update NSP logging configuration.",
+            "syntax": "az network perimeter logging-configuration update [--add]\n                                                  [--enabled-log-categories]\n                                                  [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                                  [--ids]\n                                                  [--logging-configuration-name]\n                                                  [--perimeter-name]\n                                                  [--remove]\n                                                  [--resource-group]\n                                                  [--set]\n                                                  [--subscription]\n                                                  [--version]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--enabled-log-categories",
+                "--force-string",
+                "--ids",
+                "--logging-configuration-name --name -n",
+                "--perimeter-name",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--subscription",
+                "--version"
+            ],
+            "examples": [
+                "az network perimeter logging-configuration update --perimeter-name nsp1 --resource-group rg1 --enabled-log-categories \"[NspPublicInboundPerimeterRulesDenied,NspPublicOutboundPerimeterRulesDenied]\""
+            ]
+        }
+    ]
+}

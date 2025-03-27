@@ -1,0 +1,214 @@
+{
+    "command_group": "az acr manifest",
+    "description": "Manage artifact manifests in Azure Container Registries.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az acr manifest delete",
+            "summary": "Delete a manifest in an Azure Container Registry.",
+            "syntax": "az acr manifest delete [--name]\n                       [--password]\n                       [--registry]\n                       [--suffix]\n                       [--username]\n                       [--yes]\n                       [<MANIFEST_ID>]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--name -n",
+                "--password -p",
+                "--registry -r",
+                "--suffix",
+                "--username -u",
+                "--yes -y",
+                "<MANIFEST_ID>"
+            ],
+            "examples": [
+                "az acr manifest delete -r myregistry -n hello-world:latest",
+                "az acr manifest delete myregistry.azurecr.io/hello-world:latest",
+                "az acr manifest delete -r myregistry -n hello-world@sha256:abc123"
+            ]
+        },
+        {
+            "name": "az acr manifest list",
+            "summary": "List the manifests in a repository in an Azure Container Registry.",
+            "syntax": "az acr manifest list [--name]\n                     [--orderby {time_asc, time_desc}]\n                     [--password]\n                     [--registry]\n                     [--suffix]\n                     [--top]\n                     [--username]\n                     [<REPO_ID>]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--name -n",
+                "--orderby",
+                "--password -p",
+                "--registry -r",
+                "--suffix",
+                "--top",
+                "--username -u",
+                "<REPO_ID>"
+            ],
+            "examples": [
+                "az acr manifest list -r myregistry -n hello-world",
+                "az acr manifest list myregistry.azurecr.io/hello-world"
+            ]
+        },
+        {
+            "name": "az acr manifest list-deleted",
+            "summary": "List the soft-deleted manifests in a repository in an Azure Container Registry.",
+            "syntax": "az acr manifest list-deleted [--name]\n                             [--password]\n                             [--registry]\n                             [--suffix]\n                             [--username]\n                             [<REPO_ID>]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--name -n",
+                "--password -p",
+                "--registry -r",
+                "--suffix",
+                "--username -u",
+                "<REPO_ID>"
+            ],
+            "examples": [
+                "az acr manifest list-deleted -r myregistry -n hello-world",
+                "az acr manifest list-deleted myregistry.azurecr.io/hello-world"
+            ]
+        },
+        {
+            "name": "az acr manifest list-deleted-tags",
+            "summary": "List the soft-deleted tags in a repository in an Azure Container Registry.",
+            "syntax": "az acr manifest list-deleted-tags [--name]\n                                  [--password]\n                                  [--registry]\n                                  [--suffix]\n                                  [--username]\n                                  [<PERM_REPO_ID>]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--name -n",
+                "--password -p",
+                "--registry -r",
+                "--suffix",
+                "--username -u",
+                "<PERM_REPO_ID>"
+            ],
+            "examples": [
+                "az acr manifest list-deleted-tags -r myregistry -n hello-world",
+                "az acr manifest list-deleted-tags myregistry.azurecr.io/hello-world",
+                "az acr manifest list-deleted-tags -r myregistry -n hello-world:latest",
+                "az acr manifest list-deleted-tags myregistry.azurecr.io/hello-world:latest"
+            ]
+        },
+        {
+            "name": "az acr manifest list-metadata",
+            "summary": "List the metadata of the manifests in a repository in an Azure Container Registry.",
+            "syntax": "az acr manifest list-metadata [--name]\n                              [--orderby {time_asc, time_desc}]\n                              [--password]\n                              [--registry]\n                              [--suffix]\n                              [--top]\n                              [--username]\n                              [<REPO_ID>]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--name -n",
+                "--orderby",
+                "--password -p",
+                "--registry -r",
+                "--suffix",
+                "--top",
+                "--username -u",
+                "<REPO_ID>"
+            ],
+            "examples": [
+                "az acr manifest list-metadata -r myregistry -n hello-world",
+                "az acr manifest list-metadata myregistry.azurecr.io/hello-world",
+                "az acr manifest list-metadata -r myregistry -n hello-world --query \"[]\"",
+                "az acr manifest list-metadata -r myregistry -n hello-world --query \"[?tags==null]\""
+            ]
+        },
+        {
+            "name": "az acr manifest list-referrers",
+            "summary": "List the referrers to a manifest in an Azure Container Registry.",
+            "syntax": "az acr manifest list-referrers [--artifact-type]\n                               [--name]\n                               [--password]\n                               [--recursive]\n                               [--registry]\n                               [--suffix]\n                               [--username]\n                               [<MANIFEST_ID>]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--artifact-type",
+                "--name -n",
+                "--password -p",
+                "--recursive",
+                "--registry -r",
+                "--suffix",
+                "--username -u",
+                "<MANIFEST_ID>"
+            ],
+            "examples": [
+                "az acr manifest list-referrers -r myregistry -n hello-world:latest",
+                "az acr manifest list-referrers myregistry.azurecr.io/hello-world:latest",
+                "az acr manifest list-referrers -r myregistry -n hello-world@sha256:abc123"
+            ]
+        },
+        {
+            "name": "az acr manifest restore",
+            "summary": "Restore a soft-deleted artifact and tag in an Azure Container Registry.",
+            "syntax": "az acr manifest restore [--digest]\n                        [--force]\n                        [--name]\n                        [--password]\n                        [--registry]\n                        [--suffix]\n                        [--username]\n                        [--yes]\n                        [<MANIFEST_ID>]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--digest -d",
+                "--force -f",
+                "--name -n",
+                "--password -p",
+                "--registry -r",
+                "--suffix",
+                "--username -u",
+                "--yes -y",
+                "<MANIFEST_ID>"
+            ],
+            "examples": [
+                "az acr manifest restore -r myregistry -n hello-world:latest -d sha256:abc123",
+                "az acr manifest restore myregistry.azurecr.io/hello-world:latest -d sha256:abc123",
+                "az acr manifest restore -r myregistry -n hello-world:latest",
+                "az acr manifest restore myregistry.azurecr.io/hello-world:latest"
+            ]
+        },
+        {
+            "name": "az acr manifest show",
+            "summary": "Get a manifest in an Azure Container Registry.",
+            "syntax": "az acr manifest show [--name]\n                     [--password]\n                     [--raw]\n                     [--registry]\n                     [--suffix]\n                     [--username]\n                     [<MANIFEST_ID>]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--name -n",
+                "--password -p",
+                "--raw",
+                "--registry -r",
+                "--suffix",
+                "--username -u",
+                "<MANIFEST_ID>"
+            ],
+            "examples": [
+                "az acr manifest show -r myregistry -n hello-world:latest",
+                "az acr manifest show myregistry.azurecr.io/hello-world:latest",
+                "az acr manifest show -r myregistry -n hello-world@sha256:abc123",
+                "az acr manifest show -r myregistry -n hello-world:latest --raw"
+            ]
+        },
+        {
+            "name": "az acr manifest show-metadata",
+            "summary": "Get the metadata of an artifact in an Azure Container Registry.",
+            "syntax": "az acr manifest show-metadata [--name]\n                              [--password]\n                              [--registry]\n                              [--suffix]\n                              [--username]\n                              [<MANIFEST_ID>]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--name -n",
+                "--password -p",
+                "--registry -r",
+                "--suffix",
+                "--username -u",
+                "<MANIFEST_ID>"
+            ],
+            "examples": [
+                "az acr manifest show-metadata -r myregistry -n hello-world:latest",
+                "az acr manifest show-metadata myregistry.azurecr.io/hello-world:latest",
+                "az acr manifest show-metadata -r myregistry -n hello-world@sha256:abc123"
+            ]
+        },
+        {
+            "name": "az acr manifest update-metadata",
+            "summary": "Update the manifest metadata of an artifact in an Azure Container Registry.",
+            "syntax": "az acr manifest update-metadata [--delete-enabled {false, true}]\n                                [--list-enabled {false, true}]\n                                [--name]\n                                [--password]\n                                [--read-enabled {false, true}]\n                                [--registry]\n                                [--suffix]\n                                [--username]\n                                [--write-enabled {false, true}]\n                                [<MANIFEST_ID>]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--delete-enabled",
+                "--list-enabled",
+                "--name -n",
+                "--password -p",
+                "--read-enabled",
+                "--registry -r",
+                "--suffix",
+                "--username -u",
+                "--write-enabled",
+                "<MANIFEST_ID>"
+            ],
+            "examples": [
+                "az acr manifest update-metadata -r myregistry -n hello-world:latest --write-enabled false",
+                "az acr manifest update-metadata myregistry.azurecr.io/hello-world:latest --write-enabled false",
+                "az acr manifest update-metadata -r myregistry -n hello-world@sha256:abc123 --write-enabled false"
+            ]
+        }
+    ]
+}

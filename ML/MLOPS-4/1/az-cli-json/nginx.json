@@ -1,0 +1,6 @@
+{
+    "command_group": "az nginx",
+    "description": "Manage NGINX deployment resources.",
+    "status": "GA",
+    "commands": []
+}

@@ -1,0 +1,112 @@
+{
+    "command_group": "az servicebus migration",
+    "description": "Manage Azure Service Bus Migration of Standard to Premium.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az servicebus migration abort",
+            "summary": "This operation reverts Migration.",
+            "syntax": "az servicebus migration abort [--config-name {$default}]\n                              [--ids]\n                              [--name]\n                              [--resource-group]\n                              [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--config-name",
+                "--ids",
+                "--name --namespace-name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az servicebus migration complete",
+            "summary": "This operation Completes Migration of entities by pointing the connection strings to Premium namespace and any entities created after the operation will be under Premium Namespace. CompleteMigration operation will fail when entity migration is in-progress.",
+            "syntax": "az servicebus migration complete [--config-name {$default}]\n                                 [--ids]\n                                 [--name]\n                                 [--resource-group]\n                                 [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--config-name",
+                "--ids",
+                "--name --namespace-name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az servicebus migration delete",
+            "summary": "Delete a MigrationConfiguration.",
+            "syntax": "az servicebus migration delete [--config-name {$default}]\n                               [--ids]\n                               [--name]\n                               [--resource-group]\n                               [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--config-name",
+                "--ids",
+                "--name --namespace-name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az servicebus migration list",
+            "summary": "List all migrationConfigurations.",
+            "syntax": "az servicebus migration list --name\n                             --resource-group",
+            "required_parameters": [
+                "--name --namespace-name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az servicebus migration show",
+            "summary": "Get Migration Config.",
+            "syntax": "az servicebus migration show [--config-name {$default}]\n                             [--ids]\n                             [--namespace-name]\n                             [--resource-group]\n                             [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--config-name",
+                "--ids",
+                "--namespace-name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az servicebus migration start",
+            "summary": "Create Migration configuration and starts migration of entities from Standard to Premium namespace.",
+            "syntax": "az servicebus migration start [--config-name {$default}]\n                              [--ids]\n                              [--name]\n                              [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                              [--post-migration-name]\n                              [--resource-group]\n                              [--subscription]\n                              [--target-namespace]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--config-name",
+                "--ids",
+                "--name --namespace-name -n",
+                "--no-wait",
+                "--post-migration-name",
+                "--resource-group -g",
+                "--subscription",
+                "--target-namespace"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az servicebus migration wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az servicebus migration wait [--config-name {$default}]\n                             [--created]\n                             [--custom]\n                             [--deleted]\n                             [--exists]\n                             [--ids]\n                             [--interval]\n                             [--namespace-name]\n                             [--resource-group]\n                             [--subscription]\n                             [--timeout]\n                             [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--config-name",
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--namespace-name",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

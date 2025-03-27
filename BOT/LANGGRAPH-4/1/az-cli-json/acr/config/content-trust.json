@@ -1,0 +1,36 @@
+{
+    "command_group": "az acr config content-trust",
+    "description": "Manage content-trust policy for Azure Container Registries.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az acr config content-trust show",
+            "summary": "Show the configured content-trust policy for an Azure Container Registry.",
+            "syntax": "az acr config content-trust show --registry\n                                 [--resource-group]",
+            "required_parameters": [
+                "--registry -r"
+            ],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az acr config content-trust show -r myregistry"
+            ]
+        },
+        {
+            "name": "az acr config content-trust update",
+            "summary": "Update content-trust policy for an Azure Container Registry.",
+            "syntax": "az acr config content-trust update --registry\n                                   [--resource-group]\n                                   [--status {disabled, enabled}]",
+            "required_parameters": [
+                "--registry -r"
+            ],
+            "optional_parameters": [
+                "--resource-group -g",
+                "--status"
+            ],
+            "examples": [
+                "az acr config content-trust update -r myregistry --status Enabled"
+            ]
+        }
+    ]
+}

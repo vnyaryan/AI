@@ -1,0 +1,97 @@
+{
+    "command_group": "az dt network private-endpoint connection",
+    "description": "Manage Digital Twins instance private-endpoint connections.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az dt network private-endpoint connection delete",
+            "summary": "Delete a private-endpoint connection associated with the Digital Twins instance.",
+            "syntax": "az dt network private-endpoint connection delete --cn\n                                                 --dt-name\n                                                 [--no-wait]\n                                                 [--resource-group]\n                                                 [--yes]",
+            "required_parameters": [
+                "--cn --conn-name",
+                "--dt-name --dtn -n"
+            ],
+            "optional_parameters": [
+                "--no-wait",
+                "--resource-group -g",
+                "--yes -y"
+            ],
+            "examples": [
+                "az dt network private-endpoint connection delete -n {instance_name} --cn ba8408b6-1372-41b2-aef8-af43afc4729f",
+                "az dt network private-endpoint connection delete -n {instance_name} --cn ba8408b6-1372-41b2-aef8-af43afc4729f -y --no-wait"
+            ]
+        },
+        {
+            "name": "az dt network private-endpoint connection list",
+            "summary": "List private-endpoint connections associated with the Digital Twins instance.",
+            "syntax": "az dt network private-endpoint connection list --dt-name\n                                               [--resource-group]",
+            "required_parameters": [
+                "--dt-name --dtn -n"
+            ],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az dt network private-endpoint connection list -n {instance_name}"
+            ]
+        },
+        {
+            "name": "az dt network private-endpoint connection set",
+            "summary": "Set the state of a private-endpoint connection associated with the Digital Twins instance.",
+            "syntax": "az dt network private-endpoint connection set --cn\n                                              --dt-name\n                                              --status {Approved, Disconnected, Pending, Rejected}\n                                              [--actions-required]\n                                              [--desc]\n                                              [--group-ids]\n                                              [--no-wait]\n                                              [--resource-group]",
+            "required_parameters": [
+                "--cn --conn-name",
+                "--dt-name --dtn -n",
+                "--status"
+            ],
+            "optional_parameters": [
+                "--actions-required --ar",
+                "--desc --description",
+                "--group-ids",
+                "--no-wait",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az dt network private-endpoint connection set -n {instance_name} --cn {connection_name} --status Approved --desc \"A description.\"",
+                "az dt network private-endpoint connection set -n {instance_name} --cn {connection_name} --status Rejected --desc \"Does not comply.\""
+            ]
+        },
+        {
+            "name": "az dt network private-endpoint connection show",
+            "summary": "Show a private-endpoint connection associated with the Digital Twins instance.",
+            "syntax": "az dt network private-endpoint connection show --cn\n                                               --dt-name\n                                               [--resource-group]",
+            "required_parameters": [
+                "--cn --conn-name",
+                "--dt-name --dtn -n"
+            ],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az dt network private-endpoint connection show -n {instance_name} --cn ba8408b6-1372-41b2-aef8-af43afc4729f"
+            ]
+        },
+        {
+            "name": "az dt network private-endpoint connection wait",
+            "summary": "Wait until an operation on a private-endpoint connection is complete.",
+            "syntax": "az dt network private-endpoint connection wait --cn\n                                               --dt-name\n                                               [--custom]\n                                               [--deleted]\n                                               [--interval]\n                                               [--resource-group]\n                                               [--timeout]\n                                               [--updated]",
+            "required_parameters": [
+                "--cn --conn-name",
+                "--dt-name --dtn -n"
+            ],
+            "optional_parameters": [
+                "--custom",
+                "--deleted",
+                "--interval",
+                "--resource-group -g",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": [
+                "az dt network private-endpoint connection wait -n {instance_name} --cn ba8408b6-1372-41b2-aef8-af43afc4729f --updated",
+                "az dt network private-endpoint connection wait -n {instance_name} --cn ba8408b6-1372-41b2-aef8-af43afc4729f --deleted",
+                "az dt network private-endpoint connection wait -n {instance_name} --cn ba8408b6-1372-41b2-aef8-af43afc4729f --custom \"properties.privateLinkServiceConnectionState.actionsRequired=='None'\""
+            ]
+        }
+    ]
+}

@@ -1,0 +1,72 @@
+{
+    "command_group": "az iot hub consumer-group",
+    "description": "Manage the event hub consumer groups of an IoT hub.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az iot hub consumer-group create",
+            "summary": "Create an event hub consumer group.",
+            "syntax": "az iot hub consumer-group create --hub-name\n                                 --name\n                                 [--event-hub-name]\n                                 [--resource-group]",
+            "required_parameters": [
+                "--hub-name",
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--event-hub-name",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az iot hub consumer-group create --hub-name MyIotHub --name cg1",
+                "az iot hub consumer-group create --hub-name MyIotHub --event-hub-name operationsMonitoringEvents --name cg1"
+            ]
+        },
+        {
+            "name": "az iot hub consumer-group delete",
+            "summary": "Delete an event hub consumer group.",
+            "syntax": "az iot hub consumer-group delete [--event-hub-name]\n                                 [--hub-name]\n                                 [--ids]\n                                 [--name]\n                                 [--resource-group]\n                                 [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--event-hub-name",
+                "--hub-name",
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az iot hub consumer-group list",
+            "summary": "List event hub consumer groups.",
+            "syntax": "az iot hub consumer-group list [--event-hub-name]\n                               [--hub-name]\n                               [--ids]\n                               [--resource-group]\n                               [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--event-hub-name",
+                "--hub-name",
+                "--ids",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az iot hub consumer-group list --hub-name MyHub"
+            ]
+        },
+        {
+            "name": "az iot hub consumer-group show",
+            "summary": "Get the details for an event hub consumer group.",
+            "syntax": "az iot hub consumer-group show [--event-hub-name]\n                               [--hub-name]\n                               [--ids]\n                               [--name]\n                               [--resource-group]\n                               [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--event-hub-name",
+                "--hub-name",
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az iot hub consumer-group show --hub-name MyHub --name MyEventHubConsumerGroup"
+            ]
+        }
+    ]
+}

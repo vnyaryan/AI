@@ -1,0 +1,97 @@
+{
+    "command_group": "az mysql flexible-server firewall-rule",
+    "description": "Manage firewall rules for a server.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az mysql flexible-server firewall-rule create",
+            "summary": "Create a new firewall rule for a flexible server.",
+            "syntax": "az mysql flexible-server firewall-rule create --name\n                                              --resource-group\n                                              [--end-ip-address]\n                                              [--rule-name]\n                                              [--start-ip-address]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--end-ip-address",
+                "--rule-name -r",
+                "--start-ip-address"
+            ],
+            "examples": [
+                "az mysql flexible-server firewall-rule create --resource-group testGroup --name testserver --rule-name allowip --start-ip-address 107.46.14.221",
+                "az mysql flexible-server firewall-rule create --resource-group testGroup --name testserver --rule-name allowiprange --start-ip-address 107.46.14.0 --end-ip-address 107.46.14.221",
+                "az mysql flexible-server firewall-rule create --resource-group testGroup --name testserver --start-ip-address 0.0.0.0"
+            ]
+        },
+        {
+            "name": "az mysql flexible-server firewall-rule delete",
+            "summary": "Delete a firewall rule.",
+            "syntax": "az mysql flexible-server firewall-rule delete [--ids]\n                                              [--name]\n                                              [--resource-group]\n                                              [--rule-name]\n                                              [--subscription]\n                                              [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--rule-name -r",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az mysql flexible-server firewall-rule delete --rule-name testRule --resource-group testGroup --name testserver",
+                "az mysql flexible-server firewall-rule delete --rule-name testRule --resource-group testGroup --name testserver --yes"
+            ]
+        },
+        {
+            "name": "az mysql flexible-server firewall-rule list",
+            "summary": "List all firewall rules for a flexible server.",
+            "syntax": "az mysql flexible-server firewall-rule list --name\n                                            --resource-group",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az mysql flexible-server firewall-rule list --resource-group testGroup --name testserver",
+                "az mysql flexible-server firewall-rule list --resource-group testGroup --name testserver --output table"
+            ]
+        },
+        {
+            "name": "az mysql flexible-server firewall-rule show",
+            "summary": "Get the details of a firewall rule.",
+            "syntax": "az mysql flexible-server firewall-rule show [--ids]\n                                            [--name]\n                                            [--resource-group]\n                                            [--rule-name]\n                                            [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--rule-name -r",
+                "--subscription"
+            ],
+            "examples": [
+                "az mysql flexible-server firewall-rule show --rule-name testRule --resource-group testGroup --name testserver"
+            ]
+        },
+        {
+            "name": "az mysql flexible-server firewall-rule update",
+            "summary": "Update a firewall rule.",
+            "syntax": "az mysql flexible-server firewall-rule update [--add]\n                                              [--end-ip-address]\n                                              [--force-string]\n                                              [--ids]\n                                              [--name]\n                                              [--remove]\n                                              [--resource-group]\n                                              [--rule-name]\n                                              [--set]\n                                              [--start-ip-address]\n                                              [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--end-ip-address",
+                "--force-string",
+                "--ids",
+                "--name -n",
+                "--remove",
+                "--resource-group -g",
+                "--rule-name -r",
+                "--set",
+                "--start-ip-address",
+                "--subscription"
+            ],
+            "examples": [
+                "az mysql flexible-server firewall-rule update --resource-group testGroup --name testserver \\ --rule-name allowiprange --start-ip-address 107.46.14.1",
+                "az mysql flexible-server firewall-rule update --resource-group testGroup --name testserver \\ --rule-name allowiprange --start-ip-address 107.46.14.2 --end-ip-address 107.46.14.218"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,32 @@
+{
+    "command_group": "az eventgrid domain key",
+    "description": "Manage shared access keys of a domain.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az eventgrid domain key list",
+            "summary": "List shared access keys of a domain.",
+            "syntax": "az eventgrid domain key list --name\n                             --resource-group",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az eventgrid domain key list --name MyDomain --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az eventgrid domain key regenerate",
+            "summary": "Regenerate a shared access key of a domain.",
+            "syntax": "az eventgrid domain key regenerate --key-name\n                                   --name\n                                   --resource-group",
+            "required_parameters": [
+                "--key-name",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        }
+    ]
+}

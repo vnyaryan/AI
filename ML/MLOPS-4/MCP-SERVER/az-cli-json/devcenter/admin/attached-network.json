@@ -1,0 +1,99 @@
+{
+    "command_group": "az devcenter admin attached-network",
+    "description": "Manage attached networks.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az devcenter admin attached-network create",
+            "summary": "Create an attached network connection.",
+            "syntax": "az devcenter admin attached-network create --attached-network-connection-name\n                                           --dev-center\n                                           --network-connection-id\n                                           --resource-group\n                                           [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]",
+            "required_parameters": [
+                "--attached-network-connection-name --name -n",
+                "--dev-center --dev-center-name -d",
+                "--network-connection-id",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--no-wait"
+            ],
+            "examples": [
+                "az devcenter admin attached-network create --attached-network-connection-name \"network-uswest3\" --network-connection-id \"/subscriptions/0ac520ee-14c0-480f-b6c9-0a90c58ffff/resourceGroups/rg1/providers/Microsoft.DevCenter/NetworkConnections/network-uswest3\" --dev-center-name \"Contoso\" --resource-group \"rg1\""
+            ]
+        },
+        {
+            "name": "az devcenter admin attached-network delete",
+            "summary": "Delete an attached network connection.",
+            "syntax": "az devcenter admin attached-network delete [--attached-network-connection-name]\n                                           [--dev-center]\n                                           [--ids]\n                                           [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                           [--resource-group]\n                                           [--subscription]\n                                           [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--attached-network-connection-name --name -n",
+                "--dev-center --dev-center-name -d",
+                "--ids",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az devcenter admin attached-network delete --attached-network-connection-name \"network-uswest3\" --dev-center-name \"Contoso\" --resource-group \"rg1\""
+            ]
+        },
+        {
+            "name": "az devcenter admin attached-network list",
+            "summary": "List the attached network connections configured for a dev center or project.",
+            "syntax": "az devcenter admin attached-network list --resource-group\n                                         [--dev-center]\n                                         [--max-items]\n                                         [--next-token]\n                                         [--project]",
+            "required_parameters": [
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--dev-center --dev-center-name -d",
+                "--max-items",
+                "--next-token",
+                "--project --project-name"
+            ],
+            "examples": [
+                "az devcenter admin attached-network list --dev-center-name \"Contoso\" --resource-group \"rg1\"",
+                "az devcenter admin attached-network list --project-name \"DevProject\" --resource-group \"rg1\""
+            ]
+        },
+        {
+            "name": "az devcenter admin attached-network show",
+            "summary": "Get an attached network connection configured for a dev center or project.",
+            "syntax": "az devcenter admin attached-network show [--attached-network-connection-name]\n                                         [--dev-center]\n                                         [--ids]\n                                         [--project]\n                                         [--resource-group]\n                                         [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--attached-network-connection-name --name -n",
+                "--dev-center --dev-center-name -d",
+                "--ids",
+                "--project --project-name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az devcenter admin attached-network show --name\" network-uswest3\" --dev-center-name \"Contoso\" --resource-group \"rg1\"",
+                "az devcenter admin attached-network show --name \"network-uswest3\" --project-name \"ContosoProject\" --resource-group \"rg1\""
+            ]
+        },
+        {
+            "name": "az devcenter admin attached-network wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az devcenter admin attached-network wait [--attached-network-connection-name]\n                                         [--created]\n                                         [--custom]\n                                         [--deleted]\n                                         [--dev-center]\n                                         [--exists]\n                                         [--ids]\n                                         [--interval]\n                                         [--resource-group]\n                                         [--subscription]\n                                         [--timeout]\n                                         [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--attached-network-connection-name --name -n",
+                "--created",
+                "--custom",
+                "--deleted",
+                "--dev-center --dev-center-name -d",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

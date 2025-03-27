@@ -1,0 +1,48 @@
+{
+    "command_group": "az storage queue metadata",
+    "description": "Manage the metadata for a storage queue.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az storage queue metadata show",
+            "summary": "Return all user-defined metadata for the specified queue.",
+            "syntax": "az storage queue metadata show --name\n                               [--account-key]\n                               [--account-name]\n                               [--auth-mode {key, login}]\n                               [--connection-string]\n                               [--queue-endpoint]\n                               [--sas-token]\n                               [--timeout]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--account-key",
+                "--account-name",
+                "--auth-mode",
+                "--connection-string",
+                "--queue-endpoint",
+                "--sas-token",
+                "--timeout"
+            ],
+            "examples": [
+                "az storage queue metadata show -n myqueue --account-name mystorageaccount"
+            ]
+        },
+        {
+            "name": "az storage queue metadata update",
+            "summary": "Set user-defined metadata on the specified queue.",
+            "syntax": "az storage queue metadata update --name\n                                 [--account-key]\n                                 [--account-name]\n                                 [--auth-mode {key, login}]\n                                 [--connection-string]\n                                 [--metadata]\n                                 [--queue-endpoint]\n                                 [--sas-token]\n                                 [--timeout]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--account-key",
+                "--account-name",
+                "--auth-mode",
+                "--connection-string",
+                "--metadata",
+                "--queue-endpoint",
+                "--sas-token",
+                "--timeout"
+            ],
+            "examples": [
+                "az storage queue metadata update -n myqueue --metadata a=b c=d --account-name mystorageaccount"
+            ]
+        }
+    ]
+}

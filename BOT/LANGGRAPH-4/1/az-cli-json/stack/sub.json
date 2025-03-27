@@ -1,0 +1,139 @@
+{
+    "command_group": "az stack sub",
+    "description": "Manage Deployment Stacks at subscription.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az stack sub create",
+            "summary": "Create or update a deployment stack at subscription scope.",
+            "syntax": "az stack sub create --action-on-unmanage {deleteAll, deleteResources, detachAll}\n                    --deny-settings-mode {denyDelete, denyWriteAndDelete, none}\n                    --location\n                    --name\n                    [--bse {false, true}]\n                    [--cs]\n                    [--deny-settings-excluded-actions]\n                    [--deny-settings-excluded-principals]\n                    [--deployment-resource-group]\n                    [--description]\n                    [--no-wait]\n                    [--parameters]\n                    [--query-string]\n                    [--tags]\n                    [--template-file]\n                    [--template-spec]\n                    [--template-uri]\n                    [--yes]",
+            "required_parameters": [
+                "--action-on-unmanage --aou",
+                "--deny-settings-mode --dm",
+                "--location -l",
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--bse --bypass-stack-out-of-sync-error",
+                "--cs --deny-settings-apply-to-child-scopes",
+                "--deny-settings-excluded-actions --ea",
+                "--deny-settings-excluded-principals --ep",
+                "--deployment-resource-group --dr",
+                "--description",
+                "--no-wait",
+                "--parameters -p",
+                "--query-string -q",
+                "--tags",
+                "--template-file -f",
+                "--template-spec -s",
+                "--template-uri -u",
+                "--yes"
+            ],
+            "examples": [
+                "az stack sub create --name StackName --template-file simpleTemplate.json --location westus2 --description description --deny-settings-mode None --action-on-unmanage detachAll",
+                "az stack sub create --name StackName --action-on-unmanage deleteResources --template-file simpleTemplate.json --parameters simpleTemplateParams.json --location westus2 --description description --deny-settings-mode None",
+                "az stack sub create --name StackName --template-spec TemplateSpecResourceIDWithVersion --location westus2 --description description --deny-settings-mode None --action-on-unmanage deleteResources",
+                "az stack sub create --name StackName --action-on-unmanage deleteAll --template-file simple.bicep --location westus2 --description description --deny-settings-mode None",
+                "az stack sub create --name StackName --template-file simpleTemplate.json --location westus2 --description description --subscription subscriptionId --deny-settings-mode None --action-on-unmanage deleteResources",
+                "az stack sub create --name StackName --template-file simpleTemplate.json --location westus --deployment-resource-group ResourceGroup --description description --deny-settings-mode None --action-on-unmanage deleteResources",
+                "az stack sub create --name StackName --template-file simpleTemplate.json --location westus --description description --parameters simpleTemplateParams.json value1=foo value2=bar --deny-settings-mode None --action-on-unmanage deleteResources",
+                "az stack sub create --name StackName --template-file azuredeploy.json --parameters @params.json --parameters https://mysite/params.json --parameters MyValue=This MyArray=@array.json --location westus --deny-settings-mode None --action-on-unmanage deleteResources",
+                "az stack sub create --name StackName --template-file azuredeploy.json --deny-settings-mode denyDelete --deny-settings-excluded-actions Microsoft.Compute/virtualMachines/write --deny-settings-excluded-principals \"test1 test2\" --location westus --action-on-unmanage deleteResources",
+                "az stack sub create --name StackName --template-file azuredeploy.json --deny-settings-mode denyDelete --deny-settings-excluded-actions Microsoft.Compute/virtualMachines/write --deny-settings-apply-to-child-scopes --location westus --action-on-unmanage deleteResources"
+            ]
+        },
+        {
+            "name": "az stack sub delete",
+            "summary": "Delete specified deployment stack from subscription scope.",
+            "syntax": "az stack sub delete --action-on-unmanage {deleteAll, deleteResources, detachAll}\n                    [--bse {false, true}]\n                    [--id]\n                    [--name]\n                    [--yes]",
+            "required_parameters": [
+                "--action-on-unmanage --aou"
+            ],
+            "optional_parameters": [
+                "--bse --bypass-stack-out-of-sync-error",
+                "--id",
+                "--name -n",
+                "--yes"
+            ],
+            "examples": [
+                "az stack sub delete --name StackName --action-on-unmanage deleteResources",
+                "az stack sub delete --id /subscriptions/111111111111/providers/Microsoft.Resources/deploymentStacks/StackName --action-on-unmanage detachAll"
+            ]
+        },
+        {
+            "name": "az stack sub export",
+            "summary": "Export the template used to create the deployment stack.",
+            "syntax": "az stack sub export [--id]\n                    [--name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--id",
+                "--name -n"
+            ],
+            "examples": [
+                "az stack sub export --name StackName",
+                "az stack sub export --id /subscriptions/111111111111/providers/Microsoft.Resources/deploymentStacks/StackName"
+            ]
+        },
+        {
+            "name": "az stack sub list",
+            "summary": "List all deployment stacks in subscription.",
+            "syntax": "az stack sub list",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "examples": [
+                "az stack sub list"
+            ]
+        },
+        {
+            "name": "az stack sub show",
+            "summary": "Get specified deployment stack from subscription scope.",
+            "syntax": "az stack sub show [--id]\n                  [--name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--id",
+                "--name -n"
+            ],
+            "examples": [
+                "az stack sub show --name StackName",
+                "az stack sub show --id /subscriptions/111111111111/providers/Microsoft.Resources/deploymentStacks/StackName"
+            ]
+        },
+        {
+            "name": "az stack sub validate",
+            "summary": "Validate a deployment stack at subscription scope.",
+            "syntax": "az stack sub validate --action-on-unmanage {deleteAll, deleteResources, detachAll}\n                      --deny-settings-mode {denyDelete, denyWriteAndDelete, none}\n                      --location\n                      --name\n                      [--bse {false, true}]\n                      [--cs]\n                      [--deny-settings-excluded-actions]\n                      [--deny-settings-excluded-principals]\n                      [--deployment-resource-group]\n                      [--description]\n                      [--parameters]\n                      [--query-string]\n                      [--tags]\n                      [--template-file]\n                      [--template-spec]\n                      [--template-uri]",
+            "required_parameters": [
+                "--action-on-unmanage --aou",
+                "--deny-settings-mode --dm",
+                "--location -l",
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--bse --bypass-stack-out-of-sync-error",
+                "--cs --deny-settings-apply-to-child-scopes",
+                "--deny-settings-excluded-actions --ea",
+                "--deny-settings-excluded-principals --ep",
+                "--deployment-resource-group --dr",
+                "--description",
+                "--parameters -p",
+                "--query-string -q",
+                "--tags",
+                "--template-file -f",
+                "--template-spec -s",
+                "--template-uri -u"
+            ],
+            "examples": [
+                "az stack sub validate --name StackName --template-file simpleTemplate.json --location westus2 --description description --deny-settings-mode None --action-on-unmanage detachAll",
+                "az stack sub validate --name StackName --action-on-unmanage deleteResources --template-file simpleTemplate.json --parameters simpleTemplateParams.json --location westus2 --description description --deny-settings-mode None",
+                "az stack sub validate --name StackName --template-spec TemplateSpecResourceIDWithVersion --location westus2 --description description --deny-settings-mode None --action-on-unmanage deleteResources",
+                "az stack sub validate --name StackName --action-on-unmanage deleteAll --template-file simple.bicep --location westus2 --description description --deny-settings-mode None",
+                "az stack sub validate --name StackName --template-file simpleTemplate.json --location westus2 --description description --subscription subscriptionId --deny-settings-mode None --action-on-unmanage deleteResources",
+                "az stack sub validate --name StackName --template-file simpleTemplate.json --location westus --deployment-resource-group ResourceGroup --description description --deny-settings-mode None --action-on-unmanage deleteResources",
+                "az stack sub validate --name StackName --template-file simpleTemplate.json --location westus --description description --parameters simpleTemplateParams.json value1=foo value2=bar --deny-settings-mode None --action-on-unmanage deleteResources",
+                "az stack sub validate --name StackName --template-file azuredeploy.json --parameters @params.json --parameters https://mysite/params.json --parameters MyValue=This MyArray=@array.json --location westus --deny-settings-mode None --action-on-unmanage deleteResources",
+                "az stack sub validate --name StackName --template-file azuredeploy.json --deny-settings-mode denyDelete --deny-settings-excluded-actions Microsoft.Compute/virtualMachines/write --deny-settings-excluded-principals \"test1 test2\" --location westus --action-on-unmanage deleteResources",
+                "az stack sub validate --name StackName --template-file azuredeploy.json --deny-settings-mode denyDelete --deny-settings-excluded-actions Microsoft.Compute/virtualMachines/write --deny-settings-apply-to-child-scopes --location westus --action-on-unmanage deleteResources"
+            ]
+        }
+    ]
+}

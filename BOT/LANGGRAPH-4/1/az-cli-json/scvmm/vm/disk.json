@@ -1,0 +1,117 @@
+{
+    "command_group": "az scvmm vm disk",
+    "description": "Managing the Disks of Arc for SCVMM Virtual Machine.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az scvmm vm disk add",
+            "summary": "Add a virtual disk to a virtual machine.",
+            "syntax": "az scvmm vm disk add --bus\n                     --disk-size\n                     --name\n                     --resource-group\n                     --vm-name\n                     [--bus-type {IDE, SCSI}]\n                     [--lun]\n                     [--no-wait]\n                     [--qos-id]\n                     [--qos-name]\n                     [--vhd-type {Dynamic, Fixed}]",
+            "required_parameters": [
+                "--bus",
+                "--disk-size",
+                "--name -n",
+                "--resource-group -g",
+                "--vm-name"
+            ],
+            "optional_parameters": [
+                "--bus-type",
+                "--lun",
+                "--no-wait",
+                "--qos-id",
+                "--qos-name",
+                "--vhd-type"
+            ],
+            "examples": [
+                "az scvmm vm disk add --subscription contoso-sub --resource-group contoso-rg --vm-name contoso-vm --name disk_2 --bus 1 --lun 10 --bus-type SCSI --disk-size 100"
+            ]
+        },
+        {
+            "name": "az scvmm vm disk delete",
+            "summary": "Delete disks of a virtual machine.",
+            "syntax": "az scvmm vm disk delete --disks\n                        --resource-group\n                        --vm-name\n                        [--no-wait]\n                        [--yes]",
+            "required_parameters": [
+                "--disks",
+                "--resource-group -g",
+                "--vm-name"
+            ],
+            "optional_parameters": [
+                "--no-wait",
+                "--yes -y"
+            ],
+            "examples": [
+                "az scvmm vm disk delete --subscription contoso-sub --resource-group contoso-rg --vm-name contoso-vm --disks disk_1 disk_2"
+            ]
+        },
+        {
+            "name": "az scvmm vm disk list",
+            "summary": "Retrieve the list of disks present in a VM.",
+            "syntax": "az scvmm vm disk list --resource-group\n                      --vm-name",
+            "required_parameters": [
+                "--resource-group -g",
+                "--vm-name"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az scvmm vm disk list --subscription contoso-sub --resource-group contoso-rg --vm-name contoso-vm"
+            ]
+        },
+        {
+            "name": "az scvmm vm disk show",
+            "summary": "Get the details of a disk present in a VM.",
+            "syntax": "az scvmm vm disk show --name\n                      --resource-group\n                      --vm-name",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g",
+                "--vm-name"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az scvmm vm disk show --subscription contoso-sub --resource-group contoso-rg --vm-name contoso-vm --name disk_1"
+            ]
+        },
+        {
+            "name": "az scvmm vm disk update",
+            "summary": "Update a disk of a VM.",
+            "syntax": "az scvmm vm disk update --resource-group\n                        --vm-name\n                        [--bus]\n                        [--bus-type {IDE, SCSI}]\n                        [--disk-id]\n                        [--disk-size]\n                        [--lun]\n                        [--name]\n                        [--no-wait]\n                        [--qos-id]\n                        [--qos-name]\n                        [--vhd-type {Dynamic, Fixed}]",
+            "required_parameters": [
+                "--resource-group -g",
+                "--vm-name"
+            ],
+            "optional_parameters": [
+                "--bus",
+                "--bus-type",
+                "--disk-id",
+                "--disk-size",
+                "--lun",
+                "--name -n",
+                "--no-wait",
+                "--qos-id",
+                "--qos-name",
+                "--vhd-type"
+            ],
+            "examples": [
+                "az scvmm vm disk update --subscription contoso-sub --resource-group contoso-rg --vm-name contoso-vm --name disk_1 --bus-type IDE --bus 0 --disk-size 40 --vhd-type Dynamic"
+            ]
+        },
+        {
+            "name": "az scvmm vm disk wait",
+            "summary": "Place the CLI in a waiting state until a condition of the vm disk is met.",
+            "syntax": "az scvmm vm disk wait --resource-group\n                      --virtual-machine-name\n                      [--created]\n                      [--custom]\n                      [--deleted]\n                      [--exists]\n                      [--interval]\n                      [--timeout]\n                      [--updated]",
+            "required_parameters": [
+                "--resource-group -g",
+                "--virtual-machine-name"
+            ],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--interval",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

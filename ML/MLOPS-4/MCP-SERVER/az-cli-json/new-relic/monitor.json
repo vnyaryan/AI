@@ -1,0 +1,267 @@
+{
+    "command_group": "az new-relic monitor",
+    "description": "Manage NewRelic Monitor resource.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az new-relic monitor create",
+            "summary": "Create a NewRelicMonitorResource.",
+            "syntax": "az new-relic monitor create --monitor-name\n                            --resource-group\n                            [--account-creation-source {LIFTR, NEWRELIC}]\n                            [--identity]\n                            [--location]\n                            [--new-relic-account]\n                            [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                            [--org-creation-source {LIFTR, NEWRELIC}]\n                            [--plan-data]\n                            [--tags]\n                            [--user-info]",
+            "required_parameters": [
+                "--monitor-name --name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--account-creation-source --account-source",
+                "--identity",
+                "--location -l",
+                "--new-relic-account",
+                "--no-wait",
+                "--org-creation-source",
+                "--plan-data",
+                "--tags",
+                "--user-info"
+            ],
+            "examples": [
+                "az new-relic monitor create --resource-group MyResourceGroup --name MyNewRelicMonitor --location eastus2euap --user-info first-name=\"vdftzcggiref\" last-name=\"bcsztgqovdlmzf\" email-address=\"UserEmail@123.com\" phone-number=\"123456\" --plan-data billing-cycle=\"MONTHLY\" effective-date='2022-10-25T15:14:33+02:00' plan-details=\"newrelic-pay-as-you-go-free-live@TIDgmz7xq9ge3py@PUBIDnewrelicinc1635200720692.newrelic_liftr_payg\" usage-type=\"PAYG\" --account-creation-source \"LIFTR\" --org-creation-source \"LIFTR\" --tags key6976=oaxfhf"
+            ]
+        },
+        {
+            "name": "az new-relic monitor delete",
+            "summary": "Delete a NewRelicMonitorResource.",
+            "syntax": "az new-relic monitor delete --user-email\n                            [--ids]\n                            [--monitor-name]\n                            [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                            [--resource-group]\n                            [--subscription]",
+            "required_parameters": [
+                "--user-email"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--monitor-name --name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az new-relic monitor delete --resource-group MyResourceGroup --monitor-name MyNewRelicMonitor --user-email UserEmail@123.com"
+            ]
+        },
+        {
+            "name": "az new-relic monitor get-billing-info",
+            "summary": "Get marketplace info mapped to the given monitor.",
+            "syntax": "az new-relic monitor get-billing-info [--g]\n                                      [--ids]\n                                      [--monitor-name]\n                                      [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--g --resource-group",
+                "--ids",
+                "--monitor-name",
+                "--subscription"
+            ],
+            "examples": [
+                "az new-relic monitor get-billing-info --monitor-name MyNewRelicMonitor --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az new-relic monitor get-metric-rule",
+            "summary": "Get metric rules.",
+            "syntax": "az new-relic monitor get-metric-rule --user-email\n                                     [--ids]\n                                     [--monitor-name]\n                                     [--resource-group]\n                                     [--subscription]",
+            "required_parameters": [
+                "--user-email"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--monitor-name --name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az new-relic monitor get-metric-rule --monitor-name MyNewRelicMonitor --resource-group MyResourceGroup --user-email UserEmail@123.com"
+            ]
+        },
+        {
+            "name": "az new-relic monitor get-metric-statu",
+            "summary": "Get metric status.",
+            "syntax": "az new-relic monitor get-metric-statu --user-email\n                                      [--azure-resource-ids]\n                                      [--ids]\n                                      [--monitor-name]\n                                      [--resource-group]\n                                      [--subscription]",
+            "required_parameters": [
+                "--user-email"
+            ],
+            "optional_parameters": [
+                "--azure-resource-ids",
+                "--ids",
+                "--monitor-name --name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az new-relic monitor get-metric-statu --resource-group MyResourceGroup --monitor-name MyNewRelicMonitor --user-email UserEmail@123.com --azure-resource-ids MyAzureResourceIds"
+            ]
+        },
+        {
+            "name": "az new-relic monitor list",
+            "summary": "List NewRelicMonitorResource resources.",
+            "syntax": "az new-relic monitor list [--max-items]\n                          [--next-token]\n                          [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az new-relic monitor list"
+            ]
+        },
+        {
+            "name": "az new-relic monitor list-app-service",
+            "summary": "List the app service resources currently being monitored by the NewRelic resource.",
+            "syntax": "az new-relic monitor list-app-service --monitor-name\n                                      --resource-group\n                                      --user-email\n                                      [--azure-resource-ids]\n                                      [--max-items]\n                                      [--next-token]",
+            "required_parameters": [
+                "--monitor-name --name -n",
+                "--resource-group -g",
+                "--user-email"
+            ],
+            "optional_parameters": [
+                "--azure-resource-ids",
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az new-relic monitor list-app-service --resource-group MyResourceGroup --monitor-name MyNewRelicMonitor --user-email UserEmail@123.com --azure-resource-ids MyAzureResourceIds"
+            ]
+        },
+        {
+            "name": "az new-relic monitor list-connected-partner-resource",
+            "summary": "List of all active deployments that are associated with the marketplace subscription linked to the given monitor.",
+            "syntax": "az new-relic monitor list-connected-partner-resource --monitor-name\n                                                     --resource-group\n                                                     [--body]\n                                                     [--max-items]\n                                                     [--next-token]",
+            "required_parameters": [
+                "--monitor-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--body",
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az new-relic monitor list-connected-partner-resource --resource-group MyResourceGroup --monitor-name MyNewRelicMonitor"
+            ]
+        },
+        {
+            "name": "az new-relic monitor list-host",
+            "summary": "List the compute vm resources currently being monitored by the NewRelic resource.",
+            "syntax": "az new-relic monitor list-host --monitor-name\n                               --resource-group\n                               --user-email\n                               [--max-items]\n                               [--next-token]\n                               [--vm-ids]",
+            "required_parameters": [
+                "--monitor-name --name -n",
+                "--resource-group -g",
+                "--user-email"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token",
+                "--vm-ids"
+            ],
+            "examples": [
+                "az new-relic monitor list-host --resource-group MyResourceGroup --monitor-name MyNewRelicMonitor --user-email UserEmail@123.com --vm-ids MyVmIds"
+            ]
+        },
+        {
+            "name": "az new-relic monitor list-linked-resource",
+            "summary": "List all Azure resources associated to the same NewRelic organization and account as the target resource.",
+            "syntax": "az new-relic monitor list-linked-resource --monitor-name\n                                          --resource-group\n                                          [--max-items]\n                                          [--next-token]",
+            "required_parameters": [
+                "--monitor-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az new-relic monitor list-linked-resource --monitor-name MyNewRelicMonitor --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az new-relic monitor monitored-resource",
+            "summary": "List the resources currently being monitored by the NewRelic monitor resource.",
+            "syntax": "az new-relic monitor monitored-resource --monitor-name\n                                        --resource-group\n                                        [--max-items]\n                                        [--next-token]",
+            "required_parameters": [
+                "--monitor-name --name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az new-relic monitor monitored-resource --monitor-name MyNewRelicMonitor --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az new-relic monitor show",
+            "summary": "Get a NewRelicMonitorResource.",
+            "syntax": "az new-relic monitor show [--ids]\n                          [--monitor-name]\n                          [--resource-group]\n                          [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--monitor-name --name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az new-relic monitor show --resource-group MyResourceGroup --monitor-name MyNewRelicMonitor"
+            ]
+        },
+        {
+            "name": "az new-relic monitor switch-billing",
+            "summary": "Switches the billing for NewRelic monitor resource.",
+            "syntax": "az new-relic monitor switch-billing --user-email\n                                    [--azure-resource-id]\n                                    [--ids]\n                                    [--monitor-name]\n                                    [--organization-id]\n                                    [--plan-data]\n                                    [--resource-group]\n                                    [--subscription]",
+            "required_parameters": [
+                "--user-email"
+            ],
+            "optional_parameters": [
+                "--azure-resource-id",
+                "--ids",
+                "--monitor-name",
+                "--organization-id",
+                "--plan-data",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az new-relic monitor switch-billing --monitor-name MyNewRelicMonitor --resource-group MyResourceGroup --azure-resource-id resourceId --organization-id organizationId --user-email=\"UserEmail@123.com\" --plan-data billing-cycle=\"MONTHLY\" effective-date='2022-10-25T15:14:33+02:00' plan-details=\"nr-privateofferplan03-upfront@TID5xd5yfrmr6no@PUBIDnewrelicinc-privateoffers.nr-privateoffers1\" usage-type=\"COMMITTED\""
+            ]
+        },
+        {
+            "name": "az new-relic monitor vm-host-payload",
+            "summary": "Returns the payload that needs to be passed in the request body for installing NewRelic agent on a VM.",
+            "syntax": "az new-relic monitor vm-host-payload [--ids]\n                                     [--monitor-name]\n                                     [--resource-group]\n                                     [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--monitor-name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az monitor vm-host-payload --monitor-name MyNewRelicMonitor --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az new-relic monitor wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az new-relic monitor wait [--created]\n                          [--custom]\n                          [--deleted]\n                          [--exists]\n                          [--ids]\n                          [--interval]\n                          [--monitor-name]\n                          [--resource-group]\n                          [--subscription]\n                          [--timeout]\n                          [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--monitor-name --name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

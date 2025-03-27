@@ -1,0 +1,116 @@
+{
+    "command_group": "az k8s-configuration flux kustomization",
+    "description": "Commands to manage Kustomizations associated with Flux v2 Kubernetes configurations.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az k8s-configuration flux kustomization create",
+            "summary": "Create a Kustomization associated with a Flux v2 Kubernetes configuration.",
+            "syntax": "az k8s-configuration flux kustomization create --cluster-name\n                                               --cluster-type {connectedClusters, managedClusters, provisionedClusters}\n                                               --kustomization-name\n                                               --name\n                                               --resource-group\n                                               [--cluster-resource-provider]\n                                               [--dependencies]\n                                               [--disable-health-check {false, true}]\n                                               [--force {false, true}]\n                                               [--interval]\n                                               [--no-wait]\n                                               [--path]\n                                               [--prune {false, true}]\n                                               [--retry-interval]\n                                               [--timeout]",
+            "required_parameters": [
+                "--cluster-name -c",
+                "--cluster-type -t",
+                "--kustomization-name -k",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--cluster-resource-provider --cluster-rp",
+                "--dependencies --depends --depends-on",
+                "--disable-health-check",
+                "--force",
+                "--interval --sync-interval",
+                "--no-wait",
+                "--path",
+                "--prune",
+                "--retry-interval",
+                "--timeout"
+            ],
+            "examples": [
+                "az k8s-configuration flux kustomization create --resource-group my-resource-group \\\n--cluster-name mycluster --cluster-type connectedClusters --name myconfig \\\n--kustomization-name my-kustomization-2 --path ./my/path --prune --force"
+            ]
+        },
+        {
+            "name": "az k8s-configuration flux kustomization delete",
+            "summary": "Delete a Kustomization associated with a Flux v2 Kubernetes configuration.",
+            "syntax": "az k8s-configuration flux kustomization delete --cluster-name\n                                               --cluster-type {connectedClusters, managedClusters, provisionedClusters}\n                                               --kustomization-name\n                                               --name\n                                               --resource-group\n                                               [--cluster-resource-provider]\n                                               [--no-wait]\n                                               [--yes]",
+            "required_parameters": [
+                "--cluster-name -c",
+                "--cluster-type -t",
+                "--kustomization-name -k",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--cluster-resource-provider --cluster-rp",
+                "--no-wait",
+                "--yes -y"
+            ],
+            "examples": [
+                "az k8s-configuration flux kustomization delete --resource-group my-resource-group \\\n--cluster-name mycluster --cluster-type connectedClusters --name myconfig \\\n--kustomization-name my-kustomization"
+            ]
+        },
+        {
+            "name": "az k8s-configuration flux kustomization list",
+            "summary": "List Kustomizations associated with a Flux v2 Kubernetes configuration.",
+            "syntax": "az k8s-configuration flux kustomization list --cluster-name\n                                             --cluster-type {connectedClusters, managedClusters, provisionedClusters}\n                                             --name\n                                             --resource-group\n                                             [--cluster-resource-provider]",
+            "required_parameters": [
+                "--cluster-name -c",
+                "--cluster-type -t",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--cluster-resource-provider --cluster-rp"
+            ],
+            "examples": [
+                "az k8s-configuration flux kustomization list --resource-group my-resource-group \\\n--cluster-name mycluster --name myconfig --cluster-type connectedClusters"
+            ]
+        },
+        {
+            "name": "az k8s-configuration flux kustomization show",
+            "summary": "Show a Kustomization associated with a Flux v2 Kubernetes configuration.",
+            "syntax": "az k8s-configuration flux kustomization show --cluster-name\n                                             --cluster-type {connectedClusters, managedClusters, provisionedClusters}\n                                             --kustomization-name\n                                             --name\n                                             --resource-group\n                                             [--cluster-resource-provider]",
+            "required_parameters": [
+                "--cluster-name -c",
+                "--cluster-type -t",
+                "--kustomization-name -k",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--cluster-resource-provider --cluster-rp"
+            ],
+            "examples": [
+                "az k8s-configuration flux kustomization show --resource-group my-resource-group \\\n--cluster-name mycluster --cluster-type connectedClusters --name myconfig \\\n--kustomization-name my-kustomization"
+            ]
+        },
+        {
+            "name": "az k8s-configuration flux kustomization update",
+            "summary": "Update a Kustomization associated with a Flux v2 Kubernetes configuration.",
+            "syntax": "az k8s-configuration flux kustomization update --cluster-name\n                                               --cluster-type {connectedClusters, managedClusters, provisionedClusters}\n                                               --kustomization-name\n                                               --name\n                                               --resource-group\n                                               [--cluster-resource-provider]\n                                               [--dependencies]\n                                               [--disable-health-check {false, true}]\n                                               [--force {false, true}]\n                                               [--interval]\n                                               [--no-wait]\n                                               [--path]\n                                               [--prune {false, true}]\n                                               [--retry-interval]\n                                               [--timeout]",
+            "required_parameters": [
+                "--cluster-name -c",
+                "--cluster-type -t",
+                "--kustomization-name -k",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--cluster-resource-provider --cluster-rp",
+                "--dependencies --depends --depends-on",
+                "--disable-health-check",
+                "--force",
+                "--interval --sync-interval",
+                "--no-wait",
+                "--path",
+                "--prune",
+                "--retry-interval",
+                "--timeout"
+            ],
+            "examples": [
+                "az k8s-configuration flux kustomization update --resource-group my-resource-group \\\n--cluster-name mycluster --cluster-type connectedClusters --name myconfig \\\n--kustomization-name my-kustomization --path ./my/new-path --prune --force --disable-health-check"
+            ]
+        }
+    ]
+}

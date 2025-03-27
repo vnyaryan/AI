@@ -1,0 +1,22 @@
+{
+    "command_group": "az sf cluster durability",
+    "description": "Manage the durability of a cluster.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az sf cluster durability update",
+            "summary": "Update the durability tier or VM SKU of a node type in the cluster.",
+            "syntax": "az sf cluster durability update --cluster-name\n                                --durability-level {Bronze, Gold, Silver}\n                                --node-type\n                                --resource-group",
+            "required_parameters": [
+                "--cluster-name -c",
+                "--durability-level",
+                "--node-type",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az sf cluster durability update -g group-name -c cluster1 --durability-level Silver --node-type nt1"
+            ]
+        }
+    ]
+}

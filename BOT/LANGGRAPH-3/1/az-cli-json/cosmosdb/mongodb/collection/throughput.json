@@ -1,0 +1,50 @@
+{
+    "command_group": "az cosmosdb mongodb collection throughput",
+    "description": "Manage throughput of MongoDB collection under an Azure Cosmos DB account.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az cosmosdb mongodb collection throughput migrate",
+            "summary": "Migrate the throughput of the MongoDB collection between autoscale and manually provisioned.",
+            "syntax": "az cosmosdb mongodb collection throughput migrate --account-name\n                                                  --database-name\n                                                  --name\n                                                  --resource-group\n                                                  --throughput-type {autoscale, manual}",
+            "required_parameters": [
+                "--account-name -a",
+                "--database-name -d",
+                "--name -n",
+                "--resource-group -g",
+                "--throughput-type -t"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az cosmosdb mongodb collection throughput show",
+            "summary": "Get the throughput of the MongoDB collection under an Azure Cosmos DB MongoDB database.",
+            "syntax": "az cosmosdb mongodb collection throughput show --account-name\n                                               --database-name\n                                               --name\n                                               --resource-group",
+            "required_parameters": [
+                "--account-name -a",
+                "--database-name -d",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az cosmosdb mongodb collection throughput update",
+            "summary": "Update the throughput of the MongoDB collection under an Azure Cosmos DB MongoDB database.",
+            "syntax": "az cosmosdb mongodb collection throughput update --account-name\n                                                 --database-name\n                                                 --name\n                                                 --resource-group\n                                                 [--max-throughput]\n                                                 [--throughput]",
+            "required_parameters": [
+                "--account-name -a",
+                "--database-name -d",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--max-throughput",
+                "--throughput"
+            ],
+            "examples": []
+        }
+    ]
+}

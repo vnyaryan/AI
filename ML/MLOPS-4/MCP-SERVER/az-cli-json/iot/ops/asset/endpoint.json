@@ -1,0 +1,78 @@
+{
+    "command_group": "az iot ops asset endpoint",
+    "description": "Manage asset endpoint profiles.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az iot ops asset endpoint delete",
+            "summary": "Delete an asset endpoint profile.",
+            "syntax": "az iot ops asset endpoint delete --name\n                                 --resource-group",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az iot ops asset endpoint delete --name myprofile -g myresourcegroup"
+            ]
+        },
+        {
+            "name": "az iot ops asset endpoint query",
+            "summary": "Query the Resource Graph for asset endpoint profiles.",
+            "syntax": "az iot ops asset endpoint query [--am {Anonymous, Certificate, UsernamePassword}]\n                                [--cq]\n                                [--endpoint-profile-type]\n                                [--ig]\n                                [--instance]\n                                [--location]\n                                [--name]\n                                [--resource-group]\n                                [--ta]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--am --authentication-mode",
+                "--cq --custom-query",
+                "--endpoint-profile-type --ept",
+                "--ig --instance-resource-group",
+                "--instance",
+                "--location -l",
+                "--name -n",
+                "--resource-group -g",
+                "--ta --target-address"
+            ],
+            "examples": [
+                "az iot ops asset endpoint query --authentication-mode Anonymous",
+                "az iot ops asset endpoint query --target-address opc.tcp://opcplc-000000:50000 --instance myinstance"
+            ]
+        },
+        {
+            "name": "az iot ops asset endpoint show",
+            "summary": "Show an asset endpoint profile.",
+            "syntax": "az iot ops asset endpoint show --name\n                               --resource-group",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az iot ops asset endpoint show --name myprofile -g myresourcegroup"
+            ]
+        },
+        {
+            "name": "az iot ops asset endpoint update",
+            "summary": "Update an asset endpoint profile.",
+            "syntax": "az iot ops asset endpoint update --name\n                                 --resource-group\n                                 [--am {Anonymous, Certificate, UsernamePassword}]\n                                 [--cert-ref]\n                                 [--cr]\n                                 [--pass-ref]\n                                 [--pr]\n                                 [--ta]\n                                 [--tags]\n                                 [--ur]\n                                 [--user-ref]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--am --authentication-mode",
+                "--cert-ref --certificate-ref",
+                "--cr",
+                "--pass-ref --password-ref",
+                "--pr",
+                "--ta --target-address",
+                "--tags",
+                "--ur --username-reference",
+                "--user-ref --username-ref"
+            ],
+            "examples": [
+                "az iot ops asset endpoint update --name myprofile -g myresourcegroup --authentication-mode Anonymous",
+                "az iot ops asset endpoint update --name myAssetEndpoint -g myRG --username-ref \"aio-opc-ua-broker-user-authentication/opc-plc-username\" --password-ref \"aio-opc-ua-broker-user-authentication/opc-plc-password\""
+            ]
+        }
+    ]
+}

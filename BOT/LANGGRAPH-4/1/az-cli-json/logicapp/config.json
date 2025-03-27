@@ -1,0 +1,6 @@
+{
+    "command_group": "az logicapp config",
+    "description": "Configure a logic app.",
+    "status": "GA",
+    "commands": []
+}

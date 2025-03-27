@@ -1,0 +1,6 @@
+{
+    "command_group": "az afd waf-log-analytic",
+    "description": "Manage afd WAF related log analytic results.",
+    "status": "GA",
+    "commands": []
+}

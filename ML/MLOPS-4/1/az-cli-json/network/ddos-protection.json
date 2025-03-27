@@ -1,0 +1,106 @@
+{
+    "command_group": "az network ddos-protection",
+    "description": "Manage DDoS Protection Plans.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az network ddos-protection create",
+            "summary": "Create a DDoS protection plan.",
+            "syntax": "az network ddos-protection create --name\n                                  --resource-group\n                                  [--location]\n                                  [--tags]\n                                  [--vnets]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--location -l",
+                "--tags",
+                "--vnets"
+            ],
+            "examples": [
+                "az network ddos-protection create -g MyResourceGroup -n MyDdosPlan",
+                "az network ddos-protection create --location westus2 --name MyDdosPlan --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az network ddos-protection delete",
+            "summary": "Delete a DDoS protection plan.",
+            "syntax": "az network ddos-protection delete [--ids]\n                                  [--name]\n                                  [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                  [--resource-group]\n                                  [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az network ddos-protection delete -g MyResourceGroup -n MyDdosPlan"
+            ]
+        },
+        {
+            "name": "az network ddos-protection list",
+            "summary": "List DDoS protection plans.",
+            "syntax": "az network ddos-protection list [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az network ddos-protection list"
+            ]
+        },
+        {
+            "name": "az network ddos-protection show",
+            "summary": "Show details of a DDoS protection plan.",
+            "syntax": "az network ddos-protection show [--ids]\n                                [--name]\n                                [--resource-group]\n                                [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az network ddos-protection show -g MyResourceGroup -n MyDdosPlan"
+            ]
+        },
+        {
+            "name": "az network ddos-protection update",
+            "summary": "Update a DDoS protection plan.",
+            "syntax": "az network ddos-protection update [--ids]\n                                  [--name]\n                                  [--resource-group]\n                                  [--subscription]\n                                  [--tags]\n                                  [--vnets]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--tags",
+                "--vnets"
+            ],
+            "examples": [
+                "az network ddos-protection update -g MyResourceGroup -n MyDdosPlan --vnets MyVnet",
+                "az network ddos-protection update --name MyDdosPlan --tags foo=boo --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az network ddos-protection wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az network ddos-protection wait [--created]\n                                [--custom]\n                                [--deleted]\n                                [--exists]\n                                [--ids]\n                                [--interval]\n                                [--name]\n                                [--resource-group]\n                                [--subscription]\n                                [--timeout]\n                                [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

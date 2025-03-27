@@ -1,0 +1,188 @@
+{
+    "command_group": "az network vnet",
+    "description": "Check if a private IP address is available for use within a virtual network.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az network vnet check-ip-address",
+            "summary": "Check if a private IP address is available for use within a virtual network.",
+            "syntax": "az network vnet check-ip-address --ip-address\n                                 --name\n                                 --resource-group",
+            "required_parameters": [
+                "--ip-address",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az network vnet check-ip-address -g MyResourceGroup -n MyVnet --ip-address 10.0.0.4"
+            ]
+        },
+        {
+            "name": "az network vnet create",
+            "summary": "Create a virtual network.",
+            "syntax": "az network vnet create --name\n                       --resource-group\n                       [--address-prefixes]\n                       [--bgp-community]\n                       [--ddos-protection {0, 1, f, false, n, no, t, true, y, yes}]\n                       [--ddos-protection-plan]\n                       [--dns-servers]\n                       [--edge-zone]\n                       [--enable-encryption {0, 1, f, false, n, no, t, true, y, yes}]\n                       [--encryption-enforcement-policy {AllowUnencrypted, DropUnencrypted}]\n                       [--flowtimeout]\n                       [--ipam-allocations]\n                       [--location]\n                       [--network-security-group]\n                       [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                       [--pe-vnet-policies {Basic, Disabled}]\n                       [--subnet-name]\n                       [--subnet-prefixes]\n                       [--subnets]\n                       [--tags]\n                       [--vm-protection {0, 1, f, false, n, no, t, true, y, yes}]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--address-prefixes",
+                "--bgp-community",
+                "--ddos-protection",
+                "--ddos-protection-plan",
+                "--dns-servers",
+                "--edge-zone",
+                "--enable-encryption",
+                "--encryption-enforcement-policy --encryption-policy",
+                "--flowtimeout",
+                "--ipam-allocations --ipam-pool-prefix-allocations",
+                "--location -l",
+                "--network-security-group --nsg",
+                "--no-wait",
+                "--pe-vnet-policies --private-endpoint-vnet-policies",
+                "--subnet-name",
+                "--subnet-prefixes",
+                "--subnets",
+                "--tags",
+                "--vm-protection"
+            ],
+            "examples": [
+                "az network vnet create -g MyResourceGroup -n MyVnet --address-prefix 10.0.0.0/16 --subnet-name MySubnet --subnet-prefixes 10.0.0.0/24",
+                "az network vnet create --address-prefixes 10.0.0.0/16 --name MyVirtualNetwork --resource-group MyResourceGroup --subnet-name MyAseSubnet --subnet-prefixes 10.0.0.0/24",
+                "az network vnet create -g MyResourceGroup -n MyVNet --ipam-allocations [0].number-of-ip-addresses=100 [0].id=ipam-pool-resource-id"
+            ]
+        },
+        {
+            "name": "az network vnet delete",
+            "summary": "Delete a virtual network.",
+            "syntax": "az network vnet delete [--ids]\n                       [--name]\n                       [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                       [--resource-group]\n                       [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az network vnet delete -g MyResourceGroup -n myVNet"
+            ]
+        },
+        {
+            "name": "az network vnet list",
+            "summary": "List virtual networks.",
+            "syntax": "az network vnet list [--max-items]\n                     [--next-token]\n                     [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az network vnet list",
+                "az network vnet list -g MyResourceGroup",
+                "az network vnet list --query \"[?contains(addressSpace.addressPrefixes, '10.0.0.0/16')]\""
+            ]
+        },
+        {
+            "name": "az network vnet list-available-ips",
+            "summary": "List some available ips in the vnet.",
+            "syntax": "az network vnet list-available-ips [--ids]\n                                   [--name]\n                                   [--resource-group]\n                                   [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az network vnet list-available-ips -g MyResourceGroup -n MyVNet"
+            ]
+        },
+        {
+            "name": "az network vnet list-endpoint-services",
+            "summary": "List which services support VNet service tunneling in a given region.",
+            "syntax": "az network vnet list-endpoint-services --location\n                                       [--max-items]\n                                       [--next-token]",
+            "required_parameters": [
+                "--location -l"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az network vnet list-endpoint-services -l westus -o table"
+            ]
+        },
+        {
+            "name": "az network vnet show",
+            "summary": "Get the details of a virtual network.",
+            "syntax": "az network vnet show [--expand]\n                     [--ids]\n                     [--name]\n                     [--resource-group]\n                     [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--expand",
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az network vnet show -g MyResourceGroup -n MyVNet"
+            ]
+        },
+        {
+            "name": "az network vnet update",
+            "summary": "Update a virtual network.",
+            "syntax": "az network vnet update [--add]\n                       [--address-prefixes]\n                       [--bgp-community]\n                       [--ddos-protection {0, 1, f, false, n, no, t, true, y, yes}]\n                       [--ddos-protection-plan]\n                       [--dns-servers]\n                       [--enable-encryption {0, 1, f, false, n, no, t, true, y, yes}]\n                       [--encryption-enforcement-policy {AllowUnencrypted, DropUnencrypted}]\n                       [--flowtimeout]\n                       [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                       [--ids]\n                       [--ipam-allocations]\n                       [--name]\n                       [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                       [--pe-vnet-policies {Basic, Disabled}]\n                       [--remove]\n                       [--resource-group]\n                       [--set]\n                       [--subscription]\n                       [--vm-protection {0, 1, f, false, n, no, t, true, y, yes}]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--address-prefixes",
+                "--bgp-community",
+                "--ddos-protection",
+                "--ddos-protection-plan",
+                "--dns-servers",
+                "--enable-encryption",
+                "--encryption-enforcement-policy --encryption-policy",
+                "--flowtimeout",
+                "--force-string",
+                "--ids",
+                "--ipam-allocations --ipam-pool-prefix-allocations",
+                "--name -n",
+                "--no-wait",
+                "--pe-vnet-policies --private-endpoint-vnet-policies",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--subscription",
+                "--vm-protection"
+            ],
+            "examples": [
+                "az network vnet update -g MyResourceGroup -n MyVNet --dns-servers 10.2.0.8",
+                "az network vnet update --address-prefixes 40.1.0.0/24 --name MyVNet --resource-group MyResourceGroup",
+                "az network vnet update -g MyResourceGroup -n MyVNet --dns-servers null"
+            ]
+        },
+        {
+            "name": "az network vnet wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az network vnet wait [--created]\n                     [--custom]\n                     [--deleted]\n                     [--exists]\n                     [--expand]\n                     [--ids]\n                     [--interval]\n                     [--name]\n                     [--resource-group]\n                     [--subscription]\n                     [--timeout]\n                     [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--expand",
+                "--ids",
+                "--interval",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

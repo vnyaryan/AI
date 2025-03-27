@@ -1,0 +1,64 @@
+{
+    "command_group": "az containerapp java logger",
+    "description": "Dynamically change log level for Java workloads.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az containerapp java logger delete",
+            "summary": "Delete logger for Java workloads.",
+            "syntax": "az containerapp java logger delete [--all]\n                                   [--ids]\n                                   [--logger-name]\n                                   [--name]\n                                   [--no-wait]\n                                   [--resource-group]\n                                   [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--all",
+                "--ids",
+                "--logger-name",
+                "--name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az containerapp java logger delete --all -n my-containerapp -g MyResourceGroup",
+                "az containerapp java logger delete --logger-name root -n my-containerapp -g MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az containerapp java logger set",
+            "summary": "Create or update logger for Java workloads.",
+            "syntax": "az containerapp java logger set --logger-level {debug, error, info, off, trace, warn}\n                                --logger-name\n                                [--ids]\n                                [--name]\n                                [--no-wait]\n                                [--resource-group]\n                                [--subscription]",
+            "required_parameters": [
+                "--logger-level",
+                "--logger-name"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az containerapp java logger set --logger-name root --logger-level debug -n my-containerapp -g MyResourceGroup",
+                "az containerapp java logger set --logger-name root --logger-level info -n my-containerapp -g MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az containerapp java logger show",
+            "summary": "Display logger setting for Java workloads.",
+            "syntax": "az containerapp java logger show [--all]\n                                 [--ids]\n                                 [--logger-name]\n                                 [--name]\n                                 [--resource-group]\n                                 [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--all",
+                "--ids",
+                "--logger-name",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az containerapp java logger show --all -n my-containerapp -g MyResourceGroup",
+                "az containerapp java logger show --logger-name root -n my-containerapp -g MyResourceGroup"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,37 @@
+{
+    "command_group": "az playwright-testing quota",
+    "description": "Manage Azure subscription quota resource for Microsoft Playwright Testing service.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az playwright-testing quota list",
+            "summary": "List quotas for a given subscription Id.",
+            "syntax": "az playwright-testing quota list --location\n                                 [--max-items]\n                                 [--next-token]",
+            "required_parameters": [
+                "--location -l"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az playwright-testing quota list --location eastus"
+            ]
+        },
+        {
+            "name": "az playwright-testing quota show",
+            "summary": "Get subscription quota by name.",
+            "syntax": "az playwright-testing quota show [--ids]\n                                 [--location]\n                                 [--quota-name {Reporting, ScalableExecution}]\n                                 [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--location -l",
+                "--quota-name",
+                "--subscription"
+            ],
+            "examples": [
+                "az playwright-testing quota show --location eastus --quota-name ScalableExecution"
+            ]
+        }
+    ]
+}

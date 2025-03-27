@@ -1,0 +1,118 @@
+{
+    "command_group": "az storagesync sync-group cloud-endpoint",
+    "description": "Manage cloud endpoint.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az storagesync sync-group cloud-endpoint create",
+            "summary": "Create a new cloud endpoint.",
+            "syntax": "az storagesync sync-group cloud-endpoint create --name\n                                                --storage-sync-service\n                                                --sync-group-name\n                                                [--azure-file-share-name]\n                                                [--no-wait]\n                                                [--resource-group]\n                                                [--storage-account]\n                                                [--storage-account-tenant-id]",
+            "required_parameters": [
+                "--name -n",
+                "--storage-sync-service",
+                "--sync-group-name"
+            ],
+            "optional_parameters": [
+                "--azure-file-share-name",
+                "--no-wait",
+                "--resource-group -g",
+                "--storage-account",
+                "--storage-account-tenant-id"
+            ],
+            "examples": [
+                "az storagesync sync-group cloud-endpoint create --resource-group \"SampleResourceGroup\" \\\n--storage-sync-service \"SampleStorageSyncService\" --sync-group-name \\\n\"SampleSyncGroup\" --name \"SampleCloudEndpoint\" --storage-account storageaccountnameorid --azure-file-share-name \\\n\"cvcloud-afscv-0719-058-a94a1354-a1fd-4e9a-9a50-919fad8c4ba4\""
+            ]
+        },
+        {
+            "name": "az storagesync sync-group cloud-endpoint delete",
+            "summary": "Delete a given cloud endpoint.",
+            "syntax": "az storagesync sync-group cloud-endpoint delete --name\n                                                --storage-sync-service\n                                                --sync-group-name\n                                                [--no-wait]\n                                                [--resource-group]\n                                                [--yes]",
+            "required_parameters": [
+                "--name -n",
+                "--storage-sync-service",
+                "--sync-group-name"
+            ],
+            "optional_parameters": [
+                "--no-wait",
+                "--resource-group -g",
+                "--yes -y"
+            ],
+            "examples": [
+                "az storagesync sync-group cloud-endpoint delete --resource-group \"SampleResourceGroup\" \\\n--storage-sync-service \"SampleStorageSyncService\" --sync-group-name \\\n\"SampleSyncGroup\" --name \"SampleCloudEndpoint\""
+            ]
+        },
+        {
+            "name": "az storagesync sync-group cloud-endpoint list",
+            "summary": "List all cloud endpoints in a sync group.",
+            "syntax": "az storagesync sync-group cloud-endpoint list --storage-sync-service\n                                              --sync-group-name\n                                              [--resource-group]",
+            "required_parameters": [
+                "--storage-sync-service",
+                "--sync-group-name"
+            ],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az storagesync sync-group cloud-endpoint list --resource-group \"SampleResourceGroup\" \\\n--storage-sync-service \"SampleStorageSyncService\" --sync-group-name \\\n\"SampleSyncGroup\""
+            ]
+        },
+        {
+            "name": "az storagesync sync-group cloud-endpoint show",
+            "summary": "Show the properties for a given cloud endpoint.",
+            "syntax": "az storagesync sync-group cloud-endpoint show --name\n                                              --storage-sync-service\n                                              --sync-group-name\n                                              [--resource-group]",
+            "required_parameters": [
+                "--name -n",
+                "--storage-sync-service",
+                "--sync-group-name"
+            ],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az storagesync sync-group cloud-endpoint show --resource-group \"SampleResourceGroup\" \\\n--storage-sync-service \"SampleStorageSyncService\" --sync-group-name \\\n\"SampleSyncGroup\" --name \"SampleCloudEndpoint\""
+            ]
+        },
+        {
+            "name": "az storagesync sync-group cloud-endpoint trigger-change-detection",
+            "summary": "Triggers detection of changes performed on Azure File share connected to the specified Azure File Sync Cloud Endpoint.",
+            "syntax": "az storagesync sync-group cloud-endpoint trigger-change-detection [--change-detection-mode {Default, Recursive}]\n                                                                  [--cloud-endpoint-name]\n                                                                  [--directory-path]\n                                                                  [--ids]\n                                                                  [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                                                  [--paths]\n                                                                  [--resource-group]\n                                                                  [--storage-sync-service]\n                                                                  [--subscription]\n                                                                  [--sync-group-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--change-detection-mode",
+                "--cloud-endpoint-name --name -n",
+                "--directory-path",
+                "--ids",
+                "--no-wait",
+                "--paths",
+                "--resource-group -g",
+                "--storage-sync-service --storage-sync-service-name",
+                "--subscription",
+                "--sync-group-name"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az storagesync sync-group cloud-endpoint wait",
+            "summary": "Place the CLI in a waiting state until a condition of a cloud endpoint is met.",
+            "syntax": "az storagesync sync-group cloud-endpoint wait --name\n                                              --resource-group\n                                              --storage-sync-service-name\n                                              --sync-group-name\n                                              [--created]\n                                              [--custom]\n                                              [--deleted]\n                                              [--exists]\n                                              [--interval]\n                                              [--timeout]\n                                              [--updated]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g",
+                "--storage-sync-service-name",
+                "--sync-group-name"
+            ],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--interval",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": [
+                "az storagesync sync-group cloud-endpoint wait --resource-group \"SampleResourceGroup\" \\\n--storage-sync-service \"SampleStorageSyncService\" --sync-group-name \\\n\"SampleSyncGroup\" --name \"SampleCloudEndpoint\" --created"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,75 @@
+{
+    "command_group": "az account lock",
+    "description": "Manage Azure subscription level locks.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az account lock create",
+            "summary": "Create a subscription lock.",
+            "syntax": "az account lock create --lock-type {CanNotDelete, ReadOnly}\n                       --name\n                       [--notes]",
+            "required_parameters": [
+                "--lock-type -t",
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--notes"
+            ],
+            "examples": [
+                "az account lock create --lock-type ReadOnly -n lockName"
+            ]
+        },
+        {
+            "name": "az account lock delete",
+            "summary": "Delete a subscription lock.",
+            "syntax": "az account lock delete [--ids]\n                       [--name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n"
+            ],
+            "examples": [
+                "az account lock delete --name lockName"
+            ]
+        },
+        {
+            "name": "az account lock list",
+            "summary": "List lock information in the subscription.",
+            "syntax": "az account lock list [--filter-string]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--filter-string"
+            ],
+            "examples": [
+                "az account lock list"
+            ]
+        },
+        {
+            "name": "az account lock show",
+            "summary": "Show the details of a subscription lock.",
+            "syntax": "az account lock show [--ids]\n                     [--name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n"
+            ],
+            "examples": [
+                "az account lock show -n lockname"
+            ]
+        },
+        {
+            "name": "az account lock update",
+            "summary": "Update a subscription lock.",
+            "syntax": "az account lock update [--ids]\n                       [--lock-type {CanNotDelete, ReadOnly}]\n                       [--name]\n                       [--notes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--lock-type -t",
+                "--name -n",
+                "--notes"
+            ],
+            "examples": [
+                "az account lock update --name lockName --notes newNotesHere --lock-type CanNotDelete"
+            ]
+        }
+    ]
+}

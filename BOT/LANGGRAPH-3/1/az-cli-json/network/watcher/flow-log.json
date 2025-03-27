@@ -1,0 +1,155 @@
+{
+    "command_group": "az network watcher flow-log",
+    "description": "Manage network security group flow logging.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az network watcher flow-log create",
+            "summary": "Create a flow log on a network security group.",
+            "syntax": "az network watcher flow-log create --name\n                                   [--enabled {0, 1, f, false, n, no, t, true, y, yes}]\n                                   [--filtering-criteria]\n                                   [--format {JSON}]\n                                   [--identity]\n                                   [--interval]\n                                   [--location]\n                                   [--log-version]\n                                   [--nic]\n                                   [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                   [--nsg]\n                                   [--resource-group]\n                                   [--retention]\n                                   [--storage-account]\n                                   [--subnet]\n                                   [--tags]\n                                   [--traffic-analytics {0, 1, f, false, n, no, t, true, y, yes}]\n                                   [--user-assigned-identity]\n                                   [--vnet]\n                                   [--workspace]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--enabled",
+                "--filtering-criteria",
+                "--format",
+                "--identity",
+                "--interval",
+                "--location -l",
+                "--log-version",
+                "--nic",
+                "--no-wait",
+                "--nsg",
+                "--resource-group -g",
+                "--retention",
+                "--storage-account",
+                "--subnet",
+                "--tags",
+                "--traffic-analytics",
+                "--user-assigned-identity",
+                "--vnet",
+                "--workspace"
+            ],
+            "examples": [
+                "az network watcher flow-log create --location westus --resource-group MyResourceGroup --name MyFlowLog --nsg MyNetworkSecurityGroupName --storage-account account",
+                "az network watcher flow-log create --location westus --resource-group MyResourceGroup --name MyFlowLog --vnet MyVNetName --storage-account account",
+                "az network watcher flow-log create --location westus --resource-group MyResourceGroup --name MyFlowLog --vnet MyVNetName --subnet MySubnetName --storage-account account",
+                "az network watcher flow-log create --location westus --resource-group MyResourceGroup --name MyFlowLog --nic MyNICName --storage-account account",
+                "az network watcher flow-log create --location westus --name MyFlowLog --nsg MyNetworkSecurityGroupID --storage-account account",
+                "az network watcher flow-log create --location westus --name MyFlowLog --vnet MyVNetID --storage-account account",
+                "az network watcher flow-log create --location westus --name MyFlowLog --subnet SubnetID --storage-account account",
+                "az network watcher flow-log create --location westus --name MyFlowLog --nic MyNetworkInterfaceID --storage-account account",
+                "az network watcher flow-log create --location westus --resource-group MtRGContainingVNet --name MyVNetName-flowlog --vnet MyVNetName --storage-account MyStorageAccountName  --filtering-criteria \"dstip=20.252.145.59 || DstPort=443\""
+            ]
+        },
+        {
+            "name": "az network watcher flow-log delete",
+            "summary": "Delete the specified flow log resource.",
+            "syntax": "az network watcher flow-log delete --name\n                                   [--location]\n                                   [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--location -l",
+                "--no-wait"
+            ],
+            "examples": [
+                "az network watcher flow-log delete --location westus2 --name MyFlowLogger"
+            ]
+        },
+        {
+            "name": "az network watcher flow-log list",
+            "summary": "List all flow log resources for the specified Network Watcher.",
+            "syntax": "az network watcher flow-log list [--location]\n                                 [--max-items]\n                                 [--next-token]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--location -l",
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az network watcher flow-log list --location westus2"
+            ]
+        },
+        {
+            "name": "az network watcher flow-log show",
+            "summary": "Get the flow log configuration of a network security group.",
+            "syntax": "az network watcher flow-log show [--location]\n                                 [--name]\n                                 [--nsg]\n                                 [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--location -l",
+                "--name -n",
+                "--nsg",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az network watcher flow-log show -g MyResourceGroup --nsg MyNsg",
+                "az network watcher flow-log show --location MyNetworkWatcher --name MyFlowLog"
+            ]
+        },
+        {
+            "name": "az network watcher flow-log update",
+            "summary": "Update the flow log configuration of a network security group.",
+            "syntax": "az network watcher flow-log update --location\n                                   --name\n                                   [--add]\n                                   [--enabled {0, 1, f, false, n, no, t, true, y, yes}]\n                                   [--filtering-criteria]\n                                   [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                   [--format {JSON}]\n                                   [--identity]\n                                   [--interval]\n                                   [--log-version]\n                                   [--nic]\n                                   [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                   [--nsg]\n                                   [--remove]\n                                   [--resource-group]\n                                   [--retention]\n                                   [--set]\n                                   [--storage-account]\n                                   [--subnet]\n                                   [--tags]\n                                   [--traffic-analytics {0, 1, f, false, n, no, t, true, y, yes}]\n                                   [--user-assigned-identity]\n                                   [--vnet]\n                                   [--workspace]",
+            "required_parameters": [
+                "--location -l",
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--add",
+                "--enabled",
+                "--filtering-criteria",
+                "--force-string",
+                "--format",
+                "--identity",
+                "--interval",
+                "--log-version",
+                "--nic",
+                "--no-wait",
+                "--nsg",
+                "--remove",
+                "--resource-group -g",
+                "--retention",
+                "--set",
+                "--storage-account",
+                "--subnet",
+                "--tags",
+                "--traffic-analytics",
+                "--user-assigned-identity",
+                "--vnet",
+                "--workspace"
+            ],
+            "examples": [
+                "az network watcher flow-log update --location westus --resource-group MyResourceGroup --name MyFlowLog --storage-account accountname",
+                "az network watcher flow-log update --location westus --resource-group MyResourceGroup --name MyFlowLog --storage-account accountid",
+                "az network watcher flow-log update --location westus --resource-group MyAnotherResourceGroup --name MyFlowLog --nsg MyNSG",
+                "az network watcher flow-log update --location westus --resource-group MyAnotherResourceGroup --name MyFlowLog --vnet MyVNet",
+                "az network watcher flow-log update --location westus --resource-group MyAnotherResourceGroup --name MyFlowLog --vnet MyVNet --subnet MySubnet",
+                "az network watcher flow-log update --location westus --resource-group MyAnotherResourceGroup --name MyFlowLog --nic MyNIC",
+                "az network watcher flow-log update --location westus --resource-group MyAnotherResourceGroup --name MyFlowLog --workspace MyAnotherLogAnalyticWorkspace"
+            ]
+        },
+        {
+            "name": "az network watcher flow-log wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az network watcher flow-log wait [--created]\n                                 [--custom]\n                                 [--deleted]\n                                 [--exists]\n                                 [--ids]\n                                 [--interval]\n                                 [--name]\n                                 [--network-watcher-name]\n                                 [--resource-group]\n                                 [--subscription]\n                                 [--timeout]\n                                 [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--name -n",
+                "--network-watcher-name",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

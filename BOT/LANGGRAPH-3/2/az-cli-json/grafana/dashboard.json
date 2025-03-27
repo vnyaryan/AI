@@ -1,0 +1,131 @@
+{
+    "command_group": "az grafana dashboard",
+    "description": "Commands to manage dashboards of an instance.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az grafana dashboard create",
+            "summary": "Create a new dashboard.",
+            "syntax": "az grafana dashboard create --definition\n                            --name\n                            [--api-key]\n                            [--folder]\n                            [--overwrite {false, true}]\n                            [--resource-group]\n                            [--title]",
+            "required_parameters": [
+                "--definition",
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--api-key --token -t",
+                "--folder",
+                "--overwrite",
+                "--resource-group -g",
+                "--title"
+            ],
+            "examples": [
+                "az grafana dashboard create -g MyResourceGroup -n MyGrafana --title \"My dashboard\" --folder folder1 --definition '{\n  \"dashboard\": {\n    \"annotations\": {\n        ...\n    },\n    \"panels\": {\n        ...\n    }\n  },\n  \"message\": \"Create a new test dashboard\"\n}'"
+            ]
+        },
+        {
+            "name": "az grafana dashboard delete",
+            "summary": "Delete a dashboard.",
+            "syntax": "az grafana dashboard delete --dashboard\n                            --name\n                            [--api-key]\n                            [--resource-group]",
+            "required_parameters": [
+                "--dashboard",
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--api-key --token -t",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az grafana dashboard delete -g MyResourceGroup -n MyGrafana --dashboard VdrOA7jGz"
+            ]
+        },
+        {
+            "name": "az grafana dashboard import",
+            "summary": "Import a dashboard.",
+            "syntax": "az grafana dashboard import --definition\n                            --name\n                            [--api-key]\n                            [--folder]\n                            [--overwrite {false, true}]\n                            [--resource-group]",
+            "required_parameters": [
+                "--definition",
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--api-key --token -t",
+                "--folder",
+                "--overwrite",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az grafana dashboard import -g MyResourceGroup -n MyGrafana --definition 12180",
+                "az grafana dashboard import -g MyResourceGroup -n MyGrafana --definition @c:\\temp\\dashboard.json"
+            ]
+        },
+        {
+            "name": "az grafana dashboard list",
+            "summary": "List all dashboards of an instance.",
+            "syntax": "az grafana dashboard list --name\n                          [--api-key]\n                          [--resource-group]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--api-key --token -t",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az grafana dashboard list -g MyResourceGroup -n MyGrafana --query \"[?contains(@.title, 'API server')].uid\""
+            ]
+        },
+        {
+            "name": "az grafana dashboard show",
+            "summary": "Get the details of a dashboard.",
+            "syntax": "az grafana dashboard show --dashboard\n                          --name\n                          [--api-key]\n                          [--resource-group]",
+            "required_parameters": [
+                "--dashboard",
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--api-key --token -t",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az grafana dashboard show -g MyResourceGroup -n MyGrafana --dashboard VdrOA7jGz"
+            ]
+        },
+        {
+            "name": "az grafana dashboard sync",
+            "summary": "Sync Azure Managed Grafana dashboards from one instance to another instance. Library panels within the dashboards will be automatically included in the sync. Note, dashboards with \"Provisioned\" state will be skipped due to being read-only.",
+            "syntax": "az grafana dashboard sync --destination\n                          --source\n                          [--dashboards-to-exclude]\n                          [--dashboards-to-include]\n                          [--dry-run {false, true}]\n                          [--folders-to-exclude]\n                          [--folders-to-include]",
+            "required_parameters": [
+                "--destination -d",
+                "--source -s"
+            ],
+            "optional_parameters": [
+                "--dashboards-to-exclude",
+                "--dashboards-to-include",
+                "--dry-run",
+                "--folders-to-exclude -e",
+                "--folders-to-include -i"
+            ],
+            "examples": [
+                "az grafana dashboard sync --source /subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/workspaces/providers/Microsoft.Dashboard/grafana/source --destination /subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/workspaces/providers/Microsoft.Dashboard/grafana/destination --folders-to-include \"Azure Monitor Container Insights\" \"Azure Monitor\"",
+                "az grafana dashboard sync --source /subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/workspaces/providers/Microsoft.Dashboard/grafana/source --destination /subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/workspaces/providers/Microsoft.Dashboard/grafana/destination --folders-to-include \"MyFolder\" --dashboards-to-include \"My Service Health\"",
+                "az grafana dashboard sync --source /subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/workspaces/providers/Microsoft.Dashboard/grafana/source --destination /subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/workspaces/providers/Microsoft.Dashboard/grafana/destination --dry-run"
+            ]
+        },
+        {
+            "name": "az grafana dashboard update",
+            "summary": "Update a dashboard.",
+            "syntax": "az grafana dashboard update --definition\n                            --name\n                            [--api-key]\n                            [--folder]\n                            [--overwrite {false, true}]\n                            [--resource-group]",
+            "required_parameters": [
+                "--definition",
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--api-key --token -t",
+                "--folder",
+                "--overwrite",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az grafana dashboard update -g MyResourceGroup -n MyGrafana --definition @c:\\temp\\dashboard.json"
+            ]
+        }
+    ]
+}

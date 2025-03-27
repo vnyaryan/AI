@@ -1,0 +1,114 @@
+{
+    "command_group": "az synapse pipeline",
+    "description": "Manage Synapse's pipelines.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az synapse pipeline create",
+            "summary": "Create a pipeline.",
+            "syntax": "az synapse pipeline create --file\n                           --name\n                           --workspace-name\n                           [--no-wait]",
+            "required_parameters": [
+                "--file",
+                "--name -n",
+                "--workspace-name"
+            ],
+            "optional_parameters": [
+                "--no-wait"
+            ],
+            "examples": [
+                "az synapse pipeline create --workspace-name testsynapseworkspace \\\n  --name testpipeline --file @\"path/pipeline.json\""
+            ]
+        },
+        {
+            "name": "az synapse pipeline create-run",
+            "summary": "Creates a run of a pipeline.",
+            "syntax": "az synapse pipeline create-run --name\n                               --workspace-name\n                               [--is-recovery {false, true}]\n                               [--parameters]\n                               [--reference-pipeline-run-id]\n                               [--start-activity-name]",
+            "required_parameters": [
+                "--name -n",
+                "--workspace-name"
+            ],
+            "optional_parameters": [
+                "--is-recovery",
+                "--parameters",
+                "--reference-pipeline-run-id --run-id",
+                "--start-activity-name"
+            ],
+            "examples": [
+                "az synapse pipeline create-run --workspace-name testsynapseworkspace --name \"myPipeline\" \\\n  --parameters \"{\\\"OutputBlobNameList\\\":[\\\"exampleoutput.csv\\\"]}\""
+            ]
+        },
+        {
+            "name": "az synapse pipeline delete",
+            "summary": "Delete a pipeline.",
+            "syntax": "az synapse pipeline delete --name\n                           --workspace-name\n                           [--no-wait]\n                           [--yes]",
+            "required_parameters": [
+                "--name -n",
+                "--workspace-name"
+            ],
+            "optional_parameters": [
+                "--no-wait",
+                "--yes -y"
+            ],
+            "examples": [
+                "az synapse pipeline delete --workspace-name testsynapseworkspace \\\n  --name testpipeline"
+            ]
+        },
+        {
+            "name": "az synapse pipeline list",
+            "summary": "List pipelines.",
+            "syntax": "az synapse pipeline list --workspace-name",
+            "required_parameters": [
+                "--workspace-name"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az synapse pipeline list --workspace-name testsynapseworkspace"
+            ]
+        },
+        {
+            "name": "az synapse pipeline set",
+            "summary": "Update an exist pipeline.",
+            "syntax": "az synapse pipeline set --file\n                        --name\n                        --workspace-name\n                        [--no-wait]",
+            "required_parameters": [
+                "--file",
+                "--name -n",
+                "--workspace-name"
+            ],
+            "optional_parameters": [
+                "--no-wait"
+            ],
+            "examples": [
+                "az synapse pipeline set --workspace-name testsynapseworkspace \\\n  --name testpipeline --file @\"path/pipeline.json\""
+            ]
+        },
+        {
+            "name": "az synapse pipeline show",
+            "summary": "Get a pipeline.",
+            "syntax": "az synapse pipeline show --name\n                         --workspace-name",
+            "required_parameters": [
+                "--name -n",
+                "--workspace-name"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az synapse pipeline show --workspace-name testsynapseworkspace \\\n  --name testpipeline"
+            ]
+        },
+        {
+            "name": "az synapse pipeline update",
+            "summary": "Update an exist pipeline.",
+            "syntax": "az synapse pipeline update --file\n                           --name\n                           --workspace-name\n                           [--no-wait]",
+            "required_parameters": [
+                "--file",
+                "--name -n",
+                "--workspace-name"
+            ],
+            "optional_parameters": [
+                "--no-wait"
+            ],
+            "examples": [
+                "az synapse pipeline update --workspace-name testsynapseworkspace \\\n  --name testpipeline --file @\"path/pipeline.json\""
+            ]
+        }
+    ]
+}

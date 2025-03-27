@@ -1,0 +1,90 @@
+{
+    "command_group": "az kusto data-connection event-grid",
+    "description": "Manage data connection with kusto sub group event-grid.",
+    "status": "Experimental",
+    "commands": [
+        {
+            "name": "az kusto data-connection event-grid create",
+            "summary": "Create a data connection.",
+            "syntax": "az kusto data-connection event-grid create --cluster-name\n                                           --data-connection-name\n                                           --database-name\n                                           --resource-group\n                                           [--blob-storage-event-type {Microsoft.Storage.BlobCreated, Microsoft.Storage.BlobRenamed}]\n                                           [--consumer-group]\n                                           [--data-format {APACHEAVRO, AVRO, CSV, JSON, MULTIJSON, ORC, PARQUET, PSV, RAW, SCSV, SINGLEJSON, SOHSV, TSV, TSVE, TXT, W3CLOGFILE}]\n                                           [--database-routing {Multi, Single}]\n                                           [--event-grid-resource-id]\n                                           [--event-hub-resource-id]\n                                           [--ignore-first-record {false, true}]\n                                           [--location]\n                                           [--managed-identity]\n                                           [--mapping-rule-name]\n                                           [--no-wait]\n                                           [--storage-account-resource-id]\n                                           [--table-name]",
+            "required_parameters": [
+                "--cluster-name",
+                "--data-connection-name --name -n",
+                "--database-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--blob-storage-event-type",
+                "--consumer-group",
+                "--data-format",
+                "--database-routing",
+                "--event-grid-resource-id",
+                "--event-hub-resource-id",
+                "--ignore-first-record",
+                "--location -l",
+                "--managed-identity --managed-identity-resource-id",
+                "--mapping-rule-name",
+                "--no-wait",
+                "--storage-account-resource-id",
+                "--table-name"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az kusto data-connection event-grid data-connection-validation",
+            "summary": "Checks that the data connection parameters are valid.",
+            "syntax": "az kusto data-connection event-grid data-connection-validation [--blob-storage-event-type {Microsoft.Storage.BlobCreated, Microsoft.Storage.BlobRenamed}]\n                                                               [--cluster-name]\n                                                               [--consumer-group]\n                                                               [--data-connection-name]\n                                                               [--data-format {APACHEAVRO, AVRO, CSV, JSON, MULTIJSON, ORC, PARQUET, PSV, RAW, SCSV, SINGLEJSON, SOHSV, TSV, TSVE, TXT, W3CLOGFILE}]\n                                                               [--database-name]\n                                                               [--database-routing {Multi, Single}]\n                                                               [--event-grid-resource-id]\n                                                               [--event-hub-resource-id]\n                                                               [--ids]\n                                                               [--ignore-first-record {false, true}]\n                                                               [--location]\n                                                               [--managed-identity]\n                                                               [--mapping-rule-name]\n                                                               [--no-wait]\n                                                               [--resource-group]\n                                                               [--storage-account-resource-id]\n                                                               [--subscription]\n                                                               [--table-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--blob-storage-event-type",
+                "--cluster-name",
+                "--consumer-group",
+                "--data-connection-name --name -n",
+                "--data-format",
+                "--database-name",
+                "--database-routing",
+                "--event-grid-resource-id",
+                "--event-hub-resource-id",
+                "--ids",
+                "--ignore-first-record",
+                "--location -l",
+                "--managed-identity --managed-identity-resource-id",
+                "--mapping-rule-name",
+                "--no-wait",
+                "--resource-group -g",
+                "--storage-account-resource-id",
+                "--subscription",
+                "--table-name"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az kusto data-connection event-grid update",
+            "summary": "Updates a data connection.",
+            "syntax": "az kusto data-connection event-grid update [--blob-storage-event-type {Microsoft.Storage.BlobCreated, Microsoft.Storage.BlobRenamed}]\n                                           [--cluster-name]\n                                           [--consumer-group]\n                                           [--data-connection-name]\n                                           [--data-format {APACHEAVRO, AVRO, CSV, JSON, MULTIJSON, ORC, PARQUET, PSV, RAW, SCSV, SINGLEJSON, SOHSV, TSV, TSVE, TXT, W3CLOGFILE}]\n                                           [--database-name]\n                                           [--database-routing {Multi, Single}]\n                                           [--event-grid-resource-id]\n                                           [--event-hub-resource-id]\n                                           [--ids]\n                                           [--ignore-first-record {false, true}]\n                                           [--location]\n                                           [--managed-identity]\n                                           [--mapping-rule-name]\n                                           [--no-wait]\n                                           [--resource-group]\n                                           [--storage-account-resource-id]\n                                           [--subscription]\n                                           [--table-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--blob-storage-event-type",
+                "--cluster-name",
+                "--consumer-group",
+                "--data-connection-name --name -n",
+                "--data-format",
+                "--database-name",
+                "--database-routing",
+                "--event-grid-resource-id",
+                "--event-hub-resource-id",
+                "--ids",
+                "--ignore-first-record",
+                "--location -l",
+                "--managed-identity --managed-identity-resource-id",
+                "--mapping-rule-name",
+                "--no-wait",
+                "--resource-group -g",
+                "--storage-account-resource-id",
+                "--subscription",
+                "--table-name"
+            ],
+            "examples": []
+        }
+    ]
+}

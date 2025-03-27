@@ -1,0 +1,79 @@
+{
+    "command_group": "az cdn endpoint rule action",
+    "description": "Manage delivery rule actions for an endpoint.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az cdn endpoint rule action add",
+            "summary": "Add an action to a delivery rule.",
+            "syntax": "az cdn endpoint rule action add --action-name {CacheExpiration, CacheKeyQueryString, ModifyRequestHeader, ModifyResponseHeader, OriginGroupOverride, UrlRedirect, UrlRewrite}\n                                --rule-name\n                                [--cache-behavior {BypassCache, Override, SetIfMissing}]\n                                [--cache-duration]\n                                [--custom-fragment]\n                                [--custom-hostname]\n                                [--custom-path]\n                                [--custom-querystring]\n                                [--destination]\n                                [--header-action {Append, Delete, Overwrite}]\n                                [--header-name]\n                                [--header-value]\n                                [--ids]\n                                [--name]\n                                [--origin-group]\n                                [--preserve-unmatched-path {false, true}]\n                                [--profile-name]\n                                [--query-parameters]\n                                [--query-string-behavior {Exclude, ExcludeAll, Include, IncludeAll}]\n                                [--redirect-protocol {Http, Https, MatchRequest}]\n                                [--redirect-type {Found, Moved, PermanentRedirect, TemporaryRedirect}]\n                                [--resource-group]\n                                [--source-pattern]\n                                [--subscription]",
+            "required_parameters": [
+                "--action-name",
+                "--rule-name"
+            ],
+            "optional_parameters": [
+                "--cache-behavior",
+                "--cache-duration",
+                "--custom-fragment",
+                "--custom-hostname",
+                "--custom-path",
+                "--custom-querystring",
+                "--destination",
+                "--header-action",
+                "--header-name",
+                "--header-value",
+                "--ids",
+                "--name -n",
+                "--origin-group",
+                "--preserve-unmatched-path",
+                "--profile-name",
+                "--query-parameters",
+                "--query-string-behavior",
+                "--redirect-protocol",
+                "--redirect-type",
+                "--resource-group -g",
+                "--source-pattern",
+                "--subscription"
+            ],
+            "examples": [
+                "az cdn endpoint rule action add -g group -n endpoint --profile-name profile --rule-name name --action-name \"UrlRedirect\" --redirect-protocol HTTPS --redirect-type Moved",
+                "az cdn endpoint rule action add -g group -n endpoint --profile-name profile --rule-name name --action-name \"CacheExpiration\" --cache-behavior BypassCache"
+            ]
+        },
+        {
+            "name": "az cdn endpoint rule action remove",
+            "summary": "Remove an action from a delivery rule.",
+            "syntax": "az cdn endpoint rule action remove --index\n                                   --rule-name\n                                   [--ids]\n                                   [--name]\n                                   [--profile-name]\n                                   [--resource-group]\n                                   [--subscription]",
+            "required_parameters": [
+                "--index",
+                "--rule-name"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--profile-name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az cdn endpoint rule action remove -g group -n endpoint --profile-name profile --rule-name name --index 0"
+            ]
+        },
+        {
+            "name": "az cdn endpoint rule action show",
+            "summary": "Show delivery rules asscociate with the endpoint.",
+            "syntax": "az cdn endpoint rule action show [--ids]\n                                 [--name]\n                                 [--profile-name]\n                                 [--resource-group]\n                                 [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--profile-name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az cdn endpoint rule action show -g group --profile-name profile-name -n endpoint"
+            ]
+        }
+    ]
+}

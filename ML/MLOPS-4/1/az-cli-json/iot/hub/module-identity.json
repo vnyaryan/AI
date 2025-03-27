@@ -1,0 +1,126 @@
+{
+    "command_group": "az iot hub module-identity",
+    "description": "Manage IoT device modules.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az iot hub module-identity create",
+            "summary": "Create a module on a target IoT device in an IoT Hub.",
+            "syntax": "az iot hub module-identity create --device-id\n                                  --module-id\n                                  [--am {shared_private_key, x509_ca, x509_thumbprint}]\n                                  [--auth-type {key, login}]\n                                  [--hub-name]\n                                  [--login]\n                                  [--od]\n                                  [--pk]\n                                  [--primary-thumbprint]\n                                  [--resource-group]\n                                  [--secondary-key]\n                                  [--secondary-thumbprint]\n                                  [--valid-days]",
+            "required_parameters": [
+                "--device-id -d",
+                "--module-id -m"
+            ],
+            "optional_parameters": [
+                "--am --auth-method",
+                "--auth-type",
+                "--hub-name -n",
+                "--login -l",
+                "--od --output-dir",
+                "--pk --primary-key",
+                "--primary-thumbprint --ptp",
+                "--resource-group -g",
+                "--secondary-key --sk",
+                "--secondary-thumbprint --stp",
+                "--valid-days --vd"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az iot hub module-identity delete",
+            "summary": "Delete a device in an IoT Hub.",
+            "syntax": "az iot hub module-identity delete --device-id\n                                  --module-id\n                                  [--auth-type {key, login}]\n                                  [--etag]\n                                  [--hub-name]\n                                  [--login]\n                                  [--resource-group]",
+            "required_parameters": [
+                "--device-id -d",
+                "--module-id -m"
+            ],
+            "optional_parameters": [
+                "--auth-type",
+                "--etag -e",
+                "--hub-name -n",
+                "--login -l",
+                "--resource-group -g"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az iot hub module-identity list",
+            "summary": "List modules located on an IoT device in an IoT Hub.",
+            "syntax": "az iot hub module-identity list --device-id\n                                [--auth-type {key, login}]\n                                [--hub-name]\n                                [--login]\n                                [--resource-group]\n                                [--top]",
+            "required_parameters": [
+                "--device-id -d"
+            ],
+            "optional_parameters": [
+                "--auth-type",
+                "--hub-name -n",
+                "--login -l",
+                "--resource-group -g",
+                "--top"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az iot hub module-identity renew-key",
+            "summary": "Renew target keys of IoT Hub device modules with sas authentication.",
+            "syntax": "az iot hub module-identity renew-key --device-id\n                                     --hub-name\n                                     --key-type {both, primary, secondary, swap}\n                                     --module-id\n                                     [--auth-type {key, login}]\n                                     [--etag]\n                                     [--login]\n                                     [--no-progress {false, true}]\n                                     [--resource-group]",
+            "required_parameters": [
+                "--device-id -d",
+                "--hub-name -n",
+                "--key-type --kt",
+                "--module-id -m"
+            ],
+            "optional_parameters": [
+                "--auth-type",
+                "--etag -e",
+                "--login -l",
+                "--no-progress",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az iot hub module-identity renew-key -m {module_name} -d {device_id} -n {iothub_name} --kt primary",
+                "az iot hub module-identity renew-key -m {module_name} -d {device_id} -n {iothub_name} --kt swap",
+                "az iot hub module-identity renew-key -m {module_name} {module_name} -d {device_id} -n {iothub_name} --kt secondary",
+                "az iot hub module-identity renew-key -m * -d {device_id} -n {iothub_name} --kt both"
+            ]
+        },
+        {
+            "name": "az iot hub module-identity show",
+            "summary": "Get the details of an IoT device module in an IoT Hub.",
+            "syntax": "az iot hub module-identity show --device-id\n                                --module-id\n                                [--auth-type {key, login}]\n                                [--hub-name]\n                                [--login]\n                                [--resource-group]",
+            "required_parameters": [
+                "--device-id -d",
+                "--module-id -m"
+            ],
+            "optional_parameters": [
+                "--auth-type",
+                "--hub-name -n",
+                "--login -l",
+                "--resource-group -g"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az iot hub module-identity update",
+            "summary": "Update an IoT Hub device module.",
+            "syntax": "az iot hub module-identity update --device-id\n                                  --module-id\n                                  [--add]\n                                  [--auth-type {key, login}]\n                                  [--etag]\n                                  [--force-string]\n                                  [--hub-name]\n                                  [--login]\n                                  [--remove]\n                                  [--resource-group]\n                                  [--set]",
+            "required_parameters": [
+                "--device-id -d",
+                "--module-id -m"
+            ],
+            "optional_parameters": [
+                "--add",
+                "--auth-type",
+                "--etag -e",
+                "--force-string",
+                "--hub-name -n",
+                "--login -l",
+                "--remove",
+                "--resource-group -g",
+                "--set"
+            ],
+            "examples": [
+                "az iot hub module-identity update -m {module_name} -d {device_id} -n {iothub_name} --set authentication.symmetricKey.primaryKey=\"\" authentication.symmetricKey.secondaryKey=\"\""
+            ]
+        }
+    ]
+}

@@ -1,0 +1,22 @@
+{
+    "command_group": "az new-relic plan",
+    "description": "Manage NewRelic Plan resource.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az new-relic plan list",
+            "summary": "List plans data.",
+            "syntax": "az new-relic plan list [--account-id]\n                       [--max-items]\n                       [--next-token]\n                       [--organization-id]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account-id",
+                "--max-items",
+                "--next-token",
+                "--organization-id"
+            ],
+            "examples": [
+                "az new-relic plan list --account-id MyAccountId --organization-id MyOrganizationId"
+            ]
+        }
+    ]
+}

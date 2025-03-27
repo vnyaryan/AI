@@ -1,0 +1,43 @@
+{
+    "command_group": "az containerapp ingress traffic",
+    "description": "Commands to manage traffic-splitting.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az containerapp ingress traffic set",
+            "summary": "Configure traffic-splitting for a container app.",
+            "syntax": "az containerapp ingress traffic set [--ids]\n                                    [--label-weight]\n                                    [--name]\n                                    [--resource-group]\n                                    [--revision-weight]\n                                    [--subscription]\n                                    [--traffic-weight]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--label-weight",
+                "--name -n",
+                "--resource-group -g",
+                "--revision-weight",
+                "--subscription",
+                "--traffic-weight"
+            ],
+            "examples": [
+                "az containerapp ingress traffic set -n my-containerapp -g MyResourceGroup --revision-weight latest=100",
+                "az containerapp ingress traffic set -n my-containerapp -g MyResourceGroup --revision-weight latest=80 MyRevisionName=20",
+                "az containerapp ingress traffic set -n my-containerapp -g MyResourceGroup --label-weight myLabel=80 myLabel2=20",
+                "az containerapp ingress traffic set -n my-containerapp -g MyResourceGroup --revision-weight latest=80 --label-weight myLabel=20"
+            ]
+        },
+        {
+            "name": "az containerapp ingress traffic show",
+            "summary": "Show traffic-splitting configuration for a container app.",
+            "syntax": "az containerapp ingress traffic show [--ids]\n                                     [--name]\n                                     [--resource-group]\n                                     [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az containerapp ingress traffic show -n my-containerapp -g MyResourceGroup"
+            ]
+        }
+    ]
+}

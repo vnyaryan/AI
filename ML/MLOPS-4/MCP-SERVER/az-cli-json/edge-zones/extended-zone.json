@@ -1,0 +1,62 @@
+{
+    "command_group": "az edge-zones extended-zone",
+    "description": "A small-footprint extension of Azure.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az edge-zones extended-zone list",
+            "summary": "List the Azure Extended Zones available to a subscription.",
+            "syntax": "az edge-zones extended-zone list [--max-items]\n                                 [--next-token]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az edge-zones extended-zone list"
+            ]
+        },
+        {
+            "name": "az edge-zones extended-zone register",
+            "summary": "Registers a subscription for an Extended Zone.",
+            "syntax": "az edge-zones extended-zone register [--extended-zone-name]\n                                     [--ids]\n                                     [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--extended-zone-name",
+                "--ids",
+                "--subscription"
+            ],
+            "examples": [
+                "az edge-zones extended-zone register --name losangeles"
+            ]
+        },
+        {
+            "name": "az edge-zones extended-zone show",
+            "summary": "Get an Azure Extended Zone for a subscription.",
+            "syntax": "az edge-zones extended-zone show [--extended-zone-name]\n                                 [--ids]\n                                 [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--extended-zone-name --name -n",
+                "--ids",
+                "--subscription"
+            ],
+            "examples": [
+                "az edge-zones extended-zone show --name losangeles"
+            ]
+        },
+        {
+            "name": "az edge-zones extended-zone unregister",
+            "summary": "Unregisters a subscription for an Extended Zone.",
+            "syntax": "az edge-zones extended-zone unregister [--extended-zone-name]\n                                       [--ids]\n                                       [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--extended-zone-name",
+                "--ids",
+                "--subscription"
+            ],
+            "examples": [
+                "az edge-zones extended-zone --name losangeles"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,93 @@
+{
+    "command_group": "az synapse workspace key",
+    "description": "Manage workspace's keys.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az synapse workspace key create",
+            "summary": "Create a workspace's key.",
+            "syntax": "az synapse workspace key create --key-identifier\n                                --name\n                                --resource-group\n                                --workspace-name\n                                [--no-wait]",
+            "required_parameters": [
+                "--key-identifier",
+                "--name -n",
+                "--resource-group -g",
+                "--workspace-name"
+            ],
+            "optional_parameters": [
+                "--no-wait"
+            ],
+            "examples": [
+                "az synapse workspace key create --name newkey --workspace-name testsynapseworkspace \\\n--resource-group rg --key-identifier https://{keyvaultname}.vault.azure.net/keys/{keyname}"
+            ]
+        },
+        {
+            "name": "az synapse workspace key delete",
+            "summary": "Delete a workspace's key. The key at active status can't be deleted.",
+            "syntax": "az synapse workspace key delete [--ids]\n                                [--name]\n                                [--no-wait]\n                                [--resource-group]\n                                [--subscription]\n                                [--workspace-name]\n                                [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--workspace-name",
+                "--yes -y"
+            ],
+            "examples": [
+                "az synapse workspace key delete --name newkey --workspace-name testsynapseworkspace \\\n--resource-group rg"
+            ]
+        },
+        {
+            "name": "az synapse workspace key list",
+            "summary": "List keys under specified workspace.",
+            "syntax": "az synapse workspace key list --resource-group\n                              --workspace-name",
+            "required_parameters": [
+                "--resource-group -g",
+                "--workspace-name"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az synapse workspace key list --workspace-name testsynapseworkspace --resource-group rg"
+            ]
+        },
+        {
+            "name": "az synapse workspace key show",
+            "summary": "Show a workspace's key by name.",
+            "syntax": "az synapse workspace key show [--ids]\n                              [--name]\n                              [--resource-group]\n                              [--subscription]\n                              [--workspace-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--workspace-name"
+            ],
+            "examples": [
+                "az synapse workspace key show --name newkey --workspace-name testsynapseworkspace \\\n--resource-group rg"
+            ]
+        },
+        {
+            "name": "az synapse workspace key wait",
+            "summary": "Place the CLI in a waiting state until a condition of a workspace key is met.",
+            "syntax": "az synapse workspace key wait --key-name\n                              [--created]\n                              [--custom]\n                              [--deleted]\n                              [--exists]\n                              [--ids]\n                              [--interval]\n                              [--resource-group]\n                              [--subscription]\n                              [--timeout]\n                              [--updated]\n                              [--workspace-name]",
+            "required_parameters": [
+                "--key-name"
+            ],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated",
+                "--workspace-name"
+            ],
+            "examples": []
+        }
+    ]
+}

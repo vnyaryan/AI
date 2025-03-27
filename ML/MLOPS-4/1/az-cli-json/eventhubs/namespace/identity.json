@@ -1,0 +1,39 @@
+{
+    "command_group": "az eventhubs namespace identity",
+    "description": "Manage eventhubs namespace identity.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az eventhubs namespace identity assign",
+            "summary": "Assign System or User or System,User assigned identities to a namespace.",
+            "syntax": "az eventhubs namespace identity assign --namespace-name\n                                       --resource-group\n                                       [--system-assigned {false, true}]\n                                       [--user-assigned]",
+            "required_parameters": [
+                "--namespace-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--system-assigned",
+                "--user-assigned"
+            ],
+            "examples": [
+                "az eventhubs namespace identity assign --namespace-name mynamespace -g MyResourceGroup --system-assigned --user-assigned /subscriptions/{subscriptionId}}/resourceGroups/{resourcegroup}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/MSIName /subscriptions/{subscriptionId}}/resourceGroups/{resourcegroup}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/MSIName2"
+            ]
+        },
+        {
+            "name": "az eventhubs namespace identity remove",
+            "summary": "Remove System or User or System,User assigned identities from a namespace.",
+            "syntax": "az eventhubs namespace identity remove --namespace-name\n                                       --resource-group\n                                       [--system-assigned {false, true}]\n                                       [--user-assigned]",
+            "required_parameters": [
+                "--namespace-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--system-assigned",
+                "--user-assigned"
+            ],
+            "examples": [
+                "az eventhubs namespace identity remove --namespace-name mynamespace -g MyResourceGroup --system-assigned --user-assigned /subscriptions/{subscriptionId}}/resourceGroups/{resourcegroup}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/MSIName"
+            ]
+        }
+    ]
+}

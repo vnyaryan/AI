@@ -1,0 +1,118 @@
+{
+    "command_group": "az sf managed-service",
+    "description": "Manage services running on an Azure Service Fabric managed cluster. Only support ARM deployed services.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az sf managed-service create",
+            "summary": "Create a new managed service on an Azure Service Fabric managed cluster.",
+            "syntax": "az sf managed-service create --application\n                             --cluster-name\n                             --name\n                             --resource-group\n                             --service-type\n                             --state {Stateful, Stateless}\n                             [--activation-mode]\n                             [--default-move-cost {High, Low, Medium, Zero}]\n                             [--has-persisted-state {false, true}]\n                             [--high-key]\n                             [--instance-count]\n                             [--keep-duration]\n                             [--low-key]\n                             [--min-inst-pct]\n                             [--min-instance-count]\n                             [--min-replica]\n                             [--partition-count]\n                             [--partition-names]\n                             [--partition-scheme {Named, Singleton, UniformInt64Range}]\n                             [--placement-constraints]\n                             [--plcmt-time-limit]\n                             [--quorum-loss-wait]\n                             [--replica-restart-wait]\n                             [--tags]\n                             [--target-replica]",
+            "required_parameters": [
+                "--application --application-name",
+                "--cluster-name -c",
+                "--name --service-name",
+                "--resource-group -g",
+                "--service-type --type",
+                "--state"
+            ],
+            "optional_parameters": [
+                "--activation-mode --package-activation-mode --service-package-activation-mode",
+                "--default-move-cost",
+                "--has-persisted-state",
+                "--high-key",
+                "--instance-count",
+                "--keep-duration --stand-by-keep-duration --stand-by-replica-keep-duration",
+                "--low-key",
+                "--min-inst-pct --min-instance-percentage",
+                "--min-instance-count",
+                "--min-replica --min-replica-set-size",
+                "--partition-count",
+                "--partition-names",
+                "--partition-scheme",
+                "--placement-constraints",
+                "--plcmt-time-limit --service-placement-time-limit",
+                "--quorum-loss-wait --quorum-loss-wait-duration",
+                "--replica-restart-wait --replica-restart-wait-duration",
+                "--tags",
+                "--target-replica --target-replica-set-size"
+            ],
+            "examples": [
+                "az sf managed-service create -g testRG -c testCluster --application-name testApp --state stateless --service-name testService \\\n  --service-type testStateless --instance-count -1 --partition-scheme singleton",
+                "az sf managed-service create -g testRG -c testCluster --application-name testApp --state stateful --service-name testService2 --has-persisted-state \\\n  --service-type testStatefulType --min-replica-set-size 3 --target-replica-set-size 5 --partition-scheme uniformint64range --partition-count 1 --low-key 0 --high-key 25"
+            ]
+        },
+        {
+            "name": "az sf managed-service delete",
+            "summary": "Delete a managed service.",
+            "syntax": "az sf managed-service delete --application\n                             --cluster-name\n                             --name\n                             --resource-group",
+            "required_parameters": [
+                "--application --application-name",
+                "--cluster-name -c",
+                "--name --service-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az sf managed-service delete -g testRG -c testCluster --application-name testApp --service-name testService"
+            ]
+        },
+        {
+            "name": "az sf managed-service list",
+            "summary": "List managed services of a given managed application.",
+            "syntax": "az sf managed-service list --application\n                           --cluster-name\n                           --resource-group",
+            "required_parameters": [
+                "--application --application-name",
+                "--cluster-name -c",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az sf managed-service list -g testRG -c testCluster --application-name testApp"
+            ]
+        },
+        {
+            "name": "az sf managed-service show",
+            "summary": "Get a service.",
+            "syntax": "az sf managed-service show --application\n                           --cluster-name\n                           --name\n                           --resource-group",
+            "required_parameters": [
+                "--application --application-name",
+                "--cluster-name -c",
+                "--name --service-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az sf managed-service show -g testRG -c testCluster --application-name testApp --service-name testService"
+            ]
+        },
+        {
+            "name": "az sf managed-service update",
+            "summary": "Update a managed service.",
+            "syntax": "az sf managed-service update --application\n                             --cluster-name\n                             --name\n                             --resource-group\n                             [--default-move-cost {High, Low, Medium, Zero}]\n                             [--instance-count]\n                             [--keep-duration]\n                             [--min-inst-pct]\n                             [--min-instance-count]\n                             [--min-replica]\n                             [--placement-constraints]\n                             [--plcmt-time-limit]\n                             [--quorum-loss-wait]\n                             [--replica-restart-wait]\n                             [--tags]\n                             [--target-replica]",
+            "required_parameters": [
+                "--application --application-name",
+                "--cluster-name -c",
+                "--name --service-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--default-move-cost",
+                "--instance-count",
+                "--keep-duration --stand-by-keep-duration --stand-by-replica-keep-duration",
+                "--min-inst-pct --min-instance-percentage",
+                "--min-instance-count",
+                "--min-replica --min-replica-set-size",
+                "--placement-constraints",
+                "--plcmt-time-limit --service-placement-time-limit",
+                "--quorum-loss-wait --quorum-loss-wait-duration",
+                "--replica-restart-wait --replica-restart-wait-duration",
+                "--tags",
+                "--target-replica --target-replica-set-size"
+            ],
+            "examples": [
+                "az sf managed-service update -g testRG -c testCluster --application-name testApp --service-name testService --min-instance-count 2 \\\n  --min-instance-percentage 20",
+                "az sf managed-service update -g testRG -c testCluster --application-name testApp --service-name testService2 --service-placement-time-limit '00:11:00' \\\n  --stand-by-replica-keep-duration '00:11:00' --replica-restart-wait-duration '00:11:00' --quorum-loss-wait-duration '00:11:00'"
+            ]
+        }
+    ]
+}

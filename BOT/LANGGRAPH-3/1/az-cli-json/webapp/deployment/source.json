@@ -1,0 +1,124 @@
+{
+    "command_group": "az webapp deployment source",
+    "description": "Manage web app deployment via source control.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az webapp deployment source config",
+            "summary": "Manage deployment from git or Mercurial repositories.",
+            "syntax": "az webapp deployment source config --repo-url\n                                   [--branch]\n                                   [--git-token]\n                                   [--github-action]\n                                   [--ids]\n                                   [--manual-integration]\n                                   [--name]\n                                   [--repository-type {externalgit, git, github, localgit, mercurial}]\n                                   [--resource-group]\n                                   [--slot]\n                                   [--subscription]",
+            "required_parameters": [
+                "--repo-url -u"
+            ],
+            "optional_parameters": [
+                "--branch",
+                "--git-token",
+                "--github-action",
+                "--ids",
+                "--manual-integration",
+                "--name -n",
+                "--repository-type",
+                "--resource-group -g",
+                "--slot -s",
+                "--subscription"
+            ],
+            "examples": [
+                "az webapp deployment source config --branch master --manual-integration --name MyWebApp --repo-url https://github.com/Azure-Samples/function-image-upload-resize --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az webapp deployment source config-local-git",
+            "summary": "Get a URL for a git repository endpoint to clone and push to for web app deployment.",
+            "syntax": "az webapp deployment source config-local-git [--ids]\n                                             [--name]\n                                             [--resource-group]\n                                             [--slot]\n                                             [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--slot -s",
+                "--subscription"
+            ],
+            "examples": [
+                "az webapp deployment source config-local-git \\\n    -g MyResourceGroup -n MyUniqueApp\n\ngit remote add azure \\\n    https://{deploy_user_name}@MyUniqueApp.scm.azurewebsites.net/MyUniqueApp.git"
+            ]
+        },
+        {
+            "name": "az webapp deployment source config-zip",
+            "summary": "Perform deployment using the kudu zip push deployment for a web app.",
+            "syntax": "az webapp deployment source config-zip --src\n                                       [--ids]\n                                       [--is-kube]\n                                       [--name]\n                                       [--resource-group]\n                                       [--slot]\n                                       [--subscription]\n                                       [--timeout]",
+            "required_parameters": [
+                "--src"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--is-kube",
+                "--name -n",
+                "--resource-group -g",
+                "--slot -s",
+                "--subscription",
+                "--timeout -t"
+            ],
+            "examples": [
+                "az webapp deployment source config-zip \\\n    -g {myRG} -n {myAppName} \\\n    --src {zipFilePathLocation}"
+            ]
+        },
+        {
+            "name": "az webapp deployment source delete",
+            "summary": "Delete a source control deployment configuration.",
+            "syntax": "az webapp deployment source delete [--ids]\n                                   [--name]\n                                   [--resource-group]\n                                   [--slot]\n                                   [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--slot -s",
+                "--subscription"
+            ],
+            "examples": [
+                "az webapp deployment source delete --name MyWebApp --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az webapp deployment source show",
+            "summary": "Get the details of a source control deployment configuration.",
+            "syntax": "az webapp deployment source show [--ids]\n                                 [--name]\n                                 [--resource-group]\n                                 [--slot]\n                                 [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--slot -s",
+                "--subscription"
+            ],
+            "examples": [
+                "az webapp deployment source show --name MyWebApp --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az webapp deployment source sync",
+            "summary": "Synchronize from the repository. Only needed under manual integration mode.",
+            "syntax": "az webapp deployment source sync [--ids]\n                                 [--name]\n                                 [--resource-group]\n                                 [--slot]\n                                 [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--slot -s",
+                "--subscription"
+            ],
+            "examples": [
+                "az webapp deployment source sync --name MyWebapp --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az webapp deployment source update-token",
+            "summary": "Update source control token cached in Azure app service.",
+            "syntax": "az webapp deployment source update-token [--git-token]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--git-token"
+            ],
+            "examples": []
+        }
+    ]
+}

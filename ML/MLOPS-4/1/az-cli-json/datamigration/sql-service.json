@@ -1,0 +1,184 @@
+{
+    "command_group": "az datamigration sql-service",
+    "description": "Manage Database Migration Service.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az datamigration sql-service create",
+            "summary": "Create Database Migration Service.",
+            "syntax": "az datamigration sql-service create --name\n                                    --resource-group\n                                    [--location]\n                                    [--no-wait]\n                                    [--tags]",
+            "required_parameters": [
+                "--name --sql-migration-service-name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--location -l",
+                "--no-wait",
+                "--tags"
+            ],
+            "examples": [
+                "az datamigration sql-service create --location \"northeurope\" --resource-group \"testrg\" --name \"testagent\""
+            ]
+        },
+        {
+            "name": "az datamigration sql-service delete",
+            "summary": "Delete Database Migration Service.",
+            "syntax": "az datamigration sql-service delete [--ids]\n                                    [--name]\n                                    [--no-wait]\n                                    [--resource-group]\n                                    [--subscription]\n                                    [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --sql-migration-service-name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az datamigration sql-service delete --resource-group \"testrg\" --name \"service1\""
+            ]
+        },
+        {
+            "name": "az datamigration sql-service delete-node",
+            "summary": "Delete the integration runtime node.",
+            "syntax": "az datamigration sql-service delete-node [--ids]\n                                         [--ir-name]\n                                         [--name]\n                                         [--node-name]\n                                         [--resource-group]\n                                         [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--ir-name",
+                "--name --sql-migration-service-name -n",
+                "--node-name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az datamigration sql-service delete-node --ir-name \"IRName\" --node-name \"nodeName\" --resource-group \"testrg\" --name \"service1\""
+            ]
+        },
+        {
+            "name": "az datamigration sql-service list",
+            "summary": "Retrieve all Database Migration Services in the resource group. And Retrieve all Database Migration Services in the subscription.",
+            "syntax": "az datamigration sql-service list [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az datamigration sql-service list --resource-group \"testrg\"",
+                "az datamigration sql-service list"
+            ]
+        },
+        {
+            "name": "az datamigration sql-service list-auth-key",
+            "summary": "Retrieve the List of Authentication Keys for Self Hosted Integration Runtime.",
+            "syntax": "az datamigration sql-service list-auth-key --name\n                                           --resource-group",
+            "required_parameters": [
+                "--name --sql-migration-service-name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az datamigration sql-service list-auth-key --resource-group \"testrg\" --name \"service1\""
+            ]
+        },
+        {
+            "name": "az datamigration sql-service list-integration-runtime-metric",
+            "summary": "Retrieve the registered Integration Runtine nodes and their monitoring data for a given Database Migration Service.",
+            "syntax": "az datamigration sql-service list-integration-runtime-metric --name\n                                                             --resource-group",
+            "required_parameters": [
+                "--name --sql-migration-service-name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az datamigration sql-service list-integration-runtime-metric --resource-group \"testrg\" --name \"service1\""
+            ]
+        },
+        {
+            "name": "az datamigration sql-service list-migration",
+            "summary": "Retrieve the List of database migrations attached to the service.",
+            "syntax": "az datamigration sql-service list-migration --name\n                                            --resource-group",
+            "required_parameters": [
+                "--name --sql-migration-service-name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az datamigration sql-service list-migration --resource-group \"testrg\" --name \"service1\""
+            ]
+        },
+        {
+            "name": "az datamigration sql-service regenerate-auth-key",
+            "summary": "Regenerate a new set of Authentication Keys for Self Hosted Integration Runtime.",
+            "syntax": "az datamigration sql-service regenerate-auth-key [--auth-key1]\n                                                 [--auth-key2]\n                                                 [--ids]\n                                                 [--key-name]\n                                                 [--name]\n                                                 [--resource-group]\n                                                 [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--auth-key1",
+                "--auth-key2",
+                "--ids",
+                "--key-name",
+                "--name --sql-migration-service-name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az datamigration sql-service regenerate-auth-key --key-name \"authKey1\" --resource-group \"testrg\" --name \"service1\""
+            ]
+        },
+        {
+            "name": "az datamigration sql-service show",
+            "summary": "Retrieve the Database Migration Service.",
+            "syntax": "az datamigration sql-service show [--ids]\n                                  [--name]\n                                  [--resource-group]\n                                  [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --sql-migration-service-name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az datamigration sql-service show --resource-group \"testrg\" --name \"service1\""
+            ]
+        },
+        {
+            "name": "az datamigration sql-service update",
+            "summary": "Update Database Migration Service.",
+            "syntax": "az datamigration sql-service update [--ids]\n                                    [--name]\n                                    [--no-wait]\n                                    [--resource-group]\n                                    [--subscription]\n                                    [--tags]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --sql-migration-service-name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--tags"
+            ],
+            "examples": [
+                "az datamigration sql-service update --tags mytag=\"myval\" --resource-group \"testrg\" --name \"testagent\""
+            ]
+        },
+        {
+            "name": "az datamigration sql-service wait",
+            "summary": "Place the CLI in a waiting state until a condition of the datamigration sql-service is met.",
+            "syntax": "az datamigration sql-service wait [--created]\n                                  [--custom]\n                                  [--deleted]\n                                  [--exists]\n                                  [--ids]\n                                  [--interval]\n                                  [--name]\n                                  [--resource-group]\n                                  [--subscription]\n                                  [--timeout]\n                                  [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--name --sql-migration-service-name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": [
+                "az datamigration sql-service wait --resource-group \"testrg\" --name \"service1\" --created",
+                "az datamigration sql-service wait --resource-group \"testrg\" --name \"service1\" --updated",
+                "az datamigration sql-service wait --resource-group \"testrg\" --name \"service1\" --deleted"
+            ]
+        }
+    ]
+}

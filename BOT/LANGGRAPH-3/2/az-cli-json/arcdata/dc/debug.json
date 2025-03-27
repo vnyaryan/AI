@@ -1,0 +1,78 @@
+{
+    "command_group": "az arcdata dc debug",
+    "description": "Debug data controller.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az arcdata dc debug controldb-cdc",
+            "summary": "Enable/disable CDC on Data Controller Database and Tables - for troubleshooting purposes only.",
+            "syntax": "az arcdata dc debug controldb-cdc --k8s-namespace\n                                  [--enable {false, true}]\n                                  [--retention-hours]\n                                  [--use-k8s]",
+            "required_parameters": [
+                "--k8s-namespace -k"
+            ],
+            "optional_parameters": [
+                "--enable",
+                "--retention-hours",
+                "--use-k8s"
+            ],
+            "examples": [
+                "az arcdata dc debug controldb-cdc -k arc-data-services --enable true --retention-hours 4",
+                "az arcdata dc debug controldb-cdc -k arc-data-services --enable false"
+            ]
+        },
+        {
+            "name": "az arcdata dc debug copy-logs",
+            "summary": "Copy logs.",
+            "syntax": "az arcdata dc debug copy-logs --k8s-namespace\n                              [--container]\n                              [--exclude-arcdata-logs]\n                              [--exclude-cluster-info]\n                              [--exclude-controldb]\n                              [--exclude-dumps]\n                              [--exclude-system-logs]\n                              [--pod]\n                              [--resource-kind]\n                              [--resource-name]\n                              [--skip-compress]\n                              [--target-folder]\n                              [--timeout]\n                              [--use-k8s]",
+            "required_parameters": [
+                "--k8s-namespace -k"
+            ],
+            "optional_parameters": [
+                "--container -c",
+                "--exclude-arcdata-logs",
+                "--exclude-cluster-info",
+                "--exclude-controldb",
+                "--exclude-dumps",
+                "--exclude-system-logs",
+                "--pod",
+                "--resource-kind",
+                "--resource-name",
+                "--skip-compress",
+                "--target-folder -d",
+                "--timeout -t",
+                "--use-k8s"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az arcdata dc debug dump",
+            "summary": "Trigger memory dump.",
+            "syntax": "az arcdata dc debug dump --k8s-namespace\n                         [--container {controller}]\n                         [--target-folder]\n                         [--use-k8s]",
+            "required_parameters": [
+                "--k8s-namespace -k"
+            ],
+            "optional_parameters": [
+                "--container -c",
+                "--target-folder -d",
+                "--use-k8s"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az arcdata dc debug restore-controldb-snapshot",
+            "summary": "Restores a unique copy of ControlDB from backup - for troubleshooting purposes only.",
+            "syntax": "az arcdata dc debug restore-controldb-snapshot --backup-file\n                                               --k8s-namespace\n                                               [--use-k8s]",
+            "required_parameters": [
+                "--backup-file -f",
+                "--k8s-namespace -k"
+            ],
+            "optional_parameters": [
+                "--use-k8s"
+            ],
+            "examples": [
+                "az arcdata dc debug restore-controldb-snapshot -k arc-data-services -f /path/to/backup/controller-1675653451.bak",
+                "az arcdata dc debug restore-controldb-snapshot -k arc-data-services -f C:\\path\\to\\backup\\controller-1675653451.bak"
+            ]
+        }
+    ]
+}

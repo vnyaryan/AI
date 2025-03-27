@@ -1,0 +1,110 @@
+{
+    "command_group": "az networkcloud l2network",
+    "description": "Manage layer 2 (l2) network.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az networkcloud l2network create",
+            "summary": "Create a new layer 2 (L2) network or update the properties of the existing network.",
+            "syntax": "az networkcloud l2network create --extended-location\n                                 --l2-isolation-domain-id\n                                 --l2-network-name\n                                 --resource-group\n                                 [--interface-name]\n                                 [--location]\n                                 [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                 [--tags]",
+            "required_parameters": [
+                "--extended-location",
+                "--l2-isolation-domain-id",
+                "--l2-network-name --name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--interface-name",
+                "--location -l",
+                "--no-wait",
+                "--tags"
+            ],
+            "examples": [
+                "az networkcloud l2network create --name \"l2NetworkName\" --extended-location name=\"/subscriptions/subscriptionId/resourceGroups/resourceGroupName/providers/Microsoft.ExtendedLocation/customLocations/clusterExtendedLocationName\" type=\"CustomLocation\" --location \"location\" --interface-name \"eth0\" --l2-isolation-domain-id \"/subscriptions/subscriptionId/resourceGroups/resourceGroupName/providers/Microsoft.ManagedNetworkFabric/l2IsolationDomains/l2IsolationDomainName\" --tags key1=\"myvalue1\" key2=\"myvalue2\" --resource-group \"resourceGroupName\""
+            ]
+        },
+        {
+            "name": "az networkcloud l2network delete",
+            "summary": "Delete the provided layer 2 (L2) network.",
+            "syntax": "az networkcloud l2network delete [--ids]\n                                 [--l2-network-name]\n                                 [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                 [--resource-group]\n                                 [--subscription]\n                                 [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--l2-network-name --name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az networkcloud l2network delete --name \"l2NetworkName\" --resource-group \"resourceGroupName\""
+            ]
+        },
+        {
+            "name": "az networkcloud l2network list",
+            "summary": "List layer 2 (L2) networks in the provided resource group or subscription.",
+            "syntax": "az networkcloud l2network list [--max-items]\n                               [--next-token]\n                               [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az networkcloud l2network list",
+                "az networkcloud l2network list --resource-group \"resourcegroupname\""
+            ]
+        },
+        {
+            "name": "az networkcloud l2network show",
+            "summary": "Get properties of the provided layer 2 (L2) network.",
+            "syntax": "az networkcloud l2network show [--ids]\n                               [--l2-network-name]\n                               [--resource-group]\n                               [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--l2-network-name --name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az networkcloud l2network show --name \"l2NetworkName\" --resource-group \"resourceGroupName\""
+            ]
+        },
+        {
+            "name": "az networkcloud l2network update",
+            "summary": "Update tags associated with the provided layer 2 (L2) network.",
+            "syntax": "az networkcloud l2network update [--ids]\n                                 [--l2-network-name]\n                                 [--resource-group]\n                                 [--subscription]\n                                 [--tags]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--l2-network-name --name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--tags"
+            ],
+            "examples": [
+                "az networkcloud l2network update --name \"l2NetworkName\" --tags key1=\"myvalue1\" key2=\"myvalue2\" --resource-group \"resourceGroupName\""
+            ]
+        },
+        {
+            "name": "az networkcloud l2network wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az networkcloud l2network wait [--created]\n                               [--custom]\n                               [--deleted]\n                               [--exists]\n                               [--ids]\n                               [--interval]\n                               [--l2-network-name]\n                               [--resource-group]\n                               [--subscription]\n                               [--timeout]\n                               [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--l2-network-name --name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

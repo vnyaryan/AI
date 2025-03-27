@@ -1,0 +1,120 @@
+{
+    "command_group": "az ml computetarget create",
+    "description": "Create a compute target (aks or amlcompute or computeinstance).",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az ml computetarget create aks",
+            "summary": "Create an AKS compute target.",
+            "syntax": "az ml computetarget create aks --name\n                               [--agent-count]\n                               [--cluster-purpose]\n                               [--dns-service-ip]\n                               [--docker-bridge-cidr]\n                               [--load-balancer-subnet]\n                               [--load-balancer-type]\n                               [--location]\n                               [--no-wait]\n                               [--path]\n                               [--resource-group]\n                               [--service-cidr]\n                               [--ssl-cert-file]\n                               [--ssl-cname]\n                               [--ssl-key-file]\n                               [--ssl-leaf-domain-label]\n                               [--ssl-overwrite-domain]\n                               [--subnet-name]\n                               [--subscription-id]\n                               [--vm-size]\n                               [--vnet-name]\n                               [--vnet-resourcegroup-name]\n                               [--workspace-name]\n                               [-v]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--agent-count -a",
+                "--cluster-purpose",
+                "--dns-service-ip",
+                "--docker-bridge-cidr",
+                "--load-balancer-subnet",
+                "--load-balancer-type",
+                "--location -l",
+                "--no-wait",
+                "--path",
+                "--resource-group -g",
+                "--service-cidr",
+                "--ssl-cert-file",
+                "--ssl-cname",
+                "--ssl-key-file",
+                "--ssl-leaf-domain-label",
+                "--ssl-overwrite-domain",
+                "--subnet-name",
+                "--subscription-id",
+                "--vm-size -s",
+                "--vnet-name",
+                "--vnet-resourcegroup-name",
+                "--workspace-name -w",
+                "-v"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az ml computetarget create amlcompute",
+            "summary": "Create an AzureML compute target.",
+            "syntax": "az ml computetarget create amlcompute --max-nodes\n                                      --name\n                                      --vm-size\n                                      [--admin-user-password]\n                                      [--admin-user-ssh-key]\n                                      [--admin-username]\n                                      [--assign-identity]\n                                      [--description]\n                                      [--enable-node-public-ip]\n                                      [--idle-seconds-before-scaledown]\n                                      [--location]\n                                      [--min-nodes]\n                                      [--no-wait]\n                                      [--path]\n                                      [--remote-login-port-public-access]\n                                      [--resource-group]\n                                      [--subnet-name]\n                                      [--subscription-id]\n                                      [--tag]\n                                      [--vm-priority]\n                                      [--vnet-name]\n                                      [--vnet-resourcegroup-name]\n                                      [--workspace-name]\n                                      [-v]",
+            "required_parameters": [
+                "--max-nodes",
+                "--name -n",
+                "--vm-size -s"
+            ],
+            "optional_parameters": [
+                "--admin-user-password",
+                "--admin-user-ssh-key",
+                "--admin-username",
+                "--assign-identity",
+                "--description",
+                "--enable-node-public-ip",
+                "--idle-seconds-before-scaledown",
+                "--location -l",
+                "--min-nodes",
+                "--no-wait",
+                "--path",
+                "--remote-login-port-public-access",
+                "--resource-group -g",
+                "--subnet-name",
+                "--subscription-id",
+                "--tag",
+                "--vm-priority -p",
+                "--vnet-name",
+                "--vnet-resourcegroup-name",
+                "--workspace-name -w",
+                "-v"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az ml computetarget create computeinstance",
+            "summary": "Create an AzureML compute instance target.",
+            "syntax": "az ml computetarget create computeinstance --name\n                                           --vm-size\n                                           [--admin-user-ssh-public-key]\n                                           [--description]\n                                           [--no-wait]\n                                           [--path]\n                                           [--resource-group]\n                                           [--ssh-public-access]\n                                           [--subnet-name]\n                                           [--subscription-id]\n                                           [--tag]\n                                           [--user-object-id]\n                                           [--user-tenant-id]\n                                           [--vnet-name]\n                                           [--vnet-resourcegroup-name]\n                                           [--workspace-name]\n                                           [-v]",
+            "required_parameters": [
+                "--name -n",
+                "--vm-size -s"
+            ],
+            "optional_parameters": [
+                "--admin-user-ssh-public-key",
+                "--description",
+                "--no-wait",
+                "--path",
+                "--resource-group -g",
+                "--ssh-public-access",
+                "--subnet-name",
+                "--subscription-id",
+                "--tag",
+                "--user-object-id",
+                "--user-tenant-id",
+                "--vnet-name",
+                "--vnet-resourcegroup-name",
+                "--workspace-name -w",
+                "-v"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az ml computetarget create datafactory",
+            "summary": "Create a data factory compute target.",
+            "syntax": "az ml computetarget create datafactory --name\n                                       [--location]\n                                       [--no-wait]\n                                       [--path]\n                                       [--resource-group]\n                                       [--subscription-id]\n                                       [--workspace-name]\n                                       [-v]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--location -l",
+                "--no-wait",
+                "--path",
+                "--resource-group -g",
+                "--subscription-id",
+                "--workspace-name -w",
+                "-v"
+            ],
+            "examples": []
+        }
+    ]
+}

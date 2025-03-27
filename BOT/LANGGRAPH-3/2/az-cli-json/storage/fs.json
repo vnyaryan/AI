@@ -1,0 +1,191 @@
+{
+    "command_group": "az storage fs",
+    "description": "Manage file systems in Azure Data Lake Storage Gen2 account.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az storage fs create",
+            "summary": "Create file system for Azure Data Lake Storage Gen2 account.",
+            "syntax": "az storage fs create --name\n                     [--account-key]\n                     [--account-name]\n                     [--auth-mode {key, login}]\n                     [--blob-endpoint]\n                     [--connection-string]\n                     [--default-encryption-scope]\n                     [--metadata]\n                     [--prevent-encryption-scope-override {false, true}]\n                     [--public-access {file, filesystem, off}]\n                     [--sas-token]\n                     [--timeout]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--account-key",
+                "--account-name",
+                "--auth-mode",
+                "--blob-endpoint",
+                "--connection-string",
+                "--default-encryption-scope -d",
+                "--metadata",
+                "--prevent-encryption-scope-override -p",
+                "--public-access",
+                "--sas-token",
+                "--timeout"
+            ],
+            "examples": [
+                "az storage fs create -n fsname --account-name mystorageaccount --account-key 0000-0000",
+                "az storage fs create -n fsname --public-access file --account-name mystorageaccount --account-key 0000-0000",
+                "az storage fs create --account-name mystorageaccount --auth-mode login --name fsname"
+            ]
+        },
+        {
+            "name": "az storage fs delete",
+            "summary": "Delete a file system in ADLS Gen2 account.",
+            "syntax": "az storage fs delete --name\n                     [--account-key]\n                     [--account-name]\n                     [--auth-mode {key, login}]\n                     [--blob-endpoint]\n                     [--connection-string]\n                     [--sas-token]\n                     [--timeout]\n                     [--yes]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--account-key",
+                "--account-name",
+                "--auth-mode",
+                "--blob-endpoint",
+                "--connection-string",
+                "--sas-token",
+                "--timeout",
+                "--yes -y"
+            ],
+            "examples": [
+                "az storage fs delete -n myfilesystem --account-name myadlsaccount --account-key 0000-0000"
+            ]
+        },
+        {
+            "name": "az storage fs exists",
+            "summary": "Check for the existence of a file system in ADLS Gen2 account.",
+            "syntax": "az storage fs exists --name\n                     [--account-key]\n                     [--account-name]\n                     [--auth-mode {key, login}]\n                     [--blob-endpoint]\n                     [--connection-string]\n                     [--sas-token]\n                     [--timeout]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--account-key",
+                "--account-name",
+                "--auth-mode",
+                "--blob-endpoint",
+                "--connection-string",
+                "--sas-token",
+                "--timeout"
+            ],
+            "examples": [
+                "az storage fs exists -n myfilesystem --account-name myadlsaccount --account-key 0000-0000"
+            ]
+        },
+        {
+            "name": "az storage fs generate-sas",
+            "summary": "Generate a SAS token for file system in ADLS Gen2 account.",
+            "syntax": "az storage fs generate-sas --name\n                           [--account-key]\n                           [--account-name]\n                           [--as-user]\n                           [--auth-mode {key, login}]\n                           [--blob-endpoint]\n                           [--cache-control]\n                           [--connection-string]\n                           [--content-disposition]\n                           [--content-encoding]\n                           [--content-language]\n                           [--content-type]\n                           [--encryption-scope]\n                           [--expiry]\n                           [--full-uri]\n                           [--https-only]\n                           [--ip]\n                           [--permissions]\n                           [--policy-name]\n                           [--start]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--account-key",
+                "--account-name",
+                "--as-user",
+                "--auth-mode",
+                "--blob-endpoint",
+                "--cache-control",
+                "--connection-string",
+                "--content-disposition",
+                "--content-encoding",
+                "--content-language",
+                "--content-type",
+                "--encryption-scope",
+                "--expiry",
+                "--full-uri",
+                "--https-only",
+                "--ip",
+                "--permissions",
+                "--policy-name",
+                "--start"
+            ],
+            "examples": [
+                "end=`date -u -d \"30 minutes\" '+%Y-%m-%dT%H:%MZ'`\naz storage fs generate-sas -n myfilesystem --https-only --permissions dlrw --expiry $end -o tsv"
+            ]
+        },
+        {
+            "name": "az storage fs list",
+            "summary": "List file systems in ADLS Gen2 account.",
+            "syntax": "az storage fs list [--account-key]\n                   [--account-name]\n                   [--auth-mode {key, login}]\n                   [--blob-endpoint]\n                   [--connection-string]\n                   [--include-metadata {false, true}]\n                   [--prefix]\n                   [--sas-token]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account-key",
+                "--account-name",
+                "--auth-mode",
+                "--blob-endpoint",
+                "--connection-string",
+                "--include-metadata",
+                "--prefix",
+                "--sas-token"
+            ],
+            "examples": [
+                "az storage fs list --account-name myadlsaccount --account-key 0000-0000"
+            ]
+        },
+        {
+            "name": "az storage fs list-deleted-path",
+            "summary": "List the deleted (file or directory) paths under the specified file system.",
+            "syntax": "az storage fs list-deleted-path --file-system\n                                [--account-key]\n                                [--account-name]\n                                [--auth-mode {key, login}]\n                                [--blob-endpoint]\n                                [--connection-string]\n                                [--marker]\n                                [--num-results]\n                                [--path-prefix]\n                                [--sas-token]\n                                [--timeout]",
+            "required_parameters": [
+                "--file-system -f"
+            ],
+            "optional_parameters": [
+                "--account-key",
+                "--account-name",
+                "--auth-mode",
+                "--blob-endpoint",
+                "--connection-string",
+                "--marker",
+                "--num-results",
+                "--path-prefix",
+                "--sas-token",
+                "--timeout"
+            ],
+            "examples": [
+                "az storage fs list-deleted-path -f myfilesystem --account-name mystorageccount --account-key 00000000"
+            ]
+        },
+        {
+            "name": "az storage fs show",
+            "summary": "Show properties of file system in ADLS Gen2 account.",
+            "syntax": "az storage fs show --name\n                   [--account-key]\n                   [--account-name]\n                   [--auth-mode {key, login}]\n                   [--blob-endpoint]\n                   [--connection-string]\n                   [--sas-token]\n                   [--timeout]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--account-key",
+                "--account-name",
+                "--auth-mode",
+                "--blob-endpoint",
+                "--connection-string",
+                "--sas-token",
+                "--timeout"
+            ],
+            "examples": [
+                "az storage fs show -n myfilesystem --account-name myadlsaccount --account-key 0000-0000",
+                "az storage fs show --account-name myadlsaccount --auth-mode login --name myfilesystem"
+            ]
+        },
+        {
+            "name": "az storage fs undelete-path",
+            "summary": "Restore soft-deleted path.",
+            "syntax": "az storage fs undelete-path --deleted-path-name\n                            --deletion-id\n                            --file-system\n                            [--account-key]\n                            [--account-name]\n                            [--auth-mode {key, login}]\n                            [--blob-endpoint]\n                            [--connection-string]\n                            [--sas-token]\n                            [--timeout]",
+            "required_parameters": [
+                "--deleted-path-name",
+                "--deletion-id",
+                "--file-system -f"
+            ],
+            "optional_parameters": [
+                "--account-key",
+                "--account-name",
+                "--auth-mode",
+                "--blob-endpoint",
+                "--connection-string",
+                "--sas-token",
+                "--timeout"
+            ],
+            "examples": [
+                "az storage fs undelete-path -f myfilesystem --deleted-path-name dir --deletion-id 0000 --account-name mystorageccount --account-key 00000000"
+            ]
+        }
+    ]
+}

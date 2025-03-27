@@ -1,0 +1,93 @@
+{
+    "command_group": "az footprint measurement-endpoint-condition",
+    "description": "Commands to manage measurement endpoint conditions under a measurement endpoint.",
+    "status": "Experimental",
+    "commands": [
+        {
+            "name": "az footprint measurement-endpoint-condition create",
+            "summary": "Creates or updates a measurement endpoint condition under a Footprint measurement with the specified properties.",
+            "syntax": "az footprint measurement-endpoint-condition create --constant\n                                                   --endpoint-name\n                                                   --name\n                                                   --operator {ContainsValue, ContainsValueIgnoreCasing, DoesNotContainValue, DoesNotContainValueIgnoreCasing, IsExactValue, MatchValueIgnoreCasing}\n                                                   --profile-name\n                                                   --resource-group\n                                                   --variable",
+            "required_parameters": [
+                "--constant",
+                "--endpoint-name",
+                "--name",
+                "--operator",
+                "--profile-name",
+                "--resource-group -g",
+                "--variable"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az footprint measurement-endpoint-condition create --name \"condition0\" --endpoint-name \"endpoint1\" --constant \"Edge-Prod-WST\" --operator \"MatchValueIgnoreCasing\" --variable \"X-FD-EdgeEnvironment\" --profile-name \"fpProfile1\" --resource-group \"rgName\""
+            ]
+        },
+        {
+            "name": "az footprint measurement-endpoint-condition delete",
+            "summary": "Deletes an existing measurement endpoint condition under a Footprint measurement.",
+            "syntax": "az footprint measurement-endpoint-condition delete [--endpoint-name]\n                                                   [--ids]\n                                                   [--name]\n                                                   [--profile-name]\n                                                   [--resource-group]\n                                                   [--subscription]\n                                                   [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--endpoint-name",
+                "--ids",
+                "--name",
+                "--profile-name",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az footprint measurement-endpoint-condition delete --name \"condition0\" --endpoint-name \"endpoint1\" --profile-name \"fpProfile1\" --resource-group \"rgName\""
+            ]
+        },
+        {
+            "name": "az footprint measurement-endpoint-condition list",
+            "summary": "Retrieves the information about all measurement endpoint conditions under a Footprint measurement endpoint.",
+            "syntax": "az footprint measurement-endpoint-condition list --endpoint-name\n                                                 --profile-name\n                                                 --resource-group",
+            "required_parameters": [
+                "--endpoint-name",
+                "--profile-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az footprint measurement-endpoint-condition list --endpoint-name \"endpoint1\" --profile-name \"fpProfile1\" --resource-group \"rgName\""
+            ]
+        },
+        {
+            "name": "az footprint measurement-endpoint-condition show",
+            "summary": "Retrieves the information about a single measurement endpoint condition under a Footprint measurement endpoint.",
+            "syntax": "az footprint measurement-endpoint-condition show [--endpoint-name]\n                                                 [--ids]\n                                                 [--name]\n                                                 [--profile-name]\n                                                 [--resource-group]\n                                                 [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--endpoint-name",
+                "--ids",
+                "--name",
+                "--profile-name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az footprint measurement-endpoint-condition show --name \"condition0\" --endpoint-name \"endpoint1\" --profile-name \"fpProfile1\" --resource-group \"rgName\""
+            ]
+        },
+        {
+            "name": "az footprint measurement-endpoint-condition update",
+            "summary": "Creates or updates a measurement endpoint condition under a Footprint measurement with the specified properties.",
+            "syntax": "az footprint measurement-endpoint-condition update --constant\n                                                   --operator {ContainsValue, ContainsValueIgnoreCasing, DoesNotContainValue, DoesNotContainValueIgnoreCasing, IsExactValue, MatchValueIgnoreCasing}\n                                                   --variable\n                                                   [--endpoint-name]\n                                                   [--ids]\n                                                   [--name]\n                                                   [--profile-name]\n                                                   [--resource-group]\n                                                   [--subscription]",
+            "required_parameters": [
+                "--constant",
+                "--operator",
+                "--variable"
+            ],
+            "optional_parameters": [
+                "--endpoint-name",
+                "--ids",
+                "--name",
+                "--profile-name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        }
+    ]
+}

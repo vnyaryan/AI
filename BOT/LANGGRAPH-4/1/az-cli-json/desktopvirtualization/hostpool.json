@@ -1,0 +1,137 @@
+{
+    "command_group": "az desktopvirtualization hostpool",
+    "description": "Manage desktop virtualization host pool.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az desktopvirtualization hostpool create",
+            "summary": "Create a host pool.",
+            "syntax": "az desktopvirtualization hostpool create --host-pool-type {BYODesktop, Personal, Pooled}\n                                         --load-balancer-type {BreadthFirst, DepthFirst, Persistent}\n                                         --name\n                                         --preferred-app-group-type {Desktop, None, RailApplications}\n                                         --resource-group\n                                         [--custom-rdp-property]\n                                         [--description]\n                                         [--friendly-name]\n                                         [--location]\n                                         [--max-session-limit]\n                                         [--personal-desktop-assignment-type {Automatic, Direct}]\n                                         [--registration-info]\n                                         [--ring]\n                                         [--sso-client-id]\n                                         [--sso-client-secret-key-vault-path]\n                                         [--sso-secret-type {Certificate, CertificateInKeyVault, SharedKey, SharedKeyInKeyVault}]\n                                         [--ssoadfs-authority]\n                                         [--start-vm-on-connect {0, 1, f, false, n, no, t, true, y, yes}]\n                                         [--tags]\n                                         [--validation-environment {0, 1, f, false, n, no, t, true, y, yes}]\n                                         [--vm-template]",
+            "required_parameters": [
+                "--host-pool-type",
+                "--load-balancer-type",
+                "--name -n",
+                "--preferred-app-group-type -t",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--custom-rdp-property",
+                "--description",
+                "--friendly-name",
+                "--location -l",
+                "--max-session-limit",
+                "--personal-desktop-assignment-type",
+                "--registration-info",
+                "--ring",
+                "--sso-client-id",
+                "--sso-client-secret-key-vault-path -p",
+                "--sso-secret-type",
+                "--ssoadfs-authority",
+                "--start-vm-on-connect",
+                "--tags",
+                "--validation-environment",
+                "--vm-template"
+            ],
+            "examples": [
+                "az desktopvirtualization hostpool create -g rg -n hostpool-name --friendly-name friendly --host-pool-type Pooled --load-balancer-type BreadthFirst --max-session-limit 999999 --personal-desktop-assignment-type Automatic --preferred-app-group-type Desktop --registration-info expiration-time=\"yyyy-mm-ddT08:38:08.189Z\" registration-token-operation=Update --sso-client-id client --sso-client-secret-key-vault-path https://keyvault/secret --sso-secret-type SharedKey --start-vm-on-connect false"
+            ]
+        },
+        {
+            "name": "az desktopvirtualization hostpool delete",
+            "summary": "Delete a host pool.",
+            "syntax": "az desktopvirtualization hostpool delete [--force {0, 1, f, false, n, no, t, true, y, yes}]\n                                         [--ids]\n                                         [--name]\n                                         [--resource-group]\n                                         [--subscription]\n                                         [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--force",
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az desktopvirtualization hostpool delete -g rg -n hostpool-name"
+            ]
+        },
+        {
+            "name": "az desktopvirtualization hostpool list",
+            "summary": "List host pools.",
+            "syntax": "az desktopvirtualization hostpool list [--max-items]\n                                       [--next-token]\n                                       [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az desktopvirtualization hostpool list -g rg"
+            ]
+        },
+        {
+            "name": "az desktopvirtualization hostpool retrieve-registration-token",
+            "summary": "Registration token of the host pool.",
+            "syntax": "az desktopvirtualization hostpool retrieve-registration-token [--ids]\n                                                              [--name]\n                                                              [--resource-group]\n                                                              [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az desktopvirtualization hostpool retrieve-registration-token -n hostpool-name -g rg"
+            ]
+        },
+        {
+            "name": "az desktopvirtualization hostpool show",
+            "summary": "Show a host pool.",
+            "syntax": "az desktopvirtualization hostpool show [--ids]\n                                       [--name]\n                                       [--resource-group]\n                                       [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az desktopvirtualization hostpool show -g rg -n hostpool-name"
+            ]
+        },
+        {
+            "name": "az desktopvirtualization hostpool update",
+            "summary": "Update a host pool.",
+            "syntax": "az desktopvirtualization hostpool update [--add]\n                                         [--custom-rdp-property]\n                                         [--description]\n                                         [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                         [--friendly-name]\n                                         [--ids]\n                                         [--load-balancer-type {BreadthFirst, DepthFirst, Persistent}]\n                                         [--max-session-limit]\n                                         [--name]\n                                         [--personal-desktop-assignment-type {Automatic, Direct}]\n                                         [--preferred-app-group-type {Desktop, None, RailApplications}]\n                                         [--registration-info]\n                                         [--remove]\n                                         [--resource-group]\n                                         [--ring]\n                                         [--set]\n                                         [--sso-client-id]\n                                         [--sso-client-secret-key-vault-path]\n                                         [--sso-secret-type {Certificate, CertificateInKeyVault, SharedKey, SharedKeyInKeyVault}]\n                                         [--ssoadfs-authority]\n                                         [--start-vm-on-connect {0, 1, f, false, n, no, t, true, y, yes}]\n                                         [--subscription]\n                                         [--tags]\n                                         [--validation-environment {0, 1, f, false, n, no, t, true, y, yes}]\n                                         [--vm-template]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--custom-rdp-property",
+                "--description",
+                "--force-string",
+                "--friendly-name",
+                "--ids",
+                "--load-balancer-type",
+                "--max-session-limit",
+                "--name -n",
+                "--personal-desktop-assignment-type",
+                "--preferred-app-group-type -t",
+                "--registration-info",
+                "--remove",
+                "--resource-group -g",
+                "--ring",
+                "--set",
+                "--sso-client-id",
+                "--sso-client-secret-key-vault-path -p",
+                "--sso-secret-type",
+                "--ssoadfs-authority",
+                "--start-vm-on-connect",
+                "--subscription",
+                "--tags",
+                "--validation-environment",
+                "--vm-template"
+            ],
+            "examples": [
+                "az desktopvirtualization hostpool update -g rg -n hostpool-name --tags tag=test"
+            ]
+        }
+    ]
+}

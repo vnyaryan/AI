@@ -1,0 +1,97 @@
+{
+    "command_group": "az neon postgres organization",
+    "description": "Manage a Neon organization.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az neon postgres organization delete",
+            "summary": "Delete a Neon organization.",
+            "syntax": "az neon postgres organization delete [--ids]\n                                     [--name]\n                                     [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                     [--resource-group]\n                                     [--subscription]\n                                     [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az neon postgres organization delete --subscription 12345678-1234-1234-1234-123456789abc --resource-group demoResourceGroup --name demoNeonResource"
+            ]
+        },
+        {
+            "name": "az neon postgres organization list",
+            "summary": "List Neon organizations by subscription ID.",
+            "syntax": "az neon postgres organization list [--max-items]\n                                   [--next-token]\n                                   [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az neon postgres organization list --subscription 12345678-1234-1234-1234-123456789abc --resource-group demoResourceGroup"
+            ]
+        },
+        {
+            "name": "az neon postgres organization show",
+            "summary": "Get a Neon organization.",
+            "syntax": "az neon postgres organization show [--ids]\n                                   [--name]\n                                   [--resource-group]\n                                   [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az neon postgres organization show --subscription 12345678-1234-1234-1234-123456789abc --resource-group demoResourceGroup --name demoNeonResource"
+            ]
+        },
+        {
+            "name": "az neon postgres organization update",
+            "summary": "Update a Neon organization.",
+            "syntax": "az neon postgres organization update [--add]\n                                     [--company-details]\n                                     [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                     [--ids]\n                                     [--name]\n                                     [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                     [--partner-org-props]\n                                     [--remove]\n                                     [--resource-group]\n                                     [--set]\n                                     [--subscription]\n                                     [--tags]\n                                     [--user-details]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--company-details",
+                "--force-string",
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--partner-org-props --partner-organization-properties",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--subscription",
+                "--tags",
+                "--user-details"
+            ],
+            "examples": [
+                "az az neon postgres organization update --resource-group demoResourceGroup --name demoNeonResource --user-details \"{first-name:John,last-name:Doe,email-address:johndoe@example.com,upn:johndoe,phone-number:+1234567890}\" --company-details \"{company-name:DemoCompany,country:USA,office-address:'123 Azure Ave, Redmond, WA',business-phone:+9876543210,domain:democompany.com,number-of-employees:1000}\" --partner-organization-properties \"{organization-id:org-5678,org-name:PartnerOrg,single-sign-on-properties:{single-sign-on-state:Enable,enterprise-app-id:app-9876,single-sign-on-url:'https://sso.partnerorg.com',aad-domains:['partnerorg.com']}}\" --tags \"{environment:production}\""
+            ]
+        },
+        {
+            "name": "az neon postgres organization wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az neon postgres organization wait [--created]\n                                   [--custom]\n                                   [--deleted]\n                                   [--exists]\n                                   [--ids]\n                                   [--interval]\n                                   [--name]\n                                   [--resource-group]\n                                   [--subscription]\n                                   [--timeout]\n                                   [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

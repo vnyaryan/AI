@@ -1,0 +1,128 @@
+{
+    "command_group": "az dataprotection resource-guard",
+    "description": "Manage resource guard with dataprotection.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az dataprotection resource-guard create",
+            "summary": "Creates or updates a ResourceGuard resource belonging to a resource group.",
+            "syntax": "az dataprotection resource-guard create --name\n                                        --resource-group\n                                        [--e-tag]\n                                        [--location]\n                                        [--tags]",
+            "required_parameters": [
+                "--name --resource-guard-name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--e-tag",
+                "--location -l",
+                "--tags"
+            ],
+            "examples": [
+                "az dataprotection resource-guard create --location \"WestUS\" --tags key1=\"val1\" --resource-group \"SampleResourceGroup\" --resource-guard-name \"swaggerExample\""
+            ]
+        },
+        {
+            "name": "az dataprotection resource-guard delete",
+            "summary": "Deletes a ResourceGuard resource from the resource group.",
+            "syntax": "az dataprotection resource-guard delete [--ids]\n                                        [--name]\n                                        [--resource-group]\n                                        [--subscription]\n                                        [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --resource-guard-name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az dataprotection resource-guard delete --resource-group \"SampleResourceGroup\" --resource-guard-name \"swaggerExample\""
+            ]
+        },
+        {
+            "name": "az dataprotection resource-guard list",
+            "summary": "Gets list of ResourceGuards in a subscription or in a resource group.",
+            "syntax": "az dataprotection resource-guard list [--max-items]\n                                      [--next-token]\n                                      [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az dataprotection resource-guard list",
+                "az dataprotection resource-guard list -g sarath-rg"
+            ]
+        },
+        {
+            "name": "az dataprotection resource-guard list-protected-operations",
+            "summary": "Lists protected operations associated with a ResourceGuard.",
+            "syntax": "az dataprotection resource-guard list-protected-operations --resource-type {Microsoft.DataProtection/backupVaults, Microsoft.RecoveryServices/vaults}\n                                                           [--ids]\n                                                           [--name]\n                                                           [--resource-group]\n                                                           [--subscription]",
+            "required_parameters": [
+                "--resource-type"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--name --resource-guard-name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az dataprotection resource-guard list-protected-operations --resource-group \"SampleResourceGroup\" --resource-guard-name \"swaggerExample\" --resource-type \"Microsoft.RecoveryServices/vaults\""
+            ]
+        },
+        {
+            "name": "az dataprotection resource-guard show",
+            "summary": "Returns a ResourceGuard belonging to a resource group.",
+            "syntax": "az dataprotection resource-guard show [--ids]\n                                      [--name]\n                                      [--resource-group]\n                                      [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --resource-guard-name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az dataprotection resource-guard show --resource-group \"SampleResourceGroup\" --resource-guard-name \"swaggerExample\""
+            ]
+        },
+        {
+            "name": "az dataprotection resource-guard unlock",
+            "summary": "Unlocks the critical operation which is protected by the resource guard.",
+            "syntax": "az dataprotection resource-guard unlock [--ids]\n                                        [--name]\n                                        [--operation-requests]\n                                        [--resource-group]\n                                        [--resource-to-be-deleted]\n                                        [--subscription]\n                                        [--tenant-id]\n                                        [--vault-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --resource-guard-mapping-name -n",
+                "--operation-requests --resource-guard-operation-requests",
+                "--resource-group -g",
+                "--resource-to-be-deleted",
+                "--subscription",
+                "--tenant-id",
+                "--vault-name -v"
+            ],
+            "examples": [
+                "az dataprotection resource-guard unlock -n \"DppResourceGuardProxy\" -g \"sampleRG\" -v \"sampleVault\" --resource-guard-operation-requests \"DisableMUA\" --resource-to-be-deleted \"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/sampleRG/providers/Microsoft.DataProtection/backupVaults/sampleVault/backupResourceGuardProxies/DppResourceGuardProxy\""
+            ]
+        },
+        {
+            "name": "az dataprotection resource-guard update",
+            "summary": "Updates protected operations associated with a ResourceGuard.",
+            "syntax": "az dataprotection resource-guard update [--add]\n                                        [--critical-operation-exclusion-list]\n                                        [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                        [--ids]\n                                        [--name]\n                                        [--remove]\n                                        [--resource-group]\n                                        [--resource-type {Microsoft.DataProtection/backupVaults, Microsoft.RecoveryServices/vaults}]\n                                        [--set]\n                                        [--subscription]\n                                        [--tags]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--critical-operation-exclusion-list",
+                "--force-string",
+                "--ids",
+                "--name --resource-guard-name -n",
+                "--remove",
+                "--resource-group -g",
+                "--resource-type",
+                "--set",
+                "--subscription",
+                "--tags"
+            ],
+            "examples": [
+                "az dataprotection resource-guard update --resource-group \"SampleResourceGroup\" --resource-guard-name \"swaggerExample\" --resource-type \"Microsoft.RecoveryServices/vaults\" --critical-operation-exclusion-list deleteProtection getSecurityPIN updatePolicy"
+            ]
+        }
+    ]
+}

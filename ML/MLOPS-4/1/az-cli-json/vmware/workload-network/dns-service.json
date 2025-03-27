@@ -1,0 +1,127 @@
+{
+    "command_group": "az vmware workload-network dns-service",
+    "description": "Commands to manage a DNS Service workload network.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az vmware workload-network dns-service create",
+            "summary": "Create a DNS service by id in a private cloud workload network.",
+            "syntax": "az vmware workload-network dns-service create --dns-service\n                                              --private-cloud\n                                              --resource-group\n                                              [--default-dns-zone]\n                                              [--display-name]\n                                              [--dns-service-ip]\n                                              [--fqdn-zones]\n                                              [--log-level {DEBUG, ERROR, FATAL, INFO, WARNING}]\n                                              [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                              [--revision]",
+            "required_parameters": [
+                "--dns-service --name -n",
+                "--private-cloud -c",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--default-dns-zone",
+                "--display-name",
+                "--dns-service-ip",
+                "--fqdn-zones",
+                "--log-level",
+                "--no-wait",
+                "--revision"
+            ],
+            "examples": [
+                "az vmware workload-network dns-service create --resource-group group1 --private-cloud cloud1 --dns-service dnsService1 --display-name dnsService1 --dns-service-ip 5.5.5.5 --default-dns-zone defaultDnsZone1 --fqdn-zones fqdnZone1 --log-level INFO --revision 1"
+            ]
+        },
+        {
+            "name": "az vmware workload-network dns-service delete",
+            "summary": "Delete a DNS service by id in a private cloud workload network.",
+            "syntax": "az vmware workload-network dns-service delete [--dns-service]\n                                              [--ids]\n                                              [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                              [--private-cloud]\n                                              [--resource-group]\n                                              [--subscription]\n                                              [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--dns-service --name -n",
+                "--ids",
+                "--no-wait",
+                "--private-cloud -c",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az vmware workload-network dns-service delete --resource-group group1 --private-cloud cloud1 --dns-service dnsService1"
+            ]
+        },
+        {
+            "name": "az vmware workload-network dns-service list",
+            "summary": "List of DNS services in a private cloud workload network.",
+            "syntax": "az vmware workload-network dns-service list --private-cloud\n                                            --resource-group\n                                            [--max-items]\n                                            [--next-token]",
+            "required_parameters": [
+                "--private-cloud -c",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az vmware workload-network dns-service list --resource-group group1 --private-cloud cloud1"
+            ]
+        },
+        {
+            "name": "az vmware workload-network dns-service show",
+            "summary": "Get a DNS service by id in a private cloud workload network.",
+            "syntax": "az vmware workload-network dns-service show [--dns-service]\n                                            [--ids]\n                                            [--private-cloud]\n                                            [--resource-group]\n                                            [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--dns-service --name -n",
+                "--ids",
+                "--private-cloud -c",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az vmware workload-network dns-service show --resource-group group1 --private-cloud cloud1 --dns-service dnsService1"
+            ]
+        },
+        {
+            "name": "az vmware workload-network dns-service update",
+            "summary": "Update a DNS service by id in a private cloud workload network.",
+            "syntax": "az vmware workload-network dns-service update [--add]\n                                              [--default-dns-zone]\n                                              [--display-name]\n                                              [--dns-service]\n                                              [--dns-service-ip]\n                                              [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                              [--fqdn-zones]\n                                              [--ids]\n                                              [--log-level {DEBUG, ERROR, FATAL, INFO, WARNING}]\n                                              [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                              [--private-cloud]\n                                              [--remove]\n                                              [--resource-group]\n                                              [--revision]\n                                              [--set]\n                                              [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--default-dns-zone",
+                "--display-name",
+                "--dns-service --name -n",
+                "--dns-service-ip",
+                "--force-string",
+                "--fqdn-zones",
+                "--ids",
+                "--log-level",
+                "--no-wait",
+                "--private-cloud -c",
+                "--remove",
+                "--resource-group -g",
+                "--revision",
+                "--set",
+                "--subscription"
+            ],
+            "examples": [
+                "az vmware workload-network dns-service update --resource-group group1 --private-cloud cloud1 --dns-service dnsService1 --display-name dnsService1 --dns-service-ip 5.5.5.5 --default-dns-zone defaultDnsZone1 --fqdn-zones fqdnZone1 --log-level INFO --revision 1"
+            ]
+        },
+        {
+            "name": "az vmware workload-network dns-service wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az vmware workload-network dns-service wait [--created]\n                                            [--custom]\n                                            [--deleted]\n                                            [--dns-service]\n                                            [--exists]\n                                            [--ids]\n                                            [--interval]\n                                            [--private-cloud]\n                                            [--resource-group]\n                                            [--subscription]\n                                            [--timeout]\n                                            [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--dns-service --name -n",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--private-cloud -c",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

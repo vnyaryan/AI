@@ -1,0 +1,19 @@
+{
+    "command_group": "az self-help solution-self-help",
+    "description": "Self Help solution command will help you create tenant level solutions for azure resources.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az self-help solution-self-help show",
+            "summary": "Get the self help solution using the applicable solutionId while creating the solution.",
+            "syntax": "az self-help solution-self-help show --solution-id",
+            "required_parameters": [
+                "--solution-id"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az self-help solution-self-help show --solution-id solution-id"
+            ]
+        }
+    ]
+}

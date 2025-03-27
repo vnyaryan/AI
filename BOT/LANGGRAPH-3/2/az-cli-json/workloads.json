@@ -1,0 +1,88 @@
+{
+    "command_group": "az workloads",
+    "description": "Manage workloads.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az workloads sap-availability-zone-detail",
+            "summary": "Show the recommended SAP Availability Zone Pair Details for your region.",
+            "syntax": "az workloads sap-availability-zone-detail [--app-location]\n                                          [--database-type {DB2, HANA}]\n                                          [--ids]\n                                          [--location]\n                                          [--sap-product {ECC, Other, S4HANA}]\n                                          [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--app-location",
+                "--database-type",
+                "--ids",
+                "--location -l",
+                "--sap-product",
+                "--subscription"
+            ],
+            "examples": [
+                "az workloads sap-availability-zone-detail --app-location \"northeurope\" --database-type \"HANA\" --sap-product \"S4HANA\" --location \"northeurope\""
+            ]
+        },
+        {
+            "name": "az workloads sap-disk-configuration",
+            "summary": "Show the SAP Disk Configuration Layout prod/non-prod SAP System.",
+            "syntax": "az workloads sap-disk-configuration [--app-location]\n                                    [--database-type {DB2, HANA}]\n                                    [--db-vm-sku]\n                                    [--deployment-type {SingleServer, ThreeTier}]\n                                    [--environment {NonProd, Prod}]\n                                    [--ids]\n                                    [--location]\n                                    [--sap-product {ECC, Other, S4HANA}]\n                                    [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--app-location",
+                "--database-type",
+                "--db-vm-sku",
+                "--deployment-type",
+                "--environment",
+                "--ids",
+                "--location -l",
+                "--sap-product",
+                "--subscription"
+            ],
+            "examples": [
+                "az workloads sap-disk-configuration --app-location eastus --database-type HANA --db-vm-sku Standard_M32ts --deployment-type SingleServer --environment NonProd --sap-product S4HANA --location eastus"
+            ]
+        },
+        {
+            "name": "az workloads sap-sizing-recommendation",
+            "summary": "Show SAP sizing recommendations by providing input SAPS for application tier and memory required for database tier.",
+            "syntax": "az workloads sap-sizing-recommendation [--app-location]\n                                       [--database-type {DB2, HANA}]\n                                       [--db-memory]\n                                       [--db-scale-method {ScaleUp}]\n                                       [--deployment-type {SingleServer, ThreeTier}]\n                                       [--environment {NonProd, Prod}]\n                                       [--high-availability-type {AvailabilitySet, AvailabilityZone}]\n                                       [--ids]\n                                       [--location]\n                                       [--sap-product {ECC, Other, S4HANA}]\n                                       [--saps]\n                                       [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--app-location",
+                "--database-type",
+                "--db-memory",
+                "--db-scale-method",
+                "--deployment-type",
+                "--environment",
+                "--high-availability-type",
+                "--ids",
+                "--location -l",
+                "--sap-product",
+                "--saps",
+                "--subscription"
+            ],
+            "examples": [
+                "az workloads sap-sizing-recommendation --app-location \"eastus\" --database-type \"HANA\" --db-memory 1024 --deployment-type \"ThreeTier\" --environment \"Prod\" --high-availability-type \"AvailabilitySet\" --sap-product \"S4HANA\" --saps 75000 --location \"eastus2\" --db-scale-method ScaleUp",
+                "az workloads sap-sizing-recommendation --app-location \"eastus\" --database-type \"HANA\" --db-memory 1024 --deployment-type \"ThreeTier\" --environment \"Prod\" --sap-product \"S4HANA\" --saps 20000 --location \"northeurope\" --db-scale-method ScaleUp"
+            ]
+        },
+        {
+            "name": "az workloads sap-supported-sku",
+            "summary": "Show a list of SAP supported SKUs for ASCS, Application and Database tier.",
+            "syntax": "az workloads sap-supported-sku [--app-location]\n                               [--database-type {DB2, HANA}]\n                               [--deployment-type {SingleServer, ThreeTier}]\n                               [--environment {NonProd, Prod}]\n                               [--high-availability-type {AvailabilitySet, AvailabilityZone}]\n                               [--ids]\n                               [--location]\n                               [--sap-product {ECC, Other, S4HANA}]\n                               [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--app-location",
+                "--database-type",
+                "--deployment-type",
+                "--environment",
+                "--high-availability-type",
+                "--ids",
+                "--location -l",
+                "--sap-product",
+                "--subscription"
+            ],
+            "examples": [
+                "az workloads sap-supported-sku --app-location \"eastus\" --database-type \"HANA\" --deployment-type \"ThreeTier\" --environment \"Prod\" --high-availability-type \"AvailabilitySet\" --sap-product \"S4HANA\" --location \"eastus\""
+            ]
+        }
+    ]
+}

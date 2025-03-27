@@ -1,0 +1,19 @@
+{
+    "command_group": "az netappfiles resource region-info default",
+    "description": "Provides region specific information.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az netappfiles resource region-info default show",
+            "summary": "Get storage to network proximity and logical zone mapping information.",
+            "syntax": "az netappfiles resource region-info default show [--ids]\n                                                 [--location]\n                                                 [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--location -l",
+                "--subscription"
+            ],
+            "examples": []
+        }
+    ]
+}

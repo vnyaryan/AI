@@ -1,0 +1,39 @@
+{
+    "command_group": "az postgres flexible-server private-link-resource",
+    "description": "Get Private link resource for a PostgreSQL flexible server.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az postgres flexible-server private-link-resource list",
+            "summary": "List private link resources associated with a PostgreSQL flexible server.",
+            "syntax": "az postgres flexible-server private-link-resource list [--ids]\n                                                       [--resource-group]\n                                                       [--server-name]\n                                                       [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--resource-group -g",
+                "--server-name -s",
+                "--subscription"
+            ],
+            "examples": [
+                "az postgres flexible-server private-link-resource list -g testgroup -s testsvr"
+            ]
+        },
+        {
+            "name": "az postgres flexible-server private-link-resource show",
+            "summary": "Get private link  resource for a PostgreSQL flexible server.",
+            "syntax": "az postgres flexible-server private-link-resource show [--ids]\n                                                       [--resource-group]\n                                                       [--server-name]\n                                                       [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--resource-group -g",
+                "--server-name -s",
+                "--subscription"
+            ],
+            "examples": [
+                "az postgres flexible-server private-link-resource show --resource-group testGroup --server-name testserver",
+                "az postgres flexible-server private-link-resource show --subscription testSubscription --resource-group testGroup --server-name testserver",
+                "az postgres flexible-server private-link-resource show --ids /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/testGroup/providers/Microsoft.DBforPostgreSQL/flexibleServers/testServer"
+            ]
+        }
+    ]
+}

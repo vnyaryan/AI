@@ -1,0 +1,111 @@
+{
+    "command_group": "az network firewall policy rule-collection-group draft collection",
+    "description": "Manage and configure Azure firewall policy rule collections in the rule collection group draft.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az network firewall policy rule-collection-group draft collection add-filter-collection",
+            "summary": "Add a filter collection into an Azure firewall policy rule collection group draft.",
+            "syntax": "az network firewall policy rule-collection-group draft collection add-filter-collection --collection-priority\n                                                                                        --name\n                                                                                        --policy-name\n                                                                                        --resource-group\n                                                                                        --rule-collection-group-name\n                                                                                        [--action {Allow, Deny}]\n                                                                                        [--add]\n                                                                                        [--description]\n                                                                                        [--dest-addr]\n                                                                                        [--dest-ipg]\n                                                                                        [--destination-fqdns]\n                                                                                        [--destination-ports]\n                                                                                        [--enable-tls-insp {0, 1, f, false, n, no, t, true, y, yes}]\n                                                                                        [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                                                                        [--fqdn-tags]\n                                                                                        [--ip-protocols]\n                                                                                        [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                                                                        [--protocols]\n                                                                                        [--remove]\n                                                                                        [--rule-name]\n                                                                                        [--rule-type {ApplicationRule, NatRule, NetworkRule}]\n                                                                                        [--set]\n                                                                                        [--source-addresses]\n                                                                                        [--source-ip-groups]\n                                                                                        [--target-fqdns]\n                                                                                        [--target-urls]\n                                                                                        [--web-categories]",
+            "required_parameters": [
+                "--collection-priority",
+                "--name -n",
+                "--policy-name",
+                "--resource-group -g",
+                "--rule-collection-group-name"
+            ],
+            "optional_parameters": [
+                "--action",
+                "--add",
+                "--description",
+                "--dest-addr --destination-addresses",
+                "--dest-ipg --destination-ip-groups",
+                "--destination-fqdns",
+                "--destination-ports",
+                "--enable-tls-insp --enable-tls-inspection",
+                "--force-string",
+                "--fqdn-tags",
+                "--ip-protocols",
+                "--no-wait",
+                "--protocols",
+                "--remove",
+                "--rule-name",
+                "--rule-type",
+                "--set",
+                "--source-addresses",
+                "--source-ip-groups",
+                "--target-fqdns",
+                "--target-urls",
+                "--web-categories"
+            ],
+            "examples": [
+                "az network firewall policy rule-collection-group draft collection add-filter-collection -g {rg}\n--policy-name {policy} --rule-collection-group-name {collectiongroup} --name\nfilter_collection --action Allow --rule-name network_rule --rule-type NetworkRule\n--description \"test\" --destination-addresses \"202.120.36.15\" --source-addresses\n\"202.120.36.13\" \"202.120.36.14\" --destination-ports 12003 12004 --ip-protocols TCP UDP\n--collection-priority 11002",
+                "az network firewall policy rule-collection-group draft collection add-filter-collection -g {rg}\n--policy-name {policy} --rule-collection-group-name {collectiongroup} --name\nfilter_collection --action Allow --rule-name application_rule --rule-type ApplicationRule\n--description \"test\" --destination-addresses \"202.120.36.15\" \"202.120.36.16\" --source-\naddresses \"202.120.36.13\" \"202.120.36.14\" --protocols Http=12800 Https=12801 --fqdn-tags\nAzureBackup HDInsight --collection-priority 11100"
+            ]
+        },
+        {
+            "name": "az network firewall policy rule-collection-group draft collection add-nat-collection",
+            "summary": "Add a NAT collection into an Azure firewall policy rule collection group draft.",
+            "syntax": "az network firewall policy rule-collection-group draft collection add-nat-collection --collection-priority\n                                                                                     --ip-protocols\n                                                                                     --name\n                                                                                     --policy-name\n                                                                                     --resource-group\n                                                                                     --rule-collection-group-name\n                                                                                     [--action {DNAT, SNAT}]\n                                                                                     [--add]\n                                                                                     [--description]\n                                                                                     [--dest-addr]\n                                                                                     [--destination-ports]\n                                                                                     [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                                                                     [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                                                                     [--remove]\n                                                                                     [--rule-name]\n                                                                                     [--set]\n                                                                                     [--source-addresses]\n                                                                                     [--source-ip-groups]\n                                                                                     [--translated-address]\n                                                                                     [--translated-fqdn]\n                                                                                     [--translated-port]",
+            "required_parameters": [
+                "--collection-priority",
+                "--ip-protocols",
+                "--name -n",
+                "--policy-name",
+                "--resource-group -g",
+                "--rule-collection-group-name"
+            ],
+            "optional_parameters": [
+                "--action",
+                "--add",
+                "--description",
+                "--dest-addr --destination-addresses",
+                "--destination-ports",
+                "--force-string",
+                "--no-wait",
+                "--remove",
+                "--rule-name",
+                "--set",
+                "--source-addresses",
+                "--source-ip-groups",
+                "--translated-address",
+                "--translated-fqdn",
+                "--translated-port"
+            ],
+            "examples": [
+                "az network firewall policy rule-collection-group draft collection add-nat-collection -n\nnat_collection --collection-priority 10003 --policy-name {policy} -g {rg} --rule-collection-\ngroup-name {collectiongroup} --action DNAT --rule-name network_rule --description \"test\"\n--destination-addresses \"202.120.36.15\" --source-addresses \"202.120.36.13\" \"202.120.36.14\"\n--translated-address 128.1.1.1 --translated-port 1234 --destination-ports 12000 12001 --ip-\nprotocols TCP UDP"
+            ]
+        },
+        {
+            "name": "az network firewall policy rule-collection-group draft collection list",
+            "summary": "List all rule collections of an Azure firewall policy rule collection group draft.",
+            "syntax": "az network firewall policy rule-collection-group draft collection list --policy-name\n                                                                       --rcg-name\n                                                                       --resource-group",
+            "required_parameters": [
+                "--policy-name",
+                "--rcg-name --rule-collection-group-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az network firewall policy rule-collection-group draft collection remove",
+            "summary": "Remove a rule collection from an Azure firewall policy rule collection group draft.",
+            "syntax": "az network firewall policy rule-collection-group draft collection remove --name\n                                                                         --policy-name\n                                                                         --resource-group\n                                                                         --rule-collection-group-name\n                                                                         [--add]\n                                                                         [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                                                         [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                                                         [--remove]\n                                                                         [--set]",
+            "required_parameters": [
+                "--name -n",
+                "--policy-name",
+                "--resource-group -g",
+                "--rule-collection-group-name"
+            ],
+            "optional_parameters": [
+                "--add",
+                "--force-string",
+                "--no-wait",
+                "--remove",
+                "--set"
+            ],
+            "examples": []
+        }
+    ]
+}

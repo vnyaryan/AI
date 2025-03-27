@@ -1,0 +1,89 @@
+{
+    "command_group": "az sentinel alert-rule action",
+    "description": "Manage alert rule action with sentinel.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az sentinel alert-rule action create",
+            "summary": "Create the action of alert rule.",
+            "syntax": "az sentinel alert-rule action create --action-name\n                                     --resource-group\n                                     --rule-name\n                                     --workspace-name\n                                     [--etag]\n                                     [--logic-app-resource-id]\n                                     [--trigger-uri]",
+            "required_parameters": [
+                "--action-name --name -n",
+                "--resource-group -g",
+                "--rule-name",
+                "--workspace-name -w"
+            ],
+            "optional_parameters": [
+                "--etag",
+                "--logic-app-resource-id",
+                "--trigger-uri"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az sentinel alert-rule action delete",
+            "summary": "Delete the action of alert rule.",
+            "syntax": "az sentinel alert-rule action delete [--action-name]\n                                     [--ids]\n                                     [--resource-group]\n                                     [--rule-name]\n                                     [--subscription]\n                                     [--workspace-name]\n                                     [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--action-name --name -n",
+                "--ids",
+                "--resource-group -g",
+                "--rule-name",
+                "--subscription",
+                "--workspace-name -w",
+                "--yes -y"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az sentinel alert-rule action list",
+            "summary": "Get all actions of alert rule.",
+            "syntax": "az sentinel alert-rule action list --resource-group\n                                   --rule-name\n                                   --workspace-name",
+            "required_parameters": [
+                "--resource-group -g",
+                "--rule-name",
+                "--workspace-name -w"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az sentinel alert-rule action show",
+            "summary": "Get the action of alert rule.",
+            "syntax": "az sentinel alert-rule action show [--action-name]\n                                   [--ids]\n                                   [--resource-group]\n                                   [--rule-name]\n                                   [--subscription]\n                                   [--workspace-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--action-name --name -n",
+                "--ids",
+                "--resource-group -g",
+                "--rule-name",
+                "--subscription",
+                "--workspace-name -w"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az sentinel alert-rule action update",
+            "summary": "Update the action of alert rule.",
+            "syntax": "az sentinel alert-rule action update [--action-name]\n                                     [--add]\n                                     [--etag]\n                                     [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                     [--ids]\n                                     [--logic-app-resource-id]\n                                     [--remove]\n                                     [--resource-group]\n                                     [--rule-name]\n                                     [--set]\n                                     [--subscription]\n                                     [--trigger-uri]\n                                     [--workspace-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--action-name --name -n",
+                "--add",
+                "--etag",
+                "--force-string",
+                "--ids",
+                "--logic-app-resource-id",
+                "--remove",
+                "--resource-group -g",
+                "--rule-name",
+                "--set",
+                "--subscription",
+                "--trigger-uri",
+                "--workspace-name -w"
+            ],
+            "examples": []
+        }
+    ]
+}

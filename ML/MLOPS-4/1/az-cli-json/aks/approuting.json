@@ -1,0 +1,91 @@
+{
+    "command_group": "az aks approuting",
+    "description": "Commands to manage App Routing addon.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az aks approuting disable",
+            "summary": "Disable App Routing addon.",
+            "syntax": "az aks approuting disable --name\n                          --resource-group\n                          [--yes]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--yes -y"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az aks approuting disable",
+            "summary": "Disable App Routing addon.",
+            "syntax": "az aks approuting disable --name\n                          --resource-group\n                          [--yes]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--yes -y"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az aks approuting enable",
+            "summary": "Enable App Routing.",
+            "syntax": "az aks approuting enable --name\n                         --resource-group\n                         [--attach-kv]\n                         [--enable-kv]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--attach-kv",
+                "--enable-kv"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az aks approuting enable",
+            "summary": "Enable App Routing.",
+            "syntax": "az aks approuting enable --name\n                         --resource-group\n                         [--attach-kv]\n                         [--enable-kv]\n                         [--nginx {AnnotationControlled, External, Internal, None}]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--attach-kv",
+                "--enable-kv",
+                "--nginx"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az aks approuting update",
+            "summary": "Update App Routing addon.",
+            "syntax": "az aks approuting update --name\n                         --resource-group\n                         [--attach-kv]\n                         [--enable-kv]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--attach-kv",
+                "--enable-kv"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az aks approuting update",
+            "summary": "Update App Routing addon.",
+            "syntax": "az aks approuting update --name\n                         --resource-group\n                         [--attach-kv]\n                         [--enable-kv]\n                         [--nginx {AnnotationControlled, External, Internal, None}]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--attach-kv",
+                "--enable-kv",
+                "--nginx"
+            ],
+            "examples": []
+        }
+    ]
+}

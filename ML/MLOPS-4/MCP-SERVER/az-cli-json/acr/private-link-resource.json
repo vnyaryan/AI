@@ -1,0 +1,19 @@
+{
+    "command_group": "az acr private-link-resource",
+    "description": "Manage registry private link resources.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az acr private-link-resource list",
+            "summary": "List the private link resources supported for a registry.",
+            "syntax": "az acr private-link-resource list --name\n                                  [--resource-group]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": []
+        }
+    ]
+}

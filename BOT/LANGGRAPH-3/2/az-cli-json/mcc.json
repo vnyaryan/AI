@@ -1,0 +1,6 @@
+{
+    "command_group": "az mcc",
+    "description": "Microsoft Connected Cache CLI Commands.",
+    "status": "Preview",
+    "commands": []
+}

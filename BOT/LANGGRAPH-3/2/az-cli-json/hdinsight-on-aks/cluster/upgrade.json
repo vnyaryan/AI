@@ -1,0 +1,81 @@
+{
+    "command_group": "az hdinsight-on-aks cluster upgrade",
+    "description": "Upgrade cluster.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az hdinsight-on-aks cluster upgrade history",
+            "summary": "List a list of upgrade history.",
+            "syntax": "az hdinsight-on-aks cluster upgrade history --cluster-name\n                                            --cluster-pool-name\n                                            --resource-group\n                                            [--max-items]\n                                            [--next-token]",
+            "required_parameters": [
+                "--cluster-name",
+                "--cluster-pool-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az hdinsight-on-aks cluster upgrade history -g {resourcesGroup} --cluster-pool-name {poolName} --cluster-name {clusterName}"
+            ]
+        },
+        {
+            "name": "az hdinsight-on-aks cluster upgrade list",
+            "summary": "List a cluster available upgrades.",
+            "syntax": "az hdinsight-on-aks cluster upgrade list --cluster-name\n                                         --cluster-pool-name\n                                         --resource-group\n                                         [--max-items]\n                                         [--next-token]",
+            "required_parameters": [
+                "--cluster-name",
+                "--cluster-pool-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az hdinsight-on-aks cluster upgrade list -g {resourcesGroup} --cluster-pool-name {poolName} --cluster-name {clusterName}"
+            ]
+        },
+        {
+            "name": "az hdinsight-on-aks cluster upgrade rollback",
+            "summary": "Manual rollback upgrade for a cluster.",
+            "syntax": "az hdinsight-on-aks cluster upgrade rollback --upgrade-history\n                                             [--cluster-name]\n                                             [--cluster-pool-name]\n                                             [--ids]\n                                             [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                             [--resource-group]\n                                             [--subscription]",
+            "required_parameters": [
+                "--upgrade-history"
+            ],
+            "optional_parameters": [
+                "--cluster-name",
+                "--cluster-pool-name",
+                "--ids",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az hdinsight-on-aks cluster upgrade rollback -g {resourcesGroup} --cluster-pool-name {poolName} --cluster-name {clusterName} --upgrade-history {history string}"
+            ]
+        },
+        {
+            "name": "az hdinsight-on-aks cluster upgrade run",
+            "summary": "Upgrade a cluster.",
+            "syntax": "az hdinsight-on-aks cluster upgrade run [--aks-patch-upgrade]\n                                        [--cluster-name]\n                                        [--cluster-pool-name]\n                                        [--hotfix-upgrade]\n                                        [--ids]\n                                        [--in-place-upgrade]\n                                        [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                        [--patch-version-upgrade]\n                                        [--resource-group]\n                                        [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--aks-patch-upgrade",
+                "--cluster-name",
+                "--cluster-pool-name",
+                "--hotfix-upgrade",
+                "--ids",
+                "--in-place-upgrade",
+                "--no-wait",
+                "--patch-version-upgrade",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az hdinsight-on-aks cluster upgrade run -g {resourcesGroup} --cluster-pool-name {poolName} --cluster-name {clusterName} --hotfix-upgrade component-name={componentName} target-build-number={targetBuildNumber} target-cluster-version={targetClusterVersion} target-oss-version={targetOssVersion}"
+            ]
+        }
+    ]
+}

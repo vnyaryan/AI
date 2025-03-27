@@ -1,0 +1,98 @@
+{
+    "command_group": "az gallery service-artifact",
+    "description": "Azure Compute Gallery Service Artifact.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az gallery service-artifact create",
+            "summary": "Create a Service Artifact under a gallery.",
+            "syntax": "az gallery service-artifact create --gallery-name\n                                   --location\n                                   --name\n                                   --resource-group\n                                   --target-locations\n                                   --vm-artifacts-profiles\n                                   [--description]\n                                   [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                   [--tags]",
+            "required_parameters": [
+                "--gallery-name",
+                "--location",
+                "--name --service-artifact-name -n",
+                "--resource-group -g",
+                "--target-locations",
+                "--vm-artifacts-profiles"
+            ],
+            "optional_parameters": [
+                "--description",
+                "--no-wait",
+                "--tags"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az gallery service-artifact get",
+            "summary": "Get a Service Artifact under a gallery.",
+            "syntax": "az gallery service-artifact get [--expand {latestVersion}]\n                                [--gallery-name]\n                                [--ids]\n                                [--name]\n                                [--resource-group]\n                                [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--expand",
+                "--gallery-name",
+                "--ids",
+                "--name --service-artifact-name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az gallery service-artifact list",
+            "summary": "List a list of Service Artifacts in a gallery.",
+            "syntax": "az gallery service-artifact list --gallery-name\n                                 --resource-group",
+            "required_parameters": [
+                "--gallery-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az gallery service-artifact update",
+            "summary": "Update a Service Artifact under a gallery.",
+            "syntax": "az gallery service-artifact update [--add]\n                                   [--description]\n                                   [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                   [--gallery-name]\n                                   [--ids]\n                                   [--location]\n                                   [--name]\n                                   [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                   [--remove]\n                                   [--resource-group]\n                                   [--set]\n                                   [--subscription]\n                                   [--tags]\n                                   [--target-locations]\n                                   [--vm-artifacts-profiles]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--description",
+                "--force-string",
+                "--gallery-name",
+                "--ids",
+                "--location",
+                "--name --service-artifact-name -n",
+                "--no-wait",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--subscription",
+                "--tags",
+                "--target-locations",
+                "--vm-artifacts-profiles"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az gallery service-artifact wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az gallery service-artifact wait [--created]\n                                 [--custom]\n                                 [--deleted]\n                                 [--exists]\n                                 [--expand {latestVersion}]\n                                 [--gallery-name]\n                                 [--ids]\n                                 [--interval]\n                                 [--name]\n                                 [--resource-group]\n                                 [--subscription]\n                                 [--timeout]\n                                 [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--expand",
+                "--gallery-name",
+                "--ids",
+                "--interval",
+                "--name --service-artifact-name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

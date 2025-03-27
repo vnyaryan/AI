@@ -1,0 +1,47 @@
+{
+    "command_group": "az cache",
+    "description": "Commands to manage CLI objects cached using the `--defer` argument.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az cache delete",
+            "summary": "Delete an object from the cache.",
+            "syntax": "az cache delete --name\n                --resource-group\n                --resource-type",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g",
+                "--resource-type -t"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az cache list",
+            "summary": "List the contents of the object cache.",
+            "syntax": "az cache list",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az cache purge",
+            "summary": "Clear the entire CLI object cache.",
+            "syntax": "az cache purge",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az cache show",
+            "summary": "Show the contents of a specific object in the cache.",
+            "syntax": "az cache show --name\n              --resource-group\n              --resource-type",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g",
+                "--resource-type -t"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        }
+    ]
+}

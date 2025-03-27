@@ -1,0 +1,101 @@
+{
+    "command_group": "az databoxedge device storage-account container",
+    "description": "Manage  device storage account container.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az databoxedge device storage-account container create",
+            "summary": "Create container on the device.",
+            "syntax": "az databoxedge device storage-account container create --container-name\n                                                       --data-format {AzureFile, BlockBlob, PageBlob}\n                                                       --device-name\n                                                       --resource-group\n                                                       --storage-account-name\n                                                       [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]",
+            "required_parameters": [
+                "--container-name --name -n",
+                "--data-format",
+                "--device-name",
+                "--resource-group -g",
+                "--storage-account-name"
+            ],
+            "optional_parameters": [
+                "--no-wait"
+            ],
+            "examples": [
+                "az databoxedge device storage-account container create -g rg --device-name name --storage-account-name name -n container-name --data-format BlockBlob"
+            ]
+        },
+        {
+            "name": "az databoxedge device storage-account container delete",
+            "summary": "Delete the container on the Data Box Edge/Data Box Gateway device.",
+            "syntax": "az databoxedge device storage-account container delete [--container-name]\n                                                       [--device-name]\n                                                       [--ids]\n                                                       [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                                       [--resource-group]\n                                                       [--storage-account-name]\n                                                       [--subscription]\n                                                       [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--container-name --name -n",
+                "--device-name",
+                "--ids",
+                "--no-wait",
+                "--resource-group -g",
+                "--storage-account-name",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az databoxedge device storage-account container delete -g rg --device-name name --storage-account-name name -n container-name"
+            ]
+        },
+        {
+            "name": "az databoxedge device storage-account container list",
+            "summary": "List all the containers of a storage account in a Data Box Edge/Data Box Gateway device.",
+            "syntax": "az databoxedge device storage-account container list --device-name\n                                                     --resource-group\n                                                     --storage-account-name\n                                                     [--max-items]\n                                                     [--next-token]",
+            "required_parameters": [
+                "--device-name",
+                "--resource-group -g",
+                "--storage-account-name"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az databoxedge device storage-account container list -g rg --device-name name --storage-account-name name"
+            ]
+        },
+        {
+            "name": "az databoxedge device storage-account container show",
+            "summary": "Show container.",
+            "syntax": "az databoxedge device storage-account container show [--container-name]\n                                                     [--device-name]\n                                                     [--ids]\n                                                     [--resource-group]\n                                                     [--storage-account-name]\n                                                     [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--container-name --name -n",
+                "--device-name",
+                "--ids",
+                "--resource-group -g",
+                "--storage-account-name",
+                "--subscription"
+            ],
+            "examples": [
+                "az databoxedge device storage-account container show -g rg --device-name name --storage-account-name name -n container-name"
+            ]
+        },
+        {
+            "name": "az databoxedge device storage-account container update",
+            "summary": "Update container on the device.",
+            "syntax": "az databoxedge device storage-account container update [--add]\n                                                       [--container-name]\n                                                       [--data-format {AzureFile, BlockBlob, PageBlob}]\n                                                       [--device-name]\n                                                       [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                                       [--ids]\n                                                       [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                                       [--remove]\n                                                       [--resource-group]\n                                                       [--set]\n                                                       [--storage-account-name]\n                                                       [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--container-name --name -n",
+                "--data-format",
+                "--device-name",
+                "--force-string",
+                "--ids",
+                "--no-wait",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--storage-account-name",
+                "--subscription"
+            ],
+            "examples": [
+                "az databoxedge device storage-account container update -g rg --device-name name --storage-account-name name -n container-name --data-format BlockBlob"
+            ]
+        }
+    ]
+}

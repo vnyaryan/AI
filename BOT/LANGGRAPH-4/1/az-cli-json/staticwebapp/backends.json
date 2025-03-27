@@ -1,0 +1,76 @@
+{
+    "command_group": "az staticwebapp backends",
+    "description": "Link or unlink a prexisting backend with a static web app. Also known as \"Bring your own API.\".",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az staticwebapp backends link",
+            "summary": "Link a backend to a static web app. Also known as \"Bring your own API.\".",
+            "syntax": "az staticwebapp backends link --backend-resource-id\n                              --name\n                              --resource-group\n                              [--backend-region]\n                              [--environment-name]",
+            "required_parameters": [
+                "--backend-resource-id",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--backend-region",
+                "--environment-name"
+            ],
+            "examples": [
+                "az staticwebapp backends link -n MyStaticAppName -g MyResourceGroup --backend-resource-id \"/subscriptions/<subscription-id>/resourceGroups/<resource-group>/providers/<resource-provider>/<resource-type>/<backend-name>\" --backend-region MyBackendRegion",
+                "az staticwebapp backends link -n MyStaticAppName -g MyResourceGroup --environment-name MyEnvironmentName --backend-resource-id \"/subscriptions/<subscription-id>/resourceGroups/<resource-group>/providers/<resource-provider>/<resource-type>/<backend-name>\" --backend-region MyBackendRegion"
+            ]
+        },
+        {
+            "name": "az staticwebapp backends show",
+            "summary": "Show details on the backend linked to a static web app.",
+            "syntax": "az staticwebapp backends show --name\n                              --resource-group\n                              [--environment-name]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--environment-name"
+            ],
+            "examples": [
+                "az staticwebapp backends show -n MyStaticAppName -g MyResourceGroup",
+                "az staticwebapp backends show -n MyStaticAppName -g MyResourceGroup --environment-name MyEnvironmentName"
+            ]
+        },
+        {
+            "name": "az staticwebapp backends unlink",
+            "summary": "Unlink backend from a static web app.",
+            "syntax": "az staticwebapp backends unlink --name\n                                --resource-group\n                                [--environment-name]\n                                [--remove-backend-auth]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--environment-name",
+                "--remove-backend-auth"
+            ],
+            "examples": [
+                "az staticwebapp backends unlink -n MyStaticAppName -g MyResourceGroup",
+                "az staticwebapp backends unlink -n MyStaticAppName -g MyResourceGroup --environment-name MyEnvironmentName --remove-backend-auth"
+            ]
+        },
+        {
+            "name": "az staticwebapp backends validate",
+            "summary": "Validate a backend for a static web app.",
+            "syntax": "az staticwebapp backends validate --backend-resource-id\n                                  --name\n                                  --resource-group\n                                  [--backend-region]\n                                  [--environment-name]",
+            "required_parameters": [
+                "--backend-resource-id",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--backend-region",
+                "--environment-name"
+            ],
+            "examples": [
+                "az staticwebapp backends validate -n MyStaticAppName -g MyResourceGroup --backend-resource-id \"/subscriptions/<subscription-id>/resourceGroups/<resource-group>/providers/<resource-provider>/<resource-type>/<backend-name>\" --backend-region MyBackendRegion",
+                "az staticwebapp backends validate -n MyStaticAppName -g MyResourceGroup --environment-name MyEnvironmentName --backend-resource-id \"/subscriptions/<subscription-id>/resourceGroups/<resource-group>/providers/<resource-provider>/<resource-type>/<backend-name>\" --backend-region MyBackendRegion"
+            ]
+        }
+    ]
+}

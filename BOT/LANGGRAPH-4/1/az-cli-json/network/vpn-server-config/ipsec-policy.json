@@ -1,0 +1,72 @@
+{
+    "command_group": "az network vpn-server-config ipsec-policy",
+    "description": "Manage VPN server configuration IPSec policies.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az network vpn-server-config ipsec-policy add",
+            "summary": "Add an IPSec policy to a VPN server configuration.",
+            "syntax": "az network vpn-server-config ipsec-policy add --dh-group {DHGroup1, DHGroup14, DHGroup2, DHGroup2048, DHGroup24, ECP256, ECP384, None}\n                                              --ike-encryption {AES128, AES192, AES256, DES, DES3, GCMAES128, GCMAES256}\n                                              --ike-integrity {GCMAES128, GCMAES256, MD5, SHA1, SHA256, SHA384}\n                                              --ipsec-encryption {AES128, AES192, AES256, DES, DES3, GCMAES128, GCMAES192, GCMAES256, None}\n                                              --ipsec-integrity {GCMAES128, GCMAES192, GCMAES256, MD5, SHA1, SHA256}\n                                              --name\n                                              --pfs-group {ECP256, ECP384, None, PFS1, PFS14, PFS2, PFS2048, PFS24, PFSMM}\n                                              --resource-group\n                                              --sa-data-size\n                                              --sa-lifetime\n                                              [--no-wait]",
+            "required_parameters": [
+                "--dh-group",
+                "--ike-encryption",
+                "--ike-integrity",
+                "--ipsec-encryption",
+                "--ipsec-integrity",
+                "--name -n",
+                "--pfs-group",
+                "--resource-group -g",
+                "--sa-data-size",
+                "--sa-lifetime"
+            ],
+            "optional_parameters": [
+                "--no-wait"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az network vpn-server-config ipsec-policy list",
+            "summary": "List VPN server configuration IPSec policies.",
+            "syntax": "az network vpn-server-config ipsec-policy list --name\n                                               --resource-group",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az network vpn-server-config ipsec-policy remove",
+            "summary": "Remove an IPSec policy from a VPN server configuration.",
+            "syntax": "az network vpn-server-config ipsec-policy remove --index\n                                                 --name\n                                                 --resource-group\n                                                 [--no-wait]",
+            "required_parameters": [
+                "--index",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--no-wait"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az network vpn-server-config ipsec-policy wait",
+            "summary": "Place the CLI in a waiting state until a condition of the IPSec policy of a VPN server configuration is met.",
+            "syntax": "az network vpn-server-config ipsec-policy wait --name\n                                               --resource-group\n                                               [--created]\n                                               [--custom]\n                                               [--deleted]\n                                               [--exists]\n                                               [--interval]\n                                               [--timeout]\n                                               [--updated]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--interval",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

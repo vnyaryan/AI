@@ -1,0 +1,22 @@
+{
+    "command_group": "az boards",
+    "description": "Manage Azure Boards.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az boards query",
+            "summary": "Query for a list of work items.",
+            "syntax": "az boards query [--detect {false, true}]\n                [--id]\n                [--org]\n                [--path]\n                [--project]\n                [--wiql]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--detect",
+                "--id",
+                "--org --organization",
+                "--path",
+                "--project -p",
+                "--wiql"
+            ],
+            "examples": []
+        }
+    ]
+}

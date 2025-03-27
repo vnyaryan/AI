@@ -1,0 +1,17 @@
+{
+    "command_group": "az account tenant",
+    "description": "Manage tenant.",
+    "status": "Experimental",
+    "commands": [
+        {
+            "name": "az account tenant list",
+            "summary": "Get the tenants for your account.",
+            "syntax": "az account tenant list",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "examples": [
+                "az account tenant list"
+            ]
+        }
+    ]
+}

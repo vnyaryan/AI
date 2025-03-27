@@ -1,0 +1,775 @@
+2025-01-27 19:26:34,387 - DEBUG - Logging setup completed.
+2025-01-27 19:26:34,388 - INFO - Starting the data preprocessing script...
+2025-01-27 19:26:34,388 - INFO - Cleaning and normalizing text data...
+2025-01-27 19:26:34,389 - DEBUG - Cleaned Texts: ['i love ai', 'transformers are amazing', 'machine learning is the future', 'natural language processing is fascinating']
+2025-01-27 19:26:34,389 - INFO - Removing stopwords from input texts...
+2025-01-27 19:26:34,389 - DEBUG - Texts after stopword removal: ['love ai', 'transformers amazing', 'machine learning future', 'natural language processing fascinating']
+2025-01-27 19:26:34,390 - INFO - Applying lemmatization...
+2025-01-27 19:26:41,405 - DEBUG - Lemmatized Texts: ['love ai', 'transformer amazing', 'machine learning future', 'natural language processing fascinating']
+2025-01-27 19:26:41,406 - INFO - Performing backtranslation for text augmentation...
+2025-01-27 19:26:42,408 - DEBUG - HPACK encoding <generator object _check_path_header.<locals>.inner at 0x0000020EFFD1FE00>
+2025-01-27 19:26:42,409 - DEBUG - Adding (b':method', b'POST') to the header table
+2025-01-27 19:26:42,409 - DEBUG - Encoding 3 with 7 bits
+2025-01-27 19:26:42,409 - DEBUG - Adding (b':authority', b'translate.google.com') to the header table
+2025-01-27 19:26:42,409 - DEBUG - Encoding 1 with 6 bits
+2025-01-27 19:26:42,409 - DEBUG - Encoding 14 with 7 bits
+2025-01-27 19:26:42,409 - DEBUG - Adding (b':scheme', b'https') to the header table
+2025-01-27 19:26:42,409 - DEBUG - Encoding 7 with 7 bits
+2025-01-27 19:26:42,410 - DEBUG - Adding (b':path', b'/_/TranslateWebserverUi/data/batchexecute?rpcids=MkEWBc&bl=boq_translate-webserver_20201207.13_p0&soc-app=1&soc-platform=1&soc-device=1&rt=c') to the header table
+2025-01-27 19:26:42,410 - DEBUG - Encoding 4 with 6 bits
+2025-01-27 19:26:42,410 - DEBUG - Encoding 101 with 7 bits
+2025-01-27 19:26:42,410 - DEBUG - Adding (b'accept', b'*/*') to the header table
+2025-01-27 19:26:42,410 - DEBUG - Encoding 19 with 6 bits
+2025-01-27 19:26:42,410 - DEBUG - Encoding 3 with 7 bits
+2025-01-27 19:26:42,410 - DEBUG - Adding (b'accept-encoding', b'gzip, deflate') to the header table
+2025-01-27 19:26:42,410 - DEBUG - Encoding 16 with 7 bits
+2025-01-27 19:26:42,410 - DEBUG - Adding (b'user-agent', b'Mozilla/5.0 (Windows NT 10.0; Win64; x64)') to the header table
+2025-01-27 19:26:42,410 - DEBUG - Encoding 58 with 6 bits
+2025-01-27 19:26:42,410 - DEBUG - Encoding 32 with 7 bits
+2025-01-27 19:26:42,410 - DEBUG - Adding (b'referer', b'https://translate.google.com') to the header table
+2025-01-27 19:26:42,410 - DEBUG - Encoding 51 with 6 bits
+2025-01-27 19:26:42,411 - DEBUG - Encoding 20 with 7 bits
+2025-01-27 19:26:42,411 - DEBUG - Adding (b'content-length', b'153') to the header table
+2025-01-27 19:26:42,411 - DEBUG - Encoding 28 with 6 bits
+2025-01-27 19:26:42,411 - DEBUG - Encoding 3 with 7 bits
+2025-01-27 19:26:42,411 - DEBUG - Adding (b'content-type', b'application/x-www-form-urlencoded') to the header table
+2025-01-27 19:26:42,411 - DEBUG - Encoding 31 with 6 bits
+2025-01-27 19:26:42,411 - DEBUG - Encoding 24 with 7 bits
+2025-01-27 19:26:42,411 - DEBUG - Encoded header block to b"\x83A\x8eM\x83\xa9\x14\r%^c\x9ej\n\xb9\x0fO\x87D\xe5b&7\xd8:\x91@\xd2^E\x8d\x05\xb3\xb9l\xe0f$\x1aF\xc4cI'/\x92\x92\xd4\x97\xfc\xb2\xb2\x1aDA\xa3\xae\x0eWI\xf1\x1d\x10F~\xd1&\xc1\xd4\x8a\x06\x92\xad\xe0\xb1\xa0\xb6w-\x91\x08\x02\x00D\x07W\x0b1V\x0f\x84\x1c\x8b\x0e\xba\xe0\x0f\xc2\x0eE\xab\xa0i\x94\xf6S\x00~\x10r-!{\x98\x85\x80?\x16&\x02\x7fS\x83\xf9c\xe7\x90z\xa0\xd0\x7ff\xa2\x81\xb0\xda\xe0S\xfa\xe4j\xa4?\x84)\xa7z\x81\x02\xe0\xfbS\x91\xaaq\xaf\xb5<\xb8\xd7\xf7s\x94\x9d)\xad\x17\x18a6\x0e\xa4P4\x95y\x8ey\xa8*\xe4=?\\\x83\x0bl\xff_\x98\x1du\xd0b\r&=Ly[\xc7\x8f\x0bJ{)Z\xdb(-D<\x85\x93"
+2025-01-27 19:26:43,154 - DEBUG - Decoding b'\x88_\x96\x1du\xd0b\r&=LtA\xea\xfbP\x93\x8e\xc4\x150Z\x99V{X\xa1\xa8\xeb\x10d\x9c\xbfJTu\x90\x93\xd8_\xa5)\x1f\x95\x871`\x07\xd2\x94\xda\x84\xada{\x8e\x83H4\x97@\x85\xae\xc1\xcdH\xff\x86\xa8\xeb\x10d\x9c\xbfd\x96\xd0z\xbe\x94\x00T\xca:\x94\x0b\xef\x81@\x02\xe0\x01p\x00S\x16\x8d\xff\x0f\x12\x96\xd0z\xbe\x94\x13\xaae\x1dJ\x08\x02m@\xb3q\xb7.4\xca\x98\xb4oY\xb2\x1aR2OIjO\xda\x92\x9a\x82\xd4:K\x07\xf3aQY\xeaAW\x8c\xd5\x7f?jJj\x0bP\xe9/\xcc\x1c7\xe1Y\xef\xf5\xfe\xac*+=H*\xf1\x9a\xaf@\x90\xf2\xb1\x0fRKRVO\xaa\xca\xb1\xebI\x8fR?\x85\xa8\xe8\xa8\xd2\xcb@\x03p3p\xaf\xbd\xae\x0f\xe7|\xe6B\x86B\x95\x1d*\rMl\xebR\xb3\xd0bz\xfe\x14\xdcR\xa92\xe4;\x15\xb3\\\xe5\xa2\xb5%=\x8aR{\n\xa1\xaa\x94\xeb\xff?@\x8d\xac\xb6Rd \xc7\xa9\x0bVz\x0cO_\xff\x02$\xebZ5\x87a\'\x83\xe7\xe9BN\xb5\xa3Z3&\xa2\xa1\x10|\xfd(I\xd6\xb4kKm\x14-\xdc\xb6 \xc7\xaa\x0f\x9f\xa5\t:\xd6\x8dim\xa2\x85\xbb\x96\xc4\x18\xf5-A\x90\x98>~\x94$\xebZ5\xa9<\x85\xa2\x0f\x9f\xa5\t:\xd6\x8do\x07\xf0\xe3P|\xfd(I\xd6\xb4kJ{)ZQ\x91\'\xb1\x10|\xfd(I\xd6\xb4kW@\xd3)\xec\xa6\x0f\x9f\xa5\t:\xd6\x8dj\xe8\x1ae=\x94\xad\xdc\xb6 \xc7\xaa\x0f\x9f@\x86\x19\x08Z\xd2\xb1\'\xff\x13\xdcR-{\x1a\xdc!Z\x1b\t?\xd2\x9b\x8aE\xafc[\x84+]2j*\x11\xf4\xa6\xe2\x91k\xd8\xd6\xe1\n\xd8m\xa2\x85\xb8\x96\xc4\x18\xf5})\xb8\xa4Z\xf65\xb8B\xb6\x1bh\xa1n%\xb1\x06=Kg2\x13\xf4\xa6\xe2\x91k\xd8\xd6\xe1\n\xda\x0f!h\xfaSqH\xb5\xeckp\x85nG\xe4\xe3_Jn)\x16\xbd\x8dn\x10\xad\x84\xf6R\xb6\x11\x91\'\xb1\x1fJn)\x16\xbd\x8dn\x10\xad\xae\x81\xa6S\xd9O\xd2\x9b\x8aE\xafc[\x84+k\xa0i\x94\xf6R\xb7\x12\xd8\x83\x1e\xaf@\x92%\x87B\x16=\x86\x98\xd5,z\xcbQlZ\xb3\xd0bz\x91@\xe9*\xc7\xb0\xd3\x1a\xa5\x87E\x07\xf0\xb5g\xae\xda\xd1@\x90!\xeaIjJ\xc8)-\xb0\xc9\xf4\xb5g\xa0\xc4\xf5\xba\xb0\xbd\xad5\x85Y6Z\x84\x96E\x93\xea\xb2\xa1iOb\x9f\xe9\x04\xb0\xd5\xa7\xfd}\xd8Z\xcfbV\xb6\xc3(\xc4Lo\xb0u"\x81\xa4\xbc\x8b\x1a\x0bgr\xd9\xc0\xcc\x11\x15\xd8Z\xcfb\x7f@\x94%\x87B\x16=\x86\x98\xd5-aP{l!V\xac\xf4\x18\x9e\xbf\x86@\xe9*\xc82Kv\x03ESF@\x8c\xf2\xb7\x94!j\xec:JD\x98\xf5\x7f\x010@\x8b\xf2\xb4\xb6\x0e\x92\xacz\xd2c\xd4\x8f\x89\xdd\x0e\x8c\x1a\xb6\xe4\xc5\x93O\x0f(\xffV\xd3\x92\xfc\r\x880~~^\xd7M\xb93\xe5\x9a\xfe\x8c\x9a\x8f\xfb\x87\x8btUeh\xbc\xb4\xad\xda\x01]\xd9\x16`=\x9bW>\xe7\xf3\xeb\x9d8\\\xbbu\x91X\xe5\x19\xe4\xd9\x1d\xbd\xff?\x1c\xb3,#5\xe2h\xe3BS\xa9\x1a%\x10]k\x81\x1b\x97.\x838\x98\xa8\xfd\xc3\xcd:8\xb3\x7f\xdc\xc7\xefx\xc3\xf3\xfb8{e\xf3\xd4\xbc\xc78\xb4\xfe,\x0c\xb7\xbcb\x905mI\xb3E>\xcc[2\xf8\xe7\xc3\x9ef\xbfk\x93<\x98\x9c\x91\xc1\xec\xe7\x0ePI^:\xb4\xea\xc7\xa7>\xce\x95\xc6\xb6\x9e@\xdf\xdb\xa6^\x1fj\x17\xcdf\xb0\xa8\x83}\xa5\xfaPO\xad\x96\xda\x16\x10\x04\xda\x81f\xe3n\\i\x951h\xdf\xf6\xa5cL\xf01\xf6\xa4\x87\xa4f\xaa\x05\xe69\xe6\xa0\xab\x90\xf4\xfd\xa9\x8d)\xafUTz@\x85\x1d\tY\x1d\xc9\xa4\x9d\x98?\x9b\x8d4\xcf\xf3\xf6\xa5#\x80M\xbe \x00\x1fS\xb2\xb0\x9f\x83\xf9\xb8\xd3L\xff?jR8\x04\xdb\xe2\x00\x01R\x83\xa8\xf5\x17{\xad\xdcR-\x84\xa9$\xeb_*\x13\xf4\xa6\xe2\x91l%I\'[A\xe4/\xd2\x9b\x8aE\xb0\x95$\x9dm\xc6I~\xa1!\x0bZV\xc1Q\x0f!\xaa\x9b'
+2025-01-27 19:26:43,154 - DEBUG - Decoded 8, consumed 1 bytes
+2025-01-27 19:26:43,154 - DEBUG - Decoded (b':status', b'200'), consumed 1
+2025-01-27 19:26:43,154 - DEBUG - Decoded 31, consumed 1 bytes
+2025-01-27 19:26:43,154 - DEBUG - Decoded 22, consumed 1 bytes
+2025-01-27 19:26:43,155 - DEBUG - Decoded (b'content-type', b'application/json; charset=utf-8'), total consumed 24 bytes, indexed True
+2025-01-27 19:26:43,155 - DEBUG - Decoded 24, consumed 1 bytes
+2025-01-27 19:26:43,155 - DEBUG - Decoded 33, consumed 1 bytes
+2025-01-27 19:26:43,155 - DEBUG - Decoded (b'cache-control', b'no-cache, no-store, max-age=0, must-revalidate'), total consumed 35 bytes, indexed True
+2025-01-27 19:26:43,155 - DEBUG - Decoded 5, consumed 1 bytes
+2025-01-27 19:26:43,155 - DEBUG - Decoded 6, consumed 1 bytes
+2025-01-27 19:26:43,155 - DEBUG - Decoded (b'pragma', b'no-cache'), total consumed 14 bytes, indexed True
+2025-01-27 19:26:43,155 - DEBUG - Decoded 36, consumed 1 bytes
+2025-01-27 19:26:43,155 - DEBUG - Decoded 22, consumed 1 bytes
+2025-01-27 19:26:43,155 - DEBUG - Decoded (b'expires', b'Mon, 01 Jan 1990 00:00:00 GMT'), total consumed 24 bytes, indexed True
+2025-01-27 19:26:43,155 - DEBUG - Decoded 33, consumed 2 bytes
+2025-01-27 19:26:43,155 - DEBUG - Decoded 22, consumed 1 bytes
+2025-01-27 19:26:43,155 - DEBUG - Decoded (b'date', b'Mon, 27 Jan 2025 13:56:43 GMT'), total consumed 25 bytes, indexed False
+2025-01-27 19:26:43,155 - DEBUG - Decoded 25, consumed 1 bytes
+2025-01-27 19:26:43,155 - DEBUG - Decoded 50, consumed 1 bytes
+2025-01-27 19:26:43,156 - DEBUG - Decoded (b'content-disposition', b'attachment; filename="response.bin"; filename*=UTF-8\'\'response.bin'), total consumed 52 bytes, indexed True
+2025-01-27 19:26:43,156 - DEBUG - Decoded 16, consumed 1 bytes
+2025-01-27 19:26:43,156 - DEBUG - Decoded 5, consumed 1 bytes
+2025-01-27 19:26:43,156 - DEBUG - Decoded (b'x-content-type-options', b'nosniff'), total consumed 24 bytes, indexed True
+2025-01-27 19:26:43,156 - DEBUG - Decoded 3, consumed 1 bytes
+2025-01-27 19:26:43,156 - DEBUG - Decoded 47, consumed 1 bytes
+2025-01-27 19:26:43,156 - DEBUG - Decoded (<memory at 0x0000020E85EC13C0>, b'CP="This is not a P3P policy! See g.co/p3phelp for more info."'), total consumed 53 bytes, indexed True
+2025-01-27 19:26:43,156 - DEBUG - Decoded 13, consumed 1 bytes
+2025-01-27 19:26:43,156 - DEBUG - Decoded 129, consumed 2 bytes
+2025-01-27 19:26:43,156 - DEBUG - Decoded (b'permissions-policy', b'ch-ua-arch=*, ch-ua-bitness=*, ch-ua-full-version=*, ch-ua-full-version-list=*, ch-ua-model=*, ch-ua-wow64=*, ch-ua-form-factors=*, ch-ua-platform=*, ch-ua-platform-version=*'), total consumed 146 bytes, indexed True
+2025-01-27 19:26:43,156 - DEBUG - Decoded 6, consumed 1 bytes
+2025-01-27 19:26:43,156 - DEBUG - Decoded 146, consumed 2 bytes
+2025-01-27 19:26:43,156 - DEBUG - Decoded (b'accept-ch', b'Sec-CH-UA-Arch, Sec-CH-UA-Bitness, Sec-CH-UA-Full-Version, Sec-CH-UA-Full-Version-List, Sec-CH-UA-Model, Sec-CH-UA-WoW64, Sec-CH-UA-Form-Factors, Sec-CH-UA-Platform, Sec-CH-UA-Platform-Version'), total consumed 156 bytes, indexed True
+2025-01-27 19:26:43,157 - DEBUG - Decoded 18, consumed 1 bytes
+2025-01-27 19:26:43,157 - DEBUG - Decoded 17, consumed 1 bytes
+2025-01-27 19:26:43,157 - DEBUG - Decoded (b'cross-origin-opener-policy', b'same-origin-allow-popups'), total consumed 38 bytes, indexed True
+2025-01-27 19:26:43,157 - DEBUG - Decoded 16, consumed 1 bytes
+2025-01-27 19:26:43,157 - DEBUG - Decoded 58, consumed 1 bytes
+2025-01-27 19:26:43,157 - DEBUG - Decoded (b'content-security-policy', b"require-trusted-types-for 'script';report-uri /_/TranslateWebserverUi/cspreport"), total consumed 77 bytes, indexed True
+2025-01-27 19:26:43,157 - DEBUG - Decoded 20, consumed 1 bytes
+2025-01-27 19:26:43,157 - DEBUG - Decoded 6, consumed 1 bytes
+2025-01-27 19:26:43,157 - DEBUG - Decoded (b'cross-origin-resource-policy', b'same-site'), total consumed 29 bytes, indexed True
+2025-01-27 19:26:43,157 - DEBUG - Decoded 54, consumed 1 bytes
+2025-01-27 19:26:43,157 - DEBUG - Decoded 3, consumed 1 bytes
+2025-01-27 19:26:43,157 - DEBUG - Decoded (b'server', <memory at 0x0000020E85EC1900>), total consumed 5 bytes, indexed True
+2025-01-27 19:26:43,157 - DEBUG - Decoded 12, consumed 1 bytes
+2025-01-27 19:26:43,158 - DEBUG - Decoded 1, consumed 1 bytes
+2025-01-27 19:26:43,158 - DEBUG - Decoded (b'x-xss-protection', <memory at 0x0000020E85EC16C0>), total consumed 16 bytes, indexed True
+2025-01-27 19:26:43,158 - DEBUG - Decoded 11, consumed 1 bytes
+2025-01-27 19:26:43,158 - DEBUG - Decoded 9, consumed 1 bytes
+2025-01-27 19:26:43,158 - DEBUG - Decoded (b'x-frame-options', b'SAMEORIGIN'), total consumed 23 bytes, indexed True
+2025-01-27 19:26:43,158 - DEBUG - Decoded 55, consumed 2 bytes
+2025-01-27 19:26:43,158 - DEBUG - Decoded 213, consumed 2 bytes
+2025-01-27 19:26:43,158 - DEBUG - Decoded (b'set-cookie', b'NID=521=XXCPmuILJgDMIOoZFV5lnrpsC-f5u02BQ_K08KOYvoxyYmF6BB32r6lLdQbuvXX6rJAaiCcMVlttOsMf2174Uc5fJMi6t_lZFYtMV3DzgovCiaxZh1qJxkeYah2NX-0JCwGd1nRtiK_hQGQJwYUYK4ZpdLdG6d6aQYAJ0dpHnNOHNLQjpb-NW0TqjJU; expires=Tue, 29-Jul-2025 13:56:43 GMT; path=/; domain=.google.com; HttpOnly'), total consumed 217 bytes, indexed False
+2025-01-27 19:26:43,158 - DEBUG - Decoded 5, consumed 1 bytes
+2025-01-27 19:26:43,158 - DEBUG - Decoded 36, consumed 1 bytes
+2025-01-27 19:26:43,158 - DEBUG - Decoded (b'alt-svc', b'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000'), total consumed 44 bytes, indexed True
+2025-01-27 19:26:43,158 - DEBUG - Decoded 18, consumed 1 bytes
+2025-01-27 19:26:43,158 - DEBUG - Decoded 3, consumed 1 bytes
+2025-01-27 19:26:43,158 - DEBUG - Decoded (b'accept-ranges', b'none'), total consumed 5 bytes, indexed True
+2025-01-27 19:26:43,159 - DEBUG - Decoded 59, consumed 1 bytes
+2025-01-27 19:26:43,159 - DEBUG - Decoded 45, consumed 1 bytes
+2025-01-27 19:26:43,159 - DEBUG - Decoded (b'vary', b'Sec-Fetch-Dest, Sec-Fetch-Mode, Sec-Fetch-Site,Accept-Encoding'), total consumed 47 bytes, indexed True
+2025-01-27 19:26:43,159 - DEBUG - HTTP Request: POST https://translate.google.com/_/TranslateWebserverUi/data/batchexecute?rpcids=MkEWBc&bl=boq_translate-webserver_20201207.13_p0&soc-app=1&soc-platform=1&soc-device=1&rt=c "HTTP/2 200 OK"
+2025-01-27 19:26:43,252 - DEBUG - HPACK encoding <generator object _check_path_header.<locals>.inner at 0x0000020EFFD1FE00>
+2025-01-27 19:26:43,252 - DEBUG - Adding (b':method', b'POST') to the header table
+2025-01-27 19:26:43,252 - DEBUG - Encoding 3 with 7 bits
+2025-01-27 19:26:43,252 - DEBUG - Adding (b':authority', b'translate.google.com') to the header table
+2025-01-27 19:26:43,252 - DEBUG - Encoding 1 with 6 bits
+2025-01-27 19:26:43,252 - DEBUG - Encoding 14 with 7 bits
+2025-01-27 19:26:43,252 - DEBUG - Adding (b':scheme', b'https') to the header table
+2025-01-27 19:26:43,252 - DEBUG - Encoding 7 with 7 bits
+2025-01-27 19:26:43,253 - DEBUG - Adding (b':path', b'/_/TranslateWebserverUi/data/batchexecute?rpcids=MkEWBc&bl=boq_translate-webserver_20201207.13_p0&soc-app=1&soc-platform=1&soc-device=1&rt=c') to the header table
+2025-01-27 19:26:43,253 - DEBUG - Encoding 4 with 6 bits
+2025-01-27 19:26:43,253 - DEBUG - Encoding 101 with 7 bits
+2025-01-27 19:26:43,253 - DEBUG - Adding (b'accept', b'*/*') to the header table
+2025-01-27 19:26:43,253 - DEBUG - Encoding 19 with 6 bits
+2025-01-27 19:26:43,253 - DEBUG - Encoding 3 with 7 bits
+2025-01-27 19:26:43,253 - DEBUG - Adding (b'accept-encoding', b'gzip, deflate') to the header table
+2025-01-27 19:26:43,253 - DEBUG - Encoding 16 with 7 bits
+2025-01-27 19:26:43,253 - DEBUG - Adding (b'user-agent', b'Mozilla/5.0 (Windows NT 10.0; Win64; x64)') to the header table
+2025-01-27 19:26:43,253 - DEBUG - Encoding 58 with 6 bits
+2025-01-27 19:26:43,253 - DEBUG - Encoding 32 with 7 bits
+2025-01-27 19:26:43,253 - DEBUG - Adding (b'referer', b'https://translate.google.com') to the header table
+2025-01-27 19:26:43,253 - DEBUG - Encoding 51 with 6 bits
+2025-01-27 19:26:43,253 - DEBUG - Encoding 20 with 7 bits
+2025-01-27 19:26:43,253 - DEBUG - Adding (b'cookie', b'NID=521=XXCPmuILJgDMIOoZFV5lnrpsC-f5u02BQ_K08KOYvoxyYmF6BB32r6lLdQbuvXX6rJAaiCcMVlttOsMf2174Uc5fJMi6t_lZFYtMV3DzgovCiaxZh1qJxkeYah2NX-0JCwGd1nRtiK_hQGQJwYUYK4ZpdLdG6d6aQYAJ0dpHnNOHNLQjpb-NW0TqjJU') to the header table
+2025-01-27 19:26:43,254 - DEBUG - Encoding 32 with 6 bits
+2025-01-27 19:26:43,254 - DEBUG - Encoding 156 with 7 bits
+2025-01-27 19:26:43,254 - DEBUG - Adding (b'content-length', b'154') to the header table
+2025-01-27 19:26:43,254 - DEBUG - Encoding 28 with 6 bits
+2025-01-27 19:26:43,254 - DEBUG - Encoding 3 with 7 bits
+2025-01-27 19:26:43,254 - DEBUG - Adding (b'content-type', b'application/x-www-form-urlencoded') to the header table
+2025-01-27 19:26:43,254 - DEBUG - Encoding 31 with 6 bits
+2025-01-27 19:26:43,254 - DEBUG - Encoding 24 with 7 bits
+2025-01-27 19:26:43,254 - DEBUG - Encoded header block to b"\x83A\x8eM\x83\xa9\x14\r%^c\x9ej\n\xb9\x0fO\x87D\xe5b&7\xd8:\x91@\xd2^E\x8d\x05\xb3\xb9l\xe0f$\x1aF\xc4cI'/\x92\x92\xd4\x97\xfc\xb2\xb2\x1aDA\xa3\xae\x0eWI\xf1\x1d\x10F~\xd1&\xc1\xd4\x8a\x06\x92\xad\xe0\xb1\xa0\xb6w-\x91\x08\x02\x00D\x07W\x0b1V\x0f\x84\x1c\x8b\x0e\xba\xe0\x0f\xc2\x0eE\xab\xa0i\x94\xf6S\x00~\x10r-!{\x98\x85\x80?\x16&\x02\x7fS\x83\xf9c\xe7\x90z\xa0\xd0\x7ff\xa2\x81\xb0\xda\xe0S\xfa\xe4j\xa4?\x84)\xa7z\x81\x02\xe0\xfbS\x91\xaaq\xaf\xb5<\xb8\xd7\xf7s\x94\x9d)\xad\x17\x18a6\x0e\xa4P4\x95y\x8ey\xa8*\xe4=?`\xff\x1d\xd3\x92\xfc\r\x880~~^\xd7M\xb93\xe5\x9a\xfe\x8c\x9a\x8f\xfb\x87\x8btUeh\xbc\xb4\xad\xda\x01]\xd9\x16`=\x9bW>\xe7\xf3\xeb\x9d8\\\xbbu\x91X\xe5\x19\xe4\xd9\x1d\xbd\xff?\x1c\xb3,#5\xe2h\xe3BS\xa9\x1a%\x10]k\x81\x1b\x97.\x838\x98\xa8\xfd\xc3\xcd:8\xb3\x7f\xdc\xc7\xefx\xc3\xf3\xfb8{e\xf3\xd4\xbc\xc78\xb4\xfe,\x0c\xb7\xbcb\x905mI\xb3E>\xcc[2\xf8\xe7\xc3\x9ef\xbfk\x93<\x98\x9c\x91\xc1\xec\xe7\x0ePI^:\xb4\xea\xc7\xa7>\xce\x95\xc6\xb6\x9e@\xdf\xdb\xa6^\x1f\\\x83\x0bm\x7f_\x98\x1du\xd0b\r&=Ly[\xc7\x8f\x0bJ{)Z\xdb(-D<\x85\x93"
+2025-01-27 19:26:44,819 - DEBUG - Decoding b'\x88_\x96\x1du\xd0b\r&=LtA\xea\xfbP\x93\x8e\xc4\x150Z\x99V{X\xa1\xa8\xeb\x10d\x9c\xbfJTu\x90\x93\xd8_\xa5)\x1f\x95\x871`\x07\xd2\x94\xda\x84\xada{\x8e\x83H4\x97@\x85\xae\xc1\xcdH\xff\x86\xa8\xeb\x10d\x9c\xbfd\x96\xd0z\xbe\x94\x00T\xca:\x94\x0b\xef\x81@\x02\xe0\x01p\x00S\x16\x8d\xff\x0f\x12\x96\xd0z\xbe\x94\x13\xaae\x1dJ\x08\x02m@\xb3q\xb7.4\xd2\x98\xb4oY\xb2\x1aR2OIjO\xda\x92\x9a\x82\xd4:K\x07\xf3aQY\xeaAW\x8c\xd5\x7f?jJj\x0bP\xe9/\xcc\x1c7\xe1Y\xef\xf5\xfe\xac*+=H*\xf1\x9a\xaf@\x90\xf2\xb1\x0fRKRVO\xaa\xca\xb1\xebI\x8fR?\x85\xa8\xe8\xa8\xd2\xcb@\x86\x19\x08Z\xd2\xb1\'\xff\x13\xdcR-{\x1a\xdc!Z\x1b\t?\xd2\x9b\x8aE\xafc[\x84+]2j*\x11\xf4\xa6\xe2\x91k\xd8\xd6\xe1\n\xd8m\xa2\x85\xb8\x96\xc4\x18\xf5})\xb8\xa4Z\xf65\xb8B\xb6\x1bh\xa1n%\xb1\x06=Kg2\x13\xf4\xa6\xe2\x91k\xd8\xd6\xe1\n\xda\x0f!h\xfaSqH\xb5\xeckp\x85nG\xe4\xe3_Jn)\x16\xbd\x8dn\x10\xad\x84\xf6R\xb6\x11\x91\'\xb1\x1fJn)\x16\xbd\x8dn\x10\xad\xae\x81\xa6S\xd9O\xd2\x9b\x8aE\xafc[\x84+k\xa0i\x94\xf6R\xb7\x12\xd8\x83\x1e\xaf@\x90!\xeaIjJ\xc8)-\xb0\xc9\xf4\xb5g\xa0\xc4\xf5\xba\xb0\xbd\xad5\x85Y6Z\x84\x96E\x93\xea\xb2\xa1iOb\x9f\xe9\x04\xb0\xd5\xa7\xfd}\xd8Z\xcfbV\xb6\xc3(\xc4Lo\xb0u"\x81\xa4\xbc\x8b\x1a\x0bgr\xd9\xc0\xcc\x11\x15\xd8Z\xcfb\x7f@\x92%\x87B\x16=\x86\x98\xd5,z\xcbQlZ\xb3\xd0bz\x91@\xe9*\xc7\xb0\xd3\x1a\xa5\x87E\x07\xf0\xb5g\xae\xda\xd1@\x8d\xac\xb6Rd \xc7\xa9\x0bVz\x0cO_\xff\x02$\xebZ5\x87a\'\x83\xe7\xe9BN\xb5\xa3Z3&\xa2\xa1\x10|\xfd(I\xd6\xb4kKm\x14-\xdc\xb6 \xc7\xaa\x0f\x9f\xa5\t:\xd6\x8dim\xa2\x85\xbb\x96\xc4\x18\xf5-A\x90\x98>~\x94$\xebZ5\xa9<\x85\xa2\x0f\x9f\xa5\t:\xd6\x8do\x07\xf0\xe3P|\xfd(I\xd6\xb4kJ{)ZQ\x91\'\xb1\x10|\xfd(I\xd6\xb4kW@\xd3)\xec\xa6\x0f\x9f\xa5\t:\xd6\x8dj\xe8\x1ae=\x94\xad\xdc\xb6 \xc7\xaa\x0f\x9f@\x94%\x87B\x16=\x86\x98\xd5-aP{l!V\xac\xf4\x18\x9e\xbf\x86@\xe9*\xc82Kv\x03ESF@\x8c\xf2\xb7\x94!j\xec:JD\x98\xf5\x7f\x010@\x8b\xf2\xb4\xb6\x0e\x92\xacz\xd2c\xd4\x8f\x89\xdd\x0e\x8c\x1a\xb6\xe4\xc5\x93O@\x85\x1d\tY\x1d\xc9\xa4\x9d\x98?\x9b\x8d4\xcf\xf3\xf6\xa5#\x80M\xbe \x00\x1fS\xb2\xb0\x9f\x83\xf9\xb8\xd3L\xff?jR8\x04\xdb\xe2\x00\x01R\x83\xa8\xf5\x17{\xad\xdcR-\x84\xa9$\xeb_*\x13\xf4\xa6\xe2\x91l%I\'[A\xe4/\xd2\x9b\x8aE\xb0\x95$\x9dm\xc6I~\xa1!\x0bZV\xc1Q\x0f!\xaa\x9b'
+2025-01-27 19:26:44,819 - DEBUG - Decoded 8, consumed 1 bytes
+2025-01-27 19:26:44,820 - DEBUG - Decoded (b':status', b'200'), consumed 1
+2025-01-27 19:26:44,820 - DEBUG - Decoded 31, consumed 1 bytes
+2025-01-27 19:26:44,820 - DEBUG - Decoded 22, consumed 1 bytes
+2025-01-27 19:26:44,820 - DEBUG - Decoded (b'content-type', b'application/json; charset=utf-8'), total consumed 24 bytes, indexed True
+2025-01-27 19:26:44,820 - DEBUG - Decoded 24, consumed 1 bytes
+2025-01-27 19:26:44,820 - DEBUG - Decoded 33, consumed 1 bytes
+2025-01-27 19:26:44,821 - DEBUG - Decoded (b'cache-control', b'no-cache, no-store, max-age=0, must-revalidate'), total consumed 35 bytes, indexed True
+2025-01-27 19:26:44,821 - DEBUG - Decoded 5, consumed 1 bytes
+2025-01-27 19:26:44,821 - DEBUG - Decoded 6, consumed 1 bytes
+2025-01-27 19:26:44,821 - DEBUG - Decoded (b'pragma', b'no-cache'), total consumed 14 bytes, indexed True
+2025-01-27 19:26:44,821 - DEBUG - Decoded 36, consumed 1 bytes
+2025-01-27 19:26:44,821 - DEBUG - Decoded 22, consumed 1 bytes
+2025-01-27 19:26:44,821 - DEBUG - Decoded (b'expires', b'Mon, 01 Jan 1990 00:00:00 GMT'), total consumed 24 bytes, indexed True
+2025-01-27 19:26:44,821 - DEBUG - Decoded 33, consumed 2 bytes
+2025-01-27 19:26:44,822 - DEBUG - Decoded 22, consumed 1 bytes
+2025-01-27 19:26:44,822 - DEBUG - Decoded (b'date', b'Mon, 27 Jan 2025 13:56:44 GMT'), total consumed 25 bytes, indexed False
+2025-01-27 19:26:44,822 - DEBUG - Decoded 25, consumed 1 bytes
+2025-01-27 19:26:44,822 - DEBUG - Decoded 50, consumed 1 bytes
+2025-01-27 19:26:44,822 - DEBUG - Decoded (b'content-disposition', b'attachment; filename="response.bin"; filename*=UTF-8\'\'response.bin'), total consumed 52 bytes, indexed True
+2025-01-27 19:26:44,822 - DEBUG - Decoded 16, consumed 1 bytes
+2025-01-27 19:26:44,822 - DEBUG - Decoded 5, consumed 1 bytes
+2025-01-27 19:26:44,823 - DEBUG - Decoded (b'x-content-type-options', b'nosniff'), total consumed 24 bytes, indexed True
+2025-01-27 19:26:44,823 - DEBUG - Decoded 6, consumed 1 bytes
+2025-01-27 19:26:44,823 - DEBUG - Decoded 146, consumed 2 bytes
+2025-01-27 19:26:44,823 - DEBUG - Decoded (b'accept-ch', b'Sec-CH-UA-Arch, Sec-CH-UA-Bitness, Sec-CH-UA-Full-Version, Sec-CH-UA-Full-Version-List, Sec-CH-UA-Model, Sec-CH-UA-WoW64, Sec-CH-UA-Form-Factors, Sec-CH-UA-Platform, Sec-CH-UA-Platform-Version'), total consumed 156 bytes, indexed True
+2025-01-27 19:26:44,823 - DEBUG - Decoded 16, consumed 1 bytes
+2025-01-27 19:26:44,823 - DEBUG - Decoded 58, consumed 1 bytes
+2025-01-27 19:26:44,824 - DEBUG - Decoded (b'content-security-policy', b"require-trusted-types-for 'script';report-uri /_/TranslateWebserverUi/cspreport"), total consumed 77 bytes, indexed True
+2025-01-27 19:26:44,824 - DEBUG - Decoded 18, consumed 1 bytes
+2025-01-27 19:26:44,824 - DEBUG - Decoded 17, consumed 1 bytes
+2025-01-27 19:26:44,824 - DEBUG - Decoded (b'cross-origin-opener-policy', b'same-origin-allow-popups'), total consumed 38 bytes, indexed True
+2025-01-27 19:26:44,824 - DEBUG - Decoded 13, consumed 1 bytes
+2025-01-27 19:26:44,824 - DEBUG - Decoded 129, consumed 2 bytes
+2025-01-27 19:26:44,824 - DEBUG - Decoded (b'permissions-policy', b'ch-ua-arch=*, ch-ua-bitness=*, ch-ua-full-version=*, ch-ua-full-version-list=*, ch-ua-model=*, ch-ua-wow64=*, ch-ua-form-factors=*, ch-ua-platform=*, ch-ua-platform-version=*'), total consumed 146 bytes, indexed True
+2025-01-27 19:26:44,825 - DEBUG - Decoded 20, consumed 1 bytes
+2025-01-27 19:26:44,825 - DEBUG - Decoded 6, consumed 1 bytes
+2025-01-27 19:26:44,825 - DEBUG - Decoded (b'cross-origin-resource-policy', b'same-site'), total consumed 29 bytes, indexed True
+2025-01-27 19:26:44,825 - DEBUG - Decoded 54, consumed 1 bytes
+2025-01-27 19:26:44,825 - DEBUG - Decoded 3, consumed 1 bytes
+2025-01-27 19:26:44,825 - DEBUG - Decoded (b'server', <memory at 0x0000020E85EC1180>), total consumed 5 bytes, indexed True
+2025-01-27 19:26:44,825 - DEBUG - Decoded 12, consumed 1 bytes
+2025-01-27 19:26:44,825 - DEBUG - Decoded 1, consumed 1 bytes
+2025-01-27 19:26:44,825 - DEBUG - Decoded (b'x-xss-protection', <memory at 0x0000020E85EC19C0>), total consumed 16 bytes, indexed True
+2025-01-27 19:26:44,825 - DEBUG - Decoded 11, consumed 1 bytes
+2025-01-27 19:26:44,826 - DEBUG - Decoded 9, consumed 1 bytes
+2025-01-27 19:26:44,826 - DEBUG - Decoded (b'x-frame-options', b'SAMEORIGIN'), total consumed 23 bytes, indexed True
+2025-01-27 19:26:44,826 - DEBUG - Decoded 5, consumed 1 bytes
+2025-01-27 19:26:44,826 - DEBUG - Decoded 36, consumed 1 bytes
+2025-01-27 19:26:44,826 - DEBUG - Decoded (b'alt-svc', b'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000'), total consumed 44 bytes, indexed True
+2025-01-27 19:26:44,826 - DEBUG - Decoded 18, consumed 1 bytes
+2025-01-27 19:26:44,826 - DEBUG - Decoded 3, consumed 1 bytes
+2025-01-27 19:26:44,826 - DEBUG - Decoded (b'accept-ranges', b'none'), total consumed 5 bytes, indexed True
+2025-01-27 19:26:44,827 - DEBUG - Decoded 59, consumed 1 bytes
+2025-01-27 19:26:44,827 - DEBUG - Decoded 45, consumed 1 bytes
+2025-01-27 19:26:44,827 - DEBUG - Decoded (b'vary', b'Sec-Fetch-Dest, Sec-Fetch-Mode, Sec-Fetch-Site,Accept-Encoding'), total consumed 47 bytes, indexed True
+2025-01-27 19:26:44,827 - DEBUG - HTTP Request: POST https://translate.google.com/_/TranslateWebserverUi/data/batchexecute?rpcids=MkEWBc&bl=boq_translate-webserver_20201207.13_p0&soc-app=1&soc-platform=1&soc-device=1&rt=c "HTTP/2 200 OK"
+2025-01-27 19:26:44,933 - DEBUG - HPACK encoding <generator object _check_path_header.<locals>.inner at 0x0000020EFFE08790>
+2025-01-27 19:26:44,934 - DEBUG - Adding (b':method', b'POST') to the header table
+2025-01-27 19:26:44,934 - DEBUG - Encoding 3 with 7 bits
+2025-01-27 19:26:44,934 - DEBUG - Adding (b':authority', b'translate.google.com') to the header table
+2025-01-27 19:26:44,934 - DEBUG - Encoding 1 with 6 bits
+2025-01-27 19:26:44,934 - DEBUG - Encoding 14 with 7 bits
+2025-01-27 19:26:44,934 - DEBUG - Adding (b':scheme', b'https') to the header table
+2025-01-27 19:26:44,934 - DEBUG - Encoding 7 with 7 bits
+2025-01-27 19:26:44,935 - DEBUG - Adding (b':path', b'/_/TranslateWebserverUi/data/batchexecute?rpcids=MkEWBc&bl=boq_translate-webserver_20201207.13_p0&soc-app=1&soc-platform=1&soc-device=1&rt=c') to the header table
+2025-01-27 19:26:44,935 - DEBUG - Encoding 4 with 6 bits
+2025-01-27 19:26:44,935 - DEBUG - Encoding 101 with 7 bits
+2025-01-27 19:26:44,935 - DEBUG - Adding (b'accept', b'*/*') to the header table
+2025-01-27 19:26:44,935 - DEBUG - Encoding 19 with 6 bits
+2025-01-27 19:26:44,935 - DEBUG - Encoding 3 with 7 bits
+2025-01-27 19:26:44,935 - DEBUG - Adding (b'accept-encoding', b'gzip, deflate') to the header table
+2025-01-27 19:26:44,935 - DEBUG - Encoding 16 with 7 bits
+2025-01-27 19:26:44,935 - DEBUG - Adding (b'user-agent', b'Mozilla/5.0 (Windows NT 10.0; Win64; x64)') to the header table
+2025-01-27 19:26:44,935 - DEBUG - Encoding 58 with 6 bits
+2025-01-27 19:26:44,935 - DEBUG - Encoding 32 with 7 bits
+2025-01-27 19:26:44,935 - DEBUG - Adding (b'referer', b'https://translate.google.com') to the header table
+2025-01-27 19:26:44,936 - DEBUG - Encoding 51 with 6 bits
+2025-01-27 19:26:44,936 - DEBUG - Encoding 20 with 7 bits
+2025-01-27 19:26:44,936 - DEBUG - Adding (b'cookie', b'NID=521=XXCPmuILJgDMIOoZFV5lnrpsC-f5u02BQ_K08KOYvoxyYmF6BB32r6lLdQbuvXX6rJAaiCcMVlttOsMf2174Uc5fJMi6t_lZFYtMV3DzgovCiaxZh1qJxkeYah2NX-0JCwGd1nRtiK_hQGQJwYUYK4ZpdLdG6d6aQYAJ0dpHnNOHNLQjpb-NW0TqjJU') to the header table
+2025-01-27 19:26:44,936 - DEBUG - Encoding 32 with 6 bits
+2025-01-27 19:26:44,936 - DEBUG - Encoding 156 with 7 bits
+2025-01-27 19:26:44,936 - DEBUG - Adding (b'content-length', b'165') to the header table
+2025-01-27 19:26:44,936 - DEBUG - Encoding 28 with 6 bits
+2025-01-27 19:26:44,936 - DEBUG - Encoding 3 with 7 bits
+2025-01-27 19:26:44,936 - DEBUG - Adding (b'content-type', b'application/x-www-form-urlencoded') to the header table
+2025-01-27 19:26:44,936 - DEBUG - Encoding 31 with 6 bits
+2025-01-27 19:26:44,936 - DEBUG - Encoding 24 with 7 bits
+2025-01-27 19:26:44,936 - DEBUG - Encoded header block to b"\x83A\x8eM\x83\xa9\x14\r%^c\x9ej\n\xb9\x0fO\x87D\xe5b&7\xd8:\x91@\xd2^E\x8d\x05\xb3\xb9l\xe0f$\x1aF\xc4cI'/\x92\x92\xd4\x97\xfc\xb2\xb2\x1aDA\xa3\xae\x0eWI\xf1\x1d\x10F~\xd1&\xc1\xd4\x8a\x06\x92\xad\xe0\xb1\xa0\xb6w-\x91\x08\x02\x00D\x07W\x0b1V\x0f\x84\x1c\x8b\x0e\xba\xe0\x0f\xc2\x0eE\xab\xa0i\x94\xf6S\x00~\x10r-!{\x98\x85\x80?\x16&\x02\x7fS\x83\xf9c\xe7\x90z\xa0\xd0\x7ff\xa2\x81\xb0\xda\xe0S\xfa\xe4j\xa4?\x84)\xa7z\x81\x02\xe0\xfbS\x91\xaaq\xaf\xb5<\xb8\xd7\xf7s\x94\x9d)\xad\x17\x18a6\x0e\xa4P4\x95y\x8ey\xa8*\xe4=?`\xff\x1d\xd3\x92\xfc\r\x880~~^\xd7M\xb93\xe5\x9a\xfe\x8c\x9a\x8f\xfb\x87\x8btUeh\xbc\xb4\xad\xda\x01]\xd9\x16`=\x9bW>\xe7\xf3\xeb\x9d8\\\xbbu\x91X\xe5\x19\xe4\xd9\x1d\xbd\xff?\x1c\xb3,#5\xe2h\xe3BS\xa9\x1a%\x10]k\x81\x1b\x97.\x838\x98\xa8\xfd\xc3\xcd:8\xb3\x7f\xdc\xc7\xefx\xc3\xf3\xfb8{e\xf3\xd4\xbc\xc78\xb4\xfe,\x0c\xb7\xbcb\x905mI\xb3E>\xcc[2\xf8\xe7\xc3\x9ef\xbfk\x93<\x98\x9c\x91\xc1\xec\xe7\x0ePI^:\xb4\xea\xc7\xa7>\xce\x95\xc6\xb6\x9e@\xdf\xdb\xa6^\x1f\\\x83\x0b\x8d\xff_\x98\x1du\xd0b\r&=Ly[\xc7\x8f\x0bJ{)Z\xdb(-D<\x85\x93"
+2025-01-27 19:26:45,455 - DEBUG - Decoding b'\x88_\x96\x1du\xd0b\r&=LtA\xea\xfbP\x93\x8e\xc4\x150Z\x99V{X\xa1\xa8\xeb\x10d\x9c\xbfJTu\x90\x93\xd8_\xa5)\x1f\x95\x871`\x07\xd2\x94\xda\x84\xada{\x8e\x83H4\x97@\x85\xae\xc1\xcdH\xff\x86\xa8\xeb\x10d\x9c\xbfd\x96\xd0z\xbe\x94\x00T\xca:\x94\x0b\xef\x81@\x02\xe0\x01p\x00S\x16\x8d\xff\x0f\x12\x96\xd0z\xbe\x94\x13\xaae\x1dJ\x08\x02m@\xb3q\xb7.4\xda\x98\xb4oY\xb2\x1aR2OIjO\xda\x92\x9a\x82\xd4:K\x07\xf3aQY\xeaAW\x8c\xd5\x7f?jJj\x0bP\xe9/\xcc\x1c7\xe1Y\xef\xf5\xfe\xac*+=H*\xf1\x9a\xaf@\x90\xf2\xb1\x0fRKRVO\xaa\xca\xb1\xebI\x8fR?\x85\xa8\xe8\xa8\xd2\xcb@\x92%\x87B\x16=\x86\x98\xd5,z\xcbQlZ\xb3\xd0bz\x91@\xe9*\xc7\xb0\xd3\x1a\xa5\x87E\x07\xf0\xb5g\xae\xda\xd1@\x8d\xac\xb6Rd \xc7\xa9\x0bVz\x0cO_\xff\x02$\xebZ5\x87a\'\x83\xe7\xe9BN\xb5\xa3Z3&\xa2\xa1\x10|\xfd(I\xd6\xb4kKm\x14-\xdc\xb6 \xc7\xaa\x0f\x9f\xa5\t:\xd6\x8dim\xa2\x85\xbb\x96\xc4\x18\xf5-A\x90\x98>~\x94$\xebZ5\xa9<\x85\xa2\x0f\x9f\xa5\t:\xd6\x8do\x07\xf0\xe3P|\xfd(I\xd6\xb4kJ{)ZQ\x91\'\xb1\x10|\xfd(I\xd6\xb4kW@\xd3)\xec\xa6\x0f\x9f\xa5\t:\xd6\x8dj\xe8\x1ae=\x94\xad\xdc\xb6 \xc7\xaa\x0f\x9f@\x94%\x87B\x16=\x86\x98\xd5-aP{l!V\xac\xf4\x18\x9e\xbf\x86@\xe9*\xc82K@\x90!\xeaIjJ\xc8)-\xb0\xc9\xf4\xb5g\xa0\xc4\xf5\xba\xb0\xbd\xad5\x85Y6Z\x84\x96E\x93\xea\xb2\xa1iOb\x9f\xe9\x04\xb0\xd5\xa7\xfd}\xd8Z\xcfbV\xb6\xc3(\xc4Lo\xb0u"\x81\xa4\xbc\x8b\x1a\x0bgr\xd9\xc0\xcc\x11\x15\xd8Z\xcfb\x7f@\x86\x19\x08Z\xd2\xb1\'\xff\x13\xdcR-{\x1a\xdc!Z\x1b\t?\xd2\x9b\x8aE\xafc[\x84+]2j*\x11\xf4\xa6\xe2\x91k\xd8\xd6\xe1\n\xd8m\xa2\x85\xb8\x96\xc4\x18\xf5})\xb8\xa4Z\xf65\xb8B\xb6\x1bh\xa1n%\xb1\x06=Kg2\x13\xf4\xa6\xe2\x91k\xd8\xd6\xe1\n\xda\x0f!h\xfaSqH\xb5\xeckp\x85nG\xe4\xe3_Jn)\x16\xbd\x8dn\x10\xad\x84\xf6R\xb6\x11\x91\'\xb1\x1fJn)\x16\xbd\x8dn\x10\xad\xae\x81\xa6S\xd9O\xd2\x9b\x8aE\xafc[\x84+k\xa0i\x94\xf6R\xb7\x12\xd8\x83\x1e\xafv\x03ESF@\x8c\xf2\xb7\x94!j\xec:JD\x98\xf5\x7f\x010@\x8b\xf2\xb4\xb6\x0e\x92\xacz\xd2c\xd4\x8f\x89\xdd\x0e\x8c\x1a\xb6\xe4\xc5\x93O@\x85\x1d\tY\x1d\xc9\xa4\x9d\x98?\x9b\x8d4\xcf\xf3\xf6\xa5#\x80M\xbe \x00\x1fS\xb2\xb0\x9f\x83\xf9\xb8\xd3L\xff?jR8\x04\xdb\xe2\x00\x01R\x83\xa8\xf5\x17{\xad\xdcR-\x84\xa9$\xeb_*\x13\xf4\xa6\xe2\x91l%I\'[A\xe4/\xd2\x9b\x8aE\xb0\x95$\x9dm\xc6I~\xa1!\x0bZV\xc1Q\x0f!\xaa\x9b'
+2025-01-27 19:26:45,456 - DEBUG - Decoded 8, consumed 1 bytes
+2025-01-27 19:26:45,456 - DEBUG - Decoded (b':status', b'200'), consumed 1
+2025-01-27 19:26:45,456 - DEBUG - Decoded 31, consumed 1 bytes
+2025-01-27 19:26:45,456 - DEBUG - Decoded 22, consumed 1 bytes
+2025-01-27 19:26:45,456 - DEBUG - Decoded (b'content-type', b'application/json; charset=utf-8'), total consumed 24 bytes, indexed True
+2025-01-27 19:26:45,457 - DEBUG - Decoded 24, consumed 1 bytes
+2025-01-27 19:26:45,457 - DEBUG - Decoded 33, consumed 1 bytes
+2025-01-27 19:26:45,457 - DEBUG - Decoded (b'cache-control', b'no-cache, no-store, max-age=0, must-revalidate'), total consumed 35 bytes, indexed True
+2025-01-27 19:26:45,457 - DEBUG - Decoded 5, consumed 1 bytes
+2025-01-27 19:26:45,457 - DEBUG - Decoded 6, consumed 1 bytes
+2025-01-27 19:26:45,457 - DEBUG - Decoded (b'pragma', b'no-cache'), total consumed 14 bytes, indexed True
+2025-01-27 19:26:45,457 - DEBUG - Decoded 36, consumed 1 bytes
+2025-01-27 19:26:45,458 - DEBUG - Decoded 22, consumed 1 bytes
+2025-01-27 19:26:45,458 - DEBUG - Decoded (b'expires', b'Mon, 01 Jan 1990 00:00:00 GMT'), total consumed 24 bytes, indexed True
+2025-01-27 19:26:45,458 - DEBUG - Decoded 33, consumed 2 bytes
+2025-01-27 19:26:45,458 - DEBUG - Decoded 22, consumed 1 bytes
+2025-01-27 19:26:45,458 - DEBUG - Decoded (b'date', b'Mon, 27 Jan 2025 13:56:45 GMT'), total consumed 25 bytes, indexed False
+2025-01-27 19:26:45,458 - DEBUG - Decoded 25, consumed 1 bytes
+2025-01-27 19:26:45,458 - DEBUG - Decoded 50, consumed 1 bytes
+2025-01-27 19:26:45,459 - DEBUG - Decoded (b'content-disposition', b'attachment; filename="response.bin"; filename*=UTF-8\'\'response.bin'), total consumed 52 bytes, indexed True
+2025-01-27 19:26:45,459 - DEBUG - Decoded 16, consumed 1 bytes
+2025-01-27 19:26:45,459 - DEBUG - Decoded 5, consumed 1 bytes
+2025-01-27 19:26:45,459 - DEBUG - Decoded (b'x-content-type-options', b'nosniff'), total consumed 24 bytes, indexed True
+2025-01-27 19:26:45,459 - DEBUG - Decoded 18, consumed 1 bytes
+2025-01-27 19:26:45,459 - DEBUG - Decoded 17, consumed 1 bytes
+2025-01-27 19:26:45,459 - DEBUG - Decoded (b'cross-origin-opener-policy', b'same-origin-allow-popups'), total consumed 38 bytes, indexed True
+2025-01-27 19:26:45,460 - DEBUG - Decoded 13, consumed 1 bytes
+2025-01-27 19:26:45,460 - DEBUG - Decoded 129, consumed 2 bytes
+2025-01-27 19:26:45,460 - DEBUG - Decoded (b'permissions-policy', b'ch-ua-arch=*, ch-ua-bitness=*, ch-ua-full-version=*, ch-ua-full-version-list=*, ch-ua-model=*, ch-ua-wow64=*, ch-ua-form-factors=*, ch-ua-platform=*, ch-ua-platform-version=*'), total consumed 146 bytes, indexed True
+2025-01-27 19:26:45,460 - DEBUG - Decoded 20, consumed 1 bytes
+2025-01-27 19:26:45,461 - DEBUG - Decoded 6, consumed 1 bytes
+2025-01-27 19:26:45,461 - DEBUG - Decoded (b'cross-origin-resource-policy', b'same-site'), total consumed 29 bytes, indexed True
+2025-01-27 19:26:45,461 - DEBUG - Decoded 16, consumed 1 bytes
+2025-01-27 19:26:45,461 - DEBUG - Decoded 58, consumed 1 bytes
+2025-01-27 19:26:45,461 - DEBUG - Decoded (b'content-security-policy', b"require-trusted-types-for 'script';report-uri /_/TranslateWebserverUi/cspreport"), total consumed 77 bytes, indexed True
+2025-01-27 19:26:45,461 - DEBUG - Decoded 6, consumed 1 bytes
+2025-01-27 19:26:45,461 - DEBUG - Decoded 146, consumed 2 bytes
+2025-01-27 19:26:45,462 - DEBUG - Decoded (b'accept-ch', b'Sec-CH-UA-Arch, Sec-CH-UA-Bitness, Sec-CH-UA-Full-Version, Sec-CH-UA-Full-Version-List, Sec-CH-UA-Model, Sec-CH-UA-WoW64, Sec-CH-UA-Form-Factors, Sec-CH-UA-Platform, Sec-CH-UA-Platform-Version'), total consumed 156 bytes, indexed True
+2025-01-27 19:26:45,462 - DEBUG - Decoded 54, consumed 1 bytes
+2025-01-27 19:26:45,462 - DEBUG - Decoded 3, consumed 1 bytes
+2025-01-27 19:26:45,462 - DEBUG - Decoded (b'server', <memory at 0x0000020E85EC1A80>), total consumed 5 bytes, indexed True
+2025-01-27 19:26:45,462 - DEBUG - Decoded 12, consumed 1 bytes
+2025-01-27 19:26:45,462 - DEBUG - Decoded 1, consumed 1 bytes
+2025-01-27 19:26:45,463 - DEBUG - Decoded (b'x-xss-protection', <memory at 0x0000020E85EC1C00>), total consumed 16 bytes, indexed True
+2025-01-27 19:26:45,463 - DEBUG - Decoded 11, consumed 1 bytes
+2025-01-27 19:26:45,463 - DEBUG - Decoded 9, consumed 1 bytes
+2025-01-27 19:26:45,463 - DEBUG - Decoded (b'x-frame-options', b'SAMEORIGIN'), total consumed 23 bytes, indexed True
+2025-01-27 19:26:45,463 - DEBUG - Decoded 5, consumed 1 bytes
+2025-01-27 19:26:45,463 - DEBUG - Decoded 36, consumed 1 bytes
+2025-01-27 19:26:45,463 - DEBUG - Decoded (b'alt-svc', b'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000'), total consumed 44 bytes, indexed True
+2025-01-27 19:26:45,464 - DEBUG - Decoded 18, consumed 1 bytes
+2025-01-27 19:26:45,464 - DEBUG - Decoded 3, consumed 1 bytes
+2025-01-27 19:26:45,464 - DEBUG - Decoded (b'accept-ranges', b'none'), total consumed 5 bytes, indexed True
+2025-01-27 19:26:45,464 - DEBUG - Decoded 59, consumed 1 bytes
+2025-01-27 19:26:45,464 - DEBUG - Decoded 45, consumed 1 bytes
+2025-01-27 19:26:45,464 - DEBUG - Decoded (b'vary', b'Sec-Fetch-Dest, Sec-Fetch-Mode, Sec-Fetch-Site,Accept-Encoding'), total consumed 47 bytes, indexed True
+2025-01-27 19:26:45,465 - DEBUG - HTTP Request: POST https://translate.google.com/_/TranslateWebserverUi/data/batchexecute?rpcids=MkEWBc&bl=boq_translate-webserver_20201207.13_p0&soc-app=1&soc-platform=1&soc-device=1&rt=c "HTTP/2 200 OK"
+2025-01-27 19:26:45,567 - DEBUG - HPACK encoding <generator object _check_path_header.<locals>.inner at 0x0000020EFFA24D40>
+2025-01-27 19:26:45,567 - DEBUG - Adding (b':method', b'POST') to the header table
+2025-01-27 19:26:45,567 - DEBUG - Encoding 3 with 7 bits
+2025-01-27 19:26:45,567 - DEBUG - Adding (b':authority', b'translate.google.com') to the header table
+2025-01-27 19:26:45,567 - DEBUG - Encoding 1 with 6 bits
+2025-01-27 19:26:45,568 - DEBUG - Encoding 14 with 7 bits
+2025-01-27 19:26:45,568 - DEBUG - Adding (b':scheme', b'https') to the header table
+2025-01-27 19:26:45,568 - DEBUG - Encoding 7 with 7 bits
+2025-01-27 19:26:45,568 - DEBUG - Adding (b':path', b'/_/TranslateWebserverUi/data/batchexecute?rpcids=MkEWBc&bl=boq_translate-webserver_20201207.13_p0&soc-app=1&soc-platform=1&soc-device=1&rt=c') to the header table
+2025-01-27 19:26:45,568 - DEBUG - Encoding 4 with 6 bits
+2025-01-27 19:26:45,568 - DEBUG - Encoding 101 with 7 bits
+2025-01-27 19:26:45,569 - DEBUG - Adding (b'accept', b'*/*') to the header table
+2025-01-27 19:26:45,569 - DEBUG - Encoding 19 with 6 bits
+2025-01-27 19:26:45,569 - DEBUG - Encoding 3 with 7 bits
+2025-01-27 19:26:45,569 - DEBUG - Adding (b'accept-encoding', b'gzip, deflate') to the header table
+2025-01-27 19:26:45,569 - DEBUG - Encoding 16 with 7 bits
+2025-01-27 19:26:45,569 - DEBUG - Adding (b'user-agent', b'Mozilla/5.0 (Windows NT 10.0; Win64; x64)') to the header table
+2025-01-27 19:26:45,569 - DEBUG - Encoding 58 with 6 bits
+2025-01-27 19:26:45,569 - DEBUG - Encoding 32 with 7 bits
+2025-01-27 19:26:45,570 - DEBUG - Adding (b'referer', b'https://translate.google.com') to the header table
+2025-01-27 19:26:45,570 - DEBUG - Encoding 51 with 6 bits
+2025-01-27 19:26:45,570 - DEBUG - Encoding 20 with 7 bits
+2025-01-27 19:26:45,570 - DEBUG - Adding (b'cookie', b'NID=521=XXCPmuILJgDMIOoZFV5lnrpsC-f5u02BQ_K08KOYvoxyYmF6BB32r6lLdQbuvXX6rJAaiCcMVlttOsMf2174Uc5fJMi6t_lZFYtMV3DzgovCiaxZh1qJxkeYah2NX-0JCwGd1nRtiK_hQGQJwYUYK4ZpdLdG6d6aQYAJ0dpHnNOHNLQjpb-NW0TqjJU') to the header table
+2025-01-27 19:26:45,570 - DEBUG - Encoding 32 with 6 bits
+2025-01-27 19:26:45,570 - DEBUG - Encoding 156 with 7 bits
+2025-01-27 19:26:45,570 - DEBUG - Adding (b'content-length', b'171') to the header table
+2025-01-27 19:26:45,571 - DEBUG - Encoding 28 with 6 bits
+2025-01-27 19:26:45,571 - DEBUG - Encoding 2 with 7 bits
+2025-01-27 19:26:45,571 - DEBUG - Adding (b'content-type', b'application/x-www-form-urlencoded') to the header table
+2025-01-27 19:26:45,571 - DEBUG - Encoding 31 with 6 bits
+2025-01-27 19:26:45,571 - DEBUG - Encoding 24 with 7 bits
+2025-01-27 19:26:45,571 - DEBUG - Encoded header block to b"\x83A\x8eM\x83\xa9\x14\r%^c\x9ej\n\xb9\x0fO\x87D\xe5b&7\xd8:\x91@\xd2^E\x8d\x05\xb3\xb9l\xe0f$\x1aF\xc4cI'/\x92\x92\xd4\x97\xfc\xb2\xb2\x1aDA\xa3\xae\x0eWI\xf1\x1d\x10F~\xd1&\xc1\xd4\x8a\x06\x92\xad\xe0\xb1\xa0\xb6w-\x91\x08\x02\x00D\x07W\x0b1V\x0f\x84\x1c\x8b\x0e\xba\xe0\x0f\xc2\x0eE\xab\xa0i\x94\xf6S\x00~\x10r-!{\x98\x85\x80?\x16&\x02\x7fS\x83\xf9c\xe7\x90z\xa0\xd0\x7ff\xa2\x81\xb0\xda\xe0S\xfa\xe4j\xa4?\x84)\xa7z\x81\x02\xe0\xfbS\x91\xaaq\xaf\xb5<\xb8\xd7\xf7s\x94\x9d)\xad\x17\x18a6\x0e\xa4P4\x95y\x8ey\xa8*\xe4=?`\xff\x1d\xd3\x92\xfc\r\x880~~^\xd7M\xb93\xe5\x9a\xfe\x8c\x9a\x8f\xfb\x87\x8btUeh\xbc\xb4\xad\xda\x01]\xd9\x16`=\x9bW>\xe7\xf3\xeb\x9d8\\\xbbu\x91X\xe5\x19\xe4\xd9\x1d\xbd\xff?\x1c\xb3,#5\xe2h\xe3BS\xa9\x1a%\x10]k\x81\x1b\x97.\x838\x98\xa8\xfd\xc3\xcd:8\xb3\x7f\xdc\xc7\xefx\xc3\xf3\xfb8{e\xf3\xd4\xbc\xc78\xb4\xfe,\x0c\xb7\xbcb\x905mI\xb3E>\xcc[2\xf8\xe7\xc3\x9ef\xbfk\x93<\x98\x9c\x91\xc1\xec\xe7\x0ePI^:\xb4\xea\xc7\xa7>\xce\x95\xc6\xb6\x9e@\xdf\xdb\xa6^\x1f\\\x82\x0b\xa1_\x98\x1du\xd0b\r&=Ly[\xc7\x8f\x0bJ{)Z\xdb(-D<\x85\x93"
+2025-01-27 19:26:45,743 - DEBUG - Decoding b'\x88_\x96\x1du\xd0b\r&=LtA\xea\xfbP\x93\x8e\xc4\x150Z\x99V{X\xa1\xa8\xeb\x10d\x9c\xbfJTu\x90\x93\xd8_\xa5)\x1f\x95\x871`\x07\xd2\x94\xda\x84\xada{\x8e\x83H4\x97@\x85\xae\xc1\xcdH\xff\x86\xa8\xeb\x10d\x9c\xbfd\x96\xd0z\xbe\x94\x00T\xca:\x94\x0b\xef\x81@\x02\xe0\x01p\x00S\x16\x8d\xff\x0f\x12\x96\xd0z\xbe\x94\x13\xaae\x1dJ\x08\x02m@\xb3q\xb7.4\xe2\x98\xb4oY\xb2\x1aR2OIjO\xda\x92\x9a\x82\xd4:K\x07\xf3aQY\xeaAW\x8c\xd5\x7f?jJj\x0bP\xe9/\xcc\x1c7\xe1Y\xef\xf5\xfe\xac*+=H*\xf1\x9a\xaf@\x90\xf2\xb1\x0fRKRVO\xaa\xca\xb1\xebI\x8fR?\x85\xa8\xe8\xa8\xd2\xcb@\x94%\x87B\x16=\x86\x98\xd5-aP{l!V\xac\xf4\x18\x9e\xbf\x86@\xe9*\xc82K@\x8d\xac\xb6Rd \xc7\xa9\x0bVz\x0cO_\xff\x02$\xebZ5\x87a\'\x83\xe7\xe9BN\xb5\xa3Z3&\xa2\xa1\x10|\xfd(I\xd6\xb4kKm\x14-\xdc\xb6 \xc7\xaa\x0f\x9f\xa5\t:\xd6\x8dim\xa2\x85\xbb\x96\xc4\x18\xf5-A\x90\x98>~\x94$\xebZ5\xa9<\x85\xa2\x0f\x9f\xa5\t:\xd6\x8do\x07\xf0\xe3P|\xfd(I\xd6\xb4kJ{)ZQ\x91\'\xb1\x10|\xfd(I\xd6\xb4kW@\xd3)\xec\xa6\x0f\x9f\xa5\t:\xd6\x8dj\xe8\x1ae=\x94\xad\xdc\xb6 \xc7\xaa\x0f\x9f@\x90!\xeaIjJ\xc8)-\xb0\xc9\xf4\xb5g\xa0\xc4\xf5\xba\xb0\xbd\xad5\x85Y6Z\x84\x96E\x93\xea\xb2\xa1iOb\x9f\xe9\x04\xb0\xd5\xa7\xfd}\xd8Z\xcfbV\xb6\xc3(\xc4Lo\xb0u"\x81\xa4\xbc\x8b\x1a\x0bgr\xd9\xc0\xcc\x11\x15\xd8Z\xcfb\x7f@\x86\x19\x08Z\xd2\xb1\'\xff\x13\xdcR-{\x1a\xdc!Z\x1b\t?\xd2\x9b\x8aE\xafc[\x84+]2j*\x11\xf4\xa6\xe2\x91k\xd8\xd6\xe1\n\xd8m\xa2\x85\xb8\x96\xc4\x18\xf5})\xb8\xa4Z\xf65\xb8B\xb6\x1bh\xa1n%\xb1\x06=Kg2\x13\xf4\xa6\xe2\x91k\xd8\xd6\xe1\n\xda\x0f!h\xfaSqH\xb5\xeckp\x85nG\xe4\xe3_Jn)\x16\xbd\x8dn\x10\xad\x84\xf6R\xb6\x11\x91\'\xb1\x1fJn)\x16\xbd\x8dn\x10\xad\xae\x81\xa6S\xd9O\xd2\x9b\x8aE\xafc[\x84+k\xa0i\x94\xf6R\xb7\x12\xd8\x83\x1e\xaf@\x92%\x87B\x16=\x86\x98\xd5,z\xcbQlZ\xb3\xd0bz\x91@\xe9*\xc7\xb0\xd3\x1a\xa5\x87E\x07\xf0\xb5g\xae\xda\xd1v\x03ESF@\x8c\xf2\xb7\x94!j\xec:JD\x98\xf5\x7f\x010@\x8b\xf2\xb4\xb6\x0e\x92\xacz\xd2c\xd4\x8f\x89\xdd\x0e\x8c\x1a\xb6\xe4\xc5\x93O@\x85\x1d\tY\x1d\xc9\xa4\x9d\x98?\x9b\x8d4\xcf\xf3\xf6\xa5#\x80M\xbe \x00\x1fS\xb2\xb0\x9f\x83\xf9\xb8\xd3L\xff?jR8\x04\xdb\xe2\x00\x01R\x83\xa8\xf5\x17{\xad\xdcR-\x84\xa9$\xeb_*\x13\xf4\xa6\xe2\x91l%I\'[A\xe4/\xd2\x9b\x8aE\xb0\x95$\x9dm\xc6I~\xa1!\x0bZV\xc1Q\x0f!\xaa\x9b'
+2025-01-27 19:26:45,743 - DEBUG - Decoded 8, consumed 1 bytes
+2025-01-27 19:26:45,743 - DEBUG - Decoded (b':status', b'200'), consumed 1
+2025-01-27 19:26:45,743 - DEBUG - Decoded 31, consumed 1 bytes
+2025-01-27 19:26:45,743 - DEBUG - Decoded 22, consumed 1 bytes
+2025-01-27 19:26:45,743 - DEBUG - Decoded (b'content-type', b'application/json; charset=utf-8'), total consumed 24 bytes, indexed True
+2025-01-27 19:26:45,744 - DEBUG - Decoded 24, consumed 1 bytes
+2025-01-27 19:26:45,744 - DEBUG - Decoded 33, consumed 1 bytes
+2025-01-27 19:26:45,744 - DEBUG - Decoded (b'cache-control', b'no-cache, no-store, max-age=0, must-revalidate'), total consumed 35 bytes, indexed True
+2025-01-27 19:26:45,744 - DEBUG - Decoded 5, consumed 1 bytes
+2025-01-27 19:26:45,744 - DEBUG - Decoded 6, consumed 1 bytes
+2025-01-27 19:26:45,744 - DEBUG - Decoded (b'pragma', b'no-cache'), total consumed 14 bytes, indexed True
+2025-01-27 19:26:45,744 - DEBUG - Decoded 36, consumed 1 bytes
+2025-01-27 19:26:45,744 - DEBUG - Decoded 22, consumed 1 bytes
+2025-01-27 19:26:45,744 - DEBUG - Decoded (b'expires', b'Mon, 01 Jan 1990 00:00:00 GMT'), total consumed 24 bytes, indexed True
+2025-01-27 19:26:45,744 - DEBUG - Decoded 33, consumed 2 bytes
+2025-01-27 19:26:45,744 - DEBUG - Decoded 22, consumed 1 bytes
+2025-01-27 19:26:45,744 - DEBUG - Decoded (b'date', b'Mon, 27 Jan 2025 13:56:46 GMT'), total consumed 25 bytes, indexed False
+2025-01-27 19:26:45,745 - DEBUG - Decoded 25, consumed 1 bytes
+2025-01-27 19:26:45,745 - DEBUG - Decoded 50, consumed 1 bytes
+2025-01-27 19:26:45,745 - DEBUG - Decoded (b'content-disposition', b'attachment; filename="response.bin"; filename*=UTF-8\'\'response.bin'), total consumed 52 bytes, indexed True
+2025-01-27 19:26:45,745 - DEBUG - Decoded 16, consumed 1 bytes
+2025-01-27 19:26:45,745 - DEBUG - Decoded 5, consumed 1 bytes
+2025-01-27 19:26:45,745 - DEBUG - Decoded (b'x-content-type-options', b'nosniff'), total consumed 24 bytes, indexed True
+2025-01-27 19:26:45,745 - DEBUG - Decoded 20, consumed 1 bytes
+2025-01-27 19:26:45,745 - DEBUG - Decoded 6, consumed 1 bytes
+2025-01-27 19:26:45,745 - DEBUG - Decoded (b'cross-origin-resource-policy', b'same-site'), total consumed 29 bytes, indexed True
+2025-01-27 19:26:45,745 - DEBUG - Decoded 13, consumed 1 bytes
+2025-01-27 19:26:45,745 - DEBUG - Decoded 129, consumed 2 bytes
+2025-01-27 19:26:45,745 - DEBUG - Decoded (b'permissions-policy', b'ch-ua-arch=*, ch-ua-bitness=*, ch-ua-full-version=*, ch-ua-full-version-list=*, ch-ua-model=*, ch-ua-wow64=*, ch-ua-form-factors=*, ch-ua-platform=*, ch-ua-platform-version=*'), total consumed 146 bytes, indexed True
+2025-01-27 19:26:45,746 - DEBUG - Decoded 16, consumed 1 bytes
+2025-01-27 19:26:45,746 - DEBUG - Decoded 58, consumed 1 bytes
+2025-01-27 19:26:45,746 - DEBUG - Decoded (b'content-security-policy', b"require-trusted-types-for 'script';report-uri /_/TranslateWebserverUi/cspreport"), total consumed 77 bytes, indexed True
+2025-01-27 19:26:45,746 - DEBUG - Decoded 6, consumed 1 bytes
+2025-01-27 19:26:45,746 - DEBUG - Decoded 146, consumed 2 bytes
+2025-01-27 19:26:45,746 - DEBUG - Decoded (b'accept-ch', b'Sec-CH-UA-Arch, Sec-CH-UA-Bitness, Sec-CH-UA-Full-Version, Sec-CH-UA-Full-Version-List, Sec-CH-UA-Model, Sec-CH-UA-WoW64, Sec-CH-UA-Form-Factors, Sec-CH-UA-Platform, Sec-CH-UA-Platform-Version'), total consumed 156 bytes, indexed True
+2025-01-27 19:26:45,747 - DEBUG - Decoded 18, consumed 1 bytes
+2025-01-27 19:26:45,747 - DEBUG - Decoded 17, consumed 1 bytes
+2025-01-27 19:26:45,747 - DEBUG - Decoded (b'cross-origin-opener-policy', b'same-origin-allow-popups'), total consumed 38 bytes, indexed True
+2025-01-27 19:26:45,747 - DEBUG - Decoded 54, consumed 1 bytes
+2025-01-27 19:26:45,747 - DEBUG - Decoded 3, consumed 1 bytes
+2025-01-27 19:26:45,747 - DEBUG - Decoded (b'server', <memory at 0x0000020E85EC1C00>), total consumed 5 bytes, indexed True
+2025-01-27 19:26:45,747 - DEBUG - Decoded 12, consumed 1 bytes
+2025-01-27 19:26:45,747 - DEBUG - Decoded 1, consumed 1 bytes
+2025-01-27 19:26:45,747 - DEBUG - Decoded (b'x-xss-protection', <memory at 0x0000020E85EC1180>), total consumed 16 bytes, indexed True
+2025-01-27 19:26:45,747 - DEBUG - Decoded 11, consumed 1 bytes
+2025-01-27 19:26:45,747 - DEBUG - Decoded 9, consumed 1 bytes
+2025-01-27 19:26:45,747 - DEBUG - Decoded (b'x-frame-options', b'SAMEORIGIN'), total consumed 23 bytes, indexed True
+2025-01-27 19:26:45,748 - DEBUG - Decoded 5, consumed 1 bytes
+2025-01-27 19:26:45,748 - DEBUG - Decoded 36, consumed 1 bytes
+2025-01-27 19:26:45,748 - DEBUG - Decoded (b'alt-svc', b'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000'), total consumed 44 bytes, indexed True
+2025-01-27 19:26:45,748 - DEBUG - Decoded 18, consumed 1 bytes
+2025-01-27 19:26:45,748 - DEBUG - Decoded 3, consumed 1 bytes
+2025-01-27 19:26:45,748 - DEBUG - Decoded (b'accept-ranges', b'none'), total consumed 5 bytes, indexed True
+2025-01-27 19:26:45,748 - DEBUG - Decoded 59, consumed 1 bytes
+2025-01-27 19:26:45,748 - DEBUG - Decoded 45, consumed 1 bytes
+2025-01-27 19:26:45,748 - DEBUG - Decoded (b'vary', b'Sec-Fetch-Dest, Sec-Fetch-Mode, Sec-Fetch-Site,Accept-Encoding'), total consumed 47 bytes, indexed True
+2025-01-27 19:26:45,749 - DEBUG - HTTP Request: POST https://translate.google.com/_/TranslateWebserverUi/data/batchexecute?rpcids=MkEWBc&bl=boq_translate-webserver_20201207.13_p0&soc-app=1&soc-platform=1&soc-device=1&rt=c "HTTP/2 200 OK"
+2025-01-27 19:26:45,837 - DEBUG - HPACK encoding <generator object _check_path_header.<locals>.inner at 0x0000020EFF10E8E0>
+2025-01-27 19:26:45,837 - DEBUG - Adding (b':method', b'POST') to the header table
+2025-01-27 19:26:45,837 - DEBUG - Encoding 3 with 7 bits
+2025-01-27 19:26:45,838 - DEBUG - Adding (b':authority', b'translate.google.com') to the header table
+2025-01-27 19:26:45,838 - DEBUG - Encoding 1 with 6 bits
+2025-01-27 19:26:45,838 - DEBUG - Encoding 14 with 7 bits
+2025-01-27 19:26:45,838 - DEBUG - Adding (b':scheme', b'https') to the header table
+2025-01-27 19:26:45,838 - DEBUG - Encoding 7 with 7 bits
+2025-01-27 19:26:45,838 - DEBUG - Adding (b':path', b'/_/TranslateWebserverUi/data/batchexecute?rpcids=MkEWBc&bl=boq_translate-webserver_20201207.13_p0&soc-app=1&soc-platform=1&soc-device=1&rt=c') to the header table
+2025-01-27 19:26:45,838 - DEBUG - Encoding 4 with 6 bits
+2025-01-27 19:26:45,838 - DEBUG - Encoding 101 with 7 bits
+2025-01-27 19:26:45,839 - DEBUG - Adding (b'accept', b'*/*') to the header table
+2025-01-27 19:26:45,839 - DEBUG - Encoding 19 with 6 bits
+2025-01-27 19:26:45,839 - DEBUG - Encoding 3 with 7 bits
+2025-01-27 19:26:45,839 - DEBUG - Adding (b'accept-encoding', b'gzip, deflate') to the header table
+2025-01-27 19:26:45,839 - DEBUG - Encoding 16 with 7 bits
+2025-01-27 19:26:45,839 - DEBUG - Adding (b'user-agent', b'Mozilla/5.0 (Windows NT 10.0; Win64; x64)') to the header table
+2025-01-27 19:26:45,839 - DEBUG - Encoding 58 with 6 bits
+2025-01-27 19:26:45,839 - DEBUG - Encoding 32 with 7 bits
+2025-01-27 19:26:45,839 - DEBUG - Adding (b'referer', b'https://translate.google.com') to the header table
+2025-01-27 19:26:45,839 - DEBUG - Encoding 51 with 6 bits
+2025-01-27 19:26:45,839 - DEBUG - Encoding 20 with 7 bits
+2025-01-27 19:26:45,840 - DEBUG - Adding (b'cookie', b'NID=521=XXCPmuILJgDMIOoZFV5lnrpsC-f5u02BQ_K08KOYvoxyYmF6BB32r6lLdQbuvXX6rJAaiCcMVlttOsMf2174Uc5fJMi6t_lZFYtMV3DzgovCiaxZh1qJxkeYah2NX-0JCwGd1nRtiK_hQGQJwYUYK4ZpdLdG6d6aQYAJ0dpHnNOHNLQjpb-NW0TqjJU') to the header table
+2025-01-27 19:26:45,840 - DEBUG - Encoding 32 with 6 bits
+2025-01-27 19:26:45,840 - DEBUG - Encoding 156 with 7 bits
+2025-01-27 19:26:45,840 - DEBUG - Adding (b'content-length', b'169') to the header table
+2025-01-27 19:26:45,840 - DEBUG - Encoding 28 with 6 bits
+2025-01-27 19:26:45,840 - DEBUG - Encoding 3 with 7 bits
+2025-01-27 19:26:45,840 - DEBUG - Adding (b'content-type', b'application/x-www-form-urlencoded') to the header table
+2025-01-27 19:26:45,840 - DEBUG - Encoding 31 with 6 bits
+2025-01-27 19:26:45,840 - DEBUG - Encoding 24 with 7 bits
+2025-01-27 19:26:45,840 - DEBUG - Encoded header block to b"\x83A\x8eM\x83\xa9\x14\r%^c\x9ej\n\xb9\x0fO\x87D\xe5b&7\xd8:\x91@\xd2^E\x8d\x05\xb3\xb9l\xe0f$\x1aF\xc4cI'/\x92\x92\xd4\x97\xfc\xb2\xb2\x1aDA\xa3\xae\x0eWI\xf1\x1d\x10F~\xd1&\xc1\xd4\x8a\x06\x92\xad\xe0\xb1\xa0\xb6w-\x91\x08\x02\x00D\x07W\x0b1V\x0f\x84\x1c\x8b\x0e\xba\xe0\x0f\xc2\x0eE\xab\xa0i\x94\xf6S\x00~\x10r-!{\x98\x85\x80?\x16&\x02\x7fS\x83\xf9c\xe7\x90z\xa0\xd0\x7ff\xa2\x81\xb0\xda\xe0S\xfa\xe4j\xa4?\x84)\xa7z\x81\x02\xe0\xfbS\x91\xaaq\xaf\xb5<\xb8\xd7\xf7s\x94\x9d)\xad\x17\x18a6\x0e\xa4P4\x95y\x8ey\xa8*\xe4=?`\xff\x1d\xd3\x92\xfc\r\x880~~^\xd7M\xb93\xe5\x9a\xfe\x8c\x9a\x8f\xfb\x87\x8btUeh\xbc\xb4\xad\xda\x01]\xd9\x16`=\x9bW>\xe7\xf3\xeb\x9d8\\\xbbu\x91X\xe5\x19\xe4\xd9\x1d\xbd\xff?\x1c\xb3,#5\xe2h\xe3BS\xa9\x1a%\x10]k\x81\x1b\x97.\x838\x98\xa8\xfd\xc3\xcd:8\xb3\x7f\xdc\xc7\xefx\xc3\xf3\xfb8{e\xf3\xd4\xbc\xc78\xb4\xfe,\x0c\xb7\xbcb\x905mI\xb3E>\xcc[2\xf8\xe7\xc3\x9ef\xbfk\x93<\x98\x9c\x91\xc1\xec\xe7\x0ePI^:\xb4\xea\xc7\xa7>\xce\x95\xc6\xb6\x9e@\xdf\xdb\xa6^\x1f\\\x83\x0b\x8f\xff_\x98\x1du\xd0b\r&=Ly[\xc7\x8f\x0bJ{)Z\xdb(-D<\x85\x93"
+2025-01-27 19:26:47,344 - DEBUG - Decoding b'\x88_\x96\x1du\xd0b\r&=LtA\xea\xfbP\x93\x8e\xc4\x150Z\x99V{X\xa1\xa8\xeb\x10d\x9c\xbfJTu\x90\x93\xd8_\xa5)\x1f\x95\x871`\x07\xd2\x94\xda\x84\xada{\x8e\x83H4\x97@\x85\xae\xc1\xcdH\xff\x86\xa8\xeb\x10d\x9c\xbfd\x96\xd0z\xbe\x94\x00T\xca:\x94\x0b\xef\x81@\x02\xe0\x01p\x00S\x16\x8d\xff\x0f\x12\x96\xd0z\xbe\x94\x13\xaae\x1dJ\x08\x02m@\xb3q\xb7.4\xe2\x98\xb4oY\xb2\x1aR2OIjO\xda\x92\x9a\x82\xd4:K\x07\xf3aQY\xeaAW\x8c\xd5\x7f?jJj\x0bP\xe9/\xcc\x1c7\xe1Y\xef\xf5\xfe\xac*+=H*\xf1\x9a\xaf@\x90\xf2\xb1\x0fRKRVO\xaa\xca\xb1\xebI\x8fR?\x85\xa8\xe8\xa8\xd2\xcb@\x86\x19\x08Z\xd2\xb1\'\xff\x13\xdcR-{\x1a\xdc!Z\x1b\t?\xd2\x9b\x8aE\xafc[\x84+]2j*\x11\xf4\xa6\xe2\x91k\xd8\xd6\xe1\n\xd8m\xa2\x85\xb8\x96\xc4\x18\xf5})\xb8\xa4Z\xf65\xb8B\xb6\x1bh\xa1n%\xb1\x06=Kg2\x13\xf4\xa6\xe2\x91k\xd8\xd6\xe1\n\xda\x0f!h\xfaSqH\xb5\xeckp\x85nG\xe4\xe3_Jn)\x16\xbd\x8dn\x10\xad\x84\xf6R\xb6\x11\x91\'\xb1\x1fJn)\x16\xbd\x8dn\x10\xad\xae\x81\xa6S\xd9O\xd2\x9b\x8aE\xafc[\x84+k\xa0i\x94\xf6R\xb7\x12\xd8\x83\x1e\xaf@\x94%\x87B\x16=\x86\x98\xd5-aP{l!V\xac\xf4\x18\x9e\xbf\x86@\xe9*\xc82K@\x8d\xac\xb6Rd \xc7\xa9\x0bVz\x0cO_\xff\x02$\xebZ5\x87a\'\x83\xe7\xe9BN\xb5\xa3Z3&\xa2\xa1\x10|\xfd(I\xd6\xb4kKm\x14-\xdc\xb6 \xc7\xaa\x0f\x9f\xa5\t:\xd6\x8dim\xa2\x85\xbb\x96\xc4\x18\xf5-A\x90\x98>~\x94$\xebZ5\xa9<\x85\xa2\x0f\x9f\xa5\t:\xd6\x8do\x07\xf0\xe3P|\xfd(I\xd6\xb4kJ{)ZQ\x91\'\xb1\x10|\xfd(I\xd6\xb4kW@\xd3)\xec\xa6\x0f\x9f\xa5\t:\xd6\x8dj\xe8\x1ae=\x94\xad\xdc\xb6 \xc7\xaa\x0f\x9f@\x92%\x87B\x16=\x86\x98\xd5,z\xcbQlZ\xb3\xd0bz\x91@\xe9*\xc7\xb0\xd3\x1a\xa5\x87E\x07\xf0\xb5g\xae\xda\xd1@\x90!\xeaIjJ\xc8)-\xb0\xc9\xf4\xb5g\xa0\xc4\xf5\xba\xb0\xbd\xad5\x85Y6Z\x84\x96E\x93\xea\xb2\xa1iOb\x9f\xe9\x04\xb0\xd5\xa7\xfd}\xd8Z\xcfbV\xb6\xc3(\xc4Lo\xb0u"\x81\xa4\xbc\x8b\x1a\x0bgr\xd9\xc0\xcc\x11\x15\xd8Z\xcfb\x7fv\x03ESF@\x8c\xf2\xb7\x94!j\xec:JD\x98\xf5\x7f\x010@\x8b\xf2\xb4\xb6\x0e\x92\xacz\xd2c\xd4\x8f\x89\xdd\x0e\x8c\x1a\xb6\xe4\xc5\x93O@\x85\x1d\tY\x1d\xc9\xa4\x9d\x98?\x9b\x8d4\xcf\xf3\xf6\xa5#\x80M\xbe \x00\x1fS\xb2\xb0\x9f\x83\xf9\xb8\xd3L\xff?jR8\x04\xdb\xe2\x00\x01R\x83\xa8\xf5\x17{\xad\xdcR-\x84\xa9$\xeb_*\x13\xf4\xa6\xe2\x91l%I\'[A\xe4/\xd2\x9b\x8aE\xb0\x95$\x9dm\xc6I~\xa1!\x0bZV\xc1Q\x0f!\xaa\x9b'
+2025-01-27 19:26:47,345 - DEBUG - Decoded 8, consumed 1 bytes
+2025-01-27 19:26:47,345 - DEBUG - Decoded (b':status', b'200'), consumed 1
+2025-01-27 19:26:47,345 - DEBUG - Decoded 31, consumed 1 bytes
+2025-01-27 19:26:47,345 - DEBUG - Decoded 22, consumed 1 bytes
+2025-01-27 19:26:47,345 - DEBUG - Decoded (b'content-type', b'application/json; charset=utf-8'), total consumed 24 bytes, indexed True
+2025-01-27 19:26:47,345 - DEBUG - Decoded 24, consumed 1 bytes
+2025-01-27 19:26:47,345 - DEBUG - Decoded 33, consumed 1 bytes
+2025-01-27 19:26:47,345 - DEBUG - Decoded (b'cache-control', b'no-cache, no-store, max-age=0, must-revalidate'), total consumed 35 bytes, indexed True
+2025-01-27 19:26:47,345 - DEBUG - Decoded 5, consumed 1 bytes
+2025-01-27 19:26:47,345 - DEBUG - Decoded 6, consumed 1 bytes
+2025-01-27 19:26:47,345 - DEBUG - Decoded (b'pragma', b'no-cache'), total consumed 14 bytes, indexed True
+2025-01-27 19:26:47,345 - DEBUG - Decoded 36, consumed 1 bytes
+2025-01-27 19:26:47,346 - DEBUG - Decoded 22, consumed 1 bytes
+2025-01-27 19:26:47,346 - DEBUG - Decoded (b'expires', b'Mon, 01 Jan 1990 00:00:00 GMT'), total consumed 24 bytes, indexed True
+2025-01-27 19:26:47,346 - DEBUG - Decoded 33, consumed 2 bytes
+2025-01-27 19:26:47,346 - DEBUG - Decoded 22, consumed 1 bytes
+2025-01-27 19:26:47,346 - DEBUG - Decoded (b'date', b'Mon, 27 Jan 2025 13:56:46 GMT'), total consumed 25 bytes, indexed False
+2025-01-27 19:26:47,346 - DEBUG - Decoded 25, consumed 1 bytes
+2025-01-27 19:26:47,346 - DEBUG - Decoded 50, consumed 1 bytes
+2025-01-27 19:26:47,346 - DEBUG - Decoded (b'content-disposition', b'attachment; filename="response.bin"; filename*=UTF-8\'\'response.bin'), total consumed 52 bytes, indexed True
+2025-01-27 19:26:47,346 - DEBUG - Decoded 16, consumed 1 bytes
+2025-01-27 19:26:47,346 - DEBUG - Decoded 5, consumed 1 bytes
+2025-01-27 19:26:47,346 - DEBUG - Decoded (b'x-content-type-options', b'nosniff'), total consumed 24 bytes, indexed True
+2025-01-27 19:26:47,346 - DEBUG - Decoded 6, consumed 1 bytes
+2025-01-27 19:26:47,347 - DEBUG - Decoded 146, consumed 2 bytes
+2025-01-27 19:26:47,347 - DEBUG - Decoded (b'accept-ch', b'Sec-CH-UA-Arch, Sec-CH-UA-Bitness, Sec-CH-UA-Full-Version, Sec-CH-UA-Full-Version-List, Sec-CH-UA-Model, Sec-CH-UA-WoW64, Sec-CH-UA-Form-Factors, Sec-CH-UA-Platform, Sec-CH-UA-Platform-Version'), total consumed 156 bytes, indexed True
+2025-01-27 19:26:47,347 - DEBUG - Decoded 20, consumed 1 bytes
+2025-01-27 19:26:47,347 - DEBUG - Decoded 6, consumed 1 bytes
+2025-01-27 19:26:47,347 - DEBUG - Decoded (b'cross-origin-resource-policy', b'same-site'), total consumed 29 bytes, indexed True
+2025-01-27 19:26:47,347 - DEBUG - Decoded 13, consumed 1 bytes
+2025-01-27 19:26:47,347 - DEBUG - Decoded 129, consumed 2 bytes
+2025-01-27 19:26:47,347 - DEBUG - Decoded (b'permissions-policy', b'ch-ua-arch=*, ch-ua-bitness=*, ch-ua-full-version=*, ch-ua-full-version-list=*, ch-ua-model=*, ch-ua-wow64=*, ch-ua-form-factors=*, ch-ua-platform=*, ch-ua-platform-version=*'), total consumed 146 bytes, indexed True
+2025-01-27 19:26:47,347 - DEBUG - Decoded 18, consumed 1 bytes
+2025-01-27 19:26:47,347 - DEBUG - Decoded 17, consumed 1 bytes
+2025-01-27 19:26:47,347 - DEBUG - Decoded (b'cross-origin-opener-policy', b'same-origin-allow-popups'), total consumed 38 bytes, indexed True
+2025-01-27 19:26:47,347 - DEBUG - Decoded 16, consumed 1 bytes
+2025-01-27 19:26:47,347 - DEBUG - Decoded 58, consumed 1 bytes
+2025-01-27 19:26:47,347 - DEBUG - Decoded (b'content-security-policy', b"require-trusted-types-for 'script';report-uri /_/TranslateWebserverUi/cspreport"), total consumed 77 bytes, indexed True
+2025-01-27 19:26:47,348 - DEBUG - Decoded 54, consumed 1 bytes
+2025-01-27 19:26:47,348 - DEBUG - Decoded 3, consumed 1 bytes
+2025-01-27 19:26:47,348 - DEBUG - Decoded (b'server', <memory at 0x0000020E85EC16C0>), total consumed 5 bytes, indexed True
+2025-01-27 19:26:47,348 - DEBUG - Decoded 12, consumed 1 bytes
+2025-01-27 19:26:47,348 - DEBUG - Decoded 1, consumed 1 bytes
+2025-01-27 19:26:47,348 - DEBUG - Decoded (b'x-xss-protection', <memory at 0x0000020E85EC1840>), total consumed 16 bytes, indexed True
+2025-01-27 19:26:47,348 - DEBUG - Decoded 11, consumed 1 bytes
+2025-01-27 19:26:47,348 - DEBUG - Decoded 9, consumed 1 bytes
+2025-01-27 19:26:47,348 - DEBUG - Decoded (b'x-frame-options', b'SAMEORIGIN'), total consumed 23 bytes, indexed True
+2025-01-27 19:26:47,348 - DEBUG - Decoded 5, consumed 1 bytes
+2025-01-27 19:26:47,348 - DEBUG - Decoded 36, consumed 1 bytes
+2025-01-27 19:26:47,348 - DEBUG - Decoded (b'alt-svc', b'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000'), total consumed 44 bytes, indexed True
+2025-01-27 19:26:47,348 - DEBUG - Decoded 18, consumed 1 bytes
+2025-01-27 19:26:47,348 - DEBUG - Decoded 3, consumed 1 bytes
+2025-01-27 19:26:47,348 - DEBUG - Decoded (b'accept-ranges', b'none'), total consumed 5 bytes, indexed True
+2025-01-27 19:26:47,348 - DEBUG - Decoded 59, consumed 1 bytes
+2025-01-27 19:26:47,348 - DEBUG - Decoded 45, consumed 1 bytes
+2025-01-27 19:26:47,349 - DEBUG - Decoded (b'vary', b'Sec-Fetch-Dest, Sec-Fetch-Mode, Sec-Fetch-Site,Accept-Encoding'), total consumed 47 bytes, indexed True
+2025-01-27 19:26:47,349 - DEBUG - HTTP Request: POST https://translate.google.com/_/TranslateWebserverUi/data/batchexecute?rpcids=MkEWBc&bl=boq_translate-webserver_20201207.13_p0&soc-app=1&soc-platform=1&soc-device=1&rt=c "HTTP/2 200 OK"
+2025-01-27 19:26:47,433 - DEBUG - HPACK encoding <generator object _check_path_header.<locals>.inner at 0x0000020EFFE09BE0>
+2025-01-27 19:26:47,434 - DEBUG - Adding (b':method', b'POST') to the header table
+2025-01-27 19:26:47,434 - DEBUG - Encoding 3 with 7 bits
+2025-01-27 19:26:47,434 - DEBUG - Adding (b':authority', b'translate.google.com') to the header table
+2025-01-27 19:26:47,434 - DEBUG - Encoding 1 with 6 bits
+2025-01-27 19:26:47,434 - DEBUG - Encoding 14 with 7 bits
+2025-01-27 19:26:47,434 - DEBUG - Adding (b':scheme', b'https') to the header table
+2025-01-27 19:26:47,434 - DEBUG - Encoding 7 with 7 bits
+2025-01-27 19:26:47,434 - DEBUG - Adding (b':path', b'/_/TranslateWebserverUi/data/batchexecute?rpcids=MkEWBc&bl=boq_translate-webserver_20201207.13_p0&soc-app=1&soc-platform=1&soc-device=1&rt=c') to the header table
+2025-01-27 19:26:47,434 - DEBUG - Encoding 4 with 6 bits
+2025-01-27 19:26:47,434 - DEBUG - Encoding 101 with 7 bits
+2025-01-27 19:26:47,434 - DEBUG - Adding (b'accept', b'*/*') to the header table
+2025-01-27 19:26:47,434 - DEBUG - Encoding 19 with 6 bits
+2025-01-27 19:26:47,434 - DEBUG - Encoding 3 with 7 bits
+2025-01-27 19:26:47,435 - DEBUG - Adding (b'accept-encoding', b'gzip, deflate') to the header table
+2025-01-27 19:26:47,435 - DEBUG - Encoding 16 with 7 bits
+2025-01-27 19:26:47,435 - DEBUG - Adding (b'user-agent', b'Mozilla/5.0 (Windows NT 10.0; Win64; x64)') to the header table
+2025-01-27 19:26:47,435 - DEBUG - Encoding 58 with 6 bits
+2025-01-27 19:26:47,435 - DEBUG - Encoding 32 with 7 bits
+2025-01-27 19:26:47,435 - DEBUG - Adding (b'referer', b'https://translate.google.com') to the header table
+2025-01-27 19:26:47,435 - DEBUG - Encoding 51 with 6 bits
+2025-01-27 19:26:47,435 - DEBUG - Encoding 20 with 7 bits
+2025-01-27 19:26:47,435 - DEBUG - Adding (b'cookie', b'NID=521=XXCPmuILJgDMIOoZFV5lnrpsC-f5u02BQ_K08KOYvoxyYmF6BB32r6lLdQbuvXX6rJAaiCcMVlttOsMf2174Uc5fJMi6t_lZFYtMV3DzgovCiaxZh1qJxkeYah2NX-0JCwGd1nRtiK_hQGQJwYUYK4ZpdLdG6d6aQYAJ0dpHnNOHNLQjpb-NW0TqjJU') to the header table
+2025-01-27 19:26:47,435 - DEBUG - Encoding 32 with 6 bits
+2025-01-27 19:26:47,435 - DEBUG - Encoding 156 with 7 bits
+2025-01-27 19:26:47,435 - DEBUG - Adding (b'content-length', b'181') to the header table
+2025-01-27 19:26:47,435 - DEBUG - Encoding 28 with 6 bits
+2025-01-27 19:26:47,435 - DEBUG - Encoding 2 with 7 bits
+2025-01-27 19:26:47,436 - DEBUG - Adding (b'content-type', b'application/x-www-form-urlencoded') to the header table
+2025-01-27 19:26:47,436 - DEBUG - Encoding 31 with 6 bits
+2025-01-27 19:26:47,436 - DEBUG - Encoding 24 with 7 bits
+2025-01-27 19:26:47,436 - DEBUG - Encoded header block to b"\x83A\x8eM\x83\xa9\x14\r%^c\x9ej\n\xb9\x0fO\x87D\xe5b&7\xd8:\x91@\xd2^E\x8d\x05\xb3\xb9l\xe0f$\x1aF\xc4cI'/\x92\x92\xd4\x97\xfc\xb2\xb2\x1aDA\xa3\xae\x0eWI\xf1\x1d\x10F~\xd1&\xc1\xd4\x8a\x06\x92\xad\xe0\xb1\xa0\xb6w-\x91\x08\x02\x00D\x07W\x0b1V\x0f\x84\x1c\x8b\x0e\xba\xe0\x0f\xc2\x0eE\xab\xa0i\x94\xf6S\x00~\x10r-!{\x98\x85\x80?\x16&\x02\x7fS\x83\xf9c\xe7\x90z\xa0\xd0\x7ff\xa2\x81\xb0\xda\xe0S\xfa\xe4j\xa4?\x84)\xa7z\x81\x02\xe0\xfbS\x91\xaaq\xaf\xb5<\xb8\xd7\xf7s\x94\x9d)\xad\x17\x18a6\x0e\xa4P4\x95y\x8ey\xa8*\xe4=?`\xff\x1d\xd3\x92\xfc\r\x880~~^\xd7M\xb93\xe5\x9a\xfe\x8c\x9a\x8f\xfb\x87\x8btUeh\xbc\xb4\xad\xda\x01]\xd9\x16`=\x9bW>\xe7\xf3\xeb\x9d8\\\xbbu\x91X\xe5\x19\xe4\xd9\x1d\xbd\xff?\x1c\xb3,#5\xe2h\xe3BS\xa9\x1a%\x10]k\x81\x1b\x97.\x838\x98\xa8\xfd\xc3\xcd:8\xb3\x7f\xdc\xc7\xefx\xc3\xf3\xfb8{e\xf3\xd4\xbc\xc78\xb4\xfe,\x0c\xb7\xbcb\x905mI\xb3E>\xcc[2\xf8\xe7\xc3\x9ef\xbfk\x93<\x98\x9c\x91\xc1\xec\xe7\x0ePI^:\xb4\xea\xc7\xa7>\xce\x95\xc6\xb6\x9e@\xdf\xdb\xa6^\x1f\\\x82\x0b\xc1_\x98\x1du\xd0b\r&=Ly[\xc7\x8f\x0bJ{)Z\xdb(-D<\x85\x93"
+2025-01-27 19:26:49,246 - DEBUG - Decoding b'\x88_\x96\x1du\xd0b\r&=LtA\xea\xfbP\x93\x8e\xc4\x150Z\x99V{X\xa1\xa8\xeb\x10d\x9c\xbfJTu\x90\x93\xd8_\xa5)\x1f\x95\x871`\x07\xd2\x94\xda\x84\xada{\x8e\x83H4\x97@\x85\xae\xc1\xcdH\xff\x86\xa8\xeb\x10d\x9c\xbfd\x96\xd0z\xbe\x94\x00T\xca:\x94\x0b\xef\x81@\x02\xe0\x01p\x00S\x16\x8d\xff\x0f\x12\x96\xd0z\xbe\x94\x13\xaae\x1dJ\x08\x02m@\xb3q\xb7.4\xf2\x98\xb4oY\xb2\x1aR2OIjO\xda\x92\x9a\x82\xd4:K\x07\xf3aQY\xeaAW\x8c\xd5\x7f?jJj\x0bP\xe9/\xcc\x1c7\xe1Y\xef\xf5\xfe\xac*+=H*\xf1\x9a\xaf@\x90\xf2\xb1\x0fRKRVO\xaa\xca\xb1\xebI\x8fR?\x85\xa8\xe8\xa8\xd2\xcb@\x86\x19\x08Z\xd2\xb1\'\xff\x13\xdcR-{\x1a\xdc!Z\x1b\t?\xd2\x9b\x8aE\xafc[\x84+]2j*\x11\xf4\xa6\xe2\x91k\xd8\xd6\xe1\n\xd8m\xa2\x85\xb8\x96\xc4\x18\xf5})\xb8\xa4Z\xf65\xb8B\xb6\x1bh\xa1n%\xb1\x06=Kg2\x13\xf4\xa6\xe2\x91k\xd8\xd6\xe1\n\xda\x0f!h\xfaSqH\xb5\xeckp\x85nG\xe4\xe3_Jn)\x16\xbd\x8dn\x10\xad\x84\xf6R\xb6\x11\x91\'\xb1\x1fJn)\x16\xbd\x8dn\x10\xad\xae\x81\xa6S\xd9O\xd2\x9b\x8aE\xafc[\x84+k\xa0i\x94\xf6R\xb7\x12\xd8\x83\x1e\xaf@\x90!\xeaIjJ\xc8)-\xb0\xc9\xf4\xb5g\xa0\xc4\xf5\xba\xb0\xbd\xad5\x85Y6Z\x84\x96E\x93\xea\xb2\xa1iOb\x9f\xe9\x04\xb0\xd5\xa7\xfd}\xd8Z\xcfbV\xb6\xc3(\xc4Lo\xb0u"\x81\xa4\xbc\x8b\x1a\x0bgr\xd9\xc0\xcc\x11\x15\xd8Z\xcfb\x7f@\x92%\x87B\x16=\x86\x98\xd5,z\xcbQlZ\xb3\xd0bz\x91@\xe9*\xc7\xb0\xd3\x1a\xa5\x87E\x07\xf0\xb5g\xae\xda\xd1@\x94%\x87B\x16=\x86\x98\xd5-aP{l!V\xac\xf4\x18\x9e\xbf\x86@\xe9*\xc82K@\x8d\xac\xb6Rd \xc7\xa9\x0bVz\x0cO_\xff\x02$\xebZ5\x87a\'\x83\xe7\xe9BN\xb5\xa3Z3&\xa2\xa1\x10|\xfd(I\xd6\xb4kKm\x14-\xdc\xb6 \xc7\xaa\x0f\x9f\xa5\t:\xd6\x8dim\xa2\x85\xbb\x96\xc4\x18\xf5-A\x90\x98>~\x94$\xebZ5\xa9<\x85\xa2\x0f\x9f\xa5\t:\xd6\x8do\x07\xf0\xe3P|\xfd(I\xd6\xb4kJ{)ZQ\x91\'\xb1\x10|\xfd(I\xd6\xb4kW@\xd3)\xec\xa6\x0f\x9f\xa5\t:\xd6\x8dj\xe8\x1ae=\x94\xad\xdc\xb6 \xc7\xaa\x0f\x9fv\x03ESF@\x8c\xf2\xb7\x94!j\xec:JD\x98\xf5\x7f\x010@\x8b\xf2\xb4\xb6\x0e\x92\xacz\xd2c\xd4\x8f\x89\xdd\x0e\x8c\x1a\xb6\xe4\xc5\x93O@\x85\x1d\tY\x1d\xc9\xa4\x9d\x98?\x9b\x8d4\xcf\xf3\xf6\xa5#\x80M\xbe \x00\x1fS\xb2\xb0\x9f\x83\xf9\xb8\xd3L\xff?jR8\x04\xdb\xe2\x00\x01R\x83\xa8\xf5\x17{\xad\xdcR-\x84\xa9$\xeb_*\x13\xf4\xa6\xe2\x91l%I\'[A\xe4/\xd2\x9b\x8aE\xb0\x95$\x9dm\xc6I~\xa1!\x0bZV\xc1Q\x0f!\xaa\x9b'
+2025-01-27 19:26:49,246 - DEBUG - Decoded 8, consumed 1 bytes
+2025-01-27 19:26:49,246 - DEBUG - Decoded (b':status', b'200'), consumed 1
+2025-01-27 19:26:49,246 - DEBUG - Decoded 31, consumed 1 bytes
+2025-01-27 19:26:49,246 - DEBUG - Decoded 22, consumed 1 bytes
+2025-01-27 19:26:49,247 - DEBUG - Decoded (b'content-type', b'application/json; charset=utf-8'), total consumed 24 bytes, indexed True
+2025-01-27 19:26:49,247 - DEBUG - Decoded 24, consumed 1 bytes
+2025-01-27 19:26:49,247 - DEBUG - Decoded 33, consumed 1 bytes
+2025-01-27 19:26:49,247 - DEBUG - Decoded (b'cache-control', b'no-cache, no-store, max-age=0, must-revalidate'), total consumed 35 bytes, indexed True
+2025-01-27 19:26:49,247 - DEBUG - Decoded 5, consumed 1 bytes
+2025-01-27 19:26:49,248 - DEBUG - Decoded 6, consumed 1 bytes
+2025-01-27 19:26:49,248 - DEBUG - Decoded (b'pragma', b'no-cache'), total consumed 14 bytes, indexed True
+2025-01-27 19:26:49,248 - DEBUG - Decoded 36, consumed 1 bytes
+2025-01-27 19:26:49,248 - DEBUG - Decoded 22, consumed 1 bytes
+2025-01-27 19:26:49,248 - DEBUG - Decoded (b'expires', b'Mon, 01 Jan 1990 00:00:00 GMT'), total consumed 24 bytes, indexed True
+2025-01-27 19:26:49,248 - DEBUG - Decoded 33, consumed 2 bytes
+2025-01-27 19:26:49,248 - DEBUG - Decoded 22, consumed 1 bytes
+2025-01-27 19:26:49,249 - DEBUG - Decoded (b'date', b'Mon, 27 Jan 2025 13:56:48 GMT'), total consumed 25 bytes, indexed False
+2025-01-27 19:26:49,249 - DEBUG - Decoded 25, consumed 1 bytes
+2025-01-27 19:26:49,249 - DEBUG - Decoded 50, consumed 1 bytes
+2025-01-27 19:26:49,249 - DEBUG - Decoded (b'content-disposition', b'attachment; filename="response.bin"; filename*=UTF-8\'\'response.bin'), total consumed 52 bytes, indexed True
+2025-01-27 19:26:49,249 - DEBUG - Decoded 16, consumed 1 bytes
+2025-01-27 19:26:49,249 - DEBUG - Decoded 5, consumed 1 bytes
+2025-01-27 19:26:49,249 - DEBUG - Decoded (b'x-content-type-options', b'nosniff'), total consumed 24 bytes, indexed True
+2025-01-27 19:26:49,249 - DEBUG - Decoded 6, consumed 1 bytes
+2025-01-27 19:26:49,250 - DEBUG - Decoded 146, consumed 2 bytes
+2025-01-27 19:26:49,250 - DEBUG - Decoded (b'accept-ch', b'Sec-CH-UA-Arch, Sec-CH-UA-Bitness, Sec-CH-UA-Full-Version, Sec-CH-UA-Full-Version-List, Sec-CH-UA-Model, Sec-CH-UA-WoW64, Sec-CH-UA-Form-Factors, Sec-CH-UA-Platform, Sec-CH-UA-Platform-Version'), total consumed 156 bytes, indexed True
+2025-01-27 19:26:49,250 - DEBUG - Decoded 16, consumed 1 bytes
+2025-01-27 19:26:49,250 - DEBUG - Decoded 58, consumed 1 bytes
+2025-01-27 19:26:49,250 - DEBUG - Decoded (b'content-security-policy', b"require-trusted-types-for 'script';report-uri /_/TranslateWebserverUi/cspreport"), total consumed 77 bytes, indexed True
+2025-01-27 19:26:49,250 - DEBUG - Decoded 18, consumed 1 bytes
+2025-01-27 19:26:49,251 - DEBUG - Decoded 17, consumed 1 bytes
+2025-01-27 19:26:49,251 - DEBUG - Decoded (b'cross-origin-opener-policy', b'same-origin-allow-popups'), total consumed 38 bytes, indexed True
+2025-01-27 19:26:49,251 - DEBUG - Decoded 20, consumed 1 bytes
+2025-01-27 19:26:49,251 - DEBUG - Decoded 6, consumed 1 bytes
+2025-01-27 19:26:49,251 - DEBUG - Decoded (b'cross-origin-resource-policy', b'same-site'), total consumed 29 bytes, indexed True
+2025-01-27 19:26:49,251 - DEBUG - Decoded 13, consumed 1 bytes
+2025-01-27 19:26:49,251 - DEBUG - Decoded 129, consumed 2 bytes
+2025-01-27 19:26:49,251 - DEBUG - Decoded (b'permissions-policy', b'ch-ua-arch=*, ch-ua-bitness=*, ch-ua-full-version=*, ch-ua-full-version-list=*, ch-ua-model=*, ch-ua-wow64=*, ch-ua-form-factors=*, ch-ua-platform=*, ch-ua-platform-version=*'), total consumed 146 bytes, indexed True
+2025-01-27 19:26:49,252 - DEBUG - Decoded 54, consumed 1 bytes
+2025-01-27 19:26:49,252 - DEBUG - Decoded 3, consumed 1 bytes
+2025-01-27 19:26:49,252 - DEBUG - Decoded (b'server', <memory at 0x0000020E85EC1900>), total consumed 5 bytes, indexed True
+2025-01-27 19:26:49,252 - DEBUG - Decoded 12, consumed 1 bytes
+2025-01-27 19:26:49,252 - DEBUG - Decoded 1, consumed 1 bytes
+2025-01-27 19:26:49,252 - DEBUG - Decoded (b'x-xss-protection', <memory at 0x0000020E85EC1540>), total consumed 16 bytes, indexed True
+2025-01-27 19:26:49,252 - DEBUG - Decoded 11, consumed 1 bytes
+2025-01-27 19:26:49,252 - DEBUG - Decoded 9, consumed 1 bytes
+2025-01-27 19:26:49,252 - DEBUG - Decoded (b'x-frame-options', b'SAMEORIGIN'), total consumed 23 bytes, indexed True
+2025-01-27 19:26:49,252 - DEBUG - Decoded 5, consumed 1 bytes
+2025-01-27 19:26:49,252 - DEBUG - Decoded 36, consumed 1 bytes
+2025-01-27 19:26:49,252 - DEBUG - Decoded (b'alt-svc', b'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000'), total consumed 44 bytes, indexed True
+2025-01-27 19:26:49,252 - DEBUG - Decoded 18, consumed 1 bytes
+2025-01-27 19:26:49,253 - DEBUG - Decoded 3, consumed 1 bytes
+2025-01-27 19:26:49,253 - DEBUG - Decoded (b'accept-ranges', b'none'), total consumed 5 bytes, indexed True
+2025-01-27 19:26:49,253 - DEBUG - Decoded 59, consumed 1 bytes
+2025-01-27 19:26:49,253 - DEBUG - Decoded 45, consumed 1 bytes
+2025-01-27 19:26:49,253 - DEBUG - Decoded (b'vary', b'Sec-Fetch-Dest, Sec-Fetch-Mode, Sec-Fetch-Site,Accept-Encoding'), total consumed 47 bytes, indexed True
+2025-01-27 19:26:49,253 - DEBUG - HTTP Request: POST https://translate.google.com/_/TranslateWebserverUi/data/batchexecute?rpcids=MkEWBc&bl=boq_translate-webserver_20201207.13_p0&soc-app=1&soc-platform=1&soc-device=1&rt=c "HTTP/2 200 OK"
+2025-01-27 19:26:49,341 - DEBUG - HPACK encoding <generator object _check_path_header.<locals>.inner at 0x0000020EFFE9A5A0>
+2025-01-27 19:26:49,341 - DEBUG - Adding (b':method', b'POST') to the header table
+2025-01-27 19:26:49,341 - DEBUG - Encoding 3 with 7 bits
+2025-01-27 19:26:49,341 - DEBUG - Adding (b':authority', b'translate.google.com') to the header table
+2025-01-27 19:26:49,342 - DEBUG - Encoding 1 with 6 bits
+2025-01-27 19:26:49,342 - DEBUG - Encoding 14 with 7 bits
+2025-01-27 19:26:49,342 - DEBUG - Adding (b':scheme', b'https') to the header table
+2025-01-27 19:26:49,342 - DEBUG - Encoding 7 with 7 bits
+2025-01-27 19:26:49,342 - DEBUG - Adding (b':path', b'/_/TranslateWebserverUi/data/batchexecute?rpcids=MkEWBc&bl=boq_translate-webserver_20201207.13_p0&soc-app=1&soc-platform=1&soc-device=1&rt=c') to the header table
+2025-01-27 19:26:49,342 - DEBUG - Encoding 4 with 6 bits
+2025-01-27 19:26:49,342 - DEBUG - Encoding 101 with 7 bits
+2025-01-27 19:26:49,342 - DEBUG - Adding (b'accept', b'*/*') to the header table
+2025-01-27 19:26:49,343 - DEBUG - Encoding 19 with 6 bits
+2025-01-27 19:26:49,343 - DEBUG - Encoding 3 with 7 bits
+2025-01-27 19:26:49,343 - DEBUG - Adding (b'accept-encoding', b'gzip, deflate') to the header table
+2025-01-27 19:26:49,343 - DEBUG - Encoding 16 with 7 bits
+2025-01-27 19:26:49,343 - DEBUG - Adding (b'user-agent', b'Mozilla/5.0 (Windows NT 10.0; Win64; x64)') to the header table
+2025-01-27 19:26:49,343 - DEBUG - Encoding 58 with 6 bits
+2025-01-27 19:26:49,343 - DEBUG - Encoding 32 with 7 bits
+2025-01-27 19:26:49,343 - DEBUG - Adding (b'referer', b'https://translate.google.com') to the header table
+2025-01-27 19:26:49,343 - DEBUG - Encoding 51 with 6 bits
+2025-01-27 19:26:49,344 - DEBUG - Encoding 20 with 7 bits
+2025-01-27 19:26:49,344 - DEBUG - Adding (b'cookie', b'NID=521=XXCPmuILJgDMIOoZFV5lnrpsC-f5u02BQ_K08KOYvoxyYmF6BB32r6lLdQbuvXX6rJAaiCcMVlttOsMf2174Uc5fJMi6t_lZFYtMV3DzgovCiaxZh1qJxkeYah2NX-0JCwGd1nRtiK_hQGQJwYUYK4ZpdLdG6d6aQYAJ0dpHnNOHNLQjpb-NW0TqjJU') to the header table
+2025-01-27 19:26:49,344 - DEBUG - Encoding 32 with 6 bits
+2025-01-27 19:26:49,344 - DEBUG - Encoding 156 with 7 bits
+2025-01-27 19:26:49,344 - DEBUG - Adding (b'content-length', b'185') to the header table
+2025-01-27 19:26:49,344 - DEBUG - Encoding 28 with 6 bits
+2025-01-27 19:26:49,344 - DEBUG - Encoding 3 with 7 bits
+2025-01-27 19:26:49,345 - DEBUG - Adding (b'content-type', b'application/x-www-form-urlencoded') to the header table
+2025-01-27 19:26:49,345 - DEBUG - Encoding 31 with 6 bits
+2025-01-27 19:26:49,345 - DEBUG - Encoding 24 with 7 bits
+2025-01-27 19:26:49,345 - DEBUG - Encoded header block to b"\x83A\x8eM\x83\xa9\x14\r%^c\x9ej\n\xb9\x0fO\x87D\xe5b&7\xd8:\x91@\xd2^E\x8d\x05\xb3\xb9l\xe0f$\x1aF\xc4cI'/\x92\x92\xd4\x97\xfc\xb2\xb2\x1aDA\xa3\xae\x0eWI\xf1\x1d\x10F~\xd1&\xc1\xd4\x8a\x06\x92\xad\xe0\xb1\xa0\xb6w-\x91\x08\x02\x00D\x07W\x0b1V\x0f\x84\x1c\x8b\x0e\xba\xe0\x0f\xc2\x0eE\xab\xa0i\x94\xf6S\x00~\x10r-!{\x98\x85\x80?\x16&\x02\x7fS\x83\xf9c\xe7\x90z\xa0\xd0\x7ff\xa2\x81\xb0\xda\xe0S\xfa\xe4j\xa4?\x84)\xa7z\x81\x02\xe0\xfbS\x91\xaaq\xaf\xb5<\xb8\xd7\xf7s\x94\x9d)\xad\x17\x18a6\x0e\xa4P4\x95y\x8ey\xa8*\xe4=?`\xff\x1d\xd3\x92\xfc\r\x880~~^\xd7M\xb93\xe5\x9a\xfe\x8c\x9a\x8f\xfb\x87\x8btUeh\xbc\xb4\xad\xda\x01]\xd9\x16`=\x9bW>\xe7\xf3\xeb\x9d8\\\xbbu\x91X\xe5\x19\xe4\xd9\x1d\xbd\xff?\x1c\xb3,#5\xe2h\xe3BS\xa9\x1a%\x10]k\x81\x1b\x97.\x838\x98\xa8\xfd\xc3\xcd:8\xb3\x7f\xdc\xc7\xefx\xc3\xf3\xfb8{e\xf3\xd4\xbc\xc78\xb4\xfe,\x0c\xb7\xbcb\x905mI\xb3E>\xcc[2\xf8\xe7\xc3\x9ef\xbfk\x93<\x98\x9c\x91\xc1\xec\xe7\x0ePI^:\xb4\xea\xc7\xa7>\xce\x95\xc6\xb6\x9e@\xdf\xdb\xa6^\x1f\\\x83\x0b\xcd\xff_\x98\x1du\xd0b\r&=Ly[\xc7\x8f\x0bJ{)Z\xdb(-D<\x85\x93"
+2025-01-27 19:26:49,499 - DEBUG - Decoding b'\x88_\x96\x1du\xd0b\r&=LtA\xea\xfbP\x93\x8e\xc4\x150Z\x99V{X\xa1\xa8\xeb\x10d\x9c\xbfJTu\x90\x93\xd8_\xa5)\x1f\x95\x871`\x07\xd2\x94\xda\x84\xada{\x8e\x83H4\x97@\x85\xae\xc1\xcdH\xff\x86\xa8\xeb\x10d\x9c\xbfd\x96\xd0z\xbe\x94\x00T\xca:\x94\x0b\xef\x81@\x02\xe0\x01p\x00S\x16\x8d\xff\x0f\x12\x96\xd0z\xbe\x94\x13\xaae\x1dJ\x08\x02m@\xb3q\xb7.6\x051h\xdfY\xb2\x1aR2OIjO\xda\x92\x9a\x82\xd4:K\x07\xf3aQY\xeaAW\x8c\xd5\x7f?jJj\x0bP\xe9/\xcc\x1c7\xe1Y\xef\xf5\xfe\xac*+=H*\xf1\x9a\xaf@\x90\xf2\xb1\x0fRKRVO\xaa\xca\xb1\xebI\x8fR?\x85\xa8\xe8\xa8\xd2\xcb@\x86\x19\x08Z\xd2\xb1\'\xff\x13\xdcR-{\x1a\xdc!Z\x1b\t?\xd2\x9b\x8aE\xafc[\x84+]2j*\x11\xf4\xa6\xe2\x91k\xd8\xd6\xe1\n\xd8m\xa2\x85\xb8\x96\xc4\x18\xf5})\xb8\xa4Z\xf65\xb8B\xb6\x1bh\xa1n%\xb1\x06=Kg2\x13\xf4\xa6\xe2\x91k\xd8\xd6\xe1\n\xda\x0f!h\xfaSqH\xb5\xeckp\x85nG\xe4\xe3_Jn)\x16\xbd\x8dn\x10\xad\x84\xf6R\xb6\x11\x91\'\xb1\x1fJn)\x16\xbd\x8dn\x10\xad\xae\x81\xa6S\xd9O\xd2\x9b\x8aE\xafc[\x84+k\xa0i\x94\xf6R\xb7\x12\xd8\x83\x1e\xaf@\x94%\x87B\x16=\x86\x98\xd5-aP{l!V\xac\xf4\x18\x9e\xbf\x86@\xe9*\xc82K@\x8d\xac\xb6Rd \xc7\xa9\x0bVz\x0cO_\xff\x02$\xebZ5\x87a\'\x83\xe7\xe9BN\xb5\xa3Z3&\xa2\xa1\x10|\xfd(I\xd6\xb4kKm\x14-\xdc\xb6 \xc7\xaa\x0f\x9f\xa5\t:\xd6\x8dim\xa2\x85\xbb\x96\xc4\x18\xf5-A\x90\x98>~\x94$\xebZ5\xa9<\x85\xa2\x0f\x9f\xa5\t:\xd6\x8do\x07\xf0\xe3P|\xfd(I\xd6\xb4kJ{)ZQ\x91\'\xb1\x10|\xfd(I\xd6\xb4kW@\xd3)\xec\xa6\x0f\x9f\xa5\t:\xd6\x8dj\xe8\x1ae=\x94\xad\xdc\xb6 \xc7\xaa\x0f\x9f@\x92%\x87B\x16=\x86\x98\xd5,z\xcbQlZ\xb3\xd0bz\x91@\xe9*\xc7\xb0\xd3\x1a\xa5\x87E\x07\xf0\xb5g\xae\xda\xd1@\x90!\xeaIjJ\xc8)-\xb0\xc9\xf4\xb5g\xa0\xc4\xf5\xba\xb0\xbd\xad5\x85Y6Z\x84\x96E\x93\xea\xb2\xa1iOb\x9f\xe9\x04\xb0\xd5\xa7\xfd}\xd8Z\xcfbV\xb6\xc3(\xc4Lo\xb0u"\x81\xa4\xbc\x8b\x1a\x0bgr\xd9\xc0\xcc\x11\x15\xd8Z\xcfb\x7fv\x03ESF@\x8c\xf2\xb7\x94!j\xec:JD\x98\xf5\x7f\x010@\x8b\xf2\xb4\xb6\x0e\x92\xacz\xd2c\xd4\x8f\x89\xdd\x0e\x8c\x1a\xb6\xe4\xc5\x93O@\x85\x1d\tY\x1d\xc9\xa4\x9d\x98?\x9b\x8d4\xcf\xf3\xf6\xa5#\x80M\xbe \x00\x1fS\xb2\xb0\x9f\x83\xf9\xb8\xd3L\xff?jR8\x04\xdb\xe2\x00\x01R\x83\xa8\xf5\x17{\xad\xdcR-\x84\xa9$\xeb_*\x13\xf4\xa6\xe2\x91l%I\'[A\xe4/\xd2\x9b\x8aE\xb0\x95$\x9dm\xc6I~\xa1!\x0bZV\xc1Q\x0f!\xaa\x9b'
+2025-01-27 19:26:49,500 - DEBUG - Decoded 8, consumed 1 bytes
+2025-01-27 19:26:49,500 - DEBUG - Decoded (b':status', b'200'), consumed 1
+2025-01-27 19:26:49,500 - DEBUG - Decoded 31, consumed 1 bytes
+2025-01-27 19:26:49,500 - DEBUG - Decoded 22, consumed 1 bytes
+2025-01-27 19:26:49,500 - DEBUG - Decoded (b'content-type', b'application/json; charset=utf-8'), total consumed 24 bytes, indexed True
+2025-01-27 19:26:49,500 - DEBUG - Decoded 24, consumed 1 bytes
+2025-01-27 19:26:49,500 - DEBUG - Decoded 33, consumed 1 bytes
+2025-01-27 19:26:49,500 - DEBUG - Decoded (b'cache-control', b'no-cache, no-store, max-age=0, must-revalidate'), total consumed 35 bytes, indexed True
+2025-01-27 19:26:49,500 - DEBUG - Decoded 5, consumed 1 bytes
+2025-01-27 19:26:49,500 - DEBUG - Decoded 6, consumed 1 bytes
+2025-01-27 19:26:49,501 - DEBUG - Decoded (b'pragma', b'no-cache'), total consumed 14 bytes, indexed True
+2025-01-27 19:26:49,501 - DEBUG - Decoded 36, consumed 1 bytes
+2025-01-27 19:26:49,501 - DEBUG - Decoded 22, consumed 1 bytes
+2025-01-27 19:26:49,501 - DEBUG - Decoded (b'expires', b'Mon, 01 Jan 1990 00:00:00 GMT'), total consumed 24 bytes, indexed True
+2025-01-27 19:26:49,501 - DEBUG - Decoded 33, consumed 2 bytes
+2025-01-27 19:26:49,501 - DEBUG - Decoded 22, consumed 1 bytes
+2025-01-27 19:26:49,501 - DEBUG - Decoded (b'date', b'Mon, 27 Jan 2025 13:56:50 GMT'), total consumed 25 bytes, indexed False
+2025-01-27 19:26:49,501 - DEBUG - Decoded 25, consumed 1 bytes
+2025-01-27 19:26:49,501 - DEBUG - Decoded 50, consumed 1 bytes
+2025-01-27 19:26:49,501 - DEBUG - Decoded (b'content-disposition', b'attachment; filename="response.bin"; filename*=UTF-8\'\'response.bin'), total consumed 52 bytes, indexed True
+2025-01-27 19:26:49,501 - DEBUG - Decoded 16, consumed 1 bytes
+2025-01-27 19:26:49,501 - DEBUG - Decoded 5, consumed 1 bytes
+2025-01-27 19:26:49,501 - DEBUG - Decoded (b'x-content-type-options', b'nosniff'), total consumed 24 bytes, indexed True
+2025-01-27 19:26:49,501 - DEBUG - Decoded 6, consumed 1 bytes
+2025-01-27 19:26:49,502 - DEBUG - Decoded 146, consumed 2 bytes
+2025-01-27 19:26:49,502 - DEBUG - Decoded (b'accept-ch', b'Sec-CH-UA-Arch, Sec-CH-UA-Bitness, Sec-CH-UA-Full-Version, Sec-CH-UA-Full-Version-List, Sec-CH-UA-Model, Sec-CH-UA-WoW64, Sec-CH-UA-Form-Factors, Sec-CH-UA-Platform, Sec-CH-UA-Platform-Version'), total consumed 156 bytes, indexed True
+2025-01-27 19:26:49,502 - DEBUG - Decoded 20, consumed 1 bytes
+2025-01-27 19:26:49,502 - DEBUG - Decoded 6, consumed 1 bytes
+2025-01-27 19:26:49,502 - DEBUG - Decoded (b'cross-origin-resource-policy', b'same-site'), total consumed 29 bytes, indexed True
+2025-01-27 19:26:49,502 - DEBUG - Decoded 13, consumed 1 bytes
+2025-01-27 19:26:49,502 - DEBUG - Decoded 129, consumed 2 bytes
+2025-01-27 19:26:49,502 - DEBUG - Decoded (b'permissions-policy', b'ch-ua-arch=*, ch-ua-bitness=*, ch-ua-full-version=*, ch-ua-full-version-list=*, ch-ua-model=*, ch-ua-wow64=*, ch-ua-form-factors=*, ch-ua-platform=*, ch-ua-platform-version=*'), total consumed 146 bytes, indexed True
+2025-01-27 19:26:49,502 - DEBUG - Decoded 18, consumed 1 bytes
+2025-01-27 19:26:49,502 - DEBUG - Decoded 17, consumed 1 bytes
+2025-01-27 19:26:49,502 - DEBUG - Decoded (b'cross-origin-opener-policy', b'same-origin-allow-popups'), total consumed 38 bytes, indexed True
+2025-01-27 19:26:49,502 - DEBUG - Decoded 16, consumed 1 bytes
+2025-01-27 19:26:49,503 - DEBUG - Decoded 58, consumed 1 bytes
+2025-01-27 19:26:49,503 - DEBUG - Decoded (b'content-security-policy', b"require-trusted-types-for 'script';report-uri /_/TranslateWebserverUi/cspreport"), total consumed 77 bytes, indexed True
+2025-01-27 19:26:49,503 - DEBUG - Decoded 54, consumed 1 bytes
+2025-01-27 19:26:49,503 - DEBUG - Decoded 3, consumed 1 bytes
+2025-01-27 19:26:49,503 - DEBUG - Decoded (b'server', <memory at 0x0000020E85EC1480>), total consumed 5 bytes, indexed True
+2025-01-27 19:26:49,503 - DEBUG - Decoded 12, consumed 1 bytes
+2025-01-27 19:26:49,503 - DEBUG - Decoded 1, consumed 1 bytes
+2025-01-27 19:26:49,503 - DEBUG - Decoded (b'x-xss-protection', <memory at 0x0000020E85EC1300>), total consumed 16 bytes, indexed True
+2025-01-27 19:26:49,503 - DEBUG - Decoded 11, consumed 1 bytes
+2025-01-27 19:26:49,503 - DEBUG - Decoded 9, consumed 1 bytes
+2025-01-27 19:26:49,503 - DEBUG - Decoded (b'x-frame-options', b'SAMEORIGIN'), total consumed 23 bytes, indexed True
+2025-01-27 19:26:49,503 - DEBUG - Decoded 5, consumed 1 bytes
+2025-01-27 19:26:49,503 - DEBUG - Decoded 36, consumed 1 bytes
+2025-01-27 19:26:49,504 - DEBUG - Decoded (b'alt-svc', b'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000'), total consumed 44 bytes, indexed True
+2025-01-27 19:26:49,504 - DEBUG - Decoded 18, consumed 1 bytes
+2025-01-27 19:26:49,504 - DEBUG - Decoded 3, consumed 1 bytes
+2025-01-27 19:26:49,504 - DEBUG - Decoded (b'accept-ranges', b'none'), total consumed 5 bytes, indexed True
+2025-01-27 19:26:49,504 - DEBUG - Decoded 59, consumed 1 bytes
+2025-01-27 19:26:49,504 - DEBUG - Decoded 45, consumed 1 bytes
+2025-01-27 19:26:49,504 - DEBUG - Decoded (b'vary', b'Sec-Fetch-Dest, Sec-Fetch-Mode, Sec-Fetch-Site,Accept-Encoding'), total consumed 47 bytes, indexed True
+2025-01-27 19:26:49,504 - DEBUG - HTTP Request: POST https://translate.google.com/_/TranslateWebserverUi/data/batchexecute?rpcids=MkEWBc&bl=boq_translate-webserver_20201207.13_p0&soc-app=1&soc-platform=1&soc-device=1&rt=c "HTTP/2 200 OK"
+2025-01-27 19:26:49,598 - DEBUG - HPACK encoding <generator object _check_path_header.<locals>.inner at 0x0000020E800F1970>
+2025-01-27 19:26:49,598 - DEBUG - Adding (b':method', b'POST') to the header table
+2025-01-27 19:26:49,598 - DEBUG - Encoding 3 with 7 bits
+2025-01-27 19:26:49,598 - DEBUG - Adding (b':authority', b'translate.google.com') to the header table
+2025-01-27 19:26:49,598 - DEBUG - Encoding 1 with 6 bits
+2025-01-27 19:26:49,598 - DEBUG - Encoding 14 with 7 bits
+2025-01-27 19:26:49,599 - DEBUG - Adding (b':scheme', b'https') to the header table
+2025-01-27 19:26:49,599 - DEBUG - Encoding 7 with 7 bits
+2025-01-27 19:26:49,599 - DEBUG - Adding (b':path', b'/_/TranslateWebserverUi/data/batchexecute?rpcids=MkEWBc&bl=boq_translate-webserver_20201207.13_p0&soc-app=1&soc-platform=1&soc-device=1&rt=c') to the header table
+2025-01-27 19:26:49,599 - DEBUG - Encoding 4 with 6 bits
+2025-01-27 19:26:49,599 - DEBUG - Encoding 101 with 7 bits
+2025-01-27 19:26:49,599 - DEBUG - Adding (b'accept', b'*/*') to the header table
+2025-01-27 19:26:49,599 - DEBUG - Encoding 19 with 6 bits
+2025-01-27 19:26:49,599 - DEBUG - Encoding 3 with 7 bits
+2025-01-27 19:26:49,600 - DEBUG - Adding (b'accept-encoding', b'gzip, deflate') to the header table
+2025-01-27 19:26:49,600 - DEBUG - Encoding 16 with 7 bits
+2025-01-27 19:26:49,600 - DEBUG - Adding (b'user-agent', b'Mozilla/5.0 (Windows NT 10.0; Win64; x64)') to the header table
+2025-01-27 19:26:49,600 - DEBUG - Encoding 58 with 6 bits
+2025-01-27 19:26:49,600 - DEBUG - Encoding 32 with 7 bits
+2025-01-27 19:26:49,600 - DEBUG - Adding (b'referer', b'https://translate.google.com') to the header table
+2025-01-27 19:26:49,600 - DEBUG - Encoding 51 with 6 bits
+2025-01-27 19:26:49,600 - DEBUG - Encoding 20 with 7 bits
+2025-01-27 19:26:49,600 - DEBUG - Adding (b'cookie', b'NID=521=XXCPmuILJgDMIOoZFV5lnrpsC-f5u02BQ_K08KOYvoxyYmF6BB32r6lLdQbuvXX6rJAaiCcMVlttOsMf2174Uc5fJMi6t_lZFYtMV3DzgovCiaxZh1qJxkeYah2NX-0JCwGd1nRtiK_hQGQJwYUYK4ZpdLdG6d6aQYAJ0dpHnNOHNLQjpb-NW0TqjJU') to the header table
+2025-01-27 19:26:49,601 - DEBUG - Encoding 32 with 6 bits
+2025-01-27 19:26:49,601 - DEBUG - Encoding 156 with 7 bits
+2025-01-27 19:26:49,601 - DEBUG - Adding (b'content-length', b'185') to the header table
+2025-01-27 19:26:49,601 - DEBUG - Encoding 28 with 6 bits
+2025-01-27 19:26:49,601 - DEBUG - Encoding 3 with 7 bits
+2025-01-27 19:26:49,601 - DEBUG - Adding (b'content-type', b'application/x-www-form-urlencoded') to the header table
+2025-01-27 19:26:49,601 - DEBUG - Encoding 31 with 6 bits
+2025-01-27 19:26:49,601 - DEBUG - Encoding 24 with 7 bits
+2025-01-27 19:26:49,602 - DEBUG - Encoded header block to b"\x83A\x8eM\x83\xa9\x14\r%^c\x9ej\n\xb9\x0fO\x87D\xe5b&7\xd8:\x91@\xd2^E\x8d\x05\xb3\xb9l\xe0f$\x1aF\xc4cI'/\x92\x92\xd4\x97\xfc\xb2\xb2\x1aDA\xa3\xae\x0eWI\xf1\x1d\x10F~\xd1&\xc1\xd4\x8a\x06\x92\xad\xe0\xb1\xa0\xb6w-\x91\x08\x02\x00D\x07W\x0b1V\x0f\x84\x1c\x8b\x0e\xba\xe0\x0f\xc2\x0eE\xab\xa0i\x94\xf6S\x00~\x10r-!{\x98\x85\x80?\x16&\x02\x7fS\x83\xf9c\xe7\x90z\xa0\xd0\x7ff\xa2\x81\xb0\xda\xe0S\xfa\xe4j\xa4?\x84)\xa7z\x81\x02\xe0\xfbS\x91\xaaq\xaf\xb5<\xb8\xd7\xf7s\x94\x9d)\xad\x17\x18a6\x0e\xa4P4\x95y\x8ey\xa8*\xe4=?`\xff\x1d\xd3\x92\xfc\r\x880~~^\xd7M\xb93\xe5\x9a\xfe\x8c\x9a\x8f\xfb\x87\x8btUeh\xbc\xb4\xad\xda\x01]\xd9\x16`=\x9bW>\xe7\xf3\xeb\x9d8\\\xbbu\x91X\xe5\x19\xe4\xd9\x1d\xbd\xff?\x1c\xb3,#5\xe2h\xe3BS\xa9\x1a%\x10]k\x81\x1b\x97.\x838\x98\xa8\xfd\xc3\xcd:8\xb3\x7f\xdc\xc7\xefx\xc3\xf3\xfb8{e\xf3\xd4\xbc\xc78\xb4\xfe,\x0c\xb7\xbcb\x905mI\xb3E>\xcc[2\xf8\xe7\xc3\x9ef\xbfk\x93<\x98\x9c\x91\xc1\xec\xe7\x0ePI^:\xb4\xea\xc7\xa7>\xce\x95\xc6\xb6\x9e@\xdf\xdb\xa6^\x1f\\\x83\x0b\xcd\xff_\x98\x1du\xd0b\r&=Ly[\xc7\x8f\x0bJ{)Z\xdb(-D<\x85\x93"
+2025-01-27 19:26:51,081 - DEBUG - Decoding b'\x88_\x96\x1du\xd0b\r&=LtA\xea\xfbP\x93\x8e\xc4\x150Z\x99V{X\xa1\xa8\xeb\x10d\x9c\xbfJTu\x90\x93\xd8_\xa5)\x1f\x95\x871`\x07\xd2\x94\xda\x84\xada{\x8e\x83H4\x97@\x85\xae\xc1\xcdH\xff\x86\xa8\xeb\x10d\x9c\xbfd\x96\xd0z\xbe\x94\x00T\xca:\x94\x0b\xef\x81@\x02\xe0\x01p\x00S\x16\x8d\xff\x0f\x12\x96\xd0z\xbe\x94\x13\xaae\x1dJ\x08\x02m@\xb3q\xb7.6\x051h\xdfY\xb2\x1aR2OIjO\xda\x92\x9a\x82\xd4:K\x07\xf3aQY\xeaAW\x8c\xd5\x7f?jJj\x0bP\xe9/\xcc\x1c7\xe1Y\xef\xf5\xfe\xac*+=H*\xf1\x9a\xaf@\x90\xf2\xb1\x0fRKRVO\xaa\xca\xb1\xebI\x8fR?\x85\xa8\xe8\xa8\xd2\xcb@\x92%\x87B\x16=\x86\x98\xd5,z\xcbQlZ\xb3\xd0bz\x91@\xe9*\xc7\xb0\xd3\x1a\xa5\x87E\x07\xf0\xb5g\xae\xda\xd1@\x8d\xac\xb6Rd \xc7\xa9\x0bVz\x0cO_\xff\x02$\xebZ5\x87a\'\x83\xe7\xe9BN\xb5\xa3Z3&\xa2\xa1\x10|\xfd(I\xd6\xb4kKm\x14-\xdc\xb6 \xc7\xaa\x0f\x9f\xa5\t:\xd6\x8dim\xa2\x85\xbb\x96\xc4\x18\xf5-A\x90\x98>~\x94$\xebZ5\xa9<\x85\xa2\x0f\x9f\xa5\t:\xd6\x8do\x07\xf0\xe3P|\xfd(I\xd6\xb4kJ{)ZQ\x91\'\xb1\x10|\xfd(I\xd6\xb4kW@\xd3)\xec\xa6\x0f\x9f\xa5\t:\xd6\x8dj\xe8\x1ae=\x94\xad\xdc\xb6 \xc7\xaa\x0f\x9f@\x94%\x87B\x16=\x86\x98\xd5-aP{l!V\xac\xf4\x18\x9e\xbf\x86@\xe9*\xc82K@\x90!\xeaIjJ\xc8)-\xb0\xc9\xf4\xb5g\xa0\xc4\xf5\xba\xb0\xbd\xad5\x85Y6Z\x84\x96E\x93\xea\xb2\xa1iOb\x9f\xe9\x04\xb0\xd5\xa7\xfd}\xd8Z\xcfbV\xb6\xc3(\xc4Lo\xb0u"\x81\xa4\xbc\x8b\x1a\x0bgr\xd9\xc0\xcc\x11\x15\xd8Z\xcfb\x7f@\x86\x19\x08Z\xd2\xb1\'\xff\x13\xdcR-{\x1a\xdc!Z\x1b\t?\xd2\x9b\x8aE\xafc[\x84+]2j*\x11\xf4\xa6\xe2\x91k\xd8\xd6\xe1\n\xd8m\xa2\x85\xb8\x96\xc4\x18\xf5})\xb8\xa4Z\xf65\xb8B\xb6\x1bh\xa1n%\xb1\x06=Kg2\x13\xf4\xa6\xe2\x91k\xd8\xd6\xe1\n\xda\x0f!h\xfaSqH\xb5\xeckp\x85nG\xe4\xe3_Jn)\x16\xbd\x8dn\x10\xad\x84\xf6R\xb6\x11\x91\'\xb1\x1fJn)\x16\xbd\x8dn\x10\xad\xae\x81\xa6S\xd9O\xd2\x9b\x8aE\xafc[\x84+k\xa0i\x94\xf6R\xb7\x12\xd8\x83\x1e\xafv\x03ESF@\x8c\xf2\xb7\x94!j\xec:JD\x98\xf5\x7f\x010@\x8b\xf2\xb4\xb6\x0e\x92\xacz\xd2c\xd4\x8f\x89\xdd\x0e\x8c\x1a\xb6\xe4\xc5\x93O@\x85\x1d\tY\x1d\xc9\xa4\x9d\x98?\x9b\x8d4\xcf\xf3\xf6\xa5#\x80M\xbe \x00\x1fS\xb2\xb0\x9f\x83\xf9\xb8\xd3L\xff?jR8\x04\xdb\xe2\x00\x01R\x83\xa8\xf5\x17{\xad\xdcR-\x84\xa9$\xeb_*\x13\xf4\xa6\xe2\x91l%I\'[A\xe4/\xd2\x9b\x8aE\xb0\x95$\x9dm\xc6I~\xa1!\x0bZV\xc1Q\x0f!\xaa\x9b'
+2025-01-27 19:26:51,081 - DEBUG - Decoded 8, consumed 1 bytes
+2025-01-27 19:26:51,082 - DEBUG - Decoded (b':status', b'200'), consumed 1
+2025-01-27 19:26:51,082 - DEBUG - Decoded 31, consumed 1 bytes
+2025-01-27 19:26:51,082 - DEBUG - Decoded 22, consumed 1 bytes
+2025-01-27 19:26:51,082 - DEBUG - Decoded (b'content-type', b'application/json; charset=utf-8'), total consumed 24 bytes, indexed True
+2025-01-27 19:26:51,082 - DEBUG - Decoded 24, consumed 1 bytes
+2025-01-27 19:26:51,082 - DEBUG - Decoded 33, consumed 1 bytes
+2025-01-27 19:26:51,082 - DEBUG - Decoded (b'cache-control', b'no-cache, no-store, max-age=0, must-revalidate'), total consumed 35 bytes, indexed True
+2025-01-27 19:26:51,082 - DEBUG - Decoded 5, consumed 1 bytes
+2025-01-27 19:26:51,082 - DEBUG - Decoded 6, consumed 1 bytes
+2025-01-27 19:26:51,082 - DEBUG - Decoded (b'pragma', b'no-cache'), total consumed 14 bytes, indexed True
+2025-01-27 19:26:51,082 - DEBUG - Decoded 36, consumed 1 bytes
+2025-01-27 19:26:51,082 - DEBUG - Decoded 22, consumed 1 bytes
+2025-01-27 19:26:51,082 - DEBUG - Decoded (b'expires', b'Mon, 01 Jan 1990 00:00:00 GMT'), total consumed 24 bytes, indexed True
+2025-01-27 19:26:51,083 - DEBUG - Decoded 33, consumed 2 bytes
+2025-01-27 19:26:51,083 - DEBUG - Decoded 22, consumed 1 bytes
+2025-01-27 19:26:51,083 - DEBUG - Decoded (b'date', b'Mon, 27 Jan 2025 13:56:50 GMT'), total consumed 25 bytes, indexed False
+2025-01-27 19:26:51,083 - DEBUG - Decoded 25, consumed 1 bytes
+2025-01-27 19:26:51,083 - DEBUG - Decoded 50, consumed 1 bytes
+2025-01-27 19:26:51,083 - DEBUG - Decoded (b'content-disposition', b'attachment; filename="response.bin"; filename*=UTF-8\'\'response.bin'), total consumed 52 bytes, indexed True
+2025-01-27 19:26:51,083 - DEBUG - Decoded 16, consumed 1 bytes
+2025-01-27 19:26:51,083 - DEBUG - Decoded 5, consumed 1 bytes
+2025-01-27 19:26:51,083 - DEBUG - Decoded (b'x-content-type-options', b'nosniff'), total consumed 24 bytes, indexed True
+2025-01-27 19:26:51,083 - DEBUG - Decoded 18, consumed 1 bytes
+2025-01-27 19:26:51,083 - DEBUG - Decoded 17, consumed 1 bytes
+2025-01-27 19:26:51,083 - DEBUG - Decoded (b'cross-origin-opener-policy', b'same-origin-allow-popups'), total consumed 38 bytes, indexed True
+2025-01-27 19:26:51,083 - DEBUG - Decoded 13, consumed 1 bytes
+2025-01-27 19:26:51,083 - DEBUG - Decoded 129, consumed 2 bytes
+2025-01-27 19:26:51,084 - DEBUG - Decoded (b'permissions-policy', b'ch-ua-arch=*, ch-ua-bitness=*, ch-ua-full-version=*, ch-ua-full-version-list=*, ch-ua-model=*, ch-ua-wow64=*, ch-ua-form-factors=*, ch-ua-platform=*, ch-ua-platform-version=*'), total consumed 146 bytes, indexed True
+2025-01-27 19:26:51,084 - DEBUG - Decoded 20, consumed 1 bytes
+2025-01-27 19:26:51,084 - DEBUG - Decoded 6, consumed 1 bytes
+2025-01-27 19:26:51,084 - DEBUG - Decoded (b'cross-origin-resource-policy', b'same-site'), total consumed 29 bytes, indexed True
+2025-01-27 19:26:51,084 - DEBUG - Decoded 16, consumed 1 bytes
+2025-01-27 19:26:51,084 - DEBUG - Decoded 58, consumed 1 bytes
+2025-01-27 19:26:51,084 - DEBUG - Decoded (b'content-security-policy', b"require-trusted-types-for 'script';report-uri /_/TranslateWebserverUi/cspreport"), total consumed 77 bytes, indexed True
+2025-01-27 19:26:51,084 - DEBUG - Decoded 6, consumed 1 bytes
+2025-01-27 19:26:51,084 - DEBUG - Decoded 146, consumed 2 bytes
+2025-01-27 19:26:51,084 - DEBUG - Decoded (b'accept-ch', b'Sec-CH-UA-Arch, Sec-CH-UA-Bitness, Sec-CH-UA-Full-Version, Sec-CH-UA-Full-Version-List, Sec-CH-UA-Model, Sec-CH-UA-WoW64, Sec-CH-UA-Form-Factors, Sec-CH-UA-Platform, Sec-CH-UA-Platform-Version'), total consumed 156 bytes, indexed True
+2025-01-27 19:26:51,084 - DEBUG - Decoded 54, consumed 1 bytes
+2025-01-27 19:26:51,084 - DEBUG - Decoded 3, consumed 1 bytes
+2025-01-27 19:26:51,084 - DEBUG - Decoded (b'server', <memory at 0x0000020E85EC2140>), total consumed 5 bytes, indexed True
+2025-01-27 19:26:51,085 - DEBUG - Decoded 12, consumed 1 bytes
+2025-01-27 19:26:51,085 - DEBUG - Decoded 1, consumed 1 bytes
+2025-01-27 19:26:51,085 - DEBUG - Decoded (b'x-xss-protection', <memory at 0x0000020E85EC1FC0>), total consumed 16 bytes, indexed True
+2025-01-27 19:26:51,085 - DEBUG - Decoded 11, consumed 1 bytes
+2025-01-27 19:26:51,085 - DEBUG - Decoded 9, consumed 1 bytes
+2025-01-27 19:26:51,085 - DEBUG - Decoded (b'x-frame-options', b'SAMEORIGIN'), total consumed 23 bytes, indexed True
+2025-01-27 19:26:51,086 - DEBUG - Decoded 5, consumed 1 bytes
+2025-01-27 19:26:51,086 - DEBUG - Decoded 36, consumed 1 bytes
+2025-01-27 19:26:51,086 - DEBUG - Decoded (b'alt-svc', b'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000'), total consumed 44 bytes, indexed True
+2025-01-27 19:26:51,087 - DEBUG - Decoded 18, consumed 1 bytes
+2025-01-27 19:26:51,087 - DEBUG - Decoded 3, consumed 1 bytes
+2025-01-27 19:26:51,087 - DEBUG - Decoded (b'accept-ranges', b'none'), total consumed 5 bytes, indexed True
+2025-01-27 19:26:51,087 - DEBUG - Decoded 59, consumed 1 bytes
+2025-01-27 19:26:51,087 - DEBUG - Decoded 45, consumed 1 bytes
+2025-01-27 19:26:51,087 - DEBUG - Decoded (b'vary', b'Sec-Fetch-Dest, Sec-Fetch-Mode, Sec-Fetch-Site,Accept-Encoding'), total consumed 47 bytes, indexed True
+2025-01-27 19:26:51,088 - DEBUG - HTTP Request: POST https://translate.google.com/_/TranslateWebserverUi/data/batchexecute?rpcids=MkEWBc&bl=boq_translate-webserver_20201207.13_p0&soc-app=1&soc-platform=1&soc-device=1&rt=c "HTTP/2 200 OK"
+2025-01-27 19:26:51,089 - DEBUG - Texts after backtranslation: ['love ai', 'Incredible transformer', 'Automatic learning future', 'Fascinating natural language treatment']
+2025-01-27 19:26:51,092 - INFO - Splitting text into sentences...
+2025-01-27 19:26:51,154 - DEBUG - Split Sentences: [['love ai'], ['Incredible transformer'], ['Automatic learning future'], ['Fascinating natural language treatment']]
+2025-01-27 19:26:51,160 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-01-27 19:26:51,948 - DEBUG - https://huggingface.co:443 "HEAD /bert-base-uncased/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2025-01-27 19:26:52,078 - INFO - Starting tokenization...
+2025-01-27 19:26:52,085 - INFO - Tokenization completed.
+2025-01-27 19:26:52,089 - DEBUG - Tokenized Data: {'input_ids': array([[  101,  2293,  9932,   102,     0,     0,     0,     0,     0,
+            0],
+       [  101,  9788, 10938,  2121,   102,     0,     0,     0,     0,
+            0],
+       [  101,  6882,  4083,  2925,   102,     0,     0,     0,     0,
+            0],
+       [  101, 17160,  3019,  2653,  3949,   102,     0,     0,     0,
+            0]]), 'token_type_ids': array([[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+       [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+       [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+       [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]), 'attention_mask': array([[1, 1, 1, 1, 0, 0, 0, 0, 0, 0],
+       [1, 1, 1, 1, 1, 0, 0, 0, 0, 0],
+       [1, 1, 1, 1, 1, 0, 0, 0, 0, 0],
+       [1, 1, 1, 1, 1, 1, 0, 0, 0, 0]])}
+2025-01-27 19:26:52,090 - INFO - Creating attention masks...
+2025-01-27 19:26:52,090 - INFO - Attention masks created.
+2025-01-27 19:26:52,091 - DEBUG - Attention Masks: [[1 1 1 1 0 0 0 0 0 0]
+ [1 1 1 1 1 0 0 0 0 0]
+ [1 1 1 1 1 0 0 0 0 0]
+ [1 1 1 1 1 1 0 0 0 0]]
+2025-01-27 19:26:52,091 - INFO - Splitting data into training and validation sets...
+2025-01-27 19:26:52,094 - INFO - Data splitting completed.
+2025-01-27 19:26:52,095 - DEBUG - Training Input IDs: [[  101 17160  3019  2653  3949   102     0     0     0     0]
+ [  101  2293  9932   102     0     0     0     0     0     0]
+ [  101  6882  4083  2925   102     0     0     0     0     0]]
+2025-01-27 19:26:52,095 - DEBUG - Validation Input IDs: [[  101  9788 10938  2121   102     0     0     0     0     0]]
+2025-01-27 19:26:52,095 - DEBUG - Training Attention Masks: [[1 1 1 1 1 1 0 0 0 0]
+ [1 1 1 1 0 0 0 0 0 0]
+ [1 1 1 1 1 0 0 0 0 0]]
+2025-01-27 19:26:52,095 - DEBUG - Validation Attention Masks: [[1 1 1 1 1 0 0 0 0 0]]
+2025-01-27 19:26:52,095 - INFO - Preparing datasets for Hugging Face Trainer...
+2025-01-27 19:26:52,139 - INFO - Initiating fine-tuning process...
+2025-01-27 19:26:52,139 - INFO - Loading the pre-trained model for fine-tuning...
+2025-01-27 19:26:52,879 - DEBUG - https://huggingface.co:443 "HEAD /bert-base-uncased/resolve/main/config.json HTTP/1.1" 200 0
+2025-01-27 19:26:53,619 - DEBUG - https://huggingface.co:443 "HEAD /bert-base-uncased/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2025-01-27 19:26:53,879 - INFO - Starting model fine-tuning...

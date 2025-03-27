@@ -1,0 +1,47 @@
+{
+    "command_group": "az advisor configuration",
+    "description": "Manage Azure Advisor configuration.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az advisor configuration list",
+            "summary": "List Azure Advisor configuration for the entire subscription.",
+            "syntax": "az advisor configuration list",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az advisor configuration show",
+            "summary": "Show Azure Advisor configuration for the given subscription or resource group.",
+            "syntax": "az advisor configuration show [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az advisor configuration update",
+            "summary": "Update Azure Advisor configuration.",
+            "syntax": "az advisor configuration update [--add]\n                                [--configuration-name]\n                                [--exclude]\n                                [--force-string]\n                                [--include]\n                                [--low-cpu-threshold {10, 15, 20, 5}]\n                                [--remove]\n                                [--resource-group]\n                                [--set]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--configuration-name",
+                "--exclude -e",
+                "--force-string",
+                "--include -i",
+                "--low-cpu-threshold -l",
+                "--remove",
+                "--resource-group -g",
+                "--set"
+            ],
+            "examples": [
+                "az advisor configuration update -l 20",
+                "az advisor configuration update -g myRG -e",
+                "az advisor configuration update --include --resource-group myRG"
+            ]
+        }
+    ]
+}

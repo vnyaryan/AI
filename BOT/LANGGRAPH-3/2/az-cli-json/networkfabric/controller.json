@@ -1,0 +1,119 @@
+{
+    "command_group": "az networkfabric controller",
+    "description": "Manage Network Fabric Controller Resource.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az networkfabric controller create",
+            "summary": "Create a Network Fabric Controller resource.",
+            "syntax": "az networkfabric controller create --resource-group\n                                   --resource-name\n                                   [--annotation]\n                                   [--infra-er-connections]\n                                   [--ipv4-address-space]\n                                   [--ipv6-address-space]\n                                   [--is-workload-management-network-enabled {False, True}]\n                                   [--location]\n                                   [--managed-resource-group-configuration]\n                                   [--nfc-sku {Basic, HighPerformance, Standard}]\n                                   [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                   [--tags]\n                                   [--workload-er-connections]",
+            "required_parameters": [
+                "--resource-group -g",
+                "--resource-name"
+            ],
+            "optional_parameters": [
+                "--annotation",
+                "--infra-er-connections",
+                "--ipv4-address-space",
+                "--ipv6-address-space",
+                "--is-workload-management-network-enabled",
+                "--location -l",
+                "--managed-resource-group-configuration --mrg",
+                "--nfc-sku",
+                "--no-wait",
+                "--tags",
+                "--workload-er-connections"
+            ],
+            "examples": [
+                "az networkfabric controller create --resource-group \"example-rg\" --location \"westus3\"  --resource-name \"example-nfc\" --ipv4-address-space \"10.0.0.0/19\" --is-workload-management-network-enabled \"True\" --nfc-sku \"Basic\" --infra-er-connections \"[{expressRouteCircuitId:'/subscriptions/xxxxx-xxxx-xxxx-xxxx-xxxxx/resourceGroups/example-rg/providers/Microsoft.Network/expressRouteCircuits/example-expressRouteCircuit',expressRouteAuthorizationKey:'auth-key'},{expressRouteCircuitId:'/subscriptions/xxxxx-xxxx-xxxx-xxxx-xxxxx/resourceGroups/example-rg/providers/Microsoft.Network/expressRouteCircuits/example-expressRouteCircuit',expressRouteAuthorizationKey:'auth-key'}]\" --workload-er-connections \"[{expressRouteCircuitId:'/subscriptions/xxxxx-xxxx-xxxx-xxxx-xxxxx/resourceGroups/example-rg/providers/Microsoft.Network/expressRouteCircuits/example-expressRouteCircuit',expressRouteAuthorizationKey:'auth-key'},{expressRouteCircuitId:'/subscriptions/xxxxx-xxxx-xxxx-xxxx-xxxxx/resourceGroups/example-rg/providers/Microsoft.Network/expressRouteCircuits/example-expressRouteCircuit',expressRouteAuthorizationKey:'auth-key'}]\" --mrg name=example-mrgName location=eastus",
+                "az networkfabric controller create --infra-er-connections \"??\""
+            ]
+        },
+        {
+            "name": "az networkfabric controller delete",
+            "summary": "Delete the Network Fabric Controller resource.",
+            "syntax": "az networkfabric controller delete [--ids]\n                                   [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                   [--resource-group]\n                                   [--resource-name]\n                                   [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--no-wait",
+                "--resource-group -g",
+                "--resource-name",
+                "--subscription"
+            ],
+            "examples": [
+                "az networkfabric controller delete --resource-group \"example-rg\" --resource-name \"example-nfc\""
+            ]
+        },
+        {
+            "name": "az networkfabric controller list",
+            "summary": "List all Network Fabric Controllers in the provided resource group or subscription.",
+            "syntax": "az networkfabric controller list [--max-items]\n                                 [--next-token]\n                                 [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az networkfabric controller list --resource-group \"example-rg\"",
+                "az networkfabric controller list --subscription \"<subscriptionId>\""
+            ]
+        },
+        {
+            "name": "az networkfabric controller show",
+            "summary": "Show details of the provided Network Fabric Controller resource.",
+            "syntax": "az networkfabric controller show [--ids]\n                                 [--resource-group]\n                                 [--resource-name]\n                                 [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--resource-group -g",
+                "--resource-name",
+                "--subscription"
+            ],
+            "examples": [
+                "az networkfabric controller show --resource-group \"example-rg\" --resource-name \"example-nfc\""
+            ]
+        },
+        {
+            "name": "az networkfabric controller update",
+            "summary": "Update the Network Fabric Controller resource.",
+            "syntax": "az networkfabric controller update [--ids]\n                                   [--infra-er-connections]\n                                   [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                   [--resource-group]\n                                   [--resource-name]\n                                   [--subscription]\n                                   [--tags]\n                                   [--workload-er-connections]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--infra-er-connections",
+                "--no-wait",
+                "--resource-group -g",
+                "--resource-name",
+                "--subscription",
+                "--tags",
+                "--workload-er-connections"
+            ],
+            "examples": [
+                "az networkfabric controller update --resource-group \"example-rg\"   --resource-name \"example-nfc\" --infra-er-connections \"[{expressRouteCircuitId:'/subscriptions/xxxxx-xxxx-xxxx-xxxx-xxxxx/resourceGroups/example-rg/providers/Microsoft.Network/expressRouteCircuits/example-expressRouteCircuit',expressRouteAuthorizationKey:'auth-key'}]\" --workload-er-connections \"[{expressRouteCircuitId:'/subscriptions/xxxxx-xxxx-xxxx-xxxx-xxxxx/resourceGroups/example-rg/providers/Microsoft.Network/expressRouteCircuits/example-expressRouteCircuit',expressRouteAuthorizationKey:'auth-key'}]\"",
+                "az networkfabric controller update --infra-er-connections \"??\""
+            ]
+        },
+        {
+            "name": "az networkfabric controller wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az networkfabric controller wait [--created]\n                                 [--custom]\n                                 [--deleted]\n                                 [--exists]\n                                 [--ids]\n                                 [--interval]\n                                 [--resource-group]\n                                 [--resource-name]\n                                 [--subscription]\n                                 [--timeout]\n                                 [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--resource-group -g",
+                "--resource-name",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

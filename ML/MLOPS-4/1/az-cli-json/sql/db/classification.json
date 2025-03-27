@@ -1,0 +1,88 @@
+{
+    "command_group": "az sql db classification",
+    "description": "Manage sensitivity classifications.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az sql db classification delete",
+            "summary": "Delete the sensitivity classification of a given column.",
+            "syntax": "az sql db classification delete --column\n                                --schema\n                                --table\n                                [--ids]\n                                [--name]\n                                [--resource-group]\n                                [--server]\n                                [--subscription]",
+            "required_parameters": [
+                "--column",
+                "--schema",
+                "--table"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--server -s",
+                "--subscription"
+            ],
+            "examples": [
+                "az sql db classification delete -g mygroup -s myserver -n mydb --schema dbo --table mytable --column mycolumn"
+            ]
+        },
+        {
+            "name": "az sql db classification list",
+            "summary": "Get the sensitivity classifications of a given database.",
+            "syntax": "az sql db classification list [--count]\n                              [--filter]\n                              [--ids]\n                              [--name]\n                              [--resource-group]\n                              [--server]\n                              [--skip-token]\n                              [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--count",
+                "--filter",
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--server -s",
+                "--skip-token",
+                "--subscription"
+            ],
+            "examples": [
+                "az sql db classification list -g mygroup -s myserver -n mydb"
+            ]
+        },
+        {
+            "name": "az sql db classification show",
+            "summary": "Get the sensitivity classification of a given column.",
+            "syntax": "az sql db classification show --column\n                              --schema\n                              --table\n                              [--ids]\n                              [--name]\n                              [--resource-group]\n                              [--server]\n                              [--subscription]",
+            "required_parameters": [
+                "--column",
+                "--schema",
+                "--table"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--server -s",
+                "--subscription"
+            ],
+            "examples": [
+                "az sql db classification show -g mygroup -s myserver -n mydb --schema dbo --table mytable --column mycolumn"
+            ]
+        },
+        {
+            "name": "az sql db classification update",
+            "summary": "Update a columns's sensitivity classification.",
+            "syntax": "az sql db classification update --column\n                                --schema\n                                --table\n                                [--ids]\n                                [--information-type]\n                                [--label]\n                                [--name]\n                                [--resource-group]\n                                [--server]\n                                [--subscription]",
+            "required_parameters": [
+                "--column",
+                "--schema",
+                "--table"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--information-type",
+                "--label",
+                "--name -n",
+                "--resource-group -g",
+                "--server -s",
+                "--subscription"
+            ],
+            "examples": [
+                "az sql db classification update -g mygroup -s myserver -n mydb --schema dbo --table mytable --column mycolumn --information-type Name --label \"Confidential - GDPR\""
+            ]
+        }
+    ]
+}

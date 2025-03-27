@@ -1,0 +1,24 @@
+{
+    "command_group": "az mysql flexible-server gtid",
+    "description": "Manage GTID on a server.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az mysql flexible-server gtid reset",
+            "summary": "Resets GTID on a server.",
+            "syntax": "az mysql flexible-server gtid reset --gtid-set\n                                    --resource-group\n                                    --server-name\n                                    [--no-wait]\n                                    [--yes]",
+            "required_parameters": [
+                "--gtid-set",
+                "--resource-group -g",
+                "--server-name -s"
+            ],
+            "optional_parameters": [
+                "--no-wait",
+                "--yes -y"
+            ],
+            "examples": [
+                "az mysql flexible-server gtid reset -g testgroup -s testsvr --gtid-set 3E11FA47-71CA-11E1-9E33-C80AA9429562:23"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,143 @@
+{
+    "command_group": "az network public-ip",
+    "description": "Manage public IP addresses.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az network public-ip create",
+            "summary": "Create a public IP address.",
+            "syntax": "az network public-ip create --name\n                            --resource-group\n                            [--allocation-method {Dynamic, Static}]\n                            [--ddos-protection-mode {Disabled, Enabled, VirtualNetworkInherited}]\n                            [--ddos-protection-plan]\n                            [--dns-name]\n                            [--dns-name-scope {NoReuse, ResourceGroupReuse, SubscriptionReuse, TenantReuse}]\n                            [--edge-zone]\n                            [--idle-timeout]\n                            [--ip-address]\n                            [--ip-tags]\n                            [--location]\n                            [--public-ip-prefix]\n                            [--reverse-fqdn]\n                            [--sku {Basic, Standard}]\n                            [--tags]\n                            [--tier {Global, Regional}]\n                            [--version {IPv4, IPv6}]\n                            [--zone]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--allocation-method",
+                "--ddos-protection-mode --protection-mode",
+                "--ddos-protection-plan",
+                "--dns-name",
+                "--dns-name-scope",
+                "--edge-zone",
+                "--idle-timeout",
+                "--ip-address",
+                "--ip-tags",
+                "--location -l",
+                "--public-ip-prefix",
+                "--reverse-fqdn",
+                "--sku",
+                "--tags",
+                "--tier",
+                "--version",
+                "--zone -z"
+            ],
+            "examples": [
+                "az network public-ip create -g MyResourceGroup -n MyIp",
+                "az network public-ip create -g MyResourceGroup -n MyIp --dns-name MyLabel --allocation-method Static",
+                "az network public-ip create -g MyResourceGroup -n MyIp --zone 2"
+            ]
+        },
+        {
+            "name": "az network public-ip delete",
+            "summary": "Delete a public IP address.",
+            "syntax": "az network public-ip delete [--ids]\n                            [--name]\n                            [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                            [--resource-group]\n                            [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az network public-ip delete -g MyResourceGroup -n MyIp"
+            ]
+        },
+        {
+            "name": "az network public-ip list",
+            "summary": "List public IP addresses.",
+            "syntax": "az network public-ip list [--max-items]\n                          [--next-token]\n                          [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az network public-ip list",
+                "az network public-ip list -g MyResourceGroup",
+                "az network public-ip list -g MyResourceGroup --query \"[?dnsSettings.domainNameLabel=='MyLabel']\""
+            ]
+        },
+        {
+            "name": "az network public-ip show",
+            "summary": "Get the details of a public IP address.",
+            "syntax": "az network public-ip show [--expand]\n                          [--ids]\n                          [--name]\n                          [--resource-group]\n                          [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--expand",
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az network public-ip show -g MyResourceGroup -n MyIp",
+                "az network public-ip show -g MyResourceGroup -n MyIp --query \"{fqdn: dnsSettings.fqdn,address: ipAddress}\""
+            ]
+        },
+        {
+            "name": "az network public-ip update",
+            "summary": "Update a public IP address.",
+            "syntax": "az network public-ip update [--add]\n                            [--allocation-method {Dynamic, Static}]\n                            [--ddos-protection-mode {Disabled, Enabled, VirtualNetworkInherited}]\n                            [--ddos-protection-plan]\n                            [--dns-name]\n                            [--dns-name-scope {NoReuse, ResourceGroupReuse, SubscriptionReuse, TenantReuse}]\n                            [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                            [--idle-timeout]\n                            [--ids]\n                            [--ip-tags]\n                            [--name]\n                            [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                            [--public-ip-prefix]\n                            [--remove]\n                            [--resource-group]\n                            [--reverse-fqdn]\n                            [--set]\n                            [--sku {Basic, Standard}]\n                            [--subscription]\n                            [--tags]\n                            [--version {IPv4, IPv6}]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--allocation-method",
+                "--ddos-protection-mode --protection-mode",
+                "--ddos-protection-plan",
+                "--dns-name",
+                "--dns-name-scope",
+                "--force-string",
+                "--idle-timeout",
+                "--ids",
+                "--ip-tags",
+                "--name -n",
+                "--no-wait",
+                "--public-ip-prefix",
+                "--remove",
+                "--resource-group -g",
+                "--reverse-fqdn",
+                "--set",
+                "--sku",
+                "--subscription",
+                "--tags",
+                "--version"
+            ],
+            "examples": [
+                "az network public-ip update -g MyResourceGroup -n MyIp --dns-name MyLabel --allocation-method Static",
+                "az network public-ip update -g MyResourceGroup -n MyIP --protection-mode Disabled --ddos-protection-plan null"
+            ]
+        },
+        {
+            "name": "az network public-ip wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az network public-ip wait [--created]\n                          [--custom]\n                          [--deleted]\n                          [--exists]\n                          [--expand]\n                          [--ids]\n                          [--interval]\n                          [--name]\n                          [--resource-group]\n                          [--subscription]\n                          [--timeout]\n                          [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--expand",
+                "--ids",
+                "--interval",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

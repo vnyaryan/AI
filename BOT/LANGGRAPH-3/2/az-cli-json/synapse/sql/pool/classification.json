@@ -1,0 +1,104 @@
+{
+    "command_group": "az synapse sql pool classification",
+    "description": "Manage sensitivity classifications.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az synapse sql pool classification create",
+            "summary": "Create a column's sensitivity classification.",
+            "syntax": "az synapse sql pool classification create --column\n                                          --information-type\n                                          --label\n                                          --name\n                                          --resource-group\n                                          --schema\n                                          --table\n                                          --workspace-name",
+            "required_parameters": [
+                "--column",
+                "--information-type",
+                "--label",
+                "--name -n",
+                "--resource-group -g",
+                "--schema",
+                "--table",
+                "--workspace-name"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az synapse sql pool classification create --name sqlpool --workspace-name testsynapseworkspace \\\n--resource-group rg --schema dbo --table mytable --column mycolumn \\\n--information-type Name --label \"Confidential - GDPR\""
+            ]
+        },
+        {
+            "name": "az synapse sql pool classification delete",
+            "summary": "Delete the sensitivity classification of a given column.",
+            "syntax": "az synapse sql pool classification delete --column\n                                          --schema\n                                          --table\n                                          [--ids]\n                                          [--name]\n                                          [--resource-group]\n                                          [--subscription]\n                                          [--workspace-name]",
+            "required_parameters": [
+                "--column",
+                "--schema",
+                "--table"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--workspace-name"
+            ],
+            "examples": [
+                "az synapse sql pool classification delete --name sqlpool --workspace-name testsynapseworkspace --resource-group rg \\\n--schema dbo --table mytable --column mycolumn"
+            ]
+        },
+        {
+            "name": "az synapse sql pool classification list",
+            "summary": "Get the sensitivity classifications of a given SQL pool.",
+            "syntax": "az synapse sql pool classification list --name\n                                        --resource-group\n                                        --workspace-name\n                                        [--filter]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g",
+                "--workspace-name"
+            ],
+            "optional_parameters": [
+                "--filter"
+            ],
+            "examples": [
+                "az synapse sql pool classification list --name sqlpool --workspace-name testsynapseworkspace --resource-group rg"
+            ]
+        },
+        {
+            "name": "az synapse sql pool classification show",
+            "summary": "Get the sensitivity classification of a given column.",
+            "syntax": "az synapse sql pool classification show --column\n                                        --schema\n                                        --table\n                                        [--ids]\n                                        [--name]\n                                        [--resource-group]\n                                        [--subscription]\n                                        [--workspace-name]",
+            "required_parameters": [
+                "--column",
+                "--schema",
+                "--table"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--workspace-name"
+            ],
+            "examples": [
+                "az synapse sql pool classification show --name sqlpool --workspace-name testsynapseworkspace --resource-group rg \\\n--schema dbo --table mytable --column mycolumn"
+            ]
+        },
+        {
+            "name": "az synapse sql pool classification update",
+            "summary": "Update a column's sensitivity classification.",
+            "syntax": "az synapse sql pool classification update --column\n                                          --schema\n                                          --table\n                                          [--ids]\n                                          [--information-type]\n                                          [--label]\n                                          [--name]\n                                          [--resource-group]\n                                          [--subscription]\n                                          [--workspace-name]",
+            "required_parameters": [
+                "--column",
+                "--schema",
+                "--table"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--information-type",
+                "--label",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--workspace-name"
+            ],
+            "examples": [
+                "az synapse sql pool classification update --name sqlpool --workspace-name testsynapseworkspace \\\n--resource-group rg --schema dbo --table mytable --column mycolumn \\\n--information-type Name --label \"Confidential - GDPR\""
+            ]
+        }
+    ]
+}

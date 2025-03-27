@@ -1,0 +1,72 @@
+{
+    "command_group": "az iot central device twin",
+    "description": "Manage IoT Central device twins.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az iot central device twin replace",
+            "summary": "Replace writable property values of a device, a device component or a device module or a device module component.",
+            "syntax": "az iot central device twin replace --app-id\n                                   --content\n                                   --device-id\n                                   [--api-version {2022-06-30-preview, 2022-07-31}]\n                                   [--central-api-uri]\n                                   [--co]\n                                   [--mn]\n                                   [--token]",
+            "required_parameters": [
+                "--app-id -n",
+                "--content -k",
+                "--device-id -d"
+            ],
+            "optional_parameters": [
+                "--api-version --av",
+                "--central-api-uri --central-dns-suffix",
+                "--co --component-name",
+                "--mn --module-name",
+                "--token"
+            ],
+            "examples": [
+                "az iot central device twin replace --app-id {appid} --device-id {deviceid} -k {content}",
+                "az iot central device twin replace --app-id {appid} --device-id {deviceid} --co {componentname} -k {content}",
+                "az iot central device twin replace --app-id {appid} --device-id {deviceid} --mn {modulename} --co {componentname} -k {content}"
+            ]
+        },
+        {
+            "name": "az iot central device twin show",
+            "summary": "Get all property values of a device, a device component, a device module or a device module component.",
+            "syntax": "az iot central device twin show --app-id\n                                --device-id\n                                [--api-version {2022-06-30-preview, 2022-07-31}]\n                                [--central-api-uri]\n                                [--co]\n                                [--mn]\n                                [--token]",
+            "required_parameters": [
+                "--app-id -n",
+                "--device-id -d"
+            ],
+            "optional_parameters": [
+                "--api-version --av",
+                "--central-api-uri --central-dns-suffix",
+                "--co --component-name",
+                "--mn --module-name",
+                "--token"
+            ],
+            "examples": [
+                "az iot central device twin show --app-id {appid} --device-id {deviceid}",
+                "az iot central device twin show --app-id {appid} --device-id {deviceid} --co {componentname}",
+                "az iot central device twin show --app-id {appid} --device-id {deviceid} --mn {modulename} --co {componentname}"
+            ]
+        },
+        {
+            "name": "az iot central device twin update",
+            "summary": "Update writable property values of a device, a device component, a device module or a device module component.",
+            "syntax": "az iot central device twin update --app-id\n                                  --content\n                                  --device-id\n                                  [--api-version {2022-06-30-preview, 2022-07-31}]\n                                  [--central-api-uri]\n                                  [--co]\n                                  [--mn]\n                                  [--token]",
+            "required_parameters": [
+                "--app-id -n",
+                "--content -k",
+                "--device-id -d"
+            ],
+            "optional_parameters": [
+                "--api-version --av",
+                "--central-api-uri --central-dns-suffix",
+                "--co --component-name",
+                "--mn --module-name",
+                "--token"
+            ],
+            "examples": [
+                "az iot central device twin update --app-id {appid} --device-id {deviceid} -k {content}",
+                "az iot central device twin update --app-id {appid} --device-id {deviceid} --co {componentname} -k {content}",
+                "az iot central device twin update --app-id {appid} --device-id {deviceid} --mn {modulename} --co {componentname} -k {content}"
+            ]
+        }
+    ]
+}

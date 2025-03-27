@@ -1,0 +1,72 @@
+{
+    "command_group": "az vmware placement-policy vm",
+    "description": "Commands to manage VM placement policies.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az vmware placement-policy vm create",
+            "summary": "Create a VM placement policy in a private cloud cluster.",
+            "syntax": "az vmware placement-policy vm create --affinity-type {Affinity, AntiAffinity}\n                                     --cluster-name\n                                     --name\n                                     --private-cloud\n                                     --resource-group\n                                     --vm-members\n                                     [--display-name]\n                                     [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                     [--state {Disabled, Enabled}]",
+            "required_parameters": [
+                "--affinity-type",
+                "--cluster-name",
+                "--name --placement-policy-name -n",
+                "--private-cloud -c",
+                "--resource-group -g",
+                "--vm-members"
+            ],
+            "optional_parameters": [
+                "--display-name",
+                "--no-wait",
+                "--state"
+            ],
+            "examples": [
+                "az vmware placement-policy vm create --resource-group group1 --private-cloud cloud1 --cluster-name cluster1 --placement-policy-name policy1 --state Enabled --display-name policy1 --vm-members /subscriptions/subId/resourceGroups/group1/providers/Microsoft.AVS/privateClouds/cloud1/clusters/cluster1/virtualMachines/vm-128 /subscriptions/subId/resourceGroups/group1/providers/Microsoft.AVS/privateClouds/cloud1/clusters/cluster1/virtualMachines/vm-256 --affinity-type AntiAffinity"
+            ]
+        },
+        {
+            "name": "az vmware placement-policy vm delete",
+            "summary": "Delete a VM placement policy in a private cloud cluster.",
+            "syntax": "az vmware placement-policy vm delete [--cluster-name]\n                                     [--ids]\n                                     [--name]\n                                     [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                     [--private-cloud]\n                                     [--resource-group]\n                                     [--subscription]\n                                     [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--cluster-name",
+                "--ids",
+                "--name --placement-policy-name -n",
+                "--no-wait",
+                "--private-cloud -c",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az vmware placement-policy vm delete --resource-group group1 --private-cloud cloud1 --cluster-name cluster1 --placement-policy-name policy1"
+            ]
+        },
+        {
+            "name": "az vmware placement-policy vm update",
+            "summary": "Update a VM placement policy in a private cloud cluster.",
+            "syntax": "az vmware placement-policy vm update [--add]\n                                     [--cluster-name]\n                                     [--display-name]\n                                     [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                     [--ids]\n                                     [--name]\n                                     [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                     [--private-cloud]\n                                     [--remove]\n                                     [--resource-group]\n                                     [--set]\n                                     [--state {Disabled, Enabled}]\n                                     [--subscription]\n                                     [--vm-members]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--cluster-name",
+                "--display-name",
+                "--force-string",
+                "--ids",
+                "--name --placement-policy-name -n",
+                "--no-wait",
+                "--private-cloud -c",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--state",
+                "--subscription",
+                "--vm-members"
+            ],
+            "examples": [
+                "az vmware placement-policy vm update --resource-group group1 --private-cloud cloud1 --cluster-name cluster1 --placement-policy-name policy1 --state Enabled --display-name policy1 --vm-members /subscriptions/subId/resourceGroups/group1/providers/Microsoft.AVS/privateClouds/cloud1/clusters/cluster1/virtualMachines/vm-128 /subscriptions/subId/resourceGroups/group1/providers/Microsoft.AVS/privateClouds/cloud1/clusters/cluster1/virtualMachines/vm-256"
+            ]
+        }
+    ]
+}

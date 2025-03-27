@@ -1,0 +1,132 @@
+{
+    "command_group": "az network express-route port",
+    "description": "Manage ExpressRoute ports.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az network express-route port create",
+            "summary": "Create an ExpressRoute port.",
+            "syntax": "az network express-route port create --name\n                                     --resource-group\n                                     [--bandwidth]\n                                     [--billing-type {MeteredData, UnlimitedData}]\n                                     [--encapsulation {Dot1Q, QinQ}]\n                                     [--location]\n                                     [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                     [--peering-location]\n                                     [--tags]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--bandwidth",
+                "--billing-type",
+                "--encapsulation",
+                "--location -l",
+                "--no-wait",
+                "--peering-location",
+                "--tags"
+            ],
+            "examples": [
+                "az network express-route port create --bandwidth 200 --encapsulation Dot1Q --location westus2 --name MyExpressRoutePort --peering-location westus --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az network express-route port delete",
+            "summary": "Delete an ExpressRoute port.",
+            "syntax": "az network express-route port delete [--ids]\n                                     [--name]\n                                     [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                     [--resource-group]\n                                     [--subscription]\n                                     [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az network express-route port delete --name MyExpressRoutePort --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az network express-route port generate-loa",
+            "summary": "Generate and download a letter of authorization for the requested ExpressRoutePort.",
+            "syntax": "az network express-route port generate-loa --customer-name\n                                           [--file]\n                                           [--ids]\n                                           [--name]\n                                           [--resource-group]\n                                           [--subscription]",
+            "required_parameters": [
+                "--customer-name"
+            ],
+            "optional_parameters": [
+                "--file -f",
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az network express-route port list",
+            "summary": "List ExpressRoute ports.",
+            "syntax": "az network express-route port list [--max-items]\n                                   [--next-token]\n                                   [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az network express-route port list --resource-group myresourcegroup"
+            ]
+        },
+        {
+            "name": "az network express-route port show",
+            "summary": "Get the details of an ExpressRoute port.",
+            "syntax": "az network express-route port show [--ids]\n                                   [--name]\n                                   [--resource-group]\n                                   [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az network express-route port show --name MyExpressRoutePort --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az network express-route port update",
+            "summary": "Update settings of an ExpressRoute port.",
+            "syntax": "az network express-route port update [--add]\n                                     [--billing-type {MeteredData, UnlimitedData}]\n                                     [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                     [--ids]\n                                     [--name]\n                                     [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                     [--remove]\n                                     [--resource-group]\n                                     [--set]\n                                     [--subscription]\n                                     [--tags]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--billing-type",
+                "--force-string",
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--subscription",
+                "--tags"
+            ],
+            "examples": [
+                "az network express-route port update --name MyExpressRoutePort --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az network express-route port wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az network express-route port wait [--created]\n                                   [--custom]\n                                   [--deleted]\n                                   [--exists]\n                                   [--ids]\n                                   [--interval]\n                                   [--name]\n                                   [--resource-group]\n                                   [--subscription]\n                                   [--timeout]\n                                   [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

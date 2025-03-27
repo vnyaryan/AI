@@ -1,0 +1,58 @@
+{
+    "command_group": "az security assessment-metadata",
+    "description": "View your security assessment metadata.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az security assessment-metadata create",
+            "summary": "Creates a customer managed security assessment type.",
+            "syntax": "az security assessment-metadata create --description\n                                       --display-name\n                                       --name\n                                       --severity\n                                       [--remediation-description]",
+            "required_parameters": [
+                "--description",
+                "--display-name",
+                "--name -n",
+                "--severity"
+            ],
+            "optional_parameters": [
+                "--remediation-description"
+            ],
+            "examples": [
+                "az security assessment-metadata create -n \"4fb6c0a0-1137-42c7-a1c7-4bd37c91de8d\" --display-name  \"Resource should be secured\" --severity \"high\" --description \"The resource should be secured according to my company security policy\""
+            ]
+        },
+        {
+            "name": "az security assessment-metadata delete",
+            "summary": "Deletes a security assessment type and all it's assessment results.",
+            "syntax": "az security assessment-metadata delete --name",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az security assessment-metadata delete -n '4fb6c0a0-1137-42c7-a1c7-4bd37c91de8d'"
+            ]
+        },
+        {
+            "name": "az security assessment-metadata list",
+            "summary": "List all security assessment results.",
+            "syntax": "az security assessment-metadata list",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "examples": [
+                "az security assessment-metadata list"
+            ]
+        },
+        {
+            "name": "az security assessment-metadata show",
+            "summary": "Shows a security assessment.",
+            "syntax": "az security assessment-metadata show --name",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az security assessment-metadata show -n '4fb6c0a0-1137-42c7-a1c7-4bd37c91de8d'"
+            ]
+        }
+    ]
+}

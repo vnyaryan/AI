@@ -1,0 +1,111 @@
+{
+    "command_group": "az networkfabric ipcommunity",
+    "description": "Manage Ip Community Resource.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az networkfabric ipcommunity create",
+            "summary": "Create a Ip Community resource.",
+            "syntax": "az networkfabric ipcommunity create --ip-community-rules\n                                    --resource-group\n                                    --resource-name\n                                    [--annotation]\n                                    [--location]\n                                    [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                    [--tags]",
+            "required_parameters": [
+                "--ip-community-rules",
+                "--resource-group -g",
+                "--resource-name"
+            ],
+            "optional_parameters": [
+                "--annotation",
+                "--location -l",
+                "--no-wait",
+                "--tags"
+            ],
+            "examples": [
+                "az networkfabric ipcommunity create --resource-group \"example-rg\" --location \"westus3\" --resource-name \"example-ipcommunity\" --ip-community-rules \"[{action:Permit,communityMembers:['1:1'],sequenceNumber:1234,wellKnownCommunities:[Internet,GShut]}]\"",
+                "az networkfabric ipcommunity create --ip-community-rules \"??\""
+            ]
+        },
+        {
+            "name": "az networkfabric ipcommunity delete",
+            "summary": "Delete the Ip Community resource.",
+            "syntax": "az networkfabric ipcommunity delete [--ids]\n                                    [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                    [--resource-group]\n                                    [--resource-name]\n                                    [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--no-wait",
+                "--resource-group -g",
+                "--resource-name",
+                "--subscription"
+            ],
+            "examples": [
+                "az networkfabric ipcommunity delete --resource-group \"example-rg\" --resource-name \"example-ipcommunity\""
+            ]
+        },
+        {
+            "name": "az networkfabric ipcommunity list",
+            "summary": "List all Ip Communities in the provided resource group or subscription.",
+            "syntax": "az networkfabric ipcommunity list [--max-items]\n                                  [--next-token]\n                                  [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az networkfabric ipcommunity list --resource-group \"example-rg\"",
+                "az networkfabric ipcommunity list --subscription \"<subscriptionId>\""
+            ]
+        },
+        {
+            "name": "az networkfabric ipcommunity show",
+            "summary": "Show details of the provided Ip Community resource.",
+            "syntax": "az networkfabric ipcommunity show [--ids]\n                                  [--resource-group]\n                                  [--resource-name]\n                                  [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--resource-group -g",
+                "--resource-name",
+                "--subscription"
+            ],
+            "examples": [
+                "az networkfabric ipcommunity show --resource-group \"example-rg\" --resource-name \"example-ipcommunity\""
+            ]
+        },
+        {
+            "name": "az networkfabric ipcommunity update",
+            "summary": "Update to update certain properties of the IP Community resource.",
+            "syntax": "az networkfabric ipcommunity update [--ids]\n                                    [--ip-community-rules]\n                                    [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                    [--resource-group]\n                                    [--resource-name]\n                                    [--subscription]\n                                    [--tags]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--ip-community-rules",
+                "--no-wait",
+                "--resource-group -g",
+                "--resource-name",
+                "--subscription",
+                "--tags"
+            ],
+            "examples": [
+                "az networkfabric ipcommunity update --resource-group \"example-rg\" --resource-name \"example-ipcommunity\" --ip-community-rules \"[{action:Permit,communityMembers:['1:1'],sequenceNumber:1234,wellKnownCommunities:[Internet,GShut]}]\""
+            ]
+        },
+        {
+            "name": "az networkfabric ipcommunity wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az networkfabric ipcommunity wait [--created]\n                                  [--custom]\n                                  [--deleted]\n                                  [--exists]\n                                  [--ids]\n                                  [--interval]\n                                  [--resource-group]\n                                  [--resource-name]\n                                  [--subscription]\n                                  [--timeout]\n                                  [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--resource-group -g",
+                "--resource-name",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

@@ -1,0 +1,53 @@
+{
+    "command_group": "az hdinsight-on-aks",
+    "description": "HDInsight on Aks CLI.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az hdinsight-on-aks check-name-availability",
+            "summary": "Check the availability of the resource name.",
+            "syntax": "az hdinsight-on-aks check-name-availability [--ids]\n                                            [--location]\n                                            [--name]\n                                            [--subscription]\n                                            [--type]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--location -l",
+                "--name",
+                "--subscription",
+                "--type"
+            ],
+            "examples": [
+                "az hdinsight-on-aks check-name-availability -l westus3 --name cliclusterpool/clicluster --type Microsoft.HDInsight/clusterPools/clusters"
+            ]
+        },
+        {
+            "name": "az hdinsight-on-aks list-available-cluster-pool-version",
+            "summary": "List a list of available cluster pool versions.",
+            "syntax": "az hdinsight-on-aks list-available-cluster-pool-version --location\n                                                        [--max-items]\n                                                        [--next-token]",
+            "required_parameters": [
+                "--location -l"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az hdinsight-on-aks list-available-cluster-pool-version -l westus3"
+            ]
+        },
+        {
+            "name": "az hdinsight-on-aks list-available-cluster-version",
+            "summary": "Get all hdinsightonaks available-cluster version.",
+            "syntax": "az hdinsight-on-aks list-available-cluster-version --location\n                                                   [--max-items]\n                                                   [--next-token]",
+            "required_parameters": [
+                "--location -l"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az hdinsight-on-aks list-available-cluster-version -l westus3"
+            ]
+        }
+    ]
+}

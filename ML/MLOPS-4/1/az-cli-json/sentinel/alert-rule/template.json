@@ -1,0 +1,32 @@
+{
+    "command_group": "az sentinel alert-rule template",
+    "description": "Manage alert rule template with sentinel.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az sentinel alert-rule template list",
+            "summary": "Get all alert rule templates.",
+            "syntax": "az sentinel alert-rule template list --resource-group\n                                     --workspace-name",
+            "required_parameters": [
+                "--resource-group -g",
+                "--workspace-name -w"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az sentinel alert-rule template show",
+            "summary": "Get the alert rule template.",
+            "syntax": "az sentinel alert-rule template show [--alert-rule-template-id]\n                                     [--ids]\n                                     [--resource-group]\n                                     [--subscription]\n                                     [--workspace-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--alert-rule-template-id --name -n",
+                "--ids",
+                "--resource-group -g",
+                "--subscription",
+                "--workspace-name -w"
+            ],
+            "examples": []
+        }
+    ]
+}

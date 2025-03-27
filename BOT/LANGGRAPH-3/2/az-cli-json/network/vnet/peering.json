@@ -1,0 +1,152 @@
+{
+    "command_group": "az network vnet peering",
+    "description": "Manage peering connections between Azure Virtual Networks.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az network vnet peering create",
+            "summary": "Create a virtual network peering connection.",
+            "syntax": "az network vnet peering create --name\n                               --remote-vnet\n                               --resource-group\n                               --vnet-name\n                               [--allow-forwarded-traffic {0, 1, f, false, n, no, t, true, y, yes}]\n                               [--allow-gateway-transit {0, 1, f, false, n, no, t, true, y, yes}]\n                               [--allow-vnet-access {0, 1, f, false, n, no, t, true, y, yes}]\n                               [--enable-only-ipv6 {0, 1, f, false, n, no, t, true, y, yes}]\n                               [--local-subnet-names]\n                               [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                               [--peer-complete-vnets {0, 1, f, false, n, no, t, true, y, yes}]\n                               [--remote-subnet-names]\n                               [--use-remote-gateways {0, 1, f, false, n, no, t, true, y, yes}]",
+            "required_parameters": [
+                "--name -n",
+                "--remote-vnet",
+                "--resource-group -g",
+                "--vnet-name"
+            ],
+            "optional_parameters": [
+                "--allow-forwarded-traffic",
+                "--allow-gateway-transit",
+                "--allow-vnet-access",
+                "--enable-only-ipv6",
+                "--local-subnet-names",
+                "--no-wait",
+                "--peer-complete-vnets",
+                "--remote-subnet-names",
+                "--use-remote-gateways"
+            ],
+            "examples": [
+                "az network vnet peering create -g MyResourceGroup -n MyVnet1ToMyVnet2 --vnet-name MyVnet1 --remote-vnet MyVnet2Id --allow-vnet-access"
+            ]
+        },
+        {
+            "name": "az network vnet peering delete",
+            "summary": "Delete a peering.",
+            "syntax": "az network vnet peering delete [--ids]\n                               [--name]\n                               [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                               [--resource-group]\n                               [--subscription]\n                               [--vnet-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--vnet-name"
+            ],
+            "examples": [
+                "az network vnet peering delete -g MyResourceGroup -n MyVnet1ToMyVnet2 --vnet-name MyVnet1"
+            ]
+        },
+        {
+            "name": "az network vnet peering list",
+            "summary": "List peerings.",
+            "syntax": "az network vnet peering list --resource-group\n                             --vnet-name\n                             [--max-items]\n                             [--next-token]",
+            "required_parameters": [
+                "--resource-group -g",
+                "--vnet-name"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az network vnet peering list -g MyResourceGroup --vnet-name MyVnet1"
+            ]
+        },
+        {
+            "name": "az network vnet peering show",
+            "summary": "Show details of a peering.",
+            "syntax": "az network vnet peering show [--ids]\n                             [--name]\n                             [--resource-group]\n                             [--subscription]\n                             [--vnet-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--vnet-name"
+            ],
+            "examples": [
+                "az network vnet peering show -g MyResourceGroup -n MyVnet1ToMyVnet2 --vnet-name MyVnet1"
+            ]
+        },
+        {
+            "name": "az network vnet peering sync",
+            "summary": "Sync a virtual network peering connection.",
+            "syntax": "az network vnet peering sync [--ids]\n                             [--name]\n                             [--resource-group]\n                             [--subscription]\n                             [--vnet-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--vnet-name"
+            ],
+            "examples": [
+                "az network vnet peering sync -g MyResourceGroup -n MyVnet1ToMyVnet2 --vnet-name MyVnet1"
+            ]
+        },
+        {
+            "name": "az network vnet peering update",
+            "summary": "Update a peering in the specified virtual network.",
+            "syntax": "az network vnet peering update [--add]\n                               [--allow-forwarded-traffic {0, 1, f, false, n, no, t, true, y, yes}]\n                               [--allow-gateway-transit {0, 1, f, false, n, no, t, true, y, yes}]\n                               [--allow-vnet-access {0, 1, f, false, n, no, t, true, y, yes}]\n                               [--enable-only-ipv6 {0, 1, f, false, n, no, t, true, y, yes}]\n                               [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                               [--ids]\n                               [--local-subnet-names]\n                               [--name]\n                               [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                               [--peer-complete-vnets {0, 1, f, false, n, no, t, true, y, yes}]\n                               [--remote-subnet-names]\n                               [--remote-vnet]\n                               [--remove]\n                               [--resource-group]\n                               [--set]\n                               [--subscription]\n                               [--sync-remote {true}]\n                               [--use-remote-gateways {0, 1, f, false, n, no, t, true, y, yes}]\n                               [--vnet-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--allow-forwarded-traffic",
+                "--allow-gateway-transit",
+                "--allow-vnet-access",
+                "--enable-only-ipv6",
+                "--force-string",
+                "--ids",
+                "--local-subnet-names",
+                "--name -n",
+                "--no-wait",
+                "--peer-complete-vnets",
+                "--remote-subnet-names",
+                "--remote-vnet",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--subscription",
+                "--sync-remote",
+                "--use-remote-gateways",
+                "--vnet-name"
+            ],
+            "examples": [
+                "az network vnet peering update -g MyResourceGroup -n MyVnet1ToMyVnet2 --vnet-name MyVnet1 --set allowForwardedTraffic=true",
+                "az network vnet peering update -g MyResourceGroup -n MyVnet1ToMyVnet2 --vnet-name MyVnet1 --set allowVirtualNetworkAccess=true",
+                "az network vnet peering update -g MyResourceGroup -n MyVnet1ToMyVnet2 --vnet-name MyVnet1 --set allowGatewayTransit=true",
+                "az network vnet peering update -g MyResourceGroup -n MyVnet1ToMyVnet2 --vnet-name MyVnet1 --set useRemoteGateways=true"
+            ]
+        },
+        {
+            "name": "az network vnet peering wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az network vnet peering wait [--created]\n                             [--custom]\n                             [--deleted]\n                             [--exists]\n                             [--ids]\n                             [--interval]\n                             [--name]\n                             [--resource-group]\n                             [--subscription]\n                             [--timeout]\n                             [--updated]\n                             [--vnet-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated",
+                "--vnet-name"
+            ],
+            "examples": []
+        }
+    ]
+}

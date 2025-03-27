@@ -1,0 +1,259 @@
+{
+    "command_group": "az datafactory integration-runtime",
+    "description": "Manage integration runtime with datafactory.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az datafactory integration-runtime delete",
+            "summary": "Deletes an integration runtime.",
+            "syntax": "az datafactory integration-runtime delete [--factory-name]\n                                          [--ids]\n                                          [--integration-runtime-name]\n                                          [--resource-group]\n                                          [--subscription]\n                                          [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--factory-name",
+                "--ids",
+                "--integration-runtime-name --name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az datafactory integration-runtime delete --factory-name \"exampleFactoryName\" --name \"exampleIntegrationRuntime\" --resource-group \"exampleResourceGroup\""
+            ]
+        },
+        {
+            "name": "az datafactory integration-runtime get-connection-info",
+            "summary": "Gets the on-premises integration runtime connection information for encrypting the on-premises data source credentials.",
+            "syntax": "az datafactory integration-runtime get-connection-info [--factory-name]\n                                                       [--ids]\n                                                       [--integration-runtime-name]\n                                                       [--resource-group]\n                                                       [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--factory-name",
+                "--ids",
+                "--integration-runtime-name --name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az datafactory integration-runtime get-connection-info --factory-name \"exampleFactoryName\" --name \"exampleIntegrationRuntime\" --resource-group \"exampleResourceGroup\""
+            ]
+        },
+        {
+            "name": "az datafactory integration-runtime get-monitoring-data",
+            "summary": "Get the integration runtime monitoring data, which includes the monitor data for all the nodes under this integration runtime.",
+            "syntax": "az datafactory integration-runtime get-monitoring-data [--factory-name]\n                                                       [--ids]\n                                                       [--integration-runtime-name]\n                                                       [--resource-group]\n                                                       [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--factory-name",
+                "--ids",
+                "--integration-runtime-name --name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az datafactory integration-runtime get-monitoring-data --factory-name \"exampleFactoryName\" --name \"exampleIntegrationRuntime\" --resource-group \"exampleResourceGroup\""
+            ]
+        },
+        {
+            "name": "az datafactory integration-runtime get-status",
+            "summary": "Gets detailed status information for an integration runtime.",
+            "syntax": "az datafactory integration-runtime get-status [--factory-name]\n                                              [--ids]\n                                              [--integration-runtime-name]\n                                              [--resource-group]\n                                              [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--factory-name",
+                "--ids",
+                "--integration-runtime-name --name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az datafactory integration-runtime get-status --factory-name \"exampleFactoryName\" --name \"exampleIntegrationRuntime\" --resource-group \"exampleResourceGroup\""
+            ]
+        },
+        {
+            "name": "az datafactory integration-runtime list",
+            "summary": "Lists integration runtimes.",
+            "syntax": "az datafactory integration-runtime list --factory-name\n                                        --resource-group",
+            "required_parameters": [
+                "--factory-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az datafactory integration-runtime list --factory-name \"exampleFactoryName\" --resource-group \"exampleResourceGroup\""
+            ]
+        },
+        {
+            "name": "az datafactory integration-runtime list-auth-key",
+            "summary": "Retrieves the authentication keys for an integration runtime.",
+            "syntax": "az datafactory integration-runtime list-auth-key --factory-name\n                                                 --integration-runtime-name\n                                                 --resource-group",
+            "required_parameters": [
+                "--factory-name",
+                "--integration-runtime-name --name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az datafactory integration-runtime list-auth-key --factory-name \"exampleFactoryName\" --name \"exampleIntegrationRuntime\" --resource-group \"exampleResourceGroup\""
+            ]
+        },
+        {
+            "name": "az datafactory integration-runtime regenerate-auth-key",
+            "summary": "Regenerates the authentication key for an integration runtime.",
+            "syntax": "az datafactory integration-runtime regenerate-auth-key [--factory-name]\n                                                       [--ids]\n                                                       [--integration-runtime-name]\n                                                       [--key-name {authKey1, authKey2}]\n                                                       [--resource-group]\n                                                       [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--factory-name",
+                "--ids",
+                "--integration-runtime-name --name -n",
+                "--key-name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az datafactory integration-runtime regenerate-auth-key --factory-name \"exampleFactoryName\" --name \"exampleIntegrationRuntime\" --key-name \"authKey2\" --resource-group \"exampleResourceGroup\""
+            ]
+        },
+        {
+            "name": "az datafactory integration-runtime remove-link",
+            "summary": "Remove all linked integration runtimes under specific data factory in a self-hosted integration runtime.",
+            "syntax": "az datafactory integration-runtime remove-link --linked-factory-name\n                                               [--factory-name]\n                                               [--ids]\n                                               [--integration-runtime-name]\n                                               [--resource-group]\n                                               [--subscription]",
+            "required_parameters": [
+                "--linked-factory-name"
+            ],
+            "optional_parameters": [
+                "--factory-name",
+                "--ids",
+                "--integration-runtime-name --name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az datafactory integration-runtime remove-link --factory-name \"exampleFactoryName\" --name \"exampleIntegrationRuntime\" --linked-factory-name \"exampleFactoryName-linked\" --resource-group \"exampleResourceGroup\""
+            ]
+        },
+        {
+            "name": "az datafactory integration-runtime show",
+            "summary": "Gets an integration runtime.",
+            "syntax": "az datafactory integration-runtime show [--factory-name]\n                                        [--ids]\n                                        [--if-none-match]\n                                        [--integration-runtime-name]\n                                        [--resource-group]\n                                        [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--factory-name",
+                "--ids",
+                "--if-none-match",
+                "--integration-runtime-name --name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az datafactory integration-runtime show --factory-name \"exampleFactoryName\" --name \"exampleIntegrationRuntime\" --resource-group \"exampleResourceGroup\""
+            ]
+        },
+        {
+            "name": "az datafactory integration-runtime start",
+            "summary": "Starts a ManagedReserved type integration runtime.",
+            "syntax": "az datafactory integration-runtime start [--factory-name]\n                                         [--ids]\n                                         [--integration-runtime-name]\n                                         [--no-wait]\n                                         [--resource-group]\n                                         [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--factory-name",
+                "--ids",
+                "--integration-runtime-name --name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az datafactory integration-runtime start --factory-name \"exampleFactoryName\" --name \"exampleManagedIntegrationRuntime\" --resource-group \"exampleResourceGroup\""
+            ]
+        },
+        {
+            "name": "az datafactory integration-runtime stop",
+            "summary": "Stops a ManagedReserved type integration runtime.",
+            "syntax": "az datafactory integration-runtime stop [--factory-name]\n                                        [--ids]\n                                        [--integration-runtime-name]\n                                        [--no-wait]\n                                        [--resource-group]\n                                        [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--factory-name",
+                "--ids",
+                "--integration-runtime-name --name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az datafactory integration-runtime stop --factory-name \"exampleFactoryName\" --name \"exampleManagedIntegrationRuntime\" --resource-group \"exampleResourceGroup\""
+            ]
+        },
+        {
+            "name": "az datafactory integration-runtime sync-credentials",
+            "summary": "Force the integration runtime to synchronize credentials across integration runtime nodes, and this will override the credentials across all worker nodes with those available on the dispatcher node. If you already have the latest credential backup file, you should manually import it (preferred) on any self-hosted integration runtime node than using this API directly.",
+            "syntax": "az datafactory integration-runtime sync-credentials [--factory-name]\n                                                    [--ids]\n                                                    [--integration-runtime-name]\n                                                    [--resource-group]\n                                                    [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--factory-name",
+                "--ids",
+                "--integration-runtime-name --name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az datafactory integration-runtime sync-credentials --factory-name \"exampleFactoryName\" --name \"exampleIntegrationRuntime\" --resource-group \"exampleResourceGroup\""
+            ]
+        },
+        {
+            "name": "az datafactory integration-runtime update",
+            "summary": "Updates an integration runtime.",
+            "syntax": "az datafactory integration-runtime update [--auto-update {Off, On}]\n                                          [--factory-name]\n                                          [--ids]\n                                          [--integration-runtime-name]\n                                          [--resource-group]\n                                          [--subscription]\n                                          [--update-delay-offset]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--auto-update",
+                "--factory-name",
+                "--ids",
+                "--integration-runtime-name --name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--update-delay-offset"
+            ],
+            "examples": [
+                "az datafactory integration-runtime update --factory-name \"exampleFactoryName\" --name \"exampleIntegrationRuntime\" --resource-group \"exampleResourceGroup\" --auto-update \"Off\" --update-delay-offset \"\\\"PT3H\\\"\""
+            ]
+        },
+        {
+            "name": "az datafactory integration-runtime upgrade",
+            "summary": "Upgrade self-hosted integration runtime to latest version if availability.",
+            "syntax": "az datafactory integration-runtime upgrade [--factory-name]\n                                           [--ids]\n                                           [--integration-runtime-name]\n                                           [--resource-group]\n                                           [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--factory-name",
+                "--ids",
+                "--integration-runtime-name --name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az datafactory integration-runtime upgrade --factory-name \"exampleFactoryName\" --name \"exampleIntegrationRuntime\" --resource-group \"exampleResourceGroup\""
+            ]
+        },
+        {
+            "name": "az datafactory integration-runtime wait",
+            "summary": "Place the CLI in a waiting state until a condition of the datafactory integration-runtime is met.",
+            "syntax": "az datafactory integration-runtime wait [--created]\n                                        [--custom]\n                                        [--deleted]\n                                        [--exists]\n                                        [--factory-name]\n                                        [--ids]\n                                        [--if-none-match]\n                                        [--integration-runtime-name]\n                                        [--interval]\n                                        [--resource-group]\n                                        [--subscription]\n                                        [--timeout]\n                                        [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--factory-name",
+                "--ids",
+                "--if-none-match",
+                "--integration-runtime-name --name -n",
+                "--interval",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": [
+                "az datafactory integration-runtime wait --factory-name \"exampleFactoryName\" --name \"exampleIntegrationRuntime\" --resource-group \"exampleResourceGroup\" --created"
+            ]
+        }
+    ]
+}

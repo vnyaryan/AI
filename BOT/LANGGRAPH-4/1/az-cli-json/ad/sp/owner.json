@@ -1,0 +1,19 @@
+{
+    "command_group": "az ad sp owner",
+    "description": "Manage service principal owners.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az ad sp owner list",
+            "summary": "List service principal owners.",
+            "syntax": "az ad sp owner list --id",
+            "required_parameters": [
+                "--id"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az ad sp owner list --id 00000000-0000-0000-0000-000000000000"
+            ]
+        }
+    ]
+}

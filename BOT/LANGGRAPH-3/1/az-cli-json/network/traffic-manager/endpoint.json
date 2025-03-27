@@ -1,0 +1,130 @@
+{
+    "command_group": "az network traffic-manager endpoint",
+    "description": "Manage Azure Traffic Manager end points.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az network traffic-manager endpoint create",
+            "summary": "Create a traffic manager endpoint.",
+            "syntax": "az network traffic-manager endpoint create --name\n                                           --profile-name\n                                           --resource-group\n                                           --type {azureEndpoints, externalEndpoints, nestedEndpoints}\n                                           [--always-serve {Disabled, Enabled}]\n                                           [--custom-headers]\n                                           [--endpoint-location]\n                                           [--endpoint-monitor-status]\n                                           [--endpoint-status {Disabled, Enabled}]\n                                           [--geo-mapping]\n                                           [--min-child-endpoints]\n                                           [--min-child-ipv4]\n                                           [--min-child-ipv6]\n                                           [--priority]\n                                           [--subnets]\n                                           [--target]\n                                           [--target-resource-id]\n                                           [--weight]",
+            "required_parameters": [
+                "--name -n",
+                "--profile-name",
+                "--resource-group -g",
+                "--type -t"
+            ],
+            "optional_parameters": [
+                "--always-serve",
+                "--custom-headers",
+                "--endpoint-location",
+                "--endpoint-monitor-status",
+                "--endpoint-status",
+                "--geo-mapping",
+                "--min-child-endpoints",
+                "--min-child-ipv4",
+                "--min-child-ipv6",
+                "--priority",
+                "--subnets",
+                "--target",
+                "--target-resource-id",
+                "--weight"
+            ],
+            "examples": [
+                "az network traffic-manager endpoint create -g MyResourceGroup --profile-name MyTmProfile \\\n    -n MyEndpoint --type azureEndpoints --target-resource-id $MyWebApp1Id --endpoint-status enabled"
+            ]
+        },
+        {
+            "name": "az network traffic-manager endpoint delete",
+            "summary": "Delete a traffic manager endpoint.",
+            "syntax": "az network traffic-manager endpoint delete [--ids]\n                                           [--name]\n                                           [--profile-name]\n                                           [--resource-group]\n                                           [--subscription]\n                                           [--type {AzureEndpoints, ExternalEndpoints, NestedEndpoints}]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--profile-name",
+                "--resource-group -g",
+                "--subscription",
+                "--type -t"
+            ],
+            "examples": [
+                "az network traffic-manager endpoint delete -g MyResourceGroup --profile-name MyTmProfile -n MyEndpoint --type azureEndpoints",
+                "az network traffic-manager endpoint delete --name MyEndpoint --profile-name MyTmProfile --resource-group MyResourceGroup --subscription MySubscription --type azureEndpoints"
+            ]
+        },
+        {
+            "name": "az network traffic-manager endpoint list",
+            "summary": "List traffic manager endpoints.",
+            "syntax": "az network traffic-manager endpoint list --profile-name\n                                         --resource-group\n                                         [--type {azureEndpoints, externalEndpoints, nestedEndpoints}]",
+            "required_parameters": [
+                "--profile-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--type -t"
+            ],
+            "examples": [
+                "az network traffic-manager endpoint list -g MyResourceGroup --profile-name MyTmProfile"
+            ]
+        },
+        {
+            "name": "az network traffic-manager endpoint show",
+            "summary": "Get the details of a traffic manager endpoint.",
+            "syntax": "az network traffic-manager endpoint show [--ids]\n                                         [--name]\n                                         [--profile-name]\n                                         [--resource-group]\n                                         [--subscription]\n                                         [--type {AzureEndpoints, ExternalEndpoints, NestedEndpoints}]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--profile-name",
+                "--resource-group -g",
+                "--subscription",
+                "--type -t"
+            ],
+            "examples": [
+                "az network traffic-manager endpoint show -g MyResourceGroup --profile-name MyTmProfile -n MyEndpoint --type azureEndpoints"
+            ]
+        },
+        {
+            "name": "az network traffic-manager endpoint show-geographic-hierarchy",
+            "summary": "Get the default geographic hierarchy used by the geographic traffic routing method.",
+            "syntax": "az network traffic-manager endpoint show-geographic-hierarchy",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "examples": [
+                "az network traffic-manager endpoint show-geographic-hierarchy"
+            ]
+        },
+        {
+            "name": "az network traffic-manager endpoint update",
+            "summary": "Update a traffic manager endpoint.",
+            "syntax": "az network traffic-manager endpoint update [--always-serve {Disabled, Enabled}]\n                                           [--custom-headers]\n                                           [--endpoint-location]\n                                           [--endpoint-monitor-status]\n                                           [--endpoint-status {Disabled, Enabled}]\n                                           [--geo-mapping]\n                                           [--ids]\n                                           [--min-child-endpoints]\n                                           [--min-child-ipv4]\n                                           [--min-child-ipv6]\n                                           [--name]\n                                           [--priority]\n                                           [--profile-name]\n                                           [--resource-group]\n                                           [--subnets]\n                                           [--subscription]\n                                           [--target]\n                                           [--target-resource-id]\n                                           [--type {azureEndpoints, externalEndpoints, nestedEndpoints}]\n                                           [--weight]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--always-serve",
+                "--custom-headers",
+                "--endpoint-location",
+                "--endpoint-monitor-status",
+                "--endpoint-status",
+                "--geo-mapping",
+                "--ids",
+                "--min-child-endpoints",
+                "--min-child-ipv4",
+                "--min-child-ipv6",
+                "--name -n",
+                "--priority",
+                "--profile-name",
+                "--resource-group -g",
+                "--subnets",
+                "--subscription",
+                "--target",
+                "--target-resource-id",
+                "--type -t",
+                "--weight"
+            ],
+            "examples": [
+                "az network traffic-manager endpoint update -g MyResourceGroup --profile-name MyTmProfile \\ -n MyEndpoint --weight 20 --type azureEndpoints",
+                "az network traffic-manager endpoint update --name MyEndpoint --profile-name MyTmProfile --resource-group MyResourceGroup --target webserver.mysite.com --type azureEndpoints",
+                "az network traffic-manager endpoint update --endpoint-status Enabled --name MyEndpoint --profile-name MyTmProfile --resource-group MyResourceGroup --type azureEndpoints"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,60 @@
+{
+    "command_group": "az iot ops connector opcua trust",
+    "description": "Manage trusted certificates for the OPC UA Broker.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az iot ops connector opcua trust add",
+            "summary": "Add a trusted certificate to the OPC UA Broker's trusted certificate list.",
+            "syntax": "az iot ops connector opcua trust add --certificate-file\n                                     --instance\n                                     --resource-group\n                                     [--overwrite-secret {false, true}]\n                                     [--secret-name]",
+            "required_parameters": [
+                "--certificate-file --cf",
+                "--instance -i -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--overwrite-secret",
+                "--secret-name -s"
+            ],
+            "examples": [
+                "az iot ops connector opcua trust add --instance instance --resource-group instanceresourcegroup --certificate-file \"certificate.der\"",
+                "az iot ops connector opcua trust add --instance instance --resource-group instanceresourcegroup --certificate-file \"certificate.crt\" --secret-name custom-secret-name",
+                "az iot ops connector opcua trust add --instance instance --resource-group instanceresourcegroup --certificate-file \"certificate.der\" --overwrite-secret"
+            ]
+        },
+        {
+            "name": "az iot ops connector opcua trust remove",
+            "summary": "Remove trusted certificate(s) from the OPC UA Broker's trusted certificate list.",
+            "syntax": "az iot ops connector opcua trust remove --certificate-names\n                                        --instance\n                                        --resource-group\n                                        [--force {false, true}]\n                                        [--include-secrets {false, true}]\n                                        [--yes {false, true}]",
+            "required_parameters": [
+                "--certificate-names --cn",
+                "--instance -i -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--force",
+                "--include-secrets",
+                "--yes -y"
+            ],
+            "examples": [
+                "az iot ops connector opcua trust remove --instance instance --resource-group instanceresourcegroup --certificate-names testcert1.der testcert2.crt",
+                "az iot ops connector opcua trust remove --instance instance --resource-group instanceresourcegroup --certificate-names testcert1.der testcert2.crt --include-secrets",
+                "az iot ops connector opcua trust remove --instance instance --resource-group instanceresourcegroup --certificate-names testcert1.der testcert2.crt --force",
+                "az iot ops connector opcua trust remove --instance instance --resource-group instanceresourcegroup --certificate-names testcert1.der testcert2.crt --yes"
+            ]
+        },
+        {
+            "name": "az iot ops connector opcua trust show",
+            "summary": "Show details of secretsync resource 'aio-opc-ua-broker-trust-list'.",
+            "syntax": "az iot ops connector opcua trust show --instance\n                                      --resource-group",
+            "required_parameters": [
+                "--instance -i -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az iot ops connector opcua trust show --instance instance --resource-group instanceresourcegroup"
+            ]
+        }
+    ]
+}

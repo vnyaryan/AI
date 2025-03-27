@@ -1,0 +1,96 @@
+{
+    "command_group": "az storage azcopy blob",
+    "description": "Manage object storage for unstructured data (blobs) using AzCopy.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az storage azcopy blob delete",
+            "summary": "Delete blobs from a storage blob container using AzCopy.",
+            "syntax": "az storage azcopy blob delete --container\n                              [--account-key]\n                              [--account-name]\n                              [--auth-mode {key, login}]\n                              [--connection-string]\n                              [--recursive]\n                              [--sas-token]\n                              [--target]",
+            "required_parameters": [
+                "--container -c"
+            ],
+            "optional_parameters": [
+                "--account-key",
+                "--account-name",
+                "--auth-mode",
+                "--connection-string",
+                "--recursive -r",
+                "--sas-token",
+                "--target -t"
+            ],
+            "examples": [
+                "az storage azcopy blob delete -c MyContainer --account-name MyStorageAccount -t TargetBlob",
+                "az storage azcopy blob delete -c MyContainer --account-name MyStorageAccount --recursive",
+                "az storage azcopy blob delete -c MyContainer --account-name MyStorageAccount -t \"path/to/virtual_directory\" --recursive"
+            ]
+        },
+        {
+            "name": "az storage azcopy blob download",
+            "summary": "Download blobs from a storage blob container using AzCopy.",
+            "syntax": "az storage azcopy blob download --container\n                                --destination\n                                [--account-key]\n                                [--account-name]\n                                [--auth-mode {key, login}]\n                                [--connection-string]\n                                [--recursive]\n                                [--sas-token]\n                                [--source]",
+            "required_parameters": [
+                "--container -c",
+                "--destination -d"
+            ],
+            "optional_parameters": [
+                "--account-key",
+                "--account-name",
+                "--auth-mode",
+                "--connection-string",
+                "--recursive -r",
+                "--sas-token",
+                "--source -s"
+            ],
+            "examples": [
+                "az storage azcopy blob download -c MyContainer --account-name MyStorageAccount -s \"path/to/blob\" -d \"path/to/file\"",
+                "az storage azcopy blob download -c MyContainer --account-name MyStorageAccount -s \"path/to/virtual_directory\" -d \"download/path\" --recursive",
+                "az storage azcopy blob download -c MyContainer --account-name MyStorageAccount -s * -d \"download/path\" --recursive"
+            ]
+        },
+        {
+            "name": "az storage azcopy blob sync",
+            "summary": "Sync blobs recursively to a storage blob container using AzCopy.",
+            "syntax": "az storage azcopy blob sync --container\n                            --source\n                            [--account-key]\n                            [--account-name]\n                            [--auth-mode {key, login}]\n                            [--connection-string]\n                            [--destination]\n                            [--sas-token]",
+            "required_parameters": [
+                "--container -c",
+                "--source -s"
+            ],
+            "optional_parameters": [
+                "--account-key",
+                "--account-name",
+                "--auth-mode",
+                "--connection-string",
+                "--destination -d",
+                "--sas-token"
+            ],
+            "examples": [
+                "az storage azcopy blob sync -c MyContainer --account-name MyStorageAccount -s \"path/to/file\" -d NewBlob",
+                "az storage azcopy blob sync -c MyContainer --account-name MyStorageAccount -s \"path/to/directory\""
+            ]
+        },
+        {
+            "name": "az storage azcopy blob upload",
+            "summary": "Upload blobs to a storage blob container using AzCopy.",
+            "syntax": "az storage azcopy blob upload --container\n                              --source\n                              [--account-key]\n                              [--account-name]\n                              [--auth-mode {key, login}]\n                              [--connection-string]\n                              [--destination]\n                              [--recursive]\n                              [--sas-token]",
+            "required_parameters": [
+                "--container -c",
+                "--source -s"
+            ],
+            "optional_parameters": [
+                "--account-key",
+                "--account-name",
+                "--auth-mode",
+                "--connection-string",
+                "--destination -d",
+                "--recursive -r",
+                "--sas-token"
+            ],
+            "examples": [
+                "az storage azcopy blob upload -c MyContainer --account-name MyStorageAccount -s \"path/to/file\" -d NewBlob",
+                "az storage azcopy blob upload -c MyContainer --account-name MyStorageAccount -s \"path/to/directory\" --recursive",
+                "az storage azcopy blob upload -c MyContainer --account-name MyStorageAccount -s \"path/to/directory/*\" --recursive"
+            ]
+        }
+    ]
+}

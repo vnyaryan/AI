@@ -1,0 +1,88 @@
+{
+    "command_group": "az iot du device class",
+    "description": "Device class and device class subgroup management.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az iot du device class delete",
+            "summary": "Delete a device class or device class subgroup.",
+            "syntax": "az iot du device class delete --account\n                              --cid\n                              --instance\n                              [--gid]\n                              [--resource-group]\n                              [--yes {false, true}]",
+            "required_parameters": [
+                "--account -n",
+                "--cid --class-id",
+                "--instance -i"
+            ],
+            "optional_parameters": [
+                "--gid --group-id",
+                "--resource-group -g",
+                "--yes -y"
+            ],
+            "examples": [
+                "az iot du device class delete -n {account_name} -i {instance_name} --class-id {device_class_id}",
+                "az iot du device class delete -n {account_name} -i {instance_name} --class-id {device_class_id} -y",
+                "az iot du device class delete -n {account_name} -i {instance_name} --class-id {device_class_id} --group-id {device_group_id}"
+            ]
+        },
+        {
+            "name": "az iot du device class list",
+            "summary": "List device classes or device class subgroups.",
+            "syntax": "az iot du device class list --account\n                            --instance\n                            [--filter]\n                            [--gid]\n                            [--resource-group]",
+            "required_parameters": [
+                "--account -n",
+                "--instance -i"
+            ],
+            "optional_parameters": [
+                "--filter",
+                "--gid --group-id",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az iot du device class list -n {account_name} -i {instance_name}",
+                "az iot du device class list -n {account_name} -i {instance_name} --filter \"friendlyName eq 'my-favorite-class'\"",
+                "az iot du device class list -n {account_name} -i {instance_name} --group-id {device_group_id}",
+                "az iot du device class list -n {account_name} -i {instance_name} --group-id {device_group_id} --filter \"compatProperties/manufacturer eq 'Contoso'\""
+            ]
+        },
+        {
+            "name": "az iot du device class show",
+            "summary": "Show details about a device class or device class subgroup including installable updates, the best update and update compliance.",
+            "syntax": "az iot du device class show --account\n                            --cid\n                            --instance\n                            [--best-update {false, true}]\n                            [--gid]\n                            [--installable-updates {false, true}]\n                            [--resource-group]\n                            [--update-compliance {false, true}]",
+            "required_parameters": [
+                "--account -n",
+                "--cid --class-id",
+                "--instance -i"
+            ],
+            "optional_parameters": [
+                "--best-update",
+                "--gid --group-id",
+                "--installable-updates",
+                "--resource-group -g",
+                "--update-compliance"
+            ],
+            "examples": [
+                "az iot du device class show -n {account_name} -i {instance_name} --class-id {device_class_id}",
+                "az iot du device class show -n {account_name} -i {instance_name} --class-id {device_class_id} --installable-updates",
+                "az iot du device class show -n {account_name} -i {instance_name} --class-id {device_class_id} --group-id {device_group_id}",
+                "az iot du device class show -n {account_name} -i {instance_name} --class-id {device_class_id} --group-id {device_group_id} --best-update",
+                "az iot du device class show -n {account_name} -i {instance_name} --class-id {device_class_id} --group-id {device_group_id} --update-compliance"
+            ]
+        },
+        {
+            "name": "az iot du device class update",
+            "summary": "Update a device class.",
+            "syntax": "az iot du device class update --account\n                              --cid\n                              --instance\n                              [--friendly-name]\n                              [--resource-group]",
+            "required_parameters": [
+                "--account -n",
+                "--cid --class-id",
+                "--instance -i"
+            ],
+            "optional_parameters": [
+                "--friendly-name",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az iot du device class update -n {account_name} -i {instance_name} --class-id {device_class_id} --friendly-name \"EU-region\""
+            ]
+        }
+    ]
+}

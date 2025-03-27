@@ -1,0 +1,104 @@
+{
+    "command_group": "az cosmosdb table role assignment",
+    "description": "Manage Azure Cosmos DB Table role assignments.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az cosmosdb table role assignment create",
+            "summary": "Create a Table role assignment under an Azure Cosmos DB account.",
+            "syntax": "az cosmosdb table role assignment create --account-name\n                                         --principal-id\n                                         --resource-group\n                                         --scope\n                                         [--role-assignment-id]\n                                         [--role-definition-id]\n                                         [--role-definition-name]",
+            "required_parameters": [
+                "--account-name -a",
+                "--principal-id -p",
+                "--resource-group -g",
+                "--scope -s"
+            ],
+            "optional_parameters": [
+                "--role-assignment-id -i",
+                "--role-definition-id -d",
+                "--role-definition-name -n"
+            ],
+            "examples": [
+                "az cosmosdb table role assignment create --account-name MyAccount --resource-group MyResourceGroup \\\n  --role-assignment-id cb8ed2d7-2371-4e3c-bd31-6cc1560e84f8 \\\n  --role-definition-name \"My Read Only Role\" \\\n  --scope \"/dbs/mydb/colls/mycontainer\" \\\n  --principal-id 6328f5f7-dbf7-4244-bba8-fbb9d8066506",
+                "az cosmosdb table role assignment create --account-name MyAccount --resource-group MyResourceGroup \\\n  --role-assignment-id cb8ed2d7-2371-4e3c-bd31-6cc1560e84f8 \\\n  --role-definition-id be79875a-2cc4-40d5-8958-566017875b39 \\\n  --scope \"/dbs/mydb/colls/mycontainer\" \\\n  --principal-id 6328f5f7-dbf7-4244-bba8-fbb9d8066506"
+            ]
+        },
+        {
+            "name": "az cosmosdb table role assignment delete",
+            "summary": "Delete a Table role assignment under an Azure Cosmos DB account.",
+            "syntax": "az cosmosdb table role assignment delete --account-name\n                                         --resource-group\n                                         --role-assignment-id\n                                         [--yes]",
+            "required_parameters": [
+                "--account-name -a",
+                "--resource-group -g",
+                "--role-assignment-id -i"
+            ],
+            "optional_parameters": [
+                "--yes -y"
+            ],
+            "examples": [
+                "az cosmosdb table role assignment delete --account-name MyAccount --resource-group MyResourceGroup --role-assignment-id cb8ed2d7-2371-4e3c-bd31-6cc1560e84f8"
+            ]
+        },
+        {
+            "name": "az cosmosdb table role assignment exists",
+            "summary": "Check if an Azure Cosmos DB role assignment exists.",
+            "syntax": "az cosmosdb table role assignment exists --account-name\n                                         --resource-group\n                                         --role-assignment-id",
+            "required_parameters": [
+                "--account-name -a",
+                "--resource-group -g",
+                "--role-assignment-id -i"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az cosmosdb table role assignment exists --account-name MyAccount --resource-group MyResourceGroup --role-assignment-id cb8ed2d7-2371-4e3c-bd31-6cc1560e84f8"
+            ]
+        },
+        {
+            "name": "az cosmosdb table role assignment list",
+            "summary": "List all Table role assignments under an Azure Cosmos DB account.",
+            "syntax": "az cosmosdb table role assignment list --account-name\n                                       --resource-group",
+            "required_parameters": [
+                "--account-name -a",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az cosmosdb table role assignment list --account-name MyAccount --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az cosmosdb table role assignment show",
+            "summary": "Show the properties of a Table role assignment under an Azure Cosmos DB account.",
+            "syntax": "az cosmosdb table role assignment show --account-name\n                                       --resource-group\n                                       --role-assignment-id",
+            "required_parameters": [
+                "--account-name -a",
+                "--resource-group -g",
+                "--role-assignment-id -i"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az cosmosdb table role assignment show --account-name MyAccount --resource-group MyResourceGroup --role-assignment-id cb8ed2d7-2371-4e3c-bd31-6cc1560e84f8"
+            ]
+        },
+        {
+            "name": "az cosmosdb table role assignment update",
+            "summary": "Update a Table role assignment under an Azure Cosmos DB account.",
+            "syntax": "az cosmosdb table role assignment update --account-name\n                                         --principal-id\n                                         --resource-group\n                                         --scope\n                                         [--role-assignment-id]\n                                         [--role-definition-id]\n                                         [--role-definition-name]",
+            "required_parameters": [
+                "--account-name -a",
+                "--principal-id -p",
+                "--resource-group -g",
+                "--scope -s"
+            ],
+            "optional_parameters": [
+                "--role-assignment-id -i",
+                "--role-definition-id -d",
+                "--role-definition-name -n"
+            ],
+            "examples": [
+                "az cosmosdb table role assignment update --account-name MyAccount --resource-group MyResourceGroup \\\n  --role-assignment-id cb8ed2d7-2371-4e3c-bd31-6cc1560e84f8 \\\n  --role-definition-name \"My Read Only Role\" \\\n  --scope \"/dbs/mydb/colls/mycontainer\" \\\n  --principal-id 6328f5f7-dbf7-4244-bba8-fbb9d8066506",
+                "az cosmosdb table role assignment update --account-name MyAccount --resource-group MyResourceGroup \\\n  --role-assignment-id cb8ed2d7-2371-4e3c-bd31-6cc1560e84f8 \\\n  --role-definition-id be79875a-2cc4-40d5-8958-566017875b39 \\\n  --scope \"/dbs/mydb/colls/mycontainer\" \\\n  --principal-id 6328f5f7-dbf7-4244-bba8-fbb9d8066506"
+            ]
+        }
+    ]
+}

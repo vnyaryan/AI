@@ -1,0 +1,6 @@
+{
+    "command_group": "az managed-cassandra",
+    "description": "Azure Managed Cassandra.",
+    "status": "GA",
+    "commands": []
+}

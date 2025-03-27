@@ -1,0 +1,87 @@
+{
+    "command_group": "az sql server ipv6-firewall-rule",
+    "description": "Manage a server's ipv6 firewall rules.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az sql server ipv6-firewall-rule create",
+            "summary": "Create an ipv6 firewall rule.",
+            "syntax": "az sql server ipv6-firewall-rule create --name\n                                        --resource-group\n                                        --server\n                                        [--end-ipv6-address]\n                                        [--start-ipv6-address]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g",
+                "--server -s"
+            ],
+            "optional_parameters": [
+                "--end-ipv6-address",
+                "--start-ipv6-address"
+            ],
+            "examples": [
+                "az sql server ipv6-firewall-rule create -g mygroup -s myserver -n myrule --start-ipv6-address 9a41:a145:2a80:6c8d:4628:a1b3:5812:3283 --end-ipv6-address 9a41:a145:2a80:6c8d:4628:a1b3:5812:3283"
+            ]
+        },
+        {
+            "name": "az sql server ipv6-firewall-rule delete",
+            "summary": "Deletes an IPv6 firewall rule.",
+            "syntax": "az sql server ipv6-firewall-rule delete [--ids]\n                                        [--name]\n                                        [--resource-group]\n                                        [--server]\n                                        [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--server -s",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az sql server ipv6-firewall-rule list",
+            "summary": "List a server's ipv6 firewall rules.",
+            "syntax": "az sql server ipv6-firewall-rule list [--ids]\n                                      [--resource-group]\n                                      [--server]\n                                      [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--resource-group -g",
+                "--server -s",
+                "--subscription"
+            ],
+            "examples": [
+                "az sql server ipv6-firewall-rule list -g mygroup -s myserver"
+            ]
+        },
+        {
+            "name": "az sql server ipv6-firewall-rule show",
+            "summary": "Shows the details for an ipv6 firewall rule.",
+            "syntax": "az sql server ipv6-firewall-rule show [--ids]\n                                      [--name]\n                                      [--resource-group]\n                                      [--server]\n                                      [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--server -s",
+                "--subscription"
+            ],
+            "examples": [
+                "az sql server ipv6-firewall-rule show -g mygroup -s myserver -n myrule"
+            ]
+        },
+        {
+            "name": "az sql server ipv6-firewall-rule update",
+            "summary": "Update an ipv6 firewall rule.",
+            "syntax": "az sql server ipv6-firewall-rule update [--end-ipv6-address]\n                                        [--ids]\n                                        [--name]\n                                        [--resource-group]\n                                        [--server]\n                                        [--start-ipv6-address]\n                                        [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--end-ipv6-address",
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--server -s",
+                "--start-ipv6-address",
+                "--subscription"
+            ],
+            "examples": [
+                "az sql server ipv6-firewall-rule update -g mygroup -s myserver -n myrule --start-ipv6-address 0229:e3a4:e0d7:36d3:d228:73fa:12fc:ae30 --end-ipv6-address 0229:e3a4:e0d7:36d3:d228:73fa:12fc:ae30"
+            ]
+        }
+    ]
+}

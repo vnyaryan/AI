@@ -1,0 +1,162 @@
+{
+    "command_group": "az containerapp revision",
+    "description": "Commands to manage revisions.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az containerapp revision activate",
+            "summary": "Activate a revision.",
+            "syntax": "az containerapp revision activate --revision\n                                  [--ids]\n                                  [--name]\n                                  [--resource-group]\n                                  [--subscription]",
+            "required_parameters": [
+                "--revision"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az containerapp revision activate -g MyResourceGroup --revision MyContainerappRevision"
+            ]
+        },
+        {
+            "name": "az containerapp revision copy",
+            "summary": "Create a revision based on a previous revision.",
+            "syntax": "az containerapp revision copy [--args]\n                              [--command]\n                              [--container-name]\n                              [--cpu]\n                              [--from-revision]\n                              [--ids]\n                              [--image]\n                              [--max-replicas]\n                              [--memory]\n                              [--min-replicas]\n                              [--name]\n                              [--remove-all-env-vars]\n                              [--remove-env-vars]\n                              [--replace-env-vars]\n                              [--resource-group]\n                              [--revision-suffix]\n                              [--scale-rule-auth]\n                              [--scale-rule-http-concurrency]\n                              [--scale-rule-metadata]\n                              [--scale-rule-name]\n                              [--scale-rule-type]\n                              [--set-env-vars]\n                              [--subscription]\n                              [--tags]\n                              [--workload-profile-name]\n                              [--yaml]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--args",
+                "--command",
+                "--container-name",
+                "--cpu",
+                "--from-revision",
+                "--ids",
+                "--image -i",
+                "--max-replicas",
+                "--memory",
+                "--min-replicas",
+                "--name -n",
+                "--remove-all-env-vars",
+                "--remove-env-vars",
+                "--replace-env-vars",
+                "--resource-group -g",
+                "--revision-suffix",
+                "--scale-rule-auth --sra",
+                "--scale-rule-http-concurrency --scale-rule-tcp-concurrency --srhc --srtc",
+                "--scale-rule-metadata --srm",
+                "--scale-rule-name --srn",
+                "--scale-rule-type --srt",
+                "--set-env-vars",
+                "--subscription",
+                "--tags",
+                "--workload-profile-name -w",
+                "--yaml"
+            ],
+            "examples": [
+                "az containerapp revision copy -n my-containerapp -g MyResourceGroup --cpu 0.75 --memory 1.5Gi"
+            ]
+        },
+        {
+            "name": "az containerapp revision deactivate",
+            "summary": "Deactivate a revision.",
+            "syntax": "az containerapp revision deactivate --revision\n                                    [--ids]\n                                    [--name]\n                                    [--resource-group]\n                                    [--subscription]",
+            "required_parameters": [
+                "--revision"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az containerapp revision deactivate -g MyResourceGroup --revision MyContainerappRevision"
+            ]
+        },
+        {
+            "name": "az containerapp revision list",
+            "summary": "List a container app's revisions.",
+            "syntax": "az containerapp revision list --name\n                              --resource-group\n                              [--all]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--all"
+            ],
+            "examples": [
+                "az containerapp revision list -n my-containerapp -g MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az containerapp revision restart",
+            "summary": "Restart a revision.",
+            "syntax": "az containerapp revision restart --revision\n                                 [--ids]\n                                 [--name]\n                                 [--resource-group]\n                                 [--subscription]",
+            "required_parameters": [
+                "--revision"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az containerapp revision restart -n my-containerapp -g MyResourceGroup --revision MyContainerappRevision"
+            ]
+        },
+        {
+            "name": "az containerapp revision set-mode",
+            "summary": "Set the revision mode of a container app.",
+            "syntax": "az containerapp revision set-mode --mode {multiple, single}\n                                  [--ids]\n                                  [--name]\n                                  [--resource-group]\n                                  [--subscription]",
+            "required_parameters": [
+                "--mode"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az containerapp revision set-mode -n my-containerapp -g MyResourceGroup --mode Single"
+            ]
+        },
+        {
+            "name": "az containerapp revision set-mode",
+            "summary": "Set the revision mode of a container app.",
+            "syntax": "az containerapp revision set-mode --mode {labels, multiple, single}\n                                  [--ids]\n                                  [--name]\n                                  [--resource-group]\n                                  [--subscription]\n                                  [--target-label]",
+            "required_parameters": [
+                "--mode"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--target-label"
+            ],
+            "examples": [
+                "az containerapp revision set-mode -n my-containerapp -g MyResourceGroup --mode Single"
+            ]
+        },
+        {
+            "name": "az containerapp revision show",
+            "summary": "Show details of a revision.",
+            "syntax": "az containerapp revision show --revision\n                              [--ids]\n                              [--name]\n                              [--resource-group]\n                              [--subscription]",
+            "required_parameters": [
+                "--revision"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az containerapp revision show -n my-containerapp -g MyResourceGroup \\\n    --revision MyContainerappRevision"
+            ]
+        }
+    ]
+}

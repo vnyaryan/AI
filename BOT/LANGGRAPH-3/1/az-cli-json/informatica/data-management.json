@@ -1,0 +1,6 @@
+{
+    "command_group": "az informatica data-management",
+    "description": "Manage Informatica.",
+    "status": "GA",
+    "commands": []
+}

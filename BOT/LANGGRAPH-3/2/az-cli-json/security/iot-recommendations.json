@@ -1,0 +1,34 @@
+{
+    "command_group": "az security iot-recommendations",
+    "description": "View IoT Security aggregated recommendations.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az security iot-recommendations list",
+            "summary": "List all yours IoT Security solution aggregated recommendations.",
+            "syntax": "az security iot-recommendations list --resource-group\n                                     --solution-name",
+            "required_parameters": [
+                "--resource-group -g",
+                "--solution-name"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az security iot-recommendations list --solution-name 'IoT-Hub1' --resource-group 'rg1'"
+            ]
+        },
+        {
+            "name": "az security iot-recommendations show",
+            "summary": "Shows a single aggregated recommendation of yours IoT Security solution.",
+            "syntax": "az security iot-recommendations show --name\n                                     --resource-group\n                                     --solution-name",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g",
+                "--solution-name"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az security iot-recommendations show --solution-name 'IoT-Hub1' --resource-group 'rg1' --name 'IoT_PermissiveFirewallPolicy'"
+            ]
+        }
+    ]
+}

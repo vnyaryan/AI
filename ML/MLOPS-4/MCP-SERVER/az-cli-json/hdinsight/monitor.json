@@ -1,0 +1,44 @@
+{
+    "command_group": "az hdinsight monitor",
+    "description": "Manage Classic Azure Monitor logs integration on an HDInsight cluster.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az hdinsight monitor disable",
+            "summary": "Disable the Classic Azure Monitor logs integration on an HDInsight cluster.",
+            "syntax": "az hdinsight monitor disable --name\n                             --resource-group",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az hdinsight monitor enable",
+            "summary": "Enable the Classic Azure Monitor logs integration on an HDInsight cluster.",
+            "syntax": "az hdinsight monitor enable --name\n                            --resource-group\n                            --workspace\n                            [--no-validation-timeout]\n                            [--primary-key]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g",
+                "--workspace"
+            ],
+            "optional_parameters": [
+                "--no-validation-timeout",
+                "--primary-key"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az hdinsight monitor show",
+            "summary": "Get the status of Classic Azure Monitor logs integration on an HDInsight cluster.",
+            "syntax": "az hdinsight monitor show --name\n                          --resource-group",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        }
+    ]
+}

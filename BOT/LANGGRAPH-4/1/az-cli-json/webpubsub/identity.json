@@ -1,0 +1,55 @@
+{
+    "command_group": "az webpubsub identity",
+    "description": "Manage managed identity settings.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az webpubsub identity assign",
+            "summary": "Assign managed identity for WebPubSub Service.",
+            "syntax": "az webpubsub identity assign --identity\n                             [--ids]\n                             [--name]\n                             [--resource-group]\n                             [--subscription]",
+            "required_parameters": [
+                "--identity"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az webpubsub identity assign --identity [system] -n MyWebPubSub -g MyResourceGroup",
+                "az webpubsub identity assign --identity MyManagedIdentityId -n MyWebPubSub -g MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az webpubsub identity remove",
+            "summary": "Remove managed identity for WebPubSub Service.",
+            "syntax": "az webpubsub identity remove [--ids]\n                             [--name]\n                             [--resource-group]\n                             [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az webpubsub identity remove -n MyWebPubSub -g MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az webpubsub identity show",
+            "summary": "Show managed identity for WebPubSub Service.",
+            "syntax": "az webpubsub identity show [--ids]\n                           [--name]\n                           [--resource-group]\n                           [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az webpubsub identity show -n MyWebPubSub -g MyResourceGroup"
+            ]
+        }
+    ]
+}

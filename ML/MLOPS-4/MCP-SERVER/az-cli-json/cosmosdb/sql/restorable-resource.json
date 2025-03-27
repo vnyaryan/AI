@@ -1,0 +1,20 @@
+{
+    "command_group": "az cosmosdb sql restorable-resource",
+    "description": "Manage the databases and its containers that can be restored in the given account at the given timesamp and region.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az cosmosdb sql restorable-resource list",
+            "summary": "List all the databases and its containers that can be restored in the given account at the given timesamp and region.",
+            "syntax": "az cosmosdb sql restorable-resource list --instance-id\n                                         --location\n                                         --restore-location\n                                         --restore-timestamp",
+            "required_parameters": [
+                "--instance-id -i",
+                "--location -l",
+                "--restore-location -r",
+                "--restore-timestamp -t"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        }
+    ]
+}

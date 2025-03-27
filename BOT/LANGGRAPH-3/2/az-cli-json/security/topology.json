@@ -1,0 +1,30 @@
+{
+    "command_group": "az security topology",
+    "description": "Shows the network topology in your subscription.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az security topology list",
+            "summary": "Shows the network topology in your subscription.",
+            "syntax": "az security topology list",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "examples": [
+                "az security topology list"
+            ]
+        },
+        {
+            "name": "az security topology show",
+            "summary": "Shows the network topology in your subscription.",
+            "syntax": "az security topology show --name\n                          --resource-group",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az security topology show -n default -g myService1"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,67 @@
+{
+    "command_group": "az network alb security-policy waf",
+    "description": "",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az network alb security-policy waf create",
+            "summary": "Create a Waf SecurityPolicy.",
+            "syntax": "az network alb security-policy waf create --alb-name\n                                          --name\n                                          --resource-group\n                                          [--location]\n                                          [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                          [--tags]\n                                          [--waf-policy-id]",
+            "required_parameters": [
+                "--alb-name",
+                "--name --security-policy-name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--location -l",
+                "--no-wait",
+                "--tags",
+                "--waf-policy-id"
+            ],
+            "examples": [
+                "az network alb security-policy waf create -g test-rg --alb-name test-tc -n test-sp -l NorthCentralUS\n--waf-policy-id \"/subscriptions/subid/resourcegroups/rg1/providers/Microsoft.Networking/wafpolicy/test-wp\""
+            ]
+        },
+        {
+            "name": "az network alb security-policy waf delete",
+            "summary": "Delete a Waf SecurityPolicy.",
+            "syntax": "az network alb security-policy waf delete [--alb-name]\n                                          [--ids]\n                                          [--name]\n                                          [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                          [--resource-group]\n                                          [--subscription]\n                                          [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--alb-name",
+                "--ids",
+                "--name --security-policy-name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az network alb security-policy waf delete -g test-rg --alb-name test-tc -n test-sp"
+            ]
+        },
+        {
+            "name": "az network alb security-policy waf update",
+            "summary": "Update a Waf SecurityPolicy.",
+            "syntax": "az network alb security-policy waf update [--add]\n                                          [--alb-name]\n                                          [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                          [--ids]\n                                          [--name]\n                                          [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                          [--remove]\n                                          [--resource-group]\n                                          [--set]\n                                          [--subscription]\n                                          [--tags]\n                                          [--waf-policy-id]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--alb-name",
+                "--force-string",
+                "--ids",
+                "--name --security-policy-name -n",
+                "--no-wait",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--subscription",
+                "--tags",
+                "--waf-policy-id"
+            ],
+            "examples": [
+                "az network alb security-policy waf update -g test-rg --alb-name test-tc -n test-sp\n--waf-policy-id \"/subscriptions/subid/resourcegroups/rg1/providers/Microsoft.Networking/wafpolicy/test-wp\""
+            ]
+        }
+    ]
+}

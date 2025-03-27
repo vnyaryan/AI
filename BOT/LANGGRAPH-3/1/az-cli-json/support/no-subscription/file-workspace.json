@@ -1,0 +1,31 @@
+{
+    "command_group": "az support no-subscription file-workspace",
+    "description": "File workspaces for Azure Support.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az support no-subscription file-workspace create",
+            "summary": "Creates a new file workspace.",
+            "syntax": "az support no-subscription file-workspace create --file-workspace-name",
+            "required_parameters": [
+                "--file-workspace-name"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az support no-subscription file-workspace create --file-workspace-name \"TestWorkspaceName\""
+            ]
+        },
+        {
+            "name": "az support no-subscription file-workspace show",
+            "summary": "Gets details for a specific file workspace.",
+            "syntax": "az support no-subscription file-workspace show --file-workspace-name",
+            "required_parameters": [
+                "--file-workspace-name"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az support no-subscription file-workspace show --file-workspace-name \"TestWorkspaceName\""
+            ]
+        }
+    ]
+}

@@ -1,0 +1,157 @@
+{
+    "command_group": "az ml online-endpoint",
+    "description": "Manage Azure ML online endpoints.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az ml online-endpoint create",
+            "summary": "Create an endpoint.",
+            "syntax": "az ml online-endpoint create --resource-group\n                             --workspace-name\n                             [--auth-mode]\n                             [--file]\n                             [--local {false, true}]\n                             [--name]\n                             [--no-wait]\n                             [--set]\n                             [--web]",
+            "required_parameters": [
+                "--resource-group -g",
+                "--workspace-name -w"
+            ],
+            "optional_parameters": [
+                "--auth-mode",
+                "--file -f",
+                "--local",
+                "--name -n",
+                "--no-wait",
+                "--set",
+                "--web -e"
+            ],
+            "examples": [
+                "az ml online-endpoint create --file endpoint.yml --resource-group my-resource-group --workspace-name my-workspace"
+            ]
+        },
+        {
+            "name": "az ml online-endpoint delete",
+            "summary": "Delete an endpoint.",
+            "syntax": "az ml online-endpoint delete --name\n                             --resource-group\n                             --workspace-name\n                             [--local {false, true}]\n                             [--no-wait]\n                             [--yes]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g",
+                "--workspace-name -w"
+            ],
+            "optional_parameters": [
+                "--local",
+                "--no-wait",
+                "--yes -y"
+            ],
+            "examples": [
+                "az ml online-endpoint delete --name my-online-endpoint --resource-group my-resource-group --workspace-name my-workspace"
+            ]
+        },
+        {
+            "name": "az ml online-endpoint get-credentials",
+            "summary": "List the token/keys for an online endpoint.",
+            "syntax": "az ml online-endpoint get-credentials --name\n                                      --resource-group\n                                      --workspace-name",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g",
+                "--workspace-name -w"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az ml online-endpoint get-credentials --name my-online-endpoint --resource-group my-resource-group --workspace-name my-workspace"
+            ]
+        },
+        {
+            "name": "az ml online-endpoint invoke",
+            "summary": "Invoke an endpoint.",
+            "syntax": "az ml online-endpoint invoke --name\n                             --resource-group\n                             --workspace-name\n                             [--deployment-name]\n                             [--local {false, true}]\n                             [--request-file]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g",
+                "--workspace-name -w"
+            ],
+            "optional_parameters": [
+                "--deployment-name -d",
+                "--local",
+                "--request-file -r"
+            ],
+            "examples": [
+                "az ml online-endpoint invoke --name my-online-endpoint --request-file sample_request.json --resource-group my-resource-group --workspace-name my-workspace",
+                "az ml online-endpoint invoke --name my-online-endpoint --deployment my-deployment --request-file sample_request.json --resource-group my-resource-group --workspace-name my-workspace"
+            ]
+        },
+        {
+            "name": "az ml online-endpoint list",
+            "summary": "List endpoints in a workspace.",
+            "syntax": "az ml online-endpoint list --resource-group\n                           --workspace-name\n                           [--local {false, true}]",
+            "required_parameters": [
+                "--resource-group -g",
+                "--workspace-name -w"
+            ],
+            "optional_parameters": [
+                "--local"
+            ],
+            "examples": [
+                "az ml online-endpoint list --resource-group my-resource-group --workspace-name my-workspace",
+                "az ml online-endpoint list  --resource-group my-resource-group --workspace-name my-workspace",
+                "az ml online-endpoint list --query \"[].{Name:name}\"  --output table --resource-group my-resource-group --workspace-name my-workspace"
+            ]
+        },
+        {
+            "name": "az ml online-endpoint regenerate-keys",
+            "summary": "Regenerate the keys for an online endpoint.",
+            "syntax": "az ml online-endpoint regenerate-keys --name\n                                      --resource-group\n                                      --workspace-name\n                                      [--key-type]\n                                      [--no-wait]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g",
+                "--workspace-name -w"
+            ],
+            "optional_parameters": [
+                "--key-type",
+                "--no-wait"
+            ],
+            "examples": [
+                "az ml online-endpoint regenerate-keys --name my-online-endpoint --resource-group my-resource-group --workspace-name my-workspace"
+            ]
+        },
+        {
+            "name": "az ml online-endpoint show",
+            "summary": "Show details for an endpoint.",
+            "syntax": "az ml online-endpoint show --name\n                           --resource-group\n                           --workspace-name\n                           [--local {false, true}]\n                           [--web]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g",
+                "--workspace-name -w"
+            ],
+            "optional_parameters": [
+                "--local",
+                "--web -e"
+            ],
+            "examples": [
+                "az ml online-endpoint show --name my-online-endpoint  --resource-group my-resource-group --workspace-name my-workspace",
+                "az ml online-endpoint show -n my-endpoint --query \"{Name:name,State:provisioning_state}\"  --output table --resource-group my-resource-group --workspace-name my-workspace"
+            ]
+        },
+        {
+            "name": "az ml online-endpoint update",
+            "summary": "Update an endpoint.",
+            "syntax": "az ml online-endpoint update --resource-group\n                             --workspace-name\n                             [--add]\n                             [--file]\n                             [--force-string]\n                             [--local {false, true}]\n                             [--mirror-traffic]\n                             [--name]\n                             [--no-wait]\n                             [--remove]\n                             [--set]\n                             [--traffic]\n                             [--web]",
+            "required_parameters": [
+                "--resource-group -g",
+                "--workspace-name -w"
+            ],
+            "optional_parameters": [
+                "--add",
+                "--file -f",
+                "--force-string",
+                "--local",
+                "--mirror-traffic",
+                "--name -n",
+                "--no-wait",
+                "--remove",
+                "--set",
+                "--traffic -r",
+                "--web -e"
+            ],
+            "examples": [
+                "az ml online-endpoint update --file updated_endpoint.yml --resource-group my-resource-group --workspace-name my-workspace",
+                "az ml online-endpoint update --name my-online-endpoint  --traffic \"my-new-deployment=100\" --resource-group my-resource-group --workspace-name my-workspace"
+            ]
+        }
+    ]
+}

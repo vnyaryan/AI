@@ -1,0 +1,154 @@
+{
+    "command_group": "az stack-hci cluster",
+    "description": "Manage cluster with stack hci.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az stack-hci cluster create",
+            "summary": "Create an HCI cluster.",
+            "syntax": "az stack-hci cluster create --cluster-name\n                            --resource-group\n                            [--aad-application-object-id]\n                            [--aad-client-id]\n                            [--aad-service-principal-object-id]\n                            [--aad-tenant-id]\n                            [--desired-properties]\n                            [--endpoint]\n                            [--location]\n                            [--mi-system-assigned {0, 1, f, false, n, no, t, true, y, yes}]\n                            [--tags]",
+            "required_parameters": [
+                "--cluster-name --name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--aad-application-object-id",
+                "--aad-client-id",
+                "--aad-service-principal-object-id",
+                "--aad-tenant-id",
+                "--desired-properties",
+                "--endpoint",
+                "--location -l",
+                "--mi-system-assigned",
+                "--tags"
+            ],
+            "examples": [
+                "az stack-hci cluster create --location \"East US\" --aad-client-id \"24a6e53d-04e5-44d2-b7cc-1b732a847dfc\" --aad-tenant-id \"7e589cc1-a8b6-4dff-91bd-5ec0fa18db94\" --endpoint \"https://98294836-31be-4668-aeae-698667faf99b.waconazure.com\" --name \"myCluster\" --resource- group \"test-rg\""
+            ]
+        },
+        {
+            "name": "az stack-hci cluster create-identity",
+            "summary": "Create cluster identity.",
+            "syntax": "az stack-hci cluster create-identity [--cluster-name]\n                                     [--ids]\n                                     [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                     [--resource-group]\n                                     [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--cluster-name",
+                "--ids",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az stack-hci cluster create-identity --name \"myCluster\" --resource-group \"test-rg\""
+            ]
+        },
+        {
+            "name": "az stack-hci cluster delete",
+            "summary": "Delete an HCI cluster.",
+            "syntax": "az stack-hci cluster delete [--cluster-name]\n                            [--ids]\n                            [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                            [--resource-group]\n                            [--subscription]\n                            [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--cluster-name --name -n",
+                "--ids",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az stack-hci cluster delete --name \"myCluster\" --resource-group \"test-rg\""
+            ]
+        },
+        {
+            "name": "az stack-hci cluster extend-software-assurance-benefit",
+            "summary": "Extend Software Assurance Benefit to a cluster.",
+            "syntax": "az stack-hci cluster extend-software-assurance-benefit [--cluster-name]\n                                                       [--ids]\n                                                       [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                                       [--resource-group]\n                                                       [--software-assurance-intent {Disable, Enable}]\n                                                       [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--cluster-name",
+                "--ids",
+                "--no-wait",
+                "--resource-group -g",
+                "--software-assurance-intent",
+                "--subscription"
+            ],
+            "examples": [
+                "az stack-hci cluster extend-software-assurance-benefit --cluster-name name -g rg --software-assurance-intent enable"
+            ]
+        },
+        {
+            "name": "az stack-hci cluster list",
+            "summary": "List all HCI clusters in a subscription.",
+            "syntax": "az stack-hci cluster list [--max-items]\n                          [--next-token]\n                          [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az stack-hci cluster list --resource-group \"test-rg\"",
+                "az stack-hci cluster list"
+            ]
+        },
+        {
+            "name": "az stack-hci cluster show",
+            "summary": "Get HCI cluster.",
+            "syntax": "az stack-hci cluster show [--cluster-name]\n                          [--ids]\n                          [--resource-group]\n                          [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--cluster-name --name -n",
+                "--ids",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az stack-hci cluster show --name \"myCluster\" --resource-group \"test-rg\""
+            ]
+        },
+        {
+            "name": "az stack-hci cluster update",
+            "summary": "Update an HCI cluster.",
+            "syntax": "az stack-hci cluster update [--aad-client-id]\n                            [--aad-tenant-id]\n                            [--add]\n                            [--cluster-name]\n                            [--desired-properties]\n                            [--endpoint]\n                            [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                            [--ids]\n                            [--remove]\n                            [--resource-group]\n                            [--set]\n                            [--subscription]\n                            [--tags]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--aad-client-id",
+                "--aad-tenant-id",
+                "--add",
+                "--cluster-name --name -n",
+                "--desired-properties",
+                "--endpoint",
+                "--force-string",
+                "--ids",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--subscription",
+                "--tags"
+            ],
+            "examples": [
+                "az stack-hci cluster update --endpoint \"https://98294836-31be-4668-aeae-698667faf99b.waconazure.com\" --desired-properties \"{diagnosticLevel:Basic,windowsServerSubscription:Enabled}\" --tags \"tag:\"value\" --name \"myCluster\" --resource-group \"test-rg\""
+            ]
+        },
+        {
+            "name": "az stack-hci cluster wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az stack-hci cluster wait [--cluster-name]\n                          [--created]\n                          [--custom]\n                          [--deleted]\n                          [--exists]\n                          [--ids]\n                          [--interval]\n                          [--resource-group]\n                          [--subscription]\n                          [--timeout]\n                          [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--cluster-name --name -n",
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

@@ -1,0 +1,89 @@
+{
+    "command_group": "az webapp config storage-account",
+    "description": "Manage a web app's Azure storage account configurations. (Linux Web Apps and Windows Containers Web Apps Only).",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az webapp config storage-account add",
+            "summary": "Add an Azure storage account configuration to a web app. (Linux Web Apps and Windows Containers Web Apps Only).",
+            "syntax": "az webapp config storage-account add --access-key\n                                     --account-name\n                                     --custom-id\n                                     --share-name\n                                     --storage-type {AzureBlob, AzureFiles}\n                                     [--ids]\n                                     [--mount-path]\n                                     [--name]\n                                     [--resource-group]\n                                     [--slot]\n                                     [--slot-setting]\n                                     [--subscription]",
+            "required_parameters": [
+                "--access-key -k",
+                "--account-name -a",
+                "--custom-id -i",
+                "--share-name --sn",
+                "--storage-type -t"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--mount-path -m",
+                "--name -n",
+                "--resource-group -g",
+                "--slot -s",
+                "--slot-setting",
+                "--subscription"
+            ],
+            "examples": [
+                "az webapp config storage-account add -g MyResourceGroup -n MyUniqueApp \\\n  --custom-id CustomId \\\n  --storage-type AzureFiles \\\n  --account-name MyStorageAccount \\\n  --share-name MyShare \\\n  --access-key MyAccessKey \\\n  --mount-path /path/to/mount"
+            ]
+        },
+        {
+            "name": "az webapp config storage-account delete",
+            "summary": "Delete a web app's Azure storage account configuration. (Linux Web Apps and Windows Containers Web Apps Only).",
+            "syntax": "az webapp config storage-account delete --custom-id\n                                        [--ids]\n                                        [--name]\n                                        [--resource-group]\n                                        [--slot]\n                                        [--subscription]",
+            "required_parameters": [
+                "--custom-id -i"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--slot -s",
+                "--subscription"
+            ],
+            "examples": [
+                "az webapp config storage-account delete --custom-id CustomId --name MyWebApp --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az webapp config storage-account list",
+            "summary": "Get a web app's Azure storage account configurations. (Linux Web Apps and Windows Containers Web Apps Only).",
+            "syntax": "az webapp config storage-account list --name\n                                      --resource-group\n                                      [--slot]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--slot -s"
+            ],
+            "examples": [
+                "az webapp config storage-account list --name MyWebApp --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az webapp config storage-account update",
+            "summary": "Update an existing Azure storage account configuration on a web app. (Linux Web Apps and Windows Containers Web Apps Only).",
+            "syntax": "az webapp config storage-account update --custom-id\n                                        [--access-key]\n                                        [--account-name]\n                                        [--ids]\n                                        [--mount-path]\n                                        [--name]\n                                        [--resource-group]\n                                        [--share-name]\n                                        [--slot]\n                                        [--slot-setting]\n                                        [--storage-type {AzureBlob, AzureFiles}]\n                                        [--subscription]",
+            "required_parameters": [
+                "--custom-id -i"
+            ],
+            "optional_parameters": [
+                "--access-key -k",
+                "--account-name -a",
+                "--ids",
+                "--mount-path -m",
+                "--name -n",
+                "--resource-group -g",
+                "--share-name --sn",
+                "--slot -s",
+                "--slot-setting",
+                "--storage-type -t",
+                "--subscription"
+            ],
+            "examples": [
+                "az webapp config storage-account update -g MyResourceGroup -n MyUniqueApp \\\n  --custom-id CustomId \\\n  --mount-path /path/to/new/mount",
+                "az webapp config storage-account update --access-key MyAccessKey --account-name MyAccount --custom-id CustomId --mount-path /path/to/new/mount --name MyUniqueApp --resource-group MyResourceGroup --share-name MyShare --storage-type AzureFiles"
+            ]
+        }
+    ]
+}

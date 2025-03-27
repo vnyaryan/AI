@@ -1,0 +1,100 @@
+{
+    "command_group": "az dataprotection backup-instance restore",
+    "description": "Restore backed up instances from recovery points in a backup vault.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az dataprotection backup-instance restore initialize-for-data-recovery",
+            "summary": "Initialize restore request object to recover all backed up data in a backup vault.",
+            "syntax": "az dataprotection backup-instance restore initialize-for-data-recovery --datasource-type {AzureBlob, AzureDatabaseForMySQL, AzureDatabaseForPostgreSQL, AzureDatabaseForPostgreSQLFlexibleServer, AzureDisk, AzureKubernetesService}\n                                                                       --restore-location\n                                                                       --source-datastore {ArchiveStore, OperationalStore, VaultStore}\n                                                                       [--backup-instance-id]\n                                                                       [--point-in-time]\n                                                                       [--recovery-point-id]\n                                                                       [--rehydration-duration]\n                                                                       [--rehydration-priority {Standard}]\n                                                                       [--restore-configuration]\n                                                                       [--secret-store-type {AzureKeyVault}]\n                                                                       [--secret-store-uri]\n                                                                       [--target-resource-id]",
+            "required_parameters": [
+                "--datasource-type",
+                "--restore-location",
+                "--source-datastore"
+            ],
+            "optional_parameters": [
+                "--backup-instance-id",
+                "--point-in-time",
+                "--recovery-point-id",
+                "--rehydration-duration",
+                "--rehydration-priority",
+                "--restore-configuration",
+                "--secret-store-type",
+                "--secret-store-uri",
+                "--target-resource-id"
+            ],
+            "examples": [
+                "az dataprotection backup-instance restore initialize-for-data-recovery --datasource-type AzureDisk --restore-location centraluseuap --source-datastore OperationalStore --target-resource-id {restore_disk_id} --recovery-point-id b7e6f082-b310-11eb-8f55-9cfce85d4fae"
+            ]
+        },
+        {
+            "name": "az dataprotection backup-instance restore initialize-for-data-recovery-as-files",
+            "summary": "Initialize restore request object to recover all backed up data as files in a backup vault.",
+            "syntax": "az dataprotection backup-instance restore initialize-for-data-recovery-as-files --datasource-type {AzureBlob, AzureDatabaseForMySQL, AzureDatabaseForPostgreSQL, AzureDatabaseForPostgreSQLFlexibleServer, AzureDisk, AzureKubernetesService}\n                                                                                --restore-location\n                                                                                --source-datastore {ArchiveStore, OperationalStore, VaultStore}\n                                                                                --target-blob-container-url\n                                                                                --target-file-name\n                                                                                [--point-in-time]\n                                                                                [--recovery-point-id]\n                                                                                [--rehydration-duration]\n                                                                                [--rehydration-priority {Standard}]\n                                                                                [--target-resource-id]",
+            "required_parameters": [
+                "--datasource-type",
+                "--restore-location",
+                "--source-datastore",
+                "--target-blob-container-url",
+                "--target-file-name"
+            ],
+            "optional_parameters": [
+                "--point-in-time",
+                "--recovery-point-id",
+                "--rehydration-duration",
+                "--rehydration-priority",
+                "--target-resource-id"
+            ],
+            "examples": [
+                "az dataprotection backup-instance restore initialize-for-data-recovery-as-files --datasource-type AzureDatabaseForPostgreSQL --restore-location centraluseuap --source-datastore VaultStore --target-blob-container-url {target_blob_container_url} --target-file-name {target_file_name} --recovery-point-id 9a4ab128e2d441d6a575ecd85903bd81"
+            ]
+        },
+        {
+            "name": "az dataprotection backup-instance restore initialize-for-item-recovery",
+            "summary": "Initialize restore request object to recover specified items of backed up data in a backup vault.",
+            "syntax": "az dataprotection backup-instance restore initialize-for-item-recovery --datasource-type {AzureBlob, AzureDatabaseForMySQL, AzureDatabaseForPostgreSQL, AzureDatabaseForPostgreSQLFlexibleServer, AzureDisk, AzureKubernetesService}\n                                                                       --restore-location\n                                                                       --source-datastore {ArchiveStore, OperationalStore, VaultStore}\n                                                                       [--backup-instance-id]\n                                                                       [--container-list]\n                                                                       [--from-prefix-pattern]\n                                                                       [--point-in-time]\n                                                                       [--recovery-point-id]\n                                                                       [--restore-configuration]\n                                                                       [--target-resource-id]\n                                                                       [--to-prefix-pattern]\n                                                                       [--vaulted-blob-prefix]",
+            "required_parameters": [
+                "--datasource-type",
+                "--restore-location",
+                "--source-datastore"
+            ],
+            "optional_parameters": [
+                "--backup-instance-id",
+                "--container-list",
+                "--from-prefix-pattern",
+                "--point-in-time",
+                "--recovery-point-id",
+                "--restore-configuration",
+                "--target-resource-id",
+                "--to-prefix-pattern",
+                "--vaulted-blob-prefix --vaulted-blob-prefix-pattern"
+            ],
+            "examples": [
+                "az dataprotection backup-instance restore initialize-for-item-recovery --datasource-type AzureBlob --restore-location centraluseuap --source-datastore OperationalStore --backup-instance-id {backup_instance_id}  --point-in-time 2021-05-26T15:00:00 --container-list container1 container2"
+            ]
+        },
+        {
+            "name": "az dataprotection backup-instance restore trigger",
+            "summary": "Triggers restore for a BackupInstance.",
+            "syntax": "az dataprotection backup-instance restore trigger --backup-instance-name\n                                                  --restore-request-object\n                                                  [--ids]\n                                                  [--no-wait]\n                                                  [--operation-requests]\n                                                  [--resource-group]\n                                                  [--subscription]\n                                                  [--tenant-id]\n                                                  [--use-secondary-region {false, true}]\n                                                  [--vault-name]",
+            "required_parameters": [
+                "--backup-instance-name --name -n",
+                "--restore-request-object"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--no-wait",
+                "--operation-requests --resource-guard-operation-requests",
+                "--resource-group -g",
+                "--subscription",
+                "--tenant-id",
+                "--use-secondary-region",
+                "--vault-name -v"
+            ],
+            "examples": [
+                "az dataprotection backup-instance restore trigger -g sample_rg --vault-name sample_backupvault --backup-instance-name sample_biname-fd53a211-3f3e-4c7e-ba45-81050e27c0be  --restore-request-object restorerequestobject.json",
+                "az dataprotection backup-instance restore trigger -g sample_rg --vault-name sample_backupvault --backup-instance-name sample_biname-fd53a211-3f3e-4c7e-ba45-81050e27c0be  --restore-request-object restorerequestobject.json --use-secondary-region"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,153 @@
+{
+    "command_group": "az azurestackhci virtualmachine",
+    "description": "Manage virtualmachine with azurestackhci.",
+    "status": "Experimental",
+    "commands": [
+        {
+            "name": "az azurestackhci virtualmachine create",
+            "summary": "Create a VM.",
+            "syntax": "az azurestackhci virtualmachine create --name\n                                       --resource-group\n                                       [--admin-password]\n                                       [--admin-username]\n                                       [--allow-password-auth {false, true}]\n                                       [--computer-name]\n                                       [--data-disk]\n                                       [--disable-vm-management {false, true}]\n                                       [--enable-tpm]\n                                       [--extended-location]\n                                       [--hardware-profile]\n                                       [--image-reference]\n                                       [--linux-configuration]\n                                       [--location]\n                                       [--network-profile]\n                                       [--nic-id]\n                                       [--os-disk]\n                                       [--os-profile]\n                                       [--security-profile]\n                                       [--ssh-public-keys]\n                                       [--storage-profile]\n                                       [--storagepath-id]\n                                       [--tags]\n                                       [--vm-size]\n                                       [--windows-configuration]",
+            "required_parameters": [
+                "--name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--admin-password",
+                "--admin-username",
+                "--allow-password-auth",
+                "--computer-name",
+                "--data-disk",
+                "--disable-vm-management",
+                "--enable-tpm",
+                "--extended-location",
+                "--hardware-profile",
+                "--image-reference",
+                "--linux-configuration",
+                "--location -l",
+                "--network-profile",
+                "--nic-id",
+                "--os-disk",
+                "--os-profile",
+                "--security-profile",
+                "--ssh-public-keys",
+                "--storage-profile",
+                "--storagepath-id",
+                "--tags",
+                "--vm-size",
+                "--windows-configuration"
+            ],
+            "examples": [
+                "az azurestackhci virtualmachine create --resource-group \"test-rg\" --extended-location name=\"/subscriptions/a95612cb-f1fa-4daa-a4fd-272844fa512c/resourceGroups/dogfoodarc/providers/Microsoft.ExtendedLocatio n/customLocations/dogfood-location\" type=\"CustomLocation\" --location \"West US2\" --hardware-profile vm-size=\"Default\" --nic-id \"test-nic\" --computer-name \"test-machine\" --admin-username xxx --admin-password xxx --ssh-public-keys /path/to/public_key.pub --image-reference \"test-gallery-image\" --storagepath-id \"/subscriptions/a95612cb-f1fa-4daa-a4fd-272844fa512c/resourceGroups/dogfoodarc/providers/Microsoft.AzureStackHCI/storagecontainers/test-storagepath\" --name \"test-vm\" --allow-password-auth true --disable-vm-management true"
+            ]
+        },
+        {
+            "name": "az azurestackhci virtualmachine delete",
+            "summary": "Delete a VM.",
+            "syntax": "az azurestackhci virtualmachine delete [--ids]\n                                       [--name]\n                                       [--resource-group]\n                                       [--subscription]\n                                       [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az azurestackhci virtualmachine delete --resource-group \"test-rg\" --name \"test-vm\""
+            ]
+        },
+        {
+            "name": "az azurestackhci virtualmachine list",
+            "summary": "List all the VMs.",
+            "syntax": "az azurestackhci virtualmachine list [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az azurestackhci virtualmachine list --resource-group \"test-rg\"",
+                "az azurestackhci virtualmachine list"
+            ]
+        },
+        {
+            "name": "az azurestackhci virtualmachine restart",
+            "summary": "Restart a VM.",
+            "syntax": "az azurestackhci virtualmachine restart [--ids]\n                                        [--name]\n                                        [--resource-group]\n                                        [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az azurestackhci virtualmachine restart --resource-group \"test-rg\" --name \"test-vm\""
+            ]
+        },
+        {
+            "name": "az azurestackhci virtualmachine show",
+            "summary": "Get the details of a VM.",
+            "syntax": "az azurestackhci virtualmachine show [--ids]\n                                     [--name]\n                                     [--resource-group]\n                                     [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az azurestackhci virtualmachine show --resource-group \"test-rg\" --name \"test-vm\""
+            ]
+        },
+        {
+            "name": "az azurestackhci virtualmachine start",
+            "summary": "Start a stopped VM.",
+            "syntax": "az azurestackhci virtualmachine start [--ids]\n                                      [--name]\n                                      [--resource-group]\n                                      [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az azurestackhci virtualmachine start --resource-group \"test-rg\" --name \"test-vm\""
+            ]
+        },
+        {
+            "name": "az azurestackhci virtualmachine stop",
+            "summary": "Power off (stop) a running VM.",
+            "syntax": "az azurestackhci virtualmachine stop [--ids]\n                                     [--name]\n                                     [--resource-group]\n                                     [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az azurestackhci virtualmachine stop --resource-group \"test-rg\" --name \"test-vm\""
+            ]
+        },
+        {
+            "name": "az azurestackhci virtualmachine update",
+            "summary": "Update a VM.",
+            "syntax": "az azurestackhci virtualmachine update [--cpu-count]\n                                       [--ids]\n                                       [--memory-mb]\n                                       [--name]\n                                       [--resource-group]\n                                       [--subscription]\n                                       [--tags]\n                                       [--vhd-names]\n                                       [--vnic-names]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--cpu-count",
+                "--ids",
+                "--memory-mb",
+                "--name",
+                "--resource-group -g",
+                "--subscription",
+                "--tags",
+                "--vhd-names",
+                "--vnic-names"
+            ],
+            "examples": [
+                "az azurestackhci virtualmachine update --resource-group \"test-rg\" --tags additionalProperties=\"sample\" --name \"test-vm\" --cpu-count XX --memory-mb XX --vhd-names vhd1 vhd2 --vnic-names vnic1 vnic2"
+            ]
+        }
+    ]
+}

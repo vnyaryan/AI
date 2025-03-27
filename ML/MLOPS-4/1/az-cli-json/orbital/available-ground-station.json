@@ -1,0 +1,31 @@
+{
+    "command_group": "az orbital available-ground-station",
+    "description": "Ground stations available to schedule contacts.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az orbital available-ground-station list",
+            "summary": "List available ground stations.",
+            "syntax": "az orbital available-ground-station list [--capability {Communication, EarthObservation}]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--capability"
+            ],
+            "examples": [
+                "az orbital available-ground-station list --capability \"EarthObservation\""
+            ]
+        },
+        {
+            "name": "az orbital available-ground-station show",
+            "summary": "Get the specified available ground station.",
+            "syntax": "az orbital available-ground-station show [--ground-station-name]\n                                         [--ids]\n                                         [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ground-station-name --name -n",
+                "--ids",
+                "--subscription"
+            ],
+            "examples": []
+        }
+    ]
+}

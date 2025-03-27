@@ -1,0 +1,129 @@
+{
+    "command_group": "az eventgrid namespace topic event-subscription",
+    "description": "Manage eventgrid namespace topic event subscription.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az eventgrid namespace topic event-subscription create",
+            "summary": "Create an event subscription of a namespace topic.",
+            "syntax": "az eventgrid namespace topic event-subscription create --event-subscription-name\n                                                       --namespace-name\n                                                       --resource-group\n                                                       --topic-name\n                                                       [--delivery-configuration]\n                                                       [--event-delivery-schema {CloudEventSchemaV1_0}]\n                                                       [--filters-configuration]\n                                                       [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]",
+            "required_parameters": [
+                "--event-subscription-name --name -n",
+                "--namespace-name",
+                "--resource-group -g",
+                "--topic-name"
+            ],
+            "optional_parameters": [
+                "--delivery-configuration",
+                "--event-delivery-schema",
+                "--filters-configuration",
+                "--no-wait"
+            ],
+            "examples": [
+                "az eventgrid namespace topic event-subscription create -g rg --topic-name topic -n event-subscription --namespace-name name --delivery-configuration \"{deliveryMode:Queue,queue:{receiveLockDurationInSeconds:60,maxDeliveryCount:4,eventTimeToLive:P1D}}\""
+            ]
+        },
+        {
+            "name": "az eventgrid namespace topic event-subscription delete",
+            "summary": "Delete an existing event subscription of a namespace topic.",
+            "syntax": "az eventgrid namespace topic event-subscription delete [--event-subscription-name]\n                                                       [--ids]\n                                                       [--namespace-name]\n                                                       [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                                       [--resource-group]\n                                                       [--subscription]\n                                                       [--topic-name]\n                                                       [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--event-subscription-name --name -n",
+                "--ids",
+                "--namespace-name",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--topic-name",
+                "--yes -y"
+            ],
+            "examples": [
+                "az eventgrid namespace topic event-subscription delete -g rg --topic-name topic -n event-subscription --namespace-name name"
+            ]
+        },
+        {
+            "name": "az eventgrid namespace topic event-subscription list",
+            "summary": "List event subscriptions that belong to a specific namespace topic.",
+            "syntax": "az eventgrid namespace topic event-subscription list --namespace-name\n                                                     --resource-group\n                                                     --topic-name\n                                                     [--filter]\n                                                     [--max-items]\n                                                     [--next-token]\n                                                     [--top]",
+            "required_parameters": [
+                "--namespace-name",
+                "--resource-group -g",
+                "--topic-name"
+            ],
+            "optional_parameters": [
+                "--filter",
+                "--max-items",
+                "--next-token",
+                "--top"
+            ],
+            "examples": [
+                "az eventgrid namespace topic event-subscription list -g rg --topic-name topic --namespace-name name"
+            ]
+        },
+        {
+            "name": "az eventgrid namespace topic event-subscription show",
+            "summary": "Show an event subscription of a namespace topic.",
+            "syntax": "az eventgrid namespace topic event-subscription show [--event-subscription-name]\n                                                     [--ids]\n                                                     [--namespace-name]\n                                                     [--resource-group]\n                                                     [--subscription]\n                                                     [--topic-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--event-subscription-name --name -n",
+                "--ids",
+                "--namespace-name",
+                "--resource-group -g",
+                "--subscription",
+                "--topic-name"
+            ],
+            "examples": [
+                "az eventgrid namespace topic event-subscription show -g rg --topic-name topic -n event-subscription --namespace-name name"
+            ]
+        },
+        {
+            "name": "az eventgrid namespace topic event-subscription update",
+            "summary": "Update an event subscription of a namespace topic.",
+            "syntax": "az eventgrid namespace topic event-subscription update [--add]\n                                                       [--delivery-configuration]\n                                                       [--event-delivery-schema {CloudEventSchemaV1_0}]\n                                                       [--event-subscription-name]\n                                                       [--filters-configuration]\n                                                       [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                                       [--ids]\n                                                       [--namespace-name]\n                                                       [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                                       [--remove]\n                                                       [--resource-group]\n                                                       [--set]\n                                                       [--subscription]\n                                                       [--topic-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--delivery-configuration",
+                "--event-delivery-schema",
+                "--event-subscription-name --name -n",
+                "--filters-configuration",
+                "--force-string",
+                "--ids",
+                "--namespace-name",
+                "--no-wait",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--subscription",
+                "--topic-name"
+            ],
+            "examples": [
+                "az eventgrid namespace topic event-subscription create -g rg --topic-name topic -n event-subscription --namespace-name name --filters-configuration \"{includedEventTypes:['All']}\""
+            ]
+        },
+        {
+            "name": "az eventgrid namespace topic event-subscription wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az eventgrid namespace topic event-subscription wait [--created]\n                                                     [--custom]\n                                                     [--deleted]\n                                                     [--event-subscription-name]\n                                                     [--exists]\n                                                     [--ids]\n                                                     [--interval]\n                                                     [--namespace-name]\n                                                     [--resource-group]\n                                                     [--subscription]\n                                                     [--timeout]\n                                                     [--topic-name]\n                                                     [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--event-subscription-name --name -n",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--namespace-name",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--topic-name",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

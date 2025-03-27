@@ -1,0 +1,72 @@
+{
+    "command_group": "az alias",
+    "description": "Manage Azure CLI Aliases.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az alias create",
+            "summary": "Create an alias.",
+            "syntax": "az alias create --command\n                --name",
+            "required_parameters": [
+                "--command -c",
+                "--name -n"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az alias create --name rg --command group\n\naz alias create --name ls --command list",
+                "az alias create --name list-vm --command 'vm list --resource-group myResourceGroup'",
+                "az alias create --name 'list-vm {{ resource_group }}' \\\n  --command 'vm list --resource-group {{ resource_group }}'",
+                "az alias create --name 'storage-ls {{ url }}' \\\n  --command 'storage blob list\n    --account-name {{ url.replace(\"https://\", \"\").split(\".\")[0] }}\n    --container-name {{ url.replace(\"https://\", \"\").split(\"/\")[1] }}'"
+            ]
+        },
+        {
+            "name": "az alias export",
+            "summary": "Export all registered aliases to a given path, as an INI configuration file. If no export path is specified, the alias configuration file is exported to the current working directory.",
+            "syntax": "az alias export [--exclude]\n                [--path]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--exclude -e",
+                "--path -p"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az alias import",
+            "summary": "Import aliases from an INI configuration file or an URL.",
+            "syntax": "az alias import --source",
+            "required_parameters": [
+                "--source -s"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az alias list",
+            "summary": "List the registered aliases.",
+            "syntax": "az alias list",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az alias remove",
+            "summary": "Remove one or more aliases. Aliases to be removed are space-delimited.",
+            "syntax": "az alias remove --name",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az alias remove-all",
+            "summary": "Remove all registered aliases.",
+            "syntax": "az alias remove-all [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--yes -y"
+            ],
+            "examples": []
+        }
+    ]
+}

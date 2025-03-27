@@ -1,0 +1,98 @@
+{
+    "command_group": "az providerhub sku nested-resource-type-third",
+    "description": "Gets the sku details for the given resource type and sku name.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az providerhub sku nested-resource-type-third create",
+            "summary": "Create the resource type skus in the given resource type.",
+            "syntax": "az providerhub sku nested-resource-type-third create --name\n                                                     --nested-resource-type-first\n                                                     --nested-resource-type-second\n                                                     --nested-resource-type-third\n                                                     --provider-namespace\n                                                     --resource-type\n                                                     [--sku-settings]",
+            "required_parameters": [
+                "--name --sku -n",
+                "--nested-resource-type-first --nested-rt-first",
+                "--nested-resource-type-second --nested-rt-second",
+                "--nested-resource-type-third --nested-rt-third",
+                "--provider-namespace",
+                "--resource-type"
+            ],
+            "optional_parameters": [
+                "--sku-settings"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az providerhub sku nested-resource-type-third delete",
+            "summary": "Delete a resource type sku.",
+            "syntax": "az providerhub sku nested-resource-type-third delete [--ids]\n                                                     [--name]\n                                                     [--nested-resource-type-first]\n                                                     [--nested-resource-type-second]\n                                                     [--nested-resource-type-third]\n                                                     [--provider-namespace]\n                                                     [--resource-type]\n                                                     [--subscription]\n                                                     [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --sku -n",
+                "--nested-resource-type-first --nested-rt-first",
+                "--nested-resource-type-second --nested-rt-second",
+                "--nested-resource-type-third --nested-rt-third",
+                "--provider-namespace",
+                "--resource-type",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az providerhub sku nested-resource-type-third list",
+            "summary": "List the list of skus for the given resource type.",
+            "syntax": "az providerhub sku nested-resource-type-third list --nested-resource-type-first\n                                                   --nested-resource-type-second\n                                                   --nested-resource-type-third\n                                                   --provider-namespace\n                                                   --resource-type\n                                                   [--max-items]\n                                                   [--next-token]",
+            "required_parameters": [
+                "--nested-resource-type-first --nested-rt-first",
+                "--nested-resource-type-second --nested-rt-second",
+                "--nested-resource-type-third --nested-rt-third",
+                "--provider-namespace",
+                "--resource-type"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az providerhub sku nested-resource-type-third show",
+            "summary": "Get the sku details for the given resource type and sku name.",
+            "syntax": "az providerhub sku nested-resource-type-third show [--ids]\n                                                   [--name]\n                                                   [--nested-resource-type-first]\n                                                   [--nested-resource-type-second]\n                                                   [--nested-resource-type-third]\n                                                   [--provider-namespace]\n                                                   [--resource-type]\n                                                   [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --sku -n",
+                "--nested-resource-type-first --nested-rt-first",
+                "--nested-resource-type-second --nested-rt-second",
+                "--nested-resource-type-third --nested-rt-third",
+                "--provider-namespace",
+                "--resource-type",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az providerhub sku nested-resource-type-third update",
+            "summary": "Update the resource type skus in the given resource type.",
+            "syntax": "az providerhub sku nested-resource-type-third update [--add]\n                                                     [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                                     [--ids]\n                                                     [--name]\n                                                     [--nested-resource-type-first]\n                                                     [--nested-resource-type-second]\n                                                     [--nested-resource-type-third]\n                                                     [--provider-namespace]\n                                                     [--remove]\n                                                     [--resource-type]\n                                                     [--set]\n                                                     [--sku-settings]\n                                                     [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--force-string",
+                "--ids",
+                "--name --sku -n",
+                "--nested-resource-type-first --nested-rt-first",
+                "--nested-resource-type-second --nested-rt-second",
+                "--nested-resource-type-third --nested-rt-third",
+                "--provider-namespace",
+                "--remove",
+                "--resource-type",
+                "--set",
+                "--sku-settings",
+                "--subscription"
+            ],
+            "examples": []
+        }
+    ]
+}

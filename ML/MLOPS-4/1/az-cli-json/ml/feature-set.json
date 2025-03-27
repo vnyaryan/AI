@@ -1,0 +1,225 @@
+{
+    "command_group": "az ml feature-set",
+    "description": "Manage Azure ML feature sets.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az ml feature-set archive",
+            "summary": "Archive a feature set.",
+            "syntax": "az ml feature-set archive --name\n                          --version\n                          [--feature-store-name]\n                          [--resource-group]\n                          [--workspace-name]\n                          [--yes]",
+            "required_parameters": [
+                "--name -n",
+                "--version -v"
+            ],
+            "optional_parameters": [
+                "--feature-store-name",
+                "--resource-group -g",
+                "--workspace-name -w",
+                "--yes -y"
+            ],
+            "examples": [
+                "az ml feature-set archive --name my-feature-set --version 1 --resource-group my-resource-group --feature-store-name my-feature-store"
+            ]
+        },
+        {
+            "name": "az ml feature-set backfill",
+            "summary": "Begin backfill job.",
+            "syntax": "az ml feature-set backfill [--by-data-status]\n                           [--by-job-id]\n                           [--compute-resource]\n                           [--description]\n                           [--display-name]\n                           [--feature-store-name]\n                           [--feature-window-end-time]\n                           [--feature-window-start-time]\n                           [--file]\n                           [--name]\n                           [--resource-group]\n                           [--spark-configuration-settings]\n                           [--tags]\n                           [--version]\n                           [--workspace-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--by-data-status -d",
+                "--by-job-id -j",
+                "--compute-resource -r",
+                "--description",
+                "--display-name",
+                "--feature-store-name",
+                "--feature-window-end-time -e",
+                "--feature-window-start-time -s",
+                "--file -f",
+                "--name -n",
+                "--resource-group -g",
+                "--spark-configuration-settings -c",
+                "--tags",
+                "--version -v",
+                "--workspace-name -w"
+            ],
+            "examples": [
+                "az ml feature-set backfill --name my-feature-set --version 1 --resource-group my-resource-group --feature-store-name my-feature-store --feature-window-start-time start-time --feature-window-end-time end-time"
+            ]
+        },
+        {
+            "name": "az ml feature-set create",
+            "summary": "Create a feature set.",
+            "syntax": "az ml feature-set create [--description]\n                         [--feature-store-name]\n                         [--file]\n                         [--materialization-settings]\n                         [--name]\n                         [--no-wait]\n                         [--resource-group]\n                         [--set]\n                         [--specification]\n                         [--version]\n                         [--workspace-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--description -d",
+                "--feature-store-name",
+                "--file -f",
+                "--materialization-settings -m",
+                "--name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--set",
+                "--specification -s",
+                "--version -v",
+                "--workspace-name -w"
+            ],
+            "examples": [
+                "az ml feature-set create --file feature-set.yaml --resource-group my-resource-group --feature-store-name my-feature-store"
+            ]
+        },
+        {
+            "name": "az ml feature-set get-feature",
+            "summary": "Gets a feature for a feature set.",
+            "syntax": "az ml feature-set get-feature --feature-name\n                              --name\n                              --version\n                              [--feature-store-name]\n                              [--resource-group]\n                              [--workspace-name]",
+            "required_parameters": [
+                "--feature-name",
+                "--name -n",
+                "--version -v"
+            ],
+            "optional_parameters": [
+                "--feature-store-name",
+                "--resource-group -g",
+                "--workspace-name -w"
+            ],
+            "examples": [
+                "az ml feature-set get-feature --name my-feature-set --version 1 --feature-name my-feature --resource-group my-resource-group --feature-store-name my-feature-store"
+            ]
+        },
+        {
+            "name": "az ml feature-set list",
+            "summary": "List feature set in a feature store.",
+            "syntax": "az ml feature-set list [--archived-only]\n                       [--feature-store-name]\n                       [--include-archived]\n                       [--max-results]\n                       [--name]\n                       [--resource-group]\n                       [--workspace-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--archived-only",
+                "--feature-store-name",
+                "--include-archived",
+                "--max-results -r",
+                "--name -n",
+                "--resource-group -g",
+                "--workspace-name -w"
+            ],
+            "examples": [
+                "az ml feature-set list --resource-group my-resource-group --feature-store-name my-feature-store",
+                "az ml feature-set list --name my-feature-set --resource-group my-resource-group --feature-store-name my-feature-store",
+                "az ml feature-set list --query \"[].{Name:name}\" --output table --resource-group my-resource-group --feature-store-name my-feature-store"
+            ]
+        },
+        {
+            "name": "az ml feature-set list-features",
+            "summary": "List Features for a feature set.",
+            "syntax": "az ml feature-set list-features --name\n                                --version\n                                [--feature-name]\n                                [--feature-store-name]\n                                [--resource-group]\n                                [--workspace-name]",
+            "required_parameters": [
+                "--name -n",
+                "--version -v"
+            ],
+            "optional_parameters": [
+                "--feature-name",
+                "--feature-store-name",
+                "--resource-group -g",
+                "--workspace-name -w"
+            ],
+            "examples": [
+                "az ml feature-set list-features --name my-feature-set --version 1 --resource-group my-resource-group --feature-store-name my-feature-store"
+            ]
+        },
+        {
+            "name": "az ml feature-set list-materialization-operation",
+            "summary": "List Materialization operation.",
+            "syntax": "az ml feature-set list-materialization-operation --name\n                                                 --version\n                                                 [--feature-store-name]\n                                                 [--feature-window-end-time]\n                                                 [--feature-window-start-time]\n                                                 [--filters]\n                                                 [--resource-group]\n                                                 [--workspace-name]",
+            "required_parameters": [
+                "--name -n",
+                "--version -v"
+            ],
+            "optional_parameters": [
+                "--feature-store-name",
+                "--feature-window-end-time -e",
+                "--feature-window-start-time -s",
+                "--filters",
+                "--resource-group -g",
+                "--workspace-name -w"
+            ],
+            "examples": [
+                "az ml feature-set list-materialization-operation --name my-feature-set --version 1 --resource-group my-resource-group --feature-store-name my-feature-store"
+            ]
+        },
+        {
+            "name": "az ml feature-set restore",
+            "summary": "Restore an archived feature set.",
+            "syntax": "az ml feature-set restore --name\n                          --version\n                          [--feature-store-name]\n                          [--resource-group]\n                          [--workspace-name]\n                          [--yes]",
+            "required_parameters": [
+                "--name -n",
+                "--version -v"
+            ],
+            "optional_parameters": [
+                "--feature-store-name",
+                "--resource-group -g",
+                "--workspace-name -w",
+                "--yes -y"
+            ],
+            "examples": [
+                "az ml feature-set restore --name my-feature-set --version 1 --resource-group my-resource-group --feature-store-name my-feature-store"
+            ]
+        },
+        {
+            "name": "az ml feature-set show",
+            "summary": "Shows details for a feature set.",
+            "syntax": "az ml feature-set show --name\n                       --version\n                       [--feature-store-name]\n                       [--resource-group]\n                       [--workspace-name]",
+            "required_parameters": [
+                "--name -n",
+                "--version -v"
+            ],
+            "optional_parameters": [
+                "--feature-store-name",
+                "--resource-group -g",
+                "--workspace-name -w"
+            ],
+            "examples": [
+                "az ml feature-set show --name my-feature-set --version 1 --resource-group my-resource-group --feature-store-name my-feature-store"
+            ]
+        },
+        {
+            "name": "az ml feature-set show-feature",
+            "summary": "Shows a feature for a feature set.",
+            "syntax": "az ml feature-set show-feature --feature-name\n                               --name\n                               --version\n                               [--feature-store-name]\n                               [--resource-group]\n                               [--workspace-name]",
+            "required_parameters": [
+                "--feature-name",
+                "--name -n",
+                "--version -v"
+            ],
+            "optional_parameters": [
+                "--feature-store-name",
+                "--resource-group -g",
+                "--workspace-name -w"
+            ],
+            "examples": [
+                "az ml feature-set show-feature --name my-feature-set --version 1 --feature-name my-feature --resource-group my-resource-group --feature-store-name my-feature-store"
+            ]
+        },
+        {
+            "name": "az ml feature-set update",
+            "summary": "Update a feature set.",
+            "syntax": "az ml feature-set update --feature-store-name\n                         --resource-group\n                         --workspace-name\n                         [--add]\n                         [--file]\n                         [--force-string]\n                         [--name]\n                         [--no-wait]\n                         [--remove]\n                         [--set]\n                         [--version]",
+            "required_parameters": [
+                "--feature-store-name",
+                "--resource-group -g",
+                "--workspace-name -w"
+            ],
+            "optional_parameters": [
+                "--add",
+                "--file -f",
+                "--force-string",
+                "--name -n",
+                "--no-wait",
+                "--remove",
+                "--set",
+                "--version -v"
+            ],
+            "examples": [
+                "az ml feature-set update --file feature-set.yaml --resource-group my-resource-group --feature-store-name my-feature-store"
+            ]
+        }
+    ]
+}

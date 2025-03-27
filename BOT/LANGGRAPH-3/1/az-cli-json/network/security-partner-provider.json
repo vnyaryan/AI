@@ -1,0 +1,113 @@
+{
+    "command_group": "az network security-partner-provider",
+    "description": "Manage Azure security partner provider.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az network security-partner-provider create",
+            "summary": "Create an Azure security partner provider.",
+            "syntax": "az network security-partner-provider create --name\n                                            --resource-group\n                                            [--location]\n                                            [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                            [--provider {Checkpoint, IBoss, ZScaler}]\n                                            [--tags]\n                                            [--vhub]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--location -l",
+                "--no-wait",
+                "--provider",
+                "--tags",
+                "--vhub"
+            ],
+            "examples": [
+                "az network security-partner-provider create -n MyProvider -g MyResourceGroup --vhub MyVirtualHub --provider Checkpoint"
+            ]
+        },
+        {
+            "name": "az network security-partner-provider delete",
+            "summary": "Delete an Azure security partner provider.",
+            "syntax": "az network security-partner-provider delete [--ids]\n                                            [--name]\n                                            [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                            [--resource-group]\n                                            [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az network security-partner-provider delete -n MyProvider -g MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az network security-partner-provider list",
+            "summary": "List all Azure security partner providers.",
+            "syntax": "az network security-partner-provider list [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az network security-partner-provider list -g MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az network security-partner-provider show",
+            "summary": "Show an Azure security partner provider.",
+            "syntax": "az network security-partner-provider show [--ids]\n                                          [--name]\n                                          [--resource-group]\n                                          [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az network security-partner-provider show -n MyProvider -g MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az network security-partner-provider update",
+            "summary": "Update an Azure security partner provider.",
+            "syntax": "az network security-partner-provider update [--add]\n                                            [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                            [--ids]\n                                            [--location]\n                                            [--name]\n                                            [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                            [--provider {Checkpoint, IBoss, ZScaler}]\n                                            [--remove]\n                                            [--resource-group]\n                                            [--set]\n                                            [--subscription]\n                                            [--tags]\n                                            [--vhub]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--force-string",
+                "--ids",
+                "--location -l",
+                "--name -n",
+                "--no-wait",
+                "--provider",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--subscription",
+                "--tags",
+                "--vhub"
+            ],
+            "examples": [
+                "az network security-partner-provider update -n MyProvider -g MyResourceGroup --tags a=b"
+            ]
+        },
+        {
+            "name": "az network security-partner-provider wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az network security-partner-provider wait [--created]\n                                          [--custom]\n                                          [--deleted]\n                                          [--exists]\n                                          [--ids]\n                                          [--interval]\n                                          [--name]\n                                          [--resource-group]\n                                          [--subscription]\n                                          [--timeout]\n                                          [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

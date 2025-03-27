@@ -1,0 +1,143 @@
+{
+    "command_group": "az connectedmachine",
+    "description": "Manage Azure Arc-Enabled Server.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az connectedmachine assess-patches",
+            "summary": "Assess patches on an Azure Arc-Enabled Server.",
+            "syntax": "az connectedmachine assess-patches [--ids]\n                                   [--name]\n                                   [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                   [--resource-group]\n                                   [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az connectedmachine assess-patches --resource-group MyResourceGroup --name MyMachine"
+            ]
+        },
+        {
+            "name": "az connectedmachine delete",
+            "summary": "Delete an Azure Arc-Enabled Server.",
+            "syntax": "az connectedmachine delete [--ids]\n                           [--machine-name]\n                           [--resource-group]\n                           [--subscription]\n                           [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--machine-name --name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az connectedmachine delete --name myMachine --resource-group myResourceGroup"
+            ]
+        },
+        {
+            "name": "az connectedmachine install-patches",
+            "summary": "Install patches on an Azure Arc-Enabled Server.",
+            "syntax": "az connectedmachine install-patches --maximum-duration\n                                    --reboot-setting {Always, IfRequired, Never}\n                                    [--ids]\n                                    [--linux-parameters]\n                                    [--name]\n                                    [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                    [--resource-group]\n                                    [--subscription]\n                                    [--windows-parameters]",
+            "required_parameters": [
+                "--maximum-duration",
+                "--reboot-setting"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--linux-parameters",
+                "--name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--windows-parameters"
+            ],
+            "examples": [
+                "az connectedmachine install-patches --resource-group MyResourceGroup --name MyMachine --maximum-duration PT4H --reboot-setting IfRequired --windows-parameters \"{\"classificationsToInclude\": [\"Critical\", \"Security\"]}\""
+            ]
+        },
+        {
+            "name": "az connectedmachine list",
+            "summary": "List all Azure Arc-Enabled Servers in the specified resource group.",
+            "syntax": "az connectedmachine list --resource-group\n                         [--expand]\n                         [--max-items]\n                         [--next-token]",
+            "required_parameters": [
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--expand",
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az connectedmachine list --resource-group myResourceGroup"
+            ]
+        },
+        {
+            "name": "az connectedmachine show",
+            "summary": "Get information about the model view or the instance view of an Azure Arc-Enabled Server.",
+            "syntax": "az connectedmachine show [--expand {instanceView}]\n                         [--ids]\n                         [--machine-name]\n                         [--resource-group]\n                         [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--expand",
+                "--ids",
+                "--machine-name --name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az connectedmachine show --name myMachine --resource-group myResourceGroup"
+            ]
+        },
+        {
+            "name": "az connectedmachine update",
+            "summary": "Update an Azure Arc-Enabled Server. Please note some properties can be set only during machine creation.",
+            "syntax": "az connectedmachine update [--add]\n                           [--agent-upgrade]\n                           [--client-public-key]\n                           [--expand {instanceView}]\n                           [--extensions]\n                           [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                           [--identity]\n                           [--ids]\n                           [--kind {AVS, AWS, EPS, GCP, HCI, SCVMM, VMware}]\n                           [--license-profile]\n                           [--location-data]\n                           [--machine-name]\n                           [--mssql-discovered]\n                           [--os-profile]\n                           [--os-type]\n                           [--parent-cluster-id]\n                           [--private-link-scope-id]\n                           [--remove]\n                           [--resource-group]\n                           [--service-statuses]\n                           [--set]\n                           [--subscription]\n                           [--tags]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--agent-upgrade",
+                "--client-public-key",
+                "--expand",
+                "--extensions",
+                "--force-string",
+                "--identity",
+                "--ids",
+                "--kind",
+                "--license-profile",
+                "--location-data",
+                "--machine-name --name -n",
+                "--mssql-discovered",
+                "--os-profile",
+                "--os-type",
+                "--parent-cluster-id --parent-cluster-resource-id",
+                "--private-link-scope-id --private-link-scope-resource-id",
+                "--remove",
+                "--resource-group -g",
+                "--service-statuses",
+                "--set",
+                "--subscription",
+                "--tags"
+            ],
+            "examples": [
+                "az connectedmachine update --name myMachine --resource-group myResourceGroup --location eastus2euap"
+            ]
+        },
+        {
+            "name": "az connectedmachine upgrade-extension",
+            "summary": "Upgrade Machine Extensions.",
+            "syntax": "az connectedmachine upgrade-extension [--extension-targets]\n                                      [--ids]\n                                      [--machine-name]\n                                      [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                      [--resource-group]\n                                      [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--extension-targets",
+                "--ids",
+                "--machine-name",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az connectedmachine extension upgrade --machine-name \"myMachineName\" --resource-group \"myResourceGroup\" --subscription \"mySubscription\" --targets \"{\"Microsoft.Compute.CustomScriptExtension\": \"{\"targetVersion\": \"1.10\"}\", \"Microsoft.Azure.Monitoring\": \"{\"targetVersion\": \"2.0\"}\"}\""
+            ]
+        }
+    ]
+}

@@ -1,0 +1,97 @@
+{
+    "command_group": "az storage share policy",
+    "description": "Manage shared access policies of a storage file share.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az storage share policy create",
+            "summary": "Create a stored access policy on the containing object.",
+            "syntax": "az storage share policy create --name\n                               --share-name\n                               [--account-key]\n                               [--account-name]\n                               [--connection-string]\n                               [--expiry]\n                               [--file-endpoint]\n                               [--permissions]\n                               [--sas-token]\n                               [--start]",
+            "required_parameters": [
+                "--name -n",
+                "--share-name -s"
+            ],
+            "optional_parameters": [
+                "--account-key",
+                "--account-name",
+                "--connection-string",
+                "--expiry",
+                "--file-endpoint",
+                "--permissions",
+                "--sas-token",
+                "--start"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az storage share policy delete",
+            "summary": "Delete a stored access policy on a containing object.",
+            "syntax": "az storage share policy delete --name\n                               --share-name\n                               [--account-key]\n                               [--account-name]\n                               [--connection-string]\n                               [--file-endpoint]\n                               [--sas-token]",
+            "required_parameters": [
+                "--name -n",
+                "--share-name -s"
+            ],
+            "optional_parameters": [
+                "--account-key",
+                "--account-name",
+                "--connection-string",
+                "--file-endpoint",
+                "--sas-token"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az storage share policy list",
+            "summary": "List stored access policies on a containing object.",
+            "syntax": "az storage share policy list --share-name\n                             [--account-key]\n                             [--account-name]\n                             [--connection-string]\n                             [--file-endpoint]\n                             [--sas-token]",
+            "required_parameters": [
+                "--share-name -s"
+            ],
+            "optional_parameters": [
+                "--account-key",
+                "--account-name",
+                "--connection-string",
+                "--file-endpoint",
+                "--sas-token"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az storage share policy show",
+            "summary": "Show a stored access policy on a containing object.",
+            "syntax": "az storage share policy show --name\n                             --share-name\n                             [--account-key]\n                             [--account-name]\n                             [--connection-string]\n                             [--file-endpoint]\n                             [--sas-token]",
+            "required_parameters": [
+                "--name -n",
+                "--share-name -s"
+            ],
+            "optional_parameters": [
+                "--account-key",
+                "--account-name",
+                "--connection-string",
+                "--file-endpoint",
+                "--sas-token"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az storage share policy update",
+            "summary": "Set a stored access policy on a containing object.",
+            "syntax": "az storage share policy update --name\n                               --share-name\n                               [--account-key]\n                               [--account-name]\n                               [--connection-string]\n                               [--expiry]\n                               [--file-endpoint]\n                               [--permissions]\n                               [--sas-token]\n                               [--start]",
+            "required_parameters": [
+                "--name -n",
+                "--share-name -s"
+            ],
+            "optional_parameters": [
+                "--account-key",
+                "--account-name",
+                "--connection-string",
+                "--expiry",
+                "--file-endpoint",
+                "--permissions",
+                "--sas-token",
+                "--start"
+            ],
+            "examples": []
+        }
+    ]
+}

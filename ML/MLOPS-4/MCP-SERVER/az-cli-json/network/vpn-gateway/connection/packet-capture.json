@@ -1,0 +1,26 @@
+{
+    "command_group": "az network vpn-gateway connection packet-capture",
+    "description": "Manage site-to-site VPN gateway connections packet capture.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az network vpn-gateway connection packet-capture start",
+            "summary": "Starts packet capture on Vpn connection in the specified resource group.",
+            "syntax": "az network vpn-gateway connection packet-capture start [--connection-name]\n                                                       [--filter-data]\n                                                       [--gateway-name]\n                                                       [--ids]\n                                                       [--link-connection-names]\n                                                       [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                                       [--resource-group]\n                                                       [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--connection-name --name -n",
+                "--filter-data",
+                "--gateway-name",
+                "--ids",
+                "--link-connection-names",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az network  vpn-gateway connection packet-capture start -g MyResourceGroup --gateway-name MyVpnGateway --connection-name MyVpnGatewayConnection --link-connection-names MyVpnGatewayConnection"
+            ]
+        }
+    ]
+}

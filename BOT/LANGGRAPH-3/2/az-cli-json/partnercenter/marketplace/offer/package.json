@@ -1,0 +1,37 @@
+{
+    "command_group": "az partnercenter marketplace offer package",
+    "description": "Manage the creation of offer packages, including CNAB bundles for AKS (Azure Container offerings that you sell through Microsoft).",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az partnercenter marketplace offer package build",
+            "summary": "Builds the package for an offer, preparing it for upload or publishing to the offer's technical configuration.",
+            "syntax": "az partnercenter marketplace offer package build --offer-id\n                                                 [--manifest-file]\n                                                 [--no-wait]",
+            "required_parameters": [
+                "--offer-id"
+            ],
+            "optional_parameters": [
+                "--manifest-file",
+                "--no-wait"
+            ],
+            "examples": [
+                "az partnercenter marketplace offer package build --offer-id MyOfferId --manifest-file path/to/manifest.yaml"
+            ]
+        },
+        {
+            "name": "az partnercenter marketplace offer package verify",
+            "summary": "Verifies the package contents for an offer prior to building it.",
+            "syntax": "az partnercenter marketplace offer package verify --offer-id\n                                                  [--manifest-file]\n                                                  [--no-wait]",
+            "required_parameters": [
+                "--offer-id"
+            ],
+            "optional_parameters": [
+                "--manifest-file",
+                "--no-wait"
+            ],
+            "examples": [
+                "az partnercenter marketplace offer package verify --offer-id MyOfferId --manifest-file path/to/manifest.yaml"
+            ]
+        }
+    ]
+}

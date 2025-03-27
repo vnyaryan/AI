@@ -1,0 +1,6 @@
+{
+    "command_group": "az ml computetarget amlcompute",
+    "description": "AzureML compute commands.",
+    "status": "GA",
+    "commands": []
+}

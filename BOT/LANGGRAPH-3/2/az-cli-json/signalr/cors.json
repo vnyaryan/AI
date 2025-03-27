@@ -1,0 +1,69 @@
+{
+    "command_group": "az signalr cors",
+    "description": "Manage CORS for Azure SignalR Service.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az signalr cors add",
+            "summary": "Add allowed origins to a SignalR Service.",
+            "syntax": "az signalr cors add --allowed-origins\n                    [--ids]\n                    [--name]\n                    [--resource-group]\n                    [--subscription]",
+            "required_parameters": [
+                "--allowed-origins -a"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az signalr cors add -n MySignalR -g MyResourceGroup --allowed-origins \"http://example1.com\" \"https://example2.com\""
+            ]
+        },
+        {
+            "name": "az signalr cors list",
+            "summary": "List allowed origins of a SignalR Service.",
+            "syntax": "az signalr cors list --name\n                     --resource-group",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az signalr cors remove",
+            "summary": "Remove allowed origins from a SignalR Service.",
+            "syntax": "az signalr cors remove --allowed-origins\n                       [--ids]\n                       [--name]\n                       [--resource-group]\n                       [--subscription]",
+            "required_parameters": [
+                "--allowed-origins -a"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az signalr cors remove -n MySignalR -g MyResourceGroup --allowed-origins \"http://example1.com\" \"https://example2.com\""
+            ]
+        },
+        {
+            "name": "az signalr cors update",
+            "summary": "Update allowed origins to a SignalR Service.",
+            "syntax": "az signalr cors update --allowed-origins\n                       [--ids]\n                       [--name]\n                       [--resource-group]\n                       [--subscription]",
+            "required_parameters": [
+                "--allowed-origins -a"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az signalr cors update -n MySignalR -g MyResourceGroup --allowed-origins \"http://example1.com\" \"https://example2.com\""
+            ]
+        }
+    ]
+}

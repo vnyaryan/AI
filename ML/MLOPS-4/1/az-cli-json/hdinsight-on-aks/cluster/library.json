@@ -1,0 +1,48 @@
+{
+    "command_group": "az hdinsight-on-aks cluster library",
+    "description": "Manage the library of the cluster.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az hdinsight-on-aks cluster library list",
+            "summary": "List all libraries of HDInsight on AKS cluster.",
+            "syntax": "az hdinsight-on-aks cluster library list --category {custom, predefined}\n                                         --cluster-name\n                                         --cluster-pool-name\n                                         --resource-group\n                                         [--max-items]\n                                         [--next-token]",
+            "required_parameters": [
+                "--category",
+                "--cluster-name",
+                "--cluster-pool-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az hdinsight-on-aks cluster library list --cluster-name {clustername} -g {resourcesGroup} --cluster-pool-name {clusterpoolname} --debug --category custom",
+                "az hdinsight-on-aks cluster library list --cluster-name {clustername} -g {resourcesGroup} --cluster-pool-name {clusterpoolname} --debug --category predefined"
+            ]
+        },
+        {
+            "name": "az hdinsight-on-aks cluster library manage",
+            "summary": "Library management operations on HDInsight on AKS cluster.",
+            "syntax": "az hdinsight-on-aks cluster library manage --action {Install, Uninstall}\n                                           --libraries\n                                           [--cluster-name]\n                                           [--cluster-pool-name]\n                                           [--ids]\n                                           [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                           [--resource-group]\n                                           [--subscription]",
+            "required_parameters": [
+                "--action",
+                "--libraries"
+            ],
+            "optional_parameters": [
+                "--cluster-name",
+                "--cluster-pool-name",
+                "--ids",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az hdinsight-on-aks cluster library manage --cluster-name {clustername} -g {resourcesGroup} --cluster-pool-name {clusterpoolname} --action install --libraries '[{maven:{group-id:com.azure.resourcemanager,name:azure-resourcemanager-hdinsight-containers,version:1.0.0-beta.2}}]'",
+                "az hdinsight-on-aks cluster library manage --cluster-name {clustername} -g {resourcesGroup} --cluster-pool-name {clusterpoolname} --action uninstall --libraries '[{maven:{group-id:com.azure.resourcemanager,name:azure-resourcemanager-hdinsight-containers,version:1.0.0-beta.2}}]'",
+                "az hdinsight-on-aks cluster library manage --cluster-name {clustername} -g {resourcesGroup} --cluster-pool-name {clusterpoolname} --action install --libraries '[{pypi:{name:pandas}}]'"
+            ]
+        }
+    ]
+}

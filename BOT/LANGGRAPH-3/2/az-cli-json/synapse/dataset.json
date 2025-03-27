@@ -1,0 +1,96 @@
+{
+    "command_group": "az synapse dataset",
+    "description": "Manage Synapse's datasets.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az synapse dataset create",
+            "summary": "Create a dataset.",
+            "syntax": "az synapse dataset create --file\n                          --name\n                          --workspace-name\n                          [--no-wait]",
+            "required_parameters": [
+                "--file",
+                "--name -n",
+                "--workspace-name"
+            ],
+            "optional_parameters": [
+                "--no-wait"
+            ],
+            "examples": [
+                "az synapse dataset create --workspace-name testsynapseworkspace \\\n  --name testdataset --file @\"path/dataset.json\""
+            ]
+        },
+        {
+            "name": "az synapse dataset delete",
+            "summary": "Delete a dataset.",
+            "syntax": "az synapse dataset delete --name\n                          --workspace-name\n                          [--no-wait]\n                          [--yes]",
+            "required_parameters": [
+                "--name -n",
+                "--workspace-name"
+            ],
+            "optional_parameters": [
+                "--no-wait",
+                "--yes -y"
+            ],
+            "examples": [
+                "az synapse dataset delete --workspace-name testsynapseworkspace \\\n  --name testdataset"
+            ]
+        },
+        {
+            "name": "az synapse dataset list",
+            "summary": "List datasets.",
+            "syntax": "az synapse dataset list --workspace-name",
+            "required_parameters": [
+                "--workspace-name"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az synapse dataset list --workspace-name testsynapseworkspace"
+            ]
+        },
+        {
+            "name": "az synapse dataset set",
+            "summary": "Update an exist dataset.",
+            "syntax": "az synapse dataset set --file\n                       --name\n                       --workspace-name\n                       [--no-wait]",
+            "required_parameters": [
+                "--file",
+                "--name -n",
+                "--workspace-name"
+            ],
+            "optional_parameters": [
+                "--no-wait"
+            ],
+            "examples": [
+                "az synapse dataset set --workspace-name testsynapseworkspace \\\n  --name testdataset --file @\"path/dataset.json\""
+            ]
+        },
+        {
+            "name": "az synapse dataset show",
+            "summary": "Get a dataset.",
+            "syntax": "az synapse dataset show --name\n                        --workspace-name",
+            "required_parameters": [
+                "--name -n",
+                "--workspace-name"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az synapse dataset show --workspace-name testsynapseworkspace \\\n  --name testdataset"
+            ]
+        },
+        {
+            "name": "az synapse dataset update",
+            "summary": "Update an exist dataset.",
+            "syntax": "az synapse dataset update --file\n                          --name\n                          --workspace-name\n                          [--no-wait]",
+            "required_parameters": [
+                "--file",
+                "--name -n",
+                "--workspace-name"
+            ],
+            "optional_parameters": [
+                "--no-wait"
+            ],
+            "examples": [
+                "az synapse dataset update --workspace-name testsynapseworkspace \\\n  --name testdataset --file @\"path/dataset.json\""
+            ]
+        }
+    ]
+}

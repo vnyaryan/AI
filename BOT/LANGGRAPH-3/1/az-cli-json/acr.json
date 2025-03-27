@@ -1,0 +1,296 @@
+{
+    "command_group": "az acr",
+    "description": "Manage private registries with Azure Container Registries.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az acr build",
+            "summary": "Queues a quick build, providing streaming logs for an Azure Container Registry.",
+            "syntax": "az acr build --registry\n             [--agent-pool]\n             [--auth-mode {Default, None}]\n             [--build-arg]\n             [--file]\n             [--image]\n             [--log-template]\n             [--no-format]\n             [--no-logs]\n             [--no-push]\n             [--no-wait]\n             [--platform]\n             [--resource-group]\n             [--secret-build-arg]\n             [--target]\n             [--timeout]\n             [<SOURCE_LOCATION>]",
+            "required_parameters": [
+                "--registry -r"
+            ],
+            "optional_parameters": [
+                "--agent-pool",
+                "--auth-mode",
+                "--build-arg",
+                "--file -f",
+                "--image -t",
+                "--log-template",
+                "--no-format",
+                "--no-logs",
+                "--no-push",
+                "--no-wait",
+                "--platform",
+                "--resource-group -g",
+                "--secret-build-arg",
+                "--target",
+                "--timeout",
+                "<SOURCE_LOCATION>"
+            ],
+            "examples": [
+                "az acr build -t sample/hello-world:{{.Run.ID}} -r myregistry .",
+                "az acr build -t sample/hello-world:{{.Run.ID}} -r myregistry --no-logs .",
+                "az acr build -t sample/hello-world:{{.Run.ID}} -r myregistry --no-push .",
+                "az acr build -r myregistry .",
+                "az acr build -r myregistry https://github.com/Azure/acr-builder.git -f Windows.Dockerfile --platform windows",
+                "az acr build -r myregistry oci://myregistry.azurecr.io/myartifact:mytag",
+                "az acr build -t sample/hello-world:{{.Run.ID}} -r myregistry . --platform linux/arm/v7"
+            ]
+        },
+        {
+            "name": "az acr check-health",
+            "summary": "Gets health information on the environment and optionally a target registry.",
+            "syntax": "az acr check-health [--ignore-errors]\n                    [--name]\n                    [--vnet]\n                    [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ignore-errors",
+                "--name -n",
+                "--vnet",
+                "--yes -y"
+            ],
+            "examples": [
+                "az acr check-health -n myregistry -y",
+                "az acr check-health --ignore-errors"
+            ]
+        },
+        {
+            "name": "az acr check-name",
+            "summary": "Checks if an Azure Container Registry name is valid and available for use.",
+            "syntax": "az acr check-name --name",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az acr check-name -n doesthisnameexist"
+            ]
+        },
+        {
+            "name": "az acr create",
+            "summary": "Create an Azure Container Registry.",
+            "syntax": "az acr create --name\n              --resource-group\n              --sku {Basic, Premium, Standard}\n              [--admin-enabled {false, true}]\n              [--allow-exports {false, true}]\n              [--allow-metadata-search {false, true}]\n              [--allow-trusted-services {false, true}]\n              [--default-action {Allow, Deny}]\n              [--identity]\n              [--key-encryption-key]\n              [--location]\n              [--public-network-enabled {false, true}]\n              [--tags]\n              [--workspace]\n              [--zone-redundancy {Disabled, Enabled}]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g",
+                "--sku"
+            ],
+            "optional_parameters": [
+                "--admin-enabled",
+                "--allow-exports",
+                "--allow-metadata-search",
+                "--allow-trusted-services",
+                "--default-action",
+                "--identity",
+                "--key-encryption-key",
+                "--location -l",
+                "--public-network-enabled",
+                "--tags",
+                "--workspace",
+                "--zone-redundancy"
+            ],
+            "examples": [
+                "az acr create -n myregistry -g MyResourceGroup --sku Standard"
+            ]
+        },
+        {
+            "name": "az acr delete",
+            "summary": "Deletes an Azure Container Registry.",
+            "syntax": "az acr delete --name\n              [--resource-group]\n              [--yes]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--resource-group -g",
+                "--yes -y"
+            ],
+            "examples": [
+                "az acr delete -n myregistry"
+            ]
+        },
+        {
+            "name": "az acr import",
+            "summary": "Imports an image to an Azure Container Registry from another Container Registry. Import removes the need to docker pull, docker tag, docker push. For larger images consider using `--no-wait`.",
+            "syntax": "az acr import --name\n              --source\n              [--force]\n              [--image]\n              [--no-wait]\n              [--password]\n              [--registry]\n              [--repository]\n              [--resource-group]\n              [--username]",
+            "required_parameters": [
+                "--name -n",
+                "--source"
+            ],
+            "optional_parameters": [
+                "--force",
+                "--image -t",
+                "--no-wait",
+                "--password -p",
+                "--registry -r",
+                "--repository",
+                "--resource-group -g",
+                "--username -u"
+            ],
+            "examples": [
+                "az acr import -n myregistry --source sourceregistry.azurecr.io/sourcerepository:sourcetag",
+                "az acr import -n myregistry --source docker.io/library/hello-world:latest -t targetrepository:targettag",
+                "az acr import -n myregistry --source myprivateregistry.azurecr.io/hello-world:latest -u username -p password",
+                "az acr import -n myregistry --source sourcerepository:sourcetag -t targetrepository:targettag \\\n    -r /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/sourceResourceGroup/providers/Microsoft.ContainerRegistry/registries/sourceRegistry",
+                "az acr import -n myregistry --source sourceregistry.azurecr.io/sourcerepository:sourcetag --no-wait"
+            ]
+        },
+        {
+            "name": "az acr list",
+            "summary": "Lists all the container registries under the current subscription.",
+            "syntax": "az acr list [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az acr list -o table",
+                "az acr list -g MyResourceGroup -o table"
+            ]
+        },
+        {
+            "name": "az acr login",
+            "summary": "Log in to an Azure Container Registry through the Docker CLI.",
+            "syntax": "az acr login --name\n             [--expose-token]\n             [--password]\n             [--resource-group]\n             [--suffix]\n             [--username]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--expose-token -t",
+                "--password -p",
+                "--resource-group -g",
+                "--suffix",
+                "--username -u"
+            ],
+            "examples": [
+                "az acr login -n myregistry",
+                "az acr login -n myregistry --expose-token"
+            ]
+        },
+        {
+            "name": "az acr query",
+            "summary": "Query the content in an ACR using Kusto Query Language.",
+            "syntax": "az acr query --kql-query\n             --name\n             [--password]\n             [--repository]\n             [--skip-token]\n             [--username]",
+            "required_parameters": [
+                "--kql-query -q",
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--password -p",
+                "--repository",
+                "--skip-token",
+                "--username -u"
+            ],
+            "examples": [
+                "az acr query -n $MyRegistry -q \"Manifests | limit 1\"",
+                "az acr query -n $MyRegistry -q \"Manifests\" -o table",
+                "az acr query -n $MyRegistry --repository $RepositoryName -q \"Manifests | order by createdAt desc\"",
+                "az acr query -n $MyRegistry --repository $RepositoryName -q \"Manifests | where annotations['org.cncf.notary.signature.subject'] == $Signature | project createdAt, digest, subject\"",
+                "az acr query -n $MyRegistry -q \"Manifests | project digest | order by digest asc\" --skip-token eyAibm8iOiAibHVjayIsICJidXQiOiAibmljZSIsICJ0cnkiOiAiISIgfQ=="
+            ]
+        },
+        {
+            "name": "az acr run",
+            "summary": "Queues a quick run providing streamed logs for an Azure Container Registry.",
+            "syntax": "az acr run --registry\n           [--agent-pool]\n           [--auth-mode {Default, None}]\n           [--cmd]\n           [--file]\n           [--log-template]\n           [--no-format]\n           [--no-logs]\n           [--no-wait]\n           [--platform]\n           [--resource-group]\n           [--set]\n           [--set-secret]\n           [--timeout]\n           [--values]\n           [<SOURCE_LOCATION>]",
+            "required_parameters": [
+                "--registry -r"
+            ],
+            "optional_parameters": [
+                "--agent-pool",
+                "--auth-mode",
+                "--cmd",
+                "--file -f",
+                "--log-template",
+                "--no-format",
+                "--no-logs",
+                "--no-wait",
+                "--platform",
+                "--resource-group -g",
+                "--set",
+                "--set-secret",
+                "--timeout",
+                "--values",
+                "<SOURCE_LOCATION>"
+            ],
+            "examples": [
+                "az acr run -r myregistry --cmd '$Registry/myimage' /dev/null",
+                "az acr run -r myregistry -f - /dev/null",
+                "cat task.yaml | az acr run -r myregistry -f - /dev/null",
+                "az acr run -r myregistry -f bash-echo.yaml ./workspace",
+                "az acr run -r myregistry https://github.com/Azure-Samples/acr-tasks.git -f hello-world.yaml",
+                "az acr run -r myregistry https://github.com/Azure-Samples/acr-tasks.git -f build-hello-world.yaml --platform linux",
+                "az acr run -r myregistry oci://myregistry.azurecr.io/myartifact:mytag -f hello-world.yaml"
+            ]
+        },
+        {
+            "name": "az acr show",
+            "summary": "Get the details of an Azure Container Registry.",
+            "syntax": "az acr show --name\n            [--resource-group]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az acr show -n myregistry --query loginServer",
+                "az acr show --name myregistry --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az acr show-endpoints",
+            "summary": "Display registry endpoints.",
+            "syntax": "az acr show-endpoints --name\n                      [--resource-group]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az acr show-usage",
+            "summary": "Get the storage usage for an Azure Container Registry.",
+            "syntax": "az acr show-usage --name\n                  [--resource-group]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az acr show-usage -n myregistry"
+            ]
+        },
+        {
+            "name": "az acr update",
+            "summary": "Update an Azure Container Registry.",
+            "syntax": "az acr update --name\n              [--add]\n              [--admin-enabled {false, true}]\n              [--allow-exports {false, true}]\n              [--allow-metadata-search {false, true}]\n              [--allow-trusted-services {false, true}]\n              [--anonymous-pull-enabled {false, true}]\n              [--data-endpoint-enabled {false, true}]\n              [--default-action {Allow, Deny}]\n              [--force-string]\n              [--public-network-enabled {false, true}]\n              [--remove]\n              [--resource-group]\n              [--set]\n              [--sku {Basic, Premium, Standard}]\n              [--tags]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--add",
+                "--admin-enabled",
+                "--allow-exports",
+                "--allow-metadata-search",
+                "--allow-trusted-services",
+                "--anonymous-pull-enabled",
+                "--data-endpoint-enabled",
+                "--default-action",
+                "--force-string",
+                "--public-network-enabled",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--sku",
+                "--tags"
+            ],
+            "examples": [
+                "az acr update -n myregistry --tags key1=value1 key2=value2",
+                "az acr update -n myregistry --admin-enabled true"
+            ]
+        }
+    ]
+}

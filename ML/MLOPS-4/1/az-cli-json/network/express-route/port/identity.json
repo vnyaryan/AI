@@ -1,0 +1,71 @@
+{
+    "command_group": "az network express-route port identity",
+    "description": "Manage the managed service identity of an ExpressRoute Port.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az network express-route port identity assign",
+            "summary": "Assign a managed service identity to an ExpressRoute Port.",
+            "syntax": "az network express-route port identity assign --identity\n                                              --name\n                                              --resource-group\n                                              [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]",
+            "required_parameters": [
+                "--identity",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--no-wait"
+            ],
+            "examples": [
+                "az network express-route port identity assign --resource-group MyResourceGroup --name MyExpressRoutePort --identity MyUserAssignedManagedServiceIdentity"
+            ]
+        },
+        {
+            "name": "az network express-route port identity remove",
+            "summary": "Remove the managed service identity of an ExpressRoute Port.",
+            "syntax": "az network express-route port identity remove --name\n                                              --resource-group\n                                              [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--no-wait"
+            ],
+            "examples": [
+                "az network express-route port identity remove -g MyResourceGroup --name MyExpressRoutePort"
+            ]
+        },
+        {
+            "name": "az network express-route port identity show",
+            "summary": "Show the managed service identity of an ExpressRoute Port.",
+            "syntax": "az network express-route port identity show --name\n                                            --resource-group",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az network express-route port identity show -g MyResourceGroup --name MyExpressRoutePort"
+            ]
+        },
+        {
+            "name": "az network express-route port identity wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az network express-route port identity wait [--created]\n                                            [--custom]\n                                            [--deleted]\n                                            [--exists]\n                                            [--ids]\n                                            [--interval]\n                                            [--name]\n                                            [--resource-group]\n                                            [--subscription]\n                                            [--timeout]\n                                            [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

@@ -1,0 +1,56 @@
+{
+    "command_group": "az serial-console send",
+    "description": "Send NMI/SysRq/Reset to a VM or VMSS Instance.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az serial-console send nmi",
+            "summary": "Send a Non-Maskable Interrupt (NMI) to a VM or VMSS Instance.",
+            "syntax": "az serial-console send nmi --name\n                           --resource-group\n                           [--instance-id]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--instance-id"
+            ],
+            "examples": [
+                "az serial-console send nmi -n MyVM -g MyResourceGroup",
+                "az serial-console send nmi -n MyVMSS -g MyResourceGroup --instance-id 2"
+            ]
+        },
+        {
+            "name": "az serial-console send reset",
+            "summary": "Perform a \"hard\" restart of the VM or VMSS Instance.",
+            "syntax": "az serial-console send reset --name\n                             --resource-group\n                             [--instance-id]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--instance-id"
+            ],
+            "examples": [
+                "az serial-console send reset -n MyVM -g MyResourceGroup",
+                "az serial-console send reset -n MyVMSS -g MyResourceGroup --instance-id 2"
+            ]
+        },
+        {
+            "name": "az serial-console send sysrq",
+            "summary": "Send SysRq sequence to a VM or VMSS Instance.",
+            "syntax": "az serial-console send sysrq --input\n                             --name\n                             --resource-group\n                             [--instance-id]",
+            "required_parameters": [
+                "--input",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--instance-id"
+            ],
+            "examples": [
+                "az serial-console send sysrq -n MyVM -g MyResourceGroup --input c",
+                "az serial-console send sysrq -n MyVMSS -g MyResourceGroup --instance-id 2 --input c"
+            ]
+        }
+    ]
+}

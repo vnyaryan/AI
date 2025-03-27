@@ -1,0 +1,86 @@
+{
+    "command_group": "az containerapp revision label",
+    "description": "Manage revision labels assigned to traffic weights.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az containerapp revision label add",
+            "summary": "Set a revision label to a revision with an associated traffic weight.",
+            "syntax": "az containerapp revision label add --label\n                                   --resource-group\n                                   --revision\n                                   [--name]\n                                   [--no-prompt]",
+            "required_parameters": [
+                "--label",
+                "--resource-group -g",
+                "--revision"
+            ],
+            "optional_parameters": [
+                "--name -n",
+                "--no-prompt --yes -y"
+            ],
+            "examples": [
+                "az containerapp revision label add -n my-containerapp -g MyResourceGroup --label myLabel --revision latest",
+                "az containerapp revision label add -g MyResourceGroup --label myLabel --revision revisionName"
+            ]
+        },
+        {
+            "name": "az containerapp revision label add",
+            "summary": "Set a revision label to a revision with an associated traffic weight.",
+            "syntax": "az containerapp revision label add --label\n                                   --resource-group\n                                   --revision\n                                   [--name]\n                                   [--no-prompt]",
+            "required_parameters": [
+                "--label",
+                "--resource-group -g",
+                "--revision"
+            ],
+            "optional_parameters": [
+                "--name -n",
+                "--no-prompt --yes -y"
+            ],
+            "examples": [
+                "az containerapp revision label add -n my-containerapp -g MyResourceGroup --label myLabel --revision latest",
+                "az containerapp revision label add -g MyResourceGroup --label myLabel --revision revisionName"
+            ]
+        },
+        {
+            "name": "az containerapp revision label remove",
+            "summary": "Remove a revision label from a revision with an associated traffic weight.",
+            "syntax": "az containerapp revision label remove --label\n                                      --name\n                                      --resource-group",
+            "required_parameters": [
+                "--label",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az containerapp revision label remove -n my-containerapp -g MyResourceGroup --label myLabel"
+            ]
+        },
+        {
+            "name": "az containerapp revision label remove",
+            "summary": "Remove a revision label from a revision with an associated traffic weight.",
+            "syntax": "az containerapp revision label remove --label\n                                      --name\n                                      --resource-group",
+            "required_parameters": [
+                "--label",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az containerapp revision label remove -n my-containerapp -g MyResourceGroup --label myLabel"
+            ]
+        },
+        {
+            "name": "az containerapp revision label swap",
+            "summary": "Swap a revision label between two revisions with associated traffic weights.",
+            "syntax": "az containerapp revision label swap --name\n                                    --resource-group\n                                    --source\n                                    --target",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g",
+                "--source",
+                "--target"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az containerapp revision label swap -n my-containerapp -g MyResourceGroup --source myLabel1 --target myLabel2"
+            ]
+        }
+    ]
+}

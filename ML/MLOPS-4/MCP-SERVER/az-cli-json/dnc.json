@@ -1,0 +1,6 @@
+{
+    "command_group": "az dnc",
+    "description": "Manage Delegated Network.",
+    "status": "Preview",
+    "commands": []
+}

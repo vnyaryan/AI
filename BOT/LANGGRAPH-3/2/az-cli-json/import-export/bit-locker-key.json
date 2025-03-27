@@ -1,0 +1,20 @@
+{
+    "command_group": "az import-export bit-locker-key",
+    "description": "Import-export bit-locker-key.",
+    "status": "Experimental",
+    "commands": [
+        {
+            "name": "az import-export bit-locker-key list",
+            "summary": "Returns the BitLocker Keys for all drives in the specified job.",
+            "syntax": "az import-export bit-locker-key list --job-name\n                                     --resource-group",
+            "required_parameters": [
+                "--job-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az import-export bit-locker-key list --resource-group \"myResourceGroup\" --job-name \"myJob\""
+            ]
+        }
+    ]
+}

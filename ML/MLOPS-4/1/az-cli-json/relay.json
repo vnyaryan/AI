@@ -1,0 +1,6 @@
+{
+    "command_group": "az relay",
+    "description": "Manage Azure Relay Service namespaces, WCF relays, hybrid connections, and rules.",
+    "status": "GA",
+    "commands": []
+}

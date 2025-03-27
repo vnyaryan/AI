@@ -1,0 +1,23 @@
+{
+    "command_group": "az sf cluster reliability",
+    "description": "Manage the reliability of a cluster.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az sf cluster reliability update",
+            "summary": "Update the reliability tier for the primary node in a cluster.",
+            "syntax": "az sf cluster reliability update --cluster-name\n                                 --reliability-level {Bronze, Gold, Platinum, Silver}\n                                 --resource-group\n                                 [--auto-add-node]",
+            "required_parameters": [
+                "--cluster-name -c",
+                "--reliability-level",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--auto-add-node"
+            ],
+            "examples": [
+                "az sf cluster reliability update -g group-name -c cluster1 --reliability-level Silver"
+            ]
+        }
+    ]
+}

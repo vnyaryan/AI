@@ -1,0 +1,24 @@
+{
+    "command_group": "az consumption reservation summary",
+    "description": "List reservation summaries.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az consumption reservation summary list",
+            "summary": "List reservation summaries for daily or monthly by order Id or reservation id.",
+            "syntax": "az consumption reservation summary list --grain {daily, monthly}\n                                        --reservation-order-id\n                                        [--end-date]\n                                        [--max-items]\n                                        [--next-token]\n                                        [--reservation-id]\n                                        [--start-date]",
+            "required_parameters": [
+                "--grain",
+                "--reservation-order-id"
+            ],
+            "optional_parameters": [
+                "--end-date -e",
+                "--max-items",
+                "--next-token",
+                "--reservation-id",
+                "--start-date -s"
+            ],
+            "examples": []
+        }
+    ]
+}

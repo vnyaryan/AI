@@ -1,0 +1,23 @@
+{
+    "command_group": "az oracle-database cloud-exadata-infrastructure database-server",
+    "description": "Cloud Exadata Infrastructures - Database Servers.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az oracle-database cloud-exadata-infrastructure database-server list",
+            "summary": "List DbServer resources by CloudExadataInfrastructure.",
+            "syntax": "az oracle-database cloud-exadata-infrastructure database-server list --cloudexadatainfrastructurename\n                                                                     --resource-group\n                                                                     [--max-items]\n                                                                     [--next-token]",
+            "required_parameters": [
+                "--cloudexadatainfrastructurename --exainfraname",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az oracle-database cloud-exadata-infrastructure database-server list --cloudexadatainfrastructurename <name> --resource-group <RG name>"
+            ]
+        }
+    ]
+}

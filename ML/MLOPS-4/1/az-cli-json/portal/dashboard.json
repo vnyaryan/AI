@@ -1,0 +1,109 @@
+{
+    "command_group": "az portal dashboard",
+    "description": "Manage portal dashboards.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az portal dashboard create",
+            "summary": "Create a Dashboard.",
+            "syntax": "az portal dashboard create --name\n                           --resource-group\n                           [--input-path]\n                           [--lenses]\n                           [--location]\n                           [--metadata]\n                           [--tags]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--input-path",
+                "--lenses",
+                "--location -l",
+                "--metadata",
+                "--tags"
+            ],
+            "examples": [
+                "az portal dashboard create --location \"eastus\" --name \"testDashboard\" --resource-group \"testRG\" --input-path \"/src/json/properties.json\" --tags aKey=aValue anotherKey=anotherValue"
+            ]
+        },
+        {
+            "name": "az portal dashboard delete",
+            "summary": "Delete the Dashboard.",
+            "syntax": "az portal dashboard delete [--ids]\n                           [--name]\n                           [--resource-group]\n                           [--subscription]\n                           [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az portal dashboard delete --name testDashboard --resource-group testRG"
+            ]
+        },
+        {
+            "name": "az portal dashboard import",
+            "summary": "Import a Dashboard from a JSON file.",
+            "syntax": "az portal dashboard import --input-path\n                           --name\n                           --resource-group",
+            "required_parameters": [
+                "--input-path",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az portal dashboard import -n myDashboard -g myResourceGroup --input-path /src/json/dashboard.json"
+            ]
+        },
+        {
+            "name": "az portal dashboard list",
+            "summary": "List all the dashboards within a subscription or a resource group.",
+            "syntax": "az portal dashboard list [--max-items]\n                         [--next-token]\n                         [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az portal dashboard list --resource-group testRG",
+                "az portal dashboard list"
+            ]
+        },
+        {
+            "name": "az portal dashboard show",
+            "summary": "Gets details for a dashboard.",
+            "syntax": "az portal dashboard show [--ids]\n                         [--name]\n                         [--resource-group]\n                         [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az portal dashboard show --name testDashboard --resource-group testRG"
+            ]
+        },
+        {
+            "name": "az portal dashboard update",
+            "summary": "Update an existing Dashboard.",
+            "syntax": "az portal dashboard update [--add]\n                           [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                           [--ids]\n                           [--input-path]\n                           [--lenses]\n                           [--metadata]\n                           [--name]\n                           [--remove]\n                           [--resource-group]\n                           [--set]\n                           [--subscription]\n                           [--tags]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--force-string",
+                "--ids",
+                "--input-path",
+                "--lenses",
+                "--metadata",
+                "--name -n",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--subscription",
+                "--tags"
+            ],
+            "examples": [
+                "az portal dashboard update --name \"testDashboard\" --resource-group \"testRG\" --input-path \"/src/json/properties.json\""
+            ]
+        }
+    ]
+}

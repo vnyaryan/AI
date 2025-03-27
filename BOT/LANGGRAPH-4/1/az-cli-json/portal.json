@@ -1,0 +1,6 @@
+{
+    "command_group": "az portal",
+    "description": "Manage Portal.",
+    "status": "GA",
+    "commands": []
+}

@@ -1,0 +1,96 @@
+{
+    "command_group": "az network vhub route-map rule",
+    "description": "Manage route map rule.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az network vhub route-map rule add",
+            "summary": "Add route map rule.",
+            "syntax": "az network vhub route-map rule add --resource-group\n                                   --route-map-name\n                                   --vhub-name\n                                   [--actions]\n                                   [--match-criteria]\n                                   [--name]\n                                   [--next-step {Continue, Terminate, Unknown}]\n                                   [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                   [--rule-index]",
+            "required_parameters": [
+                "--resource-group -g",
+                "--route-map-name",
+                "--vhub-name"
+            ],
+            "optional_parameters": [
+                "--actions",
+                "--match-criteria",
+                "--name",
+                "--next-step",
+                "--no-wait",
+                "--rule-index"
+            ],
+            "examples": [
+                "az network vhub route-map rule add --name rule-name -g rg --route-map-name routemap-name --vhub-name vhub-name --match-criteria \"[{matchCondition:Contains,routePrefix:[10.0.0.1/8]}]\" --actions \"[{type:Add,parameters:[{asPath:[22335]}]}]\" --next-step Continue"
+            ]
+        },
+        {
+            "name": "az network vhub route-map rule delete",
+            "summary": "Delete route map rule.",
+            "syntax": "az network vhub route-map rule delete --resource-group\n                                      --route-map-name\n                                      --rule-index\n                                      --vhub-name\n                                      [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                      [--yes]",
+            "required_parameters": [
+                "--resource-group -g",
+                "--route-map-name",
+                "--rule-index",
+                "--vhub-name"
+            ],
+            "optional_parameters": [
+                "--no-wait",
+                "--yes -y"
+            ],
+            "examples": [
+                "az network vhub route-map rule delete -g rg --route-map-name routemap-name --vhub-name vhub-name --rule-index 1"
+            ]
+        },
+        {
+            "name": "az network vhub route-map rule list",
+            "summary": "List route map rules.",
+            "syntax": "az network vhub route-map rule list --resource-group\n                                    --route-map-name\n                                    --vhub-name",
+            "required_parameters": [
+                "--resource-group -g",
+                "--route-map-name",
+                "--vhub-name"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az network vhub route-map rule list -g rg --route-map-name routemap-name --vhub-name vhub-name"
+            ]
+        },
+        {
+            "name": "az network vhub route-map rule show",
+            "summary": "Show route map rule.",
+            "syntax": "az network vhub route-map rule show --resource-group\n                                    --route-map-name\n                                    --rule-index\n                                    --vhub-name",
+            "required_parameters": [
+                "--resource-group -g",
+                "--route-map-name",
+                "--rule-index",
+                "--vhub-name"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az network vhub route-map rule show -g rg --route-map-name routemap-name --vhub-name vhub-name --rule-index 0"
+            ]
+        },
+        {
+            "name": "az network vhub route-map rule wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az network vhub route-map rule wait [--created]\n                                    [--custom]\n                                    [--deleted]\n                                    [--exists]\n                                    [--ids]\n                                    [--interval]\n                                    [--resource-group]\n                                    [--route-map-name]\n                                    [--subscription]\n                                    [--timeout]\n                                    [--updated]\n                                    [--vhub-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--resource-group -g",
+                "--route-map-name",
+                "--subscription",
+                "--timeout",
+                "--updated",
+                "--vhub-name"
+            ],
+            "examples": []
+        }
+    ]
+}

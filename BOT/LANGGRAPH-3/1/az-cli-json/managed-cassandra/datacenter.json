@@ -1,0 +1,206 @@
+{
+    "command_group": "az managed-cassandra datacenter",
+    "description": "Azure Managed Cassandra DataCenter.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az managed-cassandra datacenter create",
+            "summary": "Create a Datacenter in an Azure Managed Cassandra Cluster.",
+            "syntax": "az managed-cassandra datacenter create --cluster-name\n                                       --data-center-location\n                                       --data-center-name\n                                       --delegated-subnet-id\n                                       --node-count\n                                       --resource-group\n                                       [--availability-zone {false, true}]\n                                       [--backup-storage-customer-key-uri]\n                                       [--base64-encoded-cassandra-yaml-fragment]\n                                       [--disk-capacity]\n                                       [--disk-sku]\n                                       [--managed-disk-customer-key-uri]\n                                       [--no-wait]\n                                       [--sku]",
+            "required_parameters": [
+                "--cluster-name -c",
+                "--data-center-location -l",
+                "--data-center-name -d",
+                "--delegated-subnet-id -s",
+                "--node-count -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--availability-zone -z",
+                "--backup-storage-customer-key-uri -p",
+                "--base64-encoded-cassandra-yaml-fragment -b",
+                "--disk-capacity",
+                "--disk-sku",
+                "--managed-disk-customer-key-uri -k",
+                "--no-wait",
+                "--sku"
+            ],
+            "examples": [
+                "az managed-cassandra datacenter create \\\n--resource-group MyResourceGroup \\\n--cluster-name MyCluster \\\n--data-center-name MyDataCenter \\\n--data-center-location westus2 \\\n--node-count 3 \\\n--delegated-subnet-id /subscriptions/94d9b402-77b4-4049-b4c1-947bc6b7729b/resourceGroups/My-vnet/providers/Microsoft.Network/virtualNetworks/test-vnet/subnets/test-subnet"
+            ]
+        },
+        {
+            "name": "az managed-cassandra datacenter create",
+            "summary": "Create a Datacenter in an Azure Managed Cassandra Cluster.",
+            "syntax": "az managed-cassandra datacenter create --cluster-name\n                                       --data-center-location\n                                       --data-center-name\n                                       --delegated-subnet-id\n                                       --node-count\n                                       --resource-group\n                                       [--availability-zone {false, true}]\n                                       [--backup-storage-customer-key-uri]\n                                       [--base64-encoded-cassandra-yaml-fragment]\n                                       [--disk-capacity]\n                                       [--disk-sku]\n                                       [--ldap-search-base-dn]\n                                       [--ldap-search-filter]\n                                       [--ldap-server-certs]\n                                       [--ldap-server-hostname]\n                                       [--ldap-server-port]\n                                       [--ldap-service-user-dn]\n                                       [--ldap-svc-user-pwd]\n                                       [--managed-disk-customer-key-uri]\n                                       [--no-wait]\n                                       [--sku]",
+            "required_parameters": [
+                "--cluster-name -c",
+                "--data-center-location -l",
+                "--data-center-name -d",
+                "--delegated-subnet-id -s",
+                "--node-count -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--availability-zone -z",
+                "--backup-storage-customer-key-uri -p",
+                "--base64-encoded-cassandra-yaml-fragment -b",
+                "--disk-capacity",
+                "--disk-sku",
+                "--ldap-search-base-dn",
+                "--ldap-search-filter",
+                "--ldap-server-certs",
+                "--ldap-server-hostname",
+                "--ldap-server-port",
+                "--ldap-service-user-dn",
+                "--ldap-svc-user-pwd",
+                "--managed-disk-customer-key-uri -k",
+                "--no-wait",
+                "--sku"
+            ],
+            "examples": [
+                "az managed-cassandra datacenter create \\\n--resource-group MyResourceGroup \\\n--cluster-name MyCluster \\\n--data-center-name MyDataCenter \\\n--data-center-location westus2 \\\n--node-count 3 \\\n--delegated-subnet-id /subscriptions/94d9b402-77b4-4049-b4c1-947bc6b7729b/resourceGroups/My-vnet/providers/Microsoft.Network/virtualNetworks/test-vnet/subnets/test-subnet"
+            ]
+        },
+        {
+            "name": "az managed-cassandra datacenter delete",
+            "summary": "Deletes a Managed Cassandra Datacenter.",
+            "syntax": "az managed-cassandra datacenter delete --cluster-name\n                                       --data-center-name\n                                       --resource-group\n                                       [--no-wait]\n                                       [--yes]",
+            "required_parameters": [
+                "--cluster-name -c",
+                "--data-center-name -d",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--no-wait",
+                "--yes -y"
+            ],
+            "examples": [
+                "az managed-cassandra datacenter delete --resource-group MyResourceGroup --cluster-name MyCluster --data-center-name MyDataCenter",
+                "az managed-cassandra datacenter delete --resource-group MyResourceGroup --cluster-name MyCluster --data-center-name MyDataCenter --no-wait"
+            ]
+        },
+        {
+            "name": "az managed-cassandra datacenter delete",
+            "summary": "Deletes a Managed Cassandra Datacenter.",
+            "syntax": "az managed-cassandra datacenter delete --cluster-name\n                                       --data-center-name\n                                       --resource-group\n                                       [--no-wait]\n                                       [--yes]",
+            "required_parameters": [
+                "--cluster-name -c",
+                "--data-center-name -d",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--no-wait",
+                "--yes -y"
+            ],
+            "examples": [
+                "az managed-cassandra datacenter delete --resource-group MyResourceGroup --cluster-name MyCluster --data-center-name MyDataCenter",
+                "az managed-cassandra datacenter delete --resource-group MyResourceGroup --cluster-name MyCluster --data-center-name MyDataCenter --no-wait"
+            ]
+        },
+        {
+            "name": "az managed-cassandra datacenter list",
+            "summary": "List the Managed Cassandra Datacenters in a given Cluster.",
+            "syntax": "az managed-cassandra datacenter list --cluster-name\n                                     --resource-group",
+            "required_parameters": [
+                "--cluster-name -c",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az managed-cassandra datacenter list --resource-group MyResourceGroup --cluster-name MyCluster"
+            ]
+        },
+        {
+            "name": "az managed-cassandra datacenter list",
+            "summary": "List the Managed Cassandra Datacenters in a given Cluster.",
+            "syntax": "az managed-cassandra datacenter list --cluster-name\n                                     --resource-group",
+            "required_parameters": [
+                "--cluster-name -c",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az managed-cassandra datacenter list --resource-group MyResourceGroup --cluster-name MyCluster"
+            ]
+        },
+        {
+            "name": "az managed-cassandra datacenter show",
+            "summary": "Get a Managed Cassandra DataCenter Resource.",
+            "syntax": "az managed-cassandra datacenter show --cluster-name\n                                     --data-center-name\n                                     --resource-group",
+            "required_parameters": [
+                "--cluster-name -c",
+                "--data-center-name -d",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az managed-cassandra datacenter show --resource-group MyResourceGroup --cluster-name MyCluster --data-center-name MyDataCenter"
+            ]
+        },
+        {
+            "name": "az managed-cassandra datacenter show",
+            "summary": "Get a Managed Cassandra DataCenter Resource.",
+            "syntax": "az managed-cassandra datacenter show --cluster-name\n                                     --data-center-name\n                                     --resource-group",
+            "required_parameters": [
+                "--cluster-name -c",
+                "--data-center-name -d",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az managed-cassandra datacenter show --resource-group MyResourceGroup --cluster-name MyCluster --data-center-name MyDataCenter"
+            ]
+        },
+        {
+            "name": "az managed-cassandra datacenter update",
+            "summary": "Update a Datacenter in an Azure Managed Cassandra Cluster.",
+            "syntax": "az managed-cassandra datacenter update --cluster-name\n                                       --data-center-name\n                                       --resource-group\n                                       [--backup-storage-customer-key-uri]\n                                       [--base64-encoded-cassandra-yaml-fragment]\n                                       [--managed-disk-customer-key-uri]\n                                       [--no-wait]\n                                       [--node-count]\n                                       [--sku]",
+            "required_parameters": [
+                "--cluster-name -c",
+                "--data-center-name -d",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--backup-storage-customer-key-uri -p",
+                "--base64-encoded-cassandra-yaml-fragment -b",
+                "--managed-disk-customer-key-uri -k",
+                "--no-wait",
+                "--node-count -n",
+                "--sku"
+            ],
+            "examples": [
+                "az managed-cassandra datacenter update --resource-group MyResourceGroup --cluster-name MyCluster --data-center-name MyDataCenter --node-count 6",
+                "az managed-cassandra datacenter update --resource-group MyResourceGroup --cluster-name MyCluster --data-center-name MyDataCenter --node-count 4"
+            ]
+        },
+        {
+            "name": "az managed-cassandra datacenter update",
+            "summary": "Update a Datacenter in an Azure Managed Cassandra Cluster.",
+            "syntax": "az managed-cassandra datacenter update --cluster-name\n                                       --data-center-name\n                                       --resource-group\n                                       [--backup-storage-customer-key-uri]\n                                       [--base64-encoded-cassandra-yaml-fragment]\n                                       [--ldap-search-base-dn]\n                                       [--ldap-search-filter]\n                                       [--ldap-server-certs]\n                                       [--ldap-server-hostname]\n                                       [--ldap-server-port]\n                                       [--ldap-service-user-dn]\n                                       [--ldap-svc-user-pwd]\n                                       [--managed-disk-customer-key-uri]\n                                       [--no-wait]\n                                       [--node-count]",
+            "required_parameters": [
+                "--cluster-name -c",
+                "--data-center-name -d",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--backup-storage-customer-key-uri -p",
+                "--base64-encoded-cassandra-yaml-fragment -b",
+                "--ldap-search-base-dn",
+                "--ldap-search-filter",
+                "--ldap-server-certs",
+                "--ldap-server-hostname",
+                "--ldap-server-port",
+                "--ldap-service-user-dn",
+                "--ldap-svc-user-pwd",
+                "--managed-disk-customer-key-uri -k",
+                "--no-wait",
+                "--node-count -n"
+            ],
+            "examples": [
+                "az managed-cassandra datacenter update --resource-group MyResourceGroup --cluster-name MyCluster --data-center-name MyDataCenter --node-count 6",
+                "az managed-cassandra datacenter update --resource-group MyResourceGroup --cluster-name MyCluster --data-center-name MyDataCenter --node-count 4"
+            ]
+        }
+    ]
+}

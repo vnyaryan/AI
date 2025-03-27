@@ -1,0 +1,362 @@
+{
+    "command_group": "az dataprotection backup-instance",
+    "description": "Manage backup instance with dataprotection.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az dataprotection backup-instance adhoc-backup",
+            "summary": "Trigger adhoc backup.",
+            "syntax": "az dataprotection backup-instance adhoc-backup --rule-name\n                                               [--backup-instance-name]\n                                               [--ids]\n                                               [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                               [--resource-group]\n                                               [--retention-tag-override]\n                                               [--subscription]\n                                               [--vault-name]",
+            "required_parameters": [
+                "--rule-name"
+            ],
+            "optional_parameters": [
+                "--backup-instance-name --name -n",
+                "--ids",
+                "--no-wait",
+                "--resource-group -g",
+                "--retention-tag-override",
+                "--subscription",
+                "--vault-name -v"
+            ],
+            "examples": [
+                "az dataprotection backup-policy show -g \"000pikumar\" --vault-name \"PratikPrivatePreviewVault1\" -n \"backupPolicy\"\naz dataprotection backup-instance adhoc-backup --name \"testInstance1\" --rule-name \"BackupWeekly\" --retention-tag-override \"yearly\" --resource-group \"000pikumar\" --vault-name \"PratikPrivatePreviewVault1\""
+            ]
+        },
+        {
+            "name": "az dataprotection backup-instance create",
+            "summary": "Configure backup for a resource in a backup vault.",
+            "syntax": "az dataprotection backup-instance create --backup-instance\n                                         --resource-group\n                                         --vault-name\n                                         [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]",
+            "required_parameters": [
+                "--backup-instance",
+                "--resource-group -g",
+                "--vault-name -v"
+            ],
+            "optional_parameters": [
+                "--no-wait"
+            ],
+            "examples": [
+                "az dataprotection backup-instance create -g MyResourceGroup --vault-name MyVault --backup-instance backupinstance.json"
+            ]
+        },
+        {
+            "name": "az dataprotection backup-instance delete",
+            "summary": "Delete a backup instance in a backup vault.",
+            "syntax": "az dataprotection backup-instance delete [--backup-instance-name]\n                                         [--ids]\n                                         [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                         [--resource-group]\n                                         [--subscription]\n                                         [--vault-name]\n                                         [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--backup-instance-name --name -n",
+                "--ids",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--vault-name -v",
+                "--yes -y"
+            ],
+            "examples": [
+                "az dataprotection backup-instance delete --name \"testInstance1\" --resource-group \"000pikumar\" --vault-name \"PratikPrivatePreviewVault1\""
+            ]
+        },
+        {
+            "name": "az dataprotection backup-instance initialize",
+            "summary": "Initialize JSON request body for configuring backup of a resource.",
+            "syntax": "az dataprotection backup-instance initialize --datasource-id\n                                             --datasource-location\n                                             --datasource-type {AzureBlob, AzureDatabaseForMySQL, AzureDatabaseForPostgreSQL, AzureDatabaseForPostgreSQLFlexibleServer, AzureDisk, AzureKubernetesService}\n                                             --policy-id\n                                             [--backup-configuration]\n                                             [--friendly-name]\n                                             [--secret-store-type {AzureKeyVault}]\n                                             [--secret-store-uri]\n                                             [--snapshot-resource-group-name]\n                                             [--tags]",
+            "required_parameters": [
+                "--datasource-id",
+                "--datasource-location -l",
+                "--datasource-type",
+                "--policy-id"
+            ],
+            "optional_parameters": [
+                "--backup-configuration",
+                "--friendly-name",
+                "--secret-store-type",
+                "--secret-store-uri",
+                "--snapshot-resource-group-name --snapshot-rg",
+                "--tags"
+            ],
+            "examples": [
+                "az dataprotection backup-instance initialize --datasource-type AzureDisk -l southeastasia --policy-id {disk_policy_id} --datasource-id {disk_id}"
+            ]
+        },
+        {
+            "name": "az dataprotection backup-instance initialize-backupconfig",
+            "summary": "Initialize JSON request body for initializing and configuring backup for AzureKubernetesService or AzureBlobs (for vaulted backups) resources.",
+            "syntax": "az dataprotection backup-instance initialize-backupconfig --datasource-type {AzureBlob, AzureDatabaseForMySQL, AzureDatabaseForPostgreSQL, AzureDatabaseForPostgreSQLFlexibleServer, AzureDisk, AzureKubernetesService}\n                                                          [--backup-hook-references]\n                                                          [--container-list]\n                                                          [--excluded-namespaces]\n                                                          [--excluded-resource-type]\n                                                          [--include-all-containers {false, true}]\n                                                          [--include-cluster-scope {false, true}]\n                                                          [--included-namespaces]\n                                                          [--included-resource-type]\n                                                          [--label-selectors]\n                                                          [--snapshot-volumes {false, true}]\n                                                          [--storage-account-name]\n                                                          [--storage-account-resource-group]",
+            "required_parameters": [
+                "--datasource-type"
+            ],
+            "optional_parameters": [
+                "--backup-hook-references --backup-hook-refs",
+                "--container-list --vaulted-backup-containers",
+                "--excluded-namespaces",
+                "--excluded-resource-type --excluded-resource-types",
+                "--include-all-containers",
+                "--include-cluster-scope --include-cluster-scope-resources",
+                "--included-namespaces",
+                "--included-resource-type --included-resource-types",
+                "--label-selectors",
+                "--snapshot-volumes",
+                "--storage-account-name",
+                "--storage-account-resource-group --storage-account-rg"
+            ],
+            "examples": [
+                "az dataprotection backup-instance initialize-backupconfig --datasource-type AzureKubernetesService --label-selectors key=val foo=bar --excluded-namespaces excludeNS1 excludeNS2",
+                "az dataprotection backup-instance initialize-backupconfig --datasource-type \"AzureBlob\" --include-all-containers --storage-account-rg \"sampleRG\" --storage-account-name \"samplestorage\""
+            ]
+        },
+        {
+            "name": "az dataprotection backup-instance initialize-restoreconfig",
+            "summary": "Initialize JSON request body for initializing and configuring restore of an AzureKubernetesService resource.",
+            "syntax": "az dataprotection backup-instance initialize-restoreconfig --datasource-type {AzureBlob, AzureDatabaseForMySQL, AzureDatabaseForPostgreSQL, AzureDatabaseForPostgreSQLFlexibleServer, AzureDisk, AzureKubernetesService}\n                                                           [--conflict-policy {Patch, Skip}]\n                                                           [--excluded-namespaces]\n                                                           [--excluded-resource-type]\n                                                           [--include-cluster-scope {false, true}]\n                                                           [--included-namespaces]\n                                                           [--included-resource-type]\n                                                           [--label-selectors]\n                                                           [--namespace-mappings]\n                                                           [--persistent-restoremode {RestoreWithVolumeData, RestoreWithoutVolumeData}]\n                                                           [--resource-modifier]\n                                                           [--restore-hook-references]\n                                                           [--staging-resource-group-id]\n                                                           [--staging-storage-account-id]",
+            "required_parameters": [
+                "--datasource-type"
+            ],
+            "optional_parameters": [
+                "--conflict-policy",
+                "--excluded-namespaces",
+                "--excluded-resource-type --excluded-resource-types",
+                "--include-cluster-scope --include-cluster-scope-resources",
+                "--included-namespaces",
+                "--included-resource-type --included-resource-types",
+                "--label-selectors",
+                "--namespace-mappings",
+                "--persistent-restoremode --persistent-volume-restore-mode",
+                "--resource-modifier --resource-modifier-reference",
+                "--restore-hook-references --restore-hook-refs",
+                "--staging-resource-group-id --staging-rg-id",
+                "--staging-storage-account-id --staging-storage-id"
+            ],
+            "examples": [
+                "az dataprotection backup-instance initialize-restoreconfig --datasource-type AzureKubernetesService"
+            ]
+        },
+        {
+            "name": "az dataprotection backup-instance list",
+            "summary": "Gets backup instances belonging to a backup vault.",
+            "syntax": "az dataprotection backup-instance list --resource-group\n                                       --vault-name\n                                       [--max-items]\n                                       [--next-token]",
+            "required_parameters": [
+                "--resource-group -g",
+                "--vault-name -v"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az dataprotection backup-instance list --resource-group \"000pikumar\" --vault-name \"PratikPrivatePreviewVault1\""
+            ]
+        },
+        {
+            "name": "az dataprotection backup-instance list-from-resourcegraph",
+            "summary": "List backup instances across subscriptions, resource groups and vaults.",
+            "syntax": "az dataprotection backup-instance list-from-resourcegraph [--backup-instance-id]\n                                                          [--backup-instance-name]\n                                                          [--datasource-id]\n                                                          [--datasource-type {AzureBlob, AzureDatabaseForMySQL, AzureDatabaseForPostgreSQL, AzureDatabaseForPostgreSQLFlexibleServer, AzureDisk, AzureKubernetesService}]\n                                                          [--protection-status {ProtectionConfigured, ProtectionError}]\n                                                          [--resource-groups]\n                                                          [--subscriptions]\n                                                          [--vaults]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--backup-instance-id",
+                "--backup-instance-name",
+                "--datasource-id",
+                "--datasource-type",
+                "--protection-status",
+                "--resource-groups",
+                "--subscriptions",
+                "--vaults"
+            ],
+            "examples": [
+                "az dataprotection backup-instance list-from-resourcegraph --resource-groups resourceGroup1 resourceGroup2 --vaults vault1 vault2 --datasource-type AzureBlob",
+                "az dataprotection backup-instance list-from-resourcegraph --resource-groups resourceGroup --vaults vault --protection-status ProtectionError --datasource-type AzureDisk"
+            ]
+        },
+        {
+            "name": "az dataprotection backup-instance resume-protection",
+            "summary": "This operation will resume protection for a stopped backup instance.",
+            "syntax": "az dataprotection backup-instance resume-protection [--backup-instance-name]\n                                                    [--ids]\n                                                    [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                                    [--resource-group]\n                                                    [--subscription]\n                                                    [--vault-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--backup-instance-name --name -n",
+                "--ids",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--vault-name -v"
+            ],
+            "examples": [
+                "az dataprotection backup-instance resume-protection --name \"testbi\" --resource-group \"testrg\" --vault-name \"testvault\""
+            ]
+        },
+        {
+            "name": "az dataprotection backup-instance show",
+            "summary": "Get a backup instance with name in a backup vault.",
+            "syntax": "az dataprotection backup-instance show [--backup-instance-name]\n                                       [--ids]\n                                       [--resource-group]\n                                       [--subscription]\n                                       [--vault-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--backup-instance-name --name -n",
+                "--ids",
+                "--resource-group -g",
+                "--subscription",
+                "--vault-name -v"
+            ],
+            "examples": [
+                "az dataprotection backup-instance show --name \"testInstance1\" --resource-group \"000pikumar\" --vault-name \"PratikPrivatePreviewVault1\""
+            ]
+        },
+        {
+            "name": "az dataprotection backup-instance stop-protection",
+            "summary": "This operation will stop protection of a backup instance and data will be held forever.",
+            "syntax": "az dataprotection backup-instance stop-protection [--backup-instance-name]\n                                                  [--ids]\n                                                  [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                                  [--operation-requests]\n                                                  [--resource-group]\n                                                  [--subscription]\n                                                  [--tenant-id]\n                                                  [--vault-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--backup-instance-name --name -n",
+                "--ids",
+                "--no-wait",
+                "--operation-requests --resource-guard-operation-requests",
+                "--resource-group -g",
+                "--subscription",
+                "--tenant-id",
+                "--vault-name -v"
+            ],
+            "examples": [
+                "az dataprotection backup-instance stop-protection --name \"testbi\" --resource-group \"testrg\" --vault-name \"testvault\""
+            ]
+        },
+        {
+            "name": "az dataprotection backup-instance suspend-backup",
+            "summary": "This operation will stop backup for a backup instance and retains the backup data as per the policy (except latest Recovery point, which will be retained forever).",
+            "syntax": "az dataprotection backup-instance suspend-backup [--backup-instance-name]\n                                                 [--ids]\n                                                 [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                                 [--operation-requests]\n                                                 [--resource-group]\n                                                 [--subscription]\n                                                 [--tenant-id]\n                                                 [--vault-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--backup-instance-name --name -n",
+                "--ids",
+                "--no-wait",
+                "--operation-requests --resource-guard-operation-requests",
+                "--resource-group -g",
+                "--subscription",
+                "--tenant-id",
+                "--vault-name -v"
+            ],
+            "examples": [
+                "az dataprotection backup-instance suspend-backup --name \"testbi\" --resource-group \"testrg\" --vault-name \"testvault\""
+            ]
+        },
+        {
+            "name": "az dataprotection backup-instance update",
+            "summary": "Update properties associated with a backup instance.",
+            "syntax": "az dataprotection backup-instance update --backup-instance-name\n                                         --resource-group\n                                         --vault-name\n                                         [--container-blob-list]\n                                         [--no-wait]",
+            "required_parameters": [
+                "--backup-instance-name",
+                "--resource-group -g",
+                "--vault-name -v"
+            ],
+            "optional_parameters": [
+                "--container-blob-list --vaulted-blob-container-list",
+                "--no-wait"
+            ],
+            "examples": [
+                "az dataprotection backup-instance update --backup-instance-name MyDisk1 --vaulted-blob-container-list {backup_configuration} -g MyResourceGroup --vault-name MyVault"
+            ]
+        },
+        {
+            "name": "az dataprotection backup-instance update-msi-permissions",
+            "summary": "Assign the required permissions needed to successfully enable backup for the datasource.",
+            "syntax": "az dataprotection backup-instance update-msi-permissions --datasource-type {AzureBlob, AzureDatabaseForMySQL, AzureDatabaseForPostgreSQL, AzureDatabaseForPostgreSQLFlexibleServer, AzureDisk, AzureKubernetesService}\n                                                         --operation {Backup, Restore}\n                                                         --permissions-scope {Resource, ResourceGroup, Subscription}\n                                                         --resource-group\n                                                         --vault-name\n                                                         [--backup-instance]\n                                                         [--keyvault-id]\n                                                         [--restore-request-object]\n                                                         [--snapshot-resource-group-id]\n                                                         [--target-storage-account-id]\n                                                         [--yes]",
+            "required_parameters": [
+                "--datasource-type",
+                "--operation",
+                "--permissions-scope",
+                "--resource-group -g",
+                "--vault-name -v"
+            ],
+            "optional_parameters": [
+                "--backup-instance",
+                "--keyvault-id",
+                "--restore-request-object",
+                "--snapshot-resource-group-id --snapshot-rg-id",
+                "--target-storage-account-id",
+                "--yes -y"
+            ],
+            "examples": [
+                "az dataprotection backup-instance update-msi-permissions --backup-instance backup_inst.json --resource-group samarth_resource_group --vault-name samarthbackupvault --datasource-type AzureDisk --operation Backup --permissions-scope ResourceGroup",
+                "az dataprotection backup-instance update-msi-permissions --datasource-type AzureKubernetesService --operation Restore --permissions-scope Resource --resource-group sampleRG --vault-name samplevault --restore-request-object aksrestore.json --snapshot-resource-group-id /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/sampleRG"
+            ]
+        },
+        {
+            "name": "az dataprotection backup-instance update-policy",
+            "summary": "Update backup policy associated with backup instance.",
+            "syntax": "az dataprotection backup-instance update-policy --backup-instance-name\n                                                --policy-id\n                                                --resource-group\n                                                --vault-name\n                                                [--no-wait]\n                                                [--operation-requests]\n                                                [--tenant-id]",
+            "required_parameters": [
+                "--backup-instance-name",
+                "--policy-id",
+                "--resource-group -g",
+                "--vault-name -v"
+            ],
+            "optional_parameters": [
+                "--no-wait",
+                "--operation-requests --resource-guard-operation-requests",
+                "--tenant-id"
+            ],
+            "examples": [
+                "az dataprotection backup-instance update-policy --backup-instance-name MyDisk1 --policy-id {policy_id} -g MyResourceGroup --vault-name MyVault"
+            ]
+        },
+        {
+            "name": "az dataprotection backup-instance validate-for-backup",
+            "summary": "Validate whether configure backup will be successful or not.",
+            "syntax": "az dataprotection backup-instance validate-for-backup --backup-instance\n                                                      [--ids]\n                                                      [--no-wait]\n                                                      [--resource-group]\n                                                      [--subscription]\n                                                      [--vault-name]",
+            "required_parameters": [
+                "--backup-instance"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--vault-name -v"
+            ],
+            "examples": [
+                "az dataprotection backup-instance validate-for-backup -g sarath-rg --vault-name sarath-vault --backup-instance backup_instance.json"
+            ]
+        },
+        {
+            "name": "az dataprotection backup-instance validate-for-restore",
+            "summary": "Validates if Restore can be triggered for a DataSource.",
+            "syntax": "az dataprotection backup-instance validate-for-restore --backup-instance-name\n                                                       --restore-request-object\n                                                       [--ids]\n                                                       [--no-wait]\n                                                       [--resource-group]\n                                                       [--subscription]\n                                                       [--use-secondary-region {false, true}]\n                                                       [--vault-name]",
+            "required_parameters": [
+                "--backup-instance-name --name -n",
+                "--restore-request-object"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--use-secondary-region",
+                "--vault-name -v"
+            ],
+            "examples": [
+                "az dataprotection backup-instance validate-for-restore -g sample_rg --vault-name sample_backupvault --backup-instance-name sample_biname-fd53a211-3f3e-4c7e-ba45-81050e27c0be --restore-request-object restorerequestobject.json",
+                "az dataprotection backup-instance validate-for-restore -g sample_rg --vault-name sample_backupvault --backup-instance-name sample_biname-fd53a211-3f3e-4c7e-ba45-81050e27c0be --restore-request-object restorerequestobject.json --use-secondary-region"
+            ]
+        },
+        {
+            "name": "az dataprotection backup-instance wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az dataprotection backup-instance wait [--backup-instance-name]\n                                       [--created]\n                                       [--custom]\n                                       [--deleted]\n                                       [--exists]\n                                       [--ids]\n                                       [--interval]\n                                       [--resource-group]\n                                       [--subscription]\n                                       [--timeout]\n                                       [--updated]\n                                       [--vault-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--backup-instance-name --name -n",
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated",
+                "--vault-name -v"
+            ],
+            "examples": []
+        }
+    ]
+}

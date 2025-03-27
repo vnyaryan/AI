@@ -1,0 +1,62 @@
+{
+    "command_group": "az billing-benefits savings-plan-order-aliases",
+    "description": "Azure billing benefits savings plan order aliases commands.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az billing-benefits savings-plan-order-aliases create",
+            "summary": "Create a savings plan. Learn more about permissions needed at https://go.microsoft.com/fwlink/?linkid=2215851.",
+            "syntax": "az billing-benefits savings-plan-order-aliases create --order-alias-name\n                                                      [--applied-scope-prop]\n                                                      [--applied-scope-type {ManagementGroup, Shared, Single}]\n                                                      [--billing-plan {P1M}]\n                                                      [--billing-scope-id]\n                                                      [--commitment]\n                                                      [--display-name]\n                                                      [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                                      [--sku]\n                                                      [--term {P1Y, P3Y, P5Y}]",
+            "required_parameters": [
+                "--order-alias-name"
+            ],
+            "optional_parameters": [
+                "--applied-scope-prop",
+                "--applied-scope-type",
+                "--billing-plan",
+                "--billing-scope-id",
+                "--commitment",
+                "--display-name",
+                "--no-wait",
+                "--sku",
+                "--term"
+            ],
+            "examples": [
+                "az billing-benefits savings-plan-order-aliases create --order-alias-name \"cliTest\" --applied-scope-type Shared --billing-plan P1M --billing-scope-id /subscriptions/30000000-aaaa-bbbb-cccc-200000000004 --commitment \"{amount:10.0,currency-code:USD,grain:Hourly}\" --display-name \"cliTest\" --term P1Y --sku Compute_Savings_Plan",
+                "az billing-benefits savings-plan-order-aliases create --order-alias-name \"cliTest\" --applied-scope-type Single --applied-scope-prop \"{subscription-id:/subscriptions/30000000-aaaa-bbbb-cccc-200000000004}\" --billing-plan P1M --billing-scope-id /subscriptions/30000000-aaaa-bbbb-cccc-200000000004 --commitment \"{amount:10.0,currency-code:USD,grain:Hourly}\" --display-name \"cliTest\" --term P1Y --sku Compute_Savings_Plan",
+                "az billing-benefits savings-plan-order-aliases create --order-alias-name \"cliTest\" --applied-scope-type Single --applied-scope-prop \"{subscription-id:/subscriptions/30000000-aaaa-bbbb-cccc-200000000004/resourceGroups/rgName}\" --billing-plan P1M --billing-scope-id /subscriptions/30000000-aaaa-bbbb-cccc-200000000004 --commitment \"{amount:10.0,currency-code:USD,grain:Hourly}\" --display-name \"cliTest\" --term P1Y --sku Compute_Savings_Plan",
+                "az billing-benefits savings-plan-order-aliases create --order-alias-name \"cliTest\" --applied-scope-type ManagementGroup --applied-scope-prop \"{tenantId:10000000-aaaa-bbbb-cccc-20000000006,managementGroupId:/providers/Microsoft.Management/managementGroups/TestRg}\" --billing-plan P1M --billing-scope-id /subscriptions/30000000-aaaa-bbbb-cccc-200000000004 --commitment \"{amount:10.0,currency-code:USD,grain:Hourly}\" --display-name \"cliTest\" --term P1Y --sku Compute_Savings_Plan"
+            ]
+        },
+        {
+            "name": "az billing-benefits savings-plan-order-aliases show",
+            "summary": "Get a savings plan order alias.",
+            "syntax": "az billing-benefits savings-plan-order-aliases show --order-alias-name",
+            "required_parameters": [
+                "--order-alias-name"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az billing-benefits savings-plan-order-aliases show --order-alias-name aliasName"
+            ]
+        },
+        {
+            "name": "az billing-benefits savings-plan-order-aliases wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az billing-benefits savings-plan-order-aliases wait --order-alias-name\n                                                    [--created]\n                                                    [--custom]\n                                                    [--deleted]\n                                                    [--exists]\n                                                    [--interval]\n                                                    [--timeout]\n                                                    [--updated]",
+            "required_parameters": [
+                "--order-alias-name"
+            ],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--interval",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

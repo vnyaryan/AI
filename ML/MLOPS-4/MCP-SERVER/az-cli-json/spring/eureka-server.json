@@ -1,0 +1,40 @@
+{
+    "command_group": "az spring eureka-server",
+    "description": "(Support Standard consumption Tier) Commands to manage Eureka Server in Azure Spring Apps.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az spring eureka-server disable",
+            "summary": "(Support Standard consumption Tier) Disable Eureka Server.",
+            "syntax": "az spring eureka-server disable --name\n                                --resource-group",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az spring eureka-server enable",
+            "summary": "(Support Standard consumption Tier) Enable Eureka Server.",
+            "syntax": "az spring eureka-server enable --name\n                               --resource-group",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az spring eureka-server show",
+            "summary": "(Support Standard consumption Tier) Show Eureka Server.",
+            "syntax": "az spring eureka-server show --name\n                             --resource-group",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        }
+    ]
+}

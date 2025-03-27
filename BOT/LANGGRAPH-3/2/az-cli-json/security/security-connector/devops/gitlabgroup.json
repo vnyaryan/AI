@@ -1,0 +1,49 @@
+{
+    "command_group": "az security security-connector devops gitlabgroup",
+    "description": "GitLab Groups.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az security security-connector devops gitlabgroup list",
+            "summary": "List GitLab groups onboarded to the connector.",
+            "syntax": "az security security-connector devops gitlabgroup list --name\n                                                       --resource-group\n                                                       [--max-items]\n                                                       [--next-token]",
+            "required_parameters": [
+                "--name --security-connector-name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az security security-connector devops gitlabgroup list-subgroups",
+            "summary": "Gets nested subgroups of given GitLab Group which are onboarded to the connector.",
+            "syntax": "az security security-connector devops gitlabgroup list-subgroups [--group-name]\n                                                                 [--ids]\n                                                                 [--name]\n                                                                 [--resource-group]\n                                                                 [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--group-name",
+                "--ids",
+                "--name --security-connector-name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az security security-connector devops gitlabgroup show",
+            "summary": "Get a monitored GitLab Group resource for a given fully-qualified name.",
+            "syntax": "az security security-connector devops gitlabgroup show [--group-name]\n                                                       [--ids]\n                                                       [--name]\n                                                       [--resource-group]\n                                                       [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--group-name",
+                "--ids",
+                "--name --security-connector-name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        }
+    ]
+}

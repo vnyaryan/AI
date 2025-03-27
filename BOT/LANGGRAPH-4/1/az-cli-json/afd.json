@@ -1,0 +1,6 @@
+{
+    "command_group": "az afd",
+    "description": "Manage Azure Front Door Standard/Premium.",
+    "status": "GA",
+    "commands": []
+}

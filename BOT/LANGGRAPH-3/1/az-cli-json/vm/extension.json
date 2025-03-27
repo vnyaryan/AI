@@ -1,0 +1,111 @@
+{
+    "command_group": "az vm extension",
+    "description": "Manage extensions on VMs.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az vm extension delete",
+            "summary": "Delete operation to delete the extension.",
+            "syntax": "az vm extension delete [--ids]\n                       [--name]\n                       [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                       [--resource-group]\n                       [--subscription]\n                       [--vm-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --vm-extension-name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--vm-name"
+            ],
+            "examples": [
+                "az vm extension delete -g MyResourceGroup --vm-name MyVm -n MyExtensionName",
+                "az vm extension delete --ids $(az resource list --query \"[?contains(name, 'MyExtension')].id\" -o tsv)"
+            ]
+        },
+        {
+            "name": "az vm extension list",
+            "summary": "List the extensions attached to a VM.",
+            "syntax": "az vm extension list [--ids]\n                     [--resource-group]\n                     [--subscription]\n                     [--vm-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--resource-group -g",
+                "--subscription",
+                "--vm-name"
+            ],
+            "examples": [
+                "az vm extension list -g MyResourceGroup --vm-name MyVm"
+            ]
+        },
+        {
+            "name": "az vm extension set",
+            "summary": "Set extensions for a VM.",
+            "syntax": "az vm extension set --name\n                    --publisher\n                    [--enable-auto-upgrade {false, true}]\n                    [--extension-instance-name]\n                    [--force-update]\n                    [--ids]\n                    [--no-auto-upgrade {false, true}]\n                    [--no-auto-upgrade-minor-version {false, true}]\n                    [--no-wait]\n                    [--protected-settings]\n                    [--resource-group]\n                    [--settings]\n                    [--subscription]\n                    [--version]\n                    [--vm-name]",
+            "required_parameters": [
+                "--name -n",
+                "--publisher"
+            ],
+            "optional_parameters": [
+                "--enable-auto-upgrade",
+                "--extension-instance-name",
+                "--force-update",
+                "--ids",
+                "--no-auto-upgrade",
+                "--no-auto-upgrade-minor-version",
+                "--no-wait",
+                "--protected-settings",
+                "--resource-group -g",
+                "--settings",
+                "--subscription",
+                "--version",
+                "--vm-name"
+            ],
+            "examples": [
+                "az vm extension set -n VMAccessForLinux --publisher Microsoft.OSTCExtensions --version 1.4 \\\n    --vm-name MyVm --resource-group MyResourceGroup \\\n    --protected-settings '{\"username\":\"user1\", \"ssh_key\":\"ssh_rsa ...\"}'",
+                "az vm extension set -n customScript --publisher Microsoft.Azure.Extensions --ids {vm_id}",
+                "az vm extension set -n extName --publisher publisher --vm-name MyVM -g MyResourceGroup \\\n--enable-auto-upgrade true"
+            ]
+        },
+        {
+            "name": "az vm extension show",
+            "summary": "Display information about extensions attached to a VM.",
+            "syntax": "az vm extension show [--ids]\n                     [--instance-view]\n                     [--name]\n                     [--resource-group]\n                     [--subscription]\n                     [--vm-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--instance-view",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--vm-name"
+            ],
+            "examples": [
+                "az vm extension show -g MyResourceGroup --vm-name MyVm -n extension_name"
+            ]
+        },
+        {
+            "name": "az vm extension wait",
+            "summary": "Place the CLI in a waiting state until a condition of a virtual machine extension is met.",
+            "syntax": "az vm extension wait [--created]\n                     [--custom]\n                     [--deleted]\n                     [--exists]\n                     [--ids]\n                     [--interval]\n                     [--name]\n                     [--resource-group]\n                     [--subscription]\n                     [--timeout]\n                     [--updated]\n                     [--vm-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated",
+                "--vm-name"
+            ],
+            "examples": [
+                "az vm extension wait --created --name MyExtension --resource-group MyResourceGroup --vm-name MyVm",
+                "az vm extension wait --exists --name MyExtension --resource-group MyResourceGroup --vm-name MyVm",
+                "az vm extension wait --ids @- --name MyExtension --subscription MySubscription --updated --vm-name MyVm"
+            ]
+        }
+    ]
+}

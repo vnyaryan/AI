@@ -1,0 +1,79 @@
+{
+    "command_group": "az devcenter dev customization-task",
+    "description": "Manage customization tasks.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az devcenter dev customization-task list",
+            "summary": "List customization task.",
+            "syntax": "az devcenter dev customization-task list --project\n                                         [--dev-center]\n                                         [--endpoint]",
+            "required_parameters": [
+                "--project --project-name"
+            ],
+            "optional_parameters": [
+                "--dev-center --dev-center-name -d",
+                "--endpoint"
+            ],
+            "examples": [
+                "az devcenter dev customization-task list --dev-center-name \"ContosoDevCenter\" --project-name \"DevProject\"",
+                "az devcenter dev customization-task list --endpoint \"https://8a40af38-3b4c-4672-a6a4-5e964b1870ed-contosodevcenter.centralus.devcenter.azure.com/\" --project-name \"DevProject\""
+            ]
+        },
+        {
+            "name": "az devcenter dev customization-task show",
+            "summary": "Get a customization task.",
+            "syntax": "az devcenter dev customization-task show --catalog-name\n                                         --name\n                                         --project\n                                         [--dev-center]\n                                         [--endpoint]",
+            "required_parameters": [
+                "--catalog-name",
+                "--name --task-name -n",
+                "--project --project-name"
+            ],
+            "optional_parameters": [
+                "--dev-center --dev-center-name -d",
+                "--endpoint"
+            ],
+            "examples": [
+                "az devcenter dev customization-task show --dev-center-name \"ContosoDevCenter\" --project-name \"DevProject\" --task-name \"choco\" --catalog-name \"myCatalog\"",
+                "az devcenter dev customization-task show --endpoint \"https://8a40af38-3b4c-4672-a6a4-5e964b1870ed-contosodevcenter.centralus.devcenter.azure.com/\" --project-name \"DevProject\" --task-name \"choco\" --catalog-name \"myCatalog\""
+            ]
+        },
+        {
+            "name": "az devcenter dev customization-task show-logs",
+            "summary": "Show logs of a customization task.",
+            "syntax": "az devcenter dev customization-task show-logs --customization-group-name\n                                              --customization-task-id\n                                              --dev-box\n                                              --project\n                                              [--dev-center]\n                                              [--endpoint]\n                                              [--user-id]",
+            "required_parameters": [
+                "--customization-group-name --name -n",
+                "--customization-task-id --task-id-t",
+                "--dev-box --dev-box-name",
+                "--project --project-name"
+            ],
+            "optional_parameters": [
+                "--dev-center --dev-center-name -d",
+                "--endpoint",
+                "--user-id"
+            ],
+            "examples": [
+                "az devcenter dev customization-task show-logs --dev-center-name \"ContosoDevCenter\" --project-name \"DevProject\" --dev-box-name \"myDevBox\" --customization-group-name \"Provisioning\" --customization-task-id \"91835dc0-ef5a-4f58-9e3a-099aea8481f4\" --user-id \"00000000-0000-0000-0000-000000000000\"",
+                "az devcenter dev customization-task show-logs --endpoint \"https://8a40af38-3b4c-4672-a6a4-5e964b1870ed-contosodevcenter.centralus.devcenter.azure.com/\" --project-name \"DevProject\" --dev-box-name \"myDevBox\" --customization-group-name \"Provisioning\" --customization-task-id \"91835dc0-ef5a-4f58-9e3a-099aea8481f4\" --user-id \"00000000-0000-0000-0000-000000000000\""
+            ]
+        },
+        {
+            "name": "az devcenter dev customization-task validate",
+            "summary": "Validate customization tasks.",
+            "syntax": "az devcenter dev customization-task validate --project\n                                             --tasks\n                                             [--dev-center]\n                                             [--endpoint]\n                                             [--no-wait]",
+            "required_parameters": [
+                "--project --project-name",
+                "--tasks"
+            ],
+            "optional_parameters": [
+                "--dev-center --dev-center-name -d",
+                "--endpoint",
+                "--no-wait"
+            ],
+            "examples": [
+                "az devcenter dev customization-task validate --dev-center-name \"ContosoDevCenter\" --project-name \"DevProject\" --tasks \"[{\\\"name\\\": \\\"catalogName/choco\\\", \\\"displayName\\\": \\\"Install VS Code\\\", \\\"parameters\\\": {\\\"packageName\\\": \\\"vscode\\\", \\\"packageVersion\\\": \\\"1.0.0\\\"}}, {\\\"name\\\": \\\"catalogName/write-to-file\\\", \\\"runAs\\\": \\\"User\\\"}]\"",
+                "az devcenter dev customization-task validate --endpoint \"https://8a40af38-3b4c-4672-a6a4-5e964b1870ed-contosodevcenter.centralus.devcenter.azure.com/\" --project-name \"DevProject\" --tasks \"[{\\\"name\\\": \\\"catalogName/choco\\\", \\\"displayName\\\": \\\"Install VS Code\\\", \\\"parameters\\\": {\\\"packageName\\\": \\\"vscode\\\", \\\"packageVersion\\\": \\\"1.0.0\\\"}}, {\\\"name\\\": \\\"catalogName/write-to-file\\\", \\\"runAs\\\": \\\"User\\\"}]\""
+            ]
+        }
+    ]
+}

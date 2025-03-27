@@ -1,0 +1,6 @@
+{
+    "command_group": "az elastic get",
+    "description": "Manage to get Elastic details.",
+    "status": "GA",
+    "commands": []
+}

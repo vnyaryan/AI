@@ -1,0 +1,129 @@
+{
+    "command_group": "az mcc ent node",
+    "description": "Microsoft Connected Cache for Enterprise cache node CLI commands.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az mcc ent node create",
+            "summary": "Creates a Microsoft Connected Cache for Enterprise cache node with specified parameters.",
+            "syntax": "az mcc ent node create --cache-node-name\n                       --host-os {Eflow, Linux, Windows}\n                       --mcc-resource-name\n                       --resource-group\n                       [--tags]",
+            "required_parameters": [
+                "--cache-node-name",
+                "--host-os",
+                "--mcc-resource-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--tags"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az mcc ent node delete",
+            "summary": "Deletes a Microsoft Connected Cache for Enterprise cache node.",
+            "syntax": "az mcc ent node delete [--cache-node-name]\n                       [--ids]\n                       [--mcc-resource-name]\n                       [--resource-group]\n                       [--subscription]\n                       [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--cache-node-name",
+                "--ids",
+                "--mcc-resource-name",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az mcc ent node get-provisioning-details",
+            "summary": "Retrieves Microsoft Connected Cache for Enterprise cache node details and keys needed to provision cache node.",
+            "syntax": "az mcc ent node get-provisioning-details [--cache-node-name]\n                                         [--ids]\n                                         [--mcc-resource-name]\n                                         [--resource-group]\n                                         [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--cache-node-name",
+                "--ids",
+                "--mcc-resource-name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az mcc ent node list",
+            "summary": "Retrieves relevant information about all Microsoft Connected Cache for Enterprise cache nodes under the Microsoft Connected Cache for Enterprise resource.",
+            "syntax": "az mcc ent node list --mcc-resource-name\n                     --resource-group\n                     [--expand-output {0, 1, f, false, n, no, t, true, y, yes}]\n                     [--max-items]\n                     [--next-token]",
+            "required_parameters": [
+                "--mcc-resource-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--expand-output",
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az mcc ent node show",
+            "summary": "Retrieves relevant information for a Microsoft Connected Cache for Enterprise cache node.",
+            "syntax": "az mcc ent node show [--cache-node-name]\n                     [--expand-output {0, 1, f, false, n, no, t, true, y, yes}]\n                     [--ids]\n                     [--mcc-resource-name]\n                     [--resource-group]\n                     [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--cache-node-name",
+                "--expand-output",
+                "--ids",
+                "--mcc-resource-name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az mcc ent node update",
+            "summary": "Configures a Microsoft Connected Cache for Enterprise cache node with specified configuration parameters.",
+            "syntax": "az mcc ent node update [--add]\n                       [--auto-update-day]\n                       [--auto-update-ring {Fast, Preview, Slow}]\n                       [--auto-update-time]\n                       [--auto-update-week]\n                       [--cache-drive]\n                       [--cache-node-name]\n                       [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                       [--ids]\n                       [--mcc-resource-name]\n                       [--proxy {Disabled, Enabled, None, Required}]\n                       [--proxy-host]\n                       [--proxy-port]\n                       [--remove]\n                       [--resource-group]\n                       [--set]\n                       [--subscription]\n                       [--tags]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--auto-update-day",
+                "--auto-update-ring",
+                "--auto-update-time",
+                "--auto-update-week",
+                "--cache-drive",
+                "--cache-node-name",
+                "--force-string",
+                "--ids",
+                "--mcc-resource-name",
+                "--proxy",
+                "--proxy-host",
+                "--proxy-port",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--subscription",
+                "--tags"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az mcc ent node wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az mcc ent node wait [--cache-node-name]\n                     [--created]\n                     [--custom]\n                     [--deleted]\n                     [--exists]\n                     [--ids]\n                     [--interval]\n                     [--mcc-resource-name]\n                     [--resource-group]\n                     [--subscription]\n                     [--timeout]\n                     [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--cache-node-name",
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--mcc-resource-name",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

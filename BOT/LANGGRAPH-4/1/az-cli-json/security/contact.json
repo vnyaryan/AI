@@ -1,0 +1,88 @@
+{
+    "command_group": "az security contact",
+    "description": "View your security contacts.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az security contact create",
+            "summary": "Creates a security contact.",
+            "syntax": "az security contact create --name\n                           [--alert-notifications]\n                           [--emails]\n                           [--notifications-by-role]\n                           [--phone]",
+            "required_parameters": [
+                "--name --security-contact-name -n"
+            ],
+            "optional_parameters": [
+                "--alert-notifications",
+                "--emails",
+                "--notifications-by-role",
+                "--phone"
+            ],
+            "examples": [
+                "az security contact create -n 'default' --emails 'john@contoso.com;jane@contoso.com' --phone '214-275-4038' --notifications-by-role '{\"state\":\"On\",\"roles\":[\"Owner\"]}' --alert-notifications '{\"state\":\"On\",\"minimalSeverity\":\"Low\"}'"
+            ]
+        },
+        {
+            "name": "az security contact delete",
+            "summary": "Delete security contact configurations for the subscription.",
+            "syntax": "az security contact delete [--ids]\n                           [--name]\n                           [--subscription]\n                           [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --security-contact-name -n",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az security contact delete -n \"default\""
+            ]
+        },
+        {
+            "name": "az security contact list",
+            "summary": "List all security contact configurations for the subscription.",
+            "syntax": "az security contact list [--max-items]\n                         [--next-token]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az security contact list"
+            ]
+        },
+        {
+            "name": "az security contact show",
+            "summary": "Get Default Security contact configurations for the subscription.",
+            "syntax": "az security contact show [--ids]\n                         [--name]\n                         [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --security-contact-name -n",
+                "--subscription"
+            ],
+            "examples": [
+                "az security contact show -n \"default1\""
+            ]
+        },
+        {
+            "name": "az security contact update",
+            "summary": "Update security contact configurations for the subscription.",
+            "syntax": "az security contact update [--add]\n                           [--alert-notifications]\n                           [--emails]\n                           [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                           [--ids]\n                           [--name]\n                           [--notifications-by-role]\n                           [--phone]\n                           [--remove]\n                           [--set]\n                           [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--alert-notifications",
+                "--emails",
+                "--force-string",
+                "--ids",
+                "--name --security-contact-name -n",
+                "--notifications-by-role",
+                "--phone",
+                "--remove",
+                "--set",
+                "--subscription"
+            ],
+            "examples": [
+                "az security contact update -n 'default' --emails 'john1@contoso.com;jane@contoso.com' --phone '214-275-4038' --notifications-by-role '{\"state\":\"On\",\"roles\":[\"Owner\"]}' --alert-notifications '{\"state\":\"On\",\"minimalSeverity\":\"Low\"}'"
+            ]
+        }
+    ]
+}

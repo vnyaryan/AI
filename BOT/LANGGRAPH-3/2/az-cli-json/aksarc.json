@@ -1,0 +1,203 @@
+{
+    "command_group": "az aksarc",
+    "description": "Manage provisioned clusters.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az aksarc create",
+            "summary": "Creates the provisioned cluster.",
+            "syntax": "az aksarc create --custom-location\n                 --name\n                 --resource-group\n                 --vnet-id\n                 [--aad-admin-group-object-ids]\n                 [--ca-profile]\n                 [--control-plane-count]\n                 [--control-plane-ip]\n                 [--control-plane-vm-size]\n                 [--disable-nfs-driver]\n                 [--disable-smb-driver]\n                 [--enable-ahub]\n                 [--enable-azure-rbac]\n                 [--enable-cluster-autoscaler]\n                 [--enable-oidc-issuer]\n                 [--enable-wi]\n                 [--gateway-id]\n                 [--generate-ssh-keys]\n                 [--kubernetes-version]\n                 [--load-balancer-count]\n                 [--location]\n                 [--max-count]\n                 [--max-pods]\n                 [--min-count]\n                 [--no-wait]\n                 [--node-count]\n                 [--node-vm-size]\n                 [--nodepool-labels]\n                 [--nodepool-taints]\n                 [--pod-cidr]\n                 [--ssh-auth-ips]\n                 [--ssh-key-value]\n                 [--tags]",
+            "required_parameters": [
+                "--custom-location",
+                "--name -n",
+                "--resource-group -g",
+                "--vnet-id --vnet-ids"
+            ],
+            "optional_parameters": [
+                "--aad-admin-group-object-ids -i",
+                "--ca-profile --cluster-autoscaler-profile",
+                "--control-plane-count --control-plane-node-count",
+                "--control-plane-ip",
+                "--control-plane-vm-size",
+                "--disable-nfs-driver",
+                "--disable-smb-driver",
+                "--enable-ahub",
+                "--enable-azure-rbac",
+                "--enable-cluster-autoscaler -e",
+                "--enable-oidc-issuer",
+                "--enable-wi --enable-workload-identity",
+                "--gateway-id",
+                "--generate-ssh-keys",
+                "--kubernetes-version -k",
+                "--load-balancer-count",
+                "--location -l",
+                "--max-count",
+                "--max-pods -m",
+                "--min-count",
+                "--no-wait",
+                "--node-count -c",
+                "--node-vm-size",
+                "--nodepool-labels",
+                "--nodepool-taints",
+                "--pod-cidr",
+                "--ssh-auth-ips --ssh-authorized-ip-ranges",
+                "--ssh-key-value",
+                "--tags"
+            ],
+            "examples": [
+                "az aksarc create --resource-group sample-rg --custom-location sample-cl --name sample-aksarccluster --vnet-ids \"vnet-arm-id\""
+            ]
+        },
+        {
+            "name": "az aksarc delete",
+            "summary": "Deletes the provisioned cluster.",
+            "syntax": "az aksarc delete --name\n                 --resource-group\n                 [--no-wait]\n                 [--yes]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--no-wait",
+                "--yes -y"
+            ],
+            "examples": [
+                "az aksarc delete --name \"sample-aksarccluster\" --resource-group \"sample-rg\""
+            ]
+        },
+        {
+            "name": "az aksarc get-credentials",
+            "summary": "Get local kubeconfig of the provisioned cluster.",
+            "syntax": "az aksarc get-credentials --name\n                          --resource-group\n                          [--admin]\n                          [--context]\n                          [--file]\n                          [--overwrite-existing]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--admin -a",
+                "--context",
+                "--file -f",
+                "--overwrite-existing"
+            ],
+            "examples": [
+                "az aksarc get-credentials --name \"sample-aksarccluster\" --resource-group \"sample-rg\" --admin",
+                "az aksarc get-credentials --name \"sample-aksarccluster\" --resource-group \"sample-rg\""
+            ]
+        },
+        {
+            "name": "az aksarc get-upgrades",
+            "summary": "Get the upgrade versions available for the provisioned cluster.",
+            "syntax": "az aksarc get-upgrades --name\n                       --resource-group",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az aksarc get-upgrades --name \"samplecluster\" --resource-group \"sample-rg\""
+            ]
+        },
+        {
+            "name": "az aksarc get-versions",
+            "summary": "List the supported Kubernetes versions in the specified custom location.",
+            "syntax": "az aksarc get-versions --custom-location\n                       [--resource-group]",
+            "required_parameters": [
+                "--custom-location"
+            ],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az aksarc get-versions -g sample-rg --custom-location sample-cl"
+            ]
+        },
+        {
+            "name": "az aksarc list",
+            "summary": "Lists the provisioned clusters in a resource group or in a subscription.",
+            "syntax": "az aksarc list [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az aksarc list --resource-group \"sample-rg\"",
+                "az aksarc list"
+            ]
+        },
+        {
+            "name": "az aksarc notice",
+            "summary": "Output NOTICE file to user specified filepath.",
+            "syntax": "az aksarc notice --output-filepath",
+            "required_parameters": [
+                "--output-filepath"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az aksarc notice --output-filepath \"./Notice\""
+            ]
+        },
+        {
+            "name": "az aksarc show",
+            "summary": "Gets the provisioned cluster.",
+            "syntax": "az aksarc show --name\n               --resource-group",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az aksarc show --name \"sample-aksarccluster\" --resource-group \"sample-rg\""
+            ]
+        },
+        {
+            "name": "az aksarc update",
+            "summary": "Updates the provisioned cluster.",
+            "syntax": "az aksarc update --name\n                 --resource-group\n                 [--aad-admin-group-object-ids]\n                 [--ca-profile]\n                 [--control-plane-count]\n                 [--disable-ahub]\n                 [--disable-cluster-autoscaler]\n                 [--disable-gateway]\n                 [--disable-nfs-driver]\n                 [--disable-smb-driver]\n                 [--enable-ahub]\n                 [--enable-cluster-autoscaler]\n                 [--enable-nfs-driver]\n                 [--enable-smb-driver]\n                 [--gateway-id]\n                 [--max-count]\n                 [--min-count]\n                 [--tags]\n                 [--update-cluster-autoscaler]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--aad-admin-group-object-ids -i",
+                "--ca-profile --cluster-autoscaler-profile",
+                "--control-plane-count --control-plane-node-count",
+                "--disable-ahub",
+                "--disable-cluster-autoscaler -d",
+                "--disable-gateway",
+                "--disable-nfs-driver",
+                "--disable-smb-driver",
+                "--enable-ahub",
+                "--enable-cluster-autoscaler -e",
+                "--enable-nfs-driver",
+                "--enable-smb-driver",
+                "--gateway-id",
+                "--max-count",
+                "--min-count",
+                "--tags",
+                "--update-cluster-autoscaler -u"
+            ],
+            "examples": [
+                "az aksarc update --tags additionalProperties=\"sample\" --name \"sample-aksarccluster\" --resource-group \"sample-rg\"",
+                "az aksarc update --name \"sample-aksarccluster\" --resource-group \"sample-rg\" --enable-ahub",
+                "az aksarc update --name \"sample-aksarccluster\" --resource-group \"sample-rg\"--disable-ahub",
+                "az aksarc update --name \"sample-aksarccluster\" --resource-group \"sample-rg\" --control-plane-node-count 5"
+            ]
+        },
+        {
+            "name": "az aksarc upgrade",
+            "summary": "Upgrades the provisioned cluster.",
+            "syntax": "az aksarc upgrade --name\n                  --resource-group\n                  [--kubernetes-version]\n                  [--no-wait]\n                  [--yes]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--kubernetes-version -k",
+                "--no-wait",
+                "--yes"
+            ],
+            "examples": [
+                "az aksarc upgrade --name \"sample-aksarccluster\" --resource-group \"sample-rg\" --kubernetes-version \"1.22.2\""
+            ]
+        }
+    ]
+}

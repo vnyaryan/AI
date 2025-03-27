@@ -1,0 +1,58 @@
+{
+    "command_group": "az synapse kusto data-connection event-grid",
+    "description": "Manage kusto pool data connection with synapse sub group event-grid.",
+    "status": "Experimental",
+    "commands": [
+        {
+            "name": "az synapse kusto data-connection event-grid create",
+            "summary": "Create a data connection.",
+            "syntax": "az synapse kusto data-connection event-grid create --data-connection-name\n                                                   --database-name\n                                                   --kusto-pool-name\n                                                   --resource-group\n                                                   --workspace-name\n                                                   [--blob-storage-event-type {Microsoft.Storage.BlobCreated, Microsoft.Storage.BlobRenamed}]\n                                                   [--consumer-group]\n                                                   [--data-format {APACHEAVRO, AVRO, CSV, JSON, MULTIJSON, ORC, PARQUET, PSV, RAW, SCSV, SINGLEJSON, SOHSV, TSV, TSVE, TXT, W3CLOGFILE}]\n                                                   [--event-hub-resource-id]\n                                                   [--ignore-first-record {false, true}]\n                                                   [--location]\n                                                   [--mapping-rule-name]\n                                                   [--no-wait]\n                                                   [--storage-account-resource-id]\n                                                   [--table-name]",
+            "required_parameters": [
+                "--data-connection-name",
+                "--database-name",
+                "--kusto-pool-name",
+                "--resource-group -g",
+                "--workspace-name"
+            ],
+            "optional_parameters": [
+                "--blob-storage-event-type",
+                "--consumer-group",
+                "--data-format",
+                "--event-hub-resource-id",
+                "--ignore-first-record",
+                "--location -l",
+                "--mapping-rule-name",
+                "--no-wait",
+                "--storage-account-resource-id",
+                "--table-name"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az synapse kusto data-connection event-grid update",
+            "summary": "Updates a data connection.",
+            "syntax": "az synapse kusto data-connection event-grid update [--blob-storage-event-type {Microsoft.Storage.BlobCreated, Microsoft.Storage.BlobRenamed}]\n                                                   [--consumer-group]\n                                                   [--data-connection-name]\n                                                   [--data-format {APACHEAVRO, AVRO, CSV, JSON, MULTIJSON, ORC, PARQUET, PSV, RAW, SCSV, SINGLEJSON, SOHSV, TSV, TSVE, TXT, W3CLOGFILE}]\n                                                   [--database-name]\n                                                   [--event-hub-resource-id]\n                                                   [--ids]\n                                                   [--ignore-first-record {false, true}]\n                                                   [--kusto-pool-name]\n                                                   [--location]\n                                                   [--mapping-rule-name]\n                                                   [--no-wait]\n                                                   [--resource-group]\n                                                   [--storage-account-resource-id]\n                                                   [--subscription]\n                                                   [--table-name]\n                                                   [--workspace-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--blob-storage-event-type",
+                "--consumer-group",
+                "--data-connection-name",
+                "--data-format",
+                "--database-name",
+                "--event-hub-resource-id",
+                "--ids",
+                "--ignore-first-record",
+                "--kusto-pool-name",
+                "--location -l",
+                "--mapping-rule-name",
+                "--no-wait",
+                "--resource-group -g",
+                "--storage-account-resource-id",
+                "--subscription",
+                "--table-name",
+                "--workspace-name"
+            ],
+            "examples": []
+        }
+    ]
+}

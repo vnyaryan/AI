@@ -1,0 +1,50 @@
+{
+    "command_group": "az apic integration create",
+    "description": "",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az apic integration create apim",
+            "summary": "Add Azure APIM as an API source.",
+            "syntax": "az apic integration create apim --azure-apim\n                                --integration-name\n                                --resource-group\n                                --service-name\n                                [--import-specification {always, never, ondemand}]\n                                [--msi-resource-id]\n                                [--target-environment-id]\n                                [--target-lifecycle-stage {deprecated, design, development, preview, production, retired, testing}]",
+            "required_parameters": [
+                "--azure-apim",
+                "--integration-name -i",
+                "--resource-group -g",
+                "--service-name -n"
+            ],
+            "optional_parameters": [
+                "--import-specification",
+                "--msi-resource-id",
+                "--target-environment-id",
+                "--target-lifecycle-stage"
+            ],
+            "examples": [
+                "az apic integration create apim -g contoso-resources -n contoso -i sync-from-my-apim --azure-apim myapim",
+                "az apic integration create apim -g contoso-resources -n contoso -i sync-from-my-apim --azure-apim /subscriptions/12345678-1234-1234-1234-123456789abc/resourceGroups/samplegroup/providers/Microsoft.ApiManagement/service/sampleapim"
+            ]
+        },
+        {
+            "name": "az apic integration create aws",
+            "summary": "Add Amazon API Gateway as an API source.",
+            "syntax": "az apic integration create aws --aws-access-key-reference\n                               --aws-region-name\n                               --aws-secret-access-key-reference\n                               --integration-name\n                               --resource-group\n                               --service-name\n                               [--import-specification {always, never, ondemand}]\n                               [--msi-resource-id]\n                               [--target-environment-id]\n                               [--target-lifecycle-stage {deprecated, design, development, preview, production, retired, testing}]",
+            "required_parameters": [
+                "--aws-access-key-reference -a",
+                "--aws-region-name -r",
+                "--aws-secret-access-key-reference -s",
+                "--integration-name -i",
+                "--resource-group -g",
+                "--service-name -n"
+            ],
+            "optional_parameters": [
+                "--import-specification",
+                "--msi-resource-id",
+                "--target-environment-id",
+                "--target-lifecycle-stage"
+            ],
+            "examples": [
+                "az apic integration create aws -g contoso-resources -n contoso -i sync-from-my-amazon-api-gateway -a https://{keyvaultName}.vault.azure.net/secrets/{secretName1} -s https://{keyvaultName}.vault.azure.net/secrets/{secretName2} -r us-east-2"
+            ]
+        }
+    ]
+}

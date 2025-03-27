@@ -1,0 +1,120 @@
+{
+    "command_group": "az kusto managed-private-endpoint",
+    "description": "Manage managed private endpoint with kusto.",
+    "status": "Experimental",
+    "commands": [
+        {
+            "name": "az kusto managed-private-endpoint create",
+            "summary": "Creates a managed private endpoint.",
+            "syntax": "az kusto managed-private-endpoint create --cluster-name\n                                         --managed-private-endpoint-name\n                                         --resource-group\n                                         [--group-id]\n                                         [--no-wait]\n                                         [--private-link]\n                                         [--private-link-region]\n                                         [--request-message]",
+            "required_parameters": [
+                "--cluster-name",
+                "--managed-private-endpoint-name --name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--group-id",
+                "--no-wait",
+                "--private-link --private-link-resource-id",
+                "--private-link-region --private-link-resource-region",
+                "--request-message"
+            ],
+            "examples": [
+                "az kusto managed-private-endpoint create --cluster-name \"kustoCluster\" --name \"managedPrivateEndpointTest\" --group-id \"blob\" --private-link-resource-id \"/subscriptions/12345678-1234-1234-1234-123456789098/resourceGroups/kustorptest/providers/Microsoft.Storage/storageAccounts/storageAccountTest\" --request-message \"Please Approve.\" --resource-group \"kustorptest\""
+            ]
+        },
+        {
+            "name": "az kusto managed-private-endpoint delete",
+            "summary": "Deletes a managed private endpoint.",
+            "syntax": "az kusto managed-private-endpoint delete [--cluster-name]\n                                         [--ids]\n                                         [--managed-private-endpoint-name]\n                                         [--no-wait]\n                                         [--resource-group]\n                                         [--subscription]\n                                         [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--cluster-name",
+                "--ids",
+                "--managed-private-endpoint-name --name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az kusto managed-private-endpoint delete --cluster-name \"kustoCluster\" --name \"managedPrivateEndpointTest\" --resource-group \"kustorptest\""
+            ]
+        },
+        {
+            "name": "az kusto managed-private-endpoint list",
+            "summary": "Returns the list of managed private endpoints.",
+            "syntax": "az kusto managed-private-endpoint list --cluster-name\n                                       --resource-group",
+            "required_parameters": [
+                "--cluster-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az kusto managed-private-endpoint list --cluster-name \"kustoCluster\" --resource-group \"kustorptest\""
+            ]
+        },
+        {
+            "name": "az kusto managed-private-endpoint show",
+            "summary": "Gets a managed private endpoint.",
+            "syntax": "az kusto managed-private-endpoint show [--cluster-name]\n                                       [--ids]\n                                       [--managed-private-endpoint-name]\n                                       [--resource-group]\n                                       [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--cluster-name",
+                "--ids",
+                "--managed-private-endpoint-name --name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az kusto managed-private-endpoint show --cluster-name \"kustoCluster\" --name \"managedPrivateEndpointTest\" --resource-group \"kustorptest\""
+            ]
+        },
+        {
+            "name": "az kusto managed-private-endpoint update",
+            "summary": "Updates a managed private endpoint.",
+            "syntax": "az kusto managed-private-endpoint update [--cluster-name]\n                                         [--group-id]\n                                         [--ids]\n                                         [--managed-private-endpoint-name]\n                                         [--no-wait]\n                                         [--private-link]\n                                         [--private-link-region]\n                                         [--request-message]\n                                         [--resource-group]\n                                         [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--cluster-name",
+                "--group-id",
+                "--ids",
+                "--managed-private-endpoint-name --name -n",
+                "--no-wait",
+                "--private-link --private-link-resource-id",
+                "--private-link-region --private-link-resource-region",
+                "--request-message",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az kusto managed-private-endpoint update --cluster-name \"kustoCluster\" --name \"managedPrivateEndpointTest\" --group-id \"blob\" --private-link-resource-id \"/subscriptions/12345678-1234-1234-1234-123456789098/resourceGroups/kustorptest/providers/Microsoft.Storage/storageAccounts/storageAccountTest\" --request-message \"Please Approve Managed Private Endpoint Request.\" --resource-group \"kustorptest\""
+            ]
+        },
+        {
+            "name": "az kusto managed-private-endpoint wait",
+            "summary": "Place the CLI in a waiting state until a condition of the kusto managed-private-endpoint is met.",
+            "syntax": "az kusto managed-private-endpoint wait [--cluster-name]\n                                       [--created]\n                                       [--custom]\n                                       [--deleted]\n                                       [--exists]\n                                       [--ids]\n                                       [--interval]\n                                       [--managed-private-endpoint-name]\n                                       [--resource-group]\n                                       [--subscription]\n                                       [--timeout]\n                                       [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--cluster-name",
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--managed-private-endpoint-name --name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": [
+                "az kusto managed-private-endpoint wait --cluster-name \"kustoCluster\" --name \"managedPrivateEndpointTest\" --resource-group \"kustorptest\" --created",
+                "az kusto managed-private-endpoint wait --cluster-name \"kustoCluster\" --name \"managedPrivateEndpointTest\" --resource-group \"kustorptest\" --updated",
+                "az kusto managed-private-endpoint wait --cluster-name \"kustoCluster\" --name \"managedPrivateEndpointTest\" --resource-group \"kustorptest\" --deleted"
+            ]
+        }
+    ]
+}

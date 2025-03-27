@@ -1,0 +1,33 @@
+{
+    "command_group": "az cosmosdb table restorable-resource",
+    "description": "Manage the tables that can be restored in the given account at the given timestamp and region.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az cosmosdb table restorable-resource list",
+            "summary": "List all the tables that can be restored in the given account at the given timestamp and region.",
+            "syntax": "az cosmosdb table restorable-resource list --instance-id\n                                           --location\n                                           --restore-location\n                                           --restore-timestamp",
+            "required_parameters": [
+                "--instance-id -i",
+                "--location -l",
+                "--restore-location -r",
+                "--restore-timestamp -t"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az cosmosdb table restorable-resource list",
+            "summary": "List all the tables that can be restored in the given account at the given timestamp and region.",
+            "syntax": "az cosmosdb table restorable-resource list --instance-id\n                                           --location\n                                           --restore-location\n                                           --restore-timestamp",
+            "required_parameters": [
+                "--instance-id -i",
+                "--location -l",
+                "--restore-location -r",
+                "--restore-timestamp -t"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        }
+    ]
+}

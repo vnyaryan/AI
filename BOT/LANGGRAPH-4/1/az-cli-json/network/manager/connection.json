@@ -1,0 +1,6 @@
+{
+    "command_group": "az network manager connection",
+    "description": "Manage connection with network manager.",
+    "status": "GA",
+    "commands": []
+}

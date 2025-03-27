@@ -1,0 +1,20 @@
+{
+    "command_group": "az batch location",
+    "description": "Manage Batch service options for a subscription at the region level.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az batch location list-skus",
+            "summary": "List virtual machine SKUs available in a location.",
+            "syntax": "az batch location list-skus --location\n                            [--filter]\n                            [--maxresults]",
+            "required_parameters": [
+                "--location -l"
+            ],
+            "optional_parameters": [
+                "--filter",
+                "--maxresults"
+            ],
+            "examples": []
+        }
+    ]
+}

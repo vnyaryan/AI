@@ -1,0 +1,106 @@
+{
+    "command_group": "az stack-hci extension",
+    "description": "Manage extension with stack hci.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az stack-hci extension create",
+            "summary": "Create extension for HCI cluster.",
+            "syntax": "az stack-hci extension create --arc-setting-name\n                              --cluster-name\n                              --extension-name\n                              --resource-group\n                              [--auto-upgrade {0, 1, f, false, n, no, t, true, y, yes}]\n                              [--force-update-tag]\n                              [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                              [--protected-settings]\n                              [--publisher]\n                              [--settings]\n                              [--type]\n                              [--type-handler-version]",
+            "required_parameters": [
+                "--arc-setting-name",
+                "--cluster-name",
+                "--extension-name --name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--auto-upgrade",
+                "--force-update-tag",
+                "--no-wait",
+                "--protected-settings",
+                "--publisher",
+                "--settings",
+                "--type",
+                "--type-handler-version"
+            ],
+            "examples": [
+                "az stack-hci extension create --arc-setting-name \"default\" --cluster-name \"myCluster\" --type \"MicrosoftMonitoringAgent\" --protected-settings '{\"workspaceId\": \"xx\", \"port\": \"6516\"}' --publisher \"Microsoft.Compute\" --settings '{\"workspaceKey\": \"xx\"}' --type-handler-version \"1.10\" --name \"MicrosoftMonitoringAgent\" --resource-group \"test-rg\""
+            ]
+        },
+        {
+            "name": "az stack-hci extension delete",
+            "summary": "Delete particular arc extension of HCI Cluster.",
+            "syntax": "az stack-hci extension delete [--arc-setting-name]\n                              [--cluster-name]\n                              [--extension-name]\n                              [--ids]\n                              [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                              [--resource-group]\n                              [--subscription]\n                              [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--arc-setting-name",
+                "--cluster-name",
+                "--extension-name --name -n",
+                "--ids",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az stack-hci extension delete --arc-setting-name \"default\" --cluster-name \"myCluster\" --name \"MicrosoftMonitoringAgent\" --resource-group \"test-rg\""
+            ]
+        },
+        {
+            "name": "az stack-hci extension list",
+            "summary": "List all extensions under arc setting resource.",
+            "syntax": "az stack-hci extension list --arc-setting-name\n                            --cluster-name\n                            --resource-group\n                            [--max-items]\n                            [--next-token]",
+            "required_parameters": [
+                "--arc-setting-name",
+                "--cluster-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az stack-hci extension list --arc-setting-name \"default\" --cluster-name \"myCluster\" --resource-group \"test-rg\""
+            ]
+        },
+        {
+            "name": "az stack-hci extension show",
+            "summary": "Get particular arc extension of HCI cluster.",
+            "syntax": "az stack-hci extension show [--arc-setting-name]\n                            [--cluster-name]\n                            [--extension-name]\n                            [--ids]\n                            [--resource-group]\n                            [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--arc-setting-name",
+                "--cluster-name",
+                "--extension-name --name -n",
+                "--ids",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az stack-hci extension show --arc-setting-name \"default\" --cluster-name \"myCluster\" --name \"MicrosoftMonitoringAgent\" --resource-group \"test-rg\""
+            ]
+        },
+        {
+            "name": "az stack-hci extension wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az stack-hci extension wait [--arc-setting-name]\n                            [--cluster-name]\n                            [--created]\n                            [--custom]\n                            [--deleted]\n                            [--exists]\n                            [--extension-name]\n                            [--ids]\n                            [--interval]\n                            [--resource-group]\n                            [--subscription]\n                            [--timeout]\n                            [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--arc-setting-name",
+                "--cluster-name",
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--extension-name --name -n",
+                "--ids",
+                "--interval",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

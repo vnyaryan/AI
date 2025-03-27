@@ -1,0 +1,113 @@
+{
+    "command_group": "az aks approuting zone",
+    "description": "Commands to manage App Routing DNS Zones.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az aks approuting zone add",
+            "summary": "Add DNS Zone(s) to App Routing.",
+            "syntax": "az aks approuting zone add --ids\n                           --name\n                           --resource-group\n                           [--attach-zones]",
+            "required_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--attach-zones"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az aks approuting zone add",
+            "summary": "Add DNS Zone(s) to App Routing.",
+            "syntax": "az aks approuting zone add --ids\n                           --name\n                           --resource-group\n                           [--attach-zones]",
+            "required_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--attach-zones"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az aks approuting zone delete",
+            "summary": "Delete DNS Zone(s) from App Routing.",
+            "syntax": "az aks approuting zone delete --ids\n                              --name\n                              --resource-group\n                              [--yes]",
+            "required_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--yes -y"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az aks approuting zone delete",
+            "summary": "Delete DNS Zone(s) from App Routing.",
+            "syntax": "az aks approuting zone delete --ids\n                              --name\n                              --resource-group\n                              [--yes]",
+            "required_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--yes -y"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az aks approuting zone list",
+            "summary": "List DNS Zone IDs in App Routing.",
+            "syntax": "az aks approuting zone list --name\n                            --resource-group",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az aks approuting zone list",
+            "summary": "List DNS Zone IDs in App Routing.",
+            "syntax": "az aks approuting zone list --name\n                            --resource-group",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az aks approuting zone update",
+            "summary": "Replace DNS Zone(s) in App Routing.",
+            "syntax": "az aks approuting zone update --ids\n                              --name\n                              --resource-group\n                              [--attach-zones]",
+            "required_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--attach-zones"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az aks approuting zone update",
+            "summary": "Replace DNS Zone(s) in App Routing.",
+            "syntax": "az aks approuting zone update --ids\n                              --name\n                              --resource-group\n                              [--attach-zones]",
+            "required_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--attach-zones"
+            ],
+            "examples": []
+        }
+    ]
+}

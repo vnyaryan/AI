@@ -1,0 +1,228 @@
+{
+    "command_group": "az dls fs",
+    "description": "Manage a Data Lake Store filesystem.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az dls fs append",
+            "summary": "Append content to a file in a Data Lake Store account.",
+            "syntax": "az dls fs append --content\n                 --path\n                 [--account]\n                 [--ids]\n                 [--subscription]",
+            "required_parameters": [
+                "--content",
+                "--path"
+            ],
+            "optional_parameters": [
+                "--account -n",
+                "--ids",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az dls fs create",
+            "summary": "Creates a file or folder in a Data Lake Store account.",
+            "syntax": "az dls fs create --account\n                 --path\n                 [--content]\n                 [--folder]\n                 [--force]",
+            "required_parameters": [
+                "--account -n",
+                "--path"
+            ],
+            "optional_parameters": [
+                "--content",
+                "--folder",
+                "--force"
+            ],
+            "examples": [
+                "az dls fs create --account {account} --folder  --path {path}"
+            ]
+        },
+        {
+            "name": "az dls fs delete",
+            "summary": "Delete a file or folder in a Data Lake Store account.",
+            "syntax": "az dls fs delete --path\n                 [--account]\n                 [--ids]\n                 [--recurse]\n                 [--subscription]",
+            "required_parameters": [
+                "--path"
+            ],
+            "optional_parameters": [
+                "--account -n",
+                "--ids",
+                "--recurse",
+                "--subscription"
+            ],
+            "examples": [
+                "az dls fs delete --account {account} --path {path}"
+            ]
+        },
+        {
+            "name": "az dls fs download",
+            "summary": "Download a file or folder from a Data Lake Store account to the local machine.",
+            "syntax": "az dls fs download --destination-path\n                   --source-path\n                   [--account]\n                   [--block-size]\n                   [--buffer-size]\n                   [--chunk-size]\n                   [--ids]\n                   [--overwrite]\n                   [--subscription]\n                   [--thread-count]",
+            "required_parameters": [
+                "--destination-path",
+                "--source-path"
+            ],
+            "optional_parameters": [
+                "--account -n",
+                "--block-size",
+                "--buffer-size",
+                "--chunk-size",
+                "--ids",
+                "--overwrite",
+                "--subscription",
+                "--thread-count"
+            ],
+            "examples": [
+                "az dls fs download --account {account} --destination-path {destination-path} --source-path {source-path}"
+            ]
+        },
+        {
+            "name": "az dls fs join",
+            "summary": "Join files in a Data Lake Store account into one file.",
+            "syntax": "az dls fs join --destination-path\n               --source-paths\n               [--account]\n               [--force]\n               [--ids]\n               [--subscription]",
+            "required_parameters": [
+                "--destination-path",
+                "--source-paths"
+            ],
+            "optional_parameters": [
+                "--account -n",
+                "--force",
+                "--ids",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az dls fs list",
+            "summary": "List the files and folders in a Data Lake Store account.",
+            "syntax": "az dls fs list --path\n               [--account]\n               [--ids]\n               [--subscription]",
+            "required_parameters": [
+                "--path"
+            ],
+            "optional_parameters": [
+                "--account -n",
+                "--ids",
+                "--subscription"
+            ],
+            "examples": [
+                "az dls fs list --account {account} --path {path}"
+            ]
+        },
+        {
+            "name": "az dls fs move",
+            "summary": "Move a file or folder in a Data Lake Store account.",
+            "syntax": "az dls fs move --destination-path\n               --source-path\n               [--account]\n               [--force]\n               [--ids]\n               [--subscription]",
+            "required_parameters": [
+                "--destination-path",
+                "--source-path"
+            ],
+            "optional_parameters": [
+                "--account -n",
+                "--force",
+                "--ids",
+                "--subscription"
+            ],
+            "examples": [
+                "az dls fs move --account {account} --destination-path {destination-path} --source-path {source-path}"
+            ]
+        },
+        {
+            "name": "az dls fs preview",
+            "summary": "Preview the content of a file in a Data Lake Store account.",
+            "syntax": "az dls fs preview --path\n                  [--account]\n                  [--force]\n                  [--ids]\n                  [--length]\n                  [--offset]\n                  [--subscription]",
+            "required_parameters": [
+                "--path"
+            ],
+            "optional_parameters": [
+                "--account -n",
+                "--force",
+                "--ids",
+                "--length",
+                "--offset",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az dls fs remove-expiry",
+            "summary": "Remove the expiration time for a file.",
+            "syntax": "az dls fs remove-expiry --path\n                        [--account]\n                        [--ids]\n                        [--subscription]",
+            "required_parameters": [
+                "--path"
+            ],
+            "optional_parameters": [
+                "--account -n",
+                "--ids",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az dls fs set-expiry",
+            "summary": "Set the expiration time for a file.",
+            "syntax": "az dls fs set-expiry --expiration-time\n                     --path\n                     [--account]\n                     [--ids]\n                     [--subscription]",
+            "required_parameters": [
+                "--expiration-time",
+                "--path"
+            ],
+            "optional_parameters": [
+                "--account -n",
+                "--ids",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az dls fs show",
+            "summary": "Get file or folder information in a Data Lake Store account.",
+            "syntax": "az dls fs show --path\n               [--account]\n               [--ids]\n               [--subscription]",
+            "required_parameters": [
+                "--path"
+            ],
+            "optional_parameters": [
+                "--account -n",
+                "--ids",
+                "--subscription"
+            ],
+            "examples": [
+                "az dls fs show --account {account} --path {path}"
+            ]
+        },
+        {
+            "name": "az dls fs test",
+            "summary": "Test for the existence of a file or folder in a Data Lake Store account.",
+            "syntax": "az dls fs test --path\n               [--account]\n               [--ids]\n               [--subscription]",
+            "required_parameters": [
+                "--path"
+            ],
+            "optional_parameters": [
+                "--account -n",
+                "--ids",
+                "--subscription"
+            ],
+            "examples": [
+                "az dls fs test --account {account} --path {path}"
+            ]
+        },
+        {
+            "name": "az dls fs upload",
+            "summary": "Upload a file or folder to a Data Lake Store account.",
+            "syntax": "az dls fs upload --destination-path\n                 --source-path\n                 [--account]\n                 [--block-size]\n                 [--buffer-size]\n                 [--chunk-size]\n                 [--ids]\n                 [--overwrite]\n                 [--subscription]\n                 [--thread-count]",
+            "required_parameters": [
+                "--destination-path",
+                "--source-path"
+            ],
+            "optional_parameters": [
+                "--account -n",
+                "--block-size",
+                "--buffer-size",
+                "--chunk-size",
+                "--ids",
+                "--overwrite",
+                "--subscription",
+                "--thread-count"
+            ],
+            "examples": [
+                "az dls fs upload --account {account} --destination-path {destination-path} --overwrite  --source-path {source-path}"
+            ]
+        }
+    ]
+}

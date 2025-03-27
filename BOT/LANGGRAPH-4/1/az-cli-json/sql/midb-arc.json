@@ -1,0 +1,26 @@
+{
+    "command_group": "az sql midb-arc",
+    "description": "Manage databases for Azure Arc-enabled SQL managed instances.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az sql midb-arc restore",
+            "summary": "Restore a database to an Azure Arc enabled SQL managed instance.",
+            "syntax": "az sql midb-arc restore [--dest-name]\n                        [--dry-run]\n                        [--k8s-namespace]\n                        [--managed-instance]\n                        [--name]\n                        [--no-wait]\n                        [--time]\n                        [--use-k8s]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--dest-name",
+                "--dry-run",
+                "--k8s-namespace -k",
+                "--managed-instance",
+                "--name -n",
+                "--no-wait",
+                "--time -t",
+                "--use-k8s"
+            ],
+            "examples": [
+                "az sql midb-arc restore --managed-instance sqlmi1 --name mysourcedb\n --dest-name mynewdb --time \"2021-10-20T05:34:22Z\" --k8s-namespace\n arc --use-k8s --dry-run"
+            ]
+        }
+    ]
+}

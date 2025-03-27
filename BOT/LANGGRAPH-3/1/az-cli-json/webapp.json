@@ -1,0 +1,448 @@
+{
+    "command_group": "az webapp",
+    "description": "Manage web apps.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az webapp browse",
+            "summary": "Open a web app in a browser. This is not supported in Azure Cloud Shell.",
+            "syntax": "az webapp browse [--ids]\n                 [--logs]\n                 [--name]\n                 [--resource-group]\n                 [--slot]\n                 [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--logs -l",
+                "--name -n",
+                "--resource-group -g",
+                "--slot -s",
+                "--subscription"
+            ],
+            "examples": [
+                "az webapp browse --name MyWebapp --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az webapp create",
+            "summary": "Create a web app.",
+            "syntax": "az webapp create --name\n                 --plan\n                 --resource-group\n                 [--acr-identity]\n                 [--acr-use-identity]\n                 [--assign-identity]\n                 [--basic-auth {Disabled, Enabled}]\n                 [--container-image-name]\n                 [--container-registry-password]\n                 [--container-registry-url]\n                 [--container-registry-user]\n                 [--deployment-container-image-name]\n                 [--deployment-local-git]\n                 [--deployment-source-branch]\n                 [--deployment-source-url]\n                 [--docker-registry-server-password]\n                 [--docker-registry-server-user]\n                 [--https-only {false, true}]\n                 [--multicontainer-config-file]\n                 [--multicontainer-config-type {COMPOSE, KUBE}]\n                 [--public-network-access {Disabled, Enabled}]\n                 [--role]\n                 [--runtime]\n                 [--scope]\n                 [--startup-file]\n                 [--subnet]\n                 [--tags]\n                 [--vnet]",
+            "required_parameters": [
+                "--name -n",
+                "--plan -p",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--acr-identity",
+                "--acr-use-identity",
+                "--assign-identity",
+                "--basic-auth",
+                "--container-image-name -c",
+                "--container-registry-password -w",
+                "--container-registry-url",
+                "--container-registry-user -s",
+                "--deployment-container-image-name -i",
+                "--deployment-local-git -l",
+                "--deployment-source-branch -b",
+                "--deployment-source-url -u",
+                "--docker-registry-server-password",
+                "--docker-registry-server-user",
+                "--https-only",
+                "--multicontainer-config-file",
+                "--multicontainer-config-type",
+                "--public-network-access",
+                "--role",
+                "--runtime -r",
+                "--scope",
+                "--startup-file",
+                "--subnet",
+                "--tags",
+                "--vnet"
+            ],
+            "examples": [
+                "az webapp create -g MyResourceGroup -p MyPlan -n MyUniqueAppName",
+                "az webapp create -g MyResourceGroup -p MyPlan -n MyUniqueAppName --runtime \"java:11:Java SE:11\"",
+                "az webapp create -g MyResourceGroup -p MyPlan -n MyUniqueAppName --runtime \"node:12LTS\" --deployment-local-git",
+                "az webapp create -g MyResourceGroup -p MyPlan -n MyUniqueAppName -i nginx",
+                "az webapp create -g MyResourceGroup -p MyPlan -n MyUniqueAppName -i MyImageName -s username -w password",
+                "az webapp create -g MyResourceGroup -p MyPlan -n MyUniqueAppName -i myregistry.azurecr.io/docker-image:tag",
+                "AppServicePlanID=$(az appservice plan show -n SharedAppServicePlan -g MyASPRG --query \"id\" --out tsv) az webapp create -g MyResourceGroup -p \"$AppServicePlanID\" -n MyUniqueAppName",
+                "az webapp create -g MyResourceGroup -p MyPlan -n MyUniqueAppName --container-image-name myregistry.azurecr.io/docker-image:tag --assign-identity MyAssignIdentities --acr-use-identity --acr-identity MyUserAssignedIdentityResourceId"
+            ]
+        },
+        {
+            "name": "az webapp create",
+            "summary": "Create a web app.",
+            "syntax": "az webapp create --name\n                 --resource-group\n                 [--assign-identity]\n                 [--custom-location]\n                 [--deployment-container-image-name]\n                 [--deployment-local-git]\n                 [--deployment-source-branch]\n                 [--deployment-source-url]\n                 [--docker-registry-server-password]\n                 [--docker-registry-server-user]\n                 [--max-worker-count]\n                 [--min-worker-count]\n                 [--multicontainer-config-file]\n                 [--multicontainer-config-type {COMPOSE, KUBE}]\n                 [--plan]\n                 [--role]\n                 [--runtime]\n                 [--scope]\n                 [--startup-file]\n                 [--tags]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--assign-identity",
+                "--custom-location",
+                "--deployment-container-image-name -i",
+                "--deployment-local-git -l",
+                "--deployment-source-branch -b",
+                "--deployment-source-url -u",
+                "--docker-registry-server-password -w",
+                "--docker-registry-server-user -s",
+                "--max-worker-count",
+                "--min-worker-count",
+                "--multicontainer-config-file",
+                "--multicontainer-config-type",
+                "--plan -p",
+                "--role",
+                "--runtime -r",
+                "--scope",
+                "--startup-file",
+                "--tags"
+            ],
+            "examples": [
+                "az webapp create -g MyResourceGroup -p MyPlan -n MyUniqueAppName",
+                "az webapp create -g MyResourceGroup -p MyPlan -n MyUniqueAppName --runtime \"java|11|Java SE|11\"",
+                "az webapp create -g MyResourceGroup -p MyPlan -n MyUniqueAppName --runtime \"java:11:Java SE:11\"",
+                "az webapp create -g MyResourceGroup -p MyPlan -n MyUniqueAppName --runtime \"node|10.14\" --deployment-local-git",
+                "az webapp create -g MyResourceGroup -p MyPlan -n MyUniqueAppName -i nginx",
+                "az webapp create -g MyResourceGroup -p MyPlan -n MyUniqueAppName -i MyImageName -s username -w password",
+                "az webapp create -g MyResourceGroup -p MyPlan -n MyUniqueAppName -i myregistry.azurecr.io/docker-image:tag",
+                "AppServicePlanID=$(az appservice plan show -n SharedAppServicePlan -g MyASPRG --query \"id\" --out tsv) az webapp create -g MyResourceGroup -p \"$AppServicePlanID\" -n MyUniqueAppName",
+                "az webapp create -g MyResourceGroup -p MyPlan -n MyUniqueAppName --custom-location /subscriptions/sub_id/resourcegroups/group_name/providers/microsoft.extendedlocation/customlocations/custom_location_name",
+                "az webapp create -g MyResourceGroup -p MyPlan -n MyUniqueAppName --custom-location custom_location_name"
+            ]
+        },
+        {
+            "name": "az webapp create-remote-connection",
+            "summary": "Creates a remote connection using a tcp tunnel to your web app.",
+            "syntax": "az webapp create-remote-connection [--ids]\n                                   [--instance]\n                                   [--name]\n                                   [--port]\n                                   [--resource-group]\n                                   [--slot]\n                                   [--subscription]\n                                   [--timeout]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--instance -i",
+                "--name -n",
+                "--port -p",
+                "--resource-group -g",
+                "--slot -s",
+                "--subscription",
+                "--timeout -t"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az webapp delete",
+            "summary": "Delete a web app.",
+            "syntax": "az webapp delete [--ids]\n                 [--keep-dns-registration]\n                 [--keep-empty-plan]\n                 [--keep-metrics]\n                 [--name]\n                 [--resource-group]\n                 [--slot]\n                 [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--keep-dns-registration",
+                "--keep-empty-plan",
+                "--keep-metrics",
+                "--name -n",
+                "--resource-group -g",
+                "--slot -s",
+                "--subscription"
+            ],
+            "examples": [
+                "az webapp delete --name MyWebapp --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az webapp deploy",
+            "summary": "Deploys a provided artifact to Azure Web Apps.",
+            "syntax": "az webapp deploy [--async {false, true}]\n                 [--clean {false, true}]\n                 [--ids]\n                 [--ignore-stack {false, true}]\n                 [--name]\n                 [--resource-group]\n                 [--restart {false, true}]\n                 [--slot]\n                 [--src-path]\n                 [--src-url]\n                 [--subscription]\n                 [--target-path]\n                 [--timeout]\n                 [--track-status {false, true}]\n                 [--type {ear, jar, lib, startup, static, war, zip}]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--async",
+                "--clean",
+                "--ids",
+                "--ignore-stack",
+                "--name -n",
+                "--resource-group -g",
+                "--restart",
+                "--slot -s",
+                "--src-path",
+                "--src-url",
+                "--subscription",
+                "--target-path",
+                "--timeout",
+                "--track-status",
+                "--type"
+            ],
+            "examples": [
+                "az webapp deploy --resource-group ResourceGroup --name AppName --src-path SourcePath --type war --async true",
+                "az webapp deploy --resource-group ResourceGroup --name AppName --src-path SourcePath --type static --target-path staticfiles/test.txt"
+            ]
+        },
+        {
+            "name": "az webapp list",
+            "summary": "List web apps.",
+            "syntax": "az webapp list [--resource-group]\n               [--show-details]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--resource-group -g",
+                "--show-details"
+            ],
+            "examples": [
+                "az webapp list --resource-group MyResourceGroup",
+                "az webapp list --query \"[].{hostName: defaultHostName, state: state}\"",
+                "az webapp list --query \"[?state=='Running']\""
+            ]
+        },
+        {
+            "name": "az webapp list-instances",
+            "summary": "List all scaled out instances of a web app or web app slot.",
+            "syntax": "az webapp list-instances --name\n                         --resource-group\n                         [--slot]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--slot -s"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az webapp list-runtimes",
+            "summary": "List available built-in stacks which can be used for web apps.",
+            "syntax": "az webapp list-runtimes [--linux]\n                        [--os {linux, windows}]\n                        [--show-runtime-details]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--linux",
+                "--os --os-type",
+                "--show-runtime-details"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az webapp list-runtimes",
+            "summary": "List available built-in stacks which can be used for web apps.",
+            "syntax": "az webapp list-runtimes [--is-kube]\n                        [--linux]\n                        [--os {linux, windows}]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--is-kube",
+                "--linux",
+                "--os --os-type"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az webapp restart",
+            "summary": "Restart a web app.",
+            "syntax": "az webapp restart [--ids]\n                  [--name]\n                  [--resource-group]\n                  [--slot]\n                  [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--slot -s",
+                "--subscription"
+            ],
+            "examples": [
+                "az webapp restart --name MyWebapp --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az webapp restart",
+            "summary": "Restart a web app.",
+            "syntax": "az webapp restart [--ids]\n                  [--name]\n                  [--resource-group]\n                  [--slot]\n                  [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--slot -s",
+                "--subscription"
+            ],
+            "examples": [
+                "az webapp restart --name MyWebapp --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az webapp scale",
+            "summary": "Modify the number of instances of a webapp on Arc enabled Kubernetes workloads .",
+            "syntax": "az webapp scale --instance-count\n                [--ids]\n                [--name]\n                [--resource-group]\n                [--slot]\n                [--subscription]",
+            "required_parameters": [
+                "--instance-count"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--slot -s",
+                "--subscription"
+            ],
+            "examples": [
+                "az webapp scale -g MyResourceGroup -n MyApp --instance-count 2"
+            ]
+        },
+        {
+            "name": "az webapp show",
+            "summary": "Get the details of a web app.",
+            "syntax": "az webapp show [--ids]\n               [--name]\n               [--resource-group]\n               [--slot]\n               [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--slot -s",
+                "--subscription"
+            ],
+            "examples": [
+                "az webapp show --name MyWebapp --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az webapp show",
+            "summary": "Get the details of a web app.",
+            "syntax": "az webapp show [--ids]\n               [--name]\n               [--resource-group]\n               [--slot]\n               [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--slot -s",
+                "--subscription"
+            ],
+            "examples": [
+                "az webapp show --name MyWebapp --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az webapp ssh",
+            "summary": "SSH command establishes a ssh session to the web container and developer would get a shell terminal remotely.",
+            "syntax": "az webapp ssh [--ids]\n              [--instance]\n              [--name]\n              [--port]\n              [--resource-group]\n              [--slot]\n              [--subscription]\n              [--timeout]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--instance -i",
+                "--name -n",
+                "--port -p",
+                "--resource-group -g",
+                "--slot -s",
+                "--subscription",
+                "--timeout -t"
+            ],
+            "examples": [
+                "az webapp ssh -n MyUniqueAppName -g MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az webapp start",
+            "summary": "Start a web app.",
+            "syntax": "az webapp start [--ids]\n                [--name]\n                [--resource-group]\n                [--slot]\n                [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--slot -s",
+                "--subscription"
+            ],
+            "examples": [
+                "az webapp start --name MyWebapp --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az webapp stop",
+            "summary": "Stop a web app.",
+            "syntax": "az webapp stop [--ids]\n               [--name]\n               [--resource-group]\n               [--slot]\n               [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--slot -s",
+                "--subscription"
+            ],
+            "examples": [
+                "az webapp stop --name MyWebapp --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az webapp up",
+            "summary": "Create a webapp and deploy code from a local workspace to the app. The command is required to run from the folder where the code is present. Current support includes Node, Python, .NET Core and ASP.NET. Node, Python apps are created as Linux apps. .Net Core, ASP.NET, and static HTML apps are created as Windows apps. Append the html flag to deploy as a static HTML app. Each time the command is successfully run, default argument values for resource group, sku, location, plan, and name are saved for the current directory. These defaults are then used for any arguments not provided on subsequent runs of the command in the same directory.  Use 'az configure' to manage defaults. Run this command with the --debug parameter to see the API calls and parameters values being used.",
+            "syntax": "az webapp up [--app-service-environment]\n             [--basic-auth {Disabled, Enabled}]\n             [--dryrun]\n             [--html]\n             [--ids]\n             [--launch-browser]\n             [--location]\n             [--logs]\n             [--name]\n             [--os-type {Linux, Windows}]\n             [--plan]\n             [--resource-group]\n             [--runtime]\n             [--sku {B1, B2, B3, D1, F1, FREE, I1, I1MV2, I1V2, I2, I2MV2, I2V2, I3, I3MV2, I3V2, I4MV2, I4V2, I5MV2, I5V2, I6V2, P0V3, P1MV3, P1V2, P1V3, P2MV3, P2V2, P2V3, P3MV3, P3V2, P3V3, P4MV3, P5MV3, S1, S2, S3, SHARED, WS1, WS2, WS3}]\n             [--subscription]\n             [--track-status {false, true}]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--app-service-environment -e",
+                "--basic-auth",
+                "--dryrun",
+                "--html",
+                "--ids",
+                "--launch-browser -b",
+                "--location -l",
+                "--logs",
+                "--name -n",
+                "--os-type",
+                "--plan -p",
+                "--resource-group -g",
+                "--runtime -r",
+                "--sku",
+                "--subscription",
+                "--track-status"
+            ],
+            "examples": [
+                "az webapp up --dryrun",
+                "az webapp up",
+                "az webapp up -n MyUniqueAppName",
+                "az webapp up -n MyUniqueAppName --runtime \"java:11:Java SE:11\"",
+                "az webapp up -l locationName",
+                "az webapp up --logs",
+                "az webapp up --html"
+            ]
+        },
+        {
+            "name": "az webapp update",
+            "summary": "Update an existing web app.",
+            "syntax": "az webapp update [--add]\n                 [--basic-auth {Disabled, Enabled}]\n                 [--client-affinity-enabled {false, true}]\n                 [--force-dns-registration {false, true}]\n                 [--force-string]\n                 [--https-only {false, true}]\n                 [--ids]\n                 [--minimum-elastic-instance-count]\n                 [--name]\n                 [--prewarmed-instance-count]\n                 [--remove]\n                 [--resource-group]\n                 [--set]\n                 [--skip-custom-domain-verification {false, true}]\n                 [--skip-dns-registration {false, true}]\n                 [--slot]\n                 [--subscription]\n                 [--ttl-in-seconds {false, true}]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--basic-auth",
+                "--client-affinity-enabled",
+                "--force-dns-registration",
+                "--force-string",
+                "--https-only",
+                "--ids",
+                "--minimum-elastic-instance-count -i",
+                "--name -n",
+                "--prewarmed-instance-count -w",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--skip-custom-domain-verification",
+                "--skip-dns-registration",
+                "--slot -s",
+                "--subscription",
+                "--ttl-in-seconds"
+            ],
+            "examples": [
+                "az webapp update -g MyResourceGroup -n MyAppName --set tags.tagName=tagValue",
+                "az webapp update --https-only true --name MyAppName --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az webapp update",
+            "summary": "Update an existing web app.",
+            "syntax": "az webapp update [--add]\n                 [--client-affinity-enabled {false, true}]\n                 [--force-string]\n                 [--https-only {false, true}]\n                 [--ids]\n                 [--minimum-elastic-instance-count]\n                 [--name]\n                 [--prewarmed-instance-count]\n                 [--remove]\n                 [--resource-group]\n                 [--set]\n                 [--slot]\n                 [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--client-affinity-enabled",
+                "--force-string",
+                "--https-only",
+                "--ids",
+                "--minimum-elastic-instance-count -i",
+                "--name -n",
+                "--prewarmed-instance-count -w",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--slot -s",
+                "--subscription"
+            ],
+            "examples": [
+                "az webapp update -g MyResourceGroup -n MyAppName --set tags.tagName=tagValue",
+                "az webapp update --https-only true --name MyAppName --resource-group MyResourceGroup"
+            ]
+        }
+    ]
+}

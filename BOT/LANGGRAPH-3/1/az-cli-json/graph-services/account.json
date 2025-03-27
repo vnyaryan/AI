@@ -1,0 +1,110 @@
+{
+    "command_group": "az graph-services account",
+    "description": "Make operations on Microsoft.GraphServices/Accounts.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az graph-services account create",
+            "summary": "Create account resource. Enables billing for the provided application.",
+            "syntax": "az graph-services account create --app-id\n                                 --name\n                                 --resource-group\n                                 [--location]\n                                 [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                 [--tags]",
+            "required_parameters": [
+                "--app-id",
+                "--name --resource-name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--location -l",
+                "--no-wait",
+                "--tags"
+            ],
+            "examples": [
+                "az graph-services account create --resource-group myRG  --resource-name myGraphAppBilling --subscription mySubscriptionGUID --location global --tags \"foo=bar\" \"baz=qux\" --app-id myAppGUID"
+            ]
+        },
+        {
+            "name": "az graph-services account delete",
+            "summary": "Delete an account resource. Disables billing on the associated application.",
+            "syntax": "az graph-services account delete [--ids]\n                                 [--name]\n                                 [--resource-group]\n                                 [--subscription]\n                                 [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --resource-name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az graph-services account delete --subscription mySubscriptionGUID --resource-group myRG --resource-name myGraphAppBilling"
+            ]
+        },
+        {
+            "name": "az graph-services account list",
+            "summary": "List of accounts belonging to a subscription.",
+            "syntax": "az graph-services account list [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az graph-services account list --subscription mySubscriptionGUID --resource-group myRg"
+            ]
+        },
+        {
+            "name": "az graph-services account show",
+            "summary": "Get an account resource given its name.",
+            "syntax": "az graph-services account show [--ids]\n                               [--name]\n                               [--resource-group]\n                               [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --resource-name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az --subscription mySubscriptionGUID --resource-group myRG --resource-name myGraphAppBilling"
+            ]
+        },
+        {
+            "name": "az graph-services account update",
+            "summary": "Update an account resource.",
+            "syntax": "az graph-services account update [--add]\n                                 [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                 [--ids]\n                                 [--location]\n                                 [--name]\n                                 [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                 [--remove]\n                                 [--resource-group]\n                                 [--set]\n                                 [--subscription]\n                                 [--tags]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--force-string",
+                "--ids",
+                "--location -l",
+                "--name --resource-name -n",
+                "--no-wait",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--subscription",
+                "--tags"
+            ],
+            "examples": [
+                "az graph-services account update --resource-group myRG --resource-name myGraphAppBilling --subscription mySubscriptionGUID --location global --tags \"foo1=bar1\" \"baz1=qux1\""
+            ]
+        },
+        {
+            "name": "az graph-services account wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az graph-services account wait [--created]\n                               [--custom]\n                               [--deleted]\n                               [--exists]\n                               [--ids]\n                               [--interval]\n                               [--name]\n                               [--resource-group]\n                               [--subscription]\n                               [--timeout]\n                               [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--name --resource-name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

@@ -1,0 +1,56 @@
+{
+    "command_group": "az postgres server configuration",
+    "description": "Manage configuration values for a server.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az postgres server configuration list",
+            "summary": "List the configuration values for a server.",
+            "syntax": "az postgres server configuration list [--ids]\n                                      [--resource-group]\n                                      [--server-name]\n                                      [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--resource-group -g",
+                "--server-name -s",
+                "--subscription"
+            ],
+            "examples": [
+                "az postgres server configuration list --resource-group MyResourceGroup --server-name MyServer"
+            ]
+        },
+        {
+            "name": "az postgres server configuration set",
+            "summary": "Update the configuration of a server.",
+            "syntax": "az postgres server configuration set [--ids]\n                                     [--name]\n                                     [--resource-group]\n                                     [--server-name]\n                                     [--subscription]\n                                     [--value]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--server-name -s",
+                "--subscription",
+                "--value"
+            ],
+            "examples": [
+                "az postgres server configuration set -g testgroup -s testsvr -n {config_name} --value {config_value}",
+                "az postgres server configuration set -g testgroup -s testsvr -n {config_name}"
+            ]
+        },
+        {
+            "name": "az postgres server configuration show",
+            "summary": "Get the configuration for a server.\".",
+            "syntax": "az postgres server configuration show [--ids]\n                                      [--name]\n                                      [--resource-group]\n                                      [--server-name]\n                                      [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--server-name -s",
+                "--subscription"
+            ],
+            "examples": [
+                "az postgres server configuration show --name MyServerConfiguration --resource-group MyResourceGroup --server-name MyServer"
+            ]
+        }
+    ]
+}

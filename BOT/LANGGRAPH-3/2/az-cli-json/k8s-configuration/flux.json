@@ -1,0 +1,169 @@
+{
+    "command_group": "az k8s-configuration flux",
+    "description": "Commands to manage Flux v2 Kubernetes configurations.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az k8s-configuration flux create",
+            "summary": "Create a Flux v2 Kubernetes configuration.",
+            "syntax": "az k8s-configuration flux create --cluster-name\n                                 --cluster-type {connectedClusters, managedClusters, provisionedClusters}\n                                 --name\n                                 --resource-group\n                                 --url\n                                 [--account-key]\n                                 [--branch]\n                                 [--bucket-access-key]\n                                 [--bucket-insecure {false, true}]\n                                 [--bucket-name]\n                                 [--bucket-secret-key]\n                                 [--cluster-resource-provider]\n                                 [--commit]\n                                 [--container-name]\n                                 [--https-ca-cert]\n                                 [--https-ca-cert-file]\n                                 [--https-key]\n                                 [--https-user]\n                                 [--interval]\n                                 [--kind {azblob, bucket, git}]\n                                 [--known-hosts]\n                                 [--known-hosts-file]\n                                 [--kustomization]\n                                 [--local-auth-ref]\n                                 [--managed-identity-client-id]\n                                 [--namespace]\n                                 [--no-wait]\n                                 [--sas-token]\n                                 [--scope {cluster, namespace}]\n                                 [--semver]\n                                 [--service-principal-client-certificate]\n                                 [--service-principal-client-certificate-password]\n                                 [--service-principal-client-certificate-send-chain]\n                                 [--service-principal-client-id]\n                                 [--service-principal-client-secret]\n                                 [--service-principal-tenant-id]\n                                 [--ssh-private-key]\n                                 [--ssh-private-key-file]\n                                 [--suspend {false, true}]\n                                 [--tag]\n                                 [--timeout]",
+            "required_parameters": [
+                "--cluster-name -c",
+                "--cluster-type -t",
+                "--name -n",
+                "--resource-group -g",
+                "--url -u"
+            ],
+            "optional_parameters": [
+                "--account-key",
+                "--branch",
+                "--bucket-access-key",
+                "--bucket-insecure",
+                "--bucket-name",
+                "--bucket-secret-key",
+                "--cluster-resource-provider --cluster-rp",
+                "--commit",
+                "--container-name",
+                "--https-ca-cert",
+                "--https-ca-cert-file",
+                "--https-key",
+                "--https-user",
+                "--interval --sync-interval",
+                "--kind",
+                "--known-hosts",
+                "--known-hosts-file",
+                "--kustomization -k",
+                "--local-auth-ref --local-ref",
+                "--managed-identity-client-id --mi-client-id",
+                "--namespace --ns",
+                "--no-wait",
+                "--sas-token",
+                "--scope -s",
+                "--semver",
+                "--service-principal-client-certificate --sp-client-cert",
+                "--service-principal-client-certificate-password --sp-cert-password",
+                "--service-principal-client-certificate-send-chain --sp-cert-send-chain",
+                "--service-principal-client-id --sp-client-id",
+                "--service-principal-client-secret --sp-client-secret",
+                "--service-principal-tenant-id --sp-tenant-id",
+                "--ssh-private-key",
+                "--ssh-private-key-file",
+                "--suspend",
+                "--tag",
+                "--timeout"
+            ],
+            "examples": [
+                "az k8s-configuration flux create --resource-group my-resource-group \\\n--cluster-name mycluster --cluster-type connectedClusters \\\n--name myconfig --scope cluster --namespace my-namespace \\\n--kind git --url https://github.com/Azure/arc-k8s-demo \\\n--branch main --kustomization name=my-kustomization",
+                "az k8s-configuration flux create --resource-group my-resource-group \\\n--cluster-name mycluster --cluster-type connectedClusters \\\n--name myconfig --scope cluster --namespace my-namespace \\\n--kind bucket --url https://bucket-provider.minio.io \\\n--bucket-name my-bucket --kustomization name=my-kustomization \\\n--bucket-access-key my-access-key --bucket-secret-key my-secret-key",
+                "az k8s-configuration flux create --resource-group my-resource-group \\\n--cluster-name mycluster --cluster-type connectedClusters \\\n--name myconfig --scope cluster --namespace my-namespace \\\n--kind azblob --url https://mystorageaccount.blob.core.windows.net \\\n--container-name my-container --kustomization name=my-kustomization \\\n--account-key my-account-key"
+            ]
+        },
+        {
+            "name": "az k8s-configuration flux delete",
+            "summary": "Delete a Flux v2 Kubernetes configuration.",
+            "syntax": "az k8s-configuration flux delete --cluster-name\n                                 --cluster-type {connectedClusters, managedClusters, provisionedClusters}\n                                 --name\n                                 --resource-group\n                                 [--cluster-resource-provider]\n                                 [--force {false, true}]\n                                 [--no-wait]\n                                 [--yes]",
+            "required_parameters": [
+                "--cluster-name -c",
+                "--cluster-type -t",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--cluster-resource-provider --cluster-rp",
+                "--force",
+                "--no-wait",
+                "--yes -y"
+            ],
+            "examples": [
+                "az k8s-configuration flux delete --resource-group my-resource-group \\\n--cluster-name mycluster --cluster-type connectedClusters --name myconfig"
+            ]
+        },
+        {
+            "name": "az k8s-configuration flux list",
+            "summary": "List all Flux v2 Kubernetes configurations.",
+            "syntax": "az k8s-configuration flux list --cluster-name\n                               --cluster-type {connectedClusters, managedClusters, provisionedClusters}\n                               --resource-group\n                               [--cluster-resource-provider]",
+            "required_parameters": [
+                "--cluster-name -c",
+                "--cluster-type -t",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--cluster-resource-provider --cluster-rp"
+            ],
+            "examples": [
+                "az k8s-configuration flux list --resource-group my-resource-group \\\n--cluster-name mycluster --cluster-type connectedClusters"
+            ]
+        },
+        {
+            "name": "az k8s-configuration flux show",
+            "summary": "Show a Flux v2 Kubernetes configuration.",
+            "syntax": "az k8s-configuration flux show --cluster-name\n                               --cluster-type {connectedClusters, managedClusters, provisionedClusters}\n                               --name\n                               --resource-group\n                               [--cluster-resource-provider]",
+            "required_parameters": [
+                "--cluster-name -c",
+                "--cluster-type -t",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--cluster-resource-provider --cluster-rp"
+            ],
+            "examples": [
+                "az k8s-configuration flux show --resource-group my-resource-group \\\n--cluster-name mycluster --cluster-type connectedClusters --name myconfig"
+            ]
+        },
+        {
+            "name": "az k8s-configuration flux update",
+            "summary": "Update a Flux v2 Kubernetes configuration.",
+            "syntax": "az k8s-configuration flux update --cluster-name\n                                 --cluster-type {connectedClusters, managedClusters, provisionedClusters}\n                                 --name\n                                 --resource-group\n                                 [--account-key]\n                                 [--branch]\n                                 [--bucket-access-key]\n                                 [--bucket-insecure {false, true}]\n                                 [--bucket-name]\n                                 [--bucket-secret-key]\n                                 [--cluster-resource-provider]\n                                 [--commit]\n                                 [--container-name]\n                                 [--https-ca-cert]\n                                 [--https-ca-cert-file]\n                                 [--https-key]\n                                 [--https-user]\n                                 [--interval]\n                                 [--kind {azblob, bucket, git}]\n                                 [--known-hosts]\n                                 [--known-hosts-file]\n                                 [--kustomization]\n                                 [--local-auth-ref]\n                                 [--managed-identity-client-id]\n                                 [--no-wait]\n                                 [--sas-token]\n                                 [--semver]\n                                 [--service-principal-client-certificate]\n                                 [--service-principal-client-certificate-password]\n                                 [--service-principal-client-certificate-send-chain]\n                                 [--service-principal-client-id]\n                                 [--service-principal-client-secret]\n                                 [--service-principal-tenant-id]\n                                 [--ssh-private-key]\n                                 [--ssh-private-key-file]\n                                 [--suspend {false, true}]\n                                 [--tag]\n                                 [--timeout]\n                                 [--url]\n                                 [--yes]",
+            "required_parameters": [
+                "--cluster-name -c",
+                "--cluster-type -t",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--account-key",
+                "--branch",
+                "--bucket-access-key",
+                "--bucket-insecure",
+                "--bucket-name",
+                "--bucket-secret-key",
+                "--cluster-resource-provider --cluster-rp",
+                "--commit",
+                "--container-name",
+                "--https-ca-cert",
+                "--https-ca-cert-file",
+                "--https-key",
+                "--https-user",
+                "--interval --sync-interval",
+                "--kind",
+                "--known-hosts",
+                "--known-hosts-file",
+                "--kustomization -k",
+                "--local-auth-ref --local-ref",
+                "--managed-identity-client-id --mi-client-id",
+                "--no-wait",
+                "--sas-token",
+                "--semver",
+                "--service-principal-client-certificate --sp-client-cert",
+                "--service-principal-client-certificate-password --sp-cert-password",
+                "--service-principal-client-certificate-send-chain --sp-cert-send-chain",
+                "--service-principal-client-id --sp-client-id",
+                "--service-principal-client-secret --sp-client-secret",
+                "--service-principal-tenant-id --sp-tenant-id",
+                "--ssh-private-key",
+                "--ssh-private-key-file",
+                "--suspend",
+                "--tag",
+                "--timeout",
+                "--url -u",
+                "--yes -y"
+            ],
+            "examples": [
+                "az k8s-configuration flux update --resource-group my-resource-group \\\n--cluster-name mycluster --cluster-type connectedClusters --name myconfig \\\n--url https://github.com/Azure/arc-k8s-demo --branch main \\\n--kustomization name=my-kustomization path=./my/new-path",
+                "az k8s-configuration flux update --resource-group my-resource-group \\\n--cluster-name mycluster --cluster-type connectedClusters --name myconfig \\\n--bucket-insecure",
+                "az k8s-configuration flux update --resource-group my-resource-group \\\n--cluster-name mycluster --cluster-type connectedClusters --name myconfig \\\n--container-name other-container"
+            ]
+        }
+    ]
+}

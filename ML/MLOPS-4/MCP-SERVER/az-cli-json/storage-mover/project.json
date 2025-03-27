@@ -1,0 +1,115 @@
+{
+    "command_group": "az storage-mover project",
+    "description": "Manage Project resource, which is a logical grouping of related jobs.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az storage-mover project create",
+            "summary": "Creates a Project resource, which is a logical grouping of related jobs.",
+            "syntax": "az storage-mover project create --name\n                                --resource-group\n                                --storage-mover-name\n                                [--description]",
+            "required_parameters": [
+                "--name --project-name -n",
+                "--resource-group -g",
+                "--storage-mover-name"
+            ],
+            "optional_parameters": [
+                "--description"
+            ],
+            "examples": [
+                "az storage-mover project create -g {rg} --storage-mover-name {mover_name} -n {project_name} --description ProjectDesc"
+            ]
+        },
+        {
+            "name": "az storage-mover project delete",
+            "summary": "Deletes a Project resource.",
+            "syntax": "az storage-mover project delete [--ids]\n                                [--name]\n                                [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                [--resource-group]\n                                [--storage-mover-name]\n                                [--subscription]\n                                [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --project-name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--storage-mover-name",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az storage-mover project delete -g {rg} --storage-mover-name {mover_name} -n {project_name}"
+            ]
+        },
+        {
+            "name": "az storage-mover project list",
+            "summary": "Lists all Projects in a Storage Mover.",
+            "syntax": "az storage-mover project list --resource-group\n                              --storage-mover-name\n                              [--max-items]\n                              [--next-token]",
+            "required_parameters": [
+                "--resource-group -g",
+                "--storage-mover-name"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az storage-mover project list -g {rg} --storage-mover-name {mover_name}"
+            ]
+        },
+        {
+            "name": "az storage-mover project show",
+            "summary": "Gets a Project resource.",
+            "syntax": "az storage-mover project show [--ids]\n                              [--name]\n                              [--resource-group]\n                              [--storage-mover-name]\n                              [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --project-name -n",
+                "--resource-group -g",
+                "--storage-mover-name",
+                "--subscription"
+            ],
+            "examples": [
+                "az storage-mover project show -g {rg} --storage-mover-name {mover_name} -n {project_name}"
+            ]
+        },
+        {
+            "name": "az storage-mover project update",
+            "summary": "Update a Project resource, which is a logical grouping of related jobs.",
+            "syntax": "az storage-mover project update [--add]\n                                [--description]\n                                [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                [--ids]\n                                [--name]\n                                [--remove]\n                                [--resource-group]\n                                [--set]\n                                [--storage-mover-name]\n                                [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--description",
+                "--force-string",
+                "--ids",
+                "--name --project-name -n",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--storage-mover-name",
+                "--subscription"
+            ],
+            "examples": [
+                "az storage-mover project update -g {rg} --storage-mover-name {mover_name} -n {project_name} --description ProjectDesc2"
+            ]
+        },
+        {
+            "name": "az storage-mover project wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az storage-mover project wait [--created]\n                              [--custom]\n                              [--deleted]\n                              [--exists]\n                              [--ids]\n                              [--interval]\n                              [--name]\n                              [--resource-group]\n                              [--storage-mover-name]\n                              [--subscription]\n                              [--timeout]\n                              [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--name --project-name -n",
+                "--resource-group -g",
+                "--storage-mover-name",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

@@ -1,0 +1,40 @@
+{
+    "command_group": "az hpc-cache blob-storage-target",
+    "description": "Commands to create hpc cache blob storage target.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az hpc-cache blob-storage-target add",
+            "summary": "Create or update a blob Storage Target. This operation is allowed at any time, but if the Cache is down or unhealthy, the actual creation/modification of the Storage Target may be delayed until the Cache is healthy again.",
+            "syntax": "az hpc-cache blob-storage-target add --cache-name\n                                     --container-name\n                                     --name\n                                     --resource-group\n                                     --storage-account\n                                     --virtual-namespace-path",
+            "required_parameters": [
+                "--cache-name",
+                "--container-name",
+                "--name",
+                "--resource-group -g",
+                "--storage-account",
+                "--virtual-namespace-path -v"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az hpc-cache blob-storage-target add --resource-group \"scgroup\" --cache-name \"sc1\" --name \"st1\" --storage-account \"/subscriptions/{subscription_id}/resourceGroups/{resource_group}/providers/Microsoft.Storage/storageAccounts/{acount_name}\" --container-name \"cn\" --virtual-namespace-path \"/test\""
+            ]
+        },
+        {
+            "name": "az hpc-cache blob-storage-target update",
+            "summary": "Create or update a blob Storage Target. This operation is allowed at any time, but if the Cache is down or unhealthy, the actual creation/modification of the Storage Target may be delayed until the Cache is healthy again.",
+            "syntax": "az hpc-cache blob-storage-target update --cache-name\n                                        --name\n                                        --resource-group\n                                        [--container-name]\n                                        [--storage-account]\n                                        [--virtual-namespace-path]",
+            "required_parameters": [
+                "--cache-name",
+                "--name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--container-name",
+                "--storage-account",
+                "--virtual-namespace-path -v"
+            ],
+            "examples": []
+        }
+    ]
+}

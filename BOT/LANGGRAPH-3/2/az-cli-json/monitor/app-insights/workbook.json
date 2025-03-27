@@ -1,0 +1,112 @@
+{
+    "command_group": "az monitor app-insights workbook",
+    "description": "Manage app-insights workbook.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az monitor app-insights workbook create",
+            "summary": "Create a workbook.",
+            "syntax": "az monitor app-insights workbook create --name\n                                        --resource-group\n                                        [--category]\n                                        [--description]\n                                        [--display-name]\n                                        [--kind {shared}]\n                                        [--location]\n                                        [--mi-system-assigned {0, 1, f, false, n, no, t, true, y, yes}]\n                                        [--mi-user-assigned]\n                                        [--serialized-data]\n                                        [--source-id]\n                                        [--storage-uri]\n                                        [--tags]\n                                        [--version]",
+            "required_parameters": [
+                "--name --resource-name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--category",
+                "--description",
+                "--display-name",
+                "--kind",
+                "--location -l",
+                "--mi-system-assigned",
+                "--mi-user-assigned",
+                "--serialized-data",
+                "--source-id",
+                "--storage-uri",
+                "--tags",
+                "--version"
+            ],
+            "examples": [
+                "az monitor app-insights workbook create -n 00000000-0000-0000-0000-000000000000 -g rg --serialized-data mydata --kind shared --category workbook  --display-name workbookname"
+            ]
+        },
+        {
+            "name": "az monitor app-insights workbook delete",
+            "summary": "Delete a workbook.",
+            "syntax": "az monitor app-insights workbook delete [--ids]\n                                        [--name]\n                                        [--resource-group]\n                                        [--subscription]\n                                        [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --resource-name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az monitor app-insights workbook delete -n 00000000-0000-0000-0000-000000000000 -g wktest"
+            ]
+        },
+        {
+            "name": "az monitor app-insights workbook list",
+            "summary": "List all workbooks defined within a specified resource group and category.",
+            "syntax": "az monitor app-insights workbook list --category {TSG, performance, retention, workbook}\n                                      [--can-fetch-content {0, 1, f, false, n, no, t, true, y, yes}]\n                                      [--max-items]\n                                      [--next-token]\n                                      [--resource-group]\n                                      [--source-id]\n                                      [--tags]",
+            "required_parameters": [
+                "--category"
+            ],
+            "optional_parameters": [
+                "--can-fetch-content",
+                "--max-items",
+                "--next-token",
+                "--resource-group -g",
+                "--source-id",
+                "--tags"
+            ],
+            "examples": [
+                "az monitor app-insights workbook list -g rg --category workbook"
+            ]
+        },
+        {
+            "name": "az monitor app-insights workbook show",
+            "summary": "Show a single workbook by its resource name.",
+            "syntax": "az monitor app-insights workbook show [--can-fetch-content {0, 1, f, false, n, no, t, true, y, yes}]\n                                      [--ids]\n                                      [--name]\n                                      [--resource-group]\n                                      [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--can-fetch-content",
+                "--ids",
+                "--name --resource-name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az monitor app-insights workbook show -n 00000000-0000-0000-0000-000000000000 -g wktest"
+            ]
+        },
+        {
+            "name": "az monitor app-insights workbook update",
+            "summary": "Update a workbook.",
+            "syntax": "az monitor app-insights workbook update [--add]\n                                        [--category]\n                                        [--description]\n                                        [--display-name]\n                                        [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                        [--ids]\n                                        [--kind {shared}]\n                                        [--name]\n                                        [--remove]\n                                        [--resource-group]\n                                        [--serialized-data]\n                                        [--set]\n                                        [--source-id]\n                                        [--storage-uri]\n                                        [--subscription]\n                                        [--tags]\n                                        [--version]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--category",
+                "--description",
+                "--display-name",
+                "--force-string",
+                "--ids",
+                "--kind",
+                "--name --resource-name -n",
+                "--remove",
+                "--resource-group -g",
+                "--serialized-data",
+                "--set",
+                "--source-id",
+                "--storage-uri",
+                "--subscription",
+                "--tags",
+                "--version"
+            ],
+            "examples": [
+                "az monitor app-insights workbook update -n 00000000-0000-0000-0000-000000000000 -g rg --tags tag=test"
+            ]
+        }
+    ]
+}

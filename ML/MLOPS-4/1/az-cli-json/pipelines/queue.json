@@ -1,0 +1,36 @@
+{
+    "command_group": "az pipelines queue",
+    "description": "Manage agent queues.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az pipelines queue list",
+            "summary": "List agent queues.",
+            "syntax": "az pipelines queue list [--action {manage, none, use}]\n                        [--detect {false, true}]\n                        [--org]\n                        [--project]\n                        [--queue-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--action",
+                "--detect",
+                "--org --organization",
+                "--project -p",
+                "--queue-name"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az pipelines queue show",
+            "summary": "Show details of agent queue.",
+            "syntax": "az pipelines queue show --id\n                        [--action {manage, none, use}]\n                        [--detect {false, true}]\n                        [--org]\n                        [--project]",
+            "required_parameters": [
+                "--id --queue-id"
+            ],
+            "optional_parameters": [
+                "--action",
+                "--detect",
+                "--org --organization",
+                "--project -p"
+            ],
+            "examples": []
+        }
+    ]
+}

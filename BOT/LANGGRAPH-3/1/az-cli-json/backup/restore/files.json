@@ -1,0 +1,43 @@
+{
+    "command_group": "az backup restore files",
+    "description": "Gives access to all files of a recovery point.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az backup restore files mount-rp",
+            "summary": "Download a script which mounts files of a recovery point.",
+            "syntax": "az backup restore files mount-rp [--container-name]\n                                 [--ids]\n                                 [--item-name]\n                                 [--resource-group]\n                                 [--rp-name]\n                                 [--subscription]\n                                 [--vault-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--container-name -c",
+                "--ids",
+                "--item-name -i",
+                "--resource-group -g",
+                "--rp-name -r",
+                "--subscription",
+                "--vault-name -v"
+            ],
+            "examples": [
+                "az backup restore files mount-rp --container-name MyContainer --item-name MyItem --resource-group MyResourceGroup --rp-name MyRp --vault-name MyVault"
+            ]
+        },
+        {
+            "name": "az backup restore files unmount-rp",
+            "summary": "Close access to the recovery point.",
+            "syntax": "az backup restore files unmount-rp [--container-name]\n                                   [--ids]\n                                   [--item-name]\n                                   [--resource-group]\n                                   [--rp-name]\n                                   [--subscription]\n                                   [--vault-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--container-name -c",
+                "--ids",
+                "--item-name -i",
+                "--resource-group -g",
+                "--rp-name -r",
+                "--subscription",
+                "--vault-name -v"
+            ],
+            "examples": [
+                "az backup restore files unmount-rp --container-name MyContainer --item-name MyItem --resource-group MyResourceGroup --rp-name MyRp --vault-name MyVault"
+            ]
+        }
+    ]
+}

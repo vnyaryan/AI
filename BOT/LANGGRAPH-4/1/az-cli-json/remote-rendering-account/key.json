@@ -1,0 +1,38 @@
+{
+    "command_group": "az remote-rendering-account key",
+    "description": "Manage developer keys of a remote rendering account.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az remote-rendering-account key renew",
+            "summary": "Regenerate specified Key of a Remote Rendering Account.",
+            "syntax": "az remote-rendering-account key renew [--ids]\n                                      [--key {primary, secondary}]\n                                      [--name]\n                                      [--resource-group]\n                                      [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--key -k",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az remote-rendering-account key renew -n \"MyAccount\" -k primary --resource-group \"MyResourceGroup\""
+            ]
+        },
+        {
+            "name": "az remote-rendering-account key show",
+            "summary": "List Both of the 2 Keys of a Remote Rendering Account.",
+            "syntax": "az remote-rendering-account key show [--ids]\n                                     [--name]\n                                     [--resource-group]\n                                     [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az remote-rendering-account key show -n \"MyAccount\" --resource-group \"MyResourceGroup\""
+            ]
+        }
+    ]
+}

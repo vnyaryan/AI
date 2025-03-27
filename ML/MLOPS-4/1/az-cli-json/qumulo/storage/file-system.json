@@ -1,0 +1,94 @@
+{
+    "command_group": "az qumulo storage file-system",
+    "description": "Manage qumulo storage file system.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az qumulo storage file-system create",
+            "summary": "Create a FileSystemResource.",
+            "syntax": "az qumulo storage file-system create --file-system-name\n                                     --resource-group\n                                     [--admin-password]\n                                     [--availability-zone]\n                                     [--cluster-login-url]\n                                     [--delegated-subnet-id]\n                                     [--location]\n                                     [--marketplace-details]\n                                     [--mi-system-assigned]\n                                     [--mi-user-assigned]\n                                     [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                     [--private-ips]\n                                     [--storage-sku]\n                                     [--tags]\n                                     [--user-details]",
+            "required_parameters": [
+                "--file-system-name --name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--admin-password",
+                "--availability-zone",
+                "--cluster-login-url",
+                "--delegated-subnet-id",
+                "--location -l",
+                "--marketplace-details",
+                "--mi-system-assigned --system-assigned",
+                "--mi-user-assigned --user-assigned",
+                "--no-wait",
+                "--private-ips",
+                "--storage-sku",
+                "--tags",
+                "--user-details"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az qumulo storage file-system delete",
+            "summary": "Delete a FileSystemResource.",
+            "syntax": "az qumulo storage file-system delete [--file-system-name]\n                                     [--ids]\n                                     [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                     [--resource-group]\n                                     [--subscription]\n                                     [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--file-system-name --name -n",
+                "--ids",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az qumulo storage file-system list",
+            "summary": "List file system resources.",
+            "syntax": "az qumulo storage file-system list [--max-items]\n                                   [--next-token]\n                                   [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az qumulo storage file-system list -g rg"
+            ]
+        },
+        {
+            "name": "az qumulo storage file-system show",
+            "summary": "Get a FileSystemResource.",
+            "syntax": "az qumulo storage file-system show [--file-system-name]\n                                   [--ids]\n                                   [--resource-group]\n                                   [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--file-system-name --name -n",
+                "--ids",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az qumulo storage file-system wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az qumulo storage file-system wait [--created]\n                                   [--custom]\n                                   [--deleted]\n                                   [--exists]\n                                   [--file-system-name]\n                                   [--ids]\n                                   [--interval]\n                                   [--resource-group]\n                                   [--subscription]\n                                   [--timeout]\n                                   [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--file-system-name --name -n",
+                "--ids",
+                "--interval",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

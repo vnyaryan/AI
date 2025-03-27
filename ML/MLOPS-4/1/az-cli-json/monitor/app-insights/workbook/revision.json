@@ -1,0 +1,39 @@
+{
+    "command_group": "az monitor app-insights workbook revision",
+    "description": "Manage workbook revision.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az monitor app-insights workbook revision list",
+            "summary": "List the revisions for the workbook.",
+            "syntax": "az monitor app-insights workbook revision list --resource-group\n                                               --resource-name\n                                               [--max-items]\n                                               [--next-token]",
+            "required_parameters": [
+                "--resource-group -g",
+                "--resource-name"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az monitor app-insights workbook revision list -g rg --resource-name name"
+            ]
+        },
+        {
+            "name": "az monitor app-insights workbook revision show",
+            "summary": "Show workbook revision.",
+            "syntax": "az monitor app-insights workbook revision show [--ids]\n                                               [--name]\n                                               [--resource-group]\n                                               [--resource-name]\n                                               [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --revision-id -n",
+                "--resource-group -g",
+                "--resource-name",
+                "--subscription"
+            ],
+            "examples": [
+                "az monitor app-insights workbook revision list -g rg --resource-name name --revision-id id"
+            ]
+        }
+    ]
+}

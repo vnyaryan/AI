@@ -1,0 +1,107 @@
+{
+    "command_group": "az extension",
+    "description": "Manage and update CLI extensions.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az extension add",
+            "summary": "Add an extension.",
+            "syntax": "az extension add [--allow-preview {false, true}]\n                 [--name]\n                 [--pip-extra-index-urls]\n                 [--pip-proxy]\n                 [--source]\n                 [--system]\n                 [--upgrade]\n                 [--version]\n                 [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--allow-preview",
+                "--name -n",
+                "--pip-extra-index-urls",
+                "--pip-proxy",
+                "--source -s",
+                "--system",
+                "--upgrade",
+                "--version",
+                "--yes -y"
+            ],
+            "examples": [
+                "az extension add --name anextension",
+                "az extension add --source https://contoso.com/anextension-0.0.1-py2.py3-none-any.whl",
+                "az extension add --source ~/anextension-0.0.1-py2.py3-none-any.whl",
+                "az extension add --source ~/anextension-0.0.1-py2.py3-none-any.whl --pip-proxy https://user:pass@proxy.server:8080",
+                "az extension add --name anextension --system",
+                "az extension add --name anextension --version 1.0.0",
+                "az extension add --upgrade --name anextension"
+            ]
+        },
+        {
+            "name": "az extension list",
+            "summary": "List the installed extensions.",
+            "syntax": "az extension list",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az extension list-available",
+            "summary": "List publicly available extensions.",
+            "syntax": "az extension list-available [--show-details]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--show-details -d"
+            ],
+            "examples": [
+                "az extension list-available",
+                "az extension list-available --show-details --query anextension"
+            ]
+        },
+        {
+            "name": "az extension list-versions",
+            "summary": "List available versions for an extension.",
+            "syntax": "az extension list-versions --name",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az extension list-versions --name anextension"
+            ]
+        },
+        {
+            "name": "az extension remove",
+            "summary": "Remove an extension.",
+            "syntax": "az extension remove --name",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az extension remove --name MyExtension"
+            ]
+        },
+        {
+            "name": "az extension show",
+            "summary": "Show an extension.",
+            "syntax": "az extension show --name",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az extension show --name MyExtension"
+            ]
+        },
+        {
+            "name": "az extension update",
+            "summary": "Update an extension.",
+            "syntax": "az extension update --name\n                    [--allow-preview {false, true}]\n                    [--pip-extra-index-urls]\n                    [--pip-proxy]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--allow-preview",
+                "--pip-extra-index-urls",
+                "--pip-proxy"
+            ],
+            "examples": [
+                "az extension update --name anextension",
+                "az extension update --name anextension --pip-proxy https://user:pass@proxy.server:8080"
+            ]
+        }
+    ]
+}

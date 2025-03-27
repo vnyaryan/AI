@@ -1,0 +1,80 @@
+{
+    "command_group": "az identity",
+    "description": "Managed Identities.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az identity create",
+            "summary": "Create Identities.",
+            "syntax": "az identity create --name\n                   --resource-group\n                   [--location]\n                   [--tags]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--location -l",
+                "--tags"
+            ],
+            "examples": [
+                "az identity create --name MyIdentity --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az identity delete",
+            "summary": "Deletes the identity.",
+            "syntax": "az identity delete [--ids]\n                   [--name]\n                   [--resource-group]\n                   [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az identity list",
+            "summary": "List Managed Identities.",
+            "syntax": "az identity list [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az identity list-operations",
+            "summary": "List available operations for the Managed Identity provider.",
+            "syntax": "az identity list-operations",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az identity list-resources",
+            "summary": "List the associated resources for the identity.",
+            "syntax": "az identity list-resources [--ids]\n                           [--name]\n                           [--resource-group]\n                           [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az identity show",
+            "summary": "Gets the identity.",
+            "syntax": "az identity show [--ids]\n                 [--name]\n                 [--resource-group]\n                 [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        }
+    ]
+}

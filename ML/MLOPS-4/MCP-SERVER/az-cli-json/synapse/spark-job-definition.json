@@ -1,0 +1,100 @@
+{
+    "command_group": "az synapse spark-job-definition",
+    "description": "Manage spark job definitions in a synapse workspace.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az synapse spark-job-definition create",
+            "summary": "Create a spark job definition.",
+            "syntax": "az synapse spark-job-definition create --file\n                                       --name\n                                       --workspace-name\n                                       [--folder-path]\n                                       [--no-wait]",
+            "required_parameters": [
+                "--file",
+                "--name -n",
+                "--workspace-name"
+            ],
+            "optional_parameters": [
+                "--folder-path",
+                "--no-wait"
+            ],
+            "examples": [
+                "az synapse spark-job-definition create --workspace-name testsynapseworkspace \\\n  --name testsjdname --file @\"path/test.json\" --folder-path 'folder/subfolder'"
+            ]
+        },
+        {
+            "name": "az synapse spark-job-definition delete",
+            "summary": "Delete a spark job definition.",
+            "syntax": "az synapse spark-job-definition delete --name\n                                       --workspace-name\n                                       [--no-wait]",
+            "required_parameters": [
+                "--name -n",
+                "--workspace-name"
+            ],
+            "optional_parameters": [
+                "--no-wait"
+            ],
+            "examples": [
+                "az synapse spark-job-definition delete --workspace-name testsynapseworkspace \\\n  --name testsjdname"
+            ]
+        },
+        {
+            "name": "az synapse spark-job-definition list",
+            "summary": "List spark job definitions.",
+            "syntax": "az synapse spark-job-definition list --workspace-name",
+            "required_parameters": [
+                "--workspace-name"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az synapse spark-job-definition list --workspace-name testsynapseworkspace"
+            ]
+        },
+        {
+            "name": "az synapse spark-job-definition show",
+            "summary": "Get a spark job definition.",
+            "syntax": "az synapse spark-job-definition show --name\n                                     --workspace-name",
+            "required_parameters": [
+                "--name -n",
+                "--workspace-name"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az synapse spark-job-definition show --workspace-name testsynapseworkspace \\\n  --name testsjdname"
+            ]
+        },
+        {
+            "name": "az synapse spark-job-definition update",
+            "summary": "Update a spark job definition.",
+            "syntax": "az synapse spark-job-definition update --file\n                                       --name\n                                       --workspace-name\n                                       [--folder-path]\n                                       [--no-wait]",
+            "required_parameters": [
+                "--file",
+                "--name -n",
+                "--workspace-name"
+            ],
+            "optional_parameters": [
+                "--folder-path",
+                "--no-wait"
+            ],
+            "examples": [
+                "az synapse spark-job-definition update --workspace-name testsynapseworkspace \\\n  --name testsjdname --file @\"path/test.json\" --folder-path 'folder/subfolder'"
+            ]
+        },
+        {
+            "name": "az synapse spark-job-definition wait",
+            "summary": "Place the CLI in a waiting state until a condition of a spark job definition is met.",
+            "syntax": "az synapse spark-job-definition wait --name\n                                     --workspace-name\n                                     [--created]\n                                     [--custom]\n                                     [--deleted]\n                                     [--exists]\n                                     [--interval]\n                                     [--timeout]\n                                     [--updated]",
+            "required_parameters": [
+                "--name -n",
+                "--workspace-name"
+            ],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--interval",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

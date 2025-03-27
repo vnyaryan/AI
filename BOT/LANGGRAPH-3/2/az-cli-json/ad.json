@@ -1,0 +1,6 @@
+{
+    "command_group": "az ad",
+    "description": "Manage Microsoft Entra ID (formerly known as Azure Active Directory, Azure AD, AAD) entities needed for Azure role-based access control (Azure RBAC) through Microsoft Graph API.",
+    "status": "GA",
+    "commands": []
+}

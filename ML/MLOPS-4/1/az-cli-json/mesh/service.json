@@ -1,0 +1,35 @@
+{
+    "command_group": "az mesh service",
+    "description": "Manage Service Fabric Mesh services.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az mesh service list",
+            "summary": "List all the service resources.",
+            "syntax": "az mesh service list --app-name\n                     --resource-group\n                     [--max-items]\n                     [--next-token]",
+            "required_parameters": [
+                "--app-name --application-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az mesh service show",
+            "summary": "Get the details of a service.",
+            "syntax": "az mesh service show [--app-name]\n                     [--ids]\n                     [--name]\n                     [--resource-group]\n                     [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--app-name --application-name",
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        }
+    ]
+}

@@ -1,0 +1,114 @@
+{
+    "command_group": "az devcenter admin plan",
+    "description": "Manage plans.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az devcenter admin plan create",
+            "summary": "Create a dev center plan resource.",
+            "syntax": "az devcenter admin plan create --name\n                               --resource-group\n                               [--location]\n                               [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                               [--sku]\n                               [--tags]",
+            "required_parameters": [
+                "--name --plan-name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--location -l",
+                "--no-wait",
+                "--sku",
+                "--tags"
+            ],
+            "examples": [
+                "az devcenter admin plan create --name \"ContosoPlan\" --location \"eastus\" --resource-group \"myResourceGroup\" --sku name=\"CCOG_Standard\"  --tags CostCode=\"12345\""
+            ]
+        },
+        {
+            "name": "az devcenter admin plan delete",
+            "summary": "Delete a dev center plan.",
+            "syntax": "az devcenter admin plan delete [--ids]\n                               [--name]\n                               [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                               [--resource-group]\n                               [--subscription]\n                               [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --plan-name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az devcenter admin plan delete--name \"ContosoPlan\" --resource-group \"myResourceGroup\""
+            ]
+        },
+        {
+            "name": "az devcenter admin plan list",
+            "summary": "List all dev center plans.",
+            "syntax": "az devcenter admin plan list [--max-items]\n                             [--next-token]\n                             [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az devcenter admin plan list --resource-group \"myResourceGroup\"",
+                "az devcenter admin plan list"
+            ]
+        },
+        {
+            "name": "az devcenter admin plan show",
+            "summary": "Get a dev center plan.",
+            "syntax": "az devcenter admin plan show [--ids]\n                             [--name]\n                             [--resource-group]\n                             [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --plan-name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az devcenter admin plan show --name \"ContosoPlan\" --resource-group \"myResourceGroup\""
+            ]
+        },
+        {
+            "name": "az devcenter admin plan update",
+            "summary": "Update a dev center plan resource.",
+            "syntax": "az devcenter admin plan update [--add]\n                               [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                               [--ids]\n                               [--name]\n                               [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                               [--remove]\n                               [--resource-group]\n                               [--set]\n                               [--sku]\n                               [--subscription]\n                               [--tags]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--force-string",
+                "--ids",
+                "--name --plan-name -n",
+                "--no-wait",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--sku",
+                "--subscription",
+                "--tags"
+            ],
+            "examples": [
+                "az devcenter admin plan update --name \"ContosoPlan\" --resource-group \"myResourceGroup\" --sku name=\"CCOG_Standard\"  --tags CostCode=\"12345\""
+            ]
+        },
+        {
+            "name": "az devcenter admin plan wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az devcenter admin plan wait [--created]\n                             [--custom]\n                             [--deleted]\n                             [--exists]\n                             [--ids]\n                             [--interval]\n                             [--name]\n                             [--resource-group]\n                             [--subscription]\n                             [--timeout]\n                             [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--name --plan-name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

@@ -1,0 +1,70 @@
+{
+    "command_group": "az image builder customizer",
+    "description": "Manage image builder template customizers.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az image builder customizer add",
+            "summary": "Add an image builder customizer to an image builder template.",
+            "syntax": "az image builder customizer add --customizer-name\n                                --type {file, powershell, shell, windows-restart, windows-update}\n                                [--defer]\n                                [--dest-path]\n                                [--exit-codes]\n                                [--file-source]\n                                [--filters]\n                                [--ids]\n                                [--inline-script]\n                                [--name]\n                                [--resource-group]\n                                [--restart-check-command]\n                                [--restart-command]\n                                [--restart-timeout]\n                                [--script-url]\n                                [--search-criteria]\n                                [--subscription]\n                                [--update-limit]",
+            "required_parameters": [
+                "--customizer-name",
+                "--type -t"
+            ],
+            "optional_parameters": [
+                "--defer",
+                "--dest-path",
+                "--exit-codes -e",
+                "--file-source",
+                "--filters",
+                "--ids",
+                "--inline-script",
+                "--name -n",
+                "--resource-group -g",
+                "--restart-check-command",
+                "--restart-command",
+                "--restart-timeout",
+                "--script-url",
+                "--search-criteria",
+                "--subscription",
+                "--update-limit"
+            ],
+            "examples": [
+                "az image builder customizer add -n myTemplate -g myGroup \\\n    --inline-script \"sudo mkdir /buildArtifacts\" \\\n                    \"sudo cp /tmp/index.html /buildArtifacts/index.html\" \\\n    --customizer-name shellScriptInline --type shell --defer",
+                "az image builder customizer add -n myTemplate -g myGroup \\\n    --customizer-name myFile --type file \\\n    --file-source \"https://my-remote-file.html\" --dest-path \"/tmp/index.html\" --defer",
+                "az image builder customizer add -n myTemplate -g myGroup \\\n--customizer-name shellScriptUrl \\\n--restart-check-command \"echo Azure-Image-Builder-Restarted-the-VM  > \\\n                        c:\\buildArtifacts\\restart.txt\" \\\n    --type windows-restart --restart-timeout 10m --defer",
+                "az image builder customizer add -n myTemplate -g myGroup --customizer-name winUpdate --type windows-update --search-criteria IsInstalled=0 --filters \"exclude:\\$_.Title -like \\'*Preview*\\'\" \"include:\\$true\" --update-limit 20 --defer"
+            ]
+        },
+        {
+            "name": "az image builder customizer clear",
+            "summary": "Remove all image builder customizers from an image builder template.",
+            "syntax": "az image builder customizer clear [--defer]\n                                  [--ids]\n                                  [--name]\n                                  [--resource-group]\n                                  [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--defer",
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az image builder customizer remove",
+            "summary": "Remove an image builder customizer from an image builder template.",
+            "syntax": "az image builder customizer remove --customizer-name\n                                   [--defer]\n                                   [--ids]\n                                   [--name]\n                                   [--resource-group]\n                                   [--subscription]",
+            "required_parameters": [
+                "--customizer-name"
+            ],
+            "optional_parameters": [
+                "--defer",
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        }
+    ]
+}

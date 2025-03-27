@@ -1,0 +1,42 @@
+{
+    "command_group": "az keyvault certificate contact",
+    "description": "Manage contacts for certificate management.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az keyvault certificate contact add",
+            "summary": "Add a contact to the specified vault to receive notifications of certificate operations.",
+            "syntax": "az keyvault certificate contact add --email\n                                    --vault-name\n                                    [--name]\n                                    [--phone]",
+            "required_parameters": [
+                "--email",
+                "--vault-name"
+            ],
+            "optional_parameters": [
+                "--name",
+                "--phone"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az keyvault certificate contact delete",
+            "summary": "Remove a certificate contact from the specified vault.",
+            "syntax": "az keyvault certificate contact delete --email\n                                       --vault-name",
+            "required_parameters": [
+                "--email",
+                "--vault-name"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az keyvault certificate contact list",
+            "summary": "Lists the certificate contacts for a specified key vault.",
+            "syntax": "az keyvault certificate contact list --vault-name",
+            "required_parameters": [
+                "--vault-name"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        }
+    ]
+}

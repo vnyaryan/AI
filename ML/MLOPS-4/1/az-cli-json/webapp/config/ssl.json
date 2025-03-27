@@ -1,0 +1,174 @@
+{
+    "command_group": "az webapp config ssl",
+    "description": "Configure SSL certificates for web apps.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az webapp config ssl bind",
+            "summary": "Bind an SSL certificate to a web app.",
+            "syntax": "az webapp config ssl bind --certificate-thumbprint\n                          --ssl-type {IP, SNI}\n                          [--hostname]\n                          [--ids]\n                          [--name]\n                          [--resource-group]\n                          [--slot]\n                          [--subscription]",
+            "required_parameters": [
+                "--certificate-thumbprint",
+                "--ssl-type"
+            ],
+            "optional_parameters": [
+                "--hostname",
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--slot -s",
+                "--subscription"
+            ],
+            "examples": [
+                "az webapp config ssl bind --certificate-thumbprint {certificate-thumbprint} --name MyWebapp --resource-group MyResourceGroup --ssl-type SNI"
+            ]
+        },
+        {
+            "name": "az webapp config ssl bind",
+            "summary": "Bind an SSL certificate to a web app.",
+            "syntax": "az webapp config ssl bind --certificate-thumbprint\n                          --ssl-type {IP, SNI}\n                          [--ids]\n                          [--name]\n                          [--resource-group]\n                          [--slot]\n                          [--subscription]",
+            "required_parameters": [
+                "--certificate-thumbprint",
+                "--ssl-type"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--slot -s",
+                "--subscription"
+            ],
+            "examples": [
+                "az webapp config ssl bind --certificate-thumbprint {certificate-thumbprint} --name MyWebapp --resource-group MyResourceGroup --ssl-type SNI"
+            ]
+        },
+        {
+            "name": "az webapp config ssl create",
+            "summary": "Create a Managed Certificate for a hostname in a webapp app.",
+            "syntax": "az webapp config ssl create --hostname\n                            --name\n                            --resource-group\n                            [--certificate-name]\n                            [--slot]",
+            "required_parameters": [
+                "--hostname",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--certificate-name",
+                "--slot -s"
+            ],
+            "examples": [
+                "az webapp config ssl create --resource-group MyResourceGroup --name MyWebapp --hostname cname.mycustomdomain.com"
+            ]
+        },
+        {
+            "name": "az webapp config ssl delete",
+            "summary": "Delete an SSL certificate from a web app.",
+            "syntax": "az webapp config ssl delete --certificate-thumbprint\n                            --resource-group",
+            "required_parameters": [
+                "--certificate-thumbprint",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az webapp config ssl delete --certificate-thumbprint {certificate-thumbprint} --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az webapp config ssl import",
+            "summary": "Import an SSL or App Service Certificate to a web app from Key Vault.",
+            "syntax": "az webapp config ssl import --key-vault\n                            --key-vault-certificate-name\n                            [--certificate-name]\n                            [--ids]\n                            [--name]\n                            [--resource-group]\n                            [--subscription]",
+            "required_parameters": [
+                "--key-vault",
+                "--key-vault-certificate-name"
+            ],
+            "optional_parameters": [
+                "--certificate-name",
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az webapp config ssl import --resource-group MyResourceGroup --name MyWebapp --key-vault MyKeyVault --key-vault-certificate-name MyCertificateName",
+                "az webapp config ssl import --resource-group MyResourceGroup --name MyWebapp --key-vault '/subscriptions/[sub id]/resourceGroups/[rg]/providers/Microsoft.KeyVault/vaults/[vault name]' --key-vault-certificate-name MyCertificateName"
+            ]
+        },
+        {
+            "name": "az webapp config ssl list",
+            "summary": "List SSL certificates for a web app.",
+            "syntax": "az webapp config ssl list --resource-group",
+            "required_parameters": [
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az webapp config ssl list --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az webapp config ssl show",
+            "summary": "Show the details of an SSL certificate for a web app.",
+            "syntax": "az webapp config ssl show --certificate-name\n                          --resource-group",
+            "required_parameters": [
+                "--certificate-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az webapp config ssl show --resource-group MyResourceGroup --certificate-name cname.mycustomdomain.com"
+            ]
+        },
+        {
+            "name": "az webapp config ssl unbind",
+            "summary": "Unbind an SSL certificate from a web app.",
+            "syntax": "az webapp config ssl unbind --certificate-thumbprint\n                            [--hostname]\n                            [--ids]\n                            [--name]\n                            [--resource-group]\n                            [--slot]\n                            [--subscription]",
+            "required_parameters": [
+                "--certificate-thumbprint"
+            ],
+            "optional_parameters": [
+                "--hostname",
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--slot -s",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az webapp config ssl unbind",
+            "summary": "Unbind an SSL certificate from a web app.",
+            "syntax": "az webapp config ssl unbind --certificate-thumbprint\n                            [--ids]\n                            [--name]\n                            [--resource-group]\n                            [--slot]\n                            [--subscription]",
+            "required_parameters": [
+                "--certificate-thumbprint"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--slot -s",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az webapp config ssl upload",
+            "summary": "Upload an SSL certificate to a web app.",
+            "syntax": "az webapp config ssl upload --certificate-file\n                            --certificate-password\n                            [--certificate-name]\n                            [--ids]\n                            [--name]\n                            [--resource-group]\n                            [--slot]\n                            [--subscription]",
+            "required_parameters": [
+                "--certificate-file",
+                "--certificate-password"
+            ],
+            "optional_parameters": [
+                "--certificate-name",
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--slot -s",
+                "--subscription"
+            ],
+            "examples": [
+                "az webapp config ssl upload --certificate-file {certificate-file} --certificate-password {certificate-password} --name MyWebapp     --resource-group MyResourceGroup"
+            ]
+        }
+    ]
+}

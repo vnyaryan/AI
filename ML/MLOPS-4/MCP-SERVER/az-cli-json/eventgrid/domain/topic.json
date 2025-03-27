@@ -1,0 +1,70 @@
+{
+    "command_group": "az eventgrid domain topic",
+    "description": "Manage event domain topics.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az eventgrid domain topic create",
+            "summary": "Create a domain topic under a domain.",
+            "syntax": "az eventgrid domain topic create --domain-name\n                                 --name\n                                 --resource-group",
+            "required_parameters": [
+                "--domain-name",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az eventgrid domain topic create -g rg1 --domain-name domain1 --name domaintopic1"
+            ]
+        },
+        {
+            "name": "az eventgrid domain topic delete",
+            "summary": "Delete a domain topic under a domain.",
+            "syntax": "az eventgrid domain topic delete [--domain-name]\n                                 [--ids]\n                                 [--name]\n                                 [--resource-group]\n                                 [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--domain-name",
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az eventgrid domain topic delete -g rg1 --domain-name domain1 --name domaintopic1"
+            ]
+        },
+        {
+            "name": "az eventgrid domain topic list",
+            "summary": "List available topics in a domain.",
+            "syntax": "az eventgrid domain topic list --domain-name\n                               --resource-group\n                               [--odata-query]",
+            "required_parameters": [
+                "--domain-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--odata-query"
+            ],
+            "examples": [
+                "az eventgrid domain topic list -g rg1 --domain-name domain1",
+                "az eventgrid domain topic list -g rg1 --domain-name domain1 --odata-query \"Contains(name, 'XYZ')\"",
+                "az eventgrid domain topic list -g rg1 --domain-name domain1 --odata-query \"NOT (name eq 'name1')\""
+            ]
+        },
+        {
+            "name": "az eventgrid domain topic show",
+            "summary": "Get the details of a domain topic.",
+            "syntax": "az eventgrid domain topic show [--domain-name]\n                               [--ids]\n                               [--name]\n                               [--resource-group]\n                               [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--domain-name",
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az eventgrid domain topic show -g rg1 --domain-name domain1 --name topic1"
+            ]
+        }
+    ]
+}

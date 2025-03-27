@@ -1,0 +1,140 @@
+{
+    "command_group": "az orbital spacecraft",
+    "description": "Satellites must be registered as a spacecraft with Azure Orbital to establish contacts with the satellite.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az orbital spacecraft create",
+            "summary": "Create a spacecraft resource.",
+            "syntax": "az orbital spacecraft create --name\n                             --resource-group\n                             [--links]\n                             [--location]\n                             [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                             [--norad-id]\n                             [--tags]\n                             [--title-line]\n                             [--tle-line1]\n                             [--tle-line2]",
+            "required_parameters": [
+                "--name --spacecraft-name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--links",
+                "--location -l",
+                "--no-wait",
+                "--norad-id",
+                "--tags",
+                "--title-line",
+                "--tle-line1",
+                "--tle-line2"
+            ],
+            "examples": [
+                "az orbital spacecraft create --name <spacecraft-name> --resource-group <resource-group> -l eastus --norad-id 27424 --title-line \"AQUA\" --tle-line1 \"1 27424U 02022A   22192.74014189  .00000435  00000+0  10624-3 0  9992\" --tle-line2 \"2 27424  98.2482 134.4016 0001650 100.5984  12.3416 14.57323336 73769\" --links \"[{name:downlink,bandwidth-m-hz:15,center-frequency-m-hz:8160,polarization:RHCP,direction:Downlink}]\""
+            ]
+        },
+        {
+            "name": "az orbital spacecraft delete",
+            "summary": "Delete a specified spacecraft resource.",
+            "syntax": "az orbital spacecraft delete [--ids]\n                             [--name]\n                             [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                             [--resource-group]\n                             [--subscription]\n                             [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --spacecraft-name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az orbital spacecraft delete --name <spacecraft-name> --resource-group <resource-group>"
+            ]
+        },
+        {
+            "name": "az orbital spacecraft list",
+            "summary": "List spacecrafts.",
+            "syntax": "az orbital spacecraft list [--resource-group]\n                           [--skiptoken]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--resource-group -g",
+                "--skiptoken"
+            ],
+            "examples": [
+                "az orbital spacecraft list",
+                "az orbital spacecraft list -g <resource-group>"
+            ]
+        },
+        {
+            "name": "az orbital spacecraft list-available-contact",
+            "summary": "List available contacts. A contact is available if the spacecraft is visible from the ground station for more than the minimum viable contact duration provided in the contact profile.",
+            "syntax": "az orbital spacecraft list-available-contact --contact-profile\n                                             --end-time\n                                             --ground-station-name\n                                             --resource-group\n                                             --spacecraft-name\n                                             --start-time\n                                             [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]",
+            "required_parameters": [
+                "--contact-profile",
+                "--end-time",
+                "--ground-station-name",
+                "--resource-group -g",
+                "--spacecraft-name",
+                "--start-time"
+            ],
+            "optional_parameters": [
+                "--no-wait"
+            ],
+            "examples": [
+                "az orbital spacecraft list-available-contact -g <resource-group> --spacecraft-name <spacecraft-name> --contact-profile \"{id:<contact-profile-id>}\" --ground-station-name <ground-station-name> --start-time \"2022-11-14T00:55:31.820Z\" --end-time \"2022-11-15T00:55:31.820Z\""
+            ]
+        },
+        {
+            "name": "az orbital spacecraft show",
+            "summary": "Get the specified spacecraft in a specified resource group.",
+            "syntax": "az orbital spacecraft show [--ids]\n                           [--name]\n                           [--resource-group]\n                           [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --spacecraft-name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az orbital spacecraft show --name <spacecraft-name> --resource-group <resource-group>"
+            ]
+        },
+        {
+            "name": "az orbital spacecraft update",
+            "summary": "Update spacecraft.",
+            "syntax": "az orbital spacecraft update [--add]\n                             [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                             [--ids]\n                             [--location]\n                             [--name]\n                             [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                             [--norad-id]\n                             [--remove]\n                             [--resource-group]\n                             [--set]\n                             [--subscription]\n                             [--tags]\n                             [--title-line]\n                             [--tle-line1]\n                             [--tle-line2]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--force-string",
+                "--ids",
+                "--location -l",
+                "--name --spacecraft-name -n",
+                "--no-wait",
+                "--norad-id",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--subscription",
+                "--tags",
+                "--title-line",
+                "--tle-line1",
+                "--tle-line2"
+            ],
+            "examples": [
+                "az orbital spacecraft update --name <spacecraft-name> --resource-group <resource-group> --tags \"{tag1:value1,tag2:value2}\""
+            ]
+        },
+        {
+            "name": "az orbital spacecraft wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az orbital spacecraft wait [--created]\n                           [--custom]\n                           [--deleted]\n                           [--exists]\n                           [--ids]\n                           [--interval]\n                           [--name]\n                           [--resource-group]\n                           [--subscription]\n                           [--timeout]\n                           [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--name --spacecraft-name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

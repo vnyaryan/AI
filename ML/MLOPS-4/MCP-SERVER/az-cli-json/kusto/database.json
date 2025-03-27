@@ -1,0 +1,164 @@
+{
+    "command_group": "az kusto database",
+    "description": "Manage database with kusto.",
+    "status": "Experimental",
+    "commands": [
+        {
+            "name": "az kusto database add-principal",
+            "summary": "Add Database principals permissions.",
+            "syntax": "az kusto database add-principal [--cluster-name]\n                                [--database-name]\n                                [--ids]\n                                [--resource-group]\n                                [--subscription]\n                                [--value]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--cluster-name",
+                "--database-name",
+                "--ids",
+                "--resource-group -g",
+                "--subscription",
+                "--value"
+            ],
+            "examples": [
+                "az kusto database add-principal --cluster-name \"kustoclusterrptest4\" --database-name \"KustoDatabase8\" --value name=\"Some User\" type=\"User\" app-id=\"\" email=\"user@microsoft.com\" fqn=\"aaduser=some_guid\" role=\"Admin\" --value name=\"Kusto\" type=\"Group\" app-id=\"\" email=\"kusto@microsoft.com\" fqn=\"aadgroup=some_guid\" role=\"Viewer\" --value name=\"SomeApp\" type=\"App\" app-id=\"some_guid_app_id\" email=\"\" fqn=\"aadapp=some_guid_app_id\" role=\"Admin\" --resource-group \"kustorptest\""
+            ]
+        },
+        {
+            "name": "az kusto database create",
+            "summary": "Create a database.",
+            "syntax": "az kusto database create --cluster-name\n                         --database-name\n                         --resource-group\n                         [--no-wait]\n                         [--read-only-following-database]\n                         [--read-write-database]",
+            "required_parameters": [
+                "--cluster-name",
+                "--database-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--no-wait",
+                "--read-only-following-database",
+                "--read-write-database"
+            ],
+            "examples": [
+                "az kusto database create --cluster-name \"kustoclusterrptest4\" --database-name \"KustoDatabase8\" --read-write-database location=\"westus\" soft-delete-period=\"P1D\" --resource-group \"kustorptest\""
+            ]
+        },
+        {
+            "name": "az kusto database delete",
+            "summary": "Deletes the database with the given name.",
+            "syntax": "az kusto database delete [--cluster-name]\n                         [--database-name]\n                         [--ids]\n                         [--no-wait]\n                         [--resource-group]\n                         [--subscription]\n                         [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--cluster-name",
+                "--database-name",
+                "--ids",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az kusto database delete --cluster-name \"kustoclusterrptest4\" --database-name \"KustoDatabase8\" --resource-group \"kustorptest\""
+            ]
+        },
+        {
+            "name": "az kusto database list",
+            "summary": "Returns the list of databases of the given Kusto cluster.",
+            "syntax": "az kusto database list --cluster-name\n                       --resource-group",
+            "required_parameters": [
+                "--cluster-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az kusto database list --cluster-name \"kustoclusterrptest4\" --resource-group \"kustorptest\""
+            ]
+        },
+        {
+            "name": "az kusto database list-principal",
+            "summary": "Returns a list of database principals of the given Kusto cluster and database.",
+            "syntax": "az kusto database list-principal --cluster-name\n                                 --database-name\n                                 --resource-group",
+            "required_parameters": [
+                "--cluster-name",
+                "--database-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az kusto database list-principal --cluster-name \"kustoclusterrptest4\" --database-name \"KustoDatabase8\" --resource-group \"kustorptest\""
+            ]
+        },
+        {
+            "name": "az kusto database remove-principal",
+            "summary": "Remove Database principals permissions.",
+            "syntax": "az kusto database remove-principal [--cluster-name]\n                                   [--database-name]\n                                   [--ids]\n                                   [--resource-group]\n                                   [--subscription]\n                                   [--value]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--cluster-name",
+                "--database-name",
+                "--ids",
+                "--resource-group -g",
+                "--subscription",
+                "--value"
+            ],
+            "examples": [
+                "az kusto database remove-principal --cluster-name \"kustoclusterrptest4\" --database-name \"KustoDatabase8\" --value name=\"Some User\" type=\"User\" app-id=\"\" email=\"user@microsoft.com\" fqn=\"aaduser=some_guid\" role=\"Admin\" --value name=\"Kusto\" type=\"Group\" app-id=\"\" email=\"kusto@microsoft.com\" fqn=\"aadgroup=some_guid\" role=\"Viewer\" --value name=\"SomeApp\" type=\"App\" app-id=\"some_guid_app_id\" email=\"\" fqn=\"aadapp=some_guid_app_id\" role=\"Admin\" --resource-group \"kustorptest\""
+            ]
+        },
+        {
+            "name": "az kusto database show",
+            "summary": "Returns a database.",
+            "syntax": "az kusto database show [--cluster-name]\n                       [--database-name]\n                       [--ids]\n                       [--resource-group]\n                       [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--cluster-name",
+                "--database-name",
+                "--ids",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az kusto database show --cluster-name \"kustoclusterrptest4\" --database-name \"KustoDatabase8\" --resource-group \"kustorptest\""
+            ]
+        },
+        {
+            "name": "az kusto database update",
+            "summary": "Updates a database.",
+            "syntax": "az kusto database update [--cluster-name]\n                         [--database-name]\n                         [--ids]\n                         [--no-wait]\n                         [--read-only-following-database]\n                         [--read-write-database]\n                         [--resource-group]\n                         [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--cluster-name",
+                "--database-name",
+                "--ids",
+                "--no-wait",
+                "--read-only-following-database",
+                "--read-write-database",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az kusto database update --cluster-name \"kustoclusterrptest4\" --database-name \"KustoDatabase8\" --read-write-database location=\"westus\" soft-delete-period=\"P1D\" --resource-group \"kustorptest\""
+            ]
+        },
+        {
+            "name": "az kusto database wait",
+            "summary": "Place the CLI in a waiting state until a condition of the kusto database is met.",
+            "syntax": "az kusto database wait [--cluster-name]\n                       [--created]\n                       [--custom]\n                       [--database-name]\n                       [--deleted]\n                       [--exists]\n                       [--ids]\n                       [--interval]\n                       [--resource-group]\n                       [--subscription]\n                       [--timeout]\n                       [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--cluster-name",
+                "--created",
+                "--custom",
+                "--database-name",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": [
+                "az kusto database wait --cluster-name \"kustoclusterrptest4\" --database-name \"KustoDatabase8\" --resource-group \"kustorptest\" --created",
+                "az kusto database wait --cluster-name \"kustoclusterrptest4\" --database-name \"KustoDatabase8\" --resource-group \"kustorptest\" --updated",
+                "az kusto database wait --cluster-name \"kustoclusterrptest4\" --database-name \"KustoDatabase8\" --resource-group \"kustorptest\" --deleted"
+            ]
+        }
+    ]
+}

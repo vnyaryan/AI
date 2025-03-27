@@ -1,0 +1,147 @@
+{
+    "command_group": "az netappfiles volume export-policy",
+    "description": "Manage Azure NetApp Files (ANF) Volume export policies.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az netappfiles volume export-policy add",
+            "summary": "Add a new rule to the export policy for a volume.",
+            "syntax": "az netappfiles volume export-policy add --account-name\n                                        --name\n                                        --pool-name\n                                        --resource-group\n                                        [--allowed-clients]\n                                        [--chown-mode {Restricted, Unrestricted}]\n                                        [--cifs {0, 1, f, false, n, no, t, true, y, yes}]\n                                        [--has-root-access {0, 1, f, false, n, no, t, true, y, yes}]\n                                        [--kerberos5-read-only {0, 1, f, false, n, no, t, true, y, yes}]\n                                        [--kerberos5-read-write {0, 1, f, false, n, no, t, true, y, yes}]\n                                        [--kerberos5i-read-only {0, 1, f, false, n, no, t, true, y, yes}]\n                                        [--kerberos5i-read-write {0, 1, f, false, n, no, t, true, y, yes}]\n                                        [--kerberos5p-read-only {0, 1, f, false, n, no, t, true, y, yes}]\n                                        [--kerberos5p-read-write {0, 1, f, false, n, no, t, true, y, yes}]\n                                        [--nfsv3 {0, 1, f, false, n, no, t, true, y, yes}]\n                                        [--nfsv41 {0, 1, f, false, n, no, t, true, y, yes}]\n                                        [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                        [--rule-index]\n                                        [--unix-read-only {0, 1, f, false, n, no, t, true, y, yes}]\n                                        [--unix-read-write {0, 1, f, false, n, no, t, true, y, yes}]",
+            "required_parameters": [
+                "--account-name -a",
+                "--name --volume-name -n -v",
+                "--pool-name -p",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--allowed-clients",
+                "--chown-mode",
+                "--cifs",
+                "--has-root-access",
+                "--kerberos5-read-only",
+                "--kerberos5-read-write",
+                "--kerberos5i-read-only",
+                "--kerberos5i-read-write",
+                "--kerberos5p-read-only",
+                "--kerberos5p-read-write",
+                "--nfsv3",
+                "--nfsv41",
+                "--no-wait",
+                "--rule-index",
+                "--unix-read-only",
+                "--unix-read-write"
+            ],
+            "examples": [
+                "az netappfiles volume export-policy add -g mygroup --account-name myaccname --pool-name mypoolname --name myvolname --allowed-clients \"1.2.3.0/24\" --rule-index 2 --unix-read-only true --unix-read-write false --cifs false --nfsv3 true --nfsv41 false"
+            ]
+        },
+        {
+            "name": "az netappfiles volume export-policy list",
+            "summary": "List the export policy rules for a volume.",
+            "syntax": "az netappfiles volume export-policy list --account-name\n                                         --name\n                                         --pool-name\n                                         --resource-group",
+            "required_parameters": [
+                "--account-name -a",
+                "--name --volume-name -n -v",
+                "--pool-name -p",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az netappfiles volume export-policy list -g mygroup --account-name myaccname --pool-name mypoolname --name myvolname"
+            ]
+        },
+        {
+            "name": "az netappfiles volume export-policy remove",
+            "summary": "Remove a rule from the export policy for a volume by rule index. The current rules can be obtained by performing the subgroup list command.",
+            "syntax": "az netappfiles volume export-policy remove --account-name\n                                           --name\n                                           --pool-name\n                                           --resource-group\n                                           --rule-index\n                                           [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                           [--yes]",
+            "required_parameters": [
+                "--account-name -a",
+                "--name --volume-name -n -v",
+                "--pool-name -p",
+                "--resource-group -g",
+                "--rule-index"
+            ],
+            "optional_parameters": [
+                "--no-wait",
+                "--yes -y"
+            ],
+            "examples": [
+                "az netappfiles volume export-policy remove -g mygroup --account-name myaccname --pool-name mypoolname --name myvolname --rule-index 4"
+            ]
+        },
+        {
+            "name": "az netappfiles volume export-policy show",
+            "summary": "Show the export policy rule for a volume.",
+            "syntax": "az netappfiles volume export-policy show --account-name\n                                         --name\n                                         --pool-name\n                                         --resource-group\n                                         --rule-index",
+            "required_parameters": [
+                "--account-name -a",
+                "--name --volume-name -n -v",
+                "--pool-name -p",
+                "--resource-group -g",
+                "--rule-index"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az netappfiles volume export-policy show -g mygroup --account-name myaccname --pool-name mypoolname --name myvolname --rule-index 4"
+            ]
+        },
+        {
+            "name": "az netappfiles volume export-policy update",
+            "summary": "Update the export policy rule for a volume.",
+            "syntax": "az netappfiles volume export-policy update --account-name\n                                           --name\n                                           --pool-name\n                                           --resource-group\n                                           --rule-index\n                                           [--add]\n                                           [--allowed-clients]\n                                           [--chown-mode {Restricted, Unrestricted}]\n                                           [--cifs {0, 1, f, false, n, no, t, true, y, yes}]\n                                           [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                           [--has-root-access {0, 1, f, false, n, no, t, true, y, yes}]\n                                           [--kerberos5-read-only {0, 1, f, false, n, no, t, true, y, yes}]\n                                           [--kerberos5-read-write {0, 1, f, false, n, no, t, true, y, yes}]\n                                           [--kerberos5i-read-only {0, 1, f, false, n, no, t, true, y, yes}]\n                                           [--kerberos5i-read-write {0, 1, f, false, n, no, t, true, y, yes}]\n                                           [--kerberos5p-read-only {0, 1, f, false, n, no, t, true, y, yes}]\n                                           [--kerberos5p-read-write {0, 1, f, false, n, no, t, true, y, yes}]\n                                           [--nfsv3 {0, 1, f, false, n, no, t, true, y, yes}]\n                                           [--nfsv41 {0, 1, f, false, n, no, t, true, y, yes}]\n                                           [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                           [--remove]\n                                           [--set]\n                                           [--unix-read-only {0, 1, f, false, n, no, t, true, y, yes}]\n                                           [--unix-read-write {0, 1, f, false, n, no, t, true, y, yes}]",
+            "required_parameters": [
+                "--account-name -a",
+                "--name --volume-name -n -v",
+                "--pool-name -p",
+                "--resource-group -g",
+                "--rule-index"
+            ],
+            "optional_parameters": [
+                "--add",
+                "--allowed-clients",
+                "--chown-mode",
+                "--cifs",
+                "--force-string",
+                "--has-root-access",
+                "--kerberos5-read-only",
+                "--kerberos5-read-write",
+                "--kerberos5i-read-only",
+                "--kerberos5i-read-write",
+                "--kerberos5p-read-only",
+                "--kerberos5p-read-write",
+                "--nfsv3",
+                "--nfsv41",
+                "--no-wait",
+                "--remove",
+                "--set",
+                "--unix-read-only",
+                "--unix-read-write"
+            ],
+            "examples": [
+                "az netappfiles volume export-policy update -g mygroup --account-name myaccname --pool-name mypoolname --name myvolname --rule-index 1 --allowed-clients '1.1.3.0/24'"
+            ]
+        },
+        {
+            "name": "az netappfiles volume export-policy wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az netappfiles volume export-policy wait [--account-name]\n                                         [--created]\n                                         [--custom]\n                                         [--deleted]\n                                         [--exists]\n                                         [--ids]\n                                         [--interval]\n                                         [--name]\n                                         [--pool-name]\n                                         [--resource-group]\n                                         [--subscription]\n                                         [--timeout]\n                                         [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account-name -a",
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--name --volume-name -n -v",
+                "--pool-name -p",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

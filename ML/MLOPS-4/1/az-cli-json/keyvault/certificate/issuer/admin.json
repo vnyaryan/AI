@@ -1,0 +1,46 @@
+{
+    "command_group": "az keyvault certificate issuer admin",
+    "description": "Manage admin information for certificate issuers.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az keyvault certificate issuer admin add",
+            "summary": "Add admin details for a specified certificate issuer.",
+            "syntax": "az keyvault certificate issuer admin add --email\n                                         --issuer-name\n                                         --vault-name\n                                         [--first-name]\n                                         [--last-name]\n                                         [--phone]",
+            "required_parameters": [
+                "--email",
+                "--issuer-name",
+                "--vault-name"
+            ],
+            "optional_parameters": [
+                "--first-name",
+                "--last-name",
+                "--phone"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az keyvault certificate issuer admin delete",
+            "summary": "Remove admin details for the specified certificate issuer.",
+            "syntax": "az keyvault certificate issuer admin delete --email\n                                            --issuer-name\n                                            --vault-name",
+            "required_parameters": [
+                "--email",
+                "--issuer-name",
+                "--vault-name"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az keyvault certificate issuer admin list",
+            "summary": "List admins for a specified certificate issuer.",
+            "syntax": "az keyvault certificate issuer admin list --issuer-name\n                                          --vault-name",
+            "required_parameters": [
+                "--issuer-name",
+                "--vault-name"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        }
+    ]
+}

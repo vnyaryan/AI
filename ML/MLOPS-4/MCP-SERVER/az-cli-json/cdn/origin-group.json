@@ -1,0 +1,141 @@
+{
+    "command_group": "az cdn origin-group",
+    "description": "Manage origin groups of an endpoint.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az cdn origin-group create",
+            "summary": "Create a new origin group within the specified endpoint.",
+            "syntax": "az cdn origin-group create --endpoint-name\n                           --name\n                           --profile-name\n                           --resource-group\n                           [--formatted-origins]\n                           [--health-probe-settings]\n                           [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                           [--origins]\n                           [--probe-interval]\n                           [--probe-method]\n                           [--probe-path]\n                           [--probe-protocol]\n                           [--response-based-origin-error-detection-settings]\n                           [--response-error-detection-error-types]\n                           [--response-error-detection-failover-threshold]\n                           [--response-error-detection-status-code-ranges]\n                           [--traffic-restoration-time-to-healed-or-new-endpoints-in-minutes]",
+            "required_parameters": [
+                "--endpoint-name",
+                "--name --origin-group-name -n",
+                "--profile-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--formatted-origins",
+                "--health-probe-settings",
+                "--no-wait",
+                "--origins",
+                "--probe-interval",
+                "--probe-method",
+                "--probe-path",
+                "--probe-protocol",
+                "--response-based-origin-error-detection-settings",
+                "--response-error-detection-error-types",
+                "--response-error-detection-failover-threshold",
+                "--response-error-detection-status-code-ranges",
+                "--traffic-restoration-time-to-healed-or-new-endpoints-in-minutes"
+            ],
+            "examples": [
+                "az cdn origin-group create -g group --profile-name profile --endpoint-name endpoint -n origin-group --origins origin-0,origin-1",
+                "az cdn origin-group create -g group --profile-name profile --endpoint-name endpoint -n origin-group --origins origin-0,origin-1 --probe-path /healthz --probe-interval 90 --probe-protocol HTTPS --probe-method GET"
+            ]
+        },
+        {
+            "name": "az cdn origin-group delete",
+            "summary": "Delete an existing origin group within an endpoint.",
+            "syntax": "az cdn origin-group delete [--endpoint-name]\n                           [--ids]\n                           [--name]\n                           [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                           [--profile-name]\n                           [--resource-group]\n                           [--subscription]\n                           [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--endpoint-name",
+                "--ids",
+                "--name --origin-group-name -n",
+                "--no-wait",
+                "--profile-name",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az cdn origin-group list",
+            "summary": "List all of the existing origin groups within an endpoint.",
+            "syntax": "az cdn origin-group list --endpoint-name\n                         --profile-name\n                         --resource-group\n                         [--max-items]\n                         [--next-token]",
+            "required_parameters": [
+                "--endpoint-name",
+                "--profile-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az cdn origin-group show",
+            "summary": "Get an existing origin group within an endpoint.",
+            "syntax": "az cdn origin-group show [--endpoint-name]\n                         [--ids]\n                         [--name]\n                         [--profile-name]\n                         [--resource-group]\n                         [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--endpoint-name",
+                "--ids",
+                "--name --origin-group-name -n",
+                "--profile-name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az cdn origin-group update",
+            "summary": "Update a new origin group within the specified endpoint.",
+            "syntax": "az cdn origin-group update [--add]\n                           [--endpoint-name]\n                           [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                           [--formatted-origins]\n                           [--health-probe-settings]\n                           [--ids]\n                           [--name]\n                           [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                           [--origins]\n                           [--probe-interval]\n                           [--probe-method]\n                           [--probe-path]\n                           [--probe-protocol]\n                           [--profile-name]\n                           [--remove]\n                           [--resource-group]\n                           [--response-based-origin-error-detection-settings]\n                           [--response-error-detection-error-types]\n                           [--response-error-detection-failover-threshold]\n                           [--response-error-detection-status-code-ranges]\n                           [--set]\n                           [--subscription]\n                           [--traffic-restoration-time-to-healed-or-new-endpoints-in-minutes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--endpoint-name",
+                "--force-string",
+                "--formatted-origins",
+                "--health-probe-settings",
+                "--ids",
+                "--name --origin-group-name -n",
+                "--no-wait",
+                "--origins",
+                "--probe-interval",
+                "--probe-method",
+                "--probe-path",
+                "--probe-protocol",
+                "--profile-name",
+                "--remove",
+                "--resource-group -g",
+                "--response-based-origin-error-detection-settings",
+                "--response-error-detection-error-types",
+                "--response-error-detection-failover-threshold",
+                "--response-error-detection-status-code-ranges",
+                "--set",
+                "--subscription",
+                "--traffic-restoration-time-to-healed-or-new-endpoints-in-minutes"
+            ],
+            "examples": [
+                "az cdn origin-group update -g group --profile-name profile --endpoint-name endpoint -n origin-group --origins origin-0,origin-2",
+                "az cdn origin-group update -g group --profile-name profile --endpoint-name endpoint -n origin-group --origins origin-0,origin-1 --probe-path /healthz --probe-interval 90 --probe-protocol HTTPS --probe-method GET"
+            ]
+        },
+        {
+            "name": "az cdn origin-group wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az cdn origin-group wait [--created]\n                         [--custom]\n                         [--deleted]\n                         [--endpoint-name]\n                         [--exists]\n                         [--ids]\n                         [--interval]\n                         [--name]\n                         [--profile-name]\n                         [--resource-group]\n                         [--subscription]\n                         [--timeout]\n                         [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--endpoint-name",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--name --origin-group-name -n",
+                "--profile-name",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

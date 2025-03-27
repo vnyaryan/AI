@@ -1,0 +1,160 @@
+{
+    "command_group": "az communication email domain",
+    "description": "Manage Communication Email Domain.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az communication email domain cancel-verification",
+            "summary": "Cancel verification of DNS record.",
+            "syntax": "az communication email domain cancel-verification --verification-type {DKIM, DKIM2, DMARC, Domain, SPF}\n                                                  [--domain-name]\n                                                  [--email-service-name]\n                                                  [--ids]\n                                                  [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                                  [--resource-group]\n                                                  [--subscription]",
+            "required_parameters": [
+                "--verification-type"
+            ],
+            "optional_parameters": [
+                "--domain-name",
+                "--email-service-name",
+                "--ids",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az communication email domain cancel-verification --domain-name DomainName --email-service-name ResourceName -g ResourceGroup --verification-type Domain/SPF/DKIM/DKIM2"
+            ]
+        },
+        {
+            "name": "az communication email domain create",
+            "summary": "Create a new Domains resource under the parent EmailService resource or update an existing Domains resource.",
+            "syntax": "az communication email domain create --domain-name\n                                     --email-service-name\n                                     --resource-group\n                                     [--domain-management {AzureManaged, CustomerManaged, CustomerManagedInExchangeOnline}]\n                                     [--location]\n                                     [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                     [--tags]\n                                     [--user-engmnt-tracking {Disabled, Enabled}]",
+            "required_parameters": [
+                "--domain-name --name -n",
+                "--email-service-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--domain-management",
+                "--location -l",
+                "--no-wait",
+                "--tags",
+                "--user-engmnt-tracking"
+            ],
+            "examples": [
+                "az communication email domain create --domain-name DomainName --email-service-name ResourceName -g ResourceGroup --location global --domain-management AzureManaged/CustomerManaged --tags \"{tag:tag}\" --user-engmnt-tracking Enabled/Disabled"
+            ]
+        },
+        {
+            "name": "az communication email domain delete",
+            "summary": "Delete to delete a Domains resource.",
+            "syntax": "az communication email domain delete [--domain-name]\n                                     [--email-service-name]\n                                     [--ids]\n                                     [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                     [--resource-group]\n                                     [--subscription]\n                                     [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--domain-name --name -n",
+                "--email-service-name",
+                "--ids",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az communication email domain delete --domain-name DomainName --email-service-name ResourceName -g ResourceGroup"
+            ]
+        },
+        {
+            "name": "az communication email domain initiate-verification",
+            "summary": "Initiate verification of DNS record.",
+            "syntax": "az communication email domain initiate-verification --verification-type {DKIM, DKIM2, DMARC, Domain, SPF}\n                                                    [--domain-name]\n                                                    [--email-service-name]\n                                                    [--ids]\n                                                    [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                                    [--resource-group]\n                                                    [--subscription]",
+            "required_parameters": [
+                "--verification-type"
+            ],
+            "optional_parameters": [
+                "--domain-name",
+                "--email-service-name",
+                "--ids",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az communication email domain initiate-verification --domain-name DomainName --email-service-name ResourceName -g ResourceGroup --verification-type Domain/SPF/DKIM/DKIM2"
+            ]
+        },
+        {
+            "name": "az communication email domain list",
+            "summary": "List requests to list all Domains resources under the parent EmailServices resource.",
+            "syntax": "az communication email domain list --email-service-name\n                                   --resource-group\n                                   [--max-items]\n                                   [--next-token]",
+            "required_parameters": [
+                "--email-service-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az communication email domain list --email-service-name ResourceName -g ResourceGroup"
+            ]
+        },
+        {
+            "name": "az communication email domain show",
+            "summary": "Get the Domains resource and its properties.",
+            "syntax": "az communication email domain show [--domain-name]\n                                   [--email-service-name]\n                                   [--ids]\n                                   [--resource-group]\n                                   [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--domain-name --name -n",
+                "--email-service-name",
+                "--ids",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az communication email domain show --domain-name DomainName --email-service-name ResourceName -g ResourceGroup"
+            ]
+        },
+        {
+            "name": "az communication email domain update",
+            "summary": "Update a new Domains resource under the parent EmailService resource or update an existing Domains resource.",
+            "syntax": "az communication email domain update [--add]\n                                     [--domain-management {AzureManaged, CustomerManaged, CustomerManagedInExchangeOnline}]\n                                     [--domain-name]\n                                     [--email-service-name]\n                                     [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                     [--ids]\n                                     [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                     [--remove]\n                                     [--resource-group]\n                                     [--set]\n                                     [--subscription]\n                                     [--tags]\n                                     [--user-engmnt-tracking {Disabled, Enabled}]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--domain-management",
+                "--domain-name --name -n",
+                "--email-service-name",
+                "--force-string",
+                "--ids",
+                "--no-wait",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--subscription",
+                "--tags",
+                "--user-engmnt-tracking"
+            ],
+            "examples": [
+                "az communication email domain update --domain-name DomainName  --email-service-name ResourceName -g ResourceGroup --tags \"{tag:tag}\" --user-engmnt-tracking Enabled/Disabled"
+            ]
+        },
+        {
+            "name": "az communication email domain wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az communication email domain wait [--created]\n                                   [--custom]\n                                   [--deleted]\n                                   [--domain-name]\n                                   [--email-service-name]\n                                   [--exists]\n                                   [--ids]\n                                   [--interval]\n                                   [--resource-group]\n                                   [--subscription]\n                                   [--timeout]\n                                   [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--domain-name --name -n",
+                "--email-service-name",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

@@ -1,0 +1,106 @@
+{
+    "command_group": "az iot central export destination",
+    "description": "Manage and configure IoT Central export destinations.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az iot central export destination create",
+            "summary": "Create an export destination for an IoT Central application.",
+            "syntax": "az iot central export destination create --app-id\n                                         --dest-id\n                                         --display-name\n                                         --type {blobstorage@v1, dataexplorer@v1, eventhubs@v1, servicebusqueue@v1, servicebustopic@v1, webhook@v1}\n                                         [--api-version {2022-06-30-preview}]\n                                         [--au]\n                                         [--central-api-uri]\n                                         [--cluster-url]\n                                         [--database]\n                                         [--header]\n                                         [--table]\n                                         [--token]\n                                         [--url]",
+            "required_parameters": [
+                "--app-id -n",
+                "--dest-id",
+                "--display-name --name",
+                "--type -t"
+            ],
+            "optional_parameters": [
+                "--api-version --av",
+                "--au --authorization",
+                "--central-api-uri --central-dns-suffix",
+                "--cluster-url --cu",
+                "--database",
+                "--header",
+                "--table",
+                "--token",
+                "--url"
+            ],
+            "examples": [
+                "az iot central export destination create --app-id {appid} --dest-id {destinationid} --name {displayname} --url {url} --type webhook@v1 --header '{\"x-custom-region\":{\"value\":\"westus\", \"secret\": false}}'",
+                "az iot central export destination create --app-id {appid} --dest-id {destintionid} --type blobstorage@v1 --name {displayname} --authorization '{\n  \"type\": \"connectionString\",\n  \"connectionString\":\"DefaultEndpointsProtocol=https;AccountName=[accountName];AccountKey=[key];EndpointSuffix=core.windows.net\",\n  \"containerName\": \"test\"\n}'",
+                "az iot central export destination create --app-id {appid} --dest-id {destintionid} --type dataexplorer@v1 --name {displayname} --cluster-url {clusterurl} --database {database} --table {table} --authorization '{\n  \"type\": \"servicePrincipal\",\n  \"clientId\": \"3b420743-2020-44c6-9b70-cc42f945db0x\",\n  \"tenantId\": \"72f988bf-86f1-41af-91ab-2d7cd011db47\",\n  \"clientSecret\": \"[Secret]\"\n}'",
+                "az iot central export destination create --app-id {appid} --dest-id {destintionid} --type eventhubs@v1 --name {displayname} --authorization '{\n  \"type\": \"connectionString\",\n  \"connectionString\": \"Endpoint=sb://[hubName].servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=*****;EntityPath=entityPath1\"\n}'",
+                "az iot central export destination create --app-id {appid} --dest-id {destintionid} --type servicebusqueue@v1 --name {displayname} --authorization '{\n  \"type\": \"connectionString\",\n  \"connectionString\": \"Endpoint=sb://[namespance].servicebus.windows.net/;SharedAccessKeyName=xxx;SharedAccessKey=[key];EntityPath=[name]\"\n}'",
+                "az iot central export destination create --app-id {appid} --dest-id {destintionid} --type servicebustopic@v1 --name {displayname} --authorization '{\n  \"type\": \"connectionString\",\n  \"connectionString\": \"Endpoint=sb://[namespace].servicebus.windows.net/;SharedAccessKeyName=xxx;SharedAccessKey=[key];EntityPath=[name]\"\n}'"
+            ]
+        },
+        {
+            "name": "az iot central export destination delete",
+            "summary": "Delete an export destination for an IoT Central application.",
+            "syntax": "az iot central export destination delete --app-id\n                                         --dest-id\n                                         [--api-version {2022-06-30-preview}]\n                                         [--central-api-uri]\n                                         [--token]",
+            "required_parameters": [
+                "--app-id -n",
+                "--dest-id"
+            ],
+            "optional_parameters": [
+                "--api-version --av",
+                "--central-api-uri --central-dns-suffix",
+                "--token"
+            ],
+            "examples": [
+                "az iot central export destination delete --app-id {appid} --dest-id {destinationid}"
+            ]
+        },
+        {
+            "name": "az iot central export destination list",
+            "summary": "Get the full list of export destinations for an IoT Central application.",
+            "syntax": "az iot central export destination list --app-id\n                                       [--api-version {2022-06-30-preview}]\n                                       [--central-api-uri]\n                                       [--token]",
+            "required_parameters": [
+                "--app-id -n"
+            ],
+            "optional_parameters": [
+                "--api-version --av",
+                "--central-api-uri --central-dns-suffix",
+                "--token"
+            ],
+            "examples": [
+                "az iot central export destination list --app-id {appid}"
+            ]
+        },
+        {
+            "name": "az iot central export destination show",
+            "summary": "Get an export destination details.",
+            "syntax": "az iot central export destination show --app-id\n                                       --dest-id\n                                       [--api-version {2022-06-30-preview}]\n                                       [--central-api-uri]\n                                       [--token]",
+            "required_parameters": [
+                "--app-id -n",
+                "--dest-id"
+            ],
+            "optional_parameters": [
+                "--api-version --av",
+                "--central-api-uri --central-dns-suffix",
+                "--token"
+            ],
+            "examples": [
+                "az iot central export destination show --app-id {appid} --dest-id {destinationid}"
+            ]
+        },
+        {
+            "name": "az iot central export destination update",
+            "summary": "Update an export destination for an IoT Central application.",
+            "syntax": "az iot central export destination update --app-id\n                                         --content\n                                         --dest-id\n                                         [--api-version {2022-06-30-preview}]\n                                         [--central-api-uri]\n                                         [--token]",
+            "required_parameters": [
+                "--app-id -n",
+                "--content -k",
+                "--dest-id"
+            ],
+            "optional_parameters": [
+                "--api-version --av",
+                "--central-api-uri --central-dns-suffix",
+                "--token"
+            ],
+            "examples": [
+                "az iot central export destination update --app-id {appid} --dest-id {destinationid} --content './filepath/payload.json'",
+                "az iot central export destination update --app-id {appid} --dest-id {destinationid} --content '{\"displayName\": \"Web Hook Updated\"}'"
+            ]
+        }
+    ]
+}

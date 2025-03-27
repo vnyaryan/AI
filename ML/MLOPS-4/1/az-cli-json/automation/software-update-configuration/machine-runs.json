@@ -1,0 +1,34 @@
+{
+    "command_group": "az automation software-update-configuration machine-runs",
+    "description": "Software Update Configuration Machine Runs.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az automation software-update-configuration machine-runs list",
+            "summary": "List software update configuration machine-runs.",
+            "syntax": "az automation software-update-configuration machine-runs list --automation-account-name\n                                                              --resource-group",
+            "required_parameters": [
+                "--automation-account-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az automation software-update-configuration machine-runs list --automation-account-name                \"myAutomationAccount\" --resource-group \"rg\""
+            ]
+        },
+        {
+            "name": "az automation software-update-configuration machine-runs show",
+            "summary": "Get a single software update configuration machine runs by Id.",
+            "syntax": "az automation software-update-configuration machine-runs show --automation-account-name\n                                                              --resource-group\n                                                              --software-update-configuration-machine-run-id",
+            "required_parameters": [
+                "--automation-account-name",
+                "--resource-group -g",
+                "--software-update-configuration-machine-run-id"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az automation software-update-configuration machine-runs show --automation-account-name                \"myAutomationAccount\" --resource-group \"rg\" --software-update-configuration-machine-run-id                \"MyconfigurationMachineRunId\""
+            ]
+        }
+    ]
+}

@@ -1,0 +1,144 @@
+{
+    "command_group": "az stack-hci-vm disk",
+    "description": "Manage virtualharddisk with stack-hci-vm.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az stack-hci-vm disk attach",
+            "summary": "Attach disk to a VM.",
+            "syntax": "az stack-hci-vm disk attach [--disks]\n                            [--ids]\n                            [--name]\n                            [--resource-group]\n                            [--subscription]\n                            [--vm-name]\n                            [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--disks",
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--vm-name",
+                "--yes -y"
+            ],
+            "examples": [
+                "az stack-hci-vm disk attach --resource-group \"test-rg\" --vm-name \"test-vm\" --disks \"disk1\" \"disk2\""
+            ]
+        },
+        {
+            "name": "az stack-hci-vm disk create",
+            "summary": "Create a virtual hard disk.",
+            "syntax": "az stack-hci-vm disk create --custom-location\n                            --name\n                            --resource-group\n                            [--block-size-bytes]\n                            [--disk-file-format]\n                            [--download-url]\n                            [--dynamic {false, true}]\n                            [--location]\n                            [--logical-sector-bytes]\n                            [--physical-sector-bytes]\n                            [--polling-interval]\n                            [--size-gb]\n                            [--storage-path-id]\n                            [--tags]",
+            "required_parameters": [
+                "--custom-location",
+                "--name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--block-size-bytes",
+                "--disk-file-format",
+                "--download-url",
+                "--dynamic",
+                "--location -l",
+                "--logical-sector-bytes",
+                "--physical-sector-bytes",
+                "--polling-interval",
+                "--size-gb",
+                "--storage-path-id",
+                "--tags"
+            ],
+            "examples": [
+                "az stack-hci-vm disk create --resource-group \"test-rg\" --custom-location \"/subscriptions/a95612cb-f1fa-4daa-a4fd-272844fa512c/resourceGroups/dogfoodarc/providers/Microsoft.ExtendedLocation/customLocations/dogfood-location\" --location \"West US2\" --size-gb 2 --name \"test-vhd\" --storage-path-id \"/subscriptions/a95612cb-f1fa-4daa-a4fd-272844fa512c/resourceGroups/dogfoodarc/providers/Microsoft.AzureStackHCI/storagecontainers/test-storagepath\""
+            ]
+        },
+        {
+            "name": "az stack-hci-vm disk delete",
+            "summary": "Delete a virtual hard disk.",
+            "syntax": "az stack-hci-vm disk delete [--ids]\n                            [--name]\n                            [--polling-interval]\n                            [--resource-group]\n                            [--subscription]\n                            [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name",
+                "--polling-interval",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az stack-hci-vm disk delete --resource-group \"test-rg\" --name \"test-vhd\""
+            ]
+        },
+        {
+            "name": "az stack-hci-vm disk detach",
+            "summary": "Detach disk from a VM.",
+            "syntax": "az stack-hci-vm disk detach --resource-group\n                            --vm-name\n                            [--name]\n                            [--yes]",
+            "required_parameters": [
+                "--resource-group -g",
+                "--vm-name"
+            ],
+            "optional_parameters": [
+                "--name",
+                "--yes -y"
+            ],
+            "examples": [
+                "az stack-hci-vm disk detach --resource-group \"test-rg\" --vm-name \"test-vm\" --name \"test-disk\""
+            ]
+        },
+        {
+            "name": "az stack-hci-vm disk list",
+            "summary": "List all virtual hard disks.",
+            "syntax": "az stack-hci-vm disk list [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az stack-hci-vm disk list --resource-group \"test-rg\"",
+                "az stack-hci-vm disk list"
+            ]
+        },
+        {
+            "name": "az stack-hci-vm disk show",
+            "summary": "Get the details of a virtual hard disk.",
+            "syntax": "az stack-hci-vm disk show [--ids]\n                          [--name]\n                          [--resource-group]\n                          [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az stack-hci-vm disk show --resource-group \"test-rg\" --name \"test-vhd\""
+            ]
+        },
+        {
+            "name": "az stack-hci-vm disk update",
+            "summary": "Update a virtual hard disk.",
+            "syntax": "az stack-hci-vm disk update [--ids]\n                            [--name]\n                            [--resource-group]\n                            [--subscription]\n                            [--tags]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name",
+                "--resource-group -g",
+                "--subscription",
+                "--tags"
+            ],
+            "examples": [
+                "az stack-hci-vm disk update --resource-group \"test-rg\" --tags additionalProperties=\"sample\" --name \"test-vhd\""
+            ]
+        },
+        {
+            "name": "az stack-hci-vm disk upload",
+            "summary": "Upload a virtual hard disk using azure managed disk SAS url.",
+            "syntax": "az stack-hci-vm disk upload [--ids]\n                            [--name]\n                            [--resource-group]\n                            [--subscription]\n                            [--target-url]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name",
+                "--resource-group -g",
+                "--subscription",
+                "--target-url"
+            ],
+            "examples": [
+                "az stack-hci-vm disk upload --resource-group \"test-rg\"  --target-url \"<sas url insert>\""
+            ]
+        }
+    ]
+}

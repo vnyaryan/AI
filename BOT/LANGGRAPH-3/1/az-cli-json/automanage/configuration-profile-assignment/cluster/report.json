@@ -1,0 +1,38 @@
+{
+    "command_group": "az automanage configuration-profile-assignment cluster report",
+    "description": "Manage report within a given AzureStackHCI cluster configuration profile assignment.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az automanage configuration-profile-assignment cluster report list",
+            "summary": "List reports within a given AzureStackHCI cluster configuration profile assignment.",
+            "syntax": "az automanage configuration-profile-assignment cluster report list --assignment-name\n                                                                   --cluster-name\n                                                                   --resource-group",
+            "required_parameters": [
+                "--assignment-name --configuration-profile-assignment-name",
+                "--cluster-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az automanage configuration-profile-assignment cluster report list --assignment-name default -g {rg} --cluster-name {cluster_name}"
+            ]
+        },
+        {
+            "name": "az automanage configuration-profile-assignment cluster report show",
+            "summary": "Get information about a report associated with a AzureStackHCI cluster configuration profile assignment run.",
+            "syntax": "az automanage configuration-profile-assignment cluster report show [--assignment-name]\n                                                                   [--cluster-name]\n                                                                   [--ids]\n                                                                   [--name]\n                                                                   [--resource-group]\n                                                                   [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--assignment-name --configuration-profile-assignment-name",
+                "--cluster-name",
+                "--ids",
+                "--name --report-name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az automanage configuration-profile-assignment cluster report show -n {report_name} --assignment-name default -g {rg} --cluster-name {cluster_name}"
+            ]
+        }
+    ]
+}

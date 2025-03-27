@@ -1,0 +1,38 @@
+{
+    "command_group": "az iot hub certificate root-authority",
+    "description": "Manage the certificate root-authority for an IoT Hub instance.",
+    "status": "Deprecated",
+    "commands": [
+        {
+            "name": "az iot hub certificate root-authority set",
+            "summary": "Set the certificate root-authority for an IoT Hub instance to a specific version.",
+            "syntax": "az iot hub certificate root-authority set --cav {v1, v2}\n                                          --hub-name\n                                          [--resource-group]\n                                          [--yes {false, true}]",
+            "required_parameters": [
+                "--cav --certificate-authority",
+                "--hub-name"
+            ],
+            "optional_parameters": [
+                "--resource-group -g",
+                "--yes -y"
+            ],
+            "examples": [
+                "az iot hub certificate root-authority set --hub-name {iothub_name} --certificate-authority v2",
+                "az iot hub certificate root-authority set --hub-name {iothub_name} --certificate-authority v1"
+            ]
+        },
+        {
+            "name": "az iot hub certificate root-authority show",
+            "summary": "Show the current certificate root-authority for an IoT Hub instance.",
+            "syntax": "az iot hub certificate root-authority show --hub-name\n                                           [--resource-group]",
+            "required_parameters": [
+                "--hub-name"
+            ],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az iot hub certificate root-authority show --hub-name {iothub_name}"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,97 @@
+{
+    "command_group": "az relay wcfrelay",
+    "description": "Manage Azure Relay Service WCF Relay and Authorization Rule.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az relay wcfrelay create",
+            "summary": "Create the Relay Service WCF Relay.",
+            "syntax": "az relay wcfrelay create --name\n                         --namespace-name\n                         --resource-group\n                         [--relay-type {Http, NetTcp}]\n                         [--requires-client-authorization {0, 1, f, false, n, no, t, true, y, yes}]\n                         [--requires-transport-security {0, 1, f, false, n, no, t, true, y, yes}]\n                         [--user-metadata]",
+            "required_parameters": [
+                "--name -n",
+                "--namespace-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--relay-type",
+                "--requires-client-authorization -c",
+                "--requires-transport-security -t",
+                "--user-metadata"
+            ],
+            "examples": [
+                "az relay wcfrelay create --resource-group myresourcegroup --namespace-name mynamespace --name myrelay --relay-type NetTcp"
+            ]
+        },
+        {
+            "name": "az relay wcfrelay delete",
+            "summary": "Deletes the Relay Service WCF Relay.",
+            "syntax": "az relay wcfrelay delete [--ids]\n                         [--name]\n                         [--namespace-name]\n                         [--resource-group]\n                         [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--namespace-name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az relay wcfrelay delete --resource-group myresourcegroup --namespace-name mynamespace --name myrelay"
+            ]
+        },
+        {
+            "name": "az relay wcfrelay list",
+            "summary": "List the WCF Relay by Relay Service Namespace.",
+            "syntax": "az relay wcfrelay list --namespace-name\n                       --resource-group\n                       [--max-items]\n                       [--next-token]",
+            "required_parameters": [
+                "--namespace-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az relay wcfrelay list --resource-group myresourcegroup --namespace-name mynamespace"
+            ]
+        },
+        {
+            "name": "az relay wcfrelay show",
+            "summary": "Shows the Relay Service WCF Relay Details.",
+            "syntax": "az relay wcfrelay show [--ids]\n                       [--name]\n                       [--namespace-name]\n                       [--resource-group]\n                       [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--namespace-name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az relay wcfrelay show --resource-group myresourcegroup --namespace-name mynamespace --name myrelay"
+            ]
+        },
+        {
+            "name": "az relay wcfrelay update",
+            "summary": "Updates existing Relay Service WCF Relay.",
+            "syntax": "az relay wcfrelay update [--add]\n                         [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                         [--ids]\n                         [--name]\n                         [--namespace-name]\n                         [--relay-type {Http, NetTcp}]\n                         [--remove]\n                         [--resource-group]\n                         [--set]\n                         [--status {Active, Disabled, ReceiveDisabled, SendDisabled}]\n                         [--subscription]\n                         [--user-metadata]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--force-string",
+                "--ids",
+                "--name -n",
+                "--namespace-name",
+                "--relay-type",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--status",
+                "--subscription",
+                "--user-metadata"
+            ],
+            "examples": [
+                "az relay wcfrelay update --resource-group myresourcegroup --namespace-name mynamespace --name myrelay"
+            ]
+        }
+    ]
+}

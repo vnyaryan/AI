@@ -1,0 +1,6 @@
+{
+    "command_group": "az ml endpoint",
+    "description": "Manage machine learning endpoints.",
+    "status": "GA",
+    "commands": []
+}

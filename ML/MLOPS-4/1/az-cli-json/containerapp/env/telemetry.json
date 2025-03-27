@@ -1,0 +1,6 @@
+{
+    "command_group": "az containerapp env telemetry",
+    "description": "Commands to manage telemetry settings for the container apps environment.",
+    "status": "Preview",
+    "commands": []
+}

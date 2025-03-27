@@ -1,0 +1,102 @@
+{
+    "command_group": "az spring application-configuration-service",
+    "description": "(Enterprise Tier Only) Commands to manage Application Configuration Service in Azure Spring Apps.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az spring application-configuration-service bind",
+            "summary": "Bind an app to Application Configuration Service.",
+            "syntax": "az spring application-configuration-service bind --app\n                                                 --resource-group\n                                                 --service",
+            "required_parameters": [
+                "--app",
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az spring application-configuration-service bind --app MyApp -s MyService -g MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az spring application-configuration-service clear",
+            "summary": "Reset all Application Configuration Service settings.",
+            "syntax": "az spring application-configuration-service clear --resource-group\n                                                  --service",
+            "required_parameters": [
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az spring application-configuration-service create",
+            "summary": "Create Application Configuration Service.",
+            "syntax": "az spring application-configuration-service create --resource-group\n                                                   --service\n                                                   [--generation {Gen1, Gen2}]\n                                                   [--refresh-interval]",
+            "required_parameters": [
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [
+                "--generation",
+                "--refresh-interval"
+            ],
+            "examples": [
+                "az spring application-configuration-service create -s MyService -g MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az spring application-configuration-service delete",
+            "summary": "Delete Application Configuration Service.",
+            "syntax": "az spring application-configuration-service delete --resource-group\n                                                   --service\n                                                   [--yes]",
+            "required_parameters": [
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [
+                "--yes -y"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az spring application-configuration-service show",
+            "summary": "Show the provisioning status, runtime status, and settings of Application Configuration Service.",
+            "syntax": "az spring application-configuration-service show --resource-group\n                                                 --service",
+            "required_parameters": [
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az spring application-configuration-service unbind",
+            "summary": "Unbind an app from Application Configuration Service.",
+            "syntax": "az spring application-configuration-service unbind --app\n                                                   --resource-group\n                                                   --service",
+            "required_parameters": [
+                "--app",
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az spring application-configuration-service unbind --app MyApp -s MyService -g MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az spring application-configuration-service update",
+            "summary": "Update Application Configuration Service.",
+            "syntax": "az spring application-configuration-service update --resource-group\n                                                   --service\n                                                   [--generation {Gen1, Gen2}]\n                                                   [--refresh-interval]",
+            "required_parameters": [
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [
+                "--generation",
+                "--refresh-interval"
+            ],
+            "examples": [
+                "az spring application-configuration-service update -s MyService -g MyResourceGroup --generation Gen2"
+            ]
+        }
+    ]
+}

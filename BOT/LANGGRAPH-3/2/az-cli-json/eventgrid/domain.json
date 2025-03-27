@@ -1,0 +1,105 @@
+{
+    "command_group": "az eventgrid domain",
+    "description": "Manage event domains.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az eventgrid domain create",
+            "summary": "Create a domain.",
+            "syntax": "az eventgrid domain create --name\n                           --resource-group\n                           [--identity {noidentity, systemassigned}]\n                           [--inbound-ip-rules]\n                           [--input-mapping-default-values]\n                           [--input-mapping-fields]\n                           [--input-schema {cloudeventschemav1_0, customeventschema, eventgridschema}]\n                           [--location]\n                           [--mi-system-assigned]\n                           [--mi-user-assigned]\n                           [--public-network-access {disabled, enabled}]\n                           [--sku {basic, premium}]\n                           [--tags]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--identity",
+                "--inbound-ip-rules",
+                "--input-mapping-default-values",
+                "--input-mapping-fields",
+                "--input-schema",
+                "--location -l",
+                "--mi-system-assigned",
+                "--mi-user-assigned",
+                "--public-network-access",
+                "--sku",
+                "--tags"
+            ],
+            "examples": [
+                "az eventgrid domain create -g rg1 --name domain1 -l westus2",
+                "az eventgrid domain create -g rg1 --name domain1 -l westus2 --input-schema customeventschema --input-mapping-fields topic=mytopicField eventType=myEventTypeField --input-mapping-default-values subject=DefaultSubject dataVersion=1.0",
+                "az eventgrid domain create -g rg1 --name domain1 -l westus2 --input-schema cloudeventschemav1_0 --input-mapping-fields topic=mytopicfield",
+                "az eventgrid domain create -g rg1 --name domain1 -l westus2 --public-network-access enabled --inbound-ip-rules 10.0.0.0/8 Allow --inbound-ip-rules 10.2.0.0/8 Allow --sku basic"
+            ]
+        },
+        {
+            "name": "az eventgrid domain delete",
+            "summary": "Delete a domain.",
+            "syntax": "az eventgrid domain delete [--ids]\n                           [--name]\n                           [--resource-group]\n                           [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az eventgrid domain delete -g rg1 --name domain1"
+            ]
+        },
+        {
+            "name": "az eventgrid domain list",
+            "summary": "List available domains.",
+            "syntax": "az eventgrid domain list [--odata-query]\n                         [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--odata-query",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az eventgrid domain list",
+                "az eventgrid domain list -g rg1",
+                "az eventgrid domain list -g rg1 --odata-query \"Contains(name, 'XYZ')\"",
+                "az eventgrid domain list -g rg1 --odata-query \"NOT (name eq 'name1')\""
+            ]
+        },
+        {
+            "name": "az eventgrid domain show",
+            "summary": "Get the details of a domain.",
+            "syntax": "az eventgrid domain show [--ids]\n                         [--name]\n                         [--resource-group]\n                         [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az eventgrid domain show -g rg1 -n domain1",
+                "az eventgrid domain show --ids /subscriptions/{SubID}/resourceGroups/{RG}/providers/Microsoft.EventGrid/domains/domain1",
+                "az eventgrid domain show --name domain1 --resource-group rg1 --subscription MySubscription"
+            ]
+        },
+        {
+            "name": "az eventgrid domain update",
+            "summary": "Update a domain.",
+            "syntax": "az eventgrid domain update [--identity {noidentity, systemassigned}]\n                           [--ids]\n                           [--inbound-ip-rules]\n                           [--mi-system-assigned]\n                           [--mi-user-assigned]\n                           [--name]\n                           [--public-network-access {disabled, enabled}]\n                           [--resource-group]\n                           [--sku {basic, premium}]\n                           [--subscription]\n                           [--tags]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--identity",
+                "--ids",
+                "--inbound-ip-rules",
+                "--mi-system-assigned",
+                "--mi-user-assigned",
+                "--name -n",
+                "--public-network-access",
+                "--resource-group -g",
+                "--sku",
+                "--subscription",
+                "--tags"
+            ],
+            "examples": [
+                "az eventgrid domain update -g rg1 --name domain1 --sku Basic --identity noidentity --public-network-access enabled --inbound-ip-rules 10.0.0.0/8 Allow --inbound-ip-rules 10.2.0.0/8 Allow --tags Dept=IT --sku basic"
+            ]
+        }
+    ]
+}

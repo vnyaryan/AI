@@ -1,0 +1,107 @@
+{
+    "command_group": "az dt model",
+    "description": "Manage DTDL models and definitions on a Digital Twins instance.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az dt model create",
+            "summary": "Uploads one or more models.",
+            "syntax": "az dt model create --dt-name\n                   [--failure-policy {None, Rollback}]\n                   [--fd]\n                   [--max-models-per-batch]\n                   [--models]\n                   [--resource-group]",
+            "required_parameters": [
+                "--dt-name --dtn -n"
+            ],
+            "optional_parameters": [
+                "--failure-policy --fp",
+                "--fd --from-directory",
+                "--max-models-per-batch --mmpb",
+                "--models",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az dt model create -n {instance_or_hostname} --from-directory {directory_path}",
+                "az dt model create -n {instance_or_hostname} --models {file_path_or_inline_json}"
+            ]
+        },
+        {
+            "name": "az dt model delete",
+            "summary": "Delete a model. A model can only be deleted if no other models reference it.",
+            "syntax": "az dt model delete --dt-name\n                   --dtmi\n                   [--resource-group]",
+            "required_parameters": [
+                "--dt-name --dtn -n",
+                "--dtmi --model-id -m"
+            ],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az dt model delete -n {instance_or_hostname} --dtmi \"dtmi:com:example:Floor;1\""
+            ]
+        },
+        {
+            "name": "az dt model delete-all",
+            "summary": "Delete all models within a Digital Twins instance.",
+            "syntax": "az dt model delete-all --dt-name\n                       [--resource-group]\n                       [--yes]",
+            "required_parameters": [
+                "--dt-name --dtn -n"
+            ],
+            "optional_parameters": [
+                "--resource-group -g",
+                "--yes -y"
+            ],
+            "examples": [
+                "az dt model delete-all -n {instance_or_hostname}"
+            ]
+        },
+        {
+            "name": "az dt model list",
+            "summary": "List model metadata, definitions and dependencies.",
+            "syntax": "az dt model list --dt-name\n                 [--def {false, true}]\n                 [--dependencies-for]\n                 [--resource-group]",
+            "required_parameters": [
+                "--dt-name --dtn -n"
+            ],
+            "optional_parameters": [
+                "--def --definition",
+                "--dependencies-for",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az dt model list -n {instance_or_hostname}",
+                "az dt model list -n {instance_or_hostname} --definition",
+                "az dt model list -n {instance_or_hostname} --dependencies-for {model_id0} {model_id1}"
+            ]
+        },
+        {
+            "name": "az dt model show",
+            "summary": "Retrieve a target model or model definition.",
+            "syntax": "az dt model show --dt-name\n                 --dtmi\n                 [--def {false, true}]\n                 [--resource-group]",
+            "required_parameters": [
+                "--dt-name --dtn -n",
+                "--dtmi --model-id -m"
+            ],
+            "optional_parameters": [
+                "--def --definition",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az dt model show -n {instance_or_hostname} --dtmi \"dtmi:com:example:Floor;1\"",
+                "az dt model show -n {instance_or_hostname} --dtmi \"dtmi:com:example:Floor;1\" --definition"
+            ]
+        },
+        {
+            "name": "az dt model update",
+            "summary": "Updates the metadata for a model. Currently a model can only be decommisioned.",
+            "syntax": "az dt model update --dt-name\n                   --dtmi\n                   [--decommission {false, true}]\n                   [--resource-group]",
+            "required_parameters": [
+                "--dt-name --dtn -n",
+                "--dtmi --model-id -m"
+            ],
+            "optional_parameters": [
+                "--decommission",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az dt model update -n {instance_or_hostname} --dtmi \"dtmi:com:example:Floor;1\" --decommission"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,73 @@
+{
+    "command_group": "az sql mi dtc",
+    "description": "Commands related to managed instance DTC management.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az sql mi dtc show",
+            "summary": "Get managed instance DTC settings.",
+            "syntax": "az sql mi dtc show [--ids]\n                   [--managed-instance-name]\n                   [--resource-group]\n                   [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--managed-instance-name --mi",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az sql mi show --g resourceGroup1 --managed-instance-name managedInstance1",
+                "az sql mi show --ids /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/ResourceGroup1/providers/Microsoft.Sql/managedInstances/ManagedInstance1/dtc/current"
+            ]
+        },
+        {
+            "name": "az sql mi dtc update",
+            "summary": "Update managed instance DTC settings.",
+            "syntax": "az sql mi dtc update [--add]\n                     [--allow-inbound-enabled {0, 1, f, false, n, no, t, true, y, yes}]\n                     [--allow-outbound-enabled {0, 1, f, false, n, no, t, true, y, yes}]\n                     [--authentication]\n                     [--dtc-enabled {0, 1, f, false, n, no, t, true, y, yes}]\n                     [--external-dns-suffix-search-list]\n                     [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                     [--ids]\n                     [--managed-instance-name]\n                     [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                     [--remove]\n                     [--resource-group]\n                     [--set]\n                     [--sna-lu-transactions {0, 1, f, false, n, no, t, true, y, yes}]\n                     [--subscription]\n                     [--xa-default-timeout]\n                     [--xa-max-timeout]\n                     [--xa-transactions {0, 1, f, false, n, no, t, true, y, yes}]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--allow-inbound-enabled",
+                "--allow-outbound-enabled",
+                "--authentication",
+                "--dtc-enabled",
+                "--external-dns-suffix-search-list --external-dns-suffixes",
+                "--force-string",
+                "--ids",
+                "--managed-instance-name --mi",
+                "--no-wait",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--sna-lu-transactions --sna-lu6point2-transactions-enabled",
+                "--subscription",
+                "--xa-default-timeout --xa-transactions-default-timeout",
+                "--xa-max-timeout --xa-transactions-maximum-timeout",
+                "--xa-transactions --xa-transactions-enabled"
+            ],
+            "examples": [
+                "az sql mi dtc update -g resourceGroup1 --mi managedInstance1 --dtc-enabled true\naz sql mi dtc update --ids /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/ResourceGroup1/providers/Microsoft.Sql/managedInstances/ManagedInstance1/dtc/current --dtc-enabled true",
+                "az sql mi dtc update -g resourceGroup1 --mi managedInstance1 --xa-transactions-enabled true"
+            ]
+        },
+        {
+            "name": "az sql mi dtc wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az sql mi dtc wait [--created]\n                   [--custom]\n                   [--deleted]\n                   [--exists]\n                   [--ids]\n                   [--interval]\n                   [--managed-instance-name]\n                   [--resource-group]\n                   [--subscription]\n                   [--timeout]\n                   [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--managed-instance-name --mi",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

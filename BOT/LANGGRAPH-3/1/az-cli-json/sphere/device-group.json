@@ -1,0 +1,112 @@
+{
+    "command_group": "az sphere device-group",
+    "description": "Manage device groups in your resource group and catalog.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az sphere device-group create",
+            "summary": "Create a device group.",
+            "syntax": "az sphere device-group create --catalog\n                              --description\n                              --name\n                              --product\n                              --resource-group\n                              [--allow-crash-dumps-collection {Disabled, Enabled}]\n                              [--application-update {No3rdPartyAppUpdates, UpdateAll}]\n                              [--os-feed {Retail, RetailEval}]\n                              [--regional-data-boundary {EU, None}]",
+            "required_parameters": [
+                "--catalog -c",
+                "--description -d",
+                "--name -n",
+                "--product -p",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--allow-crash-dumps-collection -cd",
+                "--application-update -a",
+                "--os-feed -f",
+                "--regional-data-boundary -r"
+            ],
+            "examples": [
+                "az sphere device-group create --resource-group MyResourceGroup --catalog MyCatalog --product MyProduct --name MyDeviceGroup --description MyDescription",
+                "az sphere device-group create --resource-group MyResourceGroup --catalog MyCatalog --product MyProduct --name MyDeviceGroup --description MyDescription --regional-data-boundary EU"
+            ]
+        },
+        {
+            "name": "az sphere device-group create-defaults",
+            "summary": "Create default device groups targeting a product.",
+            "syntax": "az sphere device-group create-defaults --catalog\n                                       --product\n                                       --resource-group",
+            "required_parameters": [
+                "--catalog -c",
+                "--product -p",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az sphere device-group create-defaults --resource-group MyResourceGroup --catalog MyCatalog --product MyProduct"
+            ]
+        },
+        {
+            "name": "az sphere device-group delete",
+            "summary": "Delete the specified device group.",
+            "syntax": "az sphere device-group delete --catalog\n                              --device-group\n                              --product\n                              --resource-group",
+            "required_parameters": [
+                "--catalog -c",
+                "--device-group -dg",
+                "--product -p",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az sphere device-group delete --resource-group MyResourceGroup --catalog MyCatalog --product MyProduct --device-group MyDeviceGroup"
+            ]
+        },
+        {
+            "name": "az sphere device-group list",
+            "summary": "List all device groups in a catalog.",
+            "syntax": "az sphere device-group list --catalog\n                            --resource-group\n                            [--device-group]\n                            [--product]",
+            "required_parameters": [
+                "--catalog -c",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--device-group -dg",
+                "--product -p"
+            ],
+            "examples": [
+                "az sphere device-group list --resource-group MyResourceGroup --catalog MyCatalog",
+                "az sphere device-group list --resource-group MyResourceGroup --catalog MyCatalog --device-group Development",
+                "az sphere device-group list --resource-group MyResourceGroup --catalog MyCatalog --product MyProduct"
+            ]
+        },
+        {
+            "name": "az sphere device-group show",
+            "summary": "Show a device group's details.",
+            "syntax": "az sphere device-group show --catalog\n                            --device-group\n                            --product\n                            --resource-group",
+            "required_parameters": [
+                "--catalog -c",
+                "--device-group -dg",
+                "--product -p",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az sphere device-group show --resource-group MyResourceGroup --catalog MyCatalog --product MyProduct --device-group MyDeviceGroup"
+            ]
+        },
+        {
+            "name": "az sphere device-group update",
+            "summary": "Update a device group's details.",
+            "syntax": "az sphere device-group update --catalog\n                              --device-group\n                              --product\n                              --resource-group\n                              [--allow-crash-dumps-collection {Disabled, Enabled}]\n                              [--application-update {No3rdPartyAppUpdates, UpdateAll}]\n                              [--description]\n                              [--os-feed {Retail, RetailEval}]\n                              [--regional-data-boundary {EU, None}]",
+            "required_parameters": [
+                "--catalog -c",
+                "--device-group -dg",
+                "--product -p",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--allow-crash-dumps-collection -cd",
+                "--application-update -a",
+                "--description -d",
+                "--os-feed -f",
+                "--regional-data-boundary -r"
+            ],
+            "examples": [
+                "az sphere device-group update --resource-group MyResourceGroup --catalog MyCatalog --product MyProduct --device-group MyDeviceGroup --description NewDescription"
+            ]
+        }
+    ]
+}

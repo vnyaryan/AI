@@ -1,0 +1,120 @@
+{
+    "command_group": "az synapse kql-script",
+    "description": "Manage script with kusto.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az synapse kql-script create",
+            "summary": "Creates a KQL script.",
+            "syntax": "az synapse kql-script create --file\n                             --name\n                             --resource-group\n                             --workspace-name\n                             [--kusto-database-name]\n                             [--kusto-pool-name]\n                             [--no-wait]",
+            "required_parameters": [
+                "--file -f",
+                "--name -n",
+                "--resource-group -g",
+                "--workspace-name"
+            ],
+            "optional_parameters": [
+                "--kusto-database-name",
+                "--kusto-pool-name",
+                "--no-wait"
+            ],
+            "examples": [
+                "az synapse kql-script create --resource-group \"kustorptest\" --workspace-name \"kustoWorkspaceName\"                --kusto-pool-name kustopooltest --kusto-database-name kustodbtest --file C:\\samples\\KqlScript.kql                --name \"kustoScript1\""
+            ]
+        },
+        {
+            "name": "az synapse kql-script delete",
+            "summary": "Deletes a KQL script.",
+            "syntax": "az synapse kql-script delete --name\n                             --workspace-name\n                             [--no-wait]\n                             [--yes]",
+            "required_parameters": [
+                "--name -n",
+                "--workspace-name"
+            ],
+            "optional_parameters": [
+                "--no-wait",
+                "--yes -y"
+            ],
+            "examples": [
+                "az synapse kql-script delete --workspace-name \"kustoWorkspaceName\" --name \"kustoScript1\""
+            ]
+        },
+        {
+            "name": "az synapse kql-script export",
+            "summary": "Export KQL scripts.",
+            "syntax": "az synapse kql-script export --output-folder\n                             --workspace-name\n                             [--name]",
+            "required_parameters": [
+                "--output-folder",
+                "--workspace-name"
+            ],
+            "optional_parameters": [
+                "--name -n"
+            ],
+            "examples": [
+                "az synapse kql-script export --workspace-name \"kustoWorkspaceName\" --output-folder \"C:\\KqlScirpt\""
+            ]
+        },
+        {
+            "name": "az synapse kql-script import",
+            "summary": "Creates a KQL script.",
+            "syntax": "az synapse kql-script import --file\n                             --name\n                             --resource-group\n                             --workspace-name\n                             [--kusto-database-name]\n                             [--kusto-pool-name]\n                             [--no-wait]",
+            "required_parameters": [
+                "--file -f",
+                "--name -n",
+                "--resource-group -g",
+                "--workspace-name"
+            ],
+            "optional_parameters": [
+                "--kusto-database-name",
+                "--kusto-pool-name",
+                "--no-wait"
+            ],
+            "examples": [
+                "az synapse kql-script import --resource-group \"kustorptest\" --workspace-name \"kustoWorkspaceName\"                --kusto-pool-name kustopooltest --kusto-database-name kustodbtest --file C:\\samples\\KqlScript.kql                --name \"kustoScript1\""
+            ]
+        },
+        {
+            "name": "az synapse kql-script list",
+            "summary": "List KQL scripts.",
+            "syntax": "az synapse kql-script list --workspace-name",
+            "required_parameters": [
+                "--workspace-name"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az synapse kql-script list --workspace-name \"kustoWorkspaceName\""
+            ]
+        },
+        {
+            "name": "az synapse kql-script show",
+            "summary": "Gets a KQL script.",
+            "syntax": "az synapse kql-script show --name\n                           --workspace-name",
+            "required_parameters": [
+                "--name -n",
+                "--workspace-name"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az synapse kql-script show --workspace-name \"kustoWorkspaceName\" --name \"kustoScript1\""
+            ]
+        },
+        {
+            "name": "az synapse kql-script wait",
+            "summary": "Place the CLI in a waiting state until a condition of a KQL script is met.",
+            "syntax": "az synapse kql-script wait --name\n                           --workspace-name\n                           [--created]\n                           [--custom]\n                           [--deleted]\n                           [--exists]\n                           [--interval]\n                           [--timeout]\n                           [--updated]",
+            "required_parameters": [
+                "--name -n",
+                "--workspace-name"
+            ],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--interval",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

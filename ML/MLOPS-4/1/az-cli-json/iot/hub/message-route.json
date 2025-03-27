@@ -1,0 +1,120 @@
+{
+    "command_group": "az iot hub message-route",
+    "description": "Manage routes of an IoT hub.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az iot hub message-route create",
+            "summary": "Add a route for an IoT Hub.",
+            "syntax": "az iot hub message-route create --en\n                                --hub-name\n                                --rn\n                                --source-type {deviceconnectionstateevents, devicejoblifecycleevents, devicelifecycleevents, devicemessages, digitaltwinchangeevents, invalid, twinchangeevents}\n                                [--condition]\n                                [--enabled {false, true}]\n                                [--resource-group]",
+            "required_parameters": [
+                "--en --endpoint --endpoint-name",
+                "--hub-name -n",
+                "--rn --route --route-name",
+                "--source-type --type -t"
+            ],
+            "optional_parameters": [
+                "--condition -c",
+                "--enabled -e",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az iot hub message-route create -n {iothub_name} --route-name {route_name} --endpoint-name {endpoint_name} --source DeviceMessages",
+                "az iot hub message-route create -n {iothub_name} --route-name {route_name} --endpoint-name events --source DeviceMessages",
+                "az iot hub message-route create -n {iothub_name} --route-name {route_name} --endpoint-name {endpoint_name} --source DigitalTwinChangeEvents --condition {condition} --enabled false"
+            ]
+        },
+        {
+            "name": "az iot hub message-route delete",
+            "summary": "Delete all routes or a mentioned route in an IoT Hub.",
+            "syntax": "az iot hub message-route delete --hub-name\n                                [--resource-group]\n                                [--rn]\n                                [--source-type {deviceconnectionstateevents, devicejoblifecycleevents, devicelifecycleevents, devicemessages, digitaltwinchangeevents, invalid, twinchangeevents}]\n                                [--yes {false, true}]",
+            "required_parameters": [
+                "--hub-name -n"
+            ],
+            "optional_parameters": [
+                "--resource-group -g",
+                "--rn --route --route-name",
+                "--source-type --type -t",
+                "--yes -y"
+            ],
+            "examples": [
+                "az iot hub message-route delete -n {iothub_name} --route-name {route_name}",
+                "az iot hub message-route delete -n {iothub_name} --source DeviceMessages",
+                "az iot hub message-route delete -n {iothub_name}"
+            ]
+        },
+        {
+            "name": "az iot hub message-route list",
+            "summary": "Get all the routes in an IoT Hub.",
+            "syntax": "az iot hub message-route list --hub-name\n                              [--resource-group]\n                              [--source-type {deviceconnectionstateevents, devicejoblifecycleevents, devicelifecycleevents, devicemessages, digitaltwinchangeevents, invalid, twinchangeevents}]",
+            "required_parameters": [
+                "--hub-name -n"
+            ],
+            "optional_parameters": [
+                "--resource-group -g",
+                "--source-type --type -t"
+            ],
+            "examples": [
+                "az iot hub message-route list -n {iothub_name}",
+                "az iot hub message-route list -n {iothub_name} --source DeviceMessages"
+            ]
+        },
+        {
+            "name": "az iot hub message-route show",
+            "summary": "Get information about the route in an IoT Hub.",
+            "syntax": "az iot hub message-route show --hub-name\n                              --rn\n                              [--resource-group]",
+            "required_parameters": [
+                "--hub-name -n",
+                "--rn --route --route-name"
+            ],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az iot hub message-route show -n {iothub_name} --route-name {route_name}"
+            ]
+        },
+        {
+            "name": "az iot hub message-route test",
+            "summary": "Test all routes or a mentioned route in an IoT Hub.",
+            "syntax": "az iot hub message-route test --hub-name\n                              [--ap]\n                              [--body]\n                              [--resource-group]\n                              [--rn]\n                              [--source-type {deviceconnectionstateevents, devicejoblifecycleevents, devicelifecycleevents, devicemessages, digitaltwinchangeevents, invalid, twinchangeevents}]\n                              [--sp]",
+            "required_parameters": [
+                "--hub-name -n"
+            ],
+            "optional_parameters": [
+                "--ap --app-properties",
+                "--body -b",
+                "--resource-group -g",
+                "--rn --route --route-name",
+                "--source-type --type -t",
+                "--sp --system-properties"
+            ],
+            "examples": [
+                "az iot hub message-route test -n {iothub_name} --route-name {route_name}",
+                "az iot hub message-route test -n {iothub_name} --source DeviceMessages",
+                "az iot hub message-route test -n {iothub_name} -b {body} --ap {app_properties} --sp {system_properties}"
+            ]
+        },
+        {
+            "name": "az iot hub message-route update",
+            "summary": "Update a route for an IoT Hub.",
+            "syntax": "az iot hub message-route update --hub-name\n                                --rn\n                                [--condition]\n                                [--en]\n                                [--enabled {false, true}]\n                                [--resource-group]\n                                [--source-type {deviceconnectionstateevents, devicejoblifecycleevents, devicelifecycleevents, devicemessages, digitaltwinchangeevents, invalid, twinchangeevents}]",
+            "required_parameters": [
+                "--hub-name -n",
+                "--rn --route --route-name"
+            ],
+            "optional_parameters": [
+                "--condition -c",
+                "--en --endpoint --endpoint-name",
+                "--enabled -e",
+                "--resource-group -g",
+                "--source-type --type -t"
+            ],
+            "examples": [
+                "az iot hub message-route update -n {iothub_name} --route-name {route_name} --endpoint-name {endpoint_name} --source DeviceMessages",
+                "az iot hub message-route update -n {iothub_name} --route-name {route_name} --enabled false",
+                "az iot hub message-route update -n {iothub_name} --route-name {route_name} --condition {condition}"
+            ]
+        }
+    ]
+}

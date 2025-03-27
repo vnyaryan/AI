@@ -1,0 +1,41 @@
+{
+    "command_group": "az functionapp scale config always-ready",
+    "description": "Manage the always-ready settings in the scale configuration.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az functionapp scale config always-ready delete",
+            "summary": "Delete always-ready settings in the scale configuration.",
+            "syntax": "az functionapp scale config always-ready delete --setting-names\n                                                [--ids]\n                                                [--name]\n                                                [--resource-group]\n                                                [--subscription]",
+            "required_parameters": [
+                "--setting-names"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az functionapp scale config always-ready delete --name MyFunctionApp --resource-group MyResourceGroup --setting-names key1 key2"
+            ]
+        },
+        {
+            "name": "az functionapp scale config always-ready set",
+            "summary": "Add or update existing always-ready settings in the scale configuration.",
+            "syntax": "az functionapp scale config always-ready set --settings\n                                             [--ids]\n                                             [--name]\n                                             [--resource-group]\n                                             [--subscription]",
+            "required_parameters": [
+                "--settings"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az functionapp scale config always-ready set --name MyFunctionApp --resource-group MyResourceGroup --settings key1=value1 key2=value2"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,73 @@
+{
+    "command_group": "az keyvault role definition",
+    "description": "Manage role definitions.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az keyvault role definition create",
+            "summary": "Create a custom role definition.",
+            "syntax": "az keyvault role definition create --hsm-name\n                                   --role-definition",
+            "required_parameters": [
+                "--hsm-name",
+                "--role-definition"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az keyvault role definition create --hsm-name MyHSM --role-definition '{\n    \"roleName\": \"My Custom Role\",\n    \"description\": \"The description of the custom rule.\",\n    \"actions\": [],\n    \"notActions\": [],\n    \"dataActions\": [\n        \"Microsoft.KeyVault/managedHsm/keys/read/action\"\n    ],\n    \"notDataActions\": []\n}'",
+                "az keyvault role definition create --hsm-name MyHSM --role-definition @keyvault-role.json"
+            ]
+        },
+        {
+            "name": "az keyvault role definition delete",
+            "summary": "Delete a role definition.",
+            "syntax": "az keyvault role definition delete --hsm-name\n                                   [--name]\n                                   [--role-id]",
+            "required_parameters": [
+                "--hsm-name"
+            ],
+            "optional_parameters": [
+                "--name -n",
+                "--role-id"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az keyvault role definition list",
+            "summary": "List role definitions.",
+            "syntax": "az keyvault role definition list [--custom-role-only {false, true}]\n                                 [--hsm-name]\n                                 [--scope]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--custom-role-only",
+                "--hsm-name",
+                "--scope"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az keyvault role definition show",
+            "summary": "Show the details of a role definition.",
+            "syntax": "az keyvault role definition show --hsm-name\n                                 [--name]\n                                 [--role-id]",
+            "required_parameters": [
+                "--hsm-name"
+            ],
+            "optional_parameters": [
+                "--name -n",
+                "--role-id"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az keyvault role definition update",
+            "summary": "Update a role definition.",
+            "syntax": "az keyvault role definition update --hsm-name\n                                   --role-definition",
+            "required_parameters": [
+                "--hsm-name",
+                "--role-definition"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az keyvault role definition update --hsm-name MyHSM --role-definition '{\n    \"roleName\": \"My Custom Role\",\n    \"name\": \"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx\",\n    \"id\": \"Microsoft.KeyVault/providers/Microsoft.Authorization/roleDefinitions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx\",\n    \"description\": \"The description of the custom rule.\",\n    \"actions\": [],\n    \"notActions\": [],\n    \"dataActions\": [\n        \"Microsoft.KeyVault/managedHsm/keys/read/action\",\n        \"Microsoft.KeyVault/managedHsm/keys/write/action\",\n        \"Microsoft.KeyVault/managedHsm/keys/backup/action\",\n        \"Microsoft.KeyVault/managedHsm/keys/create\"\n    ],\n    \"notDataActions\": []\n}'",
+                "az keyvault role definition update --hsm-name MyHSM --role-definition @keyvault-role.json"
+            ]
+        }
+    ]
+}

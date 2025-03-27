@@ -1,0 +1,58 @@
+{
+    "command_group": "az synapse sql pool threat-policy",
+    "description": "Manage a SQL pool's threat detection policies.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az synapse sql pool threat-policy show",
+            "summary": "Get a SQL pool's threat detection policy.",
+            "syntax": "az synapse sql pool threat-policy show --security-alert-policy-name\n                                       [--ids]\n                                       [--name]\n                                       [--resource-group]\n                                       [--subscription]\n                                       [--workspace-name]",
+            "required_parameters": [
+                "--security-alert-policy-name -s"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--workspace-name"
+            ],
+            "examples": [
+                "az synapse sql pool threat-policy show --name sqlpool --workspace-name testsynapseworkspace \\\n--resource-group rg --security-alert-policy-name threatpolicy"
+            ]
+        },
+        {
+            "name": "az synapse sql pool threat-policy update",
+            "summary": "Update a SQL pool's threat detection policy.",
+            "syntax": "az synapse sql pool threat-policy update [--add]\n                                         [--disabled-alerts]\n                                         [--email-account-admins {false, true}]\n                                         [--email-addresses]\n                                         [--force-string]\n                                         [--ids]\n                                         [--name]\n                                         [--remove]\n                                         [--resource-group]\n                                         [--retention-days]\n                                         [--security-alert-policy-name]\n                                         [--set]\n                                         [--state {Disabled, Enabled, New}]\n                                         [--storage-account]\n                                         [--storage-endpoint]\n                                         [--storage-key]\n                                         [--subscription]\n                                         [--workspace-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--disabled-alerts",
+                "--email-account-admins",
+                "--email-addresses",
+                "--force-string",
+                "--ids",
+                "--name -n",
+                "--remove",
+                "--resource-group -g",
+                "--retention-days",
+                "--security-alert-policy-name -s",
+                "--set",
+                "--state",
+                "--storage-account",
+                "--storage-endpoint",
+                "--storage-key",
+                "--subscription",
+                "--workspace-name"
+            ],
+            "examples": [
+                "az synapse sql pool threat-policy update --name sqlpool --workspace-name testsynapseworkspace --resource-group rg \\\n--state Enabled --storage-account mystorageaccount --security-alert-policy-name threatpolicy",
+                "az synapse sql pool threat-policy update --name sqlpool --workspace-name testsynapseworkspace --resource-group rg \\\n--state Enabled --storage-endpoint https://mystorage.blob.core.windows.net --storage-key MYKEY== \\\n--security-alert-policy-name threatpolicy",
+                "az synapse sql pool threat-policy update --name sqlpool --workspace-name testsynapseworkspace --resource-group rg \\\n--disabled-alerts Sql_Injection_Vulnerability Access_Anomaly --security-alert-policy-name threatpolicy",
+                "az synapse sql pool threat-policy update --name sqlpool --workspace-name testsynapseworkspace --resource-group rg \\\n--email-addresses me@examlee.com you@example.com --email-account-admins true \\\n--security-alert-policy-name threatpolicy",
+                "az synapse sql pool threat-policy update --name sqlpool --workspace-name testsynapseworkspace --resource-group rg \\\n--state Disabled --security-alert-policy-name threatpolicy"
+            ]
+        }
+    ]
+}

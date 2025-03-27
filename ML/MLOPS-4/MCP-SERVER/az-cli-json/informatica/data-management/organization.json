@@ -1,0 +1,95 @@
+{
+    "command_group": "az informatica data-management organization",
+    "description": "Manage Informatica organization.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az informatica data-management organization create",
+            "summary": "Create a InformaticaOrganizationResource.",
+            "syntax": "az informatica data-management organization create --name\n                                                   --resource-group\n                                                   [--company-details]\n                                                   [--informatica-properties]\n                                                   [--link-organization]\n                                                   [--location]\n                                                   [--marketplace-details]\n                                                   [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                                   [--tags]\n                                                   [--user-details]",
+            "required_parameters": [
+                "--name --org-name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--company-details",
+                "--informatica-properties",
+                "--link-organization",
+                "--location -l",
+                "--marketplace-details",
+                "--no-wait",
+                "--tags",
+                "--user-details"
+            ],
+            "examples": [
+                "az informatica data-management organization create -n demoOrg -g demoResourceGroup --subscription ae37d5a8-dff3-49a3-bfcd-139a4f7db98x -l westUS2"
+            ]
+        },
+        {
+            "name": "az informatica data-management organization delete",
+            "summary": "Delete a InformaticaOrganizationResource.",
+            "syntax": "az informatica data-management organization delete [--ids]\n                                                   [--name]\n                                                   [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                                   [--resource-group]\n                                                   [--subscription]\n                                                   [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --org-name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az informatica data-management organization delete -n demoOrg -g demoResourceGroup --subscription ae37d5a8-dff3-49a3-bfcd-139a4f7db98x"
+            ]
+        },
+        {
+            "name": "az informatica data-management organization list",
+            "summary": "List InformaticaOrganizationResource resources by subscription ID.",
+            "syntax": "az informatica data-management organization list [--max-items]\n                                                 [--next-token]\n                                                 [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az informatica data-management organization list --subscription ae37d5a8-dff3-49a3-bfcd-139a4f7db98x"
+            ]
+        },
+        {
+            "name": "az informatica data-management organization show",
+            "summary": "Get an InformaticaOrganizationResource.",
+            "syntax": "az informatica data-management organization show [--ids]\n                                                 [--name]\n                                                 [--resource-group]\n                                                 [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --org-name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az informatica data-management organization show -g demoResourceGroup -n demoOrg"
+            ]
+        },
+        {
+            "name": "az informatica data-management organization wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az informatica data-management organization wait [--created]\n                                                 [--custom]\n                                                 [--deleted]\n                                                 [--exists]\n                                                 [--ids]\n                                                 [--interval]\n                                                 [--name]\n                                                 [--resource-group]\n                                                 [--subscription]\n                                                 [--timeout]\n                                                 [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--name --org-name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

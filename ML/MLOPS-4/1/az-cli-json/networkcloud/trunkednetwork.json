@@ -1,0 +1,111 @@
+{
+    "command_group": "az networkcloud trunkednetwork",
+    "description": "Manage trunked network.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az networkcloud trunkednetwork create",
+            "summary": "Create a new trunked network or update the properties of the existing trunked network.",
+            "syntax": "az networkcloud trunkednetwork create --extended-location\n                                      --isolation-domain-ids\n                                      --name\n                                      --resource-group\n                                      --vlans\n                                      [--interface-name]\n                                      [--location]\n                                      [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                      [--tags]",
+            "required_parameters": [
+                "--extended-location",
+                "--isolation-domain-ids",
+                "--name --trunked-network-name -n",
+                "--resource-group -g",
+                "--vlans"
+            ],
+            "optional_parameters": [
+                "--interface-name",
+                "--location -l",
+                "--no-wait",
+                "--tags"
+            ],
+            "examples": [
+                "az networkcloud trunkednetwork create --resource-group \"resourceGroupName\" --name \"trunkedNetworkName\" --extended-location name=\"/subscriptions/subscriptionId/resourceGroups/resourceGroupName/providers/Microsoft.ExtendedLocation/customLocations/clusterExtendedLocationName\" type=\"CustomLocation\" --location \"location\" --interface-name \"eth0\" --isolation-domain-ids \"/subscriptions/subscriptionId/resourceGroups/resourceGroupName/providers/Microsoft.ManagedNetworkFabric/l2IsolationDomains/l2IsolationDomainName\" \"/subscriptions/subscriptionId/resourceGroups/resourceGroupName/providers/Microsoft.ManagedNetworkFabric/l3IsolationDomains/l3IsolationDomainName\" --vlans 12 14 --tags key1=\"myvalue1\" key2=\"myvalue2\""
+            ]
+        },
+        {
+            "name": "az networkcloud trunkednetwork delete",
+            "summary": "Delete the provided trunked network.",
+            "syntax": "az networkcloud trunkednetwork delete [--ids]\n                                      [--name]\n                                      [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                      [--resource-group]\n                                      [--subscription]\n                                      [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --trunked-network-name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az networkcloud trunkednetwork delete --resource-group \"resourceGroupName\" --name \"trunkedNetworkName\""
+            ]
+        },
+        {
+            "name": "az networkcloud trunkednetwork list",
+            "summary": "List trunked networks in the provided resource group or subscription.",
+            "syntax": "az networkcloud trunkednetwork list [--max-items]\n                                    [--next-token]\n                                    [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az networkcloud trunkednetwork list",
+                "az networkcloud trunkednetwork list --resource-group \"resourceGroupName\""
+            ]
+        },
+        {
+            "name": "az networkcloud trunkednetwork show",
+            "summary": "Get properties of the provided trunked network.",
+            "syntax": "az networkcloud trunkednetwork show [--ids]\n                                    [--name]\n                                    [--resource-group]\n                                    [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --trunked-network-name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az networkcloud trunkednetwork show --resource-group \"resourceGroupName\" --name \"trunkedNetworkName\""
+            ]
+        },
+        {
+            "name": "az networkcloud trunkednetwork update",
+            "summary": "Update tags associated with the provided trunked network.",
+            "syntax": "az networkcloud trunkednetwork update [--ids]\n                                      [--name]\n                                      [--resource-group]\n                                      [--subscription]\n                                      [--tags]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --trunked-network-name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--tags"
+            ],
+            "examples": [
+                "az networkcloud trunkednetwork update --resource-group \"resourceGroupName\" --name \"trunkedNetworkName\" --tags key1=\"myvalue1\" key2=\"myvalue2\""
+            ]
+        },
+        {
+            "name": "az networkcloud trunkednetwork wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az networkcloud trunkednetwork wait [--created]\n                                    [--custom]\n                                    [--deleted]\n                                    [--exists]\n                                    [--ids]\n                                    [--interval]\n                                    [--name]\n                                    [--resource-group]\n                                    [--subscription]\n                                    [--timeout]\n                                    [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--name --trunked-network-name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

@@ -1,0 +1,98 @@
+{
+    "command_group": "az cosmosdb sql container throughput",
+    "description": "Manage throughput of SQL container under an Azure Cosmos DB account.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az cosmosdb sql container throughput migrate",
+            "summary": "Migrate the throughput of the SQL container between autoscale and manually provisioned.",
+            "syntax": "az cosmosdb sql container throughput migrate --account-name\n                                             --database-name\n                                             --name\n                                             --resource-group\n                                             --throughput-type {autoscale, manual}",
+            "required_parameters": [
+                "--account-name -a",
+                "--database-name -d",
+                "--name -n",
+                "--resource-group -g",
+                "--throughput-type -t"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az cosmosdb sql container throughput migrate",
+            "summary": "Migrate the throughput of the SQL container between autoscale and manually provisioned.",
+            "syntax": "az cosmosdb sql container throughput migrate --account-name\n                                             --database-name\n                                             --name\n                                             --resource-group\n                                             --throughput-type {autoscale, manual}",
+            "required_parameters": [
+                "--account-name -a",
+                "--database-name -d",
+                "--name -n",
+                "--resource-group -g",
+                "--throughput-type -t"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az cosmosdb sql container throughput migrate --resource-group resource_group --account-name database_account_name --database-name parent_database_name --name name_of_collection_needs_to_be_restored --throughput-type Manual"
+            ]
+        },
+        {
+            "name": "az cosmosdb sql container throughput show",
+            "summary": "Get the throughput of the SQL container under an Azure Cosmos DB SQL database.",
+            "syntax": "az cosmosdb sql container throughput show --account-name\n                                          --database-name\n                                          --name\n                                          --resource-group",
+            "required_parameters": [
+                "--account-name -a",
+                "--database-name -d",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az cosmosdb sql container throughput show",
+            "summary": "Get the throughput of the SQL container under an Azure Cosmos DB SQL database.",
+            "syntax": "az cosmosdb sql container throughput show --account-name\n                                          --database-name\n                                          --name\n                                          --resource-group",
+            "required_parameters": [
+                "--account-name -a",
+                "--database-name -d",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az cosmosdb sql container throughput update",
+            "summary": "Update the throughput of the SQL container under an Azure Cosmos DB SQL database.",
+            "syntax": "az cosmosdb sql container throughput update --account-name\n                                            --database-name\n                                            --name\n                                            --resource-group\n                                            [--max-throughput]\n                                            [--throughput]",
+            "required_parameters": [
+                "--account-name -a",
+                "--database-name -d",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--max-throughput",
+                "--throughput"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az cosmosdb sql container throughput update",
+            "summary": "Update the throughput of the SQL container under an Azure Cosmos DB SQL database.",
+            "syntax": "az cosmosdb sql container throughput update --account-name\n                                            --database-name\n                                            --name\n                                            --resource-group\n                                            [--max-throughput]\n                                            [--throughput]\n                                            [--throughput-buckets]",
+            "required_parameters": [
+                "--account-name -a",
+                "--database-name -d",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--max-throughput",
+                "--throughput",
+                "--throughput-buckets"
+            ],
+            "examples": [
+                "az cosmosdb sql container throughput update --resource-group resource_group --account-name database_account_name --database-name parent_database_name --name name_of_collection_needs_to_be_restored --throughput 1000"
+            ]
+        }
+    ]
+}

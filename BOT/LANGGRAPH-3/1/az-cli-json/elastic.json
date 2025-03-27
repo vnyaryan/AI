@@ -1,0 +1,19 @@
+{
+    "command_group": "az elastic",
+    "description": "Manage Microsoft Elastic.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az elastic get-organization-api-key",
+            "summary": "Fetch User API Key from internal database, if it was generated and stored while creating the Elasticsearch Organization.",
+            "syntax": "az elastic get-organization-api-key [--email-id]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--email-id"
+            ],
+            "examples": [
+                "az elastic get-organization-api-key --email-id id"
+            ]
+        }
+    ]
+}

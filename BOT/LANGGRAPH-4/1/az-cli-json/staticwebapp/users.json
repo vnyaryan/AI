@@ -1,0 +1,59 @@
+{
+    "command_group": "az staticwebapp users",
+    "description": "Manage users of the static app.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az staticwebapp users invite",
+            "summary": "Create invitation link for specified user to the static app.",
+            "syntax": "az staticwebapp users invite --authentication-provider\n                             --domain\n                             --invitation-expiration-in-hours\n                             --name\n                             --roles\n                             --user-details\n                             [--resource-group]",
+            "required_parameters": [
+                "--authentication-provider",
+                "--domain",
+                "--invitation-expiration-in-hours",
+                "--name -n",
+                "--roles",
+                "--user-details"
+            ],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az staticwebapp users invite -n MyStaticAppName --authentication-provider GitHub --user-details JohnDoe --role Contributor --domain static-app-001.azurestaticapps.net --invitation-expiration-in-hours 1"
+            ]
+        },
+        {
+            "name": "az staticwebapp users list",
+            "summary": "Lists users and assigned roles, limited to users who accepted their invites.",
+            "syntax": "az staticwebapp users list --name\n                           [--authentication-provider]\n                           [--resource-group]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--authentication-provider",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az staticwebapp users list -n MyStaticAppName"
+            ]
+        },
+        {
+            "name": "az staticwebapp users update",
+            "summary": "Updates a user entry with the listed roles. Either user details or user id is required.",
+            "syntax": "az staticwebapp users update --name\n                             --roles\n                             [--authentication-provider]\n                             [--resource-group]\n                             [--user-details]\n                             [--user-id]",
+            "required_parameters": [
+                "--name -n",
+                "--roles"
+            ],
+            "optional_parameters": [
+                "--authentication-provider",
+                "--resource-group -g",
+                "--user-details",
+                "--user-id"
+            ],
+            "examples": [
+                "az staticwebapp users update -n MyStaticAppName --user-details JohnDoe --role Contributor"
+            ]
+        }
+    ]
+}

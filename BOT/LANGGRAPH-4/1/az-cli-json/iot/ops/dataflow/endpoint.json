@@ -1,0 +1,34 @@
+{
+    "command_group": "az iot ops dataflow endpoint",
+    "description": "Dataflow endpoint management.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az iot ops dataflow endpoint list",
+            "summary": "List dataflow endpoint resources associated with an instance.",
+            "syntax": "az iot ops dataflow endpoint list --instance\n                                  --resource-group",
+            "required_parameters": [
+                "--instance -i",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az iot ops dataflow endpoint list --in mycluster-ops-instance -g myresourcegroup"
+            ]
+        },
+        {
+            "name": "az iot ops dataflow endpoint show",
+            "summary": "Show details of a dataflow endpoint resource.",
+            "syntax": "az iot ops dataflow endpoint show --instance\n                                  --name\n                                  --resource-group",
+            "required_parameters": [
+                "--instance -i",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az iot ops dataflow endpoint show -n myendpoint --in mycluster-ops-instance -g myresourcegroup"
+            ]
+        }
+    ]
+}

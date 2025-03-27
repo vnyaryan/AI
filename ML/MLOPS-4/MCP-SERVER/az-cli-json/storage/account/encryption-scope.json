@@ -1,0 +1,82 @@
+{
+    "command_group": "az storage account encryption-scope",
+    "description": "Manage encryption scope for a storage account.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az storage account encryption-scope create",
+            "summary": "Create an encryption scope within storage account.",
+            "syntax": "az storage account encryption-scope create --account-name\n                                           --name\n                                           [--key-source {Microsoft.KeyVault, Microsoft.Storage}]\n                                           [--key-uri]\n                                           [--require-infrastructure-encryption {false, true}]\n                                           [--resource-group]",
+            "required_parameters": [
+                "--account-name",
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--key-source -s",
+                "--key-uri -u",
+                "--require-infrastructure-encryption -i",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az storage account encryption-scope create --name myencryption -s Microsoft.Storage --account-name mystorageaccount -g MyResourceGroup",
+                "az storage account encryption-scope create --name myencryption -s Microsoft.KeyVault -u \"https://vaultname.vault.azure.net/keys/keyname/1f7fa7edc99f4cdf82b5b5f32f2a50a7\" --account-name mystorageaccount -g MyResourceGroup",
+                "az storage account encryption-scope create --account-name mystorageaccount --key-source Microsoft.Storage --name myencryption --resource-group MyResourceGroup --subscription mysubscription"
+            ]
+        },
+        {
+            "name": "az storage account encryption-scope list",
+            "summary": "List encryption scopes within storage account.",
+            "syntax": "az storage account encryption-scope list --account-name\n                                         [--filter]\n                                         [--include {All, Disabled, Enabled}]\n                                         [--marker]\n                                         [--maxpagesize]\n                                         [--resource-group]",
+            "required_parameters": [
+                "--account-name"
+            ],
+            "optional_parameters": [
+                "--filter",
+                "--include",
+                "--marker",
+                "--maxpagesize",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az storage account encryption-scope list --account-name mystorageaccount -g MyResourceGroup",
+                "az storage account encryption-scope list --account-name mystorageaccount -g myresourcegroup --filter 'startswith(name, value)'"
+            ]
+        },
+        {
+            "name": "az storage account encryption-scope show",
+            "summary": "Show properties for specified encryption scope within storage account.",
+            "syntax": "az storage account encryption-scope show --account-name\n                                         --name\n                                         [--resource-group]",
+            "required_parameters": [
+                "--account-name",
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az storage account encryption-scope show --name myencryption --account-name mystorageaccount -g MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az storage account encryption-scope update",
+            "summary": "Update properties for specified encryption scope within storage account.",
+            "syntax": "az storage account encryption-scope update --account-name\n                                           --name\n                                           [--key-source {Microsoft.KeyVault, Microsoft.Storage}]\n                                           [--key-uri]\n                                           [--resource-group]\n                                           [--state {Disabled, Enabled}]",
+            "required_parameters": [
+                "--account-name",
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--key-source -s",
+                "--key-uri -u",
+                "--resource-group -g",
+                "--state"
+            ],
+            "examples": [
+                "az storage account encryption-scope update --name myencryption -s Microsoft.Storage --account-name mystorageaccount -g MyResourceGroup",
+                "az storage account encryption-scope update --name myencryption -s Microsoft.KeyVault -u \"https://vaultname.vault.azure.net/keys/keyname/1f7fa7edc99f4cdf82b5b5f32f2a50a7\" --account-name mystorageaccount -g MyResourceGroup",
+                "az storage account encryption-scope update --name myencryption --state Disabled --account-name mystorageaccount -g MyResourceGroup",
+                "az storage account encryption-scope update --name myencryption --state Enabled --account-name mystorageaccount -g MyResourceGroup"
+            ]
+        }
+    ]
+}

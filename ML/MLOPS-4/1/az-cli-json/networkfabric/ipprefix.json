@@ -1,0 +1,112 @@
+{
+    "command_group": "az networkfabric ipprefix",
+    "description": "Manage Ip Prefix Resource.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az networkfabric ipprefix create",
+            "summary": "Create a Ip Prefix resource.",
+            "syntax": "az networkfabric ipprefix create --ip-prefix-rules\n                                 --resource-group\n                                 --resource-name\n                                 [--annotation]\n                                 [--location]\n                                 [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                 [--tags]",
+            "required_parameters": [
+                "--ip-prefix-rules",
+                "--resource-group -g",
+                "--resource-name"
+            ],
+            "optional_parameters": [
+                "--annotation",
+                "--location -l",
+                "--no-wait",
+                "--tags"
+            ],
+            "examples": [
+                "az networkfabric ipprefix create --resource-group \"example-rg\" --location \"westus3\" --resource-name \"example-ipprefix\" --ip-prefix-rules \"[{action:Permit,sequenceNumber:1234,networkPrefix:'1.1.1.0/24',condition:EqualTo,subnetMaskLength:24}]\"",
+                "az networkfabric ipprefix create --ip-prefix-rules \"??\""
+            ]
+        },
+        {
+            "name": "az networkfabric ipprefix delete",
+            "summary": "Delete the Ip Prefix resource.",
+            "syntax": "az networkfabric ipprefix delete [--ids]\n                                 [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                 [--resource-group]\n                                 [--resource-name]\n                                 [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--no-wait",
+                "--resource-group -g",
+                "--resource-name",
+                "--subscription"
+            ],
+            "examples": [
+                "az networkfabric ipprefix delete --resource-group \"example-rg\" --resource-name \"example-ipprefix\""
+            ]
+        },
+        {
+            "name": "az networkfabric ipprefix list",
+            "summary": "List all Ip Prefixes in the provided resource group or subscription.",
+            "syntax": "az networkfabric ipprefix list [--max-items]\n                               [--next-token]\n                               [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az networkfabric ipprefix list --resource-group \"example-rg\"",
+                "az networkfabric ipprefix list --subscription \"<subscriptionId>\""
+            ]
+        },
+        {
+            "name": "az networkfabric ipprefix show",
+            "summary": "Show details of the provided Ip Prefix resource.",
+            "syntax": "az networkfabric ipprefix show [--ids]\n                               [--resource-group]\n                               [--resource-name]\n                               [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--resource-group -g",
+                "--resource-name",
+                "--subscription"
+            ],
+            "examples": [
+                "az networkfabric ipprefix show --resource-group \"example-rg\" --resource-name \"example-ipprefix\""
+            ]
+        },
+        {
+            "name": "az networkfabric ipprefix update",
+            "summary": "Update to update certain properties of the IP Prefix resource.",
+            "syntax": "az networkfabric ipprefix update [--annotation]\n                                 [--ids]\n                                 [--ip-prefix-rules]\n                                 [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                 [--resource-group]\n                                 [--resource-name]\n                                 [--subscription]\n                                 [--tags]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--annotation",
+                "--ids",
+                "--ip-prefix-rules",
+                "--no-wait",
+                "--resource-group -g",
+                "--resource-name",
+                "--subscription",
+                "--tags"
+            ],
+            "examples": [
+                "az networkfabric ipprefix update  -g \"example-rg\" --resource-name \"example-ipprefix\" --ip-prefix-rules \"[{action:Permit,sequenceNumber:4155123341,networkPrefix:'10.10.10.10/30',condition:GreaterThanOrEqualTo,subnetMaskLength:10}]\""
+            ]
+        },
+        {
+            "name": "az networkfabric ipprefix wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az networkfabric ipprefix wait [--created]\n                               [--custom]\n                               [--deleted]\n                               [--exists]\n                               [--ids]\n                               [--interval]\n                               [--resource-group]\n                               [--resource-name]\n                               [--subscription]\n                               [--timeout]\n                               [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--resource-group -g",
+                "--resource-name",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

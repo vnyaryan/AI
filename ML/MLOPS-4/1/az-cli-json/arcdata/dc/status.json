@@ -1,0 +1,23 @@
+{
+    "command_group": "az arcdata dc status",
+    "description": "Status commands.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az arcdata dc status show",
+            "summary": "Show the status of the data controller.",
+            "syntax": "az arcdata dc status show [--k8s-namespace]\n                          [--name]\n                          [--resource-group]\n                          [--use-k8s]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--k8s-namespace -k",
+                "--name -n",
+                "--resource-group -g",
+                "--use-k8s"
+            ],
+            "examples": [
+                "az arcdata dc status show --k8s-namespace namespace --use-k8s",
+                "az arcdata dc status show --resource-group resource-group"
+            ]
+        }
+    ]
+}

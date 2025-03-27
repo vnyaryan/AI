@@ -1,0 +1,122 @@
+{
+    "command_group": "az healthcareapis workspace iot-connector",
+    "description": "Manage iot connector with healthcareapis.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az healthcareapis workspace iot-connector create",
+            "summary": "Create an IoT Connector resource with the specified parameters.",
+            "syntax": "az healthcareapis workspace iot-connector create --iot-connector-name\n                                                 --resource-group\n                                                 --workspace-name\n                                                 [--content]\n                                                 [--etag]\n                                                 [--identity-type {None, SystemAssigned, SystemAssigned,UserAssigned, UserAssigned}]\n                                                 [--ingestion-endpoint-configuration]\n                                                 [--location]\n                                                 [--no-wait]\n                                                 [--tags]\n                                                 [--user-assigned-identities]",
+            "required_parameters": [
+                "--iot-connector-name --name -n",
+                "--resource-group -g",
+                "--workspace-name"
+            ],
+            "optional_parameters": [
+                "--content",
+                "--etag",
+                "--identity-type",
+                "--ingestion-endpoint-configuration -c",
+                "--location -l",
+                "--no-wait",
+                "--tags",
+                "--user-assigned-identities -i"
+            ],
+            "examples": [
+                "az healthcareapis workspace iot-connector create --identity-type \"SystemAssigned\" --location \"westus\" --content \"{\\\"template\\\":[{\\\"template\\\":{\\\"deviceIdExpression\\\":\\\"$.deviceid\\\",\\\"timestampExpression\\\":\\\"$.measurementdatetime\\\",\\\"typeMatchExpression\\\":\\\"$..[?(@heartrate)]\\\",\\\"typeName\\\":\\\"heartrate\\\",\\\"values\\\":[{\\\"required\\\":\\\"true\\\",\\\"valueExpression\\\":\\\"$.heartrate\\\",\\\"valueName\\\":\\\"hr\\\"}]},\\\"templateType\\\":\\\"JsonPathContent\\\"}],\\\"templateType\\\":\\\"CollectionContent\\\"}\" --ingestion-endpoint-configuration consumer-group=\"ConsumerGroupA\" event-hub-name=\"MyEventHubName\" fully-qualified-event-hub-namespace=\"myeventhub.servicesbus.windows.net\" --tags additionalProp1=\"string\" additionalProp2=\"string\" additionalProp3=\"string\" --name \"blue\" --resource-group \"testRG\" --workspace-name \"workspace1\""
+            ]
+        },
+        {
+            "name": "az healthcareapis workspace iot-connector delete",
+            "summary": "Deletes an IoT Connector.",
+            "syntax": "az healthcareapis workspace iot-connector delete [--ids]\n                                                 [--iot-connector-name]\n                                                 [--no-wait]\n                                                 [--resource-group]\n                                                 [--subscription]\n                                                 [--workspace-name]\n                                                 [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--iot-connector-name --name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--workspace-name",
+                "--yes -y"
+            ],
+            "examples": [
+                "az healthcareapis workspace iot-connector delete --name \"blue\" --resource-group \"testRG\" --workspace-name \"workspace1\""
+            ]
+        },
+        {
+            "name": "az healthcareapis workspace iot-connector list",
+            "summary": "Lists all IoT Connectors for the given workspace.",
+            "syntax": "az healthcareapis workspace iot-connector list --resource-group\n                                               --workspace-name",
+            "required_parameters": [
+                "--resource-group -g",
+                "--workspace-name"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az healthcareapis workspace iot-connector list --resource-group \"testRG\" --workspace-name \"workspace1\""
+            ]
+        },
+        {
+            "name": "az healthcareapis workspace iot-connector show",
+            "summary": "Gets the properties of the specified IoT Connector.",
+            "syntax": "az healthcareapis workspace iot-connector show [--ids]\n                                               [--iot-connector-name]\n                                               [--resource-group]\n                                               [--subscription]\n                                               [--workspace-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--iot-connector-name --name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--workspace-name"
+            ],
+            "examples": [
+                "az healthcareapis workspace iot-connector show --name \"blue\" --resource-group \"testRG\" --workspace-name \"workspace1\""
+            ]
+        },
+        {
+            "name": "az healthcareapis workspace iot-connector update",
+            "summary": "Patch an IoT Connector.",
+            "syntax": "az healthcareapis workspace iot-connector update [--identity-type {None, SystemAssigned, SystemAssigned,UserAssigned, UserAssigned}]\n                                                 [--ids]\n                                                 [--iot-connector-name]\n                                                 [--no-wait]\n                                                 [--resource-group]\n                                                 [--subscription]\n                                                 [--tags]\n                                                 [--user-assigned-identities]\n                                                 [--workspace-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--identity-type",
+                "--ids",
+                "--iot-connector-name --name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--tags",
+                "--user-assigned-identities -i",
+                "--workspace-name"
+            ],
+            "examples": [
+                "az healthcareapis workspace iot-connector update --name \"blue\" --identity-type \"SystemAssigned\" --tags additionalProp1=\"string\" additionalProp2=\"string\" additionalProp3=\"string\" --resource-group \"testRG\" --workspace-name \"workspace1\""
+            ]
+        },
+        {
+            "name": "az healthcareapis workspace iot-connector wait",
+            "summary": "Place the CLI in a waiting state until a condition of the healthcareapis workspace iot-connector is met.",
+            "syntax": "az healthcareapis workspace iot-connector wait [--created]\n                                               [--custom]\n                                               [--deleted]\n                                               [--exists]\n                                               [--ids]\n                                               [--interval]\n                                               [--iot-connector-name]\n                                               [--resource-group]\n                                               [--subscription]\n                                               [--timeout]\n                                               [--updated]\n                                               [--workspace-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--iot-connector-name --name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated",
+                "--workspace-name"
+            ],
+            "examples": [
+                "az healthcareapis workspace iot-connector wait --name \"blue\" --resource-group \"testRG\" --workspace-name \"workspace1\" --created",
+                "az healthcareapis workspace iot-connector wait --name \"blue\" --resource-group \"testRG\" --workspace-name \"workspace1\" --updated",
+                "az healthcareapis workspace iot-connector wait --name \"blue\" --resource-group \"testRG\" --workspace-name \"workspace1\" --deleted"
+            ]
+        }
+    ]
+}

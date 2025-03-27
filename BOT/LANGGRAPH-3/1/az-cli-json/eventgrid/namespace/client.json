@@ -1,0 +1,128 @@
+{
+    "command_group": "az eventgrid namespace client",
+    "description": "Manage eventgrid namespace client.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az eventgrid namespace client create",
+            "summary": "Create a client.",
+            "syntax": "az eventgrid namespace client create --client-name\n                                     --namespace-name\n                                     --resource-group\n                                     [--attributes]\n                                     [--authentication]\n                                     [--authentication-name]\n                                     [--client-certificate-authentication]\n                                     [--description]\n                                     [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                     [--state {Disabled, Enabled}]",
+            "required_parameters": [
+                "--client-name --name -n",
+                "--namespace-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--attributes",
+                "--authentication",
+                "--authentication-name",
+                "--client-certificate-authentication",
+                "--description",
+                "--no-wait",
+                "--state"
+            ],
+            "examples": [
+                "az eventgrid namespace client create -g rg --namespace-name name -n client-name  --attributes \"{'room':'345','floor':5}\" --client-certificate-authentication \"{validationScheme:SubjectMatchesAuthenticationName}\""
+            ]
+        },
+        {
+            "name": "az eventgrid namespace client delete",
+            "summary": "Delete an existing client.",
+            "syntax": "az eventgrid namespace client delete [--client-name]\n                                     [--ids]\n                                     [--namespace-name]\n                                     [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                     [--resource-group]\n                                     [--subscription]\n                                     [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--client-name --name -n",
+                "--ids",
+                "--namespace-name",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az eventgrid namespace client delete -g rg --namespace-name name -n client-name"
+            ]
+        },
+        {
+            "name": "az eventgrid namespace client list",
+            "summary": "List all the client under a namespace.",
+            "syntax": "az eventgrid namespace client list --namespace-name\n                                   --resource-group\n                                   [--filter]\n                                   [--max-items]\n                                   [--next-token]\n                                   [--top]",
+            "required_parameters": [
+                "--namespace-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--filter",
+                "--max-items",
+                "--next-token",
+                "--top"
+            ],
+            "examples": [
+                "az eventgrid namespace client list -g rg --namespace-name name"
+            ]
+        },
+        {
+            "name": "az eventgrid namespace client show",
+            "summary": "Show a client.",
+            "syntax": "az eventgrid namespace client show [--client-name]\n                                   [--ids]\n                                   [--namespace-name]\n                                   [--resource-group]\n                                   [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--client-name --name -n",
+                "--ids",
+                "--namespace-name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az eventgrid namespace client show -g rg --namespace-name name -n client-name"
+            ]
+        },
+        {
+            "name": "az eventgrid namespace client update",
+            "summary": "Update a client.",
+            "syntax": "az eventgrid namespace client update [--add]\n                                     [--attributes]\n                                     [--authentication]\n                                     [--client-certificate-authentication]\n                                     [--client-name]\n                                     [--description]\n                                     [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                     [--ids]\n                                     [--namespace-name]\n                                     [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                     [--remove]\n                                     [--resource-group]\n                                     [--set]\n                                     [--state {Disabled, Enabled}]\n                                     [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--attributes",
+                "--authentication",
+                "--client-certificate-authentication",
+                "--client-name --name -n",
+                "--description",
+                "--force-string",
+                "--ids",
+                "--namespace-name",
+                "--no-wait",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--state",
+                "--subscription"
+            ],
+            "examples": [
+                "az eventgrid namespace client update -g rg --namespace-name name -n client-name --description test"
+            ]
+        },
+        {
+            "name": "az eventgrid namespace client wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az eventgrid namespace client wait [--client-name]\n                                   [--created]\n                                   [--custom]\n                                   [--deleted]\n                                   [--exists]\n                                   [--ids]\n                                   [--interval]\n                                   [--namespace-name]\n                                   [--resource-group]\n                                   [--subscription]\n                                   [--timeout]\n                                   [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--client-name --name -n",
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--namespace-name",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

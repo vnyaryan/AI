@@ -1,0 +1,118 @@
+{
+    "command_group": "az network nat gateway",
+    "description": "Manage NAT gateways.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az network nat gateway create",
+            "summary": "Create a NAT gateway.",
+            "syntax": "az network nat gateway create --name\n                              --resource-group\n                              [--idle-timeout]\n                              [--location]\n                              [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                              [--public-ip-addresses]\n                              [--public-ip-prefixes]\n                              [--tags]\n                              [--zone]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--idle-timeout",
+                "--location -l",
+                "--no-wait",
+                "--public-ip-addresses",
+                "--public-ip-prefixes",
+                "--tags",
+                "--zone -z"
+            ],
+            "examples": [
+                "az network nat gateway create --resource-group MyResourceGroup --name MyNatGateway --location MyLocation --public-ip-addresses  MyPublicIp --public-ip-prefixes MyPublicIpPrefix --idle-timeout 4 --zone 2"
+            ]
+        },
+        {
+            "name": "az network nat gateway delete",
+            "summary": "Delete a NAT gateway.",
+            "syntax": "az network nat gateway delete [--ids]\n                              [--name]\n                              [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                              [--resource-group]\n                              [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az network nat gateway delete --resource-group MyResourceGroup --name MyNatGateway"
+            ]
+        },
+        {
+            "name": "az network nat gateway list",
+            "summary": "List NAT gateways.",
+            "syntax": "az network nat gateway list [--max-items]\n                            [--next-token]\n                            [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az network nat gateway list -g MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az network nat gateway show",
+            "summary": "Show details of a NAT gateway.",
+            "syntax": "az network nat gateway show [--ids]\n                            [--name]\n                            [--resource-group]\n                            [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az network nat gateway show --resource-group MyResourceGroup --name MyNatGateway",
+                "az network nat gateway show --ids {GatewayId}"
+            ]
+        },
+        {
+            "name": "az network nat gateway update",
+            "summary": "Update a NAT gateway.",
+            "syntax": "az network nat gateway update [--add]\n                              [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                              [--idle-timeout]\n                              [--ids]\n                              [--name]\n                              [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                              [--public-ip-addresses]\n                              [--public-ip-prefixes]\n                              [--remove]\n                              [--resource-group]\n                              [--set]\n                              [--subscription]\n                              [--tags]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--force-string",
+                "--idle-timeout",
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--public-ip-addresses",
+                "--public-ip-prefixes",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--subscription",
+                "--tags"
+            ],
+            "examples": [
+                "az network nat gateway update -g MyResourceGroup --name MyNatGateway --idle-timeout 5"
+            ]
+        },
+        {
+            "name": "az network nat gateway wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az network nat gateway wait [--created]\n                            [--custom]\n                            [--deleted]\n                            [--exists]\n                            [--ids]\n                            [--interval]\n                            [--name]\n                            [--resource-group]\n                            [--subscription]\n                            [--timeout]\n                            [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

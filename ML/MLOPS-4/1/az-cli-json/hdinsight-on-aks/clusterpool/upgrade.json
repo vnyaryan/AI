@@ -1,0 +1,57 @@
+{
+    "command_group": "az hdinsight-on-aks clusterpool upgrade",
+    "description": "Upgrade clusterpool.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az hdinsight-on-aks clusterpool upgrade history",
+            "summary": "List a list of upgrade history.",
+            "syntax": "az hdinsight-on-aks clusterpool upgrade history --cluster-pool-name\n                                                --resource-group\n                                                [--max-items]\n                                                [--next-token]",
+            "required_parameters": [
+                "--cluster-pool-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az hdinsight-on-aks clusterpool upgrade history --g {RG} -n {poolName}"
+            ]
+        },
+        {
+            "name": "az hdinsight-on-aks clusterpool upgrade list",
+            "summary": "List a cluster pool available upgrade.",
+            "syntax": "az hdinsight-on-aks clusterpool upgrade list --cluster-pool-name\n                                             --resource-group\n                                             [--max-items]\n                                             [--next-token]",
+            "required_parameters": [
+                "--cluster-pool-name --name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az hdinsight-on-aks clusterpool upgrade list --g {RG} -n {poolName}"
+            ]
+        },
+        {
+            "name": "az hdinsight-on-aks clusterpool upgrade run",
+            "summary": "Upgrade a cluster pool.",
+            "syntax": "az hdinsight-on-aks clusterpool upgrade run [--cluster-pool-name]\n                                            [--ids]\n                                            [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                            [--node-os-upgrade]\n                                            [--resource-group]\n                                            [--subscription]\n                                            [--upgrade-profile]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--cluster-pool-name --name -n",
+                "--ids",
+                "--no-wait",
+                "--node-os-upgrade",
+                "--resource-group -g",
+                "--subscription",
+                "--upgrade-profile"
+            ],
+            "examples": [
+                "az hdinsight-on-aks clusterpool upgrade run --cluster-pool-name {poolName} -g {RG} --upgrade-profile {target-aks-version=1.27.9 upgrade-clusters=false upgrade-cluster-pool=true}"
+            ]
+        }
+    ]
+}

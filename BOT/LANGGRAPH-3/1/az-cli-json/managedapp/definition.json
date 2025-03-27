@@ -1,0 +1,99 @@
+{
+    "command_group": "az managedapp definition",
+    "description": "Manage Azure Managed Applications.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az managedapp definition create",
+            "summary": "Create a managed application definition.",
+            "syntax": "az managedapp definition create --authorizations\n                                --description\n                                --display-name\n                                --lock-level {CanNotDelete, None, ReadOnly}\n                                --name\n                                --resource-group\n                                [--create-ui-definition]\n                                [--deployment-mode {Complete, Incremental}]\n                                [--location]\n                                [--main-template]\n                                [--package-file-uri]\n                                [--tags]",
+            "required_parameters": [
+                "--authorizations -a",
+                "--description",
+                "--display-name",
+                "--lock-level",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--create-ui-definition -c",
+                "--deployment-mode",
+                "--location -l",
+                "--main-template -t",
+                "--package-file-uri",
+                "--tags"
+            ],
+            "examples": [
+                "az managedapp definition create -g MyResourceGroup -n MyManagedAppDef -l eastus --display-name \"MyManagedAppDef\" \\\n    --description \"My Managed App Def description\" -a \"myPrincipalId:myRoleId\" --lock-level None \\\n    --package-file-uri \"https://path/to/myPackage.zip\"",
+                "az managedapp definition create -g MyResourceGroup -n MyManagedAppDef -l eastus --display-name \"MyManagedAppDef\" \\\n    --description \"My Managed App Def description\" -a \"myPrincipalId:myRoleId\" --lock-level None \\\n    --create-ui-definition @myCreateUiDef.json --main-template @myMainTemplate.json"
+            ]
+        },
+        {
+            "name": "az managedapp definition delete",
+            "summary": "Delete a managed application definition.",
+            "syntax": "az managedapp definition delete [--ids]\n                                [--name]\n                                [--resource-group]\n                                [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az managedapp definition delete --name MyManagedApplicationDefinition --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az managedapp definition list",
+            "summary": "List managed application definitions.",
+            "syntax": "az managedapp definition list --resource-group",
+            "required_parameters": [
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az managedapp definition list --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az managedapp definition show",
+            "summary": "Gets a managed application definition.",
+            "syntax": "az managedapp definition show [--ids]\n                              [--name]\n                              [--resource-group]\n                              [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az managedapp definition update",
+            "summary": "Update a managed application definition.",
+            "syntax": "az managedapp definition update --authorizations\n                                --description\n                                --display-name\n                                --lock-level {CanNotDelete, None, ReadOnly}\n                                [--create-ui-definition]\n                                [--deployment-mode {Complete, Incremental}]\n                                [--ids]\n                                [--location]\n                                [--main-template]\n                                [--name]\n                                [--package-file-uri]\n                                [--resource-group]\n                                [--subscription]\n                                [--tags]",
+            "required_parameters": [
+                "--authorizations -a",
+                "--description",
+                "--display-name",
+                "--lock-level"
+            ],
+            "optional_parameters": [
+                "--create-ui-definition -c",
+                "--deployment-mode",
+                "--ids",
+                "--location -l",
+                "--main-template -t",
+                "--name -n",
+                "--package-file-uri",
+                "--resource-group -g",
+                "--subscription",
+                "--tags"
+            ],
+            "examples": [
+                "az managedapp definition update -g MyResourceGroup -n MyManagedAppDef -l eastus --display-name \"MyManagedAppDef\" \\\n    --description \"My Managed App Def description\" -a \"myPrincipalId:myRoleId\" --lock-level None \\\n    --package-file-uri \"https://path/to/myPackage.zip\"",
+                "az managedapp definition update -g MyResourceGroup -n MyManagedAppDef -l eastus --display-name \"MyManagedAppDef\" \\\n    --description \"My Managed App Def description\" -a \"myPrincipalId:myRoleId\" --lock-level None \\\n    --create-ui-definition @myCreateUiDef.json --main-template @myMainTemplate.json"
+            ]
+        }
+    ]
+}

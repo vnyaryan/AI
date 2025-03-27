@@ -1,0 +1,82 @@
+{
+    "command_group": "az synapse integration-runtime-node",
+    "description": "Manage Synapse's self-hosted integration runtime nodes.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az synapse integration-runtime-node delete",
+            "summary": "Remove a self-hosted integration runtime node.",
+            "syntax": "az synapse integration-runtime-node delete --node-name\n                                           [--ids]\n                                           [--name]\n                                           [--resource-group]\n                                           [--subscription]\n                                           [--workspace-name]\n                                           [--yes]",
+            "required_parameters": [
+                "--node-name"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--workspace-name",
+                "--yes -y"
+            ],
+            "examples": [
+                "az synapse integration-runtime-node delete --workspace-name testsynapseworkspace --resource-group rg \\\n  --name selfhostedintegrationruntime --node-name testnode"
+            ]
+        },
+        {
+            "name": "az synapse integration-runtime-node get-ip-address",
+            "summary": "Get self-hosted integration runtime node ip.",
+            "syntax": "az synapse integration-runtime-node get-ip-address --node-name\n                                                   [--ids]\n                                                   [--name]\n                                                   [--resource-group]\n                                                   [--subscription]\n                                                   [--workspace-name]",
+            "required_parameters": [
+                "--node-name"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--workspace-name"
+            ],
+            "examples": [
+                "az synapse integration-runtime-node get-ip-address --workspace-name testsynapseworkspace --resource-group rg \\\n  --name selfhostedintegrationruntime --node-name testnode"
+            ]
+        },
+        {
+            "name": "az synapse integration-runtime-node show",
+            "summary": "Get self-hosted integration runtime node information.",
+            "syntax": "az synapse integration-runtime-node show --node-name\n                                         [--ids]\n                                         [--name]\n                                         [--resource-group]\n                                         [--subscription]\n                                         [--workspace-name]",
+            "required_parameters": [
+                "--node-name"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--workspace-name"
+            ],
+            "examples": [
+                "az synapse integration-runtime-node show --workspace-name testsynapseworkspace --resource-group rg \\\n  --name selfhostedintegrationruntime --node-name testnode"
+            ]
+        },
+        {
+            "name": "az synapse integration-runtime-node update",
+            "summary": "Update self-hosted integration runtime node.",
+            "syntax": "az synapse integration-runtime-node update --auto-update {Off, On}\n                                           --node-name\n                                           --update-delay-offset\n                                           [--ids]\n                                           [--name]\n                                           [--resource-group]\n                                           [--subscription]\n                                           [--workspace-name]",
+            "required_parameters": [
+                "--auto-update",
+                "--node-name",
+                "--update-delay-offset"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--workspace-name"
+            ],
+            "examples": [
+                "az synapse integration-runtime-node update --workspace-name testsynapseworkspace --resource-group rg \\\n  --name selfhostedintegrationruntime --node-name testnode --auto-update On --update-delay-offset 'PT03H'"
+            ]
+        }
+    ]
+}

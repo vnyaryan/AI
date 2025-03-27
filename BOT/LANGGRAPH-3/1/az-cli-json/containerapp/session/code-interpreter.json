@@ -1,0 +1,130 @@
+{
+    "command_group": "az containerapp session code-interpreter",
+    "description": "Commands to interact with and manage code interpreter sessions.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az containerapp session code-interpreter delete-file",
+            "summary": "Delete a file uploaded to a code interpreter session.",
+            "syntax": "az containerapp session code-interpreter delete-file --filename\n                                                     --identifier\n                                                     --resource-group\n                                                     [--ids]\n                                                     [--name]\n                                                     [--no-wait]\n                                                     [--path]\n                                                     [--session-pool-location]\n                                                     [--subscription]\n                                                     [--yes]",
+            "required_parameters": [
+                "--filename",
+                "--identifier -i",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--path",
+                "--session-pool-location",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az containerapp session code-interpreter delete-file -n MySessionPool -g MyResourceGroup --identifier MySession \\ --filename example.txt --path /"
+            ]
+        },
+        {
+            "name": "az containerapp session code-interpreter execute",
+            "summary": "Execute code in a code interpreter session.",
+            "syntax": "az containerapp session code-interpreter execute --code\n                                                 --identifier\n                                                 --resource-group\n                                                 [--ids]\n                                                 [--name]\n                                                 [--no-wait]\n                                                 [--session-pool-location]\n                                                 [--subscription]\n                                                 [--timeout-in-seconds]",
+            "required_parameters": [
+                "--code",
+                "--identifier -i",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--session-pool-location",
+                "--subscription",
+                "--timeout-in-seconds"
+            ],
+            "examples": [
+                "az containerapp session code-interpreter execute -n MySessionPool -g MyResourceGroup --identifier MySession \\\n    --code 'print(\"'\"Hello world\"'\")' --timeout-in-seconds 30 --session-pool-location eastasia"
+            ]
+        },
+        {
+            "name": "az containerapp session code-interpreter list-files",
+            "summary": "List files uploaded to a code interpreter session.",
+            "syntax": "az containerapp session code-interpreter list-files --identifier\n                                                    --resource-group\n                                                    [--ids]\n                                                    [--name]\n                                                    [--path]\n                                                    [--session-pool-location]\n                                                    [--subscription]",
+            "required_parameters": [
+                "--identifier -i",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--path",
+                "--session-pool-location",
+                "--subscription"
+            ],
+            "examples": [
+                "az containerapp session code-interpreter list-files -n MySessionPool -g MyResourceGroup --identifier MySession --path /"
+            ]
+        },
+        {
+            "name": "az containerapp session code-interpreter show-file-content",
+            "summary": "Show the content a file uploaded to a code interpreter session.",
+            "syntax": "az containerapp session code-interpreter show-file-content --filename\n                                                           --identifier\n                                                           --resource-group\n                                                           [--ids]\n                                                           [--name]\n                                                           [--path]\n                                                           [--session-pool-location]\n                                                           [--subscription]",
+            "required_parameters": [
+                "--filename",
+                "--identifier -i",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--path",
+                "--session-pool-location",
+                "--subscription"
+            ],
+            "examples": [
+                "az containerapp session code-interpreter show-file-content -n MySessionPool -g MyResourceGroup --identifier MySession \\ --filename example.txt --path /"
+            ]
+        },
+        {
+            "name": "az containerapp session code-interpreter show-file-metadata",
+            "summary": "Shows the meta-data content a file uploaded to a code interpreter session.",
+            "syntax": "az containerapp session code-interpreter show-file-metadata --filename\n                                                            --identifier\n                                                            --resource-group\n                                                            [--ids]\n                                                            [--name]\n                                                            [--path]\n                                                            [--session-pool-location]\n                                                            [--subscription]",
+            "required_parameters": [
+                "--filename",
+                "--identifier -i",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--path",
+                "--session-pool-location",
+                "--subscription"
+            ],
+            "examples": [
+                "az containerapp session code-interpreter show-file-metadata -n MySessionPool -g MyResourceGroup --identifier MySession \\ --filename example.txt --path /"
+            ]
+        },
+        {
+            "name": "az containerapp session code-interpreter upload-file",
+            "summary": "Upload a file to a code interpreter session .",
+            "syntax": "az containerapp session code-interpreter upload-file --filepath\n                                                     --identifier\n                                                     --resource-group\n                                                     [--ids]\n                                                     [--name]\n                                                     [--no-wait]\n                                                     [--path]\n                                                     [--session-pool-location]\n                                                     [--subscription]",
+            "required_parameters": [
+                "--filepath",
+                "--identifier -i",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--path",
+                "--session-pool-location",
+                "--subscription"
+            ],
+            "examples": [
+                "az containerapp session code-interpreter upload-file -n MySessionPool -g MyResourceGroup --identifier MySession \\\n    --filepath example.txt --path /"
+            ]
+        }
+    ]
+}

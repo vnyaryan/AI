@@ -1,0 +1,20 @@
+{
+    "command_group": "az mysql server private-link-resource",
+    "description": "Manage MySQL server private link resources.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az mysql server private-link-resource list",
+            "summary": "List the private link resources supported for a MySQL server.",
+            "syntax": "az mysql server private-link-resource list [--ids]\n                                           [--resource-group]\n                                           [--server-name]\n                                           [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--resource-group -g",
+                "--server-name -s",
+                "--subscription"
+            ],
+            "examples": []
+        }
+    ]
+}

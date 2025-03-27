@@ -1,0 +1,58 @@
+{
+    "command_group": "az ams account identity",
+    "description": "Manage managed identity settings for an Azure Media Services account.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az ams account identity assign",
+            "summary": "Assign a managed identity to an Azure Media Services account.",
+            "syntax": "az ams account identity assign [--ids]\n                               [--name]\n                               [--resource-group]\n                               [--subscription]\n                               [--system-assigned {false, true}]\n                               [--user-assigned]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--system-assigned",
+                "--user-assigned"
+            ],
+            "examples": [
+                "az ams account identity assign -n myAmsAccount -g myRG --system-assigned",
+                "az ams account identity assign -n myAmsAccount -g myRG --user-assigned myUserId"
+            ]
+        },
+        {
+            "name": "az ams account identity remove",
+            "summary": "Remove a managed identity to an Azure Media Services account.",
+            "syntax": "az ams account identity remove [--ids]\n                               [--name]\n                               [--resource-group]\n                               [--subscription]\n                               [--system-assigned {false, true}]\n                               [--user-assigned]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--system-assigned",
+                "--user-assigned"
+            ],
+            "examples": [
+                "az ams account identity remove -n myAmsAccount -g myRG --system-assigned",
+                "az ams account identity remove -n myAmsAccount -g myRG --user-assigned myUserId"
+            ]
+        },
+        {
+            "name": "az ams account identity show",
+            "summary": "Show the details of managed identity settings for an Azure Media Services account.",
+            "syntax": "az ams account identity show [--ids]\n                             [--name]\n                             [--resource-group]\n                             [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az ams account identity show -n myAmsAccount -g myRG"
+            ]
+        }
+    ]
+}

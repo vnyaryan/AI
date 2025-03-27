@@ -1,0 +1,23 @@
+{
+    "command_group": "az batch task subtask",
+    "description": "Manage subtask information of a Batch task.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az batch task subtask list",
+            "summary": "Lists all of the subtasks that are associated with the specified multi-instance Task.",
+            "syntax": "az batch task subtask list --job-id\n                           --task-id\n                           [--account-endpoint]\n                           [--account-key]\n                           [--account-name]\n                           [--select]",
+            "required_parameters": [
+                "--job-id",
+                "--task-id"
+            ],
+            "optional_parameters": [
+                "--account-endpoint",
+                "--account-key",
+                "--account-name",
+                "--select"
+            ],
+            "examples": []
+        }
+    ]
+}

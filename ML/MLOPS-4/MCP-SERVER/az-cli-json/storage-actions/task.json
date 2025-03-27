@@ -1,0 +1,172 @@
+{
+    "command_group": "az storage-actions task",
+    "description": "Manage StorageTask.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az storage-actions task create",
+            "summary": "Create a new storage task resource with the specified parameters. If a storage task is already created and a subsequent create request is issued with different properties, the storage task properties will be updated. If a storage task is already created and a subsequent create request is issued with the exact same set of properties, the request will succeed.",
+            "syntax": "az storage-actions task create --action\n                               --description\n                               --enabled {0, 1, f, false, n, no, t, true, y, yes}\n                               --identity\n                               --name\n                               --resource-group\n                               [--location]\n                               [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                               [--tags]",
+            "required_parameters": [
+                "--action",
+                "--description",
+                "--enabled",
+                "--identity",
+                "--name --storage-task-name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--location -l",
+                "--no-wait",
+                "--tags"
+            ],
+            "examples": [
+                "az storage-actions task create -g rgteststorageactions -n testtask1 --identity \"{type:SystemAssigned}\" --tags \"{key1:value1}\" --action \"{if:{condition:'[[equals(AccessTier,'/Cool'/)]]',operations:[{name:'SetBlobTier',parameters:{tier:'Hot'},onSuccess:'continue',onFailure:'break'}]},else:{operations:[{name:'DeleteBlob',onSuccess:'continue',onFailure:'break'}]}}\" --description StorageTask1 --enabled true"
+            ]
+        },
+        {
+            "name": "az storage-actions task delete",
+            "summary": "Delete the storage task resource.",
+            "syntax": "az storage-actions task delete [--ids]\n                               [--name]\n                               [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                               [--resource-group]\n                               [--subscription]\n                               [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --storage-task-name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az storage-actions task delete -g rgteststorageactions -n testtask1"
+            ]
+        },
+        {
+            "name": "az storage-actions task list",
+            "summary": "List all the storage tasks available under the subscription.",
+            "syntax": "az storage-actions task list [--max-items]\n                             [--next-token]\n                             [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az storage-actions task list -g rgteststorageactions"
+            ]
+        },
+        {
+            "name": "az storage-actions task list-assignment",
+            "summary": "List all the storage task assignments available under the given resource group.",
+            "syntax": "az storage-actions task list-assignment --name\n                                        --resource-group\n                                        [--max-items]\n                                        [--maxpagesize]\n                                        [--next-token]",
+            "required_parameters": [
+                "--name --storage-task-name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--maxpagesize",
+                "--next-token"
+            ],
+            "examples": [
+                "az storage-actions task list-assignment -g rgteststorageactions -n testtask1"
+            ]
+        },
+        {
+            "name": "az storage-actions task list-report",
+            "summary": "List the storage tasks run report summary for each assignment.",
+            "syntax": "az storage-actions task list-report --name\n                                    --resource-group\n                                    [--filter]\n                                    [--max-items]\n                                    [--maxpagesize]\n                                    [--next-token]",
+            "required_parameters": [
+                "--name --storage-task-name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--filter",
+                "--max-items",
+                "--maxpagesize",
+                "--next-token"
+            ],
+            "examples": [
+                "az storage-actions task list-report -g rgteststorageactions -n testtask1"
+            ]
+        },
+        {
+            "name": "az storage-actions task preview-action",
+            "summary": "Runs the input conditions against input object metadata properties and designates matched objects in response.",
+            "syntax": "az storage-actions task preview-action --action\n                                       --blobs\n                                       --container\n                                       [--ids]\n                                       [--location]\n                                       [--subscription]",
+            "required_parameters": [
+                "--action",
+                "--blobs",
+                "--container"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--location -l",
+                "--subscription"
+            ],
+            "examples": [
+                "az storage-actions task preview-action -l eastus2euap --action \"{if:{condition:'[[equals(AccessTier,'/Cool'/)]]'},else-block-exists:True}\" --blobs \"[{name:'folder2/file1.txt',properties:[{key:'Creation-Time',value:'Wed, 06 Jun 2023 05:23:29 GMT'},{key:'Last-Modified',value:'Wed, 06 Jun 2023 05:23:29 GMT'},{key:'Etag',value:'0x6FB67175454D36D'}],metadata:[{key:'mKey2',value:'mValue2'}],tags:[{key:'tKey2',value:'tValue2'}]}]\" --container \"{name:'firstContainer',metadata:[{key:'mContainerKey1',value:'mContainerValue1'}]}\""
+            ]
+        },
+        {
+            "name": "az storage-actions task show",
+            "summary": "Get the storage task properties.",
+            "syntax": "az storage-actions task show [--ids]\n                             [--name]\n                             [--resource-group]\n                             [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --storage-task-name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az storage-actions task show -g rgteststorageactions -n testtask1"
+            ]
+        },
+        {
+            "name": "az storage-actions task update",
+            "summary": "Update a storage task resource with the specified parameters. If a storage task is already created and a subsequent update request is issued with different properties, the storage task properties will be updated. If a storage task is already created and a subsequent update request is issued with the exact same set of properties, the request will succeed.",
+            "syntax": "az storage-actions task update [--action]\n                               [--add]\n                               [--description]\n                               [--enabled {0, 1, f, false, n, no, t, true, y, yes}]\n                               [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                               [--identity]\n                               [--ids]\n                               [--name]\n                               [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                               [--remove]\n                               [--resource-group]\n                               [--set]\n                               [--subscription]\n                               [--tags]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--action",
+                "--add",
+                "--description",
+                "--enabled",
+                "--force-string",
+                "--identity",
+                "--ids",
+                "--name --storage-task-name -n",
+                "--no-wait",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--subscription",
+                "--tags"
+            ],
+            "examples": [
+                "az storage-actions task update -g rgteststorageactions -n testtask1 --identity \"{type:SystemAssigned}\" --tags \"{key2:value2}\" --action \"{if:{condition:'[[equals(BlobType,'/BlockBlob'/)]]',operations:[{name:'SetBlobTags',parameters:{Archive-Status:'Archived'},onSuccess:'continue',onFailure:'break'}]},else:{operations:[{name:'UndeleteBlob',onSuccess:'continue',onFailure:'break'}]}}\" --description StorageTask1Update --enabled true"
+            ]
+        },
+        {
+            "name": "az storage-actions task wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az storage-actions task wait [--created]\n                             [--custom]\n                             [--deleted]\n                             [--exists]\n                             [--ids]\n                             [--interval]\n                             [--name]\n                             [--resource-group]\n                             [--subscription]\n                             [--timeout]\n                             [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--name --storage-task-name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

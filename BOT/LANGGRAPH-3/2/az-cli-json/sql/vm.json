@@ -1,0 +1,264 @@
+{
+    "command_group": "az sql vm",
+    "description": "Manage SQL virtual machines.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az sql vm add-to-group",
+            "summary": "Adds SQL virtual machine to a SQL virtual machine group.",
+            "syntax": "az sql vm add-to-group --sqlvm-group\n                       [--bootstrap-acc-pwd]\n                       [--ids]\n                       [--name]\n                       [--operator-acc-pwd]\n                       [--resource-group]\n                       [--service-acc-pwd]\n                       [--subscription]",
+            "required_parameters": [
+                "--sqlvm-group -r"
+            ],
+            "optional_parameters": [
+                "--bootstrap-acc-pwd -b",
+                "--ids",
+                "--name -n",
+                "--operator-acc-pwd -p",
+                "--resource-group -g",
+                "--service-acc-pwd -s",
+                "--subscription"
+            ],
+            "examples": [
+                "az sql vm add-to-group -n sqlvm -g myresourcegroup --sqlvm-group sqlvmgroup --bootstrap-acc-pwd {bootstrappassword} --operator-acc-pwd {operatorpassword} --service-acc-pwd {servicepassword}"
+            ]
+        },
+        {
+            "name": "az sql vm create",
+            "summary": "Creates a SQL virtual machine.",
+            "syntax": "az sql vm create --name\n                 --resource-group\n                 [--backup-pwd]\n                 [--backup-schedule-type {Automated, Manual}]\n                 [--backup-system-dbs {false, true}]\n                 [--connectivity-type {LOCAL, PRIVATE, PUBLIC}]\n                 [--credential-name]\n                 [--day-of-week {Everyday, Friday, Monday, Saturday, Sunday, Thursday, Tuesday, Wednesday}]\n                 [--enable-auto-backup {false, true}]\n                 [--enable-auto-patching {false, true}]\n                 [--enable-encryption {false, true}]\n                 [--enable-key-vault-credential {false, true}]\n                 [--enable-r-services {false, true}]\n                 [--full-backup-duration]\n                 [--full-backup-frequency {Daily, Weekly}]\n                 [--full-backup-start-hour]\n                 [--image-offer]\n                 [--image-sku {Developer, Enterprise, Express, Standard, Web}]\n                 [--key-vault]\n                 [--least-privilege-mode {Enabled, NotSet}]\n                 [--license-type {AHUB, DR, PAYG}]\n                 [--location]\n                 [--log-backup-frequency]\n                 [--maintenance-window-duration]\n                 [--maintenance-window-start-hour]\n                 [--port]\n                 [--retention-period]\n                 [--sa-key]\n                 [--sp-name]\n                 [--sp-secret]\n                 [--sql-auth-update-pwd]\n                 [--sql-auth-update-username]\n                 [--sql-mgmt-type {Full, LightWeight, NoAgent}]\n                 [--sql-workload-type {DW, GENERAL, OLTP}]\n                 [--storage-account]\n                 [--tags]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--backup-pwd",
+                "--backup-schedule-type",
+                "--backup-system-dbs",
+                "--connectivity-type",
+                "--credential-name",
+                "--day-of-week",
+                "--enable-auto-backup",
+                "--enable-auto-patching",
+                "--enable-encryption",
+                "--enable-key-vault-credential",
+                "--enable-r-services",
+                "--full-backup-duration",
+                "--full-backup-frequency",
+                "--full-backup-start-hour",
+                "--image-offer",
+                "--image-sku",
+                "--key-vault",
+                "--least-privilege-mode",
+                "--license-type -i",
+                "--location -l",
+                "--log-backup-frequency",
+                "--maintenance-window-duration",
+                "--maintenance-window-start-hour",
+                "--port",
+                "--retention-period",
+                "--sa-key",
+                "--sp-name",
+                "--sp-secret",
+                "--sql-auth-update-pwd",
+                "--sql-auth-update-username",
+                "--sql-mgmt-type",
+                "--sql-workload-type",
+                "--storage-account",
+                "--tags"
+            ],
+            "examples": [
+                "az sql vm create -n sqlvm -g myresourcegroup -l eastus --license-type AHUB",
+                "az sql vm create -n sqlvm -g myresourcegroup -l eastus --license-type DR",
+                "az sql vm create -n sqlvm -g myresourcegroup -l eastus --image-sku Enterprise --license-type AHUB",
+                "az sql vm create -n sqlvm -g myresourcegroup -l eastus --least-privilege-mode Enabled --sql-mgmt-type Full",
+                "az sql vm create -n sqlvm -g myresourcegroup -l eastus --license-type AHUB --sql-mgmt-type NoAgent --image-sku Enterprise --image-offer SQL2008-WS2008R2",
+                "az sql vm create -n sqlvm -g myresourcegroup -l eastus --license-type PAYG --sql-mgmt-type Full --enable-r-services true",
+                "az sql vm create -n sqlvm -g myresourcegroup -l eastus --license-type PAYG --sql-mgmt-type Full --backup-schedule-type manual --full-backup-frequency Weekly --full-backup-start-hour 2 --full-backup-duration 2 --sa-key {storageKey} --storage-account 'https://storageacc.blob.core.windows.net/' --retention-period 30 --log-backup-frequency 60",
+                "az sql vm create -n sqlvm -g myresourcegroup -l eastus --license-type PAYG --sql-mgmt-type Full --day-of-week sunday --maintenance-window-duration 60 --maintenance-window-start-hour 2",
+                "az sql vm create -n sqlvm -g myresourcegroup -l eastus --license-type PAYG --sql-mgmt-type Full --connectivity-type private --port 1433 --sql-auth-update-username {newlogin} --sql-auth-update-pwd {sqlpassword}"
+            ]
+        },
+        {
+            "name": "az sql vm delete",
+            "summary": "Deletes a SQL virtual machine.",
+            "syntax": "az sql vm delete [--ids]\n                 [--name]\n                 [--resource-group]\n                 [--subscription]\n                 [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az sql vm enable-azure-ad-auth",
+            "summary": "Enable Azure AD authentication of a SQL virtual machine.",
+            "syntax": "az sql vm enable-azure-ad-auth [--ids]\n                               [--msi-client-id]\n                               [--name]\n                               [--resource-group]\n                               [--skip-client-validation]\n                               [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--msi-client-id",
+                "--name -n",
+                "--resource-group -g",
+                "--skip-client-validation",
+                "--subscription"
+            ],
+            "examples": [
+                "az sql vm enable-azure-ad-auth -n sqlvm -g myresourcegroup",
+                "az sql vm enable-azure-ad-auth -n sqlvm -g myresourcegroup --msi-client-id 12345678",
+                "az sql vm enable-azure-ad-auth -n sqlvm -g myresourcegroup --skip-client-validation",
+                "az sql vm enable-azure-ad-auth -n sqlvm -g myresourcegroup --msi-client-id 12345678 --skip-client-validation"
+            ]
+        },
+        {
+            "name": "az sql vm list",
+            "summary": "Lists all SQL virtual machines in a resource group or subscription.",
+            "syntax": "az sql vm list [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az sql vm remove-from-group",
+            "summary": "Remove SQL virtual machine from its current SQL virtual machine group.",
+            "syntax": "az sql vm remove-from-group [--ids]\n                            [--name]\n                            [--resource-group]\n                            [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az sql vm remove-from-group -n sqlvm -g myresourcegroup"
+            ]
+        },
+        {
+            "name": "az sql vm show",
+            "summary": "Gets a SQL virtual machine.",
+            "syntax": "az sql vm show [--expand {*, AssessmentSettings, AutoBackupSettings, AutoPatchingSettings, KeyVaultCredentialSettings, ServerConfigurationsManagementSettings}]\n               [--ids]\n               [--name]\n               [--resource-group]\n               [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--expand",
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az sql vm start-assessment",
+            "summary": "Starts SQL best practice assessment on SQL virtual machine.",
+            "syntax": "az sql vm start-assessment [--ids]\n                           [--name]\n                           [--resource-group]\n                           [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az sql vm start-assessment -n sqlvm -g myresourcegroup"
+            ]
+        },
+        {
+            "name": "az sql vm update",
+            "summary": "Updates the properties of a SQL virtual machine.",
+            "syntax": "az sql vm update [--add]\n                 [--agent-rg]\n                 [--am-day {Friday, Monday, Saturday, Sunday, Thursday, Tuesday, Wednesday}]\n                 [--am-month-occ {-1, 1, 2, 3, 4}]\n                 [--am-schedule {false, true}]\n                 [--am-time]\n                 [--am-week-int {1, 2, 3, 4, 5, 6}]\n                 [--backup-pwd]\n                 [--backup-schedule-type {Automated, Manual}]\n                 [--backup-system-dbs {false, true}]\n                 [--connectivity-type {LOCAL, PRIVATE, PUBLIC}]\n                 [--credential-name]\n                 [--day-of-week {Everyday, Friday, Monday, Saturday, Sunday, Thursday, Tuesday, Wednesday}]\n                 [--enable-assessment {false, true}]\n                 [--enable-auto-backup {false, true}]\n                 [--enable-auto-patching {false, true}]\n                 [--enable-encryption {false, true}]\n                 [--enable-key-vault-credential {false, true}]\n                 [--enable-r-services {false, true}]\n                 [--force-string]\n                 [--full-backup-duration]\n                 [--full-backup-frequency {Daily, Weekly}]\n                 [--full-backup-start-hour]\n                 [--ids]\n                 [--image-sku {Developer, Enterprise, Express, Standard, Web}]\n                 [--key-vault]\n                 [--least-privilege-mode {Enabled, NotSet}]\n                 [--license-type {AHUB, DR, PAYG}]\n                 [--log-backup-frequency]\n                 [--maintenance-window-duration]\n                 [--maintenance-window-start-hour]\n                 [--name]\n                 [--port]\n                 [--remove]\n                 [--resource-group]\n                 [--retention-period]\n                 [--sa-key]\n                 [--set]\n                 [--sp-name]\n                 [--sp-secret]\n                 [--sql-mgmt-type {Full, LightWeight, NoAgent}]\n                 [--sql-workload-type {DW, GENERAL, OLTP}]\n                 [--storage-account]\n                 [--subscription]\n                 [--tags]\n                 [--workspace-name]\n                 [--workspace-rg]\n                 [--workspace-sub]\n                 [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--agent-rg",
+                "--am-day --assessment-day-of-week",
+                "--am-month-occ --assessment-monthly-occurrence",
+                "--am-schedule --enable-assessment-schedule",
+                "--am-time --assessment-start-time-local",
+                "--am-week-int --assessment-weekly-interval",
+                "--backup-pwd",
+                "--backup-schedule-type",
+                "--backup-system-dbs",
+                "--connectivity-type",
+                "--credential-name",
+                "--day-of-week",
+                "--enable-assessment",
+                "--enable-auto-backup",
+                "--enable-auto-patching",
+                "--enable-encryption",
+                "--enable-key-vault-credential",
+                "--enable-r-services",
+                "--force-string",
+                "--full-backup-duration",
+                "--full-backup-frequency",
+                "--full-backup-start-hour",
+                "--ids",
+                "--image-sku",
+                "--key-vault",
+                "--least-privilege-mode",
+                "--license-type -i",
+                "--log-backup-frequency",
+                "--maintenance-window-duration",
+                "--maintenance-window-start-hour",
+                "--name -n",
+                "--port",
+                "--remove",
+                "--resource-group -g",
+                "--retention-period",
+                "--sa-key",
+                "--set",
+                "--sp-name",
+                "--sp-secret",
+                "--sql-mgmt-type",
+                "--sql-workload-type",
+                "--storage-account",
+                "--subscription",
+                "--tags",
+                "--workspace-name",
+                "--workspace-rg",
+                "--workspace-sub",
+                "--yes -y"
+            ],
+            "examples": [
+                "az sql vm update -n sqlvm -g myresourcegroup --set tags.tagName=tagValue",
+                "az sql vm update -n sqlvm -g myresourcegroup --remove tags.tagName",
+                "az sql vm update -n sqlvm -g myresourcegroup --image-sku Enterprise",
+                "az sql vm update -n sqlvm -g myresourcegroup --sql-mgmt-type Full",
+                "az sql vm update -n sqlvm -g myresourcegroup --least-privilege-mode Enabled --sql-mgmt-type Full",
+                "az sql vm update -n sqlvm -g myresourcegroup --backup-schedule-type manual --full-backup-frequency Weekly --full-backup-start-hour 2 --full-backup-duration 2 --sa-key {storageKey} --storage-account 'https://storageacc.blob.core.windows.net/' --retention-period 30 --log-backup-frequency 60",
+                "az sql vm update -n sqlvm -g myresourcegroup --enable-auto-backup false",
+                "az sql vm update -n sqlvm -g myresourcegroup --day-of-week sunday --maintenance-window-duration 60 --maintenance-window-start-hour 2",
+                "az sql vm update -n sqlvm -g myresourcegroup --enable-auto-patching false",
+                "az sql vm update -n sqlvm -g myresourcegroup --license-type AHUB",
+                "az sql vm update -n sqlvm -g myresourcegroup --license-type DR",
+                "az sql vm update -n sqlvm -g myresourcegroup --enable-assessment false",
+                "az sql vm update -n sqlvm -g myresourcegroup --enable-assessment-schedule false",
+                "az sql vm update -n sqlvm -g myresourcegroup --assessment-weekly-interval 1 --assessment-day-of-week monday --assessment-start-time-local '19:30'",
+                "az sql vm update -n sqlvm -g myresourcegroup --workspace-name myLogAnalyticsWorkspace --workspace-rg myRg --agent-rg myRg2 --assessment-monthly-occurrence 1 --assessment-day-of-week monday --assessment-start-time-local '19:30'",
+                "az sql vm update -n sqlvm -g myresourcegroup --enable-assessment true --workspace-name myLogAnalyticsWorkspace --workspace-rg myRg --agent-rg myRg2",
+                "az sql vm update -n sqlvm -g myresourcegroup --enable-assessment true --workspace-name myLogAnalyticsWorkspace --workspace-rg myRg --workspace-sub myLogAnalyticsWorkspaceSubName --agent-rg myRg2"
+            ]
+        },
+        {
+            "name": "az sql vm validate-azure-ad-auth",
+            "summary": "Validate Azure AD authentication of a SQL virtual machine at the client side without enabling it.",
+            "syntax": "az sql vm validate-azure-ad-auth [--ids]\n                                 [--msi-client-id]\n                                 [--name]\n                                 [--resource-group]\n                                 [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--msi-client-id",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az sql vm validate-azure-ad-auth -n sqlvm -g myresourcegroup",
+                "az sql vm validate-azure-ad-auth -n sqlvm -g myresourcegroup --msi-client-id 12345678"
+            ]
+        }
+    ]
+}

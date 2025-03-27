@@ -1,0 +1,44 @@
+{
+    "command_group": "az vmware private-cloud identity",
+    "description": "Commands for Managed Identity in a private cloud.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az vmware private-cloud identity assign",
+            "summary": "Assign a Managed Identity in a private cloud.",
+            "syntax": "az vmware private-cloud identity assign --private-cloud\n                                        --resource-group\n                                        [--system-assigned]",
+            "required_parameters": [
+                "--private-cloud -c",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--system-assigned"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az vmware private-cloud identity remove",
+            "summary": "Remove a Managed Identity in a private cloud.",
+            "syntax": "az vmware private-cloud identity remove --private-cloud\n                                        --resource-group\n                                        [--system-assigned]",
+            "required_parameters": [
+                "--private-cloud -c",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--system-assigned"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az vmware private-cloud identity show",
+            "summary": "Show Managed Identities in a private cloud.",
+            "syntax": "az vmware private-cloud identity show --private-cloud\n                                      --resource-group",
+            "required_parameters": [
+                "--private-cloud -c",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        }
+    ]
+}

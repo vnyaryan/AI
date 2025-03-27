@@ -1,0 +1,21 @@
+{
+    "command_group": "az ml experiment",
+    "description": "Commands to manage experiments.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az ml experiment list",
+            "summary": "List experiments in a workspace.",
+            "syntax": "az ml experiment list [--output-metadata-file]\n                      [--path]\n                      [--resource-group]\n                      [--subscription-id]\n                      [--workspace-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--output-metadata-file -t",
+                "--path",
+                "--resource-group -g",
+                "--subscription-id",
+                "--workspace-name -w"
+            ],
+            "examples": []
+        }
+    ]
+}

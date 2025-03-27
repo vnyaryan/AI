@@ -1,0 +1,19 @@
+{
+    "command_group": "az eventgrid extension-topic",
+    "description": "Manage Azure Event Grid extension topics.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az eventgrid extension-topic show",
+            "summary": "Get the details of an extension topic.",
+            "syntax": "az eventgrid extension-topic show --scope",
+            "required_parameters": [
+                "--scope"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az eventgrid extension-topic show --scope /subscriptions/{SubID}/resourceGroups/{RG}/providers/Microsoft.Storage/storageAccounts/{StorageAccountName}"
+            ]
+        }
+    ]
+}

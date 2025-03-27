@@ -1,0 +1,6 @@
+{
+    "command_group": "az iot central device edge",
+    "description": "Manage and configure IoT Central edge devices.",
+    "status": "GA",
+    "commands": []
+}

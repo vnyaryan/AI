@@ -1,0 +1,83 @@
+{
+    "command_group": "az spring-cloud app custom-domain",
+    "description": "Commands to manage custom domains.",
+    "status": "Deprecated",
+    "commands": [
+        {
+            "name": "az spring-cloud app custom-domain bind",
+            "summary": "Bind a custom domain with the app.",
+            "syntax": "az spring-cloud app custom-domain bind --app\n                                       --domain-name\n                                       --resource-group\n                                       --service\n                                       [--certificate]\n                                       [--enable-ingress-to-app-tls {false, true}]",
+            "required_parameters": [
+                "--app",
+                "--domain-name",
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [
+                "--certificate",
+                "--enable-ingress-to-app-tls"
+            ],
+            "examples": [
+                "az spring-cloud app custom-domain bind --domain-name MyDomainName --certificate MyCertName --app MyAppName --service MyCluster --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az spring-cloud app custom-domain list",
+            "summary": "List all custom domains of the app.",
+            "syntax": "az spring-cloud app custom-domain list --app\n                                       --resource-group\n                                       --service",
+            "required_parameters": [
+                "--app",
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az spring-cloud app custom-domain list --app MyAppName --service MyCluster --resource-group MyResourceGroup -o table"
+            ]
+        },
+        {
+            "name": "az spring-cloud app custom-domain show",
+            "summary": "Show details of a custom domain.",
+            "syntax": "az spring-cloud app custom-domain show --app\n                                       --domain-name\n                                       --resource-group\n                                       --service",
+            "required_parameters": [
+                "--app",
+                "--domain-name",
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az spring-cloud app custom-domain unbind",
+            "summary": "Unbind a custom-domain of the app.",
+            "syntax": "az spring-cloud app custom-domain unbind --app\n                                         --domain-name\n                                         --resource-group\n                                         --service",
+            "required_parameters": [
+                "--app",
+                "--domain-name",
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az spring-cloud app custom-domain update",
+            "summary": "Update a custom domain of the app.",
+            "syntax": "az spring-cloud app custom-domain update --app\n                                         --domain-name\n                                         --resource-group\n                                         --service\n                                         [--certificate]\n                                         [--enable-ingress-to-app-tls {false, true}]",
+            "required_parameters": [
+                "--app",
+                "--domain-name",
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [
+                "--certificate",
+                "--enable-ingress-to-app-tls"
+            ],
+            "examples": [
+                "az spring-cloud app custom-domain update --domain-name MyDomainName --certificate MCertName --app MyAppName --service MyCluster --resource-group MyResourceGroup"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,81 @@
+{
+    "command_group": "az group lock",
+    "description": "Manage Azure resource group locks.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az group lock create",
+            "summary": "Create a resource group lock.",
+            "syntax": "az group lock create --lock-type {CanNotDelete, ReadOnly}\n                     --name\n                     --resource-group\n                     [--notes]",
+            "required_parameters": [
+                "--lock-type -t",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--notes"
+            ],
+            "examples": [
+                "az group lock create --lock-type ReadOnly -n lockName -g MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az group lock delete",
+            "summary": "Delete a resource group lock.",
+            "syntax": "az group lock delete [--ids]\n                     [--name]\n                     [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az group lock delete --name lockName -g MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az group lock list",
+            "summary": "List lock information in the resource-group.",
+            "syntax": "az group lock list --resource-group\n                   [--filter-string]",
+            "required_parameters": [
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--filter-string"
+            ],
+            "examples": [
+                "az group lock list -g MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az group lock show",
+            "summary": "Show the details of a resource group lock.",
+            "syntax": "az group lock show [--ids]\n                   [--name]\n                   [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az group lock show -n lockname -g MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az group lock update",
+            "summary": "Update a resource group lock.",
+            "syntax": "az group lock update [--ids]\n                     [--lock-type {CanNotDelete, ReadOnly}]\n                     [--name]\n                     [--notes]\n                     [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--lock-type -t",
+                "--name -n",
+                "--notes",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az group lock update --name lockName -g MyResourceGroup --notes newNotesHere --lock-type CanNotDelete"
+            ]
+        }
+    ]
+}

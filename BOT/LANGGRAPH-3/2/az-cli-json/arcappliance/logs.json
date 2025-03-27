@@ -1,0 +1,67 @@
+{
+    "command_group": "az arcappliance logs",
+    "description": "Command group for collecting logs for Arc resource bridge. Run get-credentials command before running logs command.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az arcappliance logs hci",
+            "summary": "Command to collect logs for an Appliance on Azure Stack HCI.",
+            "syntax": "az arcappliance logs hci [--cloudagent]\n                         [--credentials-dir]\n                         [--ip]\n                         [--kubeconfig]\n                         [--loginconfigfile]\n                         [--out-dir]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--cloudagent",
+                "--credentials-dir",
+                "--ip",
+                "--kubeconfig",
+                "--loginconfigfile",
+                "--out-dir"
+            ],
+            "examples": [
+                "az arcappliance logs hci --ip [REQUIRED] --kubeconfig [OPTIONAL] --out-dir [OPTIONAL] --credentials-dir [OPTIONAL]",
+                "az arcappliance logs hci --ip [OPTIONAL] --kubeconfig [REQUIRED] --out-dir [OPTIONAL] --credentials-dir [OPTIONAL]",
+                "az arcappliance logs hci --ip [REQUIRED] --kubeconfig [OPTIONAL] --out-dir [OPTIONAL] --cloudagent [REQUIRED] --loginconfigfile [REQUIRED] --credentials-dir [OPTIONAL]"
+            ]
+        },
+        {
+            "name": "az arcappliance logs scvmm",
+            "summary": "Command to collect logs for Arc resource bridge on SCVMM (Arc-enabled SCVMM).",
+            "syntax": "az arcappliance logs scvmm [--address]\n                           [--credentials-dir]\n                           [--ip]\n                           [--kubeconfig]\n                           [--out-dir]\n                           [--password]\n                           [--port]\n                           [--username]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--address",
+                "--credentials-dir",
+                "--ip",
+                "--kubeconfig",
+                "--out-dir",
+                "--password",
+                "--port",
+                "--username"
+            ],
+            "examples": [
+                "az arcappliance logs scvmm --ip [REQUIRED] --kubeconfig [OPTIONAL] --out-dir [OPTIONAL] --credentials-dir [OPTIONAL]",
+                "az arcappliance logs scvmm --ip [OPTIONAL] --kubeconfig [REQUIRED] --out-dir [OPTIONAL] --credentials-dir [OPTIONAL]",
+                "az arcappliance logs scvmm --ip [REQUIRED] --kubeconfig [OPTIONAL] --out-dir [OPTIONAL] --credentials-dir [OPTIONAL] --address [REQUIRED] --port [REQUIRED] --username [REQUIRED] --password [REQUIRED]"
+            ]
+        },
+        {
+            "name": "az arcappliance logs vmware",
+            "summary": "Command to collect logs for Appliance on VMware.",
+            "syntax": "az arcappliance logs vmware [--address]\n                            [--credentials-dir]\n                            [--ip]\n                            [--kubeconfig]\n                            [--out-dir]\n                            [--password]\n                            [--username]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--address",
+                "--credentials-dir",
+                "--ip",
+                "--kubeconfig",
+                "--out-dir",
+                "--password",
+                "--username"
+            ],
+            "examples": [
+                "az arcappliance logs vmware --ip [REQUIRED] --kubeconfig [OPTIONAL] --out-dir [OPTIONAL] --credentials-dir [OPTIONAL]",
+                "az arcappliance logs vmware --ip [OPTIONAL] --kubeconfig [REQUIRED] --out-dir [OPTIONAL] --credentials-dir [OPTIONAL]",
+                "az arcappliance logs vmware --ip [REQUIRED] --kubeconfig [OPTIONAL] --out-dir [OPTIONAL] --credentials-dir [OPTIONAL] --address [REQUIRED] --username [REQUIRED] --password [REQUIRED]"
+            ]
+        }
+    ]
+}

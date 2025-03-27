@@ -1,0 +1,112 @@
+{
+    "command_group": "az logic integration-account assembly",
+    "description": "Manage integration account assembly.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az logic integration-account assembly create",
+            "summary": "Create an assembly for an integration account.",
+            "syntax": "az logic integration-account assembly create --assembly-artifact-name\n                                             --assembly-name\n                                             --integration-account-name\n                                             --resource-group\n                                             [--assembly-culture]\n                                             [--assembly-public-key-token]\n                                             [--assembly-version]\n                                             [--changed-time]\n                                             [--content]\n                                             [--content-link]\n                                             [--content-type]\n                                             [--created-time]\n                                             [--location]\n                                             [--metadata]\n                                             [--tags]",
+            "required_parameters": [
+                "--assembly-artifact-name --name -n",
+                "--assembly-name",
+                "--integration-account-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--assembly-culture",
+                "--assembly-public-key-token",
+                "--assembly-version",
+                "--changed-time",
+                "--content",
+                "--content-link",
+                "--content-type",
+                "--created-time",
+                "--location -l",
+                "--metadata",
+                "--tags"
+            ],
+            "examples": [
+                "az logic integration-account assembly create -g rg --integration-account-name name -n assembly --assembly-name assembly --content 'Base64 encoded Assembly Content' --content-type application/octet-stream"
+            ]
+        },
+        {
+            "name": "az logic integration-account assembly delete",
+            "summary": "Delete an assembly for an integration account.",
+            "syntax": "az logic integration-account assembly delete [--assembly-artifact-name]\n                                             [--ids]\n                                             [--integration-account-name]\n                                             [--resource-group]\n                                             [--subscription]\n                                             [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--assembly-artifact-name --name -n",
+                "--ids",
+                "--integration-account-name",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az logic integration-account assembly delete -g rg --integration-account-name name -n assembly"
+            ]
+        },
+        {
+            "name": "az logic integration-account assembly list",
+            "summary": "List the assemblies for an integration account.",
+            "syntax": "az logic integration-account assembly list --integration-account-name\n                                           --resource-group",
+            "required_parameters": [
+                "--integration-account-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az logic integration-account assembly list -g rg --integration-account-name name"
+            ]
+        },
+        {
+            "name": "az logic integration-account assembly show",
+            "summary": "Show an assembly for an integration account.",
+            "syntax": "az logic integration-account assembly show [--assembly-artifact-name]\n                                           [--ids]\n                                           [--integration-account-name]\n                                           [--resource-group]\n                                           [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--assembly-artifact-name --name -n",
+                "--ids",
+                "--integration-account-name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az logic integration-account assembly show -g rg --integration-account-name name -n assembly"
+            ]
+        },
+        {
+            "name": "az logic integration-account assembly update",
+            "summary": "Update an assembly for an integration account.",
+            "syntax": "az logic integration-account assembly update [--add]\n                                             [--assembly-artifact-name]\n                                             [--assembly-culture]\n                                             [--assembly-name]\n                                             [--assembly-public-key-token]\n                                             [--assembly-version]\n                                             [--changed-time]\n                                             [--content]\n                                             [--content-link]\n                                             [--content-type]\n                                             [--created-time]\n                                             [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                             [--ids]\n                                             [--integration-account-name]\n                                             [--location]\n                                             [--metadata]\n                                             [--remove]\n                                             [--resource-group]\n                                             [--set]\n                                             [--subscription]\n                                             [--tags]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--assembly-artifact-name --name -n",
+                "--assembly-culture",
+                "--assembly-name",
+                "--assembly-public-key-token",
+                "--assembly-version",
+                "--changed-time",
+                "--content",
+                "--content-link",
+                "--content-type",
+                "--created-time",
+                "--force-string",
+                "--ids",
+                "--integration-account-name",
+                "--location -l",
+                "--metadata",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--subscription",
+                "--tags"
+            ],
+            "examples": [
+                "az logic integration-account assembly update -g rg --integration-account-name name -n assembly --assembly-version 1.0.0.0"
+            ]
+        }
+    ]
+}

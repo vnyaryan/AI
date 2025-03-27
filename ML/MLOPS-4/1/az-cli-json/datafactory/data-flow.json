@@ -1,0 +1,89 @@
+{
+    "command_group": "az datafactory data-flow",
+    "description": "Managing and configuring Data Flows in Azure Data Factory.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az datafactory data-flow create",
+            "summary": "Creates a data flow within a factory.",
+            "syntax": "az datafactory data-flow create --data-flow-name\n                                --factory-name\n                                --flow-type\n                                --properties\n                                --resource-group\n                                [--if-match]",
+            "required_parameters": [
+                "--data-flow-name --name -n",
+                "--factory-name -f",
+                "--flow-type -t",
+                "--properties",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--if-match"
+            ],
+            "examples": [
+                "az datafactory data-flow create -g example-resource-group -f example-data-factory -n example-data-flow -t \"Flowlet\" --properties example-properties.json"
+            ]
+        },
+        {
+            "name": "az datafactory data-flow delete",
+            "summary": "Delete a specific data flow in a given factory.",
+            "syntax": "az datafactory data-flow delete [--data-flow-name]\n                                [--factory-name]\n                                [--ids]\n                                [--resource-group]\n                                [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--data-flow-name --name -n",
+                "--factory-name -f",
+                "--ids",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az datafactory data-flow delete -g example-resource-group -f example-data-factory -n example-data-flow"
+            ]
+        },
+        {
+            "name": "az datafactory data-flow list",
+            "summary": "List data flows within a provided factory.",
+            "syntax": "az datafactory data-flow list --factory-name\n                              --resource-group",
+            "required_parameters": [
+                "--factory-name -f",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az datafactory data-flow list -g example-resource-group -f example-data-factory"
+            ]
+        },
+        {
+            "name": "az datafactory data-flow show",
+            "summary": "Show information about the specified data flow.",
+            "syntax": "az datafactory data-flow show [--data-flow-name]\n                              [--factory-name]\n                              [--ids]\n                              [--if-none-match]\n                              [--resource-group]\n                              [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--data-flow-name --name -n",
+                "--factory-name -f",
+                "--ids",
+                "--if-none-match",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az datafactory data-flow show -g example-resource-group -f example-data-factory -n example-data-flow"
+            ]
+        },
+        {
+            "name": "az datafactory data-flow update",
+            "summary": "Updates a specified data flow within a factory.",
+            "syntax": "az datafactory data-flow update --properties\n                                [--data-flow-name]\n                                [--factory-name]\n                                [--ids]\n                                [--resource-group]\n                                [--subscription]",
+            "required_parameters": [
+                "--properties"
+            ],
+            "optional_parameters": [
+                "--data-flow-name --name -n",
+                "--factory-name -f",
+                "--ids",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az datafactory data-flow update -g example-resource-group -f example-data-factory -n example-data-flow --properties example-properties.json"
+            ]
+        }
+    ]
+}

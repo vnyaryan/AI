@@ -1,0 +1,104 @@
+{
+    "command_group": "az automation runtime-environment package",
+    "description": "Manage Package for Runtime Environment.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az automation runtime-environment package create",
+            "summary": "Create the package identified by package name.",
+            "syntax": "az automation runtime-environment package create --account\n                                                 --environment\n                                                 --name\n                                                 --resource-group\n                                                 [--all-of]\n                                                 [--content-hash]\n                                                 [--content-uri]\n                                                 [--content-version]",
+            "required_parameters": [
+                "--account --automation-account-name",
+                "--environment --runtime-environment-name",
+                "--name --package-name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--all-of",
+                "--content-hash",
+                "--content-uri --uri",
+                "--content-version"
+            ],
+            "examples": [
+                "az automation runtime-environment package create -g rg--automation-account-name myAutomationAccount --runtime-environment-name rt --name rt-package --uri https://teststorage.blob.core.windows.net/mycontainer/MyModule.zip --content-version 1.0.0.0"
+            ]
+        },
+        {
+            "name": "az automation runtime-environment package delete",
+            "summary": "Delete the package by name.",
+            "syntax": "az automation runtime-environment package delete [--account]\n                                                 [--environment]\n                                                 [--ids]\n                                                 [--name]\n                                                 [--resource-group]\n                                                 [--subscription]\n                                                 [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account --automation-account-name",
+                "--environment --runtime-environment-name",
+                "--ids",
+                "--name --package-name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az automation runtime-environment package delete -g rg --automation-account-name myAutomationAccount --runtime-environment-name rt --name rt-package"
+            ]
+        },
+        {
+            "name": "az automation runtime-environment package list",
+            "summary": "List the a list of Packages.",
+            "syntax": "az automation runtime-environment package list --account\n                                               --environment\n                                               --resource-group\n                                               [--max-items]\n                                               [--next-token]",
+            "required_parameters": [
+                "--account --automation-account-name",
+                "--environment --runtime-environment-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az automation runtime-environment package list -g rg --automation-account-name myAutomationAccount --runtime-environment-name rt"
+            ]
+        },
+        {
+            "name": "az automation runtime-environment package show",
+            "summary": "Get the Package identified by Package name.",
+            "syntax": "az automation runtime-environment package show [--account]\n                                               [--environment]\n                                               [--ids]\n                                               [--name]\n                                               [--resource-group]\n                                               [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account --automation-account-name",
+                "--environment --runtime-environment-name",
+                "--ids",
+                "--name --package-name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az automation runtime-environment package show -g rg --automation-account-name myAutomationAccount --runtime-environment-name rt --name rt-package"
+            ]
+        },
+        {
+            "name": "az automation runtime-environment package update",
+            "summary": "Update the package identified by package name.",
+            "syntax": "az automation runtime-environment package update [--account]\n                                                 [--add]\n                                                 [--all-of]\n                                                 [--content-hash]\n                                                 [--content-uri]\n                                                 [--content-version]\n                                                 [--environment]\n                                                 [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                                 [--ids]\n                                                 [--name]\n                                                 [--remove]\n                                                 [--resource-group]\n                                                 [--set]\n                                                 [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account --automation-account-name",
+                "--add",
+                "--all-of",
+                "--content-hash",
+                "--content-uri --uri",
+                "--content-version",
+                "--environment --runtime-environment-name",
+                "--force-string",
+                "--ids",
+                "--name --package-name -n",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--subscription"
+            ],
+            "examples": [
+                "az automation runtime-environment package update -g rg --automation-account-name myAutomationAccount --runtime-environment-name rt --name rt-package --uri https://teststorage.blob.core.windows.net/mycontainer/MyModule.zip --content-version 1.0.0.0"
+            ]
+        }
+    ]
+}

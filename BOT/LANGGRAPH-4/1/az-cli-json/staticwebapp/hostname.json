@@ -1,0 +1,71 @@
+{
+    "command_group": "az staticwebapp hostname",
+    "description": "Manage custom hostnames of Functions of the static app.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az staticwebapp hostname delete",
+            "summary": "Delete given hostname of the static app.",
+            "syntax": "az staticwebapp hostname delete --hostname\n                                --name\n                                [--no-wait]\n                                [--resource-group]\n                                [--yes]",
+            "required_parameters": [
+                "--hostname",
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--no-wait",
+                "--resource-group -g",
+                "--yes -y"
+            ],
+            "examples": [
+                "az staticwebapp hostname delete -n MyStaticAppName --hostname HostnameToDelete"
+            ]
+        },
+        {
+            "name": "az staticwebapp hostname list",
+            "summary": "List custom hostnames of the static app.",
+            "syntax": "az staticwebapp hostname list --name\n                              [--resource-group]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az staticwebapp hostname list -n MyStaticAppName"
+            ]
+        },
+        {
+            "name": "az staticwebapp hostname set",
+            "summary": "Set given sub-domain hostname to the static app. Please configure CNAME/TXT/ALIAS record with your DNS provider. Use --no-wait to not wait for validation.",
+            "syntax": "az staticwebapp hostname set --hostname\n                             --name\n                             [--no-wait]\n                             [--resource-group]\n                             [--validation-method {cname-delegation, dns-txt-token}]",
+            "required_parameters": [
+                "--hostname",
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--no-wait",
+                "--resource-group -g",
+                "--validation-method -m"
+            ],
+            "examples": [
+                "az staticwebapp hostname set -n MyStaticAppName --hostname www.example.com",
+                "az staticwebapp hostname set -n MyStaticAppName --hostname example.com --validation-method \"dns-txt-token\""
+            ]
+        },
+        {
+            "name": "az staticwebapp hostname show",
+            "summary": "Get details for a staticwebapp custom domain. Can be used to fetch validation token for TXT domain validation (see example).",
+            "syntax": "az staticwebapp hostname show --hostname\n                              --name\n                              --resource-group",
+            "required_parameters": [
+                "--hostname",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az staticwebapp hostname show -n MyStaticAppName -g MyResourceGroup --hostname example.com --query \"validationToken\"",
+                "az staticwebapp hostname show -n MyStaticAppName -g MyResourceGroup --hostname example.com"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,124 @@
+{
+    "command_group": "az network manager security-admin-config rule-collection rule",
+    "description": "Manage admin rule with network.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az network manager security-admin-config rule-collection rule create",
+            "summary": "Create a network manager security configuration admin rule.",
+            "syntax": "az network manager security-admin-config rule-collection rule create --access {Allow, AlwaysAllow, Deny}\n                                                                     --configuration-name\n                                                                     --direction {Inbound, Outbound}\n                                                                     --name\n                                                                     --priority\n                                                                     --protocol {Ah, Any, Esp, Icmp, Tcp, Udp}\n                                                                     --resource-group\n                                                                     --rule-collection-name\n                                                                     --rule-name\n                                                                     [--description]\n                                                                     [--dest-port-ranges]\n                                                                     [--destinations]\n                                                                     [--flag]\n                                                                     [--kind {Custom, Default}]\n                                                                     [--source-port-ranges]\n                                                                     [--sources]",
+            "required_parameters": [
+                "--access",
+                "--configuration-name",
+                "--direction",
+                "--name --network-manager-name -n",
+                "--priority",
+                "--protocol",
+                "--resource-group -g",
+                "--rule-collection-name",
+                "--rule-name"
+            ],
+            "optional_parameters": [
+                "--description",
+                "--dest-port-ranges",
+                "--destinations",
+                "--flag",
+                "--kind",
+                "--source-port-ranges",
+                "--sources"
+            ],
+            "examples": [
+                "az network manager security-admin-config rule-collection rule create --configuration-name \"myTestSecurityConfig\" --network-manager-name \"testNetworkManager\" --resource-group \"rg1\" --rule-collection-name \"myTestCollection\" --rule-name \"SampleAdminRule\" --kind \"Custom\" --protocol \"Tcp\" --access \"Allow\" --priority 32 --direction \"Inbound\" --destinations address-prefix=\"*\" address-prefix-type=\"IPPrefix\"  --dest-port-ranges 22"
+            ]
+        },
+        {
+            "name": "az network manager security-admin-config rule-collection rule delete",
+            "summary": "Delete an admin rule.",
+            "syntax": "az network manager security-admin-config rule-collection rule delete [--config]\n                                                                     [--force {0, 1, f, false, n, no, t, true, y, yes}]\n                                                                     [--ids]\n                                                                     [--name]\n                                                                     [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                                                     [--rc]\n                                                                     [--resource-group]\n                                                                     [--rule-name]\n                                                                     [--subscription]\n                                                                     [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--config --config-name --configuration-name",
+                "--force",
+                "--ids",
+                "--name --network-manager-name -n",
+                "--no-wait",
+                "--rc --rule-collection-name",
+                "--resource-group -g",
+                "--rule-name",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az network manager security-admin-config rule-collection rule delete --configuration-name \"myTestSecurityConfig\" --network-manager-name \"testNetworkManager\" --resource-group \"rg1\" --rule-collection-name \"myTestCollection\" --rule-name \"SampleAdminRule\""
+            ]
+        },
+        {
+            "name": "az network manager security-admin-config rule-collection rule list",
+            "summary": "List all network manager security configuration admin rules.",
+            "syntax": "az network manager security-admin-config rule-collection rule list --config\n                                                                   --name\n                                                                   --rc\n                                                                   --resource-group\n                                                                   [--max-items]\n                                                                   [--next-token]\n                                                                   [--skip-token]\n                                                                   [--top]",
+            "required_parameters": [
+                "--config --config-name --configuration-name",
+                "--name --network-manager-name -n",
+                "--rc --rule-collection-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token",
+                "--skip-token",
+                "--top"
+            ],
+            "examples": [
+                "az network manager security-admin-config rule-collection rule list --configuration-name \"myTestSecurityConfig\" --network-manager-name \"testNetworkManager\" --resource-group \"rg1\" --rule-collection-name \"myTestCollection\""
+            ]
+        },
+        {
+            "name": "az network manager security-admin-config rule-collection rule show",
+            "summary": "Get a network manager security configuration admin rule.",
+            "syntax": "az network manager security-admin-config rule-collection rule show [--config]\n                                                                   [--ids]\n                                                                   [--name]\n                                                                   [--rc]\n                                                                   [--resource-group]\n                                                                   [--rule-name]\n                                                                   [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--config --config-name --configuration-name",
+                "--ids",
+                "--name --network-manager-name -n",
+                "--rc --rule-collection-name",
+                "--resource-group -g",
+                "--rule-name",
+                "--subscription"
+            ],
+            "examples": [
+                "az network manager security-admin-config rule-collection rule show --configuration-name \"myTestSecurityConfig\" --network-manager-name \"testNetworkManager\" --resource-group \"rg1\" --rule-collection-name \"myTestCollection\" --rule-name \"SampleAdminRule\""
+            ]
+        },
+        {
+            "name": "az network manager security-admin-config rule-collection rule update",
+            "summary": "Update a network manager security configuration admin rule in a subscription.",
+            "syntax": "az network manager security-admin-config rule-collection rule update --rule-collection-name\n                                                                     [--access {Allow, AlwaysAllow, Deny}]\n                                                                     [--configuration-name]\n                                                                     [--description]\n                                                                     [--dest-port-ranges]\n                                                                     [--destinations]\n                                                                     [--direction {Inbound, Outbound}]\n                                                                     [--flag]\n                                                                     [--ids]\n                                                                     [--kind {Custom, Default}]\n                                                                     [--name]\n                                                                     [--priority]\n                                                                     [--protocol {Ah, Any, Esp, Icmp, Tcp, Udp}]\n                                                                     [--resource-group]\n                                                                     [--rule-name]\n                                                                     [--source-port-ranges]\n                                                                     [--sources]\n                                                                     [--subscription]",
+            "required_parameters": [
+                "--rule-collection-name"
+            ],
+            "optional_parameters": [
+                "--access",
+                "--configuration-name",
+                "--description",
+                "--dest-port-ranges",
+                "--destinations",
+                "--direction",
+                "--flag",
+                "--ids",
+                "--kind",
+                "--name --network-manager-name -n",
+                "--priority",
+                "--protocol",
+                "--resource-group -g",
+                "--rule-name",
+                "--source-port-ranges",
+                "--sources",
+                "--subscription"
+            ],
+            "examples": [
+                "az network manager security-admin-config rule-collection rule update --configuration-name \"myTestSecurityConfig\" --network-manager-name \"testNetworkManager\" --resource-group \"rg1\" --rule-collection-name \"myTestCollection\" --rule-name \"SampleAdminRule\" --access \"Deny\""
+            ]
+        }
+    ]
+}

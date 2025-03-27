@@ -1,0 +1,80 @@
+{
+    "command_group": "az dynatrace monitor sso-config",
+    "description": "Manage monitor sso-config.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az dynatrace monitor sso-config create",
+            "summary": "Create a dynatrace sso-config resource.",
+            "syntax": "az dynatrace monitor sso-config create --configuration-name\n                                       --monitor-name\n                                       --resource-group\n                                       [--aad-domains]\n                                       [--enterprise-app-id]\n                                       [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                       [--single-sign-on-state {Disable, Enable, Existing, Initial}]\n                                       [--single-sign-on-url]",
+            "required_parameters": [
+                "--configuration-name --name -n",
+                "--monitor-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--aad-domains",
+                "--enterprise-app-id",
+                "--no-wait",
+                "--single-sign-on-state",
+                "--single-sign-on-url"
+            ],
+            "examples": [
+                "az dynatrace monitor sso-config create -g rg --monitor-name monitor -n default --aad-domains \"['mpliftrdt20210811outlook.onmicrosoft.com']\" --single-sign-on-url \"https://www.dynatrace.io\""
+            ]
+        },
+        {
+            "name": "az dynatrace monitor sso-config list",
+            "summary": "List all dynatrace sso-config by monitor name.",
+            "syntax": "az dynatrace monitor sso-config list --monitor-name\n                                     --resource-group\n                                     [--max-items]\n                                     [--next-token]",
+            "required_parameters": [
+                "--monitor-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az dynatrace monitor sso-config list -g rg --monitor-name monitor"
+            ]
+        },
+        {
+            "name": "az dynatrace monitor sso-config show",
+            "summary": "Show a dynatrace sso-config.",
+            "syntax": "az dynatrace monitor sso-config show [--configuration-name]\n                                     [--ids]\n                                     [--monitor-name]\n                                     [--resource-group]\n                                     [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--configuration-name --name -n",
+                "--ids",
+                "--monitor-name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az dynatrace monitor sso-config show -g rg --monitor-name monitor -n default"
+            ]
+        },
+        {
+            "name": "az dynatrace monitor sso-config wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az dynatrace monitor sso-config wait [--configuration-name]\n                                     [--created]\n                                     [--custom]\n                                     [--deleted]\n                                     [--exists]\n                                     [--ids]\n                                     [--interval]\n                                     [--monitor-name]\n                                     [--resource-group]\n                                     [--subscription]\n                                     [--timeout]\n                                     [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--configuration-name --name -n",
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--monitor-name",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

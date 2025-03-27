@@ -1,0 +1,39 @@
+{
+    "command_group": "az vmware workload-network dhcp",
+    "description": "Commands to manage a DHCP (Data Host Configuration Protocol) workload network.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az vmware workload-network dhcp list",
+            "summary": "List dhcp in a private cloud workload network.",
+            "syntax": "az vmware workload-network dhcp list --private-cloud\n                                     --resource-group\n                                     [--max-items]\n                                     [--next-token]",
+            "required_parameters": [
+                "--private-cloud -c",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az vmware workload-network dhcp list --resource-group group1 --private-cloud cloud1"
+            ]
+        },
+        {
+            "name": "az vmware workload-network dhcp show",
+            "summary": "Get dhcp by id in a private cloud workload network.",
+            "syntax": "az vmware workload-network dhcp show [--dhcp]\n                                     [--ids]\n                                     [--private-cloud]\n                                     [--resource-group]\n                                     [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--dhcp --name -n",
+                "--ids",
+                "--private-cloud -c",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az vmware workload-network dhcp show --resource-group group1 --private-cloud cloud1 --dhcp dhcp1"
+            ]
+        }
+    ]
+}

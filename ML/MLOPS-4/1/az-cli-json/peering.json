@@ -1,0 +1,6 @@
+{
+    "command_group": "az peering",
+    "description": "Manage peering.",
+    "status": "GA",
+    "commands": []
+}

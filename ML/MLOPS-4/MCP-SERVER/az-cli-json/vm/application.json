@@ -1,0 +1,41 @@
+{
+    "command_group": "az vm application",
+    "description": "Manage applications for VM.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az vm application list",
+            "summary": "List applications for VM.",
+            "syntax": "az vm application list --name\n                       --resource-group",
+            "required_parameters": [
+                "--name --vm-name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az vm application list -g MyResourceGroup -n MyVm"
+            ]
+        },
+        {
+            "name": "az vm application set",
+            "summary": "Set applications for VM.",
+            "syntax": "az vm application set --app-version-ids\n                      [--app-config-overrides]\n                      [--ids]\n                      [--name]\n                      [--order-applications]\n                      [--resource-group]\n                      [--subscription]\n                      [--treat-deployment-as-failure]",
+            "required_parameters": [
+                "--app-version-ids"
+            ],
+            "optional_parameters": [
+                "--app-config-overrides",
+                "--ids",
+                "--name -n",
+                "--order-applications",
+                "--resource-group -g",
+                "--subscription",
+                "--treat-deployment-as-failure"
+            ],
+            "examples": [
+                "az vm application set -g MyResourceGroup -n MyVm --app-version-ids /subscriptions/subid/resourceGroups/MyResourceGroup/providers/Microsoft.Compute/galleries/myGallery1/applications/MyApplication1/versions/1.0 /subscriptions/subid/resourceGroups/MyResourceGroup/providers/Microsoft.Compute/galleries/myGallery1/applications/MyApplication1/versions/1.1",
+                "az vm application set -g MyResourceGroup -n MyVm --app-version-ids /subscriptions/subid/resourceGroups/MyResourceGroup/providers/Microsoft.Compute/galleries/myGallery1/applications/MyApplication1/versions/1.0 /subscriptions/subid/resourceGroups/MyResourceGroup/providers/Microsoft.Compute/galleries/myGallery1/applications/MyApplication1/versions/1.1 --app-config-overrides https://mystorageaccount.blob.core.windows.net/configurations/settings.config null"
+            ]
+        }
+    ]
+}

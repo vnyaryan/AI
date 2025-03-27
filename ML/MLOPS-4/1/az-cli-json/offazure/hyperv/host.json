@@ -1,0 +1,36 @@
+{
+    "command_group": "az offazure hyperv host",
+    "description": "Manage Hyper-V host.",
+    "status": "Experimental",
+    "commands": [
+        {
+            "name": "az offazure hyperv host list",
+            "summary": "Get all hosts on the on-premise site.",
+            "syntax": "az offazure hyperv host list --resource-group\n                             --site-name",
+            "required_parameters": [
+                "--resource-group -g",
+                "--site-name"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az offazure hyperv host list --resource-group MyResourceGroup --site-name MySiteName"
+            ]
+        },
+        {
+            "name": "az offazure hyperv host show",
+            "summary": "Get the details of a Hyper-V host.",
+            "syntax": "az offazure hyperv host show [--host-name]\n                             [--ids]\n                             [--resource-group]\n                             [--site-name]\n                             [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--host-name --name -n",
+                "--ids",
+                "--resource-group -g",
+                "--site-name",
+                "--subscription"
+            ],
+            "examples": [
+                "az offazure hyperv host show --host-name MyHostName --resource-group                  MyResourceGroup --site-name MySiteName"
+            ]
+        }
+    ]
+}

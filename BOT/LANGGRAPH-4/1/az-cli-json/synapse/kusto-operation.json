@@ -1,0 +1,17 @@
+{
+    "command_group": "az synapse kusto-operation",
+    "description": "Manage kusto operation with synapse.",
+    "status": "Experimental",
+    "commands": [
+        {
+            "name": "az synapse kusto-operation list",
+            "summary": "Lists available operations for the Kusto sub-resources inside Microsoft.Synapse provider.",
+            "syntax": "az synapse kusto-operation list",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "examples": [
+                "az synapse kusto-operation list"
+            ]
+        }
+    ]
+}

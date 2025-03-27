@@ -1,0 +1,101 @@
+{
+    "command_group": "az devops extension",
+    "description": "Manage extensions.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az devops extension disable",
+            "summary": "Disable an extension.",
+            "syntax": "az devops extension disable --extension-id\n                            --publisher-id\n                            [--detect {false, true}]\n                            [--org]",
+            "required_parameters": [
+                "--extension-id",
+                "--publisher-id"
+            ],
+            "optional_parameters": [
+                "--detect",
+                "--org --organization"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az devops extension enable",
+            "summary": "Enable an extension.",
+            "syntax": "az devops extension enable --extension-id\n                           --publisher-id\n                           [--detect {false, true}]\n                           [--org]",
+            "required_parameters": [
+                "--extension-id",
+                "--publisher-id"
+            ],
+            "optional_parameters": [
+                "--detect",
+                "--org --organization"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az devops extension install",
+            "summary": "Install an extension.",
+            "syntax": "az devops extension install --extension-id\n                            --publisher-id\n                            [--detect {false, true}]\n                            [--org]",
+            "required_parameters": [
+                "--extension-id",
+                "--publisher-id"
+            ],
+            "optional_parameters": [
+                "--detect",
+                "--org --organization"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az devops extension list",
+            "summary": "List extensions installed in an organization.",
+            "syntax": "az devops extension list [--detect {false, true}]\n                         [--include-built-in {false, true}]\n                         [--include-disabled {false, true}]\n                         [--org]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--detect",
+                "--include-built-in",
+                "--include-disabled",
+                "--org --organization"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az devops extension search",
+            "summary": "Search extensions from marketplace.",
+            "syntax": "az devops extension search --search-query",
+            "required_parameters": [
+                "--search-query -q"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az devops extension show",
+            "summary": "Get detail of single extension.",
+            "syntax": "az devops extension show --extension-id\n                         --publisher-id\n                         [--detect {false, true}]\n                         [--org]",
+            "required_parameters": [
+                "--extension-id",
+                "--publisher-id"
+            ],
+            "optional_parameters": [
+                "--detect",
+                "--org --organization"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az devops extension uninstall",
+            "summary": "Uninstall an extension.",
+            "syntax": "az devops extension uninstall --extension-id\n                              --publisher-id\n                              [--detect {false, true}]\n                              [--org]\n                              [--yes]",
+            "required_parameters": [
+                "--extension-id",
+                "--publisher-id"
+            ],
+            "optional_parameters": [
+                "--detect",
+                "--org --organization",
+                "--yes -y"
+            ],
+            "examples": []
+        }
+    ]
+}

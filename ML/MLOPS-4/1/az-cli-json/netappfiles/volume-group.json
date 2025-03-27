@@ -1,0 +1,154 @@
+{
+    "command_group": "az netappfiles volume-group",
+    "description": "Manage Azure NetApp Files (ANF) Volume Group Resources.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az netappfiles volume-group create",
+            "summary": "Create a volume group along with specified volumes.",
+            "syntax": "az netappfiles volume-group create --account-name\n                                   --group-name\n                                   --ppg\n                                   --resource-group\n                                   [--add-snapshot-capacity]\n                                   [--application-identifier]\n                                   [--application-type {ORACLE, SAP-HANA}]\n                                   [--backup-nfsv3 {0, 1, f, false, n, no, t, true, y, yes}]\n                                   [--data-backup-repl-skd {_10minutely, daily, hourly}]\n                                   [--data-backup-size]\n                                   [--data-backup-src-id]\n                                   [--data-backup-throughput]\n                                   [--data-repl-skd {_10minutely, daily, hourly}]\n                                   [--data-size]\n                                   [--data-src-id]\n                                   [--data-throughput]\n                                   [--encryption-key-source {Microsoft.KeyVault, Microsoft.NetApp}]\n                                   [--gp-rules]\n                                   [--group-description]\n                                   [--key-vault-private-endpoint-resource-id]\n                                   [--location]\n                                   [--log-backup-repl-skd {_10minutely, daily, hourly}]\n                                   [--log-backup-size]\n                                   [--log-backup-src-id]\n                                   [--log-backup-throughput]\n                                   [--log-size]\n                                   [--log-throughput]\n                                   [--memory]\n                                   [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                   [--number-of-hosts]\n                                   [--pool-name]\n                                   [--prefix]\n                                   [--shared-repl-skd {_10minutely, daily, hourly}]\n                                   [--shared-size]\n                                   [--shared-src-id]\n                                   [--shared-throughput]\n                                   [--smb-access {Disabled, Enabled}]\n                                   [--smb-browsable {Disabled, Enabled}]\n                                   [--start-host-id]\n                                   [--subnet]\n                                   [--system-role {DR, HA, PRIMARY}]\n                                   [--tags]\n                                   [--vnet]\n                                   [--volumes]\n                                   [--zones]",
+            "required_parameters": [
+                "--account-name -a",
+                "--group-name --name --volume-group-name -n",
+                "--ppg --proximity-placement-group",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--add-snapshot-capacity",
+                "--application-identifier --sap-sid",
+                "--application-type",
+                "--backup-nfsv3",
+                "--data-backup-repl-skd",
+                "--data-backup-size",
+                "--data-backup-src-id",
+                "--data-backup-throughput",
+                "--data-repl-skd",
+                "--data-size",
+                "--data-src-id",
+                "--data-throughput",
+                "--encryption-key-source",
+                "--gp-rules",
+                "--group-description",
+                "--key-vault-private-endpoint-resource-id --kv-private-endpoint-id",
+                "--location -l",
+                "--log-backup-repl-skd",
+                "--log-backup-size",
+                "--log-backup-src-id",
+                "--log-backup-throughput",
+                "--log-size",
+                "--log-throughput",
+                "--memory",
+                "--no-wait",
+                "--number-of-hosts --number-of-hots",
+                "--pool-name -p",
+                "--prefix",
+                "--shared-repl-skd",
+                "--shared-size",
+                "--shared-src-id",
+                "--shared-throughput",
+                "--smb-access",
+                "--smb-browsable",
+                "--start-host-id",
+                "--subnet",
+                "--system-role",
+                "--tags",
+                "--vnet",
+                "--volumes",
+                "--zones"
+            ],
+            "examples": [
+                "az netappfiles volume-group create -g mygroup --account-name myaccountname --pool-name mypoolname --volume-group-name myvolumegroupname --vnet myvnet --ppg myppg --application-type SAP-HANA --application-identifier mysapsid",
+                "az netappfiles volume-group create -g mygroup --account-name myaccountname --pool-name mypoolname --volume-group-name myvolumegroupname --vnet myvnet --ppg myppg --application-type ORACLE --application-identifier DEV"
+            ]
+        },
+        {
+            "name": "az netappfiles volume-group delete",
+            "summary": "Delete the specified volume group only if there are no volumes under volume group.",
+            "syntax": "az netappfiles volume-group delete [--account-name]\n                                   [--group-name]\n                                   [--ids]\n                                   [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                   [--resource-group]\n                                   [--subscription]\n                                   [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account-name -a",
+                "--group-name --name --volume-group-name -n",
+                "--ids",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az netappfiles volume-group create -g mygroup --account-name myaccountname --pool-name mypoolname --volume-group-name myvolumegroupname"
+            ]
+        },
+        {
+            "name": "az netappfiles volume-group list",
+            "summary": "List all volume groups for given account.",
+            "syntax": "az netappfiles volume-group list --account-name\n                                 --resource-group",
+            "required_parameters": [
+                "--account-name -a",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az netappfiles volume-group list -g mygroup --account-name myaccountname"
+            ]
+        },
+        {
+            "name": "az netappfiles volume-group show",
+            "summary": "Get details of the specified volume group.",
+            "syntax": "az netappfiles volume-group show [--account-name]\n                                 [--group-name]\n                                 [--ids]\n                                 [--resource-group]\n                                 [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account-name -a",
+                "--group-name --name --volume-group-name -n",
+                "--ids",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az netappfiles volume-group show -g mygroup --account-name myaccountname --volume-group-name myvolumegroupname"
+            ]
+        },
+        {
+            "name": "az netappfiles volume-group update",
+            "summary": "Update a volume group along with specified volumes.",
+            "syntax": "az netappfiles volume-group update [--account-name]\n                                   [--add]\n                                   [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                   [--group-meta-data]\n                                   [--group-name]\n                                   [--ids]\n                                   [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                   [--remove]\n                                   [--resource-group]\n                                   [--set]\n                                   [--subscription]\n                                   [--volumes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account-name -a",
+                "--add",
+                "--force-string",
+                "--group-meta-data",
+                "--group-name --name --volume-group-name -n",
+                "--ids",
+                "--no-wait",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--subscription",
+                "--volumes"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az netappfiles volume-group wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az netappfiles volume-group wait [--account-name]\n                                 [--created]\n                                 [--custom]\n                                 [--deleted]\n                                 [--exists]\n                                 [--group-name]\n                                 [--ids]\n                                 [--interval]\n                                 [--resource-group]\n                                 [--subscription]\n                                 [--timeout]\n                                 [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account-name -a",
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--group-name --name --volume-group-name -n",
+                "--ids",
+                "--interval",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

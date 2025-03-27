@@ -1,0 +1,95 @@
+{
+    "command_group": "az backup recoverypoint",
+    "description": "A snapshot of data at that point-of-time, stored in Recovery Services Vault, from which you can restore information.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az backup recoverypoint list",
+            "summary": "List all recovery points of a backed up item.",
+            "syntax": "az backup recoverypoint list --container-name\n                             --item-name\n                             --resource-group\n                             --vault-name\n                             [--backup-management-type {AzureIaasVM, AzureStorage, AzureWorkload}]\n                             [--end-date]\n                             [--is-ready-for-move {false, true}]\n                             [--recommended-for-archive]\n                             [--start-date]\n                             [--target-tier {VaultArchive}]\n                             [--tier {Snapshot, SnapshotAndVaultArchive, SnapshotAndVaultStandard, VaultArchive, VaultStandard, VaultStandardRehydrated}]\n                             [--use-secondary-region]\n                             [--workload-type {AzureFileShare, MSSQL, SAPHANA, SAPHanaDatabase, SQLDataBase, VM}]",
+            "required_parameters": [
+                "--container-name -c",
+                "--item-name -i",
+                "--resource-group -g",
+                "--vault-name -v"
+            ],
+            "optional_parameters": [
+                "--backup-management-type",
+                "--end-date",
+                "--is-ready-for-move",
+                "--recommended-for-archive",
+                "--start-date",
+                "--target-tier",
+                "--tier",
+                "--use-secondary-region",
+                "--workload-type"
+            ],
+            "examples": [
+                "az backup recoverypoint list --container-name MyContainer --backup-management-type AzureIaasVM --item-name MyItem --resource-group MyResourceGroup --vault-name MyVault"
+            ]
+        },
+        {
+            "name": "az backup recoverypoint move",
+            "summary": "Move a particular recovery point of a backed up item from one tier to another tier.",
+            "syntax": "az backup recoverypoint move --container-name\n                             --destination-tier {VaultArchive}\n                             --item-name\n                             --name\n                             --resource-group\n                             --source-tier {VaultStandard}\n                             --vault-name\n                             [--backup-management-type {AzureIaasVM, AzureStorage, AzureWorkload}]\n                             [--workload-type {AzureFileShare, MSSQL, SAPHANA, SAPHanaDatabase, SQLDataBase, VM}]",
+            "required_parameters": [
+                "--container-name -c",
+                "--destination-tier",
+                "--item-name -i",
+                "--name -n",
+                "--resource-group -g",
+                "--source-tier",
+                "--vault-name -v"
+            ],
+            "optional_parameters": [
+                "--backup-management-type",
+                "--workload-type"
+            ],
+            "examples": [
+                "az backup recoverypoint move --container-name MyContainer --backup-management-type AzureIaasVM --item-name MyItem --resource-group MyResourceGroup --vault-name MyVault --name RpId --source-tier SourceTier --destination-tier DestinationTier"
+            ]
+        },
+        {
+            "name": "az backup recoverypoint show",
+            "summary": "Shows details of a particular recovery point.",
+            "syntax": "az backup recoverypoint show [--backup-management-type {AzureIaasVM, AzureStorage, AzureWorkload}]\n                             [--container-name]\n                             [--ids]\n                             [--item-name]\n                             [--name]\n                             [--resource-group]\n                             [--subscription]\n                             [--use-secondary-region]\n                             [--vault-name]\n                             [--workload-type {AzureFileShare, MSSQL, SAPHANA, SAPHanaDatabase, SQLDataBase, VM}]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--backup-management-type",
+                "--container-name -c",
+                "--ids",
+                "--item-name -i",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--use-secondary-region",
+                "--vault-name -v",
+                "--workload-type"
+            ],
+            "examples": [
+                "az backup recoverypoint show --container-name MyContainer --backup-management-type AzureIaasVM --item-name MyItem --name MyRecoveryPoint --resource-group MyResourceGroup --vault-name MyVault"
+            ]
+        },
+        {
+            "name": "az backup recoverypoint show-log-chain",
+            "summary": "List the start and end points of the unbroken log chain(s) of the given backup item.",
+            "syntax": "az backup recoverypoint show-log-chain --container-name\n                                       --item-name\n                                       --resource-group\n                                       --vault-name\n                                       [--backup-management-type {AzureIaasVM, AzureStorage, AzureWorkload}]\n                                       [--end-date]\n                                       [--start-date]\n                                       [--use-secondary-region]\n                                       [--workload-type {AzureFileShare, MSSQL, SAPHANA, SAPHanaDatabase, SQLDataBase, VM}]",
+            "required_parameters": [
+                "--container-name -c",
+                "--item-name -i",
+                "--resource-group -g",
+                "--vault-name -v"
+            ],
+            "optional_parameters": [
+                "--backup-management-type",
+                "--end-date",
+                "--start-date",
+                "--use-secondary-region",
+                "--workload-type"
+            ],
+            "examples": [
+                "az backup recoverypoint show-log-chain --container-name MyContainer --backup-management-type AzureWorkload --item-name MyItem --resource-group MyResourceGroup --vault-name MyVault"
+            ]
+        }
+    ]
+}

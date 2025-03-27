@@ -1,0 +1,179 @@
+{
+    "command_group": "az appservice plan",
+    "description": "Manage app service plans.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az appservice plan create",
+            "summary": "Create an app service plan.",
+            "syntax": "az appservice plan create --name\n                          --resource-group\n                          [--app-service-environment]\n                          [--hyper-v]\n                          [--is-linux]\n                          [--location]\n                          [--no-wait]\n                          [--number-of-workers]\n                          [--per-site-scaling]\n                          [--sku {B1, B2, B3, D1, F1, FREE, I1, I1MV2, I1V2, I2, I2MV2, I2V2, I3, I3MV2, I3V2, I4MV2, I4V2, I5MV2, I5V2, I6V2, P0V3, P1MV3, P1V2, P1V3, P2MV3, P2V2, P2V3, P3MV3, P3V2, P3V3, P4MV3, P5MV3, S1, S2, S3, SHARED, WS1, WS2, WS3}]\n                          [--tags]\n                          [--zone-redundant]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--app-service-environment -e",
+                "--hyper-v",
+                "--is-linux",
+                "--location -l",
+                "--no-wait",
+                "--number-of-workers",
+                "--per-site-scaling",
+                "--sku",
+                "--tags",
+                "--zone-redundant -z"
+            ],
+            "examples": [
+                "az appservice plan create -g MyResourceGroup -n MyPlan",
+                "az appservice plan create -g MyResourceGroup -n MyPlan --is-linux --number-of-workers 4 --sku S1",
+                "az appservice plan create -g MyResourceGroup -n MyPlan --hyper-v --sku P1V3",
+                "az appservice plan create -g MyResourceGroup -n MyPlan --app-service-environment MyAppServiceEnvironment --sku I1",
+                "az appservice plan create -g MyResourceGroup -n MyPlan --app-service-environment '/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/test-rg/providers/Microsoft.Web/hostingEnvironments/test-ase' --sku I1V2",
+                "az appservice plan create -g MyResourceGroup -n MyPlan --app-service-environment '/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/test-rg/providers/Microsoft.Web/hostingEnvironments/test-ase' --sku I1V2 --location ase-region"
+            ]
+        },
+        {
+            "name": "az appservice plan create",
+            "summary": "Create an app service plan.",
+            "syntax": "az appservice plan create --name\n                          --resource-group\n                          [--app-service-environment]\n                          [--custom-location]\n                          [--hyper-v]\n                          [--is-linux]\n                          [--location]\n                          [--no-wait]\n                          [--number-of-workers]\n                          [--per-site-scaling]\n                          [--sku]\n                          [--tags]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--app-service-environment -e",
+                "--custom-location -c",
+                "--hyper-v",
+                "--is-linux",
+                "--location -l",
+                "--no-wait",
+                "--number-of-workers",
+                "--per-site-scaling",
+                "--sku",
+                "--tags"
+            ],
+            "examples": [
+                "az appservice plan create -g MyResourceGroup -n MyPlan",
+                "az appservice plan create -g MyResourceGroup -n MyPlan \\\n    --is-linux --number-of-workers 4 --sku S1",
+                "az appservice plan create -g MyResourceGroup -n MyPlan \\\n    --app-service-environment MyAppServiceEnvironment --sku I1",
+                "az appservice plan create -g MyResourceGroup -n MyPlan \\\n    --custom-location /subscriptions/sub_id/resourcegroups/group_name/providers/microsoft.extendedlocation/customlocations/custom_location_name \\\n    --per-site-scaling --is-linux --sku K1",
+                "az appservice plan create -g MyResourceGroup -n MyPlan \\\n    --custom-location custom_location_name \\\n    --per-site-scaling --is-linux --sku K1"
+            ]
+        },
+        {
+            "name": "az appservice plan delete",
+            "summary": "Delete an app service plan.",
+            "syntax": "az appservice plan delete [--ids]\n                          [--name]\n                          [--resource-group]\n                          [--subscription]\n                          [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az appservice plan delete --name MyAppServicePlan --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az appservice plan list",
+            "summary": "List app service plans.",
+            "syntax": "az appservice plan list [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az appservice plan list --query \"[?sku.tier=='Free']\"",
+                "az appservice plan list --query \"[?hostingEnvironmentProfile.name=='<ase-name>']\""
+            ]
+        },
+        {
+            "name": "az appservice plan list",
+            "summary": "List app service plans.",
+            "syntax": "az appservice plan list [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az appservice plan list --query \"[?sku.tier=='Free']\"",
+                "az appservice plan list --query \"[?hostingEnvironmentProfile.name=='<ase-name>']\""
+            ]
+        },
+        {
+            "name": "az appservice plan show",
+            "summary": "Get the app service plans for a resource group or a set of resource groups.",
+            "syntax": "az appservice plan show [--ids]\n                        [--name]\n                        [--resource-group]\n                        [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az appservice plan show --name MyAppServicePlan --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az appservice plan show",
+            "summary": "Get the app service plans for a resource group or a set of resource groups.",
+            "syntax": "az appservice plan show [--ids]\n                        [--name]\n                        [--resource-group]\n                        [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az appservice plan show --name MyAppServicePlan --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az appservice plan update",
+            "summary": "Update an app service plan.",
+            "syntax": "az appservice plan update [--add]\n                          [--elastic-scale {false, true}]\n                          [--force-string]\n                          [--ids]\n                          [--max-elastic-worker-count]\n                          [--name]\n                          [--no-wait]\n                          [--number-of-workers]\n                          [--remove]\n                          [--resource-group]\n                          [--set]\n                          [--sku {B1, B2, B3, D1, F1, FREE, I1, I1MV2, I1V2, I2, I2MV2, I2V2, I3, I3MV2, I3V2, I4MV2, I4V2, I5MV2, I5V2, I6V2, P0V3, P1MV3, P1V2, P1V3, P2MV3, P2V2, P2V3, P3MV3, P3V2, P3V3, P4MV3, P5MV3, S1, S2, S3, SHARED, WS1, WS2, WS3}]\n                          [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--elastic-scale",
+                "--force-string",
+                "--ids",
+                "--max-elastic-worker-count -m",
+                "--name -n",
+                "--no-wait",
+                "--number-of-workers",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--sku",
+                "--subscription"
+            ],
+            "examples": [
+                "az appservice plan update --name MyAppServicePlan --resource-group MyResourceGroup --sku F1"
+            ]
+        },
+        {
+            "name": "az appservice plan update",
+            "summary": "Update an app service plan. See https://docs.microsoft.com/azure/app-service/app-service-plan-manage#move-an-app-to-another-app-service-plan to learn more.",
+            "syntax": "az appservice plan update [--ids]\n                          [--name]\n                          [--no-wait]\n                          [--number-of-workers]\n                          [--resource-group]\n                          [--sku {ANY, B1, B2, B3, D1, ELASTICANY, F1, FREE, I1, I2, I3, P1V2, P2V2, P3V2, PC2, PC3, PC4, S1, S2, S3, SHARED}]\n                          [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--number-of-workers",
+                "--resource-group -g",
+                "--sku",
+                "--subscription"
+            ],
+            "examples": [
+                "az appservice plan update --name MyAppServicePlan --resource-group MyResourceGroup --sku F1",
+                "az appservice plan update --name MyAppServicePlan --resource-group MyResourceGroup \\\n    --sku ANY --number-of-workers 3"
+            ]
+        }
+    ]
+}

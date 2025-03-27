@@ -1,0 +1,136 @@
+{
+    "command_group": "az containerapp env storage",
+    "description": "Commands to manage storage for the Container Apps environment.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az containerapp env storage list",
+            "summary": "List the storages for an environment.",
+            "syntax": "az containerapp env storage list --name\n                                 --resource-group",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az containerapp env storage list -g MyResourceGroup -n MyEnvironment"
+            ]
+        },
+        {
+            "name": "az containerapp env storage list",
+            "summary": "List the storages for an environment.",
+            "syntax": "az containerapp env storage list --name\n                                 --resource-group",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az containerapp env storage list -g MyResourceGroup -n MyEnvironment"
+            ]
+        },
+        {
+            "name": "az containerapp env storage remove",
+            "summary": "Remove a storage from an environment.",
+            "syntax": "az containerapp env storage remove --name\n                                   --resource-group\n                                   --storage-name\n                                   [--yes]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g",
+                "--storage-name"
+            ],
+            "optional_parameters": [
+                "--yes -y"
+            ],
+            "examples": [
+                "az containerapp env storage remove -g MyResourceGroup --storage-name MyStorageName -n MyEnvironment"
+            ]
+        },
+        {
+            "name": "az containerapp env storage remove",
+            "summary": "Remove a storage from an environment.",
+            "syntax": "az containerapp env storage remove --name\n                                   --resource-group\n                                   --storage-name\n                                   [--yes]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g",
+                "--storage-name"
+            ],
+            "optional_parameters": [
+                "--yes -y"
+            ],
+            "examples": [
+                "az containerapp env storage remove -g MyResourceGroup --storage-name MyStorageName -n MyEnvironment"
+            ]
+        },
+        {
+            "name": "az containerapp env storage set",
+            "summary": "Create or update a storage.",
+            "syntax": "az containerapp env storage set --access-mode {ReadOnly, ReadWrite}\n                                --account-name\n                                --azure-file-account-key\n                                --azure-file-share-name\n                                --name\n                                --resource-group\n                                --storage-name\n                                [--no-wait]",
+            "required_parameters": [
+                "--access-mode",
+                "--account-name --azure-file-account-name -a",
+                "--azure-file-account-key --storage-account-key -k",
+                "--azure-file-share-name --file-share -f",
+                "--name -n",
+                "--resource-group -g",
+                "--storage-name"
+            ],
+            "optional_parameters": [
+                "--no-wait"
+            ],
+            "examples": [
+                "az containerapp env storage set -g MyResourceGroup -n MyEnv --storage-name MyStorageName --access-mode ReadOnly --azure-file-account-key MyAccountKey --azure-file-account-name MyAccountName --azure-file-share-name MyShareName"
+            ]
+        },
+        {
+            "name": "az containerapp env storage set",
+            "summary": "Create or update a storage.",
+            "syntax": "az containerapp env storage set --name\n                                --resource-group\n                                --storage-name\n                                [--access-mode {ReadOnly, ReadWrite}]\n                                [--account-name]\n                                [--azure-file-account-key]\n                                [--azure-file-share-name]\n                                [--no-wait]\n                                [--server]\n                                [--storage-type {AzureFile, NfsAzureFile}]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g",
+                "--storage-name"
+            ],
+            "optional_parameters": [
+                "--access-mode",
+                "--account-name --azure-file-account-name -a",
+                "--azure-file-account-key --storage-account-key -k",
+                "--azure-file-share-name --file-share -f",
+                "--no-wait",
+                "--server -s",
+                "--storage-type"
+            ],
+            "examples": [
+                "az containerapp env storage set -g MyResourceGroup -n MyEnv --storage-name MyStorageName --access-mode ReadOnly --azure-file-account-key MyAccountKey --azure-file-account-name MyAccountName --azure-file-share-name MyShareName",
+                "az containerapp env storage set -g MyResourceGroup -n MyEnv --storage-name MyStorageName --storage-type NfsAzureFile --access-mode ReadOnly --server MyNfsServer.file.core.windows.net --file-share /MyNfsServer/MyShareName"
+            ]
+        },
+        {
+            "name": "az containerapp env storage show",
+            "summary": "Show the details of a storage.",
+            "syntax": "az containerapp env storage show --name\n                                 --resource-group\n                                 --storage-name",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g",
+                "--storage-name"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az containerapp env storage show -g MyResourceGroup --storage-name MyStorageName -n MyEnvironment"
+            ]
+        },
+        {
+            "name": "az containerapp env storage show",
+            "summary": "Show the details of a storage.",
+            "syntax": "az containerapp env storage show --name\n                                 --resource-group\n                                 --storage-name",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g",
+                "--storage-name"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az containerapp env storage show -g MyResourceGroup --storage-name MyStorageName -n MyEnvironment"
+            ]
+        }
+    ]
+}

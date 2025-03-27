@@ -1,0 +1,93 @@
+{
+    "command_group": "az synapse sql ad-admin",
+    "description": "Manage SQL Active Directory administrator.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az synapse sql ad-admin create",
+            "summary": "Create the SQL Azure Active Directory administrator.",
+            "syntax": "az synapse sql ad-admin create --display-name\n                               --object-id\n                               --resource-group\n                               --workspace-name\n                               [--no-wait]",
+            "required_parameters": [
+                "--display-name -u",
+                "--object-id -i",
+                "--resource-group -g",
+                "--workspace-name"
+            ],
+            "optional_parameters": [
+                "--no-wait"
+            ],
+            "examples": [
+                "az synapse sql ad-admin create --workspace-name testsynapseworkspace --resource-group rg \\\n--display-name youraccount@yourdomain --object-id 00000000-0000-0000-0000-000000000000"
+            ]
+        },
+        {
+            "name": "az synapse sql ad-admin delete",
+            "summary": "Delete the SQL Azure Active Directory administrator.",
+            "syntax": "az synapse sql ad-admin delete --resource-group\n                               --workspace-name\n                               [--no-wait]\n                               [--yes]",
+            "required_parameters": [
+                "--resource-group -g",
+                "--workspace-name"
+            ],
+            "optional_parameters": [
+                "--no-wait",
+                "--yes -y"
+            ],
+            "examples": [
+                "az synapse sql ad-admin delete --workspace-name testsynapseworkspace --resource-group rg"
+            ]
+        },
+        {
+            "name": "az synapse sql ad-admin show",
+            "summary": "Get the SQL Azure Active Directory administrator.",
+            "syntax": "az synapse sql ad-admin show --resource-group\n                             --workspace-name",
+            "required_parameters": [
+                "--resource-group -g",
+                "--workspace-name"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az synapse sql ad-admin show --workspace-name testsynapseworkspace --resource-group rg"
+            ]
+        },
+        {
+            "name": "az synapse sql ad-admin update",
+            "summary": "Update the SQL Azure Active Directory administrator.",
+            "syntax": "az synapse sql ad-admin update --resource-group\n                               --workspace-name\n                               [--add]\n                               [--display-name]\n                               [--force-string]\n                               [--no-wait]\n                               [--object-id]\n                               [--remove]\n                               [--set]",
+            "required_parameters": [
+                "--resource-group -g",
+                "--workspace-name"
+            ],
+            "optional_parameters": [
+                "--add",
+                "--display-name -u",
+                "--force-string",
+                "--no-wait",
+                "--object-id -i",
+                "--remove",
+                "--set"
+            ],
+            "examples": [
+                "az synapse sql ad-admin update --workspace-name testsynapseworkspace --resource-group rg \\\n--display-name youraccount@yourdomain --object-id 00000000-0000-0000-0000-000000000000"
+            ]
+        },
+        {
+            "name": "az synapse sql ad-admin wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az synapse sql ad-admin wait --resource-group\n                             --workspace-name\n                             [--created]\n                             [--custom]\n                             [--deleted]\n                             [--exists]\n                             [--interval]\n                             [--timeout]\n                             [--updated]",
+            "required_parameters": [
+                "--resource-group -g",
+                "--workspace-name"
+            ],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--interval",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

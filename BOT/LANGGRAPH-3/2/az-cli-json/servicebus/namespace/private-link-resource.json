@@ -1,0 +1,18 @@
+{
+    "command_group": "az servicebus namespace private-link-resource",
+    "description": "Manage servicebus namespace private link resources.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az servicebus namespace private-link-resource show",
+            "summary": "List lists of resources that supports Privatelinks.",
+            "syntax": "az servicebus namespace private-link-resource show --namespace-name\n                                                   --resource-group",
+            "required_parameters": [
+                "--namespace-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        }
+    ]
+}

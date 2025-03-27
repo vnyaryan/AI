@@ -1,0 +1,108 @@
+{
+    "command_group": "az network service-endpoint policy",
+    "description": "Manage service endpoint policies.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az network service-endpoint policy create",
+            "summary": "Create a service endpoint policy.",
+            "syntax": "az network service-endpoint policy create --name\n                                          --resource-group\n                                          [--location]\n                                          [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                          [--tags]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--location -l",
+                "--no-wait",
+                "--tags"
+            ],
+            "examples": [
+                "az network service-endpoint policy create --name MyServiceEndpointPolicy --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az network service-endpoint policy delete",
+            "summary": "Delete a service endpoint policy.",
+            "syntax": "az network service-endpoint policy delete [--ids]\n                                          [--name]\n                                          [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                          [--resource-group]\n                                          [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az network service-endpoint policy delete -g MyResourceGroup -n MyPolicy"
+            ]
+        },
+        {
+            "name": "az network service-endpoint policy list",
+            "summary": "List service endpoint policies.",
+            "syntax": "az network service-endpoint policy list [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az network service-endpoint policy list --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az network service-endpoint policy show",
+            "summary": "Get the details of a service endpoint policy.",
+            "syntax": "az network service-endpoint policy show [--ids]\n                                        [--name]\n                                        [--resource-group]\n                                        [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az network service-endpoint policy show --name MyServiceEndpointPolicy --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az network service-endpoint policy update",
+            "summary": "Update a service endpoint policy.",
+            "syntax": "az network service-endpoint policy update [--add]\n                                          [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                          [--ids]\n                                          [--name]\n                                          [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                          [--remove]\n                                          [--resource-group]\n                                          [--set]\n                                          [--subscription]\n                                          [--tags]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--force-string",
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--subscription",
+                "--tags"
+            ],
+            "examples": [
+                "az network service-endpoint policy update -g MyResourceGroup -n MyPolicy --tags test=nest"
+            ]
+        },
+        {
+            "name": "az network service-endpoint policy wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az network service-endpoint policy wait [--created]\n                                        [--custom]\n                                        [--deleted]\n                                        [--exists]\n                                        [--ids]\n                                        [--interval]\n                                        [--name]\n                                        [--resource-group]\n                                        [--subscription]\n                                        [--timeout]\n                                        [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

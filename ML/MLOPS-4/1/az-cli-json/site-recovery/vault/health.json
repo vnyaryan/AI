@@ -1,0 +1,38 @@
+{
+    "command_group": "az site-recovery vault health",
+    "description": "Manage the health details of the vault.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az site-recovery vault health refresh-default",
+            "summary": "Refresh default for the health of the vault.",
+            "syntax": "az site-recovery vault health refresh-default [--ids]\n                                              [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                              [--resource-group]\n                                              [--subscription]\n                                              [--vault-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--vault-name"
+            ],
+            "examples": [
+                "az site-recovery vault health refresh-default -g rg --vault-name vault_name"
+            ]
+        },
+        {
+            "name": "az site-recovery vault health show",
+            "summary": "Get the health details of the vault.",
+            "syntax": "az site-recovery vault health show [--ids]\n                                   [--resource-group]\n                                   [--subscription]\n                                   [--vault-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--resource-group -g",
+                "--subscription",
+                "--vault-name"
+            ],
+            "examples": [
+                "az site-recovery vault health show -g rg --vault-name vault_name"
+            ]
+        }
+    ]
+}

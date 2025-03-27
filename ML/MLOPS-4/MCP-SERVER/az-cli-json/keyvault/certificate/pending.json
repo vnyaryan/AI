@@ -1,0 +1,44 @@
+{
+    "command_group": "az keyvault certificate pending",
+    "description": "Manage pending certificate creation operations.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az keyvault certificate pending delete",
+            "summary": "Deletes the creation operation for a specific certificate.",
+            "syntax": "az keyvault certificate pending delete --name\n                                       --vault-name",
+            "required_parameters": [
+                "--name -n",
+                "--vault-name"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az keyvault certificate pending merge",
+            "summary": "Merges a certificate or a certificate chain with a key pair existing on the server.",
+            "syntax": "az keyvault certificate pending merge --file\n                                      --name\n                                      --vault-name\n                                      [--disabled {false, true}]\n                                      [--tags]",
+            "required_parameters": [
+                "--file -f",
+                "--name -n",
+                "--vault-name"
+            ],
+            "optional_parameters": [
+                "--disabled",
+                "--tags"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az keyvault certificate pending show",
+            "summary": "Gets the creation operation of a certificate.",
+            "syntax": "az keyvault certificate pending show --name\n                                     --vault-name",
+            "required_parameters": [
+                "--name -n",
+                "--vault-name"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        }
+    ]
+}

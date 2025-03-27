@@ -1,0 +1,89 @@
+{
+    "command_group": "az tsi reference-data-set",
+    "description": "Manage reference data set with timeseriesinsights.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az tsi reference-data-set create",
+            "summary": "Create a reference data set in the specified environment.",
+            "syntax": "az tsi reference-data-set create --environment-name\n                                 --key-properties\n                                 --location\n                                 --name\n                                 --resource-group\n                                 [--comparison-behavior {Ordinal, OrdinalIgnoreCase}]\n                                 [--tags]",
+            "required_parameters": [
+                "--environment-name",
+                "--key-properties",
+                "--location -l",
+                "--name --reference-data-set-name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--comparison-behavior --data-string-comparison-behavior",
+                "--tags"
+            ],
+            "examples": [
+                "az tsi reference-data-set create --environment-name \"env1\" --location westus --key-properties name=\"DeviceId1\" type=\"String\" --key-properties name=\"DeviceFloor\" type=\"Double\" --name \"rds1\" --resource-group \"rg1\""
+            ]
+        },
+        {
+            "name": "az tsi reference-data-set delete",
+            "summary": "Delete the reference data set with the specified name in the specified subscription, resource group, and environment.",
+            "syntax": "az tsi reference-data-set delete [--environment-name]\n                                 [--ids]\n                                 [--name]\n                                 [--resource-group]\n                                 [--subscription]\n                                 [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--environment-name",
+                "--ids",
+                "--name --reference-data-set-name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az tsi reference-data-set delete --environment-name \"env1\" --name \"rds1\" --resource-group \"rg1\""
+            ]
+        },
+        {
+            "name": "az tsi reference-data-set list",
+            "summary": "List all the available reference data sets associated with the subscription and within the specified resource group and environment.",
+            "syntax": "az tsi reference-data-set list --environment-name\n                               --resource-group",
+            "required_parameters": [
+                "--environment-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az tsi reference-data-set list --environment-name \"env1\" --resource-group \"rg1\""
+            ]
+        },
+        {
+            "name": "az tsi reference-data-set show",
+            "summary": "Get the reference data set with the specified name in the specified environment.",
+            "syntax": "az tsi reference-data-set show [--environment-name]\n                               [--ids]\n                               [--name]\n                               [--resource-group]\n                               [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--environment-name",
+                "--ids",
+                "--name --reference-data-set-name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az tsi reference-data-set show --environment-name \"env1\" --name \"rds1\" --resource-group \"rg1\""
+            ]
+        },
+        {
+            "name": "az tsi reference-data-set update",
+            "summary": "Update the reference data set with the specified name in the specified subscription, resource group, and environment.",
+            "syntax": "az tsi reference-data-set update [--environment-name]\n                                 [--ids]\n                                 [--name]\n                                 [--resource-group]\n                                 [--subscription]\n                                 [--tags]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--environment-name",
+                "--ids",
+                "--name --reference-data-set-name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--tags"
+            ],
+            "examples": [
+                "az tsi reference-data-set update --environment-name \"env1\" --name \"rds1\" --tags someKey=\"someValue\" --resource-group \"rg1\""
+            ]
+        }
+    ]
+}

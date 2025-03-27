@@ -1,0 +1,120 @@
+{
+    "command_group": "az eventhubs eventhub",
+    "description": "Manage Azure EventHubs eventhub and authorization-rule.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az eventhubs eventhub create",
+            "summary": "Creates the EventHubs Eventhub.",
+            "syntax": "az eventhubs eventhub create --name\n                             --namespace-name\n                             --resource-group\n                             [--archive-name-format]\n                             [--blob-container]\n                             [--capture-interval]\n                             [--capture-size-limit]\n                             [--cleanup-policy {Compact, Delete, DeleteOrCompact}]\n                             [--destination-name]\n                             [--enable-capture {false, true}]\n                             [--mi-system-assigned {false, true}]\n                             [--mi-user-assigned]\n                             [--min-compaction-lag-in-mins]\n                             [--partition-count]\n                             [--retention-time]\n                             [--skip-empty-archives {false, true}]\n                             [--status {Active, Disabled, SendDisabled}]\n                             [--storage-account]\n                             [--timestamp-type {Create, LogAppend}]\n                             [--tombstone-retention-time-in-hours]\n                             [--user-metadata]",
+            "required_parameters": [
+                "--name -n",
+                "--namespace-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--archive-name-format",
+                "--blob-container",
+                "--capture-interval",
+                "--capture-size-limit",
+                "--cleanup-policy",
+                "--destination-name",
+                "--enable-capture",
+                "--mi-system-assigned",
+                "--mi-user-assigned",
+                "--min-compaction-lag-in-mins --min-lag",
+                "--partition-count",
+                "--retention-time --retention-time-in-hours",
+                "--skip-empty-archives",
+                "--status",
+                "--storage-account",
+                "--timestamp-type",
+                "--tombstone-retention-time-in-hours --tombstone-time",
+                "--user-metadata"
+            ],
+            "examples": [
+                "az eventhubs eventhub create --resource-group myresourcegroup --namespace-name mynamespace --name myeventhub --cleanup-policy Delete --partition-count 15"
+            ]
+        },
+        {
+            "name": "az eventhubs eventhub delete",
+            "summary": "Delete an Event Hub from the specified Namespace and resource group.",
+            "syntax": "az eventhubs eventhub delete [--event-hub-name]\n                             [--ids]\n                             [--namespace-name]\n                             [--resource-group]\n                             [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--event-hub-name --name -n",
+                "--ids",
+                "--namespace-name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az eventhubs eventhub list",
+            "summary": "List all the Event Hubs in a Namespace.",
+            "syntax": "az eventhubs eventhub list --namespace-name\n                           --resource-group\n                           [--max-items]\n                           [--next-token]\n                           [--skip]\n                           [--top]",
+            "required_parameters": [
+                "--namespace-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token",
+                "--skip",
+                "--top"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az eventhubs eventhub show",
+            "summary": "Get an Event Hubs description for the specified Event Hub.",
+            "syntax": "az eventhubs eventhub show [--event-hub-name]\n                           [--ids]\n                           [--namespace-name]\n                           [--resource-group]\n                           [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--event-hub-name --name -n",
+                "--ids",
+                "--namespace-name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az eventhubs eventhub update",
+            "summary": "Update a new Event Hub as a nested resource within a Namespace.",
+            "syntax": "az eventhubs eventhub update [--add]\n                             [--archive-name-format]\n                             [--blob-container]\n                             [--capture-interval]\n                             [--capture-size-limit]\n                             [--cleanup-policy {Compact, Delete, DeleteOrCompact}]\n                             [--destination-name]\n                             [--enable-capture {0, 1, f, false, n, no, t, true, y, yes}]\n                             [--encoding {Avro, AvroDeflate}]\n                             [--event-hub-name]\n                             [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                             [--identity]\n                             [--ids]\n                             [--min-compaction-lag-in-mins]\n                             [--namespace-name]\n                             [--partition-count]\n                             [--remove]\n                             [--resource-group]\n                             [--retention-time]\n                             [--set]\n                             [--skip-empty-archives {0, 1, f, false, n, no, t, true, y, yes}]\n                             [--status {Active, Creating, Deleting, Disabled, ReceiveDisabled, Renaming, Restoring, SendDisabled, Unknown}]\n                             [--storage-account]\n                             [--subscription]\n                             [--timestamp-type {Create, LogAppend}]\n                             [--tombstone-retention-time-in-hours]\n                             [--user-metadata]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--archive-name-format",
+                "--blob-container",
+                "--capture-interval",
+                "--capture-size-limit",
+                "--cleanup-policy",
+                "--destination-name",
+                "--enable-capture",
+                "--encoding",
+                "--event-hub-name --name -n",
+                "--force-string",
+                "--identity",
+                "--ids",
+                "--min-compaction-lag-in-mins --min-lag",
+                "--namespace-name",
+                "--partition-count",
+                "--remove",
+                "--resource-group -g",
+                "--retention-time --retention-time-in-hours",
+                "--set",
+                "--skip-empty-archives",
+                "--status",
+                "--storage-account",
+                "--subscription",
+                "--timestamp-type",
+                "--tombstone-retention-time-in-hours -t",
+                "--user-metadata"
+            ],
+            "examples": []
+        }
+    ]
+}

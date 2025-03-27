@@ -1,0 +1,216 @@
+{
+    "command_group": "az ml data",
+    "description": "Manage Azure ML data assets.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az ml data archive",
+            "summary": "Archive a data asset.",
+            "syntax": "az ml data archive --name\n                   [--label]\n                   [--resource-group]\n                   [--version]\n                   [--workspace-name]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--label -l",
+                "--resource-group -g",
+                "--version -v",
+                "--workspace-name -w"
+            ],
+            "examples": [
+                "az ml data archive --name my-env --resource-group my-resource-group --workspace-name my-workspace",
+                "az ml data archive --name my-env --version 1 --resource-group my-resource-group --workspace-name my-workspace"
+            ]
+        },
+        {
+            "name": "az ml data create",
+            "summary": "Create a data asset in a workspace/registry. If you are using a registry, replace `--workspace-name my-workspace` with the `--registry-name <registry-name>` option.",
+            "syntax": "az ml data create [--datastore]\n                  [--description]\n                  [--file]\n                  [--name]\n                  [--no-wait]\n                  [--path]\n                  [--registry-name]\n                  [--resource-group]\n                  [--set]\n                  [--skip-validation]\n                  [--type {mltable, uri_file, uri_folder}]\n                  [--version]\n                  [--workspace-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--datastore",
+                "--description -d",
+                "--file -f",
+                "--name -n",
+                "--no-wait",
+                "--path -p",
+                "--registry-name",
+                "--resource-group -g",
+                "--set",
+                "--skip-validation",
+                "--type -t",
+                "--version -v",
+                "--workspace-name -w"
+            ],
+            "examples": [
+                "az ml data create --file data.yml --resource-group my-resource-group --workspace-name my-workspace",
+                "az ml data create --file data.yml --registry-name my-registry-name",
+                "az ml data create --name my-data --version 1 --path ./my-data.csv --resource-group my-resource-group --workspace-name my-workspace",
+                "az ml data create --name my-data --version 1 --path ./my-data.csv --registry-name my-registry-name"
+            ]
+        },
+        {
+            "name": "az ml data import",
+            "summary": "Import data and create a data asset.",
+            "syntax": "az ml data import --resource-group\n                  --workspace-name\n                  [--datastore]\n                  [--description]\n                  [--file]\n                  [--name]\n                  [--path]\n                  [--set]\n                  [--skip-validation]\n                  [--type {mltable, uri_file, uri_folder}]\n                  [--version]",
+            "required_parameters": [
+                "--resource-group -g",
+                "--workspace-name -w"
+            ],
+            "optional_parameters": [
+                "--datastore",
+                "--description -d",
+                "--file -f",
+                "--name -n",
+                "--path -p",
+                "--set",
+                "--skip-validation",
+                "--type -t",
+                "--version -v"
+            ],
+            "examples": [
+                "az ml data import --file dataimport.yml --resource-group my-resource-group --workspace-name my-workspace"
+            ]
+        },
+        {
+            "name": "az ml data list",
+            "summary": "List data assets in a workspace/registry. If you are using a registry, replace `--workspace-name my-workspace` with the `--registry-name <registry-name>` option.",
+            "syntax": "az ml data list [--archived-only]\n                [--include-archived]\n                [--max-results]\n                [--name]\n                [--registry-name]\n                [--resource-group]\n                [--workspace-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--archived-only",
+                "--include-archived",
+                "--max-results -r",
+                "--name -n",
+                "--registry-name",
+                "--resource-group -g",
+                "--workspace-name -w"
+            ],
+            "examples": [
+                "az ml data list --resource-group my-resource-group --workspace-name my-workspace",
+                "az ml data list --name my-data --resource-group my-resource-group --workspace-name my-workspace",
+                "az ml data list --query \"[].{Name:name}\" --output table --resource-group my-resource-group --workspace-name my-workspace",
+                "az ml data list --registry-name my-registry-name",
+                "az ml data list --name my-data --registry-name my-registry-name"
+            ]
+        },
+        {
+            "name": "az ml data list-materialization-status",
+            "summary": "Show status of list of data import materialization jobs that create versions of a data asset.",
+            "syntax": "az ml data list-materialization-status --resource-group\n                                       --workspace-name\n                                       [--all-results {false, true}]\n                                       [--archived-only]\n                                       [--include-archived]\n                                       [--max-results]\n                                       [--name]",
+            "required_parameters": [
+                "--resource-group -g",
+                "--workspace-name -w"
+            ],
+            "optional_parameters": [
+                "--all-results",
+                "--archived-only",
+                "--include-archived",
+                "--max-results -r",
+                "--name -p"
+            ],
+            "examples": [
+                "az ml data list-materialization-status --name asset-name --resource-group my-resource-group --workspace-name my-workspace"
+            ]
+        },
+        {
+            "name": "az ml data mount",
+            "summary": "Mount a specific data asset to a local path. For now only Linux is supported.",
+            "syntax": "az ml data mount --path\n                 [--mode]\n                 [--mount-point]\n                 [--persistent]\n                 [--resource-group]\n                 [--workspace-name]",
+            "required_parameters": [
+                "--path"
+            ],
+            "optional_parameters": [
+                "--mode",
+                "--mount-point",
+                "--persistent",
+                "--resource-group -g",
+                "--workspace-name -w"
+            ],
+            "examples": [
+                "az ml data mount --mount-point /mnt/my-data --mode ro_mount --path azureml:my_urifolder:1",
+                "az ml data mount --mount-point /mnt/my-data --mode ro_mount --path azureml://subscriptions/my-sub-id/resourcegroups/my-rg/workspaces/myworkspace/data/some_data/versions/5",
+                "az ml data mount --mount-point /mnt/my-data --mode ro_mount --path azureml:my_urifolder",
+                "az ml data mount --mount-point /mnt/my-data --mode ro_mount --path azureml://subscriptions/my-sub-id/resourcegroups/my-rg/workspaces/myworkspace/data/some_data",
+                "az ml data mount --mount-point /mnt/my-data --mode ro_mount --path https://raw.githubusercontent.com/pandas-dev/pandas/main/doc/data/titanic.csv",
+                "az ml data mount --mount-point /mnt/my-data --mode ro_mount --path https://<account_name>.blob.core.windows.net/<container_name>/<path>",
+                "az ml data mount --mount-point /mnt/my-data --mode ro_mount --path abfss://<file_system>@<account_name>.dfs.core.windows.net/<path>"
+            ]
+        },
+        {
+            "name": "az ml data restore",
+            "summary": "Restore an archived data asset.",
+            "syntax": "az ml data restore --name\n                   [--label]\n                   [--resource-group]\n                   [--version]\n                   [--workspace-name]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--label -l",
+                "--resource-group -g",
+                "--version -v",
+                "--workspace-name -w"
+            ],
+            "examples": [
+                "az ml data restore --name my-env --resource-group my-resource-group --workspace-name my-workspace",
+                "az ml data restore --name my-env --version 1 --resource-group my-resource-group --workspace-name my-workspace"
+            ]
+        },
+        {
+            "name": "az ml data share",
+            "summary": "Share a specific data asset from workspace to registry.",
+            "syntax": "az ml data share --name\n                 --registry-name\n                 --resource-group\n                 --share-with-name\n                 --share-with-version\n                 --version\n                 --workspace-name",
+            "required_parameters": [
+                "--name -n",
+                "--registry-name",
+                "--resource-group -g",
+                "--share-with-name",
+                "--share-with-version",
+                "--version -v",
+                "--workspace-name -w"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az ml data share --name my-data --version my-version --resource-group my-resource-group --workspace-name my-workspace --share-with-name new-name-in-registry --share-with-version new-version-in-registry --registry-name my-registry"
+            ]
+        },
+        {
+            "name": "az ml data show",
+            "summary": "Shows details for a data asset in a workspace/registry. If you are using a registry, replace `--workspace-name my-workspace` with the `--registry-name <registry-name>` option.",
+            "syntax": "az ml data show --name\n                [--label]\n                [--registry-name]\n                [--resource-group]\n                [--version]\n                [--workspace-name]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--label -l",
+                "--registry-name",
+                "--resource-group -g",
+                "--version -v",
+                "--workspace-name -w"
+            ],
+            "examples": [
+                "az ml data show --name my-data --version 1 --resource-group my-resource-group --workspace-name my-workspace",
+                "az ml data show --name my-data --label latest --resource-group my-resource-group --workspace-name my-workspace",
+                "az ml data show --name my-data --version 1 --registry-name my-registry-name"
+            ]
+        },
+        {
+            "name": "az ml data update",
+            "summary": "Update a data asset.",
+            "syntax": "az ml data update --name\n                  --resource-group\n                  --workspace-name\n                  [--add]\n                  [--force-string]\n                  [--label]\n                  [--registry-name]\n                  [--remove]\n                  [--set]\n                  [--version]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g",
+                "--workspace-name -w"
+            ],
+            "optional_parameters": [
+                "--add",
+                "--force-string",
+                "--label -l",
+                "--registry-name",
+                "--remove",
+                "--set",
+                "--version -v"
+            ],
+            "examples": []
+        }
+    ]
+}

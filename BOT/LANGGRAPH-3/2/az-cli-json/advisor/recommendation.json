@@ -1,0 +1,47 @@
+{
+    "command_group": "az advisor recommendation",
+    "description": "Review Azure Advisor recommendations.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az advisor recommendation disable",
+            "summary": "Disable Azure Advisor recommendations.",
+            "syntax": "az advisor recommendation disable [--days]\n                                  [--ids]\n                                  [--name]\n                                  [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--days -d",
+                "--ids",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az advisor recommendation enable",
+            "summary": "Enable Azure Advisor recommendations.",
+            "syntax": "az advisor recommendation enable [--ids]\n                                 [--name]\n                                 [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az advisor recommendation enable --name MyRecommendation"
+            ]
+        },
+        {
+            "name": "az advisor recommendation list",
+            "summary": "List Azure Advisor recommendations.",
+            "syntax": "az advisor recommendation list [--category {Cost, HighAvailability, Performance, Security}]\n                               [--ids]\n                               [--refresh]\n                               [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--category -c",
+                "--ids",
+                "--refresh -r",
+                "--resource-group -g"
+            ],
+            "examples": []
+        }
+    ]
+}

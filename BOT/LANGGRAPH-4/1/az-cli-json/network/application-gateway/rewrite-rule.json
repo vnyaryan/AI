@@ -1,0 +1,149 @@
+{
+    "command_group": "az network application-gateway rewrite-rule",
+    "description": "Manage rewrite rules of an application gateway.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az network application-gateway rewrite-rule create",
+            "summary": "Create a rewrite rule.",
+            "syntax": "az network application-gateway rewrite-rule create --gateway-name\n                                                   --name\n                                                   --resource-group\n                                                   --rule-set-name\n                                                   [--conditions]\n                                                   [--enable-reroute {0, 1, f, false, n, no, t, true, y, yes}]\n                                                   [--modified-path]\n                                                   [--modified-query-string]\n                                                   [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                                   [--request-header-configurations]\n                                                   [--request-headers]\n                                                   [--response-header-configurations]\n                                                   [--response-headers]\n                                                   [--sequence]",
+            "required_parameters": [
+                "--gateway-name",
+                "--name -n",
+                "--resource-group -g",
+                "--rule-set-name"
+            ],
+            "optional_parameters": [
+                "--conditions",
+                "--enable-reroute",
+                "--modified-path",
+                "--modified-query-string",
+                "--no-wait",
+                "--request-header-configurations",
+                "--request-headers",
+                "--response-header-configurations",
+                "--response-headers",
+                "--sequence"
+            ],
+            "examples": [
+                "az network application-gateway rewrite-rule create -g MyResourceGroup --gateway-name MyGateway --rule-set-name MyRuleSet -n MyRule --sequence 123 --request-headers foo=bar --response-headers cat=hat"
+            ]
+        },
+        {
+            "name": "az network application-gateway rewrite-rule delete",
+            "summary": "Delete a rewrite rule.",
+            "syntax": "az network application-gateway rewrite-rule delete --gateway-name\n                                                   --name\n                                                   --resource-group\n                                                   --rule-set-name\n                                                   [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]",
+            "required_parameters": [
+                "--gateway-name",
+                "--name -n",
+                "--resource-group -g",
+                "--rule-set-name"
+            ],
+            "optional_parameters": [
+                "--no-wait"
+            ],
+            "examples": [
+                "az network application-gateway rewrite-rule delete --gateway-name MyGateway --name MyRewriteRule --resource-group MyResourceGroup --rule-set-name MyRuleSet"
+            ]
+        },
+        {
+            "name": "az network application-gateway rewrite-rule list",
+            "summary": "List rewrite rules.",
+            "syntax": "az network application-gateway rewrite-rule list --gateway-name\n                                                 --resource-group\n                                                 --rule-set-name",
+            "required_parameters": [
+                "--gateway-name",
+                "--resource-group -g",
+                "--rule-set-name"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az network application-gateway rewrite-rule list --gateway-name MyGateway --resource-group MyResourceGroup --rule-set-name MyRuleSet"
+            ]
+        },
+        {
+            "name": "az network application-gateway rewrite-rule list-request-headers",
+            "summary": "List all available request headers.",
+            "syntax": "az network application-gateway rewrite-rule list-request-headers",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "examples": [
+                "az network application-gateway rewrite-rule list-request-headers"
+            ]
+        },
+        {
+            "name": "az network application-gateway rewrite-rule list-response-headers",
+            "summary": "List all available response headers.",
+            "syntax": "az network application-gateway rewrite-rule list-response-headers",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "examples": [
+                "az network application-gateway rewrite-rule list-response-headers"
+            ]
+        },
+        {
+            "name": "az network application-gateway rewrite-rule show",
+            "summary": "Get the details of a rewrite rule.",
+            "syntax": "az network application-gateway rewrite-rule show --gateway-name\n                                                 --name\n                                                 --resource-group\n                                                 --rule-set-name",
+            "required_parameters": [
+                "--gateway-name",
+                "--name -n",
+                "--resource-group -g",
+                "--rule-set-name"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az network application-gateway rewrite-rule show --gateway-name MyGateway --name MyRewriteRule --resource-group MyResourceGroup --rule-set-name MyRuleSet"
+            ]
+        },
+        {
+            "name": "az network application-gateway rewrite-rule update",
+            "summary": "Update a rewrite rule.",
+            "syntax": "az network application-gateway rewrite-rule update --gateway-name\n                                                   --name\n                                                   --resource-group\n                                                   --rule-set-name\n                                                   [--add]\n                                                   [--conditions]\n                                                   [--enable-reroute {0, 1, f, false, n, no, t, true, y, yes}]\n                                                   [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                                   [--modified-path]\n                                                   [--modified-query-string]\n                                                   [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                                   [--remove]\n                                                   [--request-header-configurations]\n                                                   [--request-headers]\n                                                   [--response-header-configurations]\n                                                   [--response-headers]\n                                                   [--sequence]\n                                                   [--set]",
+            "required_parameters": [
+                "--gateway-name",
+                "--name -n",
+                "--resource-group -g",
+                "--rule-set-name"
+            ],
+            "optional_parameters": [
+                "--add",
+                "--conditions",
+                "--enable-reroute",
+                "--force-string",
+                "--modified-path",
+                "--modified-query-string",
+                "--no-wait",
+                "--remove",
+                "--request-header-configurations",
+                "--request-headers",
+                "--response-header-configurations",
+                "--response-headers",
+                "--sequence",
+                "--set"
+            ],
+            "examples": [
+                "az network application-gateway rewrite-rule update --gateway-name MyGateway --name MyRewriteRule --remove tags.foo --resource-group MyResourceGroup --rule-set-name MyRuleSet"
+            ]
+        },
+        {
+            "name": "az network application-gateway rewrite-rule wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az network application-gateway rewrite-rule wait [--created]\n                                                 [--custom]\n                                                 [--deleted]\n                                                 [--exists]\n                                                 [--gateway-name]\n                                                 [--ids]\n                                                 [--interval]\n                                                 [--resource-group]\n                                                 [--subscription]\n                                                 [--timeout]\n                                                 [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--gateway-name",
+                "--ids",
+                "--interval",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

@@ -1,0 +1,78 @@
+{
+    "command_group": "az containerapp ingress",
+    "description": "Commands to manage ingress and traffic-splitting.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az containerapp ingress disable",
+            "summary": "Disable ingress for a container app.",
+            "syntax": "az containerapp ingress disable [--ids]\n                                [--name]\n                                [--resource-group]\n                                [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az containerapp ingress disable -n my-containerapp -g MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az containerapp ingress enable",
+            "summary": "Enable or update ingress for a container app.",
+            "syntax": "az containerapp ingress enable --type {external, internal}\n                               [--allow-insecure {false, true}]\n                               [--exposed-port]\n                               [--ids]\n                               [--name]\n                               [--resource-group]\n                               [--subscription]\n                               [--target-port]\n                               [--transport {auto, http, http2, tcp}]",
+            "required_parameters": [
+                "--type"
+            ],
+            "optional_parameters": [
+                "--allow-insecure",
+                "--exposed-port",
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--target-port",
+                "--transport"
+            ],
+            "examples": [
+                "az containerapp ingress enable -n my-containerapp -g MyResourceGroup \\\n    --type external --allow-insecure --target-port 80 --transport auto"
+            ]
+        },
+        {
+            "name": "az containerapp ingress show",
+            "summary": "Show details of a container app's ingress.",
+            "syntax": "az containerapp ingress show [--ids]\n                             [--name]\n                             [--resource-group]\n                             [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az containerapp ingress show -n my-containerapp -g MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az containerapp ingress update",
+            "summary": "Update ingress for a container app.",
+            "syntax": "az containerapp ingress update [--allow-insecure {false, true}]\n                               [--exposed-port]\n                               [--ids]\n                               [--name]\n                               [--resource-group]\n                               [--subscription]\n                               [--target-port]\n                               [--transport {auto, http, http2, tcp}]\n                               [--type {external, internal}]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--allow-insecure",
+                "--exposed-port",
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--target-port",
+                "--transport",
+                "--type"
+            ],
+            "examples": [
+                "az containerapp ingress update -n my-containerapp -g MyResourceGroup \\\n    --target-port 8080"
+            ]
+        }
+    ]
+}

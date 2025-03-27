@@ -1,0 +1,93 @@
+{
+    "command_group": "az azurestackhci virtualnetwork",
+    "description": "Manage virtualnetwork with azurestackhci.",
+    "status": "Experimental",
+    "commands": [
+        {
+            "name": "az azurestackhci virtualnetwork create",
+            "summary": "Create a virtual network.",
+            "syntax": "az azurestackhci virtualnetwork create --name\n                                       --resource-group\n                                       [--address-prefix]\n                                       [--dns-servers]\n                                       [--extended-location]\n                                       [--gateway]\n                                       [--ip-allocation-method]\n                                       [--location]\n                                       [--network-type]\n                                       [--routes]\n                                       [--subnets]\n                                       [--tags]\n                                       [--vlan]\n                                       [--vm-switch-name]",
+            "required_parameters": [
+                "--name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--address-prefix",
+                "--dns-servers",
+                "--extended-location",
+                "--gateway",
+                "--ip-allocation-method",
+                "--location -l",
+                "--network-type",
+                "--routes",
+                "--subnets",
+                "--tags",
+                "--vlan",
+                "--vm-switch-name"
+            ],
+            "examples": [
+                "az azurestackhci virtualnetwork create --resource-group \"test-rg\" --extended-location name=\"/subscriptions/a95612cb-f1fa-4daa-a4fd-272844fa512c/resourceGroups/dogfoodarc/providers/Microsoft.ExtendedLocation/customLocations/dogfood-location\" type=\"CustomLocation\" --location \"West US2\" --network-type \"Transparent\" --name \"test-vnet\" --ip-allocation-method \"Static\" --address-prefix \"10.0.0.0/28\" --vm-switch-name \"test-vm-switch\" --dns-servers 10.220.32.16 10.220.32.17"
+            ]
+        },
+        {
+            "name": "az azurestackhci virtualnetwork delete",
+            "summary": "Delete a virtual network.",
+            "syntax": "az azurestackhci virtualnetwork delete [--ids]\n                                       [--name]\n                                       [--resource-group]\n                                       [--subscription]\n                                       [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az azurestackhci virtualnetwork delete --resource-group \"test-rg\" --name \"test-vnet\""
+            ]
+        },
+        {
+            "name": "az azurestackhci virtualnetwork list",
+            "summary": "List all the virtual networks.",
+            "syntax": "az azurestackhci virtualnetwork list [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az azurestackhci virtualnetwork list --resource-group \"test-rg\"",
+                "az azurestackhci virtualnetwork list"
+            ]
+        },
+        {
+            "name": "az azurestackhci virtualnetwork show",
+            "summary": "Get the details of a virtual network.",
+            "syntax": "az azurestackhci virtualnetwork show [--ids]\n                                     [--name]\n                                     [--resource-group]\n                                     [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az azurestackhci virtualnetwork show --resource-group \"test-rg\" --name \"test-vnet\""
+            ]
+        },
+        {
+            "name": "az azurestackhci virtualnetwork update",
+            "summary": "Update a virtual network.",
+            "syntax": "az azurestackhci virtualnetwork update [--ids]\n                                       [--name]\n                                       [--resource-group]\n                                       [--subscription]\n                                       [--tags]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name",
+                "--resource-group -g",
+                "--subscription",
+                "--tags"
+            ],
+            "examples": [
+                "az azurestackhci virtualnetwork update --resource-group \"test-rg\" --tags additionalProperties=\"sample\" --name \"test-vnet\""
+            ]
+        }
+    ]
+}

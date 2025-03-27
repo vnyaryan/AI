@@ -1,0 +1,31 @@
+{
+    "command_group": "az maintenance public-configuration",
+    "description": "Manage public maintenance configuration with maintenance.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az maintenance public-configuration list",
+            "summary": "List Public Maintenance Configuration records.",
+            "syntax": "az maintenance public-configuration list",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "examples": [
+                "az maintenance public-configuration list"
+            ]
+        },
+        {
+            "name": "az maintenance public-configuration show",
+            "summary": "Get Public Maintenance Configuration record.",
+            "syntax": "az maintenance public-configuration show [--ids]\n                                         [--name]\n                                         [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --resource-name -n",
+                "--subscription"
+            ],
+            "examples": [
+                "az maintenance public-configuration show --resource-name \"configuration1\""
+            ]
+        }
+    ]
+}

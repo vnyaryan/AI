@@ -1,0 +1,71 @@
+{
+    "command_group": "az sapmonitor",
+    "description": "(PREVIEW) Manage Azure SAP Monitor.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az sapmonitor create",
+            "summary": "Create a SAP Monitor.",
+            "syntax": "az sapmonitor create --hana-subnet\n                     --monitor-name\n                     --region\n                     --resource-group\n                     [--dca]\n                     [--lawsid]\n                     [--tags]",
+            "required_parameters": [
+                "--hana-subnet --hdbsn",
+                "--monitor-name -n",
+                "--region",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--dca --disable_customer_analytics",
+                "--lawsid --log-analytics-workspace-arm-id",
+                "--tags"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az sapmonitor delete",
+            "summary": "Delete a SAP Monitor.",
+            "syntax": "az sapmonitor delete --monitor-name\n                     --resource-group",
+            "required_parameters": [
+                "--monitor-name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az sapmonitor list",
+            "summary": "List SAP Monitors.",
+            "syntax": "az sapmonitor list",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az sapmonitor show",
+            "summary": "Get the details of a SAP Monitor.",
+            "syntax": "az sapmonitor show --monitor-name\n                   --resource-group",
+            "required_parameters": [
+                "--monitor-name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az sapmonitor update",
+            "summary": "Updates the tags field of a SAP Monitor.",
+            "syntax": "az sapmonitor update --monitor-name\n                     --resource-group\n                     [--add]\n                     [--force-string]\n                     [--no-wait]\n                     [--remove]\n                     [--set]",
+            "required_parameters": [
+                "--monitor-name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--add",
+                "--force-string",
+                "--no-wait",
+                "--remove",
+                "--set"
+            ],
+            "examples": []
+        }
+    ]
+}

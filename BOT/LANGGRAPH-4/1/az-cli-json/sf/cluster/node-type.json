@@ -1,0 +1,28 @@
+{
+    "command_group": "az sf cluster node-type",
+    "description": "Manage the node-type of a cluster.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az sf cluster node-type add",
+            "summary": "Add a new node type to a cluster.",
+            "syntax": "az sf cluster node-type add --capacity\n                            --cluster-name\n                            --node-type\n                            --resource-group\n                            --vm-password\n                            --vm-user-name\n                            [--durability-level {Bronze, Gold, Silver}]\n                            [--vm-sku]\n                            [--vm-tier]",
+            "required_parameters": [
+                "--capacity",
+                "--cluster-name -c",
+                "--node-type",
+                "--resource-group -g",
+                "--vm-password",
+                "--vm-user-name"
+            ],
+            "optional_parameters": [
+                "--durability-level",
+                "--vm-sku",
+                "--vm-tier"
+            ],
+            "examples": [
+                "az sf cluster node-type add -g group-name -c cluster1 --node-type 'n2' --capacity 5 --vm-user-name 'adminName' --vm-password testPassword0"
+            ]
+        }
+    ]
+}

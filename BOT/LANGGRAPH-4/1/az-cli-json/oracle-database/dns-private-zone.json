@@ -1,0 +1,22 @@
+{
+    "command_group": "az oracle-database dns-private-zone",
+    "description": "DNS Private Zone.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az oracle-database dns-private-zone list",
+            "summary": "List DnsPrivateZone resources by Location.",
+            "syntax": "az oracle-database dns-private-zone list --location\n                                         [--max-items]\n                                         [--next-token]",
+            "required_parameters": [
+                "--location -l"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az oracle-database dns-private-zone list --location <location>"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,214 @@
+{
+    "command_group": "az network bastion",
+    "description": "Manage Azure Bastion host machines.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az network bastion create",
+            "summary": "Create the specified Bastion Host.",
+            "syntax": "az network bastion create --name\n                          --resource-group\n                          --vnet-name\n                          [--disable-copy-paste {0, 1, f, false, n, no, t, true, y, yes}]\n                          [--enable-ip-connect {0, 1, f, false, n, no, t, true, y, yes}]\n                          [--enable-tunneling {0, 1, f, false, n, no, t, true, y, yes}]\n                          [--file-copy {0, 1, f, false, n, no, t, true, y, yes}]\n                          [--kerberos {0, 1, f, false, n, no, t, true, y, yes}]\n                          [--location]\n                          [--network-acls-ips]\n                          [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                          [--public-ip-address]\n                          [--scale-units]\n                          [--session-recording {0, 1, f, false, n, no, t, true, y, yes}]\n                          [--shareable-link {0, 1, f, false, n, no, t, true, y, yes}]\n                          [--sku {Basic, Developer, Premium, Standard}]\n                          [--tags]\n                          [--zones]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g",
+                "--vnet-name"
+            ],
+            "optional_parameters": [
+                "--disable-copy-paste",
+                "--enable-ip-connect",
+                "--enable-tunneling",
+                "--file-copy",
+                "--kerberos",
+                "--location -l",
+                "--network-acls-ips",
+                "--no-wait",
+                "--public-ip-address",
+                "--scale-units",
+                "--session-recording",
+                "--shareable-link",
+                "--sku",
+                "--tags",
+                "--zones"
+            ],
+            "examples": [
+                "az network bastion create --location westus2 --name MyBastionHost --public-ip-address MyPublicIpAddress --resource-group MyResourceGroup --vnet-name MyVnet",
+                "az network bastion create --location westus2 --name MyBastionHost --public-ip-address MyPublicIpAddress --resource-group MyResourceGroup --vnet-name MyVnet --zones 1 2 3",
+                "az network bastion create --location westus2 --name MyBastionHost --public-ip-address MyPublicIpAddress --resource-group MyResourceGroup --vnet-name MyVnet --zones 1 2 3 --sku Premium --session-recording",
+                "az network bastion create --name MyBastion --resource-group MyResourceGroup --sku Developer --vnet-name MyVnet",
+                "az network bastion create --name MyBastion --resource-group MyResourceGroup --sku Developer --vnet-name MyVnet --network-acls-ips \"1.1.1.1/16 100.64.0.0/10\""
+            ]
+        },
+        {
+            "name": "az network bastion delete",
+            "summary": "Delete the specified Bastion Host.",
+            "syntax": "az network bastion delete [--ids]\n                          [--name]\n                          [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                          [--resource-group]\n                          [--subscription]\n                          [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az network bastion delete --name MyBastionHost --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az network bastion list",
+            "summary": "List all Bastion Hosts in a resource group.",
+            "syntax": "az network bastion list [--max-items]\n                        [--next-token]\n                        [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az network bastion list -g MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az network bastion rdp",
+            "summary": "RDP to target Virtual Machine using Tunneling from Azure Bastion.",
+            "syntax": "az network bastion rdp [--auth-type]\n                       [--configure]\n                       [--disable-gateway {false, true}]\n                       [--enable-mfa {false, true}]\n                       [--ids]\n                       [--name]\n                       [--resource-group]\n                       [--resource-port]\n                       [--subscription]\n                       [--target-ip-address]\n                       [--target-resource-id]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--auth-type",
+                "--configure",
+                "--disable-gateway",
+                "--enable-mfa",
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--resource-port",
+                "--subscription",
+                "--target-ip-address",
+                "--target-resource-id"
+            ],
+            "examples": [
+                "az network bastion rdp --name MyBastionHost --resource-group MyResourceGroup --target-resource-id vmResourceId",
+                "az network bastion rdp --name MyBastionHost --resource-group MyResourceGroup --target-ip-address 10.0.0.1"
+            ]
+        },
+        {
+            "name": "az network bastion show",
+            "summary": "Get the specified Bastion Host.",
+            "syntax": "az network bastion show [--ids]\n                        [--name]\n                        [--resource-group]\n                        [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az network bastion show --name MyBastionHost --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az network bastion ssh",
+            "summary": "SSH to a virtual machine using Tunneling from Azure Bastion.",
+            "syntax": "az network bastion ssh --auth-type\n                       [--ids]\n                       [--name]\n                       [--resource-group]\n                       [--resource-port]\n                       [--ssh-key]\n                       [--subscription]\n                       [--target-ip-address]\n                       [--target-resource-id]\n                       [--username]\n                       [<SSH_ARGS>]",
+            "required_parameters": [
+                "--auth-type"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--resource-port",
+                "--ssh-key",
+                "--subscription",
+                "--target-ip-address",
+                "--target-resource-id",
+                "--username",
+                "<SSH_ARGS>"
+            ],
+            "examples": [
+                "az network bastion ssh --name MyBastionHost --resource-group MyResourceGroup --target-resource-id vmResourceId --auth-type password --username xyz",
+                "az network bastion ssh --name MyBastionHost --resource-group MyResourceGroup --target-resource-id vmResourceId --auth-type ssh-key --username xyz --ssh-key C:/filepath/sshkey.pem",
+                "az network bastion ssh --name MyBastionHost --resource-group MyResourceGroup --target-resource-id vmResourceId --auth-type AAD",
+                "az network bastion ssh --name MyBastionHost --resource-group MyResourceGroup --target-resource-id vmResourceId --auth-type AAD -- -L 8080:127.0.0.1:8080"
+            ]
+        },
+        {
+            "name": "az network bastion tunnel",
+            "summary": "Open a tunnel through Azure Bastion to a target virtual machine.",
+            "syntax": "az network bastion tunnel --port\n                          --resource-port\n                          [--ids]\n                          [--name]\n                          [--resource-group]\n                          [--subscription]\n                          [--target-ip-address]\n                          [--target-resource-id]\n                          [--timeout]",
+            "required_parameters": [
+                "--port",
+                "--resource-port"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--target-ip-address",
+                "--target-resource-id",
+                "--timeout"
+            ],
+            "examples": [
+                "az network bastion tunnel --name MyBastionHost --resource-group MyResourceGroup --target-resource-id vmResourceId --resource-port 22 --port 50022",
+                "az network bastion tunnel --name MyBastionHost --resource-group MyResourceGroup --target-ip-address 10.0.0.1 --resource-port 22 --port 50022"
+            ]
+        },
+        {
+            "name": "az network bastion update",
+            "summary": "Update the specified Bastion Host.",
+            "syntax": "az network bastion update [--add]\n                          [--bastion-host-name]\n                          [--disable-copy-paste {0, 1, f, false, n, no, t, true, y, yes}]\n                          [--dns-name]\n                          [--enable-ip-connect {0, 1, f, false, n, no, t, true, y, yes}]\n                          [--enable-tunneling {0, 1, f, false, n, no, t, true, y, yes}]\n                          [--file-copy {0, 1, f, false, n, no, t, true, y, yes}]\n                          [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                          [--ids]\n                          [--ip-configurations]\n                          [--kerberos {0, 1, f, false, n, no, t, true, y, yes}]\n                          [--location]\n                          [--network-acls]\n                          [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                          [--remove]\n                          [--resource-group]\n                          [--scale-units]\n                          [--session-recording {0, 1, f, false, n, no, t, true, y, yes}]\n                          [--set]\n                          [--shareable-link {0, 1, f, false, n, no, t, true, y, yes}]\n                          [--sku]\n                          [--subscription]\n                          [--tags]\n                          [--virtual-network]\n                          [--zones]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--bastion-host-name --name -n",
+                "--disable-copy-paste",
+                "--dns-name",
+                "--enable-ip-connect",
+                "--enable-tunneling",
+                "--file-copy",
+                "--force-string",
+                "--ids",
+                "--ip-configurations",
+                "--kerberos",
+                "--location -l",
+                "--network-acls",
+                "--no-wait",
+                "--remove",
+                "--resource-group -g",
+                "--scale-units",
+                "--session-recording",
+                "--set",
+                "--shareable-link",
+                "--sku",
+                "--subscription",
+                "--tags",
+                "--virtual-network",
+                "--zones"
+            ],
+            "examples": [
+                "az network bastion update --name MyBastionHost --resource-group MyResourceGroup --enable-tunneling"
+            ]
+        },
+        {
+            "name": "az network bastion wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az network bastion wait [--bastion-host-name]\n                        [--created]\n                        [--custom]\n                        [--deleted]\n                        [--exists]\n                        [--ids]\n                        [--interval]\n                        [--resource-group]\n                        [--subscription]\n                        [--timeout]\n                        [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--bastion-host-name --name -n",
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

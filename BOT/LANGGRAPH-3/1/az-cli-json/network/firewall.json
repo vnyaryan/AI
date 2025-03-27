@@ -1,0 +1,170 @@
+{
+    "command_group": "az network firewall",
+    "description": "Manage and configure Azure Firewalls.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az network firewall create",
+            "summary": "Create an Azure Firewall.",
+            "syntax": "az network firewall create --name\n                           --resource-group\n                           [--allow-active-ftp {0, 1, f, false, n, no, t, true, y, yes}]\n                           [--conf-name]\n                           [--count]\n                           [--dns-servers]\n                           [--enable-dns-proxy {0, 1, f, false, n, no, t, true, y, yes}]\n                           [--enable-explicit-proxy {0, 1, f, false, n, no, t, true, y, yes}]\n                           [--enable-fat-flow-logging {0, 1, f, false, n, no, t, true, y, yes}]\n                           [--enable-pac-file {0, 1, f, false, n, no, t, true, y, yes}]\n                           [--enable-udp-log-optimization {0, 1, f, false, n, no, t, true, y, yes}]\n                           [--firewall-policy]\n                           [--http-port]\n                           [--https-port {0, 1, f, false, n, no, t, true, y, yes}]\n                           [--location]\n                           [--m-conf-name]\n                           [--m-public-ip]\n                           [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                           [--pac-file]\n                           [--pac-file-port]\n                           [--private-ranges]\n                           [--public-ip]\n                           [--route-server-id]\n                           [--sku {AZFW_Hub, AZFW_VNet}]\n                           [--tags]\n                           [--threat-intel-mode {Alert, Deny, Off}]\n                           [--tier {Basic, Premium, Standard}]\n                           [--vhub]\n                           [--vnet-name]\n                           [--zones]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--allow-active-ftp",
+                "--conf-name",
+                "--count --public-ip-count",
+                "--dns-servers",
+                "--enable-dns-proxy",
+                "--enable-explicit-proxy",
+                "--enable-fat-flow-logging --fat-flow-logging",
+                "--enable-pac-file",
+                "--enable-udp-log-optimization --udp-log-optimization",
+                "--firewall-policy --policy",
+                "--http-port",
+                "--https-port",
+                "--location -l",
+                "--m-conf-name",
+                "--m-public-ip",
+                "--no-wait",
+                "--pac-file",
+                "--pac-file-port",
+                "--private-ranges",
+                "--public-ip",
+                "--route-server-id",
+                "--sku",
+                "--tags",
+                "--threat-intel-mode",
+                "--tier",
+                "--vhub --virtual-hub",
+                "--vnet-name",
+                "--zones -z"
+            ],
+            "examples": [
+                "az network firewall create -g MyResourceGroup -n MyFirewall --private-ranges 10.0.0.0 10.0.0.0/16 IANAPrivateRanges",
+                "az network firewall create -g MyResourceGroup -n MyFirewall --sku AZFW_Hub --tier Standard --virtual-hub MyVirtualHub1 --public-ip-count 1",
+                "az network firewall create -g MyResourceGroup -n MyFirewall --sku AZFW_VNet --tier Basic --vnet-name MyVNet --conf-name MyIpConfig --m-conf-name MyManagementIpConfig --m-public-ip MyPublicIp",
+                "az network firewall create -g MyResourceGroup -n MyFirewall --sku AZFW_Hub --tier Basic --vhub MyVHub --public-ip-count 2"
+            ]
+        },
+        {
+            "name": "az network firewall delete",
+            "summary": "Delete an Azure Firewall.",
+            "syntax": "az network firewall delete [--ids]\n                           [--name]\n                           [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                           [--resource-group]\n                           [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az network firewall learned-ip-prefix",
+            "summary": "Retrieves a list of all IP prefixes that azure firewall has learned to not SNAT.",
+            "syntax": "az network firewall learned-ip-prefix [--ids]\n                                      [--name]\n                                      [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                      [--resource-group]\n                                      [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az network firewall learned-ip-prefix -g MyResourceGroup -n MyFirewall"
+            ]
+        },
+        {
+            "name": "az network firewall list",
+            "summary": "List Azure Firewalls.",
+            "syntax": "az network firewall list [--max-items]\n                         [--next-token]\n                         [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token",
+                "--resource-group -g"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az network firewall list-fqdn-tags",
+            "summary": "Gets all the Azure Firewall FQDN Tags in a subscription.",
+            "syntax": "az network firewall list-fqdn-tags [--max-items]\n                                   [--next-token]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az network firewall show",
+            "summary": "Get the details of an Azure Firewall.",
+            "syntax": "az network firewall show [--ids]\n                         [--name]\n                         [--resource-group]\n                         [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az network firewall update",
+            "summary": "Update an Azure Firewall.",
+            "syntax": "az network firewall update [--add]\n                           [--allow-active-ftp {0, 1, f, false, n, no, t, true, y, yes}]\n                           [--count]\n                           [--dns-servers]\n                           [--enable-dns-proxy {0, 1, f, false, n, no, t, true, y, yes}]\n                           [--enable-fat-flow-logging {0, 1, f, false, n, no, t, true, y, yes}]\n                           [--enable-udp-log-optimization {0, 1, f, false, n, no, t, true, y, yes}]\n                           [--firewall-policy]\n                           [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                           [--ids]\n                           [--name]\n                           [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                           [--private-ranges]\n                           [--public-ips]\n                           [--remove]\n                           [--resource-group]\n                           [--route-server-id]\n                           [--set]\n                           [--subscription]\n                           [--tags]\n                           [--threat-intel-mode {Alert, Deny, Off}]\n                           [--vhub]\n                           [--zones]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--allow-active-ftp",
+                "--count --public-ip-count",
+                "--dns-servers",
+                "--enable-dns-proxy",
+                "--enable-fat-flow-logging --fat-flow-logging",
+                "--enable-udp-log-optimization --udp-log-optimization",
+                "--firewall-policy --policy",
+                "--force-string",
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--private-ranges",
+                "--public-ips",
+                "--remove",
+                "--resource-group -g",
+                "--route-server-id",
+                "--set",
+                "--subscription",
+                "--tags",
+                "--threat-intel-mode",
+                "--vhub --virtual-hub",
+                "--zones -z"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az network firewall wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az network firewall wait [--created]\n                         [--custom]\n                         [--deleted]\n                         [--exists]\n                         [--ids]\n                         [--interval]\n                         [--name]\n                         [--resource-group]\n                         [--subscription]\n                         [--timeout]\n                         [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

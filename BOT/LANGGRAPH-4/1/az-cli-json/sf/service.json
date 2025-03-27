@@ -1,0 +1,75 @@
+{
+    "command_group": "az sf service",
+    "description": "Manage services running on an Azure Service Fabric cluster. Only support ARM deployed services.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az sf service create",
+            "summary": "Create a new service on an Azure Service Fabric cluster.",
+            "syntax": "az sf service create --application\n                     --cluster-name\n                     --name\n                     --resource-group\n                     --service-type\n                     --state {stateful, stateless}\n                     [--default-move-cost {High, Low, Medium, Zero}]\n                     [--instance-count]\n                     [--min-replica]\n                     [--partition-scheme {named, singleton, uniformInt64}]\n                     [--target-replica]",
+            "required_parameters": [
+                "--application --application-name",
+                "--cluster-name -c",
+                "--name --service-name",
+                "--resource-group -g",
+                "--service-type",
+                "--state"
+            ],
+            "optional_parameters": [
+                "--default-move-cost",
+                "--instance-count",
+                "--min-replica --min-replica-set-size",
+                "--partition-scheme",
+                "--target-replica --target-replica-set-size"
+            ],
+            "examples": [
+                "az sf service create -g testRG -c testCluster --application-name testApp --state stateless --service-name testApp~testService \\\n  --service-type testStateless --instance-count -1 --partition-scheme singleton",
+                "az sf service create -g testRG -c testCluster --application-name testApp --state stateful --service-name testApp~testService2 \\\n  --service-type testStatefulType --min-replica-set-size 3 --target-replica-set-size 5"
+            ]
+        },
+        {
+            "name": "az sf service delete",
+            "summary": "Delete a service.",
+            "syntax": "az sf service delete --application-name\n                     --cluster-name\n                     --name\n                     --resource-group",
+            "required_parameters": [
+                "--application-name",
+                "--cluster-name -c",
+                "--name --service-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az sf service delete -g testRG -c testCluster --application-name testApp --service-name testApp~testService"
+            ]
+        },
+        {
+            "name": "az sf service list",
+            "summary": "List services of a given application.",
+            "syntax": "az sf service list --application-name\n                   --cluster-name\n                   --resource-group",
+            "required_parameters": [
+                "--application-name",
+                "--cluster-name -c",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az sf service list -g testRG -c testCluster --application-name testApp"
+            ]
+        },
+        {
+            "name": "az sf service show",
+            "summary": "Get a service.",
+            "syntax": "az sf service show --application-name\n                   --cluster-name\n                   --name\n                   --resource-group",
+            "required_parameters": [
+                "--application-name",
+                "--cluster-name -c",
+                "--name --service-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az sf service show -g testRG -c testCluster --application-name testApp --service-name testApp~testService"
+            ]
+        }
+    ]
+}

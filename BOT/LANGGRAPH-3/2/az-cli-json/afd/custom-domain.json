@@ -1,0 +1,143 @@
+{
+    "command_group": "az afd custom-domain",
+    "description": "Manage custom domains within the specified profile.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az afd custom-domain create",
+            "summary": "Create a new domain within the specified profile.",
+            "syntax": "az afd custom-domain create --custom-domain-name\n                            --profile-name\n                            --resource-group\n                            [--azure-dns-zone]\n                            [--certificate-type {AzureFirstPartyManagedCertificate, CustomerCertificate, ManagedCertificate}]\n                            [--host-name]\n                            [--minimum-tls-version {TLS10, TLS12}]\n                            [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                            [--secret]",
+            "required_parameters": [
+                "--custom-domain-name --name -n",
+                "--profile-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--azure-dns-zone",
+                "--certificate-type",
+                "--host-name",
+                "--minimum-tls-version",
+                "--no-wait",
+                "--secret"
+            ],
+            "examples": [
+                "az afd custom-domain create -g group --custom-domain-name customDomain --profile-name profile --host-name www.contoso.com --minimum-tls-version TLS12 --certificate-type ManagedCertificate",
+                "az afd custom-domain create -g group --custom-domain-name example-custom-domain --profile-name profile --host-name www.contoso.com --minimum-tls-version TLS12 --certificate-type CustomerCertificate --secret secretName"
+            ]
+        },
+        {
+            "name": "az afd custom-domain delete",
+            "summary": "Delete an existing AzureFrontDoor domain with the specified domain name under the specified subscription, resource group and profile.",
+            "syntax": "az afd custom-domain delete [--custom-domain-name]\n                            [--ids]\n                            [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                            [--profile-name]\n                            [--resource-group]\n                            [--subscription]\n                            [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--custom-domain-name --name -n",
+                "--ids",
+                "--no-wait",
+                "--profile-name",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az afd custom-domain delete -g group --profile-name profile  --custom-domain-name customDomainName"
+            ]
+        },
+        {
+            "name": "az afd custom-domain list",
+            "summary": "List existing AzureFrontDoor domains.",
+            "syntax": "az afd custom-domain list --profile-name\n                          --resource-group\n                          [--max-items]\n                          [--next-token]",
+            "required_parameters": [
+                "--profile-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az afd custom-domain list -g group --profile-name profile"
+            ]
+        },
+        {
+            "name": "az afd custom-domain regenerate-validation-token",
+            "summary": "Updates the domain validation token.",
+            "syntax": "az afd custom-domain regenerate-validation-token [--custom-domain-name]\n                                                 [--ids]\n                                                 [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                                 [--profile-name]\n                                                 [--resource-group]\n                                                 [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--custom-domain-name",
+                "--ids",
+                "--no-wait",
+                "--profile-name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az afd custom-domain regenerate-validation-token -g MyResourceGroup --profile-name MyProfle --custom-domain-name MyCustomDomain"
+            ]
+        },
+        {
+            "name": "az afd custom-domain show",
+            "summary": "Get an existing AzureFrontDoor domain with the specified domain name under the specified subscription, resource group and profile.",
+            "syntax": "az afd custom-domain show [--custom-domain-name]\n                          [--ids]\n                          [--profile-name]\n                          [--resource-group]\n                          [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--custom-domain-name --name -n",
+                "--ids",
+                "--profile-name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az afd custom-domain show -g group --profile-name profile  --custom-domain-name customDomainName"
+            ]
+        },
+        {
+            "name": "az afd custom-domain update",
+            "summary": "Update a new domain within the specified profile.",
+            "syntax": "az afd custom-domain update [--add]\n                            [--azure-dns-zone]\n                            [--certificate-type {AzureFirstPartyManagedCertificate, CustomerCertificate, ManagedCertificate}]\n                            [--custom-domain-name]\n                            [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                            [--ids]\n                            [--minimum-tls-version {TLS10, TLS12}]\n                            [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                            [--profile-name]\n                            [--remove]\n                            [--resource-group]\n                            [--secret]\n                            [--set]\n                            [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--azure-dns-zone",
+                "--certificate-type",
+                "--custom-domain-name --name -n",
+                "--force-string",
+                "--ids",
+                "--minimum-tls-version",
+                "--no-wait",
+                "--profile-name",
+                "--remove",
+                "--resource-group -g",
+                "--secret",
+                "--set",
+                "--subscription"
+            ],
+            "examples": [
+                "az afd custom-domain update -g group --custom-domain-name customDomain --profile-name profile --minimum-tls-version TLS12",
+                "az afd custom-domain update -g group --custom-domain-name customDomain --profile-name profile --certificate-type ManagedCertificate"
+            ]
+        },
+        {
+            "name": "az afd custom-domain wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az afd custom-domain wait [--created]\n                          [--custom]\n                          [--custom-domain-name]\n                          [--deleted]\n                          [--exists]\n                          [--ids]\n                          [--interval]\n                          [--profile-name]\n                          [--resource-group]\n                          [--subscription]\n                          [--timeout]\n                          [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--custom-domain-name --name -n",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--profile-name",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

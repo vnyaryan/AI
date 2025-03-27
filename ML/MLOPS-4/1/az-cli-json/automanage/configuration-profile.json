@@ -1,0 +1,89 @@
+{
+    "command_group": "az automanage configuration-profile",
+    "description": "Manage configuration profile.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az automanage configuration-profile create",
+            "summary": "Create a configuration profile.",
+            "syntax": "az automanage configuration-profile create --configuration-profile-name\n                                           --resource-group\n                                           [--configuration]\n                                           [--location]\n                                           [--tags]",
+            "required_parameters": [
+                "--configuration-profile-name --name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--configuration",
+                "--location -l",
+                "--tags"
+            ],
+            "examples": [
+                "az automanage configuration-profile create -n {profile_name} -g {rg} --configuration '{\"Antimalware/Enable\":false,\"Backup/Enable\":false,\"VMInsights/Enable\":true,\"AzureSecurityCenter/Enable\":true,\"UpdateManagement/Enable\":true,\"ChangeTrackingAndInventory/Enable\":true,\"GuestConfiguration/Enable\":true,\"LogAnalytics/Enable\":true,\"BootDiagnostics/Enable\":true}'",
+                "az automanage configuration-profile create -n {profile_name} -g {rg} --configuration '{\"Backup/SchedulePolicy/ScheduleRunTimes\":[\"2023-02-10T18:25:43.511Z\", \"2023-02-12T01:02:03.456Z\"],\"Backup/RetentionPolicy/DailySchedule/RetentionTimes\":[\"2023-02-10T18:25:43.511Z\", \"2023-02-12T01:02:03.456Z\"]}'"
+            ]
+        },
+        {
+            "name": "az automanage configuration-profile delete",
+            "summary": "Delete a configuration profile.",
+            "syntax": "az automanage configuration-profile delete [--configuration-profile-name]\n                                           [--ids]\n                                           [--resource-group]\n                                           [--subscription]\n                                           [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--configuration-profile-name --name -n",
+                "--ids",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az automanage configuration-profile delete -n {profile_name} -g {rg}"
+            ]
+        },
+        {
+            "name": "az automanage configuration-profile list",
+            "summary": "List configuration profiles within a subscription.",
+            "syntax": "az automanage configuration-profile list [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az automanage configuration-profile list -g {rg}"
+            ]
+        },
+        {
+            "name": "az automanage configuration-profile show",
+            "summary": "Get information about a configuration profile.",
+            "syntax": "az automanage configuration-profile show [--configuration-profile-name]\n                                         [--ids]\n                                         [--resource-group]\n                                         [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--configuration-profile-name --name -n",
+                "--ids",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az automanage configuration-profile show -n {profile_name} -g {rg}"
+            ]
+        },
+        {
+            "name": "az automanage configuration-profile update",
+            "summary": "Update a configuration profile.",
+            "syntax": "az automanage configuration-profile update [--add]\n                                           [--configuration]\n                                           [--configuration-profile-name]\n                                           [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                           [--ids]\n                                           [--remove]\n                                           [--resource-group]\n                                           [--set]\n                                           [--subscription]\n                                           [--tags]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--configuration",
+                "--configuration-profile-name --name -n",
+                "--force-string",
+                "--ids",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--subscription",
+                "--tags"
+            ],
+            "examples": [
+                "az automanage configuration-profile update -n {profile_name} -g {rg} --configuration '{\"Antimalware/Enable\":true,\"VMInsights/Enable\":false}'"
+            ]
+        }
+    ]
+}

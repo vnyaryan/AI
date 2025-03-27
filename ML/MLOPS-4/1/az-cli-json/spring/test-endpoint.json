@@ -1,0 +1,55 @@
+{
+    "command_group": "az spring test-endpoint",
+    "description": "Commands to manage test endpoint in Azure Spring Apps.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az spring test-endpoint disable",
+            "summary": "Disable test endpoint of the Azure Spring Apps.",
+            "syntax": "az spring test-endpoint disable --name\n                                --resource-group",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az spring test-endpoint enable",
+            "summary": "Enable test endpoint of the Azure Spring Apps.",
+            "syntax": "az spring test-endpoint enable --name\n                               --resource-group",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az spring test-endpoint list",
+            "summary": "List test endpoint keys of the Azure Spring Apps.",
+            "syntax": "az spring test-endpoint list --name\n                             --resource-group\n                             [--app]\n                             [--deployment]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--app",
+                "--deployment -d"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az spring test-endpoint renew-key",
+            "summary": "Regenerate a test-endpoint key for the Azure Spring Apps.",
+            "syntax": "az spring test-endpoint renew-key --name\n                                  --resource-group\n                                  --type {Primary, Secondary}",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g",
+                "--type"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        }
+    ]
+}

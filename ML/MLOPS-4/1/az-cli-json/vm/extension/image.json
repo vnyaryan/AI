@@ -1,0 +1,78 @@
+{
+    "command_group": "az vm extension image",
+    "description": "Find the available VM extensions for a subscription and region.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az vm extension image list",
+            "summary": "List the information on available extensions.",
+            "syntax": "az vm extension image list [--latest]\n                           [--location]\n                           [--name]\n                           [--publisher]\n                           [--version]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--latest",
+                "--location -l",
+                "--name -n",
+                "--publisher -p",
+                "--version"
+            ],
+            "examples": [
+                "az vm extension image list --query \"[].publisher\" -o tsv | sort -u",
+                "az vm extension image list --query \"[].name\" -o tsv | sort -u | grep Docker",
+                "az vm extension image list --query \\\n    \"[?starts_with(publisher, 'Microsoft.Azure.App')].publisher\" \\\n    -o tsv | sort -u | xargs -I{} az vm extension image list-names --publisher {} -l westus"
+            ]
+        },
+        {
+            "name": "az vm extension image list-names",
+            "summary": "List the names of available extensions.",
+            "syntax": "az vm extension image list-names [--ids]\n                                 [--location]\n                                 [--publisher]\n                                 [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--location -l",
+                "--publisher --publisher-name -p",
+                "--subscription"
+            ],
+            "examples": [
+                "az vm extension image list-names --publisher Microsoft.Azure.Extensions -l westus --query \"[?starts_with(name, 'Docker')]\"",
+                "az vm extension image list-names --publisher Microsoft.Azure.Extensions -l westus --query \"[?starts_with(name, 'Custom')]\""
+            ]
+        },
+        {
+            "name": "az vm extension image list-versions",
+            "summary": "List the versions for available extensions.",
+            "syntax": "az vm extension image list-versions [--filter]\n                                    [--ids]\n                                    [--location]\n                                    [--name]\n                                    [--orderby]\n                                    [--publisher]\n                                    [--subscription]\n                                    [--top]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--filter",
+                "--ids",
+                "--location -l",
+                "--name --type -n",
+                "--orderby",
+                "--publisher --publisher-name -p",
+                "--subscription",
+                "--top"
+            ],
+            "examples": [
+                "az vm extension image list-versions --publisher Microsoft.Azure.Extensions -l westus -n DockerExtension -o table"
+            ]
+        },
+        {
+            "name": "az vm extension image show",
+            "summary": "Display information for an extension.",
+            "syntax": "az vm extension image show [--ids]\n                           [--location]\n                           [--name]\n                           [--publisher]\n                           [--subscription]\n                           [--version]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--location -l",
+                "--name --type -n",
+                "--publisher --publisher-name -p",
+                "--subscription",
+                "--version"
+            ],
+            "examples": [
+                "az vm extension image show -l westus -n CustomScript --publisher Microsoft.Azure.Extensions --version 2.0.2",
+                "az vm extension image list-versions --publisher Microsoft.Azure.Extensions -l westus -n DockerExtension --query \"[].name\" -o tsv | sort | tail -n 1\naz vm extension image show -l westus --publisher Microsoft.Azure.Extensions -n DockerExtension --version LatestVersion"
+            ]
+        }
+    ]
+}

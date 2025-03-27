@@ -1,0 +1,93 @@
+{
+    "command_group": "az iot central app",
+    "description": "Manage IoT Central applications.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az iot central app create",
+            "summary": "Create an IoT Central application.",
+            "syntax": "az iot central app create --name\n                          --resource-group\n                          --subdomain\n                          [--display-name]\n                          [--location]\n                          [--mi-system-assigned]\n                          [--no-wait]\n                          [--sku {ST0, ST1, ST2}]\n                          [--template]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g",
+                "--subdomain -s"
+            ],
+            "optional_parameters": [
+                "--display-name -d",
+                "--location -l",
+                "--mi-system-assigned",
+                "--no-wait",
+                "--sku -p",
+                "--template -t"
+            ],
+            "examples": [
+                "az iot central app create -n my-first-iot-app -g MyResourceGroup -s my-iot-app",
+                "az iot central app create -n my-first-iot-app -g MyResourceGroup -s my-iot-app -l eastus -p ST1 -t iotc-distribution",
+                "az iot central app create -n my-first-iot-app -g MyResourceGroup -s my-iot-app --mi-system-assigned"
+            ]
+        },
+        {
+            "name": "az iot central app delete",
+            "summary": "Delete an IoT Central application.",
+            "syntax": "az iot central app delete --name\n                          --resource-group\n                          [--no-wait]\n                          [--yes]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--no-wait",
+                "--yes -y"
+            ],
+            "examples": [
+                "az iot central app delete -n my-first-iot-app -g MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az iot central app list",
+            "summary": "List IoT Central applications.",
+            "syntax": "az iot central app list [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az iot central app list",
+                "az iot central app list -g MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az iot central app show",
+            "summary": "Get the details of an IoT Central application.",
+            "syntax": "az iot central app show --name\n                        [--resource-group]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az iot central app show -n my-first-iot-app",
+                "az iot central app show -n my-first-iot-app -g MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az iot central app update",
+            "summary": "Update metadata for an IoT Central application.",
+            "syntax": "az iot central app update --name\n                          --resource-group\n                          [--add]\n                          [--force-string]\n                          [--remove]\n                          [--set]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--add",
+                "--force-string",
+                "--remove",
+                "--set"
+            ],
+            "examples": [
+                "az iot central app update -n my-first-iot-app -g MyResourceGroup --set sku.name=ST1",
+                "az iot central app update -n my-first-iot-app -g MyResourceGroup --set subdomain.name=my-iot-app-new"
+            ]
+        }
+    ]
+}

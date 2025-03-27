@@ -1,0 +1,159 @@
+{
+    "command_group": "az vm repair",
+    "description": "Setup repair VMs with copied source OS Disk to resolve issues.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az vm repair create",
+            "summary": "Create a new repair VM and attach the source VM's copied OS disk as a data disk.",
+            "syntax": "az vm repair create --name\n                    --resource-group\n                    [--associate-public-ip]\n                    [--copy-disk-name]\n                    [--disable-trusted-launch]\n                    [--distro]\n                    [--enable-nested]\n                    [--encrypt-recovery-key]\n                    [--repair-group-name]\n                    [--repair-password]\n                    [--repair-username]\n                    [--repair-vm-name]\n                    [--unlock-encrypted-vm]\n                    [--yes]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--associate-public-ip",
+                "--copy-disk-name",
+                "--disable-trusted-launch",
+                "--distro",
+                "--enable-nested",
+                "--encrypt-recovery-key",
+                "--repair-group-name",
+                "--repair-password",
+                "--repair-username",
+                "--repair-vm-name",
+                "--unlock-encrypted-vm",
+                "--yes"
+            ],
+            "examples": [
+                "az vm repair create -g MyResourceGroup -n myVM --verbose",
+                "az vm repair create -g MyResourceGroup -n myVM --repair-username username --repair-password password!234 --verbose",
+                "az vm repair create -g MyResourceGroup -n myVM --distro 'rhel7|sles12|ubuntu20|centos6|oracle8|sles15'",
+                "az vm repair create -g MyResourceGroup -n myVM --yes --repair-username <username> --repair-password <password>",
+                "az vm repair create -g MyResourceGroup -n myVM --associate-public-ip --yes --repair-username <username> --repair-password <password>",
+                "az vm repair create -g MyResourceGroup -n myVM --yes --repair-username <username> --repair-password <password> --disable-trusted-launch",
+                "az vm repair create -g MyResourceGroup -n myVM --yes --repair-username <username> --repair-password <password> --unlock-encrypted-vm --encrypt-recovery-key <key>"
+            ]
+        },
+        {
+            "name": "az vm repair list-scripts",
+            "summary": "List available scripts. Located https://github.com/Azure/repair-script-library.",
+            "syntax": "az vm repair list-scripts [--preview]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--preview"
+            ],
+            "examples": [
+                "az vm repair list-scripts --verbose",
+                "az vm repair list-scripts --query \"[?starts_with(id, 'win')]\"",
+                "az vm repair list-scripts --query \"[?contains(description, 'test')]\"",
+                "az vm repair list-scripts --preview \"https://github.com/User/repair-script-library/blob/main/map.json\""
+            ]
+        },
+        {
+            "name": "az vm repair repair-and-restore",
+            "summary": "Repair and restore the VM.",
+            "syntax": "az vm repair repair-and-restore [--copy-disk-name]\n                                [--ids]\n                                [--name]\n                                [--repair-group-name]\n                                [--repair-password]\n                                [--repair-username]\n                                [--repair-vm-name]\n                                [--resource-group]\n                                [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--copy-disk-name",
+                "--ids",
+                "--name -n",
+                "--repair-group-name",
+                "--repair-password",
+                "--repair-username",
+                "--repair-vm-name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az vm repair repair-and-restore --name vmrepairtest --resource-group MyResourceGroup --verbose"
+            ]
+        },
+        {
+            "name": "az vm repair repair-button",
+            "summary": "Repair button script.",
+            "syntax": "az vm repair repair-button --button-command\n                           [--copy-disk-name]\n                           [--ids]\n                           [--name]\n                           [--repair-group-name]\n                           [--repair-password]\n                           [--repair-username]\n                           [--repair-vm-name]\n                           [--resource-group]\n                           [--subscription]",
+            "required_parameters": [
+                "--button-command"
+            ],
+            "optional_parameters": [
+                "--copy-disk-name",
+                "--ids",
+                "--name -n",
+                "--repair-group-name",
+                "--repair-password",
+                "--repair-username",
+                "--repair-vm-name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az vm repair repair-button --name vmrepairtest --resource-group MyResourceGroup --button-command fstab --verbose"
+            ]
+        },
+        {
+            "name": "az vm repair reset-nic",
+            "summary": "Reset the network interface stack on the VM guest OS. https://docs.microsoft.com/en-us/troubleshoot/azure/virtual-machines/reset-network-interface.",
+            "syntax": "az vm repair reset-nic [--ids]\n                       [--name]\n                       [--resource-group]\n                       [--subscription]\n                       [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--yes"
+            ],
+            "examples": [
+                "az vm repair reset-nic -g MyResourceGroup -n MyVM --verbose",
+                "az vm repair reset-nic -g MyResourceGroup -n MyVM --subscription mySub --verbose",
+                "az vm repair reset-nic -g MyResourceGroup -n MyVM --yes --verbose"
+            ]
+        },
+        {
+            "name": "az vm repair restore",
+            "summary": "Replace source VM's OS disk with data disk from repair VM.",
+            "syntax": "az vm repair restore [--disk-name]\n                     [--ids]\n                     [--name]\n                     [--repair-vm-id]\n                     [--resource-group]\n                     [--subscription]\n                     [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--disk-name",
+                "--ids",
+                "--name -n",
+                "--repair-vm-id",
+                "--resource-group -g",
+                "--subscription",
+                "--yes"
+            ],
+            "examples": [
+                "az vm repair restore -g MyResourceGroup -n MyVM --verbose",
+                "az vm repair restore -g MyResourceGroup -n MyVM --disk-name MyDiskCopy --verbose"
+            ]
+        },
+        {
+            "name": "az vm repair run",
+            "summary": "Run verified scripts from GitHub on a VM. 'az vm repair list-scripts' to view available scripts.",
+            "syntax": "az vm repair run [--custom-script-file]\n                 [--ids]\n                 [--name]\n                 [--parameters]\n                 [--preview]\n                 [--repair-vm-id]\n                 [--resource-group]\n                 [--run-id]\n                 [--run-on-repair]\n                 [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--custom-script-file",
+                "--ids",
+                "--name -n",
+                "--parameters",
+                "--preview",
+                "--repair-vm-id",
+                "--resource-group -g",
+                "--run-id",
+                "--run-on-repair",
+                "--subscription"
+            ],
+            "examples": [
+                "az vm repair run -g MyResourceGroup -n MySourceWinVM --run-id win-hello-world --verbose",
+                "az vm repair run -g MyResourceGroup -n MySourceWinVM --run-id win-hello-world --run-on-repair --verbose",
+                "az vm repair run -g MyResourceGroup -n MySourceWinVM --run-id win-hello-world --parameters hello=hi world=earth --verbose",
+                "az vm repair run -g MyResourceGroup -n MySourceWinVM --run-id linux-alar2 --parameters key=test ++initiator=selfhelp --verbose --debug",
+                "az vm repair run -g MyResourceGroup -n MySourceWinVM --custom-script-file ./file.ps1 --verbose",
+                "az vm repair run -g MyResourceGroup -n MySourceWinVM --preview \"https://github.com/User/repair-script-library/blob/main/map.json\" --run-id test"
+            ]
+        }
+    ]
+}

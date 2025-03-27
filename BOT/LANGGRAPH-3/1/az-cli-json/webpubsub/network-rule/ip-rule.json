@@ -1,0 +1,41 @@
+{
+    "command_group": "az webpubsub network-rule ip-rule",
+    "description": "Manage WebPubSub Service IP rules.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az webpubsub network-rule ip-rule add",
+            "summary": "Add IP rule to WebPubSub Service.",
+            "syntax": "az webpubsub network-rule ip-rule add --ip-rule\n                                      [--ids]\n                                      [--name]\n                                      [--resource-group]\n                                      [--subscription]",
+            "required_parameters": [
+                "--ip-rule"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az webpubsub network-rule ip-rule add -n MyWebPubSub -g MyResourceGroup --ip-rule value=\"10.0.0.24\" action=\"Allow\" --ip-rule value=\"192.168.0.0/24\" action=\"Deny\""
+            ]
+        },
+        {
+            "name": "az webpubsub network-rule ip-rule remove",
+            "summary": "Remove IP rule from WebPubSub Service.",
+            "syntax": "az webpubsub network-rule ip-rule remove --ip-rule\n                                         [--ids]\n                                         [--name]\n                                         [--resource-group]\n                                         [--subscription]",
+            "required_parameters": [
+                "--ip-rule"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az webpubsub network-rule ip-rule remove -n MyWebPubSub -g MyResourceGroup --ip-rule value=\"10.0.0.24\" action=\"Allow\" --ip-rule value=\"192.168.0.0/24\" action=\"Deny\""
+            ]
+        }
+    ]
+}

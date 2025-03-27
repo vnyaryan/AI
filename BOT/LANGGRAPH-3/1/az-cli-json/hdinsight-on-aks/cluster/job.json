@@ -1,0 +1,43 @@
+{
+    "command_group": "az hdinsight-on-aks cluster job",
+    "description": "Cluster job operations.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az hdinsight-on-aks cluster job list",
+            "summary": "List jobs of HDInsight on AKS cluster.",
+            "syntax": "az hdinsight-on-aks cluster job list --cluster-name\n                                     --cluster-pool-name\n                                     --resource-group\n                                     [--filter]\n                                     [--max-items]\n                                     [--next-token]",
+            "required_parameters": [
+                "--cluster-name",
+                "--cluster-pool-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--filter",
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az hdinsight-on-aks cluster job list --cluster-pool-name {poolName} -g {rg} --cluster-name {clusterName}"
+            ]
+        },
+        {
+            "name": "az hdinsight-on-aks cluster job run",
+            "summary": "Operations on jobs of HDInsight on AKS cluster.",
+            "syntax": "az hdinsight-on-aks cluster job run [--cluster-name]\n                                    [--cluster-pool-name]\n                                    [--flink-job]\n                                    [--ids]\n                                    [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                    [--resource-group]\n                                    [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--cluster-name",
+                "--cluster-pool-name",
+                "--flink-job",
+                "--ids",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az hdinsight-on-aks cluster job run --cluster-pool-name {poolName} -g {rg} --cluster-name {clusterName} --flink-job job-name=\"test\" job-jar-directory=\"abfs://demodfs@flinkdemo.dfs.core.windows.net/jars\" jar-name=\"FlinkJobDemo-1.0-SNAPSHOT.jar\" entry-class=\"org.example.SleepJob\" action=\"NEW\" flink-configuration=\"{parallelism:1}\""
+            ]
+        }
+    ]
+}

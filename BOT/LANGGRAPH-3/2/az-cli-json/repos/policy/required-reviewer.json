@@ -1,0 +1,50 @@
+{
+    "command_group": "az repos policy required-reviewer",
+    "description": "Manage required reviewer policy.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az repos policy required-reviewer create",
+            "summary": "Create required reviewer policy.",
+            "syntax": "az repos policy required-reviewer create --blocking {false, true}\n                                         --branch\n                                         --enabled {false, true}\n                                         --message\n                                         --repository-id\n                                         --required-reviewer-ids\n                                         [--branch-match-type {exact, prefix}]\n                                         [--detect {false, true}]\n                                         [--org]\n                                         [--path-filter]\n                                         [--project]",
+            "required_parameters": [
+                "--blocking",
+                "--branch",
+                "--enabled",
+                "--message",
+                "--repository-id",
+                "--required-reviewer-ids"
+            ],
+            "optional_parameters": [
+                "--branch-match-type",
+                "--detect",
+                "--org --organization",
+                "--path-filter",
+                "--project -p"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az repos policy required-reviewer update",
+            "summary": "Update required reviewer policy.",
+            "syntax": "az repos policy required-reviewer update --id\n                                         [--blocking {false, true}]\n                                         [--branch]\n                                         [--branch-match-type {exact, prefix}]\n                                         [--detect {false, true}]\n                                         [--enabled {false, true}]\n                                         [--message]\n                                         [--org]\n                                         [--path-filter]\n                                         [--project]\n                                         [--repository-id]\n                                         [--required-reviewer-ids]",
+            "required_parameters": [
+                "--id --policy-id"
+            ],
+            "optional_parameters": [
+                "--blocking",
+                "--branch",
+                "--branch-match-type",
+                "--detect",
+                "--enabled",
+                "--message",
+                "--org --organization",
+                "--path-filter",
+                "--project -p",
+                "--repository-id",
+                "--required-reviewer-ids"
+            ],
+            "examples": []
+        }
+    ]
+}

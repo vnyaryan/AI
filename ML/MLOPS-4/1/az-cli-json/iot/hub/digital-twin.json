@@ -1,0 +1,66 @@
+{
+    "command_group": "az iot hub digital-twin",
+    "description": "Manipulate and interact with the digital twin of an IoT Hub device.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az iot hub digital-twin invoke-command",
+            "summary": "Invoke a root or component level command of a digital twin device.",
+            "syntax": "az iot hub digital-twin invoke-command --cn\n                                       --device-id\n                                       [--component-path]\n                                       [--connect-timeout]\n                                       [--hub-name]\n                                       [--login]\n                                       [--payload]\n                                       [--resource-group]\n                                       [--response-timeout]",
+            "required_parameters": [
+                "--cn --command-name",
+                "--device-id -d"
+            ],
+            "optional_parameters": [
+                "--component-path",
+                "--connect-timeout --cto",
+                "--hub-name -n",
+                "--login -l",
+                "--payload",
+                "--resource-group -g",
+                "--response-timeout --rto"
+            ],
+            "examples": [
+                "az iot hub digital-twin invoke-command --command-name {command_name} -n {iothub_name} -d {device_id} --payload '{\"property_name\": \"property_value\"}'",
+                "az iot hub digital-twin invoke-command --command-name reboot -n {iothub_name} -d {device_id} --payload 5",
+                "az iot hub digital-twin invoke-command --cn getMaxMinReport -n {iothub_name} -d {device_id} --component-path thermostat1"
+            ]
+        },
+        {
+            "name": "az iot hub digital-twin show",
+            "summary": "Show the digital twin of an IoT Hub device.",
+            "syntax": "az iot hub digital-twin show --device-id\n                             [--hub-name]\n                             [--login]\n                             [--resource-group]",
+            "required_parameters": [
+                "--device-id -d"
+            ],
+            "optional_parameters": [
+                "--hub-name -n",
+                "--login -l",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az iot hub digital-twin show -n {iothub_name} -d {device_id}"
+            ]
+        },
+        {
+            "name": "az iot hub digital-twin update",
+            "summary": "Update the read-write properties of a digital twin device via JSON patch specification.",
+            "syntax": "az iot hub digital-twin update --device-id\n                               --json-patch\n                               [--etag]\n                               [--hub-name]\n                               [--login]\n                               [--resource-group]",
+            "required_parameters": [
+                "--device-id -d",
+                "--json-patch --patch"
+            ],
+            "optional_parameters": [
+                "--etag -e",
+                "--hub-name -n",
+                "--login -l",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az iot hub digital-twin update --hub-name {iothub_name} --device-id {device_id} --json-patch '{\"op\":\"add\", \"path\":\"/thermostat1/targetTemperature\", \"value\": 54}'",
+                "az iot hub digital-twin update -n {iothub_name} -d {device_id} --json-patch '[\n  {\"op\":\"remove\", \"path\":\"/thermostat1/targetTemperature\"},\n  {\"op\":\"add\", \"path\":\"/thermostat2/targetTemperature\", \"value\": 22}\n]'",
+                "az iot hub digital-twin update -n {iothub_name} -d {device_id} --json-patch ./my/patch/document.json"
+            ]
+        }
+    ]
+}

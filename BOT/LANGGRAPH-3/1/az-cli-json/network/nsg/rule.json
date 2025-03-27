@@ -1,0 +1,139 @@
+{
+    "command_group": "az network nsg rule",
+    "description": "Manage network security group rules.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az network nsg rule create",
+            "summary": "Create a network security group rule.",
+            "syntax": "az network nsg rule create --name\n                           --nsg-name\n                           --priority\n                           --resource-group\n                           [--access {Allow, Deny}]\n                           [--description]\n                           [--destination-address-prefixes]\n                           [--destination-asgs]\n                           [--destination-port-ranges]\n                           [--direction {Inbound, Outbound}]\n                           [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                           [--protocol {*, Ah, Esp, Icmp, Tcp, Udp}]\n                           [--source-address-prefixes]\n                           [--source-asgs]\n                           [--source-port-ranges]",
+            "required_parameters": [
+                "--name -n",
+                "--nsg-name",
+                "--priority",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--access",
+                "--description",
+                "--destination-address-prefixes",
+                "--destination-asgs",
+                "--destination-port-ranges",
+                "--direction",
+                "--no-wait",
+                "--protocol",
+                "--source-address-prefixes",
+                "--source-asgs",
+                "--source-port-ranges"
+            ],
+            "examples": [
+                "az network nsg rule create -g MyResourceGroup --nsg-name MyNsg -n MyNsgRule --priority 100",
+                "az network nsg rule create -g MyResourceGroup --nsg-name MyNsg -n MyNsgRule --priority 4096 --source-address-prefixes 208.130.28.0/24 --source-port-ranges 80 --destination-address-prefixes '*' --destination-port-ranges 80 8080 --access Deny --protocol Tcp --description \"Deny from specific IP address ranges on 80 and 8080.\"",
+                "az network nsg rule create -g MyResourceGroup --nsg-name MyNsg -n MyNsgRuleWithTags --priority 400 --source-address-prefixes VirtualNetwork --destination-address-prefixes Storage --destination-port-ranges '*' --direction Outbound --access Allow --protocol Tcp --description \"Allow VirtualNetwork to Storage.\"",
+                "az network nsg rule create -g MyResourceGroup --nsg-name MyNsg -n MyNsgRuleWithAsg --priority 500 --source-address-prefixes Internet --destination-port-ranges 80 8080 --destination-asgs Web --access Allow --protocol Tcp --description \"Allow Internet to Web ASG on ports 80,8080.\""
+            ]
+        },
+        {
+            "name": "az network nsg rule delete",
+            "summary": "Delete a network security group rule.",
+            "syntax": "az network nsg rule delete [--ids]\n                           [--name]\n                           [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                           [--nsg-name]\n                           [--resource-group]\n                           [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--nsg-name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az network nsg rule delete -g MyResourceGroup --nsg-name MyNsg -n MyNsgRule"
+            ]
+        },
+        {
+            "name": "az network nsg rule list",
+            "summary": "List all rules in a network security group.",
+            "syntax": "az network nsg rule list --nsg-name\n                         --resource-group\n                         [--include-default]",
+            "required_parameters": [
+                "--nsg-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--include-default"
+            ],
+            "examples": [
+                "az network nsg rule list -g MyResourceGroup --nsg-name MyNsg"
+            ]
+        },
+        {
+            "name": "az network nsg rule show",
+            "summary": "Get the details of a network security group rule.",
+            "syntax": "az network nsg rule show [--ids]\n                         [--name]\n                         [--nsg-name]\n                         [--resource-group]\n                         [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--nsg-name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az network nsg rule show -g MyResourceGroup --nsg-name MyNsg -n MyNsgRule"
+            ]
+        },
+        {
+            "name": "az network nsg rule update",
+            "summary": "Update a network security group rule.",
+            "syntax": "az network nsg rule update [--access {Allow, Deny}]\n                           [--add]\n                           [--description]\n                           [--destination-address-prefixes]\n                           [--destination-asgs]\n                           [--destination-port-ranges]\n                           [--direction {Inbound, Outbound}]\n                           [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                           [--ids]\n                           [--name]\n                           [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                           [--nsg-name]\n                           [--priority]\n                           [--protocol {*, Ah, Esp, Icmp, Tcp, Udp}]\n                           [--remove]\n                           [--resource-group]\n                           [--set]\n                           [--source-address-prefixes]\n                           [--source-asgs]\n                           [--source-port-ranges]\n                           [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--access",
+                "--add",
+                "--description",
+                "--destination-address-prefixes",
+                "--destination-asgs",
+                "--destination-port-ranges",
+                "--direction",
+                "--force-string",
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--nsg-name",
+                "--priority",
+                "--protocol",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--source-address-prefixes",
+                "--source-asgs",
+                "--source-port-ranges",
+                "--subscription"
+            ],
+            "examples": [
+                "az network nsg rule update -g MyResourceGroup --nsg-name MyNsg -n MyNsgRule --destination-address-prefix '*'",
+                "az network nsg rule update --name MyNsgRule --nsg-name MyNsg --resource-group MyResourceGroup --source-address-prefixes 208.130.28/24"
+            ]
+        },
+        {
+            "name": "az network nsg rule wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az network nsg rule wait [--created]\n                         [--custom]\n                         [--deleted]\n                         [--exists]\n                         [--ids]\n                         [--interval]\n                         [--name]\n                         [--nsg-name]\n                         [--resource-group]\n                         [--subscription]\n                         [--timeout]\n                         [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--name -n",
+                "--nsg-name",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

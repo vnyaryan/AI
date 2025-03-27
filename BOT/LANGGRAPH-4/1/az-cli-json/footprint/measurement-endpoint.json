@@ -1,0 +1,107 @@
+{
+    "command_group": "az footprint measurement-endpoint",
+    "description": "Commands to manage measurement endpoints under a profile.",
+    "status": "Experimental",
+    "commands": [
+        {
+            "name": "az footprint measurement-endpoint create",
+            "summary": "Creates or updates a single measurement endpoint under a Footprint profile with the specified properties.",
+            "syntax": "az footprint measurement-endpoint create --endpoint\n                                         --measurement-endpoint-name\n                                         --measurement-type\n                                         --profile-name\n                                         --resource-group\n                                         --weight\n                                         [--description]\n                                         [--end-time-utc]\n                                         [--experiment-id]\n                                         [--metadata]\n                                         [--object-path]\n                                         [--sample-rate-cold]\n                                         [--sample-rate-hot]\n                                         [--sample-rate-warm]\n                                         [--start-time-utc]",
+            "required_parameters": [
+                "--endpoint",
+                "--measurement-endpoint-name --name -n",
+                "--measurement-type",
+                "--profile-name",
+                "--resource-group -g",
+                "--weight"
+            ],
+            "optional_parameters": [
+                "--description",
+                "--end-time-utc",
+                "--experiment-id",
+                "--metadata",
+                "--object-path",
+                "--sample-rate-cold",
+                "--sample-rate-hot",
+                "--sample-rate-warm",
+                "--start-time-utc"
+            ],
+            "examples": [
+                "az footprint measurement-endpoint create --name \"endpoint1\" --endpoint \"www.contoso.com\" --experiment-id \"664cdec4f07d4e1083c9b3969ee2c49b\" --measurement-type 2 --object-path \"/trans.gif\" --weight 10 --profile-name \"fpProfile1\" --resource-group \"rgName\""
+            ]
+        },
+        {
+            "name": "az footprint measurement-endpoint delete",
+            "summary": "Deletes an existing measurement endpoint under a Footprint profile.",
+            "syntax": "az footprint measurement-endpoint delete [--ids]\n                                         [--measurement-endpoint-name]\n                                         [--profile-name]\n                                         [--resource-group]\n                                         [--subscription]\n                                         [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--measurement-endpoint-name --name -n",
+                "--profile-name",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az footprint measurement-endpoint delete --name \"endpoint1\" --profile-name \"fpProfile1\" --resource-group \"rgName\""
+            ]
+        },
+        {
+            "name": "az footprint measurement-endpoint list",
+            "summary": "Retrieves the information about all measurement endpoints under a Footprint profile.",
+            "syntax": "az footprint measurement-endpoint list --profile-name\n                                       --resource-group",
+            "required_parameters": [
+                "--profile-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az footprint measurement-endpoint list --profile-name \"fpProfile1\" --resource-group \"rgName\""
+            ]
+        },
+        {
+            "name": "az footprint measurement-endpoint show",
+            "summary": "Retrieves the information about a single measurement endpoint under a Footprint profile.",
+            "syntax": "az footprint measurement-endpoint show [--ids]\n                                       [--measurement-endpoint-name]\n                                       [--profile-name]\n                                       [--resource-group]\n                                       [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--measurement-endpoint-name --name -n",
+                "--profile-name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az footprint measurement-endpoint show --name \"endpoint1\" --profile-name \"fpProfile1\" --resource-group \"rgName\""
+            ]
+        },
+        {
+            "name": "az footprint measurement-endpoint update",
+            "summary": "Creates or updates a single measurement endpoint under a Footprint profile with the specified properties.",
+            "syntax": "az footprint measurement-endpoint update --endpoint\n                                         --measurement-type\n                                         --weight\n                                         [--description]\n                                         [--end-time-utc]\n                                         [--experiment-id]\n                                         [--ids]\n                                         [--measurement-endpoint-name]\n                                         [--metadata]\n                                         [--object-path]\n                                         [--profile-name]\n                                         [--resource-group]\n                                         [--sample-rate-cold]\n                                         [--sample-rate-hot]\n                                         [--sample-rate-warm]\n                                         [--start-time-utc]\n                                         [--subscription]",
+            "required_parameters": [
+                "--endpoint",
+                "--measurement-type",
+                "--weight"
+            ],
+            "optional_parameters": [
+                "--description",
+                "--end-time-utc",
+                "--experiment-id",
+                "--ids",
+                "--measurement-endpoint-name --name -n",
+                "--metadata",
+                "--object-path",
+                "--profile-name",
+                "--resource-group -g",
+                "--sample-rate-cold",
+                "--sample-rate-hot",
+                "--sample-rate-warm",
+                "--start-time-utc",
+                "--subscription"
+            ],
+            "examples": []
+        }
+    ]
+}

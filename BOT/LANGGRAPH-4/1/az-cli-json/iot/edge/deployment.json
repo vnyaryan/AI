@@ -1,0 +1,125 @@
+{
+    "command_group": "az iot edge deployment",
+    "description": "Manage IoT Edge deployments at scale.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az iot edge deployment create",
+            "summary": "Create an IoT Edge deployment in a target IoT Hub.",
+            "syntax": "az iot edge deployment create --content\n                              --deployment-id\n                              [--auth-type {key, login}]\n                              [--cl]\n                              [--cmq]\n                              [--hub-name]\n                              [--lab]\n                              [--layered {false, true}]\n                              [--login]\n                              [--metrics]\n                              [--no-validation {false, true}]\n                              [--pri]\n                              [--resource-group]\n                              [--target-condition]",
+            "required_parameters": [
+                "--content -k",
+                "--deployment-id -d"
+            ],
+            "optional_parameters": [
+                "--auth-type",
+                "--cl --custom-labels",
+                "--cmq --custom-metric-queries",
+                "--hub-name -n",
+                "--lab --labels",
+                "--layered",
+                "--login -l",
+                "--metrics -m",
+                "--no-validation",
+                "--pri --priority",
+                "--resource-group -g",
+                "--target-condition --tc -t"
+            ],
+            "examples": [
+                "az iot edge deployment create -d {deployment_name} -n {iothub_name} --content ./modules_content.json --labels '{\"key0\":\"value0\", \"key1\":\"value1\"}' --target-condition \"tags.building=9 and tags.environment='test'\" --priority 3",
+                "az iot edge deployment create -d {deployment_name} -n {iothub_name} --content ./modules_content.json --labels \"{'key':'value'}\" --target-condition \"tags.environment='dev'\"",
+                "az iot edge deployment create -d {deployment_name} -n {iothub_name} --content \"{'modulesContent':{'`$edgeAgent':{\n  'properties.desired.modules.mymodule0':{ }},'`$edgeHub':{'properties.desired.routes.myroute0':'FROM /messages/* INTO `$upstream'}}}\"\n--target-condition \"tags.environment='dev'\" --priority 10 --metrics \"{'queries':{'mymetrik':'SELECT deviceId from devices where properties.reported.lastDesiredStatus.code = 200'}}\"",
+                "az iot edge deployment create -d {deployment_name} -n {iothub_name} --content '{\"modulesContent\":{\"$edgeAgent\":{\"properties.desired.modules.mymodule0\":{ }},\"$edgeHub\":{\"properties.desired.routes.myroute0\":\"FROM /messages/* INTO $upstream\"}}}' --target-condition \"tags.building=9 and tags.environment='test'\" --metrics '{\"queries\":{\"mymetrik\":\"SELECT deviceId from devices where properties.reported.lastDesiredStatus.code = 200\"}}'",
+                "az iot edge deployment create -d {deployment_name} -n {iothub_name} --content ./modules_content.json --target-condition \"tags.building=9 and tags.environment='test'\" --metrics ./metrics_content.json",
+                "az iot edge deployment create -d {deployment_name} -n {iothub_name} --content ./modules_content.json --target-condition \"tags.building=9 and tags.environment='test'\" --custom-labels key0=value0 key1=value1 --custom-metric-queries mymetric1=\"select deviceId from devices where tags.location='US'\" mymetric2=\"select *\""
+            ]
+        },
+        {
+            "name": "az iot edge deployment delete",
+            "summary": "Delete an IoT Edge deployment.",
+            "syntax": "az iot edge deployment delete --deployment-id\n                              [--auth-type {key, login}]\n                              [--etag]\n                              [--hub-name]\n                              [--login]\n                              [--resource-group]",
+            "required_parameters": [
+                "--deployment-id -d"
+            ],
+            "optional_parameters": [
+                "--auth-type",
+                "--etag -e",
+                "--hub-name -n",
+                "--login -l",
+                "--resource-group -g"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az iot edge deployment list",
+            "summary": "List IoT Edge deployments in an IoT Hub.",
+            "syntax": "az iot edge deployment list [--auth-type {key, login}]\n                            [--hub-name]\n                            [--login]\n                            [--resource-group]\n                            [--top]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--auth-type",
+                "--hub-name -n",
+                "--login -l",
+                "--resource-group -g",
+                "--top"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az iot edge deployment show",
+            "summary": "Get the details of an IoT Edge deployment.",
+            "syntax": "az iot edge deployment show --deployment-id\n                            [--auth-type {key, login}]\n                            [--hub-name]\n                            [--login]\n                            [--resource-group]",
+            "required_parameters": [
+                "--deployment-id -d"
+            ],
+            "optional_parameters": [
+                "--auth-type",
+                "--hub-name -n",
+                "--login -l",
+                "--resource-group -g"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az iot edge deployment show-metric",
+            "summary": "Evaluate a target system metric defined in an IoT Edge deployment.",
+            "syntax": "az iot edge deployment show-metric --deployment-id\n                                   --metric-id\n                                   [--auth-type {key, login}]\n                                   [--hub-name]\n                                   [--login]\n                                   [--metric-type {system, user}]\n                                   [--resource-group]",
+            "required_parameters": [
+                "--deployment-id -d",
+                "--metric-id -m"
+            ],
+            "optional_parameters": [
+                "--auth-type",
+                "--hub-name -n",
+                "--login -l",
+                "--metric-type --mt",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az iot edge deployment show-metric -m appliedCount -d {deployment_name} -n {iothub_name} --mt system",
+                "az iot edge deployment show-metric -m myCustomMetric -d {deployment_name} -n {iothub_name}"
+            ]
+        },
+        {
+            "name": "az iot edge deployment update",
+            "summary": "Update specified properties of an IoT Edge deployment.",
+            "syntax": "az iot edge deployment update --deployment-id\n                              [--add]\n                              [--auth-type {key, login}]\n                              [--etag]\n                              [--force-string]\n                              [--hub-name]\n                              [--login]\n                              [--remove]\n                              [--resource-group]\n                              [--set]",
+            "required_parameters": [
+                "--deployment-id -d"
+            ],
+            "optional_parameters": [
+                "--add",
+                "--auth-type",
+                "--etag -e",
+                "--force-string",
+                "--hub-name -n",
+                "--login -l",
+                "--remove",
+                "--resource-group -g",
+                "--set"
+            ],
+            "examples": [
+                "az iot edge deployment update -d {deployment_name} -n {iothub_name} --set labels='{\"purpose\":\"dev\", \"owners\":\"IoTEngineering\"}' targetCondition='tags.building=9'"
+            ]
+        }
+    ]
+}

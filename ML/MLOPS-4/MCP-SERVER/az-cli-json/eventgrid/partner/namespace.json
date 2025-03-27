@@ -1,0 +1,73 @@
+{
+    "command_group": "az eventgrid partner namespace",
+    "description": "Manage partner namespaces.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az eventgrid partner namespace create",
+            "summary": "Create a partner namespace.",
+            "syntax": "az eventgrid partner namespace create --name\n                                      --partner-registration-id\n                                      --resource-group\n                                      [--location]\n                                      [--partner-topic-routing-mode {ChannelNameHeader, SourceEventAttribute}]\n                                      [--tags]",
+            "required_parameters": [
+                "--name -n",
+                "--partner-registration-id",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--location -l",
+                "--partner-topic-routing-mode --route-mode",
+                "--tags"
+            ],
+            "examples": [
+                "az eventgrid partner namespace create -g rg1 --name namespaceName1 -l westus2 --partner-registration-id 795c9f2f-6d2d-42ff-a570-42fd3043192c"
+            ]
+        },
+        {
+            "name": "az eventgrid partner namespace delete",
+            "summary": "Delete a partner namespace.",
+            "syntax": "az eventgrid partner namespace delete [--ids]\n                                      [--name]\n                                      [--resource-group]\n                                      [--subscription]\n                                      [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az eventgrid partner namespace delete -g rg1 --name partnernamespace1"
+            ]
+        },
+        {
+            "name": "az eventgrid partner namespace list",
+            "summary": "List available partner namespaces.",
+            "syntax": "az eventgrid partner namespace list [--odata-query]\n                                    [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--odata-query",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az eventgrid partner namespace list",
+                "az eventgrid partner namespace list -g rg1",
+                "az eventgrid partner namespace list -g rg1 --odata-query \"Contains(name, 'XYZ')\"",
+                "az eventgrid partner namespace list -g rg1 --odata-query \"NOT (name eq 'name1')\""
+            ]
+        },
+        {
+            "name": "az eventgrid partner namespace show",
+            "summary": "Get the details of a partner namespace.",
+            "syntax": "az eventgrid partner namespace show [--ids]\n                                    [--name]\n                                    [--resource-group]\n                                    [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az eventgrid partner namespace show -g rg1 -n partnernamespace1",
+                "az eventgrid partner namespace show --ids /subscriptions/{SubID}/resourceGroups/{RG}/providers/Microsoft.EventGrid/partnenamespaces/partnernamespace1"
+            ]
+        }
+    ]
+}

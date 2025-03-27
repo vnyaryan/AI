@@ -1,0 +1,69 @@
+{
+    "command_group": "az batch node user",
+    "description": "Manage the user accounts of a Batch compute node.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az batch node user create",
+            "summary": "Add a user account to a Batch compute node.",
+            "syntax": "az batch node user create --node-id\n                          --pool-id\n                          [--account-endpoint]\n                          [--account-key]\n                          [--account-name]\n                          [--expiry-time]\n                          [--is-admin]\n                          [--json-file]\n                          [--name]\n                          [--password]\n                          [--ssh-public-key]",
+            "required_parameters": [
+                "--node-id",
+                "--pool-id"
+            ],
+            "optional_parameters": [
+                "--account-endpoint",
+                "--account-key",
+                "--account-name",
+                "--expiry-time",
+                "--is-admin",
+                "--json-file",
+                "--name",
+                "--password",
+                "--ssh-public-key"
+            ],
+            "examples": [
+                "az batch node user create --pool-id pool1 --node-id node1 --name example_user --ssh-public-key example_public_key"
+            ]
+        },
+        {
+            "name": "az batch node user delete",
+            "summary": "Deletes a user Account from the specified Compute Node.",
+            "syntax": "az batch node user delete --node-id\n                          --pool-id\n                          --user-name\n                          [--account-endpoint]\n                          [--account-key]\n                          [--account-name]\n                          [--yes]",
+            "required_parameters": [
+                "--node-id",
+                "--pool-id",
+                "--user-name"
+            ],
+            "optional_parameters": [
+                "--account-endpoint",
+                "--account-key",
+                "--account-name",
+                "--yes -y"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az batch node user reset",
+            "summary": "Update the properties of a user account on a Batch compute node. Unspecified properties which can be updated are reset to their defaults.",
+            "syntax": "az batch node user reset --node-id\n                         --pool-id\n                         --user-name\n                         [--account-endpoint]\n                         [--account-key]\n                         [--account-name]\n                         [--expiry-time]\n                         [--json-file]\n                         [--password]\n                         [--ssh-public-key]",
+            "required_parameters": [
+                "--node-id",
+                "--pool-id",
+                "--user-name"
+            ],
+            "optional_parameters": [
+                "--account-endpoint",
+                "--account-key",
+                "--account-name",
+                "--expiry-time",
+                "--json-file",
+                "--password",
+                "--ssh-public-key"
+            ],
+            "examples": [
+                "az batch node user reset --pool-id pool1 --node-id node1 --user-name example_user --ssh-public-key new_public_key"
+            ]
+        }
+    ]
+}

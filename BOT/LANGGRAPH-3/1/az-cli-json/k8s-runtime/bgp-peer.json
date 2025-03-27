@@ -1,0 +1,104 @@
+{
+    "command_group": "az k8s-runtime bgp-peer",
+    "description": "Manage BGP peers of Arc Kubernetes clusters.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az k8s-runtime bgp-peer create",
+            "summary": "Create a BgpPeer.",
+            "syntax": "az k8s-runtime bgp-peer create --bgp-peer-name\n                               --resource-uri\n                               [--my-asn]\n                               [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                               [--peer-address]\n                               [--peer-asn]",
+            "required_parameters": [
+                "--bgp-peer-name",
+                "--resource-uri"
+            ],
+            "optional_parameters": [
+                "--my-asn",
+                "--no-wait",
+                "--peer-address",
+                "--peer-asn"
+            ],
+            "examples": [
+                "az k8s-runtime bgp-peer create --bgp-peer-name bgpPeer1 --resource-uri subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/example/providers/Microsoft.Kubernetes/connectedClusters/cluster1 --my-asn 10000 --peer-asn 20000 --peer-address 192.168.50.1"
+            ]
+        },
+        {
+            "name": "az k8s-runtime bgp-peer delete",
+            "summary": "Delete a BgpPeer.",
+            "syntax": "az k8s-runtime bgp-peer delete --bgp-peer-name\n                               --resource-uri\n                               [--yes]",
+            "required_parameters": [
+                "--bgp-peer-name",
+                "--resource-uri"
+            ],
+            "optional_parameters": [
+                "--yes -y"
+            ],
+            "examples": [
+                "az k8s-runtime bgp-peer delete --bgp-peer-name bgpPeer1 --resource-uri subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/example/providers/Microsoft.Kubernetes/connectedClusters/cluster1"
+            ]
+        },
+        {
+            "name": "az k8s-runtime bgp-peer list",
+            "summary": "List BgpPeer resources by parent.",
+            "syntax": "az k8s-runtime bgp-peer list --resource-uri\n                             [--max-items]\n                             [--next-token]",
+            "required_parameters": [
+                "--resource-uri"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az k8s-runtime bgp-peer list --resource-uri subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/example/providers/Microsoft.Kubernetes/connectedClusters/cluster1"
+            ]
+        },
+        {
+            "name": "az k8s-runtime bgp-peer show",
+            "summary": "Get a BgpPeer.",
+            "syntax": "az k8s-runtime bgp-peer show --bgp-peer-name\n                             --resource-uri",
+            "required_parameters": [
+                "--bgp-peer-name",
+                "--resource-uri"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az k8s-runtime bgp-peer show --bgp-peer-name bgpPeer1 --resource-uri subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/example/providers/Microsoft.Kubernetes/connectedClusters/cluster1"
+            ]
+        },
+        {
+            "name": "az k8s-runtime bgp-peer update",
+            "summary": "Update a BgpPeer.",
+            "syntax": "az k8s-runtime bgp-peer update --bgp-peer-name\n                               --resource-uri\n                               [--add]\n                               [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                               [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                               [--remove]\n                               [--set]",
+            "required_parameters": [
+                "--bgp-peer-name",
+                "--resource-uri"
+            ],
+            "optional_parameters": [
+                "--add",
+                "--force-string",
+                "--no-wait",
+                "--remove",
+                "--set"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az k8s-runtime bgp-peer wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az k8s-runtime bgp-peer wait --bgp-peer-name\n                             --resource-uri\n                             [--created]\n                             [--custom]\n                             [--deleted]\n                             [--exists]\n                             [--interval]\n                             [--timeout]\n                             [--updated]",
+            "required_parameters": [
+                "--bgp-peer-name",
+                "--resource-uri"
+            ],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--interval",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

@@ -1,0 +1,36 @@
+{
+    "command_group": "az cosmosdb postgres cluster server",
+    "description": "Manage Azure Cosmos DB for PostgreSQL cluster servers.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az cosmosdb postgres cluster server list",
+            "summary": "List nodes of a cluster.",
+            "syntax": "az cosmosdb postgres cluster server list --cluster-name\n                                         --resource-group",
+            "required_parameters": [
+                "--cluster-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az cosmosdb postgres cluster server list --cluster-name \"test-cluster\" -g \"testGroup\" --subscription \"ffffffff-ffff-ffff-ffff-ffffffffffff\""
+            ]
+        },
+        {
+            "name": "az cosmosdb postgres cluster server show",
+            "summary": "Get information about a node in cluster.",
+            "syntax": "az cosmosdb postgres cluster server show [--cluster-name]\n                                         [--ids]\n                                         [--name]\n                                         [--resource-group]\n                                         [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--cluster-name",
+                "--ids",
+                "--name --server-name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az cosmosdb postgres cluster server show -n \"test-cluster-c\" --cluster-name \"test-cluster\" -g \"testGroup\" --subscription \"ffffffff-ffff-ffff-ffff-ffffffffffff\""
+            ]
+        }
+    ]
+}

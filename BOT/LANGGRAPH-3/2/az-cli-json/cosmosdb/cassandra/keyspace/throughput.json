@@ -1,0 +1,47 @@
+{
+    "command_group": "az cosmosdb cassandra keyspace throughput",
+    "description": "Manage throughput of Cassandra keyspace under an Azure Cosmos DB account.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az cosmosdb cassandra keyspace throughput migrate",
+            "summary": "Migrate the throughput of the Cassandra keyspace between autoscale and manually provisioned.",
+            "syntax": "az cosmosdb cassandra keyspace throughput migrate --account-name\n                                                  --name\n                                                  --resource-group\n                                                  --throughput-type {autoscale, manual}",
+            "required_parameters": [
+                "--account-name -a",
+                "--name -n",
+                "--resource-group -g",
+                "--throughput-type -t"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az cosmosdb cassandra keyspace throughput show",
+            "summary": "Get the throughput of the Cassandra keyspace under an Azure Cosmos DB account.",
+            "syntax": "az cosmosdb cassandra keyspace throughput show --account-name\n                                               --name\n                                               --resource-group",
+            "required_parameters": [
+                "--account-name -a",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az cosmosdb cassandra keyspace throughput update",
+            "summary": "Update the throughput of the Cassandra keyspace under an Azure Cosmos DB account.",
+            "syntax": "az cosmosdb cassandra keyspace throughput update --account-name\n                                                 --name\n                                                 --resource-group\n                                                 [--max-throughput]\n                                                 [--throughput]",
+            "required_parameters": [
+                "--account-name -a",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--max-throughput",
+                "--throughput"
+            ],
+            "examples": []
+        }
+    ]
+}

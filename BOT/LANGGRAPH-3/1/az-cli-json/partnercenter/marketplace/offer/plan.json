@@ -1,0 +1,63 @@
+{
+    "command_group": "az partnercenter marketplace offer plan",
+    "description": "Manage a Marketplace offer plans.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az partnercenter marketplace offer plan create",
+            "summary": "Create a plan for a marketplace offer.",
+            "syntax": "az partnercenter marketplace offer plan create --id\n                                               --name\n                                               --offer-id\n                                               [--no-wait]\n                                               [--subtype]",
+            "required_parameters": [
+                "--id --plan-id",
+                "--name -n",
+                "--offer-id"
+            ],
+            "optional_parameters": [
+                "--no-wait",
+                "--subtype -s"
+            ],
+            "examples": [
+                "az partnercenter marketplace offer plan create --id MyPlanId --name \"My Plan Name\" --offer-id MyOfferId",
+                "az partnercenter marketplace offer plan create --id MyPlanId --name \"My Plan Name\" --offer-id MyOfferId --subtype managed-app"
+            ]
+        },
+        {
+            "name": "az partnercenter marketplace offer plan delete",
+            "summary": "Delete a plan for a marketplace offer.",
+            "syntax": "az partnercenter marketplace offer plan delete --id\n                                               --offer-id",
+            "required_parameters": [
+                "--id --plan-id",
+                "--offer-id"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az partnercenter marketplace offer plan delete --id MyPlanId --offer-id MyOfferId"
+            ]
+        },
+        {
+            "name": "az partnercenter marketplace offer plan list",
+            "summary": "List the plans of a marketplace offer.",
+            "syntax": "az partnercenter marketplace offer plan list --offer-id",
+            "required_parameters": [
+                "--offer-id"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az partnercenter marketplace offer plan list --offer-id MyOfferId"
+            ]
+        },
+        {
+            "name": "az partnercenter marketplace offer plan show",
+            "summary": "Get the plan of a marketplace offer.",
+            "syntax": "az partnercenter marketplace offer plan show --id\n                                             --offer-id",
+            "required_parameters": [
+                "--id --plan-id",
+                "--offer-id"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az partnercenter marketplace offer plan show --id MyPlanId --offer-id MyOfferId"
+            ]
+        }
+    ]
+}

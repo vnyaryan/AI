@@ -1,0 +1,215 @@
+{
+    "command_group": "az ml service",
+    "description": "Manage operationalized services.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az ml service delete",
+            "summary": "Delete a service from the workspace.",
+            "syntax": "az ml service delete --name\n                     [--path]\n                     [--resource-group]\n                     [--subscription-id]\n                     [--workspace-name]\n                     [-v]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--path",
+                "--resource-group -g",
+                "--subscription-id",
+                "--workspace-name -w",
+                "-v"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az ml service get-access-token",
+            "summary": "Get a token to issue requests a service.",
+            "syntax": "az ml service get-access-token --name\n                               [--path]\n                               [--resource-group]\n                               [--subscription-id]\n                               [--workspace-name]\n                               [-v]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--path",
+                "--resource-group -g",
+                "--subscription-id",
+                "--workspace-name -w",
+                "-v"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az ml service get-keys",
+            "summary": "Get keys to issue requests against a service.",
+            "syntax": "az ml service get-keys --name\n                       [--path]\n                       [--resource-group]\n                       [--subscription-id]\n                       [--workspace-name]\n                       [-v]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--path",
+                "--resource-group -g",
+                "--subscription-id",
+                "--workspace-name -w",
+                "-v"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az ml service get-logs",
+            "summary": "Get logs for a service.",
+            "syntax": "az ml service get-logs --name\n                       [--init]\n                       [--num_lines]\n                       [--path]\n                       [--resource-group]\n                       [--subscription-id]\n                       [--workspace-name]\n                       [-v]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--init -i",
+                "--num_lines -l",
+                "--path",
+                "--resource-group -g",
+                "--subscription-id",
+                "--workspace-name -w",
+                "-v"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az ml service list",
+            "summary": "List services in the workspace.",
+            "syntax": "az ml service list [--compute-type]\n                   [--image-digest]\n                   [--model-id]\n                   [--model-name]\n                   [--path]\n                   [--property]\n                   [--resource-group]\n                   [--subscription-id]\n                   [--tag]\n                   [--workspace-name]\n                   [-v]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--compute-type -c",
+                "--image-digest",
+                "--model-id",
+                "--model-name",
+                "--path",
+                "--property",
+                "--resource-group -g",
+                "--subscription-id",
+                "--tag",
+                "--workspace-name -w",
+                "-v"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az ml service regen-key",
+            "summary": "Regenerate keys for a service.",
+            "syntax": "az ml service regen-key --key\n                        --name\n                        [--path]\n                        [--resource-group]\n                        [--set-key]\n                        [--subscription-id]\n                        [--workspace-name]\n                        [-v]",
+            "required_parameters": [
+                "--key -k",
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--path",
+                "--resource-group -g",
+                "--set-key -s",
+                "--subscription-id",
+                "--workspace-name -w",
+                "-v"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az ml service run",
+            "summary": "Run a service in the workspace.",
+            "syntax": "az ml service run --name\n                  [--input-data]\n                  [--path]\n                  [--resource-group]\n                  [--subscription-id]\n                  [--workspace-name]\n                  [-v]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--input-data -d",
+                "--path",
+                "--resource-group -g",
+                "--subscription-id",
+                "--workspace-name -w",
+                "-v"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az ml service show",
+            "summary": "Show details for a service in the workspace.",
+            "syntax": "az ml service show --name\n                   [--path]\n                   [--resource-group]\n                   [--subscription-id]\n                   [--workspace-name]\n                   [-v]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--path",
+                "--resource-group -g",
+                "--subscription-id",
+                "--workspace-name -w",
+                "-v"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az ml service update",
+            "summary": "Update a service in the workspace.",
+            "syntax": "az ml service update --name\n                     [--add-property]\n                     [--add-tag]\n                     [--ae]\n                     [--ai]\n                     [--ar]\n                     [--as]\n                     [--at]\n                     [--autoscale-max-replicas]\n                     [--autoscale-min-replicas]\n                     [--base-image]\n                     [--base-image-registry]\n                     [--cc]\n                     [--ccl]\n                     [--cf]\n                     [--collect-model-data]\n                     [--compute-target]\n                     [--cuda-version]\n                     [--dc]\n                     [--description]\n                     [--dn]\n                     [--ds]\n                     [--ed]\n                     [--eg]\n                     [--entry-script]\n                     [--environment-name]\n                     [--environment-version]\n                     [--failure-threshold]\n                     [--gb]\n                     [--gbl]\n                     [--gc]\n                     [--ic]\n                     [--id]\n                     [--is-migration]\n                     [--kp]\n                     [--ks]\n                     [--lo]\n                     [--max-request-wait-time]\n                     [--model]\n                     [--model-metadata-file]\n                     [--no-wait]\n                     [--nr]\n                     [--path]\n                     [--period-seconds]\n                     [--po]\n                     [--remove-tag]\n                     [--replica-max-concurrent-requests]\n                     [--resource-group]\n                     [--rt]\n                     [--sc]\n                     [--scoring-timeout-ms]\n                     [--sd]\n                     [--se]\n                     [--sk]\n                     [--sp]\n                     [--st]\n                     [--subscription-id]\n                     [--timeout-seconds]\n                     [--token-auth-enabled]\n                     [--workspace-name]\n                     [-v]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--add-property",
+                "--add-tag",
+                "--ae --auth-enabled",
+                "--ai --enable-app-insights",
+                "--ar --autoscale-refresh-seconds",
+                "--as --autoscale-enabled",
+                "--at --autoscale-target-utilization",
+                "--autoscale-max-replicas --ma",
+                "--autoscale-min-replicas --mi",
+                "--base-image --bi",
+                "--base-image-registry --ir",
+                "--cc --cpu-cores",
+                "--ccl --cpu-cores-limit",
+                "--cf --conda-file",
+                "--collect-model-data --md",
+                "--compute-target",
+                "--cuda-version --cv",
+                "--dc --deploy-config-file",
+                "--description -d",
+                "--dn --dns-name-label",
+                "--ds --extra-docker-file-steps",
+                "--ed --environment-directory",
+                "--eg --enable-gpu",
+                "--entry-script --es",
+                "--environment-name -e",
+                "--environment-version --ev",
+                "--failure-threshold --ft",
+                "--gb --memory-gb",
+                "--gbl --memory-gb-limit",
+                "--gc --gpu-cores",
+                "--ic --inference-config-file",
+                "--id --initial-delay-seconds",
+                "--is-migration",
+                "--kp --primary-key",
+                "--ks --secondary-key",
+                "--lo --location",
+                "--max-request-wait-time --mr",
+                "--model -m",
+                "--model-metadata-file -f",
+                "--no-wait",
+                "--nr --num-replicas",
+                "--path",
+                "--period-seconds --ps",
+                "--po --port",
+                "--remove-tag",
+                "--replica-max-concurrent-requests --rm",
+                "--resource-group -g",
+                "--rt --runtime",
+                "--sc --ssl-cname",
+                "--scoring-timeout-ms --tm",
+                "--sd --source-directory",
+                "--se --ssl-enabled",
+                "--sk --ssl-key-pem-file",
+                "--sp --ssl-cert-pem-file",
+                "--st --success-threshold",
+                "--subscription-id",
+                "--timeout-seconds --ts",
+                "--token-auth-enabled",
+                "--workspace-name -w",
+                "-v"
+            ],
+            "examples": []
+        }
+    ]
+}

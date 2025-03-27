@@ -1,0 +1,157 @@
+{
+    "command_group": "az reservations reservation-order",
+    "description": "Reservations reservation-order.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az reservations reservation-order calculate",
+            "summary": "Calculate price for placing a `ReservationOrder`.",
+            "syntax": "az reservations reservation-order calculate [--applied-scope]\n                                            [--applied-scope-property]\n                                            [--applied-scope-type {ManagementGroup, Shared, Single}]\n                                            [--billing-plan {Monthly, Upfront}]\n                                            [--billing-scope]\n                                            [--display-name]\n                                            [--instance-flexibility {Off, On}]\n                                            [--location]\n                                            [--quantity]\n                                            [--renew {0, 1, f, false, n, no, t, true, y, yes}]\n                                            [--reserved-resource-type {AVS, AppService, AzureDataExplorer, AzureFiles, BlockBlob, CosmosDb, DataFactory, Databricks, DedicatedHost, ManagedDisk, MariaDb, MySql, NetAppStorage, PostgreSql, RedHat, RedHatOsa, RedisCache, SapHana, SqlAzureHybridBenefit, SqlDataWarehouse, SqlDatabases, SqlEdge, SuseLinux, VMwareCloudSimple, VirtualMachineSoftware, VirtualMachines}]\n                                            [--review-date-time]\n                                            [--sku]\n                                            [--term {P1Y, P3Y, P5Y}]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--applied-scope",
+                "--applied-scope-property",
+                "--applied-scope-type",
+                "--billing-plan",
+                "--billing-scope",
+                "--display-name",
+                "--instance-flexibility",
+                "--location",
+                "--quantity",
+                "--renew",
+                "--reserved-resource-type",
+                "--review-date-time",
+                "--sku",
+                "--term"
+            ],
+            "examples": [
+                "az reservations reservation-order calculate --applied-scope-type Shared --billing-scope 50000000-aaaa-bbbb-cccc-100000000002 --display-name name1 --quantity 1 --reserved-resource-type VirtualMachines --sku Standard_B1s --term P1Y --billing-plan Monthly --location eastus"
+            ]
+        },
+        {
+            "name": "az reservations reservation-order calculate-refund",
+            "summary": "Calculate price for returning `Reservations` if there are no policy errors.",
+            "syntax": "az reservations reservation-order calculate-refund --reservation-order-id\n                                                   [--id]\n                                                   [--quantity]\n                                                   [--reservation-id]\n                                                   [--scope]",
+            "required_parameters": [
+                "--reservation-order-id"
+            ],
+            "optional_parameters": [
+                "--id",
+                "--quantity",
+                "--reservation-id",
+                "--scope"
+            ],
+            "examples": [
+                "az reservations reservation-order calculate-refund --reservation-order-id 0000000-aaaa-bbbb-cccc-20000000001 --id /providers/microsoft.capacity/reservationOrders/0000000-aaaa-bbbb-cccc-20000000001 --scope Reservation --quantity 1 --reservation-id /providers/microsoft.capacity/reservationOrders/0000000-aaaa-bbbb-cccc-20000000001/reservations/50000000-aaaa-bbbb-cccc-200000000000"
+            ]
+        },
+        {
+            "name": "az reservations reservation-order change-directory",
+            "summary": "Change directory (tenant) of `ReservationOrder` and all `Reservation` under it to specified tenant id.",
+            "syntax": "az reservations reservation-order change-directory --reservation-order-id\n                                                   [--destination-tenant-id]",
+            "required_parameters": [
+                "--reservation-order-id"
+            ],
+            "optional_parameters": [
+                "--destination-tenant-id"
+            ],
+            "examples": [
+                "az reservations reservation-order change-directory --reservation-order-id 50000000-aaaa-bbbb-cccc-200000000000 --destination-tenant-id 10000000-aaaa-bbbb-cccc-200000000011"
+            ]
+        },
+        {
+            "name": "az reservations reservation-order list",
+            "summary": "List of all the `ReservationOrder`s that the user has access to in the current tenant.",
+            "syntax": "az reservations reservation-order list [--max-items]\n                                       [--next-token]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az reservations reservation-order list"
+            ]
+        },
+        {
+            "name": "az reservations reservation-order purchase",
+            "summary": "Create `ReservationOrder` and create resource under the specified URI.",
+            "syntax": "az reservations reservation-order purchase --reservation-order-id\n                                           [--applied-scope]\n                                           [--applied-scope-property]\n                                           [--applied-scope-type {ManagementGroup, Shared, Single}]\n                                           [--billing-plan {Monthly, Upfront}]\n                                           [--billing-scope]\n                                           [--display-name]\n                                           [--instance-flexibility {Off, On}]\n                                           [--location]\n                                           [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                           [--quantity]\n                                           [--renew {0, 1, f, false, n, no, t, true, y, yes}]\n                                           [--reserved-resource-type {AVS, AppService, AzureDataExplorer, AzureFiles, BlockBlob, CosmosDb, DataFactory, Databricks, DedicatedHost, ManagedDisk, MariaDb, MySql, NetAppStorage, PostgreSql, RedHat, RedHatOsa, RedisCache, SapHana, SqlAzureHybridBenefit, SqlDataWarehouse, SqlDatabases, SqlEdge, SuseLinux, VMwareCloudSimple, VirtualMachineSoftware, VirtualMachines}]\n                                           [--review-date-time]\n                                           [--sku]\n                                           [--term {P1Y, P3Y, P5Y}]",
+            "required_parameters": [
+                "--reservation-order-id"
+            ],
+            "optional_parameters": [
+                "--applied-scope",
+                "--applied-scope-property",
+                "--applied-scope-type",
+                "--billing-plan",
+                "--billing-scope",
+                "--display-name",
+                "--instance-flexibility",
+                "--location",
+                "--no-wait",
+                "--quantity",
+                "--renew",
+                "--reserved-resource-type",
+                "--review-date-time",
+                "--sku",
+                "--term"
+            ],
+            "examples": [
+                "az reservations reservation-order purchase --reservation-order-id 40000000-aaaa-bbbb-cccc-200000000005 --applied-scope-type Single --billing-scope 50000000-aaaa-bbbb-cccc-200000000005 --reserved-resource-type VirtualMachines --display-name name1 --quantity 1 --sku Standard_B1s --term P1Y --billing-plan Monthly --location eastus --applied-scope 50000000-aaaa-bbbb-cccc-200000000010",
+                "az reservations reservation-order purchase --reservation-order-id 40000000-aaaa-bbbb-cccc-200000000005 --applied-scope-type Single --billing-scope 50000000-aaaa-bbbb-cccc-200000000005 --reserved-resource-type VirtualMachines --display-name testername1 --quantity 1 --sku Standard_B1s --term P1Y --billing-plan Monthly --location eastus --applied-scope '/subscriptions/50000000-aaaa-bbbb-cccc-200000000005/resourceGroups/rg1' --instance-flexibility Off"
+            ]
+        },
+        {
+            "name": "az reservations reservation-order return",
+            "summary": "Return a reservation.",
+            "syntax": "az reservations reservation-order return --reservation-order-id\n                                         [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                         [--quantity]\n                                         [--reservation-id]\n                                         [--return-reason]\n                                         [--scope]\n                                         [--session-id]",
+            "required_parameters": [
+                "--reservation-order-id"
+            ],
+            "optional_parameters": [
+                "--no-wait",
+                "--quantity",
+                "--reservation-id",
+                "--return-reason",
+                "--scope",
+                "--session-id"
+            ],
+            "examples": [
+                "az reservations reservation-order return --reservation-order-id 50000000-aaaa-bbbb-cccc-200000000000 --return-reason mockReason --scope Reservation --quantity 1 --reservation-id /providers/microsoft.capacity/reservationOrders/50000000-aaaa-bbbb-cccc-200000000000/reservations/30000000-aaaa-bbbb-cccc-200000000011 --session-id 40000000-aaaa-bbbb-cccc-200000000020"
+            ]
+        },
+        {
+            "name": "az reservations reservation-order show",
+            "summary": "Get the details of the `ReservationOrder`.",
+            "syntax": "az reservations reservation-order show --reservation-order-id\n                                       [--expand]",
+            "required_parameters": [
+                "--reservation-order-id"
+            ],
+            "optional_parameters": [
+                "--expand"
+            ],
+            "examples": [
+                "az reservations reservation-order show --reservation-order-id 50000000-aaaa-bbbb-cccc-200000000005"
+            ]
+        },
+        {
+            "name": "az reservations reservation-order wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az reservations reservation-order wait --reservation-order-id\n                                       [--created]\n                                       [--custom]\n                                       [--deleted]\n                                       [--exists]\n                                       [--expand]\n                                       [--interval]\n                                       [--timeout]\n                                       [--updated]",
+            "required_parameters": [
+                "--reservation-order-id"
+            ],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--expand",
+                "--interval",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

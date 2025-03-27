@@ -1,0 +1,77 @@
+{
+    "command_group": "az arcappliance",
+    "description": "Commands to manage Arc resource bridge.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az arcappliance get-credentials",
+            "summary": "Command to get the on-premises infrastructure credentials used by Arc resource bridge to manage on-premises resources.",
+            "syntax": "az arcappliance get-credentials [--config-file]\n                                [--credentials-dir]\n                                [--name]\n                                [--overwrite-existing {false, true}]\n                                [--partner {false, true}]\n                                [--resource-group]\n                                [--yes {false, true}]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--config-file",
+                "--credentials-dir",
+                "--name -n",
+                "--overwrite-existing",
+                "--partner",
+                "--resource-group -g",
+                "--yes -y"
+            ],
+            "examples": [
+                "az arcappliance get-credentials --resource-group [REQUIRED] --name [REQUIRED] --credentials-dir [OPTIONAL]",
+                "az arcappliance get-credentials --config-file [REQUIRED] --credentials-dir [OPTIONAL]",
+                "az arcappliance get-credentials --config-file [REQUIRED] --credentials-dir [OPTIONAL] --y [OPTIONAL]",
+                "az arcappliance get-credentials --resource-group [REQUIRED] --name [REQUIRED] --credentials-dir [OPTIONAL] --overwrite-existing [OPTIONAL]",
+                "az arcappliance get-credentials --resource-group [REQUIRED] --name [REQUIRED] --partner [OPTIONAL]"
+            ]
+        },
+        {
+            "name": "az arcappliance get-upgrades",
+            "summary": "Command to fetch the available upgrades for an Appliance.",
+            "syntax": "az arcappliance get-upgrades --name\n                             --resource-group",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az arcappliance get-upgrades --resource-group [REQUIRED] --name [REQUIRED]"
+            ]
+        },
+        {
+            "name": "az arcappliance list",
+            "summary": "Command to list Arc resource bridge resources.",
+            "syntax": "az arcappliance list [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az arcappliance list -g [OPTIONAL]"
+            ]
+        },
+        {
+            "name": "az arcappliance notice",
+            "summary": "Command to display the EULA & Notice File link for Arc resource bridge.",
+            "syntax": "az arcappliance notice",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "examples": [
+                "az arcappliance notice"
+            ]
+        },
+        {
+            "name": "az arcappliance show",
+            "summary": "Command to provide information about an Arc resource bridge Azure resource. This is useful to monitor the status of the resource bridge.",
+            "syntax": "az arcappliance show --name\n                     --resource-group",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az arcappliance show --resource-group [REQUIRED] --name [REQUIRED]"
+            ]
+        }
+    ]
+}

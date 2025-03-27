@@ -1,0 +1,99 @@
+{
+    "command_group": "az iot central device-group",
+    "description": "Manage and configure IoT Central device groups.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az iot central device-group create",
+            "summary": "Create a device group.",
+            "syntax": "az iot central device-group create --app-id\n                                   --device-group-id\n                                   --display-name\n                                   --filter\n                                   [--api-version {2022-06-30-preview, 2022-07-31}]\n                                   [--central-api-uri]\n                                   [--description]\n                                   [--organizations]\n                                   [--token]",
+            "required_parameters": [
+                "--app-id -n",
+                "--device-group-id",
+                "--display-name",
+                "--filter"
+            ],
+            "optional_parameters": [
+                "--api-version --av",
+                "--central-api-uri --central-dns-suffix",
+                "--description",
+                "--organizations",
+                "--token"
+            ],
+            "examples": [
+                "az iot central device-group create --app-id {appid} --device-group-id {devicegroupid} --display-name \"DeviceGroup1\" --filter \"SELECT * FROM devices WHERE $provisioned = true\" --description \"This is a default device group.\" --organizations {organization}"
+            ]
+        },
+        {
+            "name": "az iot central device-group delete",
+            "summary": "Delete a device group.",
+            "syntax": "az iot central device-group delete --app-id\n                                   --device-group-id\n                                   [--api-version {2022-06-30-preview, 2022-07-31}]\n                                   [--central-api-uri]\n                                   [--token]",
+            "required_parameters": [
+                "--app-id -n",
+                "--device-group-id"
+            ],
+            "optional_parameters": [
+                "--api-version --av",
+                "--central-api-uri --central-dns-suffix",
+                "--token"
+            ],
+            "examples": [
+                "az iot central device-group delete --app-id {appid} --device-group-id {devicegroupid}"
+            ]
+        },
+        {
+            "name": "az iot central device-group list",
+            "summary": "Get the list of device groups for an IoT Central application.",
+            "syntax": "az iot central device-group list --app-id\n                                 [--api-version {2022-06-30-preview, 2022-07-31}]\n                                 [--central-api-uri]\n                                 [--token]",
+            "required_parameters": [
+                "--app-id -n"
+            ],
+            "optional_parameters": [
+                "--api-version --av",
+                "--central-api-uri --central-dns-suffix",
+                "--token"
+            ],
+            "examples": [
+                "az iot central device-group list --app-id {appid}"
+            ]
+        },
+        {
+            "name": "az iot central device-group show",
+            "summary": "Get the device group  by ID.",
+            "syntax": "az iot central device-group show --app-id\n                                 --device-group-id\n                                 [--api-version {2022-06-30-preview, 2022-07-31}]\n                                 [--central-api-uri]\n                                 [--token]",
+            "required_parameters": [
+                "--app-id -n",
+                "--device-group-id"
+            ],
+            "optional_parameters": [
+                "--api-version --av",
+                "--central-api-uri --central-dns-suffix",
+                "--token"
+            ],
+            "examples": [
+                "az iot central device-group show --app-id {appid} --device-group-id {devicegroupid}"
+            ]
+        },
+        {
+            "name": "az iot central device-group update",
+            "summary": "Update an existing device group.",
+            "syntax": "az iot central device-group update --app-id\n                                   --device-group-id\n                                   [--api-version {2022-06-30-preview, 2022-07-31}]\n                                   [--central-api-uri]\n                                   [--description]\n                                   [--display-name]\n                                   [--filter]\n                                   [--organizations]\n                                   [--token]",
+            "required_parameters": [
+                "--app-id -n",
+                "--device-group-id"
+            ],
+            "optional_parameters": [
+                "--api-version --av",
+                "--central-api-uri --central-dns-suffix",
+                "--description",
+                "--display-name",
+                "--filter",
+                "--organizations",
+                "--token"
+            ],
+            "examples": [
+                "az iot central device-group update --app-id {appid} --device-group-id {devicegroupid} --display-name {displayname} --filter {filter} --description {description} --organizations {organization}"
+            ]
+        }
+    ]
+}

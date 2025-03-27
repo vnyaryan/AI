@@ -1,0 +1,39 @@
+{
+    "command_group": "az confluent organization environment schema-registry-cluster",
+    "description": "Commands to get the schema registry cluster details in a environment.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az confluent organization environment schema-registry-cluster list",
+            "summary": "List schema registry clusters.",
+            "syntax": "az confluent organization environment schema-registry-cluster list --environment-id\n                                                                   --organization-name\n                                                                   --resource-group\n                                                                   [--max-items]\n                                                                   [--next-token]\n                                                                   [--page-size]\n                                                                   [--page-token]",
+            "required_parameters": [
+                "--environment-id",
+                "--organization-name",
+                "--resource-group"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token",
+                "--page-size",
+                "--page-token"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az confluent organization environment schema-registry-cluster show",
+            "summary": "Get schema registry cluster by Id.",
+            "syntax": "az confluent organization environment schema-registry-cluster show [--cluster-id]\n                                                                   [--environment-id]\n                                                                   [--ids]\n                                                                   [--organization-name]\n                                                                   [--resource-group]\n                                                                   [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--cluster-id",
+                "--environment-id",
+                "--ids",
+                "--organization-name",
+                "--resource-group",
+                "--subscription"
+            ],
+            "examples": []
+        }
+    ]
+}

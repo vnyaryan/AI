@@ -1,0 +1,104 @@
+{
+    "command_group": "az costmanagement export",
+    "description": "Costmanagement export.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az costmanagement export create",
+            "summary": "The operation to create an export.",
+            "syntax": "az costmanagement export create --name\n                                --scope\n                                --storage-account-id\n                                --storage-container\n                                --timeframe {BillingMonthToDate, Custom, MonthToDate, TheLastBillingMonth, TheLastMonth, WeekToDate}\n                                [--dataset-configuration]\n                                [--recurrence {Annually, Daily, Monthly, Weekly}]\n                                [--recurrence-period]\n                                [--schedule-status {Active, Inactive}]\n                                [--storage-directory]\n                                [--time-period]\n                                [--type {ActualCost, AmortizedCost, Usage}]",
+            "required_parameters": [
+                "--name",
+                "--scope",
+                "--storage-account-id",
+                "--storage-container",
+                "--timeframe"
+            ],
+            "optional_parameters": [
+                "--dataset-configuration",
+                "--recurrence",
+                "--recurrence-period",
+                "--schedule-status",
+                "--storage-directory",
+                "--time-period",
+                "--type"
+            ],
+            "examples": [
+                "az costmanagement export create --name \"TestExport\" --type \"Usage\" --dataset-configuration columns=\"Date\" columns=\"MeterId\" columns=\"InstanceId\" columns=\"ResourceLocation\" columns=\"PreTaxCost\" --timeframe \"MonthToDate\" --storage-container=\"exports\" --storage-account-id=\"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/MYDEVTESTRG/providers/Microsoft.Storage/storageAccounts/ccmeastusdiag182\" --storage-directory=\"ad-hoc\" --recurrence \"Weekly\" --recurrence-period from=\"2018-06-01T00:00:00Z\" to=\"2018-10-31T00:00:00Z\" --schedule-status \"Active\" --scope \"providers/Microsoft.Management/managementGroups/TestMG\"",
+                "az costmanagement export create --name \"TestExport\" --type \"Usage\" --dataset-configuration columns=\"Date\" columns=\"MeterId\" columns=\"InstanceId\" columns=\"ResourceLocation\" columns=\"PreTaxCost\" --timeframe \"MonthToDate\" --storage-container=\"exports\" --storage-account-id=\"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/MYDEVTESTRG/providers/Microsoft.Storage/storageAccounts/ccmeastusdiag182\" --storage-directory=\"ad-hoc\" --recurrence \"Weekly\" --recurrence-period from=\"2018-06-01T00:00:00Z\" to=\"2018-10-31T00:00:00Z\" --schedule-status \"Active\" --scope \"subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/MYDEVTESTRG\"",
+                "az costmanagement export create --name \"TestExport\" --type \"Usage\" --dataset-configuration columns=\"Date\" columns=\"MeterId\" columns=\"InstanceId\" columns=\"ResourceLocation\" columns=\"PreTaxCost\" --timeframe \"MonthToDate\" --storage-container=\"exports\" --storage-account-id=\"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/MYDEVTESTRG/providers/Microsoft.Storage/storageAccounts/ccmeastusdiag182\" --storage-directory=\"ad-hoc\" --recurrence \"Weekly\" --recurrence-period from=\"2018-06-01T00:00:00Z\" to=\"2018-10-31T00:00:00Z\" --schedule-status \"Active\" --scope \"subscriptions/00000000-0000-0000-0000-000000000000\""
+            ]
+        },
+        {
+            "name": "az costmanagement export delete",
+            "summary": "The operation to delete an export.",
+            "syntax": "az costmanagement export delete --name\n                                --scope\n                                [--yes]",
+            "required_parameters": [
+                "--name",
+                "--scope"
+            ],
+            "optional_parameters": [
+                "--yes -y"
+            ],
+            "examples": [
+                "az costmanagement export delete --name \"TestExport\" --scope \"providers/Microsoft.Management/managementGroups/TestMG\"",
+                "az costmanagement export delete --name \"TestExport\" --scope \"subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/MYDEVTESTRG\"",
+                "az costmanagement export delete --name \"TestExport\" --scope \"subscriptions/00000000-0000-0000-0000-000000000000\""
+            ]
+        },
+        {
+            "name": "az costmanagement export list",
+            "summary": "The operation to list all exports at the given scope.",
+            "syntax": "az costmanagement export list --scope",
+            "required_parameters": [
+                "--scope"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az costmanagement export list --scope \"providers/Microsoft.Management/managementGroups/TestMG\"",
+                "az costmanagement export list --scope \"subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/MYDEVTESTRG\"",
+                "az costmanagement export list --scope \"subscriptions/00000000-0000-0000-0000-000000000000\""
+            ]
+        },
+        {
+            "name": "az costmanagement export show",
+            "summary": "The operation to get the execution history of an export for the defined scope by export name.",
+            "syntax": "az costmanagement export show --name\n                              --scope",
+            "required_parameters": [
+                "--name",
+                "--scope"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az costmanagement export show --name \"TestExport\" --scope \"providers/Microsoft.Management/managementGroups/TestMG\"",
+                "az costmanagement export show --name \"TestExport\" --scope \"subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/MYDEVTESTRG\"",
+                "az costmanagement export show --name \"TestExport\" --scope \"subscriptions/00000000-0000-0000-0000-000000000000\""
+            ]
+        },
+        {
+            "name": "az costmanagement export update",
+            "summary": "The operation to update an export.",
+            "syntax": "az costmanagement export update --name\n                                --scope\n                                [--dataset-configuration]\n                                [--recurrence {Annually, Daily, Monthly, Weekly}]\n                                [--recurrence-period]\n                                [--schedule-status {Active, Inactive}]\n                                [--storage-account-id]\n                                [--storage-container]\n                                [--storage-directory]\n                                [--time-period]\n                                [--timeframe {BillingMonthToDate, Custom, MonthToDate, TheLastBillingMonth, TheLastMonth, WeekToDate}]",
+            "required_parameters": [
+                "--name",
+                "--scope"
+            ],
+            "optional_parameters": [
+                "--dataset-configuration",
+                "--recurrence",
+                "--recurrence-period",
+                "--schedule-status",
+                "--storage-account-id",
+                "--storage-container",
+                "--storage-directory",
+                "--time-period",
+                "--timeframe"
+            ],
+            "examples": [
+                "az costmanagement export update --name \"TestExport\" --dataset-configuration columns=\"Date\" columns=\"MeterId\" columns=\"InstanceId\" columns=\"ResourceLocation\" columns=\"PreTaxCost\" --timeframe \"MonthToDate\" --storage-container=\"exports\" --storage-account-id=\"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/MYDEVTESTRG/providers/Microsoft.Storage/storageAccounts/ccmeastusdiag182\" --storage-directory=\"ad-hoc\" --recurrence \"Weekly\" --recurrence-period from=\"2018-06-01T00:00:00Z\" to=\"2018-10-31T00:00:00Z\" --schedule-status \"Active\" --scope \"providers/Microsoft.Management/managementGroups/TestMG\"",
+                "az costmanagement export update --name \"TestExport\" --dataset-configuration columns=\"Date\" columns=\"MeterId\" columns=\"InstanceId\" columns=\"ResourceLocation\" columns=\"PreTaxCost\" --timeframe \"MonthToDate\" --storage-container=\"exports\" --storage-account-id=\"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/MYDEVTESTRG/providers/Microsoft.Storage/storageAccounts/ccmeastusdiag182\" --storage-directory=\"ad-hoc\" --recurrence \"Weekly\" --recurrence-period from=\"2018-06-01T00:00:00Z\" to=\"2018-10-31T00:00:00Z\" --schedule-status \"Active\" --scope \"subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/MYDEVTESTRG\"",
+                "az costmanagement export update --name \"TestExport\" --dataset-configuration columns=\"Date\" columns=\"MeterId\" columns=\"InstanceId\" columns=\"ResourceLocation\" columns=\"PreTaxCost\" --timeframe \"MonthToDate\" --storage-container=\"exports\" --storage-account-id=\"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/MYDEVTESTRG/providers/Microsoft.Storage/storageAccounts/ccmeastusdiag182\" --storage-directory=\"ad-hoc\" --recurrence \"Weekly\" --recurrence-period from=\"2018-06-01T00:00:00Z\" to=\"2018-10-31T00:00:00Z\" --schedule-status \"Active\" --scope \"subscriptions/00000000-0000-0000-0000-000000000000\""
+            ]
+        }
+    ]
+}

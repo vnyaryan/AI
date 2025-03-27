@@ -1,0 +1,103 @@
+{
+    "command_group": "az monitor log-analytics solution",
+    "description": "Commands to manage monitor log-analytics solution.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az monitor log-analytics solution create",
+            "summary": "Create the Solution.",
+            "syntax": "az monitor log-analytics solution create --resource-group\n                                         --solution-type\n                                         --workspace\n                                         [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                         [--tags]",
+            "required_parameters": [
+                "--resource-group -g",
+                "--solution-type -t",
+                "--workspace -w"
+            ],
+            "optional_parameters": [
+                "--no-wait",
+                "--tags"
+            ],
+            "examples": [
+                "az monitor log-analytics solution create --resource-group MyResourceGroup --solution-type Containers --tags key=value --workspace \"/subscriptions/{SubID}/resourceGroups/{ResourceGroup}/providers/ Microsoft.OperationalInsights/workspaces/{WorkspaceName}\""
+            ]
+        },
+        {
+            "name": "az monitor log-analytics solution delete",
+            "summary": "Delete the solution in the subscription.",
+            "syntax": "az monitor log-analytics solution delete --name\n                                         --resource-group\n                                         [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                         [--yes]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--no-wait",
+                "--yes -y"
+            ],
+            "examples": [
+                "az monitor log-analytics solution delete --resource-group MyResourceGroup --name SolutionName"
+            ]
+        },
+        {
+            "name": "az monitor log-analytics solution list",
+            "summary": "List the solution list. It will retrieve both first party and third party solutions.",
+            "syntax": "az monitor log-analytics solution list [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az monitor log-analytics solution list",
+                "az monitor log-analytics solution list --subscription MySubscription",
+                "az monitor log-analytics solution list --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az monitor log-analytics solution show",
+            "summary": "Get the user solution.",
+            "syntax": "az monitor log-analytics solution show --name\n                                       --resource-group",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az monitor log-analytics solution show --resource-group MyResourceGroup --name SolutionName"
+            ]
+        },
+        {
+            "name": "az monitor log-analytics solution update",
+            "summary": "Update a Solution. Only updating tags supported.",
+            "syntax": "az monitor log-analytics solution update --name\n                                         --resource-group\n                                         [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                         [--tags]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--no-wait",
+                "--tags"
+            ],
+            "examples": [
+                "az monitor log-analytics solution update --resource-group MyResourceGroup --name SolutionName --tags key=value"
+            ]
+        },
+        {
+            "name": "az monitor log-analytics solution wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az monitor log-analytics solution wait [--created]\n                                       [--custom]\n                                       [--deleted]\n                                       [--exists]\n                                       [--ids]\n                                       [--interval]\n                                       [--name]\n                                       [--resource-group]\n                                       [--subscription]\n                                       [--timeout]\n                                       [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

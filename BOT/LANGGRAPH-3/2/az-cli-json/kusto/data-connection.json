@@ -1,0 +1,82 @@
+{
+    "command_group": "az kusto data-connection",
+    "description": "Manage data connection with kusto.",
+    "status": "Experimental",
+    "commands": [
+        {
+            "name": "az kusto data-connection delete",
+            "summary": "Deletes the data connection with the given name.",
+            "syntax": "az kusto data-connection delete [--cluster-name]\n                                [--data-connection-name]\n                                [--database-name]\n                                [--ids]\n                                [--no-wait]\n                                [--resource-group]\n                                [--subscription]\n                                [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--cluster-name",
+                "--data-connection-name --name -n",
+                "--database-name",
+                "--ids",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az kusto data-connection delete --cluster-name \"kustoclusterrptest4\" --name \"kustoeventhubconnection1\" --database-name \"KustoDatabase8\" --resource-group \"kustorptest\""
+            ]
+        },
+        {
+            "name": "az kusto data-connection list",
+            "summary": "Returns the list of data connections of the given Kusto database.",
+            "syntax": "az kusto data-connection list --cluster-name\n                              --database-name\n                              --resource-group",
+            "required_parameters": [
+                "--cluster-name",
+                "--database-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az kusto data-connection list --cluster-name \"kustoclusterrptest4\" --database-name \"KustoDatabase8\" --resource-group \"kustorptest\""
+            ]
+        },
+        {
+            "name": "az kusto data-connection show",
+            "summary": "Returns a data connection.",
+            "syntax": "az kusto data-connection show [--cluster-name]\n                              [--data-connection-name]\n                              [--database-name]\n                              [--ids]\n                              [--resource-group]\n                              [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--cluster-name",
+                "--data-connection-name --name -n",
+                "--database-name",
+                "--ids",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az kusto data-connection show --cluster-name \"kustoclusterrptest4\" --name \"DataConnections8\" --database-name \"KustoDatabase8\" --resource-group \"kustorptest\""
+            ]
+        },
+        {
+            "name": "az kusto data-connection wait",
+            "summary": "Place the CLI in a waiting state until a condition of the kusto data-connection is met.",
+            "syntax": "az kusto data-connection wait [--cluster-name]\n                              [--created]\n                              [--custom]\n                              [--data-connection-name]\n                              [--database-name]\n                              [--deleted]\n                              [--exists]\n                              [--ids]\n                              [--interval]\n                              [--resource-group]\n                              [--subscription]\n                              [--timeout]\n                              [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--cluster-name",
+                "--created",
+                "--custom",
+                "--data-connection-name --name -n",
+                "--database-name",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": [
+                "az kusto data-connection wait --cluster-name \"kustoclusterrptest4\" --name \"DataConnections8\" --database-name \"KustoDatabase8\" --resource-group \"kustorptest\" --created",
+                "az kusto data-connection wait --cluster-name \"kustoclusterrptest4\" --name \"DataConnections8\" --database-name \"KustoDatabase8\" --resource-group \"kustorptest\" --deleted"
+            ]
+        }
+    ]
+}

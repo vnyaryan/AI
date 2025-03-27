@@ -1,0 +1,24 @@
+{
+    "command_group": "az billing-benefits savings-plan",
+    "description": "Azure billing benefits savings plan commands.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az billing-benefits savings-plan list",
+            "summary": "List savings plans.",
+            "syntax": "az billing-benefits savings-plan list [--filter]\n                                      [--orderby]\n                                      [--selected-state]\n                                      [--skiptoken]\n                                      [--take]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--filter",
+                "--orderby",
+                "--selected-state",
+                "--skiptoken",
+                "--take"
+            ],
+            "examples": [
+                "az billing-benefits savings-plan list --filter \"properties/userFriendlyAppliedScopeType eq 'Shared'\" --orderby \"properties/displayName asc\"",
+                "az billing-benefits savings-plan list"
+            ]
+        }
+    ]
+}

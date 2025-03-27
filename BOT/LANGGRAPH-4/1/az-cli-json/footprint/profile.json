@@ -1,0 +1,87 @@
+{
+    "command_group": "az footprint profile",
+    "description": "Commands to manage Footprint profiles.",
+    "status": "Experimental",
+    "commands": [
+        {
+            "name": "az footprint profile create",
+            "summary": "Creates or updates a Footprint profile with the specified properties.",
+            "syntax": "az footprint profile create --measurement-count\n                            --name\n                            --resource-group\n                            --start-delay-ms\n                            [--description]\n                            [--location]\n                            [--reporting-endpoints]\n                            [--sample-rate-cold]\n                            [--tags]",
+            "required_parameters": [
+                "--measurement-count",
+                "--name --profile-name -n",
+                "--resource-group -g",
+                "--start-delay-ms"
+            ],
+            "optional_parameters": [
+                "--description",
+                "--location -l",
+                "--reporting-endpoints",
+                "--sample-rate-cold",
+                "--tags"
+            ],
+            "examples": [
+                "az footprint profile create --location \"westus2\" --measurement-count 3 --start-delay-ms 5000 --tags key1=\"value1\" key2=\"value2\" --name \"fpProfile1\" --resource-group \"rgName\""
+            ]
+        },
+        {
+            "name": "az footprint profile delete",
+            "summary": "Deletes an existing Footprint profile.",
+            "syntax": "az footprint profile delete [--ids]\n                            [--name]\n                            [--resource-group]\n                            [--subscription]\n                            [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --profile-name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az footprint profile delete --name \"fpProfile1\" --resource-group \"rgName\""
+            ]
+        },
+        {
+            "name": "az footprint profile list",
+            "summary": "Retrieves the information about all Footprint profiles under a subscription.",
+            "syntax": "az footprint profile list [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az footprint profile list --resource-group \"rgName\""
+            ]
+        },
+        {
+            "name": "az footprint profile show",
+            "summary": "Retrieves the information about a single Footprint profile.",
+            "syntax": "az footprint profile show [--ids]\n                          [--name]\n                          [--resource-group]\n                          [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --profile-name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az footprint profile show --name \"fpProfile1\" --resource-group \"rgName\""
+            ]
+        },
+        {
+            "name": "az footprint profile update",
+            "summary": "Updates an existing Footprint profile resource.",
+            "syntax": "az footprint profile update [--ids]\n                            [--name]\n                            [--resource-group]\n                            [--subscription]\n                            [--tags]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --profile-name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--tags"
+            ],
+            "examples": [
+                "az footprint profile update --tags key1=\"value1\" key2=\"value2\" --name \"fpProfile1\" --resource-group \"rgName\""
+            ]
+        }
+    ]
+}

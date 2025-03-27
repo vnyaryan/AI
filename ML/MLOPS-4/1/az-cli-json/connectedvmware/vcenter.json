@@ -1,0 +1,76 @@
+{
+    "command_group": "az connectedvmware vcenter",
+    "description": "Vcenter resource.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az connectedvmware vcenter connect",
+            "summary": "Create vcenter resource.",
+            "syntax": "az connectedvmware vcenter connect --custom-location\n                                   --location\n                                   [--fqdn]\n                                   [--ids]\n                                   [--name]\n                                   [--no-wait]\n                                   [--password]\n                                   [--port]\n                                   [--resource-group]\n                                   [--subscription]\n                                   [--tags]\n                                   [--username]",
+            "required_parameters": [
+                "--custom-location -c",
+                "--location -l"
+            ],
+            "optional_parameters": [
+                "--fqdn",
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--password",
+                "--port",
+                "--resource-group -g",
+                "--subscription",
+                "--tags",
+                "--username"
+            ],
+            "examples": [
+                "az connectedvmware vcenter connect --custom-location \"custom location name\"                --fqdn \"vcenter fqdn/ip\" --username \"vcenter user name\" --password \"vcenter password\"                --resource-group \"resource group name\" --location \"location name\" --name \"vcenter name\""
+            ]
+        },
+        {
+            "name": "az connectedvmware vcenter delete",
+            "summary": "Delete vcenter resource.",
+            "syntax": "az connectedvmware vcenter delete [--force]\n                                  [--ids]\n                                  [--name]\n                                  [--no-wait]\n                                  [--resource-group]\n                                  [--subscription]\n                                  [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--force",
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az connectedvmware vcenter delete --ids \"resource id\" --name \"vcenter name\"                --resource-group \"resource group name\" --subscription \"Name or ID of subscription\""
+            ]
+        },
+        {
+            "name": "az connectedvmware vcenter list",
+            "summary": "Retrieve a list of vcenter resource of given resource group.",
+            "syntax": "az connectedvmware vcenter list [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az connectedvmware vcenter list --resource-group \"resource group name\""
+            ]
+        },
+        {
+            "name": "az connectedvmware vcenter show",
+            "summary": "Get details of a vcenter resource by id, resource-group, vcenter name or subscription.",
+            "syntax": "az connectedvmware vcenter show [--ids]\n                                [--name]\n                                [--resource-group]\n                                [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az connectedvmware vcenter show --ids \"resource id\" --name \"vcenter name\"                    --resource-group \"resource group name\" --subscription \"Name or ID of subscription\""
+            ]
+        }
+    ]
+}

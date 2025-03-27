@@ -1,0 +1,59 @@
+{
+    "command_group": "az billing invoice",
+    "description": "Manage invoice.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az billing invoice download",
+            "summary": "Get URL to download invoice.",
+            "syntax": "az billing invoice download [--account-name]\n                            [--download-token]\n                            [--download-urls]\n                            [--invoice-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account-name",
+                "--download-token",
+                "--download-urls",
+                "--invoice-name"
+            ],
+            "examples": [
+                "az billing invoice download --account-name \"{billingAccountName}\" --invoice-name \"{invoiceName}\" --download-token \"{downloadToken}\"",
+                "az billing invoice download --account-name \"{billingAccountName}\" --download-urls \"{ListOfDownloadURLs}\"",
+                "az billing invoice download --download-urls \"{ListOfDownloadURLs}\"",
+                "az billing invoice download --invoice-name \"{invoiceName}\" --download-token \"{downloadToken}\""
+            ]
+        },
+        {
+            "name": "az billing invoice list",
+            "summary": "List the invoices for a subscription.",
+            "syntax": "az billing invoice list --period-end-date\n                        --period-start-date\n                        [--account-name]\n                        [--profile-name]",
+            "required_parameters": [
+                "--period-end-date",
+                "--period-start-date"
+            ],
+            "optional_parameters": [
+                "--account-name",
+                "--profile-name"
+            ],
+            "examples": [
+                "az billing invoice list --account-name \"{billingAccountName}\" --profile-name \"{billingProfileName}\" --period-end-date \"2018-06-30\" --period-start-date \"2018-01-01\"",
+                "az billing invoice list --account-name \"{billingAccountName}\" --profile-name \"{billingProfileName}\" --period-end-date \"2018-06-30\" --period-start-date \"2018-01-01\""
+            ]
+        },
+        {
+            "name": "az billing invoice show",
+            "summary": "Get an invoice. The operation is supported for billing accounts with agreement type Microsoft Partner Agreement or Microsoft Customer Agreement.",
+            "syntax": "az billing invoice show --name\n                        [--account-name]\n                        [--by-subscription]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--account-name",
+                "--by-subscription"
+            ],
+            "examples": [
+                "az billing invoice show --account-name \"{billingAccountName}\" --name \"{invoiceName}\"",
+                "az billing invoice show --name \"{invoiceName}\"",
+                "az billing invoice show --name \"{invoiceName}\" --by-subscription"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,138 @@
+{
+    "command_group": "az network private-endpoint",
+    "description": "Manage private endpoints.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az network private-endpoint create",
+            "summary": "Create a private endpoint.",
+            "syntax": "az network private-endpoint create --connection-name\n                                   --name\n                                   --private-connection-resource-id\n                                   --resource-group\n                                   --subnet\n                                   [--asg]\n                                   [--edge-zone]\n                                   [--group-id]\n                                   [--ip-config]\n                                   [--location]\n                                   [--manual-request {0, 1, f, false, n, no, t, true, y, yes}]\n                                   [--nic-name]\n                                   [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                   [--request-message]\n                                   [--tags]\n                                   [--vnet-name]",
+            "required_parameters": [
+                "--connection-name",
+                "--name -n",
+                "--private-connection-resource-id",
+                "--resource-group -g",
+                "--subnet"
+            ],
+            "optional_parameters": [
+                "--asg --asgs",
+                "--edge-zone",
+                "--group-id --group-ids",
+                "--ip-config --ip-configs",
+                "--location -l",
+                "--manual-request",
+                "--nic-name",
+                "--no-wait",
+                "--request-message",
+                "--tags",
+                "--vnet-name"
+            ],
+            "examples": [
+                "az network private-endpoint create -g MyResourceGroup -n MyPE --vnet-name MyVnetName --subnet MySubnet --private-connection-resource-id \"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/MyResourceGroup/providers/Microsoft.Network/privateLinkServices/MyPLS\" --connection-name tttt -l centralus",
+                "az network private-endpoint create -n MyPE -g MyResourceGroup --vnet-name MyVnetName --subnet MySubnet --connection-name MyConnectionName --group-id MyGroupId --private-connection-resource-id MyResourceId --asg id=MyAsgId --asg id=MyAsgId",
+                "az network private-endpoint create -n MyPE -g MyResourceGroup --vnet-name MyVnetName --subnet MySubnet --connection-name MyConnectionName --group-id MyGroupId --private-connection-resource-id MyResourceId --ip-configs [{name:Myipconfig1,group-id:MyGroupId ,member-name:MyMemberName,private-ip-address:10.0.0.4},{name:Myipconfig2,private-ip-address:10.0.0.6}]"
+            ]
+        },
+        {
+            "name": "az network private-endpoint delete",
+            "summary": "Delete a private endpoint.",
+            "syntax": "az network private-endpoint delete [--ids]\n                                   [--name]\n                                   [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                   [--resource-group]\n                                   [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az network private-endpoint delete --name MyPrivateEndpoint --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az network private-endpoint list",
+            "summary": "List private endpoints.",
+            "syntax": "az network private-endpoint list [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az network private-endpoint list -g MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az network private-endpoint list-types",
+            "summary": "Returns all of the resource types that can be linked to a Private Endpoint in this subscription in this region.",
+            "syntax": "az network private-endpoint list-types [--location]\n                                       [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--location -l",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az network private-endpoint list-types -l centralus"
+            ]
+        },
+        {
+            "name": "az network private-endpoint show",
+            "summary": "Get the details of a private endpoint.",
+            "syntax": "az network private-endpoint show [--expand]\n                                 [--ids]\n                                 [--name]\n                                 [--resource-group]\n                                 [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--expand",
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az network private-endpoint show --name MyPrivateEndpoint --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az network private-endpoint update",
+            "summary": "Update a private endpoint.",
+            "syntax": "az network private-endpoint update [--add]\n                                   [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                   [--ids]\n                                   [--name]\n                                   [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                   [--remove]\n                                   [--request-message]\n                                   [--resource-group]\n                                   [--set]\n                                   [--subscription]\n                                   [--tags]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--force-string",
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--remove",
+                "--request-message",
+                "--resource-group -g",
+                "--set",
+                "--subscription",
+                "--tags"
+            ],
+            "examples": [
+                "az network private-endpoint update -g MyResourceGroup -n MyPE --request-message \"test\" --tags mytag=hello",
+                "az network private-endpoint update --name MyPE --resource-group MyResourceGroup --set useRemoteGateways=true"
+            ]
+        },
+        {
+            "name": "az network private-endpoint wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az network private-endpoint wait [--created]\n                                 [--custom]\n                                 [--deleted]\n                                 [--exists]\n                                 [--expand]\n                                 [--ids]\n                                 [--interval]\n                                 [--name]\n                                 [--resource-group]\n                                 [--subscription]\n                                 [--timeout]\n                                 [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--expand",
+                "--ids",
+                "--interval",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

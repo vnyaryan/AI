@@ -1,0 +1,54 @@
+{
+    "command_group": "az support in-subscription communication",
+    "description": "Manage support ticket communications.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az support in-subscription communication create",
+            "summary": "Adds a new customer communication to an Azure support ticket.",
+            "syntax": "az support in-subscription communication create --communication-body\n                                                --communication-name\n                                                --communication-subject\n                                                --ticket-name\n                                                [--communication-sender]\n                                                [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]",
+            "required_parameters": [
+                "--communication-body",
+                "--communication-name",
+                "--communication-subject",
+                "--ticket-name"
+            ],
+            "optional_parameters": [
+                "--communication-sender",
+                "--no-wait"
+            ],
+            "examples": [
+                "az support in-subscription communication create  --ticket-name \"TestTicketName \"--communication-name \"TestTicketCommunicationName\" --communication-body \"TicketCommunicationBody\" --communication-subject \"TicketCommunicationSubject\""
+            ]
+        },
+        {
+            "name": "az support in-subscription communication list",
+            "summary": "List all communications (attachments not included) for a support ticket. <br/></br> You can also filter support ticket communications by _CreatedDate_ or _CommunicationType_ using the $filter parameter. The only type of communication supported today is _Web_. Output will be a paged result with _nextLink_, using which you can retrieve the next set of Communication results. <br/><br/>Support ticket data is available for 18 months after ticket creation. If a ticket was created more than 18 months ago, a request for data might cause an error.",
+            "syntax": "az support in-subscription communication list --ticket-name\n                                              [--filter]\n                                              [--max-items]\n                                              [--next-token]",
+            "required_parameters": [
+                "--ticket-name"
+            ],
+            "optional_parameters": [
+                "--filter",
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az support in-subscription communication list --ticket-name \"TestTicketName\" --filter \"CreatedDate ge 2024-01-01\""
+            ]
+        },
+        {
+            "name": "az support in-subscription communication show",
+            "summary": "Get communication details for a support ticket.",
+            "syntax": "az support in-subscription communication show --communication-name\n                                              --ticket-name",
+            "required_parameters": [
+                "--communication-name",
+                "--ticket-name"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az support in-subscription communication show --ticket-name \"TestTicketName\" --communication-name \"TestTicketCommunicationName\""
+            ]
+        }
+    ]
+}

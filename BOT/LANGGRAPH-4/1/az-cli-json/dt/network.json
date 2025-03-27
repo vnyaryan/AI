@@ -1,0 +1,6 @@
+{
+    "command_group": "az dt network",
+    "description": "Manage Digital Twins network configuration including private links and endpoint connections.",
+    "status": "GA",
+    "commands": []
+}

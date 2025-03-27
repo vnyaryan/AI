@@ -1,0 +1,45 @@
+{
+    "command_group": "az monitor log-analytics workspace table search-job",
+    "description": "Manage tables for log analytics workspace search results table.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az monitor log-analytics workspace table search-job cancel",
+            "summary": "Cancel a log analytics workspace search results table query run.",
+            "syntax": "az monitor log-analytics workspace table search-job cancel [--ids]\n                                                           [--name]\n                                                           [--resource-group]\n                                                           [--subscription]\n                                                           [--workspace-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --table-name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--workspace-name"
+            ],
+            "examples": [
+                "az monitor log-analytics workspace table search-job cancel --resource-group MyResourceGroup --workspace-name MyWorkspace -n MyTable_SRCH"
+            ]
+        },
+        {
+            "name": "az monitor log-analytics workspace table search-job create",
+            "summary": "Create a Log Analytics workspace search results table. The table name needs to end with '_SRCH'.",
+            "syntax": "az monitor log-analytics workspace table search-job create --end-search-time\n                                                           --name\n                                                           --resource-group\n                                                           --search-query\n                                                           --start-search-time\n                                                           --workspace-name\n                                                           [--limit]\n                                                           [--no-wait]\n                                                           [--retention-time]\n                                                           [--total-retention-time]",
+            "required_parameters": [
+                "--end-search-time",
+                "--name -n",
+                "--resource-group -g",
+                "--search-query",
+                "--start-search-time",
+                "--workspace-name"
+            ],
+            "optional_parameters": [
+                "--limit",
+                "--no-wait",
+                "--retention-time",
+                "--total-retention-time"
+            ],
+            "examples": [
+                "az monitor log-analytics workspace table search-job create --resource-group MyResourceGroup --workspace-name MyWorkspace -n MyTable_SRCH --retention-time 45 --search-query \"Heartbeat | where SourceSystem != '' | project SourceSystem\" --limit 1000 --start-search-time \"Sat, 28 Aug 2021 05:29:18 GMT\" --end-search-time \"Sat, 28 Aug 2021 08:29:18 GMT\""
+            ]
+        }
+    ]
+}

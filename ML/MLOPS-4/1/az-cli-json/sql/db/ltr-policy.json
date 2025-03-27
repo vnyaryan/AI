@@ -1,0 +1,45 @@
+{
+    "command_group": "az sql db ltr-policy",
+    "description": "Manage SQL database long term retention policy.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az sql db ltr-policy set",
+            "summary": "Update long term retention settings for a database.",
+            "syntax": "az sql db ltr-policy set [--access-tier {Archive, Hot}]\n                         [--ids]\n                         [--make-backups-immutable {false, true}]\n                         [--monthly-retention]\n                         [--name]\n                         [--resource-group]\n                         [--server]\n                         [--subscription]\n                         [--week-of-year]\n                         [--weekly-retention]\n                         [--yearly-retention]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--access-tier --backup-storage-access-tier",
+                "--ids",
+                "--make-backups-immutable",
+                "--monthly-retention",
+                "--name -n",
+                "--resource-group -g",
+                "--server -s",
+                "--subscription",
+                "--week-of-year",
+                "--weekly-retention",
+                "--yearly-retention"
+            ],
+            "examples": [
+                "az sql db ltr-policy set -g mygroup -s myserver -n mydb --weekly-retention \"P1W\" --monthly-retention \"P6M\" --yearly-retention \"P1Y\" --week-of-year 26 --access-tier \"Archive\" --make-backups-immutable true"
+            ]
+        },
+        {
+            "name": "az sql db ltr-policy show",
+            "summary": "Show the long term retention policy for a database.",
+            "syntax": "az sql db ltr-policy show [--ids]\n                          [--name]\n                          [--resource-group]\n                          [--server]\n                          [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--server -s",
+                "--subscription"
+            ],
+            "examples": [
+                "az sql db ltr-policy show -g mygroup -s myserver -n mydb"
+            ]
+        }
+    ]
+}

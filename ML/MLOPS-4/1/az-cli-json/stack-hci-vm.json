@@ -1,0 +1,200 @@
+{
+    "command_group": "az stack-hci-vm",
+    "description": "Manage virtualmachine with stack-hci-vm.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az stack-hci-vm create",
+            "summary": "Create a VM.",
+            "syntax": "az stack-hci-vm create --custom-location\n                       --name\n                       --resource-group\n                       [--admin-password]\n                       [--admin-username]\n                       [--attach-data-disks]\n                       [--authentication-type {all, password, ssh}]\n                       [--computer-name]\n                       [--enable-agent {false, true}]\n                       [--enable-secure-boot {false, true}]\n                       [--enable-vm-config-agent {false, true}]\n                       [--enable-vtpm {false, true}]\n                       [--gpu-dda-count]\n                       [--gpu-p-count]\n                       [--gpus]\n                       [--image]\n                       [--location]\n                       [--nics]\n                       [--os-disk-name]\n                       [--os-type {linux, windows}]\n                       [--polling-interval]\n                       [--proxy-configuration]\n                       [--security-type {ConfidentialVM, TrustedLaunch}]\n                       [--size]\n                       [--ssh-dest-key-path]\n                       [--ssh-key-values]\n                       [--storage-path-id]\n                       [--tags]",
+            "required_parameters": [
+                "--custom-location",
+                "--name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--admin-password",
+                "--admin-username",
+                "--attach-data-disks",
+                "--authentication-type",
+                "--computer-name",
+                "--enable-agent",
+                "--enable-secure-boot",
+                "--enable-vm-config-agent",
+                "--enable-vtpm",
+                "--gpu-dda-count",
+                "--gpu-p-count",
+                "--gpus",
+                "--image",
+                "--location -l",
+                "--nics",
+                "--os-disk-name",
+                "--os-type",
+                "--polling-interval",
+                "--proxy-configuration",
+                "--security-type",
+                "--size",
+                "--ssh-dest-key-path",
+                "--ssh-key-values",
+                "--storage-path-id",
+                "--tags"
+            ],
+            "examples": [
+                "az stack-hci-vm create --resource-group \"test-rg\" --custom-location \"/subscriptions/a95612cb-f1fa-4daa-a4fd-272844fa512c/resourceGroups/dogfoodarc/providers/Microsoft.ExtendedLocatio n/customLocations/dogfood-location\" --location \"West US2\" --size \"Default\" --nics \"test-nic\" --computer-name \"test-machine\" --admin-username xxx --admin-password xxx --image \"test-gallery-image\" --storage-path-id \"/subscriptions/a95612cb-f1fa-4daa-a4fd-272844fa512c/resourceGroups/dogfoodarc/providers/Microsoft.AzureStackHCI/storagecontainers/test-storagepath\" --name \"test-vm\" --authentication-type all --enable-agent true --ssh-key-values @key-file"
+            ]
+        },
+        {
+            "name": "az stack-hci-vm delete",
+            "summary": "Delete a VM.",
+            "syntax": "az stack-hci-vm delete [--ids]\n                       [--name]\n                       [--polling-interval]\n                       [--resource-group]\n                       [--subscription]\n                       [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name",
+                "--polling-interval",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az stack-hci-vm delete --resource-group \"test-rg\" --name \"test-vm\""
+            ]
+        },
+        {
+            "name": "az stack-hci-vm list",
+            "summary": "List all the VMs.",
+            "syntax": "az stack-hci-vm list [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az stack-hci-vm list --resource-group \"test-rg\"",
+                "az stack-hci-vm list"
+            ]
+        },
+        {
+            "name": "az stack-hci-vm pause",
+            "summary": "Pause a VM.",
+            "syntax": "az stack-hci-vm pause [--ids]\n                      [--name]\n                      [--polling-interval]\n                      [--resource-group]\n                      [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name",
+                "--polling-interval",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az stack-hci-vm pause --resource-group \"test-rg\" --name \"test-vm\""
+            ]
+        },
+        {
+            "name": "az stack-hci-vm restart",
+            "summary": "Restart a VM.",
+            "syntax": "az stack-hci-vm restart [--ids]\n                        [--name]\n                        [--polling-interval]\n                        [--resource-group]\n                        [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name",
+                "--polling-interval",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az stack-hci-vm restart --resource-group \"test-rg\" --name \"test-vm\""
+            ]
+        },
+        {
+            "name": "az stack-hci-vm save",
+            "summary": "Save a VM.",
+            "syntax": "az stack-hci-vm save [--ids]\n                     [--name]\n                     [--polling-interval]\n                     [--resource-group]\n                     [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name",
+                "--polling-interval",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az stack-hci-vm save --resource-group \"test-rg\" --name \"test-vm\""
+            ]
+        },
+        {
+            "name": "az stack-hci-vm show",
+            "summary": "Get the details of a VM.",
+            "syntax": "az stack-hci-vm show [--ids]\n                     [--name]\n                     [--resource-group]\n                     [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az stack-hci-vm show --resource-group \"test-rg\" --name \"test-vm\""
+            ]
+        },
+        {
+            "name": "az stack-hci-vm start",
+            "summary": "Start a stopped VM.",
+            "syntax": "az stack-hci-vm start [--ids]\n                      [--name]\n                      [--polling-interval]\n                      [--resource-group]\n                      [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name",
+                "--polling-interval",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az stack-hci-vm start --resource-group \"test-rg\" --name \"test-vm\""
+            ]
+        },
+        {
+            "name": "az stack-hci-vm stop",
+            "summary": "Power off (stop) a running VM.",
+            "syntax": "az stack-hci-vm stop [--ids]\n                     [--name]\n                     [--polling-interval]\n                     [--resource-group]\n                     [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name",
+                "--polling-interval",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az stack-hci-vm stop --resource-group \"test-rg\" --name \"test-vm\""
+            ]
+        },
+        {
+            "name": "az stack-hci-vm update",
+            "summary": "Update a VM.",
+            "syntax": "az stack-hci-vm update [--add]\n                       [--computer-name]\n                       [--enable-agent {false, true}]\n                       [--enable-vm-config-agent {false, true}]\n                       [--force-string]\n                       [--ids]\n                       [--memory-mb]\n                       [--name]\n                       [--nics]\n                       [--polling-interval]\n                       [--remove]\n                       [--resource-group]\n                       [--set]\n                       [--subscription]\n                       [--tags]\n                       [--v-cpus-available]\n                       [--vhds]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--computer-name",
+                "--enable-agent",
+                "--enable-vm-config-agent",
+                "--force-string",
+                "--ids",
+                "--memory-mb",
+                "--name",
+                "--nics",
+                "--polling-interval",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--subscription",
+                "--tags",
+                "--v-cpus-available",
+                "--vhds"
+            ],
+            "examples": [
+                "az stack-hci-vm update --resource-group \"test-rg\" --tags additionalProperties=\"sample\" --name \"test-vm\" --v-cpus-available XX --memory-mb XX"
+            ]
+        }
+    ]
+}

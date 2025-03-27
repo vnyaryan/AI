@@ -1,0 +1,43 @@
+{
+    "command_group": "az mysql server-logs",
+    "description": "Manage server logs.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az mysql server-logs download",
+            "summary": "Download log files.",
+            "syntax": "az mysql server-logs download --name\n                              [--ids]\n                              [--resource-group]\n                              [--server-name]\n                              [--subscription]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--resource-group -g",
+                "--server-name -s",
+                "--subscription"
+            ],
+            "examples": [
+                "az mysql server-logs download -g testgroup -s testsvr -n f1.log f2.log"
+            ]
+        },
+        {
+            "name": "az mysql server-logs list",
+            "summary": "List log files for a server.",
+            "syntax": "az mysql server-logs list --resource-group\n                          --server-name\n                          [--file-last-written]\n                          [--filename-contains]\n                          [--max-file-size]",
+            "required_parameters": [
+                "--resource-group -g",
+                "--server-name -s"
+            ],
+            "optional_parameters": [
+                "--file-last-written",
+                "--filename-contains",
+                "--max-file-size"
+            ],
+            "examples": [
+                "az mysql server-logs list -g testgroup -s testsvr",
+                "az mysql server-logs list -g testgroup -s testsvr --file-last-written 10",
+                "az mysql server-logs list -g testgroup -s testsvr --max-file-size 30"
+            ]
+        }
+    ]
+}

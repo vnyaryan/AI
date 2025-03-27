@@ -1,0 +1,79 @@
+{
+    "command_group": "az iot central file-upload-config",
+    "description": "Manage and configure IoT Central file upload.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az iot central file-upload-config create",
+            "summary": "Create file upload storage account configuration.",
+            "syntax": "az iot central file-upload-config create --app-id\n                                         --connection-string\n                                         --container\n                                         [--account]\n                                         [--api-version {2022-07-31}]\n                                         [--central-api-uri]\n                                         [--sas-ttl]\n                                         [--token]",
+            "required_parameters": [
+                "--app-id -n",
+                "--connection-string -s",
+                "--container -c"
+            ],
+            "optional_parameters": [
+                "--account -a",
+                "--api-version --av",
+                "--central-api-uri --central-dns-suffix",
+                "--sas-ttl",
+                "--token"
+            ],
+            "examples": [
+                "az iot central file-upload-config create --app-id {appid} --connection-string {conn_string} --container {container}"
+            ]
+        },
+        {
+            "name": "az iot central file-upload-config delete",
+            "summary": "Delete file upload storage account configuration.",
+            "syntax": "az iot central file-upload-config delete --app-id\n                                         [--api-version {2022-07-31}]\n                                         [--central-api-uri]\n                                         [--token]",
+            "required_parameters": [
+                "--app-id -n"
+            ],
+            "optional_parameters": [
+                "--api-version --av",
+                "--central-api-uri --central-dns-suffix",
+                "--token"
+            ],
+            "examples": [
+                "az iot central file-upload-config delete --app-id {appid}"
+            ]
+        },
+        {
+            "name": "az iot central file-upload-config show",
+            "summary": "Get the details of file upload storage account configuration.",
+            "syntax": "az iot central file-upload-config show --app-id\n                                       [--api-version {2022-07-31}]\n                                       [--central-api-uri]\n                                       [--token]",
+            "required_parameters": [
+                "--app-id -n"
+            ],
+            "optional_parameters": [
+                "--api-version --av",
+                "--central-api-uri --central-dns-suffix",
+                "--token"
+            ],
+            "examples": [
+                "az iot central file-upload-config show --app-id {appid}"
+            ]
+        },
+        {
+            "name": "az iot central file-upload-config update",
+            "summary": "Update file upload storage account configuration.",
+            "syntax": "az iot central file-upload-config update --app-id\n                                         [--account]\n                                         [--api-version {2022-07-31}]\n                                         [--central-api-uri]\n                                         [--connection-string]\n                                         [--container]\n                                         [--sas-ttl]\n                                         [--token]",
+            "required_parameters": [
+                "--app-id -n"
+            ],
+            "optional_parameters": [
+                "--account -a",
+                "--api-version --av",
+                "--central-api-uri --central-dns-suffix",
+                "--connection-string -s",
+                "--container -c",
+                "--sas-ttl",
+                "--token"
+            ],
+            "examples": [
+                "az iot central file-upload-config update --app-id {appid} --container {container}"
+            ]
+        }
+    ]
+}

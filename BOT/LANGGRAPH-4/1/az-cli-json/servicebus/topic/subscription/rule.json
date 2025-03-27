@@ -1,0 +1,126 @@
+{
+    "command_group": "az servicebus topic subscription rule",
+    "description": "Servicebus topic subscription rule.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az servicebus topic subscription rule create",
+            "summary": "Create the ServiceBus Rule for Subscription.",
+            "syntax": "az servicebus topic subscription rule create --name\n                                             --namespace-name\n                                             --resource-group\n                                             --subscription-name\n                                             --topic-name\n                                             [--action-compatibility-level]\n                                             [--action-sql-expression]\n                                             [--content-type]\n                                             [--correlation-filter]\n                                             [--correlation-id]\n                                             [--enable-action-preprocessing {false, true}]\n                                             [--enable-correlation-preprocessing {false, true}]\n                                             [--enable-sql-preprocessing {false, true}]\n                                             [--filter-sql-expression]\n                                             [--filter-type {CorrelationFilter, SqlFilter}]\n                                             [--label]\n                                             [--message-id]\n                                             [--no-wait]\n                                             [--reply-to]\n                                             [--reply-to-session-id]\n                                             [--session-id]\n                                             [--to]",
+            "required_parameters": [
+                "--name -n",
+                "--namespace-name",
+                "--resource-group -g",
+                "--subscription-name",
+                "--topic-name"
+            ],
+            "optional_parameters": [
+                "--action-compatibility-level",
+                "--action-sql-expression",
+                "--content-type",
+                "--correlation-filter --correlation-filter-property",
+                "--correlation-id",
+                "--enable-action-preprocessing",
+                "--enable-correlation-preprocessing",
+                "--enable-sql-preprocessing",
+                "--filter-sql-expression",
+                "--filter-type",
+                "--label",
+                "--message-id",
+                "--no-wait",
+                "--reply-to",
+                "--reply-to-session-id",
+                "--session-id",
+                "--to"
+            ],
+            "examples": [
+                "az servicebus topic subscription rule create --resource-group myresourcegroup --namespace-name mynamespace --topic-name mytopic --subscription-name mysubscription --name myrule --filter-sql-expression myproperty=myvalue"
+            ]
+        },
+        {
+            "name": "az servicebus topic subscription rule delete",
+            "summary": "Delete an existing rule.",
+            "syntax": "az servicebus topic subscription rule delete [--ids]\n                                             [--name]\n                                             [--namespace-name]\n                                             [--resource-group]\n                                             [--subscription]\n                                             [--subscription-name]\n                                             [--topic-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --rule-name -n",
+                "--namespace-name",
+                "--resource-group -g",
+                "--subscription",
+                "--subscription-name",
+                "--topic-name"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az servicebus topic subscription rule list",
+            "summary": "List all the rules within given topic-subscription.",
+            "syntax": "az servicebus topic subscription rule list --namespace-name\n                                           --resource-group\n                                           --subscription-name\n                                           --topic-name\n                                           [--skip]\n                                           [--top]",
+            "required_parameters": [
+                "--namespace-name",
+                "--resource-group -g",
+                "--subscription-name",
+                "--topic-name"
+            ],
+            "optional_parameters": [
+                "--skip",
+                "--top"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az servicebus topic subscription rule show",
+            "summary": "Get the description for the specified rule.",
+            "syntax": "az servicebus topic subscription rule show [--ids]\n                                           [--name]\n                                           [--namespace-name]\n                                           [--resource-group]\n                                           [--subscription]\n                                           [--subscription-name]\n                                           [--topic-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --rule-name -n",
+                "--namespace-name",
+                "--resource-group -g",
+                "--subscription",
+                "--subscription-name",
+                "--topic-name"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az servicebus topic subscription rule update",
+            "summary": "Update a new rule and updates an existing rule.",
+            "syntax": "az servicebus topic subscription rule update [--action-compatibility-level]\n                                             [--action-preprocessing {0, 1, f, false, n, no, t, true, y, yes}]\n                                             [--action-sql-expression]\n                                             [--add]\n                                             [--compatibility-level]\n                                             [--content-type]\n                                             [--correlation-id]\n                                             [--enable-correlation-preprocessing {0, 1, f, false, n, no, t, true, y, yes}]\n                                             [--enable-sql-preprocessing {0, 1, f, false, n, no, t, true, y, yes}]\n                                             [--filter-sql-expression]\n                                             [--filter-type {CorrelationFilter, SqlFilter}]\n                                             [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                             [--ids]\n                                             [--label]\n                                             [--message-id]\n                                             [--name]\n                                             [--namespace-name]\n                                             [--properties]\n                                             [--remove]\n                                             [--reply-to]\n                                             [--reply-to-session-id]\n                                             [--resource-group]\n                                             [--session-id]\n                                             [--set]\n                                             [--subscription]\n                                             [--subscription-name]\n                                             [--to]\n                                             [--topic-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--action-compatibility-level",
+                "--action-preprocessing --enable-action-preprocessing",
+                "--action-sql-expression",
+                "--add",
+                "--compatibility-level",
+                "--content-type",
+                "--correlation-id",
+                "--enable-correlation-preprocessing --requires-preprocessing",
+                "--enable-sql-preprocessing -f",
+                "--filter-sql-expression --sql-expression",
+                "--filter-type",
+                "--force-string",
+                "--ids",
+                "--label",
+                "--message-id",
+                "--name --rule-name -n",
+                "--namespace-name",
+                "--properties",
+                "--remove",
+                "--reply-to",
+                "--reply-to-session-id",
+                "--resource-group -g",
+                "--session-id",
+                "--set",
+                "--subscription",
+                "--subscription-name",
+                "--to",
+                "--topic-name"
+            ],
+            "examples": []
+        }
+    ]
+}

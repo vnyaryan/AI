@@ -1,0 +1,253 @@
+{
+    "command_group": "az sql mi",
+    "description": "Manage SQL managed instances.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az sql mi create",
+            "summary": "Create a managed instance.",
+            "syntax": "az sql mi create --name\n                 --resource-group\n                 --subnet\n                 [--admin-password]\n                 [--admin-user]\n                 [--am {AzureAD, Paired, Windows}]\n                 [--assign-identity]\n                 [--backup-storage-redundancy]\n                 [--capacity]\n                 [--collation]\n                 [--database-format {AlwaysUpToDate, SQLServer2022}]\n                 [--dns-zone-partner]\n                 [--edition]\n                 [--enable-ad-only-auth]\n                 [--external-admin-name]\n                 [--external-admin-principal-type]\n                 [--external-admin-sid]\n                 [--family]\n                 [--gpv2 {false, true}]\n                 [--identity-type {None, SystemAssigned, SystemAssigned,UserAssigned, UserAssigned}]\n                 [--instance-pool-name]\n                 [--iops]\n                 [--key-id]\n                 [--license-type {BasePrice, LicenseIncluded}]\n                 [--location]\n                 [--maint-config-id]\n                 [--minimal-tls-version {1.0, 1.1, 1.2, None}]\n                 [--no-wait]\n                 [--pid]\n                 [--pricing-model {Freemium, Regular}]\n                 [--proxy-override {Default, Proxy, Redirect}]\n                 [--public-data-endpoint-enabled {false, true}]\n                 [--service-principal-type {None, SystemAssigned}]\n                 [--storage]\n                 [--tags]\n                 [--timezone-id]\n                 [--user-assigned-identity-id]\n                 [--vnet-name]\n                 [--yes]\n                 [--zone-redundant {false, true}]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g",
+                "--subnet"
+            ],
+            "optional_parameters": [
+                "--admin-password -p",
+                "--admin-user -u",
+                "--am --authentication-metadata",
+                "--assign-identity -i",
+                "--backup-storage-redundancy --bsr",
+                "--capacity -c",
+                "--collation",
+                "--database-format",
+                "--dns-zone-partner",
+                "--edition --tier -e",
+                "--enable-ad-only-auth",
+                "--external-admin-name",
+                "--external-admin-principal-type",
+                "--external-admin-sid",
+                "--family -f",
+                "--gpv2",
+                "--identity-type -t",
+                "--instance-pool-name",
+                "--iops",
+                "--key-id -k",
+                "--license-type",
+                "--location -l",
+                "--maint-config-id -m",
+                "--minimal-tls-version",
+                "--no-wait",
+                "--pid --primary-user-assigned-identity-id",
+                "--pricing-model",
+                "--proxy-override",
+                "--public-data-endpoint-enabled",
+                "--service-principal-type",
+                "--storage",
+                "--tags",
+                "--timezone-id",
+                "--user-assigned-identity-id -a",
+                "--vnet-name",
+                "--yes -y",
+                "--zone-redundant -z"
+            ],
+            "examples": [
+                "az sql mi create -g mygroup -n myinstance -l mylocation -i -u myusername -p mypassword --subnet /subscriptions/{SubID}/resourceGroups/{ResourceGroup}/providers/Microsoft.Network/virtualNetworks/{VNETName}/subnets/{SubnetName}",
+                "az sql mi create -g mygroup -n myinstance -l mylocation -i -u myusername -p mypassword --license-type LicenseIncluded --subnet /subscriptions/{SubID}/resourceGroups/{ResourceGroup}/providers/Microsoft.Network/virtualNetworks/{VNETName}/subnets/{SubnetName} --capacity 8 --storage 32GB --edition GeneralPurpose --family Gen5",
+                "az sql mi create -g mygroup -n myinstance -l mylocation -i -u myusername -p mypassword --license-type LicenseIncluded --subnet /subscriptions/{SubID}/resourceGroups/{ResourceGroup}/providers/Microsoft.Network/virtualNetworks/{VNETName}/subnets/{SubnetName} --capacity 8 --storage 32GB --edition GeneralPurpose --family Gen5 --tags tagName1=tagValue1 tagName2=tagValue2",
+                "az sql mi create -g mygroup -n myinstance -l mylocation -i -u myusername -p mypassword --license-type LicenseIncluded --subnet /subscriptions/{SubID}/resourceGroups/{ResourceGroup}/providers/Microsoft.Network/virtualNetworks/{VNETName}/subnets/{SubnetName} --capacity 8 --storage 32GB --edition GeneralPurpose --family Gen5 --backup-storage-redundancy Local",
+                "az sql mi create -g mygroup -n myinstance -l mylocation -i -u myusername -p mypassword --subnet /subscriptions/{SubID}/resourceGroups/{ResourceGroup}/providers/Microsoft.Network/virtualNetworks/{VNETName}/subnets/{SubnetName} -m SQL_{Region}_{MaintenanceConfigName}",
+                "az sql mi create -g mygroup -n myinstance -l mylocation -i -u myusername -p mypassword --subnet /subscriptions/{SubID}/resourceGroups/{ResourceGroup}/providers/Microsoft.Network/virtualNetworks/{VNETName}/subnets/{SubnetName} --service-principal-type SystemAssigned",
+                "az sql mi create --enable-ad-only-auth --external-admin-principal-type User --external-admin-name myUserName --external-admin-sid c5e964e2-6bb2-2222-1111-3b16ec0e1234 -g myResourceGroup -n miName --subnet /subscriptions/78975f9f-2222-1111-1111-29c42ac70000/resourceGroups/myResourceGroup/providers/Microsoft.Network/virtualNetworks/vnet-test/subnets/ManagedInstance",
+                "az sql mi create --enable-ad-only-auth --external-admin-principal-type User --external-admin-name myUserName \\ --external-admin-sid c5e964e2-6bb2-1111-1111-3b16ec0e1234 -g myResourceGroup -n myServer -i \\ --user-assigned-identity-id /subscriptions/xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/myResourceGroup/providers/Microsoft.ManagedIdentity/userAssignedIdentities/testumi \\ --identity-type SystemAssigned,UserAssigned --pid /subscriptions/xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/myResourceGroup/providers/Microsoft.ManagedIdentity/userAssignedIdentities/testumi \\ --subnet /subscriptions/78975f9f-2222-1111-1111-29c42ac70000/resourceGroups/myResourceGroup/providers/Microsoft.Network/virtualNetworks/vnet-test/subnets/ManagedInstance",
+                "az sql mi create --enable-ad-only-auth --external-admin-principal-type User --external-admin-name myUserName \\ --external-admin-sid c5e964e2-6bb2-1111-1111-3b16ec0e1234 -g myResourceGroup -n myServer -i \\ --user-assigned-identity-id /subscriptions/xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/myResourceGroup/providers/Microsoft.ManagedIdentity/userAssignedIdentities/testumi \\ --identity-type UserAssigned --pid /subscriptions/xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/myResourceGroup/providers/Microsoft.ManagedIdentity/userAssignedIdentities/testumi \\ --subnet /subscriptions/78975f9f-2222-1111-1111-29c42ac70000/resourceGroups/myResourceGroup/providers/Microsoft.Network/virtualNetworks/vnet-test/subnets/ManagedInstance",
+                "az sql mi create -g mygroup -n myinstance -l mylocation -i -u myusername -p mypassword --subnet /subscriptions/{SubID}/resourceGroups/{ResourceGroup}/providers/Microsoft.Network/virtualNetworks/{VNETName}/subnets/{SubnetName} -z",
+                "az sql mi create -g mygroup -n myinstance -l mylocation -i -u myusername -p mypassword --subnet /subscriptions/{SubID}/resourceGroups/{ResourceGroup}/providers/Microsoft.Network/virtualNetworks/{VNETName}/subnets/{SubnetName} -z false",
+                "az sql mi create -g mygroup -n myinstance -l mylocation -i -u myusername -p mypassword --subnet /subscriptions/{SubID}/resourceGroups/{ResourceGroup}/providers/Microsoft.Network/virtualNetworks/{VNETName}/subnets/{SubnetName} --instance-pool-name myinstancepool",
+                "az sql mi create -g mygroup -n myinstance -l mylocation -i -u myusername -p mypassword --subnet /subscriptions/{SubID}/resourceGroups/{ResourceGroup}/providers/Microsoft.Network/virtualNetworks/{VNETName}/subnets/{SubnetName} --database-format AlwaysUpToDate --pricing-model Regular",
+                "az sql mi create -g mygroup -n myinstance -l mylocation -i -u myusername -p mypassword --subnet /subscriptions/{SubID}/resourceGroups/{ResourceGroup}/providers/Microsoft.Network/virtualNetworks/{VNETName}/subnets/{SubnetName} --dns-zone-partner dns",
+                "az sql mi create -g mygroup -n myinstance -l mylocation -i -u myusername -p mypassword --subnet /subscriptions/{SubID}/resourceGroups/{ResourceGroup}/providers/Microsoft.Network/virtualNetworks/{VNETName}/subnets/{SubnetName} --am Windows",
+                "az sql mi create -g mygroup -n myinstance -l mylocation -i -u myusername -p mypassword --subnet /subscriptions/{SubID}/resourceGroups/{ResourceGroup}/providers/Microsoft.Network/virtualNetworks/{VNETName}/subnets/{SubnetName} -e GeneralPurpose --gpv2 true -f Gen8IH -c 4 --storage 256GB --iops 3000"
+            ]
+        },
+        {
+            "name": "az sql mi delete",
+            "summary": "Delete a managed instance.",
+            "syntax": "az sql mi delete [--ids]\n                 [--name]\n                 [--no-wait]\n                 [--resource-group]\n                 [--subscription]\n                 [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az sql mi delete -g mygroup -n myinstance --yes"
+            ]
+        },
+        {
+            "name": "az sql mi failover",
+            "summary": "Failover a managed instance.",
+            "syntax": "az sql mi failover [--ids]\n                   [--name]\n                   [--no-wait]\n                   [--replica-type]\n                   [--resource-group]\n                   [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--replica-type",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az sql mi failover -g mygroup -n myinstance",
+                "az sql mi failover -g mygroup -n myinstance --replica-type ReadableSecondary"
+            ]
+        },
+        {
+            "name": "az sql mi list",
+            "summary": "List available managed instances.",
+            "syntax": "az sql mi list [--expand-ad-admin]\n               [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--expand-ad-admin",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az sql mi list",
+                "az sql mi list -g mygroup"
+            ]
+        },
+        {
+            "name": "az sql mi refresh-external-governance-status",
+            "summary": "Refresh external governance enablement status.",
+            "syntax": "az sql mi refresh-external-governance-status [--ids]\n                                             [--managed-instance-name]\n                                             [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                             [--resource-group]\n                                             [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--managed-instance-name --mi",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az sql mi refresh-external-governance-status --managed-instance-name managedInstance -g resourceGroup1 --subscription xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+            ]
+        },
+        {
+            "name": "az sql mi show",
+            "summary": "Get the details for a managed instance.",
+            "syntax": "az sql mi show [--expand-ad-admin]\n               [--ids]\n               [--name]\n               [--resource-group]\n               [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--expand-ad-admin",
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az sql mi show -g mygroup -n myinstance"
+            ]
+        },
+        {
+            "name": "az sql mi start",
+            "summary": "Start the managed instance.",
+            "syntax": "az sql mi start [--ids]\n                [--managed-instance]\n                [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                [--resource-group]\n                [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--managed-instance --mi",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az sql mi start --ids resourceId\naz sql mi start --mi miName -g resourceGroup --subscription subscription"
+            ]
+        },
+        {
+            "name": "az sql mi stop",
+            "summary": "Stop the managed instance.",
+            "syntax": "az sql mi stop [--ids]\n               [--managed-instance]\n               [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n               [--resource-group]\n               [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--managed-instance --mi",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az sql mi stop --ids resourceId\naz sql mi stop --mi miName -g resourceGroup --subscription subscription"
+            ]
+        },
+        {
+            "name": "az sql mi update",
+            "summary": "Update a managed instance.",
+            "syntax": "az sql mi update [--add]\n                 [--admin-password]\n                 [--am {AzureAD, Paired, Windows}]\n                 [--assign-identity]\n                 [--backup-storage-redundancy]\n                 [--capacity]\n                 [--database-format {AlwaysUpToDate, SQLServer2022}]\n                 [--edition]\n                 [--family]\n                 [--force-string]\n                 [--gpv2 {false, true}]\n                 [--identity-type {None, SystemAssigned, SystemAssigned,UserAssigned, UserAssigned}]\n                 [--ids]\n                 [--instance-pool-name]\n                 [--iops]\n                 [--key-id]\n                 [--license-type {BasePrice, LicenseIncluded}]\n                 [--maint-config-id]\n                 [--minimal-tls-version {1.0, 1.1, 1.2, None}]\n                 [--name]\n                 [--no-wait]\n                 [--pid]\n                 [--pricing-model {Freemium, Regular}]\n                 [--proxy-override {Default, Proxy, Redirect}]\n                 [--public-data-endpoint-enabled {false, true}]\n                 [--remove]\n                 [--resource-group]\n                 [--service-principal-type {None, SystemAssigned}]\n                 [--set]\n                 [--storage]\n                 [--subnet]\n                 [--subscription]\n                 [--tags]\n                 [--user-assigned-identity-id]\n                 [--vnet-name]\n                 [--yes]\n                 [--zone-redundant {false, true}]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--admin-password -p",
+                "--am --authentication-metadata",
+                "--assign-identity -i",
+                "--backup-storage-redundancy --bsr",
+                "--capacity -c",
+                "--database-format",
+                "--edition --tier -e",
+                "--family -f",
+                "--force-string",
+                "--gpv2",
+                "--identity-type -t",
+                "--ids",
+                "--instance-pool-name",
+                "--iops",
+                "--key-id -k",
+                "--license-type",
+                "--maint-config-id -m",
+                "--minimal-tls-version",
+                "--name -n",
+                "--no-wait",
+                "--pid --primary-user-assigned-identity-id",
+                "--pricing-model",
+                "--proxy-override",
+                "--public-data-endpoint-enabled",
+                "--remove",
+                "--resource-group -g",
+                "--service-principal-type",
+                "--set",
+                "--storage",
+                "--subnet",
+                "--subscription",
+                "--tags",
+                "--user-assigned-identity-id -a",
+                "--vnet-name",
+                "--yes -y",
+                "--zone-redundant -z"
+            ],
+            "examples": [
+                "az sql mi update -g mygroup -n myinstance -i -p mypassword --license-type mylicensetype --capacity vcorecapacity --storage storagesize",
+                "az sql mi update -g mygroup -n myinstance --tier GeneralPurpose --family Gen5",
+                "az sql mi update -g mygroup -n myinstance --set tags.tagName=tagValue",
+                "az sql mi update -g mygroup -n myinstance --remove tags.tagName",
+                "az sql mi update --name myinstance --proxy-override Default --resource-group mygroup --subscription MySubscription",
+                "az sql mi update --name myinstance --public-data-endpoint-enabled true --resource-group mygroup --subscription MySubscription",
+                "az sql mi update -g mygroup -n myinstance -m SQL_{Region}_{MaintenanceConfigName}",
+                "az sql mi update -g mygroup -n myinstance -m SQL_Default",
+                "az sql mi update -g mygroup -n myinstance --service-principal-type SystemAssigned",
+                "az sql mi update -g myResourceGroup -n myServer -i \\ --user-assigned-identity-id /subscriptions/xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/myResourceGroup/providers/Microsoft.ManagedIdentity/userAssignedIdentities/testumi \\ --identity-type SystemAssigned,UserAssigned --pid /subscriptions/xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/myResourceGroup/providers/Microsoft.ManagedIdentity/userAssignedIdentities/testumi",
+                "az sql mi update -g myResourceGroup -n myServer -i \\ --user-assigned-identity-id /subscriptions/xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/myResourceGroup/providers/Microsoft.ManagedIdentity/userAssignedIdentities/testumi \\ --identity-type UserAssigned --pid /subscriptions/xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/myResourceGroup/providers/Microsoft.ManagedIdentity/userAssignedIdentities/testumi",
+                "az sql mi update -g myResourceGroup -n myServer -i \\ --subnet /subscriptions/xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/myResourceGroup/providers/Microsoft.Network/virtualNetworks/myvnet/subnets/mysubnet \\",
+                "az sql mi update -g mygroup -n myinstance --bsr Local",
+                "az sql mi update -g mygroup -n myinstance -z",
+                "az sql mi update -g mygroup -n myinstance --instance-pool-name myinstancepool",
+                "az sql mi update -g mygroup -n myinstance --remove instancePoolId --capacity vcorecapacity",
+                "az sql mi update -g mygroup -n myinstance --database-format AlwaysUpToDate --pricing-model Regular",
+                "az sql mi update -g mygroup -n myinstance --am Windows",
+                "az sql mi update -g mygroup -n myinstance -e GeneralPurpose --gpv2 true --iops 3000"
+            ]
+        }
+    ]
+}

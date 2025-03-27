@@ -1,0 +1,43 @@
+{
+    "command_group": "az network virtual-appliance inbound-security-rule",
+    "description": "Manage Azure Network Virtual Appliance Inbound Security Rules.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az network virtual-appliance inbound-security-rule create",
+            "summary": "Create the specified Network Virtual Appliance Inbound Security Rules.",
+            "syntax": "az network virtual-appliance inbound-security-rule create --name\n                                                          --nva-name\n                                                          --resource-group\n                                                          [--id]\n                                                          [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                                          [--rule-type {AutoExpire, Permanent}]\n                                                          [--rules]",
+            "required_parameters": [
+                "--name --rule-collection-name -n",
+                "--nva-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--id",
+                "--no-wait",
+                "--rule-type",
+                "--rules"
+            ],
+            "examples": [
+                "az network virtual-appliance inbound-security-rule create  --network-virtual-appliance-name \"MyName\" -g \"MyRG\" --subscription {subID} --rule-type \"Permanent\" --name \"PermanentRuleCollection\" --rules \"[{name:'inboundRule',protocol:'TCP',destination-port-ranges:['80-120'],applies-on:['slbIP'],source-address-prefix:'*'}]\"",
+                "az network virtual-appliance inbound-security-rule create  --network-virtual-appliance-name \"MyName\" -g \"MyRG\" --subscription {subID} --rule-type \"AutoExpire\" --name \"TemporaryRuleCollection\" --rules \"[{name:'inboundRule',protocol:'TCP',destination-port-ranges:['80-120'],applies-on:['publicnicipconfig'],source-address-prefix:'20.0.0.0/32'}]\""
+            ]
+        },
+        {
+            "name": "az network virtual-appliance inbound-security-rule show",
+            "summary": "Get the available specified Network Virtual Appliance Inbound Security Rules Collection.",
+            "syntax": "az network virtual-appliance inbound-security-rule show [--ids]\n                                                        [--name]\n                                                        [--nva-name]\n                                                        [--resource-group]\n                                                        [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --rule-collection-name -n",
+                "--nva-name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az network virtual-appliance inbound-security-rule show --nva-name \"MyName\" -g \"MyRG\" --subscription {subID} --name \"InboundRuleCollection\""
+            ]
+        }
+    ]
+}

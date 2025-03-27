@@ -1,0 +1,62 @@
+{
+    "command_group": "az sf application-type",
+    "description": "Manage application types on an Azure Service Fabric cluster.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az sf application-type create",
+            "summary": "Create a new application type on an Azure Service Fabric cluster.",
+            "syntax": "az sf application-type create --application-type-name\n                              --cluster-name\n                              --resource-group",
+            "required_parameters": [
+                "--application-type-name --name",
+                "--cluster-name -c",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az sf application-type create -g testRG -c testCluster --application-type-name testAppType"
+            ]
+        },
+        {
+            "name": "az sf application-type delete",
+            "summary": "Delete an application type.",
+            "syntax": "az sf application-type delete --application-type-name\n                              --cluster-name\n                              --resource-group",
+            "required_parameters": [
+                "--application-type-name --name",
+                "--cluster-name -c",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az sf application-type delete -g testRG -c testCluster --application-type-name CalcServiceApp"
+            ]
+        },
+        {
+            "name": "az sf application-type list",
+            "summary": "List application types of a given cluster.",
+            "syntax": "az sf application-type list --cluster-name\n                            --resource-group",
+            "required_parameters": [
+                "--cluster-name -c",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az sf application-type list -g testRG -c testCluster"
+            ]
+        },
+        {
+            "name": "az sf application-type show",
+            "summary": "Show the properties of an application type on an Azure Service Fabric cluster.",
+            "syntax": "az sf application-type show --application-type-name\n                            --cluster-name\n                            --resource-group",
+            "required_parameters": [
+                "--application-type-name --name",
+                "--cluster-name -c",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az sf application-type show -g testRG -c testCluster --application-type-name CalcServiceApp"
+            ]
+        }
+    ]
+}

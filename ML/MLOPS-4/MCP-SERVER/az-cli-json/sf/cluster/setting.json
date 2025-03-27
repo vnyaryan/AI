@@ -1,0 +1,42 @@
+{
+    "command_group": "az sf cluster setting",
+    "description": "Manage a cluster's settings.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az sf cluster setting remove",
+            "summary": "Remove settings from a cluster.",
+            "syntax": "az sf cluster setting remove --cluster-name\n                             --resource-group\n                             [--parameter]\n                             [--section]\n                             [--settings-section]",
+            "required_parameters": [
+                "--cluster-name -c",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--parameter",
+                "--section",
+                "--settings-section --settings-section-description"
+            ],
+            "examples": [
+                "az sf cluster setting remove -g group-name -c cluster1 --section 'NamingService' --parameter 'MaxFileOperationTimeout'"
+            ]
+        },
+        {
+            "name": "az sf cluster setting set",
+            "summary": "Update the settings of a cluster.",
+            "syntax": "az sf cluster setting set --cluster-name\n                          --resource-group\n                          [--parameter]\n                          [--section]\n                          [--settings-section]\n                          [--value]",
+            "required_parameters": [
+                "--cluster-name -c",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--parameter",
+                "--section",
+                "--settings-section --settings-section-description",
+                "--value"
+            ],
+            "examples": [
+                "az sf cluster setting set -g group-name -c cluster1 --section 'NamingService' --parameter 'MaxFileOperationTimeout' --value 5000"
+            ]
+        }
+    ]
+}

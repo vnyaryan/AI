@@ -1,0 +1,115 @@
+{
+    "command_group": "az automation account",
+    "description": "Automation Account.",
+    "status": "Experimental",
+    "commands": [
+        {
+            "name": "az automation account create",
+            "summary": "Create automation account.",
+            "syntax": "az automation account create --automation-account-name\n                             --resource-group\n                             [--location]\n                             [--sku {Basic, Free}]\n                             [--tags]",
+            "required_parameters": [
+                "--automation-account-name --name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--location -l",
+                "--sku",
+                "--tags"
+            ],
+            "examples": [
+                "az automation account create --automation-account-name \"myAutomationAccount\" --location \"East US 2\"                --sku \"Free\" --resource-group \"rg\""
+            ]
+        },
+        {
+            "name": "az automation account delete",
+            "summary": "Delete an automation account.",
+            "syntax": "az automation account delete [--automation-account-name]\n                             [--ids]\n                             [--resource-group]\n                             [--subscription]\n                             [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--automation-account-name --name -n",
+                "--ids",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az automation account delete --name \"myAutomationAccount\" --resource-group \"rg\""
+            ]
+        },
+        {
+            "name": "az automation account list",
+            "summary": "Retrieve a list of accounts within a given resource group. And Retrieve a list of accounts within a given subscription.",
+            "syntax": "az automation account list [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az automation account list --resource-group \"rg\"",
+                "az automation account list"
+            ]
+        },
+        {
+            "name": "az automation account list-keys",
+            "summary": "Retrieve the automation keys for an account.",
+            "syntax": "az automation account list-keys [--automation-account-name]\n                                [--ids]\n                                [--resource-group]\n                                [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--automation-account-name --name -n",
+                "--ids",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az automation account list-keys --resource-group myResouceGroup --name myAutomationAccount"
+            ]
+        },
+        {
+            "name": "az automation account show",
+            "summary": "Get information about an Automation Account.",
+            "syntax": "az automation account show [--automation-account-name]\n                           [--ids]\n                           [--resource-group]\n                           [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--automation-account-name --name -n",
+                "--ids",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az automation account show --name \"myAutomationAccount\" --resource-group \"rg\""
+            ]
+        },
+        {
+            "name": "az automation account show-linked-workspace",
+            "summary": "Get the linked workspace for the account id.",
+            "syntax": "az automation account show-linked-workspace [--automation-account-name]\n                                            [--ids]\n                                            [--resource-group]\n                                            [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--automation-account-name --name -n",
+                "--ids",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az automation account show-linked-workspace --resource-group myResourceGroup --name myAutomationAccount"
+            ]
+        },
+        {
+            "name": "az automation account update",
+            "summary": "Update an automation account.",
+            "syntax": "az automation account update [--automation-account-name]\n                             [--ids]\n                             [--resource-group]\n                             [--sku {Basic, Free}]\n                             [--subscription]\n                             [--tags]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--automation-account-name --name -n",
+                "--ids",
+                "--resource-group -g",
+                "--sku",
+                "--subscription",
+                "--tags"
+            ],
+            "examples": [
+                "az automation account update --automation-account-name \"myAutomationAccount\" --tags KEY=VALUE                --resource-group \"rg\""
+            ]
+        }
+    ]
+}

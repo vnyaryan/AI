@@ -1,0 +1,56 @@
+{
+    "command_group": "az backup vault identity",
+    "description": "Identity details of a Recovery Services Vault.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az backup vault identity assign",
+            "summary": "Assign Identities to Recovery Services vault.",
+            "syntax": "az backup vault identity assign [--ids]\n                                [--name]\n                                [--resource-group]\n                                [--subscription]\n                                [--system-assigned]\n                                [--user-assigned]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--system-assigned",
+                "--user-assigned"
+            ],
+            "examples": [
+                "az backup vault identity assign --system-assigned --user-assigned MyIdentityId1 --resource-group MyResourceGroup --name MyVault"
+            ]
+        },
+        {
+            "name": "az backup vault identity remove",
+            "summary": "Remove Identities of Recovery Services vault.",
+            "syntax": "az backup vault identity remove [--ids]\n                                [--name]\n                                [--resource-group]\n                                [--subscription]\n                                [--system-assigned]\n                                [--user-assigned]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--system-assigned",
+                "--user-assigned"
+            ],
+            "examples": [
+                "az backup vault identity remove --system-assigned --user-assigned MyIdentityId1 --resource-group MyResourceGroup --name MyVault"
+            ]
+        },
+        {
+            "name": "az backup vault identity show",
+            "summary": "Show Identities of Recovery Services vault.",
+            "syntax": "az backup vault identity show [--ids]\n                              [--name]\n                              [--resource-group]\n                              [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az backup vault identity show --resource-group MyResourceGroup --name MyVault"
+            ]
+        }
+    ]
+}

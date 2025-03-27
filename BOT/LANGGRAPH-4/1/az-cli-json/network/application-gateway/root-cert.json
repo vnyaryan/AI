@@ -1,0 +1,110 @@
+{
+    "command_group": "az network application-gateway root-cert",
+    "description": "Manage trusted root certificates of an application gateway.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az network application-gateway root-cert create",
+            "summary": "Upload a trusted root certificate.",
+            "syntax": "az network application-gateway root-cert create --gateway-name\n                                                --name\n                                                --resource-group\n                                                [--cert-file]\n                                                [--keyvault-secret]\n                                                [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]",
+            "required_parameters": [
+                "--gateway-name",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--cert-file",
+                "--keyvault-secret",
+                "--no-wait"
+            ],
+            "examples": [
+                "az network application-gateway root-cert create --cert-file FilePath --gateway-name MyGateway --name MyTrustedRootCertificate --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az network application-gateway root-cert delete",
+            "summary": "Delete a trusted root certificate.",
+            "syntax": "az network application-gateway root-cert delete --gateway-name\n                                                --name\n                                                --resource-group\n                                                [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]",
+            "required_parameters": [
+                "--gateway-name",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--no-wait"
+            ],
+            "examples": [
+                "az network application-gateway root-cert delete -g MyResourceGroup --gateway-name MyAppGateway -n MyRootCert"
+            ]
+        },
+        {
+            "name": "az network application-gateway root-cert list",
+            "summary": "List trusted root certificates.",
+            "syntax": "az network application-gateway root-cert list --gateway-name\n                                              --resource-group",
+            "required_parameters": [
+                "--gateway-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az network application-gateway root-cert list -g MyResourceGroup --gateway-name MyAppGateway"
+            ]
+        },
+        {
+            "name": "az network application-gateway root-cert show",
+            "summary": "Get the details of a trusted root certificate.",
+            "syntax": "az network application-gateway root-cert show --gateway-name\n                                              --name\n                                              --resource-group",
+            "required_parameters": [
+                "--gateway-name",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az network application-gateway root-cert show -g MyResourceGroup --gateway-name MyAppGateway -n MyRootCert"
+            ]
+        },
+        {
+            "name": "az network application-gateway root-cert update",
+            "summary": "Update a trusted root certificate.",
+            "syntax": "az network application-gateway root-cert update --gateway-name\n                                                --name\n                                                --resource-group\n                                                [--add]\n                                                [--cert-file]\n                                                [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                                [--keyvault-secret]\n                                                [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                                [--remove]\n                                                [--set]",
+            "required_parameters": [
+                "--gateway-name",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--add",
+                "--cert-file",
+                "--force-string",
+                "--keyvault-secret",
+                "--no-wait",
+                "--remove",
+                "--set"
+            ],
+            "examples": [
+                "az network application-gateway root-cert update --cert-file FilePath --gateway-name MyGateway --name MyTrustedRootCertificate --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az network application-gateway root-cert wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az network application-gateway root-cert wait [--created]\n                                              [--custom]\n                                              [--deleted]\n                                              [--exists]\n                                              [--gateway-name]\n                                              [--ids]\n                                              [--interval]\n                                              [--resource-group]\n                                              [--subscription]\n                                              [--timeout]\n                                              [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--gateway-name",
+                "--ids",
+                "--interval",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

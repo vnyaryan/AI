@@ -1,0 +1,118 @@
+{
+    "command_group": "az oracle-database autonomous-database backup",
+    "description": "Autonomous Databases Backup.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az oracle-database autonomous-database backup create",
+            "summary": "Create a AutonomousDatabaseBackup.",
+            "syntax": "az oracle-database autonomous-database backup create --adbbackupid\n                                                     --autonomousdatabasename\n                                                     --resource-group\n                                                     [--display-name]\n                                                     [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                                     [--retention-days]",
+            "required_parameters": [
+                "--adbbackupid --name -n",
+                "--autonomousdatabasename",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--display-name",
+                "--no-wait",
+                "--retention-days --retention-period-in-days"
+            ],
+            "examples": [
+                "az oracle-database autonomous-database backup create --autonomousdatabasename <ADBS name> --resource-group <resource_group> --adbbackupid <id> --display-name <display name> --retention-period-in-days <days>"
+            ]
+        },
+        {
+            "name": "az oracle-database autonomous-database backup delete",
+            "summary": "Delete a AutonomousDatabaseBackup.",
+            "syntax": "az oracle-database autonomous-database backup delete [--adbbackupid]\n                                                     [--autonomousdatabasename]\n                                                     [--ids]\n                                                     [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                                     [--resource-group]\n                                                     [--subscription]\n                                                     [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--adbbackupid --name -n",
+                "--autonomousdatabasename",
+                "--ids",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az oracle-database autonomous-database backup delete --autonomousdatabasename <ADBS name> --resource-group <resource_group> --adbbackupid <id>"
+            ]
+        },
+        {
+            "name": "az oracle-database autonomous-database backup list",
+            "summary": "List AutonomousDatabaseBackup resources by AutonomousDatabase.",
+            "syntax": "az oracle-database autonomous-database backup list --autonomousdatabasename\n                                                   --resource-group\n                                                   [--max-items]\n                                                   [--next-token]",
+            "required_parameters": [
+                "--autonomousdatabasename",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az az oracle-database autonomous-database backup list --autonomousdatabasename <ADBS name> --resource-group <resource_group>"
+            ]
+        },
+        {
+            "name": "az oracle-database autonomous-database backup show",
+            "summary": "Get a AutonomousDatabaseBackup.",
+            "syntax": "az oracle-database autonomous-database backup show [--adbbackupid]\n                                                   [--autonomousdatabasename]\n                                                   [--ids]\n                                                   [--resource-group]\n                                                   [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--adbbackupid --name -n",
+                "--autonomousdatabasename",
+                "--ids",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az oracle-database autonomous-database backup show --autonomousdatabasename <ADBS name> --resource-group <resource_group> --adbbackupid <id>"
+            ]
+        },
+        {
+            "name": "az oracle-database autonomous-database backup update",
+            "summary": "Update a AutonomousDatabaseBackup.",
+            "syntax": "az oracle-database autonomous-database backup update [--adbbackupid]\n                                                     [--add]\n                                                     [--autonomousdatabasename]\n                                                     [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                                     [--ids]\n                                                     [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                                     [--remove]\n                                                     [--resource-group]\n                                                     [--retention-days]\n                                                     [--set]\n                                                     [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--adbbackupid --name -n",
+                "--add",
+                "--autonomousdatabasename",
+                "--force-string",
+                "--ids",
+                "--no-wait",
+                "--remove",
+                "--resource-group -g",
+                "--retention-days --retention-period-in-days",
+                "--set",
+                "--subscription"
+            ],
+            "examples": [
+                "az oracle-database autonomous-database backup create --autonomousdatabasename <ADBS name> --resource-group <resource_group> --adbbackupid <id> --retention-period-in-days <days>"
+            ]
+        },
+        {
+            "name": "az oracle-database autonomous-database backup wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az oracle-database autonomous-database backup wait [--adbbackupid]\n                                                   [--autonomousdatabasename]\n                                                   [--created]\n                                                   [--custom]\n                                                   [--deleted]\n                                                   [--exists]\n                                                   [--ids]\n                                                   [--interval]\n                                                   [--resource-group]\n                                                   [--subscription]\n                                                   [--timeout]\n                                                   [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--adbbackupid --name -n",
+                "--autonomousdatabasename",
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

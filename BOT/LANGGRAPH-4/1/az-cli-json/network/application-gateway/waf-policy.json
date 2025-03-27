@@ -1,0 +1,115 @@
+{
+    "command_group": "az network application-gateway waf-policy",
+    "description": "Manage application gateway web application firewall (WAF) policies.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az network application-gateway waf-policy create",
+            "summary": "Create an application gateway WAF policy.",
+            "syntax": "az network application-gateway waf-policy create --name\n                                                 --resource-group\n                                                 [--custom-rules]\n                                                 [--location]\n                                                 [--managed-rules]\n                                                 [--policy-settings]\n                                                 [--tags]\n                                                 [--type {Microsoft_BotManagerRuleSet, Microsoft_DefaultRuleSet, OWASP}]\n                                                 [--version {0.1, 1.0, 1.1, 2.1, 2.2.9, 3.0, 3.1, 3.2}]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--custom-rules",
+                "--location -l",
+                "--managed-rules",
+                "--policy-settings",
+                "--tags",
+                "--type",
+                "--version"
+            ],
+            "examples": [
+                "az network application-gateway waf-policy create --name MyApplicationGatewayWAFPolicy --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az network application-gateway waf-policy delete",
+            "summary": "Delete an application gateway WAF policy.",
+            "syntax": "az network application-gateway waf-policy delete [--ids]\n                                                 [--name]\n                                                 [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                                 [--resource-group]\n                                                 [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az network application-gateway waf-policy delete --name MyApplicationGatewayWAFPolicy --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az network application-gateway waf-policy list",
+            "summary": "List application gateway WAF policies.",
+            "syntax": "az network application-gateway waf-policy list [--max-items]\n                                               [--next-token]\n                                               [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token",
+                "--resource-group -g"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az network application-gateway waf-policy show",
+            "summary": "Get the details of an application gateway WAF policy.",
+            "syntax": "az network application-gateway waf-policy show [--ids]\n                                               [--name]\n                                               [--resource-group]\n                                               [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az network application-gateway waf-policy show --name MyApplicationGatewayWAFPolicy --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az network application-gateway waf-policy update",
+            "summary": "Update an application gateway WAF policy.",
+            "syntax": "az network application-gateway waf-policy update [--add]\n                                                 [--custom-rules]\n                                                 [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                                 [--ids]\n                                                 [--managed-rules]\n                                                 [--name]\n                                                 [--policy-settings]\n                                                 [--remove]\n                                                 [--resource-group]\n                                                 [--set]\n                                                 [--subscription]\n                                                 [--tags]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--custom-rules",
+                "--force-string",
+                "--ids",
+                "--managed-rules",
+                "--name -n",
+                "--policy-settings",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--subscription",
+                "--tags"
+            ],
+            "examples": [
+                "az network application-gateway waf-policy update --add communities='12076:5010' --name MyApplicationGatewayWAFPolicy --resource-group MyResourceGroup",
+                "az network application-gateway waf-policy update --managed-rules \"{managed-rule-sets:[{rule-group-overrides:[{rule-group-name:REQUEST-921-PROTOCOL-ATTACK,rules:[{rule-id:921100},{rule-id:921100}]}],rule-set-type:OWASP,rule-set-version:3.0}]}\""
+            ]
+        },
+        {
+            "name": "az network application-gateway waf-policy wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az network application-gateway waf-policy wait [--created]\n                                               [--custom]\n                                               [--deleted]\n                                               [--exists]\n                                               [--ids]\n                                               [--interval]\n                                               [--name]\n                                               [--resource-group]\n                                               [--subscription]\n                                               [--timeout]\n                                               [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

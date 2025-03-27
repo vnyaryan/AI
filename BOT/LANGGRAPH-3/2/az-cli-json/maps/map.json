@@ -1,0 +1,17 @@
+{
+    "command_group": "az maps map",
+    "description": "Manage map with maps.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az maps map list-operation",
+            "summary": "List operations available for the Maps Resource Provider.",
+            "syntax": "az maps map list-operation",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "examples": [
+                "az maps map list-operation"
+            ]
+        }
+    ]
+}

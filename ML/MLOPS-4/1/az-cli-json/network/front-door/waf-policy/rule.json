@@ -1,0 +1,90 @@
+{
+    "command_group": "az network front-door waf-policy rule",
+    "description": "Manage WAF policy custom rules.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az network front-door waf-policy rule create",
+            "summary": "Create a WAF policy custom rule. Use --defer and add a rule match-condition.",
+            "syntax": "az network front-door waf-policy rule create --action {Allow, AnomalyScoring, Block, JSChallenge, Log, Redirect}\n                                             --name\n                                             --policy-name\n                                             --priority\n                                             --resource-group\n                                             --rule-type {MatchRule, RateLimitRule}\n                                             [--defer]\n                                             [--disabled {false, true}]\n                                             [--rate-limit-duration]\n                                             [--rate-limit-threshold]",
+            "required_parameters": [
+                "--action",
+                "--name -n",
+                "--policy-name",
+                "--priority",
+                "--resource-group -g",
+                "--rule-type"
+            ],
+            "optional_parameters": [
+                "--defer",
+                "--disabled",
+                "--rate-limit-duration",
+                "--rate-limit-threshold"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az network front-door waf-policy rule delete",
+            "summary": "Delete a WAF policy custom rule.",
+            "syntax": "az network front-door waf-policy rule delete [--defer]\n                                             [--ids]\n                                             [--name]\n                                             [--policy-name]\n                                             [--resource-group]\n                                             [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--defer",
+                "--ids",
+                "--name -n",
+                "--policy-name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az network front-door waf-policy rule list",
+            "summary": "List WAF policy custom rules.",
+            "syntax": "az network front-door waf-policy rule list --policy-name\n                                           --resource-group\n                                           [--defer]",
+            "required_parameters": [
+                "--policy-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--defer"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az network front-door waf-policy rule show",
+            "summary": "Get the details of a WAF policy custom rule.",
+            "syntax": "az network front-door waf-policy rule show [--defer]\n                                           [--ids]\n                                           [--name]\n                                           [--policy-name]\n                                           [--resource-group]\n                                           [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--defer",
+                "--ids",
+                "--name -n",
+                "--policy-name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az network front-door waf-policy rule update",
+            "summary": "Alter the details of a WAF policy custom rule.",
+            "syntax": "az network front-door waf-policy rule update [--action {Allow, AnomalyScoring, Block, JSChallenge, Log, Redirect}]\n                                             [--defer]\n                                             [--disabled {false, true}]\n                                             [--ids]\n                                             [--name]\n                                             [--policy-name]\n                                             [--priority]\n                                             [--rate-limit-duration]\n                                             [--rate-limit-threshold]\n                                             [--resource-group]\n                                             [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--action",
+                "--defer",
+                "--disabled",
+                "--ids",
+                "--name -n",
+                "--policy-name",
+                "--priority",
+                "--rate-limit-duration",
+                "--rate-limit-threshold",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        }
+    ]
+}

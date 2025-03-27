@@ -1,0 +1,178 @@
+{
+    "command_group": "az databox job",
+    "description": "Manage data box job.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az databox job cancel",
+            "summary": "CancelJob.",
+            "syntax": "az databox job cancel --reason\n                      [--ids]\n                      [--job-name]\n                      [--resource-group]\n                      [--subscription]\n                      [--yes]",
+            "required_parameters": [
+                "--reason"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--job-name --name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az databox job cancel -g rg --job-name name --reason reason"
+            ]
+        },
+        {
+            "name": "az databox job create",
+            "summary": "Create a new job with the specified parameters.",
+            "syntax": "az databox job create --job-name\n                      --resource-group\n                      --sku {DataBox, DataBoxCustomerDisk, DataBoxDisk, DataBoxHeavy}\n                      --transfer-type {ExportFromAzure, ImportToAzure}\n                      [--city]\n                      [--company-name]\n                      [--contact-name]\n                      [--country]\n                      [--data-box-customer-disk]\n                      [--email-list]\n                      [--expected-data-size]\n                      [--identity]\n                      [--kek-identity]\n                      [--kek-type {CustomerManaged, MicrosoftManaged}]\n                      [--kek-url]\n                      [--kek-vault-resource-id]\n                      [--location]\n                      [--mobile]\n                      [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                      [--phone]\n                      [--postal-code]\n                      [--resource-group-for-managed-disk]\n                      [--staging-storage-account]\n                      [--state-or-province]\n                      [--storage-account]\n                      [--street-address1]\n                      [--street-address2]\n                      [--street-address3]\n                      [--tags]\n                      [--transfer-all-blobs {0, 1, f, false, n, no, t, true, y, yes}]\n                      [--transfer-all-files {0, 1, f, false, n, no, t, true, y, yes}]\n                      [--transfer-configuration-type {TransferAll, TransferUsingFilter}]\n                      [--transfer-filter-details]",
+            "required_parameters": [
+                "--job-name --name -n",
+                "--resource-group -g",
+                "--sku",
+                "--transfer-type"
+            ],
+            "optional_parameters": [
+                "--city",
+                "--company-name",
+                "--contact-name",
+                "--country",
+                "--data-box-customer-disk",
+                "--email-list",
+                "--expected-data-size",
+                "--identity",
+                "--kek-identity",
+                "--kek-type",
+                "--kek-url",
+                "--kek-vault-resource-id",
+                "--location -l",
+                "--mobile",
+                "--no-wait",
+                "--phone",
+                "--postal-code",
+                "--resource-group-for-managed-disk",
+                "--staging-storage-account",
+                "--state-or-province",
+                "--storage-account",
+                "--street-address1",
+                "--street-address2",
+                "--street-address3",
+                "--tags",
+                "--transfer-all-blobs",
+                "--transfer-all-files",
+                "--transfer-configuration-type",
+                "--transfer-filter-details"
+            ],
+            "examples": [
+                "az databox job create -g rg -n job-name --sku databox --contact-name 'test' --phone 14258828080 --email-list testing@microsoft.com --street-address1 \"1 MICROSOFT WAY\" --city Redmond --state-or-province WA --country US --postal-code 98052 --company-name Microsoft --storage-account account-id --staging-storage-account account-id --resource-group-for-managed-disk rg --transfer-type ImportToAzure --kek-type MicrosoftManaged"
+            ]
+        },
+        {
+            "name": "az databox job delete",
+            "summary": "Delete a job.",
+            "syntax": "az databox job delete [--ids]\n                      [--job-name]\n                      [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                      [--resource-group]\n                      [--subscription]\n                      [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--job-name --name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az databox job delete -n job-name -g rg"
+            ]
+        },
+        {
+            "name": "az databox job list",
+            "summary": "List all the jobs available under the subscription.",
+            "syntax": "az databox job list [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az databox job list -g rg"
+            ]
+        },
+        {
+            "name": "az databox job list-credential",
+            "summary": "This method gets the unencrypted secrets related to the job.",
+            "syntax": "az databox job list-credential [--ids]\n                               [--job-name]\n                               [--resource-group]\n                               [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--job-name --name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az databox job list-credential -g rg -n job-name"
+            ]
+        },
+        {
+            "name": "az databox job mark-devices-shipped",
+            "summary": "Request to mark devices for a given job as shipped.",
+            "syntax": "az databox job mark-devices-shipped --deliver-package-details\n                                    [--ids]\n                                    [--job-name]\n                                    [--resource-group]\n                                    [--subscription]",
+            "required_parameters": [
+                "--deliver-package-details"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--job-name --name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az databox job mark-devices-shipped -g rg -n job-name"
+            ]
+        },
+        {
+            "name": "az databox job show",
+            "summary": "Get information about the specified job.",
+            "syntax": "az databox job show [--ids]\n                    [--job-name]\n                    [--resource-group]\n                    [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--job-name --name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az databox job show -g rg -n job-name"
+            ]
+        },
+        {
+            "name": "az databox job update",
+            "summary": "Update the properties of an existing job.",
+            "syntax": "az databox job update [--city]\n                      [--company-name]\n                      [--contact-name]\n                      [--country]\n                      [--email-list]\n                      [--ids]\n                      [--job-name]\n                      [--kek-identity]\n                      [--kek-type {CustomerManaged, MicrosoftManaged}]\n                      [--kek-url]\n                      [--kek-vault-resource-id]\n                      [--mobile]\n                      [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                      [--phone]\n                      [--postal-code]\n                      [--resource-group]\n                      [--state-or-province]\n                      [--street-address1]\n                      [--street-address2]\n                      [--street-address3]\n                      [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--city",
+                "--company-name",
+                "--contact-name",
+                "--country",
+                "--email-list",
+                "--ids",
+                "--job-name --name -n",
+                "--kek-identity",
+                "--kek-type",
+                "--kek-url",
+                "--kek-vault-resource-id",
+                "--mobile",
+                "--no-wait",
+                "--phone",
+                "--postal-code",
+                "--resource-group -g",
+                "--state-or-province",
+                "--street-address1",
+                "--street-address2",
+                "--street-address3",
+                "--subscription"
+            ],
+            "examples": [
+                "az databox job update -g rg -n job-name --contact-name 'name --email-list email --phone phone-number"
+            ]
+        }
+    ]
+}

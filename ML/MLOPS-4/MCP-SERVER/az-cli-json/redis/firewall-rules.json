@@ -1,0 +1,79 @@
+{
+    "command_group": "az redis firewall-rules",
+    "description": "Manage Redis firewall rules.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az redis firewall-rules create",
+            "summary": "Create a redis cache firewall rule.",
+            "syntax": "az redis firewall-rules create --end-ip\n                               --name\n                               --resource-group\n                               --rule-name\n                               --start-ip",
+            "required_parameters": [
+                "--end-ip",
+                "--name -n",
+                "--resource-group -g",
+                "--rule-name",
+                "--start-ip"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az redis firewall-rules delete",
+            "summary": "Deletes a single firewall rule in a specified redis cache.",
+            "syntax": "az redis firewall-rules delete --rule-name\n                               [--ids]\n                               [--name]\n                               [--resource-group]\n                               [--subscription]",
+            "required_parameters": [
+                "--rule-name"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az redis firewall-rules list",
+            "summary": "Gets all firewall rules in the specified redis cache.",
+            "syntax": "az redis firewall-rules list --name\n                             --resource-group",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az redis firewall-rules show",
+            "summary": "Gets a single firewall rule in a specified redis cache.",
+            "syntax": "az redis firewall-rules show --rule-name\n                             [--ids]\n                             [--name]\n                             [--resource-group]\n                             [--subscription]",
+            "required_parameters": [
+                "--rule-name"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az redis firewall-rules update",
+            "summary": "Update a redis cache firewall rule.",
+            "syntax": "az redis firewall-rules update --end-ip\n                               --rule-name\n                               --start-ip\n                               [--ids]\n                               [--name]\n                               [--resource-group]\n                               [--subscription]",
+            "required_parameters": [
+                "--end-ip",
+                "--rule-name",
+                "--start-ip"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        }
+    ]
+}

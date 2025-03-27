@@ -1,0 +1,6 @@
+{
+    "command_group": "az consumption reservation",
+    "description": "Manage reservations for Azure resources.",
+    "status": "Preview",
+    "commands": []
+}

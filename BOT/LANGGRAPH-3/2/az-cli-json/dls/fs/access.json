@@ -1,0 +1,124 @@
+{
+    "command_group": "az dls fs access",
+    "description": "Manage Data Lake Store filesystem access and permissions.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az dls fs access remove-all",
+            "summary": "Remove the access control list for a file or folder.",
+            "syntax": "az dls fs access remove-all --path\n                            [--account]\n                            [--default-acl]\n                            [--ids]\n                            [--subscription]",
+            "required_parameters": [
+                "--path"
+            ],
+            "optional_parameters": [
+                "--account -n",
+                "--default-acl",
+                "--ids",
+                "--subscription"
+            ],
+            "examples": [
+                "az dls fs access remove-all --account dpreptestfiles --path / --subscription MySubscription"
+            ]
+        },
+        {
+            "name": "az dls fs access remove-entry",
+            "summary": "Remove entries for the access control list of a file or folder.",
+            "syntax": "az dls fs access remove-entry --acl-spec\n                              --path\n                              [--account]\n                              [--ids]\n                              [--subscription]",
+            "required_parameters": [
+                "--acl-spec",
+                "--path"
+            ],
+            "optional_parameters": [
+                "--account -n",
+                "--ids",
+                "--subscription"
+            ],
+            "examples": [
+                "az dls fs access remove-entry --account dpreptestfiles --acl-spec user:00000000-0000-0000-0000-000000000000:-w- --path /"
+            ]
+        },
+        {
+            "name": "az dls fs access set",
+            "summary": "Replace the existing access control list for a file or folder.",
+            "syntax": "az dls fs access set --acl-spec\n                     --path\n                     [--account]\n                     [--ids]\n                     [--subscription]",
+            "required_parameters": [
+                "--acl-spec",
+                "--path"
+            ],
+            "optional_parameters": [
+                "--account -n",
+                "--ids",
+                "--subscription"
+            ],
+            "examples": [
+                "az dls fs access set --account dpreptestfiles --acl-spec user:00000000-0000-0000-0000-000000000000:-w- --path / --subscription MySubscription"
+            ]
+        },
+        {
+            "name": "az dls fs access set-entry",
+            "summary": "Update the access control list for a file or folder.",
+            "syntax": "az dls fs access set-entry --acl-spec\n                           --path\n                           [--account]\n                           [--ids]\n                           [--subscription]",
+            "required_parameters": [
+                "--acl-spec",
+                "--path"
+            ],
+            "optional_parameters": [
+                "--account -n",
+                "--ids",
+                "--subscription"
+            ],
+            "examples": [
+                "az dls fs access set-entry --account dpreptestfiles --acl-spec user:00000000-0000-0000-0000-000000000000:-w- --path /"
+            ]
+        },
+        {
+            "name": "az dls fs access set-owner",
+            "summary": "Set the owner information for a file or folder in a Data Lake Store account.",
+            "syntax": "az dls fs access set-owner --path\n                           [--account]\n                           [--group]\n                           [--ids]\n                           [--owner]\n                           [--subscription]",
+            "required_parameters": [
+                "--path"
+            ],
+            "optional_parameters": [
+                "--account -n",
+                "--group",
+                "--ids",
+                "--owner",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az dls fs access set-permission",
+            "summary": "Set the permissions for a file or folder in a Data Lake Store account.",
+            "syntax": "az dls fs access set-permission --path\n                                --permission\n                                [--account]\n                                [--ids]\n                                [--subscription]",
+            "required_parameters": [
+                "--path",
+                "--permission"
+            ],
+            "optional_parameters": [
+                "--account -n",
+                "--ids",
+                "--subscription"
+            ],
+            "examples": [
+                "az dls fs access set-permission --account dpreptestfiles --path / --permission 777 --subscription MySubscription"
+            ]
+        },
+        {
+            "name": "az dls fs access show",
+            "summary": "Display the access control list (ACL).",
+            "syntax": "az dls fs access show --path\n                      [--account]\n                      [--ids]\n                      [--subscription]",
+            "required_parameters": [
+                "--path"
+            ],
+            "optional_parameters": [
+                "--account -n",
+                "--ids",
+                "--subscription"
+            ],
+            "examples": [
+                "az dls fs access show --account {account} --path {path}"
+            ]
+        }
+    ]
+}

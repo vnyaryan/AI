@@ -1,0 +1,29 @@
+{
+    "command_group": "az support services",
+    "description": "Azure services and related problem categories.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az support services list",
+            "summary": "List all the Azure services available for support ticket creation. Always use the service and problem classifications obtained programmatically. This practice ensures that you always have the most recent set of service and problem classification Ids.",
+            "syntax": "az support services list",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "examples": [
+                "az support services list"
+            ]
+        },
+        {
+            "name": "az support services show",
+            "summary": "Get a specific Azure service for support ticket creation.",
+            "syntax": "az support services show --service-name",
+            "required_parameters": [
+                "--service-name"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az support services show --service-name \"ServiceNameGuid\""
+            ]
+        }
+    ]
+}

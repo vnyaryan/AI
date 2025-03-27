@@ -1,0 +1,6 @@
+{
+    "command_group": "az communication user-identity",
+    "description": "Commands to manage user identities and their tokens for a Communication Service resource.",
+    "status": "Preview",
+    "commands": []
+}

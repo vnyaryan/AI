@@ -1,0 +1,100 @@
+{
+    "command_group": "az baremetalstorageinstance",
+    "description": "Handle Operations for Storage Azure Bare Metal Instances.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az baremetalstorageinstance create",
+            "summary": "Create an Azure Bare Metal Storage Instance for the specified subscription, resource group, and instance name.",
+            "syntax": "az baremetalstorageinstance create --instance-name\n                                   --resource-group\n                                   [--azure-bare-metal-storage-instance-size]\n                                   [--billing-mode]\n                                   [--bmsi-id]\n                                   [--generation]\n                                   [--hardware-type]\n                                   [--identity]\n                                   [--location]\n                                   [--offering-type]\n                                   [--provisioning-state {Accepted, Canceled, Creating, Deleting, Failed, Migrating, Succeeded, Updating}]\n                                   [--storage-type]\n                                   [--tags]\n                                   [--workload-type]",
+            "required_parameters": [
+                "--instance-name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--azure-bare-metal-storage-instance-size --sku",
+                "--billing-mode",
+                "--bmsi-id --instance-id",
+                "--generation",
+                "--hardware-type",
+                "--identity",
+                "--location -l",
+                "--offering-type",
+                "--provisioning-state",
+                "--storage-type",
+                "--tags",
+                "--workload-type"
+            ],
+            "examples": [
+                "az baremetalstorageinstance create -g myResourceGroup -n myAzureBareMetalStorageInstance --location westus2 --sku S72"
+            ]
+        },
+        {
+            "name": "az baremetalstorageinstance delete",
+            "summary": "Delete an Azure Bare Metal Storage Instance for the specified subscription, resource group, and instance name.",
+            "syntax": "az baremetalstorageinstance delete [--ids]\n                                   [--instance-name]\n                                   [--resource-group]\n                                   [--subscription]\n                                   [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--instance-name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az baremetalstorageinstance delete -g myResourceGroup -n myAzureBareMetalStorageInstance"
+            ]
+        },
+        {
+            "name": "az baremetalstorageinstance list",
+            "summary": "List a list of AzureBareMetalStorage instances in the specified subscription. The operations returns various properties of each Azure Bare Metal Instance.",
+            "syntax": "az baremetalstorageinstance list [--max-items]\n                                 [--next-token]\n                                 [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az baremetalstorageinstance list",
+                "az baremetalstorageinstance list -g myResourceGroup"
+            ]
+        },
+        {
+            "name": "az baremetalstorageinstance show",
+            "summary": "Get an Azure Bare Metal Storage instance for the specified subscription, resource group, and instance name.",
+            "syntax": "az baremetalstorageinstance show [--ids]\n                                 [--instance-name]\n                                 [--resource-group]\n                                 [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--instance-name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az baremetalstorageinstance show -g myResourceGroup -n myAzureBareMetalStorageInstance"
+            ]
+        },
+        {
+            "name": "az baremetalstorageinstance update",
+            "summary": "Update an Azure Bare Metal Storage Instance for the specified subscription, resource group, and instance name.",
+            "syntax": "az baremetalstorageinstance update [--add]\n                                   [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                   [--identity]\n                                   [--ids]\n                                   [--instance-name]\n                                   [--remove]\n                                   [--resource-group]\n                                   [--set]\n                                   [--subscription]\n                                   [--tags]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--force-string",
+                "--identity",
+                "--ids",
+                "--instance-name -n",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--subscription",
+                "--tags"
+            ],
+            "examples": [
+                "az baremetalstorageinstance update --resource-group $RESOURCE_GROUP --instance-name $BM_INSTANCE_NAME --identity \"{type:SystemAssigned}\""
+            ]
+        }
+    ]
+}

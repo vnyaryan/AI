@@ -1,0 +1,58 @@
+{
+    "command_group": "az peering asn",
+    "description": "Peering asn.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az peering asn create",
+            "summary": "Creates a new peer ASN or updates an existing peer ASN with the specified name under the given subscription.",
+            "syntax": "az peering asn create --peer-asn-name\n                      [--peer-asn]\n                      [--peer-contact-detail]\n                      [--peer-name]\n                      [--validation-state {Approved, Failed, None, Pending}]",
+            "required_parameters": [
+                "--peer-asn-name"
+            ],
+            "optional_parameters": [
+                "--peer-asn",
+                "--peer-contact-detail",
+                "--peer-name",
+                "--validation-state"
+            ],
+            "examples": [
+                "az peering asn create --peer-asn 65000 --peer-contact-detail email=\"noc@contoso.com\" phone=\"+1 (234) 567-8999\" role=\"Noc\" --peer-contact-detail email=\"abc@contoso.com\" phone=\"+1 (234) 567-8900\" role=\"Policy\" --peer-contact-detail email=\"xyz@contoso.com\" phone=\"+1 (234) 567-8900\" role=\"Technical\" --peer-name \"Contoso\" --peer-asn-name \"peerAsnName\""
+            ]
+        },
+        {
+            "name": "az peering asn delete",
+            "summary": "Deletes an existing peer ASN with the specified name under the given subscription.",
+            "syntax": "az peering asn delete --peer-asn-name",
+            "required_parameters": [
+                "--peer-asn-name"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az peering asn delete --peer-asn-name \"peerAsnName\""
+            ]
+        },
+        {
+            "name": "az peering asn list",
+            "summary": "Lists all of the peer ASNs under the given subscription.",
+            "syntax": "az peering asn list",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "examples": [
+                "az peering asn list"
+            ]
+        },
+        {
+            "name": "az peering asn show",
+            "summary": "Gets the peer ASN with the specified name under the given subscription.",
+            "syntax": "az peering asn show --peer-asn-name",
+            "required_parameters": [
+                "--peer-asn-name"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az peering asn show --peer-asn-name \"peerAsnName\""
+            ]
+        }
+    ]
+}

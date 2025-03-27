@@ -1,0 +1,69 @@
+{
+    "command_group": "az ams live-output",
+    "description": "Manage live outputs for an Azure Media Service account.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az ams live-output create",
+            "summary": "Create a live output.",
+            "syntax": "az ams live-output create --account-name\n                          --archive-window-length\n                          --asset-name\n                          --live-event-name\n                          --name\n                          --resource-group\n                          [--description]\n                          [--fragments-per-ts-segment]\n                          [--manifest-name]\n                          [--output-snap-time]",
+            "required_parameters": [
+                "--account-name -a",
+                "--archive-window-length",
+                "--asset-name",
+                "--live-event-name",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--description",
+                "--fragments-per-ts-segment",
+                "--manifest-name",
+                "--output-snap-time"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az ams live-output delete",
+            "summary": "Delete a live output.",
+            "syntax": "az ams live-output delete [--account-name]\n                          [--ids]\n                          [--live-event-name]\n                          [--name]\n                          [--resource-group]\n                          [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account-name -a",
+                "--ids",
+                "--live-event-name",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az ams live-output list",
+            "summary": "List all the live outputs in a live event.",
+            "syntax": "az ams live-output list --account-name\n                        --live-event-name\n                        --resource-group",
+            "required_parameters": [
+                "--account-name -a",
+                "--live-event-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az ams live-output show",
+            "summary": "Show the details of a live output.",
+            "syntax": "az ams live-output show [--account-name]\n                        [--ids]\n                        [--live-event-name]\n                        [--name]\n                        [--resource-group]\n                        [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account-name -a",
+                "--ids",
+                "--live-event-name",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        }
+    ]
+}

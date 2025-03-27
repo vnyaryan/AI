@@ -1,0 +1,62 @@
+{
+    "command_group": "az iot du device group",
+    "description": "Device group management.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az iot du device group delete",
+            "summary": "Delete a device group.",
+            "syntax": "az iot du device group delete --account\n                              --gid\n                              --instance\n                              [--resource-group]\n                              [--yes {false, true}]",
+            "required_parameters": [
+                "--account -n",
+                "--gid --group-id",
+                "--instance -i"
+            ],
+            "optional_parameters": [
+                "--resource-group -g",
+                "--yes -y"
+            ],
+            "examples": [
+                "az iot du device group delete -n {account_name} -i {instance_name} --group-id {device_group_id}",
+                "az iot du device group delete -n {account_name} -i {instance_name} --group-id {device_group_id} -y"
+            ]
+        },
+        {
+            "name": "az iot du device group list",
+            "summary": "List device groups within an instance.",
+            "syntax": "az iot du device group list --account\n                            --instance\n                            [--order-by]\n                            [--resource-group]",
+            "required_parameters": [
+                "--account -n",
+                "--instance -i"
+            ],
+            "optional_parameters": [
+                "--order-by",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az iot du device group list -n {account_name} -i {instance_name}",
+                "az iot du device group list -n {account_name} -i {instance_name} --order-by deviceCount"
+            ]
+        },
+        {
+            "name": "az iot du device group show",
+            "summary": "Show details about a device group including the best update and update compliance.",
+            "syntax": "az iot du device group show --account\n                            --gid\n                            --instance\n                            [--best-updates {false, true}]\n                            [--resource-group]\n                            [--update-compliance {false, true}]",
+            "required_parameters": [
+                "--account -n",
+                "--gid --group-id",
+                "--instance -i"
+            ],
+            "optional_parameters": [
+                "--best-updates",
+                "--resource-group -g",
+                "--update-compliance"
+            ],
+            "examples": [
+                "az iot du device group show -n {account_name} -i {instance_name} --group-id {device_group_id}",
+                "az iot du device group show -n {account_name} -i {instance_name} --group-id {device_group_id} --best-updates",
+                "az iot du device group show -n {account_name} -i {instance_name} --group-id {device_group_id} --update-compliance"
+            ]
+        }
+    ]
+}

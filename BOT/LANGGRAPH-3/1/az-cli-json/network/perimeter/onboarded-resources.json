@@ -1,0 +1,22 @@
+{
+    "command_group": "az network perimeter onboarded-resources",
+    "description": "Manage resources onboarded to NSP.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az network perimeter onboarded-resources list",
+            "summary": "Gets the list of resources that are onboarded with NSP. These resources can be associated with a network security perimeter.",
+            "syntax": "az network perimeter onboarded-resources list --location\n                                              [--max-items]\n                                              [--next-token]",
+            "required_parameters": [
+                "--location -l"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az network perimeter onboarded-resources list -l northcentralus"
+            ]
+        }
+    ]
+}

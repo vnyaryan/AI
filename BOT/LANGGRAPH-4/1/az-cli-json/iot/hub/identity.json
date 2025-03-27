@@ -1,0 +1,61 @@
+{
+    "command_group": "az iot hub identity",
+    "description": "Manage identities of an Azure IoT hub.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az iot hub identity assign",
+            "summary": "Assign managed identities to an IoT Hub.",
+            "syntax": "az iot hub identity assign [--ids]\n                           [--name]\n                           [--resource-group]\n                           [--role]\n                           [--scopes]\n                           [--subscription]\n                           [--system {false, true}]\n                           [--user]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--role",
+                "--scopes",
+                "--subscription",
+                "--system --system-assigned",
+                "--user --user-assigned"
+            ],
+            "examples": [
+                "az iot hub identity assign --name MyIoTHub --resource-group MyResourceGroup --user-assigned {resourceId1} {resourceId2}",
+                "az iot hub identity assign --name MyIoTHub --resource-group MyResourceGroup --system-assigned --role \"Storage Blob Data Contributor\" --scopes {resourceId}"
+            ]
+        },
+        {
+            "name": "az iot hub identity remove",
+            "summary": "Remove managed identities from an IoT Hub.",
+            "syntax": "az iot hub identity remove [--ids]\n                           [--name]\n                           [--resource-group]\n                           [--subscription]\n                           [--system {false, true}]\n                           [--user]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--system --system-assigned",
+                "--user --user-assigned"
+            ],
+            "examples": [
+                "az iot hub identity remove --name MyIoTHub --resource-group MyResourceGroup --user-assigned {resourceId}",
+                "az iot hub identity remove --name MyIoTHub --resource-group MyResourceGroup --system-assigned",
+                "az iot hub identity remove --name MyIoTHub --resource-group MyResourceGroup --system-assigned --user-assigned"
+            ]
+        },
+        {
+            "name": "az iot hub identity show",
+            "summary": "Show the identity properties of an IoT Hub.",
+            "syntax": "az iot hub identity show [--ids]\n                         [--name]\n                         [--resource-group]\n                         [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az iot hub identity show --name MyIoTHub --resource-group MyResourceGroup"
+            ]
+        }
+    ]
+}

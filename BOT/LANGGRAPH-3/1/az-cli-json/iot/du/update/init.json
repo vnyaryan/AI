@@ -1,0 +1,34 @@
+{
+    "command_group": "az iot du update init",
+    "description": "Utility for import manifest initialization.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az iot du update init v5",
+            "summary": "Initialize a v5 import manifest with the desired state.",
+            "syntax": "az iot du update init v5 --compat\n                         --step\n                         --update-name\n                         --update-provider\n                         --update-version\n                         [--description]\n                         [--file]\n                         [--is-deployable {false, true}]\n                         [--no-validation {false, true}]\n                         [--related-file]",
+            "required_parameters": [
+                "--compat",
+                "--step",
+                "--update-name",
+                "--update-provider",
+                "--update-version"
+            ],
+            "optional_parameters": [
+                "--description",
+                "--file",
+                "--is-deployable",
+                "--no-validation",
+                "--related-file"
+            ],
+            "examples": [
+                "az iot du update init v5 --update-provider Microsoft --update-name myAptUpdate --update-version 1.0.0 --description \"My minimum update\" --compat manufacturer=Contoso model=Vacuum --step handler=microsoft/apt:1 properties='{\"installedCriteria\": \"1.0\"}' --file path=/my/apt/manifest/file",
+                "az iot du update init v5 --update-provider Microsoft --update-name myAptUpdate --update-version 1.0.0 --description \"My minimum update\" --compat manufacturer=Contoso model=Vacuum --step handler=microsoft/apt:1 properties='{\\\"installedCriteria\\\": \\\"1.0\\\"}' --file path=/my/apt/manifest/file",
+                "az iot du update init v5 --update-provider Microsoft --update-name myAptUpdate --update-version 1.0.0 --description \"My minimum update\" --compat manufacturer=Contoso model=Vacuum --step handler=microsoft/apt:1 properties=\"{\\\"installedCriteria\\\": \\\"1.0\\\"}\" --file path=/my/apt/manifest/file",
+                "az iot du update init v5 --update-provider Microsoft --update-name myAptUpdate --update-version 1.0.0 --description \"My minimum update\" --compat manufacturer=Contoso model=Vacuum --step handler=microsoft/apt:1 properties=\"@/path/to/file\" --file path=/my/apt/manifest/file",
+                "az iot du update init v5 --update-provider Microsoft --update-name mySwUpdate --update-version 1.1.0 --compat manufacturer=Contoso model=Microphone --step handler=microsoft/swupdate:1 description=\"Deploy Update\" properties='{\"installedCriteria\": \"1.0\"}' --file path=/my/update/image/file1 --file path=/my/update/image/file2 --is-deployable false",
+                "az iot du update init v5 \\\n--update-provider Microsoft --update-name myBundled --update-version 2.0 \\\n--compat manufacturer=Contoso model=SpaceStation \\\n--step handler=microsoft/script:1 properties='{\"arguments\": \"--pre\"}' description=\"Pre-install script\" \\\n--file path=/my/update/scripts/preinstall.sh downloadHandler=microsoft/delta:1 \\\n--related-file path=/my/update/scripts/related_preinstall.json properties='{\"microsoft.sourceFileHashAlgorithm\": \"sha256\"}' \\\n--step updateId.provider=Microsoft updateId.name=SwUpdate updateId.version=1.1 \\\n--step handler=microsoft/script:1 properties='{\"arguments\": \"--post\"}' description=\"Post-install script\" \\\n--file path=/my/update/scripts/postinstall.sh"
+            ]
+        }
+    ]
+}

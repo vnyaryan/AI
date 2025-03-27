@@ -1,0 +1,112 @@
+{
+    "command_group": "az confidentialledger managedccfs",
+    "description": "Deploy and manage the Azure Managed CCF instances.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az confidentialledger managedccfs create",
+            "summary": "Create an instance of the Azure Managed CCF service.",
+            "syntax": "az confidentialledger managedccfs create --members\n                                         --name\n                                         --resource-group\n                                         [--app-type]\n                                         [--language-runtime]\n                                         [--location]\n                                         [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                         [--node-count]\n                                         [--tags]",
+            "required_parameters": [
+                "--members",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--app-type",
+                "--language-runtime",
+                "--location -l",
+                "--no-wait",
+                "--node-count",
+                "--tags"
+            ],
+            "examples": [
+                "az confidentialledger managedccfs create --members \"[{certificate:'c:/certs/member0_cert.pem',identifier:'member0',group:'group1'},{certificate:'c:/certs/member1_cert.pem',identifier:'member1',group:'group2'}]\" --name mymccfinstance --resource-group mccfRG --app-type sample",
+                "az confidentialledger managedccfs create --members \"[{certificate:'c:/certs/member0_cert.pem',identifier:'member0'},{certificate:'c:/certs/member1_cert.pem',identifier:'member1'}]\" --name mymccfinstance --resource-group mccfRG",
+                "az confidentialledger managedccfs create --members \"[{certificate:'c:/certs/member0_cert.pem',identifier:'member0',group:'mygroup1'},{certificate:'c:/certs/member1_cert.pem',identifier:'member1'}]\" --name mymccfinstance --resource-group mccfRG --node-count 5"
+            ]
+        },
+        {
+            "name": "az confidentialledger managedccfs delete",
+            "summary": "Delete a Managed CCF instance.",
+            "syntax": "az confidentialledger managedccfs delete [--ids]\n                                         [--name]\n                                         [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                         [--resource-group]\n                                         [--subscription]\n                                         [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az confidentialledger managedccfs delete --name \"myMccf\" --resource-group \"myResourceGroup\""
+            ]
+        },
+        {
+            "name": "az confidentialledger managedccfs list",
+            "summary": "View the Azure Managed CCF instances in a resource group.",
+            "syntax": "az confidentialledger managedccfs list [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az confidentialledger managedccfs list --resource-group \"myResourceGroup\""
+            ]
+        },
+        {
+            "name": "az confidentialledger managedccfs show",
+            "summary": "View the details of an instance.",
+            "syntax": "az confidentialledger managedccfs show [--ids]\n                                       [--name]\n                                       [--resource-group]\n                                       [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az confidentialledger managedccfs show --name \"myMccf\" --resource-group \"myResourceGroup\""
+            ]
+        },
+        {
+            "name": "az confidentialledger managedccfs update",
+            "summary": "Patch a Managed CCF instance.",
+            "syntax": "az confidentialledger managedccfs update [--deployment-type]\n                                         [--ids]\n                                         [--member-certificates]\n                                         [--name]\n                                         [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                         [--node-count]\n                                         [--resource-group]\n                                         [--subscription]\n                                         [--tags]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--deployment-type",
+                "--ids",
+                "--member-certificates",
+                "--name -n",
+                "--no-wait",
+                "--node-count",
+                "--resource-group -g",
+                "--subscription",
+                "--tags"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az confidentialledger managedccfs wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az confidentialledger managedccfs wait [--created]\n                                       [--custom]\n                                       [--deleted]\n                                       [--exists]\n                                       [--ids]\n                                       [--interval]\n                                       [--name]\n                                       [--resource-group]\n                                       [--subscription]\n                                       [--timeout]\n                                       [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

@@ -1,0 +1,113 @@
+{
+    "command_group": "az new-relic monitor tag-rule",
+    "description": "Manage tag rule of a NewRelic Monitor resource.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az new-relic monitor tag-rule create",
+            "summary": "Create a TagRule.",
+            "syntax": "az new-relic monitor tag-rule create --monitor-name\n                                     --name\n                                     --resource-group\n                                     [--log-rules]\n                                     [--metric-rules]\n                                     [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]",
+            "required_parameters": [
+                "--monitor-name",
+                "--name --rule-set-name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--log-rules",
+                "--metric-rules",
+                "--no-wait"
+            ],
+            "examples": [
+                "az new-relic monitor tag-rule create --resource-group MyResourceGroup --monitor-name MyNewRelicMonitor --name default --log-rules \"{send-aad-logs:'Enabled',send-subscription-logs:'Enabled',send-activity-logs:'Enabled',filtering-tags:[{name:'Environment',value:'Prod',action:'Include'}]}\" --metric-rules \"{user-email:'UserEmail@123.com',filtering-tags:[{name:'Environment',value:'Prod',action:'Include'}]}\""
+            ]
+        },
+        {
+            "name": "az new-relic monitor tag-rule delete",
+            "summary": "Delete a TagRule.",
+            "syntax": "az new-relic monitor tag-rule delete [--ids]\n                                     [--monitor-name]\n                                     [--name]\n                                     [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                     [--resource-group]\n                                     [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--monitor-name",
+                "--name --rule-set-name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az new-relic monitor tag-rule delete --resource-group MyResourceGroup --monitor-name MyNewRelicMonitor --name default"
+            ]
+        },
+        {
+            "name": "az new-relic monitor tag-rule list",
+            "summary": "List TagRule resources by NewRelicMonitorResource.",
+            "syntax": "az new-relic monitor tag-rule list --monitor-name\n                                   --resource-group\n                                   [--max-items]\n                                   [--next-token]",
+            "required_parameters": [
+                "--monitor-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az new-relic monitor tag-rule list --resource-group MyResourceGroup --monitor-name MyNewRelicMonitor"
+            ]
+        },
+        {
+            "name": "az new-relic monitor tag-rule show",
+            "summary": "Get a TagRule.",
+            "syntax": "az new-relic monitor tag-rule show [--ids]\n                                   [--monitor-name]\n                                   [--name]\n                                   [--resource-group]\n                                   [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--monitor-name",
+                "--name --rule-set-name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az new-relic monitor tag-rule show --resource-group MyResourceGroup --monitor-name MyNewRelicMonitor --name default"
+            ]
+        },
+        {
+            "name": "az new-relic monitor tag-rule update",
+            "summary": "Update a TagRule.",
+            "syntax": "az new-relic monitor tag-rule update [--ids]\n                                     [--log-rules]\n                                     [--metric-rules]\n                                     [--monitor-name]\n                                     [--name]\n                                     [--resource-group]\n                                     [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--log-rules",
+                "--metric-rules",
+                "--monitor-name",
+                "--name --rule-set-name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az new-relic monitor tag-rule update --resource-group MyResourceGroup --monitor-name MyNewRelicMonitor --name default --log-rules \"{send-aad-logs:'Enabled',send-subscription-logs:'Enabled',send-activity-logs:'Enabled',filtering-tags:[{name:'Environment',value:'Prod',action:'Include'}]}\" --metric-rules \"{user-email:'UserEmail@123.com',filtering-tags:[{name:'Environment',value:'Prod',action:'Include'}]}\""
+            ]
+        },
+        {
+            "name": "az new-relic monitor tag-rule wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az new-relic monitor tag-rule wait [--created]\n                                   [--custom]\n                                   [--deleted]\n                                   [--exists]\n                                   [--ids]\n                                   [--interval]\n                                   [--monitor-name]\n                                   [--name]\n                                   [--resource-group]\n                                   [--subscription]\n                                   [--timeout]\n                                   [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--monitor-name",
+                "--name --rule-set-name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

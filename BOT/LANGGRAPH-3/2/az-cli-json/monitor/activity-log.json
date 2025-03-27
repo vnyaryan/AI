@@ -1,0 +1,39 @@
+{
+    "command_group": "az monitor activity-log",
+    "description": "Manage activity logs.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az monitor activity-log list",
+            "summary": "List and query activity log events.",
+            "syntax": "az monitor activity-log list [--caller]\n                             [--correlation-id]\n                             [--end-time]\n                             [--max-events]\n                             [--namespace]\n                             [--offset]\n                             [--resource-group]\n                             [--resource-id]\n                             [--select {authorization, caller, category, claims, correlationId, description, eventDataId, eventName, eventTimestamp, httpRequest, id, level, operationId, operationName, properties, resourceGroupName, resourceId, resourceProviderName, resourceType, status, subStatus, submissionTimestamp, subscriptionId, tenantId}]\n                             [--start-time]\n                             [--status]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--caller",
+                "--correlation-id",
+                "--end-time",
+                "--max-events",
+                "--namespace",
+                "--offset",
+                "--resource-group -g",
+                "--resource-id",
+                "--select",
+                "--start-time",
+                "--status"
+            ],
+            "examples": [
+                "az monitor activity-log list --start-time 2018-07-01 --offset 7d",
+                "az monitor activity-log list --correlation-id b5eac9d2-e829-4c9a-9efb-586d19417c5f",
+                "az monitor activity-log list -g {ResourceGroup} --offset 1h"
+            ]
+        },
+        {
+            "name": "az monitor activity-log list-categories",
+            "summary": "List the list of available event categories supported in the Activity Logs Service.",
+            "syntax": "az monitor activity-log list-categories",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "examples": []
+        }
+    ]
+}

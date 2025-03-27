@@ -1,0 +1,185 @@
+{
+    "command_group": "az oracle-database cloud-vm-cluster",
+    "description": "Cloud VM Clusters.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az oracle-database cloud-vm-cluster add-vm",
+            "summary": "Add VMs to the VM Cluster.",
+            "syntax": "az oracle-database cloud-vm-cluster add-vm --db-servers\n                                           [--cloudvmclustername]\n                                           [--ids]\n                                           [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                           [--resource-group]\n                                           [--subscription]",
+            "required_parameters": [
+                "--db-servers"
+            ],
+            "optional_parameters": [
+                "--cloudvmclustername",
+                "--ids",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az oracle-database cloud-vm-cluster add-vm --cloudvmclustername <vmclustername> --resource-group <Resource group> --db-servers ['ocid1','ocid2']"
+            ]
+        },
+        {
+            "name": "az oracle-database cloud-vm-cluster create",
+            "summary": "Create a CloudVmCluster.",
+            "syntax": "az oracle-database cloud-vm-cluster create --cloudvmclustername\n                                           --resource-group\n                                           [--backup-subnet-cidr]\n                                           [--cloud-exadata-infrastructure-id]\n                                           [--cluster-name]\n                                           [--collection-options]\n                                           [--cpu-core-count]\n                                           [--data-storage-percentage]\n                                           [--data-storage-size-in-tbs]\n                                           [--db-node-storage-size-in-gbs]\n                                           [--db-servers]\n                                           [--display-name]\n                                           [--domain]\n                                           [--gi-version]\n                                           [--hostname]\n                                           [--is-local-backup-enabled {0, 1, f, false, n, no, t, true, y, yes}]\n                                           [--is-sparse-diskgroup-enabled {0, 1, f, false, n, no, t, true, y, yes}]\n                                           [--license-model {BringYourOwnLicense, LicenseIncluded}]\n                                           [--location]\n                                           [--memory-size-in-gbs]\n                                           [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                           [--nsg-cidrs]\n                                           [--ocpu-count]\n                                           [--scan-listener-port-tcp]\n                                           [--scan-listener-port-tcp-ssl]\n                                           [--ssh-public-keys]\n                                           [--subnet-id]\n                                           [--system-version]\n                                           [--tags]\n                                           [--time-zone]\n                                           [--vnet-id]\n                                           [--zone-id]",
+            "required_parameters": [
+                "--cloudvmclustername --name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--backup-subnet-cidr",
+                "--cloud-exadata-infrastructure-id --exa-infra-id",
+                "--cluster-name",
+                "--collection-options --data-collection-options",
+                "--cpu-core-count",
+                "--data-storage-percentage --storage-percent",
+                "--data-storage-size-in-tbs --storage-tbs",
+                "--db-node-storage-size-in-gbs --node-storage-gbs",
+                "--db-servers",
+                "--display-name",
+                "--domain",
+                "--gi-version",
+                "--hostname",
+                "--is-local-backup-enabled --local-backup-enabled",
+                "--is-sparse-diskgroup-enabled --sparse-diskgroup",
+                "--license-model",
+                "--location -l",
+                "--memory-size-in-gbs",
+                "--no-wait",
+                "--nsg-cidrs",
+                "--ocpu-count",
+                "--scan-listener-port-tcp",
+                "--scan-listener-port-tcp-ssl --scan-tcps-port",
+                "--ssh-public-keys",
+                "--subnet-id",
+                "--system-version",
+                "--tags",
+                "--time-zone",
+                "--vnet-id",
+                "--zone-id"
+            ],
+            "examples": [
+                "az oracle-database cloud-vm-cluster create --name <name> --resource-group <resource group> --location <location> --cloud-exadata-infrastructure-id <Exa Infra Id> --cpu-core-count <cpu count> --data-storage-percentage <storage percent> --data-storage-size-in-tbs <storage in TBs> --db-node-storage-size-in-gbs <storage size> --db-servers ['ocid1','ocid2'] --display-name <display name> --gi-version 19.0.0.0 --hostname <host name> --is-local-backup-enabled False --is-sparse-diskgroup-enabled False --license-model <LicenseIncluded/BringYourOwnLicense> --memory-size-in-gbs <memory size> --ssh-public-keys <ssh key> --subnet-id <subnet id> --time-zone <timezeone eg. UTC> --vnet-id <virtual network id>"
+            ]
+        },
+        {
+            "name": "az oracle-database cloud-vm-cluster delete",
+            "summary": "Delete a CloudVmCluster.",
+            "syntax": "az oracle-database cloud-vm-cluster delete [--cloudvmclustername]\n                                           [--ids]\n                                           [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                           [--resource-group]\n                                           [--subscription]\n                                           [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--cloudvmclustername --name -n",
+                "--ids",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az oracle-database cloud-vm-cluster delete --name <name> --resource-group <resource group>"
+            ]
+        },
+        {
+            "name": "az oracle-database cloud-vm-cluster list",
+            "summary": "List CloudVmCluster resources by subscription ID.",
+            "syntax": "az oracle-database cloud-vm-cluster list [--max-items]\n                                         [--next-token]\n                                         [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az oracle-database cloud-vm-cluster list --resource-group <resource group>"
+            ]
+        },
+        {
+            "name": "az oracle-database cloud-vm-cluster remove-vm",
+            "summary": "Remove VMs from the VM Cluster.",
+            "syntax": "az oracle-database cloud-vm-cluster remove-vm --db-servers\n                                              [--cloudvmclustername]\n                                              [--ids]\n                                              [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                              [--resource-group]\n                                              [--subscription]",
+            "required_parameters": [
+                "--db-servers"
+            ],
+            "optional_parameters": [
+                "--cloudvmclustername",
+                "--ids",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az oracle-database cloud-vm-cluster remove-vm --cloudvmclustername <vmclustername> --resource-group <Resource group> --db-servers ['ocid1','ocid2']"
+            ]
+        },
+        {
+            "name": "az oracle-database cloud-vm-cluster show",
+            "summary": "Get a CloudVmCluster.",
+            "syntax": "az oracle-database cloud-vm-cluster show [--cloudvmclustername]\n                                         [--ids]\n                                         [--resource-group]\n                                         [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--cloudvmclustername --name -n",
+                "--ids",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az oracle-database cloud-vm-cluster show --cloudvmclustername <vmclustername> --resource-group <Resource group>"
+            ]
+        },
+        {
+            "name": "az oracle-database cloud-vm-cluster update",
+            "summary": "Update a CloudVmCluster.",
+            "syntax": "az oracle-database cloud-vm-cluster update [--add]\n                                           [--cloudvmclustername]\n                                           [--collection-options]\n                                           [--compute-nodes]\n                                           [--cpu-core-count]\n                                           [--data-storage-size-in-tbs]\n                                           [--db-node-storage-size-in-gbs]\n                                           [--display-name]\n                                           [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                           [--ids]\n                                           [--license-model {BringYourOwnLicense, LicenseIncluded}]\n                                           [--memory-size-in-gbs]\n                                           [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                           [--ocpu-count]\n                                           [--remove]\n                                           [--resource-group]\n                                           [--set]\n                                           [--ssh-public-keys]\n                                           [--storage-size-in-gbs]\n                                           [--subscription]\n                                           [--tags]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--cloudvmclustername --name -n",
+                "--collection-options --data-collection-options",
+                "--compute-nodes",
+                "--cpu-core-count",
+                "--data-storage-size-in-tbs --storage-tbs",
+                "--db-node-storage-size-in-gbs --node-storage-gbs",
+                "--display-name",
+                "--force-string",
+                "--ids",
+                "--license-model",
+                "--memory-size-in-gbs",
+                "--no-wait",
+                "--ocpu-count",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--ssh-public-keys",
+                "--storage-size-in-gbs",
+                "--subscription",
+                "--tags"
+            ],
+            "examples": [
+                "az oracle-database cloud-vm-cluster update --cloudvmclustername <vmclustername> --resource-group <Resource group> --tags {tagv1:tagk1}"
+            ]
+        },
+        {
+            "name": "az oracle-database cloud-vm-cluster wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az oracle-database cloud-vm-cluster wait [--cloudvmclustername]\n                                         [--created]\n                                         [--custom]\n                                         [--deleted]\n                                         [--exists]\n                                         [--ids]\n                                         [--interval]\n                                         [--resource-group]\n                                         [--subscription]\n                                         [--timeout]\n                                         [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--cloudvmclustername --name -n",
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

@@ -1,0 +1,20 @@
+{
+    "command_group": "az bot webchat",
+    "description": "Manage the Webchat Channel on a bot.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az bot webchat show",
+            "summary": "Get details of the Webchat Channel on a bot.",
+            "syntax": "az bot webchat show --name\n                    --resource-group\n                    [--with-secrets {false, true}]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--with-secrets"
+            ],
+            "examples": []
+        }
+    ]
+}

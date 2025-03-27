@@ -1,0 +1,99 @@
+{
+    "command_group": "az network watcher connection-monitor endpoint",
+    "description": "Manage endpoint of a connection monitor.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az network watcher connection-monitor endpoint add",
+            "summary": "Add an endpoint to a connection monitor.",
+            "syntax": "az network watcher connection-monitor endpoint add --connection-monitor\n                                                   --endpoint-name\n                                                   --location\n                                                   [--address]\n                                                   [--address-exclude]\n                                                   [--address-include]\n                                                   [--coverage-level {AboveAverage, Average, BelowAverage, Default, Full, Low}]\n                                                   [--dest-test-groups]\n                                                   [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                                   [--resource-id]\n                                                   [--source-test-groups]\n                                                   [--type {AzureArcVM, AzureSubnet, AzureVM, AzureVMSS, AzureVNet, ExternalAddress, MMAWorkspaceMachine, MMAWorkspaceNetwork}]",
+            "required_parameters": [
+                "--connection-monitor",
+                "--endpoint-name --name -n",
+                "--location -l"
+            ],
+            "optional_parameters": [
+                "--address",
+                "--address-exclude",
+                "--address-include",
+                "--coverage-level",
+                "--dest-test-groups",
+                "--no-wait",
+                "--resource-id",
+                "--source-test-groups",
+                "--type"
+            ],
+            "examples": [
+                "az network watcher connection-monitor endpoint add --connection-monitor MyConnectionMonitor --location westus --name MyExternalEndpoint --address \"bing.com\" --dest-test-groups DefaultTestGroup --type ExternalAddress",
+                "az network watcher connection-monitor endpoint add --connection-monitor MyConnectionMonitor --location westus --name MyVMEndpoint --resource-id MyVMResourceID --source-test-groups DefaultTestGroup --type AzureVM",
+                "az network watcher connection-monitor endpoint add --connection-monitor MyConnectionMonitor --location westus --name MySubnetEndpoint --resource-id MySubnetID --source-test-groups DefaultTestGroup --type AzureSubnet --address-exclude 10.0.0.25 10.0.0.30 --coverage-level BelowAverage"
+            ]
+        },
+        {
+            "name": "az network watcher connection-monitor endpoint list",
+            "summary": "List all endpoints from a connection monitor.",
+            "syntax": "az network watcher connection-monitor endpoint list --connection-monitor\n                                                    --location",
+            "required_parameters": [
+                "--connection-monitor",
+                "--location -l"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az network watcher connection-monitor endpoint list --connection-monitor MyConnectionMonitor --location westus2"
+            ]
+        },
+        {
+            "name": "az network watcher connection-monitor endpoint remove",
+            "summary": "Remove an endpoint from a connection monitor.",
+            "syntax": "az network watcher connection-monitor endpoint remove --connection-monitor\n                                                      --endpoint-name\n                                                      --location\n                                                      [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                                      [--test-groups]",
+            "required_parameters": [
+                "--connection-monitor",
+                "--endpoint-name --name -n",
+                "--location -l"
+            ],
+            "optional_parameters": [
+                "--no-wait",
+                "--test-groups"
+            ],
+            "examples": [
+                "az network watcher connection-monitor endpoint remove --connection-monitor MyConnectionMonitor --location westus --name MyEndpoint",
+                "az network watcher connection-monitor endpoint remove --connection-monitor MyConnectionMonitor --location westus --name MyEndpoint --test-groups DefaultTestGroup HealthCheckTestGroup"
+            ]
+        },
+        {
+            "name": "az network watcher connection-monitor endpoint show",
+            "summary": "Show an endpoint from a connection monitor.",
+            "syntax": "az network watcher connection-monitor endpoint show --connection-monitor\n                                                    --endpoint-name\n                                                    --location",
+            "required_parameters": [
+                "--connection-monitor",
+                "--endpoint-name --name -n",
+                "--location -l"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az network watcher connection-monitor endpoint show --connection-monitor MyConnectionMonitor --location westus2 --name myconnectionmonitorendpoint --subscription MySubscription"
+            ]
+        },
+        {
+            "name": "az network watcher connection-monitor endpoint wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az network watcher connection-monitor endpoint wait [--connection-monitor]\n                                                    [--created]\n                                                    [--custom]\n                                                    [--deleted]\n                                                    [--exists]\n                                                    [--ids]\n                                                    [--interval]\n                                                    [--subscription]\n                                                    [--timeout]\n                                                    [--updated]\n                                                    [--watcher-name]\n                                                    [--watcher-rg]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--connection-monitor",
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--subscription",
+                "--timeout",
+                "--updated",
+                "--watcher-name",
+                "--watcher-rg -g"
+            ],
+            "examples": []
+        }
+    ]
+}

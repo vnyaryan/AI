@@ -1,0 +1,6 @@
+{
+    "command_group": "az security va sql",
+    "description": "View Sql Vulnerability Assessment scan results and manage baseline.",
+    "status": "GA",
+    "commands": []
+}

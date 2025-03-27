@@ -1,0 +1,6 @@
+{
+    "command_group": "az iot",
+    "description": "Manage Internet of Things (IoT) assets.",
+    "status": "GA",
+    "commands": []
+}

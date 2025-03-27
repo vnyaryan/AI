@@ -1,0 +1,101 @@
+{
+    "command_group": "az ml datastore",
+    "description": "Manage Azure ML datastores.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az ml datastore create",
+            "summary": "Create a datastore.",
+            "syntax": "az ml datastore create --file\n                       --resource-group\n                       --workspace-name\n                       [--name]\n                       [--set]",
+            "required_parameters": [
+                "--file -f",
+                "--resource-group -g",
+                "--workspace-name -w"
+            ],
+            "optional_parameters": [
+                "--name -n",
+                "--set"
+            ],
+            "examples": [
+                "az ml datastore create --file blobstore.yml --resource-group my-resource-group --workspace-name my-workspace"
+            ]
+        },
+        {
+            "name": "az ml datastore delete",
+            "summary": "Delete a datastore.",
+            "syntax": "az ml datastore delete --name\n                       --resource-group\n                       --workspace-name",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g",
+                "--workspace-name -w"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az ml datastore list",
+            "summary": "List datastores in a workspace.",
+            "syntax": "az ml datastore list --resource-group\n                     --workspace-name\n                     [--max-results]",
+            "required_parameters": [
+                "--resource-group -g",
+                "--workspace-name -w"
+            ],
+            "optional_parameters": [
+                "--max-results -r"
+            ],
+            "examples": [
+                "az ml datastore list --query \"[].{Name:name}\"  --output table --resource-group my-resource-group --workspace-name my-workspace"
+            ]
+        },
+        {
+            "name": "az ml datastore mount",
+            "summary": "Mount a specific datastore to a local path. For now only Linux is supported.",
+            "syntax": "az ml datastore mount --path\n                      [--mode]\n                      [--mount-point]\n                      [--persistent]\n                      [--resource-group]\n                      [--workspace-name]",
+            "required_parameters": [
+                "--path"
+            ],
+            "optional_parameters": [
+                "--mode",
+                "--mount-point",
+                "--persistent",
+                "--resource-group -g",
+                "--workspace-name -w"
+            ],
+            "examples": [
+                "az ml datastore mount --mount-point /mnt/my-datastore --mode ro_mount --path my-datastore",
+                "az ml datastore mount --mount-point /mnt/my-datastore --mode ro_mount --path azureml://datastores/my-datastore",
+                "az ml datastore mount --mount-point /mnt/my-datastore --mode ro_mount --path azureml://subscriptions/my-sub-id/resourcegroups/my-rg/providers/Microsoft.MachineLearningServices/workspaces/myworkspace/datastores/my-datastore"
+            ]
+        },
+        {
+            "name": "az ml datastore show",
+            "summary": "Show details for a datastore.",
+            "syntax": "az ml datastore show --name\n                     --resource-group\n                     --workspace-name",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g",
+                "--workspace-name -w"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az ml datastore update",
+            "summary": "Update a datastore.",
+            "syntax": "az ml datastore update --resource-group\n                       --workspace-name\n                       [--add]\n                       [--file]\n                       [--force-string]\n                       [--name]\n                       [--remove]\n                       [--set]",
+            "required_parameters": [
+                "--resource-group -g",
+                "--workspace-name -w"
+            ],
+            "optional_parameters": [
+                "--add",
+                "--file -f",
+                "--force-string",
+                "--name -n",
+                "--remove",
+                "--set"
+            ],
+            "examples": []
+        }
+    ]
+}

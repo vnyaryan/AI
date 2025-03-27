@@ -1,0 +1,23 @@
+{
+    "command_group": "az iot hub device-identity connection-string",
+    "description": "Manage IoT device's connection string.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az iot hub device-identity connection-string show",
+            "summary": "Show a given IoT Hub device connection string.",
+            "syntax": "az iot hub device-identity connection-string show --device-id\n                                                  [--auth-type {key, login}]\n                                                  [--hub-name]\n                                                  [--key-type {primary, secondary}]\n                                                  [--login]\n                                                  [--resource-group]",
+            "required_parameters": [
+                "--device-id -d"
+            ],
+            "optional_parameters": [
+                "--auth-type",
+                "--hub-name -n",
+                "--key-type --kt",
+                "--login -l",
+                "--resource-group -g"
+            ],
+            "examples": []
+        }
+    ]
+}

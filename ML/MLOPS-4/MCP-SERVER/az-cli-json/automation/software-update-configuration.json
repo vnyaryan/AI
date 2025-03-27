@@ -1,0 +1,96 @@
+{
+    "command_group": "az automation software-update-configuration",
+    "description": "Automation software-update-configuration.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az automation software-update-configuration create",
+            "summary": "Create automation software-update-configuration.",
+            "syntax": "az automation software-update-configuration create --automation-account-name\n                                                   --configuration-name\n                                                   --frequency\n                                                   --interval\n                                                   --operating-system {Linux, Windows}\n                                                   --resource-group\n                                                   [--azure-queries-locations]\n                                                   [--azure-queries-scope]\n                                                   [--azure-queries-tags]\n                                                   [--azure-virtual-machines]\n                                                   [--creation-time]\n                                                   [--description]\n                                                   [--duration]\n                                                   [--excluded-kb-numbers]\n                                                   [--expiry-time]\n                                                   [--expiry-time-offset-minutes]\n                                                   [--included-kb-numbers]\n                                                   [--included-update-classifications]\n                                                   [--is-enabled {false, true}]\n                                                   [--last-modified-time]\n                                                   [--next-run]\n                                                   [--next-run-offset-minutes]\n                                                   [--non-azure-computer-names]\n                                                   [--non-azure-queries-function-alias]\n                                                   [--non-azure-queries-workspace-id]\n                                                   [--post-task-job-id]\n                                                   [--post-task-source]\n                                                   [--post-task-status]\n                                                   [--pre-task-job-id]\n                                                   [--pre-task-source]\n                                                   [--pre-task-status]\n                                                   [--reboot-setting]\n                                                   [--start-time]\n                                                   [--time-zone]",
+            "required_parameters": [
+                "--automation-account-name",
+                "--configuration-name --name -n",
+                "--frequency",
+                "--interval",
+                "--operating-system",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--azure-queries-locations",
+                "--azure-queries-scope",
+                "--azure-queries-tags",
+                "--azure-virtual-machines",
+                "--creation-time",
+                "--description",
+                "--duration",
+                "--excluded-kb-numbers",
+                "--expiry-time",
+                "--expiry-time-offset-minutes",
+                "--included-kb-numbers",
+                "--included-update-classifications",
+                "--is-enabled",
+                "--last-modified-time",
+                "--next-run",
+                "--next-run-offset-minutes",
+                "--non-azure-computer-names",
+                "--non-azure-queries-function-alias",
+                "--non-azure-queries-workspace-id",
+                "--post-task-job-id",
+                "--post-task-source",
+                "--post-task-status",
+                "--pre-task-job-id",
+                "--pre-task-source",
+                "--pre-task-status",
+                "--reboot-setting",
+                "--start-time",
+                "--time-zone"
+            ],
+            "examples": [
+                "az automation software-update-configuration create --automation-account-name \"myAutomationAccount\"                  --resource-group \"rg\" -n mySoftwareUpdateConfiguration --frequency Hour --interval 1                  --operating-system windows --excluded-kb-numbers 16800,16800 -n confgname                  --included-update-classifications Critical --duration pT2H0M --azure-virtual-machines                  /subscriptions/{subid}/resourceGroups/{rg}/providers/Microsoft.Compute/virtualMachines/myVM"
+            ]
+        },
+        {
+            "name": "az automation software-update-configuration delete",
+            "summary": "Delete an automation software-update-configuration.",
+            "syntax": "az automation software-update-configuration delete --automation-account-name\n                                                   --configuration-name\n                                                   --resource-group\n                                                   [--yes]",
+            "required_parameters": [
+                "--automation-account-name",
+                "--configuration-name --name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--yes -y"
+            ],
+            "examples": [
+                "az automation software-update-configuration delete --name \"mySoftwareUpdateConfiguration\"                --resource-group \"rg\" --automation-account-name \"myAutomationAccount\""
+            ]
+        },
+        {
+            "name": "az automation software-update-configuration list",
+            "summary": "List all software-update-configurations for the account.",
+            "syntax": "az automation software-update-configuration list --automation-account-name\n                                                 --resource-group",
+            "required_parameters": [
+                "--automation-account-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az automation software-update-configuration list --automation-account-name \"myAutomationAccount\"                 --resource-group \"rg\""
+            ]
+        },
+        {
+            "name": "az automation software-update-configuration show",
+            "summary": "Get a single software-update-configuration by name.",
+            "syntax": "az automation software-update-configuration show --automation-account-name\n                                                 --configuration-name\n                                                 --resource-group",
+            "required_parameters": [
+                "--automation-account-name",
+                "--configuration-name --name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az automation software-update-configuration show --automation-account-name \"myAutomationAccount\"                --resource-group \"rg\" --name \"mySoftwareUpdateConfiguration\""
+            ]
+        }
+    ]
+}

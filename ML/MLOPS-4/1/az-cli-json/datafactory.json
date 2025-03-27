@@ -1,0 +1,146 @@
+{
+    "command_group": "az datafactory",
+    "description": "Manage Data Factory.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az datafactory configure-factory-repo",
+            "summary": "Updates a factory's repo information.",
+            "syntax": "az datafactory configure-factory-repo [--factory-git-hub-configuration]\n                                      [--factory-resource-id]\n                                      [--factory-vsts-configuration]\n                                      [--ids]\n                                      [--location]\n                                      [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--factory-git-hub-configuration --github-config",
+                "--factory-resource-id",
+                "--factory-vsts-configuration --vsts-config",
+                "--ids",
+                "--location -l",
+                "--subscription"
+            ],
+            "examples": [
+                "az datafactory configure-factory-repo --factory-resource-id \"/subscriptions/12345678-1234-1234-1234-12345678abc/resourceGroups/exampleResourceGroup/providers/Microsoft.DataFactory/factories/exampleFactoryName\" --factory-vsts-configuration account-name=\"ADF\" collaboration-branch=\"master\" last-commit-id=\"\" project-name=\"project\" repository-name=\"repo\" root-folder=\"/\" tenant-id=\"\" --location \"East US\""
+            ]
+        },
+        {
+            "name": "az datafactory create",
+            "summary": "Create a factory.",
+            "syntax": "az datafactory create --factory-name\n                      --resource-group\n                      [--factory-git-hub-configuration]\n                      [--factory-vsts-configuration]\n                      [--global-parameters]\n                      [--if-match]\n                      [--location]\n                      [--public-network-access]\n                      [--tags]",
+            "required_parameters": [
+                "--factory-name --name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--factory-git-hub-configuration --github-config",
+                "--factory-vsts-configuration --vsts-config",
+                "--global-parameters",
+                "--if-match",
+                "--location -l",
+                "--public-network-access",
+                "--tags"
+            ],
+            "examples": [
+                "az datafactory create --location \"East US\" --name \"exampleFactoryName\" --resource-group \"exampleResourceGroup\""
+            ]
+        },
+        {
+            "name": "az datafactory delete",
+            "summary": "Deletes a factory.",
+            "syntax": "az datafactory delete [--factory-name]\n                      [--ids]\n                      [--resource-group]\n                      [--subscription]\n                      [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--factory-name --name -n",
+                "--ids",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az datafactory delete --name \"exampleFactoryName\" --resource-group \"exampleResourceGroup\""
+            ]
+        },
+        {
+            "name": "az datafactory get-data-plane-access",
+            "summary": "Get Data Plane access.",
+            "syntax": "az datafactory get-data-plane-access [--access-resource-path]\n                                     [--expire-time]\n                                     [--factory-name]\n                                     [--ids]\n                                     [--permissions]\n                                     [--profile-name]\n                                     [--resource-group]\n                                     [--start-time]\n                                     [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--access-resource-path",
+                "--expire-time",
+                "--factory-name --name -n",
+                "--ids",
+                "--permissions",
+                "--profile-name",
+                "--resource-group -g",
+                "--start-time",
+                "--subscription"
+            ],
+            "examples": [
+                "az datafactory get-data-plane-access --name \"exampleFactoryName\" --access-resource-path \"\" --expire-time \"2018-11-10T09:46:20.2659347Z\" --permissions \"r\" --profile-name \"DefaultProfile\" --start-time \"2018-11-10T02:46:20.2659347Z\" --resource-group \"exampleResourceGroup\""
+            ]
+        },
+        {
+            "name": "az datafactory get-git-hub-access-token",
+            "summary": "Get GitHub Access Token.",
+            "syntax": "az datafactory get-git-hub-access-token --git-hub-access-code\n                                        --git-hub-access-token-base-url\n                                        [--factory-name]\n                                        [--git-hub-client-id]\n                                        [--ids]\n                                        [--resource-group]\n                                        [--subscription]",
+            "required_parameters": [
+                "--git-hub-access-code",
+                "--git-hub-access-token-base-url"
+            ],
+            "optional_parameters": [
+                "--factory-name --name -n",
+                "--git-hub-client-id",
+                "--ids",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az datafactory get-git-hub-access-token --name \"exampleFactoryName\" --git-hub-access-code \"some\" --git-hub-access-token-base-url \"some\" --git-hub-client-id \"some\" --resource-group \"exampleResourceGroup\""
+            ]
+        },
+        {
+            "name": "az datafactory list",
+            "summary": "Lists factories. And Lists factories under the specified subscription.",
+            "syntax": "az datafactory list [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az datafactory list --resource-group \"exampleResourceGroup\"",
+                "az datafactory list"
+            ]
+        },
+        {
+            "name": "az datafactory show",
+            "summary": "Gets a factory.",
+            "syntax": "az datafactory show [--factory-name]\n                    [--ids]\n                    [--if-none-match]\n                    [--resource-group]\n                    [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--factory-name --name -n",
+                "--ids",
+                "--if-none-match",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az datafactory show --name \"exampleFactoryName\" --resource-group \"exampleResourceGroup\""
+            ]
+        },
+        {
+            "name": "az datafactory update",
+            "summary": "Updates a factory.",
+            "syntax": "az datafactory update [--factory-name]\n                      [--ids]\n                      [--public-network-access]\n                      [--resource-group]\n                      [--subscription]\n                      [--tags]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--factory-name --name -n",
+                "--ids",
+                "--public-network-access",
+                "--resource-group -g",
+                "--subscription",
+                "--tags"
+            ],
+            "examples": [
+                "az datafactory update --name \"exampleFactoryName\" --tags exampleTag=\"exampleValue\" --resource-group \"exampleResourceGroup\""
+            ]
+        }
+    ]
+}

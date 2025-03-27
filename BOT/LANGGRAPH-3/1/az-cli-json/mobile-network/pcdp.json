@@ -1,0 +1,114 @@
+{
+    "command_group": "az mobile-network pcdp",
+    "description": "Manage packet core data plane.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az mobile-network pcdp create",
+            "summary": "Create a packet core data plane.",
+            "syntax": "az mobile-network pcdp create --access-interface\n                              --name\n                              --pccp-name\n                              --resource-group\n                              [--location]\n                              [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                              [--tags]",
+            "required_parameters": [
+                "--access-interface",
+                "--name --pcdp-name -n",
+                "--pccp-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--location -l",
+                "--no-wait",
+                "--tags"
+            ],
+            "examples": [
+                "az mobile-network pcdp create -n pcdp-name -g rg --pccp-name pccp-name --access-interface \"{name:N2,ipv4Address:10.28.128.2,ipv4Subnet:10.28.128.0/24,ipv4Gateway:10.28.128.1}\""
+            ]
+        },
+        {
+            "name": "az mobile-network pcdp delete",
+            "summary": "Delete the specified packet core data plane.",
+            "syntax": "az mobile-network pcdp delete [--ids]\n                              [--name]\n                              [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                              [--pccp-name]\n                              [--resource-group]\n                              [--subscription]\n                              [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --pcdp-name -n",
+                "--no-wait",
+                "--pccp-name",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az mobile-network pcdp delete -g rg -n pcdp-name --pccp-name pccp-name -y"
+            ]
+        },
+        {
+            "name": "az mobile-network pcdp list",
+            "summary": "List all the packet core data planes associated with a packet core control plane.",
+            "syntax": "az mobile-network pcdp list --pccp-name\n                            --resource-group\n                            [--max-items]\n                            [--next-token]",
+            "required_parameters": [
+                "--pccp-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az mobile-network pcdp list -g rg --pccp-name pccp_name"
+            ]
+        },
+        {
+            "name": "az mobile-network pcdp show",
+            "summary": "Get information about the specified packet core data plane.",
+            "syntax": "az mobile-network pcdp show [--ids]\n                            [--name]\n                            [--pccp-name]\n                            [--resource-group]\n                            [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --pcdp-name -n",
+                "--pccp-name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az mobile-network pcdp show -g rg -n pcdp-name --pccp-name pccp-name"
+            ]
+        },
+        {
+            "name": "az mobile-network pcdp update",
+            "summary": "Update packet core data planes tags.",
+            "syntax": "az mobile-network pcdp update [--ids]\n                              [--name]\n                              [--pccp-name]\n                              [--resource-group]\n                              [--subscription]\n                              [--tags]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --pcdp-name -n",
+                "--pccp-name",
+                "--resource-group -g",
+                "--subscription",
+                "--tags"
+            ],
+            "examples": [
+                "az mobile-network pcdp update -n pcdp_name -g rg --pccp-name pccp-name --tags \"{tag:test,tag2:test2}\""
+            ]
+        },
+        {
+            "name": "az mobile-network pcdp wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az mobile-network pcdp wait [--created]\n                            [--custom]\n                            [--deleted]\n                            [--exists]\n                            [--ids]\n                            [--interval]\n                            [--name]\n                            [--pccp-name]\n                            [--resource-group]\n                            [--subscription]\n                            [--timeout]\n                            [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--name --pcdp-name -n",
+                "--pccp-name",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

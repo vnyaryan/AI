@@ -1,0 +1,59 @@
+{
+    "command_group": "az search private-endpoint-connection",
+    "description": "Manage Azure Search private endpoint connections.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az search private-endpoint-connection delete",
+            "summary": "Disconnects the private endpoint connection and deletes it from the search service.",
+            "syntax": "az search private-endpoint-connection delete --name\n                                             --resource-group\n                                             --service-name\n                                             [--yes]",
+            "required_parameters": [
+                "--name --private-endpoint-connection-name -n",
+                "--resource-group -g",
+                "--service-name"
+            ],
+            "optional_parameters": [
+                "--yes -y"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az search private-endpoint-connection list",
+            "summary": "Gets a list of all private endpoint connections in the given service.",
+            "syntax": "az search private-endpoint-connection list --resource-group\n                                           --service-name",
+            "required_parameters": [
+                "--resource-group -g",
+                "--service-name"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az search private-endpoint-connection show",
+            "summary": "Gets the details of the private endpoint connection to the search service in the given resource group.",
+            "syntax": "az search private-endpoint-connection show --name\n                                           --resource-group\n                                           --service-name",
+            "required_parameters": [
+                "--name --private-endpoint-connection-name -n",
+                "--resource-group -g",
+                "--service-name"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az search private-endpoint-connection update",
+            "summary": "Update an existing private endpoint connection in a Search service in the given resource group.",
+            "syntax": "az search private-endpoint-connection update --actions-required\n                                             --description\n                                             --name\n                                             --resource-group\n                                             --service-name\n                                             --status",
+            "required_parameters": [
+                "--actions-required",
+                "--description",
+                "--name -n",
+                "--resource-group -g",
+                "--service-name",
+                "--status"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        }
+    ]
+}

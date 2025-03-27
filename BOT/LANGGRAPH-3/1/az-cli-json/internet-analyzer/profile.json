@@ -1,0 +1,79 @@
+{
+    "command_group": "az internet-analyzer profile",
+    "description": "Commands to manage internet analyzer profile.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az internet-analyzer profile create",
+            "summary": "Create internet analyzer profile.",
+            "syntax": "az internet-analyzer profile create --name\n                                    --resource-group\n                                    [--enabled-state {Disabled, Enabled}]\n                                    [--location]\n                                    [--tags]",
+            "required_parameters": [
+                "--name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--enabled-state",
+                "--location -l",
+                "--tags"
+            ],
+            "examples": [
+                "az internet-analyzer profile create --resource-group \"MyResourceGroup\" --name \"MyProfile\" \\\n--location \"WestUs\" --enabled-state \"Enabled\""
+            ]
+        },
+        {
+            "name": "az internet-analyzer profile delete",
+            "summary": "Delete internet analyzer profile.",
+            "syntax": "az internet-analyzer profile delete --name\n                                    --resource-group",
+            "required_parameters": [
+                "--name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az internet-analyzer profile delete --resource-group \"MyResourceGroup\" --name \"MyProfile\""
+            ]
+        },
+        {
+            "name": "az internet-analyzer profile list",
+            "summary": "List internet analyzer profiles.",
+            "syntax": "az internet-analyzer profile list --resource-group",
+            "required_parameters": [
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az internet-analyzer profile list --resource-group \"MyResourceGroup\""
+            ]
+        },
+        {
+            "name": "az internet-analyzer profile show",
+            "summary": "Show internet analyzer profile.",
+            "syntax": "az internet-analyzer profile show --name\n                                  --resource-group",
+            "required_parameters": [
+                "--name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az internet-analyzer profile show --resource-group \"MyResourceGroup\" --name \"MyProfile\""
+            ]
+        },
+        {
+            "name": "az internet-analyzer profile update",
+            "summary": "Update internet analyzer profile.",
+            "syntax": "az internet-analyzer profile update --name\n                                    --resource-group\n                                    [--enabled-state {Disabled, Enabled}]\n                                    [--location]\n                                    [--tags]",
+            "required_parameters": [
+                "--name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--enabled-state",
+                "--location -l",
+                "--tags"
+            ],
+            "examples": [
+                "az internet-analyzer profile update --resource-group \"MyResourceGroup\" --name \"MyProfile\" \\\n--enabled-state \"Enabled\""
+            ]
+        }
+    ]
+}

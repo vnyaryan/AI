@@ -1,0 +1,81 @@
+{
+    "command_group": "az kusto data-connection iot-hub",
+    "description": "Manage data connection with kusto sub group iot-hub.",
+    "status": "Experimental",
+    "commands": [
+        {
+            "name": "az kusto data-connection iot-hub create",
+            "summary": "Create a data connection.",
+            "syntax": "az kusto data-connection iot-hub create --cluster-name\n                                        --data-connection-name\n                                        --database-name\n                                        --resource-group\n                                        [--consumer-group]\n                                        [--data-format {APACHEAVRO, AVRO, CSV, JSON, MULTIJSON, ORC, PARQUET, PSV, RAW, SCSV, SINGLEJSON, SOHSV, TSV, TSVE, TXT, W3CLOGFILE}]\n                                        [--database-routing {Multi, Single}]\n                                        [--event-system-properties]\n                                        [--iot-hub-resource-id]\n                                        [--location]\n                                        [--mapping-rule-name]\n                                        [--no-wait]\n                                        [--shared-access-policy-name]\n                                        [--table-name]",
+            "required_parameters": [
+                "--cluster-name",
+                "--data-connection-name --name -n",
+                "--database-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--consumer-group",
+                "--data-format",
+                "--database-routing",
+                "--event-system-properties",
+                "--iot-hub-resource-id",
+                "--location -l",
+                "--mapping-rule-name",
+                "--no-wait",
+                "--shared-access-policy-name",
+                "--table-name"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az kusto data-connection iot-hub data-connection-validation",
+            "summary": "Checks that the data connection parameters are valid.",
+            "syntax": "az kusto data-connection iot-hub data-connection-validation [--cluster-name]\n                                                            [--consumer-group]\n                                                            [--data-connection-name]\n                                                            [--data-format {APACHEAVRO, AVRO, CSV, JSON, MULTIJSON, ORC, PARQUET, PSV, RAW, SCSV, SINGLEJSON, SOHSV, TSV, TSVE, TXT, W3CLOGFILE}]\n                                                            [--database-name]\n                                                            [--database-routing {Multi, Single}]\n                                                            [--event-system-properties]\n                                                            [--ids]\n                                                            [--iot-hub-resource-id]\n                                                            [--location]\n                                                            [--mapping-rule-name]\n                                                            [--no-wait]\n                                                            [--resource-group]\n                                                            [--shared-access-policy-name]\n                                                            [--subscription]\n                                                            [--table-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--cluster-name",
+                "--consumer-group",
+                "--data-connection-name --name -n",
+                "--data-format",
+                "--database-name",
+                "--database-routing",
+                "--event-system-properties",
+                "--ids",
+                "--iot-hub-resource-id",
+                "--location -l",
+                "--mapping-rule-name",
+                "--no-wait",
+                "--resource-group -g",
+                "--shared-access-policy-name",
+                "--subscription",
+                "--table-name"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az kusto data-connection iot-hub update",
+            "summary": "Updates a data connection.",
+            "syntax": "az kusto data-connection iot-hub update [--cluster-name]\n                                        [--consumer-group]\n                                        [--data-connection-name]\n                                        [--data-format {APACHEAVRO, AVRO, CSV, JSON, MULTIJSON, ORC, PARQUET, PSV, RAW, SCSV, SINGLEJSON, SOHSV, TSV, TSVE, TXT, W3CLOGFILE}]\n                                        [--database-name]\n                                        [--database-routing {Multi, Single}]\n                                        [--event-system-properties]\n                                        [--ids]\n                                        [--iot-hub-resource-id]\n                                        [--location]\n                                        [--mapping-rule-name]\n                                        [--no-wait]\n                                        [--resource-group]\n                                        [--shared-access-policy-name]\n                                        [--subscription]\n                                        [--table-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--cluster-name",
+                "--consumer-group",
+                "--data-connection-name --name -n",
+                "--data-format",
+                "--database-name",
+                "--database-routing",
+                "--event-system-properties",
+                "--ids",
+                "--iot-hub-resource-id",
+                "--location -l",
+                "--mapping-rule-name",
+                "--no-wait",
+                "--resource-group -g",
+                "--shared-access-policy-name",
+                "--subscription",
+                "--table-name"
+            ],
+            "examples": []
+        }
+    ]
+}

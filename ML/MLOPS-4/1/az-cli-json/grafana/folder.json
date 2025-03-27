@@ -1,0 +1,77 @@
+{
+    "command_group": "az grafana folder",
+    "description": "Commands to manage folders of an instance.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az grafana folder create",
+            "summary": "Create a new folder.",
+            "syntax": "az grafana folder create --name\n                         --title\n                         [--api-key]\n                         [--resource-group]",
+            "required_parameters": [
+                "--name -n",
+                "--title"
+            ],
+            "optional_parameters": [
+                "--api-key --token -t",
+                "--resource-group -g"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az grafana folder delete",
+            "summary": "Delete a folder.",
+            "syntax": "az grafana folder delete --folder\n                         --name\n                         [--api-key]\n                         [--resource-group]",
+            "required_parameters": [
+                "--folder",
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--api-key --token -t",
+                "--resource-group -g"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az grafana folder list",
+            "summary": "List all folders of an instance.",
+            "syntax": "az grafana folder list --name\n                       [--api-key]\n                       [--resource-group]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--api-key --token -t",
+                "--resource-group -g"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az grafana folder show",
+            "summary": "Get the details of a folder.",
+            "syntax": "az grafana folder show --folder\n                       --name\n                       [--api-key]\n                       [--resource-group]",
+            "required_parameters": [
+                "--folder",
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--api-key --token -t",
+                "--resource-group -g"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az grafana folder update",
+            "summary": "Update a folder.",
+            "syntax": "az grafana folder update --folder\n                         --name\n                         --title\n                         [--api-key]\n                         [--resource-group]",
+            "required_parameters": [
+                "--folder",
+                "--name -n",
+                "--title"
+            ],
+            "optional_parameters": [
+                "--api-key --token -t",
+                "--resource-group -g"
+            ],
+            "examples": []
+        }
+    ]
+}

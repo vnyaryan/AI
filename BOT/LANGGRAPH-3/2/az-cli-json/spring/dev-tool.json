@@ -1,0 +1,74 @@
+{
+    "command_group": "az spring dev-tool",
+    "description": "(Enterprise Tier Only) Commands to manage Dev Tools in Azure Spring Apps. The Dev Tools Portal is an underlying application that hosts the developer tools.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az spring dev-tool create",
+            "summary": "Create Dev Tool Portal.",
+            "syntax": "az spring dev-tool create --resource-group\n                          --service\n                          [--assign-endpoint {false, true}]\n                          [--client-id]\n                          [--client-secret]\n                          [--metadata-url]\n                          [--no-wait]\n                          [--scopes]",
+            "required_parameters": [
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [
+                "--assign-endpoint",
+                "--client-id",
+                "--client-secret",
+                "--metadata-url",
+                "--no-wait",
+                "--scopes"
+            ],
+            "examples": [
+                "az spring dev-tool create -s MyService -g MyResourceGroup --assign-endpoint",
+                "az spring dev-tool create -s MyService -g MyResourceGroup --client-id 00000000-0000-0000-000000000000 --scopes scope1,scope2  --client-secret MySecret --metadata-url \"https://example.com/.well-known/openid-configuration\" --assign-endpoint"
+            ]
+        },
+        {
+            "name": "az spring dev-tool delete",
+            "summary": "Delete Dev Tool Portal.",
+            "syntax": "az spring dev-tool delete --resource-group\n                          --service\n                          [--no-wait]\n                          [--yes]",
+            "required_parameters": [
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [
+                "--no-wait",
+                "--yes -y"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az spring dev-tool show",
+            "summary": "Show the provisioning state, running status and settings of Dev Tool Portal.",
+            "syntax": "az spring dev-tool show --resource-group\n                        --service",
+            "required_parameters": [
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az spring dev-tool update",
+            "summary": "Update Dev Tool Portal.",
+            "syntax": "az spring dev-tool update --resource-group\n                          --service\n                          [--assign-endpoint {false, true}]\n                          [--client-id]\n                          [--client-secret]\n                          [--metadata-url]\n                          [--no-wait]\n                          [--scopes]",
+            "required_parameters": [
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [
+                "--assign-endpoint",
+                "--client-id",
+                "--client-secret",
+                "--metadata-url",
+                "--no-wait",
+                "--scopes"
+            ],
+            "examples": [
+                "az spring dev-tool update -s MyService -g MyResourceGroup --assign-endpoint",
+                "az spring dev-tool update -s MyService -g MyResourceGroup --client-id 00000000-0000-0000-000000000000 --scopes scope1,scope2  --client-secret MySecret --metadata-url \"https://example.com/.well-known/openid-configuration\" --assign-endpoint"
+            ]
+        }
+    ]
+}

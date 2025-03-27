@@ -1,0 +1,54 @@
+{
+    "command_group": "az iot ops broker authn",
+    "description": "Broker authentication management.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az iot ops broker authn delete",
+            "summary": "Delete an mqtt broker authentication resource.",
+            "syntax": "az iot ops broker authn delete --broker\n                               --instance\n                               --name\n                               --resource-group\n                               [--yes {false, true}]",
+            "required_parameters": [
+                "--broker -b",
+                "--instance -i",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--yes -y"
+            ],
+            "examples": [
+                "az iot ops broker authn delete -n authn -b broker --in mycluster-ops-instance -g myresourcegroup",
+                "az iot ops broker authn delete -n authn -b broker --in mycluster-ops-instance -g myresourcegroup -y"
+            ]
+        },
+        {
+            "name": "az iot ops broker authn list",
+            "summary": "List mqtt broker authentication resources associated with an instance.",
+            "syntax": "az iot ops broker authn list --broker\n                             --instance\n                             --resource-group",
+            "required_parameters": [
+                "--broker -b",
+                "--instance -i",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az iot ops broker authn list -b broker --in mycluster-ops-instance -g myresourcegroup"
+            ]
+        },
+        {
+            "name": "az iot ops broker authn show",
+            "summary": "Show details of an mqtt broker authentication resource.",
+            "syntax": "az iot ops broker authn show --broker\n                             --instance\n                             --name\n                             --resource-group",
+            "required_parameters": [
+                "--broker -b",
+                "--instance -i",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az iot ops broker authn show -n authn -b broker --in mycluster-ops-instance -g myresourcegroup"
+            ]
+        }
+    ]
+}

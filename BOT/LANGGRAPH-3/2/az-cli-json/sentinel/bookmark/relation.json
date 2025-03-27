@@ -1,0 +1,92 @@
+{
+    "command_group": "az sentinel bookmark relation",
+    "description": "Manage bookmark relation with sentinel.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az sentinel bookmark relation create",
+            "summary": "Create the bookmark relation.",
+            "syntax": "az sentinel bookmark relation create --bookmark-id\n                                     --name\n                                     --resource-group\n                                     --workspace-name\n                                     [--etag]\n                                     [--related-resource-id]",
+            "required_parameters": [
+                "--bookmark-id",
+                "--name --relation-name -n",
+                "--resource-group -g",
+                "--workspace-name -w"
+            ],
+            "optional_parameters": [
+                "--etag",
+                "--related-resource-id"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az sentinel bookmark relation delete",
+            "summary": "Delete the bookmark relation.",
+            "syntax": "az sentinel bookmark relation delete [--bookmark-id]\n                                     [--ids]\n                                     [--name]\n                                     [--resource-group]\n                                     [--subscription]\n                                     [--workspace-name]\n                                     [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--bookmark-id",
+                "--ids",
+                "--name --relation-name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--workspace-name -w",
+                "--yes -y"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az sentinel bookmark relation list",
+            "summary": "Get all bookmark relations.",
+            "syntax": "az sentinel bookmark relation list --bookmark-id\n                                   --resource-group\n                                   --workspace-name\n                                   [--filter]\n                                   [--orderby]\n                                   [--skip-token]\n                                   [--top]",
+            "required_parameters": [
+                "--bookmark-id",
+                "--resource-group -g",
+                "--workspace-name -w"
+            ],
+            "optional_parameters": [
+                "--filter",
+                "--orderby",
+                "--skip-token",
+                "--top"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az sentinel bookmark relation show",
+            "summary": "Get a bookmark relation.",
+            "syntax": "az sentinel bookmark relation show [--bookmark-id]\n                                   [--ids]\n                                   [--name]\n                                   [--resource-group]\n                                   [--subscription]\n                                   [--workspace-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--bookmark-id",
+                "--ids",
+                "--name --relation-name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--workspace-name -w"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az sentinel bookmark relation update",
+            "summary": "Update the bookmark relation.",
+            "syntax": "az sentinel bookmark relation update [--add]\n                                     [--bookmark-id]\n                                     [--etag]\n                                     [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                     [--ids]\n                                     [--name]\n                                     [--related-resource-id]\n                                     [--remove]\n                                     [--resource-group]\n                                     [--set]\n                                     [--subscription]\n                                     [--workspace-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--bookmark-id",
+                "--etag",
+                "--force-string",
+                "--ids",
+                "--name --relation-name -n",
+                "--related-resource-id",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--subscription",
+                "--workspace-name -w"
+            ],
+            "examples": []
+        }
+    ]
+}

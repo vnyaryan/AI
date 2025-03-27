@@ -1,0 +1,67 @@
+{
+    "command_group": "az sphere device capability",
+    "description": "Manage device capability configurations.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az sphere device capability apply",
+            "summary": "Temporarily apply a capability session on the attached device.",
+            "syntax": "az sphere device capability apply [--capability-file]\n                                  [--none {false, true}]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--capability-file",
+                "--none -n"
+            ],
+            "examples": [
+                "az sphere device capability apply --capability-file myCapabilities.cap",
+                "az sphere device capability apply --none"
+            ]
+        },
+        {
+            "name": "az sphere device capability download",
+            "summary": "Download a device capability file from the Azure Sphere Security Service.",
+            "syntax": "az sphere device capability download --catalog\n                                     --resource-group\n                                     [--device]\n                                     [--output-file]\n                                     [--type {ApplicationDevelopment, FieldServicing}]",
+            "required_parameters": [
+                "--catalog -c",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--device -d",
+                "--output-file -of",
+                "--type -t"
+            ],
+            "examples": [
+                "az sphere device capability download --resource-group MyResourceGroup --catalog MyCatalog --device <DeviceIdValue> --type ApplicationDevelopment --output-file myCapabilities.cap",
+                "az sphere device capability download --resource-group MyResourceGroup --catalog MyCatalog --device <DeviceIdValue> --output-file myCapabilities.cap"
+            ]
+        },
+        {
+            "name": "az sphere device capability show-attached",
+            "summary": "Show the current device capability configuration of the attached device.",
+            "syntax": "az sphere device capability show-attached [--device]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--device -d"
+            ],
+            "examples": [
+                "az sphere device capability show-attached",
+                "az sphere device capability show-attached --device <DeviceIdValue>"
+            ]
+        },
+        {
+            "name": "az sphere device capability update",
+            "summary": "Update the device capability configuration for the attached device.",
+            "syntax": "az sphere device capability update --capability-file\n                                   [--device]",
+            "required_parameters": [
+                "--capability-file"
+            ],
+            "optional_parameters": [
+                "--device -d"
+            ],
+            "examples": [
+                "az sphere device capability update --capability-file myCapabilities.cap",
+                "az sphere device capability update --capability-file myCapabilities.cap --device <DeviceIdValue>"
+            ]
+        }
+    ]
+}

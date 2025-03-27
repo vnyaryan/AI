@@ -1,0 +1,37 @@
+{
+    "command_group": "az cloud-service os-family",
+    "description": "Manage cloud service os family.",
+    "status": "Experimental",
+    "commands": [
+        {
+            "name": "az cloud-service os-family list",
+            "summary": "List all guest operating system families available to be specified in the XML service configuration (.cscfg) for a cloud service.",
+            "syntax": "az cloud-service os-family list --location\n                                [--max-items]\n                                [--next-token]",
+            "required_parameters": [
+                "--location -l"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az cloud-service os-family list -l eastus"
+            ]
+        },
+        {
+            "name": "az cloud-service os-family show",
+            "summary": "Show guest operating system family that can be specified in the XML service configuration (.cscfg) for a cloud service.",
+            "syntax": "az cloud-service os-family show [--ids]\n                                [--location]\n                                [--name]\n                                [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--location -l",
+                "--name --os-family-name -n",
+                "--subscription"
+            ],
+            "examples": [
+                "az cloud-service os-family show -n os-family -l eastus"
+            ]
+        }
+    ]
+}

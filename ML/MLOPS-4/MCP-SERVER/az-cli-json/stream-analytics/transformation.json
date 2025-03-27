@@ -1,0 +1,60 @@
+{
+    "command_group": "az stream-analytics transformation",
+    "description": "Manage transformation with stream analytics.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az stream-analytics transformation create",
+            "summary": "Create a transformation or replaces an already existing transformation under an existing streaming job.",
+            "syntax": "az stream-analytics transformation create --job-name\n                                          --name\n                                          --resource-group\n                                          [--if-match]\n                                          [--if-none-match]\n                                          [--saql]\n                                          [--streaming-units]\n                                          [--valid-streaming-units]",
+            "required_parameters": [
+                "--job-name",
+                "--name --transformation-name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--if-match",
+                "--if-none-match",
+                "--saql",
+                "--streaming-units",
+                "--valid-streaming-units"
+            ],
+            "examples": [
+                "az stream-analytics transformation create --job-name \"sj8374\" --resource-group \"sjrg4423\" --saql \"Select Id, Name from inputtest\" --streaming-units 6 --transformation-name \"transformation952\""
+            ]
+        },
+        {
+            "name": "az stream-analytics transformation show",
+            "summary": "Get details about the specified transformation.",
+            "syntax": "az stream-analytics transformation show --job-name\n                                        --name\n                                        --resource-group",
+            "required_parameters": [
+                "--job-name",
+                "--name --transformation-name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az stream-analytics transformation show --job-name \"sj8374\" --resource-group \"sjrg4423\" --name \"transformation952\""
+            ]
+        },
+        {
+            "name": "az stream-analytics transformation update",
+            "summary": "Update an existing transformation under an existing streaming job. This can be used to partially update (ie. update one or two properties) a transformation without affecting the rest the job or transformation definition.",
+            "syntax": "az stream-analytics transformation update --job-name\n                                          --name\n                                          --resource-group\n                                          [--if-match]\n                                          [--saql]\n                                          [--streaming-units]\n                                          [--valid-streaming-units]",
+            "required_parameters": [
+                "--job-name",
+                "--name --transformation-name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--if-match",
+                "--saql",
+                "--streaming-units",
+                "--valid-streaming-units"
+            ],
+            "examples": [
+                "az stream-analytics transformation update --job-name \"sj8374\" --resource-group \"sjrg4423\" --saql \"New query\" --transformation-name \"transformation952\""
+            ]
+        }
+    ]
+}

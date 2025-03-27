@@ -1,0 +1,66 @@
+{
+    "command_group": "az spring-cloud gateway",
+    "description": "(Enterprise Tier Only) Commands to manage gateway in Azure Spring Cloud.",
+    "status": "Preview and Deprecated",
+    "commands": [
+        {
+            "name": "az spring-cloud gateway clear",
+            "summary": "Clear all settings of gateway.",
+            "syntax": "az spring-cloud gateway clear --resource-group\n                              --service\n                              [--no-wait]",
+            "required_parameters": [
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [
+                "--no-wait"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az spring-cloud gateway show",
+            "summary": "Show the settings, provisioning status and runtime status of gateway.",
+            "syntax": "az spring-cloud gateway show --resource-group\n                             --service",
+            "required_parameters": [
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az spring-cloud gateway update",
+            "summary": "Update an existing gateway properties.",
+            "syntax": "az spring-cloud gateway update --resource-group\n                               --service\n                               [--allow-credentials {false, true}]\n                               [--allowed-headers]\n                               [--allowed-methods]\n                               [--allowed-origins]\n                               [--api-description]\n                               [--api-doc-location]\n                               [--api-title]\n                               [--api-version]\n                               [--assign-endpoint {false, true}]\n                               [--client-id]\n                               [--client-secret]\n                               [--cpu]\n                               [--exposed-headers]\n                               [--https-only {false, true}]\n                               [--instance-count]\n                               [--issuer-uri]\n                               [--max-age]\n                               [--memory]\n                               [--no-wait]\n                               [--scope]\n                               [--server-url]",
+            "required_parameters": [
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [
+                "--allow-credentials",
+                "--allowed-headers",
+                "--allowed-methods",
+                "--allowed-origins",
+                "--api-description",
+                "--api-doc-location",
+                "--api-title",
+                "--api-version",
+                "--assign-endpoint",
+                "--client-id",
+                "--client-secret",
+                "--cpu",
+                "--exposed-headers",
+                "--https-only",
+                "--instance-count",
+                "--issuer-uri",
+                "--max-age",
+                "--memory",
+                "--no-wait",
+                "--scope",
+                "--server-url"
+            ],
+            "examples": [
+                "az spring-cloud gateway update -s MyService -g MyResourceGroup --assign-endpoint true --https-only true"
+            ]
+        }
+    ]
+}

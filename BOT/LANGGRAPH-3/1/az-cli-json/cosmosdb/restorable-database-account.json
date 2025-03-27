@@ -1,0 +1,51 @@
+{
+    "command_group": "az cosmosdb restorable-database-account",
+    "description": "Manage restorable Azure Cosmos DB accounts.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az cosmosdb restorable-database-account list",
+            "summary": "List all the database accounts that can be restored.",
+            "syntax": "az cosmosdb restorable-database-account list [--account-name]\n                                             [--location]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account-name -n",
+                "--location -l"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az cosmosdb restorable-database-account list",
+            "summary": "List all the database accounts that can be restored.",
+            "syntax": "az cosmosdb restorable-database-account list [--account-name]\n                                             [--location]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account-name -n",
+                "--location -l"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az cosmosdb restorable-database-account show",
+            "summary": "Show the details of a database account that can be restored.",
+            "syntax": "az cosmosdb restorable-database-account show [--instance-id]\n                                             [--location]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--instance-id -i",
+                "--location -l"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az cosmosdb restorable-database-account show",
+            "summary": "Show the details of a database account that can be restored.",
+            "syntax": "az cosmosdb restorable-database-account show [--instance-id]\n                                             [--location]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--instance-id -i",
+                "--location -l"
+            ],
+            "examples": []
+        }
+    ]
+}

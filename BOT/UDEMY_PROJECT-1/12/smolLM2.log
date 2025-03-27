@@ -1,0 +1,56 @@
+# Log file for SmolLM2 model execution
+2025-02-25 14:00:01,109 - DEBUG - Logging setup completed.
+2025-02-25 14:00:01,110 - DEBUG - Starting the model download process.
+2025-02-25 14:00:01,110 - DEBUG - Downloading tokenizer for model: HuggingFaceTB/SmolLM2-1.7B-Instruct
+2025-02-25 14:00:01,118 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-02-25 14:00:02,011 - DEBUG - https://huggingface.co:443 "HEAD /HuggingFaceTB/SmolLM2-1.7B-Instruct/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2025-02-25 14:00:02,024 - DEBUG - Attempting to acquire lock 1427419433536 on C:\Users\ARYAVIN\Documents\GitHub\AI\ai\BOT\UDEMY_PROJECT-1\12\.locks\models--HuggingFaceTB--SmolLM2-1.7B-Instruct\8c7b22013909450429303ed10be4398bd63f5457.lock
+2025-02-25 14:00:02,026 - DEBUG - Lock 1427419433536 acquired on C:\Users\ARYAVIN\Documents\GitHub\AI\ai\BOT\UDEMY_PROJECT-1\12\.locks\models--HuggingFaceTB--SmolLM2-1.7B-Instruct\8c7b22013909450429303ed10be4398bd63f5457.lock
+2025-02-25 14:00:02,303 - DEBUG - https://huggingface.co:443 "GET /HuggingFaceTB/SmolLM2-1.7B-Instruct/resolve/main/tokenizer_config.json HTTP/1.1" 200 3764
+2025-02-25 14:05:27,411 - DEBUG - Attempting to release lock 1427419433536 on C:\Users\ARYAVIN\Documents\GitHub\AI\ai\BOT\UDEMY_PROJECT-1\12\.locks\models--HuggingFaceTB--SmolLM2-1.7B-Instruct\8c7b22013909450429303ed10be4398bd63f5457.lock
+2025-02-25 14:05:27,425 - DEBUG - Lock 1427419433536 released on C:\Users\ARYAVIN\Documents\GitHub\AI\ai\BOT\UDEMY_PROJECT-1\12\.locks\models--HuggingFaceTB--SmolLM2-1.7B-Instruct\8c7b22013909450429303ed10be4398bd63f5457.lock
+2025-02-25 14:05:28,066 - DEBUG - Resetting dropped connection: huggingface.co
+2025-02-25 14:05:28,461 - DEBUG - https://huggingface.co:443 "HEAD /HuggingFaceTB/SmolLM2-1.7B-Instruct/resolve/main/vocab.json HTTP/1.1" 200 0
+2025-02-25 14:05:28,471 - DEBUG - Attempting to acquire lock 1427832141248 on C:\Users\ARYAVIN\Documents\GitHub\AI\ai\BOT\UDEMY_PROJECT-1\12\.locks\models--HuggingFaceTB--SmolLM2-1.7B-Instruct\0ad5ecc2035b7031b88afb544ee95e2d49baa484.lock
+2025-02-25 14:05:28,473 - DEBUG - Lock 1427832141248 acquired on C:\Users\ARYAVIN\Documents\GitHub\AI\ai\BOT\UDEMY_PROJECT-1\12\.locks\models--HuggingFaceTB--SmolLM2-1.7B-Instruct\0ad5ecc2035b7031b88afb544ee95e2d49baa484.lock
+2025-02-25 14:05:28,758 - DEBUG - https://huggingface.co:443 "GET /HuggingFaceTB/SmolLM2-1.7B-Instruct/resolve/main/vocab.json HTTP/1.1" 200 800662
+2025-02-25 14:05:29,552 - DEBUG - Attempting to release lock 1427832141248 on C:\Users\ARYAVIN\Documents\GitHub\AI\ai\BOT\UDEMY_PROJECT-1\12\.locks\models--HuggingFaceTB--SmolLM2-1.7B-Instruct\0ad5ecc2035b7031b88afb544ee95e2d49baa484.lock
+2025-02-25 14:05:29,554 - DEBUG - Lock 1427832141248 released on C:\Users\ARYAVIN\Documents\GitHub\AI\ai\BOT\UDEMY_PROJECT-1\12\.locks\models--HuggingFaceTB--SmolLM2-1.7B-Instruct\0ad5ecc2035b7031b88afb544ee95e2d49baa484.lock
+2025-02-25 14:05:29,831 - DEBUG - https://huggingface.co:443 "HEAD /HuggingFaceTB/SmolLM2-1.7B-Instruct/resolve/main/merges.txt HTTP/1.1" 200 0
+2025-02-25 14:05:29,835 - DEBUG - Attempting to acquire lock 1427830179936 on C:\Users\ARYAVIN\Documents\GitHub\AI\ai\BOT\UDEMY_PROJECT-1\12\.locks\models--HuggingFaceTB--SmolLM2-1.7B-Instruct\69503b13f727ba3812b6803e97442a6de05ef5eb.lock
+2025-02-25 14:05:29,837 - DEBUG - Lock 1427830179936 acquired on C:\Users\ARYAVIN\Documents\GitHub\AI\ai\BOT\UDEMY_PROJECT-1\12\.locks\models--HuggingFaceTB--SmolLM2-1.7B-Instruct\69503b13f727ba3812b6803e97442a6de05ef5eb.lock
+2025-02-25 14:05:30,107 - DEBUG - https://huggingface.co:443 "GET /HuggingFaceTB/SmolLM2-1.7B-Instruct/resolve/main/merges.txt HTTP/1.1" 200 466391
+2025-02-25 14:05:30,667 - DEBUG - Attempting to release lock 1427830179936 on C:\Users\ARYAVIN\Documents\GitHub\AI\ai\BOT\UDEMY_PROJECT-1\12\.locks\models--HuggingFaceTB--SmolLM2-1.7B-Instruct\69503b13f727ba3812b6803e97442a6de05ef5eb.lock
+2025-02-25 14:05:30,669 - DEBUG - Lock 1427830179936 released on C:\Users\ARYAVIN\Documents\GitHub\AI\ai\BOT\UDEMY_PROJECT-1\12\.locks\models--HuggingFaceTB--SmolLM2-1.7B-Instruct\69503b13f727ba3812b6803e97442a6de05ef5eb.lock
+2025-02-25 14:05:30,942 - DEBUG - https://huggingface.co:443 "HEAD /HuggingFaceTB/SmolLM2-1.7B-Instruct/resolve/main/tokenizer.json HTTP/1.1" 200 0
+2025-02-25 14:05:30,945 - DEBUG - Attempting to acquire lock 1427851129824 on C:\Users\ARYAVIN\Documents\GitHub\AI\ai\BOT\UDEMY_PROJECT-1\12\.locks\models--HuggingFaceTB--SmolLM2-1.7B-Instruct\f922b1797f0c88e71addc8393787831f2477a4bd.lock
+2025-02-25 14:05:30,947 - DEBUG - Lock 1427851129824 acquired on C:\Users\ARYAVIN\Documents\GitHub\AI\ai\BOT\UDEMY_PROJECT-1\12\.locks\models--HuggingFaceTB--SmolLM2-1.7B-Instruct\f922b1797f0c88e71addc8393787831f2477a4bd.lock
+2025-02-25 14:05:31,224 - DEBUG - https://huggingface.co:443 "GET /HuggingFaceTB/SmolLM2-1.7B-Instruct/resolve/main/tokenizer.json HTTP/1.1" 200 2104556
+2025-02-25 14:05:32,002 - DEBUG - Attempting to release lock 1427851129824 on C:\Users\ARYAVIN\Documents\GitHub\AI\ai\BOT\UDEMY_PROJECT-1\12\.locks\models--HuggingFaceTB--SmolLM2-1.7B-Instruct\f922b1797f0c88e71addc8393787831f2477a4bd.lock
+2025-02-25 14:05:32,003 - DEBUG - Lock 1427851129824 released on C:\Users\ARYAVIN\Documents\GitHub\AI\ai\BOT\UDEMY_PROJECT-1\12\.locks\models--HuggingFaceTB--SmolLM2-1.7B-Instruct\f922b1797f0c88e71addc8393787831f2477a4bd.lock
+2025-02-25 14:05:32,268 - DEBUG - https://huggingface.co:443 "HEAD /HuggingFaceTB/SmolLM2-1.7B-Instruct/resolve/main/added_tokens.json HTTP/1.1" 404 0
+2025-02-25 14:05:32,528 - DEBUG - https://huggingface.co:443 "HEAD /HuggingFaceTB/SmolLM2-1.7B-Instruct/resolve/main/special_tokens_map.json HTTP/1.1" 200 0
+2025-02-25 14:05:32,532 - DEBUG - Attempting to acquire lock 1427818774800 on C:\Users\ARYAVIN\Documents\GitHub\AI\ai\BOT\UDEMY_PROJECT-1\12\.locks\models--HuggingFaceTB--SmolLM2-1.7B-Instruct\44719d2e365acac0637fd25a3acf46494ca45940.lock
+2025-02-25 14:05:32,533 - DEBUG - Lock 1427818774800 acquired on C:\Users\ARYAVIN\Documents\GitHub\AI\ai\BOT\UDEMY_PROJECT-1\12\.locks\models--HuggingFaceTB--SmolLM2-1.7B-Instruct\44719d2e365acac0637fd25a3acf46494ca45940.lock
+2025-02-25 14:05:32,793 - DEBUG - https://huggingface.co:443 "GET /HuggingFaceTB/SmolLM2-1.7B-Instruct/resolve/main/special_tokens_map.json HTTP/1.1" 200 655
+2025-02-25 14:05:32,805 - DEBUG - Attempting to release lock 1427818774800 on C:\Users\ARYAVIN\Documents\GitHub\AI\ai\BOT\UDEMY_PROJECT-1\12\.locks\models--HuggingFaceTB--SmolLM2-1.7B-Instruct\44719d2e365acac0637fd25a3acf46494ca45940.lock
+2025-02-25 14:05:32,807 - DEBUG - Lock 1427818774800 released on C:\Users\ARYAVIN\Documents\GitHub\AI\ai\BOT\UDEMY_PROJECT-1\12\.locks\models--HuggingFaceTB--SmolLM2-1.7B-Instruct\44719d2e365acac0637fd25a3acf46494ca45940.lock
+2025-02-25 14:05:33,067 - DEBUG - https://huggingface.co:443 "HEAD /HuggingFaceTB/SmolLM2-1.7B-Instruct/resolve/main/chat_template.jinja HTTP/1.1" 404 0
+2025-02-25 14:05:33,324 - DEBUG - Tokenizer downloaded successfully.
+2025-02-25 14:05:33,324 - DEBUG - Downloading model: HuggingFaceTB/SmolLM2-1.7B-Instruct
+2025-02-25 14:05:33,579 - DEBUG - https://huggingface.co:443 "HEAD /HuggingFaceTB/SmolLM2-1.7B-Instruct/resolve/main/config.json HTTP/1.1" 200 0
+2025-02-25 14:05:33,584 - DEBUG - Attempting to acquire lock 1427850344544 on C:\Users\ARYAVIN\Documents\GitHub\AI\ai\BOT\UDEMY_PROJECT-1\12\.locks\models--HuggingFaceTB--SmolLM2-1.7B-Instruct\d25647d8e513f6df339fd08d0eca84c7cfa5781a.lock
+2025-02-25 14:05:33,586 - DEBUG - Lock 1427850344544 acquired on C:\Users\ARYAVIN\Documents\GitHub\AI\ai\BOT\UDEMY_PROJECT-1\12\.locks\models--HuggingFaceTB--SmolLM2-1.7B-Instruct\d25647d8e513f6df339fd08d0eca84c7cfa5781a.lock
+2025-02-25 14:05:33,841 - DEBUG - https://huggingface.co:443 "GET /HuggingFaceTB/SmolLM2-1.7B-Instruct/resolve/main/config.json HTTP/1.1" 200 792
+2025-02-25 14:05:33,858 - DEBUG - Attempting to release lock 1427850344544 on C:\Users\ARYAVIN\Documents\GitHub\AI\ai\BOT\UDEMY_PROJECT-1\12\.locks\models--HuggingFaceTB--SmolLM2-1.7B-Instruct\d25647d8e513f6df339fd08d0eca84c7cfa5781a.lock
+2025-02-25 14:05:33,860 - DEBUG - Lock 1427850344544 released on C:\Users\ARYAVIN\Documents\GitHub\AI\ai\BOT\UDEMY_PROJECT-1\12\.locks\models--HuggingFaceTB--SmolLM2-1.7B-Instruct\d25647d8e513f6df339fd08d0eca84c7cfa5781a.lock
+2025-02-25 14:05:38,231 - DEBUG - https://huggingface.co:443 "HEAD /HuggingFaceTB/SmolLM2-1.7B-Instruct/resolve/main/model.safetensors HTTP/1.1" 302 0
+2025-02-25 14:05:38,237 - DEBUG - Attempting to acquire lock 1427856631392 on C:\Users\ARYAVIN\Documents\GitHub\AI\ai\BOT\UDEMY_PROJECT-1\12\.locks\models--HuggingFaceTB--SmolLM2-1.7B-Instruct\f55217be716b6a997b97b9d8d7eb6fad02e00858f5010ec24f64603c3a98a0e8.lock
+2025-02-25 14:05:38,239 - DEBUG - Lock 1427856631392 acquired on C:\Users\ARYAVIN\Documents\GitHub\AI\ai\BOT\UDEMY_PROJECT-1\12\.locks\models--HuggingFaceTB--SmolLM2-1.7B-Instruct\f55217be716b6a997b97b9d8d7eb6fad02e00858f5010ec24f64603c3a98a0e8.lock
+2025-02-25 14:05:38,245 - DEBUG - Starting new HTTPS connection (1): cdn-lfs-us-1.hf.co:443
+2025-02-25 14:05:38,580 - DEBUG - https://cdn-lfs-us-1.hf.co:443 "GET /repos/e4/2e/e42eab17172b7b09874f4dd4b8e7c9f29a6d7a07a5760ec4b6bfc002f3ee9568/f55217be716b6a997b97b9d8d7eb6fad02e00858f5010ec24f64603c3a98a0e8?response-content-disposition=inline%3B+filename*%3DUTF-8%27%27model.safetensors%3B+filename%3D%22model.safetensors%22%3B&Expires=1740476140&Policy=eyJTdGF0ZW1lbnQiOlt7IkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc0MDQ3NjE0MH19LCJSZXNvdXJjZSI6Imh0dHBzOi8vY2RuLWxmcy11cy0xLmhmLmNvL3JlcG9zL2U0LzJlL2U0MmVhYjE3MTcyYjdiMDk4NzRmNGRkNGI4ZTdjOWYyOWE2ZDdhMDdhNTc2MGVjNGI2YmZjMDAyZjNlZTk1NjgvZjU1MjE3YmU3MTZiNmE5OTdiOTdiOWQ4ZDdlYjZmYWQwMmUwMDg1OGY1MDEwZWMyNGY2NDYwM2MzYTk4YTBlOD9yZXNwb25zZS1jb250ZW50LWRpc3Bvc2l0aW9uPSoifV19&Signature=ZxxGVc4FRkt~f6tpTFJQN1DwN9QoZ8e6d8dukt5jOq5a8AkQn-G2WRDvRYYzh0ZWXli6XWQz6OucJ~7s59CmCxKR18MJVlTey3Vo6Ho-9huTS7JMqYXOYmxnuc~AuGDZAbKDeua~lVyN6BRvvH9mj7hL8AEbqbNanJglfdJr1HTfNhJeesjHrTU~VYdBGuItlOnKNq5-JBcPDAIwEcKA31EytT4rbl1l2tXRacsplPGXpPBrgYVr~pMm0AO2TmaOy-GVrW8xt3IP8qAIhYlO4eKRuk~vEIlk~2Yultrl3j0LqpT9VEVUKJdjfpZa1Fz70hrLQqcrsIHFShXxiyPZsQ__&Key-Pair-Id=K24J24Z295AEI9 HTTP/1.1" 200 3422777952
+2025-02-25 14:13:47,238 - DEBUG - Attempting to release lock 1427856631392 on C:\Users\ARYAVIN\Documents\GitHub\AI\ai\BOT\UDEMY_PROJECT-1\12\.locks\models--HuggingFaceTB--SmolLM2-1.7B-Instruct\f55217be716b6a997b97b9d8d7eb6fad02e00858f5010ec24f64603c3a98a0e8.lock
+2025-02-25 14:13:47,263 - DEBUG - Lock 1427856631392 released on C:\Users\ARYAVIN\Documents\GitHub\AI\ai\BOT\UDEMY_PROJECT-1\12\.locks\models--HuggingFaceTB--SmolLM2-1.7B-Instruct\f55217be716b6a997b97b9d8d7eb6fad02e00858f5010ec24f64603c3a98a0e8.lock
+2025-02-25 14:13:47,269 - ERROR - Error loading model: Consistency check failed: file should be of size 3422777952 but has size 73407498 (model.safetensors).
+We are sorry for the inconvenience. Please retry with `force_download=True`.
+If the issue persists, please let us know by opening an issue on https://github.com/huggingface/huggingface_hub.

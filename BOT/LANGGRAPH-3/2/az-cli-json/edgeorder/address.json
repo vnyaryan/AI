@@ -1,0 +1,112 @@
+{
+    "command_group": "az edgeorder address",
+    "description": "Manage address with edgeorder sub group address.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az edgeorder address create",
+            "summary": "Create a new address with the specified parameters. Existing address can be updated with this API.",
+            "syntax": "az edgeorder address create --address-name\n                            --contact-details\n                            --resource-group\n                            [--location]\n                            [--no-wait]\n                            [--shipping-address]\n                            [--tags]",
+            "required_parameters": [
+                "--address-name --name -n",
+                "--contact-details",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--location -l",
+                "--no-wait",
+                "--shipping-address",
+                "--tags"
+            ],
+            "examples": [
+                "az edgeorder address create --name \"TestMSAddressName\" --location \"eastus\" --contact-details contact-name=\"Petr Cech\" email-list=\"testemail@microsoft.com\" phone=\"1234567890\" phone-extension=\"\" --shipping-address address-type=\"None\" city=\"San Francisco\" company-name=\"Microsoft\" country=\"US\" postal-code=\"94107\" state-or-province=\"CA\" street-address1=\"16 TOWNSEND ST\" street-address2=\"UNIT 1\" --resource-group \"TestRG\""
+            ]
+        },
+        {
+            "name": "az edgeorder address delete",
+            "summary": "Delete an address.",
+            "syntax": "az edgeorder address delete [--address-name]\n                            [--ids]\n                            [--no-wait]\n                            [--resource-group]\n                            [--subscription]\n                            [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--address-name --name -n",
+                "--ids",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az edgeorder address delete --name \"TestAddressName1\" --resource-group \"TestRG\""
+            ]
+        },
+        {
+            "name": "az edgeorder address list",
+            "summary": "List all the addresses available under the given resource group. And List all the addresses available under the subscription.",
+            "syntax": "az edgeorder address list [--filter]\n                          [--resource-group]\n                          [--skip-token]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--filter",
+                "--resource-group -g",
+                "--skip-token"
+            ],
+            "examples": [
+                "az edgeorder address list --resource-group \"TestRG\"",
+                "az edgeorder address list"
+            ]
+        },
+        {
+            "name": "az edgeorder address show",
+            "summary": "Get information about the specified address.",
+            "syntax": "az edgeorder address show [--address-name]\n                          [--ids]\n                          [--resource-group]\n                          [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--address-name --name -n",
+                "--ids",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az edgeorder address show --name \"TestMSAddressName\" --resource-group \"TestRG\""
+            ]
+        },
+        {
+            "name": "az edgeorder address update",
+            "summary": "Update the properties of an existing address.",
+            "syntax": "az edgeorder address update [--address-name]\n                            [--contact-details]\n                            [--ids]\n                            [--if-match]\n                            [--no-wait]\n                            [--resource-group]\n                            [--shipping-address]\n                            [--subscription]\n                            [--tags]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--address-name --name -n",
+                "--contact-details",
+                "--ids",
+                "--if-match",
+                "--no-wait",
+                "--resource-group -g",
+                "--shipping-address",
+                "--subscription",
+                "--tags"
+            ],
+            "examples": [
+                "az edgeorder address update --name \"TestAddressName2\" --contact-details contact-name=\"Petr Cech\" email-list=\"ssemcr@microsoft.com\" phone=\"1234567890\" phone-extension=\"\" --shipping-address address-type=\"None\" city=\"San Francisco\" company-name=\"Microsoft\" country=\"US\" postal-code=\"94107\" state-or-province=\"CA\" street-address1=\"16 TOWNSEND STT\" street-address2=\"UNIT 1\" --tags Hobby=\"Web Series Added\" Name=\"Smile-Updated\" WhatElse=\"Web Series Added\" Work=\"Engineering\" --resource-group \"TestRG\""
+            ]
+        },
+        {
+            "name": "az edgeorder address wait",
+            "summary": "Place the CLI in a waiting state until a condition of the address is met.",
+            "syntax": "az edgeorder address wait --address-name\n                          --resource-group\n                          [--created]\n                          [--custom]\n                          [--deleted]\n                          [--exists]\n                          [--interval]\n                          [--timeout]\n                          [--updated]",
+            "required_parameters": [
+                "--address-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--interval",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

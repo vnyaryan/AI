@@ -1,0 +1,95 @@
+{
+    "command_group": "az ad user",
+    "description": "Manage Microsoft Entra users.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az ad user create",
+            "summary": "Create a user.",
+            "syntax": "az ad user create --display-name\n                  --password\n                  --user-principal-name\n                  [--force-change-password-next-sign-in {false, true}]\n                  [--immutable-id]\n                  [--mail-nickname]",
+            "required_parameters": [
+                "--display-name",
+                "--password",
+                "--user-principal-name"
+            ],
+            "optional_parameters": [
+                "--force-change-password-next-sign-in",
+                "--immutable-id",
+                "--mail-nickname"
+            ],
+            "examples": [
+                "az ad user create --display-name myuser --password password --user-principal-name myuser@contoso.com"
+            ]
+        },
+        {
+            "name": "az ad user delete",
+            "summary": "Delete a user.",
+            "syntax": "az ad user delete --id",
+            "required_parameters": [
+                "--id"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az ad user delete --id myuser@contoso.com"
+            ]
+        },
+        {
+            "name": "az ad user get-member-groups",
+            "summary": "Get groups of which the user is a member.",
+            "syntax": "az ad user get-member-groups --id\n                             [--security-enabled-only {false, true}]",
+            "required_parameters": [
+                "--id"
+            ],
+            "optional_parameters": [
+                "--security-enabled-only"
+            ],
+            "examples": [
+                "az ad user get-member-groups --id myuser@contoso.com"
+            ]
+        },
+        {
+            "name": "az ad user list",
+            "summary": "List users.",
+            "syntax": "az ad user list [--display-name]\n                [--filter]\n                [--upn]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--display-name",
+                "--filter",
+                "--upn"
+            ],
+            "examples": [
+                "az ad user list"
+            ]
+        },
+        {
+            "name": "az ad user show",
+            "summary": "Get the details of a user.",
+            "syntax": "az ad user show --id",
+            "required_parameters": [
+                "--id"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az ad user show --id myuser@contoso.com"
+            ]
+        },
+        {
+            "name": "az ad user update",
+            "summary": "Update a user.",
+            "syntax": "az ad user update --id\n                  [--account-enabled {false, true}]\n                  [--display-name]\n                  [--force-change-password-next-sign-in {false, true}]\n                  [--mail-nickname]\n                  [--password]",
+            "required_parameters": [
+                "--id"
+            ],
+            "optional_parameters": [
+                "--account-enabled",
+                "--display-name",
+                "--force-change-password-next-sign-in",
+                "--mail-nickname",
+                "--password"
+            ],
+            "examples": [
+                "az ad user update --id myuser@contoso.com --display-name username2"
+            ]
+        }
+    ]
+}

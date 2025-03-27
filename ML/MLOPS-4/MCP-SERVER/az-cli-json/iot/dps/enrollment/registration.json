@@ -1,0 +1,38 @@
+{
+    "command_group": "az iot dps enrollment registration",
+    "description": "Manage service-side device registrations for an individual enrollment in an Azure IoT Hub Device Provisioning Service.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az iot dps enrollment registration delete",
+            "summary": "Delete a device registration for an individual enrollment in an Azure IoT Hub Device Provisioning Service.",
+            "syntax": "az iot dps enrollment registration delete --eid\n                                          [--auth-type {key, login}]\n                                          [--dps-name]\n                                          [--etag]\n                                          [--login]\n                                          [--resource-group]",
+            "required_parameters": [
+                "--eid --enrollment-id"
+            ],
+            "optional_parameters": [
+                "--auth-type",
+                "--dps-name -n",
+                "--etag -e",
+                "--login -l",
+                "--resource-group -g"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az iot dps enrollment registration show",
+            "summary": "Get a device registration for an individual enrollment in an Azure IoT Hub Device Provisioning Service.",
+            "syntax": "az iot dps enrollment registration show --eid\n                                        [--auth-type {key, login}]\n                                        [--dps-name]\n                                        [--login]\n                                        [--resource-group]",
+            "required_parameters": [
+                "--eid --enrollment-id"
+            ],
+            "optional_parameters": [
+                "--auth-type",
+                "--dps-name -n",
+                "--login -l",
+                "--resource-group -g"
+            ],
+            "examples": []
+        }
+    ]
+}

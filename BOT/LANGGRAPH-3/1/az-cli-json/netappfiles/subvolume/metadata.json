@@ -1,0 +1,26 @@
+{
+    "command_group": "az netappfiles subvolume metadata",
+    "description": "Manage Azure NetApp Files (ANF) Subvolume Metadata.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az netappfiles subvolume metadata show",
+            "summary": "Get details of the specified subvolume.",
+            "syntax": "az netappfiles subvolume metadata show [--account-name]\n                                       [--ids]\n                                       [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                       [--pool-name]\n                                       [--resource-group]\n                                       [--subscription]\n                                       [--subvolume-name]\n                                       [--volume-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account-name -a",
+                "--ids",
+                "--no-wait",
+                "--pool-name -p",
+                "--resource-group -g",
+                "--subscription",
+                "--subvolume-name",
+                "--volume-name -v"
+            ],
+            "examples": [
+                "az netappfiles subvolume metadata show -g mygroup --account-name myaccountname  --pool-name mypoolname --volume-name myvolumename --subvolume-name mysubvolumename"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,188 @@
+{
+    "command_group": "az synapse trigger",
+    "description": "Manage Synapse's triggers.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az synapse trigger create",
+            "summary": "Create a trigger.",
+            "syntax": "az synapse trigger create --file\n                          --name\n                          --workspace-name\n                          [--no-wait]",
+            "required_parameters": [
+                "--file",
+                "--name -n",
+                "--workspace-name"
+            ],
+            "optional_parameters": [
+                "--no-wait"
+            ],
+            "examples": [
+                "az synapse trigger create --workspace-name testsynapseworkspace \\\n  --name testtrigger --file @\"path/trigger.json\""
+            ]
+        },
+        {
+            "name": "az synapse trigger delete",
+            "summary": "Delete a trigger.",
+            "syntax": "az synapse trigger delete --name\n                          --workspace-name\n                          [--no-wait]\n                          [--yes]",
+            "required_parameters": [
+                "--name -n",
+                "--workspace-name"
+            ],
+            "optional_parameters": [
+                "--no-wait",
+                "--yes -y"
+            ],
+            "examples": [
+                "az synapse trigger delete --workspace-name testsynapseworkspace \\\n  --name testtrigger"
+            ]
+        },
+        {
+            "name": "az synapse trigger get-event-subscription-status",
+            "summary": "Get a trigger's event subscription status.",
+            "syntax": "az synapse trigger get-event-subscription-status --name\n                                                 --workspace-name",
+            "required_parameters": [
+                "--name -n",
+                "--workspace-name"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az synapse trigger get-event-subscription-status --workspace-name testsynapseworkspace \\\n  --name eventtrigger"
+            ]
+        },
+        {
+            "name": "az synapse trigger list",
+            "summary": "List triggers.",
+            "syntax": "az synapse trigger list --workspace-name",
+            "required_parameters": [
+                "--workspace-name"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az synapse trigger list --workspace-name testsynapseworkspace"
+            ]
+        },
+        {
+            "name": "az synapse trigger set",
+            "summary": "Update an exist trigger.",
+            "syntax": "az synapse trigger set --file\n                       --name\n                       --workspace-name\n                       [--no-wait]",
+            "required_parameters": [
+                "--file",
+                "--name -n",
+                "--workspace-name"
+            ],
+            "optional_parameters": [
+                "--no-wait"
+            ],
+            "examples": [
+                "az synapse trigger set --workspace-name testsynapseworkspace \\\n  --name testtrigger --file @\"path/trigger.json\""
+            ]
+        },
+        {
+            "name": "az synapse trigger show",
+            "summary": "Get a trigger.",
+            "syntax": "az synapse trigger show --name\n                        --workspace-name",
+            "required_parameters": [
+                "--name -n",
+                "--workspace-name"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az synapse trigger show --workspace-name testsynapseworkspace \\\n  --name testtrigger"
+            ]
+        },
+        {
+            "name": "az synapse trigger start",
+            "summary": "Starts a trigger.",
+            "syntax": "az synapse trigger start --name\n                         --workspace-name\n                         [--no-wait]",
+            "required_parameters": [
+                "--name -n",
+                "--workspace-name"
+            ],
+            "optional_parameters": [
+                "--no-wait"
+            ],
+            "examples": [
+                "az synapse trigger start --workspace-name testsynapseworkspace \\\n  --name testtrigger"
+            ]
+        },
+        {
+            "name": "az synapse trigger stop",
+            "summary": "Stops a trigger.",
+            "syntax": "az synapse trigger stop --name\n                        --workspace-name\n                        [--no-wait]",
+            "required_parameters": [
+                "--name -n",
+                "--workspace-name"
+            ],
+            "optional_parameters": [
+                "--no-wait"
+            ],
+            "examples": [
+                "az synapse trigger stop --workspace-name testsynapseworkspace \\\n  --name testtrigger"
+            ]
+        },
+        {
+            "name": "az synapse trigger subscribe-to-event",
+            "summary": "Subscribe event trigger to events.",
+            "syntax": "az synapse trigger subscribe-to-event --name\n                                      --workspace-name\n                                      [--no-wait]",
+            "required_parameters": [
+                "--name -n",
+                "--workspace-name"
+            ],
+            "optional_parameters": [
+                "--no-wait"
+            ],
+            "examples": [
+                "az synapse trigger subscribe-to-event --workspace-name testsynapseworkspace \\\n  --name eventtrigger"
+            ]
+        },
+        {
+            "name": "az synapse trigger unsubscribe-from-event",
+            "summary": "Unsubscribe event trigger from events.",
+            "syntax": "az synapse trigger unsubscribe-from-event --name\n                                          --workspace-name\n                                          [--no-wait]",
+            "required_parameters": [
+                "--name -n",
+                "--workspace-name"
+            ],
+            "optional_parameters": [
+                "--no-wait"
+            ],
+            "examples": [
+                "az synapse trigger unsubscribe-from-event --workspace-name testsynapseworkspace \\\n  --name eventtrigger"
+            ]
+        },
+        {
+            "name": "az synapse trigger update",
+            "summary": "Update an exist trigger.",
+            "syntax": "az synapse trigger update --file\n                          --name\n                          --workspace-name\n                          [--no-wait]",
+            "required_parameters": [
+                "--file",
+                "--name -n",
+                "--workspace-name"
+            ],
+            "optional_parameters": [
+                "--no-wait"
+            ],
+            "examples": [
+                "az synapse trigger update --workspace-name testsynapseworkspace \\\n  --name testtrigger --file @\"path/trigger.json\""
+            ]
+        },
+        {
+            "name": "az synapse trigger wait",
+            "summary": "Place the CLI in a waiting state until a condition of a trigger is met.",
+            "syntax": "az synapse trigger wait --name\n                        --workspace-name\n                        [--created]\n                        [--custom]\n                        [--deleted]\n                        [--exists]\n                        [--interval]\n                        [--timeout]\n                        [--updated]",
+            "required_parameters": [
+                "--name -n",
+                "--workspace-name"
+            ],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--interval",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

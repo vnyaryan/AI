@@ -1,0 +1,174 @@
+{
+    "command_group": "az palo-alto cloudngfw firewall",
+    "description": "Manage cloudngfw firewall resource.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az palo-alto cloudngfw firewall create",
+            "summary": "Create a FirewallResource.",
+            "syntax": "az palo-alto cloudngfw firewall create --dns-settings\n                                       --firewall-name\n                                       --marketplace-details\n                                       --network-profile\n                                       --plan-data\n                                       --resource-group\n                                       [--associated-rulestack]\n                                       [--front-end-settings]\n                                       [--identity]\n                                       [--is-panorama-managed {FALSE, TRUE}]\n                                       [--location]\n                                       [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                       [--pan-etag]\n                                       [--panorama-config]\n                                       [--tags]",
+            "required_parameters": [
+                "--dns-settings",
+                "--firewall-name --name -n",
+                "--marketplace-details",
+                "--network-profile",
+                "--plan-data",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--associated-rulestack",
+                "--front-end-settings",
+                "--identity",
+                "--is-panorama-managed",
+                "--location -l",
+                "--no-wait",
+                "--pan-etag",
+                "--panorama-config",
+                "--tags"
+            ],
+            "examples": [
+                "az palo-alto cloudngfw firewall create --name MyCloudngfwFirewall -g MyResourceGroup --location eastus --associated-rulestack \"{location:eastus,resource-id:/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/MyResourceGroup/providers/PaloAltoNetworks.Cloudngfw/localRulestacks/MyLocalRulestacks}\" --dns-settings \"{enable-dns-proxy:DISABLED,enabled-dns-type:CUSTOM}\" --is-panorama-managed FALSE --marketplace-details \"{marketplace-subscription-status:Subscribed,offer-id:offer-id,publisher-id:publisher-id}\" --network-profile \"{egress-nat-ip:[],enable-egress-nat:DISABLED,network-type:VNET,public-ips:[{address:10.0.0.0/16,resource-id:/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/MyResourceGroup/providers/Microsoft.Network/publicIPAddresses/MypublicIP}],vnet-configuration:{ip-of-trust-subnet-for-udr:{address:10.0.0.0/16},trust-subnet:{resource-id:/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/MyResourceGroup/providers/Microsoft.Network/virtualNetworks/MyVnet/subnets/subnet1},un-trust-subnet:{resource-id:/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/MyResourceGroup/providers/Microsoft.Network/virtualNetworks/MyVnet/subnets/subnet1},vnet:{resource-id:/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/MyResourceGroup/providers/Microsoft.Network/virtualNetworks/MyVnet}}}\" --panorama-config \"{config-string:bas64EncodedString}\" --plan-data \"{billing-cycle:MONTHLY,plan-id:plan-id,usage-type:PAYG}\""
+            ]
+        },
+        {
+            "name": "az palo-alto cloudngfw firewall delete",
+            "summary": "Delete a FirewallResource.",
+            "syntax": "az palo-alto cloudngfw firewall delete [--firewall-name]\n                                       [--ids]\n                                       [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                       [--resource-group]\n                                       [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--firewall-name --name -n",
+                "--ids",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az palo-alto cloudngfw firewall delete --resource-group MyResourceGroup -n MyCloudngfwFirewall"
+            ]
+        },
+        {
+            "name": "az palo-alto cloudngfw firewall list",
+            "summary": "List FirewallResource resources by subscription ID.",
+            "syntax": "az palo-alto cloudngfw firewall list [--max-items]\n                                     [--next-token]\n                                     [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az palo-alto cloudngfw firewall list --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az palo-alto cloudngfw firewall save-log-profile",
+            "summary": "Save Log Profile for Firewall.",
+            "syntax": "az palo-alto cloudngfw firewall save-log-profile [--application-insights]\n                                                 [--common-destination]\n                                                 [--decrypt-destination]\n                                                 [--firewall-name]\n                                                 [--ids]\n                                                 [--log-option {INDIVIDUAL_DESTINATION, SAME_DESTINATION}]\n                                                 [--log-type {AUDIT, DECRYPTION, DLP, THREAT, TRAFFIC, WILDFIRE}]\n                                                 [--resource-group]\n                                                 [--subscription]\n                                                 [--threat-destination]\n                                                 [--traffic-destination]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--application-insights",
+                "--common-destination",
+                "--decrypt-destination --decrypt-log-destination",
+                "--firewall-name --name -n",
+                "--ids",
+                "--log-option",
+                "--log-type",
+                "--resource-group -g",
+                "--subscription",
+                "--threat-destination --threat-log-destination",
+                "--traffic-destination --traffic-log-destination"
+            ],
+            "examples": [
+                "az palo-alto cloudngfw firewall save-log-profile --resource-group MyResourceGroup -n MyCloudngfwFirewall --log-option \"SAME_DESTINATION\" --log-type \"TRAFFIC\""
+            ]
+        },
+        {
+            "name": "az palo-alto cloudngfw firewall show",
+            "summary": "Get a FirewallResource.",
+            "syntax": "az palo-alto cloudngfw firewall show [--firewall-name]\n                                     [--ids]\n                                     [--resource-group]\n                                     [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--firewall-name --name -n",
+                "--ids",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az palo-alto cloudngfw firewall show --name MyCloudngfwFirewall -g MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az palo-alto cloudngfw firewall show-log-profile",
+            "summary": "Get Log Profile for Firewall.",
+            "syntax": "az palo-alto cloudngfw firewall show-log-profile [--firewall-name]\n                                                 [--ids]\n                                                 [--resource-group]\n                                                 [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--firewall-name --name -n",
+                "--ids",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az palo-alto cloudngfw firewall show-log-profile --resource-group MyResourceGroup -n MyCloudngfwFirewall"
+            ]
+        },
+        {
+            "name": "az palo-alto cloudngfw firewall show-support-info",
+            "summary": "Support info for firewall.",
+            "syntax": "az palo-alto cloudngfw firewall show-support-info [--email]\n                                                  [--firewall-name]\n                                                  [--ids]\n                                                  [--resource-group]\n                                                  [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--email",
+                "--firewall-name --name -n",
+                "--ids",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az palo-alto cloudngfw firewall show-support-info --resource-group MyResourceGroup -n MyCloudngfwFirewall"
+            ]
+        },
+        {
+            "name": "az palo-alto cloudngfw firewall update",
+            "summary": "Update a FirewallResource.",
+            "syntax": "az palo-alto cloudngfw firewall update [--add]\n                                       [--firewall-name]\n                                       [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                       [--identity]\n                                       [--ids]\n                                       [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                       [--remove]\n                                       [--resource-group]\n                                       [--set]\n                                       [--subscription]\n                                       [--tags]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--firewall-name --name -n",
+                "--force-string",
+                "--identity",
+                "--ids",
+                "--no-wait",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--subscription",
+                "--tags"
+            ],
+            "examples": [
+                "az palo-alto cloudngfw firewall update --name MyCloudngfwFirewall -g MyResourceGroup --tags \"{tagName:value}\""
+            ]
+        },
+        {
+            "name": "az palo-alto cloudngfw firewall wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az palo-alto cloudngfw firewall wait [--created]\n                                     [--custom]\n                                     [--deleted]\n                                     [--exists]\n                                     [--firewall-name]\n                                     [--ids]\n                                     [--interval]\n                                     [--resource-group]\n                                     [--subscription]\n                                     [--timeout]\n                                     [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--firewall-name --name -n",
+                "--ids",
+                "--interval",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

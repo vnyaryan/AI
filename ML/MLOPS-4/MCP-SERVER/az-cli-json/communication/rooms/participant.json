@@ -1,0 +1,54 @@
+{
+    "command_group": "az communication rooms participant",
+    "description": "Commands to manage participants of an existing room.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az communication rooms participant add-or-update",
+            "summary": "Add or update participants in a room.",
+            "syntax": "az communication rooms participant add-or-update --room\n                                                 [--attendee-participants]\n                                                 [--connection-string]\n                                                 [--consumer-participants]\n                                                 [--presenter-participants]",
+            "required_parameters": [
+                "--room"
+            ],
+            "optional_parameters": [
+                "--attendee-participants",
+                "--connection-string",
+                "--consumer-participants",
+                "--presenter-participants"
+            ],
+            "examples": [
+                "az communication rooms participant add-or-update --room \"12345678901234567\" --presenter-participants \"8:acs:xxxxxx\" \"8:acs:xxxxxx\" --attendee-participants \"8:acs:xxxxxx\" \"8:acs:xxxxxx\""
+            ]
+        },
+        {
+            "name": "az communication rooms participant get",
+            "summary": "Get participants of a room.",
+            "syntax": "az communication rooms participant get --room\n                                       [--connection-string]",
+            "required_parameters": [
+                "--room"
+            ],
+            "optional_parameters": [
+                "--connection-string"
+            ],
+            "examples": [
+                "az communication rooms participant get --room \"12345678901234567\""
+            ]
+        },
+        {
+            "name": "az communication rooms participant remove",
+            "summary": "Remove participants from a room.",
+            "syntax": "az communication rooms participant remove --participants\n                                          --room\n                                          [--connection-string]\n                                          [--yes]",
+            "required_parameters": [
+                "--participants",
+                "--room"
+            ],
+            "optional_parameters": [
+                "--connection-string",
+                "--yes -y"
+            ],
+            "examples": [
+                "az communication rooms participant remove --room \"12345678901234567\" --participants \"8:acs:xxxxxx\" \"8:acs:xxxxxx\" \"8:acs:xxxxxx\""
+            ]
+        }
+    ]
+}

@@ -1,0 +1,62 @@
+{
+    "command_group": "az vmware hcx-enterprise-site",
+    "description": "Commands to manage HCX Enterprise Sites in a private cloud.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az vmware hcx-enterprise-site create",
+            "summary": "Create an HCX Enterprise Site in a private cloud.",
+            "syntax": "az vmware hcx-enterprise-site create --hcx-enterprise-site-name\n                                     --private-cloud\n                                     --resource-group",
+            "required_parameters": [
+                "--hcx-enterprise-site-name --name -n",
+                "--private-cloud -c",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az vmware hcx-enterprise-site delete",
+            "summary": "Delete an HCX Enterprise Site in a private cloud.",
+            "syntax": "az vmware hcx-enterprise-site delete [--hcx-enterprise-site-name]\n                                     [--ids]\n                                     [--private-cloud]\n                                     [--resource-group]\n                                     [--subscription]\n                                     [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--hcx-enterprise-site-name --name -n",
+                "--ids",
+                "--private-cloud -c",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az vmware hcx-enterprise-site list",
+            "summary": "List HCX Enterprise Sites in a private cloud.",
+            "syntax": "az vmware hcx-enterprise-site list --private-cloud\n                                   --resource-group\n                                   [--max-items]\n                                   [--next-token]",
+            "required_parameters": [
+                "--private-cloud -c",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az vmware hcx-enterprise-site show",
+            "summary": "Get an HCX Enterprise Site by name in a private cloud.",
+            "syntax": "az vmware hcx-enterprise-site show [--hcx-enterprise-site-name]\n                                   [--ids]\n                                   [--private-cloud]\n                                   [--resource-group]\n                                   [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--hcx-enterprise-site-name --name -n",
+                "--ids",
+                "--private-cloud -c",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        }
+    ]
+}

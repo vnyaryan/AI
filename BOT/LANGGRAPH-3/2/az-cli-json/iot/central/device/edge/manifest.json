@@ -1,0 +1,23 @@
+{
+    "command_group": "az iot central device edge manifest",
+    "description": "Manage IoT Edge device manifests.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az iot central device edge manifest show",
+            "summary": "Get the deployment manifest associated to the specified IoT Edge device.",
+            "syntax": "az iot central device edge manifest show --app-id\n                                         --device-id\n                                         [--central-api-uri]\n                                         [--token]",
+            "required_parameters": [
+                "--app-id -n",
+                "--device-id -d"
+            ],
+            "optional_parameters": [
+                "--central-api-uri --central-dns-suffix",
+                "--token"
+            ],
+            "examples": [
+                "az iot central device edge manifest show --app-id {appid} --device-id {deviceId}"
+            ]
+        }
+    ]
+}

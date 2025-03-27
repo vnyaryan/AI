@@ -1,0 +1,71 @@
+{
+    "command_group": "az akshybrid vnet",
+    "description": "Manage virtual networks for provisioned clusters.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az akshybrid vnet create",
+            "summary": "Creates the virtual network.",
+            "syntax": "az akshybrid vnet create --custom-location\n                         --name\n                         --resource-group\n                         [--location]\n                         [--moc-group]\n                         [--moc-location]\n                         [--moc-vnet-name]\n                         [--no-wait]\n                         [--tags]\n                         [--vsphere-segment-name]",
+            "required_parameters": [
+                "--custom-location",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--location -l",
+                "--moc-group",
+                "--moc-location",
+                "--moc-vnet-name",
+                "--no-wait",
+                "--tags",
+                "--vsphere-segment-name"
+            ],
+            "examples": [
+                "az akshybrid vnet create --name \"test-vnet-static\" --resource-group \"test-arcappliance-resgrp\" --custom-location \"testcustomlocation\" --moc-vnet-name \"test-vnet\""
+            ]
+        },
+        {
+            "name": "az akshybrid vnet delete",
+            "summary": "Deletes the virtual network.",
+            "syntax": "az akshybrid vnet delete --name\n                         --resource-group\n                         [--no-wait]\n                         [--yes]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--no-wait",
+                "--yes -y"
+            ],
+            "examples": [
+                "az akshybrid vnet delete --resource-group \"test-arcappliance-resgrp\" --name \"test-vnet-static\""
+            ]
+        },
+        {
+            "name": "az akshybrid vnet list",
+            "summary": "Lists the virtual networks by resource group or subscription.",
+            "syntax": "az akshybrid vnet list [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az akshybrid vnet list --resource-group \"test-arcappliance-resgrp\"",
+                "az akshybrid vnet list"
+            ]
+        },
+        {
+            "name": "az akshybrid vnet show",
+            "summary": "Gets the virtual network.",
+            "syntax": "az akshybrid vnet show --name\n                       --resource-group",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az akshybrid vnet show --resource-group \"test-arcappliance-resgrp\" --name \"test-vnet-static\""
+            ]
+        }
+    ]
+}

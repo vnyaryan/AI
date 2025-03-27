@@ -1,0 +1,21 @@
+{
+    "command_group": "az container app",
+    "description": "Commands to Manage Azure Container Instances App.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az container app up",
+            "summary": "Deploy to Azure Container Instances using GitHub Actions.",
+            "syntax": "az container app up [--acr]\n                    [--branch-name]\n                    [--do-not-wait]\n                    [--port]\n                    [--repository]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--acr",
+                "--branch-name",
+                "--do-not-wait",
+                "--port",
+                "--repository"
+            ],
+            "examples": []
+        }
+    ]
+}

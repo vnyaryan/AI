@@ -1,0 +1,33 @@
+{
+    "command_group": "az datashare email-registration",
+    "description": "Manage email registration with datashare.",
+    "status": "Experimental",
+    "commands": [
+        {
+            "name": "az datashare email-registration activate-email",
+            "summary": "Activate the email registration for the current tenant.",
+            "syntax": "az datashare email-registration activate-email --location\n                                               [--activation-code]",
+            "required_parameters": [
+                "--location -l"
+            ],
+            "optional_parameters": [
+                "--activation-code"
+            ],
+            "examples": [
+                "az datashare email-registration activate-email --activation-code \"djsfhakj2lekowd3wepfklpwe9lpflcd\" --location \"East US 2\""
+            ]
+        },
+        {
+            "name": "az datashare email-registration register-email",
+            "summary": "Register an email for the current tenant.",
+            "syntax": "az datashare email-registration register-email --location",
+            "required_parameters": [
+                "--location -l"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az datashare email-registration register-email --location \"East US 2\""
+            ]
+        }
+    ]
+}

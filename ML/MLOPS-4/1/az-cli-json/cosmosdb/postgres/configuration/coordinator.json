@@ -1,0 +1,62 @@
+{
+    "command_group": "az cosmosdb postgres configuration coordinator",
+    "description": "Manage Azure Cosmos DB for PostgreSQL coordinator configurations.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az cosmosdb postgres configuration coordinator show",
+            "summary": "Get information of a configuration for coordinator.",
+            "syntax": "az cosmosdb postgres configuration coordinator show [--cluster-name]\n                                                    [--configuration-name]\n                                                    [--ids]\n                                                    [--resource-group]\n                                                    [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--cluster-name",
+                "--configuration-name --name -n",
+                "--ids",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az cosmosdb postgres configuration coordinator show -n \"array_nulls\" --cluster-name \"test-cluster\" -g \"testGroup\" --subscription \"ffffffff-ffff-ffff-ffff-ffffffffffff\""
+            ]
+        },
+        {
+            "name": "az cosmosdb postgres configuration coordinator update",
+            "summary": "Updates configuration of coordinator in a cluster.",
+            "syntax": "az cosmosdb postgres configuration coordinator update [--cluster-name]\n                                                      [--configuration-name]\n                                                      [--ids]\n                                                      [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                                      [--resource-group]\n                                                      [--subscription]\n                                                      [--value]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--cluster-name",
+                "--configuration-name --name -n",
+                "--ids",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--value"
+            ],
+            "examples": [
+                "az cosmosdb postgres configuration coordinator update -n \"array_nulls\" --value \"off\" --cluster-name \"test-cluster\" -g \"testGroup\" --subscription \"ffffffff-ffff-ffff-ffff-ffffffffffff\""
+            ]
+        },
+        {
+            "name": "az cosmosdb postgres configuration coordinator wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az cosmosdb postgres configuration coordinator wait [--cluster-name]\n                                                    [--configuration-name]\n                                                    [--created]\n                                                    [--custom]\n                                                    [--deleted]\n                                                    [--exists]\n                                                    [--ids]\n                                                    [--interval]\n                                                    [--resource-group]\n                                                    [--subscription]\n                                                    [--timeout]\n                                                    [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--cluster-name",
+                "--configuration-name --name -n",
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

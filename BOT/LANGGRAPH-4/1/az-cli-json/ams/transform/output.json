@@ -1,0 +1,53 @@
+{
+    "command_group": "az ams transform output",
+    "description": "Manage transform outputs for an Azure Media Services account.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az ams transform output add",
+            "summary": "Add an output to an existing transform.",
+            "syntax": "az ams transform output add --preset\n                            [--account-name]\n                            [--audio-analysis-mode]\n                            [--audio-language]\n                            [--blur-type]\n                            [--face-detector-mode]\n                            [--ids]\n                            [--insights-to-extract {AllInsights, AudioInsightsOnly, VideoInsightsOnly}]\n                            [--name]\n                            [--on-error {ContinueJob, StopProcessingJob}]\n                            [--relative-priority {High, Low, Normal}]\n                            [--resolution]\n                            [--resource-group]\n                            [--subscription]\n                            [--video-analysis-mode]",
+            "required_parameters": [
+                "--preset"
+            ],
+            "optional_parameters": [
+                "--account-name -a",
+                "--audio-analysis-mode",
+                "--audio-language",
+                "--blur-type",
+                "--face-detector-mode",
+                "--ids",
+                "--insights-to-extract",
+                "--name -n",
+                "--on-error",
+                "--relative-priority",
+                "--resolution",
+                "--resource-group -g",
+                "--subscription",
+                "--video-analysis-mode"
+            ],
+            "examples": [
+                "az ams transform output add -a myAmsAccount -n transformName -g myResourceGroup --preset \"C:\\MyPresets\\CustomPreset.json\"",
+                "az ams transform output add -a myAmsAccount -n transformName -g myResourceGroup --preset VideoAnalyzer --audio-language es-ES --insights-to-extract AudioInsightsOnly"
+            ]
+        },
+        {
+            "name": "az ams transform output remove",
+            "summary": "Remove an output from an existing transform.",
+            "syntax": "az ams transform output remove --output-index\n                               [--account-name]\n                               [--ids]\n                               [--name]\n                               [--resource-group]\n                               [--subscription]",
+            "required_parameters": [
+                "--output-index"
+            ],
+            "optional_parameters": [
+                "--account-name -a",
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az ams transform output remove -a myAmsAccount -n transformName -g myResourceGroup --output-index 1"
+            ]
+        }
+    ]
+}

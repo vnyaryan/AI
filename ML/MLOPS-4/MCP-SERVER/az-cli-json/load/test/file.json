@@ -1,0 +1,80 @@
+{
+    "command_group": "az load test file",
+    "description": "Command group for operations on test files.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az load test file delete",
+            "summary": "Delete a file from test.",
+            "syntax": "az load test file delete --file-name\n                         --load-test-resource\n                         --test-id\n                         [--resource-group]\n                         [--yes]",
+            "required_parameters": [
+                "--file-name",
+                "--load-test-resource --name -n",
+                "--test-id -t"
+            ],
+            "optional_parameters": [
+                "--resource-group -g",
+                "--yes -y"
+            ],
+            "examples": [
+                "az load test file delete --test-id sample-test-id --load-test-resource sample-alt-resource --resource-group sample-rg --file-name sample-jmx.jmx --yes"
+            ]
+        },
+        {
+            "name": "az load test file download",
+            "summary": "Download a file from a test.",
+            "syntax": "az load test file download --file-name\n                           --load-test-resource\n                           --path\n                           --test-id\n                           [--force]\n                           [--resource-group]",
+            "required_parameters": [
+                "--file-name",
+                "--load-test-resource --name -n",
+                "--path",
+                "--test-id -t"
+            ],
+            "optional_parameters": [
+                "--force",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az load test file download --test-id sample-test-id --load-test-resource sample-alt-resource --resource-group sample-rg --file-name sample-jmx.jmx --path ~/Downloads/\nexamples:",
+                "az load test file download --test-id sample-test-id --load-test-resource sample-alt-resource --resource-group sample-rg --file-name sample-jmx.jmx --path ~/Downloads/ --force"
+            ]
+        },
+        {
+            "name": "az load test file list",
+            "summary": "List all files in a test.",
+            "syntax": "az load test file list --load-test-resource\n                       --test-id\n                       [--resource-group]",
+            "required_parameters": [
+                "--load-test-resource --name -n",
+                "--test-id -t"
+            ],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az load test file list --test-id sample-test-id --load-test-resource sample-alt-resource --resource-group sample-rg"
+            ]
+        },
+        {
+            "name": "az load test file upload",
+            "summary": "Upload a file to a test.",
+            "syntax": "az load test file upload --load-test-resource\n                         --path\n                         --test-id\n                         [--file-type]\n                         [--no-wait]\n                         [--resource-group]",
+            "required_parameters": [
+                "--load-test-resource --name -n",
+                "--path",
+                "--test-id -t"
+            ],
+            "optional_parameters": [
+                "--file-type",
+                "--no-wait",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az load test file upload --test-id sample-test-id --load-test-resource sample-alt-resource --resource-group sample-rg --path sample-jmx.jmx",
+                "az load test file upload --test-id sample-test-id --load-test-resource sample-alt-resource --resource-group sample-rg --path ~/Resources/split-csv.csv --file-type ADDITIONAL_ARTIFACTS --no-wait",
+                "az load test file upload --test-id sample-test-id --load-test-resource sample-alt-resource --resource-group sample-rg --path ~/Resources/user-prop.properties --file-type USER_PROPERTIES",
+                "az load test file upload --test-id sample-test-id --load-test-resource sample-alt-resource --resource-group sample-rg --path ~/Resources/sample-zip.zip --file-type ZIPPED_ARTIFACTS",
+                "az load test file upload --test-id sample-test-id --load-test-resource sample-alt-resource --resource-group sample-rg --path ~/Resources/sample-url-requests.json --file-type URL_TEST_CONFIG"
+            ]
+        }
+    ]
+}

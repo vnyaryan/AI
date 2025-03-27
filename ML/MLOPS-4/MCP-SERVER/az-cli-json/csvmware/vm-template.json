@@ -1,0 +1,35 @@
+{
+    "command_group": "az csvmware vm-template",
+    "description": "Manage VMware virtual machine templates.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az csvmware vm-template list",
+            "summary": "List details of VMware virtual machines templates in a private cloud.",
+            "syntax": "az csvmware vm-template list --location\n                             --private-cloud\n                             --resource-pool",
+            "required_parameters": [
+                "--location -l",
+                "--private-cloud -p",
+                "--resource-pool -r"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az csvmware vm-template list -p MyPrivateCloud -r MyResourcePool --location eastus"
+            ]
+        },
+        {
+            "name": "az csvmware vm-template show",
+            "summary": "Get the details of a VMware virtual machines template in a private cloud.",
+            "syntax": "az csvmware vm-template show --location\n                             --name\n                             --private-cloud",
+            "required_parameters": [
+                "--location -l",
+                "--name -n",
+                "--private-cloud -p"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az csvmware vm-template show  -n MyVmTemplate -p MyPrivateCloud --location eastus"
+            ]
+        }
+    ]
+}

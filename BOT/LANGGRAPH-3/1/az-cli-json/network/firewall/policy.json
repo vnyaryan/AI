@@ -1,0 +1,147 @@
+{
+    "command_group": "az network firewall policy",
+    "description": "Manage and configure Azure firewall policy.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az network firewall policy create",
+            "summary": "Create an Azure firewall policy.",
+            "syntax": "az network firewall policy create --name\n                                  --resource-group\n                                  [--auto-learn-private-ranges {Disabled, Enabled}]\n                                  [--base-policy]\n                                  [--cert-name]\n                                  [--dns-servers]\n                                  [--enable-dns-proxy {0, 1, f, false, n, no, t, true, y, yes}]\n                                  [--explicit-proxy]\n                                  [--fqdns]\n                                  [--identity]\n                                  [--idps-mode {Alert, Deny, Off}]\n                                  [--idps-profile {Advanced, Basic, Standard}]\n                                  [--ip-addresses]\n                                  [--key-vault-secret-id]\n                                  [--location]\n                                  [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                  [--private-ranges]\n                                  [--sku {Basic, Premium, Standard}]\n                                  [--sql {0, 1, f, false, n, no, t, true, y, yes}]\n                                  [--tags]\n                                  [--threat-intel-mode {Alert, Deny, Off}]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--auto-learn-private-ranges --learn-ranges",
+                "--base-policy",
+                "--cert-name",
+                "--dns-servers",
+                "--enable-dns-proxy",
+                "--explicit-proxy",
+                "--fqdns",
+                "--identity",
+                "--idps-mode",
+                "--idps-profile",
+                "--ip-addresses",
+                "--key-vault-secret-id",
+                "--location -l",
+                "--no-wait",
+                "--private-ranges",
+                "--sku",
+                "--sql",
+                "--tags",
+                "--threat-intel-mode"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az network firewall policy delete",
+            "summary": "Delete an Azure firewall policy.",
+            "syntax": "az network firewall policy delete [--ids]\n                                  [--name]\n                                  [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                  [--resource-group]\n                                  [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az network firewall policy deploy",
+            "summary": "Deploys the firewall policy draft and child rule collection group drafts.",
+            "syntax": "az network firewall policy deploy [--ids]\n                                  [--name]\n                                  [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                  [--resource-group]\n                                  [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az network firewall policy list",
+            "summary": "List all Azure firewall policies.",
+            "syntax": "az network firewall policy list [--max-items]\n                                [--next-token]\n                                [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token",
+                "--resource-group -g"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az network firewall policy show",
+            "summary": "Show an Azure firewall policy.",
+            "syntax": "az network firewall policy show [--expand]\n                                [--ids]\n                                [--name]\n                                [--resource-group]\n                                [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--expand",
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az network firewall policy update",
+            "summary": "Update an Azure firewall policy.",
+            "syntax": "az network firewall policy update [--add]\n                                  [--auto-learn-private-ranges {Disabled, Enabled}]\n                                  [--cert-name]\n                                  [--dns-servers]\n                                  [--enable-dns-proxy {0, 1, f, false, n, no, t, true, y, yes}]\n                                  [--explicit-proxy]\n                                  [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                  [--fqdns]\n                                  [--identity]\n                                  [--idps-mode {Alert, Deny, Off}]\n                                  [--idps-profile {Advanced, Basic, Standard}]\n                                  [--ids]\n                                  [--ip-addresses]\n                                  [--key-vault-secret-id]\n                                  [--name]\n                                  [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                  [--private-ranges]\n                                  [--remove]\n                                  [--resource-group]\n                                  [--set]\n                                  [--sku {Basic, Premium, Standard}]\n                                  [--sql {0, 1, f, false, n, no, t, true, y, yes}]\n                                  [--subscription]\n                                  [--tags]\n                                  [--threat-intel-mode {Alert, Deny, Off}]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--auto-learn-private-ranges --learn-ranges",
+                "--cert-name",
+                "--dns-servers",
+                "--enable-dns-proxy",
+                "--explicit-proxy",
+                "--force-string",
+                "--fqdns",
+                "--identity",
+                "--idps-mode",
+                "--idps-profile",
+                "--ids",
+                "--ip-addresses",
+                "--key-vault-secret-id",
+                "--name -n",
+                "--no-wait",
+                "--private-ranges",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--sku",
+                "--sql",
+                "--subscription",
+                "--tags",
+                "--threat-intel-mode"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az network firewall policy wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az network firewall policy wait [--created]\n                                [--custom]\n                                [--deleted]\n                                [--exists]\n                                [--expand]\n                                [--ids]\n                                [--interval]\n                                [--name]\n                                [--resource-group]\n                                [--subscription]\n                                [--timeout]\n                                [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--expand",
+                "--ids",
+                "--interval",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

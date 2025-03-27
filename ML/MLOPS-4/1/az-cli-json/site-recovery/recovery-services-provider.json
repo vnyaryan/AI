@@ -1,0 +1,24 @@
+{
+    "command_group": "az site-recovery recovery-services-provider",
+    "description": "Manage fabric recovery-services-provider.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az site-recovery recovery-services-provider list",
+            "summary": "List the registered recovery services providers for the specified fabric.",
+            "syntax": "az site-recovery recovery-services-provider list --fabric-name\n                                                 --resource-group\n                                                 --vault-name\n                                                 [--max-items]\n                                                 [--next-token]",
+            "required_parameters": [
+                "--fabric-name",
+                "--resource-group -g",
+                "--vault-name"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az site-recovery recovery-services-provider list --fabric-name \"fabric_name\" -g \"rg\" --vault-name \"vault_name\""
+            ]
+        }
+    ]
+}

@@ -1,0 +1,124 @@
+{
+    "command_group": "az trustedsigning",
+    "description": "Manage trusted signing account.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az trustedsigning check-name-availability",
+            "summary": "Checks that the trusted signing account name is valid and is not already in use.",
+            "syntax": "az trustedsigning check-name-availability --name\n                                          [--type]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--type"
+            ],
+            "examples": [
+                "az trustedsigning check-name-availability --name MyAccount"
+            ]
+        },
+        {
+            "name": "az trustedsigning create",
+            "summary": "Create a trusted Signing Account.",
+            "syntax": "az trustedsigning create --account-name\n                         --resource-group\n                         [--location]\n                         [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                         [--sku]\n                         [--tags]",
+            "required_parameters": [
+                "--account-name --name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--location -l",
+                "--no-wait",
+                "--sku",
+                "--tags"
+            ],
+            "examples": [
+                "az trustedsigning create -n MyAccount -l westus -g MyResourceGroup --sku Basic"
+            ]
+        },
+        {
+            "name": "az trustedsigning delete",
+            "summary": "Delete a trusted signing account.",
+            "syntax": "az trustedsigning delete [--account-name]\n                         [--ids]\n                         [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                         [--resource-group]\n                         [--subscription]\n                         [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account-name --name -n",
+                "--ids",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az trustedsigning delete -n MyAccount -g MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az trustedsigning list",
+            "summary": "List trusted signing accounts within a subscription.",
+            "syntax": "az trustedsigning list [--max-items]\n                       [--next-token]\n                       [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az trustedsigning list -g MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az trustedsigning show",
+            "summary": "Get a trusted Signing Account.",
+            "syntax": "az trustedsigning show [--account-name]\n                       [--ids]\n                       [--resource-group]\n                       [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account-name --name -n",
+                "--ids",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az trustedsigning show -n MyAccount -g MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az trustedsigning update",
+            "summary": "Update a trusted signing account.",
+            "syntax": "az trustedsigning update [--account-name]\n                         [--ids]\n                         [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                         [--resource-group]\n                         [--sku]\n                         [--subscription]\n                         [--tags]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account-name --name -n",
+                "--ids",
+                "--no-wait",
+                "--resource-group -g",
+                "--sku",
+                "--subscription",
+                "--tags"
+            ],
+            "examples": [
+                "az trustedsigning update -n MyAccount -g MyResourceGroup --sku Premium",
+                "az trustedsigning update -n MyAccount -g MyResourceGroup --tags \"key1=value1 key2=value2\""
+            ]
+        },
+        {
+            "name": "az trustedsigning wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az trustedsigning wait [--account-name]\n                       [--created]\n                       [--custom]\n                       [--deleted]\n                       [--exists]\n                       [--ids]\n                       [--interval]\n                       [--resource-group]\n                       [--subscription]\n                       [--timeout]\n                       [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account-name --name -n",
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

@@ -1,0 +1,6 @@
+{
+    "command_group": "az afd log-analytic",
+    "description": "Manage afd log analytic results.",
+    "status": "GA",
+    "commands": []
+}

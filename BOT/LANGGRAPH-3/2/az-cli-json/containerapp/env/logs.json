@@ -1,0 +1,25 @@
+{
+    "command_group": "az containerapp env logs",
+    "description": "Show container app environment logs.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az containerapp env logs show",
+            "summary": "Show past environment logs and/or print logs in real time (with the --follow parameter).",
+            "syntax": "az containerapp env logs show [--follow {false, true}]\n                              [--ids]\n                              [--name]\n                              [--resource-group]\n                              [--subscription]\n                              [--tail]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--follow",
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--tail"
+            ],
+            "examples": [
+                "az containerapp env logs show -n MyEnvironment -g MyResourceGroup",
+                "az containerapp env logs show -n MyEnvironment -g MyResourceGroup --follow --tail 30"
+            ]
+        }
+    ]
+}

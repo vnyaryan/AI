@@ -1,0 +1,49 @@
+{
+    "command_group": "az signalr upstream",
+    "description": "Manage upstream settings.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az signalr upstream clear",
+            "summary": "Clear upstream settings of an existing SignalR Service.",
+            "syntax": "az signalr upstream clear [--ids]\n                          [--name]\n                          [--resource-group]\n                          [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az signalr upstream list",
+            "summary": "List upstream settings of an existing SignalR Service.",
+            "syntax": "az signalr upstream list --name\n                         --resource-group",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az signalr upstream update",
+            "summary": "Update order sensitive upstream settings for an existing SignalR Service.",
+            "syntax": "az signalr upstream update --template\n                           [--ids]\n                           [--name]\n                           [--resource-group]\n                           [--subscription]",
+            "required_parameters": [
+                "--template"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az signalr upstream update -n MySignalR -g MyResourceGroup --template url-template=\"http://host-connections.com\" category-pattern=\"connections\" --template url-template=\"http://host-connections.com\" category-pattern=\"messages\"",
+                "az signalr upstream update -n MySignalR -g MyResourceGroup --template url-template=\"http://host.com/{hub}/{event}/{category}\" category-pattern=\"messages\" event-pattern=\"broadcast\" hub-pattern=\"chat\""
+            ]
+        }
+    ]
+}

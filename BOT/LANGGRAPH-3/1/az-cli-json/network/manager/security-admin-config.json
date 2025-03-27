@@ -1,0 +1,122 @@
+{
+    "command_group": "az network manager security-admin-config",
+    "description": "Manage security admin configuration with network.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az network manager security-admin-config create",
+            "summary": "Create a network manager security admin configuration.",
+            "syntax": "az network manager security-admin-config create --config\n                                                --manager-name\n                                                --resource-group\n                                                [--aggregation {Manual, None}]\n                                                [--apply-on]\n                                                [--description]",
+            "required_parameters": [
+                "--config --config-name --configuration-name",
+                "--manager-name --name --network-manager-name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--aggregation --network-group-address-space-aggregation-option",
+                "--apply-on --apply-on-network-intent-policy",
+                "--description"
+            ],
+            "examples": [
+                "az network manager security-admin-config create --configuration-name \"myTestSecurityConfig\" --network-manager-name \"TestNetworkManager\" --resource-group \"rg1\" --description \"A sample policy\" --apply-on None"
+            ]
+        },
+        {
+            "name": "az network manager security-admin-config delete",
+            "summary": "Delete a network manager security admin configuration.",
+            "syntax": "az network manager security-admin-config delete [--config]\n                                                [--force {0, 1, f, false, n, no, t, true, y, yes}]\n                                                [--ids]\n                                                [--manager-name]\n                                                [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                                [--resource-group]\n                                                [--subscription]\n                                                [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--config --config-name --configuration-name",
+                "--force",
+                "--ids",
+                "--manager-name --name --network-manager-name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az network manager security-admin-config delete --configuration-name \"myTestSecurityConfig\" --network-manager-name \"testNetworkManager\" --resource-group \"rg1\" --force n"
+            ]
+        },
+        {
+            "name": "az network manager security-admin-config list",
+            "summary": "List all the network manager security admin configurations in a network manager, in a paginated format.",
+            "syntax": "az network manager security-admin-config list --manager-name\n                                              --resource-group\n                                              [--max-items]\n                                              [--next-token]\n                                              [--skip-token]\n                                              [--top]",
+            "required_parameters": [
+                "--manager-name --name --network-manager-name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token",
+                "--skip-token",
+                "--top"
+            ],
+            "examples": [
+                "az network manager security-admin-config list --network-manager-name \"testNetworkManager\" --resource-group \"rg1\""
+            ]
+        },
+        {
+            "name": "az network manager security-admin-config show",
+            "summary": "Get a network manager security admin configuration.",
+            "syntax": "az network manager security-admin-config show [--config]\n                                              [--ids]\n                                              [--manager-name]\n                                              [--resource-group]\n                                              [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--config --config-name --configuration-name",
+                "--ids",
+                "--manager-name --name --network-manager-name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az network manager security-admin-config show --configuration-name \"myTestSecurityConfig\" --network-manager-name \"testNetworkManager\" --resource-group \"rg1\""
+            ]
+        },
+        {
+            "name": "az network manager security-admin-config update",
+            "summary": "Update a network manager security admin configuration.",
+            "syntax": "az network manager security-admin-config update [--add]\n                                                [--aggregation {Manual, None}]\n                                                [--apply-on]\n                                                [--config]\n                                                [--description]\n                                                [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                                [--ids]\n                                                [--manager-name]\n                                                [--remove]\n                                                [--resource-group]\n                                                [--set]\n                                                [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--aggregation --network-group-address-space-aggregation-option",
+                "--apply-on --apply-on-network-intent-policy",
+                "--config --config-name --configuration-name",
+                "--description",
+                "--force-string",
+                "--ids",
+                "--manager-name --name --network-manager-name -n",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--subscription"
+            ],
+            "examples": [
+                "az network manager security-admin-config update --configuration-name \"myTestSecurityConfig\" --network-manager-name \"TestNetworkManager\" --resource-group \"rg1\" --description \"A sample policy\" --apply-on None"
+            ]
+        },
+        {
+            "name": "az network manager security-admin-config wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az network manager security-admin-config wait [--config]\n                                              [--created]\n                                              [--custom]\n                                              [--deleted]\n                                              [--exists]\n                                              [--ids]\n                                              [--interval]\n                                              [--manager-name]\n                                              [--resource-group]\n                                              [--subscription]\n                                              [--timeout]\n                                              [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--config --config-name --configuration-name",
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--manager-name --name --network-manager-name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

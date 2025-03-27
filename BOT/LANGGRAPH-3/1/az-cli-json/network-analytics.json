@@ -1,0 +1,6 @@
+{
+    "command_group": "az network-analytics",
+    "description": "Network Analytics command group Azure Operator Insights resource manipulation.",
+    "status": "GA",
+    "commands": []
+}

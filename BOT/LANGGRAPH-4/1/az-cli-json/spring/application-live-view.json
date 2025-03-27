@@ -1,0 +1,47 @@
+{
+    "command_group": "az spring application-live-view",
+    "description": "(Enterprise Tier Only) Commands to manage Application Live View in Azure Spring Apps. Application Live View presents application instance metrics, and makes it easy for developers to monitor application runtimes.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az spring application-live-view create",
+            "summary": "Create Application Live View.",
+            "syntax": "az spring application-live-view create --resource-group\n                                       --service\n                                       [--no-wait]",
+            "required_parameters": [
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [
+                "--no-wait"
+            ],
+            "examples": [
+                "az spring application-live-view create -s MyService -g MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az spring application-live-view delete",
+            "summary": "Delete Application Live View.",
+            "syntax": "az spring application-live-view delete --resource-group\n                                       --service\n                                       [--no-wait]\n                                       [--yes]",
+            "required_parameters": [
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [
+                "--no-wait",
+                "--yes -y"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az spring application-live-view show",
+            "summary": "Show the provisioning state, running status and settings of Application Live View.",
+            "syntax": "az spring application-live-view show --resource-group\n                                     --service",
+            "required_parameters": [
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        }
+    ]
+}

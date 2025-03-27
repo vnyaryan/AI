@@ -1,0 +1,43 @@
+{
+    "command_group": "az oracle-database cloud-vm-cluster database-node",
+    "description": "Database Nodes.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az oracle-database cloud-vm-cluster database-node action",
+            "summary": "VM actions on DbNode of VM Cluster by the provided filter.",
+            "syntax": "az oracle-database cloud-vm-cluster database-node action --action {Reset, SoftReset, Start, Stop}\n                                                         [--cloudvmclustername]\n                                                         [--dbnodeocid]\n                                                         [--ids]\n                                                         [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                                         [--resource-group]\n                                                         [--subscription]",
+            "required_parameters": [
+                "--action"
+            ],
+            "optional_parameters": [
+                "--cloudvmclustername",
+                "--dbnodeocid",
+                "--ids",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az oracle-database cloud-vm-cluster database-node action --cloudvmclustername <VM Cluster Name> --resource-group <resource group> --dbnodeocid <db node ocid> --action Start",
+                "az oracle-database cloud-vm-cluster database-node action --cloudvmclustername <VM Cluster Name> --resource-group <resource group> --dbnodeocid <db node ocid> --action Stop"
+            ]
+        },
+        {
+            "name": "az oracle-database cloud-vm-cluster database-node list",
+            "summary": "List DbNode resources by CloudVmCluster.",
+            "syntax": "az oracle-database cloud-vm-cluster database-node list --cloudvmclustername\n                                                       --resource-group\n                                                       [--max-items]\n                                                       [--next-token]",
+            "required_parameters": [
+                "--cloudvmclustername",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az oracle-database cloud-vm-cluster database-node list --cloudvmclustername <VM Cluster Name> --resource-group <resource group>"
+            ]
+        }
+    ]
+}

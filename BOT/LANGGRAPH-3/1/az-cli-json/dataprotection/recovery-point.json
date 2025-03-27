@@ -1,0 +1,44 @@
+{
+    "command_group": "az dataprotection recovery-point",
+    "description": "Manage recovery point with dataprotection.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az dataprotection recovery-point list",
+            "summary": "Returns a list of Recovery Points for a DataSource in a vault.",
+            "syntax": "az dataprotection recovery-point list --backup-instance-name\n                                      --resource-group\n                                      --vault-name\n                                      [--end-time]\n                                      [--max-items]\n                                      [--next-token]\n                                      [--start-time]\n                                      [--use-secondary-region {false, true}]",
+            "required_parameters": [
+                "--backup-instance-name",
+                "--resource-group -g",
+                "--vault-name -v"
+            ],
+            "optional_parameters": [
+                "--end-time",
+                "--max-items",
+                "--next-token",
+                "--start-time",
+                "--use-secondary-region"
+            ],
+            "examples": [
+                "az dataprotection recovery-point list --backup-instance-name \"sample_biname-00000000-0000-0000-0000-000000000000\" --resource-group \"sample_rg\" --vault-name \"sample_vault\""
+            ]
+        },
+        {
+            "name": "az dataprotection recovery-point show",
+            "summary": "Get a Recovery Point using recoveryPointId for a Datasource.",
+            "syntax": "az dataprotection recovery-point show [--backup-instance-name]\n                                      [--ids]\n                                      [--recovery-point-id]\n                                      [--resource-group]\n                                      [--subscription]\n                                      [--vault-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--backup-instance-name",
+                "--ids",
+                "--recovery-point-id",
+                "--resource-group -g",
+                "--subscription",
+                "--vault-name -v"
+            ],
+            "examples": [
+                "az dataprotection recovery-point show --backup-instance-name \"testInstance1\" --recovery- point-id \"7fb2cddd-c5b3-44f6-a0d9-db3c4f9d5f25\" --resource-group \"000pikumar\" --vault-name \"PratikPrivatePreviewVault1\""
+            ]
+        }
+    ]
+}

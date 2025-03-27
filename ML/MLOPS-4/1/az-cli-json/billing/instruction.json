@@ -1,0 +1,76 @@
+{
+    "command_group": "az billing instruction",
+    "description": "Manage billing instruction.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az billing instruction create",
+            "summary": "Create an instruction. These are custom billing instructions and are only applicable for certain customers.",
+            "syntax": "az billing instruction create --account-name\n                              --name\n                              --profile-name\n                              [--amount]\n                              [--creation-date]\n                              [--end-date]\n                              [--start-date]",
+            "required_parameters": [
+                "--account-name",
+                "--name -n",
+                "--profile-name"
+            ],
+            "optional_parameters": [
+                "--amount",
+                "--creation-date",
+                "--end-date",
+                "--start-date"
+            ],
+            "examples": [
+                "az billing instruction create --account-name \"{billingAccountName}\" --profile-name \"{billingProfileName}\" --name \"{instructionName}\" --amount 5000 --end-date \"2020-12-30T21:26:47.997Z\" --start-date \"2019-12-30T21:26:47.997Z\""
+            ]
+        },
+        {
+            "name": "az billing instruction list",
+            "summary": "List the instructions by billing profile id.",
+            "syntax": "az billing instruction list --account-name\n                            --profile-name",
+            "required_parameters": [
+                "--account-name",
+                "--profile-name"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az billing instruction list --account-name \"{billingAccountName}\" --profile-name \"{billingProfileName}\""
+            ]
+        },
+        {
+            "name": "az billing instruction show",
+            "summary": "Show the instruction by name. These are custom billing instructions and are only applicable for certain customers.",
+            "syntax": "az billing instruction show --account-name\n                            --name\n                            --profile-name",
+            "required_parameters": [
+                "--account-name",
+                "--name -n",
+                "--profile-name"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az billing instruction show --account-name \"{billingAccountName}\" --profile-name \"{billingProfileName}\" --name \"{instructionName}\""
+            ]
+        },
+        {
+            "name": "az billing instruction update",
+            "summary": "Update an instruction. These are custom billing instructions and are only applicable for certain customers.",
+            "syntax": "az billing instruction update --account-name\n                              --name\n                              --profile-name\n                              [--add]\n                              [--amount]\n                              [--creation-date]\n                              [--end-date]\n                              [--force-string]\n                              [--remove]\n                              [--set]\n                              [--start-date]",
+            "required_parameters": [
+                "--account-name",
+                "--name -n",
+                "--profile-name"
+            ],
+            "optional_parameters": [
+                "--add",
+                "--amount",
+                "--creation-date",
+                "--end-date",
+                "--force-string",
+                "--remove",
+                "--set",
+                "--start-date"
+            ],
+            "examples": [
+                "az billing instruction update --account-name \"{billingAccountName}\" --profile-name \"{billingProfileName}\" --name \"{instructionName}\" --amount 5000"
+            ]
+        }
+    ]
+}

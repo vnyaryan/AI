@@ -1,0 +1,77 @@
+{
+    "command_group": "az quota",
+    "description": "Manag quota for Azure resource providers.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az quota create",
+            "summary": "Create the quota limit for the specified resource.",
+            "syntax": "az quota create --resource-name\n                --scope\n                [--limit-object]\n                [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                [--properties]\n                [--resource-type]",
+            "required_parameters": [
+                "--resource-name",
+                "--scope"
+            ],
+            "optional_parameters": [
+                "--limit-object",
+                "--no-wait",
+                "--properties",
+                "--resource-type"
+            ],
+            "examples": [
+                "az quota create --resource-name MinPublicIpInterNetworkPrefixLength --scope /subscriptions/00000000-0000-0000-0000-000000000000/providers/Microsoft.Network/locations/eastus --limit-object value=10 --resource-type MinPublicIpInterNetworkPrefixLength",
+                "az quota create --resource-name StandardSkuPublicIpAddresses --scope /subscriptions/00000000-0000-0000-0000-000000000000/providers/Microsoft.Network/locations/eastus --limit-object value=10 --resource-type PublicIpAddresses",
+                "az quota create --resource-name standardFSv2Family --scope /subscriptions/00000000-0000-0000-0000-000000000000/providers/Microsoft.Compute/locations/eastus --limit-object value=10 --resource-type dedicated",
+                "az quota create  --resource-name TotalLowPriorityCores --scope /subscriptions/00000000-0000-0000-0000-000000000000/providers/Microsoft.MachineLearning/Services/locations/eastus --limit-object value=10 --resource-type lowPriority"
+            ]
+        },
+        {
+            "name": "az quota list",
+            "summary": "List current quota limits of all resources for the specified scope.",
+            "syntax": "az quota list --scope\n              [--max-items]\n              [--next-token]",
+            "required_parameters": [
+                "--scope"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az quota list --scope /subscriptions/00000000-0000-0000-0000-000000000000/providers/Microsoft.Compute/locations/eastus",
+                "az quota list --scope /subscriptions/00000000-0000-0000-0000-000000000000/providers/Microsoft.Network/locations/eastus",
+                "az quota list --scope /subscriptions/00000000-0000-0000-0000-000000000000/providers/Microsoft.MachineLearningServices/locations/eastus"
+            ]
+        },
+        {
+            "name": "az quota show",
+            "summary": "Show the quota limit of a resource.",
+            "syntax": "az quota show --resource-name\n              --scope",
+            "required_parameters": [
+                "--resource-name",
+                "--scope"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az quota show --resource-name standardNDSFamily --scope /subscriptions/00000000-0000-0000-0000-000000000000/providers/Microsoft.Compute/locations/eastus"
+            ]
+        },
+        {
+            "name": "az quota update",
+            "summary": "Update the quota limit for a specific resource.",
+            "syntax": "az quota update --resource-name\n                --scope\n                [--limit-object]\n                [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                [--properties]\n                [--resource-type]",
+            "required_parameters": [
+                "--resource-name",
+                "--scope"
+            ],
+            "optional_parameters": [
+                "--limit-object",
+                "--no-wait",
+                "--properties",
+                "--resource-type"
+            ],
+            "examples": [
+                "az quota update --resource-name standardFSv2Family --scope /subscriptions/00000000-0000-0000-0000-0000\u000000000/providers/Microsoft.Compute/locations/eastus --limit-object value=10 --resource-type dedicated",
+                "az quota update --resource-name MinPublicIpInterNetworkPrefixLength --scope /subscriptions/00000000-0000-0000-0000-000000000000/providers/Microsoft.Network/locations/eastus --limit-object value=10 --resource-type MinPublicIpInterNetworkPrefixLength"
+            ]
+        }
+    ]
+}

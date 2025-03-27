@@ -1,0 +1,78 @@
+{
+    "command_group": "az network front-door probe",
+    "description": "Manage Front Door health probe settings.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az network front-door probe create",
+            "summary": "Create Front Door health probe settings.",
+            "syntax": "az network front-door probe create --front-door-name\n                                   --interval\n                                   --name\n                                   --path\n                                   --resource-group\n                                   [--enabled {Disabled, Enabled}]\n                                   [--probeMethod {GET, HEAD}]\n                                   [--protocol {Http, Https}]",
+            "required_parameters": [
+                "--front-door-name -f",
+                "--interval",
+                "--name -n",
+                "--path",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--enabled",
+                "--probeMethod",
+                "--protocol"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az network front-door probe delete",
+            "summary": "Delete Front Door health probe settings.",
+            "syntax": "az network front-door probe delete --front-door-name\n                                   --name\n                                   --resource-group",
+            "required_parameters": [
+                "--front-door-name -f",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az network front-door probe list",
+            "summary": "List Front Door health probe settings.",
+            "syntax": "az network front-door probe list --front-door-name\n                                 --resource-group",
+            "required_parameters": [
+                "--front-door-name -f",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az network front-door probe show",
+            "summary": "Get the details of a Front Door health probe settings.",
+            "syntax": "az network front-door probe show --front-door-name\n                                 --name\n                                 --resource-group",
+            "required_parameters": [
+                "--front-door-name -f",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az network front-door probe update",
+            "summary": "Update Front Door health probe settings.",
+            "syntax": "az network front-door probe update --front-door-name\n                                   --name\n                                   --resource-group\n                                   [--enabled {Disabled, Enabled}]\n                                   [--interval]\n                                   [--path]\n                                   [--probeMethod {GET, HEAD}]\n                                   [--protocol {Http, Https}]",
+            "required_parameters": [
+                "--front-door-name -f",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--enabled",
+                "--interval",
+                "--path",
+                "--probeMethod",
+                "--protocol"
+            ],
+            "examples": []
+        }
+    ]
+}

@@ -1,0 +1,70 @@
+{
+    "command_group": "az ams account storage",
+    "description": "Manage storage for an Azure Media Services account.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az ams account storage add",
+            "summary": "Attach a secondary storage to an Azure Media Services account.",
+            "syntax": "az ams account storage add [--account-name]\n                           [--ids]\n                           [--name]\n                           [--resource-group]\n                           [--subscription]\n                           [--system-assigned {false, true}]\n                           [--user-assigned]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account-name -a",
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--system-assigned",
+                "--user-assigned"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az ams account storage remove",
+            "summary": "Detach a secondary storage from an Azure Media Services account.",
+            "syntax": "az ams account storage remove [--account-name]\n                              [--ids]\n                              [--name]\n                              [--resource-group]\n                              [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account-name -a",
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az ams account storage set-authentication",
+            "summary": "Set the authentication of a storage account attached to an Azure Media Services account.",
+            "syntax": "az ams account storage set-authentication --storage-auth {ManagedIdentity, System}\n                                          [--account-name]\n                                          [--ids]\n                                          [--resource-group]\n                                          [--storage-account-id]\n                                          [--subscription]\n                                          [--system-assigned {false, true}]\n                                          [--user-assigned]",
+            "required_parameters": [
+                "--storage-auth"
+            ],
+            "optional_parameters": [
+                "--account-name -a",
+                "--ids",
+                "--resource-group -g",
+                "--storage-account-id",
+                "--subscription",
+                "--system-assigned",
+                "--user-assigned"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az ams account storage sync-storage-keys",
+            "summary": "Synchronize storage account keys for a storage account associated with an Azure Media Services account.",
+            "syntax": "az ams account storage sync-storage-keys --storage-account-id\n                                         [--account-name]\n                                         [--ids]\n                                         [--resource-group]\n                                         [--subscription]",
+            "required_parameters": [
+                "--storage-account-id"
+            ],
+            "optional_parameters": [
+                "--account-name -a",
+                "--ids",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        }
+    ]
+}

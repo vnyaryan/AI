@@ -1,0 +1,104 @@
+{
+    "command_group": "az apic environment",
+    "description": "Commands to manage environments in API Center.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az apic environment create",
+            "summary": "Create a new environment or update an existing environment.",
+            "syntax": "az apic environment create --environment-id\n                           --resource-group\n                           --service-name\n                           --title\n                           --type {development, production, staging, testing}\n                           [--custom-properties]\n                           [--description]\n                           [--onboarding]\n                           [--server]",
+            "required_parameters": [
+                "--environment-id",
+                "--resource-group -g",
+                "--service-name -n",
+                "--title",
+                "--type"
+            ],
+            "optional_parameters": [
+                "--custom-properties",
+                "--description",
+                "--onboarding",
+                "--server"
+            ],
+            "examples": [
+                "az apic environment create -g api-center-test -n contosoeuap --environment-id public --title \"Public cloud\" --type \"development\""
+            ]
+        },
+        {
+            "name": "az apic environment delete",
+            "summary": "Delete the environment.",
+            "syntax": "az apic environment delete [--environment-id]\n                           [--ids]\n                           [--resource-group]\n                           [--service-name]\n                           [--subscription]\n                           [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--environment-id",
+                "--ids",
+                "--resource-group -g",
+                "--service-name -n",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az apic environment delete -g api-center-test -n contosoeuap --environment-id public"
+            ]
+        },
+        {
+            "name": "az apic environment list",
+            "summary": "List a collection of environments.",
+            "syntax": "az apic environment list --resource-group\n                         --service-name\n                         [--filter]\n                         [--max-items]\n                         [--next-token]",
+            "required_parameters": [
+                "--resource-group -g",
+                "--service-name -n"
+            ],
+            "optional_parameters": [
+                "--filter",
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az apic environment list -g api-center-test -n contosoeuap"
+            ]
+        },
+        {
+            "name": "az apic environment show",
+            "summary": "Get details of the environment.",
+            "syntax": "az apic environment show [--environment-id]\n                         [--ids]\n                         [--resource-group]\n                         [--service-name]\n                         [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--environment-id",
+                "--ids",
+                "--resource-group -g",
+                "--service-name -n",
+                "--subscription"
+            ],
+            "examples": [
+                "az apic environment show -g api-center-test -n contosoeuap --environment-id public"
+            ]
+        },
+        {
+            "name": "az apic environment update",
+            "summary": "Update existing environment.",
+            "syntax": "az apic environment update [--add]\n                           [--custom-properties]\n                           [--description]\n                           [--environment-id]\n                           [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                           [--ids]\n                           [--onboarding]\n                           [--remove]\n                           [--resource-group]\n                           [--server]\n                           [--service-name]\n                           [--set]\n                           [--subscription]\n                           [--title]\n                           [--type {development, production, staging, testing}]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--custom-properties",
+                "--description",
+                "--environment-id",
+                "--force-string",
+                "--ids",
+                "--onboarding",
+                "--remove",
+                "--resource-group -g",
+                "--server",
+                "--service-name -n",
+                "--set",
+                "--subscription",
+                "--title",
+                "--type"
+            ],
+            "examples": [
+                "az apic environment update -g api-center-test -n contosoeuap --environment-id public --title \"Public cloud\""
+            ]
+        }
+    ]
+}

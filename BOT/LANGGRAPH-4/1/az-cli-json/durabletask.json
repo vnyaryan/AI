@@ -1,0 +1,6 @@
+{
+    "command_group": "az durabletask",
+    "description": "Commands to manage Durabletask schedulers and taskhubs.",
+    "status": "GA",
+    "commands": []
+}

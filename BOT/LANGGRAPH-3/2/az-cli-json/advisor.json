@@ -1,0 +1,6 @@
+{
+    "command_group": "az advisor",
+    "description": "Manage Azure Advisor.",
+    "status": "GA",
+    "commands": []
+}

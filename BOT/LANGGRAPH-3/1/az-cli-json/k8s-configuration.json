@@ -1,0 +1,53 @@
+{
+    "command_group": "az k8s-configuration",
+    "description": "Commands to manage resources from Microsoft.KubernetesConfiguration.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az k8s-configuration delete",
+            "summary": "Delete a Flux v1 Kubernetes configuration (This command is for Flux v1, to use the newer Flux v2, run \"az k8s-configuration flux delete\").",
+            "syntax": "az k8s-configuration delete --cluster-name\n                            --cluster-type {connectedClusters, managedClusters, provisionedClusters}\n                            --name\n                            --resource-group\n                            [--yes]",
+            "required_parameters": [
+                "--cluster-name -c",
+                "--cluster-type -t",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--yes -y"
+            ],
+            "examples": [
+                "az k8s-configuration delete --resource-group MyResourceGroup --cluster-name MyClusterName \\\n--cluster-type connectedClusters --name MyConfigurationName"
+            ]
+        },
+        {
+            "name": "az k8s-configuration list",
+            "summary": "List Flux v1 Kubernetes configurations (This command is for Flux v1, to use the newer Flux v2, run \"az k8s-configuration flux list\").",
+            "syntax": "az k8s-configuration list --cluster-name\n                          --cluster-type {connectedClusters, managedClusters, provisionedClusters}\n                          --resource-group",
+            "required_parameters": [
+                "--cluster-name -c",
+                "--cluster-type -t",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az k8s-configuration list --resource-group MyResourceGroup --cluster-name MyClusterName \\\n--cluster-type connectedClusters"
+            ]
+        },
+        {
+            "name": "az k8s-configuration show",
+            "summary": "Show details of a Flux v1 Kubernetes configuration (This command is for Flux v1, to use the newer Flux v2, run \"az k8s-configuration flux show\").",
+            "syntax": "az k8s-configuration show --cluster-name\n                          --cluster-type {connectedClusters, managedClusters, provisionedClusters}\n                          --name\n                          --resource-group",
+            "required_parameters": [
+                "--cluster-name -c",
+                "--cluster-type -t",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az k8s-configuration show --resource-group MyResourceGroup --cluster-name MyClusterName \\\n--cluster-type connectedClusters --name MyConfigurationName"
+            ]
+        }
+    ]
+}

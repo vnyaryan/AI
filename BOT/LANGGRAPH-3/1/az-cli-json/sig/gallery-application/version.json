@@ -1,0 +1,128 @@
+{
+    "command_group": "az sig gallery-application version",
+    "description": "Manage gallery application version.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az sig gallery-application version create",
+            "summary": "Create a gallery Application Version.",
+            "syntax": "az sig gallery-application version create --application-name\n                                          --gallery-name\n                                          --install-command\n                                          --name\n                                          --package-file-link\n                                          --remove-command\n                                          --resource-group\n                                          [--config-file-name]\n                                          [--default-file-link]\n                                          [--end-of-life-date]\n                                          [--exclude-from {false, true}]\n                                          [--location]\n                                          [--no-wait]\n                                          [--package-file-name]\n                                          [--tags]\n                                          [--target-regions]\n                                          [--update-command]",
+            "required_parameters": [
+                "--application-name",
+                "--gallery-name -r",
+                "--install-command",
+                "--name --version-name -n",
+                "--package-file-link",
+                "--remove-command",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--config-file-name",
+                "--default-file-link",
+                "--end-of-life-date",
+                "--exclude-from",
+                "--location -l",
+                "--no-wait",
+                "--package-file-name",
+                "--tags",
+                "--target-regions",
+                "--update-command"
+            ],
+            "examples": [
+                "az sig gallery-application version create --gallery-name myGalleryName --application-name myGalleryApplicationName -n 1.0.0 -g myResourceGroup --package-file-link https://{myStorageAccount}.blob.core.windows.net/{myStorageContainer}/{myStorageBlob}  --install-command installCommand  --remove-command removeCommand"
+            ]
+        },
+        {
+            "name": "az sig gallery-application version delete",
+            "summary": "Delete a gallery application version.",
+            "syntax": "az sig gallery-application version delete [--application-name]\n                                          [--gallery-application-version-name]\n                                          [--gallery-name]\n                                          [--ids]\n                                          [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                          [--resource-group]\n                                          [--subscription]\n                                          [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--application-name --gallery-application-name",
+                "--gallery-application-version-name --name --version-name -n",
+                "--gallery-name -r",
+                "--ids",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az sig gallery-application version list",
+            "summary": "List gallery application versions.",
+            "syntax": "az sig gallery-application version list --application-name\n                                        --gallery-name\n                                        --resource-group",
+            "required_parameters": [
+                "--application-name --gallery-application-name",
+                "--gallery-name -r",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az sig gallery-application version show",
+            "summary": "Get information about a gallery application version.",
+            "syntax": "az sig gallery-application version show [--application-name]\n                                        [--expand {ReplicationStatus}]\n                                        [--gallery-application-version-name]\n                                        [--gallery-name]\n                                        [--ids]\n                                        [--resource-group]\n                                        [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--application-name --gallery-application-name",
+                "--expand",
+                "--gallery-application-version-name --name --version-name -n",
+                "--gallery-name -r",
+                "--ids",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az sig gallery-application version update",
+            "summary": "Update a gallery Application Version.",
+            "syntax": "az sig gallery-application version update --application-name\n                                          --gallery-name\n                                          --name\n                                          --package-file-link\n                                          --resource-group\n                                          [--default-file-link]\n                                          [--end-of-life-date]\n                                          [--exclude-from {false, true}]\n                                          [--location]\n                                          [--no-wait]\n                                          [--tags]\n                                          [--target-regions]",
+            "required_parameters": [
+                "--application-name",
+                "--gallery-name -r",
+                "--name --version-name -n",
+                "--package-file-link",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--default-file-link",
+                "--end-of-life-date",
+                "--exclude-from",
+                "--location -l",
+                "--no-wait",
+                "--tags",
+                "--target-regions"
+            ],
+            "examples": [
+                "az sig gallery-application version update --gallery-name myGalleryName --application-name myGalleryApplicationName -n 1.0.0 -g myResourceGroup --package-file-link https://{myStorageAccount}.blob.core.windows.net/{myStorageContainer}/{myStorageBlob} --end-of-life-date \"2050-07-01T07:00:00Z\""
+            ]
+        },
+        {
+            "name": "az sig gallery-application version wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az sig gallery-application version wait [--application-name]\n                                        [--created]\n                                        [--custom]\n                                        [--deleted]\n                                        [--exists]\n                                        [--expand {ReplicationStatus}]\n                                        [--gallery-application-version-name]\n                                        [--gallery-name]\n                                        [--ids]\n                                        [--interval]\n                                        [--resource-group]\n                                        [--subscription]\n                                        [--timeout]\n                                        [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--application-name --gallery-application-name",
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--expand",
+                "--gallery-application-version-name --name --version-name -n",
+                "--gallery-name -r",
+                "--ids",
+                "--interval",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

@@ -1,0 +1,22 @@
+{
+    "command_group": "az confluent organization role-binding",
+    "description": "Manage Role binding.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az confluent organization role-binding delete",
+            "summary": "Delete role bindings.",
+            "syntax": "az confluent organization role-binding delete [--ids]\n                                              [--organization-name]\n                                              [--resource-group]\n                                              [--role-binding-id]\n                                              [--subscription]\n                                              [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--organization-name",
+                "--resource-group",
+                "--role-binding-id",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": []
+        }
+    ]
+}

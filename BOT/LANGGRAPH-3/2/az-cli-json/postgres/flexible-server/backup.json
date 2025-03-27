@@ -1,0 +1,68 @@
+{
+    "command_group": "az postgres flexible-server backup",
+    "description": "Manage flexible server backups.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az postgres flexible-server backup create",
+            "summary": "Create a new backup for a flexible server.",
+            "syntax": "az postgres flexible-server backup create --backup-name\n                                          --name\n                                          --resource-group",
+            "required_parameters": [
+                "--backup-name -b",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az postgres flexible-server backup create -g testgroup -n testsvr --backup-name testbackup"
+            ]
+        },
+        {
+            "name": "az postgres flexible-server backup delete",
+            "summary": "Delete a specific backup.",
+            "syntax": "az postgres flexible-server backup delete --backup-name\n                                          [--ids]\n                                          [--name]\n                                          [--resource-group]\n                                          [--subscription]\n                                          [--yes]",
+            "required_parameters": [
+                "--backup-name -b"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az postgres flexible-server backup delete -g testgroup -n testsvr --backup-name testbackup"
+            ]
+        },
+        {
+            "name": "az postgres flexible-server backup list",
+            "summary": "List all the backups for a given server.",
+            "syntax": "az postgres flexible-server backup list --name\n                                        --resource-group",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az postgres flexible-server backup list -g testgroup -n testsvr"
+            ]
+        },
+        {
+            "name": "az postgres flexible-server backup show",
+            "summary": "Show the details of a specific backup for a given server.",
+            "syntax": "az postgres flexible-server backup show [--backup-name]\n                                        [--ids]\n                                        [--name]\n                                        [--resource-group]\n                                        [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--backup-name -b",
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az postgres flexible-server backup show -g testgroup -n testsvr --backup-name testbackup"
+            ]
+        }
+    ]
+}

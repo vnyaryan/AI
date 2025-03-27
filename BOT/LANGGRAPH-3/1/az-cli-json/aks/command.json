@@ -1,0 +1,35 @@
+{
+    "command_group": "az aks command",
+    "description": "See detail usage in 'az aks command invoke', 'az aks command result'.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az aks command invoke",
+            "summary": "Run a shell command (with kubectl, helm) on your aks cluster, support attaching files as well.",
+            "syntax": "az aks command invoke --name\n                      --resource-group\n                      [--command]\n                      [--file]\n                      [--no-wait]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--command -c",
+                "--file -f",
+                "--no-wait"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az aks command result",
+            "summary": "Fetch result from previously triggered 'aks command invoke'.",
+            "syntax": "az aks command result --name\n                      --resource-group\n                      [--command-id]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--command-id -i"
+            ],
+            "examples": []
+        }
+    ]
+}

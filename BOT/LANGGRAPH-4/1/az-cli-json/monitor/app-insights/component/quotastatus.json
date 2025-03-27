@@ -1,0 +1,22 @@
+{
+    "command_group": "az monitor app-insights component quotastatus",
+    "description": "Manage component quotastatus.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az monitor app-insights component quotastatus show",
+            "summary": "Show daily data volume cap (quota) status for an Application Insights component.",
+            "syntax": "az monitor app-insights component quotastatus show [--ids]\n                                                   [--resource-group]\n                                                   [--resource-name]\n                                                   [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--resource-group -g",
+                "--resource-name",
+                "--subscription"
+            ],
+            "examples": [
+                "az monitor app-insights component quotastatus show -g rg --resource-name name"
+            ]
+        }
+    ]
+}

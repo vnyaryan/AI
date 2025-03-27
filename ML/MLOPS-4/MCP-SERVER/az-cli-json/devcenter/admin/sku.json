@@ -1,0 +1,20 @@
+{
+    "command_group": "az devcenter admin sku",
+    "description": "Manage skus.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az devcenter admin sku list",
+            "summary": "List the Microsoft.DevCenter SKUs available in a subscription.",
+            "syntax": "az devcenter admin sku list [--max-items]\n                            [--next-token]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az devcenter admin sku list"
+            ]
+        }
+    ]
+}

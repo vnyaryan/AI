@@ -1,0 +1,129 @@
+{
+    "command_group": "az stream-analytics cluster",
+    "description": "Manage cluster with stream analytics.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az stream-analytics cluster create",
+            "summary": "Create a Stream Analytics Cluster or replaces an already existing cluster.",
+            "syntax": "az stream-analytics cluster create --cluster-name\n                                   --resource-group\n                                   [--if-match]\n                                   [--if-none-match]\n                                   [--location]\n                                   [--no-wait]\n                                   [--sku]\n                                   [--tags]",
+            "required_parameters": [
+                "--cluster-name --name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--if-match",
+                "--if-none-match",
+                "--location -l",
+                "--no-wait",
+                "--sku",
+                "--tags"
+            ],
+            "examples": [
+                "az stream-analytics cluster create --location \"North US\" --sku name=\"Default\" capacity=36 --tags key=\"value\" --name \"An Example Cluster\" --resource-group \"sjrg\""
+            ]
+        },
+        {
+            "name": "az stream-analytics cluster delete",
+            "summary": "Delete the specified cluster.",
+            "syntax": "az stream-analytics cluster delete [--cluster-name]\n                                   [--ids]\n                                   [--no-wait]\n                                   [--resource-group]\n                                   [--subscription]\n                                   [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--cluster-name --name -n",
+                "--ids",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az stream-analytics cluster delete --name \"testcluster\" --resource-group \"sjrg\""
+            ]
+        },
+        {
+            "name": "az stream-analytics cluster list",
+            "summary": "List all of the clusters in the given resource group. And Lists all of the clusters in the given subscription.",
+            "syntax": "az stream-analytics cluster list [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az stream-analytics cluster list --resource-group \"sjrg\"",
+                "az stream-analytics cluster list"
+            ]
+        },
+        {
+            "name": "az stream-analytics cluster list-streaming-job",
+            "summary": "List all of the streaming jobs in the given cluster.",
+            "syntax": "az stream-analytics cluster list-streaming-job --cluster-name\n                                               --resource-group",
+            "required_parameters": [
+                "--cluster-name --name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az stream-analytics cluster list-streaming-job --name \"testcluster\" --resource-group \"sjrg\""
+            ]
+        },
+        {
+            "name": "az stream-analytics cluster show",
+            "summary": "Get information about the specified cluster.",
+            "syntax": "az stream-analytics cluster show [--cluster-name]\n                                 [--ids]\n                                 [--resource-group]\n                                 [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--cluster-name --name -n",
+                "--ids",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az stream-analytics cluster show --name \"testcluster\" --resource-group \"sjrg\""
+            ]
+        },
+        {
+            "name": "az stream-analytics cluster update",
+            "summary": "Update an existing cluster. This can be used to partially update (ie. update one or two properties) a cluster without affecting the rest of the cluster definition.",
+            "syntax": "az stream-analytics cluster update [--cluster-name]\n                                   [--ids]\n                                   [--if-match]\n                                   [--location]\n                                   [--no-wait]\n                                   [--resource-group]\n                                   [--sku]\n                                   [--subscription]\n                                   [--tags]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--cluster-name --name -n",
+                "--ids",
+                "--if-match",
+                "--location -l",
+                "--no-wait",
+                "--resource-group -g",
+                "--sku",
+                "--subscription",
+                "--tags"
+            ],
+            "examples": [
+                "az stream-analytics cluster update --location \"Central US\" --sku capacity=72 --name \"testcluster\" --resource-group \"sjrg\""
+            ]
+        },
+        {
+            "name": "az stream-analytics cluster wait",
+            "summary": "Place the CLI in a waiting state until a condition of the stream-analytics cluster is met.",
+            "syntax": "az stream-analytics cluster wait [--cluster-name]\n                                 [--created]\n                                 [--custom]\n                                 [--deleted]\n                                 [--exists]\n                                 [--ids]\n                                 [--interval]\n                                 [--resource-group]\n                                 [--subscription]\n                                 [--timeout]\n                                 [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--cluster-name --name -n",
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": [
+                "az stream-analytics cluster wait --name \"testcluster\" --resource-group \"sjrg\" --created",
+                "az stream-analytics cluster wait --name \"testcluster\" --resource-group \"sjrg\" --updated",
+                "az stream-analytics cluster wait --name \"testcluster\" --resource-group \"sjrg\" --deleted"
+            ]
+        }
+    ]
+}

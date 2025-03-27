@@ -1,0 +1,48 @@
+{
+    "command_group": "az repos pr work-item",
+    "description": "Manage work items associated with pull requests.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az repos pr work-item add",
+            "summary": "Link one or more work items to a pull request.",
+            "syntax": "az repos pr work-item add --id\n                          --work-items\n                          [--detect {false, true}]\n                          [--org]",
+            "required_parameters": [
+                "--id",
+                "--work-items"
+            ],
+            "optional_parameters": [
+                "--detect",
+                "--org --organization"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az repos pr work-item list",
+            "summary": "List linked work items for a pull request.",
+            "syntax": "az repos pr work-item list --id\n                           [--detect {false, true}]\n                           [--org]",
+            "required_parameters": [
+                "--id"
+            ],
+            "optional_parameters": [
+                "--detect",
+                "--org --organization"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az repos pr work-item remove",
+            "summary": "Unlink one or more work items from a pull request.",
+            "syntax": "az repos pr work-item remove --id\n                             --work-items\n                             [--detect {false, true}]\n                             [--org]",
+            "required_parameters": [
+                "--id",
+                "--work-items"
+            ],
+            "optional_parameters": [
+                "--detect",
+                "--org --organization"
+            ],
+            "examples": []
+        }
+    ]
+}

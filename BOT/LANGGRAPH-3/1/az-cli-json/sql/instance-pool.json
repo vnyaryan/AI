@@ -1,0 +1,121 @@
+{
+    "command_group": "az sql instance-pool",
+    "description": "Manage instance pools.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az sql instance-pool create",
+            "summary": "Create an instance pool.",
+            "syntax": "az sql instance-pool create --capacity\n                            --edition\n                            --family\n                            --location\n                            --name\n                            --resource-group\n                            --subnet\n                            [--license-type {BasePrice, LicenseIncluded}]\n                            [--maint-config-id]\n                            [--no-wait]\n                            [--tags]\n                            [--vnet-name]",
+            "required_parameters": [
+                "--capacity -c",
+                "--edition --tier -e",
+                "--family -f",
+                "--location -l",
+                "--name -n",
+                "--resource-group -g",
+                "--subnet"
+            ],
+            "optional_parameters": [
+                "--license-type",
+                "--maint-config-id -m",
+                "--no-wait",
+                "--tags",
+                "--vnet-name"
+            ],
+            "examples": [
+                "az sql instance-pool create -g resource_group_name -n instance_pool_name -l location --subnet /subscriptions/{SubID}/resourceGroups/{ResourceGroup}/providers/Microsoft.Network/virtualNetworks/{VNETName}/subnets/{SubnetName} --license-type LicenseIncluded --capacity 8 -e GeneralPurpose -f Gen5 -m SQL_{Region}_{MaintenanceConfigName} --no-wait",
+                "az sql instance-pool create --license-type LicenseIncluded -l northcentralus -n myinstancepool -c 8 -e GeneralPurpose -f Gen5 -g billingPools --subnet mysubnetname --vnet-name myvnetname"
+            ]
+        },
+        {
+            "name": "az sql instance-pool delete",
+            "summary": "Delete an instance pool.",
+            "syntax": "az sql instance-pool delete --name\n                            --resource-group\n                            [--no-wait]\n                            [--yes]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--no-wait",
+                "--yes -y"
+            ],
+            "examples": [
+                "az sql instance-pool delete -g mygroup -n myinstancepool --yes"
+            ]
+        },
+        {
+            "name": "az sql instance-pool list",
+            "summary": "List available instance pools.",
+            "syntax": "az sql instance-pool list [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az sql instance-pool list",
+                "az sql instance-pool list -g mygroup"
+            ]
+        },
+        {
+            "name": "az sql instance-pool show",
+            "summary": "Get the details for an instance pool.",
+            "syntax": "az sql instance-pool show --name\n                          --resource-group",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az sql instance-pool show -g mygroup -n myinstancepool"
+            ]
+        },
+        {
+            "name": "az sql instance-pool update",
+            "summary": "Update an instance pool.",
+            "syntax": "az sql instance-pool update --name\n                            --resource-group\n                            [--add]\n                            [--capacity]\n                            [--edition]\n                            [--family]\n                            [--force-string]\n                            [--license-type {BasePrice, LicenseIncluded}]\n                            [--maint-config-id]\n                            [--no-wait]\n                            [--remove]\n                            [--set]\n                            [--tags]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--add",
+                "--capacity -c",
+                "--edition --tier -e",
+                "--family -f",
+                "--force-string",
+                "--license-type",
+                "--maint-config-id -m",
+                "--no-wait",
+                "--remove",
+                "--set",
+                "--tags"
+            ],
+            "examples": [
+                "az sql instance-pool update -n myinstancepool -g mygroup --tags mykey1=myvalue1 mykey2=myvalue2 --license-type LicenseIncluded --capacity 8 -e GeneralPurpose -f Gen5 -m SQL_{Region}_{MaintenanceConfigName}",
+                "az sql instance-pool update -n myinstancepool -g mygroup --tags \"\""
+            ]
+        },
+        {
+            "name": "az sql instance-pool wait",
+            "summary": "Wait for an instance pool to reach a desired state.",
+            "syntax": "az sql instance-pool wait --name\n                          --resource-group\n                          [--created]\n                          [--custom]\n                          [--deleted]\n                          [--exists]\n                          [--interval]\n                          [--timeout]\n                          [--updated]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--interval",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": [
+                "az sql instance-pool wait -n myinstancepool -g mygroup --created"
+            ]
+        }
+    ]
+}

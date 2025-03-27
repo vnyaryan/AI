@@ -1,0 +1,126 @@
+{
+    "command_group": "az network custom-ip prefix",
+    "description": "Manage custom IP prefix resources.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az network custom-ip prefix create",
+            "summary": "Create a custom IP prefix resource.",
+            "syntax": "az network custom-ip prefix create --name\n                                   --resource-group\n                                   [--asn]\n                                   [--authorization-message]\n                                   [--cidr]\n                                   [--cip-prefix-parent]\n                                   [--express-route-advertise {0, 1, f, false, n, no, t, true, y, yes}]\n                                   [--geo {AFRI, APAC, AQ, EURO, GLOBAL, LATAM, ME, NAM, OCEANIA}]\n                                   [--is-parent {0, 1, f, false, n, no, t, true, y, yes}]\n                                   [--location]\n                                   [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                   [--prefix-type {Child, Parent, Singular}]\n                                   [--signed-message]\n                                   [--tags]\n                                   [--zone]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--asn",
+                "--authorization-message",
+                "--cidr",
+                "--cip-prefix-parent -c",
+                "--express-route-advertise --is-advertised",
+                "--geo",
+                "--is-parent",
+                "--location -l",
+                "--no-wait",
+                "--prefix-type",
+                "--signed-message",
+                "--tags",
+                "--zone -z"
+            ],
+            "examples": [
+                "az network custom-ip prefix create --location westus2 --name MyCustomIpPrefix --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az network custom-ip prefix delete",
+            "summary": "Delete a custom IP prefix resource.",
+            "syntax": "az network custom-ip prefix delete [--ids]\n                                   [--name]\n                                   [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                   [--resource-group]\n                                   [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az network custom-ip prefix delete --name MyCustomIpPrefix --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az network custom-ip prefix list",
+            "summary": "List custom IP prefix resources.",
+            "syntax": "az network custom-ip prefix list [--max-items]\n                                 [--next-token]\n                                 [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az network custom-ip prefix list --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az network custom-ip prefix show",
+            "summary": "Get the details of a custom IP prefix resource.",
+            "syntax": "az network custom-ip prefix show [--expand]\n                                 [--ids]\n                                 [--name]\n                                 [--resource-group]\n                                 [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--expand",
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az network custom-ip prefix show --name MyCustomIpPrefix --resource-group MyResourceGroup --subscription MySubscription"
+            ]
+        },
+        {
+            "name": "az network custom-ip prefix update",
+            "summary": "Update a custom IP prefix resource.",
+            "syntax": "az network custom-ip prefix update [--add]\n                                   [--authorization-message]\n                                   [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                   [--ids]\n                                   [--name]\n                                   [--no-internet-advertise {0, 1, f, false, n, no, t, true, y, yes}]\n                                   [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                   [--remove]\n                                   [--resource-group]\n                                   [--set]\n                                   [--signed-message]\n                                   [--state {commission, decommission, deprovision, provision}]\n                                   [--subscription]\n                                   [--tags]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--authorization-message",
+                "--force-string",
+                "--ids",
+                "--name -n",
+                "--no-internet-advertise",
+                "--no-wait",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--signed-message",
+                "--state",
+                "--subscription",
+                "--tags"
+            ],
+            "examples": [
+                "az network custom-ip prefix update --name MyCustomIpPrefix --resource-group MyResourceGroup --tags foo=bar"
+            ]
+        },
+        {
+            "name": "az network custom-ip prefix wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az network custom-ip prefix wait [--created]\n                                 [--custom]\n                                 [--deleted]\n                                 [--exists]\n                                 [--expand]\n                                 [--ids]\n                                 [--interval]\n                                 [--name]\n                                 [--resource-group]\n                                 [--subscription]\n                                 [--timeout]\n                                 [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--expand",
+                "--ids",
+                "--interval",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

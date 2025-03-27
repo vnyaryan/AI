@@ -1,0 +1,88 @@
+{
+    "command_group": "az security alerts-suppression-rule",
+    "description": "View and manage alerts suppression rules.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az security alerts-suppression-rule delete",
+            "summary": "Delete an alerts suppression rule.",
+            "syntax": "az security alerts-suppression-rule delete --rule-name",
+            "required_parameters": [
+                "--rule-name"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az security alerts-suppression-rule delete --rule-name RuleName"
+            ]
+        },
+        {
+            "name": "az security alerts-suppression-rule delete_scope",
+            "summary": "Delete an alerts suppression rule scope.",
+            "syntax": "az security alerts-suppression-rule delete_scope --field\n                                                 --rule-name",
+            "required_parameters": [
+                "--field",
+                "--rule-name"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az security alerts-suppression-rule delete_scope --rule-name RuleName --field \"entities.process.commandline\""
+            ]
+        },
+        {
+            "name": "az security alerts-suppression-rule list",
+            "summary": "List all alerts suppression rule on a subscription scope.",
+            "syntax": "az security alerts-suppression-rule list",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "examples": [
+                "az security alerts-suppression-rule list"
+            ]
+        },
+        {
+            "name": "az security alerts-suppression-rule show",
+            "summary": "Shows an alerts suppression rule.",
+            "syntax": "az security alerts-suppression-rule show --rule-name",
+            "required_parameters": [
+                "--rule-name"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az security alerts-suppression-rule show --rule-name RuleName"
+            ]
+        },
+        {
+            "name": "az security alerts-suppression-rule update",
+            "summary": "Updates or create an alerts suppression rule.",
+            "syntax": "az security alerts-suppression-rule update --alert-type\n                                           --reason\n                                           --rule-name\n                                           --state\n                                           [--comment]\n                                           [--expiration-date-utc]",
+            "required_parameters": [
+                "--alert-type",
+                "--reason",
+                "--rule-name",
+                "--state"
+            ],
+            "optional_parameters": [
+                "--comment",
+                "--expiration-date-utc"
+            ],
+            "examples": [
+                "az security alerts-suppression-rule update --rule-name RuleName --alert-type \"Test\" --reason \"Other\" --comment \"Test comment\" --state \"Enabled\""
+            ]
+        },
+        {
+            "name": "az security alerts-suppression-rule upsert_scope",
+            "summary": "Update an alerts suppression rule with scope element.",
+            "syntax": "az security alerts-suppression-rule upsert_scope --field\n                                                 --rule-name\n                                                 [--any-of]\n                                                 [--contains-substring]",
+            "required_parameters": [
+                "--field",
+                "--rule-name"
+            ],
+            "optional_parameters": [
+                "--any-of",
+                "--contains-substring"
+            ],
+            "examples": [
+                "az security alerts-suppression-rule upsert_scope --field \"entities.process.commandline\" --contains-substring \"example\" --rule-name RuleName"
+            ]
+        }
+    ]
+}

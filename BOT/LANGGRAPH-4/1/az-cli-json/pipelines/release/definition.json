@@ -1,0 +1,38 @@
+{
+    "command_group": "az pipelines release definition",
+    "description": "Manage release definitions.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az pipelines release definition list",
+            "summary": "List release definitions.",
+            "syntax": "az pipelines release definition list [--artifact-source-id]\n                                     [--artifact-type {build, externaltfsbuild, git, github, jenkins, tfvc}]\n                                     [--detect {false, true}]\n                                     [--name]\n                                     [--org]\n                                     [--project]\n                                     [--top]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--artifact-source-id",
+                "--artifact-type",
+                "--detect",
+                "--name",
+                "--org --organization",
+                "--project -p",
+                "--top"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az pipelines release definition show",
+            "summary": "Get the details of a release definition.",
+            "syntax": "az pipelines release definition show [--detect {false, true}]\n                                     [--id]\n                                     [--name]\n                                     [--open]\n                                     [--org]\n                                     [--project]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--detect",
+                "--id",
+                "--name",
+                "--open",
+                "--org --organization",
+                "--project -p"
+            ],
+            "examples": []
+        }
+    ]
+}

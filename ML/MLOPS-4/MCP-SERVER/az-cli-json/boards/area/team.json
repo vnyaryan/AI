@@ -1,0 +1,72 @@
+{
+    "command_group": "az boards area team",
+    "description": "Manage areas for a team.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az boards area team add",
+            "summary": "Add area to a team.",
+            "syntax": "az boards area team add --path\n                        --team\n                        [--detect {false, true}]\n                        [--include-sub-areas {false, true}]\n                        [--org]\n                        [--project]\n                        [--set-as-default]",
+            "required_parameters": [
+                "--path",
+                "--team"
+            ],
+            "optional_parameters": [
+                "--detect",
+                "--include-sub-areas",
+                "--org --organization",
+                "--project -p",
+                "--set-as-default"
+            ],
+            "examples": [
+                "az boards area team add --team 'ContosoTeam' --path '\\ContosoProject\\MyProjectAreaName'"
+            ]
+        },
+        {
+            "name": "az boards area team list",
+            "summary": "List areas for a team.",
+            "syntax": "az boards area team list --team\n                         [--detect {false, true}]\n                         [--org]\n                         [--project]",
+            "required_parameters": [
+                "--team"
+            ],
+            "optional_parameters": [
+                "--detect",
+                "--org --organization",
+                "--project -p"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az boards area team remove",
+            "summary": "Remove area from a team.",
+            "syntax": "az boards area team remove --path\n                           --team\n                           [--detect {false, true}]\n                           [--org]\n                           [--project]",
+            "required_parameters": [
+                "--path",
+                "--team"
+            ],
+            "optional_parameters": [
+                "--detect",
+                "--org --organization",
+                "--project -p"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az boards area team update",
+            "summary": "Update team area.",
+            "syntax": "az boards area team update --path\n                           --team\n                           [--detect {false, true}]\n                           [--include-sub-areas {false, true}]\n                           [--org]\n                           [--project]\n                           [--set-as-default]",
+            "required_parameters": [
+                "--path",
+                "--team"
+            ],
+            "optional_parameters": [
+                "--detect",
+                "--include-sub-areas",
+                "--org --organization",
+                "--project -p",
+                "--set-as-default"
+            ],
+            "examples": []
+        }
+    ]
+}

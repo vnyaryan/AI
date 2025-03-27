@@ -1,0 +1,43 @@
+{
+    "command_group": "az containerapp auth google",
+    "description": "Manage containerapp authentication and authorization of the Google identity provider.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az containerapp auth google show",
+            "summary": "Show the authentication settings for the Google identity provider.",
+            "syntax": "az containerapp auth google show [--ids]\n                                 [--name]\n                                 [--resource-group]\n                                 [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az containerapp auth google show --name my-containerapp --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az containerapp auth google update",
+            "summary": "Update the client id and client secret for the Google identity provider.",
+            "syntax": "az containerapp auth google update [--allowed-audiences]\n                                   [--client-id]\n                                   [--client-secret]\n                                   [--client-secret-name]\n                                   [--ids]\n                                   [--name]\n                                   [--resource-group]\n                                   [--scopes]\n                                   [--subscription]\n                                   [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--allowed-audiences --allowed-token-audiences",
+                "--client-id",
+                "--client-secret",
+                "--client-secret-name",
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--scopes",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az containerapp auth google update  -g myResourceGroup --name my-containerapp \\\n  --client-id my-client-id --client-secret very_secret_password"
+            ]
+        }
+    ]
+}

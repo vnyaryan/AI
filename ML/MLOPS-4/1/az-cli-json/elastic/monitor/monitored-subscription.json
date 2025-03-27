@@ -1,0 +1,117 @@
+{
+    "command_group": "az elastic monitor monitored-subscription",
+    "description": "Manage monitored subscription with elastic.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az elastic monitor monitored-subscription create",
+            "summary": "Create the subscriptions that should be monitored by the Elastic monitor resource.",
+            "syntax": "az elastic monitor monitored-subscription create --configuration-name\n                                                 --monitor-name\n                                                 --resource-group\n                                                 [--monitored-subscription-list]\n                                                 [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                                 [--operation {Active, AddBegin, AddComplete, DeleteBegin, DeleteComplete}]",
+            "required_parameters": [
+                "--configuration-name --name -n",
+                "--monitor-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--monitored-subscription-list -m",
+                "--no-wait",
+                "--operation"
+            ],
+            "examples": [
+                "az elastic monitor monitored-subscription create --resource-group myResourceGroup --monitor-name myMonitor --configuration-name default"
+            ]
+        },
+        {
+            "name": "az elastic monitor monitored-subscription delete",
+            "summary": "Delete the subscriptions that are being monitored by the Elastic monitor resource.",
+            "syntax": "az elastic monitor monitored-subscription delete [--configuration-name]\n                                                 [--ids]\n                                                 [--monitor-name]\n                                                 [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                                 [--resource-group]\n                                                 [--subscription]\n                                                 [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--configuration-name --name -n",
+                "--ids",
+                "--monitor-name",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az elastic monitor monitored-subscription delete --resource-group myResourceGroup --monitor-name myMonitor --configuration-name default"
+            ]
+        },
+        {
+            "name": "az elastic monitor monitored-subscription list",
+            "summary": "List all the subscriptions currently being monitored by the Elastic monitor resource.",
+            "syntax": "az elastic monitor monitored-subscription list --monitor-name\n                                               --resource-group\n                                               [--max-items]\n                                               [--next-token]",
+            "required_parameters": [
+                "--monitor-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az elastic monitor monitored-subscription list --resource-group myResourceGroup --monitor-name myMonitor"
+            ]
+        },
+        {
+            "name": "az elastic monitor monitored-subscription show",
+            "summary": "Get all the subscriptions currently being monitored by the Elastic monitor resource.",
+            "syntax": "az elastic monitor monitored-subscription show [--configuration-name]\n                                               [--ids]\n                                               [--monitor-name]\n                                               [--resource-group]\n                                               [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--configuration-name --name -n",
+                "--ids",
+                "--monitor-name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az elastic monitor monitored-subscription show --resource-group myResourceGroup --monitor-name myMonitor --configuration-name default"
+            ]
+        },
+        {
+            "name": "az elastic monitor monitored-subscription update",
+            "summary": "Update the subscriptions that should be monitored by the Elastic monitor resource.",
+            "syntax": "az elastic monitor monitored-subscription update [--add]\n                                                 [--configuration-name]\n                                                 [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                                 [--ids]\n                                                 [--monitor-name]\n                                                 [--monitored-subscription-list]\n                                                 [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                                 [--operation {Active, AddBegin, AddComplete, DeleteBegin, DeleteComplete}]\n                                                 [--remove]\n                                                 [--resource-group]\n                                                 [--set]\n                                                 [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--configuration-name --name -n",
+                "--force-string",
+                "--ids",
+                "--monitor-name",
+                "--monitored-subscription-list -m",
+                "--no-wait",
+                "--operation",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az elastic monitor monitored-subscription wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az elastic monitor monitored-subscription wait [--configuration-name]\n                                               [--created]\n                                               [--custom]\n                                               [--deleted]\n                                               [--exists]\n                                               [--ids]\n                                               [--interval]\n                                               [--monitor-name]\n                                               [--resource-group]\n                                               [--subscription]\n                                               [--timeout]\n                                               [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--configuration-name --name -n",
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--monitor-name",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

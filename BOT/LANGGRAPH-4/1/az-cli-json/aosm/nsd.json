@@ -1,0 +1,46 @@
+{
+    "command_group": "az aosm nsd",
+    "description": "Manage AOSM publisher Network Service Designs.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az aosm nsd build",
+            "summary": "Build an AOSM Network Service Design.",
+            "syntax": "az aosm nsd build --config-file",
+            "required_parameters": [
+                "--config-file -f"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az aosm nsd build --config-file my-nsd-input-config.jsonc"
+            ]
+        },
+        {
+            "name": "az aosm nsd generate-config",
+            "summary": "Generate configuration file for building an AOSM publisher Network Service Design.",
+            "syntax": "az aosm nsd generate-config [--output-file]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--output-file"
+            ],
+            "examples": [
+                "az aosm nsd generate-config",
+                "az aosm nsd generate-config --output-file my-nsd-input-config.jsonc"
+            ]
+        },
+        {
+            "name": "az aosm nsd publish",
+            "summary": "Publish a pre-built AOSM Network Service Design.",
+            "syntax": "az aosm nsd publish --build-output-folder\n                    [--no-subscription-permissions]",
+            "required_parameters": [
+                "--build-output-folder -b"
+            ],
+            "optional_parameters": [
+                "--no-subscription-permissions -u"
+            ],
+            "examples": [
+                "az aosm nsd publish --build-output-folder my-nsd-output-folder"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+{
+    "command_group": "az afd profile log-scrubbing",
+    "description": "Defines rules that scrub sensitive fields in the Azure Front Door profile logs.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az afd profile log-scrubbing show",
+            "summary": "Defines rules that scrub sensitive fields in the Azure Front Door profile logs.",
+            "syntax": "az afd profile log-scrubbing show --profile-name\n                                  --resource-group",
+            "required_parameters": [
+                "--profile-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        }
+    ]
+}

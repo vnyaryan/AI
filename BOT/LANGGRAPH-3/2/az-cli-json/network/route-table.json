@@ -1,0 +1,112 @@
+{
+    "command_group": "az network route-table",
+    "description": "Manage route tables.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az network route-table create",
+            "summary": "Create a route table.",
+            "syntax": "az network route-table create --name\n                              --resource-group\n                              [--disable-bgp-route-propagation {0, 1, f, false, n, no, t, true, y, yes}]\n                              [--location]\n                              [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                              [--tags]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--disable-bgp-route-propagation",
+                "--location -l",
+                "--no-wait",
+                "--tags"
+            ],
+            "examples": [
+                "az network route-table create -g MyResourceGroup -n MyRouteTable"
+            ]
+        },
+        {
+            "name": "az network route-table delete",
+            "summary": "Delete a route table.",
+            "syntax": "az network route-table delete [--ids]\n                              [--name]\n                              [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                              [--resource-group]\n                              [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az network route-table delete -g MyResourceGroup -n MyRouteTable"
+            ]
+        },
+        {
+            "name": "az network route-table list",
+            "summary": "List route tables.",
+            "syntax": "az network route-table list [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az network route-table list -g MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az network route-table show",
+            "summary": "Get the details of a route table.",
+            "syntax": "az network route-table show [--expand]\n                            [--ids]\n                            [--name]\n                            [--resource-group]\n                            [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--expand",
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az network route-table show -g MyResourceGroup -n MyRouteTable"
+            ]
+        },
+        {
+            "name": "az network route-table update",
+            "summary": "Update a route table.",
+            "syntax": "az network route-table update [--add]\n                              [--disable-bgp-route-propagation {0, 1, f, false, n, no, t, true, y, yes}]\n                              [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                              [--ids]\n                              [--name]\n                              [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                              [--remove]\n                              [--resource-group]\n                              [--set]\n                              [--subscription]\n                              [--tags]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--disable-bgp-route-propagation",
+                "--force-string",
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--subscription",
+                "--tags"
+            ],
+            "examples": [
+                "az network route-table update -g MyResourceGroup -n MyRouteTable --disable-bgp-route-propagation true"
+            ]
+        },
+        {
+            "name": "az network route-table wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az network route-table wait [--created]\n                            [--custom]\n                            [--deleted]\n                            [--exists]\n                            [--expand]\n                            [--ids]\n                            [--interval]\n                            [--name]\n                            [--resource-group]\n                            [--subscription]\n                            [--timeout]\n                            [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--expand",
+                "--ids",
+                "--interval",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

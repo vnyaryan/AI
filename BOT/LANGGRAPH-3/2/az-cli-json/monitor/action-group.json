@@ -1,0 +1,121 @@
+{
+    "command_group": "az monitor action-group",
+    "description": "Manage action groups.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az monitor action-group create",
+            "summary": "Create a new action group.",
+            "syntax": "az monitor action-group create --action-group-name\n                               --resource-group\n                               [--action]\n                               [--group-short-name]\n                               [--location]\n                               [--tags]",
+            "required_parameters": [
+                "--action-group-name --name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--action --actions -a",
+                "--group-short-name --short-name",
+                "--location -l",
+                "--tags"
+            ],
+            "examples": [
+                "az monitor action-group create --action webhook MyActionName https://alerts.contoso.com apiKey={APIKey} type=HighCPU --name MyActionGroup --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az monitor action-group delete",
+            "summary": "Delete an action group.",
+            "syntax": "az monitor action-group delete [--action-group-name]\n                               [--ids]\n                               [--resource-group]\n                               [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--action-group-name --name -n",
+                "--ids",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az monitor action-group enable-receiver",
+            "summary": "Enable a receiver in an action group.",
+            "syntax": "az monitor action-group enable-receiver --name\n                                        [--action-group]\n                                        [--ids]\n                                        [--resource-group]\n                                        [--subscription]",
+            "required_parameters": [
+                "--name --receiver-name -n"
+            ],
+            "optional_parameters": [
+                "--action-group --action-group-name",
+                "--ids",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az monitor action-group list",
+            "summary": "List action groups under a resource group or the current subscription.",
+            "syntax": "az monitor action-group list [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az monitor action-group show",
+            "summary": "Show the details of an action group.",
+            "syntax": "az monitor action-group show [--action-group-name]\n                             [--ids]\n                             [--resource-group]\n                             [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--action-group-name --name -n",
+                "--ids",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az monitor action-group show --name MyActionGroup --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az monitor action-group update",
+            "summary": "Update an action group.",
+            "syntax": "az monitor action-group update [--action-group-name]\n                               [--add]\n                               [--add-action]\n                               [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                               [--group-short-name]\n                               [--ids]\n                               [--remove]\n                               [--remove-action]\n                               [--resource-group]\n                               [--set]\n                               [--subscription]\n                               [--tags]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--action-group-name --name -n",
+                "--add",
+                "--add-action --add-actions -a",
+                "--force-string",
+                "--group-short-name --short-name",
+                "--ids",
+                "--remove",
+                "--remove-action -r",
+                "--resource-group -g",
+                "--set",
+                "--subscription",
+                "--tags"
+            ],
+            "examples": [
+                "az monitor action-group update --name MyActionGroup --resource-group MyResourceGroup --set retentionPolicy.days=365 --subscription MySubscription"
+            ]
+        },
+        {
+            "name": "az monitor action-group wait",
+            "summary": "Place the CLI in a waiting state.",
+            "syntax": "az monitor action-group wait [--created]\n                             [--custom]\n                             [--deleted]\n                             [--exists]\n                             [--ids]\n                             [--interval]\n                             [--name]\n                             [--resource-group]\n                             [--subscription]\n                             [--timeout]\n                             [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

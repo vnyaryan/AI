@@ -1,0 +1,39 @@
+{
+    "command_group": "az sql db tde key",
+    "description": "Manage a database's encryption protector.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az sql db tde key revalidate",
+            "summary": "Revalidates a database's encryption protector key.",
+            "syntax": "az sql db tde key revalidate [--database]\n                             [--ids]\n                             [--resource-group]\n                             [--server]\n                             [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--database -d",
+                "--ids",
+                "--resource-group -g",
+                "--server -s",
+                "--subscription"
+            ],
+            "examples": [
+                "az sql db tde key revalidate --database mydb --resource-group MyResourceGroup --server myserver"
+            ]
+        },
+        {
+            "name": "az sql db tde key revert",
+            "summary": "Reverts a database's encryption protector key to server level.",
+            "syntax": "az sql db tde key revert [--database]\n                         [--ids]\n                         [--resource-group]\n                         [--server]\n                         [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--database -d",
+                "--ids",
+                "--resource-group -g",
+                "--server -s",
+                "--subscription"
+            ],
+            "examples": [
+                "az sql db tde key revert --database mydb --resource-group MyResourceGroup --server myserver"
+            ]
+        }
+    ]
+}

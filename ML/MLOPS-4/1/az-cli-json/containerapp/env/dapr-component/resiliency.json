@@ -1,0 +1,127 @@
+{
+    "command_group": "az containerapp env dapr-component resiliency",
+    "description": "Commands to manage resiliency policies for a dapr component.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az containerapp env dapr-component resiliency create",
+            "summary": "Create resiliency policies for a dapr component.",
+            "syntax": "az containerapp env dapr-component resiliency create --dapr-component-name\n                                                     --environment\n                                                     --name\n                                                     --resource-group\n                                                     [--in-cb-interval]\n                                                     [--in-cb-sequential-err]\n                                                     [--in-cb-timeout]\n                                                     [--in-http-delay]\n                                                     [--in-http-interval]\n                                                     [--in-http-retries]\n                                                     [--in-timeout]\n                                                     [--no-wait]\n                                                     [--out-cb-interval]\n                                                     [--out-cb-sequential-err]\n                                                     [--out-cb-timeout]\n                                                     [--out-http-delay]\n                                                     [--out-http-interval]\n                                                     [--out-http-retries]\n                                                     [--out-timeout]\n                                                     [--yaml]",
+            "required_parameters": [
+                "--dapr-component-name",
+                "--environment",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--in-cb-interval",
+                "--in-cb-sequential-err",
+                "--in-cb-timeout",
+                "--in-http-delay",
+                "--in-http-interval",
+                "--in-http-retries",
+                "--in-timeout",
+                "--no-wait",
+                "--out-cb-interval",
+                "--out-cb-sequential-err",
+                "--out-cb-timeout",
+                "--out-http-delay",
+                "--out-http-interval",
+                "--out-http-retries",
+                "--out-timeout",
+                "--yaml"
+            ],
+            "examples": [
+                "az containerapp env dapr-component resiliency create -g MyResourceGroup \\\n  -n MyDaprResiliency --dapr-component-name MyDaprComponentName \\\n  --environment MyEnvironment --out-timeout 45",
+                "az containerapp env dapr-component resiliency create -g MyResourceGroup \\\n  -n MyDaprResiliency --dapr-component-name MyDaprComponentName \\\n  --environment MyEnvironment --yaml \"path/to/yaml/file.yml\""
+            ]
+        },
+        {
+            "name": "az containerapp env dapr-component resiliency delete",
+            "summary": "Delete resiliency policies for a dapr component.",
+            "syntax": "az containerapp env dapr-component resiliency delete --dapr-component-name\n                                                     --environment\n                                                     --resource-group\n                                                     [--ids]\n                                                     [--name]\n                                                     [--no-wait]\n                                                     [--subscription]\n                                                     [--yes]",
+            "required_parameters": [
+                "--dapr-component-name",
+                "--environment",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az containerapp env dapr-component resiliency delete -g MyResourceGroup \\\n  -n MyDaprResiliency --dapr-component-name MyDaprComponentName \\\n  --environment MyEnvironment"
+            ]
+        },
+        {
+            "name": "az containerapp env dapr-component resiliency list",
+            "summary": "List resiliency policies for a dapr component.",
+            "syntax": "az containerapp env dapr-component resiliency list --dapr-component-name\n                                                   --environment\n                                                   --resource-group",
+            "required_parameters": [
+                "--dapr-component-name",
+                "--environment",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az containerapp env dapr-component resiliency list -g MyResourceGroup \\\n --dapr-component-name MyDaprComponentName --environment MyEnvironment"
+            ]
+        },
+        {
+            "name": "az containerapp env dapr-component resiliency show",
+            "summary": "Show resiliency policies for a dapr component.",
+            "syntax": "az containerapp env dapr-component resiliency show --dapr-component-name\n                                                   --environment\n                                                   --resource-group\n                                                   [--ids]\n                                                   [--name]\n                                                   [--subscription]",
+            "required_parameters": [
+                "--dapr-component-name",
+                "--environment",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--subscription"
+            ],
+            "examples": [
+                "az containerapp env dapr-component resiliency show -g MyResourceGroup \\\n  -n MyDaprResiliency --dapr-component-name MyDaprComponentName \\\n  --environment MyEnvironment"
+            ]
+        },
+        {
+            "name": "az containerapp env dapr-component resiliency update",
+            "summary": "Update resiliency policies for a dapr component.",
+            "syntax": "az containerapp env dapr-component resiliency update --dapr-component-name\n                                                     --environment\n                                                     --resource-group\n                                                     [--ids]\n                                                     [--in-cb-interval]\n                                                     [--in-cb-sequential-err]\n                                                     [--in-cb-timeout]\n                                                     [--in-http-delay]\n                                                     [--in-http-interval]\n                                                     [--in-http-retries]\n                                                     [--in-timeout]\n                                                     [--name]\n                                                     [--no-wait]\n                                                     [--out-cb-interval]\n                                                     [--out-cb-sequential-err]\n                                                     [--out-cb-timeout]\n                                                     [--out-http-delay]\n                                                     [--out-http-interval]\n                                                     [--out-http-retries]\n                                                     [--out-timeout]\n                                                     [--subscription]\n                                                     [--yaml]",
+            "required_parameters": [
+                "--dapr-component-name",
+                "--environment",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--in-cb-interval",
+                "--in-cb-sequential-err",
+                "--in-cb-timeout",
+                "--in-http-delay",
+                "--in-http-interval",
+                "--in-http-retries",
+                "--in-timeout",
+                "--name -n",
+                "--no-wait",
+                "--out-cb-interval",
+                "--out-cb-sequential-err",
+                "--out-cb-timeout",
+                "--out-http-delay",
+                "--out-http-interval",
+                "--out-http-retries",
+                "--out-timeout",
+                "--subscription",
+                "--yaml"
+            ],
+            "examples": [
+                "az containerapp env dapr-component resiliency update -g MyResourceGroup \\\n  -n MyDaprResiliency --dapr-component-name MyDaprComponentName \\\n  --environment MyEnvironment --in-timeout 45",
+                "az containerapp env dapr-component resiliency update -g MyResourceGroup \\\n  -n MyDaprResiliency --dapr-component-name MyDaprComponentName \\\n  --environment MyEnvironment --yaml \"path/to/yaml/file.yml\""
+            ]
+        }
+    ]
+}

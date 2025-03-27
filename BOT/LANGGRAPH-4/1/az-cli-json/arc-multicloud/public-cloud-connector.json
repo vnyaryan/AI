@@ -1,0 +1,125 @@
+{
+    "command_group": "az arc-multicloud public-cloud-connector",
+    "description": "Commands for multicloudConnector.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az arc-multicloud public-cloud-connector create",
+            "summary": "Create a PublicCloudConnector.",
+            "syntax": "az arc-multicloud public-cloud-connector create --name\n                                                --resource-group\n                                                [--aws-cloud-profile]\n                                                [--host-type {AWS}]\n                                                [--location]\n                                                [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                                [--tags]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--aws-cloud-profile",
+                "--host-type",
+                "--location -l",
+                "--no-wait",
+                "--tags"
+            ],
+            "examples": [
+                "az arc-multicloud public-cloud-connector create --resource-group multiCloudRG --name awsConnector --aws-cloud-profile \"{account-id:123456789123,excluded-accounts:[123456789124,123456789125],is-organizational-account:True}\" --host-type AWS --tags \"{a:b}\" --location eastus",
+                "az arc-multicloud public-cloud-connector create --resource-group multiCloudRG --name awsConnector --aws-cloud-profile account-id=123456789123 is-organizational-account=false --host-type AWS --tags a=b --location eastus"
+            ]
+        },
+        {
+            "name": "az arc-multicloud public-cloud-connector delete",
+            "summary": "Delete a PublicCloudConnector.",
+            "syntax": "az arc-multicloud public-cloud-connector delete [--ids]\n                                                [--name]\n                                                [--resource-group]\n                                                [--subscription]\n                                                [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az arc-multicloud public-cloud-connector delete --resource-group multiCloudRG --name awsConnector"
+            ]
+        },
+        {
+            "name": "az arc-multicloud public-cloud-connector list",
+            "summary": "List PublicCloudConnector resources within the current subscription, and limit to the specified resource group if one is provided.",
+            "syntax": "az arc-multicloud public-cloud-connector list [--max-items]\n                                              [--next-token]\n                                              [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az arc-multicloud public-cloud-connector list --resource-group multiCloudRG"
+            ]
+        },
+        {
+            "name": "az arc-multicloud public-cloud-connector show",
+            "summary": "Get a PublicCloudConnector.",
+            "syntax": "az arc-multicloud public-cloud-connector show [--ids]\n                                              [--name]\n                                              [--resource-group]\n                                              [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az arc-multicloud public-cloud-connector show --resource-group multiCloudRG --name awsConnector"
+            ]
+        },
+        {
+            "name": "az arc-multicloud public-cloud-connector test-permission",
+            "summary": "A long-running resource action.",
+            "syntax": "az arc-multicloud public-cloud-connector test-permission [--ids]\n                                                         [--name]\n                                                         [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                                         [--resource-group]\n                                                         [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az arc-multicloud public-cloud-connector test-permission --resource-group multiCloudRG --name awsConnector"
+            ]
+        },
+        {
+            "name": "az arc-multicloud public-cloud-connector update",
+            "summary": "Update a PublicCloudConnector.",
+            "syntax": "az arc-multicloud public-cloud-connector update [--aws-cloud-profile]\n                                                [--ids]\n                                                [--name]\n                                                [--resource-group]\n                                                [--subscription]\n                                                [--tags]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--aws-cloud-profile",
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--tags"
+            ],
+            "examples": [
+                "az arc-multicloud public-cloud-connector update --resource-group multiCloudRG --name awsConnector --aws-cloud-profile \"{excluded-accounts:[123456789123,123456789124]}\" --tags \"{}\""
+            ]
+        },
+        {
+            "name": "az arc-multicloud public-cloud-connector wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az arc-multicloud public-cloud-connector wait [--created]\n                                              [--custom]\n                                              [--deleted]\n                                              [--exists]\n                                              [--ids]\n                                              [--interval]\n                                              [--name]\n                                              [--resource-group]\n                                              [--subscription]\n                                              [--timeout]\n                                              [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

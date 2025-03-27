@@ -1,0 +1,123 @@
+{
+    "command_group": "az quantum workspace",
+    "description": "Manage Azure Quantum workspaces.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az quantum workspace clear",
+            "summary": "Clear the default Azure Quantum workspace.",
+            "syntax": "az quantum workspace clear",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "examples": [
+                "az quantum workspace clear"
+            ]
+        },
+        {
+            "name": "az quantum workspace create",
+            "summary": "Create a new Azure Quantum workspace.",
+            "syntax": "az quantum workspace create --location\n                            --resource-group\n                            --storage-account\n                            --workspace-name\n                            [--auto-accept]\n                            [--provider-sku-list]\n                            [--skip-autoadd]\n                            [--skip-role-assignment]",
+            "required_parameters": [
+                "--location -l",
+                "--resource-group -g",
+                "--storage-account -a",
+                "--workspace-name -w"
+            ],
+            "optional_parameters": [
+                "--auto-accept",
+                "--provider-sku-list -r",
+                "--skip-autoadd",
+                "--skip-role-assignment"
+            ],
+            "examples": [
+                "az quantum workspace create -g MyResourceGroup -w MyWorkspace -l MyLocation \\\n    -a MyStorageAccountName",
+                "az quantum workspace create -g MyResourceGroup -w MyWorkspace -l MyLocation \\\n    -r \"MyProvider1 / MySKU1, MyProvider2 / MySKU2\" --skip-autoadd -a MyStorageAccountName\n\nTo display a list of available providers and their SKUs, use the following command:\n    az quantum offerings list -l MyLocation -o table"
+            ]
+        },
+        {
+            "name": "az quantum workspace delete",
+            "summary": "Delete the given (or current) Azure Quantum workspace.",
+            "syntax": "az quantum workspace delete --resource-group\n                            --workspace-name",
+            "required_parameters": [
+                "--resource-group -g",
+                "--workspace-name -w"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az quantum workspace delete -g MyResourceGroup -w MyWorkspace"
+            ]
+        },
+        {
+            "name": "az quantum workspace list",
+            "summary": "Get the list of Azure Quantum workspaces available.",
+            "syntax": "az quantum workspace list [--location]\n                          [--resource-group]\n                          [--tag]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--location -l",
+                "--resource-group -g",
+                "--tag"
+            ],
+            "examples": [
+                "az quantum workspace list",
+                "az quantum workspace list -l MyLocation"
+            ]
+        },
+        {
+            "name": "az quantum workspace quotas",
+            "summary": "List the quotas for the given (or current) Azure Quantum workspace.",
+            "syntax": "az quantum workspace quotas --location\n                            --resource-group\n                            --workspace-name",
+            "required_parameters": [
+                "--location -l",
+                "--resource-group -g",
+                "--workspace-name -w"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az quantum workspace quotas -g MyResourceGroup -w MyWorkspace -l MyLocation"
+            ]
+        },
+        {
+            "name": "az quantum workspace set",
+            "summary": "Select a default Azure Quantum workspace for future commands.",
+            "syntax": "az quantum workspace set --location\n                         --resource-group\n                         --workspace-name",
+            "required_parameters": [
+                "--location -l",
+                "--resource-group -g",
+                "--workspace-name -w"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az quantum workspace set -g MyResourceGroup -w MyWorkspace -l MyLocation"
+            ]
+        },
+        {
+            "name": "az quantum workspace show",
+            "summary": "Get the details of the given (or current) Azure Quantum workspace.",
+            "syntax": "az quantum workspace show [--resource-group]\n                          [--workspace-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--resource-group -g",
+                "--workspace-name -w"
+            ],
+            "examples": [
+                "az quantum workspace show",
+                "az quantum workspace show -g MyResourceGroup -w MyWorkspace"
+            ]
+        },
+        {
+            "name": "az quantum workspace update",
+            "summary": "Update the given (or current) Azure Quantum workspace.",
+            "syntax": "az quantum workspace update [--enable-api-key]\n                            [--resource-group]\n                            [--workspace-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--enable-api-key",
+                "--resource-group -g",
+                "--workspace-name -w"
+            ],
+            "examples": [
+                "az quantum workspace update --enable-api-key True",
+                "az quantum workspace update --enable-api-key False"
+            ]
+        }
+    ]
+}

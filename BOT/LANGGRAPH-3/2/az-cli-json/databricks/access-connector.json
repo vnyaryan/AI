@@ -1,0 +1,115 @@
+{
+    "command_group": "az databricks access-connector",
+    "description": "Commands to manage databricks access connector.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az databricks access-connector create",
+            "summary": "Create azure databricks accessConnector.",
+            "syntax": "az databricks access-connector create --name\n                                      --resource-group\n                                      [--identities]\n                                      [--identity-type {None, SystemAssigned, SystemAssigned,UserAssigned, UserAssigned}]\n                                      [--location]\n                                      [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                      [--tags]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--identities --user-assigned-identities",
+                "--identity-type",
+                "--location -l",
+                "--no-wait",
+                "--tags"
+            ],
+            "examples": [
+                "az databricks access-connector create --resource-group MyResourceGroup --name MyAccessConnector --location westus --identity-type SystemAssigned"
+            ]
+        },
+        {
+            "name": "az databricks access-connector delete",
+            "summary": "Delete the azure databricks accessConnector.",
+            "syntax": "az databricks access-connector delete [--ids]\n                                      [--name]\n                                      [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                      [--resource-group]\n                                      [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az databricks access-connector delete --resource-group MyResourceGroup --name MyAccessConnector"
+            ]
+        },
+        {
+            "name": "az databricks access-connector list",
+            "summary": "List all the azure databricks accessConnectors within a subscription.",
+            "syntax": "az databricks access-connector list [--max-items]\n                                    [--next-token]\n                                    [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az databricks access-connector list  --resource-group MyResourceGroup",
+                "az databricks access-connector list"
+            ]
+        },
+        {
+            "name": "az databricks access-connector show",
+            "summary": "Get an azure databricks accessConnector.",
+            "syntax": "az databricks access-connector show [--ids]\n                                    [--name]\n                                    [--resource-group]\n                                    [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az databricks access-connector show --resource-group MyResourceGroup --name MyAccessConnector"
+            ]
+        },
+        {
+            "name": "az databricks access-connector update",
+            "summary": "Update azure databricks accessConnector.",
+            "syntax": "az databricks access-connector update [--add]\n                                      [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                      [--identities]\n                                      [--identity-type {None, SystemAssigned, SystemAssigned,UserAssigned, UserAssigned}]\n                                      [--ids]\n                                      [--name]\n                                      [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                      [--remove]\n                                      [--resource-group]\n                                      [--set]\n                                      [--subscription]\n                                      [--tags]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--force-string",
+                "--identities --user-assigned-identities",
+                "--identity-type",
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--subscription",
+                "--tags"
+            ],
+            "examples": [
+                "az databricks access-connector update --resource-group MyResourceGroup --name MyAccessConnector --location westus --identity-type SystemAssigned"
+            ]
+        },
+        {
+            "name": "az databricks access-connector wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az databricks access-connector wait [--created]\n                                    [--custom]\n                                    [--deleted]\n                                    [--exists]\n                                    [--ids]\n                                    [--interval]\n                                    [--name]\n                                    [--resource-group]\n                                    [--subscription]\n                                    [--timeout]\n                                    [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

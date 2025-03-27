@@ -1,0 +1,35 @@
+{
+    "command_group": "az containerapp add-on postgres",
+    "description": "Commands to manage the postgres add-on for the Container Apps environment.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az containerapp add-on postgres create",
+            "summary": "Command to create the postgres add-on.",
+            "syntax": "az containerapp add-on postgres create --environment\n                                       --name\n                                       --resource-group\n                                       [--no-wait]",
+            "required_parameters": [
+                "--environment",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--no-wait"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az containerapp add-on postgres delete",
+            "summary": "Command to delete the postgres add-on.",
+            "syntax": "az containerapp add-on postgres delete --name\n                                       --resource-group\n                                       [--no-wait]\n                                       [--yes]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--no-wait",
+                "--yes -y"
+            ],
+            "examples": []
+        }
+    ]
+}

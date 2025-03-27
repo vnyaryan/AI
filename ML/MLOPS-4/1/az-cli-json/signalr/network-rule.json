@@ -1,0 +1,39 @@
+{
+    "command_group": "az signalr network-rule",
+    "description": "Manage network rules.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az signalr network-rule list",
+            "summary": "Get the Network access control of SignalR Service.",
+            "syntax": "az signalr network-rule list --name\n                             --resource-group",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az signalr network-rule update",
+            "summary": "Update the Network access control of SignalR Service.",
+            "syntax": "az signalr network-rule update [--allow]\n                               [--connection-name]\n                               [--deny]\n                               [--ids]\n                               [--name]\n                               [--public-network {false, true}]\n                               [--resource-group]\n                               [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--allow",
+                "--connection-name",
+                "--deny",
+                "--ids",
+                "--name -n",
+                "--public-network",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az signalr network-rule update --public-network -n MySignalR -g MyResourceGroup --allow RESTAPI",
+                "az signalr network-rule update --connection-name MyPrivateEndpointConnection -n MySignalR -g MyResourceGroup --allow ClientConnection ServerConnection",
+                "az signalr network-rule update --public-network --connection-name MyPrivateEndpointConnection1 MyPrivateEndpointConnection2 -n MySignalR -g MyResourceGroup --deny ClientConnection"
+            ]
+        }
+    ]
+}

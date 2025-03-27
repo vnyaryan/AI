@@ -1,0 +1,140 @@
+{
+    "command_group": "az devcenter admin project",
+    "description": "Manage projects.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az devcenter admin project create",
+            "summary": "Create a project.",
+            "syntax": "az devcenter admin project create --dev-center-id\n                                  --name\n                                  --resource-group\n                                  [--catalog-item-sync-types]\n                                  [--description]\n                                  [--display-name]\n                                  [--identity-type {None, SystemAssigned, SystemAssigned, UserAssigned, UserAssigned}]\n                                  [--location]\n                                  [--max-dev-boxes-per-user]\n                                  [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                  [--tags]\n                                  [--user-assigned-identities]",
+            "required_parameters": [
+                "--dev-center-id",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--catalog-item-sync-types -c",
+                "--description",
+                "--display-name",
+                "--identity-type",
+                "--location -l",
+                "--max-dev-boxes-per-user",
+                "--no-wait",
+                "--tags",
+                "--user-assigned-identities -u"
+            ],
+            "examples": [
+                "az devcenter admin project create --location \"eastus\" --description \"This is my first project.\" --dev-center-id \"/subscriptions/0ac520ee-14c0-480f-b6c9-0a90c58ffff/resourceGroups/rg1/providers/Microsoft.DevCenter/devcenters/Contoso\" --tags CostCenter=\"R&D\" --name \"DevProject\" --resource-group \"rg1\" --max-dev-boxes-per-user \"3\""
+            ]
+        },
+        {
+            "name": "az devcenter admin project delete",
+            "summary": "Delete a project.",
+            "syntax": "az devcenter admin project delete [--ids]\n                                  [--name]\n                                  [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                  [--resource-group]\n                                  [--subscription]\n                                  [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az devcenter admin project delete --name \"DevProject\" --resource-group \"rg1\""
+            ]
+        },
+        {
+            "name": "az devcenter admin project get-inherited-setting",
+            "summary": "Gets applicable inherited settings for this project.",
+            "syntax": "az devcenter admin project get-inherited-setting [--ids]\n                                                 [--name]\n                                                 [--resource-group]\n                                                 [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az devcenter admin project get-inherited-setting --name \"DevProject\" --resource-group \"rg1\""
+            ]
+        },
+        {
+            "name": "az devcenter admin project list",
+            "summary": "List projects.",
+            "syntax": "az devcenter admin project list [--max-items]\n                                [--next-token]\n                                [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az devcenter admin project list --resource-group \"rg1\"",
+                "az devcenter admin project list"
+            ]
+        },
+        {
+            "name": "az devcenter admin project show",
+            "summary": "Get a project.",
+            "syntax": "az devcenter admin project show [--ids]\n                                [--name]\n                                [--resource-group]\n                                [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az devcenter admin project show --name \"DevProject\" --resource-group \"rg1\""
+            ]
+        },
+        {
+            "name": "az devcenter admin project update",
+            "summary": "Update a project.",
+            "syntax": "az devcenter admin project update [--add]\n                                  [--catalog-item-sync-types]\n                                  [--description]\n                                  [--display-name]\n                                  [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                  [--identity-type {None, SystemAssigned, SystemAssigned, UserAssigned, UserAssigned}]\n                                  [--ids]\n                                  [--max-dev-boxes-per-user]\n                                  [--name]\n                                  [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                  [--remove]\n                                  [--resource-group]\n                                  [--set]\n                                  [--subscription]\n                                  [--tags]\n                                  [--user-assigned-identities]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--catalog-item-sync-types -c",
+                "--description",
+                "--display-name",
+                "--force-string",
+                "--identity-type",
+                "--ids",
+                "--max-dev-boxes-per-user",
+                "--name -n",
+                "--no-wait",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--subscription",
+                "--tags",
+                "--user-assigned-identities -u"
+            ],
+            "examples": [
+                "az devcenter admin project update --description \"This is my first project.\" --tags CostCenter=\"R&D\" --name \"DevProject\" --resource-group \"rg1\" --max-dev-boxes-per-user \"5\""
+            ]
+        },
+        {
+            "name": "az devcenter admin project wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az devcenter admin project wait [--created]\n                                [--custom]\n                                [--deleted]\n                                [--exists]\n                                [--ids]\n                                [--interval]\n                                [--name]\n                                [--resource-group]\n                                [--subscription]\n                                [--timeout]\n                                [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

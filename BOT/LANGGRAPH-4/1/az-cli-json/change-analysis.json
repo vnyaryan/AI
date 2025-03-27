@@ -1,0 +1,40 @@
+{
+    "command_group": "az change-analysis",
+    "description": "List changes for resources.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az change-analysis list",
+            "summary": "List the changes of resources in the subscription within the specified time range. Customer data will always be masked.",
+            "syntax": "az change-analysis list --end-time\n                        --start-time\n                        [--resource-group]\n                        [--skip-token]",
+            "required_parameters": [
+                "--end-time",
+                "--start-time"
+            ],
+            "optional_parameters": [
+                "--resource-group -g",
+                "--skip-token"
+            ],
+            "examples": [
+                "az change-analysis list --start-time '05/24/2022 8:43:36' --end-time '05/25/2022 9:46:36'",
+                "az change-analysis list -g [ResourceGroup] --start-time '05/24/2022 8:43:36' --end-time '05/25/2022 9:46:36'"
+            ]
+        },
+        {
+            "name": "az change-analysis list-by-resource",
+            "summary": "List the changes of a resource within the specified time range. Customer data will be masked if the user doesn't have access.",
+            "syntax": "az change-analysis list-by-resource --end-time\n                                    --resource\n                                    --start-time\n                                    [--skip-token]",
+            "required_parameters": [
+                "--end-time",
+                "--resource -r",
+                "--start-time"
+            ],
+            "optional_parameters": [
+                "--skip-token"
+            ],
+            "examples": [
+                "az change-analysis list-by-resource -r [ResourceId] --start-time '05/24/2022 8:43:36' --end-time '05/25/2022 9:46:36'"
+            ]
+        }
+    ]
+}

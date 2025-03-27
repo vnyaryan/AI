@@ -1,0 +1,40 @@
+{
+    "command_group": "az partnercenter marketplace offer setup",
+    "description": "Manage a Marketplace Offer's setup.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az partnercenter marketplace offer setup show",
+            "summary": "Show the offer setup.",
+            "syntax": "az partnercenter marketplace offer setup show --id",
+            "required_parameters": [
+                "--id --offer-id"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az partnercenter marketplace offer setup show --offer-id MyOfferId"
+            ]
+        },
+        {
+            "name": "az partnercenter marketplace offer setup update",
+            "summary": "Update a marketplace offer.",
+            "syntax": "az partnercenter marketplace offer setup update --id\n                                                [--add]\n                                                [--force-string]\n                                                [--remove]\n                                                [--reseller {false, true}]\n                                                [--sell-through-microsoft {false, true}]\n                                                [--set]\n                                                [--test-drive {false, true}]\n                                                [--trial-uri]",
+            "required_parameters": [
+                "--id --offer-id"
+            ],
+            "optional_parameters": [
+                "--add",
+                "--force-string",
+                "--remove",
+                "--reseller",
+                "--sell-through-microsoft",
+                "--set",
+                "--test-drive",
+                "--trial-uri"
+            ],
+            "examples": [
+                "az partnercenter marketplace offer setup update --offer-id MyOfferId --sell-through-microsoft true"
+            ]
+        }
+    ]
+}

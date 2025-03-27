@@ -1,0 +1,6 @@
+{
+    "command_group": "az synapse role",
+    "description": "Manage Synapse's role assignments and definitions.",
+    "status": "GA",
+    "commands": []
+}

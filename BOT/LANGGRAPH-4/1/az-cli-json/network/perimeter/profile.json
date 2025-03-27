@@ -1,0 +1,75 @@
+{
+    "command_group": "az network perimeter profile",
+    "description": "Manage Network Profiles under an NSP.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az network perimeter profile create",
+            "summary": "Creates or updates a network profile.",
+            "syntax": "az network perimeter profile create --name\n                                    --perimeter-name\n                                    --resource-group\n                                    [--location]\n                                    [--tags]",
+            "required_parameters": [
+                "--name --profile-name -n",
+                "--perimeter-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--location -l",
+                "--tags"
+            ],
+            "examples": [
+                "az network perimeter profile create -n MyProfile --perimeter-name MyPerimeter -g MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az network perimeter profile delete",
+            "summary": "Deletes an NSP profile.",
+            "syntax": "az network perimeter profile delete [--ids]\n                                    [--name]\n                                    [--perimeter-name]\n                                    [--resource-group]\n                                    [--subscription]\n                                    [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --profile-name -n",
+                "--perimeter-name",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az network perimeter profile delete -n MyProfile --perimeter-name MyPerimeter -g MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az network perimeter profile list",
+            "summary": "Lists the NSP profiles in the specified network security perimeter.",
+            "syntax": "az network perimeter profile list --perimeter-name\n                                  --resource-group\n                                  [--max-items]\n                                  [--next-token]\n                                  [--skip-token]\n                                  [--top]",
+            "required_parameters": [
+                "--perimeter-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token",
+                "--skip-token",
+                "--top"
+            ],
+            "examples": [
+                "az network perimeter profile list --perimeter-name MyPerimeter -g MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az network perimeter profile show",
+            "summary": "Gets the specified NSP profile.",
+            "syntax": "az network perimeter profile show [--ids]\n                                  [--name]\n                                  [--perimeter-name]\n                                  [--resource-group]\n                                  [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --profile-name -n",
+                "--perimeter-name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az network perimeter profile show --perimeter-name MyPerimeter -g MyResourceGroup -n MyProfile"
+            ]
+        }
+    ]
+}

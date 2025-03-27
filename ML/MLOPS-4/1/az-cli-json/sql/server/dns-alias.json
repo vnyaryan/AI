@@ -1,0 +1,80 @@
+{
+    "command_group": "az sql server dns-alias",
+    "description": "Manage a server's DNS aliases.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az sql server dns-alias create",
+            "summary": "Creates a server DNS alias.",
+            "syntax": "az sql server dns-alias create --name\n                               --resource-group\n                               --server",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g",
+                "--server -s"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az sql server dns-alias delete",
+            "summary": "Deletes the server DNS alias with the given name.",
+            "syntax": "az sql server dns-alias delete --name\n                               [--ids]\n                               [--resource-group]\n                               [--server]\n                               [--subscription]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--resource-group -g",
+                "--server -s",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az sql server dns-alias list",
+            "summary": "Gets a list of server DNS aliases for a server.",
+            "syntax": "az sql server dns-alias list [--ids]\n                             [--resource-group]\n                             [--server]\n                             [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--resource-group -g",
+                "--server -s",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az sql server dns-alias set",
+            "summary": "Sets a server to which DNS alias should point.",
+            "syntax": "az sql server dns-alias set --name\n                            --original-server\n                            [--ids]\n                            [--original-resource-group]\n                            [--original-subscription-id]\n                            [--resource-group]\n                            [--server]\n                            [--subscription]",
+            "required_parameters": [
+                "--name -n",
+                "--original-server"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--original-resource-group",
+                "--original-subscription-id",
+                "--resource-group -g",
+                "--server -s",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az sql server dns-alias show",
+            "summary": "Gets a server DNS alias.",
+            "syntax": "az sql server dns-alias show --name\n                             [--ids]\n                             [--resource-group]\n                             [--server]\n                             [--subscription]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--resource-group -g",
+                "--server -s",
+                "--subscription"
+            ],
+            "examples": []
+        }
+    ]
+}

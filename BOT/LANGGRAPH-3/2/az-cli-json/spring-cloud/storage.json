@@ -1,0 +1,96 @@
+{
+    "command_group": "az spring-cloud storage",
+    "description": "Commands to manage Storages in Azure Spring Cloud.",
+    "status": "Deprecated",
+    "commands": [
+        {
+            "name": "az spring-cloud storage add",
+            "summary": "Create a new storage in the Azure Spring Cloud.",
+            "syntax": "az spring-cloud storage add --account-key\n                            --account-name\n                            --name\n                            --resource-group\n                            --service\n                            --storage-type",
+            "required_parameters": [
+                "--account-key",
+                "--account-name",
+                "--name -n",
+                "--resource-group -g",
+                "--service -s",
+                "--storage-type"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az spring-cloud storage add --storage-type StorageAccount --account-name MyAccountName --account-key MyAccountKey  -g MyResourceGroup -s MyService -n MyStorageName"
+            ]
+        },
+        {
+            "name": "az spring-cloud storage list",
+            "summary": "List all existing storages in the Azure Spring Cloud.",
+            "syntax": "az spring-cloud storage list --resource-group\n                             --service",
+            "required_parameters": [
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az spring-cloud storage list -g MyResourceGroup -s MyService"
+            ]
+        },
+        {
+            "name": "az spring-cloud storage list-persistent-storage",
+            "summary": "List all the persistent storages related to an existing storage in the Azure Spring Cloud.",
+            "syntax": "az spring-cloud storage list-persistent-storage --name\n                                                --resource-group\n                                                --service",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az spring-cloud storage list-persistent-storage -g MyResourceGroup -s MyService -n MyStorageName"
+            ]
+        },
+        {
+            "name": "az spring-cloud storage remove",
+            "summary": "Remove an existing storage in the Azure Spring Cloud.",
+            "syntax": "az spring-cloud storage remove --name\n                               --resource-group\n                               --service",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az spring-cloud storage remove -g MyResourceGroup -s MyService -n MyStorageName"
+            ]
+        },
+        {
+            "name": "az spring-cloud storage show",
+            "summary": "Get an existing storage in the Azure Spring Cloud.",
+            "syntax": "az spring-cloud storage show --name\n                             --resource-group\n                             --service",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az spring-cloud storage show -g MyResourceGroup -s MyService -n MyStorageName"
+            ]
+        },
+        {
+            "name": "az spring-cloud storage update",
+            "summary": "Update an existing storage in the Azure Spring Cloud.",
+            "syntax": "az spring-cloud storage update --account-key\n                               --account-name\n                               --name\n                               --resource-group\n                               --service\n                               --storage-type",
+            "required_parameters": [
+                "--account-key",
+                "--account-name",
+                "--name -n",
+                "--resource-group -g",
+                "--service -s",
+                "--storage-type"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az spring-cloud storage update --storage-type StorageAccount --account-name MyAccountName --account-key MyAccountKey  -g MyResourceGroup -s MyService -n MyStorageName"
+            ]
+        }
+    ]
+}

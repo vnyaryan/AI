@@ -1,0 +1,27 @@
+{
+    "command_group": "az cosmosdb locations",
+    "description": "Manage Azure Cosmos DB location properties.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az cosmosdb locations list",
+            "summary": "Retrieves the list of cosmosdb locations and their properties.",
+            "syntax": "az cosmosdb locations list",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az cosmosdb locations show",
+            "summary": "Show the Azure Cosmos DB location properties in the given location.",
+            "syntax": "az cosmosdb locations show --location",
+            "required_parameters": [
+                "--location -l"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az cosmosdb locations show --location 'East US'"
+            ]
+        }
+    ]
+}

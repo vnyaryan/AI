@@ -1,0 +1,33 @@
+{
+    "command_group": "az support in-subscription file-workspace",
+    "description": "File workspaces for Azure Support for the specified subscription.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az support in-subscription file-workspace create",
+            "summary": "Create a new file workspace for the specified subscription.",
+            "syntax": "az support in-subscription file-workspace create --file-workspace-name",
+            "required_parameters": [
+                "--file-workspace-name"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az support in-subscription file-workspace create --file-workspace-name \"TestWorkspaceName\" --subscription \"TestSubscription\"",
+                "az support in-subscription file-workspace create --file-workspace-name \"TestWorkspaceName\""
+            ]
+        },
+        {
+            "name": "az support in-subscription file-workspace show",
+            "summary": "Get details for a specific file workspace in an Azure subscription.",
+            "syntax": "az support in-subscription file-workspace show --file-workspace-name",
+            "required_parameters": [
+                "--file-workspace-name"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az support in-subscription file-workspace show --file-workspace-name \"TestWorkspaceName\" --subscription \"TestSubscription\"",
+                "az support in-subscription file-workspace show --file-workspace-name \"TestWorkspaceName\""
+            ]
+        }
+    ]
+}

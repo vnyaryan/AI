@@ -1,0 +1,106 @@
+{
+    "command_group": "az site-recovery recovery-plan",
+    "description": "Manage the recovery plans in the vault.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az site-recovery recovery-plan create",
+            "summary": "Create operation to create a recovery plan.",
+            "syntax": "az site-recovery recovery-plan create --groups\n                                      --name\n                                      --primary-fabric-id\n                                      --recovery-fabric-id\n                                      --resource-group\n                                      --vault-name\n                                      [--failover-deploy-model {Classic, NotApplicable, ResourceManager}]\n                                      [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                      [--provider-input]",
+            "required_parameters": [
+                "--groups",
+                "--name --recovery-plan-name -n",
+                "--primary-fabric-id",
+                "--recovery-fabric-id",
+                "--resource-group -g",
+                "--vault-name"
+            ],
+            "optional_parameters": [
+                "--failover-deploy-model --failover-deployment-model",
+                "--no-wait",
+                "--provider-input --provider-specific-input"
+            ],
+            "examples": [
+                "az site-recovery recovery-plan create -n recovery_plan_name -g rg --vault-name vault_name --groups '[{group-type:Boot,replication-protected-items:[{id:protected_item_id,virtual-machine-id:vm_id}]}]' --primary-fabric-id fabric1_id --recovery-fabric-id fabric2_id --failover-deployment-model ResourceManager",
+                "az site-recovery recovery-plan create -n \"recovery_plan_name\" -g \"rg\" --vault-name \"vault_name\" --groups '[{group-type:Boot,replication-protected-items:[{id:\"protected_item_id\",virtual-machine-id:\"protectable_item_id\"}]}]' --primary-fabric-id \"fabric_id\" --recovery-fabric-id \"Microsoft Azure\" --failover-deployment-model ResourceManager",
+                "az site-recovery recovery-plan create -n \"recovery_plan_name\" -g \"rg\" --vault-name \"vault_name\" --groups '[{group-type:Boot,replication-protected-items:[{id:\"protected_item_id\",virtual-machine-id:\"vm_id\"}]}]' --primary-fabric-id \"fabric_id\" --recovery-fabric-id \"Microsoft Azure\" --failover-deployment-model ResourceManager"
+            ]
+        },
+        {
+            "name": "az site-recovery recovery-plan delete",
+            "summary": "Delete a recovery plan.",
+            "syntax": "az site-recovery recovery-plan delete [--ids]\n                                      [--name]\n                                      [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                      [--resource-group]\n                                      [--subscription]\n                                      [--vault-name]\n                                      [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --recovery-plan-name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--vault-name",
+                "--yes -y"
+            ],
+            "examples": [
+                "az site-recovery recovery-plan delete -n recovery_plan_name -g rg --vault-name vault_name"
+            ]
+        },
+        {
+            "name": "az site-recovery recovery-plan list",
+            "summary": "List the recovery plans in the vault.",
+            "syntax": "az site-recovery recovery-plan list --resource-group\n                                    --vault-name\n                                    [--max-items]\n                                    [--next-token]",
+            "required_parameters": [
+                "--resource-group -g",
+                "--vault-name"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az site-recovery recovery-plan list -g rg --vault-name vault_name"
+            ]
+        },
+        {
+            "name": "az site-recovery recovery-plan show",
+            "summary": "Get the details of the recovery plan.",
+            "syntax": "az site-recovery recovery-plan show [--ids]\n                                    [--name]\n                                    [--resource-group]\n                                    [--subscription]\n                                    [--vault-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --recovery-plan-name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--vault-name"
+            ],
+            "examples": [
+                "az site-recovery recovery-plan show -n recovery_plan_name -g rg --vault-name vault_name"
+            ]
+        },
+        {
+            "name": "az site-recovery recovery-plan update",
+            "summary": "Update operation to create a recovery plan.",
+            "syntax": "az site-recovery recovery-plan update [--add]\n                                      [--failover-deploy-model {Classic, NotApplicable, ResourceManager}]\n                                      [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                      [--groups]\n                                      [--ids]\n                                      [--name]\n                                      [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                      [--primary-fabric-id]\n                                      [--provider-input]\n                                      [--recovery-fabric-id]\n                                      [--remove]\n                                      [--resource-group]\n                                      [--set]\n                                      [--subscription]\n                                      [--vault-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--failover-deploy-model --failover-deployment-model",
+                "--force-string",
+                "--groups",
+                "--ids",
+                "--name --recovery-plan-name -n",
+                "--no-wait",
+                "--primary-fabric-id",
+                "--provider-input --provider-specific-input",
+                "--recovery-fabric-id",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--subscription",
+                "--vault-name"
+            ],
+            "examples": [
+                "az site-recovery recovery-plan update -n recovery_plan_name -g rg --vault-name vault_name --groups '[{group-type:Boot,replication-protected-items:[{id:protected_item_id,virtual-machine-id:vm_id}]}]' --primary-fabric-id fabric1_id --recovery-fabric-id fabric2_id --failover-deployment-model ResourceManager"
+            ]
+        }
+    ]
+}

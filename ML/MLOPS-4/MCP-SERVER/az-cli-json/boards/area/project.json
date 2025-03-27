@@ -1,0 +1,81 @@
+{
+    "command_group": "az boards area project",
+    "description": "Manage areas for a project.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az boards area project create",
+            "summary": "Create area.",
+            "syntax": "az boards area project create --name\n                              [--detect {false, true}]\n                              [--org]\n                              [--path]\n                              [--project]",
+            "required_parameters": [
+                "--name"
+            ],
+            "optional_parameters": [
+                "--detect",
+                "--org --organization",
+                "--path",
+                "--project -p"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az boards area project delete",
+            "summary": "Delete area.",
+            "syntax": "az boards area project delete --path\n                              [--detect {false, true}]\n                              [--org]\n                              [--project]\n                              [--yes]",
+            "required_parameters": [
+                "--path"
+            ],
+            "optional_parameters": [
+                "--detect",
+                "--org --organization",
+                "--project -p",
+                "--yes -y"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az boards area project list",
+            "summary": "List areas for a project.",
+            "syntax": "az boards area project list [--depth]\n                            [--detect {false, true}]\n                            [--org]\n                            [--path]\n                            [--project]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--depth",
+                "--detect",
+                "--org --organization",
+                "--path",
+                "--project -p"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az boards area project show",
+            "summary": "Show area details for a project.",
+            "syntax": "az boards area project show --id\n                            [--detect {false, true}]\n                            [--org]\n                            [--project]",
+            "required_parameters": [
+                "--id"
+            ],
+            "optional_parameters": [
+                "--detect",
+                "--org --organization",
+                "--project -p"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az boards area project update",
+            "summary": "Update area.",
+            "syntax": "az boards area project update --path\n                              [--child-id]\n                              [--detect {false, true}]\n                              [--name]\n                              [--org]\n                              [--project]",
+            "required_parameters": [
+                "--path"
+            ],
+            "optional_parameters": [
+                "--child-id",
+                "--detect",
+                "--name",
+                "--org --organization",
+                "--project -p"
+            ],
+            "examples": []
+        }
+    ]
+}

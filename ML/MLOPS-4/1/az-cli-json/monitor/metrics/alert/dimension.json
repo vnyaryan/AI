@@ -1,0 +1,22 @@
+{
+    "command_group": "az monitor metrics alert dimension",
+    "description": "Manage near-realtime metric alert rule dimensions.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az monitor metrics alert dimension create",
+            "summary": "Build a metric alert rule dimension.",
+            "syntax": "az monitor metrics alert dimension create --name\n                                          --value\n                                          [--op {Exclude, Include}]",
+            "required_parameters": [
+                "--name -n",
+                "--value -v"
+            ],
+            "optional_parameters": [
+                "--op --operator"
+            ],
+            "examples": [
+                "$dim = az monitor metrics alert dimension create -n dimName --op Include -v GetBlob PutBlob"
+            ]
+        }
+    ]
+}

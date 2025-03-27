@@ -1,0 +1,131 @@
+{
+    "command_group": "az automation configuration",
+    "description": "Manage Dsc Configuration.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az automation configuration create",
+            "summary": "Create the configuration identified by configuration name.",
+            "syntax": "az automation configuration create --account\n                                   --configuration-name\n                                   --resource-group\n                                   [--description]\n                                   [--location]\n                                   [--log-progress {0, 1, f, false, n, no, t, true, y, yes}]\n                                   [--log-verbose {0, 1, f, false, n, no, t, true, y, yes}]\n                                   [--parameters]\n                                   [--source]\n                                   [--source-hash]\n                                   [--source-type {embeddedContent, uri}]\n                                   [--source-version]\n                                   [--tags]",
+            "required_parameters": [
+                "--account --automation-account-name",
+                "--configuration-name --name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--description",
+                "--location",
+                "--log-progress",
+                "--log-verbose",
+                "--parameters",
+                "--source",
+                "--source-hash",
+                "--source-type",
+                "--source-version",
+                "--tags"
+            ],
+            "examples": [
+                "az automation configuration create -g rg --automation-account-name myAutomationAccount -n SetupServer --location westus2 --source-type embeddedContent --source \"Configuration SetupServer {\nNode localhost {\nWindowsFeature IIS {\nName = \"Web-Server\";\nEnsure = \"Present\"\n}\n}\n}\""
+            ]
+        },
+        {
+            "name": "az automation configuration delete",
+            "summary": "Delete the dsc configuration identified by configuration name.",
+            "syntax": "az automation configuration delete [--account]\n                                   [--configuration-name]\n                                   [--ids]\n                                   [--resource-group]\n                                   [--subscription]\n                                   [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account --automation-account-name",
+                "--configuration-name --name -n",
+                "--ids",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az automation configuration list -g rg --automation-account-name myAutomationAccount"
+            ]
+        },
+        {
+            "name": "az automation configuration list",
+            "summary": "List a list of configurations.",
+            "syntax": "az automation configuration list --account\n                                 --resource-group\n                                 [--filter]\n                                 [--inlinecount]\n                                 [--max-items]\n                                 [--next-token]\n                                 [--skip]\n                                 [--top]",
+            "required_parameters": [
+                "--account --automation-account-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--filter",
+                "--inlinecount",
+                "--max-items",
+                "--next-token",
+                "--skip",
+                "--top"
+            ],
+            "examples": [
+                "az automation configuration list -g rg --automation-account-name myAutomationAccount"
+            ]
+        },
+        {
+            "name": "az automation configuration show",
+            "summary": "Get the configuration identified by configuration name.",
+            "syntax": "az automation configuration show [--account]\n                                 [--configuration-name]\n                                 [--ids]\n                                 [--resource-group]\n                                 [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account --automation-account-name",
+                "--configuration-name --name -n",
+                "--ids",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az automation configuration show -g rg --automation-account-name myAutomationAccount -n SetupServer"
+            ]
+        },
+        {
+            "name": "az automation configuration show-content",
+            "summary": "Get the configuration script identified by configuration name.",
+            "syntax": "az automation configuration show-content [--account]\n                                         [--configuration-name]\n                                         [--ids]\n                                         [--resource-group]\n                                         [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account --automation-account-name",
+                "--configuration-name --name -n",
+                "--ids",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az automation configuration show-content -g rg --automation-account-name myAutomationAccount -n SetupServer"
+            ]
+        },
+        {
+            "name": "az automation configuration update",
+            "summary": "Update the configuration identified by configuration name.",
+            "syntax": "az automation configuration update [--account]\n                                   [--add]\n                                   [--configuration-name]\n                                   [--description]\n                                   [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                   [--ids]\n                                   [--location]\n                                   [--log-progress {0, 1, f, false, n, no, t, true, y, yes}]\n                                   [--log-verbose {0, 1, f, false, n, no, t, true, y, yes}]\n                                   [--parameters]\n                                   [--remove]\n                                   [--resource-group]\n                                   [--set]\n                                   [--source]\n                                   [--source-hash]\n                                   [--source-type {embeddedContent, uri}]\n                                   [--source-version]\n                                   [--subscription]\n                                   [--tags]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account --automation-account-name",
+                "--add",
+                "--configuration-name --name -n",
+                "--description",
+                "--force-string",
+                "--ids",
+                "--location",
+                "--log-progress",
+                "--log-verbose",
+                "--parameters",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--source",
+                "--source-hash",
+                "--source-type",
+                "--source-version",
+                "--subscription",
+                "--tags"
+            ],
+            "examples": [
+                "az automation configuration update -g rg --automation-account-name myAutomationAccount -n SetupServer --location westus2 --source-type embeddedContent --source \"Configuration SetupServer {\nNode localhostServer {\nWindowsFeature IIS {\nName = \"Web-Server\";\nEnsure = \"Present\"\n}\n}\n}\""
+            ]
+        }
+    ]
+}

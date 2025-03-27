@@ -1,0 +1,98 @@
+{
+    "command_group": "az large-storage-instance",
+    "description": "Handle Operations for Storage Azure Large Instances.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az large-storage-instance create",
+            "summary": "Create an Azure Large Storage Instance for the specified subscription,.",
+            "syntax": "az large-storage-instance create --instance-name\n                                 --resource-group\n                                 [--alsi-id]\n                                 [--azure-large-storage-instance-size]\n                                 [--billing-mode]\n                                 [--generation]\n                                 [--hardware-type {Cisco_UCS, HPE, SDFLEX}]\n                                 [--identity]\n                                 [--location]\n                                 [--offering-type]\n                                 [--storage-type]\n                                 [--tags]\n                                 [--workload-type]",
+            "required_parameters": [
+                "--instance-name --name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--alsi-id --instance-id",
+                "--azure-large-storage-instance-size --sku",
+                "--billing-mode",
+                "--generation",
+                "--hardware-type",
+                "--identity",
+                "--location -l",
+                "--offering-type",
+                "--storage-type",
+                "--tags",
+                "--workload-type"
+            ],
+            "examples": [
+                "az large-storage-instance create -g myResourceGroup -n myAzureLargeStorageInstance -l westus2 --sku S72"
+            ]
+        },
+        {
+            "name": "az large-storage-instance delete",
+            "summary": "Delete an Azure Large Storage Instance for the specified subscription,.",
+            "syntax": "az large-storage-instance delete [--ids]\n                                 [--instance-name]\n                                 [--resource-group]\n                                 [--subscription]\n                                 [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--instance-name --name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az large-storage-instance delete --resource-group myResourceGroup --instance-name myAzureLargeStorageInstance"
+            ]
+        },
+        {
+            "name": "az large-storage-instance list",
+            "summary": "List a list of Azure Large Storage Instances in the specified subscription. The operations returns various properties of each Azure Large Storage instance.",
+            "syntax": "az large-storage-instance list [--max-items]\n                               [--next-token]\n                               [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az large-storage-instance list --subscription $SUBSCRIPTIONID --resource-group $RESOURCE_GROUP"
+            ]
+        },
+        {
+            "name": "az large-storage-instance show",
+            "summary": "Get an Azure Large Storage instance for the specified subscription, resource.",
+            "syntax": "az large-storage-instance show [--ids]\n                               [--instance-name]\n                               [--resource-group]\n                               [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--instance-name --name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az large-storage-instance show --subscription $SUBSCRIPTION_ID --instance-name $INSTANCE_NAME --resource-group $RESOURCE_GROUP"
+            ]
+        },
+        {
+            "name": "az large-storage-instance update",
+            "summary": "Update an Azure Large Storage Instance for the specified subscription,.",
+            "syntax": "az large-storage-instance update [--add]\n                                 [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                 [--identity]\n                                 [--ids]\n                                 [--instance-name]\n                                 [--remove]\n                                 [--resource-group]\n                                 [--set]\n                                 [--subscription]\n                                 [--tags]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--force-string",
+                "--identity",
+                "--ids",
+                "--instance-name --name -n",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--subscription",
+                "--tags"
+            ],
+            "examples": [
+                "az large-storage-instance update -g myResourceGroup -n myAzureLargeStorageInstance --tags \"{key:value}\""
+            ]
+        }
+    ]
+}

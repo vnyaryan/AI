@@ -1,0 +1,126 @@
+{
+    "command_group": "az monitor log-analytics query-pack query",
+    "description": "Manage the query of log analytics query pack.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az monitor log-analytics query-pack query create",
+            "summary": "Create a specific query within a log analytics query pack.",
+            "syntax": "az monitor log-analytics query-pack query create --body\n                                                 --display-name\n                                                 --name\n                                                 --query-pack-name\n                                                 --resource-group\n                                                 [--categories]\n                                                 [--description]\n                                                 [--resource-types]\n                                                 [--solutions]\n                                                 [--tags]",
+            "required_parameters": [
+                "--body",
+                "--display-name",
+                "--name --query-id -n",
+                "--query-pack-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--categories",
+                "--description",
+                "--resource-types",
+                "--solutions",
+                "--tags"
+            ],
+            "examples": [
+                "az monitor log-analytics query-pack query create --query-id 112c6b1f-5a86-4f01-a2d7-efb8e31f930f --display-name queryName -g resourceGroupName  --query-pack-name queryPackName --body \"heartbeat | take 10\" --description \"some description\" --categories \"[network,monitor]\" --resource-types \"[microsoft.network/loadbalancers,microsoft.insights/autoscalesettings]\" --solutions \"[networkmonitoring]\" --tags \"{version:[v2022-01-01,v2021-12-01]}\""
+            ]
+        },
+        {
+            "name": "az monitor log-analytics query-pack query delete",
+            "summary": "Delete a specific query defined within a log analytics query pack.",
+            "syntax": "az monitor log-analytics query-pack query delete [--ids]\n                                                 [--name]\n                                                 [--query-pack-name]\n                                                 [--resource-group]\n                                                 [--subscription]\n                                                 [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --query-id -n",
+                "--query-pack-name",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az monitor log-analytics query-pack query delete --query-id 112c6b1f-5a86-4f01-a2d7-efb8e31f930f -g resourceGroup --query-pack-name queryPackName"
+            ]
+        },
+        {
+            "name": "az monitor log-analytics query-pack query list",
+            "summary": "List queries defined within a log analytics query pack.",
+            "syntax": "az monitor log-analytics query-pack query list --query-pack-name\n                                               --resource-group\n                                               [--include-body {0, 1, f, false, n, no, t, true, y, yes}]",
+            "required_parameters": [
+                "--query-pack-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--include-body"
+            ],
+            "examples": [
+                "az monitor log-analytics query-pack query list -g resourceGroupName --query-pack-name queryPackName",
+                "az monitor log-analytics query-pack query list -g resourceGroupName --query-pack-name queryPackName --include-body false"
+            ]
+        },
+        {
+            "name": "az monitor log-analytics query-pack query search",
+            "summary": "Search a list of queries defined within a log analytics query pack according to given search properties.",
+            "syntax": "az monitor log-analytics query-pack query search [--categories]\n                                                 [--ids]\n                                                 [--include-body {0, 1, f, false, n, no, t, true, y, yes}]\n                                                 [--query-pack-name]\n                                                 [--resource-group]\n                                                 [--resource-types]\n                                                 [--solutions]\n                                                 [--subscription]\n                                                 [--tags]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--categories",
+                "--ids",
+                "--include-body",
+                "--query-pack-name",
+                "--resource-group -g",
+                "--resource-types",
+                "--solutions",
+                "--subscription",
+                "--tags"
+            ],
+            "examples": [
+                "az monitor log-analytics query-pack query search -g resourceGroupName --query-pack-name queryPackName --categories network --resource-types microsoft.insights/autoscalesettings --solutions networkmonitoring --tags version=\"[v2021-12-01]\"",
+                "az monitor log-analytics query-pack query search -g resourceGroupName --query-pack-name queryPackName --categories network --resource-types microsoft.insights/autoscalesettings --solutions networkmonitoring --tags version=\"[v2021-12-01]\" --include-body false"
+            ]
+        },
+        {
+            "name": "az monitor log-analytics query-pack query show",
+            "summary": "Show a specific query defined within a log analytics query pack.",
+            "syntax": "az monitor log-analytics query-pack query show [--ids]\n                                               [--name]\n                                               [--query-pack-name]\n                                               [--resource-group]\n                                               [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --query-id -n",
+                "--query-pack-name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az monitor log-analytics query-pack query show --query-id 112c6b1f-5a86-4f01-a2d7-efb8e31f930f -g resourceGroup --query-pack-name queryPackName"
+            ]
+        },
+        {
+            "name": "az monitor log-analytics query-pack query update",
+            "summary": "Update a specific query within a log analytics query pack.",
+            "syntax": "az monitor log-analytics query-pack query update [--add]\n                                                 [--body]\n                                                 [--categories]\n                                                 [--description]\n                                                 [--display-name]\n                                                 [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                                 [--ids]\n                                                 [--name]\n                                                 [--query-pack-name]\n                                                 [--remove]\n                                                 [--resource-group]\n                                                 [--resource-types]\n                                                 [--set]\n                                                 [--solutions]\n                                                 [--subscription]\n                                                 [--tags]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--body",
+                "--categories",
+                "--description",
+                "--display-name",
+                "--force-string",
+                "--ids",
+                "--name --query-id -n",
+                "--query-pack-name",
+                "--remove",
+                "--resource-group -g",
+                "--resource-types",
+                "--set",
+                "--solutions",
+                "--subscription",
+                "--tags"
+            ],
+            "examples": [
+                "az monitor log-analytics query-pack query update --query-id 112c6b1f-5a86-4f01-a2d7-efb8e31f930f -g resourceGroup  --query-pack-name queryPackName --body \"heartbeat | take 20\" --categories [2]=databases --tags version[0]=null"
+            ]
+        }
+    ]
+}

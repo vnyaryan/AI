@@ -1,0 +1,87 @@
+{
+    "command_group": "az network manager connection management-group",
+    "description": "Manage management-group connection with network.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az network manager connection management-group create",
+            "summary": "Create a network manager connection on this management group.",
+            "syntax": "az network manager connection management-group create --connection-name\n                                                      --management-group-id\n                                                      --network-manager\n                                                      [--description]",
+            "required_parameters": [
+                "--connection-name --name -n",
+                "--management-group-id",
+                "--network-manager --network-manager-id"
+            ],
+            "optional_parameters": [
+                "--description"
+            ],
+            "examples": [
+                "az network manager connection management-group create --management-group-id \"testManagementGroupId\" --connection-name \"testNetworkManagerConnection\" --network-manager \"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/testGroup/providers/Microsoft.Network/networkManagers/testNm\" --description \"A sample connection.\""
+            ]
+        },
+        {
+            "name": "az network manager connection management-group delete",
+            "summary": "Delete specified pending connection created by this management group.",
+            "syntax": "az network manager connection management-group delete --connection-name\n                                                      --management-group-id\n                                                      [--yes]",
+            "required_parameters": [
+                "--connection-name --name -n",
+                "--management-group-id"
+            ],
+            "optional_parameters": [
+                "--yes -y"
+            ],
+            "examples": [
+                "az network manager connection management-group delete --management-group-id \"testManagementGroupId\" --connection-name \"testNetworkManagerConnection\""
+            ]
+        },
+        {
+            "name": "az network manager connection management-group list",
+            "summary": "List all network manager connections created by this management group.",
+            "syntax": "az network manager connection management-group list --management-group-id\n                                                    [--max-items]\n                                                    [--next-token]\n                                                    [--skip-token]\n                                                    [--top]",
+            "required_parameters": [
+                "--management-group-id"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token",
+                "--skip-token",
+                "--top"
+            ],
+            "examples": [
+                "az network manager connection management-group list --management-group-id \"testManagementGroupId\""
+            ]
+        },
+        {
+            "name": "az network manager connection management-group show",
+            "summary": "Get a specified connection created by this management group.",
+            "syntax": "az network manager connection management-group show --connection-name\n                                                    --management-group-id",
+            "required_parameters": [
+                "--connection-name --name -n",
+                "--management-group-id"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az network manager connection management-group show --management-group-id \"testManagementGroupId\" --connection-name \"testNetworkManagerConnection\""
+            ]
+        },
+        {
+            "name": "az network manager connection management-group update",
+            "summary": "Update a network manager connection on this management group.",
+            "syntax": "az network manager connection management-group update --connection-name\n                                                      --management-group-id\n                                                      [--add]\n                                                      [--description]\n                                                      [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                                      [--remove]\n                                                      [--set]",
+            "required_parameters": [
+                "--connection-name --name -n",
+                "--management-group-id"
+            ],
+            "optional_parameters": [
+                "--add",
+                "--description",
+                "--force-string",
+                "--remove",
+                "--set"
+            ],
+            "examples": [
+                "az network manager connection management-group update --management-group-id \"testManagementGroupId\" --connection-name \"testNetworkManagerConnection\" --description \"My Test Network Manager Connection\""
+            ]
+        }
+    ]
+}

@@ -1,0 +1,6 @@
+{
+    "command_group": "az dt data-history",
+    "description": "Manage and configure data history.",
+    "status": "GA",
+    "commands": []
+}

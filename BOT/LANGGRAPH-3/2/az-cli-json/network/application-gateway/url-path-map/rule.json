@@ -1,0 +1,67 @@
+{
+    "command_group": "az network application-gateway url-path-map rule",
+    "description": "Manage the rules of a URL path map.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az network application-gateway url-path-map rule create",
+            "summary": "Create a rule for a URL path map.",
+            "syntax": "az network application-gateway url-path-map rule create --gateway-name\n                                                        --name\n                                                        --path-map-name\n                                                        --paths\n                                                        --resource-group\n                                                        [--address-pool]\n                                                        [--http-settings]\n                                                        [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                                        [--redirect-config]\n                                                        [--rewrite-rule-set]\n                                                        [--waf-policy]",
+            "required_parameters": [
+                "--gateway-name",
+                "--name -n",
+                "--path-map-name",
+                "--paths",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--address-pool",
+                "--http-settings",
+                "--no-wait",
+                "--redirect-config",
+                "--rewrite-rule-set",
+                "--waf-policy"
+            ],
+            "examples": [
+                "az network application-gateway url-path-map rule create -g MyResourceGroup --gateway-name MyAppGateway -n MyUrlPathMapRule2 --path-map-name MyUrlPathMap --paths /mypath2/* --address-pool MyAddressPool --http-settings MyHttpSettings"
+            ]
+        },
+        {
+            "name": "az network application-gateway url-path-map rule delete",
+            "summary": "Delete a rule for a URL path map.",
+            "syntax": "az network application-gateway url-path-map rule delete --gateway-name\n                                                        --name\n                                                        --path-map-name\n                                                        --resource-group\n                                                        [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]",
+            "required_parameters": [
+                "--gateway-name",
+                "--name -n",
+                "--path-map-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--no-wait"
+            ],
+            "examples": [
+                "az network application-gateway url-path-map rule delete -g MyResourceGroup --gateway-name MyAppGateway --path-map-name MyUrlPathMap -n MyUrlPathMapRule2"
+            ]
+        },
+        {
+            "name": "az network application-gateway url-path-map rule wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az network application-gateway url-path-map rule wait [--created]\n                                                      [--custom]\n                                                      [--deleted]\n                                                      [--exists]\n                                                      [--gateway-name]\n                                                      [--ids]\n                                                      [--interval]\n                                                      [--resource-group]\n                                                      [--subscription]\n                                                      [--timeout]\n                                                      [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--gateway-name",
+                "--ids",
+                "--interval",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

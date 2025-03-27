@@ -1,0 +1,83 @@
+{
+    "command_group": "az repos ref",
+    "description": "Manage Git references.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az repos ref create",
+            "summary": "Create a reference.",
+            "syntax": "az repos ref create --name\n                    --object-id\n                    [--detect {false, true}]\n                    [--org]\n                    [--project]\n                    [--repository]",
+            "required_parameters": [
+                "--name",
+                "--object-id"
+            ],
+            "optional_parameters": [
+                "--detect",
+                "--org --organization",
+                "--project -p",
+                "--repository -r"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az repos ref delete",
+            "summary": "Delete a reference.",
+            "syntax": "az repos ref delete --name\n                    [--detect {false, true}]\n                    [--object-id]\n                    [--org]\n                    [--project]\n                    [--repository]",
+            "required_parameters": [
+                "--name"
+            ],
+            "optional_parameters": [
+                "--detect",
+                "--object-id",
+                "--org --organization",
+                "--project -p",
+                "--repository -r"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az repos ref list",
+            "summary": "List the references.",
+            "syntax": "az repos ref list [--detect {false, true}]\n                  [--filter]\n                  [--org]\n                  [--project]\n                  [--repository]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--detect",
+                "--filter",
+                "--org --organization",
+                "--project -p",
+                "--repository -r"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az repos ref lock",
+            "summary": "Lock a reference.",
+            "syntax": "az repos ref lock --name\n                  [--detect {false, true}]\n                  [--org]\n                  [--project]\n                  [--repository]",
+            "required_parameters": [
+                "--name"
+            ],
+            "optional_parameters": [
+                "--detect",
+                "--org --organization",
+                "--project -p",
+                "--repository -r"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az repos ref unlock",
+            "summary": "Unlock a reference.",
+            "syntax": "az repos ref unlock --name\n                    [--detect {false, true}]\n                    [--org]\n                    [--project]\n                    [--repository]",
+            "required_parameters": [
+                "--name"
+            ],
+            "optional_parameters": [
+                "--detect",
+                "--org --organization",
+                "--project -p",
+                "--repository -r"
+            ],
+            "examples": []
+        }
+    ]
+}

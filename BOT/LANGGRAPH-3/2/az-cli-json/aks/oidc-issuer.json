@@ -1,0 +1,21 @@
+{
+    "command_group": "az aks oidc-issuer",
+    "description": "Oidc issuer related commands.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az aks oidc-issuer rotate-signing-keys",
+            "summary": "Rotate oidc issuer service account signing keys.",
+            "syntax": "az aks oidc-issuer rotate-signing-keys --name\n                                       --resource-group\n                                       [--no-wait]\n                                       [--yes]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--no-wait",
+                "--yes -y"
+            ],
+            "examples": []
+        }
+    ]
+}

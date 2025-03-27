@@ -1,0 +1,6 @@
+{
+    "command_group": "az artifacts",
+    "description": "Manage Azure Artifacts.",
+    "status": "GA",
+    "commands": []
+}

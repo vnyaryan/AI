@@ -1,0 +1,68 @@
+{
+    "command_group": "az acr taskrun",
+    "description": "Manage taskruns using Azure Container Registries.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az acr taskrun delete",
+            "summary": "Delete a taskrun from an Azure Container Registry.",
+            "syntax": "az acr taskrun delete --name\n                      --registry\n                      [--resource-group]\n                      [--yes]",
+            "required_parameters": [
+                "--name -n",
+                "--registry -r"
+            ],
+            "optional_parameters": [
+                "--resource-group -g",
+                "--yes -y"
+            ],
+            "examples": [
+                "az acr taskrun delete -r myregistry -n MyTaskRun -g MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az acr taskrun list",
+            "summary": "List the taskruns for an Azure Container Registry.",
+            "syntax": "az acr taskrun list --registry\n                    [--resource-group]",
+            "required_parameters": [
+                "--registry -r"
+            ],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az acr taskrun list -r myregistry -g MyResourceGroup -o table"
+            ]
+        },
+        {
+            "name": "az acr taskrun logs",
+            "summary": "Show run logs for a particular taskrun.",
+            "syntax": "az acr taskrun logs --name\n                    --registry\n                    [--no-format]\n                    [--resource-group]",
+            "required_parameters": [
+                "--name -n",
+                "--registry -r"
+            ],
+            "optional_parameters": [
+                "--no-format",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az acr taskrun logs -r myregistry -n MyTaskRun"
+            ]
+        },
+        {
+            "name": "az acr taskrun show",
+            "summary": "Get the properties of a named taskrun for an Azure Container Registry.",
+            "syntax": "az acr taskrun show --name\n                    --registry\n                    [--resource-group]",
+            "required_parameters": [
+                "--name -n",
+                "--registry -r"
+            ],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az acr taskrun show -r myregistry -n MyTaskRun -o table"
+            ]
+        }
+    ]
+}

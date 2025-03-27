@@ -1,0 +1,115 @@
+{
+    "command_group": "az logic workflow",
+    "description": "Manage workflow.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az logic workflow create",
+            "summary": "Create a workflow.",
+            "syntax": "az logic workflow create --name\n                         --resource-group\n                         [--access-control]\n                         [--definition]\n                         [--endpoints-configuration]\n                         [--integration-account]\n                         [--integration-service-environment]\n                         [--location]\n                         [--mi-system-assigned {0, 1, f, false, n, no, t, true, y, yes}]\n                         [--mi-user-assigned]\n                         [--state {Completed, Deleted, Disabled, Enabled, NotSpecified, Suspended}]\n                         [--tags]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--access-control",
+                "--definition",
+                "--endpoints-configuration",
+                "--integration-account",
+                "--integration-service-environment",
+                "--location -l",
+                "--mi-system-assigned",
+                "--mi-user-assigned",
+                "--state",
+                "--tags"
+            ],
+            "examples": [
+                "az logic workflow create --resource-group rg --name workflow --definition workflow.json"
+            ]
+        },
+        {
+            "name": "az logic workflow delete",
+            "summary": "Delete a workflow.",
+            "syntax": "az logic workflow delete [--ids]\n                         [--name]\n                         [--resource-group]\n                         [--subscription]\n                         [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az logic workflow delete --resource-group rg --name workflow"
+            ]
+        },
+        {
+            "name": "az logic workflow generate-upgraded-definition",
+            "summary": "Generates the upgraded definition for a workflow.",
+            "syntax": "az logic workflow generate-upgraded-definition [--ids]\n                                               [--resource-group]\n                                               [--subscription]\n                                               [--target-schema-version]\n                                               [--workflow-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--resource-group -g",
+                "--subscription",
+                "--target-schema-version",
+                "--workflow-name"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az logic workflow list",
+            "summary": "List workflows.",
+            "syntax": "az logic workflow list [--filter]\n                       [--max-items]\n                       [--next-token]\n                       [--resource-group]\n                       [--top]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--filter",
+                "--max-items",
+                "--next-token",
+                "--resource-group -g",
+                "--top"
+            ],
+            "examples": [
+                "az logic workflow list --resource-group rg",
+                "az logic workflow list"
+            ]
+        },
+        {
+            "name": "az logic workflow show",
+            "summary": "Show a workflow.",
+            "syntax": "az logic workflow show [--ids]\n                       [--name]\n                       [--resource-group]\n                       [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az logic workflow show --resource-group rg --name workflow"
+            ]
+        },
+        {
+            "name": "az logic workflow update",
+            "summary": "Update a workflow.",
+            "syntax": "az logic workflow update --name\n                         --resource-group\n                         [--add]\n                         [--definition]\n                         [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                         [--location]\n                         [--remove]\n                         [--set]\n                         [--state {Completed, Deleted, Disabled, Enabled, NotSpecified, Suspended}]\n                         [--tags]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--add",
+                "--definition",
+                "--force-string",
+                "--location -l",
+                "--remove",
+                "--set",
+                "--state",
+                "--tags"
+            ],
+            "examples": [
+                "az logic workflow update --resource-group rg --name workflow --definition workflow.json"
+            ]
+        }
+    ]
+}

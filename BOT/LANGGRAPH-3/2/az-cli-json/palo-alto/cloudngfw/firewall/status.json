@@ -1,0 +1,23 @@
+{
+    "command_group": "az palo-alto cloudngfw firewall status",
+    "description": "Manage cloudngfw firewall status resource.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az palo-alto cloudngfw firewall status list",
+            "summary": "List FirewallStatusResource resources by Firewalls.",
+            "syntax": "az palo-alto cloudngfw firewall status list --firewall-name\n                                            --resource-group\n                                            [--max-items]\n                                            [--next-token]",
+            "required_parameters": [
+                "--firewall-name --name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az palo-alto cloudngfw firewall status list --resource-group MyResourceGroup -n MyCloudngfwFirewall"
+            ]
+        }
+    ]
+}

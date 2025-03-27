@@ -1,0 +1,24 @@
+{
+    "command_group": "az iot du device module",
+    "description": "Device module management.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az iot du device module show",
+            "summary": "Show a device module identity imported to the instance.",
+            "syntax": "az iot du device module show --account\n                             --device-id\n                             --instance\n                             --module-id\n                             [--resource-group]",
+            "required_parameters": [
+                "--account -n",
+                "--device-id -d",
+                "--instance -i",
+                "--module-id -m"
+            ],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az iot du device module show -n {account_name} -i {instance_name} -d {device_id} -m {module_id}"
+            ]
+        }
+    ]
+}

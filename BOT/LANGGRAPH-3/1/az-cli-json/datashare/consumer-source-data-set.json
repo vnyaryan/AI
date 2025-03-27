@@ -1,0 +1,23 @@
+{
+    "command_group": "az datashare consumer-source-data-set",
+    "description": "Manage consumer source data set with datashare.",
+    "status": "Experimental",
+    "commands": [
+        {
+            "name": "az datashare consumer-source-data-set list",
+            "summary": "Get source dataSets of a shareSubscription.",
+            "syntax": "az datashare consumer-source-data-set list --account-name\n                                           --resource-group\n                                           --share-subscription-name\n                                           [--skip-token]",
+            "required_parameters": [
+                "--account-name",
+                "--resource-group -g",
+                "--share-subscription-name"
+            ],
+            "optional_parameters": [
+                "--skip-token"
+            ],
+            "examples": [
+                "az datashare consumer-source-data-set list --account-name \"Account1\" --resource-group \"SampleResourceGroup\" --share-subscription-name \"Share1\""
+            ]
+        }
+    ]
+}

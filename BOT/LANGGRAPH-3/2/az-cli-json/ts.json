@@ -1,0 +1,127 @@
+{
+    "command_group": "az ts",
+    "description": "Manage template specs at subscription or resource group scope.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az ts create",
+            "summary": "Create a template spec and or template spec version.",
+            "syntax": "az ts create --name\n             --resource-group\n             [--description]\n             [--display-name]\n             [--location]\n             [--tags]\n             [--template-file]\n             [--ui-form-definition]\n             [--version]\n             [--version-description]\n             [--yes]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--description",
+                "--display-name -d",
+                "--location -l",
+                "--tags",
+                "--template-file -f",
+                "--ui-form-definition",
+                "--version -v",
+                "--version-description",
+                "--yes -y"
+            ],
+            "examples": [
+                "az ts create -g testRG --name TemplateSpecName -l WestUS --display-name \"MyDisplayName\" --description \"Simple template spec\" --tags key1=value1",
+                "az ts create -g testRG --name TemplateSpecName -v 2.0 -l WestUS --template-file templateSpec.json --version-description \"Less simple template spec\" --tags key1=value1 key3=value3",
+                "az ts create -g testRG --name TemplateSpecName -v 1.0 -l WestUS --template-file templateSpec.json --display-name \"MyDisplayName\" --description \"Simple template spec\" --version-description \"Version of simple template spec\" --tags key1=value1 key2=value2"
+            ]
+        },
+        {
+            "name": "az ts delete",
+            "summary": "Delete a specified template spec or template spec version by name or resource ID..",
+            "syntax": "az ts delete [--name]\n             [--resource-group]\n             [--template-spec]\n             [--version]\n             [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--name -n",
+                "--resource-group -g",
+                "--template-spec -s",
+                "--version -v",
+                "--yes -y"
+            ],
+            "examples": [
+                "az ts delete -g MyResourceGroup --name TemplateSpecName",
+                "az ts delete -g MyResourceGroup --name TemplateSpecName --version VersionName",
+                "az ts delete --template-spec resourceID"
+            ]
+        },
+        {
+            "name": "az ts export",
+            "summary": "Export the specified template spec version and artifacts (if any) to the specified output folder.",
+            "syntax": "az ts export --output-folder\n             [--name]\n             [--resource-group]\n             [--template-spec]\n             [--version]",
+            "required_parameters": [
+                "--output-folder"
+            ],
+            "optional_parameters": [
+                "--name -n",
+                "--resource-group -g",
+                "--template-spec -s",
+                "--version -v"
+            ],
+            "examples": [
+                "az ts export -s resourceID --output-folder C:/path/",
+                "az ts export -g testrg --name TemplateSpecName --version VersionName --output-folder C:/path/"
+            ]
+        },
+        {
+            "name": "az ts list",
+            "summary": "List template specs or template spec versions.",
+            "syntax": "az ts list [--name]\n           [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az ts list",
+                "az ts list --subscription Subscription",
+                "az ts list -g MyResourceGroup",
+                "az ts list -g MyResourceGroup -n TemplateSpecName"
+            ]
+        },
+        {
+            "name": "az ts show",
+            "summary": "Get the specified template spec or template spec version.",
+            "syntax": "az ts show [--name]\n           [--resource-group]\n           [--template-spec]\n           [--version]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--name -n",
+                "--resource-group -g",
+                "--template-spec -s",
+                "--version -v"
+            ],
+            "examples": [
+                "az ts show -g testrg --name TemplateSpecName",
+                "az ts show -g testrg --name TemplateSpecName --version VersionName",
+                "az ts show --template-spec resourceID"
+            ]
+        },
+        {
+            "name": "az ts update",
+            "summary": "Update a template spec version.",
+            "syntax": "az ts update [--description]\n             [--display-name]\n             [--name]\n             [--resource-group]\n             [--tags]\n             [--template-file]\n             [--template-spec]\n             [--ui-form-definition]\n             [--version]\n             [--version-description]\n             [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--description",
+                "--display-name -d",
+                "--name -n",
+                "--resource-group -g",
+                "--tags",
+                "--template-file -f",
+                "--template-spec -s",
+                "--ui-form-definition",
+                "--version -v",
+                "--version-description",
+                "--yes -y"
+            ],
+            "examples": [
+                "az ts update --template-spec resourceID -f updatedFile.json",
+                "az ts update --template-spec resourceID --display-name \"NewParentDisplayName\" --tags key1=value1",
+                "az ts update -g ExistingRG --name ExistingName -v 3.0 --version-description \"New description\" --yes",
+                "az ts update -g ExistingRG --name ExistingName -v 3.0 -f updatedTemplate.json --display-name \"New parent display name\" --description \"New parent description\" --version-description \"New child description\" --ui-form-definition formDefinition.json",
+                "az ts update -g ExistingRG --name ExistingName -v 3.0 -f updatedTemplate.json --tags --yes"
+            ]
+        }
+    ]
+}

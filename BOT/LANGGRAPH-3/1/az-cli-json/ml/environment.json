@@ -1,0 +1,156 @@
+{
+    "command_group": "az ml environment",
+    "description": "Manage Azure ML environments.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az ml environment archive",
+            "summary": "Archive an environment.",
+            "syntax": "az ml environment archive --name\n                          [--label]\n                          [--registry-name]\n                          [--resource-group]\n                          [--version]\n                          [--workspace-name]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--label -l",
+                "--registry-name",
+                "--resource-group -g",
+                "--version -v",
+                "--workspace-name -w"
+            ],
+            "examples": [
+                "az ml environment archive --name my-env --resource-group my-resource-group --workspace-name my-workspace",
+                "az ml environment archive --name my-env --version 1 --resource-group my-resource-group --workspace-name my-workspace"
+            ]
+        },
+        {
+            "name": "az ml environment create",
+            "summary": "Create an environment.",
+            "syntax": "az ml environment create [--build-context]\n                         [--conda-file]\n                         [--datastore]\n                         [--description]\n                         [--dockerfile-path]\n                         [--file]\n                         [--image]\n                         [--name]\n                         [--no-wait]\n                         [--os-type]\n                         [--registry-name]\n                         [--resource-group]\n                         [--set]\n                         [--tags]\n                         [--version]\n                         [--workspace-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--build-context -b",
+                "--conda-file -c",
+                "--datastore",
+                "--description",
+                "--dockerfile-path -d",
+                "--file -f",
+                "--image -i",
+                "--name -n",
+                "--no-wait",
+                "--os-type",
+                "--registry-name",
+                "--resource-group -g",
+                "--set",
+                "--tags",
+                "--version -v",
+                "--workspace-name -w"
+            ],
+            "examples": [
+                "az ml environment create --file my_env.yml --resource-group my-resource-group --workspace-name my-workspace",
+                "az ml environment create --name my-env --version 1 --file my_env.yml  --image pytorch/pytorch --resource-group my-resource-group --workspace-name my-workspace",
+                "az ml environment create --name my-env --version 1 --file my_env.yml  --build-context envs/context/ --dockerfile-path Dockerfile --resource-group my-resource-group --workspace-name my-workspace",
+                "az ml environment create --name my-env --version 1 --file my_env.yml  --conda-file conda_dep.yml --image mcr.microsoft.com/azureml/openmpi3.1.2-ubuntu18.04 --resource-group my-resource-group --workspace-name my-workspace",
+                "az ml environment create --file my_env.yml --registry-name my-registry-name --resource-group my-resource-group"
+            ]
+        },
+        {
+            "name": "az ml environment list",
+            "summary": "List environments in a workspace.",
+            "syntax": "az ml environment list [--archived-only]\n                       [--include-archived]\n                       [--max-results]\n                       [--name]\n                       [--registry-name]\n                       [--resource-group]\n                       [--workspace-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--archived-only",
+                "--include-archived",
+                "--max-results -r",
+                "--name -n",
+                "--registry-name",
+                "--resource-group -g",
+                "--workspace-name -w"
+            ],
+            "examples": [
+                "az ml environment list --resource-group my-resource-group --workspace-name my-workspace",
+                "az ml environment list --name my-env --resource-group my-resource-group --workspace-name my-workspace",
+                "az ml environment list --query \"[].{Name:name}\"  --output table --resource-group my-resource-group --workspace-name my-workspace",
+                "az ml environment list --registry-name my-registry-name --resource-group my-resource-group",
+                "az ml environment list --name my-env --registry-name my-registry-name --resource-group my-resource-group"
+            ]
+        },
+        {
+            "name": "az ml environment restore",
+            "summary": "Restore an archived environment.",
+            "syntax": "az ml environment restore --name\n                          [--label]\n                          [--registry-name]\n                          [--resource-group]\n                          [--version]\n                          [--workspace-name]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--label -l",
+                "--registry-name",
+                "--resource-group -g",
+                "--version -v",
+                "--workspace-name -w"
+            ],
+            "examples": [
+                "az ml environment restore --name my-env --resource-group my-resource-group --workspace-name my-workspace",
+                "az ml environment restore --name my-env --version 1 --resource-group my-resource-group --workspace-name my-workspace"
+            ]
+        },
+        {
+            "name": "az ml environment share",
+            "summary": "Share a specific environment from workspace to registry.",
+            "syntax": "az ml environment share --name\n                        --registry-name\n                        --share-with-name\n                        --share-with-version\n                        --version\n                        [--resource-group]\n                        [--workspace-name]",
+            "required_parameters": [
+                "--name -n",
+                "--registry-name",
+                "--share-with-name",
+                "--share-with-version",
+                "--version -v"
+            ],
+            "optional_parameters": [
+                "--resource-group -g",
+                "--workspace-name -w"
+            ],
+            "examples": [
+                "az ml environment share --name my-environment --version my-version --resource-group my-resource-group --workspace-name my-workspace --share-with-name new-name-in-registry --share-with-version new-version-in-registry --registry-name my-registry"
+            ]
+        },
+        {
+            "name": "az ml environment show",
+            "summary": "Show details for an environment.",
+            "syntax": "az ml environment show --name\n                       [--label]\n                       [--registry-name]\n                       [--resource-group]\n                       [--version]\n                       [--workspace-name]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--label -l",
+                "--registry-name",
+                "--resource-group -g",
+                "--version -v",
+                "--workspace-name -w"
+            ],
+            "examples": [
+                "az ml environment show --name my-env --version 1 --resource-group my-resource-group --workspace-name my-workspace",
+                "az ml environment show --name my-env --version 1 --registry-name my-registry-name --resource-group my-resource-group"
+            ]
+        },
+        {
+            "name": "az ml environment update",
+            "summary": "Update an environment.",
+            "syntax": "az ml environment update --name\n                         [--add]\n                         [--force-string]\n                         [--label]\n                         [--registry-name]\n                         [--remove]\n                         [--resource-group]\n                         [--set]\n                         [--version]\n                         [--workspace-name]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--add",
+                "--force-string",
+                "--label -l",
+                "--registry-name",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--version -v",
+                "--workspace-name -w"
+            ],
+            "examples": []
+        }
+    ]
+}

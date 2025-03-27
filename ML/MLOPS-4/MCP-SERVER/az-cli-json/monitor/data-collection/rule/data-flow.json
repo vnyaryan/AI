@@ -1,0 +1,41 @@
+{
+    "command_group": "az monitor data-collection rule data-flow",
+    "description": "Manage data flows.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az monitor data-collection rule data-flow add",
+            "summary": "Add a data flow.",
+            "syntax": "az monitor data-collection rule data-flow add --data-collection-rule-name\n                                              --resource-group\n                                              [--built-in-transform]\n                                              [--capture-overflow {0, 1, f, false, n, no, t, true, y, yes}]\n                                              [--data-flow-index]\n                                              [--destinations]\n                                              [--output-stream]\n                                              [--streams]\n                                              [--transform-kql]",
+            "required_parameters": [
+                "--data-collection-rule-name --rule-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--built-in-transform",
+                "--capture-overflow",
+                "--data-flow-index",
+                "--destinations",
+                "--output-stream",
+                "--streams",
+                "--transform-kql"
+            ],
+            "examples": [
+                "az monitor data-collection rule data-flow add --rule-name myCollectionRule --resource-group myResourceGroup --destinations XX3 XX4 --streams Microsoft-Perf Microsoft-WindowsEvent"
+            ]
+        },
+        {
+            "name": "az monitor data-collection rule data-flow list",
+            "summary": "List data flows.",
+            "syntax": "az monitor data-collection rule data-flow list --data-collection-rule-name\n                                               --resource-group",
+            "required_parameters": [
+                "--data-collection-rule-name --rule-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az monitor data-collection rule data-flow list --rule-name myCollectionRule --resource-group myResourceGroup"
+            ]
+        }
+    ]
+}

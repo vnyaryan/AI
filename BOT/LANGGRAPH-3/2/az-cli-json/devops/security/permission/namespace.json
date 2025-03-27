@@ -1,0 +1,32 @@
+{
+    "command_group": "az devops security permission namespace",
+    "description": "Manage security namespaces.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az devops security permission namespace list",
+            "summary": "List all available namespaces for an organization.",
+            "syntax": "az devops security permission namespace list [--detect {false, true}]\n                                             [--local-only]\n                                             [--org]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--detect",
+                "--local-only",
+                "--org --organization"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az devops security permission namespace show",
+            "summary": "Show details of permissions available in each namespace.",
+            "syntax": "az devops security permission namespace show --id\n                                             [--detect {false, true}]\n                                             [--org]",
+            "required_parameters": [
+                "--id --namespace-id"
+            ],
+            "optional_parameters": [
+                "--detect",
+                "--org --organization"
+            ],
+            "examples": []
+        }
+    ]
+}

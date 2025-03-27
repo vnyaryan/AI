@@ -1,0 +1,131 @@
+{
+    "command_group": "az afd origin-group",
+    "description": "Manage origin groups under the specified profile.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az afd origin-group create",
+            "summary": "Create a new origin group within the specified profile.",
+            "syntax": "az afd origin-group create --name\n                           --profile-name\n                           --resource-group\n                           [--additional-latency-in-milliseconds]\n                           [--enable-health-probe {0, 1, f, false, n, no, t, true, y, yes}]\n                           [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                           [--probe-interval-in-seconds]\n                           [--probe-path]\n                           [--probe-protocol {Http, Https, NotSet}]\n                           [--probe-request-type {GET, HEAD, NotSet}]\n                           [--sample-size]\n                           [--session-affinity-state {Disabled, Enabled}]\n                           [--successful-samples-required]\n                           [--traffic-restoration-time-to-healed-or-new-endpoints-in-minutes]",
+            "required_parameters": [
+                "--name --origin-group-name -n",
+                "--profile-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--additional-latency-in-milliseconds",
+                "--enable-health-probe",
+                "--no-wait",
+                "--probe-interval-in-seconds",
+                "--probe-path",
+                "--probe-protocol",
+                "--probe-request-type",
+                "--sample-size",
+                "--session-affinity-state",
+                "--successful-samples-required",
+                "--traffic-restoration-time-to-healed-or-new-endpoints-in-minutes"
+            ],
+            "examples": [
+                "az afd origin-group create -g group --origin-group-name og1 --profile-name profile --probe-request-type GET --probe-protocol Http --probe-interval-in-seconds 120 --probe-path /test1/azure.txt --sample-size 4 --successful-samples-required 3 --additional-latency-in-milliseconds 50"
+            ]
+        },
+        {
+            "name": "az afd origin-group delete",
+            "summary": "Delete an existing origin group within a profile.",
+            "syntax": "az afd origin-group delete [--ids]\n                           [--name]\n                           [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                           [--profile-name]\n                           [--resource-group]\n                           [--subscription]\n                           [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --origin-group-name -n",
+                "--no-wait",
+                "--profile-name",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az afd origin-group delete -g group --origin-group-name og1 --profile-name profile"
+            ]
+        },
+        {
+            "name": "az afd origin-group list",
+            "summary": "List all of the existing origin groups within a profile.",
+            "syntax": "az afd origin-group list --profile-name\n                         --resource-group\n                         [--max-items]\n                         [--next-token]",
+            "required_parameters": [
+                "--profile-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az afd origin-group show",
+            "summary": "Get an existing origin group within a profile.",
+            "syntax": "az afd origin-group show [--ids]\n                         [--name]\n                         [--profile-name]\n                         [--resource-group]\n                         [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --origin-group-name -n",
+                "--profile-name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az afd origin-group update",
+            "summary": "Update a new origin group within the specified profile.",
+            "syntax": "az afd origin-group update [--add]\n                           [--additional-latency-in-milliseconds]\n                           [--enable-health-probe {0, 1, f, false, n, no, t, true, y, yes}]\n                           [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                           [--ids]\n                           [--name]\n                           [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                           [--probe-interval-in-seconds]\n                           [--probe-path]\n                           [--probe-protocol {Http, Https, NotSet}]\n                           [--probe-request-type {GET, HEAD, NotSet}]\n                           [--profile-name]\n                           [--remove]\n                           [--resource-group]\n                           [--sample-size]\n                           [--session-affinity-state {Disabled, Enabled}]\n                           [--set]\n                           [--subscription]\n                           [--successful-samples-required]\n                           [--traffic-restoration-time-to-healed-or-new-endpoints-in-minutes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--additional-latency-in-milliseconds",
+                "--enable-health-probe",
+                "--force-string",
+                "--ids",
+                "--name --origin-group-name -n",
+                "--no-wait",
+                "--probe-interval-in-seconds",
+                "--probe-path",
+                "--probe-protocol",
+                "--probe-request-type",
+                "--profile-name",
+                "--remove",
+                "--resource-group -g",
+                "--sample-size",
+                "--session-affinity-state",
+                "--set",
+                "--subscription",
+                "--successful-samples-required",
+                "--traffic-restoration-time-to-healed-or-new-endpoints-in-minutes"
+            ],
+            "examples": [
+                "az afd origin-group update -g group --origin-group-name og1 --profile-name profile --probe-request-type HEAD --probe-protocol Https --probe-interval-in-seconds 120 --probe-path /test1/azure.txt"
+            ]
+        },
+        {
+            "name": "az afd origin-group wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az afd origin-group wait [--created]\n                         [--custom]\n                         [--deleted]\n                         [--exists]\n                         [--ids]\n                         [--interval]\n                         [--name]\n                         [--profile-name]\n                         [--resource-group]\n                         [--subscription]\n                         [--timeout]\n                         [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--name --origin-group-name -n",
+                "--profile-name",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

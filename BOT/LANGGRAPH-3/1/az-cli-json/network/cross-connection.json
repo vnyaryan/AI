@@ -1,0 +1,131 @@
+{
+    "command_group": "az network cross-connection",
+    "description": "Manage express route cross connection.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az network cross-connection list",
+            "summary": "List all express route cross-connections for the current subscription.",
+            "syntax": "az network cross-connection list [--max-items]\n                                 [--next-token]\n                                 [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az network cross-connection list -g MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az network cross-connection list-arp-tables",
+            "summary": "Show the current address resolution protocol (ARP) table of an express route cross connection peering.",
+            "syntax": "az network cross-connection list-arp-tables --path {primary, secondary}\n                                            --peering-name\n                                            [--ids]\n                                            [--name]\n                                            [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                            [--resource-group]\n                                            [--subscription]",
+            "required_parameters": [
+                "--path",
+                "--peering-name"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az network cross-connection list-arp-tables -g MyResourceGroup -n MyCircuit --path primary --peering-name AzurePrivatePeering"
+            ]
+        },
+        {
+            "name": "az network cross-connection list-route-tables",
+            "summary": "Show the current routing table of an express route cross connection peering.",
+            "syntax": "az network cross-connection list-route-tables --path {primary, secondary}\n                                              --peering-name\n                                              [--ids]\n                                              [--name]\n                                              [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                              [--resource-group]\n                                              [--subscription]",
+            "required_parameters": [
+                "--path",
+                "--peering-name"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az network cross-connection list-route-tables -g MyResourceGroup -n MyCircuit --path primary --peering-name AzurePrivatePeering"
+            ]
+        },
+        {
+            "name": "az network cross-connection show",
+            "summary": "Show the details of an express route cross connection.",
+            "syntax": "az network cross-connection show [--ids]\n                                 [--name]\n                                 [--resource-group]\n                                 [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az network cross-connection show -n MyCircuit -g MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az network cross-connection summarize-route-table",
+            "summary": "Show the route table summary associated with the express route cross connection in a resource group.",
+            "syntax": "az network cross-connection summarize-route-table --path {primary, secondary}\n                                                  --peering-name\n                                                  [--ids]\n                                                  [--name]\n                                                  [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                                  [--resource-group]\n                                                  [--subscription]",
+            "required_parameters": [
+                "--path",
+                "--peering-name"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az network cross-connection update",
+            "summary": "Update settings of an express route cross-connection.",
+            "syntax": "az network cross-connection update [--add]\n                                   [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                   [--ids]\n                                   [--name]\n                                   [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                   [--notes]\n                                   [--provisioning-state {Deprovisioning, NotProvisioned, Provisioned, Provisioning}]\n                                   [--remove]\n                                   [--resource-group]\n                                   [--set]\n                                   [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--force-string",
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--notes",
+                "--provisioning-state",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az network cross-connection wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az network cross-connection wait [--created]\n                                 [--custom]\n                                 [--deleted]\n                                 [--exists]\n                                 [--ids]\n                                 [--interval]\n                                 [--name]\n                                 [--resource-group]\n                                 [--subscription]\n                                 [--timeout]\n                                 [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

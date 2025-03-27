@@ -1,0 +1,41 @@
+{
+    "command_group": "az webpubsub network-rule",
+    "description": "Commands to manage Webpubsub network rules.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az webpubsub network-rule show",
+            "summary": "Get the Network access control of WebPubSub Service.",
+            "syntax": "az webpubsub network-rule show [--ids]\n                               [--name]\n                               [--resource-group]\n                               [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az webpubsub network-rule update",
+            "summary": "Update the Network access control of WebPubSub Service.",
+            "syntax": "az webpubsub network-rule update [--allow {ClientConnection, RESTAPI, ServerConnection, Trace}]\n                                 [--connection-name]\n                                 [--deny {ClientConnection, RESTAPI, ServerConnection, Trace}]\n                                 [--ids]\n                                 [--name]\n                                 [--public-network {false, true}]\n                                 [--resource-group]\n                                 [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--allow",
+                "--connection-name",
+                "--deny",
+                "--ids",
+                "--name -n",
+                "--public-network",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az webpubsub network-rule update --public-network -n MyWebPubSub -g MyResourceGroup --allow RESTAPI",
+                "az webpubsub network-rule update --connection-name MyPrivateEndpointConnection -n MyWebPubSub -g MyResourceGroup --allow ClientConnection ServerConnection",
+                "az webpubsub network-rule update --public-network --connection-name MyPrivateEndpointConnection1 MyPrivateEndpointConnection2 -n MyWebPubSub -g MyResourceGroup --deny ClientConnection"
+            ]
+        }
+    ]
+}

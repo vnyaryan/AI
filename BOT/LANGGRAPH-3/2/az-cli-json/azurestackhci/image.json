@@ -1,0 +1,91 @@
+{
+    "command_group": "az azurestackhci image",
+    "description": "Manage images with azurestackhci.",
+    "status": "Experimental",
+    "commands": [
+        {
+            "name": "az azurestackhci image create",
+            "summary": "Create a gallery image.",
+            "syntax": "az azurestackhci image create --name\n                              --resource-group\n                              [--extended-location]\n                              [--image-path]\n                              [--location]\n                              [--offer]\n                              [--os-type]\n                              [--publisher]\n                              [--sku]\n                              [--storagepath-id]\n                              [--tags]\n                              [--version]",
+            "required_parameters": [
+                "--name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--extended-location",
+                "--image-path",
+                "--location -l",
+                "--offer",
+                "--os-type",
+                "--publisher",
+                "--sku",
+                "--storagepath-id",
+                "--tags",
+                "--version"
+            ],
+            "examples": [
+                "az azurestackhci image create --extended-location name=\"/subscriptions/a95612cb-f1fa-4daa-a4fd-272844fa512c/resourceGroups/dogfoodarc/providers/Microsoft.ExtendedLocation/customLocations/dogfood-location\" type=\"CustomLocation\" --location \"West US2\" --storagepath-id \"/subscriptions/a95612cb-f1fa-4daa-a4fd-272844fa512c/resourceGroups/dogfoodarc/providers/Microsoft.AzureStackHCI/storagecontainers/test-storagepath\" --image-path \"C:\\\\test.vhdx\" --name \"test-gallery-image\" --resource-group \"test-rg\""
+            ]
+        },
+        {
+            "name": "az azurestackhci image delete",
+            "summary": "Delete an image.",
+            "syntax": "az azurestackhci image delete [--ids]\n                              [--name]\n                              [--resource-group]\n                              [--subscription]\n                              [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az azurestackhci image delete --name \"test-gallery-image\" --resource-group \"test-rg\""
+            ]
+        },
+        {
+            "name": "az azurestackhci image list",
+            "summary": "List all gallery images.",
+            "syntax": "az azurestackhci image list [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az azurestackhci image list --resource-group \"test-rg\"",
+                "az azurestackhci image list"
+            ]
+        },
+        {
+            "name": "az azurestackhci image show",
+            "summary": "Get the details of an image.",
+            "syntax": "az azurestackhci image show [--ids]\n                            [--name]\n                            [--resource-group]\n                            [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az azurestackhci image show --name \"test-gallery-image\" --resource-group \"test-rg\""
+            ]
+        },
+        {
+            "name": "az azurestackhci image update",
+            "summary": "Update an image.",
+            "syntax": "az azurestackhci image update [--ids]\n                              [--name]\n                              [--resource-group]\n                              [--subscription]\n                              [--tags]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name",
+                "--resource-group -g",
+                "--subscription",
+                "--tags"
+            ],
+            "examples": [
+                "az azurestackhci image update --tags additionalProperties=\"sample\" --name \"test-gallery-image\" --resource-group \"test-rg\""
+            ]
+        }
+    ]
+}

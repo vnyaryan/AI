@@ -1,0 +1,90 @@
+{
+    "command_group": "az ml environment",
+    "description": "Commands to manage environments.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az ml environment download",
+            "summary": "Download an environment definition to a specified directory.",
+            "syntax": "az ml environment download --directory\n                           --name\n                           [--output-metadata-file]\n                           [--overwrite]\n                           [--path]\n                           [--resource-group]\n                           [--subscription-id]\n                           [--version]\n                           [--workspace-name]",
+            "required_parameters": [
+                "--directory -d",
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--output-metadata-file -t",
+                "--overwrite",
+                "--path",
+                "--resource-group -g",
+                "--subscription-id",
+                "--version -v",
+                "--workspace-name -w"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az ml environment list",
+            "summary": "List environments in a workspace.",
+            "syntax": "az ml environment list [--output-metadata-file]\n                       [--path]\n                       [--resource-group]\n                       [--subscription-id]\n                       [--workspace-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--output-metadata-file -t",
+                "--path",
+                "--resource-group -g",
+                "--subscription-id",
+                "--workspace-name -w"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az ml environment register",
+            "summary": "Register an environment definition from a specified directory.",
+            "syntax": "az ml environment register --directory\n                           [--output-metadata-file]\n                           [--path]\n                           [--resource-group]\n                           [--subscription-id]\n                           [--workspace-name]",
+            "required_parameters": [
+                "--directory -d"
+            ],
+            "optional_parameters": [
+                "--output-metadata-file -t",
+                "--path",
+                "--resource-group -g",
+                "--subscription-id",
+                "--workspace-name -w"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az ml environment scaffold",
+            "summary": "Scaffold the files for a default environment definition in the specified directory.",
+            "syntax": "az ml environment scaffold --directory\n                           --name\n                           [--output-metadata-file]\n                           [--path]\n                           [--resource-group]\n                           [--subscription-id]\n                           [--workspace-name]",
+            "required_parameters": [
+                "--directory -d",
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--output-metadata-file -t",
+                "--path",
+                "--resource-group -g",
+                "--subscription-id",
+                "--workspace-name -w"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az ml environment show",
+            "summary": "Show an environment by name and optionally version.",
+            "syntax": "az ml environment show --name\n                       [--output-metadata-file]\n                       [--path]\n                       [--resource-group]\n                       [--subscription-id]\n                       [--version]\n                       [--workspace-name]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--output-metadata-file -t",
+                "--path",
+                "--resource-group -g",
+                "--subscription-id",
+                "--version -v",
+                "--workspace-name -w"
+            ],
+            "examples": []
+        }
+    ]
+}

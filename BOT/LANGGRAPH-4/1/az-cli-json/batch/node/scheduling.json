@@ -1,0 +1,43 @@
+{
+    "command_group": "az batch node scheduling",
+    "description": "Manage task scheduling for a Batch compute node.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az batch node scheduling disable",
+            "summary": "Disable scheduling on a Batch compute node.",
+            "syntax": "az batch node scheduling disable --node-id\n                                 --pool-id\n                                 [--account-endpoint]\n                                 [--account-key]\n                                 [--account-name]\n                                 [--json-file]\n                                 [--node-disable-scheduling-option]",
+            "required_parameters": [
+                "--node-id",
+                "--pool-id"
+            ],
+            "optional_parameters": [
+                "--account-endpoint",
+                "--account-key",
+                "--account-name",
+                "--json-file",
+                "--node-disable-scheduling-option"
+            ],
+            "examples": [
+                "az batch node scheduling disable --pool-id pool1 --node-id node1 --node-disable-scheduling-option requeue"
+            ]
+        },
+        {
+            "name": "az batch node scheduling enable",
+            "summary": "Enable scheduling on a Batch compute node.",
+            "syntax": "az batch node scheduling enable --node-id\n                                --pool-id\n                                [--account-endpoint]\n                                [--account-key]\n                                [--account-name]",
+            "required_parameters": [
+                "--node-id",
+                "--pool-id"
+            ],
+            "optional_parameters": [
+                "--account-endpoint",
+                "--account-key",
+                "--account-name"
+            ],
+            "examples": [
+                "az batch node scheduling enable --pool-id pool1 --node-id node1"
+            ]
+        }
+    ]
+}

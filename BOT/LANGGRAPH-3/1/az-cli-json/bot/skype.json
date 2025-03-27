@@ -1,0 +1,55 @@
+{
+    "command_group": "az bot skype",
+    "description": "Manage the Skype Channel on a bot.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az bot skype create",
+            "summary": "Create the Skype Channel on a bot.",
+            "syntax": "az bot skype create --name\n                    --resource-group\n                    [--add-disabled {false, true}]\n                    [--calling-web-hook]\n                    [--enable-calling {false, true}]\n                    [--enable-groups {false, true}]\n                    [--enable-media-cards {false, true}]\n                    [--enable-messaging {false, true}]\n                    [--enable-screen-sharing {false, true}]\n                    [--enable-video {false, true}]\n                    [--groups-mode]\n                    [--location]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--add-disabled",
+                "--calling-web-hook",
+                "--enable-calling",
+                "--enable-groups",
+                "--enable-media-cards",
+                "--enable-messaging",
+                "--enable-screen-sharing",
+                "--enable-video",
+                "--groups-mode",
+                "--location -l"
+            ],
+            "examples": [
+                "az bot skype create -n botName -g MyResourceGroup --enable-messaging\n--enable-screen-sharing"
+            ]
+        },
+        {
+            "name": "az bot skype delete",
+            "summary": "Delete the Skype Channel on a bot.",
+            "syntax": "az bot skype delete --name\n                    --resource-group",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az bot skype show",
+            "summary": "Get details of the Skype Channel on a bot.",
+            "syntax": "az bot skype show --name\n                  --resource-group\n                  [--with-secrets {false, true}]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--with-secrets"
+            ],
+            "examples": []
+        }
+    ]
+}

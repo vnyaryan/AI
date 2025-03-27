@@ -1,0 +1,60 @@
+{
+    "command_group": "az ml marketplace-subscription",
+    "description": "Manage Azure ML marketplace subscriptions.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az ml marketplace-subscription create",
+            "summary": "Create a marketplace subscription.",
+            "syntax": "az ml marketplace-subscription create --resource-group\n                                      --workspace-name\n                                      [--file]\n                                      [--name]\n                                      [--no-wait]\n                                      [--set]",
+            "required_parameters": [
+                "--resource-group -g",
+                "--workspace-name -w"
+            ],
+            "optional_parameters": [
+                "--file -f",
+                "--name -n",
+                "--no-wait",
+                "--set"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az ml marketplace-subscription delete",
+            "summary": "Delete a marketplace subscription.",
+            "syntax": "az ml marketplace-subscription delete --name\n                                      --resource-group\n                                      --workspace-name\n                                      [--no-wait]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g",
+                "--workspace-name -w"
+            ],
+            "optional_parameters": [
+                "--no-wait"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az ml marketplace-subscription list",
+            "summary": "List marketplace subscriptions in a workspace.",
+            "syntax": "az ml marketplace-subscription list --resource-group\n                                    --workspace-name",
+            "required_parameters": [
+                "--resource-group -g",
+                "--workspace-name -w"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az ml marketplace-subscription show",
+            "summary": "Shows details for a marketplace subscription.",
+            "syntax": "az ml marketplace-subscription show --name\n                                    --resource-group\n                                    --workspace-name",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g",
+                "--workspace-name -w"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        }
+    ]
+}

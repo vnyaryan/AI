@@ -1,0 +1,6 @@
+{
+    "command_group": "az containerapp session",
+    "description": "Commands to manage sessions.To learn more about individual commands under each subgroup run containerapp session [subgroup name] --help.",
+    "status": "GA",
+    "commands": []
+}

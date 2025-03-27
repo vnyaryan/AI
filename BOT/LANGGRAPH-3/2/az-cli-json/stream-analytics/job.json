@@ -1,0 +1,199 @@
+{
+    "command_group": "az stream-analytics job",
+    "description": "Manage streaming job with stream analytics.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az stream-analytics job create",
+            "summary": "Create a streaming job or replaces an already existing streaming job.",
+            "syntax": "az stream-analytics job create --job-name\n                               --resource-group\n                               [--arrival-max-delay]\n                               [--compatibility-level {1.0, 1.2}]\n                               [--content-storage-policy {JobStorageAccount, SystemAccount}]\n                               [--data-locale]\n                               [--functions]\n                               [--id]\n                               [--identity]\n                               [--if-match]\n                               [--if-none-match]\n                               [--inputs]\n                               [--job-storage-account]\n                               [--job-type {Cloud, Edge}]\n                               [--location]\n                               [--no-wait]\n                               [--order-max-delay]\n                               [--out-of-order-policy {Adjust, Drop}]\n                               [--output-error-policy {Drop, Stop}]\n                               [--output-start-mode {CustomTime, JobStartTime, LastOutputEventTime}]\n                               [--output-start-time]\n                               [--outputs]\n                               [--tags]\n                               [--transformation]",
+            "required_parameters": [
+                "--job-name --name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--arrival-max-delay",
+                "--compatibility-level",
+                "--content-storage-policy",
+                "--data-locale",
+                "--functions",
+                "--id",
+                "--identity",
+                "--if-match",
+                "--if-none-match",
+                "--inputs",
+                "--job-storage-account",
+                "--job-type",
+                "--location -l",
+                "--no-wait",
+                "--order-max-delay",
+                "--out-of-order-policy",
+                "--output-error-policy",
+                "--output-start-mode",
+                "--output-start-time",
+                "--outputs",
+                "--tags",
+                "--transformation"
+            ],
+            "examples": [
+                "az stream-analytics job create --job-name \"sj7804\" --resource-group \"sjrg3276\" --location \"West US\" --compatibility-level \"1.0\" --data-locale \"en-US\" --arrival-max-delay 5 --order-max-delay 0 --out-of-order-policy \"Drop\" --functions \"[]\" --inputs \"[{\\\"name\\\":\\\"inputtest\\\",\\\"properties\\\":{\\\"type\\\":\\\"Stream\\\",\\\"datasource\\\":{\\\"type\\\":\\\"Microsoft.Storage/Blob\\\",\\\"properties\\\":{\\\"container\\\":\\\"containerName\\\",\\\"pathPattern\\\":\\\"\\\",\\\"storageAccounts\\\":[{\\\"accountKey\\\":\\\"yourAccountKey==\\\",\\\"accountName\\\":\\\"yourAccountName\\\"}]}},\\\"serialization\\\":{\\\"type\\\":\\\"Json\\\",\\\"properties\\\":{\\\"encoding\\\":\\\"UTF8\\\"}}}}]\" --output-error-policy \"Drop\" --outputs \"[{\\\"name\\\":\\\"outputtest\\\",\\\"datasource\\\":{\\\"type\\\":\\\"Microsoft.Sql/Server/Database\\\",\\\"properties\\\":{\\\"database\\\":\\\"databaseName\\\",\\\"password\\\":\\\"userPassword\\\",\\\"server\\\":\\\"serverName\\\",\\\"table\\\":\\\"tableName\\\",\\\"user\\\":\\\"<user>\\\"}}}]\" --transformation name=\"transformationtest\" streaming-units=1 query=\"Select Id, Name from inputtest\" --tags key1=\"value1\" key3=\"value3\" randomKey=\"randomValue\"",
+                "az stream-analytics job create --job-name \"sj59\" --resource-group \"sjrg6936\" --location \"West US\" --compatibility-level \"1.0\" --data-locale \"en-US\" --arrival-max-delay 16 --order-max-delay 5 --out-of-order-policy \"Drop\" --functions \"[]\" --inputs \"[]\" --output-error-policy \"Drop\" --outputs \"[]\" --tags key1=\"value1\" key3=\"value3\" randomKey=\"randomValue\""
+            ]
+        },
+        {
+            "name": "az stream-analytics job delete",
+            "summary": "Delete a streaming job.",
+            "syntax": "az stream-analytics job delete --job-name\n                               --resource-group\n                               [--no-wait]\n                               [--yes]",
+            "required_parameters": [
+                "--job-name --name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--no-wait",
+                "--yes -y"
+            ],
+            "examples": [
+                "az stream-analytics job delete --job-name \"sj59\" --resource-group \"sjrg6936\""
+            ]
+        },
+        {
+            "name": "az stream-analytics job list",
+            "summary": "List all of the streaming jobs in the specified resource group. And Lists all of the streaming jobs in the given subscription.",
+            "syntax": "az stream-analytics job list [--expand]\n                             [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--expand",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az stream-analytics job list --resource-group \"sjrg6936\"",
+                "az stream-analytics job list --expand \"inputs,outputs,transformation,functions\" --resource-group \"sjrg3276\"",
+                "az stream-analytics job list",
+                "az stream-analytics job list --expand \"inputs,outputs,transformation,functions\""
+            ]
+        },
+        {
+            "name": "az stream-analytics job scale",
+            "summary": "Scale a streaming job when the job is running.",
+            "syntax": "az stream-analytics job scale --job-name\n                              --resource-group\n                              [--no-wait]\n                              [--streaming-units]",
+            "required_parameters": [
+                "--job-name --name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--no-wait",
+                "--streaming-units"
+            ],
+            "examples": [
+                "az stream-analytics job scale --job-name \"sj59\" --resource-group \"sjrg6936\" --streaming-units 36"
+            ]
+        },
+        {
+            "name": "az stream-analytics job show",
+            "summary": "Get details about the specified streaming job.",
+            "syntax": "az stream-analytics job show --job-name\n                             --resource-group\n                             [--expand]",
+            "required_parameters": [
+                "--job-name --name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--expand"
+            ],
+            "examples": [
+                "az stream-analytics job show --job-name \"sj59\" --resource-group \"sjrg6936\"",
+                "az stream-analytics job show --expand \"inputs,outputs,transformation,functions\" --job-name \"sj7804\" --resource-group \"sjrg3276\""
+            ]
+        },
+        {
+            "name": "az stream-analytics job start",
+            "summary": "Start a streaming job. Once a job is started it will start processing input events and produce output.",
+            "syntax": "az stream-analytics job start --job-name\n                              --resource-group\n                              [--no-wait]\n                              [--output-start-mode {CustomTime, JobStartTime, LastOutputEventTime}]\n                              [--output-start-time]",
+            "required_parameters": [
+                "--job-name --name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--no-wait",
+                "--output-start-mode",
+                "--output-start-time"
+            ],
+            "examples": [
+                "az stream-analytics job start --job-name \"sj59\" --resource-group \"sjrg6936\" --output-start-mode \"CustomTime\" --output-start-time \"2012-12-12T12:12:12Z\"",
+                "az stream-analytics job start --job-name \"sj59\" --resource-group \"sjrg6936\" --output-start-mode \"JobStartTime\"",
+                "az stream-analytics job start --job-name \"sj59\" --resource-group \"sjrg6936\" --output-start-mode \"LastOutputEventTime\""
+            ]
+        },
+        {
+            "name": "az stream-analytics job stop",
+            "summary": "Stop a running streaming job. This will cause a running streaming job to stop processing input events and producing output.",
+            "syntax": "az stream-analytics job stop --job-name\n                             --resource-group\n                             [--no-wait]",
+            "required_parameters": [
+                "--job-name --name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--no-wait"
+            ],
+            "examples": [
+                "az stream-analytics job stop --job-name \"sj59\" --resource-group \"sjrg6936\""
+            ]
+        },
+        {
+            "name": "az stream-analytics job update",
+            "summary": "Update an existing streaming job. This can be used to partially update (ie. update one or two properties) a streaming job without affecting the rest the job definition.",
+            "syntax": "az stream-analytics job update --job-name\n                               --resource-group\n                               [--arrival-max-delay]\n                               [--compatibility-level {1.0, 1.2}]\n                               [--content-storage-policy {JobStorageAccount, SystemAccount}]\n                               [--data-locale]\n                               [--functions]\n                               [--id]\n                               [--identity]\n                               [--if-match]\n                               [--inputs]\n                               [--job-storage-account]\n                               [--job-type {Cloud, Edge}]\n                               [--location]\n                               [--order-max-delay]\n                               [--out-of-order-policy {Adjust, Drop}]\n                               [--output-error-policy {Drop, Stop}]\n                               [--output-start-mode {CustomTime, JobStartTime, LastOutputEventTime}]\n                               [--output-start-time]\n                               [--outputs]\n                               [--tags]\n                               [--transformation]",
+            "required_parameters": [
+                "--job-name --name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--arrival-max-delay",
+                "--compatibility-level",
+                "--content-storage-policy",
+                "--data-locale",
+                "--functions",
+                "--id",
+                "--identity",
+                "--if-match",
+                "--inputs",
+                "--job-storage-account",
+                "--job-type",
+                "--location -l",
+                "--order-max-delay",
+                "--out-of-order-policy",
+                "--output-error-policy",
+                "--output-start-mode",
+                "--output-start-time",
+                "--outputs",
+                "--tags",
+                "--transformation"
+            ],
+            "examples": [
+                "az stream-analytics job update --job-name \"sj59\" --resource-group \"sjrg6936\" --arrival-max-delay 13 --order-max-delay 21"
+            ]
+        },
+        {
+            "name": "az stream-analytics job wait",
+            "summary": "Place the CLI in a waiting state until a condition of the stream-analytics job is met.",
+            "syntax": "az stream-analytics job wait --job-name\n                             --resource-group\n                             [--created]\n                             [--custom]\n                             [--deleted]\n                             [--exists]\n                             [--expand]\n                             [--interval]\n                             [--timeout]\n                             [--updated]",
+            "required_parameters": [
+                "--job-name --name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--expand",
+                "--interval",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": [
+                "az stream-analytics job wait --expand \"inputs,outputs,transformation,functions\" --job-name \"sj7804\" --resource-group \"sjrg3276\" --created",
+                "az stream-analytics job wait --expand \"inputs,outputs,transformation,functions\" --job-name \"sj7804\" --resource-group \"sjrg3276\" --deleted"
+            ]
+        }
+    ]
+}

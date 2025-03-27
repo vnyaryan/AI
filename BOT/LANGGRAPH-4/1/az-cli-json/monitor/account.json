@@ -1,0 +1,107 @@
+{
+    "command_group": "az monitor account",
+    "description": "Manage monitor account.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az monitor account create",
+            "summary": "Create a workspace.",
+            "syntax": "az monitor account create --azure-monitor-workspace-name\n                          --resource-group\n                          [--location]\n                          [--tags]",
+            "required_parameters": [
+                "--azure-monitor-workspace-name --name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--location -l",
+                "--tags"
+            ],
+            "examples": [
+                "az monitor account create -n account-name -g rg"
+            ]
+        },
+        {
+            "name": "az monitor account delete",
+            "summary": "Delete a workspace.",
+            "syntax": "az monitor account delete [--azure-monitor-workspace-name]\n                          [--ids]\n                          [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                          [--resource-group]\n                          [--subscription]\n                          [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--azure-monitor-workspace-name --name -n",
+                "--ids",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az monitor account delete -n account-name -g rg"
+            ]
+        },
+        {
+            "name": "az monitor account list",
+            "summary": "List all workspaces in the specified subscription.",
+            "syntax": "az monitor account list [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az monitor account list -g rg"
+            ]
+        },
+        {
+            "name": "az monitor account show",
+            "summary": "Show the specific azure monitor workspace.",
+            "syntax": "az monitor account show [--azure-monitor-workspace-name]\n                        [--ids]\n                        [--resource-group]\n                        [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--azure-monitor-workspace-name --name -n",
+                "--ids",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az monitor account show -n account -g rg"
+            ]
+        },
+        {
+            "name": "az monitor account update",
+            "summary": "Update a workspace.",
+            "syntax": "az monitor account update [--add]\n                          [--azure-monitor-workspace-name]\n                          [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                          [--ids]\n                          [--remove]\n                          [--resource-group]\n                          [--set]\n                          [--subscription]\n                          [--tags]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--azure-monitor-workspace-name --name -n",
+                "--force-string",
+                "--ids",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--subscription",
+                "--tags"
+            ],
+            "examples": [
+                "az monitor account update -n account-name -g rg --tags \"{tag:test}\""
+            ]
+        },
+        {
+            "name": "az monitor account wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az monitor account wait [--azure-monitor-workspace-name]\n                        [--created]\n                        [--custom]\n                        [--deleted]\n                        [--exists]\n                        [--ids]\n                        [--interval]\n                        [--resource-group]\n                        [--subscription]\n                        [--timeout]\n                        [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--azure-monitor-workspace-name --name -n",
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

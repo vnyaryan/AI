@@ -1,0 +1,134 @@
+{
+    "command_group": "az webapp connection",
+    "description": "Commands to manage webapp connections.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az webapp connection delete",
+            "summary": "Delete a webapp connection.",
+            "syntax": "az webapp connection delete [--connection]\n                            [--id]\n                            [--name]\n                            [--no-wait]\n                            [--resource-group]\n                            [--slot]\n                            [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--connection",
+                "--id",
+                "--name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--slot",
+                "--yes -y"
+            ],
+            "examples": [
+                "az webapp connection delete",
+                "az webapp connection delete -g WebAppRG -n MyWebApp --connection MyConnection",
+                "az webapp connection delete --id /subscriptions/{subscription}/resourceGroups/{source_resource_group}/providers/Microsoft.Web/sites/{site}/providers/Microsoft.ServiceLinker/linkers/{linker}"
+            ]
+        },
+        {
+            "name": "az webapp connection list",
+            "summary": "List connections of a webapp.",
+            "syntax": "az webapp connection list [--name]\n                          [--resource-group]\n                          [--slot]\n                          [--source-id]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--name -n",
+                "--resource-group -g",
+                "--slot",
+                "--source-id"
+            ],
+            "examples": [
+                "az webapp connection list",
+                "az webapp connection list -g WebAppRG -n MyWebApp",
+                "az webapp connection list --source-id /subscriptions/{subscription}/resourceGroups/{source_resource_group}/providers/Microsoft.Web/sites/{site}"
+            ]
+        },
+        {
+            "name": "az webapp connection list-configuration",
+            "summary": "List source configurations of a webapp connection.",
+            "syntax": "az webapp connection list-configuration [--connection]\n                                        [--id]\n                                        [--name]\n                                        [--resource-group]\n                                        [--slot]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--connection",
+                "--id",
+                "--name -n",
+                "--resource-group -g",
+                "--slot"
+            ],
+            "examples": [
+                "az webapp connection list-configuration",
+                "az webapp connection list-configuration -g WebAppRG -n MyWebApp --connection MyConnection",
+                "az webapp connection list-configuration --id /subscriptions/{subscription}/resourceGroups/{source_resource_group}/providers/Microsoft.Web/sites/{site}/providers/Microsoft.ServiceLinker/linkers/{linker}"
+            ]
+        },
+        {
+            "name": "az webapp connection list-support-types",
+            "summary": "List client types and auth types supported by webapp connections.",
+            "syntax": "az webapp connection list-support-types [--target-type {app-insights, appconfig, cognitiveservices, confluent-cloud, cosmos-cassandra, cosmos-gremlin, cosmos-mongo, cosmos-sql, cosmos-table, eventhub, fabric-sql, keyvault, mysql, mysql-flexible, postgres, postgres-flexible, redis, redis-enterprise, servicebus, signalr, sql, storage-blob, storage-file, storage-queue, storage-table, webpubsub}]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--target-type -t"
+            ],
+            "examples": [
+                "az webapp connection list-support-types -o table",
+                "az webapp connection list-support-types --target-type storage-blob -o table"
+            ]
+        },
+        {
+            "name": "az webapp connection show",
+            "summary": "Get the details of a webapp connection.",
+            "syntax": "az webapp connection show [--connection]\n                          [--id]\n                          [--name]\n                          [--resource-group]\n                          [--slot]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--connection",
+                "--id",
+                "--name -n",
+                "--resource-group -g",
+                "--slot"
+            ],
+            "examples": [
+                "az webapp connection show",
+                "az webapp connection show -g WebAppRG -n MyWebApp --connection MyConnection",
+                "az webapp connection show --id /subscriptions/{subscription}/resourceGroups/{source_resource_group}/providers/Microsoft.Web/sites/{site}/providers/Microsoft.ServiceLinker/linkers/{linker}"
+            ]
+        },
+        {
+            "name": "az webapp connection validate",
+            "summary": "Validate a webapp connection.",
+            "syntax": "az webapp connection validate [--connection]\n                              [--id]\n                              [--name]\n                              [--resource-group]\n                              [--slot]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--connection",
+                "--id",
+                "--name -n",
+                "--resource-group -g",
+                "--slot"
+            ],
+            "examples": [
+                "az webapp connection validate",
+                "az webapp connection validate -g WebAppRG -n MyWebApp --connection MyConnection",
+                "az webapp connection validate --id /subscriptions/{subscription}/resourceGroups/{source_resource_group}/providers/Microsoft.Web/sites/{site}/providers/Microsoft.ServiceLinker/linkers/{linker}"
+            ]
+        },
+        {
+            "name": "az webapp connection wait",
+            "summary": "Place the CLI in a waiting state until a condition of the connection is met.",
+            "syntax": "az webapp connection wait [--connection]\n                          [--created]\n                          [--custom]\n                          [--deleted]\n                          [--exists]\n                          [--id]\n                          [--interval]\n                          [--name]\n                          [--resource-group]\n                          [--slot]\n                          [--timeout]\n                          [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--connection",
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--id",
+                "--interval",
+                "--name -n",
+                "--resource-group -g",
+                "--slot",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": [
+                "az webapp connection wait --id /subscriptions/{subscription}/resourceGroups/{source_resource_group}/providers/Microsoft.Web/sites/{site}/providers/Microsoft.ServiceLinker/linkers/{linker} --created"
+            ]
+        }
+    ]
+}

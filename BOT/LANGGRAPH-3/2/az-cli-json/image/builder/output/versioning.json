@@ -1,0 +1,65 @@
+{
+    "command_group": "az image builder output versioning",
+    "description": "Manage image builder template output versioner.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az image builder output versioning remove",
+            "summary": "Remove all versioning options on specified outputs.",
+            "syntax": "az image builder output versioning remove --output-name\n                                          [--defer]\n                                          [--ids]\n                                          [--name]\n                                          [--resource-group]\n                                          [--subscription]",
+            "required_parameters": [
+                "--output-name"
+            ],
+            "optional_parameters": [
+                "--defer",
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az image builder output versioning remove -n MyTemplate -g MyResourceGroup --output-name MyVhdImage --defer"
+            ]
+        },
+        {
+            "name": "az image builder output versioning set",
+            "summary": "Set the image builder output versioner of an image builder template.",
+            "syntax": "az image builder output versioning set --output-name\n                                       --scheme {Latest, Source}\n                                       [--defer]\n                                       [--ids]\n                                       [--major]\n                                       [--name]\n                                       [--resource-group]\n                                       [--subscription]",
+            "required_parameters": [
+                "--output-name",
+                "--scheme"
+            ],
+            "optional_parameters": [
+                "--defer",
+                "--ids",
+                "--major",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az image builder output versioning set -n MyTemplate -g MyResourceGroup --output-name MyVhdImage --scheme Latest --defer",
+                "az image builder output versioning set -n MyTemplate -g MyResourceGroup --output-name MyVhdImage --scheme Latest --major 1 --defer",
+                "az image builder output versioning set -n MyTemplate -g MyResourceGroup --output-name MyVhdImage --scheme Source --defer"
+            ]
+        },
+        {
+            "name": "az image builder output versioning show",
+            "summary": "Show versioning options on specified outputs.",
+            "syntax": "az image builder output versioning show --output-name\n                                        [--defer]\n                                        [--ids]\n                                        [--name]\n                                        [--resource-group]\n                                        [--subscription]",
+            "required_parameters": [
+                "--output-name"
+            ],
+            "optional_parameters": [
+                "--defer",
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az image builder output versioning show -n MyTemplate -g MyResourceGroup --output-name MyVhdImage --defer"
+            ]
+        }
+    ]
+}

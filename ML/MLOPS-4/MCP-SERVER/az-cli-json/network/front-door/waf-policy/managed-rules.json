@@ -1,0 +1,50 @@
+{
+    "command_group": "az network front-door waf-policy managed-rules",
+    "description": "Change and view managed rule sets associated with your WAF policy.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az network front-door waf-policy managed-rules add",
+            "summary": "Add a managed rule set to a WAF policy.",
+            "syntax": "az network front-door waf-policy managed-rules add --type\n                                                   --version\n                                                   [--action {Block, Log, Redirect}]\n                                                   [--ids]\n                                                   [--policy-name]\n                                                   [--resource-group]\n                                                   [--subscription]",
+            "required_parameters": [
+                "--type",
+                "--version"
+            ],
+            "optional_parameters": [
+                "--action",
+                "--ids",
+                "--policy-name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az network front-door waf-policy managed-rules list",
+            "summary": "Show which managed rule sets are applied to a WAF policy.",
+            "syntax": "az network front-door waf-policy managed-rules list --policy-name\n                                                    --resource-group",
+            "required_parameters": [
+                "--policy-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az network front-door waf-policy managed-rules remove",
+            "summary": "Remove a managed rule set from a WAF policy.",
+            "syntax": "az network front-door waf-policy managed-rules remove --type\n                                                      [--ids]\n                                                      [--policy-name]\n                                                      [--resource-group]\n                                                      [--subscription]",
+            "required_parameters": [
+                "--type"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--policy-name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        }
+    ]
+}

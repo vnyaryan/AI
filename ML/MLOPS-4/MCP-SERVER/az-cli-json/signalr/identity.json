@@ -1,0 +1,51 @@
+{
+    "command_group": "az signalr identity",
+    "description": "Manage managed identity settings.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az signalr identity assign",
+            "summary": "Assign managed identity for SignalR Service.",
+            "syntax": "az signalr identity assign --identity\n                           [--ids]\n                           [--name]\n                           [--resource-group]\n                           [--subscription]",
+            "required_parameters": [
+                "--identity"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az signalr identity assign --identity [system] -n MySignalR -g MyResourceGroup",
+                "az signalr identity assign --identity MyManagedIdentityId -n MySignalR -g MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az signalr identity remove",
+            "summary": "Remove managed identity for SignalR Service.",
+            "syntax": "az signalr identity remove [--ids]\n                           [--name]\n                           [--resource-group]\n                           [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az signalr identity show",
+            "summary": "Show managed identity for SignalR Service.",
+            "syntax": "az signalr identity show [--ids]\n                         [--name]\n                         [--resource-group]\n                         [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        }
+    ]
+}

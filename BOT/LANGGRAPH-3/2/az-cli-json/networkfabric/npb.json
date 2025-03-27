@@ -1,0 +1,37 @@
+{
+    "command_group": "az networkfabric npb",
+    "description": "Manage Network Packet Broker Resource.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az networkfabric npb list",
+            "summary": "List all Network Packet Brokers in the provided resource group or subscription.",
+            "syntax": "az networkfabric npb list [--max-items]\n                          [--next-token]\n                          [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az networkfabric npb list --resource-group \"example-rg\"",
+                "az networkfabric npb list --subscription \"<subscriptionId>\""
+            ]
+        },
+        {
+            "name": "az networkfabric npb show",
+            "summary": "Show details of the provided Network Packet Broker resource.",
+            "syntax": "az networkfabric npb show [--ids]\n                          [--resource-group]\n                          [--resource-name]\n                          [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--resource-group -g",
+                "--resource-name",
+                "--subscription"
+            ],
+            "examples": [
+                "az networkfabric npb show --resource-group \"example-rg\" --resource-name \"example-npb\""
+            ]
+        }
+    ]
+}

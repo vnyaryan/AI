@@ -1,0 +1,126 @@
+{
+    "command_group": "az servicebus georecovery-alias",
+    "description": "Manage Azure Service Bus Geo-Disaster Recovery Configuration Alias.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az servicebus georecovery-alias break-pair",
+            "summary": "This operation disables the Disaster Recovery and stops replicating changes from primary to secondary namespaces.",
+            "syntax": "az servicebus georecovery-alias break-pair [--alias]\n                                           [--ids]\n                                           [--namespace-name]\n                                           [--resource-group]\n                                           [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--alias -a",
+                "--ids",
+                "--namespace-name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az servicebus georecovery-alias create",
+            "summary": "Create a new Alias(Disaster Recovery configuration).",
+            "syntax": "az servicebus georecovery-alias create --alias\n                                       --namespace-name\n                                       --partner-namespace\n                                       --resource-group\n                                       [--alternate-name]",
+            "required_parameters": [
+                "--alias -a",
+                "--namespace-name",
+                "--partner-namespace",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--alternate-name"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az servicebus georecovery-alias delete",
+            "summary": "Delete an Alias(Disaster Recovery configuration).",
+            "syntax": "az servicebus georecovery-alias delete [--alias]\n                                       [--ids]\n                                       [--namespace-name]\n                                       [--resource-group]\n                                       [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--alias -a",
+                "--ids",
+                "--namespace-name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az servicebus georecovery-alias exists",
+            "summary": "Check the give namespace name availability.",
+            "syntax": "az servicebus georecovery-alias exists --alias\n                                       [--ids]\n                                       [--namespace-name]\n                                       [--resource-group]\n                                       [--subscription]",
+            "required_parameters": [
+                "--alias -a"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--namespace-name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az servicebus georecovery-alias fail-over",
+            "summary": "Invokes GEO DR failover and reconfigure the alias to point to the secondary namespace.",
+            "syntax": "az servicebus georecovery-alias fail-over [--alias]\n                                          [--ids]\n                                          [--is-safe-failover {0, 1, f, false, n, no, t, true, y, yes}]\n                                          [--namespace-name]\n                                          [--resource-group]\n                                          [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--alias -a",
+                "--ids",
+                "--is-safe-failover",
+                "--namespace-name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az servicebus georecovery-alias list",
+            "summary": "List all Alias(Disaster Recovery configurations).",
+            "syntax": "az servicebus georecovery-alias list --namespace-name\n                                     --resource-group",
+            "required_parameters": [
+                "--namespace-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az servicebus georecovery-alias set",
+            "summary": "Sets Service Bus Geo-Disaster Recovery Configuration Alias for the give Namespace.",
+            "syntax": "az servicebus georecovery-alias set --alias\n                                    --partner-namespace\n                                    [--alternate-name]\n                                    [--ids]\n                                    [--namespace-name]\n                                    [--no-wait]\n                                    [--resource-group]\n                                    [--subscription]",
+            "required_parameters": [
+                "--alias -a",
+                "--partner-namespace"
+            ],
+            "optional_parameters": [
+                "--alternate-name",
+                "--ids",
+                "--namespace-name",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az servicebus georecovery-alias set --resource-group myresourcegroup --namespace-name primarynamespace --alias myaliasname --partner-namespace armresourceid",
+                "az servicebus georecovery-alias set --alias myaliasname --namespace-name primarynamespace --partner-namespace armresourceid --resource-group myresourcegroup --subscription MySubscription"
+            ]
+        },
+        {
+            "name": "az servicebus georecovery-alias show",
+            "summary": "Get Alias(Disaster Recovery configuration) for primary or secondary namespace.",
+            "syntax": "az servicebus georecovery-alias show [--alias]\n                                     [--ids]\n                                     [--namespace-name]\n                                     [--resource-group]\n                                     [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--alias -a",
+                "--ids",
+                "--namespace-name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        }
+    ]
+}

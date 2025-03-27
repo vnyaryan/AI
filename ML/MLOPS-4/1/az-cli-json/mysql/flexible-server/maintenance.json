@@ -1,0 +1,55 @@
+{
+    "command_group": "az mysql flexible-server maintenance",
+    "description": "Manage maintenance on a flexible server.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az mysql flexible-server maintenance list",
+            "summary": "List all of the maintenances of a flexible server.",
+            "syntax": "az mysql flexible-server maintenance list --resource-group\n                                          --server-name",
+            "required_parameters": [
+                "--resource-group -g",
+                "--server-name -s"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az mysql flexible-server maintenance list --resource-group testgroup --server-name testserver"
+            ]
+        },
+        {
+            "name": "az mysql flexible-server maintenance reschedule",
+            "summary": "Reschedule the ongoing planned maintenance of a flexible server.",
+            "syntax": "az mysql flexible-server maintenance reschedule --maintenance-name\n                                                --start-time\n                                                [--ids]\n                                                [--resource-group]\n                                                [--server-name]\n                                                [--subscription]",
+            "required_parameters": [
+                "--maintenance-name -m",
+                "--start-time"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--resource-group -g",
+                "--server-name -s",
+                "--subscription"
+            ],
+            "examples": [
+                "az mysql flexible-server maintenance reschedule --resource-group testgroup --server-name testserver --maintenance-name _T9Q-TS8 --start-time 2024-06-01T09:00:00Z"
+            ]
+        },
+        {
+            "name": "az mysql flexible-server maintenance show",
+            "summary": "Get the specific maintenance of a flexible server by maintenance name.",
+            "syntax": "az mysql flexible-server maintenance show --maintenance-name\n                                          [--ids]\n                                          [--resource-group]\n                                          [--server-name]\n                                          [--subscription]",
+            "required_parameters": [
+                "--maintenance-name -m"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--resource-group -g",
+                "--server-name -s",
+                "--subscription"
+            ],
+            "examples": [
+                "az mysql flexible-server maintenance show --resource-group testgroup --server-name testserver --maintenance-name _T9Q-TS8"
+            ]
+        }
+    ]
+}

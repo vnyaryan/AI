@@ -1,0 +1,108 @@
+{
+    "command_group": "az hdinsight autoscale",
+    "description": "Manage HDInsight cluster's Autoscale configuration.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az hdinsight autoscale create",
+            "summary": "Enable Autoscale for a running cluster.",
+            "syntax": "az hdinsight autoscale create --cluster-name\n                              --resource-group\n                              --type {Load, Schedule}\n                              [--days {Friday, Monday, Saturday, Sunday, Thursday, Tuesday, Wednesday}]\n                              [--max-workernode-count]\n                              [--min-workernode-count]\n                              [--no-wait]\n                              [--time]\n                              [--timezone]\n                              [--workernode-count]\n                              [--yes]",
+            "required_parameters": [
+                "--cluster-name",
+                "--resource-group -g",
+                "--type"
+            ],
+            "optional_parameters": [
+                "--days",
+                "--max-workernode-count",
+                "--min-workernode-count",
+                "--no-wait",
+                "--time",
+                "--timezone",
+                "--workernode-count",
+                "--yes -y"
+            ],
+            "examples": [
+                "az hdinsight autoscale create --resource-group MyResourceGroup --cluster-name MyCluster --type Load \\\n--min-workernode-count 3 --max-workernode-count 5",
+                "az hdinsight autoscale create --resource-group MyResourceGroup --cluster-name MyCluster --type Schedule \\\n--timezone \"Pacific Standard Time\" --days Monday Tuesday --time 09:00 --workernode-count 5"
+            ]
+        },
+        {
+            "name": "az hdinsight autoscale delete",
+            "summary": "Disable Autoscale for a running cluster.",
+            "syntax": "az hdinsight autoscale delete --cluster-name\n                              --resource-group\n                              [--no-wait]\n                              [--yes]",
+            "required_parameters": [
+                "--cluster-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--no-wait",
+                "--yes -y"
+            ],
+            "examples": [
+                "az hdinsight autoscale delete --resource-group MyResourceGroup --cluster-name MyCluster"
+            ]
+        },
+        {
+            "name": "az hdinsight autoscale list-timezones",
+            "summary": "List the available timezone name when enabling Schedule-based Autoscale.",
+            "syntax": "az hdinsight autoscale list-timezones",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "examples": [
+                "az hdinsight autoscale list-timezones"
+            ]
+        },
+        {
+            "name": "az hdinsight autoscale show",
+            "summary": "Get the Autoscale configuration of a specified cluster.",
+            "syntax": "az hdinsight autoscale show --cluster-name\n                            --resource-group",
+            "required_parameters": [
+                "--cluster-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az hdinsight autoscale show --resource-group MyResourceGroup --cluster-name MyCluster"
+            ]
+        },
+        {
+            "name": "az hdinsight autoscale update",
+            "summary": "Update the Autoscale configuration.",
+            "syntax": "az hdinsight autoscale update --cluster-name\n                              --resource-group\n                              [--max-workernode-count]\n                              [--min-workernode-count]\n                              [--no-wait]\n                              [--timezone]",
+            "required_parameters": [
+                "--cluster-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--max-workernode-count",
+                "--min-workernode-count",
+                "--no-wait",
+                "--timezone"
+            ],
+            "examples": [
+                "az hdinsight autoscale update --resource-group MyResourceGroup --cluster-name MyCluster --max-workernode-count 5",
+                "az hdinsight autoscale update --resource-group MyResourceGroup --cluster-name MyCluster --timezone \"China Standard Time\""
+            ]
+        },
+        {
+            "name": "az hdinsight autoscale wait",
+            "summary": "Place the CLI in a waiting state until an operation is complete.",
+            "syntax": "az hdinsight autoscale wait --name\n                            --resource-group\n                            [--created]\n                            [--custom]\n                            [--deleted]\n                            [--exists]\n                            [--interval]\n                            [--timeout]\n                            [--updated]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--interval",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

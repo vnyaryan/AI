@@ -1,0 +1,160 @@
+{
+    "command_group": "az hpc-cache",
+    "description": "Commands to manage hpc cache.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az hpc-cache create",
+            "summary": "Create or update a Cache.",
+            "syntax": "az hpc-cache create --cache-size-gb\n                    --location\n                    --name\n                    --resource-group\n                    --sku-name\n                    --subnet\n                    [--no-wait]\n                    [--tags]",
+            "required_parameters": [
+                "--cache-size-gb",
+                "--location -l",
+                "--name",
+                "--resource-group -g",
+                "--sku-name",
+                "--subnet"
+            ],
+            "optional_parameters": [
+                "--no-wait",
+                "--tags"
+            ],
+            "examples": [
+                "az hpc-cache create --resource-group \"scgroup\" --name \"sc1\" --location \"eastus\" --cache-size-gb \"3072\" --subnet \"/subscriptions/{subscription_id}/resourceGroups/{resource_group}/providers/Microsoft.Network/virtualNetworks/{virtual_network_name}/subnets/{subnet_name}\" --sku-name \"Standard_2G\""
+            ]
+        },
+        {
+            "name": "az hpc-cache delete",
+            "summary": "Schedule a Cache for deletion.",
+            "syntax": "az hpc-cache delete --name\n                    --resource-group\n                    [--no-wait]",
+            "required_parameters": [
+                "--name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--no-wait"
+            ],
+            "examples": [
+                "az hpc-cache delete --resource-group \"scgroup\" --name \"sc\""
+            ]
+        },
+        {
+            "name": "az hpc-cache flush",
+            "summary": "Tell a Cache to write all dirty data to the Storage Target(s). During the flush, clients will see errors returned until the flush is complete.",
+            "syntax": "az hpc-cache flush --name\n                   --resource-group",
+            "required_parameters": [
+                "--name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az hpc-cache flush --resource-group \"scgroup\" --name \"sc\""
+            ]
+        },
+        {
+            "name": "az hpc-cache list",
+            "summary": "Return all Caches the user has access to under a resource group.",
+            "syntax": "az hpc-cache list [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az hpc-cache list",
+                "az hpc-cache list --resource-group \"scgroup\""
+            ]
+        },
+        {
+            "name": "az hpc-cache show",
+            "summary": "Return a Cache.",
+            "syntax": "az hpc-cache show --name\n                  --resource-group",
+            "required_parameters": [
+                "--name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az hpc-cache show --resource-group \"scgroup\" --name \"sc1\""
+            ]
+        },
+        {
+            "name": "az hpc-cache start",
+            "summary": "Tell a Stopped state Cache to transition to Active state.",
+            "syntax": "az hpc-cache start --name\n                   --resource-group\n                   [--no-wait]",
+            "required_parameters": [
+                "--name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--no-wait"
+            ],
+            "examples": [
+                "az hpc-cache start --resource-group \"scgroup\" --name \"sc\""
+            ]
+        },
+        {
+            "name": "az hpc-cache stop",
+            "summary": "Tell an Active Cache to transition to Stopped state.",
+            "syntax": "az hpc-cache stop --name\n                  --resource-group\n                  [--no-wait]",
+            "required_parameters": [
+                "--name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--no-wait"
+            ],
+            "examples": [
+                "az hpc-cache stop --resource-group \"scgroup\" --name \"sc\""
+            ]
+        },
+        {
+            "name": "az hpc-cache update",
+            "summary": "Update a Cache.",
+            "syntax": "az hpc-cache update --name\n                    --resource-group\n                    [--tags]",
+            "required_parameters": [
+                "--name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--tags"
+            ],
+            "examples": [
+                "az hpc-cache update --resource-group \"scgroup\" --name \"sc1\" --tags \"key=val\""
+            ]
+        },
+        {
+            "name": "az hpc-cache upgrade-firmware",
+            "summary": "Upgrade a Cache's firmware if a new version is available. Otherwise, this operation has no effect.",
+            "syntax": "az hpc-cache upgrade-firmware --name\n                              --resource-group",
+            "required_parameters": [
+                "--name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az hpc-cache upgrade-firmware --resource-group \"scgroup\" --name \"sc\""
+            ]
+        },
+        {
+            "name": "az hpc-cache wait",
+            "summary": "Wait a hpc Cache to specified state.",
+            "syntax": "az hpc-cache wait --name\n                  --resource-group\n                  [--created]\n                  [--custom]\n                  [--deleted]\n                  [--exists]\n                  [--interval]\n                  [--timeout]\n                  [--updated]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--interval",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": [
+                "az hpc-cache wait --resource-group \"scgroup\" --name \"sc\" --created"
+            ]
+        }
+    ]
+}

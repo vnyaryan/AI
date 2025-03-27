@@ -1,0 +1,36 @@
+{
+    "command_group": "az databoxedge alert",
+    "description": "Manage alert with databoxedge.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az databoxedge alert list",
+            "summary": "Get all the alerts for a Data Box Edge/Data Box Gateway device.",
+            "syntax": "az databoxedge alert list --device-name\n                          --resource-group",
+            "required_parameters": [
+                "--device-name -d",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az databoxedge alert list --device-name \"testedgedevice\" --resource-group \"GroupForEdgeAutomation\""
+            ]
+        },
+        {
+            "name": "az databoxedge alert show",
+            "summary": "Get an alert by name.",
+            "syntax": "az databoxedge alert show [--device-name]\n                          [--ids]\n                          [--name]\n                          [--resource-group]\n                          [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--device-name -d",
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az databoxedge alert show --name \"159a00c7-8543-4343-9435-263ac87df3bb\" --device-name \"testedgedevice\" --resource-group \"GroupForEdgeAutomation\""
+            ]
+        }
+    ]
+}

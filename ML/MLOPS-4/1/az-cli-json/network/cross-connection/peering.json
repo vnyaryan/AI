@@ -1,0 +1,130 @@
+{
+    "command_group": "az network cross-connection peering",
+    "description": "Manage express route cross connection peering.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az network cross-connection peering create",
+            "summary": "Create peering settings for an express route cross connection.",
+            "syntax": "az network cross-connection peering create --cross-connection-name\n                                           --peer-asn\n                                           --peering-type {AzurePrivatePeering, AzurePublicPeering, MicrosoftPeering}\n                                           --primary-peer-subnet\n                                           --resource-group\n                                           --secondary-peer-subnet\n                                           --vlan-id\n                                           [--advertised-public-prefixes]\n                                           [--customer-asn]\n                                           [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                           [--routing-registry-name {AFRINIC, ALTDB, APNIC, ARIN, LACNIC, LEVEL3, RADB, RIPENCC}]\n                                           [--shared-key]",
+            "required_parameters": [
+                "--cross-connection-name",
+                "--peer-asn",
+                "--peering-type",
+                "--primary-peer-subnet",
+                "--resource-group -g",
+                "--secondary-peer-subnet",
+                "--vlan-id"
+            ],
+            "optional_parameters": [
+                "--advertised-public-prefixes",
+                "--customer-asn",
+                "--no-wait",
+                "--routing-registry-name",
+                "--shared-key"
+            ],
+            "examples": [
+                "az network cross-connection peering create -g MyResourceGroup --cross-connection-name MyCircuit --peering-type MicrosoftPeering --peer-asn 10002 --vlan-id 103 --primary-peer-subnet 101.0.0.0/30 --secondary-peer-subnet 102.0.0.0/30 --advertised-public-prefixes 101.0.0.0/30"
+            ]
+        },
+        {
+            "name": "az network cross-connection peering delete",
+            "summary": "Delete peering settings.",
+            "syntax": "az network cross-connection peering delete [--cross-connection-name]\n                                           [--ids]\n                                           [--name]\n                                           [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                           [--resource-group]\n                                           [--subscription]\n                                           [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--cross-connection-name",
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az network cross-connection peering delete -g MyResourceGroup --cross-connection-name MyCircuit -n AzurePrivatePeering"
+            ]
+        },
+        {
+            "name": "az network cross-connection peering list",
+            "summary": "List peering settings of an express route cross connection.",
+            "syntax": "az network cross-connection peering list --cross-connection-name\n                                         --resource-group\n                                         [--max-items]\n                                         [--next-token]",
+            "required_parameters": [
+                "--cross-connection-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az network cross-connection peering list -g MyResourceGroup --cross-connection-name MyCircuit"
+            ]
+        },
+        {
+            "name": "az network cross-connection peering show",
+            "summary": "Show the details of an express route peering.",
+            "syntax": "az network cross-connection peering show [--cross-connection-name]\n                                         [--ids]\n                                         [--name]\n                                         [--resource-group]\n                                         [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--cross-connection-name",
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az network cross-connection peering show -g MyResourceGroup --cross-connection-name MyCircuit -n AzurePrivatePeering"
+            ]
+        },
+        {
+            "name": "az network cross-connection peering update",
+            "summary": "Update peering settings for an express route cross connection.",
+            "syntax": "az network cross-connection peering update [--add]\n                                           [--advertised-public-prefixes]\n                                           [--cross-connection-name]\n                                           [--customer-asn]\n                                           [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                           [--ids]\n                                           [--ip-version {IPv4, IPv6}]\n                                           [--name]\n                                           [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                           [--peer-asn]\n                                           [--primary-peer-subnet]\n                                           [--remove]\n                                           [--resource-group]\n                                           [--routing-registry-name {AFRINIC, ALTDB, APNIC, ARIN, LACNIC, LEVEL3, RADB, RIPENCC}]\n                                           [--secondary-peer-subnet]\n                                           [--set]\n                                           [--shared-key]\n                                           [--subscription]\n                                           [--vlan-id]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--advertised-public-prefixes",
+                "--cross-connection-name",
+                "--customer-asn",
+                "--force-string",
+                "--ids",
+                "--ip-version",
+                "--name -n",
+                "--no-wait",
+                "--peer-asn",
+                "--primary-peer-subnet",
+                "--remove",
+                "--resource-group -g",
+                "--routing-registry-name",
+                "--secondary-peer-subnet",
+                "--set",
+                "--shared-key",
+                "--subscription",
+                "--vlan-id"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az network cross-connection peering wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az network cross-connection peering wait [--created]\n                                         [--cross-connection-name]\n                                         [--custom]\n                                         [--deleted]\n                                         [--exists]\n                                         [--ids]\n                                         [--interval]\n                                         [--name]\n                                         [--resource-group]\n                                         [--subscription]\n                                         [--timeout]\n                                         [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--cross-connection-name",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

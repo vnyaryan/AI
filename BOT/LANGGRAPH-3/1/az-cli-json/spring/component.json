@@ -1,0 +1,45 @@
+{
+    "command_group": "az spring component",
+    "description": "(Enterprise Tier Only) Commands to handle managed components.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az spring component list",
+            "summary": "(Enterprise Tier Only) List managed components.",
+            "syntax": "az spring component list --resource-group\n                         --service",
+            "required_parameters": [
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az spring component list --service MyAzureSpringAppsInstance --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az spring component logs",
+            "summary": "(Enterprise Tier Only) Show logs for managed components. Logs will be streamed when setting '-f/--follow'. For now, only supports subcomponents of (a) Application Configuration Service (b) Spring Cloud Gateway (c) Spring Cloud Config Server.",
+            "syntax": "az spring component logs --resource-group\n                         --service\n                         [--all-instances]\n                         [--follow]\n                         [--instance]\n                         [--limit]\n                         [--lines]\n                         [--max-log-requests]\n                         [--name]\n                         [--since]",
+            "required_parameters": [
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [
+                "--all-instances",
+                "--follow  -f",
+                "--instance -i",
+                "--limit",
+                "--lines",
+                "--max-log-requests",
+                "--name -n",
+                "--since"
+            ],
+            "examples": [
+                "az spring component logs --name flux-source-controller --service MyAzureSpringAppsInstance --resource-group MyResourceGroup --all-instances",
+                "az spring component logs --name application-configuration-service --service MyAzureSpringAppsInstance --resource-group MyResourceGroup --instance InstanceName",
+                "az spring component logs --name spring-cloud-gateway --service MyAzureSpringAppsInstance --resource-group MyResourceGroup --all-instances --follow",
+                "az spring component logs --service MyAzureSpringAppsInstance --resource-group MyResourceGroup --instance InstanceName"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,245 @@
+{
+    "command_group": "az sig image-definition",
+    "description": "Manage shared gallery image with VM.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az sig image-definition create",
+            "summary": "Create a gallery image definition.",
+            "syntax": "az sig image-definition create --gallery-image-definition\n                               --gallery-name\n                               --offer\n                               --os-type {Linux, Windows}\n                               --publisher\n                               --resource-group\n                               --sku\n                               [--architecture {Arm64, x64}]\n                               [--description]\n                               [--disallowed-disk-types]\n                               [--end-of-life-date]\n                               [--eula]\n                               [--features]\n                               [--hyper-v-generation {V1, V2}]\n                               [--location]\n                               [--maximum-cpu-core]\n                               [--maximum-memory]\n                               [--minimum-cpu-core]\n                               [--minimum-memory]\n                               [--os-state {Generalized, Specialized}]\n                               [--plan-name]\n                               [--plan-product]\n                               [--plan-publisher]\n                               [--privacy-statement-uri]\n                               [--release-note-uri]\n                               [--tags]",
+            "required_parameters": [
+                "--gallery-image-definition -i",
+                "--gallery-name -r",
+                "--offer -f",
+                "--os-type",
+                "--publisher -p",
+                "--resource-group -g",
+                "--sku -s"
+            ],
+            "optional_parameters": [
+                "--architecture",
+                "--description",
+                "--disallowed-disk-types",
+                "--end-of-life-date",
+                "--eula",
+                "--features",
+                "--hyper-v-generation",
+                "--location -l",
+                "--maximum-cpu-core",
+                "--maximum-memory",
+                "--minimum-cpu-core",
+                "--minimum-memory",
+                "--os-state",
+                "--plan-name",
+                "--plan-product",
+                "--plan-publisher",
+                "--privacy-statement-uri",
+                "--release-note-uri",
+                "--tags"
+            ],
+            "examples": [
+                "az sig image-definition create --resource-group MyResourceGroup \\\n--gallery-name MyGallery --gallery-image-definition MyImage \\\n--publisher GreatPublisher --offer GreatOffer --sku GreatSku \\\n--os-type linux --os-state Specialized",
+                "az sig image-definition create --resource-group MyResourceGroup \\\n--gallery-name MyGallery --gallery-image-definition MyImage \\\n--publisher GreatPublisher --offer GreatOffer --sku GreatSku \\\n--os-type linux --os-state Generalized",
+                "az sig image-definition create --resource-group MyResourceGroup \\\n--gallery-name MyGallery --gallery-image-definition MyImage \\\n--publisher GreatPublisher --offer GreatOffer --sku GreatSku \\\n--os-type windows --os-state Specialized",
+                "az sig image-definition create --resource-group MyResourceGroup \\\n--gallery-name MyGallery --gallery-image-definition MyImage \\\n--publisher GreatPublisher --offer GreatOffer --sku GreatSku \\\n--os-type windows --os-state Generalized",
+                "az sig image-definition create --resource-group MyResourceGroup \\\n--gallery-name MyGallery --gallery-image-definition MyImage \\\n--publisher GreatPublisher --offer GreatOffer --sku GreatSku \\\n--os-type linux --os-state Specialized --plan-name PlanName \\\n--plan-product PlanProduct --plan-publisher PlanPublisher",
+                "az sig image-definition create --resource-group MyResourceGroup \\\n--gallery-name MyGallery --gallery-image-definition MyImage \\\n--publisher GreatPublisher --offer GreatOffer --sku GreatSku \\\n--os-type linux --os-state Specialized \\\n--features IsHibernateSupported=true",
+                "az sig image-definition create --resource-group MyResourceGroup \\\n--gallery-name MyGallery --gallery-image-definition MyImage \\\n--publisher GreatPublisher --offer GreatOffer --sku GreatSku \\\n--os-type linux --os-state Specialized \\\n--features IsAcceleratedNetworkSupported=true",
+                "az sig image-definition create --resource-group MyResourceGroup \\\n--gallery-name MyGallery --gallery-image-definition MyImage \\\n--publisher GreatPublisher --offer GreatOffer --sku GreatSku \\\n--os-type linux --os-state Specialized \\\n--features SecurityType=TrustedLaunch",
+                "az sig image-definition create --resource-group MyResourceGroup \\\n--gallery-name MyGallery --gallery-image-definition MyImage \\\n--publisher GreatPublisher --offer GreatOffer --sku GreatSku \\\n--os-type linux --os-state Specialized \\\n--features SecurityType=ConfidentialVmSupported",
+                "az sig image-definition create --resource-group MyResourceGroup \\\n--gallery-name MyGallery --gallery-image-definition MyImage \\\n--publisher GreatPublisher --offer GreatOffer --sku GreatSku \\\n--os-type linux --os-state Specialized \\\n--features SecurityType=ConfidentialVM",
+                "az sig image-definition create --resource-group MyResourceGroup \\\n--gallery-name MyGallery --gallery-image-definition MyImage \\\n--publisher GreatPublisher --offer GreatOffer --sku GreatSku \\\n--os-type linux --os-state Specialized \\\n--features SecurityType=TrustedLaunchSupported",
+                "az sig image-definition create --resource-group MyResourceGroup \\\n--gallery-name MyGallery --gallery-image-definition MyImage \\\n--publisher GreatPublisher --offer GreatOffer --sku GreatSku \\\n--os-type linux --os-state Specialized \\\n--features SecurityType=TrustedLaunchAndConfidentialVmSupported",
+                "az sig image-definition create --resource-group MyResourceGroup \\\n--gallery-name MyGallery --gallery-image-definition MyImage \\\n--publisher GreatPublisher --offer GreatOffer --sku GreatSku \\\n--os-type linux --os-state Specialized \\\n--end-of-life-date YYYY-MM-DDTHH:MM:SS+00:00",
+                "az sig image-definition create --resource-group MyResourceGroup \\\n--gallery-name MyGallery --gallery-image-definition MyImage \\\n--publisher GreatPublisher --offer GreatOffer --sku GreatSku \\\n--os-type linux --os-state Specialized \\\n--minimum-cpu-core myMinCPU --maximum-cpu-core myMaxCPU \\\n--minimum-memory myMinMemory --maximum-memory myMaxMemory",
+                "az sig image-definition create --resource-group MyResourceGroup \\\n--gallery-name MyGallery --gallery-image-definition MyImage \\\n--publisher GreatPublisher --offer GreatOffer --sku GreatSku \\\n--os-type linux --os-state Specialized \\\n--disallowed-disk-types Standard_LRS",
+                "az sig image-definition create --resource-group MyResourceGroup \\\n--gallery-name MyGallery --gallery-image-definition MyImage \\\n--publisher GreatPublisher --offer GreatOffer --sku GreatSku \\\n--os-type linux --os-state Specialized \\\n--eula path_to_eula --privacy-statement-uri path_to_statement \\\n--release-note-uri path_to_release_notes"
+            ]
+        },
+        {
+            "name": "az sig image-definition delete",
+            "summary": "Delete a gallery image.",
+            "syntax": "az sig image-definition delete [--gallery-image-definition]\n                               [--gallery-name]\n                               [--ids]\n                               [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                               [--resource-group]\n                               [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--gallery-image-definition --gallery-image-name -i",
+                "--gallery-name -r",
+                "--ids",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az sig image-definition list",
+            "summary": "List gallery image definitions in a gallery.",
+            "syntax": "az sig image-definition list --gallery-name\n                             --resource-group\n                             [--max-items]\n                             [--next-token]",
+            "required_parameters": [
+                "--gallery-name -r",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az sig image-definition list-community",
+            "summary": "List VM Image definitions in a gallery community.",
+            "syntax": "az sig image-definition list-community [--ids]\n                                       [--location]\n                                       [--marker]\n                                       [--public-gallery-name]\n                                       [--show-next-marker]\n                                       [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--location -l",
+                "--marker",
+                "--public-gallery-name",
+                "--show-next-marker",
+                "--subscription"
+            ],
+            "examples": [
+                "az sig image-definition list-community --public-gallery-name publicGalleryName \\\n--location myLocation"
+            ]
+        },
+        {
+            "name": "az sig image-definition list-community",
+            "summary": "List VM Image definitions in a gallery community (preview).",
+            "syntax": "az sig image-definition list-community [--ids]\n                                       [--location]\n                                       [--marker]\n                                       [--public-gallery-name]\n                                       [--show-next-marker]\n                                       [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--location -l",
+                "--marker",
+                "--public-gallery-name",
+                "--show-next-marker",
+                "--subscription"
+            ],
+            "examples": [
+                "az sig image-definition list-community --public-gallery-name publicGalleryName \\\n--location myLocation"
+            ]
+        },
+        {
+            "name": "az sig image-definition list-shared",
+            "summary": "List VM Image definitions in a gallery shared directly to your subscription or tenant.",
+            "syntax": "az sig image-definition list-shared [--gallery-unique-name]\n                                    [--ids]\n                                    [--location]\n                                    [--marker]\n                                    [--shared-to {tenant}]\n                                    [--show-next-marker]\n                                    [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--gallery-unique-name",
+                "--ids",
+                "--location -l",
+                "--marker",
+                "--shared-to",
+                "--show-next-marker",
+                "--subscription"
+            ],
+            "examples": [
+                "az sig image-definition list-shared --gallery-unique-name galleryUniqueName \\\n--location myLocation",
+                "az sig image-definition list-shared --gallery-unique-name galleryUniqueName \\\n--location myLocation --shared-to tenant"
+            ]
+        },
+        {
+            "name": "az sig image-definition show",
+            "summary": "Get information about a gallery image definition.",
+            "syntax": "az sig image-definition show [--gallery-image-definition]\n                             [--gallery-name]\n                             [--ids]\n                             [--resource-group]\n                             [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--gallery-image-definition --gallery-image-name -i",
+                "--gallery-name -r",
+                "--ids",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az sig image-definition show-community",
+            "summary": "Get a community gallery image.",
+            "syntax": "az sig image-definition show-community [--gallery-image-definition]\n                                       [--ids]\n                                       [--location]\n                                       [--public-gallery-name]\n                                       [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--gallery-image-definition -i",
+                "--ids",
+                "--location -l",
+                "--public-gallery-name",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az sig image-definition show-community",
+            "summary": "Get an image in a gallery community (preview).",
+            "syntax": "az sig image-definition show-community [--gallery-image-definition]\n                                       [--ids]\n                                       [--location]\n                                       [--public-gallery-name]\n                                       [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--gallery-image-definition -i",
+                "--ids",
+                "--location -l",
+                "--public-gallery-name",
+                "--subscription"
+            ],
+            "examples": [
+                "az sig image-definition show-community --public-gallery-name publicGalleryName \\\n--gallery-image-definition myGalleryImageName --location myLocation"
+            ]
+        },
+        {
+            "name": "az sig image-definition show-shared",
+            "summary": "Get a shared gallery image.",
+            "syntax": "az sig image-definition show-shared [--gallery-image-definition]\n                                    [--gallery-unique-name]\n                                    [--ids]\n                                    [--location]\n                                    [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--gallery-image-definition --gallery-image-name -i",
+                "--gallery-unique-name",
+                "--ids",
+                "--location -l",
+                "--subscription"
+            ],
+            "examples": [
+                "az sig image-definition show-shared --gallery-unique-name galleryUniqueName --gallery-image-definition myGalleryImageName --location myLocation"
+            ]
+        },
+        {
+            "name": "az sig image-definition update",
+            "summary": "Update a VM Image definition.",
+            "syntax": "az sig image-definition update [--add]\n                               [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                               [--gallery-image-definition]\n                               [--gallery-name]\n                               [--ids]\n                               [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                               [--remove]\n                               [--resource-group]\n                               [--set]\n                               [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--force-string",
+                "--gallery-image-definition -i",
+                "--gallery-name -r",
+                "--ids",
+                "--no-wait",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--subscription"
+            ],
+            "examples": [
+                "az sig image-definition update --resource-group MyResourceGroup --gallery-name MyGallery --gallery-image-definition MyImage --resource-group MyResourceGroup --set recommended.vCpUs.min=myNewvCpUsMin recommended.vCpUs.max=myNewvCpUsMax recommended.memory.min=myNewMemoryMin recommended.memory.max=myNewMemoryMax description=\"newDescription\"",
+                "az sig image-definition update --resource-group MyResourceGroup --gallery-name MyGallery --gallery-image-definition MyImage --resource-group MyResourceGroup --remove recommended.vCpUs.min"
+            ]
+        },
+        {
+            "name": "az sig image-definition wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az sig image-definition wait [--created]\n                             [--custom]\n                             [--deleted]\n                             [--exists]\n                             [--gallery-image-definition]\n                             [--gallery-name]\n                             [--ids]\n                             [--interval]\n                             [--resource-group]\n                             [--subscription]\n                             [--timeout]\n                             [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--gallery-image-definition --gallery-image-name -i",
+                "--gallery-name -r",
+                "--ids",
+                "--interval",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

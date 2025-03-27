@@ -1,0 +1,6 @@
+{
+    "command_group": "az support",
+    "description": "Manage Azure support resource.",
+    "status": "GA",
+    "commands": []
+}

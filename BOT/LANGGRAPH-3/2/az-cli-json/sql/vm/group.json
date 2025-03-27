@@ -1,0 +1,102 @@
+{
+    "command_group": "az sql vm group",
+    "description": "Manage SQL virtual machine groups.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az sql vm group create",
+            "summary": "Creates a SQL virtual machine group.",
+            "syntax": "az sql vm group create --domain-fqdn\n                       --image-offer\n                       --image-sku {Developer, Enterprise}\n                       --name\n                       --operator-acc\n                       --resource-group\n                       --service-acc\n                       --storage-account\n                       [--bootstrap-acc]\n                       [--cluster-subnet-type {MultiSubnet, SingleSubnet}]\n                       [--fsw-path]\n                       [--location]\n                       [--ou-path]\n                       [--sa-key]\n                       [--tags]",
+            "required_parameters": [
+                "--domain-fqdn -f",
+                "--image-offer -i",
+                "--image-sku -s",
+                "--name -n",
+                "--operator-acc -p",
+                "--resource-group -g",
+                "--service-acc -e",
+                "--storage-account -u"
+            ],
+            "optional_parameters": [
+                "--bootstrap-acc",
+                "--cluster-subnet-type",
+                "--fsw-path",
+                "--location -l",
+                "--ou-path",
+                "--sa-key -k",
+                "--tags"
+            ],
+            "examples": [
+                "az sql vm group create -n sqlvmgroup -l eastus -g myresourcegroup --image-offer SQL2016-WS2016 --image-sku Enterprise --domain-fqdn Domain.com --operator-acc testop --service-acc testservice --sa-key {PublicKey} --storage-account 'https://storacc.blob.core.windows.net/'",
+                "az sql vm group create -n sqlvmgroup -l eastus -g myresourcegroup --image-offer SQL2019-WS2022 --image-sku Enterprise --cluster-subnet-type MultiSubnet --domain-fqdn Domain.com --operator-acc testop --service-acc testservice --sa-key {PublicKey} --storage-account 'https://storacc.blob.core.windows.net/'"
+            ]
+        },
+        {
+            "name": "az sql vm group delete",
+            "summary": "Deletes a SQL virtual machine group.",
+            "syntax": "az sql vm group delete [--ids]\n                       [--name]\n                       [--resource-group]\n                       [--subscription]\n                       [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az sql vm group list",
+            "summary": "Lists all SQL virtual machine groups in a resource group or subscription.",
+            "syntax": "az sql vm group list [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az sql vm group show",
+            "summary": "Gets a SQL virtual machine group.",
+            "syntax": "az sql vm group show [--ids]\n                     [--name]\n                     [--resource-group]\n                     [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az sql vm group update",
+            "summary": "Updates a SQL virtual machine group if there are not SQL virtual machines attached to the group.",
+            "syntax": "az sql vm group update [--add]\n                       [--bootstrap-acc]\n                       [--cluster-subnet-type {MultiSubnet, SingleSubnet}]\n                       [--domain-fqdn]\n                       [--force-string]\n                       [--fsw-path]\n                       [--ids]\n                       [--name]\n                       [--operator-acc]\n                       [--ou-path]\n                       [--remove]\n                       [--resource-group]\n                       [--sa-key]\n                       [--service-acc]\n                       [--set]\n                       [--storage-account]\n                       [--subscription]\n                       [--tags]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--bootstrap-acc",
+                "--cluster-subnet-type",
+                "--domain-fqdn -f",
+                "--force-string",
+                "--fsw-path",
+                "--ids",
+                "--name -n",
+                "--operator-acc -p",
+                "--ou-path",
+                "--remove",
+                "--resource-group -g",
+                "--sa-key -k",
+                "--service-acc -e",
+                "--set",
+                "--storage-account -u",
+                "--subscription",
+                "--tags"
+            ],
+            "examples": [
+                "az sql vm group update -n sqlvmgroup -g myresourcegroup --operator-acc testop",
+                "az sql vm group update -n sqlvmgroup -g myresourcegroup --sa-key {PublicKey} --storage-account 'https://newstoracc.blob.core.windows.net/'"
+            ]
+        }
+    ]
+}

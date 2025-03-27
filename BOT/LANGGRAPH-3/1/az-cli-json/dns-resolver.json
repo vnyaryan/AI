@@ -1,0 +1,135 @@
+{
+    "command_group": "az dns-resolver",
+    "description": "Manage Dns Resolver.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az dns-resolver create",
+            "summary": "Create a DNS resolver.",
+            "syntax": "az dns-resolver create --dns-resolver-name\n                       --id\n                       --resource-group\n                       [--if-match]\n                       [--if-none-match]\n                       [--location]\n                       [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                       [--tags]",
+            "required_parameters": [
+                "--dns-resolver-name --name -n",
+                "--id",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--if-match",
+                "--if-none-match",
+                "--location -l",
+                "--no-wait",
+                "--tags"
+            ],
+            "examples": [
+                "az dns-resolver create --name \"sampleDnsResolver\" --location \"westus2\" --id \"/subscriptions/ cbb1387e-4b03-44f2-ad41-58d4677b9873/resourceGroups/virtualNetworkResourceGroup/providers/Mi crosoft.Network/virtualNetworks/sampleVirtualNetwork\" --tags key1=\"value1\" --resource-group \"sampleResourceGroup\""
+            ]
+        },
+        {
+            "name": "az dns-resolver delete",
+            "summary": "Deletes a DNS resolver. WARNING: This operation cannot be undone.",
+            "syntax": "az dns-resolver delete [--dns-resolver-name]\n                       [--ids]\n                       [--if-match]\n                       [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                       [--resource-group]\n                       [--subscription]\n                       [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--dns-resolver-name --name -n",
+                "--ids",
+                "--if-match",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az dns-resolver delete --name \"sampleDnsResolver\" --resource-group \"sampleResourceGroup\""
+            ]
+        },
+        {
+            "name": "az dns-resolver list",
+            "summary": "Lists DNS resolver resource IDs linked to a virtual network. And Lists DNS resolvers within a resource group. And Lists DNS resolvers in all resource groups of a subscription.",
+            "syntax": "az dns-resolver list [--resource-group]\n                     [--top]\n                     [--virtual-network-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--resource-group -g",
+                "--top",
+                "--virtual-network-name"
+            ],
+            "examples": [
+                "az dns-resolver list --resource-group \"sampleResourceGroup\" --virtual-network-name \"sampleVirtualNetwork\"",
+                "az dns-resolver list --resource-group \"sampleResourceGroup\"",
+                "az dns-resolver list"
+            ]
+        },
+        {
+            "name": "az dns-resolver list-by-virtual-network",
+            "summary": "Lists DNS resolver resource IDs linked to a virtual network.",
+            "syntax": "az dns-resolver list-by-virtual-network --resource-group\n                                        --virtual-network-name\n                                        [--max-items]\n                                        [--next-token]\n                                        [--top]",
+            "required_parameters": [
+                "--resource-group -g",
+                "--virtual-network-name"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token",
+                "--top"
+            ],
+            "examples": [
+                "az dns-resolver list --resource-group \"sampleResourceGroup\" --virtual-network-name \"sampleVirtualNetwork\""
+            ]
+        },
+        {
+            "name": "az dns-resolver show",
+            "summary": "Gets properties of a DNS resolver.",
+            "syntax": "az dns-resolver show [--dns-resolver-name]\n                     [--ids]\n                     [--resource-group]\n                     [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--dns-resolver-name --name -n",
+                "--ids",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az dns-resolver show --resource-group sampleResourceGroup --dns-resolver-name sampleDnsResolver"
+            ]
+        },
+        {
+            "name": "az dns-resolver update",
+            "summary": "Updates a DNS resolver.",
+            "syntax": "az dns-resolver update [--add]\n                       [--dns-resolver-name]\n                       [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                       [--ids]\n                       [--if-match]\n                       [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                       [--remove]\n                       [--resource-group]\n                       [--set]\n                       [--subscription]\n                       [--tags]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--dns-resolver-name --name -n",
+                "--force-string",
+                "--ids",
+                "--if-match",
+                "--no-wait",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--subscription",
+                "--tags"
+            ],
+            "examples": [
+                "az dns-resolver update --name \"sampleDnsResolver\" --tags key1=\"value1\" --resource-group \"sampleResourceGroup\""
+            ]
+        },
+        {
+            "name": "az dns-resolver wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az dns-resolver wait [--created]\n                     [--custom]\n                     [--deleted]\n                     [--dns-resolver-name]\n                     [--exists]\n                     [--ids]\n                     [--interval]\n                     [--resource-group]\n                     [--subscription]\n                     [--timeout]\n                     [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--dns-resolver-name --name -n",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

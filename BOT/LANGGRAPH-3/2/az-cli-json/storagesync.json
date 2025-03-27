@@ -1,0 +1,82 @@
+{
+    "command_group": "az storagesync",
+    "description": "Manage Azure File Sync.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az storagesync check-name-availability",
+            "summary": "Check the give namespace name availability.",
+            "syntax": "az storagesync check-name-availability --name\n                                       --type {Microsoft.StorageSync/storageSyncServices}\n                                       [--ids]\n                                       [--location-name]\n                                       [--subscription]",
+            "required_parameters": [
+                "--name",
+                "--type"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--location-name",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az storagesync create",
+            "summary": "Create a new storage sync service.",
+            "syntax": "az storagesync create --name\n                      --resource-group\n                      [--location]\n                      [--tags]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--location -l",
+                "--tags"
+            ],
+            "examples": [
+                "az storagesync create --resource-group \"SampleResourceGroup\" \\\n--name \"SampleStorageSyncService\" --location \"WestUS\" --tags key1=value1"
+            ]
+        },
+        {
+            "name": "az storagesync delete",
+            "summary": "Delete a given storage sync service.",
+            "syntax": "az storagesync delete [--ids]\n                      [--name]\n                      [--resource-group]\n                      [--subscription]\n                      [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az storagesync delete --resource-group \"SampleResourceGroup\" \\\n--name \"SampleStorageSyncService\""
+            ]
+        },
+        {
+            "name": "az storagesync list",
+            "summary": "List all storage sync services in a resource group or a subscription.",
+            "syntax": "az storagesync list [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az storagesync list --resource-group \"SampleResourceGroup\"",
+                "az storagesync list"
+            ]
+        },
+        {
+            "name": "az storagesync show",
+            "summary": "Show the properties for a given storage sync service.",
+            "syntax": "az storagesync show [--ids]\n                    [--name]\n                    [--resource-group]\n                    [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az storagesync show --resource-group \"SampleResourceGroup\" --name \\\n\"SampleStorageSyncService\""
+            ]
+        }
+    ]
+}

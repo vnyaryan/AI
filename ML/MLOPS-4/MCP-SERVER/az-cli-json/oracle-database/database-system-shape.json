@@ -1,0 +1,22 @@
+{
+    "command_group": "az oracle-database database-system-shape",
+    "description": "Database System Shapes.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az oracle-database database-system-shape list",
+            "summary": "List DbSystemShape resources by Location.",
+            "syntax": "az oracle-database database-system-shape list --location\n                                              [--max-items]\n                                              [--next-token]",
+            "required_parameters": [
+                "--location -l"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az oracle-database database-system-shape list --location <location>"
+            ]
+        }
+    ]
+}

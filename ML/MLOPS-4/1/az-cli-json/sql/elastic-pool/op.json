@@ -1,0 +1,39 @@
+{
+    "command_group": "az sql elastic-pool op",
+    "description": "Manage operations on an elastic pool.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az sql elastic-pool op cancel",
+            "summary": "Cancels the asynchronous operation on the elastic pool.",
+            "syntax": "az sql elastic-pool op cancel --name\n                              [--elastic-pool]\n                              [--ids]\n                              [--resource-group]\n                              [--server]\n                              [--subscription]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--elastic-pool",
+                "--ids",
+                "--resource-group -g",
+                "--server -s",
+                "--subscription"
+            ],
+            "examples": [
+                "az sql elastic-pool op cancel -g mygroup -s myserver --elastic-pool myelasticpool -n d2896mydb-2ba8-4c84-bac1-387c430cce40"
+            ]
+        },
+        {
+            "name": "az sql elastic-pool op list",
+            "summary": "Gets a list of operations performed on the elastic pool.",
+            "syntax": "az sql elastic-pool op list [--elastic-pool]\n                            [--ids]\n                            [--resource-group]\n                            [--server]\n                            [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--elastic-pool",
+                "--ids",
+                "--resource-group -g",
+                "--server -s",
+                "--subscription"
+            ],
+            "examples": []
+        }
+    ]
+}

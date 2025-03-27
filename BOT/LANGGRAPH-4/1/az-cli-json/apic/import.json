@@ -1,0 +1,31 @@
+{
+    "command_group": "az apic import",
+    "description": "",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az apic import aws",
+            "summary": "Import an Amazon API Gateway API source.",
+            "syntax": "az apic import aws --aws-access-key-reference\n                   --aws-region-name\n                   --aws-secret-access-key-reference\n                   [--ids]\n                   [--import-specification {always, never, ondemand}]\n                   [--msi-resource-id]\n                   [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                   [--resource-group]\n                   [--service-name]\n                   [--subscription]\n                   [--target-environment-id]\n                   [--target-lifecycle-stage {deprecated, design, development, preview, production, retired, testing}]",
+            "required_parameters": [
+                "--aws-access-key-reference -a",
+                "--aws-region-name -r",
+                "--aws-secret-access-key-reference -s"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--import-specification",
+                "--msi-resource-id",
+                "--no-wait",
+                "--resource-group -g",
+                "--service-name -n",
+                "--subscription",
+                "--target-environment-id",
+                "--target-lifecycle-stage"
+            ],
+            "examples": [
+                "az apic import aws -g contoso-resources -n contoso -a https://{keyvaultName}.vault.azure.net/secrets/{secretName1} -s https://{keyvaultName}.vault.azure.net/secrets/{secretName2} -r us-east-2"
+            ]
+        }
+    ]
+}

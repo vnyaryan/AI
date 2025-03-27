@@ -1,0 +1,73 @@
+{
+    "command_group": "az apim graphql resolver policy",
+    "description": "Manage Azure API Management GraphQL API's Resolvers Policies.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az apim graphql resolver policy create",
+            "summary": "Create or updates policy configuration for the GraphQL API Resolver level.",
+            "syntax": "az apim graphql resolver policy create --api-id\n                                       --resolver-id\n                                       --resource-group\n                                       --service-name\n                                       --value-path\n                                       [--policy-format]",
+            "required_parameters": [
+                "--api-id",
+                "--resolver-id",
+                "--resource-group -g",
+                "--service-name -n",
+                "--value-path"
+            ],
+            "optional_parameters": [
+                "--policy-format"
+            ],
+            "examples": [
+                "az apim graphql resolver policy create --service-name MyApim -g MyResourceGroup --api-id MyApi --resolver-id MyResolverId --policy-format xml --value-path 'path to xml file'"
+            ]
+        },
+        {
+            "name": "az apim graphql resolver policy delete",
+            "summary": "Delete the policy configuration at the GraphQL Api Resolver.",
+            "syntax": "az apim graphql resolver policy delete --api-id\n                                       --resolver-id\n                                       --resource-group\n                                       --service-name\n                                       [--if-match]\n                                       [--yes]",
+            "required_parameters": [
+                "--api-id",
+                "--resolver-id",
+                "--resource-group -g",
+                "--service-name -n"
+            ],
+            "optional_parameters": [
+                "--if-match",
+                "--yes -y"
+            ],
+            "examples": [
+                "az apim graphql resolver policy delete --service-name MyApim -g MyResourceGroup --api-id MyApi --resolver-id MyResolverId"
+            ]
+        },
+        {
+            "name": "az apim graphql resolver policy list",
+            "summary": "Get the list of policy configuration at the GraphQL API Resolver level.",
+            "syntax": "az apim graphql resolver policy list --api-id\n                                     --resolver-id\n                                     --resource-group\n                                     --service-name",
+            "required_parameters": [
+                "--api-id",
+                "--resolver-id",
+                "--resource-group -g",
+                "--service-name -n"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az apim graphql resolver policy list --service-name MyApim -g MyResourceGroup --api-id MyApi --resolver-id MyResolverId"
+            ]
+        },
+        {
+            "name": "az apim graphql resolver policy show",
+            "summary": "Get the policy configuration at the GraphQL API Resolver level.",
+            "syntax": "az apim graphql resolver policy show --api-id\n                                     --resolver-id\n                                     --resource-group\n                                     --service-name",
+            "required_parameters": [
+                "--api-id",
+                "--resolver-id",
+                "--resource-group -g",
+                "--service-name -n"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az apim graphql resolver policy show --service-name MyApim -g MyResourceGroup --api-id MyApi --resolver-id MyResolverId"
+            ]
+        }
+    ]
+}

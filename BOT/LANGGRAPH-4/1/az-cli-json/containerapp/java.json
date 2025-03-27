@@ -1,0 +1,6 @@
+{
+    "command_group": "az containerapp java",
+    "description": "Commands to manage Java workloads.",
+    "status": "GA",
+    "commands": []
+}

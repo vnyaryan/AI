@@ -1,0 +1,132 @@
+{
+    "command_group": "az network application-gateway rewrite-rule condition",
+    "description": "Manage rewrite rule conditions of an application gateway.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az network application-gateway rewrite-rule condition create",
+            "summary": "Create a rewrite rule condition.",
+            "syntax": "az network application-gateway rewrite-rule condition create --gateway-name\n                                                             --resource-group\n                                                             --rule-name\n                                                             --rule-set-name\n                                                             --variable\n                                                             [--ignore-case {0, 1, f, false, n, no, t, true, y, yes}]\n                                                             [--negate {0, 1, f, false, n, no, t, true, y, yes}]\n                                                             [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                                             [--pattern]",
+            "required_parameters": [
+                "--gateway-name",
+                "--resource-group -g",
+                "--rule-name",
+                "--rule-set-name",
+                "--variable"
+            ],
+            "optional_parameters": [
+                "--ignore-case",
+                "--negate",
+                "--no-wait",
+                "--pattern"
+            ],
+            "examples": [
+                "az network application-gateway rewrite-rule condition create -g MyResourceGroup --gateway-name MyGateway --rule-set-name MyRuleSet --rule-name MyRule --variable MyVariable --pattern \"^Bearer\" --ignore-case false --negate"
+            ]
+        },
+        {
+            "name": "az network application-gateway rewrite-rule condition delete",
+            "summary": "Delete a rewrite rule condition.",
+            "syntax": "az network application-gateway rewrite-rule condition delete --gateway-name\n                                                             --resource-group\n                                                             --rule-name\n                                                             --rule-set-name\n                                                             --variable\n                                                             [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]",
+            "required_parameters": [
+                "--gateway-name",
+                "--resource-group -g",
+                "--rule-name",
+                "--rule-set-name",
+                "--variable"
+            ],
+            "optional_parameters": [
+                "--no-wait"
+            ],
+            "examples": [
+                "az network application-gateway rewrite-rule condition delete -g MyResourceGroup --gateway-name MyGateway --rule-set-name MyRuleSet --rule-name MyRule --variable MyVariable"
+            ]
+        },
+        {
+            "name": "az network application-gateway rewrite-rule condition list",
+            "summary": "List rewrite rule conditions.",
+            "syntax": "az network application-gateway rewrite-rule condition list --gateway-name\n                                                           --resource-group\n                                                           --rule-name\n                                                           --rule-set-name",
+            "required_parameters": [
+                "--gateway-name",
+                "--resource-group -g",
+                "--rule-name",
+                "--rule-set-name"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az network application-gateway rewrite-rule condition list --gateway-name MyGateway --resource-group MyResourceGroup --rule-name MyRule --rule-set-name MyRuleSet"
+            ]
+        },
+        {
+            "name": "az network application-gateway rewrite-rule condition list-server-variables",
+            "summary": "List all available server variables.",
+            "syntax": "az network application-gateway rewrite-rule condition list-server-variables",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "examples": [
+                "az network application-gateway rewrite-rule condition list-server-variables"
+            ]
+        },
+        {
+            "name": "az network application-gateway rewrite-rule condition show",
+            "summary": "Get the details of a rewrite rule condition.",
+            "syntax": "az network application-gateway rewrite-rule condition show --gateway-name\n                                                           --resource-group\n                                                           --rule-name\n                                                           --rule-set-name\n                                                           --variable",
+            "required_parameters": [
+                "--gateway-name",
+                "--resource-group -g",
+                "--rule-name",
+                "--rule-set-name",
+                "--variable"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az network application-gateway rewrite-rule condition show -g MyResourceGroup --gateway-name MyGateway --rule-set-name MyRuleSet --rule-name MyRule --variable MyVariable"
+            ]
+        },
+        {
+            "name": "az network application-gateway rewrite-rule condition update",
+            "summary": "Update a rewrite rule condition.",
+            "syntax": "az network application-gateway rewrite-rule condition update --gateway-name\n                                                             --resource-group\n                                                             --rule-name\n                                                             --rule-set-name\n                                                             --variable\n                                                             [--add]\n                                                             [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                                             [--ignore-case {0, 1, f, false, n, no, t, true, y, yes}]\n                                                             [--negate {0, 1, f, false, n, no, t, true, y, yes}]\n                                                             [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                                             [--pattern]\n                                                             [--remove]\n                                                             [--set]",
+            "required_parameters": [
+                "--gateway-name",
+                "--resource-group -g",
+                "--rule-name",
+                "--rule-set-name",
+                "--variable"
+            ],
+            "optional_parameters": [
+                "--add",
+                "--force-string",
+                "--ignore-case",
+                "--negate",
+                "--no-wait",
+                "--pattern",
+                "--remove",
+                "--set"
+            ],
+            "examples": [
+                "az network application-gateway rewrite-rule condition update -g MyResourceGroup --gateway-name MyGateway --rule-set-name MyRuleSet --rule-name MyRule --variable MyVariable --pattern \"^Bearers\""
+            ]
+        },
+        {
+            "name": "az network application-gateway rewrite-rule condition wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az network application-gateway rewrite-rule condition wait [--created]\n                                                           [--custom]\n                                                           [--deleted]\n                                                           [--exists]\n                                                           [--gateway-name]\n                                                           [--ids]\n                                                           [--interval]\n                                                           [--resource-group]\n                                                           [--subscription]\n                                                           [--timeout]\n                                                           [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--gateway-name",
+                "--ids",
+                "--interval",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

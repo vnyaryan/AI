@@ -1,0 +1,1486 @@
+{
+    "command_group": "az aks",
+    "description": "Manage Azure Kubernetes Services.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az aks browse",
+            "summary": "Show the dashboard for a Kubernetes cluster in a web browser.",
+            "syntax": "az aks browse --name\n              --resource-group\n              [--disable-browser]\n              [--listen-address]\n              [--listen-port]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--disable-browser",
+                "--listen-address",
+                "--listen-port"
+            ],
+            "examples": [
+                "az aks browse --name MyManagedCluster --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az aks browse",
+            "summary": "Show the dashboard for a Kubernetes cluster in a web browser.",
+            "syntax": "az aks browse --name\n              --resource-group\n              [--disable-browser]\n              [--listen-address]\n              [--listen-port]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--disable-browser",
+                "--listen-address",
+                "--listen-port"
+            ],
+            "examples": [
+                "az aks browse --name MyManagedCluster --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az aks check-acr",
+            "summary": "Validate an ACR is accessible from an AKS cluster.",
+            "syntax": "az aks check-acr --acr\n                 --name\n                 --resource-group\n                 [--node-name]",
+            "required_parameters": [
+                "--acr",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--node-name"
+            ],
+            "examples": [
+                "az aks check-acr --name MyManagedCluster --resource-group MyResourceGroup --acr myacr.azurecr.io"
+            ]
+        },
+        {
+            "name": "az aks create",
+            "summary": "Create a new managed Kubernetes cluster.",
+            "syntax": "az aks create --name\n              --resource-group\n              [--aad-admin-group-object-ids]\n              [--aad-tenant-id]\n              [--aci-subnet-name]\n              [--admin-username]\n              [--aks-custom-headers]\n              [--ampls-resource-id]\n              [--api-server-authorized-ip-ranges]\n              [--appgw-id]\n              [--appgw-name]\n              [--appgw-subnet-cidr]\n              [--appgw-subnet-id]\n              [--appgw-watch-namespace]\n              [--assign-identity]\n              [--assign-kubelet-identity]\n              [--attach-acr]\n              [--auto-upgrade-channel {node-image, none, patch, rapid, stable}]\n              [--azure-keyvault-kms-key-id]\n              [--azure-keyvault-kms-key-vault-network-access {Private, Public}]\n              [--azure-keyvault-kms-key-vault-resource-id]\n              [--azure-monitor-workspace-resource-id]\n              [--ca-profile]\n              [--client-secret]\n              [--crg-id]\n              [--data-collection-settings]\n              [--defender-config]\n              [--disable-acns-observability]\n              [--disable-acns-security]\n              [--disable-disk-driver]\n              [--disable-file-driver]\n              [--disable-local-accounts]\n              [--disable-public-fqdn]\n              [--disable-rbac]\n              [--disable-snapshot-controller]\n              [--dns-name-prefix]\n              [--dns-service-ip]\n              [--edge-zone]\n              [--enable-aad]\n              [--enable-acns]\n              [--enable-addons]\n              [--enable-ahub]\n              [--enable-app-routing]\n              [--enable-asm]\n              [--enable-azure-container-storage {azureDisk, elasticSan, ephemeralDisk}]\n              [--enable-azure-keyvault-kms]\n              [--enable-azure-monitor-metrics]\n              [--enable-azure-rbac]\n              [--enable-blob-driver]\n              [--enable-cluster-autoscaler]\n              [--enable-cost-analysis]\n              [--enable-defender]\n              [--enable-encryption-at-host]\n              [--enable-fips-image]\n              [--enable-high-log-scale-mode {false, true}]\n              [--enable-image-cleaner]\n              [--enable-keda]\n              [--enable-managed-identity]\n              [--enable-msi-auth-for-monitoring {false, true}]\n              [--enable-node-public-ip]\n              [--enable-oidc-issuer]\n              [--enable-private-cluster]\n              [--enable-secret-rotation]\n              [--enable-secure-boot]\n              [--enable-sgxquotehelper]\n              [--enable-syslog {false, true}]\n              [--enable-ultra-ssd]\n              [--enable-vpa]\n              [--enable-vtpm]\n              [--enable-windows-gmsa]\n              [--enable-windows-recording-rules]\n              [--enable-workload-identity]\n              [--ephemeral-disk-nvme-perf-tier {Basic, Premium, Standard}]\n              [--ephemeral-disk-volume-type {EphemeralVolumeOnly, PersistentVolumeWithAnnotation}]\n              [--fqdn-subdomain]\n              [--generate-ssh-keys]\n              [--gmsa-dns-server]\n              [--gmsa-root-domain-name]\n              [--gpu-instance-profile {MIG1g, MIG2g, MIG3g, MIG4g, MIG7g}]\n              [--grafana-resource-id]\n              [--host-group-id]\n              [--http-proxy-config]\n              [--if-match]\n              [--if-none-match]\n              [--image-cleaner-interval-hours]\n              [--ip-families]\n              [--k8s-support-plan {AKSLongTermSupport, KubernetesOfficial}]\n              [--ksm-metric-annotations-allow-list]\n              [--ksm-metric-labels-allow-list]\n              [--kubelet-config]\n              [--kubernetes-version]\n              [--linux-os-config]\n              [--load-balancer-backend-pool-type {nodeIP, nodeIPConfiguration}]\n              [--load-balancer-idle-timeout]\n              [--load-balancer-managed-outbound-ip-count]\n              [--load-balancer-managed-outbound-ipv6-count]\n              [--load-balancer-outbound-ip-prefixes]\n              [--load-balancer-outbound-ips]\n              [--load-balancer-outbound-ports]\n              [--load-balancer-sku {basic, standard}]\n              [--location]\n              [--max-count]\n              [--max-pods]\n              [--min-count]\n              [--nat-gateway-idle-timeout]\n              [--nat-gateway-managed-outbound-ip-count]\n              [--network-dataplane {azure, cilium}]\n              [--network-plugin {azure, kubenet, none}]\n              [--network-plugin-mode {overlay}]\n              [--network-policy]\n              [--no-ssh-key]\n              [--no-wait]\n              [--node-count]\n              [--node-os-upgrade-channel {NodeImage, None, SecurityPatch, Unmanaged}]\n              [--node-osdisk-diskencryptionset-id]\n              [--node-osdisk-size]\n              [--node-osdisk-type {Ephemeral, Managed}]\n              [--node-public-ip-prefix-id]\n              [--node-public-ip-tags]\n              [--node-resource-group]\n              [--node-vm-size]\n              [--nodepool-allowed-host-ports]\n              [--nodepool-asg-ids]\n              [--nodepool-labels]\n              [--nodepool-name]\n              [--nodepool-tags]\n              [--nodepool-taints]\n              [--nrg-lockdown-restriction-level {ReadOnly, Unrestricted}]\n              [--os-sku {AzureLinux, CBLMariner, Mariner, Ubuntu}]\n              [--outbound-type {loadBalancer, managedNATGateway, userAssignedNATGateway, userDefinedRouting}]\n              [--pod-cidr]\n              [--pod-cidrs]\n              [--pod-subnet-id]\n              [--ppg]\n              [--private-dns-zone]\n              [--revision]\n              [--rotation-poll-interval]\n              [--service-cidr]\n              [--service-cidrs]\n              [--service-principal]\n              [--skip-subnet-role-assignment]\n              [--snapshot-id]\n              [--ssh-key-value]\n              [--storage-pool-name]\n              [--storage-pool-option {NVMe, Temp}]\n              [--storage-pool-size]\n              [--storage-pool-sku {PremiumV2_LRS, Premium_LRS, Premium_ZRS, StandardSSD_LRS, StandardSSD_ZRS, Standard_LRS, UltraSSD_LRS}]\n              [--tags]\n              [--tier {free, premium, standard}]\n              [--vm-set-type]\n              [--vnet-subnet-id]\n              [--windows-admin-password]\n              [--windows-admin-username]\n              [--workspace-resource-id]\n              [--yes]\n              [--zones]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--aad-admin-group-object-ids",
+                "--aad-tenant-id",
+                "--aci-subnet-name",
+                "--admin-username -u",
+                "--aks-custom-headers",
+                "--ampls-resource-id",
+                "--api-server-authorized-ip-ranges",
+                "--appgw-id",
+                "--appgw-name",
+                "--appgw-subnet-cidr",
+                "--appgw-subnet-id",
+                "--appgw-watch-namespace",
+                "--assign-identity",
+                "--assign-kubelet-identity",
+                "--attach-acr",
+                "--auto-upgrade-channel",
+                "--azure-keyvault-kms-key-id",
+                "--azure-keyvault-kms-key-vault-network-access",
+                "--azure-keyvault-kms-key-vault-resource-id",
+                "--azure-monitor-workspace-resource-id",
+                "--ca-profile --cluster-autoscaler-profile",
+                "--client-secret",
+                "--crg-id",
+                "--data-collection-settings",
+                "--defender-config",
+                "--disable-acns-observability",
+                "--disable-acns-security",
+                "--disable-disk-driver",
+                "--disable-file-driver",
+                "--disable-local-accounts",
+                "--disable-public-fqdn",
+                "--disable-rbac",
+                "--disable-snapshot-controller",
+                "--dns-name-prefix -p",
+                "--dns-service-ip",
+                "--edge-zone",
+                "--enable-aad",
+                "--enable-acns",
+                "--enable-addons -a",
+                "--enable-ahub",
+                "--enable-app-routing",
+                "--enable-asm --enable-azure-service-mesh",
+                "--enable-azure-container-storage",
+                "--enable-azure-keyvault-kms",
+                "--enable-azure-monitor-metrics",
+                "--enable-azure-rbac",
+                "--enable-blob-driver",
+                "--enable-cluster-autoscaler",
+                "--enable-cost-analysis",
+                "--enable-defender",
+                "--enable-encryption-at-host",
+                "--enable-fips-image",
+                "--enable-high-log-scale-mode",
+                "--enable-image-cleaner",
+                "--enable-keda",
+                "--enable-managed-identity",
+                "--enable-msi-auth-for-monitoring",
+                "--enable-node-public-ip",
+                "--enable-oidc-issuer",
+                "--enable-private-cluster",
+                "--enable-secret-rotation",
+                "--enable-secure-boot",
+                "--enable-sgxquotehelper",
+                "--enable-syslog",
+                "--enable-ultra-ssd",
+                "--enable-vpa",
+                "--enable-vtpm",
+                "--enable-windows-gmsa",
+                "--enable-windows-recording-rules",
+                "--enable-workload-identity",
+                "--ephemeral-disk-nvme-perf-tier",
+                "--ephemeral-disk-volume-type",
+                "--fqdn-subdomain",
+                "--generate-ssh-keys",
+                "--gmsa-dns-server",
+                "--gmsa-root-domain-name",
+                "--gpu-instance-profile",
+                "--grafana-resource-id",
+                "--host-group-id",
+                "--http-proxy-config",
+                "--if-match",
+                "--if-none-match",
+                "--image-cleaner-interval-hours",
+                "--ip-families",
+                "--k8s-support-plan",
+                "--ksm-metric-annotations-allow-list",
+                "--ksm-metric-labels-allow-list",
+                "--kubelet-config",
+                "--kubernetes-version -k",
+                "--linux-os-config",
+                "--load-balancer-backend-pool-type",
+                "--load-balancer-idle-timeout",
+                "--load-balancer-managed-outbound-ip-count",
+                "--load-balancer-managed-outbound-ipv6-count",
+                "--load-balancer-outbound-ip-prefixes",
+                "--load-balancer-outbound-ips",
+                "--load-balancer-outbound-ports",
+                "--load-balancer-sku",
+                "--location -l",
+                "--max-count",
+                "--max-pods -m",
+                "--min-count",
+                "--nat-gateway-idle-timeout",
+                "--nat-gateway-managed-outbound-ip-count",
+                "--network-dataplane",
+                "--network-plugin",
+                "--network-plugin-mode",
+                "--network-policy",
+                "--no-ssh-key -x",
+                "--no-wait",
+                "--node-count -c",
+                "--node-os-upgrade-channel",
+                "--node-osdisk-diskencryptionset-id -d",
+                "--node-osdisk-size",
+                "--node-osdisk-type",
+                "--node-public-ip-prefix-id",
+                "--node-public-ip-tags",
+                "--node-resource-group",
+                "--node-vm-size -s",
+                "--nodepool-allowed-host-ports",
+                "--nodepool-asg-ids",
+                "--nodepool-labels",
+                "--nodepool-name",
+                "--nodepool-tags",
+                "--nodepool-taints",
+                "--nrg-lockdown-restriction-level",
+                "--os-sku",
+                "--outbound-type",
+                "--pod-cidr",
+                "--pod-cidrs",
+                "--pod-subnet-id",
+                "--ppg",
+                "--private-dns-zone",
+                "--revision",
+                "--rotation-poll-interval",
+                "--service-cidr",
+                "--service-cidrs",
+                "--service-principal",
+                "--skip-subnet-role-assignment",
+                "--snapshot-id",
+                "--ssh-key-value",
+                "--storage-pool-name",
+                "--storage-pool-option",
+                "--storage-pool-size",
+                "--storage-pool-sku",
+                "--tags",
+                "--tier",
+                "--vm-set-type",
+                "--vnet-subnet-id",
+                "--windows-admin-password",
+                "--windows-admin-username",
+                "--workspace-resource-id",
+                "--yes -y",
+                "--zones -z"
+            ],
+            "examples": [
+                "az aks create -g MyResourceGroup -n MyManagedCluster --ssh-key-value /path/to/publickey",
+                "az aks create -g MyResourceGroup -n MyManagedCluster --kubernetes-version 1.16.9",
+                "az aks create -g MyResourceGroup -n MyManagedCluster --node-count 7",
+                "az aks create -g MyResourceGroup -n MyManagedCluster",
+                "az aks create -g MyResourceGroup -n MyManagedCluster --load-balancer-managed-outbound-ip-count 2",
+                "az aks create -g MyResourceGroup -n MyManagedCluster --load-balancer-managed-outbound-ip-count 2 --load-balancer-idle-timeout 5 --load-balancer-outbound-ports 8000",
+                "az aks create -g MyResourceGroup -n MyManagedCluster --load-balancer-outbound-ips <ip-resource-id-1,ip-resource-id-2>",
+                "az aks create -g MyResourceGroup -n MyManagedCluster --load-balancer-outbound-ip-prefixes <ip-prefix-resource-id-1,ip-prefix-resource-id-2>",
+                "az aks create -g MyResourceGroup -n MyManagedCluster --nat-gateway-managed-outbound-ip-count 2 --nat-gateway-idle-timeout 4 --outbound-type managedNATGateway --generate-ssh-keys",
+                "az aks create -g MyResourceGroup -n MyManagedCluster --load-balancer-sku basic --vm-set-type AvailabilitySet",
+                "az aks create -g MyResourceGroup -n MyManagedCluster --api-server-authorized-ip-ranges 193.168.1.0/24,194.168.1.0/24,195.168.1.0",
+                "az aks create -g MyResourceGroup -n MyManagedCluster --enable-managed-identity",
+                "az aks create -g MyResourceGroup -n MyManagedCluster --outbound-type userDefinedRouting --load-balancer-sku standard --vnet-subnet-id customUserSubnetVnetID",
+                "az aks create -g MyResourceGroup -n MyManagedCluster --load-balancer-sku Standard --network-plugin azure --windows-admin-username azure --windows-admin-password 'replacePassword1234$'",
+                "az aks create -g MyResourceGroup -n MyManagedCluster --load-balancer-sku Standard --network-plugin azure --windows-admin-username azure --windows-admin-password 'replacePassword1234$' --enable-ahub",
+                "az aks create -g MyResourceGroup -n MyManagedCluster --enable-aad --aad-admin-group-object-ids <id-1,id-2> --aad-tenant-id <id>",
+                "az aks create -g MyResourceGroup -n MyManagedCluster --node-osdisk-diskencryptionset-id <disk-encryption-set-resource-id>",
+                "az aks create -g MyResourceGroup -n MyManagedCluster --node-osdisk-type Ephemeral --node-osdisk-size 48",
+                "az aks create -g MyResourceGroup -n MyManagedCluster --enable-encryption-at-host",
+                "az aks create -g MyResourceGroup -n MyManagedCluster --enable-ultra-ssd",
+                "az aks create -g MyResourceGroup -n MyManagedCluster --enable-aad --enable-azure-rbac",
+                "az aks create -g MyResourceGroup -n MyManagedCluster --assign-identity <control-plane-identity-resource-id> --assign-kubelet-identity <kubelet-identity-resource-id>",
+                "az aks create -g MyResourceGroup -n MyManagedCluster --location <location> --kubernetes-version 1.20.7 --edge-zone <edge-zone-name>",
+                "az aks create -g MyResourceGroup -n MyManagedCluster --os-sku Ubuntu",
+                "az aks create -g MyResourceGroup -n MyManagedCluster --tags \"foo=bar\" \"baz=qux\"",
+                "az aks create -g MyResourceGroup -n MyManagedCluster --aks-custom-headers WindowsContainerRuntime=containerd",
+                "az aks create -g MyResourceGroup -n MyManagedCluster --enable-fips-image",
+                "az aks create -g MyResourceGroup -n MyManagedCluster --load-balancer-sku Standard --network-plugin azure --windows-admin-username azure --windows-admin-password 'replacePassword1234$' --enable-windows-gmsa",
+                "az aks create -g MyResourceGroup -n MyManagedCluster --load-balancer-sku Standard --network-plugin azure --windows-admin-username azure --windows-admin-password 'replacePassword1234$' --enable-windows-gmsa --gmsa-dns-server \"10.240.0.4\" --gmsa-root-domain-name \"contoso.com\"",
+                "az aks create -g MyResourceGroup -n MyManagedCluster --kubernetes-version 1.20.9 --snapshot-id \"/subscriptions/00000/resourceGroups/AnotherResourceGroup/providers/Microsoft.ContainerService/snapshots/mysnapshot1\"",
+                "az aks create -g MyResourceGroup -n MyMC --kubernetes-version 1.20.13 --location westus2 --host-group-id /subscriptions/00000/resourceGroups/AnotherResourceGroup/providers/Microsoft.ContainerService/hostGroups/myHostGroup --node-vm-size VMSize --enable-managed-identity --assign-identity <user_assigned_identity_resource_id>",
+                "az aks create -g MyResourceGroup -n MyManagedCluster --network-plugin none",
+                "az aks create -g MyResourceGroup -n MyManagedCluster --enable-keda",
+                "az aks create -g MyResourceGroup -n MyManagedCluster --enable-azure-monitor-metrics",
+                "az aks create -g MyResourceGroup -n MyManagedCluster --enable-vpa",
+                "az aks create -g MyResourceGroup -n MyMC --kubernetes-version 1.20.9 --node-vm-size VMSize --assign-identity \"subscriptions/SubID/resourceGroups/RGName/providers/Microsoft.ManagedIdentity/userAssignedIdentities/myID\" --enable-managed-identity --crg-id \"subscriptions/SubID/resourceGroups/RGName/providers/Microsoft.ContainerService/CapacityReservationGroups/MyCRGID\"",
+                "az aks create -g MyResourceGroup -n MyManagedCluster --enable-azure-service-mesh"
+            ]
+        },
+        {
+            "name": "az aks create",
+            "summary": "Create a new managed Kubernetes cluster.",
+            "syntax": "az aks create --name\n              --resource-group\n              [--aad-admin-group-object-ids]\n              [--aad-tenant-id]\n              [--aci-subnet-name]\n              [--admin-username]\n              [--aks-custom-headers]\n              [--ampls-resource-id]\n              [--api-server-authorized-ip-ranges]\n              [--apiserver-subnet-id]\n              [--app-routing-default-nginx-controller {AnnotationControlled, External, Internal, None}]\n              [--appgw-id]\n              [--appgw-name]\n              [--appgw-subnet-cidr]\n              [--appgw-subnet-id]\n              [--appgw-watch-namespace]\n              [--assign-identity]\n              [--assign-kubelet-identity]\n              [--attach-acr]\n              [--auto-upgrade-channel {node-image, none, patch, rapid, stable}]\n              [--azure-keyvault-kms-key-id]\n              [--azure-keyvault-kms-key-vault-network-access {Private, Public}]\n              [--azure-keyvault-kms-key-vault-resource-id]\n              [--azure-monitor-workspace-resource-id]\n              [--bootstrap-artifact-source {Cache, Direct}]\n              [--bootstrap-container-registry-resource-id]\n              [--ca-certs]\n              [--ca-profile]\n              [--client-secret]\n              [--cluster-service-load-balancer-health-probe-mode {Servicenodeport, Shared}]\n              [--cluster-snapshot-id]\n              [--crg-id]\n              [--data-collection-settings]\n              [--defender-config]\n              [--disable-acns-observability]\n              [--disable-acns-security]\n              [--disable-disk-driver]\n              [--disable-file-driver]\n              [--disable-local-accounts]\n              [--disable-public-fqdn]\n              [--disable-rbac]\n              [--disable-snapshot-controller]\n              [--disk-driver-version {v1, v2}]\n              [--dns-name-prefix]\n              [--dns-service-ip]\n              [--dns-zone-resource-ids]\n              [--edge-zone]\n              [--enable-aad]\n              [--enable-acns]\n              [--enable-addon-autoscaling]\n              [--enable-addons]\n              [--enable-ahub]\n              [--enable-ai-toolchain-operator]\n              [--enable-apiserver-vnet-integration]\n              [--enable-app-routing]\n              [--enable-asm]\n              [--enable-azure-container-storage {azureDisk, elasticSan, ephemeralDisk}]\n              [--enable-azure-keyvault-kms]\n              [--enable-azure-monitor-app-monitoring]\n              [--enable-azure-monitor-metrics]\n              [--enable-azure-rbac]\n              [--enable-blob-driver]\n              [--enable-cluster-autoscaler]\n              [--enable-cost-analysis]\n              [--enable-custom-ca-trust]\n              [--enable-defender]\n              [--enable-encryption-at-host]\n              [--enable-fips-image]\n              [--enable-high-log-scale-mode {false, true}]\n              [--enable-image-cleaner]\n              [--enable-image-integrity]\n              [--enable-imds-restriction]\n              [--enable-keda]\n              [--enable-managed-identity]\n              [--enable-msi-auth-for-monitoring {false, true}]\n              [--enable-node-public-ip]\n              [--enable-oidc-issuer]\n              [--enable-pod-identity]\n              [--enable-pod-identity-with-kubenet]\n              [--enable-private-cluster]\n              [--enable-secret-rotation]\n              [--enable-secure-boot]\n              [--enable-sgxquotehelper]\n              [--enable-static-egress-gateway]\n              [--enable-syslog {false, true}]\n              [--enable-ultra-ssd]\n              [--enable-vpa]\n              [--enable-vtpm]\n              [--enable-windows-gmsa]\n              [--enable-windows-recording-rules]\n              [--enable-workload-identity]\n              [--ephemeral-disk-nvme-perf-tier {Basic, Premium, Standard}]\n              [--ephemeral-disk-volume-type {EphemeralVolumeOnly, PersistentVolumeWithAnnotation}]\n              [--fqdn-subdomain]\n              [--generate-ssh-keys]\n              [--gmsa-dns-server]\n              [--gmsa-root-domain-name]\n              [--gpu-instance-profile {MIG1g, MIG2g, MIG3g, MIG4g, MIG7g}]\n              [--grafana-resource-id]\n              [--host-group-id]\n              [--http-proxy-config]\n              [--if-match]\n              [--if-none-match]\n              [--image-cleaner-interval-hours]\n              [--ip-families]\n              [--k8s-support-plan {AKSLongTermSupport, KubernetesOfficial}]\n              [--ksm-metric-annotations-allow-list]\n              [--ksm-metric-labels-allow-list]\n              [--kube-proxy-config]\n              [--kubelet-config]\n              [--kubernetes-version]\n              [--linux-os-config]\n              [--load-balancer-backend-pool-type]\n              [--load-balancer-idle-timeout]\n              [--load-balancer-managed-outbound-ip-count]\n              [--load-balancer-managed-outbound-ipv6-count]\n              [--load-balancer-outbound-ip-prefixes]\n              [--load-balancer-outbound-ips]\n              [--load-balancer-outbound-ports]\n              [--load-balancer-sku {basic, standard}]\n              [--location]\n              [--max-count]\n              [--max-pods]\n              [--message-of-the-day]\n              [--min-count]\n              [--nat-gateway-idle-timeout]\n              [--nat-gateway-managed-outbound-ip-count]\n              [--network-dataplane {azure, cilium}]\n              [--network-plugin {azure, kubenet, none}]\n              [--network-plugin-mode {overlay}]\n              [--network-policy]\n              [--no-ssh-key]\n              [--no-wait]\n              [--node-count]\n              [--node-init-taints]\n              [--node-os-upgrade-channel {NodeImage, None, SecurityPatch, Unmanaged}]\n              [--node-osdisk-diskencryptionset-id]\n              [--node-osdisk-size]\n              [--node-osdisk-type {Ephemeral, Managed}]\n              [--node-provisioning-mode {Auto, Manual}]\n              [--node-public-ip-prefix-id]\n              [--node-public-ip-tags]\n              [--node-resource-group]\n              [--node-vm-size]\n              [--nodepool-allowed-host-ports]\n              [--nodepool-asg-ids]\n              [--nodepool-labels]\n              [--nodepool-name]\n              [--nodepool-tags]\n              [--nodepool-taints]\n              [--nrg-lockdown-restriction-level {ReadOnly, Unrestricted}]\n              [--os-sku {AzureLinux, CBLMariner, Mariner, Ubuntu}]\n              [--outbound-type {block, loadBalancer, managedNATGateway, none, userAssignedNATGateway, userDefinedRouting}]\n              [--pod-cidr]\n              [--pod-cidrs]\n              [--pod-ip-allocation-mode {DynamicIndividual, StaticBlock}]\n              [--pod-subnet-id]\n              [--ppg]\n              [--private-dns-zone]\n              [--revision]\n              [--rotation-poll-interval]\n              [--safeguards-excluded-ns]\n              [--safeguards-level {Enforcement, Off, Warning}]\n              [--safeguards-version]\n              [--service-cidr]\n              [--service-cidrs]\n              [--service-principal]\n              [--skip-subnet-role-assignment]\n              [--sku {automatic, base}]\n              [--snapshot-id]\n              [--ssh-access {disabled, localuser}]\n              [--ssh-key-value]\n              [--storage-pool-name]\n              [--storage-pool-option {NVMe, Temp}]\n              [--storage-pool-size]\n              [--storage-pool-sku {PremiumV2_LRS, Premium_LRS, Premium_ZRS, StandardSSD_LRS, StandardSSD_ZRS, Standard_LRS, UltraSSD_LRS}]\n              [--tags]\n              [--tier {free, premium, standard}]\n              [--vm-set-type]\n              [--vm-sizes]\n              [--vnet-subnet-id]\n              [--windows-admin-password]\n              [--windows-admin-username]\n              [--workload-runtime {KataCcIsolation, KataMshvVmIsolation, OCIContainer, WasmWasi}]\n              [--workspace-resource-id]\n              [--yes]\n              [--zones]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--aad-admin-group-object-ids",
+                "--aad-tenant-id",
+                "--aci-subnet-name",
+                "--admin-username -u",
+                "--aks-custom-headers",
+                "--ampls-resource-id",
+                "--api-server-authorized-ip-ranges",
+                "--apiserver-subnet-id",
+                "--app-routing-default-nginx-controller --ardnc",
+                "--appgw-id",
+                "--appgw-name",
+                "--appgw-subnet-cidr",
+                "--appgw-subnet-id",
+                "--appgw-watch-namespace",
+                "--assign-identity",
+                "--assign-kubelet-identity",
+                "--attach-acr",
+                "--auto-upgrade-channel",
+                "--azure-keyvault-kms-key-id",
+                "--azure-keyvault-kms-key-vault-network-access",
+                "--azure-keyvault-kms-key-vault-resource-id",
+                "--azure-monitor-workspace-resource-id",
+                "--bootstrap-artifact-source",
+                "--bootstrap-container-registry-resource-id",
+                "--ca-certs --custom-ca-trust-certificates",
+                "--ca-profile --cluster-autoscaler-profile",
+                "--client-secret",
+                "--cluster-service-load-balancer-health-probe-mode",
+                "--cluster-snapshot-id",
+                "--crg-id",
+                "--data-collection-settings",
+                "--defender-config",
+                "--disable-acns-observability",
+                "--disable-acns-security",
+                "--disable-disk-driver",
+                "--disable-file-driver",
+                "--disable-local-accounts",
+                "--disable-public-fqdn",
+                "--disable-rbac",
+                "--disable-snapshot-controller",
+                "--disk-driver-version",
+                "--dns-name-prefix -p",
+                "--dns-service-ip",
+                "--dns-zone-resource-ids",
+                "--edge-zone",
+                "--enable-aad",
+                "--enable-acns",
+                "--enable-addon-autoscaling",
+                "--enable-addons -a",
+                "--enable-ahub",
+                "--enable-ai-toolchain-operator",
+                "--enable-apiserver-vnet-integration",
+                "--enable-app-routing",
+                "--enable-asm --enable-azure-service-mesh",
+                "--enable-azure-container-storage",
+                "--enable-azure-keyvault-kms",
+                "--enable-azure-monitor-app-monitoring",
+                "--enable-azure-monitor-metrics",
+                "--enable-azure-rbac",
+                "--enable-blob-driver",
+                "--enable-cluster-autoscaler",
+                "--enable-cost-analysis",
+                "--enable-custom-ca-trust",
+                "--enable-defender",
+                "--enable-encryption-at-host",
+                "--enable-fips-image",
+                "--enable-high-log-scale-mode",
+                "--enable-image-cleaner",
+                "--enable-image-integrity",
+                "--enable-imds-restriction",
+                "--enable-keda",
+                "--enable-managed-identity",
+                "--enable-msi-auth-for-monitoring",
+                "--enable-node-public-ip",
+                "--enable-oidc-issuer",
+                "--enable-pod-identity",
+                "--enable-pod-identity-with-kubenet",
+                "--enable-private-cluster",
+                "--enable-secret-rotation",
+                "--enable-secure-boot",
+                "--enable-sgxquotehelper",
+                "--enable-static-egress-gateway",
+                "--enable-syslog",
+                "--enable-ultra-ssd",
+                "--enable-vpa",
+                "--enable-vtpm",
+                "--enable-windows-gmsa",
+                "--enable-windows-recording-rules",
+                "--enable-workload-identity",
+                "--ephemeral-disk-nvme-perf-tier",
+                "--ephemeral-disk-volume-type",
+                "--fqdn-subdomain",
+                "--generate-ssh-keys",
+                "--gmsa-dns-server",
+                "--gmsa-root-domain-name",
+                "--gpu-instance-profile",
+                "--grafana-resource-id",
+                "--host-group-id",
+                "--http-proxy-config",
+                "--if-match",
+                "--if-none-match",
+                "--image-cleaner-interval-hours",
+                "--ip-families",
+                "--k8s-support-plan",
+                "--ksm-metric-annotations-allow-list",
+                "--ksm-metric-labels-allow-list",
+                "--kube-proxy-config",
+                "--kubelet-config",
+                "--kubernetes-version -k",
+                "--linux-os-config",
+                "--load-balancer-backend-pool-type",
+                "--load-balancer-idle-timeout",
+                "--load-balancer-managed-outbound-ip-count",
+                "--load-balancer-managed-outbound-ipv6-count",
+                "--load-balancer-outbound-ip-prefixes",
+                "--load-balancer-outbound-ips",
+                "--load-balancer-outbound-ports",
+                "--load-balancer-sku",
+                "--location -l",
+                "--max-count",
+                "--max-pods -m",
+                "--message-of-the-day",
+                "--min-count",
+                "--nat-gateway-idle-timeout",
+                "--nat-gateway-managed-outbound-ip-count",
+                "--network-dataplane",
+                "--network-plugin",
+                "--network-plugin-mode",
+                "--network-policy",
+                "--no-ssh-key -x",
+                "--no-wait",
+                "--node-count -c",
+                "--node-init-taints --nodepool-initialization-taints",
+                "--node-os-upgrade-channel",
+                "--node-osdisk-diskencryptionset-id -d",
+                "--node-osdisk-size",
+                "--node-osdisk-type",
+                "--node-provisioning-mode",
+                "--node-public-ip-prefix-id",
+                "--node-public-ip-tags",
+                "--node-resource-group",
+                "--node-vm-size -s",
+                "--nodepool-allowed-host-ports",
+                "--nodepool-asg-ids",
+                "--nodepool-labels",
+                "--nodepool-name",
+                "--nodepool-tags",
+                "--nodepool-taints",
+                "--nrg-lockdown-restriction-level",
+                "--os-sku",
+                "--outbound-type",
+                "--pod-cidr",
+                "--pod-cidrs",
+                "--pod-ip-allocation-mode",
+                "--pod-subnet-id",
+                "--ppg",
+                "--private-dns-zone",
+                "--revision",
+                "--rotation-poll-interval",
+                "--safeguards-excluded-ns",
+                "--safeguards-level",
+                "--safeguards-version",
+                "--service-cidr",
+                "--service-cidrs",
+                "--service-principal",
+                "--skip-subnet-role-assignment",
+                "--sku",
+                "--snapshot-id",
+                "--ssh-access",
+                "--ssh-key-value",
+                "--storage-pool-name",
+                "--storage-pool-option",
+                "--storage-pool-size",
+                "--storage-pool-sku",
+                "--tags",
+                "--tier",
+                "--vm-set-type",
+                "--vm-sizes",
+                "--vnet-subnet-id",
+                "--windows-admin-password",
+                "--windows-admin-username",
+                "--workload-runtime",
+                "--workspace-resource-id",
+                "--yes -y",
+                "--zones -z"
+            ],
+            "examples": [
+                "az aks create -g MyResourceGroup -n MyManagedCluster --ssh-key-value /path/to/publickey",
+                "az aks create -g MyResourceGroup -n MyManagedCluster --kubernetes-version 1.13.9",
+                "az aks create -g MyResourceGroup -n MyManagedCluster --node-count 7",
+                "az aks create -g MyResourceGroup -n MyManagedCluster --kubernetes-version 1.13.9 --node-count 3 --enable-cluster-autoscaler --min-count 1 --max-count 5",
+                "az aks create -g MyResourceGroup -n MyManagedCluster --kubernetes-version 1.13.9 --vm-set-type AvailabilitySet",
+                "az aks create -g MyResourceGroup -n MyManagedCluster",
+                "az aks create -g MyResourceGroup -n MyManagedCluster --load-balancer-managed-outbound-ip-count 2",
+                "az aks create -g MyResourceGroup -n MyManagedCluster --load-balancer-outbound-ips <ip-resource-id-1,ip-resource-id-2>",
+                "az aks create -g MyResourceGroup -n MyManagedCluster --load-balancer-outbound-ip-prefixes <ip-prefix-resource-id-1,ip-prefix-resource-id-2>",
+                "az aks create -g MyResourceGroup -n MyManagedCluster --load-balancer-managed-outbound-ip-count 2 --load-balancer-idle-timeout 5 --load-balancer-outbound-ports 8000",
+                "az aks create -g MyResourceGroup -n MyManagedCluster --nat-gateway-managed-outbound-ip-count 2 --nat-gateway-idle-timeout 4",
+                "az aks create -g MyResourceGroup -n MyManagedCluster --load-balancer-sku basic --vm-set-type AvailabilitySet",
+                "az aks create -g MyResourceGroup -n MyManagedCluster --api-server-authorized-ip-ranges 193.168.1.0/24,194.168.1.0/24,195.168.1.0",
+                "az aks create -g MyResourceGroup -n MyManagedCluster --node-osdisk-diskencryptionset-id <disk-encryption-set-resource-id>",
+                "az aks create -g MyResourceGroup -n MyManagedCluster --outbound-type userDefinedRouting --load-balancer-sku standard --vnet-subnet-id customUserSubnetVnetID",
+                "az aks create -g MyResourceGroup -n MyManagedCluster --load-balancer-sku Standard --network-plugin azure --windows-admin-username azure --windows-admin-password 'replacePassword1234$' --enable-ahub",
+                "az aks create -g MyResourceGroup -n MyManagedCluster --enable-aad --aad-admin-group-object-ids <id-1,id-2> --aad-tenant-id <id>",
+                "az aks create -g MyResourceGroup -n MyManagedCluster --node-osdisk-type Ephemeral --node-osdisk-size 48",
+                "az aks create -g MyResourceGroup -n MyManagedCluster --tags \"foo=bar\" \"baz=qux\"",
+                "az aks create -g MyResourceGroup -n MyManagedCluster --enable-encryption-at-host",
+                "az aks create -g MyResourceGroup -n MyManagedCluster --enable-ultra-ssd",
+                "az aks create -g MyResourceGroup -n MyManagedCluster --assign-identity <control-plane-identity-resource-id> --assign-kubelet-identity <kubelet-identity-resource-id>",
+                "az aks create -g MyResourceGroup -n MyManagedCluster --enable-aad --enable-azure-rbac",
+                "az aks create -g MyResourceGroup -n MyManagedCluster --os-sku Ubuntu",
+                "az aks create -g MyResourceGroup -n MyManagedCluster --load-balancer-sku Standard --network-plugin azure --windows-admin-username azure --windows-admin-password 'replacePassword1234$' --enable-windows-gmsa",
+                "az aks create -g MyResourceGroup -n MyManagedCluster --load-balancer-sku Standard --network-plugin azure --windows-admin-username azure --windows-admin-password 'replacePassword1234$' --enable-windows-gmsa --gmsa-dns-server \"10.240.0.4\" --gmsa-root-domain-name \"contoso.com\"",
+                "az aks create -g MyResourceGroup -n MyManagedCluster --kubernetes-version 1.20.9 --snapshot-id \"/subscriptions/00000/resourceGroups/AnotherResourceGroup/providers/Microsoft.ContainerService/snapshots/mysnapshot1\"",
+                "az aks create -g MyResourceGroup -n MyManagedCluster --cluster-snapshot-id \"/subscriptions/00000/resourceGroups/AnotherResourceGroup/providers/Microsoft.ContainerService/managedclustersnapshots/mysnapshot1\"",
+                "az aks create -g MyResourceGroup -n MyMC --kubernetes-version 1.20.9 --node-vm-size VMSize --assign-identity CRG-RG-ID --enable-managed-identity --crg-id \"subscriptions/SubID/resourceGroups/RGName/providers/Microsoft.ContainerService/CapacityReservationGroups/MyCRGID\"",
+                "az aks create -g MyResourceGroup -n MyMC --kubernetes-version 1.20.13 --location westus2 --host-group-id /subscriptions/00000/resourceGroups/AnotherResourceGroup/providers/Microsoft.ContainerService/hostGroups/myHostGroup --node-vm-size VMSize --enable-managed-identity --assign-identity <user_assigned_identity_resource_id>",
+                "az aks create -g MyResourceGroup -n MyManagedCluster --network-plugin none",
+                "az aks create -g MyResourceGroup -n MyManagedCluster --enable-custom-ca-trust",
+                "az aks create -g MyResourceGroup -n MyManagedCluster --safeguards-level Warning --enable-addons azure-policy",
+                "az aks create -g MyResourceGroup -n MyManagedCluster --safeguards-level Warning --safeguards-excluded-ns ns1,ns2 --enable-addons azure-policy",
+                "az aks create -g MyResourceGroup -n MyManagedCluster --enable-azure-service-mesh",
+                "az aks create -g MyResourceGroup -n MyManagedCluster --enable-azuremonitormetrics",
+                "az aks create -g MyResourceGroup -n MyManagedCluster --enable-azure-monitor-app-monitoring",
+                "az aks create -g MyResourceGroup -n MyManagedCluster --os-sku Ubuntu --max-pods MaxPodsPerNode --network-plugin azure --vnet-subnet-id /subscriptions/00000/resourceGroups/AnotherResourceGroup/providers/Microsoft.Network/virtualNetworks/MyVnet/subnets/NodeSubnet --pod-subnet-id /subscriptions/00000/resourceGroups/AnotherResourceGroup/providers/Microsoft.Network/virtualNetworks/MyVnet/subnets/PodSubnet --pod-ip-allocation-mode StaticBlock",
+                "az aks create -g MyResourceGroup -n MyManagedCluster --vm-set-type VirtualMachines --vm-sizes \"VMSize1,VMSize2\" --node-count 3"
+            ]
+        },
+        {
+            "name": "az aks delete",
+            "summary": "Delete a managed Kubernetes cluster.",
+            "syntax": "az aks delete --name\n              --resource-group\n              [--if-match]\n              [--no-wait]\n              [--yes]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--if-match",
+                "--no-wait",
+                "--yes -y"
+            ],
+            "examples": [
+                "az aks delete --name MyManagedCluster --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az aks delete",
+            "summary": "Delete a managed Kubernetes cluster.",
+            "syntax": "az aks delete --name\n              --resource-group\n              [--if-match]\n              [--ignore-pod-disruption-budget]\n              [--no-wait]\n              [--yes]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--if-match",
+                "--ignore-pod-disruption-budget",
+                "--no-wait",
+                "--yes -y"
+            ],
+            "examples": [
+                "az aks delete --name MyManagedCluster --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az aks disable-addons",
+            "summary": "Disable Kubernetes addons.",
+            "syntax": "az aks disable-addons --addons\n                      --name\n                      --resource-group\n                      [--no-wait]",
+            "required_parameters": [
+                "--addons -a",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--no-wait"
+            ],
+            "examples": [
+                "az aks disable-addons --addons virtual-node --name MyManagedCluster --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az aks disable-addons",
+            "summary": "Disable Kubernetes addons.",
+            "syntax": "az aks disable-addons --addons\n                      --name\n                      --resource-group\n                      [--no-wait]",
+            "required_parameters": [
+                "--addons -a",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--no-wait"
+            ],
+            "examples": [
+                "az aks disable-addons --addons virtual-node --name MyManagedCluster --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az aks enable-addons",
+            "summary": "Enable Kubernetes addons.",
+            "syntax": "az aks enable-addons --addons\n                     --name\n                     --resource-group\n                     [--ampls-resource-id]\n                     [--appgw-id]\n                     [--appgw-name]\n                     [--appgw-subnet-cidr]\n                     [--appgw-subnet-id]\n                     [--appgw-watch-namespace]\n                     [--data-collection-settings]\n                     [--enable-high-log-scale-mode {false, true}]\n                     [--enable-msi-auth-for-monitoring {false, true}]\n                     [--enable-secret-rotation]\n                     [--enable-sgxquotehelper]\n                     [--enable-syslog {false, true}]\n                     [--no-wait]\n                     [--rotation-poll-interval]\n                     [--subnet-name]\n                     [--workspace-resource-id]",
+            "required_parameters": [
+                "--addons -a",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--ampls-resource-id",
+                "--appgw-id",
+                "--appgw-name",
+                "--appgw-subnet-cidr",
+                "--appgw-subnet-id",
+                "--appgw-watch-namespace",
+                "--data-collection-settings",
+                "--enable-high-log-scale-mode",
+                "--enable-msi-auth-for-monitoring",
+                "--enable-secret-rotation",
+                "--enable-sgxquotehelper",
+                "--enable-syslog",
+                "--no-wait",
+                "--rotation-poll-interval",
+                "--subnet-name -s",
+                "--workspace-resource-id"
+            ],
+            "examples": [
+                "az aks enable-addons --addons virtual-node --name MyManagedCluster --resource-group MyResourceGroup --subnet MySubnetName",
+                "az aks enable-addons --name MyManagedCluster --resource-group MyResourceGroup --addons ingress-appgw --appgw-subnet-cidr 10.225.0.0/16 --appgw-name gateway",
+                "az aks enable-addons --name MyManagedCluster --resource-group MyResourceGroup --addons open-service-mesh"
+            ]
+        },
+        {
+            "name": "az aks enable-addons",
+            "summary": "Enable Kubernetes addons.",
+            "syntax": "az aks enable-addons --addons\n                     --name\n                     --resource-group\n                     [--aks-custom-headers]\n                     [--ampls-resource-id]\n                     [--appgw-id]\n                     [--appgw-name]\n                     [--appgw-subnet-cidr]\n                     [--appgw-subnet-id]\n                     [--appgw-watch-namespace]\n                     [--data-collection-settings]\n                     [--dns-zone-resource-ids]\n                     [--enable-high-log-scale-mode {false, true}]\n                     [--enable-msi-auth-for-monitoring {false, true}]\n                     [--enable-secret-rotation]\n                     [--enable-sgxquotehelper]\n                     [--enable-syslog {false, true}]\n                     [--no-wait]\n                     [--rotation-poll-interval]\n                     [--subnet-name]\n                     [--workspace-resource-id]",
+            "required_parameters": [
+                "--addons -a",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--aks-custom-headers",
+                "--ampls-resource-id",
+                "--appgw-id",
+                "--appgw-name",
+                "--appgw-subnet-cidr",
+                "--appgw-subnet-id",
+                "--appgw-watch-namespace",
+                "--data-collection-settings",
+                "--dns-zone-resource-ids",
+                "--enable-high-log-scale-mode",
+                "--enable-msi-auth-for-monitoring",
+                "--enable-secret-rotation",
+                "--enable-sgxquotehelper",
+                "--enable-syslog",
+                "--no-wait",
+                "--rotation-poll-interval",
+                "--subnet-name -s",
+                "--workspace-resource-id"
+            ],
+            "examples": [
+                "az aks enable-addons --addons virtual-node --name MyManagedCluster --resource-group MyResourceGroup --subnet-name VirtualNodeSubnet",
+                "az aks enable-addons --name MyManagedCluster --resource-group MyResourceGroup --addons ingress-appgw --appgw-subnet-cidr 10.2.0.0/16 --appgw-name gateway",
+                "az aks enable-addons --name MyManagedCluster --resource-group MyResourceGroup --addons open-service-mesh"
+            ]
+        },
+        {
+            "name": "az aks get-credentials",
+            "summary": "Get access credentials for a managed Kubernetes cluster.",
+            "syntax": "az aks get-credentials --name\n                       --resource-group\n                       [--admin]\n                       [--context]\n                       [--file]\n                       [--format]\n                       [--overwrite-existing]\n                       [--public-fqdn]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--admin -a",
+                "--context",
+                "--file -f",
+                "--format",
+                "--overwrite-existing",
+                "--public-fqdn"
+            ],
+            "examples": [
+                "az aks get-credentials --name MyManagedCluster --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az aks get-credentials",
+            "summary": "Get access credentials for a managed Kubernetes cluster.",
+            "syntax": "az aks get-credentials --name\n                       --resource-group\n                       [--admin]\n                       [--aks-custom-headers]\n                       [--context]\n                       [--file]\n                       [--format {azure, exec}]\n                       [--overwrite-existing]\n                       [--public-fqdn]\n                       [--user]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--admin -a",
+                "--aks-custom-headers",
+                "--context",
+                "--file -f",
+                "--format",
+                "--overwrite-existing",
+                "--public-fqdn",
+                "--user -u"
+            ],
+            "examples": [
+                "az aks get-credentials --name MyManagedCluster --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az aks get-upgrades",
+            "summary": "Get the upgrade versions available for a managed Kubernetes cluster.",
+            "syntax": "az aks get-upgrades --name\n                    --resource-group",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az aks get-upgrades --name MyManagedCluster --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az aks get-upgrades",
+            "summary": "Get the upgrade versions available for a managed Kubernetes cluster.",
+            "syntax": "az aks get-upgrades --name\n                    --resource-group",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az aks get-upgrades --name MyManagedCluster --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az aks get-versions",
+            "summary": "Get the versions available for creating a managed Kubernetes cluster.",
+            "syntax": "az aks get-versions --location",
+            "required_parameters": [
+                "--location -l"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az aks get-versions --location westus2"
+            ]
+        },
+        {
+            "name": "az aks get-versions",
+            "summary": "Get the versions available for creating a managed Kubernetes cluster.",
+            "syntax": "az aks get-versions --location",
+            "required_parameters": [
+                "--location -l"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az aks get-versions --location westus2"
+            ]
+        },
+        {
+            "name": "az aks install-cli",
+            "summary": "Download and install kubectl, the Kubernetes command-line tool. Download and install kubelogin, a client-go credential (exec) plugin implementing azure authentication.",
+            "syntax": "az aks install-cli [--base-src-url]\n                   [--client-version]\n                   [--install-location]\n                   [--kubelogin-base-src-url]\n                   [--kubelogin-install-location]\n                   [--kubelogin-version]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--base-src-url",
+                "--client-version",
+                "--install-location",
+                "--kubelogin-base-src-url -l",
+                "--kubelogin-install-location",
+                "--kubelogin-version"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az aks kanalyze",
+            "summary": "Display diagnostic results for the Kubernetes cluster after kollect is done.",
+            "syntax": "az aks kanalyze --name\n                --resource-group",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az aks kollect",
+            "summary": "Collecting diagnostic information for the Kubernetes cluster.",
+            "syntax": "az aks kollect --name\n               --resource-group\n               [--container-logs]\n               [--kube-objects]\n               [--node-logs]\n               [--node-logs-windows]\n               [--sas-token]\n               [--storage-account]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--container-logs",
+                "--kube-objects",
+                "--node-logs",
+                "--node-logs-windows",
+                "--sas-token",
+                "--storage-account"
+            ],
+            "examples": [
+                "az aks kollect -g MyResourceGroup -n MyManagedCluster --storage-account MyStorageAccount --sas-token \"MySasToken\"",
+                "az aks kollect -g MyResourceGroup -n MyManagedCluster --storage-account \"MyStoreageAccountResourceId\"",
+                "az aks kollect -g MyResourceGroup -n MyManagedCluster",
+                "az aks kollect -g MyResourceGroup -n MyManagedCluster --container-logs \"mynamespace1/mypod1 myns2\"",
+                "az aks kollect -g MyResourceGroup -n MyManagedCluster --kube-objects \"mynamespace1/service myns2/deployment/deployment1\"",
+                "az aks kollect -g MyResourceGroup -n MyManagedCluster --node-logs \"/var/log/azure-vnet.log /var/log/azure-vnet-ipam.log\""
+            ]
+        },
+        {
+            "name": "az aks list",
+            "summary": "List managed Kubernetes clusters.",
+            "syntax": "az aks list [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az aks list",
+            "summary": "List managed Kubernetes clusters.",
+            "syntax": "az aks list [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az aks operation-abort",
+            "summary": "Abort last running operation on managed cluster.",
+            "syntax": "az aks operation-abort --name\n                       --resource-group\n                       [--no-wait]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--no-wait"
+            ],
+            "examples": [
+                "az aks operation-abort -g myResourceGroup -n myAKSCluster"
+            ]
+        },
+        {
+            "name": "az aks operation-abort",
+            "summary": "Abort last running operation on managed cluster.",
+            "syntax": "az aks operation-abort --name\n                       --resource-group\n                       [--aks-custom-headers]\n                       [--no-wait]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--aks-custom-headers",
+                "--no-wait"
+            ],
+            "examples": [
+                "az aks operation-abort -g myResourceGroup -n myAKSCluster"
+            ]
+        },
+        {
+            "name": "az aks remove-dev-spaces",
+            "summary": "Remove Azure Dev Spaces from a managed Kubernetes cluster.",
+            "syntax": "az aks remove-dev-spaces --name\n                         --resource-group\n                         [--yes]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--yes -y"
+            ],
+            "examples": [
+                "az aks remove-dev-spaces -g my-aks-group -n my-aks",
+                "az aks remove-dev-spaces -g my-aks-group -n my-aks --yes"
+            ]
+        },
+        {
+            "name": "az aks rotate-certs",
+            "summary": "Rotate certificates and keys on a managed Kubernetes cluster.",
+            "syntax": "az aks rotate-certs --name\n                    --resource-group\n                    [--no-wait]\n                    [--yes]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--no-wait",
+                "--yes -y"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az aks rotate-certs",
+            "summary": "Rotate certificates and keys on a managed Kubernetes cluster.",
+            "syntax": "az aks rotate-certs --name\n                    --resource-group\n                    [--no-wait]\n                    [--yes]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--no-wait",
+                "--yes -y"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az aks scale",
+            "summary": "Scale the node pool in a managed Kubernetes cluster.",
+            "syntax": "az aks scale --name\n             --node-count\n             --resource-group\n             [--no-wait]\n             [--nodepool-name]",
+            "required_parameters": [
+                "--name -n",
+                "--node-count -c",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--no-wait",
+                "--nodepool-name"
+            ],
+            "examples": [
+                "az aks scale --name MyManagedCluster --node-count 3 --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az aks scale",
+            "summary": "Scale the node pool in a managed Kubernetes cluster.",
+            "syntax": "az aks scale --name\n             --node-count\n             --resource-group\n             [--aks-custom-headers]\n             [--no-wait]\n             [--nodepool-name]",
+            "required_parameters": [
+                "--name -n",
+                "--node-count -c",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--aks-custom-headers",
+                "--no-wait",
+                "--nodepool-name"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az aks show",
+            "summary": "Show the details for a managed Kubernetes cluster.",
+            "syntax": "az aks show --name\n            --resource-group",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az aks show --name MyManagedCluster --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az aks show",
+            "summary": "Show the details for a managed Kubernetes cluster.",
+            "syntax": "az aks show --name\n            --resource-group\n            [--aks-custom-headers]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--aks-custom-headers"
+            ],
+            "examples": [
+                "az aks show -g MyResourceGroup -n MyManagedCluster"
+            ]
+        },
+        {
+            "name": "az aks start",
+            "summary": "Starts a previously stopped Managed Cluster.",
+            "syntax": "az aks start --name\n             --resource-group\n             [--no-wait]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--no-wait"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az aks start",
+            "summary": "Starts a previously stopped Managed Cluster.",
+            "syntax": "az aks start --name\n             --resource-group\n             [--no-wait]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--no-wait"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az aks stop",
+            "summary": "Stop a managed cluster.",
+            "syntax": "az aks stop --name\n            --resource-group\n            [--no-wait]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--no-wait"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az aks stop",
+            "summary": "Stop a managed cluster.",
+            "syntax": "az aks stop --name\n            --resource-group\n            [--no-wait]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--no-wait"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az aks update",
+            "summary": "Update a managed Kubernetes cluster. When called with no optional arguments this attempts to move the cluster to its goal state without changing the current cluster configuration. This can be used to move out of a non succeeded state.",
+            "syntax": "az aks update --name\n              --resource-group\n              [--aad-admin-group-object-ids]\n              [--aad-tenant-id]\n              [--aks-custom-headers]\n              [--api-server-authorized-ip-ranges]\n              [--assign-identity]\n              [--assign-kubelet-identity]\n              [--attach-acr]\n              [--auto-upgrade-channel {node-image, none, patch, rapid, stable}]\n              [--azure-container-storage-nodepools]\n              [--azure-keyvault-kms-key-id]\n              [--azure-keyvault-kms-key-vault-network-access {Private, Public}]\n              [--azure-keyvault-kms-key-vault-resource-id]\n              [--azure-monitor-workspace-resource-id]\n              [--ca-profile]\n              [--defender-config]\n              [--detach-acr]\n              [--disable-acns]\n              [--disable-acns-observability]\n              [--disable-acns-security]\n              [--disable-ahub]\n              [--disable-azure-container-storage {all, azureDisk, elasticSan, ephemeralDisk}]\n              [--disable-azure-keyvault-kms]\n              [--disable-azure-monitor-metrics]\n              [--disable-azure-rbac]\n              [--disable-blob-driver]\n              [--disable-cluster-autoscaler]\n              [--disable-cost-analysis]\n              [--disable-defender]\n              [--disable-disk-driver]\n              [--disable-file-driver]\n              [--disable-force-upgrade]\n              [--disable-image-cleaner]\n              [--disable-keda]\n              [--disable-local-accounts]\n              [--disable-public-fqdn]\n              [--disable-secret-rotation]\n              [--disable-snapshot-controller]\n              [--disable-vpa]\n              [--disable-windows-gmsa]\n              [--disable-workload-identity]\n              [--enable-aad]\n              [--enable-acns]\n              [--enable-ahub]\n              [--enable-azure-container-storage {azureDisk, elasticSan, ephemeralDisk}]\n              [--enable-azure-keyvault-kms]\n              [--enable-azure-monitor-metrics]\n              [--enable-azure-rbac]\n              [--enable-blob-driver]\n              [--enable-cluster-autoscaler]\n              [--enable-cost-analysis]\n              [--enable-defender]\n              [--enable-disk-driver]\n              [--enable-file-driver]\n              [--enable-force-upgrade]\n              [--enable-image-cleaner]\n              [--enable-keda]\n              [--enable-local-accounts]\n              [--enable-managed-identity]\n              [--enable-oidc-issuer]\n              [--enable-public-fqdn]\n              [--enable-secret-rotation]\n              [--enable-snapshot-controller]\n              [--enable-vpa]\n              [--enable-windows-gmsa]\n              [--enable-windows-recording-rules]\n              [--enable-workload-identity]\n              [--ephemeral-disk-nvme-perf-tier {Basic, Premium, Standard}]\n              [--ephemeral-disk-volume-type {EphemeralVolumeOnly, PersistentVolumeWithAnnotation}]\n              [--gmsa-dns-server]\n              [--gmsa-root-domain-name]\n              [--grafana-resource-id]\n              [--http-proxy-config]\n              [--if-match]\n              [--if-none-match]\n              [--image-cleaner-interval-hours]\n              [--ip-families]\n              [--k8s-support-plan {AKSLongTermSupport, KubernetesOfficial}]\n              [--ksm-metric-annotations-allow-list]\n              [--ksm-metric-labels-allow-list]\n              [--load-balancer-backend-pool-type {nodeIP, nodeIPConfiguration}]\n              [--load-balancer-idle-timeout]\n              [--load-balancer-managed-outbound-ip-count]\n              [--load-balancer-managed-outbound-ipv6-count]\n              [--load-balancer-outbound-ip-prefixes]\n              [--load-balancer-outbound-ips]\n              [--load-balancer-outbound-ports]\n              [--max-count]\n              [--min-count]\n              [--nat-gateway-idle-timeout]\n              [--nat-gateway-managed-outbound-ip-count]\n              [--network-dataplane {azure, cilium}]\n              [--network-plugin {azure, kubenet, none}]\n              [--network-plugin-mode]\n              [--network-policy {azure, calico, cilium, none}]\n              [--no-wait]\n              [--node-os-upgrade-channel]\n              [--nodepool-labels]\n              [--nodepool-taints]\n              [--nrg-lockdown-restriction-level {ReadOnly, Unrestricted}]\n              [--outbound-type {loadBalancer, managedNATGateway, userAssignedNATGateway, userDefinedRouting}]\n              [--pod-cidr]\n              [--private-dns-zone]\n              [--rotation-poll-interval]\n              [--storage-pool-name]\n              [--storage-pool-option {NVMe, Temp, all}]\n              [--storage-pool-size]\n              [--storage-pool-sku {PremiumV2_LRS, Premium_LRS, Premium_ZRS, StandardSSD_LRS, StandardSSD_ZRS, Standard_LRS, UltraSSD_LRS}]\n              [--tags]\n              [--tier {free, premium, standard}]\n              [--update-cluster-autoscaler]\n              [--upgrade-override-until]\n              [--windows-admin-password]\n              [--yes]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--aad-admin-group-object-ids",
+                "--aad-tenant-id",
+                "--aks-custom-headers",
+                "--api-server-authorized-ip-ranges",
+                "--assign-identity",
+                "--assign-kubelet-identity",
+                "--attach-acr",
+                "--auto-upgrade-channel",
+                "--azure-container-storage-nodepools",
+                "--azure-keyvault-kms-key-id",
+                "--azure-keyvault-kms-key-vault-network-access",
+                "--azure-keyvault-kms-key-vault-resource-id",
+                "--azure-monitor-workspace-resource-id",
+                "--ca-profile --cluster-autoscaler-profile",
+                "--defender-config",
+                "--detach-acr",
+                "--disable-acns",
+                "--disable-acns-observability",
+                "--disable-acns-security",
+                "--disable-ahub",
+                "--disable-azure-container-storage",
+                "--disable-azure-keyvault-kms",
+                "--disable-azure-monitor-metrics",
+                "--disable-azure-rbac",
+                "--disable-blob-driver",
+                "--disable-cluster-autoscaler -d",
+                "--disable-cost-analysis",
+                "--disable-defender",
+                "--disable-disk-driver",
+                "--disable-file-driver",
+                "--disable-force-upgrade",
+                "--disable-image-cleaner",
+                "--disable-keda",
+                "--disable-local-accounts",
+                "--disable-public-fqdn",
+                "--disable-secret-rotation",
+                "--disable-snapshot-controller",
+                "--disable-vpa",
+                "--disable-windows-gmsa",
+                "--disable-workload-identity",
+                "--enable-aad",
+                "--enable-acns",
+                "--enable-ahub",
+                "--enable-azure-container-storage",
+                "--enable-azure-keyvault-kms",
+                "--enable-azure-monitor-metrics",
+                "--enable-azure-rbac",
+                "--enable-blob-driver",
+                "--enable-cluster-autoscaler -e",
+                "--enable-cost-analysis",
+                "--enable-defender",
+                "--enable-disk-driver",
+                "--enable-file-driver",
+                "--enable-force-upgrade",
+                "--enable-image-cleaner",
+                "--enable-keda",
+                "--enable-local-accounts",
+                "--enable-managed-identity",
+                "--enable-oidc-issuer",
+                "--enable-public-fqdn",
+                "--enable-secret-rotation",
+                "--enable-snapshot-controller",
+                "--enable-vpa",
+                "--enable-windows-gmsa",
+                "--enable-windows-recording-rules",
+                "--enable-workload-identity",
+                "--ephemeral-disk-nvme-perf-tier",
+                "--ephemeral-disk-volume-type",
+                "--gmsa-dns-server",
+                "--gmsa-root-domain-name",
+                "--grafana-resource-id",
+                "--http-proxy-config",
+                "--if-match",
+                "--if-none-match",
+                "--image-cleaner-interval-hours",
+                "--ip-families",
+                "--k8s-support-plan",
+                "--ksm-metric-annotations-allow-list",
+                "--ksm-metric-labels-allow-list",
+                "--load-balancer-backend-pool-type",
+                "--load-balancer-idle-timeout",
+                "--load-balancer-managed-outbound-ip-count",
+                "--load-balancer-managed-outbound-ipv6-count",
+                "--load-balancer-outbound-ip-prefixes",
+                "--load-balancer-outbound-ips",
+                "--load-balancer-outbound-ports",
+                "--max-count",
+                "--min-count",
+                "--nat-gateway-idle-timeout",
+                "--nat-gateway-managed-outbound-ip-count",
+                "--network-dataplane",
+                "--network-plugin",
+                "--network-plugin-mode",
+                "--network-policy",
+                "--no-wait",
+                "--node-os-upgrade-channel",
+                "--nodepool-labels",
+                "--nodepool-taints",
+                "--nrg-lockdown-restriction-level",
+                "--outbound-type",
+                "--pod-cidr",
+                "--private-dns-zone",
+                "--rotation-poll-interval",
+                "--storage-pool-name",
+                "--storage-pool-option",
+                "--storage-pool-size",
+                "--storage-pool-sku",
+                "--tags",
+                "--tier",
+                "--update-cluster-autoscaler -u",
+                "--upgrade-override-until",
+                "--windows-admin-password",
+                "--yes -y"
+            ],
+            "examples": [
+                "az aks update -g MyResourceGroup -n MyManagedCluster",
+                "az aks update -g MyResourceGroup -n MyManagedCluster --load-balancer-managed-outbound-ip-count 2",
+                "az aks update -g MyResourceGroup -n MyManagedCluster --load-balancer-outbound-ips <ip-resource-id-1,ip-resource-id-2>",
+                "az aks update -g MyResourceGroup -n MyManagedCluster --load-balancer-managed-outbound-ip-count 2 --load-balancer-idle-timeout 5 --load-balancer-outbound-ports 8000",
+                "az aks update -g MyResourceGroup -n MyManagedCluster --load-balancer-outbound-ip-prefixes <ip-prefix-resource-id-1,ip-prefix-resource-id-2>",
+                "az aks update -g MyResourceGroup -n MyManagedCluster --nat-gateway-managed-outbound-ip-count 2 --nat-gateway-idle-timeout 4",
+                "az aks update -g MyResourceGroup -n MyManagedCluster --attach-acr acrName",
+                "az aks update -g MyResourceGroup -n MyManagedCluster --api-server-authorized-ip-ranges 193.168.1.0/24,194.168.1.0/24",
+                "az aks update -g MyResourceGroup -n MyManagedCluster --api-server-authorized-ip-ranges \"\"",
+                "az aks update -g MyResourceGroup -n MyManagedCluster --api-server-authorized-ip-ranges 0.0.0.0/32",
+                "az aks update -g MyResourceGroup -n MyManagedCluster --aad-admin-group-object-ids <id-1,id-2> --aad-tenant-id <id>",
+                "az aks update -g MyResourceGroup -n MyManagedCluster --enable-aad --aad-admin-group-object-ids <id-1,id-2> --aad-tenant-id <id>",
+                "az aks update -g MyResourceGroup -n MyManagedCluster --enable-ahub",
+                "az aks update -g MyResourceGroup -n MyManagedCluster --disable-ahub",
+                "az aks update -g MyResourceGroup -n MyManagedCLuster --windows-admin-password \"Repl@cePassw0rd12345678\"",
+                "az aks update -g MyResourceGroup -n MyManagedCluster --enable-managed-identity",
+                "az aks update -g MyResourceGroup -n MyManagedCluster --enable-managed-identity --assign-identity <user_assigned_identity_resource_id>",
+                "az aks update -g MyResourceGroup -n MyManagedCluster --enable-aad --enable-azure-rbac",
+                "az aks update -g MyResourceGroup -n MyManagedCluster --enable-azure-rbac",
+                "az aks update -g MyResourceGroup -n MyManagedCluster --disable-azure-rbac",
+                "az aks update -g MyResourceGroup -n MyManagedCLuster --tags \"foo=bar\" \"baz=qux\"",
+                "az aks update -g MyResourceGroup -n MyManagedCluster --aks-custom-headers WindowsContainerRuntime=containerd,AKSHTTPCustomFeatures=Microsoft.ContainerService/CustomNodeConfigPreview",
+                "az aks update -g MyResourceGroup -n MyManagedCluster --enable-windows-gmsa",
+                "az aks update -g MyResourceGroup -n MyManagedCluster --enable-windows-gmsa --gmsa-dns-server \"10.240.0.4\" --gmsa-root-domain-name \"contoso.com\"",
+                "az aks update -g MyResourceGroup -n MyManagedCluster --disable-windows-gmsa",
+                "az aks update -g MyResourceGroup -n MyManagedCluster --enable-keda",
+                "az aks update -g MyResourceGroup -n MyManagedCluster --disable-keda",
+                "az aks update -g MyResourceGroup -n MyManagedCLuster --enable-vpa",
+                "az aks update -g MyResourceGroup -n MyManagedCLuster --disable-vpa"
+            ]
+        },
+        {
+            "name": "az aks update",
+            "summary": "Update the properties of a managed Kubernetes cluster.",
+            "syntax": "az aks update --name\n              --resource-group\n              [--aad-admin-group-object-ids]\n              [--aad-tenant-id]\n              [--aks-custom-headers]\n              [--api-server-authorized-ip-ranges]\n              [--apiserver-subnet-id]\n              [--assign-identity]\n              [--assign-kubelet-identity]\n              [--attach-acr]\n              [--auto-upgrade-channel {node-image, none, patch, rapid, stable}]\n              [--azure-container-storage-nodepools]\n              [--azure-keyvault-kms-key-id]\n              [--azure-keyvault-kms-key-vault-network-access {Private, Public}]\n              [--azure-keyvault-kms-key-vault-resource-id]\n              [--azure-monitor-workspace-resource-id]\n              [--bootstrap-artifact-source {Cache, Direct}]\n              [--bootstrap-container-registry-resource-id]\n              [--ca-certs]\n              [--ca-profile]\n              [--cluster-service-load-balancer-health-probe-mode {Servicenodeport, Shared}]\n              [--cluster-snapshot-id]\n              [--defender-config]\n              [--detach-acr]\n              [--disable-acns]\n              [--disable-acns-observability]\n              [--disable-acns-security]\n              [--disable-addon-autoscaling]\n              [--disable-ahub]\n              [--disable-ai-toolchain-operator]\n              [--disable-azure-container-storage {all, azureDisk, elasticSan, ephemeralDisk}]\n              [--disable-azure-keyvault-kms]\n              [--disable-azure-monitor-app-monitoring]\n              [--disable-azure-monitor-metrics]\n              [--disable-azure-rbac]\n              [--disable-blob-driver]\n              [--disable-cluster-autoscaler]\n              [--disable-cost-analysis]\n              [--disable-defender]\n              [--disable-disk-driver]\n              [--disable-file-driver]\n              [--disable-force-upgrade]\n              [--disable-image-cleaner]\n              [--disable-image-integrity]\n              [--disable-imds-restriction]\n              [--disable-keda]\n              [--disable-local-accounts]\n              [--disable-pod-identity]\n              [--disable-pod-security-policy]\n              [--disable-private-cluster]\n              [--disable-public-fqdn]\n              [--disable-secret-rotation]\n              [--disable-snapshot-controller]\n              [--disable-static-egress-gateway]\n              [--disable-vpa]\n              [--disable-workload-identity]\n              [--disk-driver-version {v1, v2}]\n              [--enable-aad]\n              [--enable-acns]\n              [--enable-addon-autoscaling]\n              [--enable-ahub]\n              [--enable-ai-toolchain-operator]\n              [--enable-apiserver-vnet-integration]\n              [--enable-azure-container-storage {azureDisk, elasticSan, ephemeralDisk}]\n              [--enable-azure-keyvault-kms]\n              [--enable-azure-monitor-app-monitoring]\n              [--enable-azure-monitor-metrics]\n              [--enable-azure-rbac]\n              [--enable-blob-driver]\n              [--enable-cluster-autoscaler]\n              [--enable-cost-analysis]\n              [--enable-defender]\n              [--enable-disk-driver]\n              [--enable-file-driver]\n              [--enable-force-upgrade]\n              [--enable-image-cleaner]\n              [--enable-image-integrity]\n              [--enable-imds-restriction]\n              [--enable-keda]\n              [--enable-local-accounts]\n              [--enable-managed-identity]\n              [--enable-oidc-issuer]\n              [--enable-pod-identity]\n              [--enable-pod-identity-with-kubenet]\n              [--enable-private-cluster]\n              [--enable-public-fqdn]\n              [--enable-secret-rotation]\n              [--enable-snapshot-controller]\n              [--enable-static-egress-gateway]\n              [--enable-vpa]\n              [--enable-windows-gmsa]\n              [--enable-windows-recording-rules]\n              [--enable-workload-identity]\n              [--ephemeral-disk-nvme-perf-tier {Basic, Premium, Standard}]\n              [--ephemeral-disk-volume-type {EphemeralVolumeOnly, PersistentVolumeWithAnnotation}]\n              [--gmsa-dns-server]\n              [--gmsa-root-domain-name]\n              [--grafana-resource-id]\n              [--http-proxy-config]\n              [--if-match]\n              [--if-none-match]\n              [--image-cleaner-interval-hours]\n              [--ip-families]\n              [--k8s-support-plan {AKSLongTermSupport, KubernetesOfficial}]\n              [--ksm-metric-annotations-allow-list]\n              [--ksm-metric-labels-allow-list]\n              [--kube-proxy-config]\n              [--load-balancer-backend-pool-type]\n              [--load-balancer-idle-timeout]\n              [--load-balancer-managed-outbound-ip-count]\n              [--load-balancer-managed-outbound-ipv6-count]\n              [--load-balancer-outbound-ip-prefixes]\n              [--load-balancer-outbound-ips]\n              [--load-balancer-outbound-ports]\n              [--max-count]\n              [--min-count]\n              [--nat-gateway-idle-timeout]\n              [--nat-gateway-managed-outbound-ip-count]\n              [--network-dataplane {azure, cilium}]\n              [--network-plugin {azure, kubenet, none}]\n              [--network-plugin-mode]\n              [--network-policy]\n              [--no-wait]\n              [--node-init-taints]\n              [--node-os-upgrade-channel {NodeImage, None, SecurityPatch, Unmanaged}]\n              [--node-provisioning-mode {Auto, Manual}]\n              [--nodepool-labels]\n              [--nodepool-taints]\n              [--nrg-lockdown-restriction-level {ReadOnly, Unrestricted}]\n              [--outbound-type {block, loadBalancer, managedNATGateway, none, userAssignedNATGateway, userDefinedRouting}]\n              [--pod-cidr]\n              [--private-dns-zone]\n              [--rotation-poll-interval]\n              [--safeguards-excluded-ns]\n              [--safeguards-level {Enforcement, Off, Warning}]\n              [--safeguards-version]\n              [--sku {automatic, base}]\n              [--ssh-key-value]\n              [--storage-pool-name]\n              [--storage-pool-option {NVMe, Temp, all}]\n              [--storage-pool-size]\n              [--storage-pool-sku {PremiumV2_LRS, Premium_LRS, Premium_ZRS, StandardSSD_LRS, StandardSSD_ZRS, Standard_LRS, UltraSSD_LRS}]\n              [--tags]\n              [--tier {free, premium, standard}]\n              [--update-cluster-autoscaler]\n              [--upgrade-override-until]\n              [--windows-admin-password]\n              [--yes]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--aad-admin-group-object-ids",
+                "--aad-tenant-id",
+                "--aks-custom-headers",
+                "--api-server-authorized-ip-ranges",
+                "--apiserver-subnet-id",
+                "--assign-identity",
+                "--assign-kubelet-identity",
+                "--attach-acr",
+                "--auto-upgrade-channel",
+                "--azure-container-storage-nodepools",
+                "--azure-keyvault-kms-key-id",
+                "--azure-keyvault-kms-key-vault-network-access",
+                "--azure-keyvault-kms-key-vault-resource-id",
+                "--azure-monitor-workspace-resource-id",
+                "--bootstrap-artifact-source",
+                "--bootstrap-container-registry-resource-id",
+                "--ca-certs --custom-ca-trust-certificates",
+                "--ca-profile --cluster-autoscaler-profile",
+                "--cluster-service-load-balancer-health-probe-mode",
+                "--cluster-snapshot-id",
+                "--defender-config",
+                "--detach-acr",
+                "--disable-acns",
+                "--disable-acns-observability",
+                "--disable-acns-security",
+                "--disable-addon-autoscaling",
+                "--disable-ahub",
+                "--disable-ai-toolchain-operator",
+                "--disable-azure-container-storage",
+                "--disable-azure-keyvault-kms",
+                "--disable-azure-monitor-app-monitoring",
+                "--disable-azure-monitor-metrics",
+                "--disable-azure-rbac",
+                "--disable-blob-driver",
+                "--disable-cluster-autoscaler -d",
+                "--disable-cost-analysis",
+                "--disable-defender",
+                "--disable-disk-driver",
+                "--disable-file-driver",
+                "--disable-force-upgrade",
+                "--disable-image-cleaner",
+                "--disable-image-integrity",
+                "--disable-imds-restriction",
+                "--disable-keda",
+                "--disable-local-accounts",
+                "--disable-pod-identity",
+                "--disable-pod-security-policy",
+                "--disable-private-cluster",
+                "--disable-public-fqdn",
+                "--disable-secret-rotation",
+                "--disable-snapshot-controller",
+                "--disable-static-egress-gateway",
+                "--disable-vpa",
+                "--disable-workload-identity",
+                "--disk-driver-version",
+                "--enable-aad",
+                "--enable-acns",
+                "--enable-addon-autoscaling",
+                "--enable-ahub",
+                "--enable-ai-toolchain-operator",
+                "--enable-apiserver-vnet-integration",
+                "--enable-azure-container-storage",
+                "--enable-azure-keyvault-kms",
+                "--enable-azure-monitor-app-monitoring",
+                "--enable-azure-monitor-metrics",
+                "--enable-azure-rbac",
+                "--enable-blob-driver",
+                "--enable-cluster-autoscaler -e",
+                "--enable-cost-analysis",
+                "--enable-defender",
+                "--enable-disk-driver",
+                "--enable-file-driver",
+                "--enable-force-upgrade",
+                "--enable-image-cleaner",
+                "--enable-image-integrity",
+                "--enable-imds-restriction",
+                "--enable-keda",
+                "--enable-local-accounts",
+                "--enable-managed-identity",
+                "--enable-oidc-issuer",
+                "--enable-pod-identity",
+                "--enable-pod-identity-with-kubenet",
+                "--enable-private-cluster",
+                "--enable-public-fqdn",
+                "--enable-secret-rotation",
+                "--enable-snapshot-controller",
+                "--enable-static-egress-gateway",
+                "--enable-vpa",
+                "--enable-windows-gmsa",
+                "--enable-windows-recording-rules",
+                "--enable-workload-identity",
+                "--ephemeral-disk-nvme-perf-tier",
+                "--ephemeral-disk-volume-type",
+                "--gmsa-dns-server",
+                "--gmsa-root-domain-name",
+                "--grafana-resource-id",
+                "--http-proxy-config",
+                "--if-match",
+                "--if-none-match",
+                "--image-cleaner-interval-hours",
+                "--ip-families",
+                "--k8s-support-plan",
+                "--ksm-metric-annotations-allow-list",
+                "--ksm-metric-labels-allow-list",
+                "--kube-proxy-config",
+                "--load-balancer-backend-pool-type",
+                "--load-balancer-idle-timeout",
+                "--load-balancer-managed-outbound-ip-count",
+                "--load-balancer-managed-outbound-ipv6-count",
+                "--load-balancer-outbound-ip-prefixes",
+                "--load-balancer-outbound-ips",
+                "--load-balancer-outbound-ports",
+                "--max-count",
+                "--min-count",
+                "--nat-gateway-idle-timeout",
+                "--nat-gateway-managed-outbound-ip-count",
+                "--network-dataplane",
+                "--network-plugin",
+                "--network-plugin-mode",
+                "--network-policy",
+                "--no-wait",
+                "--node-init-taints --nodepool-initialization-taints",
+                "--node-os-upgrade-channel",
+                "--node-provisioning-mode",
+                "--nodepool-labels",
+                "--nodepool-taints",
+                "--nrg-lockdown-restriction-level",
+                "--outbound-type",
+                "--pod-cidr",
+                "--private-dns-zone",
+                "--rotation-poll-interval",
+                "--safeguards-excluded-ns",
+                "--safeguards-level",
+                "--safeguards-version",
+                "--sku",
+                "--ssh-key-value",
+                "--storage-pool-name",
+                "--storage-pool-option",
+                "--storage-pool-size",
+                "--storage-pool-sku",
+                "--tags",
+                "--tier",
+                "--update-cluster-autoscaler -u",
+                "--upgrade-override-until",
+                "--windows-admin-password",
+                "--yes -y"
+            ],
+            "examples": [
+                "az aks update -g MyResourceGroup -n MyManagedCluster",
+                "az aks update --enable-cluster-autoscaler --min-count 1 --max-count 5 -g MyResourceGroup -n MyManagedCluster",
+                "az aks update --disable-cluster-autoscaler -g MyResourceGroup -n MyManagedCluster",
+                "az aks update --update-cluster-autoscaler --min-count 1 --max-count 10 -g MyResourceGroup -n MyManagedCluster",
+                "az aks update --disable-pod-security-policy -g MyResourceGroup -n MyManagedCluster",
+                "az aks update -g MyResourceGroup -n MyManagedCluster --load-balancer-managed-outbound-ip-count 2",
+                "az aks update -g MyResourceGroup -n MyManagedCluster --load-balancer-outbound-ips <ip-resource-id-1,ip-resource-id-2>",
+                "az aks update -g MyResourceGroup -n MyManagedCluster --load-balancer-outbound-ip-prefixes <ip-prefix-resource-id-1,ip-prefix-resource-id-2>",
+                "az aks update -g MyResourceGroup -n MyManagedCluster --outbound-type managedNATGateway",
+                "az aks update -g MyResourceGroup -n MyManagedCluster --load-balancer-managed-outbound-ip-count 2 --load-balancer-idle-timeout 5 --load-balancer-outbound-ports 8000",
+                "az aks update -g MyResourceGroup -n MyManagedCluster --nat-gateway-managed-outbound-ip-count 2 --nat-gateway-idle-timeout 4",
+                "az aks update -g MyResourceGroup -n MyManagedCluster --api-server-authorized-ip-ranges 193.168.1.0/24,194.168.1.0/24",
+                "az aks update -g MyResourceGroup -n MyManagedCluster --api-server-authorized-ip-ranges \"\"",
+                "az aks update -g MyResourceGroup -n MyManagedCluster --api-server-authorized-ip-ranges 0.0.0.0/32",
+                "az aks update -g MyResourceGroup -n MyManagedCluster --aad-admin-group-object-ids <id-1,id-2> --aad-tenant-id <id>",
+                "az aks update -g MyResourceGroup -n MyManagedCluster --enable-aad --aad-admin-group-object-ids <id-1,id-2> --aad-tenant-id <id>",
+                "az aks update -g MyResourceGroup -n MyManagedCluster --enable-ahub",
+                "az aks update -g MyResourceGroup -n MyManagedCluster --disable-ahub",
+                "az aks update -g MyResourceGroup -n MyManagedCluster --enable-managed-identity",
+                "az aks update -g MyResourceGroup -n MyManagedCluster --enable-managed-identity --assign-identity <user_assigned_identity_resource_id>",
+                "az aks update -g MyResourceGroup -n MyManagedCluster --enable-pod-identity",
+                "az aks update -g MyResourceGroup -n MyManagedCluster --disable-pod-identity",
+                "az aks update -g MyResourceGroup -n MyManagedCLuster --tags \"foo=bar\" \"baz=qux\"",
+                "az aks update -g MyResourceGroup -n MyManagedCLuster --windows-admin-password \"Repl@cePassw0rd12345678\"",
+                "az aks update -g MyResourceGroup -n MyManagedCluster --enable-azure-rbac",
+                "az aks update -g MyResourceGroup -n MyManagedCluster --disable-azure-rbac",
+                "az aks update -g MyResourceGroup -n MyManagedCluster --enable-windows-gmsa",
+                "az aks update -g MyResourceGroup -n MyManagedCluster --enable-windows-gmsa --gmsa-dns-server \"10.240.0.4\" --gmsa-root-domain-name \"contoso.com\"",
+                "az aks update -g MyResourceGroup -n MyManagedCluster --cluster-snapshot-id \"/subscriptions/00000/resourceGroups/AnotherResourceGroup/providers/Microsoft.ContainerService/managedclustersnapshots/mysnapshot1\"",
+                "az aks update -g MyResourceGroup -n MyManagedCluster --safeguards-level Warning",
+                "az aks update -g MyResourceGroup -n MyManagedCluster --safeguards-level Warning --safeguards-excluded-ns ns1,ns2",
+                "az aks update -g MyResourceGroup -n MyManagedCluster --safeguards-excluded-ns \"\""
+            ]
+        },
+        {
+            "name": "az aks update-credentials",
+            "summary": "Update credentials for a managed Kubernetes cluster, like service principal.",
+            "syntax": "az aks update-credentials --name\n                          --resource-group\n                          [--client-secret]\n                          [--no-wait]\n                          [--reset-service-principal]\n                          [--service-principal]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--client-secret",
+                "--no-wait",
+                "--reset-service-principal",
+                "--service-principal"
+            ],
+            "examples": [
+                "az aks update-credentials -g MyResourceGroup -n MyManagedCluster --reset-service-principal --service-principal MyNewServicePrincipalID --client-secret MyNewServicePrincipalSecret"
+            ]
+        },
+        {
+            "name": "az aks upgrade",
+            "summary": "Upgrade a managed Kubernetes cluster to a newer version.",
+            "syntax": "az aks upgrade --name\n               --resource-group\n               [--control-plane-only]\n               [--disable-force-upgrade]\n               [--enable-force-upgrade]\n               [--if-match]\n               [--if-none-match]\n               [--k8s-support-plan {AKSLongTermSupport, KubernetesOfficial}]\n               [--kubernetes-version]\n               [--no-wait]\n               [--node-image-only]\n               [--tier {free, premium, standard}]\n               [--upgrade-override-until]\n               [--yes]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--control-plane-only",
+                "--disable-force-upgrade",
+                "--enable-force-upgrade",
+                "--if-match",
+                "--if-none-match",
+                "--k8s-support-plan",
+                "--kubernetes-version -k",
+                "--no-wait",
+                "--node-image-only",
+                "--tier",
+                "--upgrade-override-until",
+                "--yes -y"
+            ],
+            "examples": [
+                "az aks upgrade --kubernetes-version 1.12.6 --name MyManagedCluster --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az aks upgrade",
+            "summary": "Upgrade a managed Kubernetes cluster to a newer version.",
+            "syntax": "az aks upgrade --name\n               --resource-group\n               [--aks-custom-headers]\n               [--cluster-snapshot-id]\n               [--control-plane-only]\n               [--disable-force-upgrade]\n               [--enable-force-upgrade]\n               [--if-match]\n               [--if-none-match]\n               [--kubernetes-version]\n               [--no-wait]\n               [--node-image-only]\n               [--upgrade-override-until]\n               [--yes]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--aks-custom-headers",
+                "--cluster-snapshot-id",
+                "--control-plane-only",
+                "--disable-force-upgrade",
+                "--enable-force-upgrade",
+                "--if-match",
+                "--if-none-match",
+                "--kubernetes-version -k",
+                "--no-wait",
+                "--node-image-only",
+                "--upgrade-override-until",
+                "--yes -y"
+            ],
+            "examples": [
+                "az aks upgrade -g MyResourceGroup -n MyManagedCluster --cluster-snapshot-id \"/subscriptions/00000/resourceGroups/AnotherResourceGroup/providers/Microsoft.ContainerService/managedclustersnapshots/mysnapshot1\""
+            ]
+        },
+        {
+            "name": "az aks use-dev-spaces",
+            "summary": "Use Azure Dev Spaces with a managed Kubernetes cluster.",
+            "syntax": "az aks use-dev-spaces --name\n                      --resource-group\n                      [--endpoint {None, Private, Public}]\n                      [--space]\n                      [--update]\n                      [--yes]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--endpoint -e",
+                "--space -s",
+                "--update",
+                "--yes -y"
+            ],
+            "examples": [
+                "az aks use-dev-spaces -g my-aks-group -n my-aks",
+                "az aks use-dev-spaces -g my-aks-group -n my-aks --update --space my-space",
+                "az aks use-dev-spaces -g my-aks-group -n my-aks -s develop/my-space -y",
+                "az aks use-dev-spaces -g my-aks-group -n my-aks -e private"
+            ]
+        },
+        {
+            "name": "az aks use-dev-spaces",
+            "summary": "Use Azure Dev Spaces with a managed Kubernetes cluster.",
+            "syntax": "az aks use-dev-spaces --name\n                      --resource-group\n                      [--endpoint {None, Private, Public}]\n                      [--space]\n                      [--update]\n                      [--yes]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--endpoint -e",
+                "--space -s",
+                "--update",
+                "--yes -y"
+            ],
+            "examples": [
+                "az aks use-dev-spaces -g my-aks-group -n my-aks",
+                "az aks use-dev-spaces -g my-aks-group -n my-aks --update --space my-space",
+                "az aks use-dev-spaces -g my-aks-group -n my-aks -s develop/my-space -y",
+                "az aks use-dev-spaces -g my-aks-group -n my-aks -e private"
+            ]
+        },
+        {
+            "name": "az aks wait",
+            "summary": "Wait for a managed Kubernetes cluster to reach a desired state.",
+            "syntax": "az aks wait --name\n            --resource-group\n            [--created]\n            [--custom]\n            [--deleted]\n            [--exists]\n            [--interval]\n            [--timeout]\n            [--updated]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--interval",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": [
+                "az aks wait -g MyResourceGroup -n MyManagedCluster --updated --interval 60 --timeout 1800",
+                "az aks wait --created --interval 60 --name MyManagedCluster --resource-group MyResourceGroup --timeout 1800"
+            ]
+        },
+        {
+            "name": "az aks wait",
+            "summary": "Wait for a managed Kubernetes cluster to reach a desired state.",
+            "syntax": "az aks wait --name\n            --resource-group\n            [--created]\n            [--custom]\n            [--deleted]\n            [--exists]\n            [--interval]\n            [--timeout]\n            [--updated]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--interval",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": [
+                "az aks wait -g MyResourceGroup -n MyManagedCluster --updated --interval 60 --timeout 1800",
+                "az aks wait --created --interval 60 --name MyManagedCluster --resource-group MyResourceGroup --timeout 1800"
+            ]
+        }
+    ]
+}

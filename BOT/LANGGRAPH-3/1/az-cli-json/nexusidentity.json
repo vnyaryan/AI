@@ -1,0 +1,15 @@
+{
+    "command_group": "az nexusidentity",
+    "description": "Command to manage Nexusidentity keys.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az nexusidentity gen-keys",
+            "summary": "Generate Nexusidentity keys.",
+            "syntax": "az nexusidentity gen-keys",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "examples": []
+        }
+    ]
+}
