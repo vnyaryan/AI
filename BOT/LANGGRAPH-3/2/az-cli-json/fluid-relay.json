@@ -1,6 +1,0 @@
-{
-    "command_group": "az fluid-relay",
-    "description": "Manage Fluid Relay.",
-    "status": "GA",
-    "commands": []
-}

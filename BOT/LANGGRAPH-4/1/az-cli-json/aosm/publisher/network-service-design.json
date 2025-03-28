@@ -1,6 +1,0 @@
-{
-    "command_group": "az aosm publisher network-service-design",
-    "description": "Commands to manage network service design resources.",
-    "status": "Preview",
-    "commands": []
-}

@@ -1,6 +1,0 @@
-{
-    "command_group": "az spring-cloud application-configuration-service git",
-    "description": "Commands to manage Application Configuration Service git property in Azure Spring Cloud.",
-    "status": "Preview and Deprecated",
-    "commands": []
-}

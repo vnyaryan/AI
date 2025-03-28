@@ -1,6 +1,0 @@
-{
-    "command_group": "az servicebus",
-    "description": "Servicebus.",
-    "status": "GA",
-    "commands": []
-}

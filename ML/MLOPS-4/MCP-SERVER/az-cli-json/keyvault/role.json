@@ -1,6 +1,0 @@
-{
-    "command_group": "az keyvault role",
-    "description": "Manage user roles for access control.",
-    "status": "GA",
-    "commands": []
-}

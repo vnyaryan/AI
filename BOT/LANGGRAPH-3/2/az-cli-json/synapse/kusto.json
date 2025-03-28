@@ -1,6 +1,0 @@
-{
-    "command_group": "az synapse kusto",
-    "description": "Manage synapse kusto.",
-    "status": "GA",
-    "commands": []
-}

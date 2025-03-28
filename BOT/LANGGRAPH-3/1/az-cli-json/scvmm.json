@@ -1,6 +1,0 @@
-{
-    "command_group": "az scvmm",
-    "description": "Commands for managing Arc for SCVMM resources.",
-    "status": "GA",
-    "commands": []
-}

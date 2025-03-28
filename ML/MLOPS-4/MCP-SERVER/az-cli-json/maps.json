@@ -1,6 +1,0 @@
-{
-    "command_group": "az maps",
-    "description": "Manage Azure Maps.",
-    "status": "GA",
-    "commands": []
-}

@@ -1,6 +1,0 @@
-{
-    "command_group": "az alerts-management",
-    "description": "Manage Azure Alerts Management Service Resource.",
-    "status": "GA",
-    "commands": []
-}

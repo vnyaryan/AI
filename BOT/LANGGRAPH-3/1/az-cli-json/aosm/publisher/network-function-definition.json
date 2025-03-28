@@ -1,6 +1,0 @@
-{
-    "command_group": "az aosm publisher network-function-definition",
-    "description": "Commands to manage network function definition resources.",
-    "status": "Preview",
-    "commands": []
-}

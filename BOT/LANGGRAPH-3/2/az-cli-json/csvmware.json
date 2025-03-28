@@ -1,6 +1,0 @@
-{
-    "command_group": "az csvmware",
-    "description": "Manage Azure VMware Solution by CloudSimple.",
-    "status": "Preview",
-    "commands": []
-}

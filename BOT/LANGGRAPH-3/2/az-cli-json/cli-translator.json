@@ -1,6 +1,0 @@
-{
-    "command_group": "az cli-translator",
-    "description": "Translate ARM template or REST API to CLI scripts.",
-    "status": "Experimental",
-    "commands": []
-}

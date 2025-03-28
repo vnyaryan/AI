@@ -1,6 +1,0 @@
-{
-    "command_group": "az dls",
-    "description": "Manage Data Lake Store accounts and filesystems.",
-    "status": "Preview",
-    "commands": []
-}

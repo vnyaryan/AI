@@ -1,6 +1,0 @@
-{
-    "command_group": "az aks trustedaccess",
-    "description": "Commands to manage trusted access security features.",
-    "status": "GA",
-    "commands": []
-}

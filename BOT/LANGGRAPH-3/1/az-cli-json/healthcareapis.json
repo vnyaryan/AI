@@ -1,6 +1,0 @@
-{
-    "command_group": "az healthcareapis",
-    "description": "Azure Healthcare APIs is a secure cloud platform for managing health data, supporting analytics, machine learning, and scalable solutions.",
-    "status": "GA",
-    "commands": []
-}

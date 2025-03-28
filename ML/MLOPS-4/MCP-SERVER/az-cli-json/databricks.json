@@ -1,6 +1,0 @@
-{
-    "command_group": "az databricks",
-    "description": "Manage databricks workspaces.",
-    "status": "GA",
-    "commands": []
-}

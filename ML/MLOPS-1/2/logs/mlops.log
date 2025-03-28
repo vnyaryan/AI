@@ -1,9 +1,0 @@
-2025-01-27 19:32:22,298 - DEBUG - Logging setup completed.
-2025-01-27 19:32:22,299 - INFO - Starting the script...
-2025-01-27 19:32:26,471 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
-2025-01-27 19:32:26,730 - DEBUG - https://huggingface.co:443 "HEAD /bert-base-uncased/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
-2025-01-27 19:32:27,123 - DEBUG - https://huggingface.co:443 "HEAD /bert-base-uncased/resolve/main/config.json HTTP/1.1" 200 0
-2025-01-27 19:32:27,593 - INFO - Starting model fine-tuning...
-2025-01-27 19:41:41,548 - INFO - Model fine-tuning completed.
-2025-01-27 19:41:43,350 - INFO - Fine-tuned model saved successfully.
-2025-01-27 19:41:43,669 - INFO - Script completed successfully.

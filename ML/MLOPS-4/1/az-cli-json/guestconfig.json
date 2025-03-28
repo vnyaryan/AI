@@ -1,6 +1,0 @@
-{
-    "command_group": "az guestconfig",
-    "description": "Manage Guest Configuration.",
-    "status": "GA",
-    "commands": []
-}

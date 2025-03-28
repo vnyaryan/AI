@@ -1,6 +1,0 @@
-{
-    "command_group": "az logicapp deployment",
-    "description": "Manage logic app deployments.",
-    "status": "GA",
-    "commands": []
-}

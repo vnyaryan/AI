@@ -1,6 +1,0 @@
-{
-    "command_group": "az sql server ms-support",
-    "description": "Manage a server's Microsoft support operations.",
-    "status": "GA",
-    "commands": []
-}

@@ -1,6 +1,0 @@
-{
-    "command_group": "az databox",
-    "description": "Manage data box.",
-    "status": "GA",
-    "commands": []
-}

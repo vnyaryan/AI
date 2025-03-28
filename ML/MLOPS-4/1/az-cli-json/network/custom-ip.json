@@ -1,6 +1,0 @@
-{
-    "command_group": "az network custom-ip",
-    "description": "Manage custom IP.",
-    "status": "GA",
-    "commands": []
-}

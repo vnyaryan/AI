@@ -1,6 +1,0 @@
-{
-    "command_group": "az offazure hyperv",
-    "description": "Manage Hyper-V on-premise resources.",
-    "status": "Experimental",
-    "commands": []
-}

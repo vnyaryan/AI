@@ -1,6 +1,0 @@
-{
-    "command_group": "az vmware",
-    "description": "Commands to manage Azure VMware Solution.",
-    "status": "GA",
-    "commands": []
-}

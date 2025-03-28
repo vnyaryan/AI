@@ -1,6 +1,0 @@
-{
-    "command_group": "az site-recovery vmware-site",
-    "description": "Manage vmware-site.",
-    "status": "GA",
-    "commands": []
-}

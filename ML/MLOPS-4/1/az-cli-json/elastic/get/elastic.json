@@ -1,6 +1,0 @@
-{
-    "command_group": "az elastic get elastic",
-    "description": "Get elastic details.",
-    "status": "GA",
-    "commands": []
-}

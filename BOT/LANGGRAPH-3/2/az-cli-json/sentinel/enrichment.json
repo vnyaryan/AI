@@ -1,6 +1,0 @@
-{
-    "command_group": "az sentinel enrichment",
-    "description": "Manage enrichment with sentinel.",
-    "status": "GA",
-    "commands": []
-}

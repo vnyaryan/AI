@@ -1,6 +1,0 @@
-{
-    "command_group": "az capacity",
-    "description": "Manage capacity.",
-    "status": "GA",
-    "commands": []
-}

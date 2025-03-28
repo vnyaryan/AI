@@ -1,6 +1,0 @@
-{
-    "command_group": "az acr config",
-    "description": "Configure policies for Azure Container Registries.",
-    "status": "GA",
-    "commands": []
-}

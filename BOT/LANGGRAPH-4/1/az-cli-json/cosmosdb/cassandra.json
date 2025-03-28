@@ -1,6 +1,0 @@
-{
-    "command_group": "az cosmosdb cassandra",
-    "description": "Manage Cassandra resources of Azure Cosmos DB account.",
-    "status": "GA",
-    "commands": []
-}

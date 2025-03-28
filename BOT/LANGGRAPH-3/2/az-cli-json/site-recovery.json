@@ -1,6 +1,0 @@
-{
-    "command_group": "az site-recovery",
-    "description": "Manage Site Recovery Service.",
-    "status": "GA",
-    "commands": []
-}

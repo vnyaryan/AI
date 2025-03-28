@@ -1,6 +1,0 @@
-{
-    "command_group": "az elastic get elastic organization-to-azure",
-    "description": "Manage to get Elastic organization.",
-    "status": "GA",
-    "commands": []
-}

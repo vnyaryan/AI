@@ -1,6 +1,0 @@
-{
-    "command_group": "az devcenter admin",
-    "description": "Manage devcenter admin resources.",
-    "status": "GA",
-    "commands": []
-}

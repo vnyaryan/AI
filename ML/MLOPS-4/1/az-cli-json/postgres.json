@@ -1,6 +1,0 @@
-{
-    "command_group": "az postgres",
-    "description": "Manage Azure Database for PostgreSQL servers.",
-    "status": "GA",
-    "commands": []
-}

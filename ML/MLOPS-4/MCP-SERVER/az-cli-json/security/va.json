@@ -1,6 +1,0 @@
-{
-    "command_group": "az security va",
-    "description": "View Vulnerability Assessment.",
-    "status": "GA",
-    "commands": []
-}

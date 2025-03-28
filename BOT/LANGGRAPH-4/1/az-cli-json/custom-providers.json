@@ -1,6 +1,0 @@
-{
-    "command_group": "az custom-providers",
-    "description": "Commands to manage custom providers.",
-    "status": "GA",
-    "commands": []
-}

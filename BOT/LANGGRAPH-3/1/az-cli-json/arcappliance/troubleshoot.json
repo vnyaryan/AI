@@ -1,6 +1,0 @@
-{
-    "command_group": "az arcappliance troubleshoot",
-    "description": "Command group for troubleshooting an Appliance cluster.",
-    "status": "GA",
-    "commands": []
-}

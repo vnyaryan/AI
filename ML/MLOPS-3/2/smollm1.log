@@ -1,4 +1,0 @@
-# Log file for SmolLM2 GGUF model download
-2025-02-25 22:13:31,941 - DEBUG - Logging setup completed.
-2025-02-25 22:13:31,942 - DEBUG - Starting the GGUF model download process.
-2025-02-25 22:13:31,942 - DEBUG - Downloading GGUF model using CLI: bartowski/SmolLM2-1.7B-Instruct-GGUF

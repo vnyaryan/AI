@@ -1,6 +1,0 @@
-{
-    "command_group": "az mcc ent",
-    "description": "Microsoft Connected Cache for Enterprise CLI commands.",
-    "status": "Preview",
-    "commands": []
-}

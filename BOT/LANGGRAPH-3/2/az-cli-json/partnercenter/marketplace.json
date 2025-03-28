@@ -1,6 +1,0 @@
-{
-    "command_group": "az partnercenter marketplace",
-    "description": "Commands to manage the Partner Center Marketplace.",
-    "status": "GA",
-    "commands": []
-}

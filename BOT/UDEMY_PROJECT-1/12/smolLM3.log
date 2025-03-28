@@ -1,9 +1,0 @@
-2025-02-25 11:03:24,320 - DEBUG - Logging setup completed for local LLM.
-2025-02-25 11:03:24,322 - DEBUG - Starting local model process.
-2025-02-25 11:03:24,340 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
-2025-02-25 11:03:25,151 - DEBUG - https://huggingface.co:443 "HEAD /HuggingFaceTB/SmolLM2-360M/resolve/main/config.json HTTP/1.1" 200 0
-2025-02-25 11:03:36,986 - DEBUG - https://huggingface.co:443 "HEAD /HuggingFaceTB/SmolLM2-360M/resolve/main/generation_config.json HTTP/1.1" 200 0
-2025-02-25 11:03:39,274 - DEBUG - Local text-generation pipeline created.
-2025-02-25 11:03:39,314 - DEBUG - HuggingFacePipeline LLM created with local model.
-2025-02-25 11:03:39,318 - DEBUG - Prompt template created.
-2025-02-25 11:03:39,324 - DEBUG - LLMChain created using local LLM.

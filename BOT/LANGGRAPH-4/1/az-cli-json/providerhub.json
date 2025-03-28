@@ -1,6 +1,0 @@
-{
-    "command_group": "az providerhub",
-    "description": "Manage resources with ProviderHub.",
-    "status": "GA",
-    "commands": []
-}

@@ -1,6 +1,0 @@
-{
-    "command_group": "az cosmosdb table role",
-    "description": "Manage Azure Cosmos DB Table role resources.",
-    "status": "GA",
-    "commands": []
-}

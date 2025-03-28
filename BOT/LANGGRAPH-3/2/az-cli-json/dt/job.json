@@ -1,6 +1,0 @@
-{
-    "command_group": "az dt job",
-    "description": "Manage and configure jobs for a digital twin instance.",
-    "status": "GA",
-    "commands": []
-}

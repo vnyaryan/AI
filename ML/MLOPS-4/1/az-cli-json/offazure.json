@@ -1,6 +1,0 @@
-{
-    "command_group": "az offazure",
-    "description": "Manage on-premise resources for migrate.",
-    "status": "Experimental",
-    "commands": []
-}

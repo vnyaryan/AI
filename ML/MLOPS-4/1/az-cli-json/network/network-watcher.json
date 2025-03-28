@@ -1,6 +1,0 @@
-{
-    "command_group": "az network network-watcher",
-    "description": "Manage network watcher and its sub-resources.",
-    "status": "GA",
-    "commands": []
-}

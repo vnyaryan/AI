@@ -1,5 +1,0 @@
-2025-03-18 00:12:09,437 - DEBUG - Logging setup completed.
-2025-03-18 00:12:09,437 - INFO - Searching for keyword: API connector
-2025-03-18 00:12:09,444 - DEBUG - Starting new HTTPS connection (1): api.github.com:443
-2025-03-18 00:12:09,946 - DEBUG - https://api.github.com:443 "GET /search/code?q=API+connector%2Brepo%3Avnyaryan%2Fazure-docs HTTP/1.1" 200 None
-2025-03-18 00:12:09,947 - INFO - No results found for keyword 'API connector'.

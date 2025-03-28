@@ -1,6 +1,0 @@
-{
-    "command_group": "az network private-dns link",
-    "description": "Manage Private DNS links.",
-    "status": "GA",
-    "commands": []
-}

@@ -1,6 +1,0 @@
-{
-    "command_group": "az iot ops connector opcua",
-    "description": "OPC UA connector management.",
-    "status": "Preview",
-    "commands": []
-}

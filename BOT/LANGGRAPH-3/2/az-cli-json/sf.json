@@ -1,6 +1,0 @@
-{
-    "command_group": "az sf",
-    "description": "Manage and administer Azure Service Fabric clusters.",
-    "status": "GA",
-    "commands": []
-}

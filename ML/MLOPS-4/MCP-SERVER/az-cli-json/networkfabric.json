@@ -1,6 +1,0 @@
-{
-    "command_group": "az networkfabric",
-    "description": "Manage Azure Network Fabric Management Service API.",
-    "status": "GA",
-    "commands": []
-}

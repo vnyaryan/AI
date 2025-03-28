@@ -1,6 +1,0 @@
-{
-    "command_group": "az grafana integrations",
-    "description": "Commands to manage integrations of a Grafana instance.",
-    "status": "GA",
-    "commands": []
-}

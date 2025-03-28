@@ -1,6 +1,0 @@
-{
-    "command_group": "az edge-zones",
-    "description": "Manage Edge Zone resources.",
-    "status": "Preview",
-    "commands": []
-}

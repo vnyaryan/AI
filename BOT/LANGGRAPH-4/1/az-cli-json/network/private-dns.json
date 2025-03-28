@@ -1,6 +1,0 @@
-{
-    "command_group": "az network private-dns",
-    "description": "Manage Private DNS domains in Azure.",
-    "status": "GA",
-    "commands": []
-}

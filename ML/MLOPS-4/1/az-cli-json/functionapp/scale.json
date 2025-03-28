@@ -1,6 +1,0 @@
-{
-    "command_group": "az functionapp scale",
-    "description": "Manage a function app's scale.",
-    "status": "GA",
-    "commands": []
-}

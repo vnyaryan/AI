@@ -1,6 +1,0 @@
-{
-    "command_group": "az automanage",
-    "description": "Manage Automanage.",
-    "status": "GA",
-    "commands": []
-}

@@ -1,6 +1,0 @@
-{
-    "command_group": "az sql server-arc",
-    "description": "Manage SQL Server enabled by Azure Arc.",
-    "status": "GA",
-    "commands": []
-}

@@ -1,6 +1,0 @@
-{
-    "command_group": "az k8s-runtime",
-    "description": "Manage Arc Kubernetes Runtime resources.",
-    "status": "GA",
-    "commands": []
-}

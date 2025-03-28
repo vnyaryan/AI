@@ -1,6 +1,0 @@
-{
-    "command_group": "az communication chat",
-    "description": "Commands to interact with Azure Communication Services Chat gateway.",
-    "status": "Preview",
-    "commands": []
-}

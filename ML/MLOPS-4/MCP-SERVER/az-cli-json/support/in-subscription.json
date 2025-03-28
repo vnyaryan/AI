@@ -1,6 +1,0 @@
-{
-    "command_group": "az support in-subscription",
-    "description": "Manage Azure support resource within the selected subscription.",
-    "status": "GA",
-    "commands": []
-}

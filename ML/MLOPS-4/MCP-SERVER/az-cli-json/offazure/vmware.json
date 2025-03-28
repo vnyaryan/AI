@@ -1,6 +1,0 @@
-{
-    "command_group": "az offazure vmware",
-    "description": "Manage VMware on-premise resources.",
-    "status": "Experimental",
-    "commands": []
-}

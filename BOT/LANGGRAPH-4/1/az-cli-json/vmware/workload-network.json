@@ -1,6 +1,0 @@
-{
-    "command_group": "az vmware workload-network",
-    "description": "Commands to manage workload-networks in a private cloud.",
-    "status": "GA",
-    "commands": []
-}

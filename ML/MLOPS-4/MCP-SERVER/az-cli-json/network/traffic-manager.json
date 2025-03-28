@@ -1,6 +1,0 @@
-{
-    "command_group": "az network traffic-manager",
-    "description": "Manage the routing of incoming traffic.",
-    "status": "GA",
-    "commands": []
-}

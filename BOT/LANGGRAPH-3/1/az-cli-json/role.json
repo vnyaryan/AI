@@ -1,6 +1,0 @@
-{
-    "command_group": "az role",
-    "description": "Manage Azure role-based access control (Azure RBAC).",
-    "status": "GA",
-    "commands": []
-}

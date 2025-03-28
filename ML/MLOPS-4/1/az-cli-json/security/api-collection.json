@@ -1,6 +1,0 @@
-{
-    "command_group": "az security api-collection",
-    "description": "Discover, manage, and view security insights for API collections.",
-    "status": "Preview",
-    "commands": []
-}

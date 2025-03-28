@@ -1,6 +1,0 @@
-{
-    "command_group": "az neon",
-    "description": "Manage Neon Postgres.",
-    "status": "Preview",
-    "commands": []
-}

@@ -1,6 +1,0 @@
-{
-    "command_group": "az dt network private-endpoint",
-    "description": "Manage Digital Twins instance private-endpoints.",
-    "status": "GA",
-    "commands": []
-}

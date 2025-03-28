@@ -1,6 +1,0 @@
-{
-    "command_group": "az qumulo storage",
-    "description": "Manage qumulo storage.",
-    "status": "GA",
-    "commands": []
-}

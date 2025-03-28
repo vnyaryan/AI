@@ -1,6 +1,0 @@
-{
-    "command_group": "az mysql",
-    "description": "Manage Azure Database for MySQL servers.",
-    "status": "GA",
-    "commands": []
-}

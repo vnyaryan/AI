@@ -1,6 +1,0 @@
-{
-    "command_group": "az eventgrid partner",
-    "description": "Manage partner resources.",
-    "status": "GA",
-    "commands": []
-}

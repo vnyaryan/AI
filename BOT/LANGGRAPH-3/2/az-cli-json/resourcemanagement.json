@@ -1,6 +1,0 @@
-{
-    "command_group": "az resourcemanagement",
-    "description": "Resourcemanagement CLI command group.",
-    "status": "GA",
-    "commands": []
-}

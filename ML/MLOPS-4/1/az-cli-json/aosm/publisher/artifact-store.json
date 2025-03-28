@@ -1,6 +1,0 @@
-{
-    "command_group": "az aosm publisher artifact-store",
-    "description": "Commands to manage artifact store resources.",
-    "status": "Preview",
-    "commands": []
-}

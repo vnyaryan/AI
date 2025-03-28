@@ -1,6 +1,0 @@
-{
-    "command_group": "az network nat",
-    "description": "Manage NAT resources.",
-    "status": "GA",
-    "commands": []
-}

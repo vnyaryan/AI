@@ -1,6 +1,0 @@
-{
-    "command_group": "az cognitiveservices",
-    "description": "Manage Azure Cognitive Services accounts.",
-    "status": "GA",
-    "commands": []
-}

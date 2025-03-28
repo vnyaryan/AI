@@ -1,6 +1,0 @@
-{
-    "command_group": "az maintenance",
-    "description": "Manage Maintenance.",
-    "status": "GA",
-    "commands": []
-}

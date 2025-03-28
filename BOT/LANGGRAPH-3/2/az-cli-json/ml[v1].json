@@ -1,6 +1,0 @@
-{
-    "command_group": "az ml",
-    "description": "Manage Azure Machine Learning resources with the Azure CLI ML extension v1.",
-    "status": "GA",
-    "commands": []
-}

@@ -1,6 +1,0 @@
-{
-    "command_group": "az devops security",
-    "description": "Manage security related operations.",
-    "status": "GA",
-    "commands": []
-}

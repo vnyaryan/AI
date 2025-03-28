@@ -1,6 +1,0 @@
-{
-    "command_group": "az mdp",
-    "description": "Manage resources of Managed DevOps pools.",
-    "status": "GA",
-    "commands": []
-}

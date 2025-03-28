@@ -1,6 +1,0 @@
-{
-    "command_group": "az firmwareanalysis",
-    "description": "Commands to manage firmware analysis.",
-    "status": "GA",
-    "commands": []
-}

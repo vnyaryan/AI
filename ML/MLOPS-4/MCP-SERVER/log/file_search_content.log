@@ -1,5 +1,0 @@
-# Log file for Keyword Line Search
-2025-03-19 14:12:12,024 - DEBUG - Logging setup completed.
-2025-03-19 14:12:22,296 - INFO - Search started for keyword: 'sap' in file: C:\Users\ARYAVIN\Documents\GitHub\AI\ai\ML\MLOPS-4\2\az-cli-json\workloads\monitor\sap-landscape-monitor.json
-2025-03-19 14:12:22,296 - INFO - Opening file: C:\Users\ARYAVIN\Documents\GitHub\AI\ai\ML\MLOPS-4\2\az-cli-json\workloads\monitor\sap-landscape-monitor.json
-2025-03-19 14:12:22,310 - INFO - Keyword 'sap' found in 22 line(s).

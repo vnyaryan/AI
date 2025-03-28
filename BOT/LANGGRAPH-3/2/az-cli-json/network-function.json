@@ -1,6 +1,0 @@
-{
-    "command_group": "az network-function",
-    "description": "Manage network function.",
-    "status": "GA",
-    "commands": []
-}

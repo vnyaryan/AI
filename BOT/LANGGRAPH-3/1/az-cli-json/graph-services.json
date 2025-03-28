@@ -1,6 +1,0 @@
-{
-    "command_group": "az graph-services",
-    "description": "Make operations on Microsoft.GraphServices resource types.",
-    "status": "GA",
-    "commands": []
-}

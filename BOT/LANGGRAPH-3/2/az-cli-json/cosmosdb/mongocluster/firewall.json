@@ -1,6 +1,0 @@
-{
-    "command_group": "az cosmosdb mongocluster firewall",
-    "description": "Mongo cluster firewall.",
-    "status": "Preview",
-    "commands": []
-}

@@ -1,6 +1,0 @@
-{
-    "command_group": "az policy",
-    "description": "Manage resource policies.",
-    "status": "GA",
-    "commands": []
-}

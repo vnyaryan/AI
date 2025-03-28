@@ -1,6 +1,0 @@
-{
-    "command_group": "az private-link",
-    "description": "Private-link association CLI command group.",
-    "status": "GA",
-    "commands": []
-}

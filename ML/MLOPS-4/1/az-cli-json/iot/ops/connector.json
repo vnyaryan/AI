@@ -1,6 +1,0 @@
-{
-    "command_group": "az iot ops connector",
-    "description": "Connector management.",
-    "status": "Preview",
-    "commands": []
-}

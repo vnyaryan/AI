@@ -1,6 +1,0 @@
-{
-    "command_group": "az spring-cloud build-service",
-    "description": "(Enterprise Tier Only) Commands to manage build service in Azure Spring Cloud.",
-    "status": "Preview and Deprecated",
-    "commands": []
-}

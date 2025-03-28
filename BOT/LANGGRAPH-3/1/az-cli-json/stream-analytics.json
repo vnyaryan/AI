@@ -1,6 +1,0 @@
-{
-    "command_group": "az stream-analytics",
-    "description": "Manage Stream Analytics.",
-    "status": "GA",
-    "commands": []
-}
