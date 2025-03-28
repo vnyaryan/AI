@@ -1,0 +1,6 @@
+{
+    "command_group": "az managedservices",
+    "description": "Manage the registration assignments and definitions in Azure.",
+    "status": "GA",
+    "commands": []
+}

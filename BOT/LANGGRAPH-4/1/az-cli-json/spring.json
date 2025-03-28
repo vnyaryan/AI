@@ -1,0 +1,188 @@
+{
+    "command_group": "az spring",
+    "description": "Commands to manage Azure Spring Apps.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az spring create",
+            "summary": "Create an Azure Spring Apps instance.",
+            "syntax": "az spring create --name\n                 --resource-group\n                 [--acs-gen {Gen1, Gen2}]\n                 [--ap-instance]\n                 [--app-insights]\n                 [--app-insights-key]\n                 [--app-network-resource-group]\n                 [--app-subnet]\n                 [--build-pool-size {S1, S2, S3, S4, S5, S6, S7, S8, S9}]\n                 [--disable-app-insights {false, true}]\n                 [--disable-build-service {false, true}]\n                 [--enable-acs]\n                 [--enable-alv]\n                 [--enable-api-portal]\n                 [--enable-app-acc]\n                 [--enable-config-server]\n                 [--enable-dataplane-public-endpoint {false, true}]\n                 [--enable-gateway]\n                 [--enable-private-storage-access {false, true}]\n                 [--enable-service-registry]\n                 [--gateway-instance-count]\n                 [--infra-resource-group]\n                 [--ingress-read-timeout]\n                 [--location]\n                 [--managed-environment]\n                 [--marketplace-plan-id]\n                 [--no-wait]\n                 [--outbound-type]\n                 [--registry-password]\n                 [--registry-server]\n                 [--registry-username]\n                 [--reserved-cidr-range]\n                 [--sampling-rate]\n                 [--service-runtime-network-resource-group]\n                 [--service-runtime-subnet]\n                 [--sku {Basic, Enterprise, Standard, StandardGen2}]\n                 [--tags]\n                 [--vnet]\n                 [--zone-redundant {false, true}]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--acs-gen --application-configuration-service-generation",
+                "--ap-instance --api-portal-instance-count",
+                "--app-insights",
+                "--app-insights-key",
+                "--app-network-resource-group --app-nrg",
+                "--app-subnet",
+                "--build-pool-size",
+                "--disable-app-insights",
+                "--disable-build-service",
+                "--enable-acs --enable-application-configuration-service",
+                "--enable-alv --enable-application-live-view",
+                "--enable-api-portal",
+                "--enable-app-acc --enable-application-accelerator",
+                "--enable-config-server --enable-cs",
+                "--enable-dataplane-public-endpoint --enable-dppa",
+                "--enable-gateway",
+                "--enable-private-storage-access --enable-psa",
+                "--enable-service-registry --enable-sr",
+                "--gateway-instance-count",
+                "--infra-resource-group",
+                "--ingress-read-timeout",
+                "--location -l",
+                "--managed-environment",
+                "--marketplace-plan-id",
+                "--no-wait",
+                "--outbound-type",
+                "--registry-password",
+                "--registry-server",
+                "--registry-username",
+                "--reserved-cidr-range",
+                "--sampling-rate",
+                "--service-runtime-network-resource-group --svc-nrg",
+                "--service-runtime-subnet --svc-subnet",
+                "--sku",
+                "--tags",
+                "--vnet",
+                "--zone-redundant"
+            ],
+            "examples": [
+                "az spring create -n MyService -g MyResourceGroup -l westus",
+                "az spring create -n MyService -g MyResourceGroup -l westus --app-insights-key \"MyConnectionString\"",
+                "az spring create -n MyService -g MyResourceGroup -l westus --app-insights appInsightsName",
+                "az spring create -n MyService -g MyResourceGroup -l westus --app-insights appInsightsName --sampling-rate 10",
+                "az spring create -n MyService -g MyResourceGroup --disable-app-insights",
+                "az spring create -n MyService -g MyResourceGroup --vnet MyVNet --app-subnet MyAppSubnet --service-runtime-subnet MyServiceRuntimeSubnet",
+                "az spring create -n MyService -g MyResourceGroup --app-subnet /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/MyVnetRg/providers/Microsoft.Network/VirtualNetworks/test-vnet/subnets/app --service-runtime-subnet /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/MyVnetRg/providers/Microsoft.Network/VirtualNetworks/test-vnet/subnets/svc --reserved-cidr-range 10.0.0.0/16,10.1.0.0/16,10.2.0.1/16",
+                "az provider register -n Microsoft.SaaS\naz term accept --publisher vmware-inc --product azure-spring-cloud-vmware-tanzu-2 --plan asa-ent-hr-mtr\naz spring create -n MyService -g MyResourceGroup --sku Enterprise",
+                "az provider register -n Microsoft.SaaS\naz term accept --publisher vmware-inc --product azure-spring-cloud-vmware-tanzu-2 --plan asa-ent-hr-mtr\naz spring create -n MyService -g MyResourceGroup --sku Enterprise --enable-application-configuration-service --enable-config-server --enable-service-registry --enable-gateway --enable-api-portal --enable-application-live-view  --enable-application-accelerator"
+            ]
+        },
+        {
+            "name": "az spring delete",
+            "summary": "Delete an Azure Spring Apps.",
+            "syntax": "az spring delete --name\n                 --resource-group\n                 [--no-wait]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--no-wait"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az spring flush-virtualnetwork-dns-settings",
+            "summary": "(Standard and Enterprise Tier Only) Flush Virtual network DNS setting for Azure Spring Apps.",
+            "syntax": "az spring flush-virtualnetwork-dns-settings --name\n                                            --resource-group\n                                            [--no-wait]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--no-wait"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az spring list",
+            "summary": "List all Azure Spring Apps in the given resource group, otherwise list the subscription's.",
+            "syntax": "az spring list [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az spring list-marketplace-plan",
+            "summary": "(Enterprise Tier Only) List Marketplace plan to be purchased.",
+            "syntax": "az spring list-marketplace-plan",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "examples": [
+                "az spring list-marketplace-plan -o table"
+            ]
+        },
+        {
+            "name": "az spring list-support-server-versions",
+            "summary": "(Standard and Basic Tier Only) List supported server versions.",
+            "syntax": "az spring list-support-server-versions --resource-group\n                                       --service",
+            "required_parameters": [
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az spring list-support-server-versions -o table -s MyService -g MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az spring show",
+            "summary": "Show the details for an Azure Spring Apps.",
+            "syntax": "az spring show --name\n               --resource-group",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az spring start",
+            "summary": "Start an Azure Spring Apps.",
+            "syntax": "az spring start --name\n                --resource-group\n                [--no-wait]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--no-wait"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az spring stop",
+            "summary": "Stop an Azure Spring Apps.",
+            "syntax": "az spring stop --name\n               --resource-group\n               [--no-wait]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--no-wait"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az spring update",
+            "summary": "Update an Azure Spring Apps.",
+            "syntax": "az spring update --name\n                 --resource-group\n                 [--build-pool-size {S1, S2, S3, S4, S5, S6, S7, S8, S9}]\n                 [--enable-dataplane-public-endpoint {false, true}]\n                 [--enable-planned-maintenance]\n                 [--enable-private-storage-access {false, true}]\n                 [--ingress-read-timeout]\n                 [--no-wait]\n                 [--planned-maintenance-day {Friday, Monday, Saturday, Sunday, Thursday, Tuesday, Wednesday}]\n                 [--planned-maintenance-start-hour]\n                 [--sku {Basic, Enterprise, Standard, StandardGen2}]\n                 [--tags]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--build-pool-size",
+                "--enable-dataplane-public-endpoint --enable-dppa",
+                "--enable-planned-maintenance --enable-pm",
+                "--enable-private-storage-access --enable-psa",
+                "--ingress-read-timeout",
+                "--no-wait",
+                "--planned-maintenance-day --pm-day",
+                "--planned-maintenance-start-hour --pm-start-hour",
+                "--sku",
+                "--tags"
+            ],
+            "examples": [
+                "az spring update -n MyService --sku Standard -g MyResourceGroup",
+                "az spring update -n MyService -g MyResourceGroup --tags key1=value1 key2=value2",
+                "az spring update -n MyService -g MyResourceGroup --enable-planned-maintenance --planned-maintenance-day Friday --planned-maintenance-start-hour 10"
+            ]
+        }
+    ]
+}

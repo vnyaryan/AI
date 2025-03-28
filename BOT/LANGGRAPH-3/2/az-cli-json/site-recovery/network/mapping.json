@@ -1,0 +1,111 @@
+{
+    "command_group": "az site-recovery network mapping",
+    "description": "Manage Network Mapping.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az site-recovery network mapping create",
+            "summary": "Create operation to create an ASR network mapping.",
+            "syntax": "az site-recovery network mapping create --fabric-name\n                                        --name\n                                        --network-name\n                                        --recovery-network-id\n                                        --resource-group\n                                        --vault-name\n                                        [--fabric-details]\n                                        [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                        [--recovery-fabric-name]",
+            "required_parameters": [
+                "--fabric-name",
+                "--name --network-mapping-name -n",
+                "--network-name",
+                "--recovery-network-id",
+                "--resource-group -g",
+                "--vault-name"
+            ],
+            "optional_parameters": [
+                "--fabric-details --fabric-specific-details",
+                "--no-wait",
+                "--recovery-fabric-name"
+            ],
+            "examples": [
+                "az site-recovery network mapping create -g rg --fabric-name fabric1_name -n network_mapping1_name --network-name azureNetwork --vault-name vault_name --recovery-network-id vnet2_id --fabric-details '{azure-to-azure:{primary-network-id:vnetvm_id}}' --recovery-fabric-name fabric2_name",
+                "az site-recovery network mapping create -g \"rg\" --fabric-name \"fabric_name\" -n \"network_mapping_name\" --network-name \"vnet_source_name\" --vault-name \"vault_name\" --recovery-network-id \"vnet_recovery_id\" --fabric-details '{vmm-to-azure:\"\"}'"
+            ]
+        },
+        {
+            "name": "az site-recovery network mapping delete",
+            "summary": "Delete operation to delete a network mapping.",
+            "syntax": "az site-recovery network mapping delete [--fabric-name]\n                                        [--ids]\n                                        [--name]\n                                        [--network-name]\n                                        [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                        [--resource-group]\n                                        [--subscription]\n                                        [--vault-name]\n                                        [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--fabric-name",
+                "--ids",
+                "--name --network-mapping-name -n",
+                "--network-name",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--vault-name",
+                "--yes -y"
+            ],
+            "examples": [
+                "az site-recovery network mapping delete -g rg --fabric-name fabric_source_name -n network_mapping_src_to_recovery_name --network-name azureNetwork --vault-name vault_name'"
+            ]
+        },
+        {
+            "name": "az site-recovery network mapping list",
+            "summary": "List all ASR network mappings for the specified network.",
+            "syntax": "az site-recovery network mapping list --fabric-name\n                                      --network-name\n                                      --resource-group\n                                      --vault-name\n                                      [--max-items]\n                                      [--next-token]",
+            "required_parameters": [
+                "--fabric-name",
+                "--network-name",
+                "--resource-group -g",
+                "--vault-name"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az site-recovery network mapping list -g rg --fabric-name fabric_source_name --network-name azureNetwork --vault-name vault_name"
+            ]
+        },
+        {
+            "name": "az site-recovery network mapping show",
+            "summary": "Get the details of an ASR network mapping.",
+            "syntax": "az site-recovery network mapping show [--fabric-name]\n                                      [--ids]\n                                      [--name]\n                                      [--network-name]\n                                      [--resource-group]\n                                      [--subscription]\n                                      [--vault-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--fabric-name",
+                "--ids",
+                "--name --network-mapping-name -n",
+                "--network-name",
+                "--resource-group -g",
+                "--subscription",
+                "--vault-name"
+            ],
+            "examples": [
+                "az site-recovery network mapping show -g rg --fabric-name fabric_source_name -n network_mapping_src_to_recovery_name --network-name azureNetwork --vault-name vault_name"
+            ]
+        },
+        {
+            "name": "az site-recovery network mapping update",
+            "summary": "Update operation to create an ASR network mapping.",
+            "syntax": "az site-recovery network mapping update [--add]\n                                        [--fabric-details]\n                                        [--fabric-name]\n                                        [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                        [--ids]\n                                        [--name]\n                                        [--network-name]\n                                        [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                        [--recovery-fabric-name]\n                                        [--recovery-network-id]\n                                        [--remove]\n                                        [--resource-group]\n                                        [--set]\n                                        [--subscription]\n                                        [--vault-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--fabric-details --fabric-specific-details",
+                "--fabric-name",
+                "--force-string",
+                "--ids",
+                "--name --network-mapping-name -n",
+                "--network-name",
+                "--no-wait",
+                "--recovery-fabric-name",
+                "--recovery-network-id",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--subscription",
+                "--vault-name"
+            ],
+            "examples": [
+                "az site-recovery network mapping update -g rg --fabric-name fabric_recovery_name -n network_mapping_src_to_recovery_name --network-name azureNetwork --vault-name vault_name --recovery-network-id vnetvm_id --fabric-details '{azure-to-azure:{primary-network-id:vnet_recovery_id}}' --recovery-fabric-name fabric_source_name"
+            ]
+        }
+    ]
+}

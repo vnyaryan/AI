@@ -1,0 +1,118 @@
+{
+    "command_group": "az network vpn-gateway",
+    "description": "Manage site-to-site VPN gateways.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az network vpn-gateway create",
+            "summary": "Create a site-to-site VPN gateway.",
+            "syntax": "az network vpn-gateway create --name\n                              --resource-group\n                              [--asn]\n                              [--bgp-peering-address]\n                              [--location]\n                              [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                              [--peer-weight]\n                              [--scale-unit]\n                              [--tags]\n                              [--vhub]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--asn",
+                "--bgp-peering-address",
+                "--location -l",
+                "--no-wait",
+                "--peer-weight",
+                "--scale-unit",
+                "--tags",
+                "--vhub"
+            ],
+            "examples": [
+                "az network vpn-gateway create -n MyVPNGateway -g MyRG --vhub MyVHub -l westus"
+            ]
+        },
+        {
+            "name": "az network vpn-gateway delete",
+            "summary": "Delete a site-to-site VPN gateway.",
+            "syntax": "az network vpn-gateway delete [--ids]\n                              [--name]\n                              [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                              [--resource-group]\n                              [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az network vpn-gateway delete -n MyVPNGateway -g MyRG"
+            ]
+        },
+        {
+            "name": "az network vpn-gateway list",
+            "summary": "List site-to-site VPN gateways.",
+            "syntax": "az network vpn-gateway list [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az network vpn-gateway list -g MyRG"
+            ]
+        },
+        {
+            "name": "az network vpn-gateway show",
+            "summary": "Get the details of a site-to-site VPN gateway.",
+            "syntax": "az network vpn-gateway show [--ids]\n                            [--name]\n                            [--resource-group]\n                            [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az network vpn-gateway show -n MyVPNGateway -g MyRG"
+            ]
+        },
+        {
+            "name": "az network vpn-gateway update",
+            "summary": "Update settings of a site-to-site VPN gateway.",
+            "syntax": "az network vpn-gateway update [--add]\n                              [--asn]\n                              [--bgp-peering-address]\n                              [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                              [--ids]\n                              [--name]\n                              [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                              [--peer-weight]\n                              [--remove]\n                              [--resource-group]\n                              [--scale-unit]\n                              [--set]\n                              [--subscription]\n                              [--tags]\n                              [--vhub]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--asn",
+                "--bgp-peering-address",
+                "--force-string",
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--peer-weight",
+                "--remove",
+                "--resource-group -g",
+                "--scale-unit",
+                "--set",
+                "--subscription",
+                "--tags",
+                "--vhub"
+            ],
+            "examples": [
+                "az network vpn-gateway create -g MyRG --vhub MyVHub --name MyVPNGateway --tags foo=bar"
+            ]
+        },
+        {
+            "name": "az network vpn-gateway wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az network vpn-gateway wait [--created]\n                            [--custom]\n                            [--deleted]\n                            [--exists]\n                            [--ids]\n                            [--interval]\n                            [--name]\n                            [--resource-group]\n                            [--subscription]\n                            [--timeout]\n                            [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

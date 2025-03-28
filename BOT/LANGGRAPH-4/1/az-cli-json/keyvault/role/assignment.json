@@ -1,0 +1,57 @@
+{
+    "command_group": "az keyvault role assignment",
+    "description": "Manage role assignments.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az keyvault role assignment create",
+            "summary": "Create a new role assignment for a user, group, or service principal.",
+            "syntax": "az keyvault role assignment create --role\n                                   --scope\n                                   [--assignee]\n                                   [--assignee-object-id]\n                                   [--assignee-principal-type {Application, DirectoryObjectOrGroup, DirectoryRoleTemplate, Everyone, ForeignGroup, Group, MSI, ServicePrincipal, Unknown, User}]\n                                   [--hsm-name]\n                                   [--id]\n                                   [--name]",
+            "required_parameters": [
+                "--role",
+                "--scope"
+            ],
+            "optional_parameters": [
+                "--assignee",
+                "--assignee-object-id",
+                "--assignee-principal-type -t",
+                "--hsm-name",
+                "--id",
+                "--name -n"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az keyvault role assignment delete",
+            "summary": "Delete a role assignment.",
+            "syntax": "az keyvault role assignment delete [--assignee]\n                                   [--assignee-object-id]\n                                   [--hsm-name]\n                                   [--id]\n                                   [--ids]\n                                   [--name]\n                                   [--role]\n                                   [--scope]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--assignee",
+                "--assignee-object-id",
+                "--hsm-name",
+                "--id",
+                "--ids",
+                "--name -n",
+                "--role",
+                "--scope"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az keyvault role assignment list",
+            "summary": "List role assignments.",
+            "syntax": "az keyvault role assignment list [--assignee]\n                                 [--assignee-object-id]\n                                 [--hsm-name]\n                                 [--id]\n                                 [--role]\n                                 [--scope]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--assignee",
+                "--assignee-object-id",
+                "--hsm-name",
+                "--id",
+                "--role",
+                "--scope"
+            ],
+            "examples": []
+        }
+    ]
+}

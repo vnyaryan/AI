@@ -1,0 +1,35 @@
+{
+    "command_group": "az containerapp add-on redis",
+    "description": "Commands to manage the redis add-on for the Container Apps environment.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az containerapp add-on redis create",
+            "summary": "Command to create the redis add-on.",
+            "syntax": "az containerapp add-on redis create --environment\n                                    --name\n                                    --resource-group\n                                    [--no-wait]",
+            "required_parameters": [
+                "--environment",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--no-wait"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az containerapp add-on redis delete",
+            "summary": "Command to delete the redis add-on.",
+            "syntax": "az containerapp add-on redis delete --name\n                                    --resource-group\n                                    [--no-wait]\n                                    [--yes]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--no-wait",
+                "--yes -y"
+            ],
+            "examples": []
+        }
+    ]
+}

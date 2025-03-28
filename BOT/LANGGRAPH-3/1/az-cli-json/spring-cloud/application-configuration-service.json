@@ -1,0 +1,57 @@
+{
+    "command_group": "az spring-cloud application-configuration-service",
+    "description": "(Enterprise Tier Only) Commands to manage Application Configuration Service in Azure Spring Cloud.",
+    "status": "Preview and Deprecated",
+    "commands": [
+        {
+            "name": "az spring-cloud application-configuration-service bind",
+            "summary": "Bind an app to Application Configuration Service.",
+            "syntax": "az spring-cloud application-configuration-service bind --app\n                                                       --resource-group\n                                                       --service",
+            "required_parameters": [
+                "--app",
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az spring-cloud application-configuration-service bind --app MyApp -s MyService -g MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az spring-cloud application-configuration-service clear",
+            "summary": "Reset all Application Configuration Service settings.",
+            "syntax": "az spring-cloud application-configuration-service clear --resource-group\n                                                        --service",
+            "required_parameters": [
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az spring-cloud application-configuration-service show",
+            "summary": "Show the provisioning status, runtime status, and settings of Application Configuration Service.",
+            "syntax": "az spring-cloud application-configuration-service show --resource-group\n                                                       --service",
+            "required_parameters": [
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az spring-cloud application-configuration-service unbind",
+            "summary": "Unbind an app from Application Configuration Service.",
+            "syntax": "az spring-cloud application-configuration-service unbind --app\n                                                         --resource-group\n                                                         --service",
+            "required_parameters": [
+                "--app",
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az spring-cloud application-configuration-service unbind --app MyApp -s MyService -g MyResourceGroup"
+            ]
+        }
+    ]
+}

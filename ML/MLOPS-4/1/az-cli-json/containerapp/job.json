@@ -1,0 +1,325 @@
+{
+    "command_group": "az containerapp job",
+    "description": "Commands to manage Container Apps jobs.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az containerapp job create",
+            "summary": "Create a container apps job.",
+            "syntax": "az containerapp job create --name\n                           --resource-group\n                           [--args]\n                           [--command]\n                           [--container-name]\n                           [--cpu]\n                           [--cron-expression]\n                           [--env-vars]\n                           [--environment]\n                           [--image]\n                           [--max-executions]\n                           [--memory]\n                           [--mi-system-assigned]\n                           [--mi-user-assigned]\n                           [--min-executions]\n                           [--no-wait]\n                           [--parallelism]\n                           [--polling-interval]\n                           [--rcc]\n                           [--registry-identity]\n                           [--registry-password]\n                           [--registry-server]\n                           [--registry-username]\n                           [--replica-retry-limit]\n                           [--replica-timeout]\n                           [--scale-rule-auth]\n                           [--scale-rule-metadata]\n                           [--scale-rule-name]\n                           [--scale-rule-type]\n                           [--secrets]\n                           [--tags]\n                           [--trigger-type]\n                           [--workload-profile-name]\n                           [--yaml]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--args",
+                "--command",
+                "--container-name",
+                "--cpu",
+                "--cron-expression",
+                "--env-vars",
+                "--environment",
+                "--image",
+                "--max-executions",
+                "--memory",
+                "--mi-system-assigned",
+                "--mi-user-assigned",
+                "--min-executions",
+                "--no-wait",
+                "--parallelism",
+                "--polling-interval",
+                "--rcc --replica-completion-count",
+                "--registry-identity",
+                "--registry-password",
+                "--registry-server",
+                "--registry-username",
+                "--replica-retry-limit",
+                "--replica-timeout",
+                "--scale-rule-auth --sra",
+                "--scale-rule-metadata --srm",
+                "--scale-rule-name --srn",
+                "--scale-rule-type --srt",
+                "--secrets -s",
+                "--tags",
+                "--trigger-type",
+                "--workload-profile-name -w",
+                "--yaml"
+            ],
+            "examples": [
+                "az containerapp job create -n MyContainerappsjob -g MyResourceGroup \\\n    --trigger-type Manual \\\n    --replica-timeout 5 \\\n    --replica-retry-limit 2 \\\n    --replica-completion-count 1 \\\n    --parallelism 1 \\\n    --image imageName \\\n    --workload-profile-name my-wlp",
+                "az containerapp job create -n MyContainerappsjob -g MyResourceGroup \\\n    --trigger-type Schedule \\\n    --replica-timeout 5 \\\n    --replica-retry-limit 2 \\\n    --replica-completion-count 1 \\\n    --parallelism 1 \\\n    --cron-expression \"*/1 * * * *\" \\\n    --image imageName",
+                "az containerapp job create -n MyContainerappsjob -g MyResourceGroup \\\n    --trigger-type Event \\\n    --replica-timeout 5 \\\n    --replica-retry-limit 2 \\\n    --replica-completion-count 1 \\\n    --parallelism 1 \\\n    --polling-interval 30 \\\n    --min-executions 0 \\\n    --max-executions 1 \\\n    --scale-rule-name queueJob \\\n    --scale-rule-type azure-queue \\\n    --scale-rule-metadata \"accountName=mystorageaccountname\" \\\n                          \"cloud=AzurePublicCloud\" \\\n                          \"queueLength\": \"5\" \"queueName\": \"foo\" \\\n    --scale-rule-auth \"connection=my-connection-string-secret-name\" \\\n    --image imageName"
+            ]
+        },
+        {
+            "name": "az containerapp job create",
+            "summary": "Create a container apps job.",
+            "syntax": "az containerapp job create --name\n                           --resource-group\n                           [--args]\n                           [--command]\n                           [--container-name]\n                           [--cpu]\n                           [--cron-expression]\n                           [--env-vars]\n                           [--environment]\n                           [--environment-type {connected, managed}]\n                           [--image]\n                           [--max-executions]\n                           [--memory]\n                           [--mi-system-assigned]\n                           [--mi-user-assigned]\n                           [--min-executions]\n                           [--no-wait]\n                           [--parallelism]\n                           [--polling-interval]\n                           [--rcc]\n                           [--registry-identity]\n                           [--registry-password]\n                           [--registry-server]\n                           [--registry-username]\n                           [--replica-retry-limit]\n                           [--replica-timeout]\n                           [--scale-rule-auth]\n                           [--scale-rule-identity]\n                           [--scale-rule-metadata]\n                           [--scale-rule-name]\n                           [--scale-rule-type]\n                           [--secrets]\n                           [--tags]\n                           [--trigger-type]\n                           [--workload-profile-name]\n                           [--yaml]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--args",
+                "--command",
+                "--container-name",
+                "--cpu",
+                "--cron-expression",
+                "--env-vars",
+                "--environment",
+                "--environment-type",
+                "--image",
+                "--max-executions",
+                "--memory",
+                "--mi-system-assigned",
+                "--mi-user-assigned",
+                "--min-executions",
+                "--no-wait",
+                "--parallelism",
+                "--polling-interval",
+                "--rcc --replica-completion-count",
+                "--registry-identity",
+                "--registry-password",
+                "--registry-server",
+                "--registry-username",
+                "--replica-retry-limit",
+                "--replica-timeout",
+                "--scale-rule-auth --sra",
+                "--scale-rule-identity --sri",
+                "--scale-rule-metadata --srm",
+                "--scale-rule-name --srn",
+                "--scale-rule-type --srt",
+                "--secrets -s",
+                "--tags",
+                "--trigger-type",
+                "--workload-profile-name -w",
+                "--yaml"
+            ],
+            "examples": [
+                "az containerapp job create -n MyContainerappsjob -g MyResourceGroup \\\n    --environment MyContainerappEnv\n    --trigger-type Manual \\\n    --replica-timeout 5 \\\n    --replica-retry-limit 2 \\\n    --replica-completion-count 1 \\\n    --parallelism 1 \\\n    --image imageName \\\n    --workload-profile-name my-wlp",
+                "az containerapp job create -n MyContainerappsjob -g MyResourceGroup \\\n    --environment MyContainerappEnv\n    --trigger-type Schedule \\\n    --replica-timeout 5 \\\n    --replica-retry-limit 2 \\\n    --replica-completion-count 1 \\\n    --parallelism 1 \\\n    --cron-expression \"*/1 * * * *\" \\\n    --image imageName",
+                "az containerapp job create -n MyContainerappsjob -g MyResourceGroup \\\n    --environment MyContainerappEnv\n    --trigger-type Event \\\n    --replica-timeout 5 \\\n    --replica-retry-limit 2 \\\n    --replica-completion-count 1 \\\n    --parallelism 1 \\\n    --polling-interval 30 \\\n    --min-executions 0 \\\n    --max-executions 1 \\\n    --scale-rule-name queueJob \\\n    --scale-rule-type azure-queue \\\n    --scale-rule-metadata \"accountName=mystorageaccountname\" \\\n                          \"cloud=AzurePublicCloud\" \\\n                          \"queueLength=5\" \"queueName=foo\" \\\n    --scale-rule-auth \"connection=my-connection-string-secret-name\" \\\n    --image imageName",
+                "az containerapp job create -n MyContainerappsjob -g MyResourceGroup \\\n    --environment MyContainerappEnv\n    --trigger-type Event \\\n    --replica-timeout 5 \\\n    --replica-retry-limit 2 \\\n    --replica-completion-count 1 \\\n    --parallelism 1 \\\n    --polling-interval 30 \\\n    --min-executions 0 \\\n    --max-executions 1 \\\n    --scale-rule-name azure-queue \\\n    --scale-rule-type azure-queue \\\n    --scale-rule-metadata \"accountName=mystorageaccountname\" \\\n                          \"cloud=AzurePublicCloud\" \\\n                          \"queueLength=5\" \"queueName=foo\" \\\n    --scale-rule-identity myUserIdentityResourceId \\\n    --image imageName",
+                "az containerapp job create -n MyContainerappsjob -g MyResourceGroup \\\n    --environment MyContainerappConnectedEnv\n    --environment-type connected\n    --trigger-type Manual \\\n    --replica-timeout 5 \\\n    --replica-retry-limit 2 \\\n    --replica-completion-count 1 \\\n    --parallelism 1 \\\n    --image imageName \\\n    --workload-profile-name my-wlp"
+            ]
+        },
+        {
+            "name": "az containerapp job delete",
+            "summary": "Delete a Container Apps Job.",
+            "syntax": "az containerapp job delete [--ids]\n                           [--name]\n                           [--no-wait]\n                           [--resource-group]\n                           [--subscription]\n                           [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az containerapp job delete -n my-containerapp-job -g MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az containerapp job delete",
+            "summary": "Delete a Container Apps Job.",
+            "syntax": "az containerapp job delete [--ids]\n                           [--name]\n                           [--no-wait]\n                           [--resource-group]\n                           [--subscription]\n                           [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az containerapp job delete -n my-containerapp-job -g MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az containerapp job list",
+            "summary": "List Container Apps Job by subscription or resource group.",
+            "syntax": "az containerapp job list [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az containerapp job list",
+                "az containerapp job list -g MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az containerapp job list",
+            "summary": "List Container Apps Job by subscription or resource group.",
+            "syntax": "az containerapp job list [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az containerapp job list",
+                "az containerapp job list -g MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az containerapp job show",
+            "summary": "Show details of a Container Apps Job.",
+            "syntax": "az containerapp job show [--ids]\n                         [--name]\n                         [--resource-group]\n                         [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az containerapp job show -n my-containerapp-job -g MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az containerapp job show",
+            "summary": "Show details of a Container Apps Job.",
+            "syntax": "az containerapp job show [--ids]\n                         [--name]\n                         [--resource-group]\n                         [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az containerapp job show -n my-containerapp-job -g MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az containerapp job start",
+            "summary": "Start a Container Apps Job execution.",
+            "syntax": "az containerapp job start [--args]\n                          [--command]\n                          [--container-name]\n                          [--cpu]\n                          [--env-vars]\n                          [--ids]\n                          [--image]\n                          [--memory]\n                          [--name]\n                          [--no-wait]\n                          [--registry-identity]\n                          [--resource-group]\n                          [--subscription]\n                          [--yaml]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--args",
+                "--command",
+                "--container-name",
+                "--cpu",
+                "--env-vars",
+                "--ids",
+                "--image",
+                "--memory",
+                "--name -n",
+                "--no-wait",
+                "--registry-identity",
+                "--resource-group -g",
+                "--subscription",
+                "--yaml"
+            ],
+            "examples": [
+                "az containerapp job start -n my-containerapp-job -g MyResourceGroup",
+                "az containerapp job start -n my-containerapp-job -g MyResourceGroup --image MyImageName --cpu 0.5 --memory 1.0Gi"
+            ]
+        },
+        {
+            "name": "az containerapp job stop",
+            "summary": "Stops a Container Apps Job execution.",
+            "syntax": "az containerapp job stop [--ids]\n                         [--job-execution-name]\n                         [--name]\n                         [--no-wait]\n                         [--resource-group]\n                         [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--job-execution-name",
+                "--name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az containerapp job stop -n my-containerapp-job -g MyResourceGroup",
+                "az containerapp job stop -n my-containerapp-job -g MyResourceGroup --job-execution-name MyContainerAppJob-66v9xh0",
+                "az containerapp job stop -n my-containerapp-job -g MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az containerapp job update",
+            "summary": "Update a Container Apps Job.",
+            "syntax": "az containerapp job update [--args]\n                           [--command]\n                           [--container-name]\n                           [--cpu]\n                           [--cron-expression]\n                           [--ids]\n                           [--image]\n                           [--max-executions]\n                           [--memory]\n                           [--min-executions]\n                           [--name]\n                           [--no-wait]\n                           [--parallelism]\n                           [--polling-interval]\n                           [--rcc]\n                           [--remove-all-env-vars]\n                           [--remove-env-vars]\n                           [--replace-env-vars]\n                           [--replica-retry-limit]\n                           [--replica-timeout]\n                           [--resource-group]\n                           [--scale-rule-auth]\n                           [--scale-rule-metadata]\n                           [--scale-rule-name]\n                           [--scale-rule-type]\n                           [--set-env-vars]\n                           [--subscription]\n                           [--tags]\n                           [--workload-profile-name]\n                           [--yaml]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--args",
+                "--command",
+                "--container-name",
+                "--cpu",
+                "--cron-expression",
+                "--ids",
+                "--image",
+                "--max-executions",
+                "--memory",
+                "--min-executions",
+                "--name -n",
+                "--no-wait",
+                "--parallelism",
+                "--polling-interval",
+                "--rcc --replica-completion-count",
+                "--remove-all-env-vars",
+                "--remove-env-vars",
+                "--replace-env-vars",
+                "--replica-retry-limit",
+                "--replica-timeout",
+                "--resource-group -g",
+                "--scale-rule-auth --sra",
+                "--scale-rule-metadata --srm",
+                "--scale-rule-name --srn",
+                "--scale-rule-type --srt",
+                "--set-env-vars",
+                "--subscription",
+                "--tags",
+                "--workload-profile-name -w",
+                "--yaml"
+            ],
+            "examples": [
+                "az containerapp job update -n my-containerapp-job -g MyResourceGroup \\\n    --replica-timeout 10"
+            ]
+        },
+        {
+            "name": "az containerapp job update",
+            "summary": "Update a Container Apps Job.",
+            "syntax": "az containerapp job update [--args]\n                           [--command]\n                           [--container-name]\n                           [--cpu]\n                           [--cron-expression]\n                           [--ids]\n                           [--image]\n                           [--max-executions]\n                           [--memory]\n                           [--min-executions]\n                           [--name]\n                           [--no-wait]\n                           [--parallelism]\n                           [--polling-interval]\n                           [--rcc]\n                           [--remove-all-env-vars]\n                           [--remove-env-vars]\n                           [--replace-env-vars]\n                           [--replica-retry-limit]\n                           [--replica-timeout]\n                           [--resource-group]\n                           [--scale-rule-auth]\n                           [--scale-rule-identity]\n                           [--scale-rule-metadata]\n                           [--scale-rule-name]\n                           [--scale-rule-type]\n                           [--set-env-vars]\n                           [--subscription]\n                           [--tags]\n                           [--workload-profile-name]\n                           [--yaml]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--args",
+                "--command",
+                "--container-name",
+                "--cpu",
+                "--cron-expression",
+                "--ids",
+                "--image",
+                "--max-executions",
+                "--memory",
+                "--min-executions",
+                "--name -n",
+                "--no-wait",
+                "--parallelism",
+                "--polling-interval",
+                "--rcc --replica-completion-count",
+                "--remove-all-env-vars",
+                "--remove-env-vars",
+                "--replace-env-vars",
+                "--replica-retry-limit",
+                "--replica-timeout",
+                "--resource-group -g",
+                "--scale-rule-auth --sra",
+                "--scale-rule-identity --sri",
+                "--scale-rule-metadata --srm",
+                "--scale-rule-name --srn",
+                "--scale-rule-type --srt",
+                "--set-env-vars",
+                "--subscription",
+                "--tags",
+                "--workload-profile-name -w",
+                "--yaml"
+            ],
+            "examples": [
+                "az containerapp job update -n my-containerapp-job -g MyResourceGroup \\\n    --replica-timeout 10"
+            ]
+        }
+    ]
+}

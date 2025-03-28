@@ -1,0 +1,76 @@
+{
+    "command_group": "az vmware datastore",
+    "description": "Commands to manage a datastore in a private cloud cluster.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az vmware datastore delete",
+            "summary": "Delete a datastore in a private cloud cluster.",
+            "syntax": "az vmware datastore delete [--cluster]\n                           [--datastore-name]\n                           [--ids]\n                           [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                           [--private-cloud]\n                           [--resource-group]\n                           [--subscription]\n                           [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--cluster --cluster-name",
+                "--datastore-name --name -n",
+                "--ids",
+                "--no-wait",
+                "--private-cloud -c",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az vmware datastore list",
+            "summary": "List datastores in a private cloud cluster.",
+            "syntax": "az vmware datastore list --cluster\n                         --private-cloud\n                         --resource-group\n                         [--max-items]\n                         [--next-token]",
+            "required_parameters": [
+                "--cluster --cluster-name",
+                "--private-cloud -c",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az vmware datastore show",
+            "summary": "Show details of a datastore in a private cloud cluster.",
+            "syntax": "az vmware datastore show [--cluster]\n                         [--datastore-name]\n                         [--ids]\n                         [--private-cloud]\n                         [--resource-group]\n                         [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--cluster --cluster-name",
+                "--datastore-name --name -n",
+                "--ids",
+                "--private-cloud -c",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az vmware datastore wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az vmware datastore wait [--cluster]\n                         [--created]\n                         [--custom]\n                         [--datastore-name]\n                         [--deleted]\n                         [--exists]\n                         [--ids]\n                         [--interval]\n                         [--private-cloud]\n                         [--resource-group]\n                         [--subscription]\n                         [--timeout]\n                         [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--cluster --cluster-name",
+                "--created",
+                "--custom",
+                "--datastore-name --name -n",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--private-cloud -c",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

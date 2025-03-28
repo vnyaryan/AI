@@ -1,0 +1,160 @@
+{
+    "command_group": "az acr connected-registry",
+    "description": "Manage connected registry resources with Azure Container Registries.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az acr connected-registry create",
+            "summary": "Create a connected registry for an Azure Container Registry.",
+            "syntax": "az acr connected-registry create --name\n                                 --registry\n                                 [--client-tokens]\n                                 [--log-level]\n                                 [--mode {ReadOnly, ReadWrite}]\n                                 [--notifications]\n                                 [--parent]\n                                 [--repository]\n                                 [--resource-group]\n                                 [--sync-message-ttl]\n                                 [--sync-schedule]\n                                 [--sync-token]\n                                 [--sync-window]\n                                 [--yes]",
+            "required_parameters": [
+                "--name -n",
+                "--registry -r"
+            ],
+            "optional_parameters": [
+                "--client-tokens",
+                "--log-level",
+                "--mode -m",
+                "--notifications",
+                "--parent -p",
+                "--repository",
+                "--resource-group -g",
+                "--sync-message-ttl",
+                "--sync-schedule -s",
+                "--sync-token",
+                "--sync-window -w",
+                "--yes -y"
+            ],
+            "examples": [
+                "az acr connected-registry create --registry mycloudregistry --name myconnectedregistry \\\n    --repository \"app/hello-world\" \"service/mycomponent\"",
+                "az acr connected-registry create --registry mycloudregistry  --name myreadonlyacr \\\n    --mode readonly --parent myconnectedregistry --sync-token mySyncTokenName",
+                "az acr connected-registry create -r mycloudregistry -n myreadonlyacr -p myconnectedregistry \\\n    --repository \"app/mycomponent\" -m ReadOnly -s \"0 12 * * *\" -w PT4H \\\n    --client-tokens myTokenName1 myTokenName2"
+            ]
+        },
+        {
+            "name": "az acr connected-registry deactivate",
+            "summary": "Deactivate a connected registry from Azure Container Registry.",
+            "syntax": "az acr connected-registry deactivate --name\n                                     --registry\n                                     [--resource-group]\n                                     [--yes]",
+            "required_parameters": [
+                "--name -n",
+                "--registry -r"
+            ],
+            "optional_parameters": [
+                "--resource-group -g",
+                "--yes -y"
+            ],
+            "examples": [
+                "az acr connected-registry deactivate -r mycloudregistry -n myconnectedregistry"
+            ]
+        },
+        {
+            "name": "az acr connected-registry delete",
+            "summary": "Delete a connected registry from Azure Container Registry.",
+            "syntax": "az acr connected-registry delete --name\n                                 --registry\n                                 [--cleanup]\n                                 [--resource-group]\n                                 [--yes]",
+            "required_parameters": [
+                "--name -n",
+                "--registry -r"
+            ],
+            "optional_parameters": [
+                "--cleanup",
+                "--resource-group -g",
+                "--yes -y"
+            ],
+            "examples": [
+                "az acr connected-registry delete --registry mycloudregistry --name myconnectedregistry",
+                "az acr connected-registry delete -r mycloudregistry -n myconnectedregistry --cleanup"
+            ]
+        },
+        {
+            "name": "az acr connected-registry get-settings",
+            "summary": "Retrieve information required to activate a connected registry, and creates or rotates the sync token credentials.",
+            "syntax": "az acr connected-registry get-settings --name\n                                       --parent-protocol {http, https}\n                                       --registry\n                                       [--generate-password {1, 2}]\n                                       [--resource-group]\n                                       [--yes]",
+            "required_parameters": [
+                "--name -n",
+                "--parent-protocol",
+                "--registry -r"
+            ],
+            "optional_parameters": [
+                "--generate-password",
+                "--resource-group -g",
+                "--yes -y"
+            ],
+            "examples": [
+                "az acr connected-registry get-settings -r mycloudregistry -n myconnectedregistry --parent-protocol http",
+                "az acr connected-registry get-settings -r mycloudregistry -n myconnectedregistry --generate-password 1 --parent-protocol https"
+            ]
+        },
+        {
+            "name": "az acr connected-registry list",
+            "summary": "List all the connected registries under the current parent registry.",
+            "syntax": "az acr connected-registry list --registry\n                               [--no-children]\n                               [--parent]\n                               [--resource-group]",
+            "required_parameters": [
+                "--registry -r"
+            ],
+            "optional_parameters": [
+                "--no-children",
+                "--parent -p",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az acr connected-registry list --registry mycloudregistry --output table",
+                "az acr connected-registry list --registry mycloudregistry --no-children --output table",
+                "az acr connected-registry list -r mycloudregistry -p myconnectedregistry --output table"
+            ]
+        },
+        {
+            "name": "az acr connected-registry list-client-tokens",
+            "summary": "List all the client tokens associated to a specific connected registries.",
+            "syntax": "az acr connected-registry list-client-tokens --name\n                                             --registry\n                                             [--resource-group]",
+            "required_parameters": [
+                "--name -n",
+                "--registry -r"
+            ],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az acr connected-registry list-client-tokens -r mycloudregistry -n myreadonlyacr -o table"
+            ]
+        },
+        {
+            "name": "az acr connected-registry show",
+            "summary": "Show connected registry details.",
+            "syntax": "az acr connected-registry show --name\n                               --registry\n                               [--resource-group]",
+            "required_parameters": [
+                "--name -n",
+                "--registry -r"
+            ],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az acr connected-registry show --registry mycloudregistry --name myreadonlyacr --output table"
+            ]
+        },
+        {
+            "name": "az acr connected-registry update",
+            "summary": "Update a connected registry for an Azure Container Registry.",
+            "syntax": "az acr connected-registry update --name\n                                 --registry\n                                 [--add-client-tokens]\n                                 [--add-notifications]\n                                 [--log-level]\n                                 [--remove-client-tokens]\n                                 [--remove-notifications]\n                                 [--resource-group]\n                                 [--sync-message-ttl]\n                                 [--sync-schedule]\n                                 [--sync-window]",
+            "required_parameters": [
+                "--name -n",
+                "--registry -r"
+            ],
+            "optional_parameters": [
+                "--add-client-tokens",
+                "--add-notifications",
+                "--log-level",
+                "--remove-client-tokens",
+                "--remove-notifications",
+                "--resource-group -g",
+                "--sync-message-ttl",
+                "--sync-schedule -s",
+                "--sync-window -w"
+            ],
+            "examples": [
+                "az acr connected-registry update --registry mycloudregistry --name myconnectedregistry \\\n    --remove-client-tokens myTokenName1 --add-client-tokens myTokenName2 myTokenName3",
+                "az acr connected-registry update --registry mycloudregistry --name myreadonlyacr \\\n    --sync-schedule \"0 12 * * *\" --sync-window PT4H"
+            ]
+        }
+    ]
+}

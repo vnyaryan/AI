@@ -1,0 +1,6 @@
+{
+    "command_group": "az palo-alto cloudngfw",
+    "description": "Manage cloudngfw resource.",
+    "status": "GA",
+    "commands": []
+}

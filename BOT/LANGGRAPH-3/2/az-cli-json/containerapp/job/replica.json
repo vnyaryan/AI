@@ -1,0 +1,22 @@
+{
+    "command_group": "az containerapp job replica",
+    "description": "Manage container app replicas.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az containerapp job replica list",
+            "summary": "List a container app job execution's replica.",
+            "syntax": "az containerapp job replica list --name\n                                 --resource-group\n                                 [--execution]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--execution"
+            ],
+            "examples": [
+                "az containerapp job replica list -n my-containerappjob -g MyResourceGroup --execution MyExecution"
+            ]
+        }
+    ]
+}

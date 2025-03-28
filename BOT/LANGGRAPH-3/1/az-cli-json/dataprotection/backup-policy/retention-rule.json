@@ -1,0 +1,51 @@
+{
+    "command_group": "az dataprotection backup-policy retention-rule",
+    "description": "Create lifecycles and add or remove retention rules in a backup policy.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az dataprotection backup-policy retention-rule create-lifecycle",
+            "summary": "Create lifecycle for Azure Retention rule.",
+            "syntax": "az dataprotection backup-policy retention-rule create-lifecycle --count\n                                                                --retention-duration-type {Days, Months, Weeks, Years}\n                                                                --source-datastore {ArchiveStore, OperationalStore, VaultStore}\n                                                                [--copy-option {CopyOnExpiryOption, CustomCopyOption, ImmediateCopyOption}]\n                                                                [--target-datastore {ArchiveStore, OperationalStore, VaultStore}]",
+            "required_parameters": [
+                "--count --retention-duration-count",
+                "--retention-duration-type --type",
+                "--source-datastore"
+            ],
+            "optional_parameters": [
+                "--copy-option",
+                "--target-datastore"
+            ],
+            "examples": [
+                "az dataprotection backup-policy retention-rule create-lifecycle --retention-duration-count 12 --retention-duration-type Days --source-datastore OperationalStore"
+            ]
+        },
+        {
+            "name": "az dataprotection backup-policy retention-rule remove",
+            "summary": "Remove existing retention rule in a backup policy.",
+            "syntax": "az dataprotection backup-policy retention-rule remove --name {Daily, Default, Monthly, Weekly, Yearly}\n                                                      --policy",
+            "required_parameters": [
+                "--name",
+                "--policy"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az dataprotection backup-policy retention-rule remove --name Daily --policy policy.json"
+            ]
+        },
+        {
+            "name": "az dataprotection backup-policy retention-rule set",
+            "summary": "Add new retention rule or update existing retention rule.",
+            "syntax": "az dataprotection backup-policy retention-rule set --lifecycles\n                                                   --name {Daily, Default, Monthly, Weekly, Yearly}\n                                                   --policy",
+            "required_parameters": [
+                "--lifecycles",
+                "--name",
+                "--policy"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az dataprotection backup-policy retention-rule set --lifecycles dailylifecycle.json --name Daily --policy policy.json"
+            ]
+        }
+    ]
+}

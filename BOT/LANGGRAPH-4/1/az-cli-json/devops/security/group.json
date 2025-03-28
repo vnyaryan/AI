@@ -1,0 +1,87 @@
+{
+    "command_group": "az devops security group",
+    "description": "Manage security groups.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az devops security group create",
+            "summary": "Create a new Azure DevOps group.",
+            "syntax": "az devops security group create [--description]\n                                [--detect {false, true}]\n                                [--email-id]\n                                [--groups]\n                                [--name]\n                                [--org]\n                                [--origin-id]\n                                [--project]\n                                [--scope {organization, project}]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--description",
+                "--detect",
+                "--email-id",
+                "--groups",
+                "--name",
+                "--org --organization",
+                "--origin-id",
+                "--project -p",
+                "--scope"
+            ],
+            "examples": [
+                "az devops security group create --name 'Some group name'\n--description 'Something to describe this group'",
+                "Get object ID of an existing AAD group\naz ad group show -g '{Group Name}'\naz devops security group create --origin-id '{Object ID}' --groups 'vssgp.someDescriptorForGroup'",
+                "az devops security group create --email-id '{Email ID of AAD group}'\n--groups 'vssgp.someDescriptorForGroup'",
+                "az devops security group create --name 'Some group name'\n--groups 'vssgp.someDescriptorForGroupOne,vssgp.someDescriptorForGroupTwo'"
+            ]
+        },
+        {
+            "name": "az devops security group delete",
+            "summary": "Delete an Azure DevOps group.",
+            "syntax": "az devops security group delete --id\n                                [--detect {false, true}]\n                                [--org]\n                                [--yes]",
+            "required_parameters": [
+                "--id"
+            ],
+            "optional_parameters": [
+                "--detect",
+                "--org --organization",
+                "--yes -y"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az devops security group list",
+            "summary": "List all the groups in a project or organization.",
+            "syntax": "az devops security group list [--continuation-token]\n                              [--detect {false, true}]\n                              [--org]\n                              [--project]\n                              [--scope {organization, project}]\n                              [--subject-types]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--continuation-token",
+                "--detect",
+                "--org --organization",
+                "--project -p",
+                "--scope",
+                "--subject-types"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az devops security group show",
+            "summary": "Show group details.",
+            "syntax": "az devops security group show --id\n                              [--detect {false, true}]\n                              [--org]",
+            "required_parameters": [
+                "--id"
+            ],
+            "optional_parameters": [
+                "--detect",
+                "--org --organization"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az devops security group update",
+            "summary": "Update name AND/OR description for an Azure DevOps group.",
+            "syntax": "az devops security group update --id\n                                [--description]\n                                [--detect {false, true}]\n                                [--name]\n                                [--org]",
+            "required_parameters": [
+                "--id"
+            ],
+            "optional_parameters": [
+                "--description",
+                "--detect",
+                "--name",
+                "--org --organization"
+            ],
+            "examples": []
+        }
+    ]
+}

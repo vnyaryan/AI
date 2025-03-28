@@ -1,0 +1,88 @@
+{
+    "command_group": "az cosmosdb sql trigger",
+    "description": "Manage Azure Cosmos DB SQL triggers.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az cosmosdb sql trigger create",
+            "summary": "Create an SQL trigger under an Azure Cosmos DB SQL container.",
+            "syntax": "az cosmosdb sql trigger create --account-name\n                               --body\n                               --container-name\n                               --database-name\n                               --name\n                               --resource-group\n                               [--operation {All, Create, Delete, Replace, Update}]\n                               [--type {Post, Pre}]",
+            "required_parameters": [
+                "--account-name -a",
+                "--body -b",
+                "--container-name -c",
+                "--database-name -d",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--operation",
+                "--type -t"
+            ],
+            "examples": [
+                "az cosmosdb sql trigger create -g MyResourceGroup -a MyAccount -d MyDatabase -c MyContainer -n MyTrigger -b TriggerBody"
+            ]
+        },
+        {
+            "name": "az cosmosdb sql trigger delete",
+            "summary": "Delete the SQL trigger under an Azure Cosmos DB SQL container.",
+            "syntax": "az cosmosdb sql trigger delete --account-name\n                               --container-name\n                               --database-name\n                               --name\n                               --resource-group\n                               [--yes]",
+            "required_parameters": [
+                "--account-name -a",
+                "--container-name -c",
+                "--database-name -d",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--yes -y"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az cosmosdb sql trigger list",
+            "summary": "List the SQL triggers under an Azure Cosmos DB SQL container.",
+            "syntax": "az cosmosdb sql trigger list --account-name\n                             --container-name\n                             --database-name\n                             --resource-group",
+            "required_parameters": [
+                "--account-name -a",
+                "--container-name -c",
+                "--database-name -d",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az cosmosdb sql trigger show",
+            "summary": "Show the details of a SQL trigger under an Azure Cosmos DB SQL container.",
+            "syntax": "az cosmosdb sql trigger show --account-name\n                             --container-name\n                             --database-name\n                             --name\n                             --resource-group",
+            "required_parameters": [
+                "--account-name -a",
+                "--container-name -c",
+                "--database-name -d",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az cosmosdb sql trigger update",
+            "summary": "Updates an Azure Cosmos DB SQL trigger.",
+            "syntax": "az cosmosdb sql trigger update --account-name\n                               --container-name\n                               --database-name\n                               --name\n                               --resource-group\n                               [--body]\n                               [--operation {All, Create, Delete, Replace, Update}]\n                               [--type {Post, Pre}]",
+            "required_parameters": [
+                "--account-name -a",
+                "--container-name -c",
+                "--database-name -d",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--body -b",
+                "--operation",
+                "--type -t"
+            ],
+            "examples": []
+        }
+    ]
+}

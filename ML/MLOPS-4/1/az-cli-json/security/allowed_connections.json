@@ -1,0 +1,30 @@
+{
+    "command_group": "az security allowed_connections",
+    "description": "View all possible traffic between resources for the subscription and location, based on connection type.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az security allowed_connections list",
+            "summary": "List of all possible traffic between resources for the subscription.",
+            "syntax": "az security allowed_connections list",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "examples": [
+                "az security allowed_connections list"
+            ]
+        },
+        {
+            "name": "az security allowed_connections show",
+            "summary": "List all possible traffic between resources for the subscription and location, based on connection type.",
+            "syntax": "az security allowed_connections show --name\n                                     --resource-group",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az security allowed_connections show --name Internal --resource-group mygroup"
+            ]
+        }
+    ]
+}

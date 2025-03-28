@@ -1,0 +1,96 @@
+{
+    "command_group": "az policy exemption",
+    "description": "Manage resource policy exemptions.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az policy exemption create",
+            "summary": "Create a policy exemption.",
+            "syntax": "az policy exemption create --name\n                           [--description]\n                           [--display-name]\n                           [--exemption-category {Mitigated, Waiver}]\n                           [--expires-on]\n                           [--metadata]\n                           [--policy-assignment]\n                           [--policy-definition-reference-ids]\n                           [--resource-group]\n                           [--scope]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--description",
+                "--display-name",
+                "--exemption-category -e",
+                "--expires-on",
+                "--metadata",
+                "--policy-assignment -a",
+                "--policy-definition-reference-ids -r",
+                "--resource-group -g",
+                "--scope"
+            ],
+            "examples": [
+                "az policy exemption create -n exemptTestVM \\\n    --policy-assignment \"/subscriptions/mySubId/providers/Microsoft.Authorization/policyAssignments/limitVMSku\" \\\n    --exemption-category \"Waiver\"",
+                "az policy exemption create -n exemptTestVM \\\n    --policy-assignment \"/subscriptions/mySubId/providers/Microsoft.Authorization/policyAssignments/limitVMSku\" \\\n    --exemption-category \"Waiver\" \\\n    --resource-group \"myResourceGroup\"",
+                "az policy exemption create -n exemptTestVM \\\n    --policy-assignment \"/providers/Microsoft.Management/managementGroups/myMG/providers/Microsoft.Authorization/policyAssignments/limitVMSku\" \\\n    --exemption-category \"Waiver\" \\\n    --scope \"/providers/Microsoft.Management/managementGroups/myMG\""
+            ]
+        },
+        {
+            "name": "az policy exemption delete",
+            "summary": "Delete a policy exemption.",
+            "syntax": "az policy exemption delete --name\n                           [--resource-group]\n                           [--scope]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--resource-group -g",
+                "--scope"
+            ],
+            "examples": [
+                "az policy exemption delete --name MyPolicyExemption --resource-group \"myResourceGroup\""
+            ]
+        },
+        {
+            "name": "az policy exemption list",
+            "summary": "List policy exemptions.",
+            "syntax": "az policy exemption list [--disable-scope-strict-match]\n                         [--resource-group]\n                         [--scope]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--disable-scope-strict-match -i",
+                "--resource-group -g",
+                "--scope"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az policy exemption show",
+            "summary": "Show a policy exemption.",
+            "syntax": "az policy exemption show --name\n                         [--resource-group]\n                         [--scope]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--resource-group -g",
+                "--scope"
+            ],
+            "examples": [
+                "az policy exemption show --name MyPolicyExemption --resource-group \"myResourceGroup\""
+            ]
+        },
+        {
+            "name": "az policy exemption update",
+            "summary": "Update a policy exemption.",
+            "syntax": "az policy exemption update --name\n                           [--description]\n                           [--display-name]\n                           [--exemption-category {Mitigated, Waiver}]\n                           [--expires-on]\n                           [--metadata]\n                           [--policy-definition-reference-ids]\n                           [--resource-group]\n                           [--scope]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--description",
+                "--display-name",
+                "--exemption-category -e",
+                "--expires-on",
+                "--metadata",
+                "--policy-definition-reference-ids -r",
+                "--resource-group -g",
+                "--scope"
+            ],
+            "examples": [
+                "az policy exemption update -n exemptTestVM \\\n    --exemption-category \"Mitigated\"",
+                "az policy exemption update -n exemptTestVM \\\n    --exemption-category \"Mitigated\" \\\n    --resource-group \"myResourceGroup\"",
+                "az policy exemption update -n exemptTestVM \\\n    --exemption-category \"Mitigated\" \\\n    --scope \"/providers/Microsoft.Management/managementGroups/myMG\""
+            ]
+        }
+    ]
+}

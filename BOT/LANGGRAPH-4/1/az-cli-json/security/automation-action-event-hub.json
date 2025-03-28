@@ -1,0 +1,22 @@
+{
+    "command_group": "az security automation-action-event-hub",
+    "description": "Creates security automation event hub action.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az security automation-action-event-hub create",
+            "summary": "Creates security automation event hub action.",
+            "syntax": "az security automation-action-event-hub create --connection-string\n                                               --event-hub-resource-id\n                                               [--sas-policy-name]",
+            "required_parameters": [
+                "--connection-string",
+                "--event-hub-resource-id"
+            ],
+            "optional_parameters": [
+                "--sas-policy-name"
+            ],
+            "examples": [
+                "az security automation-action-event-hub create --event-hub-resource-id '/subscriptions/03b601f1-7eca-4496-8f8d-355219eee254/resourceGroups/sample-rg/providers/Microsoft.EventHub/namespaces/evenhubnamespace1/eventhubs/evenhubname1' --connection-string 'Endpoint=sb://dummy/;SharedAccessKeyName=dummy;SharedAccessKey=dummy;EntityPath=dummy' --sas-policy-name 'Send'"
+            ]
+        }
+    ]
+}

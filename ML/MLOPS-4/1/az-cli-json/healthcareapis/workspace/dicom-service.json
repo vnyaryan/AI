@@ -1,0 +1,121 @@
+{
+    "command_group": "az healthcareapis workspace dicom-service",
+    "description": "Manage dicom service with healthcareapis.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az healthcareapis workspace dicom-service create",
+            "summary": "Create a DICOM Service resource with the specified parameters.",
+            "syntax": "az healthcareapis workspace dicom-service create --dicom-service-name\n                                                 --resource-group\n                                                 --workspace-name\n                                                 [--etag]\n                                                 [--identity-type {None, SystemAssigned, SystemAssigned,UserAssigned, UserAssigned}]\n                                                 [--location]\n                                                 [--no-wait]\n                                                 [--public-network-access {Disabled, Enabled}]\n                                                 [--tags]\n                                                 [--user-assigned-identities]",
+            "required_parameters": [
+                "--dicom-service-name --name -n",
+                "--resource-group -g",
+                "--workspace-name"
+            ],
+            "optional_parameters": [
+                "--etag",
+                "--identity-type",
+                "--location -l",
+                "--no-wait",
+                "--public-network-access",
+                "--tags",
+                "--user-assigned-identities -i"
+            ],
+            "examples": [
+                "az healthcareapis workspace dicom-service create --name \"blue\" --location \"westus\" --resource-group \"testRG\" --workspace-name \"workspace1\""
+            ]
+        },
+        {
+            "name": "az healthcareapis workspace dicom-service delete",
+            "summary": "Deletes a DICOM Service.",
+            "syntax": "az healthcareapis workspace dicom-service delete [--dicom-service-name]\n                                                 [--ids]\n                                                 [--no-wait]\n                                                 [--resource-group]\n                                                 [--subscription]\n                                                 [--workspace-name]\n                                                 [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--dicom-service-name --name -n",
+                "--ids",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--workspace-name",
+                "--yes -y"
+            ],
+            "examples": [
+                "az healthcareapis workspace dicom-service delete --name \"blue\" --resource-group \"testRG\" --workspace-name \"workspace1\""
+            ]
+        },
+        {
+            "name": "az healthcareapis workspace dicom-service list",
+            "summary": "Lists all DICOM Services for the given workspace.",
+            "syntax": "az healthcareapis workspace dicom-service list --resource-group\n                                               --workspace-name",
+            "required_parameters": [
+                "--resource-group -g",
+                "--workspace-name"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az healthcareapis workspace dicom-service list --resource-group \"testRG\" --workspace-name \"workspace1\""
+            ]
+        },
+        {
+            "name": "az healthcareapis workspace dicom-service show",
+            "summary": "Gets the properties of the specified DICOM Service.",
+            "syntax": "az healthcareapis workspace dicom-service show [--dicom-service-name]\n                                               [--ids]\n                                               [--resource-group]\n                                               [--subscription]\n                                               [--workspace-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--dicom-service-name --name -n",
+                "--ids",
+                "--resource-group -g",
+                "--subscription",
+                "--workspace-name"
+            ],
+            "examples": [
+                "az healthcareapis workspace dicom-service show --name \"blue\" --resource-group \"testRG\" --workspace-name \"workspace1\""
+            ]
+        },
+        {
+            "name": "az healthcareapis workspace dicom-service update",
+            "summary": "Patch DICOM Service details.",
+            "syntax": "az healthcareapis workspace dicom-service update [--dicom-service-name]\n                                                 [--identity-type {None, SystemAssigned, SystemAssigned,UserAssigned, UserAssigned}]\n                                                 [--ids]\n                                                 [--no-wait]\n                                                 [--resource-group]\n                                                 [--subscription]\n                                                 [--tags]\n                                                 [--user-assigned-identities]\n                                                 [--workspace-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--dicom-service-name --name -n",
+                "--identity-type",
+                "--ids",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--tags",
+                "--user-assigned-identities -i",
+                "--workspace-name"
+            ],
+            "examples": [
+                "az healthcareapis workspace dicom-service update --name \"blue\" --tags tagKey=\"tagValue\" --resource-group \"testRG\" --workspace-name \"workspace1\""
+            ]
+        },
+        {
+            "name": "az healthcareapis workspace dicom-service wait",
+            "summary": "Place the CLI in a waiting state until a condition of the healthcareapis workspace dicom-service is met.",
+            "syntax": "az healthcareapis workspace dicom-service wait [--created]\n                                               [--custom]\n                                               [--deleted]\n                                               [--dicom-service-name]\n                                               [--exists]\n                                               [--ids]\n                                               [--interval]\n                                               [--resource-group]\n                                               [--subscription]\n                                               [--timeout]\n                                               [--updated]\n                                               [--workspace-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--dicom-service-name --name -n",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated",
+                "--workspace-name"
+            ],
+            "examples": [
+                "az healthcareapis workspace dicom-service wait --name \"blue\" --resource-group \"testRG\" --workspace-name \"workspace1\" --created",
+                "az healthcareapis workspace dicom-service wait --name \"blue\" --resource-group \"testRG\" --workspace-name \"workspace1\" --updated",
+                "az healthcareapis workspace dicom-service wait --name \"blue\" --resource-group \"testRG\" --workspace-name \"workspace1\" --deleted"
+            ]
+        }
+    ]
+}

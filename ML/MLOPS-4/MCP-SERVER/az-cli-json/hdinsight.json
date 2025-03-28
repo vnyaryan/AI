@@ -1,0 +1,217 @@
+{
+    "command_group": "az hdinsight",
+    "description": "Manage HDInsight resources.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az hdinsight create",
+            "summary": "Create a new cluster.",
+            "syntax": "az hdinsight create --name\n                    --resource-group\n                    --type\n                    [--assign-identity]\n                    [--autoscale-count]\n                    [--autoscale-max-count]\n                    [--autoscale-min-count]\n                    [--autoscale-type {Load, Schedule}]\n                    [--cluster-admin-account]\n                    [--cluster-admin-password]\n                    [--cluster-configurations]\n                    [--cluster-tier {Premium, Standard}]\n                    [--cluster-users-group-dns]\n                    [--component-version]\n                    [--compute-isolation {false, true}]\n                    [--days {Friday, Monday, Saturday, Sunday, Thursday, Tuesday, Wednesday}]\n                    [--domain]\n                    [--edgenode-size]\n                    [--enable-private-link {false, true}]\n                    [--encryption-algorithm {RSA-OAEP, RSA-OAEP-256, RSA1_5}]\n                    [--encryption-at-host {false, true}]\n                    [--encryption-in-transit {false, true}]\n                    [--encryption-key-name]\n                    [--encryption-key-version]\n                    [--encryption-vault-uri]\n                    [--esp]\n                    [--headnode-size]\n                    [--host-sku]\n                    [--http-password]\n                    [--http-user]\n                    [--idbroker]\n                    [--kafka-client-group-id]\n                    [--kafka-client-group-name]\n                    [--kafka-management-node-count]\n                    [--kafka-management-node-size]\n                    [--ldaps-urls]\n                    [--location]\n                    [--minimal-tls-version {1.2}]\n                    [--no-validation-timeout]\n                    [--no-wait]\n                    [--outbound-dependencies-managed-type {External, Managed}]\n                    [--private-link-config]\n                    [--public-ip-tag-type]\n                    [--public-ip-tag-value]\n                    [--resource-provider-connection {Inbound, Outbound}]\n                    [--ssh-password]\n                    [--ssh-public-key]\n                    [--ssh-user]\n                    [--storage-account]\n                    [--storage-account-key]\n                    [--storage-account-managed-identity]\n                    [--storage-container]\n                    [--storage-filesystem]\n                    [--subnet]\n                    [--tags]\n                    [--time]\n                    [--timezone]\n                    [--version]\n                    [--vnet-name]\n                    [--workernode-count]\n                    [--workernode-data-disk-size]\n                    [--workernode-data-disk-storage-account-type {premium_lrs, standard_lrs}]\n                    [--workernode-data-disks-per-node]\n                    [--workernode-size]\n                    [--zones]\n                    [--zookeepernode-size]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g",
+                "--type -t"
+            ],
+            "optional_parameters": [
+                "--assign-identity",
+                "--autoscale-count --autoscale-workernode-count",
+                "--autoscale-max-count --autoscale-max-workernode-count",
+                "--autoscale-min-count --autoscale-min-workernode-count",
+                "--autoscale-type",
+                "--cluster-admin-account",
+                "--cluster-admin-password",
+                "--cluster-configurations",
+                "--cluster-tier",
+                "--cluster-users-group-dns",
+                "--component-version",
+                "--compute-isolation --enable-compute-isolation",
+                "--days",
+                "--domain",
+                "--edgenode-size",
+                "--enable-private-link",
+                "--encryption-algorithm",
+                "--encryption-at-host",
+                "--encryption-in-transit",
+                "--encryption-key-name",
+                "--encryption-key-version",
+                "--encryption-vault-uri",
+                "--esp",
+                "--headnode-size",
+                "--host-sku",
+                "--http-password -p",
+                "--http-user -u",
+                "--idbroker",
+                "--kafka-client-group-id",
+                "--kafka-client-group-name",
+                "--kafka-management-node-count",
+                "--kafka-management-node-size",
+                "--ldaps-urls",
+                "--location -l",
+                "--minimal-tls-version",
+                "--no-validation-timeout",
+                "--no-wait",
+                "--outbound-dependencies-managed-type --outbound-managed-type",
+                "--private-link-config --private-link-configurations",
+                "--public-ip-tag-type",
+                "--public-ip-tag-value",
+                "--resource-provider-connection --rp-connection",
+                "--ssh-password -P",
+                "--ssh-public-key -K",
+                "--ssh-user -U",
+                "--storage-account",
+                "--storage-account-key",
+                "--storage-account-managed-identity",
+                "--storage-container",
+                "--storage-filesystem",
+                "--subnet",
+                "--tags",
+                "--time",
+                "--timezone",
+                "--version -v",
+                "--vnet-name",
+                "--workernode-count -c",
+                "--workernode-data-disk-size",
+                "--workernode-data-disk-storage-account-type",
+                "--workernode-data-disks-per-node",
+                "--workernode-size",
+                "--zones",
+                "--zookeepernode-size"
+            ],
+            "examples": [
+                "az hdinsight create -t spark -g MyResourceGroup -n MyCluster \\\n-p \"HttpPassword1234!\" \\\n--storage-account MyStorageAccount",
+                "az hdinsight create -t spark -g MyResourceGroup -n MyCluster \\\n-p \"HttpPassword1234!\" \\\n--storage-account MyStorageAccount --minimal-tls-version 1.2",
+                "az hdinsight create -t spark -g MyResourceGroup -n MyCluster \\\n-p \"HttpPassword1234!\" \\\n--storage-account MyStorageAccount --encryption-in-transit true",
+                "az hdinsight create -t spark -g MyResourceGroup -n MyCluster \\\n-p \"HttpPassword1234!\" \\\n--storage-account MyStorageAccount --encryption-at-host true",
+                "az hdinsight create --esp -t spark -g MyResourceGroup -n MyCluster \\\n-p \"HttpPassword1234!\" \\\n--storage-account MyStorageAccount \\\n--subnet \"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/MyRG/providers/Microsoft.Network/virtualNetworks/MyVnet/subnets/subnet1\" \\\n--domain \"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/MyRG/providers/Microsoft.AAD/domainServices/MyDomain.onmicrosoft.com\" \\\n--assign-identity \"/subscriptions/00000000-0000-0000-0000-000000000000/resourcegroups/MyMsiRG/providers/Microsoft.ManagedIdentity/userAssignedIdentities/MyMSI\" \\\n--cluster-admin-account MyAdminAccount@MyDomain.onmicrosoft.com \\\n--cluster-users-group-dns MyGroup",
+                "az hdinsight create --esp --idbroker -t spark -g MyResourceGroup -n MyCluster \\\n-p \"HttpPassword1234!\" \\\n--storage-account MyStorageAccount \\\n--subnet \"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/MyRG/providers/Microsoft.Network/virtualNetworks/MyVnet/subnets/subnet1\" \\\n--domain \"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/MyRG/providers/Microsoft.AAD/domainServices/MyDomain.onmicrosoft.com\" \\\n--assign-identity \"/subscriptions/00000000-0000-0000-0000-000000000000/resourcegroups/MyMsiRG/providers/Microsoft.ManagedIdentity/userAssignedIdentities/MyMSI\" \\\n--cluster-admin-account MyAdminAccount@MyDomain.onmicrosoft.com \\\n--cluster-users-group-dns MyGroup",
+                "az hdinsight create -t kafka -g MyResourceGroup -n MyCluster \\\n-p \"HttpPassword1234!\" --workernode-data-disks-per-node 2 \\\n--storage-account MyStorageAccount \\\n--encryption-key-name kafkaClusterKey \\\n--encryption-key-version 00000000000000000000000000000000 \\\n--encryption-vault-uri https://MyKeyVault.vault.azure.net \\\n--assign-identity MyMSI",
+                "az hdinsight create -t kafka -g MyResourceGroup -n MyCluster \\\n-p \"HttpPassword1234!\" --workernode-data-disks-per-node 2 \\\n--storage-account MyStorageAccount \\\n--kafka-management-node-size \"Standard_D4_v2\" \\\n--kafka-client-group-id MySecurityGroupId \\\n--kafka-client-group-name MySecurityGroupName\n--component-version kafka=2.1",
+                "az hdinsight create -t spark -g MyResourceGroup -n MyCluster \\\n-p \"HttpPassword1234!\" \\\n--storage-account MyStorageAccount \\\n--storage-account-managed-identity MyMSI",
+                "az hdinsight create -t spark -g MyResourceGroup -n MyCluster \\\n-p \"HttpPassword1234!\" \\\n--storage-account MyStorageAccount \\\n--cluster-configuration {'gateway':{'restAuthCredential.username':'admin'}}",
+                "az hdinsight create -t spark -g MyResourceGroup -n MyCluster \\\n-p \"HttpPassword1234!\" \\\n--storage-account MyStorageAccount \\\n--cluster-configuration @config.json",
+                "az hdinsight create -t spark --version 3.6 -g MyResourceGroup -n MyCluster \\\n-p \"HttpPassword1234!\" --storage-account MyStorageAccount \\\n--autoscale-type Load --autoscale-min-workernode-count 3 --autoscale-max-workernode-count 5",
+                "az hdinsight create -t spark --version 3.6 -g MyResourceGroup -n MyCluster \\\n-p \"HttpPassword1234!\" --storage-account MyStorageAccount \\\n--autoscale-type Schedule --timezone \"Pacific Standard Time\" --days Monday \\\n--time 09:00 --autoscale-workernode-count 5",
+                "az hdinsight create -t spark --version 3.6 -g MyResourceGroup -n MyCluster \\\n-p \"HttpPassword1234!\" --storage-account MyStorageAccount \\\n--subnet \"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/rg/providers/Microsoft.Network/virtualNetworks/fakevnet/subnets/default\" \\\n--resource-provider-connection Outbound --enable-private-link",
+                "az hdinsight create -t spark --version 3.6 -g MyResourceGroup -n MyCluster \\\n-p \"HttpPassword1234!\" --storage-account MyStorageAccount \\\n--enable-compute-isolation --workernode-size \"Standard_E8S_V3\" --headnode-size \"Standard_E8S_V3\""
+            ]
+        },
+        {
+            "name": "az hdinsight delete",
+            "summary": "Deletes the specified HDInsight cluster.",
+            "syntax": "az hdinsight delete --name\n                    --resource-group\n                    [--no-wait]\n                    [--yes]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--no-wait",
+                "--yes -y"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az hdinsight list",
+            "summary": "List HDInsight clusters in a resource group or subscription.",
+            "syntax": "az hdinsight list [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az hdinsight list-usage",
+            "summary": "Lists the usages for the specified location.",
+            "syntax": "az hdinsight list-usage --location",
+            "required_parameters": [
+                "--location -l"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az hdinsight resize",
+            "summary": "Resize the specified HDInsight cluster to the specified size.",
+            "syntax": "az hdinsight resize --name\n                    --resource-group\n                    --workernode-count\n                    [--no-wait]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g",
+                "--workernode-count -c"
+            ],
+            "optional_parameters": [
+                "--no-wait"
+            ],
+            "examples": [
+                "az hdinsight resize --name MyCluster --resource-group rg --workernode-count 5"
+            ]
+        },
+        {
+            "name": "az hdinsight rotate-disk-encryption-key",
+            "summary": "Rotate the disk encryption key of the specified HDInsight cluster.",
+            "syntax": "az hdinsight rotate-disk-encryption-key --encryption-key-name\n                                        --encryption-key-version\n                                        --encryption-vault-uri\n                                        --name\n                                        --resource-group\n                                        [--no-wait]",
+            "required_parameters": [
+                "--encryption-key-name",
+                "--encryption-key-version",
+                "--encryption-vault-uri",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--no-wait"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az hdinsight show",
+            "summary": "Gets the specified cluster.",
+            "syntax": "az hdinsight show --name\n                  --resource-group",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az hdinsight update",
+            "summary": "Update the tags or identity of the specified HDInsight cluster. Setting the identity property will override the existing identity configuration of the cluster.",
+            "syntax": "az hdinsight update --name\n                    --resource-group\n                    [--assign-identity]\n                    [--assign-identity-type]\n                    [--no-wait]\n                    [--tags]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--assign-identity",
+                "--assign-identity-type",
+                "--no-wait",
+                "--tags"
+            ],
+            "examples": [
+                "az hdinsight update --name MyCluster --resource-group rg --tags key=value",
+                "az hdinsight update --name MyCluster --resource-group rg --assign-identity-type UserAssigned --assign-identity MyMsi",
+                "az hdinsight update --name MyCluster --resource-group rg --assign-identity-type UserAssigned --assign-identity MyMsi1 MyMsi2",
+                "az hdinsight update --name MyCluster --resource-group rg --assign-identity-type SystemAssigned",
+                "az hdinsight update --name MyCluster --resource-group rg --assign-identity-type \"SystemAssigned,UserAssigned\" --assign-identity MyMsi1"
+            ]
+        },
+        {
+            "name": "az hdinsight wait",
+            "summary": "Place the CLI in a waiting state until an operation is complete.",
+            "syntax": "az hdinsight wait --name\n                  --resource-group\n                  [--created]\n                  [--custom]\n                  [--deleted]\n                  [--exists]\n                  [--interval]\n                  [--timeout]\n                  [--updated]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--interval",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

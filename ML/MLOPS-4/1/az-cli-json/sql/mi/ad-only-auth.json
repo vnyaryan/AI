@@ -1,0 +1,52 @@
+{
+    "command_group": "az sql mi ad-only-auth",
+    "description": "Manage a Managed Instance's Azure Active Directory only settings.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az sql mi ad-only-auth disable",
+            "summary": "Disable Azure Active Directory only Authentication for this Managed Instance.",
+            "syntax": "az sql mi ad-only-auth disable [--ids]\n                               [--name]\n                               [--resource-group]\n                               [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az sql mi ad-only-auth disable --resource-group mygroup --name myMI"
+            ]
+        },
+        {
+            "name": "az sql mi ad-only-auth enable",
+            "summary": "Enable Azure Active Directory only Authentication for this Managed Instance.",
+            "syntax": "az sql mi ad-only-auth enable [--ids]\n                              [--name]\n                              [--resource-group]\n                              [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az sql mi ad-only-auth enable --resource-group mygroup --name myMI"
+            ]
+        },
+        {
+            "name": "az sql mi ad-only-auth get",
+            "summary": "Get a specific Azure Active Directory only Authentication property.",
+            "syntax": "az sql mi ad-only-auth get [--ids]\n                           [--name]\n                           [--resource-group]\n                           [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az sql mi ad-only-auth get --resource-group mygroup --name myMI"
+            ]
+        }
+    ]
+}

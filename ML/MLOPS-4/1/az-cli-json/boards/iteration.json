@@ -1,0 +1,6 @@
+{
+    "command_group": "az boards iteration",
+    "description": "Manage iterations.",
+    "status": "GA",
+    "commands": []
+}

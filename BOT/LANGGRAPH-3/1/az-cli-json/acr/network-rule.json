@@ -1,0 +1,51 @@
+{
+    "command_group": "az acr network-rule",
+    "description": "Manage network rules for Azure Container Registries.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az acr network-rule add",
+            "summary": "Add a network rule.",
+            "syntax": "az acr network-rule add --name\n                        [--ip-address]\n                        [--resource-group]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--ip-address",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az acr network-rule add -n myregistry --ip-address 23.45.1.0/24"
+            ]
+        },
+        {
+            "name": "az acr network-rule list",
+            "summary": "List network rules.",
+            "syntax": "az acr network-rule list --name\n                         [--resource-group]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az acr network-rule list -n myregistry"
+            ]
+        },
+        {
+            "name": "az acr network-rule remove",
+            "summary": "Remove a network rule.",
+            "syntax": "az acr network-rule remove --name\n                           [--ip-address]\n                           [--resource-group]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--ip-address",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az acr network-rule remove -n myregistry --ip-address 23.45.1.0/24"
+            ]
+        }
+    ]
+}

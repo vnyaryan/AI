@@ -1,0 +1,71 @@
+{
+    "command_group": "az network firewall application-rule",
+    "description": "Manage and configure Azure Firewall application rules.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az network firewall application-rule create",
+            "summary": "Create an Azure Firewall application rule.",
+            "syntax": "az network firewall application-rule create --collection-name\n                                            --firewall-name\n                                            --name\n                                            --protocols\n                                            --resource-group\n                                            [--action {Allow, Deny}]\n                                            [--description]\n                                            [--fqdn-tags]\n                                            [--priority]\n                                            [--source-addresses]\n                                            [--source-ip-groups]\n                                            [--target-fqdns]",
+            "required_parameters": [
+                "--collection-name -c",
+                "--firewall-name -f",
+                "--name -n",
+                "--protocols",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--action",
+                "--description",
+                "--fqdn-tags",
+                "--priority",
+                "--source-addresses",
+                "--source-ip-groups",
+                "--target-fqdns"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az network firewall application-rule delete",
+            "summary": "Delete an Azure Firewall application rule.",
+            "syntax": "az network firewall application-rule delete [--collection-name]\n                                            [--firewall-name]\n                                            [--ids]\n                                            [--name]\n                                            [--resource-group]\n                                            [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--collection-name -c",
+                "--firewall-name -f",
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az network firewall application-rule list",
+            "summary": "List Azure Firewall application rules.",
+            "syntax": "az network firewall application-rule list --collection-name\n                                          --firewall-name\n                                          --resource-group",
+            "required_parameters": [
+                "--collection-name -c",
+                "--firewall-name -f",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az network firewall application-rule show",
+            "summary": "Get the details of an Azure Firewall application rule.",
+            "syntax": "az network firewall application-rule show [--collection-name]\n                                          [--firewall-name]\n                                          [--ids]\n                                          [--name]\n                                          [--resource-group]\n                                          [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--collection-name -c",
+                "--firewall-name -f",
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        }
+    ]
+}

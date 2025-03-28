@@ -1,0 +1,66 @@
+{
+    "command_group": "az csvmware vm nic",
+    "description": "Manage VMware virtual machine's Network Interface Cards.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az csvmware vm nic add",
+            "summary": "Add NIC to a VMware virtual machine.",
+            "syntax": "az csvmware vm nic add --resource-group\n                       --virtual-network\n                       --vm-name\n                       [--adapter {E1000, E1000E, PCNET32, VMXNET, VMXNET2, VMXNET3}]\n                       [--power-on-boot {false, true}]",
+            "required_parameters": [
+                "--resource-group -g",
+                "--virtual-network",
+                "--vm-name"
+            ],
+            "optional_parameters": [
+                "--adapter",
+                "--power-on-boot"
+            ],
+            "examples": [
+                "az csvmware vm nic add --vm-name MyVm -g MyResourceGroup --virtual-network MyVirtualNetwork",
+                "az csvmware vm nic add --vm-name MyVm -g MyResourceGroup --virtual-network MyVirtualNetwork --adapter E1000E --power-on-boot true"
+            ]
+        },
+        {
+            "name": "az csvmware vm nic delete",
+            "summary": "Delete NICs from a VM.",
+            "syntax": "az csvmware vm nic delete --nics\n                          --resource-group\n                          --vm-name",
+            "required_parameters": [
+                "--nics",
+                "--resource-group -g",
+                "--vm-name"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az csvmware vm nic delete --vm-name MyVm -g MyResourceGroup --nics \"My NIC Name 1\" \"My NIC Name 2\""
+            ]
+        },
+        {
+            "name": "az csvmware vm nic list",
+            "summary": "List details of NICs available on a VMware virtual machine.",
+            "syntax": "az csvmware vm nic list --resource-group\n                        --vm-name",
+            "required_parameters": [
+                "--resource-group -g",
+                "--vm-name"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az csvmware vm nic list --vm-name MyVm -g MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az csvmware vm nic show",
+            "summary": "Get the details of a VMware virtual machine's NIC.",
+            "syntax": "az csvmware vm nic show --name\n                        --resource-group\n                        --vm-name",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g",
+                "--vm-name"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az csvmware vm nic show --vm-name MyVm -g MyResourceGroup -n \"My NIC Name\""
+            ]
+        }
+    ]
+}

@@ -1,0 +1,66 @@
+{
+    "command_group": "az spring application-accelerator predefined-accelerator",
+    "description": "(Enterprise Tier Only) Commands to manage predefined accelerator in Azure Spring Apps.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az spring application-accelerator predefined-accelerator disable",
+            "summary": "(Enterprise Tier Only) Disable a predefined accelerator.",
+            "syntax": "az spring application-accelerator predefined-accelerator disable --name\n                                                                 --resource-group\n                                                                 --service\n                                                                 [--no-wait]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [
+                "--no-wait"
+            ],
+            "examples": [
+                "az spring application-accelerator predefined-accelerator disable --name AcceleratorName --service MyCluster --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az spring application-accelerator predefined-accelerator enable",
+            "summary": "(Enterprise Tier Only) Enable a predefined accelerator.",
+            "syntax": "az spring application-accelerator predefined-accelerator enable --name\n                                                                --resource-group\n                                                                --service\n                                                                [--no-wait]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [
+                "--no-wait"
+            ],
+            "examples": [
+                "az spring application-accelerator predefined-accelerator enable --name AcceleratorName --service MyCluster --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az spring application-accelerator predefined-accelerator list",
+            "summary": "(Enterprise Tier Only) List all existing predefined accelerators.",
+            "syntax": "az spring application-accelerator predefined-accelerator list --resource-group\n                                                              --service",
+            "required_parameters": [
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az spring application-accelerator predefined-accelerator list --service MyCluster --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az spring application-accelerator predefined-accelerator show",
+            "summary": "(Enterprise Tier Only) Show the settings, provisioning status and runtime status of predefined accelerator.",
+            "syntax": "az spring application-accelerator predefined-accelerator show --name\n                                                              --resource-group\n                                                              --service",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az spring application-accelerator predefined-accelerator show --name AcceleratorName --service MyCluster --resource-group MyResourceGroup"
+            ]
+        }
+    ]
+}

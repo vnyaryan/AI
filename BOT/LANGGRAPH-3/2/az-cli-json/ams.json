@@ -1,0 +1,6 @@
+{
+    "command_group": "az ams",
+    "description": "Manage Azure Media Services resources.",
+    "status": "GA",
+    "commands": []
+}

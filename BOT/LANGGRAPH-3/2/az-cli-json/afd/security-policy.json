@@ -1,0 +1,113 @@
+{
+    "command_group": "az afd security-policy",
+    "description": "Manage security policies within the specified profile.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az afd security-policy create",
+            "summary": "Create a new security policy within the specified profile.",
+            "syntax": "az afd security-policy create --domains\n                              --name\n                              --profile-name\n                              --resource-group\n                              --waf-policy\n                              [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]",
+            "required_parameters": [
+                "--domains",
+                "--name --security-policy-name -n",
+                "--profile-name",
+                "--resource-group -g",
+                "--waf-policy"
+            ],
+            "optional_parameters": [
+                "--no-wait"
+            ],
+            "examples": [
+                "az afd security-policy create -g group --profile-name profile --security-policy-name sp1 --domains /subscriptions/sub1/resourcegroups/rg1/providers/Microsoft.Cdn/profiles/profile1/afdEndpoints/endpoint1 /subscriptions/sub1/resourcegroups/rg1/providers/Microsoft.Cdn/profiles/profile1/customDomains/customDomain1 --waf-policy /subscriptions/sub1/resourcegroups/rg1/providers/Microsoft.Network/frontdoorwebapplicationfirewallpolicies/waf1"
+            ]
+        },
+        {
+            "name": "az afd security-policy delete",
+            "summary": "Delete an existing security policy within profile.",
+            "syntax": "az afd security-policy delete [--ids]\n                              [--name]\n                              [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                              [--profile-name]\n                              [--resource-group]\n                              [--subscription]\n                              [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --security-policy-name -n",
+                "--no-wait",
+                "--profile-name",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az afd security-policy list",
+            "summary": "List security policies associated with the profile.",
+            "syntax": "az afd security-policy list --profile-name\n                            --resource-group\n                            [--max-items]\n                            [--next-token]",
+            "required_parameters": [
+                "--profile-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az afd security-policy show",
+            "summary": "Get an existing security policy within a profile.",
+            "syntax": "az afd security-policy show [--ids]\n                            [--name]\n                            [--profile-name]\n                            [--resource-group]\n                            [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --security-policy-name -n",
+                "--profile-name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az afd security-policy update",
+            "summary": "Update a new security policy within the specified profile.",
+            "syntax": "az afd security-policy update [--add]\n                              [--domains]\n                              [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                              [--ids]\n                              [--name]\n                              [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                              [--profile-name]\n                              [--remove]\n                              [--resource-group]\n                              [--set]\n                              [--subscription]\n                              [--waf-policy]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--domains",
+                "--force-string",
+                "--ids",
+                "--name --security-policy-name -n",
+                "--no-wait",
+                "--profile-name",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--subscription",
+                "--waf-policy"
+            ],
+            "examples": [
+                "az afd security-policy update -g group --security-policy-name sp1 --profile-name profile --domains /subscriptions/sub1/resourcegroups/rg1/providers/Microsoft.Cdn/profiles/profile1/customDomains/customDomain1"
+            ]
+        },
+        {
+            "name": "az afd security-policy wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az afd security-policy wait [--created]\n                            [--custom]\n                            [--deleted]\n                            [--exists]\n                            [--ids]\n                            [--interval]\n                            [--name]\n                            [--profile-name]\n                            [--resource-group]\n                            [--subscription]\n                            [--timeout]\n                            [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--name --security-policy-name -n",
+                "--profile-name",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

@@ -1,0 +1,39 @@
+{
+    "command_group": "az monitor private-link-scope private-link-resource",
+    "description": "Manage private link resource of a private link scope resource.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az monitor private-link-scope private-link-resource list",
+            "summary": "List all private link resources of a private link scope resource.",
+            "syntax": "az monitor private-link-scope private-link-resource list --resource-group\n                                                         --scope-name\n                                                         [--max-items]\n                                                         [--next-token]",
+            "required_parameters": [
+                "--resource-group -g",
+                "--scope-name"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az monitor private-link-scope private-link-resource list --scope-name MyScope -g MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az monitor private-link-scope private-link-resource show",
+            "summary": "Show a private link resource of a private link scope resource.",
+            "syntax": "az monitor private-link-scope private-link-resource show [--ids]\n                                                         [--name]\n                                                         [--resource-group]\n                                                         [--scope-name]\n                                                         [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--scope-name",
+                "--subscription"
+            ],
+            "examples": [
+                "az monitor private-link-scope scoped-resource show -n MyName -g MyResourceGroup --scope-name MyScope"
+            ]
+        }
+    ]
+}

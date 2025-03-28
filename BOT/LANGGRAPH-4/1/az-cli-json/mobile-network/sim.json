@@ -1,0 +1,101 @@
+{
+    "command_group": "az mobile-network sim",
+    "description": "Manage sim.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az mobile-network sim create",
+            "summary": "Create a SIM.",
+            "syntax": "az mobile-network sim create --international-msi\n                             --name\n                             --resource-group\n                             --sim-group-name\n                             [--authentication-key]\n                             [--device-type]\n                             [--icc-id]\n                             [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                             [--operator-key-code]\n                             [--sim-policy]\n                             [--static-ip-config]",
+            "required_parameters": [
+                "--international-msi",
+                "--name --sim-name -n",
+                "--resource-group -g",
+                "--sim-group-name"
+            ],
+            "optional_parameters": [
+                "--authentication-key",
+                "--device-type",
+                "--icc-id",
+                "--no-wait",
+                "--operator-key-code",
+                "--sim-policy",
+                "--static-ip-config"
+            ],
+            "examples": [
+                "az mobile-network sim create -g rg --sim-group-name sim-group-name -n sim-name --international-msi 0000000000 --operator-key-code 00000000000000000000000000000000 --authentication-key 00000000000000000000000000000000"
+            ]
+        },
+        {
+            "name": "az mobile-network sim delete",
+            "summary": "Delete the specified SIM.",
+            "syntax": "az mobile-network sim delete [--ids]\n                             [--name]\n                             [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                             [--resource-group]\n                             [--sim-group-name]\n                             [--subscription]\n                             [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --sim-name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--sim-group-name",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az mobile-network sim delete -g rg -n sim-name --sim-group-name sim-group-name -y"
+            ]
+        },
+        {
+            "name": "az mobile-network sim list",
+            "summary": "List all the SIMs in a SIM group.",
+            "syntax": "az mobile-network sim list --resource-group\n                           --sim-group-name\n                           [--max-items]\n                           [--next-token]",
+            "required_parameters": [
+                "--resource-group -g",
+                "--sim-group-name"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az mobile-network sim list -g rg --sim-group-name sim-group-name"
+            ]
+        },
+        {
+            "name": "az mobile-network sim show",
+            "summary": "Get information about the specified SIM.",
+            "syntax": "az mobile-network sim show [--ids]\n                           [--name]\n                           [--resource-group]\n                           [--sim-group-name]\n                           [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --sim-name -n",
+                "--resource-group -g",
+                "--sim-group-name",
+                "--subscription"
+            ],
+            "examples": [
+                "az mobile-network sim show -g rg -n sim-name --sim-group-name sim-group-name"
+            ]
+        },
+        {
+            "name": "az mobile-network sim wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az mobile-network sim wait [--created]\n                           [--custom]\n                           [--deleted]\n                           [--exists]\n                           [--ids]\n                           [--interval]\n                           [--name]\n                           [--resource-group]\n                           [--sim-group-name]\n                           [--subscription]\n                           [--timeout]\n                           [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--name --sim-name -n",
+                "--resource-group -g",
+                "--sim-group-name",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

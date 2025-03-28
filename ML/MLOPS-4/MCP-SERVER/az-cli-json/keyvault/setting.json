@@ -1,0 +1,50 @@
+{
+    "command_group": "az keyvault setting",
+    "description": "Manage MHSM settings.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az keyvault setting list",
+            "summary": "Get all settings associated with the managed HSM.",
+            "syntax": "az keyvault setting list [--hsm-name]\n                         [--id]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--hsm-name",
+                "--id"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az keyvault setting show",
+            "summary": "Get specific setting associated with the managed HSM.",
+            "syntax": "az keyvault setting show --name\n                         [--hsm-name]\n                         [--id]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--hsm-name",
+                "--id"
+            ],
+            "examples": [
+                "az keyvault setting show --name AllowKeyManagementOperationsThroughARM --hsm-name myhsm"
+            ]
+        },
+        {
+            "name": "az keyvault setting update",
+            "summary": "Update specific setting associated with the managed HSM.",
+            "syntax": "az keyvault setting update --name\n                           --value\n                           [--hsm-name]\n                           [--id]\n                           [--setting-type {boolean, string}]",
+            "required_parameters": [
+                "--name -n",
+                "--value"
+            ],
+            "optional_parameters": [
+                "--hsm-name",
+                "--id",
+                "--setting-type --type"
+            ],
+            "examples": [
+                "az keyvault setting update --name AllowKeyManagementOperationsThroughARM --value true --type boolean --hsm-name myhsm"
+            ]
+        }
+    ]
+}

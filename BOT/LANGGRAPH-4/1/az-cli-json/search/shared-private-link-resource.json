@@ -1,0 +1,98 @@
+{
+    "command_group": "az search shared-private-link-resource",
+    "description": "Manage Azure Search shared private link resources.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az search shared-private-link-resource create",
+            "summary": "Create shared privatelink resources in a Search service in the given resource group.",
+            "syntax": "az search shared-private-link-resource create --group-id\n                                              --name\n                                              --resource-group\n                                              --resource-id\n                                              --service-name\n                                              [--no-wait]\n                                              [--request-message]",
+            "required_parameters": [
+                "--group-id",
+                "--name -n",
+                "--resource-group -g",
+                "--resource-id",
+                "--service-name"
+            ],
+            "optional_parameters": [
+                "--no-wait",
+                "--request-message"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az search shared-private-link-resource delete",
+            "summary": "Initiates the deletion of the shared private link resource from the search service.",
+            "syntax": "az search shared-private-link-resource delete --name\n                                              --resource-group\n                                              --service-name\n                                              [--yes]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g",
+                "--service-name"
+            ],
+            "optional_parameters": [
+                "--yes -y"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az search shared-private-link-resource list",
+            "summary": "Gets a list of all shared private link resources managed by the given service.",
+            "syntax": "az search shared-private-link-resource list --resource-group\n                                            --service-name",
+            "required_parameters": [
+                "--resource-group -g",
+                "--service-name"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az search shared-private-link-resource show",
+            "summary": "Gets the details of the shared private link resource managed by the search service in the given resource group.",
+            "syntax": "az search shared-private-link-resource show --name\n                                            --resource-group\n                                            --service-name",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g",
+                "--service-name"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az search shared-private-link-resource update",
+            "summary": "Update shared privatelink resources in a Search service in the given resource group.",
+            "syntax": "az search shared-private-link-resource update --group-id\n                                              --name\n                                              --request-message\n                                              --resource-group\n                                              --resource-id\n                                              --service-name\n                                              [--no-wait]",
+            "required_parameters": [
+                "--group-id",
+                "--name -n",
+                "--request-message",
+                "--resource-group -g",
+                "--resource-id",
+                "--service-name"
+            ],
+            "optional_parameters": [
+                "--no-wait"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az search shared-private-link-resource wait",
+            "summary": "Wait for async shared private link resource operations.",
+            "syntax": "az search shared-private-link-resource wait --name\n                                            --resource-group\n                                            --service-name\n                                            [--created]\n                                            [--custom]\n                                            [--deleted]\n                                            [--exists]\n                                            [--interval]\n                                            [--timeout]\n                                            [--updated]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g",
+                "--service-name"
+            ],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--interval",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

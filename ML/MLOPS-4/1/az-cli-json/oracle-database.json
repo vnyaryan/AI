@@ -1,0 +1,6 @@
+{
+    "command_group": "az oracle-database",
+    "description": "Command Modules for RP Oracle.Database.",
+    "status": "GA",
+    "commands": []
+}

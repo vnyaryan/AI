@@ -1,0 +1,124 @@
+{
+    "command_group": "az oracle-database cloud-exadata-infrastructure",
+    "description": "Cloud Exadata Infrastructures.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az oracle-database cloud-exadata-infrastructure create",
+            "summary": "Create a CloudExadataInfrastructure.",
+            "syntax": "az oracle-database cloud-exadata-infrastructure create --cloudexadatainfrastructurename\n                                                       --resource-group\n                                                       --zones\n                                                       [--compute-count]\n                                                       [--customer-contacts]\n                                                       [--display-name]\n                                                       [--location]\n                                                       [--maintenance-window]\n                                                       [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                                       [--shape]\n                                                       [--storage-count]\n                                                       [--tags]",
+            "required_parameters": [
+                "--cloudexadatainfrastructurename --name -n",
+                "--resource-group -g",
+                "--zones"
+            ],
+            "optional_parameters": [
+                "--compute-count",
+                "--customer-contacts",
+                "--display-name",
+                "--location -l",
+                "--maintenance-window",
+                "--no-wait",
+                "--shape",
+                "--storage-count",
+                "--tags"
+            ],
+            "examples": [
+                "az oracle-database cloud-exadata-infrastructure create --name <name> --resource-group <RG name> --zones <2> --compute-count 2<> --display-name <display name> --shape Exadata.X9M --storage-count <2> --location <location>"
+            ]
+        },
+        {
+            "name": "az oracle-database cloud-exadata-infrastructure delete",
+            "summary": "Delete a CloudExadataInfrastructure.",
+            "syntax": "az oracle-database cloud-exadata-infrastructure delete [--cloudexadatainfrastructurename]\n                                                       [--ids]\n                                                       [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                                       [--resource-group]\n                                                       [--subscription]\n                                                       [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--cloudexadatainfrastructurename --name -n",
+                "--ids",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az oracle-database cloud-exadata-infrastructure delete --name <name> --resource-group <RG name>"
+            ]
+        },
+        {
+            "name": "az oracle-database cloud-exadata-infrastructure list",
+            "summary": "List CloudExadataInfrastructure resources by subscription ID.",
+            "syntax": "az oracle-database cloud-exadata-infrastructure list [--max-items]\n                                                     [--next-token]\n                                                     [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az oracle-database cloud-exadata-infrastructure list --resource-group <RG name>"
+            ]
+        },
+        {
+            "name": "az oracle-database cloud-exadata-infrastructure show",
+            "summary": "Get a CloudExadataInfrastructure.",
+            "syntax": "az oracle-database cloud-exadata-infrastructure show [--cloudexadatainfrastructurename]\n                                                     [--ids]\n                                                     [--resource-group]\n                                                     [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--cloudexadatainfrastructurename --name -n",
+                "--ids",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az oracle-database cloud-exadata-infrastructure show --name <name> --resource-group <RG name>"
+            ]
+        },
+        {
+            "name": "az oracle-database cloud-exadata-infrastructure update",
+            "summary": "Update a CloudExadataInfrastructure.",
+            "syntax": "az oracle-database cloud-exadata-infrastructure update [--add]\n                                                       [--cloudexadatainfrastructurename]\n                                                       [--compute-count]\n                                                       [--customer-contacts]\n                                                       [--display-name]\n                                                       [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                                       [--ids]\n                                                       [--maintenance-window]\n                                                       [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                                       [--remove]\n                                                       [--resource-group]\n                                                       [--set]\n                                                       [--storage-count]\n                                                       [--subscription]\n                                                       [--tags]\n                                                       [--zones]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--cloudexadatainfrastructurename --name -n",
+                "--compute-count",
+                "--customer-contacts",
+                "--display-name",
+                "--force-string",
+                "--ids",
+                "--maintenance-window",
+                "--no-wait",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--storage-count",
+                "--subscription",
+                "--tags",
+                "--zones"
+            ],
+            "examples": [
+                "az oracle-database cloud-exadata-infrastructure update --name <name> --resource-group <RG name> --tags {tagV1:tagK1>"
+            ]
+        },
+        {
+            "name": "az oracle-database cloud-exadata-infrastructure wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az oracle-database cloud-exadata-infrastructure wait [--cloudexadatainfrastructurename]\n                                                     [--created]\n                                                     [--custom]\n                                                     [--deleted]\n                                                     [--exists]\n                                                     [--ids]\n                                                     [--interval]\n                                                     [--resource-group]\n                                                     [--subscription]\n                                                     [--timeout]\n                                                     [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--cloudexadatainfrastructurename --name -n",
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

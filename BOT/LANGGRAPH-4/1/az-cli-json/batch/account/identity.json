@@ -1,0 +1,56 @@
+{
+    "command_group": "az batch account identity",
+    "description": "Manage identities of a batch account.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az batch account identity assign",
+            "summary": "Add managed identities to an existing batch account.",
+            "syntax": "az batch account identity assign --name\n                                 --resource-group\n                                 [--system-assigned]\n                                 [--user-assigned]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--system-assigned",
+                "--user-assigned"
+            ],
+            "examples": [
+                "az batch account identity assign --name MyBatchAccount --resource-group MyResourceGroup --system-assigned",
+                "az batch account identity assign --name MyBatchAccount --resource-group MyResourceGroup --user-assigned MyAssignedId"
+            ]
+        },
+        {
+            "name": "az batch account identity remove",
+            "summary": "Remove managed identities from an existing batch account.",
+            "syntax": "az batch account identity remove --name\n                                 --resource-group\n                                 [--system-assigned]\n                                 [--user-assigned]\n                                 [--yes]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--system-assigned",
+                "--user-assigned",
+                "--yes -y"
+            ],
+            "examples": [
+                "az batch account identity remove --name MyBatchAccount --resource-group MyResourceGroup --system-assigned",
+                "az batch account identity remove --name MyBatchAccount --resource-group MyResourceGroup --user-assigned MyAssignedId",
+                "az batch account identity remove --name MyBatchAccount --resource-group MyResourceGroup --user-assigned"
+            ]
+        },
+        {
+            "name": "az batch account identity show",
+            "summary": "Display managed identities of a batch account.",
+            "syntax": "az batch account identity show --name\n                               --resource-group",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az batch account identity show --name MyBatchAccount --resource-group MyResourceGroup"
+            ]
+        }
+    ]
+}

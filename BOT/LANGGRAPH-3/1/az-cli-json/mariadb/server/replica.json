@@ -1,0 +1,57 @@
+{
+    "command_group": "az mariadb server replica",
+    "description": "Manage read replicas.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az mariadb server replica create",
+            "summary": "Create a read replica for a server.",
+            "syntax": "az mariadb server replica create --name\n                                 --resource-group\n                                 --source-server\n                                 [--location]\n                                 [--no-wait]\n                                 [--sku-name]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g",
+                "--source-server -s"
+            ],
+            "optional_parameters": [
+                "--location -l",
+                "--no-wait",
+                "--sku-name"
+            ],
+            "examples": [
+                "az mariadb server replica create -n testreplsvr -g testgroup -s testsvr",
+                "az mariadb server replica create -n testreplsvr -g testgroup \\\n    -s \"/subscriptions/${SubID}/resourceGroups/${ResourceGroup}/providers/Microsoft.DBforMariaDB/servers/testsvr2\""
+            ]
+        },
+        {
+            "name": "az mariadb server replica list",
+            "summary": "List all read replicas for a given server.",
+            "syntax": "az mariadb server replica list [--ids]\n                               [--resource-group]\n                               [--server-name]\n                               [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--resource-group -g",
+                "--server-name -s",
+                "--subscription"
+            ],
+            "examples": [
+                "az mariadb server replica list -g testgroup -s testsvr"
+            ]
+        },
+        {
+            "name": "az mariadb server replica stop",
+            "summary": "Stop replication to a read replica and make it a read/write server.",
+            "syntax": "az mariadb server replica stop [--ids]\n                               [--name]\n                               [--resource-group]\n                               [--subscription]\n                               [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az mariadb server replica stop -g testgroup -n testreplsvr"
+            ]
+        }
+    ]
+}

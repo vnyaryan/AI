@@ -1,0 +1,61 @@
+{
+    "command_group": "az storage account management-policy",
+    "description": "Manage storage account management policies.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az storage account management-policy create",
+            "summary": "Create the data policy rules associated with the specified storage account.",
+            "syntax": "az storage account management-policy create --account-name\n                                            --policy\n                                            --resource-group",
+            "required_parameters": [
+                "--account-name",
+                "--policy",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az storage account management-policy create --account-name myaccount --policy @policy.json --resource-group myresourcegroup"
+            ]
+        },
+        {
+            "name": "az storage account management-policy delete",
+            "summary": "Delete the data policy rules associated with the specified storage account.",
+            "syntax": "az storage account management-policy delete --account-name\n                                            --resource-group",
+            "required_parameters": [
+                "--account-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az storage account management-policy show",
+            "summary": "Get the data policy rules associated with the specified storage account.",
+            "syntax": "az storage account management-policy show --account-name\n                                          --resource-group",
+            "required_parameters": [
+                "--account-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az storage account management-policy update",
+            "summary": "Update the data policy rules associated with the specified storage account.",
+            "syntax": "az storage account management-policy update --account-name\n                                            --resource-group\n                                            [--add]\n                                            [--force-string]\n                                            [--remove]\n                                            [--set]",
+            "required_parameters": [
+                "--account-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--add",
+                "--force-string",
+                "--remove",
+                "--set"
+            ],
+            "examples": [
+                "az storage account management-policy update --account-name myaccount --resource-group myresourcegroup --set policy.rules[0].name=newname"
+            ]
+        }
+    ]
+}

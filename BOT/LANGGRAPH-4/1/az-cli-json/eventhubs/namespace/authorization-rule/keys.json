@@ -1,0 +1,40 @@
+{
+    "command_group": "az eventhubs namespace authorization-rule keys",
+    "description": "Authorization-rule keys.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az eventhubs namespace authorization-rule keys list",
+            "summary": "Gets the primary and secondary connection strings for the Namespace.",
+            "syntax": "az eventhubs namespace authorization-rule keys list --authorization-rule-name\n                                                    --namespace-name\n                                                    --resource-group",
+            "required_parameters": [
+                "--authorization-rule-name --name",
+                "--namespace-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az eventhubs namespace authorization-rule keys list --resource-group myresourcegroup --namespace-name mynamespace --name myauthorule"
+            ]
+        },
+        {
+            "name": "az eventhubs namespace authorization-rule keys renew",
+            "summary": "Regenerates the primary or secondary connection strings for the specified Namespace.",
+            "syntax": "az eventhubs namespace authorization-rule keys renew --key {PrimaryKey, SecondaryKey}\n                                                     [--authorization-rule-name]\n                                                     [--ids]\n                                                     [--key-value]\n                                                     [--namespace-name]\n                                                     [--resource-group]\n                                                     [--subscription]",
+            "required_parameters": [
+                "--key"
+            ],
+            "optional_parameters": [
+                "--authorization-rule-name --name",
+                "--ids",
+                "--key-value",
+                "--namespace-name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az eventhubs namespace authorization-rule keys renew --resource-group myresourcegroup --namespace-name mynamespace --name myauthorule --key PrimaryKey"
+            ]
+        }
+    ]
+}

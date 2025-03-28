@@ -1,0 +1,131 @@
+{
+    "command_group": "az networkfabric l2domain",
+    "description": "Manage L2 Isolation Domain Resource.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az networkfabric l2domain create",
+            "summary": "Create a L2 Isolation Domain resource.",
+            "syntax": "az networkfabric l2domain create --nf-id\n                                 --resource-group\n                                 --resource-name\n                                 --vlan-id\n                                 [--annotation]\n                                 [--location]\n                                 [--mtu]\n                                 [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                 [--tags]",
+            "required_parameters": [
+                "--nf-id",
+                "--resource-group -g",
+                "--resource-name",
+                "--vlan-id"
+            ],
+            "optional_parameters": [
+                "--annotation",
+                "--location -l",
+                "--mtu",
+                "--no-wait",
+                "--tags"
+            ],
+            "examples": [
+                "az networkfabric l2domain create --resource-group \"example-rg\" --resource-name \"example-l2domain\" --location \"westus3\" --nf-id \"/subscriptions/xxxxxx-xxxxxx-xxxx-xxxx-xxxxxx/resourceGroups/example-rg/providers/Microsoft.ManagedNetworkFabric/NetworkFabrics/example-fabricName\" --vlan-id  501 --mtu 1500"
+            ]
+        },
+        {
+            "name": "az networkfabric l2domain delete",
+            "summary": "Delete the L2 Isolation Domain resource.",
+            "syntax": "az networkfabric l2domain delete [--ids]\n                                 [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                 [--resource-group]\n                                 [--resource-name]\n                                 [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--no-wait",
+                "--resource-group -g",
+                "--resource-name",
+                "--subscription"
+            ],
+            "examples": [
+                "az networkfabric l2domain delete --resource-group \"example-rg\" --resource-name \"example-l2domain\""
+            ]
+        },
+        {
+            "name": "az networkfabric l2domain list",
+            "summary": "List all L2 Isolation Domains in the provided resource group or subscription.",
+            "syntax": "az networkfabric l2domain list [--max-items]\n                               [--next-token]\n                               [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az networkfabric l2domain list --resource-group \"example-rg\"",
+                "az networkfabric l2domain list --subscription \"<subscriptionId>\""
+            ]
+        },
+        {
+            "name": "az networkfabric l2domain show",
+            "summary": "Show details of the provided L2 Isolation Domain resource.",
+            "syntax": "az networkfabric l2domain show [--ids]\n                               [--resource-group]\n                               [--resource-name]\n                               [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--resource-group -g",
+                "--resource-name",
+                "--subscription"
+            ],
+            "examples": [
+                "az networkfabric l2domain show --resource-group \"example-rg\" --resource-name \"example-l2domain\""
+            ]
+        },
+        {
+            "name": "az networkfabric l2domain update",
+            "summary": "Update the L2 Isolation Domain resource.",
+            "syntax": "az networkfabric l2domain update [--annotation]\n                                 [--ids]\n                                 [--mtu]\n                                 [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                 [--resource-group]\n                                 [--resource-name]\n                                 [--subscription]\n                                 [--tags]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--annotation",
+                "--ids",
+                "--mtu",
+                "--no-wait",
+                "--resource-group -g",
+                "--resource-name",
+                "--subscription",
+                "--tags"
+            ],
+            "examples": [
+                "az networkfabric l2domain update --resource-group \"example-rg\" --resource-name \"example-l2domain\" --mtu 1500"
+            ]
+        },
+        {
+            "name": "az networkfabric l2domain update-admin-state",
+            "summary": "Enables isolation domain across the fabric or on specified racks.",
+            "syntax": "az networkfabric l2domain update-admin-state [--ids]\n                                             [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                             [--resource-group]\n                                             [--resource-ids]\n                                             [--resource-name]\n                                             [--state {Disable, Enable}]\n                                             [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--no-wait",
+                "--resource-group -g",
+                "--resource-ids",
+                "--resource-name",
+                "--state",
+                "--subscription"
+            ],
+            "examples": [
+                "az networkfabric l2domain update-admin-state --resource-group \"example-rg\" --resource-name \"example-l2domain\" --state \"Enable\""
+            ]
+        },
+        {
+            "name": "az networkfabric l2domain wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az networkfabric l2domain wait [--created]\n                               [--custom]\n                               [--deleted]\n                               [--exists]\n                               [--ids]\n                               [--interval]\n                               [--resource-group]\n                               [--resource-name]\n                               [--subscription]\n                               [--timeout]\n                               [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--resource-group -g",
+                "--resource-name",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

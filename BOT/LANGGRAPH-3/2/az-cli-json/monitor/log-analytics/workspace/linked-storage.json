@@ -1,0 +1,101 @@
+{
+    "command_group": "az monitor log-analytics workspace linked-storage",
+    "description": "Manage linked storage account for log analytics workspace.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az monitor log-analytics workspace linked-storage add",
+            "summary": "Add some linked storage accounts with specific data source type for log analytics workspace.",
+            "syntax": "az monitor log-analytics workspace linked-storage add --resource-group\n                                                      --storage-accounts\n                                                      --type {Alerts, AzureWatson, CustomLogs, Ingestion, Query}\n                                                      --workspace-name",
+            "required_parameters": [
+                "--resource-group -g",
+                "--storage-accounts",
+                "--type",
+                "--workspace-name -n"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az monitor log-analytics workspace linked-storage add --type AzureWatson -g MyResourceGroup --workspace-name MyWorkspace --storage-accounts StorageAccount1 StorageAccount2",
+                "az monitor log-analytics workspace linked-storage add --type AzureWatson -g MyResourceGroup --workspace-name MyWorkspace --storage-accounts /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/clitest.rg000001/providers/Microsoft.Storage/storageAccounts/cli000001"
+            ]
+        },
+        {
+            "name": "az monitor log-analytics workspace linked-storage create",
+            "summary": "Create some linked storage accounts for log analytics workspace.",
+            "syntax": "az monitor log-analytics workspace linked-storage create --data-source-type {Alerts, AzureWatson, CustomLogs, Ingestion, Query}\n                                                         --resource-group\n                                                         --storage-accounts\n                                                         --workspace-name",
+            "required_parameters": [
+                "--data-source-type --type",
+                "--resource-group -g",
+                "--storage-accounts",
+                "--workspace-name -n"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az monitor log-analytics workspace linked-storage create --type AzureWatson -g MyResourceGroup --workspace-name MyWorkspace --storage-accounts StorageAccount1 StorageAccount2",
+                "az monitor log-analytics workspace linked-storage create --type AzureWatson -g MyResourceGroup --workspace-name MyWorkspace --storage-accounts /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/clitest.rg000001/providers/Microsoft.Storage/storageAccounts/cli000001"
+            ]
+        },
+        {
+            "name": "az monitor log-analytics workspace linked-storage delete",
+            "summary": "Delete all linked storage accounts with specific data source type for log analytics workspace.",
+            "syntax": "az monitor log-analytics workspace linked-storage delete [--data-source-type {Alerts, AzureWatson, CustomLogs, Ingestion, Query}]\n                                                         [--ids]\n                                                         [--resource-group]\n                                                         [--subscription]\n                                                         [--workspace-name]\n                                                         [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--data-source-type --type",
+                "--ids",
+                "--resource-group -g",
+                "--subscription",
+                "--workspace-name -n",
+                "--yes -y"
+            ],
+            "examples": [
+                "az monitor log-analytics workspace linked-storage delete --type AzureWatson -g MyResourceGroup --workspace-name MyWorkspace"
+            ]
+        },
+        {
+            "name": "az monitor log-analytics workspace linked-storage list",
+            "summary": "List all linked storage accounts for a log analytics workspace.",
+            "syntax": "az monitor log-analytics workspace linked-storage list --resource-group\n                                                       --workspace-name",
+            "required_parameters": [
+                "--resource-group -g",
+                "--workspace-name -n"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az monitor log-analytics workspace linked-storage list --resource-group MyResourceGroup --workspace-name MyWorkspace"
+            ]
+        },
+        {
+            "name": "az monitor log-analytics workspace linked-storage remove",
+            "summary": "Remove some linked storage accounts with specific data source type for log analytics workspace.",
+            "syntax": "az monitor log-analytics workspace linked-storage remove --resource-group\n                                                         --storage-accounts\n                                                         --type {Alerts, AzureWatson, CustomLogs, Ingestion, Query}\n                                                         --workspace-name",
+            "required_parameters": [
+                "--resource-group -g",
+                "--storage-accounts",
+                "--type",
+                "--workspace-name -n"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az monitor log-analytics workspace linked-storage remove --type AzureWatson -g MyResourceGroup --workspace-name MyWorkspace --storage-accounts StorageAccount1 StorageAccount2",
+                "az monitor log-analytics workspace linked-storage remove --type AzureWatson -g MyResourceGroup --workspace-name MyWorkspace --storage-accounts /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/clitest.rg000001/providers/Microsoft.Storage/storageAccounts/cli000001"
+            ]
+        },
+        {
+            "name": "az monitor log-analytics workspace linked-storage show",
+            "summary": "Show all linked storage accounts with specific data source type for a log analytics workspace.",
+            "syntax": "az monitor log-analytics workspace linked-storage show [--data-source-type {Alerts, AzureWatson, CustomLogs, Ingestion, Query}]\n                                                       [--ids]\n                                                       [--resource-group]\n                                                       [--subscription]\n                                                       [--workspace-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--data-source-type --type",
+                "--ids",
+                "--resource-group -g",
+                "--subscription",
+                "--workspace-name -n"
+            ],
+            "examples": [
+                "az monitor log-analytics workspace linked-storage show --type AzureWatson -g MyResourceGroup --workspace-name MyWorkspace"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,58 @@
+{
+    "command_group": "az dt identity",
+    "description": "Manage identites of a Digital Twins instance.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az dt identity assign",
+            "summary": "Assign managed identities to a Digital Twins instance.",
+            "syntax": "az dt identity assign --dt-name\n                      [--mi-system-assigned {false, true}]\n                      [--mi-user-assigned]\n                      [--resource-group]\n                      [--role]\n                      [--scopes]",
+            "required_parameters": [
+                "--dt-name --dtn -n"
+            ],
+            "optional_parameters": [
+                "--mi-system-assigned --system",
+                "--mi-user-assigned --user",
+                "--resource-group -g",
+                "--role",
+                "--scopes"
+            ],
+            "examples": [
+                "az dt identity assign -n {instance_name} --mi-system-assigned --role \"Azure Event Hubs Data Sender\" --scopes {resource_id}",
+                "az dt identity assign -n {instance_name} --mi-user-assigned {resource_id} {resource_id}"
+            ]
+        },
+        {
+            "name": "az dt identity remove",
+            "summary": "Remove managed identities from a Digital Twins instance.",
+            "syntax": "az dt identity remove --dt-name\n                      [--mi-system-assigned {false, true}]\n                      [--mi-user-assigned]\n                      [--resource-group]",
+            "required_parameters": [
+                "--dt-name --dtn -n"
+            ],
+            "optional_parameters": [
+                "--mi-system-assigned --system",
+                "--mi-user-assigned --user",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az dt identity remove -n {instance_name} --mi-system-assigned",
+                "az dt identity remove -n {instance_name} --mi-user-assigned {resource_id} {resource_id}",
+                "az dt identity remove -n {instance_name} --mi-user-assigned --mi-system-assigned"
+            ]
+        },
+        {
+            "name": "az dt identity show",
+            "summary": "Show the identity properties of a Digital Twins instance.",
+            "syntax": "az dt identity show --dt-name\n                    [--resource-group]",
+            "required_parameters": [
+                "--dt-name --dtn -n"
+            ],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az dt identity show -n {instance_name} -g {resource_group}"
+            ]
+        }
+    ]
+}

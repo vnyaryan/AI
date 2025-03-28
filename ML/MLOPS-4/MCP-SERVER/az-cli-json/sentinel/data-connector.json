@@ -1,0 +1,155 @@
+{
+    "command_group": "az sentinel data-connector",
+    "description": "Manage data connector with sentinel.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az sentinel data-connector connect",
+            "summary": "Connect a data connector.",
+            "syntax": "az sentinel data-connector connect --data-connector-id\n                                   --resource-group\n                                   --workspace-name\n                                   [--api-key]\n                                   [--authorization-code]\n                                   [--client-id]\n                                   [--client-secret]\n                                   [--endpoint]\n                                   [--kind {APIKey, Basic, OAuth2}]\n                                   [--output-stream]\n                                   [--password]\n                                   [--rule-immutable-id]\n                                   [--user-name]",
+            "required_parameters": [
+                "--data-connector-id",
+                "--resource-group -g",
+                "--workspace-name -w"
+            ],
+            "optional_parameters": [
+                "--api-key",
+                "--authorization-code",
+                "--client-id",
+                "--client-secret",
+                "--endpoint",
+                "--kind",
+                "--output-stream",
+                "--password",
+                "--rule-immutable-id",
+                "--user-name"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az sentinel data-connector create",
+            "summary": "Create the data connector.",
+            "syntax": "az sentinel data-connector create --data-connector-id\n                                  --resource-group\n                                  --workspace-name\n                                  [--api-polling]\n                                  [--aws-cloud-trail]\n                                  [--aws-s3]\n                                  [--azure-active-directory]\n                                  [--azure-protection]\n                                  [--azure-security-center]\n                                  [--cloud-app-security]\n                                  [--defender-protection]\n                                  [--dynamics365]\n                                  [--etag]\n                                  [--generic-ui]\n                                  [--intelligence-taxii]\n                                  [--iot]\n                                  [--microsoft-intelligence]\n                                  [--microsoft-protection]\n                                  [--office-atp]\n                                  [--office-irm]\n                                  [--office-power-bi]\n                                  [--office365]\n                                  [--office365-project]\n                                  [--threat-intelligence]",
+            "required_parameters": [
+                "--data-connector-id --name -n",
+                "--resource-group -g",
+                "--workspace-name -w"
+            ],
+            "optional_parameters": [
+                "--api-polling",
+                "--aws-cloud-trail",
+                "--aws-s3",
+                "--azure-active-directory",
+                "--azure-protection",
+                "--azure-security-center",
+                "--cloud-app-security",
+                "--defender-protection",
+                "--dynamics365",
+                "--etag",
+                "--generic-ui",
+                "--intelligence-taxii",
+                "--iot",
+                "--microsoft-intelligence",
+                "--microsoft-protection",
+                "--office-atp",
+                "--office-irm",
+                "--office-power-bi",
+                "--office365",
+                "--office365-project",
+                "--threat-intelligence"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az sentinel data-connector delete",
+            "summary": "Delete the data connector.",
+            "syntax": "az sentinel data-connector delete [--data-connector-id]\n                                  [--ids]\n                                  [--resource-group]\n                                  [--subscription]\n                                  [--workspace-name]\n                                  [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--data-connector-id --name -n",
+                "--ids",
+                "--resource-group -g",
+                "--subscription",
+                "--workspace-name -w",
+                "--yes -y"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az sentinel data-connector disconnect",
+            "summary": "Disconnect a data connector.",
+            "syntax": "az sentinel data-connector disconnect --data-connector-id\n                                      --resource-group\n                                      --workspace-name",
+            "required_parameters": [
+                "--data-connector-id",
+                "--resource-group -g",
+                "--workspace-name -w"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az sentinel data-connector list",
+            "summary": "Get all data connectors.",
+            "syntax": "az sentinel data-connector list --resource-group\n                                --workspace-name",
+            "required_parameters": [
+                "--resource-group -g",
+                "--workspace-name -w"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az sentinel data-connector show",
+            "summary": "Get a data connector.",
+            "syntax": "az sentinel data-connector show [--data-connector-id]\n                                [--ids]\n                                [--resource-group]\n                                [--subscription]\n                                [--workspace-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--data-connector-id --name -n",
+                "--ids",
+                "--resource-group -g",
+                "--subscription",
+                "--workspace-name -w"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az sentinel data-connector update",
+            "summary": "Update the data connector.",
+            "syntax": "az sentinel data-connector update [--add]\n                                  [--api-polling]\n                                  [--aws-cloud-trail]\n                                  [--aws-s3]\n                                  [--azure-active-directory]\n                                  [--azure-protection]\n                                  [--azure-security-center]\n                                  [--cloud-app-security]\n                                  [--data-connector-id]\n                                  [--defender-protection]\n                                  [--dynamics365]\n                                  [--etag]\n                                  [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                  [--generic-ui]\n                                  [--ids]\n                                  [--intelligence-taxii]\n                                  [--iot]\n                                  [--microsoft-intelligence]\n                                  [--microsoft-protection]\n                                  [--office-atp]\n                                  [--office-irm]\n                                  [--office-power-bi]\n                                  [--office365]\n                                  [--office365-project]\n                                  [--remove]\n                                  [--resource-group]\n                                  [--set]\n                                  [--subscription]\n                                  [--threat-intelligence]\n                                  [--workspace-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--api-polling",
+                "--aws-cloud-trail",
+                "--aws-s3",
+                "--azure-active-directory",
+                "--azure-protection",
+                "--azure-security-center",
+                "--cloud-app-security",
+                "--data-connector-id --name -n",
+                "--defender-protection",
+                "--dynamics365",
+                "--etag",
+                "--force-string",
+                "--generic-ui",
+                "--ids",
+                "--intelligence-taxii",
+                "--iot",
+                "--microsoft-intelligence",
+                "--microsoft-protection",
+                "--office-atp",
+                "--office-irm",
+                "--office-power-bi",
+                "--office365",
+                "--office365-project",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--subscription",
+                "--threat-intelligence",
+                "--workspace-name -w"
+            ],
+            "examples": []
+        }
+    ]
+}

@@ -1,0 +1,85 @@
+{
+    "command_group": "az network manager connection subscription",
+    "description": "Manage subscription-group connection with network.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az network manager connection subscription create",
+            "summary": "Create a network manager connection on this subscription.",
+            "syntax": "az network manager connection subscription create --connection-name\n                                                  --network-manager\n                                                  [--description]",
+            "required_parameters": [
+                "--connection-name --name -n",
+                "--network-manager --network-manager-id"
+            ],
+            "optional_parameters": [
+                "--description"
+            ],
+            "examples": [
+                "az network manager connection subscription create --connection-name \"testNetworkManagerConnection\" --description \"A sample policy\" --network-manager-id /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/rg1/providers/Microsoft.Network/networkManagers/testManagerName"
+            ]
+        },
+        {
+            "name": "az network manager connection subscription delete",
+            "summary": "Delete specified connection created by this subscription.",
+            "syntax": "az network manager connection subscription delete [--connection-name]\n                                                  [--ids]\n                                                  [--subscription]\n                                                  [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--connection-name --name -n",
+                "--ids",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az network manager connection subscription delete --connection-name \"testNetworkManagerConnection\""
+            ]
+        },
+        {
+            "name": "az network manager connection subscription list",
+            "summary": "List all network manager connections created by this subscription.",
+            "syntax": "az network manager connection subscription list [--max-items]\n                                                [--next-token]\n                                                [--skip-token]\n                                                [--top]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token",
+                "--skip-token",
+                "--top"
+            ],
+            "examples": [
+                "az network manager connection subscription list"
+            ]
+        },
+        {
+            "name": "az network manager connection subscription show",
+            "summary": "Get a specified connection created by this subscription.",
+            "syntax": "az network manager connection subscription show [--connection-name]\n                                                [--ids]\n                                                [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--connection-name --name -n",
+                "--ids",
+                "--subscription"
+            ],
+            "examples": [
+                "az network manager connection subscription show --connection-name \"testNetworkManagerConnection\""
+            ]
+        },
+        {
+            "name": "az network manager connection subscription update",
+            "summary": "Update a network manager connection on this subscription.",
+            "syntax": "az network manager connection subscription update [--add]\n                                                  [--connection-name]\n                                                  [--description]\n                                                  [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                                  [--ids]\n                                                  [--remove]\n                                                  [--set]\n                                                  [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--connection-name --name -n",
+                "--description",
+                "--force-string",
+                "--ids",
+                "--remove",
+                "--set",
+                "--subscription"
+            ],
+            "examples": [
+                "az network manager connection subscription update --connection-name \"testNetworkManagerConnection\" --description \"A sample policy\""
+            ]
+        }
+    ]
+}

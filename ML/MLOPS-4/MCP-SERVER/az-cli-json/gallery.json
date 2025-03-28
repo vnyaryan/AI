@@ -1,0 +1,6 @@
+{
+    "command_group": "az gallery",
+    "description": "Azure Compute Gallery.",
+    "status": "GA",
+    "commands": []
+}

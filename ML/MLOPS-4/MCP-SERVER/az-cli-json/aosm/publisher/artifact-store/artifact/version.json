@@ -1,0 +1,46 @@
+{
+    "command_group": "az aosm publisher artifact-store artifact version",
+    "description": "Commands to manage artifact versions.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az aosm publisher artifact-store artifact version list",
+            "summary": "List a Artifact overview information.",
+            "syntax": "az aosm publisher artifact-store artifact version list --artifact-name\n                                                       --artifact-store-name\n                                                       --publisher-name\n                                                       --resource-group\n                                                       [--max-items]\n                                                       [--next-token]",
+            "required_parameters": [
+                "--artifact-name",
+                "--artifact-store-name",
+                "--publisher-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az aosm publisher artifact-store artifact version list --resource-group contoso-aosm --publisher-name contoso --artifact-store-name contoso --artifact-name nginx"
+            ]
+        },
+        {
+            "name": "az aosm publisher artifact-store artifact version update-state",
+            "summary": "Update artifact state defined in artifact store.",
+            "syntax": "az aosm publisher artifact-store artifact version update-state --artifact-name\n                                                               [--artifact-state {Active, Deprecated, Preview, Unknown}]\n                                                               [--artifact-store-name]\n                                                               [--ids]\n                                                               [--name]\n                                                               [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                                               [--publisher-name]\n                                                               [--resource-group]\n                                                               [--subscription]",
+            "required_parameters": [
+                "--artifact-name"
+            ],
+            "optional_parameters": [
+                "--artifact-state",
+                "--artifact-store-name",
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--publisher-name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az aosm publisher artifact-store artifact version update-state --resource-group contoso-aosm --publisher-name contoso --artifact-store-name contoso --artifact-name nginx --name 1.0.0 --artifact-state Deprecated"
+            ]
+        }
+    ]
+}

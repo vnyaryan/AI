@@ -1,0 +1,21 @@
+{
+    "command_group": "az batch job task-counts",
+    "description": "View the number of tasks and slots in a Batch job and their states.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az batch job task-counts show",
+            "summary": "Gets the Task counts for the specified Job.",
+            "syntax": "az batch job task-counts show --job-id\n                              [--account-endpoint]\n                              [--account-key]\n                              [--account-name]",
+            "required_parameters": [
+                "--job-id"
+            ],
+            "optional_parameters": [
+                "--account-endpoint",
+                "--account-key",
+                "--account-name"
+            ],
+            "examples": []
+        }
+    ]
+}

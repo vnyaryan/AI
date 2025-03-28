@@ -1,0 +1,97 @@
+{
+    "command_group": "az storage queue policy",
+    "description": "Manage shared access policies for a storage queue.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az storage queue policy create",
+            "summary": "Create a stored access policy on the containing object.",
+            "syntax": "az storage queue policy create --name\n                               --queue-name\n                               [--account-key]\n                               [--account-name]\n                               [--connection-string]\n                               [--expiry]\n                               [--permissions]\n                               [--queue-endpoint]\n                               [--sas-token]\n                               [--start]",
+            "required_parameters": [
+                "--name -n",
+                "--queue-name -q"
+            ],
+            "optional_parameters": [
+                "--account-key",
+                "--account-name",
+                "--connection-string",
+                "--expiry",
+                "--permissions",
+                "--queue-endpoint",
+                "--sas-token",
+                "--start"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az storage queue policy delete",
+            "summary": "Delete a stored access policy on a containing object.",
+            "syntax": "az storage queue policy delete --name\n                               --queue-name\n                               [--account-key]\n                               [--account-name]\n                               [--connection-string]\n                               [--queue-endpoint]\n                               [--sas-token]",
+            "required_parameters": [
+                "--name -n",
+                "--queue-name -q"
+            ],
+            "optional_parameters": [
+                "--account-key",
+                "--account-name",
+                "--connection-string",
+                "--queue-endpoint",
+                "--sas-token"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az storage queue policy list",
+            "summary": "List stored access policies on a containing object.",
+            "syntax": "az storage queue policy list --queue-name\n                             [--account-key]\n                             [--account-name]\n                             [--connection-string]\n                             [--queue-endpoint]\n                             [--sas-token]",
+            "required_parameters": [
+                "--queue-name -q"
+            ],
+            "optional_parameters": [
+                "--account-key",
+                "--account-name",
+                "--connection-string",
+                "--queue-endpoint",
+                "--sas-token"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az storage queue policy show",
+            "summary": "Show a stored access policy on a containing object.",
+            "syntax": "az storage queue policy show --name\n                             --queue-name\n                             [--account-key]\n                             [--account-name]\n                             [--connection-string]\n                             [--queue-endpoint]\n                             [--sas-token]",
+            "required_parameters": [
+                "--name -n",
+                "--queue-name -q"
+            ],
+            "optional_parameters": [
+                "--account-key",
+                "--account-name",
+                "--connection-string",
+                "--queue-endpoint",
+                "--sas-token"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az storage queue policy update",
+            "summary": "Set a stored access policy on a containing object.",
+            "syntax": "az storage queue policy update --name\n                               --queue-name\n                               [--account-key]\n                               [--account-name]\n                               [--connection-string]\n                               [--expiry]\n                               [--permissions]\n                               [--queue-endpoint]\n                               [--sas-token]\n                               [--start]",
+            "required_parameters": [
+                "--name -n",
+                "--queue-name -q"
+            ],
+            "optional_parameters": [
+                "--account-key",
+                "--account-name",
+                "--connection-string",
+                "--expiry",
+                "--permissions",
+                "--queue-endpoint",
+                "--sas-token",
+                "--start"
+            ],
+            "examples": []
+        }
+    ]
+}

@@ -1,0 +1,81 @@
+{
+    "command_group": "az account subscription",
+    "description": "Manage subscriptions.",
+    "status": "Experimental",
+    "commands": [
+        {
+            "name": "az account subscription cancel",
+            "summary": "Cancel subscription.",
+            "syntax": "az account subscription cancel --id\n                               [--yes]",
+            "required_parameters": [
+                "--id --subscription-id"
+            ],
+            "optional_parameters": [
+                "--yes -y"
+            ],
+            "examples": [
+                "az account subscription cancel --subscription-id \"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx\""
+            ]
+        },
+        {
+            "name": "az account subscription enable",
+            "summary": "Enable subscription.",
+            "syntax": "az account subscription enable --id",
+            "required_parameters": [
+                "--id --subscription-id"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az account subscription enable --subscription-id \"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx\""
+            ]
+        },
+        {
+            "name": "az account subscription list",
+            "summary": "Get all subscriptions for a tenant.",
+            "syntax": "az account subscription list",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "examples": [
+                "az account subscription list"
+            ]
+        },
+        {
+            "name": "az account subscription list-location",
+            "summary": "This operation provides all the locations that are available for resource providers; however, each resource provider may support a subset of this list.",
+            "syntax": "az account subscription list-location --id",
+            "required_parameters": [
+                "--id --subscription-id"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az account subscription list-location --subscription-id \"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx\""
+            ]
+        },
+        {
+            "name": "az account subscription rename",
+            "summary": "Rename subscription.",
+            "syntax": "az account subscription rename --id\n                               [--name]",
+            "required_parameters": [
+                "--id --subscription-id"
+            ],
+            "optional_parameters": [
+                "--name --subscription-name -n"
+            ],
+            "examples": [
+                "az account subscription rename --subscription-id \"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx\""
+            ]
+        },
+        {
+            "name": "az account subscription show",
+            "summary": "Get details about a specified subscription.",
+            "syntax": "az account subscription show --id",
+            "required_parameters": [
+                "--id --subscription-id"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az account subscription show --subscription-id \"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx\""
+            ]
+        }
+    ]
+}

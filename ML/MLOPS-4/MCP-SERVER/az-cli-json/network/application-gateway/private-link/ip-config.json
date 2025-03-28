@@ -1,0 +1,93 @@
+{
+    "command_group": "az network application-gateway private-link ip-config",
+    "description": "Manage IP configuration of a private link to configure its capability.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az network application-gateway private-link ip-config add",
+            "summary": "Add an IP configuration to a private link to scale up its capability.",
+            "syntax": "az network application-gateway private-link ip-config add --gateway-name\n                                                          --name\n                                                          --private-link\n                                                          --resource-group\n                                                          [--ip-address]\n                                                          [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                                          [--primary {0, 1, f, false, n, no, t, true, y, yes}]",
+            "required_parameters": [
+                "--gateway-name",
+                "--name -n",
+                "--private-link",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--ip-address",
+                "--no-wait",
+                "--primary"
+            ],
+            "examples": [
+                "az network application-gateway private-link ip-config add -n MyIPConfig -g MyResourceGroup  --gateway-name MyGateway --private-link MyPrivateLink --primary true"
+            ]
+        },
+        {
+            "name": "az network application-gateway private-link ip-config list",
+            "summary": "List all the IP configurations of a private link.",
+            "syntax": "az network application-gateway private-link ip-config list --gateway-name\n                                                           --private-link\n                                                           --resource-group",
+            "required_parameters": [
+                "--gateway-name",
+                "--private-link",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az network application-gateway private-link ip-config list -g MyResourceGroup --gateway-name MyGateway --private-link MyPrivateLink"
+            ]
+        },
+        {
+            "name": "az network application-gateway private-link ip-config remove",
+            "summary": "Remove an IP configuration from a private link to scale down its capability.",
+            "syntax": "az network application-gateway private-link ip-config remove --gateway-name\n                                                             --name\n                                                             --private-link\n                                                             --resource-group\n                                                             [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                                             [--yes]",
+            "required_parameters": [
+                "--gateway-name",
+                "--name -n",
+                "--private-link",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--no-wait",
+                "--yes -y"
+            ],
+            "examples": [
+                "az network application-gateway private-link ip-config remove -n MyIPConfig -g MyResourceGroup --gateway-name MyGateway --private-link MyPrivateLink --yes"
+            ]
+        },
+        {
+            "name": "az network application-gateway private-link ip-config show",
+            "summary": "Show an IP configuration of a private link.",
+            "syntax": "az network application-gateway private-link ip-config show --gateway-name\n                                                           --name\n                                                           --private-link\n                                                           --resource-group",
+            "required_parameters": [
+                "--gateway-name",
+                "--name -n",
+                "--private-link",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az network application-gateway private-link ip-config show -n MyIPConfig -g MyResourceGroup --gateway-name MyGateway --private-link MyPrivateLink"
+            ]
+        },
+        {
+            "name": "az network application-gateway private-link ip-config wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az network application-gateway private-link ip-config wait [--created]\n                                                           [--custom]\n                                                           [--deleted]\n                                                           [--exists]\n                                                           [--gateway-name]\n                                                           [--ids]\n                                                           [--interval]\n                                                           [--resource-group]\n                                                           [--subscription]\n                                                           [--timeout]\n                                                           [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--gateway-name",
+                "--ids",
+                "--interval",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

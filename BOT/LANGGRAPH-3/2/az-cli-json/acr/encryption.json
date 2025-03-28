@@ -1,0 +1,33 @@
+{
+    "command_group": "az acr encryption",
+    "description": "Manage container registry encryption.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az acr encryption rotate-key",
+            "summary": "Rotate (update) the container registry's encryption key.",
+            "syntax": "az acr encryption rotate-key --name\n                             [--identity]\n                             [--key-encryption-key]\n                             [--resource-group]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--identity",
+                "--key-encryption-key",
+                "--resource-group -g"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az acr encryption show",
+            "summary": "Show the container registry's encryption details.",
+            "syntax": "az acr encryption show --name\n                       [--resource-group]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": []
+        }
+    ]
+}

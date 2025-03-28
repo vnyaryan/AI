@@ -1,0 +1,19 @@
+{
+    "command_group": "az dynatrace",
+    "description": "Manage dynatrace.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az dynatrace get-marketplace-saas-resource-detail",
+            "summary": "Get Marketplace SaaS resource details of a tenant under a specific subscription.",
+            "syntax": "az dynatrace get-marketplace-saas-resource-detail --tenant-id",
+            "required_parameters": [
+                "--tenant-id"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az dynatrace get-marketplace-saas-resource-detail --tenant-id urnmattojzhktcfw"
+            ]
+        }
+    ]
+}

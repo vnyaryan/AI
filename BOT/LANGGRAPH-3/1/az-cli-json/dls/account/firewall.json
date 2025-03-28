@@ -1,0 +1,84 @@
+{
+    "command_group": "az dls account firewall",
+    "description": "Manage Data Lake Store account firewall rules.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az dls account firewall create",
+            "summary": "Creates a firewall rule in a Data Lake Store account.",
+            "syntax": "az dls account firewall create --account\n                               --end-ip-address\n                               --firewall-rule-name\n                               --start-ip-address\n                               [--resource-group]",
+            "required_parameters": [
+                "--account -n",
+                "--end-ip-address",
+                "--firewall-rule-name",
+                "--start-ip-address"
+            ],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az dls account firewall delete",
+            "summary": "Deletes a firewall rule in a Data Lake Store account.",
+            "syntax": "az dls account firewall delete --firewall-rule-name\n                               [--account]\n                               [--ids]\n                               [--resource-group]\n                               [--subscription]",
+            "required_parameters": [
+                "--firewall-rule-name"
+            ],
+            "optional_parameters": [
+                "--account -n",
+                "--ids",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az dls account firewall list",
+            "summary": "Lists firewall rules in a Data Lake Store account.",
+            "syntax": "az dls account firewall list [--account]\n                             [--ids]\n                             [--resource-group]\n                             [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account -n",
+                "--ids",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az dls account firewall list --account mydatalakestoragegen1 --subscription MySubscription"
+            ]
+        },
+        {
+            "name": "az dls account firewall show",
+            "summary": "Get the details of a firewall rule in a Data Lake Store account.",
+            "syntax": "az dls account firewall show --firewall-rule-name\n                             [--account]\n                             [--ids]\n                             [--resource-group]\n                             [--subscription]",
+            "required_parameters": [
+                "--firewall-rule-name"
+            ],
+            "optional_parameters": [
+                "--account -n",
+                "--ids",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az dls account firewall update",
+            "summary": "Updates a firewall rule in a Data Lake Store account.",
+            "syntax": "az dls account firewall update --firewall-rule-name\n                               [--account]\n                               [--end-ip-address]\n                               [--ids]\n                               [--resource-group]\n                               [--start-ip-address]\n                               [--subscription]",
+            "required_parameters": [
+                "--firewall-rule-name"
+            ],
+            "optional_parameters": [
+                "--account -n",
+                "--end-ip-address",
+                "--ids",
+                "--resource-group -g",
+                "--start-ip-address",
+                "--subscription"
+            ],
+            "examples": []
+        }
+    ]
+}

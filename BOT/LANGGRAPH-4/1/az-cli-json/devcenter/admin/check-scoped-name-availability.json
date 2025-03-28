@@ -1,0 +1,22 @@
+{
+    "command_group": "az devcenter admin check-scoped-name-availability",
+    "description": "Manage check scoped name availability.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az devcenter admin check-scoped-name-availability execute",
+            "summary": "Check the availability of name for resource.",
+            "syntax": "az devcenter admin check-scoped-name-availability execute --name\n                                                          --scope\n                                                          --type",
+            "required_parameters": [
+                "--name",
+                "--scope",
+                "--type"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az devcenter admin check-scoped-name-availability execute --name \"name1\" --type \"\"Microsoft.DevCenter/projects/catalogs\" --scope \"/subscriptions/0ac520ee-14c0-480f-b6c9-0a90c58ffff/resourceGroups/rg1/providers/Microsoft.DevCenter/projects/DevProject\"",
+                "az devcenter admin check-scoped-name-availability execute --name \"name1\" --type \"\"Microsoft.DevCenter/devcenters/catalogs\" --scope  \"/subscriptions/0ac520ee-14c0-480f-b6c9-0a90c58ffff/resourceGroups/rg1/providers/Microsoft.DevCenter/devcenters/Contoso\""
+            ]
+        }
+    ]
+}

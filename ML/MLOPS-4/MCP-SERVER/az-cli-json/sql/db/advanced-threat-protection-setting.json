@@ -1,0 +1,42 @@
+{
+    "command_group": "az sql db advanced-threat-protection-setting",
+    "description": "Manage a database's advanced threat protection setting.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az sql db advanced-threat-protection-setting show",
+            "summary": "Gets an advanced threat protection setting.",
+            "syntax": "az sql db advanced-threat-protection-setting show [--ids]\n                                                  [--name]\n                                                  [--resource-group]\n                                                  [--server]\n                                                  [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--server -s",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az sql db advanced-threat-protection-setting update",
+            "summary": "Update a database's advanced threat protection setting.",
+            "syntax": "az sql db advanced-threat-protection-setting update [--add]\n                                                    [--force-string]\n                                                    [--ids]\n                                                    [--name]\n                                                    [--remove]\n                                                    [--resource-group]\n                                                    [--server]\n                                                    [--set]\n                                                    [--state]\n                                                    [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--force-string",
+                "--ids",
+                "--name -n",
+                "--remove",
+                "--resource-group -g",
+                "--server -s",
+                "--set",
+                "--state",
+                "--subscription"
+            ],
+            "examples": [
+                "az sql db advanced-threat-protection-setting update -g mygroup -s myserver -n mydb --state Disabled"
+            ]
+        }
+    ]
+}

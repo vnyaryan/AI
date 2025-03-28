@@ -1,0 +1,121 @@
+{
+    "command_group": "az eventgrid namespace topic-space",
+    "description": "Manage eventgrid namespace topic space.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az eventgrid namespace topic-space create",
+            "summary": "Create a topic space.",
+            "syntax": "az eventgrid namespace topic-space create --name\n                                          --namespace-name\n                                          --resource-group\n                                          [--description]\n                                          [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                          [--topic-templates]",
+            "required_parameters": [
+                "--name --topic-space-name -n",
+                "--namespace-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--description",
+                "--no-wait",
+                "--topic-templates"
+            ],
+            "examples": [
+                "az eventgrid namespace topic-space create -g rg --namespace-name name -n topic-space --topic-templates ['name=topicspace']"
+            ]
+        },
+        {
+            "name": "az eventgrid namespace topic-space delete",
+            "summary": "Delete an existing topic space.",
+            "syntax": "az eventgrid namespace topic-space delete [--ids]\n                                          [--name]\n                                          [--namespace-name]\n                                          [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                          [--resource-group]\n                                          [--subscription]\n                                          [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --topic-space-name -n",
+                "--namespace-name",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az eventgrid namespace topic-space delete -g rg --namespace-name name -n topic-space"
+            ]
+        },
+        {
+            "name": "az eventgrid namespace topic-space list",
+            "summary": "List all the topic spaces under a namespace.",
+            "syntax": "az eventgrid namespace topic-space list --namespace-name\n                                        --resource-group\n                                        [--filter]\n                                        [--max-items]\n                                        [--next-token]\n                                        [--top]",
+            "required_parameters": [
+                "--namespace-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--filter",
+                "--max-items",
+                "--next-token",
+                "--top"
+            ],
+            "examples": [
+                "az eventgrid namespace topic-space list -g rg --namespace-name name"
+            ]
+        },
+        {
+            "name": "az eventgrid namespace topic-space show",
+            "summary": "Show a topic space.",
+            "syntax": "az eventgrid namespace topic-space show [--ids]\n                                        [--name]\n                                        [--namespace-name]\n                                        [--resource-group]\n                                        [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --topic-space-name -n",
+                "--namespace-name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az eventgrid namespace topic-space show  -g rg --namespace-name name -n topic-space"
+            ]
+        },
+        {
+            "name": "az eventgrid namespace topic-space update",
+            "summary": "Update a topic space.",
+            "syntax": "az eventgrid namespace topic-space update [--add]\n                                          [--description]\n                                          [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                          [--ids]\n                                          [--name]\n                                          [--namespace-name]\n                                          [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                          [--remove]\n                                          [--resource-group]\n                                          [--set]\n                                          [--subscription]\n                                          [--topic-templates]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--description",
+                "--force-string",
+                "--ids",
+                "--name --topic-space-name -n",
+                "--namespace-name",
+                "--no-wait",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--subscription",
+                "--topic-templates"
+            ],
+            "examples": [
+                "az eventgrid namespace topic-space update -g rg --namespace-name name -n topic-space --description test"
+            ]
+        },
+        {
+            "name": "az eventgrid namespace topic-space wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az eventgrid namespace topic-space wait [--created]\n                                        [--custom]\n                                        [--deleted]\n                                        [--exists]\n                                        [--ids]\n                                        [--interval]\n                                        [--name]\n                                        [--namespace-name]\n                                        [--resource-group]\n                                        [--subscription]\n                                        [--timeout]\n                                        [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--name --topic-space-name -n",
+                "--namespace-name",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

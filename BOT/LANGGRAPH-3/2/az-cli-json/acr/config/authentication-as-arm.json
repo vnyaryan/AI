@@ -1,0 +1,37 @@
+{
+    "command_group": "az acr config authentication-as-arm",
+    "description": "Manage 'Azure AD authenticate as ARM' policy for Azure Container Registries.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az acr config authentication-as-arm show",
+            "summary": "Show the configured 'Azure AD authenticate as ARM' policy for an Azure Container Registry.",
+            "syntax": "az acr config authentication-as-arm show --registry\n                                         [--resource-group]",
+            "required_parameters": [
+                "--registry -r"
+            ],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az acr config authentication-as-arm show -r myregistry"
+            ]
+        },
+        {
+            "name": "az acr config authentication-as-arm update",
+            "summary": "Update 'Azure AD authenticate as ARM' policy for an Azure Container Registry.",
+            "syntax": "az acr config authentication-as-arm update --registry\n                                           [--resource-group]\n                                           [--status {disabled, enabled}]",
+            "required_parameters": [
+                "--registry -r"
+            ],
+            "optional_parameters": [
+                "--resource-group -g",
+                "--status"
+            ],
+            "examples": [
+                "az acr config authentication-as-arm update -r myregistry --status Disabled",
+                "az acr config authentication-as-arm update -r myregistry --status Enabled"
+            ]
+        }
+    ]
+}

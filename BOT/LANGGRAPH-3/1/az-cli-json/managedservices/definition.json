@@ -1,0 +1,90 @@
+{
+    "command_group": "az managedservices definition",
+    "description": "Manage the registration definitions in Azure.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az managedservices definition create",
+            "summary": "Create a registration definition.",
+            "syntax": "az managedservices definition create --name\n                                     --principal-id\n                                     --role-definition-id\n                                     --tenant-id\n                                     [--definition-id]\n                                     [--description]\n                                     [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                     [--plan-name]\n                                     [--plan-product]\n                                     [--plan-publisher]\n                                     [--plan-version]",
+            "required_parameters": [
+                "--name",
+                "--principal-id",
+                "--role-definition-id",
+                "--tenant-id"
+            ],
+            "optional_parameters": [
+                "--definition-id",
+                "--description",
+                "--no-wait",
+                "--plan-name",
+                "--plan-product",
+                "--plan-publisher",
+                "--plan-version"
+            ],
+            "examples": [
+                "az managedservices definition create --name mydef --tenant-id dab3375b-6197-4a15-a44b-16c41faa91d7 --principal-id b6f6c88a-5b7a-455e-ba40-ce146d4d3671 --role-definition-id ccdd72a7-3385-48ef-bd42-f606fba81ae7"
+            ]
+        },
+        {
+            "name": "az managedservices definition delete",
+            "summary": "Delete a registration definition.",
+            "syntax": "az managedservices definition delete --definition\n                                     [--yes]",
+            "required_parameters": [
+                "--definition"
+            ],
+            "optional_parameters": [
+                "--yes -y"
+            ],
+            "examples": [
+                "az managedservices definition delete --definition af8772a0-fd9c-4ddc-8ad0-7d4b3913d7dd",
+                "az managedservices definition delete --definition /subscriptions/39033314-9b39-4c7b-84fd-0e26e55f15dc/providers/Microsoft.ManagedServices/registrationDefinitions/1d693e4f-9e79-433a-b3a2-afce1f8b61ec"
+            ]
+        },
+        {
+            "name": "az managedservices definition list",
+            "summary": "List all the registration definitions under the default scope or under the subscription provided.",
+            "syntax": "az managedservices definition list [--max-items]\n                                   [--next-token]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az managedservices definition list"
+            ]
+        },
+        {
+            "name": "az managedservices definition show",
+            "summary": "Show the registration definition details.",
+            "syntax": "az managedservices definition show --definition",
+            "required_parameters": [
+                "--definition"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az managedservices definition show --definition af8772a0-fd9c-4ddc-8ad0-7d4b3913d7dd",
+                "az managedservices definition show --definition /subscriptions/39033314-9b39-4c7b-84fd-0e26e55f15dc/providers/Microsoft.ManagedServices/registrationDefinitions/1d693e4f-9e79-433a-b3a2-afce1f8b61ec"
+            ]
+        },
+        {
+            "name": "az managedservices definition wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az managedservices definition wait --definition\n                                   --scope\n                                   [--created]\n                                   [--custom]\n                                   [--deleted]\n                                   [--exists]\n                                   [--interval]\n                                   [--timeout]\n                                   [--updated]",
+            "required_parameters": [
+                "--definition",
+                "--scope"
+            ],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--interval",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

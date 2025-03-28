@@ -1,0 +1,18 @@
+{
+    "command_group": "az partnercenter marketplace offer plan technical-configuration",
+    "description": "Manage a Marketplace offer plan's technical configuration.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az partnercenter marketplace offer plan technical-configuration show",
+            "summary": "Show a plan's technical configuration.",
+            "syntax": "az partnercenter marketplace offer plan technical-configuration show --offer-id\n                                                                     --plan-id",
+            "required_parameters": [
+                "--offer-id",
+                "--plan-id"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        }
+    ]
+}

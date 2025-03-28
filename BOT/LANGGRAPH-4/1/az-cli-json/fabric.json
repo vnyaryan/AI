@@ -1,0 +1,6 @@
+{
+    "command_group": "az fabric",
+    "description": "Manage Microsoft Fabric resources.",
+    "status": "GA",
+    "commands": []
+}

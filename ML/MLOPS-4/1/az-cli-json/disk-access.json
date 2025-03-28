@@ -1,0 +1,108 @@
+{
+    "command_group": "az disk-access",
+    "description": "Manage disk access resources.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az disk-access create",
+            "summary": "Create a disk access resource.",
+            "syntax": "az disk-access create --name\n                      --resource-group\n                      [--location]\n                      [--no-wait]\n                      [--tags]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--location -l",
+                "--no-wait",
+                "--tags"
+            ],
+            "examples": [
+                "az disk-access create -g MyResourceGroup -l centraluseuap -n MyDiskAccess"
+            ]
+        },
+        {
+            "name": "az disk-access delete",
+            "summary": "Delete a disk access resource.",
+            "syntax": "az disk-access delete [--disk-access-name]\n                      [--ids]\n                      [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                      [--resource-group]\n                      [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--disk-access-name --name -n",
+                "--ids",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az disk-access delete -g MyResourceGroup -n MyDiskAccess"
+            ]
+        },
+        {
+            "name": "az disk-access list",
+            "summary": "List all the disk access resources under a resource group.",
+            "syntax": "az disk-access list [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az disk-access list -g MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az disk-access show",
+            "summary": "Get information about a disk access resource.",
+            "syntax": "az disk-access show [--disk-access-name]\n                    [--ids]\n                    [--resource-group]\n                    [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--disk-access-name --name -n",
+                "--ids",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az disk-access show -g MyResourceGroup -n MyDiskAccess"
+            ]
+        },
+        {
+            "name": "az disk-access update",
+            "summary": "Update a disk access resource.",
+            "syntax": "az disk-access update [--add]\n                      [--force-string]\n                      [--ids]\n                      [--name]\n                      [--no-wait]\n                      [--remove]\n                      [--resource-group]\n                      [--set]\n                      [--subscription]\n                      [--tags]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--force-string",
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--subscription",
+                "--tags"
+            ],
+            "examples": [
+                "az disk-access update -g MyResourceGroup -n MyDiskAccess --tags tag1=val1 tag2=val2"
+            ]
+        },
+        {
+            "name": "az disk-access wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az disk-access wait [--created]\n                    [--custom]\n                    [--deleted]\n                    [--disk-access-name]\n                    [--exists]\n                    [--ids]\n                    [--interval]\n                    [--resource-group]\n                    [--subscription]\n                    [--timeout]\n                    [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--disk-access-name --name -n",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

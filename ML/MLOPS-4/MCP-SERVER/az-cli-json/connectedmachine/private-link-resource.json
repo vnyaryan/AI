@@ -1,0 +1,39 @@
+{
+    "command_group": "az connectedmachine private-link-resource",
+    "description": "Manage private link resource of an Azure Arc-Enabled Server.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az connectedmachine private-link-resource list",
+            "summary": "List the private link resources that need to be created for an Azure Monitor PrivateLinkScope.",
+            "syntax": "az connectedmachine private-link-resource list --resource-group\n                                               --scope-name\n                                               [--max-items]\n                                               [--next-token]",
+            "required_parameters": [
+                "--resource-group -g",
+                "--scope-name -n"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az connectedmachine private-link-resource list --resource-group myResourceGroup --scope-name myPrivateLinkScope"
+            ]
+        },
+        {
+            "name": "az connectedmachine private-link-resource show",
+            "summary": "Get the private link resources that need to be created for an Azure Monitor PrivateLinkScope.",
+            "syntax": "az connectedmachine private-link-resource show [--group-name]\n                                               [--ids]\n                                               [--resource-group]\n                                               [--scope-name]\n                                               [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--group-name --name -n",
+                "--ids",
+                "--resource-group -g",
+                "--scope-name",
+                "--subscription"
+            ],
+            "examples": [
+                "az connectedmachine private-link-resource show --group-name hybridcompute --resource-group myResourceGroup --scope-name myPrivateLinkScope"
+            ]
+        }
+    ]
+}

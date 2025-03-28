@@ -1,0 +1,63 @@
+{
+    "command_group": "az storage blob incremental-copy",
+    "description": "Manage blob incremental copy operations.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az storage blob incremental-copy cancel",
+            "summary": "Aborts a pending copy_blob operation, and leaves a destination blob with zero length and full metadata.",
+            "syntax": "az storage blob incremental-copy cancel --container-name\n                                        --copy-id\n                                        --name\n                                        [--account-key]\n                                        [--account-name]\n                                        [--auth-mode {key, login}]\n                                        [--connection-string]\n                                        [--lease-id]\n                                        [--sas-token]\n                                        [--timeout]",
+            "required_parameters": [
+                "--container-name -c",
+                "--copy-id",
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--account-key",
+                "--account-name",
+                "--auth-mode",
+                "--connection-string",
+                "--lease-id",
+                "--sas-token",
+                "--timeout"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az storage blob incremental-copy start",
+            "summary": "Copies an incremental copy of a blob asynchronously.",
+            "syntax": "az storage blob incremental-copy start --destination-blob\n                                       --destination-container\n                                       [--account-key]\n                                       [--account-name]\n                                       [--auth-mode {key, login}]\n                                       [--connection-string]\n                                       [--destination-if-match]\n                                       [--destination-if-modified-since]\n                                       [--destination-if-none-match]\n                                       [--destination-if-unmodified-since]\n                                       [--destination-lease-id]\n                                       [--metadata]\n                                       [--sas-token]\n                                       [--source-account-key]\n                                       [--source-account-name]\n                                       [--source-blob]\n                                       [--source-container]\n                                       [--source-lease-id]\n                                       [--source-sas]\n                                       [--source-snapshot]\n                                       [--source-uri]\n                                       [--timeout]",
+            "required_parameters": [
+                "--destination-blob -b",
+                "--destination-container -c"
+            ],
+            "optional_parameters": [
+                "--account-key",
+                "--account-name",
+                "--auth-mode",
+                "--connection-string",
+                "--destination-if-match",
+                "--destination-if-modified-since",
+                "--destination-if-none-match",
+                "--destination-if-unmodified-since",
+                "--destination-lease-id",
+                "--metadata",
+                "--sas-token",
+                "--source-account-key",
+                "--source-account-name",
+                "--source-blob",
+                "--source-container",
+                "--source-lease-id",
+                "--source-sas",
+                "--source-snapshot",
+                "--source-uri -u",
+                "--timeout"
+            ],
+            "examples": [
+                "az storage blob incremental-copy start --source-container MySourceContainer --source-blob MyBlob --source-account-name MySourceAccount --source-account-key MySourceKey --source-snapshot MySnapshot --destination-container MyDestinationContainer --destination-blob MyDestinationBlob",
+                "az storage blob incremental-copy start --account-key 00000000 --account-name MyAccount --destination-blob MyDestinationBlob --destination-container MyDestinationContainer --source-account-key MySourceKey --source-account-name MySourceAccount --source-blob MyBlob --source-container MySourceContainer --source-snapshot MySnapshot",
+                "az storage blob incremental-copy start --connection-string myconnectionstring --destination-blob mydestinationblob --destination-container MyDestinationContainer --source-uri https://storage.blob.core.windows.net/photos"
+            ]
+        }
+    ]
+}

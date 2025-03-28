@@ -1,0 +1,26 @@
+{
+    "command_group": "az keyvault restore",
+    "description": "Manage full HSM restore.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az keyvault restore start",
+            "summary": "Restore a full backup of a HSM.",
+            "syntax": "az keyvault restore start --backup-folder\n                          [--blob-container-name]\n                          [--hsm-name]\n                          [--id]\n                          [--key]\n                          [--storage-account-name]\n                          [--storage-container-SAS-token]\n                          [--storage-resource-uri]\n                          [--use-managed-identity {false, true}]",
+            "required_parameters": [
+                "--backup-folder"
+            ],
+            "optional_parameters": [
+                "--blob-container-name",
+                "--hsm-name",
+                "--id",
+                "--key --key-name",
+                "--storage-account-name",
+                "--storage-container-SAS-token -t",
+                "--storage-resource-uri",
+                "--use-managed-identity"
+            ],
+            "examples": []
+        }
+    ]
+}

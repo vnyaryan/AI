@@ -1,0 +1,112 @@
+{
+    "command_group": "az network vpn-site",
+    "description": "Manage VPN site configurations.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az network vpn-site create",
+            "summary": "Create a VPN site configuration.",
+            "syntax": "az network vpn-site create --ip-address\n                           --name\n                           --resource-group\n                           [--address-prefixes]\n                           [--asn]\n                           [--bgp-peering-address]\n                           [--device-model]\n                           [--device-vendor]\n                           [--link-speed]\n                           [--location]\n                           [--no-wait]\n                           [--peer-weight]\n                           [--security-site {false, true}]\n                           [--site-key]\n                           [--tags]\n                           [--virtual-wan]\n                           [--with-link {false, true}]",
+            "required_parameters": [
+                "--ip-address",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--address-prefixes",
+                "--asn",
+                "--bgp-peering-address",
+                "--device-model",
+                "--device-vendor",
+                "--link-speed",
+                "--location -l",
+                "--no-wait",
+                "--peer-weight",
+                "--security-site",
+                "--site-key",
+                "--tags",
+                "--virtual-wan",
+                "--with-link"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az network vpn-site delete",
+            "summary": "Delete a VPN site configuration.",
+            "syntax": "az network vpn-site delete [--ids]\n                           [--name]\n                           [--resource-group]\n                           [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az network vpn-site download",
+            "summary": "Provide a SAS-URL to download the configuration for a VPN site.",
+            "syntax": "az network vpn-site download --request\n                             --resource-group\n                             --vwan-name",
+            "required_parameters": [
+                "--request",
+                "--resource-group -g",
+                "--vwan-name"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az network vpn-site list",
+            "summary": "List VPN site configurations.",
+            "syntax": "az network vpn-site list [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az network vpn-site show",
+            "summary": "Get the details of a VPN site configuration.",
+            "syntax": "az network vpn-site show [--ids]\n                         [--name]\n                         [--resource-group]\n                         [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az network vpn-site update",
+            "summary": "Update settings of a VPN site configuration.",
+            "syntax": "az network vpn-site update [--add]\n                           [--address-prefixes]\n                           [--asn]\n                           [--bgp-peering-address]\n                           [--device-model]\n                           [--device-vendor]\n                           [--force-string]\n                           [--ids]\n                           [--ip-address]\n                           [--link-speed]\n                           [--name]\n                           [--no-wait]\n                           [--peer-weight]\n                           [--remove]\n                           [--resource-group]\n                           [--security-site {false, true}]\n                           [--set]\n                           [--site-key]\n                           [--subscription]\n                           [--tags]\n                           [--virtual-wan]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--address-prefixes",
+                "--asn",
+                "--bgp-peering-address",
+                "--device-model",
+                "--device-vendor",
+                "--force-string",
+                "--ids",
+                "--ip-address",
+                "--link-speed",
+                "--name -n",
+                "--no-wait",
+                "--peer-weight",
+                "--remove",
+                "--resource-group -g",
+                "--security-site",
+                "--set",
+                "--site-key",
+                "--subscription",
+                "--tags",
+                "--virtual-wan"
+            ],
+            "examples": []
+        }
+    ]
+}

@@ -1,0 +1,22 @@
+{
+    "command_group": "az mdp usage",
+    "description": "Manage quota usage resources.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az mdp usage list",
+            "summary": "List quota resources in given location.",
+            "syntax": "az mdp usage list --location\n                  [--max-items]\n                  [--next-token]",
+            "required_parameters": [
+                "--location -l"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az mdp usage list --location westus"
+            ]
+        }
+    ]
+}

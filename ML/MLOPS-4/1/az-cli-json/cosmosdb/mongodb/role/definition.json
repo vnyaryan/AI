@@ -1,0 +1,179 @@
+{
+    "command_group": "az cosmosdb mongodb role definition",
+    "description": "Manage Azure Cosmos DB Mongo role definitions.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az cosmosdb mongodb role definition create",
+            "summary": "Create a Mongo DB role definition under an Azure Cosmos DB account.",
+            "syntax": "az cosmosdb mongodb role definition create --account-name\n                                           --body\n                                           --resource-group",
+            "required_parameters": [
+                "--account-name -a",
+                "--body -b",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az cosmosdb mongodb role definition create --account-name MyAccount --resource-group MyResourceGroup --body '{\n  \"Id\": \"MyDB.My_Read_Only_Role\",\n  \"RoleName\": \"My_Read_Only_Role\",\n  \"Type\": \"CustomRole\",\n  \"DatabaseName\": \"MyDB\",\n  \"Privileges\": [{\n    \"Resource\": {\n        \"Db\": \"MyDB\",\n        \"Collection\": \"MyCol\"\n      },\n      \"Actions\": [\n        \"insert\",\n        \"find\"\n      ]\n  }],\n  \"Roles\": [\n    {\n      \"Role\": \"myInheritedRole\",\n      \"Db\": \"MyTestDb\"\n    }\n  ]\n}'",
+                "az cosmosdb mongodb role definition create --account-name MyAccount --resource-group MyResourceGroup --body @mongo-role-definition.json"
+            ]
+        },
+        {
+            "name": "az cosmosdb mongodb role definition create",
+            "summary": "Create a Mongo DB role definition under an Azure Cosmos DB account.",
+            "syntax": "az cosmosdb mongodb role definition create --account-name\n                                           --body\n                                           --resource-group",
+            "required_parameters": [
+                "--account-name -a",
+                "--body -b",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az cosmosdb mongodb role definition create --account-name MyAccount --resource-group MyResourceGroup --body '{\n  \"Id\": \"MyDB.My_Read_Only_Role\",\n  \"RoleName\": \"My_Read_Only_Role\",\n  \"Type\": \"CustomRole\",\n  \"DatabaseName\": \"MyDB\",\n  \"Privileges\": [{\n    \"Resource\": {\n        \"Db\": \"MyDB\",\n        \"Collection\": \"MyCol\"\n      },\n      \"Actions\": [\n        \"insert\",\n        \"find\"\n      ]\n  }],\n  \"Roles\": [\n    {\n      \"Role\": \"myInheritedRole\",\n      \"Db\": \"MyTestDb\"\n    }\n  ]\n}'",
+                "az cosmosdb mongodb role definition create --account-name MyAccount --resource-group MyResourceGroup --body @mongo-role-definition.json"
+            ]
+        },
+        {
+            "name": "az cosmosdb mongodb role definition delete",
+            "summary": "Delete a CosmosDb MongoDb role definition under an Azure Cosmos DB account.",
+            "syntax": "az cosmosdb mongodb role definition delete --account-name\n                                           --id\n                                           --resource-group\n                                           [--yes]",
+            "required_parameters": [
+                "--account-name -a",
+                "--id -i",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--yes -y"
+            ],
+            "examples": [
+                "az cosmosdb mongodb role definition delete --account-name MyAccount --resource-group MyResourceGroup --id be79875a-2cc4-40d5-8958-566017875b39"
+            ]
+        },
+        {
+            "name": "az cosmosdb mongodb role definition delete",
+            "summary": "Delete a CosmosDb MongoDb role definition under an Azure Cosmos DB account.",
+            "syntax": "az cosmosdb mongodb role definition delete --account-name\n                                           --id\n                                           --resource-group\n                                           [--yes]",
+            "required_parameters": [
+                "--account-name -a",
+                "--id -i",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--yes -y"
+            ],
+            "examples": [
+                "az cosmosdb mongodb role definition delete --account-name MyAccount --resource-group MyResourceGroup --id be79875a-2cc4-40d5-8958-566017875b39"
+            ]
+        },
+        {
+            "name": "az cosmosdb mongodb role definition exists",
+            "summary": "Check if an Azure Cosmos DB MongoDb role definition exists.",
+            "syntax": "az cosmosdb mongodb role definition exists --account-name\n                                           --id\n                                           --resource-group",
+            "required_parameters": [
+                "--account-name -a",
+                "--id -i",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az cosmosdb mongodb role definition exists --account-name MyAccount --resource-group MyResourceGroup --id be79875a-2cc4-40d5-8958-566017875b39"
+            ]
+        },
+        {
+            "name": "az cosmosdb mongodb role definition exists",
+            "summary": "Check if an Azure Cosmos DB MongoDb role definition exists.",
+            "syntax": "az cosmosdb mongodb role definition exists --account-name\n                                           --id\n                                           --resource-group",
+            "required_parameters": [
+                "--account-name -a",
+                "--id -i",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az cosmosdb mongodb role definition exists --account-name MyAccount --resource-group MyResourceGroup --id be79875a-2cc4-40d5-8958-566017875b39"
+            ]
+        },
+        {
+            "name": "az cosmosdb mongodb role definition list",
+            "summary": "List all MongoDb role definitions under an Azure Cosmos DB account.",
+            "syntax": "az cosmosdb mongodb role definition list --account-name\n                                         --resource-group",
+            "required_parameters": [
+                "--account-name -a",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az cosmosdb mongodb role definition list --account-name MyAccount --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az cosmosdb mongodb role definition list",
+            "summary": "List all MongoDb role definitions under an Azure Cosmos DB account.",
+            "syntax": "az cosmosdb mongodb role definition list --account-name\n                                         --resource-group",
+            "required_parameters": [
+                "--account-name -a",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az cosmosdb mongodb role definition list --account-name MyAccount --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az cosmosdb mongodb role definition show",
+            "summary": "Show the properties of a MongoDb role definition under an Azure Cosmos DB account.",
+            "syntax": "az cosmosdb mongodb role definition show --account-name\n                                         --id\n                                         --resource-group",
+            "required_parameters": [
+                "--account-name -a",
+                "--id -i",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az cosmosdb mongodb role definition show --account-name MyAccount --resource-group MyResourceGroup --id be79875a-2cc4-40d5-8958-566017875b39"
+            ]
+        },
+        {
+            "name": "az cosmosdb mongodb role definition show",
+            "summary": "Show the properties of a MongoDb role definition under an Azure Cosmos DB account.",
+            "syntax": "az cosmosdb mongodb role definition show --account-name\n                                         --id\n                                         --resource-group",
+            "required_parameters": [
+                "--account-name -a",
+                "--id -i",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az cosmosdb mongodb role definition show --account-name MyAccount --resource-group MyResourceGroup --id be79875a-2cc4-40d5-8958-566017875b39"
+            ]
+        },
+        {
+            "name": "az cosmosdb mongodb role definition update",
+            "summary": "Update a MongoDb role definition under an Azure Cosmos DB account.",
+            "syntax": "az cosmosdb mongodb role definition update --account-name\n                                           --body\n                                           --resource-group",
+            "required_parameters": [
+                "--account-name -a",
+                "--body -b",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az cosmosdb mongodb role definition update --account-name MyAccount --resource-group MyResourceGroup --body @mongo-role-definition.json"
+            ]
+        },
+        {
+            "name": "az cosmosdb mongodb role definition update",
+            "summary": "Update a MongoDb role definition under an Azure Cosmos DB account.",
+            "syntax": "az cosmosdb mongodb role definition update --account-name\n                                           --body\n                                           --resource-group",
+            "required_parameters": [
+                "--account-name -a",
+                "--body -b",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az cosmosdb mongodb role definition update --account-name MyAccount --resource-group MyResourceGroup --body @mongo-role-definition.json"
+            ]
+        }
+    ]
+}

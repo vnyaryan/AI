@@ -1,0 +1,92 @@
+{
+    "command_group": "az automation hrwg",
+    "description": "Automation Hybrid Runbook Worker Group.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az automation hrwg create",
+            "summary": "Create a hybrid runbook worker group.",
+            "syntax": "az automation hrwg create --automation-account-name\n                          --hybrid-runbook-worker-group-name\n                          --resource-group\n                          [--credential]",
+            "required_parameters": [
+                "--automation-account-name",
+                "--hybrid-runbook-worker-group-name --name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--credential"
+            ],
+            "examples": [
+                "az automation hrwg create --automation-account-name accountName --resource-group groupName --name hybridrunbookworkergroupName"
+            ]
+        },
+        {
+            "name": "az automation hrwg delete",
+            "summary": "Delete a hybrid runbook worker group.",
+            "syntax": "az automation hrwg delete [--automation-account-name]\n                          [--hybrid-runbook-worker-group-name]\n                          [--ids]\n                          [--resource-group]\n                          [--subscription]\n                          [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--automation-account-name",
+                "--hybrid-runbook-worker-group-name --name -n",
+                "--ids",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az automation hrwg delete --automation-account-name accountName --resource-group groupName --name hybridrunbookworkergroupName"
+            ]
+        },
+        {
+            "name": "az automation hrwg list",
+            "summary": "List all hybrid runbook worker groups.",
+            "syntax": "az automation hrwg list --automation-account-name\n                        --resource-group\n                        [--filter]",
+            "required_parameters": [
+                "--automation-account-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--filter"
+            ],
+            "examples": [
+                "az automation hrwg list --automation-account-name accountName --resource-group groupName"
+            ]
+        },
+        {
+            "name": "az automation hrwg show",
+            "summary": "Get hybrid worker group.",
+            "syntax": "az automation hrwg show [--automation-account-name]\n                        [--hybrid-runbook-worker-group-name]\n                        [--ids]\n                        [--resource-group]\n                        [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--automation-account-name",
+                "--hybrid-runbook-worker-group-name --name -n",
+                "--ids",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az automation hrwg show --automation-account-name accountName --resource-group groupName --name hybridrunbookworkergroupName"
+            ]
+        },
+        {
+            "name": "az automation hrwg update",
+            "summary": "Update a hybrid runbook worker group.",
+            "syntax": "az automation hrwg update [--add]\n                          [--automation-account-name]\n                          [--credential]\n                          [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                          [--hybrid-runbook-worker-group-name]\n                          [--ids]\n                          [--remove]\n                          [--resource-group]\n                          [--set]\n                          [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--automation-account-name",
+                "--credential",
+                "--force-string",
+                "--hybrid-runbook-worker-group-name --name -n",
+                "--ids",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--subscription"
+            ],
+            "examples": [
+                "az automation hrwg update --automation-account-name accountName --resource-group groupName --name hybridrunbookworkergroupName --credential \"{name: credentialname}\""
+            ]
+        }
+    ]
+}

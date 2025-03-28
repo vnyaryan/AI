@@ -1,0 +1,45 @@
+{
+    "command_group": "az spring-cloud app binding",
+    "description": "Commands to manage bindings with Azure Data Services, you need to manually restart app to make settings take effect.",
+    "status": "Deprecated",
+    "commands": [
+        {
+            "name": "az spring-cloud app binding list",
+            "summary": "List all service bindings in an app.",
+            "syntax": "az spring-cloud app binding list --app\n                                 --resource-group\n                                 --service",
+            "required_parameters": [
+                "--app",
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az spring-cloud app binding remove",
+            "summary": "Remove a service binding of the app.",
+            "syntax": "az spring-cloud app binding remove --app\n                                   --name\n                                   --resource-group\n                                   --service",
+            "required_parameters": [
+                "--app",
+                "--name -n",
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az spring-cloud app binding show",
+            "summary": "Show the details of a service binding.",
+            "syntax": "az spring-cloud app binding show --app\n                                 --name\n                                 --resource-group\n                                 --service",
+            "required_parameters": [
+                "--app",
+                "--name -n",
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        }
+    ]
+}

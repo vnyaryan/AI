@@ -1,0 +1,43 @@
+{
+    "command_group": "az sf managed-cluster client-certificate",
+    "description": "Manage client certificates of a manged cluster.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az sf managed-cluster client-certificate add",
+            "summary": "Add a new client certificate to the managed cluster.",
+            "syntax": "az sf managed-cluster client-certificate add --cluster-name\n                                             --resource-group\n                                             [--common-name]\n                                             [--is-admin {false, true}]\n                                             [--issuer-thumbprint]\n                                             [--thumbprint]",
+            "required_parameters": [
+                "--cluster-name -c",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--common-name",
+                "--is-admin",
+                "--issuer-thumbprint",
+                "--thumbprint"
+            ],
+            "examples": [
+                "az sf managed-cluster client-certificate add -g testRG -c testCluster --thumbprint XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX --is-admin",
+                "az sf managed-cluster client-certificate add -g testRG -c testCluster --common-name Contoso.com --issuer-thumbprint XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+            ]
+        },
+        {
+            "name": "az sf managed-cluster client-certificate delete",
+            "summary": "Delete a client certificate from the managed cluster.",
+            "syntax": "az sf managed-cluster client-certificate delete --cluster-name\n                                                --resource-group\n                                                [--common-name]\n                                                [--thumbprint]",
+            "required_parameters": [
+                "--cluster-name -c",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--common-name",
+                "--thumbprint"
+            ],
+            "examples": [
+                "az sf managed-cluster client-certificate delete -g testRG -c testCluster --thumbprint XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+                "az sf managed-cluster client-certificate delete -g testRG -c testCluster --common-name Contoso.com"
+            ]
+        }
+    ]
+}

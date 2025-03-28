@@ -1,0 +1,6 @@
+{
+    "command_group": "az functionapp runtime",
+    "description": "Manage a function app's runtime.",
+    "status": "GA",
+    "commands": []
+}

@@ -1,0 +1,160 @@
+{
+    "command_group": "az logicapp",
+    "description": "Manage logic apps.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az logicapp create",
+            "summary": "Create a logic app.",
+            "syntax": "az logicapp create --name\n                   --resource-group\n                   --storage-account\n                   [--app-insights]\n                   [--app-insights-key]\n                   [--deployment-container-image-name]\n                   [--deployment-local-git]\n                   [--deployment-source-branch]\n                   [--deployment-source-url]\n                   [--disable-app-insights {false, true}]\n                   [--docker-registry-server-password]\n                   [--docker-registry-server-user]\n                   [--functions-version {4}]\n                   [--https-only {false, true}]\n                   [--plan]\n                   [--runtime-version {~14, ~16, ~18}]\n                   [--tags]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g",
+                "--storage-account -s"
+            ],
+            "optional_parameters": [
+                "--app-insights",
+                "--app-insights-key",
+                "--deployment-container-image-name -i",
+                "--deployment-local-git -l",
+                "--deployment-source-branch -b",
+                "--deployment-source-url -u",
+                "--disable-app-insights",
+                "--docker-registry-server-password -w",
+                "--docker-registry-server-user -d",
+                "--functions-version -v",
+                "--https-only",
+                "--plan -p",
+                "--runtime-version",
+                "--tags"
+            ],
+            "examples": [
+                "az logicapp create -g myRG --subscription mySubscription -p MyPlan -n myLogicApp -s myStorageAccount"
+            ]
+        },
+        {
+            "name": "az logicapp delete",
+            "summary": "Delete a logic app.",
+            "syntax": "az logicapp delete --name\n                   --resource-group\n                   [--slot]\n                   [--yes]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--slot -s",
+                "--yes -y"
+            ],
+            "examples": [
+                "az logicapp delete --name myLogicApp --resource-group myRG --subscription mySubscription"
+            ]
+        },
+        {
+            "name": "az logicapp list",
+            "summary": "List logic apps.",
+            "syntax": "az logicapp list [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az logicapp list --query \"[].hostName: defaultHostName, state: state\"",
+                "az logicapp list --query \"[?state=='Running']\""
+            ]
+        },
+        {
+            "name": "az logicapp restart",
+            "summary": "Restart a logic app.",
+            "syntax": "az logicapp restart --name\n                    --resource-group\n                    [--slot]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--slot -s"
+            ],
+            "examples": [
+                "az logicapp restart --name myLogicApp --resource-group myRG"
+            ]
+        },
+        {
+            "name": "az logicapp scale",
+            "summary": "Scale a logic app.",
+            "syntax": "az logicapp scale --name\n                  --resource-group\n                  [--max-instances]\n                  [--min-instances]\n                  [--slot]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--max-instances",
+                "--min-instances",
+                "--slot -s"
+            ],
+            "examples": [
+                "az logicapp scale --name myLogicApp --resource-group myRG --subscription mySubscription --min-instances 2 --max-instances 4"
+            ]
+        },
+        {
+            "name": "az logicapp show",
+            "summary": "Get the details of a logic app.",
+            "syntax": "az logicapp show --name\n                 --resource-group",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az logicapp show --name myLogicApp --resource-group myRG --subscription mySubscription"
+            ]
+        },
+        {
+            "name": "az logicapp start",
+            "summary": "Start a logic app.",
+            "syntax": "az logicapp start --name\n                  --resource-group\n                  [--slot]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--slot -s"
+            ],
+            "examples": [
+                "az logicapp start --name myLogicApp --resource-group myRG"
+            ]
+        },
+        {
+            "name": "az logicapp stop",
+            "summary": "Stop a logic app.",
+            "syntax": "az logicapp stop --name\n                 --resource-group\n                 [--slot]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--slot -s"
+            ],
+            "examples": [
+                "az logicapp stop --name myLogicApp --resource-group myRG"
+            ]
+        },
+        {
+            "name": "az logicapp update",
+            "summary": "Update a logic app.",
+            "syntax": "az logicapp update --name\n                   --resource-group\n                   [--add]\n                   [--force-string]\n                   [--plan]\n                   [--remove]\n                   [--set]\n                   [--slot]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--add",
+                "--force-string",
+                "--plan",
+                "--remove",
+                "--set",
+                "--slot -s"
+            ],
+            "examples": [
+                "az logicapp update --name myLogicApp --resource-group myRG"
+            ]
+        }
+    ]
+}

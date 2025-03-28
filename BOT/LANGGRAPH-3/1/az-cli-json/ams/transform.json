@@ -1,0 +1,97 @@
+{
+    "command_group": "az ams transform",
+    "description": "Manage transforms for an Azure Media Services account.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az ams transform create",
+            "summary": "Create a transform.",
+            "syntax": "az ams transform create --account-name\n                        --name\n                        --preset\n                        --resource-group\n                        [--audio-analysis-mode]\n                        [--audio-language]\n                        [--blur-type]\n                        [--description]\n                        [--face-detector-mode]\n                        [--insights-to-extract {AllInsights, AudioInsightsOnly, VideoInsightsOnly}]\n                        [--on-error {ContinueJob, StopProcessingJob}]\n                        [--relative-priority {High, Low, Normal}]\n                        [--resolution]\n                        [--video-analysis-mode]",
+            "required_parameters": [
+                "--account-name -a",
+                "--name -n",
+                "--preset",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--audio-analysis-mode",
+                "--audio-language",
+                "--blur-type",
+                "--description",
+                "--face-detector-mode",
+                "--insights-to-extract",
+                "--on-error",
+                "--relative-priority",
+                "--resolution",
+                "--video-analysis-mode"
+            ],
+            "examples": [
+                "az ams transform create -a myAmsAccount -n transformName -g myResourceGroup --preset AdaptiveStreaming --relative-priority High",
+                "az ams transform create -a myAmsAccount -n transformName -g myResourceGroup --preset \"C:\\MyPresets\\CustomPreset.json\" --relative-priority Low"
+            ]
+        },
+        {
+            "name": "az ams transform delete",
+            "summary": "Delete a transform.",
+            "syntax": "az ams transform delete [--account-name]\n                        [--ids]\n                        [--name]\n                        [--resource-group]\n                        [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account-name -a",
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az ams transform list",
+            "summary": "List all the transforms of an Azure Media Services account.",
+            "syntax": "az ams transform list --account-name\n                      --resource-group\n                      [--filter]\n                      [--orderby]",
+            "required_parameters": [
+                "--account-name -a",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--filter",
+                "--orderby"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az ams transform show",
+            "summary": "Show the details of a transform.",
+            "syntax": "az ams transform show [--account-name]\n                      [--ids]\n                      [--name]\n                      [--resource-group]\n                      [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account-name -a",
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az ams transform update",
+            "summary": "Update the details of a transform.",
+            "syntax": "az ams transform update [--account-name]\n                        [--add]\n                        [--description]\n                        [--force-string]\n                        [--ids]\n                        [--name]\n                        [--remove]\n                        [--resource-group]\n                        [--set]\n                        [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account-name -a",
+                "--add",
+                "--description",
+                "--force-string",
+                "--ids",
+                "--name -n",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--subscription"
+            ],
+            "examples": [
+                "az ams transform update -a myAmsAccount -n transformName -g myResourceGroup --set outputs[0].relativePriority=High"
+            ]
+        }
+    ]
+}

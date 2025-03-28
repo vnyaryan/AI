@@ -1,0 +1,41 @@
+{
+    "command_group": "az vmware placement-policy",
+    "description": "Commands to manage placement policies.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az vmware placement-policy list",
+            "summary": "List placement policies in a private cloud cluster.",
+            "syntax": "az vmware placement-policy list --cluster-name\n                                --private-cloud\n                                --resource-group\n                                [--max-items]\n                                [--next-token]",
+            "required_parameters": [
+                "--cluster-name",
+                "--private-cloud -c",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az vmware placement-policy list --resource-group group1 --private-cloud cloud1 --cluster-name cluster1"
+            ]
+        },
+        {
+            "name": "az vmware placement-policy show",
+            "summary": "Get a placement policy by name in a private cloud cluster.",
+            "syntax": "az vmware placement-policy show [--cluster-name]\n                                [--ids]\n                                [--name]\n                                [--private-cloud]\n                                [--resource-group]\n                                [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--cluster-name",
+                "--ids",
+                "--name --placement-policy-name -n",
+                "--private-cloud -c",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az vmware placement-policy show --resource-group group1 --private-cloud cloud1 --cluster-name cluster1 --placement-policy-name policy1"
+            ]
+        }
+    ]
+}

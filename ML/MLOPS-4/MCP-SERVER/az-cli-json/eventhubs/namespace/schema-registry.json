@@ -1,0 +1,88 @@
+{
+    "command_group": "az eventhubs namespace schema-registry",
+    "description": "Manages eventhubs namespace schema registry.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az eventhubs namespace schema-registry create",
+            "summary": "Create an EventHub schema group.",
+            "syntax": "az eventhubs namespace schema-registry create --name\n                                              --namespace-name\n                                              --resource-group\n                                              [--group-properties]\n                                              [--schema-compatibility {Backward, Forward, None}]\n                                              [--schema-type {Avro, Unknown}]",
+            "required_parameters": [
+                "--name --schema-group-name -n",
+                "--namespace-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--group-properties",
+                "--schema-compatibility",
+                "--schema-type"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az eventhubs namespace schema-registry delete",
+            "summary": "Delete an EventHub schema group.",
+            "syntax": "az eventhubs namespace schema-registry delete [--ids]\n                                              [--name]\n                                              [--namespace-name]\n                                              [--resource-group]\n                                              [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --schema-group-name -n",
+                "--namespace-name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az eventhubs namespace schema-registry list",
+            "summary": "List all the Schema Groups in a Namespace.",
+            "syntax": "az eventhubs namespace schema-registry list --namespace-name\n                                            --resource-group\n                                            [--max-items]\n                                            [--next-token]\n                                            [--skip]\n                                            [--top]",
+            "required_parameters": [
+                "--namespace-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token",
+                "--skip",
+                "--top"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az eventhubs namespace schema-registry show",
+            "summary": "Get the details of an EventHub schema group.",
+            "syntax": "az eventhubs namespace schema-registry show [--ids]\n                                            [--name]\n                                            [--namespace-name]\n                                            [--resource-group]\n                                            [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --schema-group-name -n",
+                "--namespace-name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az eventhubs namespace schema-registry update",
+            "summary": "Update an EventHub schema group.",
+            "syntax": "az eventhubs namespace schema-registry update [--add]\n                                              [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                              [--group-properties]\n                                              [--ids]\n                                              [--name]\n                                              [--namespace-name]\n                                              [--remove]\n                                              [--resource-group]\n                                              [--schema-compatibility {Backward, Forward, None}]\n                                              [--schema-type {Avro, Unknown}]\n                                              [--set]\n                                              [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--force-string",
+                "--group-properties",
+                "--ids",
+                "--name --schema-group-name -n",
+                "--namespace-name",
+                "--remove",
+                "--resource-group -g",
+                "--schema-compatibility",
+                "--schema-type",
+                "--set",
+                "--subscription"
+            ],
+            "examples": []
+        }
+    ]
+}

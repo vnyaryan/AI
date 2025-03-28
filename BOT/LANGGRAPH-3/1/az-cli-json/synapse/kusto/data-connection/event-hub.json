@@ -1,0 +1,62 @@
+{
+    "command_group": "az synapse kusto data-connection event-hub",
+    "description": "Manage kusto pool data connection with synapse sub group event-hub.",
+    "status": "Experimental",
+    "commands": [
+        {
+            "name": "az synapse kusto data-connection event-hub create",
+            "summary": "Create a data connection.",
+            "syntax": "az synapse kusto data-connection event-hub create --data-connection-name\n                                                  --database-name\n                                                  --kusto-pool-name\n                                                  --resource-group\n                                                  --workspace-name\n                                                  [--compression {GZip, None}]\n                                                  [--consumer-group]\n                                                  [--data-format {APACHEAVRO, AVRO, CSV, JSON, MULTIJSON, ORC, PARQUET, PSV, RAW, SCSV, SINGLEJSON, SOHSV, TSV, TSVE, TXT, W3CLOGFILE}]\n                                                  [--event-hub-resource-id]\n                                                  [--event-system-properties]\n                                                  [--location]\n                                                  [--managed-identity-resource-id]\n                                                  [--mapping-rule-name]\n                                                  [--no-wait]\n                                                  [--table-name]",
+            "required_parameters": [
+                "--data-connection-name",
+                "--database-name",
+                "--kusto-pool-name",
+                "--resource-group -g",
+                "--workspace-name"
+            ],
+            "optional_parameters": [
+                "--compression",
+                "--consumer-group",
+                "--data-format",
+                "--event-hub-resource-id",
+                "--event-system-properties",
+                "--location -l",
+                "--managed-identity-resource-id",
+                "--mapping-rule-name",
+                "--no-wait",
+                "--table-name"
+            ],
+            "examples": [
+                "az synapse kusto data-connection event-hub create --data-connection-name \"DataConnections8\" --database-name \"KustoDatabase8\" --kusto-pool-name \"kustoclusterrptest4\" --location \"westus\" --consumer-group \"testConsumerGroup1\" --event-hub-resource-id \"/subscriptions/12345678-1234-1234-1234-123456789098/resourceGroups/kustorptest/providers/Microsoft.EventHub/namespaces/eventhubTestns1/eventhubs/eventhubTest1\" --resource-group \"kustorptest\" --workspace-name \"synapseWorkspaceName\""
+            ]
+        },
+        {
+            "name": "az synapse kusto data-connection event-hub update",
+            "summary": "Updates a data connection.",
+            "syntax": "az synapse kusto data-connection event-hub update [--compression {GZip, None}]\n                                                  [--consumer-group]\n                                                  [--data-connection-name]\n                                                  [--data-format {APACHEAVRO, AVRO, CSV, JSON, MULTIJSON, ORC, PARQUET, PSV, RAW, SCSV, SINGLEJSON, SOHSV, TSV, TSVE, TXT, W3CLOGFILE}]\n                                                  [--database-name]\n                                                  [--event-hub-resource-id]\n                                                  [--event-system-properties]\n                                                  [--ids]\n                                                  [--kusto-pool-name]\n                                                  [--location]\n                                                  [--managed-identity-resource-id]\n                                                  [--mapping-rule-name]\n                                                  [--no-wait]\n                                                  [--resource-group]\n                                                  [--subscription]\n                                                  [--table-name]\n                                                  [--workspace-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--compression",
+                "--consumer-group",
+                "--data-connection-name",
+                "--data-format",
+                "--database-name",
+                "--event-hub-resource-id",
+                "--event-system-properties",
+                "--ids",
+                "--kusto-pool-name",
+                "--location -l",
+                "--managed-identity-resource-id",
+                "--mapping-rule-name",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--table-name",
+                "--workspace-name"
+            ],
+            "examples": [
+                "az synapse kusto data-connection event-hub update --data-connection-name \"DataConnections8\" --database-name \"KustoDatabase8\" --kusto-pool-name \"kustoclusterrptest4\" --location \"westus\" --consumer-group \"testConsumerGroup1\" --event-hub-resource-id \"/subscriptions/12345678-1234-1234-1234-123456789098/resourceGroups/kustorptest/providers/Microsoft.EventHub/namespaces/eventhubTestns1/eventhubs/eventhubTest1\" --resource-group \"kustorptest\" --workspace-name \"synapseWorkspaceName\""
+            ]
+        }
+    ]
+}

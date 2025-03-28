@@ -1,0 +1,785 @@
+{
+    "command_group": "az spring connection update",
+    "description": "Update a spring app connection.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az spring connection update app-insights",
+            "summary": "Update a spring app to app-insights connection.",
+            "syntax": "az spring connection update app-insights [--app]\n                                         [--appconfig-id]\n                                         [--client-type {dotnet, dotnet-internal, go, java, nodejs, none, python}]\n                                         [--connection]\n                                         [--connstr-props]\n                                         [--customized-keys]\n                                         [--deployment]\n                                         [--id]\n                                         [--no-wait]\n                                         [--opt-out {auth, configinfo, publicnetwork}]\n                                         [--resource-group]\n                                         [--secret]\n                                         [--service]\n                                         [--vault-id]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--app",
+                "--appconfig-id",
+                "--client-type",
+                "--connection",
+                "--connstr-props",
+                "--customized-keys",
+                "--deployment",
+                "--id",
+                "--no-wait",
+                "--opt-out",
+                "--resource-group -g",
+                "--secret",
+                "--service",
+                "--vault-id"
+            ],
+            "examples": [
+                "az spring connection update app-insights -g SpringCloudRG --service MySpringService --app MyApp --connection MyConnection --client-type dotnet",
+                "az spring connection update app-insights --id /subscriptions/{subscription}/resourceGroups/{source_resource_group}/providers/Microsoft.Web/sites/{site}/providers/Microsoft.ServiceLinker/linkers/{linker} --client-type dotnet"
+            ]
+        },
+        {
+            "name": "az spring connection update appconfig",
+            "summary": "Update a spring app to appconfig connection.",
+            "syntax": "az spring connection update appconfig [--app]\n                                      [--appconfig-id]\n                                      [--client-type {dotnet, dotnet-internal, java, nodejs, none, python}]\n                                      [--connection]\n                                      [--connstr-props]\n                                      [--customized-keys]\n                                      [--deployment]\n                                      [--id]\n                                      [--no-wait]\n                                      [--opt-out {auth, configinfo, publicnetwork}]\n                                      [--private-endpoint {false, true}]\n                                      [--resource-group]\n                                      [--secret]\n                                      [--service]\n                                      [--service-principal]\n                                      [--system-identity]\n                                      [--user-identity]\n                                      [--vault-id]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--app",
+                "--appconfig-id",
+                "--client-type",
+                "--connection",
+                "--connstr-props",
+                "--customized-keys",
+                "--deployment",
+                "--id",
+                "--no-wait",
+                "--opt-out",
+                "--private-endpoint",
+                "--resource-group -g",
+                "--secret",
+                "--service",
+                "--service-principal",
+                "--system-identity",
+                "--user-identity",
+                "--vault-id"
+            ],
+            "examples": [
+                "az spring connection update appconfig -g SpringCloudRG --service MySpringService --app MyApp --connection MyConnection --client-type dotnet",
+                "az spring connection update appconfig --id /subscriptions/{subscription}/resourceGroups/{source_resource_group}/providers/Microsoft.Web/sites/{site}/providers/Microsoft.ServiceLinker/linkers/{linker} --client-type dotnet"
+            ]
+        },
+        {
+            "name": "az spring connection update cognitiveservices",
+            "summary": "Update a spring app to cognitiveservices connection.",
+            "syntax": "az spring connection update cognitiveservices [--app]\n                                              [--appconfig-id]\n                                              [--client-type {dotnet, none, python}]\n                                              [--connection]\n                                              [--connstr-props]\n                                              [--customized-keys]\n                                              [--deployment]\n                                              [--id]\n                                              [--no-wait]\n                                              [--opt-out {auth, configinfo, publicnetwork}]\n                                              [--resource-group]\n                                              [--secret]\n                                              [--service]\n                                              [--service-principal]\n                                              [--system-identity]\n                                              [--user-identity]\n                                              [--vault-id]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--app",
+                "--appconfig-id",
+                "--client-type",
+                "--connection",
+                "--connstr-props",
+                "--customized-keys",
+                "--deployment",
+                "--id",
+                "--no-wait",
+                "--opt-out",
+                "--resource-group -g",
+                "--secret",
+                "--service",
+                "--service-principal",
+                "--system-identity",
+                "--user-identity",
+                "--vault-id"
+            ],
+            "examples": [
+                "az spring connection update cognitiveservices -g SpringCloudRG --service MySpringService --app MyApp --connection MyConnection --client-type dotnet",
+                "az spring connection update cognitiveservices --id /subscriptions/{subscription}/resourceGroups/{source_resource_group}/providers/Microsoft.Web/sites/{site}/providers/Microsoft.ServiceLinker/linkers/{linker} --client-type dotnet"
+            ]
+        },
+        {
+            "name": "az spring connection update confluent-cloud",
+            "summary": "Update a spring app to confluent-cloud connection.",
+            "syntax": "az spring connection update confluent-cloud --connection\n                                            [--app]\n                                            [--appconfig-id]\n                                            [--bootstrap-server]\n                                            [--client-type {dotnet, dotnet-internal, go, java, none, python, springBoot}]\n                                            [--customized-keys]\n                                            [--deployment]\n                                            [--kafka-key]\n                                            [--kafka-secret]\n                                            [--no-wait]\n                                            [--opt-out {auth, configinfo, publicnetwork}]\n                                            [--resource-group]\n                                            [--schema-key]\n                                            [--schema-registry]\n                                            [--schema-secret]\n                                            [--service]\n                                            [--source-id]\n                                            [--vault-id]",
+            "required_parameters": [
+                "--connection"
+            ],
+            "optional_parameters": [
+                "--app",
+                "--appconfig-id",
+                "--bootstrap-server",
+                "--client-type",
+                "--customized-keys",
+                "--deployment",
+                "--kafka-key",
+                "--kafka-secret",
+                "--no-wait",
+                "--opt-out",
+                "--resource-group -g",
+                "--schema-key",
+                "--schema-registry",
+                "--schema-secret",
+                "--service",
+                "--source-id",
+                "--vault-id"
+            ],
+            "examples": [
+                "az spring connection update confluent-cloud -g SpringCloudRG --service MySpringService --app MyApp --connection MyConnection --client python",
+                "az spring connection update confluent-cloud -g SpringCloudRG --service MySpringService --app MyApp --connection MyConnection --bootstrap-server xxx.eastus.azure.confluent.cloud:9092 --kafka-key Name --kafka-secret Secret",
+                "az spring connection update confluent-cloud -g SpringCloudRG --service MySpringService --app MyApp --connection MyConnection_schema --client python",
+                "az spring connection update confluent-cloud -g SpringCloudRG --service MySpringService --app MyApp --connection MyConnection_schema --schema-registry https://xxx.eastus.azure.confluent.cloud --schema-key Name --schema-secret Secret"
+            ]
+        },
+        {
+            "name": "az spring connection update cosmos-cassandra",
+            "summary": "Update a spring app to cosmos-cassandra connection.",
+            "syntax": "az spring connection update cosmos-cassandra [--app]\n                                             [--appconfig-id]\n                                             [--client-type {dotnet, dotnet-internal, go, java, nodejs, none, python, springBoot}]\n                                             [--connection]\n                                             [--connstr-props]\n                                             [--customized-keys]\n                                             [--deployment]\n                                             [--id]\n                                             [--no-wait]\n                                             [--opt-out {auth, configinfo, publicnetwork}]\n                                             [--private-endpoint {false, true}]\n                                             [--resource-group]\n                                             [--secret]\n                                             [--service]\n                                             [--service-endpoint {false, true}]\n                                             [--service-principal]\n                                             [--system-identity]\n                                             [--user-identity]\n                                             [--vault-id]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--app",
+                "--appconfig-id",
+                "--client-type",
+                "--connection",
+                "--connstr-props",
+                "--customized-keys",
+                "--deployment",
+                "--id",
+                "--no-wait",
+                "--opt-out",
+                "--private-endpoint",
+                "--resource-group -g",
+                "--secret",
+                "--service",
+                "--service-endpoint",
+                "--service-principal",
+                "--system-identity",
+                "--user-identity",
+                "--vault-id"
+            ],
+            "examples": [
+                "az spring connection update cosmos-cassandra -g SpringCloudRG --service MySpringService --app MyApp --connection MyConnection --client-type dotnet",
+                "az spring connection update cosmos-cassandra --id /subscriptions/{subscription}/resourceGroups/{source_resource_group}/providers/Microsoft.Web/sites/{site}/providers/Microsoft.ServiceLinker/linkers/{linker} --client-type dotnet"
+            ]
+        },
+        {
+            "name": "az spring connection update cosmos-gremlin",
+            "summary": "Update a spring app to cosmos-gremlin connection.",
+            "syntax": "az spring connection update cosmos-gremlin [--app]\n                                           [--appconfig-id]\n                                           [--client-type {dotnet, dotnet-internal, java, nodejs, none, php, python}]\n                                           [--connection]\n                                           [--connstr-props]\n                                           [--customized-keys]\n                                           [--deployment]\n                                           [--id]\n                                           [--no-wait]\n                                           [--opt-out {auth, configinfo, publicnetwork}]\n                                           [--private-endpoint {false, true}]\n                                           [--resource-group]\n                                           [--secret]\n                                           [--service]\n                                           [--service-endpoint {false, true}]\n                                           [--service-principal]\n                                           [--system-identity]\n                                           [--user-identity]\n                                           [--vault-id]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--app",
+                "--appconfig-id",
+                "--client-type",
+                "--connection",
+                "--connstr-props",
+                "--customized-keys",
+                "--deployment",
+                "--id",
+                "--no-wait",
+                "--opt-out",
+                "--private-endpoint",
+                "--resource-group -g",
+                "--secret",
+                "--service",
+                "--service-endpoint",
+                "--service-principal",
+                "--system-identity",
+                "--user-identity",
+                "--vault-id"
+            ],
+            "examples": [
+                "az spring connection update cosmos-gremlin -g SpringCloudRG --service MySpringService --app MyApp --connection MyConnection --client-type dotnet",
+                "az spring connection update cosmos-gremlin --id /subscriptions/{subscription}/resourceGroups/{source_resource_group}/providers/Microsoft.Web/sites/{site}/providers/Microsoft.ServiceLinker/linkers/{linker} --client-type dotnet"
+            ]
+        },
+        {
+            "name": "az spring connection update cosmos-mongo",
+            "summary": "Update a spring app to cosmos-mongo connection.",
+            "syntax": "az spring connection update cosmos-mongo [--app]\n                                         [--appconfig-id]\n                                         [--client-type {dotnet, dotnet-internal, go, java, nodejs, none, springBoot}]\n                                         [--connection]\n                                         [--connstr-props]\n                                         [--customized-keys]\n                                         [--deployment]\n                                         [--id]\n                                         [--no-wait]\n                                         [--opt-out {auth, configinfo, publicnetwork}]\n                                         [--private-endpoint {false, true}]\n                                         [--resource-group]\n                                         [--secret]\n                                         [--service]\n                                         [--service-endpoint {false, true}]\n                                         [--service-principal]\n                                         [--system-identity]\n                                         [--user-identity]\n                                         [--vault-id]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--app",
+                "--appconfig-id",
+                "--client-type",
+                "--connection",
+                "--connstr-props",
+                "--customized-keys",
+                "--deployment",
+                "--id",
+                "--no-wait",
+                "--opt-out",
+                "--private-endpoint",
+                "--resource-group -g",
+                "--secret",
+                "--service",
+                "--service-endpoint",
+                "--service-principal",
+                "--system-identity",
+                "--user-identity",
+                "--vault-id"
+            ],
+            "examples": [
+                "az spring connection update cosmos-mongo -g SpringCloudRG --service MySpringService --app MyApp --connection MyConnection --client-type dotnet",
+                "az spring connection update cosmos-mongo --id /subscriptions/{subscription}/resourceGroups/{source_resource_group}/providers/Microsoft.Web/sites/{site}/providers/Microsoft.ServiceLinker/linkers/{linker} --client-type dotnet"
+            ]
+        },
+        {
+            "name": "az spring connection update cosmos-sql",
+            "summary": "Update a spring app to cosmos-sql connection.",
+            "syntax": "az spring connection update cosmos-sql [--app]\n                                       [--appconfig-id]\n                                       [--client-type {dotnet, dotnet-internal, java, nodejs, none, python, springBoot}]\n                                       [--connection]\n                                       [--connstr-props]\n                                       [--customized-keys]\n                                       [--deployment]\n                                       [--id]\n                                       [--no-wait]\n                                       [--opt-out {auth, configinfo, publicnetwork}]\n                                       [--private-endpoint {false, true}]\n                                       [--resource-group]\n                                       [--secret]\n                                       [--service]\n                                       [--service-endpoint {false, true}]\n                                       [--service-principal]\n                                       [--system-identity]\n                                       [--user-identity]\n                                       [--vault-id]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--app",
+                "--appconfig-id",
+                "--client-type",
+                "--connection",
+                "--connstr-props",
+                "--customized-keys",
+                "--deployment",
+                "--id",
+                "--no-wait",
+                "--opt-out",
+                "--private-endpoint",
+                "--resource-group -g",
+                "--secret",
+                "--service",
+                "--service-endpoint",
+                "--service-principal",
+                "--system-identity",
+                "--user-identity",
+                "--vault-id"
+            ],
+            "examples": [
+                "az spring connection update cosmos-sql -g SpringCloudRG --service MySpringService --app MyApp --connection MyConnection --client-type dotnet",
+                "az spring connection update cosmos-sql --id /subscriptions/{subscription}/resourceGroups/{source_resource_group}/providers/Microsoft.Web/sites/{site}/providers/Microsoft.ServiceLinker/linkers/{linker} --client-type dotnet"
+            ]
+        },
+        {
+            "name": "az spring connection update cosmos-table",
+            "summary": "Update a spring app to cosmos-table connection.",
+            "syntax": "az spring connection update cosmos-table [--app]\n                                         [--appconfig-id]\n                                         [--client-type {dotnet, dotnet-internal, java, nodejs, none, python, springBoot}]\n                                         [--connection]\n                                         [--connstr-props]\n                                         [--customized-keys]\n                                         [--deployment]\n                                         [--id]\n                                         [--no-wait]\n                                         [--opt-out {auth, configinfo, publicnetwork}]\n                                         [--private-endpoint {false, true}]\n                                         [--resource-group]\n                                         [--secret]\n                                         [--service]\n                                         [--service-endpoint {false, true}]\n                                         [--service-principal]\n                                         [--system-identity]\n                                         [--user-identity]\n                                         [--vault-id]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--app",
+                "--appconfig-id",
+                "--client-type",
+                "--connection",
+                "--connstr-props",
+                "--customized-keys",
+                "--deployment",
+                "--id",
+                "--no-wait",
+                "--opt-out",
+                "--private-endpoint",
+                "--resource-group -g",
+                "--secret",
+                "--service",
+                "--service-endpoint",
+                "--service-principal",
+                "--system-identity",
+                "--user-identity",
+                "--vault-id"
+            ],
+            "examples": [
+                "az spring connection update cosmos-table -g SpringCloudRG --service MySpringService --app MyApp --connection MyConnection --client-type dotnet",
+                "az spring connection update cosmos-table --id /subscriptions/{subscription}/resourceGroups/{source_resource_group}/providers/Microsoft.Web/sites/{site}/providers/Microsoft.ServiceLinker/linkers/{linker} --client-type dotnet"
+            ]
+        },
+        {
+            "name": "az spring connection update eventhub",
+            "summary": "Update a spring app to eventhub connection.",
+            "syntax": "az spring connection update eventhub [--app]\n                                     [--appconfig-id]\n                                     [--client-type {dotnet, dotnet-internal, go, java, kafka-springBoot, nodejs, none, python, springBoot}]\n                                     [--connection]\n                                     [--connstr-props]\n                                     [--customized-keys]\n                                     [--deployment]\n                                     [--id]\n                                     [--no-wait]\n                                     [--opt-out {auth, configinfo, publicnetwork}]\n                                     [--private-endpoint {false, true}]\n                                     [--resource-group]\n                                     [--secret]\n                                     [--service]\n                                     [--service-endpoint {false, true}]\n                                     [--service-principal]\n                                     [--system-identity]\n                                     [--user-identity]\n                                     [--vault-id]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--app",
+                "--appconfig-id",
+                "--client-type",
+                "--connection",
+                "--connstr-props",
+                "--customized-keys",
+                "--deployment",
+                "--id",
+                "--no-wait",
+                "--opt-out",
+                "--private-endpoint",
+                "--resource-group -g",
+                "--secret",
+                "--service",
+                "--service-endpoint",
+                "--service-principal",
+                "--system-identity",
+                "--user-identity",
+                "--vault-id"
+            ],
+            "examples": [
+                "az spring connection update eventhub -g SpringCloudRG --service MySpringService --app MyApp --connection MyConnection --client-type dotnet",
+                "az spring connection update eventhub --id /subscriptions/{subscription}/resourceGroups/{source_resource_group}/providers/Microsoft.Web/sites/{site}/providers/Microsoft.ServiceLinker/linkers/{linker} --client-type dotnet"
+            ]
+        },
+        {
+            "name": "az spring connection update fabric-sql",
+            "summary": "Update a spring app to fabric-sql connection.",
+            "syntax": "az spring connection update fabric-sql [--app]\n                                       [--appconfig-id]\n                                       [--client-type {dotnet, go, java, none, php, python}]\n                                       [--connection]\n                                       [--connstr-props]\n                                       [--customized-keys]\n                                       [--deployment]\n                                       [--id]\n                                       [--no-wait]\n                                       [--opt-out {auth, configinfo, publicnetwork}]\n                                       [--resource-group]\n                                       [--service]\n                                       [--system-identity]\n                                       [--user-identity]\n                                       [--vault-id]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--app",
+                "--appconfig-id",
+                "--client-type",
+                "--connection",
+                "--connstr-props",
+                "--customized-keys",
+                "--deployment",
+                "--id",
+                "--no-wait",
+                "--opt-out",
+                "--resource-group -g",
+                "--service",
+                "--system-identity",
+                "--user-identity",
+                "--vault-id"
+            ],
+            "examples": [
+                "az spring connection update fabric-sql -g SpringCloudRG --service MySpringService --app MyApp --connection MyConnection --client-type dotnet",
+                "az spring connection update fabric-sql --id /subscriptions/{subscription}/resourceGroups/{source_resource_group}/providers/Microsoft.Web/sites/{site}/providers/Microsoft.ServiceLinker/linkers/{linker} --client-type dotnet"
+            ]
+        },
+        {
+            "name": "az spring connection update keyvault",
+            "summary": "Update a spring app to keyvault connection.",
+            "syntax": "az spring connection update keyvault [--app]\n                                     [--appconfig-id]\n                                     [--client-type {dotnet, dotnet-internal, java, nodejs, none, python, springBoot}]\n                                     [--connection]\n                                     [--connstr-props]\n                                     [--customized-keys]\n                                     [--deployment]\n                                     [--id]\n                                     [--no-wait]\n                                     [--opt-out {auth, configinfo, publicnetwork}]\n                                     [--private-endpoint {false, true}]\n                                     [--resource-group]\n                                     [--service]\n                                     [--service-endpoint {false, true}]\n                                     [--service-principal]\n                                     [--system-identity]\n                                     [--user-identity]\n                                     [--vault-id]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--app",
+                "--appconfig-id",
+                "--client-type",
+                "--connection",
+                "--connstr-props",
+                "--customized-keys",
+                "--deployment",
+                "--id",
+                "--no-wait",
+                "--opt-out",
+                "--private-endpoint",
+                "--resource-group -g",
+                "--service",
+                "--service-endpoint",
+                "--service-principal",
+                "--system-identity",
+                "--user-identity",
+                "--vault-id"
+            ],
+            "examples": [
+                "az spring connection update keyvault -g SpringCloudRG --service MySpringService --app MyApp --connection MyConnection --client-type dotnet",
+                "az spring connection update keyvault --id /subscriptions/{subscription}/resourceGroups/{source_resource_group}/providers/Microsoft.Web/sites/{site}/providers/Microsoft.ServiceLinker/linkers/{linker} --client-type dotnet"
+            ]
+        },
+        {
+            "name": "az spring connection update mysql",
+            "summary": "Update a spring app to mysql connection.",
+            "syntax": "az spring connection update mysql [--app]\n                                  [--appconfig-id]\n                                  [--client-type {django, dotnet, dotnet-internal, go, java, nodejs, none, php, python, ruby, springBoot}]\n                                  [--connection]\n                                  [--connstr-props]\n                                  [--customized-keys]\n                                  [--deployment]\n                                  [--id]\n                                  [--no-wait]\n                                  [--opt-out {auth, configinfo, publicnetwork}]\n                                  [--private-endpoint {false, true}]\n                                  [--resource-group]\n                                  [--secret]\n                                  [--service]\n                                  [--service-endpoint {false, true}]\n                                  [--vault-id]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--app",
+                "--appconfig-id",
+                "--client-type",
+                "--connection",
+                "--connstr-props",
+                "--customized-keys",
+                "--deployment",
+                "--id",
+                "--no-wait",
+                "--opt-out",
+                "--private-endpoint",
+                "--resource-group -g",
+                "--secret",
+                "--service",
+                "--service-endpoint",
+                "--vault-id"
+            ],
+            "examples": [
+                "az spring connection update mysql -g SpringCloudRG --service MySpringService --app MyApp --connection MyConnection --client-type dotnet",
+                "az spring connection update mysql --id /subscriptions/{subscription}/resourceGroups/{source_resource_group}/providers/Microsoft.Web/sites/{site}/providers/Microsoft.ServiceLinker/linkers/{linker} --client-type dotnet"
+            ]
+        },
+        {
+            "name": "az spring connection update mysql-flexible",
+            "summary": "Update a spring app to mysql-flexible connection.",
+            "syntax": "az spring connection update mysql-flexible [--app]\n                                           [--appconfig-id]\n                                           [--client-type {django, dotnet, dotnet-internal, go, java, nodejs, none, php, python, ruby, springBoot}]\n                                           [--connection]\n                                           [--connstr-props]\n                                           [--customized-keys]\n                                           [--deployment]\n                                           [--id]\n                                           [--no-wait]\n                                           [--opt-out {auth, configinfo, publicnetwork}]\n                                           [--private-endpoint {false, true}]\n                                           [--resource-group]\n                                           [--secret]\n                                           [--service]\n                                           [--service-principal]\n                                           [--system-identity]\n                                           [--user-identity]\n                                           [--vault-id]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--app",
+                "--appconfig-id",
+                "--client-type",
+                "--connection",
+                "--connstr-props",
+                "--customized-keys",
+                "--deployment",
+                "--id",
+                "--no-wait",
+                "--opt-out",
+                "--private-endpoint",
+                "--resource-group -g",
+                "--secret",
+                "--service",
+                "--service-principal",
+                "--system-identity",
+                "--user-identity",
+                "--vault-id"
+            ],
+            "examples": [
+                "az spring connection update mysql-flexible -g SpringCloudRG --service MySpringService --app MyApp --connection MyConnection --client-type dotnet",
+                "az spring connection update mysql-flexible --id /subscriptions/{subscription}/resourceGroups/{source_resource_group}/providers/Microsoft.Web/sites/{site}/providers/Microsoft.ServiceLinker/linkers/{linker} --client-type dotnet"
+            ]
+        },
+        {
+            "name": "az spring connection update postgres",
+            "summary": "Update a spring app to postgres connection.",
+            "syntax": "az spring connection update postgres [--app]\n                                     [--appconfig-id]\n                                     [--client-type {django, dotnet, dotnet-internal, go, java, nodejs, none, php, python, ruby, springBoot}]\n                                     [--connection]\n                                     [--connstr-props]\n                                     [--customized-keys]\n                                     [--deployment]\n                                     [--id]\n                                     [--no-wait]\n                                     [--opt-out {auth, configinfo, publicnetwork}]\n                                     [--private-endpoint {false, true}]\n                                     [--resource-group]\n                                     [--secret]\n                                     [--service]\n                                     [--service-endpoint {false, true}]\n                                     [--service-principal]\n                                     [--system-identity]\n                                     [--user-identity]\n                                     [--vault-id]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--app",
+                "--appconfig-id",
+                "--client-type",
+                "--connection",
+                "--connstr-props",
+                "--customized-keys",
+                "--deployment",
+                "--id",
+                "--no-wait",
+                "--opt-out",
+                "--private-endpoint",
+                "--resource-group -g",
+                "--secret",
+                "--service",
+                "--service-endpoint",
+                "--service-principal",
+                "--system-identity",
+                "--user-identity",
+                "--vault-id"
+            ],
+            "examples": [
+                "az spring connection update postgres -g SpringCloudRG --service MySpringService --app MyApp --connection MyConnection --client-type dotnet",
+                "az spring connection update postgres --id /subscriptions/{subscription}/resourceGroups/{source_resource_group}/providers/Microsoft.Web/sites/{site}/providers/Microsoft.ServiceLinker/linkers/{linker} --client-type dotnet"
+            ]
+        },
+        {
+            "name": "az spring connection update postgres-flexible",
+            "summary": "Update a spring app to postgres-flexible connection.",
+            "syntax": "az spring connection update postgres-flexible [--app]\n                                              [--appconfig-id]\n                                              [--client-type {django, dotnet, dotnet-internal, go, java, nodejs, none, php, python, ruby, springBoot}]\n                                              [--connection]\n                                              [--connstr-props]\n                                              [--customized-keys]\n                                              [--deployment]\n                                              [--id]\n                                              [--no-wait]\n                                              [--opt-out {auth, configinfo, publicnetwork}]\n                                              [--resource-group]\n                                              [--secret]\n                                              [--service]\n                                              [--service-principal]\n                                              [--system-identity]\n                                              [--user-identity]\n                                              [--vault-id]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--app",
+                "--appconfig-id",
+                "--client-type",
+                "--connection",
+                "--connstr-props",
+                "--customized-keys",
+                "--deployment",
+                "--id",
+                "--no-wait",
+                "--opt-out",
+                "--resource-group -g",
+                "--secret",
+                "--service",
+                "--service-principal",
+                "--system-identity",
+                "--user-identity",
+                "--vault-id"
+            ],
+            "examples": [
+                "az spring connection update postgres-flexible -g SpringCloudRG --service MySpringService --app MyApp --connection MyConnection --client-type dotnet",
+                "az spring connection update postgres-flexible --id /subscriptions/{subscription}/resourceGroups/{source_resource_group}/providers/Microsoft.Web/sites/{site}/providers/Microsoft.ServiceLinker/linkers/{linker} --client-type dotnet"
+            ]
+        },
+        {
+            "name": "az spring connection update redis",
+            "summary": "Update a spring app to redis connection.",
+            "syntax": "az spring connection update redis [--app]\n                                  [--appconfig-id]\n                                  [--client-type {dotnet, dotnet-internal, go, java, nodejs, none, python, springBoot}]\n                                  [--connection]\n                                  [--connstr-props]\n                                  [--customized-keys]\n                                  [--deployment]\n                                  [--id]\n                                  [--no-wait]\n                                  [--opt-out {auth, configinfo, publicnetwork}]\n                                  [--private-endpoint {false, true}]\n                                  [--resource-group]\n                                  [--secret]\n                                  [--service]\n                                  [--service-principal]\n                                  [--system-identity]\n                                  [--user-identity]\n                                  [--vault-id]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--app",
+                "--appconfig-id",
+                "--client-type",
+                "--connection",
+                "--connstr-props",
+                "--customized-keys",
+                "--deployment",
+                "--id",
+                "--no-wait",
+                "--opt-out",
+                "--private-endpoint",
+                "--resource-group -g",
+                "--secret",
+                "--service",
+                "--service-principal",
+                "--system-identity",
+                "--user-identity",
+                "--vault-id"
+            ],
+            "examples": [
+                "az spring connection update redis -g SpringCloudRG --service MySpringService --app MyApp --connection MyConnection --client-type dotnet",
+                "az spring connection update redis --id /subscriptions/{subscription}/resourceGroups/{source_resource_group}/providers/Microsoft.Web/sites/{site}/providers/Microsoft.ServiceLinker/linkers/{linker} --client-type dotnet"
+            ]
+        },
+        {
+            "name": "az spring connection update redis-enterprise",
+            "summary": "Update a spring app to redis-enterprise connection.",
+            "syntax": "az spring connection update redis-enterprise [--app]\n                                             [--appconfig-id]\n                                             [--client-type {dotnet, dotnet-internal, go, java, nodejs, none, python, springBoot}]\n                                             [--connection]\n                                             [--connstr-props]\n                                             [--customized-keys]\n                                             [--deployment]\n                                             [--id]\n                                             [--no-wait]\n                                             [--opt-out {auth, configinfo, publicnetwork}]\n                                             [--resource-group]\n                                             [--secret]\n                                             [--service]\n                                             [--vault-id]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--app",
+                "--appconfig-id",
+                "--client-type",
+                "--connection",
+                "--connstr-props",
+                "--customized-keys",
+                "--deployment",
+                "--id",
+                "--no-wait",
+                "--opt-out",
+                "--resource-group -g",
+                "--secret",
+                "--service",
+                "--vault-id"
+            ],
+            "examples": [
+                "az spring connection update redis-enterprise -g SpringCloudRG --service MySpringService --app MyApp --connection MyConnection --client-type dotnet",
+                "az spring connection update redis-enterprise --id /subscriptions/{subscription}/resourceGroups/{source_resource_group}/providers/Microsoft.Web/sites/{site}/providers/Microsoft.ServiceLinker/linkers/{linker} --client-type dotnet"
+            ]
+        },
+        {
+            "name": "az spring connection update servicebus",
+            "summary": "Update a spring app to servicebus connection.",
+            "syntax": "az spring connection update servicebus [--app]\n                                       [--appconfig-id]\n                                       [--client-type {dotnet, dotnet-internal, go, java, nodejs, none, python, springBoot}]\n                                       [--connection]\n                                       [--connstr-props]\n                                       [--customized-keys]\n                                       [--deployment]\n                                       [--id]\n                                       [--no-wait]\n                                       [--opt-out {auth, configinfo, publicnetwork}]\n                                       [--private-endpoint {false, true}]\n                                       [--resource-group]\n                                       [--secret]\n                                       [--service]\n                                       [--service-endpoint {false, true}]\n                                       [--service-principal]\n                                       [--system-identity]\n                                       [--user-identity]\n                                       [--vault-id]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--app",
+                "--appconfig-id",
+                "--client-type",
+                "--connection",
+                "--connstr-props",
+                "--customized-keys",
+                "--deployment",
+                "--id",
+                "--no-wait",
+                "--opt-out",
+                "--private-endpoint",
+                "--resource-group -g",
+                "--secret",
+                "--service",
+                "--service-endpoint",
+                "--service-principal",
+                "--system-identity",
+                "--user-identity",
+                "--vault-id"
+            ],
+            "examples": [
+                "az spring connection update servicebus -g SpringCloudRG --service MySpringService --app MyApp --connection MyConnection --client-type dotnet",
+                "az spring connection update servicebus --id /subscriptions/{subscription}/resourceGroups/{source_resource_group}/providers/Microsoft.Web/sites/{site}/providers/Microsoft.ServiceLinker/linkers/{linker} --client-type dotnet"
+            ]
+        },
+        {
+            "name": "az spring connection update signalr",
+            "summary": "Update a spring app to signalr connection.",
+            "syntax": "az spring connection update signalr [--app]\n                                    [--appconfig-id]\n                                    [--client-type {dotnet, dotnet-internal, none}]\n                                    [--connection]\n                                    [--connstr-props]\n                                    [--customized-keys]\n                                    [--deployment]\n                                    [--id]\n                                    [--no-wait]\n                                    [--opt-out {auth, configinfo, publicnetwork}]\n                                    [--private-endpoint {false, true}]\n                                    [--resource-group]\n                                    [--secret]\n                                    [--service]\n                                    [--service-principal]\n                                    [--system-identity]\n                                    [--user-identity]\n                                    [--vault-id]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--app",
+                "--appconfig-id",
+                "--client-type",
+                "--connection",
+                "--connstr-props",
+                "--customized-keys",
+                "--deployment",
+                "--id",
+                "--no-wait",
+                "--opt-out",
+                "--private-endpoint",
+                "--resource-group -g",
+                "--secret",
+                "--service",
+                "--service-principal",
+                "--system-identity",
+                "--user-identity",
+                "--vault-id"
+            ],
+            "examples": [
+                "az spring connection update signalr -g SpringCloudRG --service MySpringService --app MyApp --connection MyConnection --client-type dotnet",
+                "az spring connection update signalr --id /subscriptions/{subscription}/resourceGroups/{source_resource_group}/providers/Microsoft.Web/sites/{site}/providers/Microsoft.ServiceLinker/linkers/{linker} --client-type dotnet"
+            ]
+        },
+        {
+            "name": "az spring connection update sql",
+            "summary": "Update a spring app to sql connection.",
+            "syntax": "az spring connection update sql [--app]\n                                [--appconfig-id]\n                                [--client-type {django, dotnet, dotnet-internal, go, java, nodejs, none, php, python, ruby, springBoot}]\n                                [--connection]\n                                [--connstr-props]\n                                [--customized-keys]\n                                [--deployment]\n                                [--id]\n                                [--no-wait]\n                                [--opt-out {auth, configinfo, publicnetwork}]\n                                [--private-endpoint {false, true}]\n                                [--resource-group]\n                                [--secret]\n                                [--service]\n                                [--service-endpoint {false, true}]\n                                [--service-principal]\n                                [--system-identity]\n                                [--user-identity]\n                                [--vault-id]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--app",
+                "--appconfig-id",
+                "--client-type",
+                "--connection",
+                "--connstr-props",
+                "--customized-keys",
+                "--deployment",
+                "--id",
+                "--no-wait",
+                "--opt-out",
+                "--private-endpoint",
+                "--resource-group -g",
+                "--secret",
+                "--service",
+                "--service-endpoint",
+                "--service-principal",
+                "--system-identity",
+                "--user-identity",
+                "--vault-id"
+            ],
+            "examples": [
+                "az spring connection update sql -g SpringCloudRG --service MySpringService --app MyApp --connection MyConnection --client-type dotnet",
+                "az spring connection update sql --id /subscriptions/{subscription}/resourceGroups/{source_resource_group}/providers/Microsoft.Web/sites/{site}/providers/Microsoft.ServiceLinker/linkers/{linker} --client-type dotnet"
+            ]
+        },
+        {
+            "name": "az spring connection update storage-blob",
+            "summary": "Update a spring app to storage-blob connection.",
+            "syntax": "az spring connection update storage-blob [--app]\n                                         [--appconfig-id]\n                                         [--client-type {dotnet, dotnet-internal, java, nodejs, none, python, springBoot}]\n                                         [--connection]\n                                         [--connstr-props]\n                                         [--customized-keys]\n                                         [--deployment]\n                                         [--id]\n                                         [--no-wait]\n                                         [--opt-out {auth, configinfo, publicnetwork}]\n                                         [--private-endpoint {false, true}]\n                                         [--resource-group]\n                                         [--secret]\n                                         [--service]\n                                         [--service-endpoint {false, true}]\n                                         [--service-principal]\n                                         [--system-identity]\n                                         [--user-identity]\n                                         [--vault-id]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--app",
+                "--appconfig-id",
+                "--client-type",
+                "--connection",
+                "--connstr-props",
+                "--customized-keys",
+                "--deployment",
+                "--id",
+                "--no-wait",
+                "--opt-out",
+                "--private-endpoint",
+                "--resource-group -g",
+                "--secret",
+                "--service",
+                "--service-endpoint",
+                "--service-principal",
+                "--system-identity",
+                "--user-identity",
+                "--vault-id"
+            ],
+            "examples": [
+                "az spring connection update storage-blob -g SpringCloudRG --service MySpringService --app MyApp --connection MyConnection --client-type dotnet",
+                "az spring connection update storage-blob --id /subscriptions/{subscription}/resourceGroups/{source_resource_group}/providers/Microsoft.Web/sites/{site}/providers/Microsoft.ServiceLinker/linkers/{linker} --client-type dotnet"
+            ]
+        },
+        {
+            "name": "az spring connection update storage-file",
+            "summary": "Update a spring app to storage-file connection.",
+            "syntax": "az spring connection update storage-file [--app]\n                                         [--appconfig-id]\n                                         [--client-type {dotnet, dotnet-internal, java, nodejs, none, php, python, ruby, springBoot}]\n                                         [--connection]\n                                         [--connstr-props]\n                                         [--customized-keys]\n                                         [--deployment]\n                                         [--id]\n                                         [--no-wait]\n                                         [--opt-out {auth, configinfo, publicnetwork}]\n                                         [--private-endpoint {false, true}]\n                                         [--resource-group]\n                                         [--secret]\n                                         [--service]\n                                         [--service-endpoint {false, true}]\n                                         [--vault-id]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--app",
+                "--appconfig-id",
+                "--client-type",
+                "--connection",
+                "--connstr-props",
+                "--customized-keys",
+                "--deployment",
+                "--id",
+                "--no-wait",
+                "--opt-out",
+                "--private-endpoint",
+                "--resource-group -g",
+                "--secret",
+                "--service",
+                "--service-endpoint",
+                "--vault-id"
+            ],
+            "examples": [
+                "az spring connection update storage-file -g SpringCloudRG --service MySpringService --app MyApp --connection MyConnection --client-type dotnet",
+                "az spring connection update storage-file --id /subscriptions/{subscription}/resourceGroups/{source_resource_group}/providers/Microsoft.Web/sites/{site}/providers/Microsoft.ServiceLinker/linkers/{linker} --client-type dotnet"
+            ]
+        },
+        {
+            "name": "az spring connection update storage-queue",
+            "summary": "Update a spring app to storage-queue connection.",
+            "syntax": "az spring connection update storage-queue [--app]\n                                          [--appconfig-id]\n                                          [--client-type {dotnet, dotnet-internal, java, nodejs, none, python, springBoot}]\n                                          [--connection]\n                                          [--connstr-props]\n                                          [--customized-keys]\n                                          [--deployment]\n                                          [--id]\n                                          [--no-wait]\n                                          [--opt-out {auth, configinfo, publicnetwork}]\n                                          [--private-endpoint {false, true}]\n                                          [--resource-group]\n                                          [--secret]\n                                          [--service]\n                                          [--service-endpoint {false, true}]\n                                          [--service-principal]\n                                          [--system-identity]\n                                          [--user-identity]\n                                          [--vault-id]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--app",
+                "--appconfig-id",
+                "--client-type",
+                "--connection",
+                "--connstr-props",
+                "--customized-keys",
+                "--deployment",
+                "--id",
+                "--no-wait",
+                "--opt-out",
+                "--private-endpoint",
+                "--resource-group -g",
+                "--secret",
+                "--service",
+                "--service-endpoint",
+                "--service-principal",
+                "--system-identity",
+                "--user-identity",
+                "--vault-id"
+            ],
+            "examples": [
+                "az spring connection update storage-queue -g SpringCloudRG --service MySpringService --app MyApp --connection MyConnection --client-type dotnet",
+                "az spring connection update storage-queue --id /subscriptions/{subscription}/resourceGroups/{source_resource_group}/providers/Microsoft.Web/sites/{site}/providers/Microsoft.ServiceLinker/linkers/{linker} --client-type dotnet"
+            ]
+        },
+        {
+            "name": "az spring connection update storage-table",
+            "summary": "Update a spring app to storage-table connection.",
+            "syntax": "az spring connection update storage-table [--app]\n                                          [--appconfig-id]\n                                          [--client-type {dotnet, dotnet-internal, java, nodejs, none, python}]\n                                          [--connection]\n                                          [--connstr-props]\n                                          [--customized-keys]\n                                          [--deployment]\n                                          [--id]\n                                          [--no-wait]\n                                          [--opt-out {auth, configinfo, publicnetwork}]\n                                          [--private-endpoint {false, true}]\n                                          [--resource-group]\n                                          [--secret]\n                                          [--service]\n                                          [--service-endpoint {false, true}]\n                                          [--service-principal]\n                                          [--system-identity]\n                                          [--user-identity]\n                                          [--vault-id]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--app",
+                "--appconfig-id",
+                "--client-type",
+                "--connection",
+                "--connstr-props",
+                "--customized-keys",
+                "--deployment",
+                "--id",
+                "--no-wait",
+                "--opt-out",
+                "--private-endpoint",
+                "--resource-group -g",
+                "--secret",
+                "--service",
+                "--service-endpoint",
+                "--service-principal",
+                "--system-identity",
+                "--user-identity",
+                "--vault-id"
+            ],
+            "examples": [
+                "az spring connection update storage-table -g SpringCloudRG --service MySpringService --app MyApp --connection MyConnection --client-type dotnet",
+                "az spring connection update storage-table --id /subscriptions/{subscription}/resourceGroups/{source_resource_group}/providers/Microsoft.Web/sites/{site}/providers/Microsoft.ServiceLinker/linkers/{linker} --client-type dotnet"
+            ]
+        },
+        {
+            "name": "az spring connection update webpubsub",
+            "summary": "Update a spring app to webpubsub connection.",
+            "syntax": "az spring connection update webpubsub [--app]\n                                      [--appconfig-id]\n                                      [--client-type {dotnet, dotnet-internal, java, nodejs, none, python}]\n                                      [--connection]\n                                      [--connstr-props]\n                                      [--customized-keys]\n                                      [--deployment]\n                                      [--id]\n                                      [--no-wait]\n                                      [--opt-out {auth, configinfo, publicnetwork}]\n                                      [--private-endpoint {false, true}]\n                                      [--resource-group]\n                                      [--secret]\n                                      [--service]\n                                      [--service-principal]\n                                      [--system-identity]\n                                      [--user-identity]\n                                      [--vault-id]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--app",
+                "--appconfig-id",
+                "--client-type",
+                "--connection",
+                "--connstr-props",
+                "--customized-keys",
+                "--deployment",
+                "--id",
+                "--no-wait",
+                "--opt-out",
+                "--private-endpoint",
+                "--resource-group -g",
+                "--secret",
+                "--service",
+                "--service-principal",
+                "--system-identity",
+                "--user-identity",
+                "--vault-id"
+            ],
+            "examples": [
+                "az spring connection update webpubsub -g SpringCloudRG --service MySpringService --app MyApp --connection MyConnection --client-type dotnet",
+                "az spring connection update webpubsub --id /subscriptions/{subscription}/resourceGroups/{source_resource_group}/providers/Microsoft.Web/sites/{site}/providers/Microsoft.ServiceLinker/linkers/{linker} --client-type dotnet"
+            ]
+        }
+    ]
+}

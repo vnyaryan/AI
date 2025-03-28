@@ -1,0 +1,20 @@
+{
+    "command_group": "az internet-analyzer preconfigured-endpoint",
+    "description": "Commands to manage preconfigured endpoints.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az internet-analyzer preconfigured-endpoint list",
+            "summary": "List preconfigured endpoints.",
+            "syntax": "az internet-analyzer preconfigured-endpoint list --profile-name\n                                                 --resource-group",
+            "required_parameters": [
+                "--profile-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az internet-analyzer preconfigured-endpoint list --resource-group \"MyResourceGroup\" \\\n--profile-name \"MyProfile\""
+            ]
+        }
+    ]
+}

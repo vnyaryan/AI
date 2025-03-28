@@ -1,0 +1,105 @@
+{
+    "command_group": "az network vhub route-table",
+    "description": "Manage route table in the virtual hub.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az network vhub route-table create",
+            "summary": "Create a route table in the virtual hub.",
+            "syntax": "az network vhub route-table create --name\n                                   --resource-group\n                                   --vhub-name\n                                   [--destination-type {CIDR, ResourceId, Service}]\n                                   [--destinations]\n                                   [--labels]\n                                   [--next-hop]\n                                   [--next-hop-type {ResourceId}]\n                                   [--no-wait]\n                                   [--route-name]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g",
+                "--vhub-name"
+            ],
+            "optional_parameters": [
+                "--destination-type",
+                "--destinations",
+                "--labels",
+                "--next-hop",
+                "--next-hop-type",
+                "--no-wait",
+                "--route-name"
+            ],
+            "examples": [
+                "az network vhub route-table create -n MyRouteTable -g MyResourceGroup --vhub-name MyVhub --route-name MyRoute --destination-type CIDR --destinations \"10.4.0.0/16\" \"10.6.0.0/16\" --next-hop-type ResourceId --next-hop /subscriptions/MySub/resourceGroups/MyResourceGroup/providers/Microsoft.Network/azureFirewalls/MyFirewall --labels label1 label2"
+            ]
+        },
+        {
+            "name": "az network vhub route-table delete",
+            "summary": "Delete a route table in the virtual hub.",
+            "syntax": "az network vhub route-table delete --name\n                                   --resource-group\n                                   --vhub-name",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g",
+                "--vhub-name"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az network vhub route-table delete -n MyRouteTable -g MyResourceGroup --vhub-name MyVhub"
+            ]
+        },
+        {
+            "name": "az network vhub route-table list",
+            "summary": "List all route tables in the virtual hub.",
+            "syntax": "az network vhub route-table list --resource-group\n                                 --vhub-name",
+            "required_parameters": [
+                "--resource-group -g",
+                "--vhub-name"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az network vhub route-table show",
+            "summary": "Show a route table in the virtual hub.",
+            "syntax": "az network vhub route-table show --name\n                                 --resource-group\n                                 --vhub-name",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g",
+                "--vhub-name"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az network vhub route-table update",
+            "summary": "Update a route table in the virtual hub.",
+            "syntax": "az network vhub route-table update --name\n                                   --resource-group\n                                   --vhub-name\n                                   [--labels]\n                                   [--no-wait]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g",
+                "--vhub-name"
+            ],
+            "optional_parameters": [
+                "--labels",
+                "--no-wait"
+            ],
+            "examples": [
+                "az network vhub route-table update -n MyRouteTable -g MyResourceGroup --vhub-name MyVhub --labels label1 label2"
+            ]
+        },
+        {
+            "name": "az network vhub route-table wait",
+            "summary": "Place the CLI in a waiting state until a condition of the vhub route-table is met.",
+            "syntax": "az network vhub route-table wait --name\n                                 --resource-group\n                                 --vhub-name\n                                 [--created]\n                                 [--custom]\n                                 [--deleted]\n                                 [--exists]\n                                 [--interval]\n                                 [--timeout]\n                                 [--updated]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g",
+                "--vhub-name"
+            ],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--interval",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": [
+                "az network vhub route-table wait -n MyRouteTable -g MyResourceGroup --vhub-name MyVhub --created"
+            ]
+        }
+    ]
+}

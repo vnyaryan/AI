@@ -1,0 +1,87 @@
+{
+    "command_group": "az pipelines variable-group",
+    "description": "Manage variable groups.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az pipelines variable-group create",
+            "summary": "Create a variable group.",
+            "syntax": "az pipelines variable-group create --name\n                                   --variables\n                                   [--authorize {false, true}]\n                                   [--description]\n                                   [--detect {false, true}]\n                                   [--org]\n                                   [--project]",
+            "required_parameters": [
+                "--name",
+                "--variables"
+            ],
+            "optional_parameters": [
+                "--authorize",
+                "--description",
+                "--detect",
+                "--org --organization",
+                "--project -p"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az pipelines variable-group delete",
+            "summary": "Delete a variable group.",
+            "syntax": "az pipelines variable-group delete --group-id\n                                   [--detect {false, true}]\n                                   [--org]\n                                   [--project]\n                                   [--yes]",
+            "required_parameters": [
+                "--group-id --id"
+            ],
+            "optional_parameters": [
+                "--detect",
+                "--org --organization",
+                "--project -p",
+                "--yes -y"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az pipelines variable-group list",
+            "summary": "List variable groups.",
+            "syntax": "az pipelines variable-group list [--action {manage, none, use}]\n                                 [--continuation-token]\n                                 [--detect {false, true}]\n                                 [--group-name]\n                                 [--org]\n                                 [--project]\n                                 [--query-order {Asc, Desc}]\n                                 [--top]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--action --action-filter",
+                "--continuation-token",
+                "--detect",
+                "--group-name",
+                "--org --organization",
+                "--project -p",
+                "--query-order",
+                "--top"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az pipelines variable-group show",
+            "summary": "Show variable group details.",
+            "syntax": "az pipelines variable-group show --group-id\n                                 [--detect {false, true}]\n                                 [--org]\n                                 [--project]",
+            "required_parameters": [
+                "--group-id --id"
+            ],
+            "optional_parameters": [
+                "--detect",
+                "--org --organization",
+                "--project -p"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az pipelines variable-group update",
+            "summary": "Update a variable group.",
+            "syntax": "az pipelines variable-group update --group-id\n                                   [--authorize {false, true}]\n                                   [--description]\n                                   [--detect {false, true}]\n                                   [--name]\n                                   [--org]\n                                   [--project]",
+            "required_parameters": [
+                "--group-id --id"
+            ],
+            "optional_parameters": [
+                "--authorize",
+                "--description",
+                "--detect",
+                "--name",
+                "--org --organization",
+                "--project -p"
+            ],
+            "examples": []
+        }
+    ]
+}

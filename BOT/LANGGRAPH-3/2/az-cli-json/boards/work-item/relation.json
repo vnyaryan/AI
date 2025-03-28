@@ -1,0 +1,63 @@
+{
+    "command_group": "az boards work-item relation",
+    "description": "Manage work item relations.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az boards work-item relation add",
+            "summary": "Add relation(s) to work item.",
+            "syntax": "az boards work-item relation add --id\n                                 --relation-type\n                                 [--detect {false, true}]\n                                 [--org]\n                                 [--target-id]\n                                 [--target-url]",
+            "required_parameters": [
+                "--id",
+                "--relation-type"
+            ],
+            "optional_parameters": [
+                "--detect",
+                "--org --organization",
+                "--target-id",
+                "--target-url"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az boards work-item relation list-type",
+            "summary": "List work item relations supported in the organization.",
+            "syntax": "az boards work-item relation list-type [--detect {false, true}]\n                                       [--org]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--detect",
+                "--org --organization"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az boards work-item relation remove",
+            "summary": "Remove relation(s) from work item.",
+            "syntax": "az boards work-item relation remove --id\n                                    --relation-type\n                                    --target-id\n                                    [--detect {false, true}]\n                                    [--org]\n                                    [--yes]",
+            "required_parameters": [
+                "--id",
+                "--relation-type",
+                "--target-id"
+            ],
+            "optional_parameters": [
+                "--detect",
+                "--org --organization",
+                "--yes -y"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az boards work-item relation show",
+            "summary": "Get work item, fill relations with friendly name.",
+            "syntax": "az boards work-item relation show --id\n                                  [--detect {false, true}]\n                                  [--org]",
+            "required_parameters": [
+                "--id"
+            ],
+            "optional_parameters": [
+                "--detect",
+                "--org --organization"
+            ],
+            "examples": []
+        }
+    ]
+}

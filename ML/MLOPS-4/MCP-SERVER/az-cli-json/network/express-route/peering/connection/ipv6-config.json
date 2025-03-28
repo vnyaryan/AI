@@ -1,0 +1,64 @@
+{
+    "command_group": "az network express-route peering connection ipv6-config",
+    "description": "Manage ExpressRoute circuit connection configs.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az network express-route peering connection ipv6-config remove",
+            "summary": "Remove connection config to ExpressRoute circuit connection.",
+            "syntax": "az network express-route peering connection ipv6-config remove --circuit-name\n                                                               --name\n                                                               --peering-name\n                                                               --resource-group\n                                                               [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]",
+            "required_parameters": [
+                "--circuit-name",
+                "--name -n",
+                "--peering-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--no-wait"
+            ],
+            "examples": [
+                "az network express-route peering connection ipv6-config remove -g MyResourceGroup --circuit-name MyCircuit --peering-name AzurePrivatePeering -n myConnection"
+            ]
+        },
+        {
+            "name": "az network express-route peering connection ipv6-config set",
+            "summary": "Set connection config to ExpressRoute circuit connection.",
+            "syntax": "az network express-route peering connection ipv6-config set --circuit-name\n                                                            --name\n                                                            --peering-name\n                                                            --resource-group\n                                                            [--address-prefix]\n                                                            [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]",
+            "required_parameters": [
+                "--circuit-name",
+                "--name -n",
+                "--peering-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--address-prefix",
+                "--no-wait"
+            ],
+            "examples": [
+                "az network express-route peering connection ipv6-config set -g MyResourceGroup --circuit-name MyCircuit --peering-name AzurePrivatePeering -n myConnection --address-prefix .../125"
+            ]
+        },
+        {
+            "name": "az network express-route peering connection ipv6-config wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az network express-route peering connection ipv6-config wait [--circuit-name]\n                                                             [--created]\n                                                             [--custom]\n                                                             [--deleted]\n                                                             [--exists]\n                                                             [--ids]\n                                                             [--interval]\n                                                             [--name]\n                                                             [--peering-name]\n                                                             [--resource-group]\n                                                             [--subscription]\n                                                             [--timeout]\n                                                             [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--circuit-name",
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--name -n",
+                "--peering-name",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

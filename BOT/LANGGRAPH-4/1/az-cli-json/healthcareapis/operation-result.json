@@ -1,0 +1,22 @@
+{
+    "command_group": "az healthcareapis operation-result",
+    "description": "Healthcareapis operation-result.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az healthcareapis operation-result show",
+            "summary": "Get the operation result for a long running operation.",
+            "syntax": "az healthcareapis operation-result show [--ids]\n                                        [--location-name]\n                                        [--operation-result-id]\n                                        [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--location-name",
+                "--operation-result-id",
+                "--subscription"
+            ],
+            "examples": [
+                "az healthcareapis operation-result show --location-name \"westus\" --operation-result-id \"exampleid\""
+            ]
+        }
+    ]
+}

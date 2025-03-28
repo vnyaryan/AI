@@ -1,0 +1,135 @@
+{
+    "command_group": "az security security-connector devops",
+    "description": "DevOps configuration and operations.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az security security-connector devops create",
+            "summary": "Create a DevOps Configuration.",
+            "syntax": "az security security-connector devops create --name\n                                             --resource-group\n                                             [--authorization-code]\n                                             [--auto-discovery {Disabled, Enabled, NotApplicable}]\n                                             [--inventory-list]\n                                             [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]",
+            "required_parameters": [
+                "--name --security-connector-name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--authorization-code",
+                "--auto-discovery",
+                "--inventory-list",
+                "--no-wait"
+            ],
+            "examples": [
+                "az security security-connectors devops create --name myConnector --resource-group myResourceGroup --auto-discovery Enabled --authorization-code MyAccessToken",
+                "az security security-connectors devops create --name myConnector --resource-group myResourceGroup --auto-discovery Disable --authorization-code $MY_ENVIRONMENT_VARIABLE_WITH_OAUTHTOKEN",
+                "az security security-connectors devops create --name myConnector --resource-group myResourceGroup --auto-discovery Disable --top-level-inventory-list org1,org2 --authorization-code myOAuthToken"
+            ]
+        },
+        {
+            "name": "az security security-connector devops delete",
+            "summary": "Delete a DevOps Connector.",
+            "syntax": "az security security-connector devops delete [--ids]\n                                             [--name]\n                                             [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                             [--resource-group]\n                                             [--subscription]\n                                             [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --security-connector-name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az security security-connector devops list-available-azuredevopsorgs",
+            "summary": "Returns a list of all Azure DevOps organizations accessible by the user token consumed by the connector. Returns 401 if connector was created by different user or identity.",
+            "syntax": "az security security-connector devops list-available-azuredevopsorgs [--ids]\n                                                                     [--name]\n                                                                     [--resource-group]\n                                                                     [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --security-connector-name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az security security-connector devops list-available-githubowners",
+            "summary": "Returns a list of all GitHub owners accessible by the user token consumed by the connector. Returns 401 if connector was created by different user or identity.",
+            "syntax": "az security security-connector devops list-available-githubowners [--ids]\n                                                                  [--name]\n                                                                  [--resource-group]\n                                                                  [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --security-connector-name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az security security-connector devops list-available-gitlabgroups",
+            "summary": "Returns a list of all GitLab groups accessible by the user token consumed by the connector. Returns 401 if connector was created by different user or identity.",
+            "syntax": "az security security-connector devops list-available-gitlabgroups [--ids]\n                                                                  [--name]\n                                                                  [--resource-group]\n                                                                  [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --security-connector-name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az security security-connector devops show",
+            "summary": "Get a DevOps Configuration.",
+            "syntax": "az security security-connector devops show [--ids]\n                                           [--name]\n                                           [--resource-group]\n                                           [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --security-connector-name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az security security-connector devops update",
+            "summary": "Update a DevOps Configuration.",
+            "syntax": "az security security-connector devops update [--authorization-code]\n                                             [--auto-discovery {Disabled, Enabled, NotApplicable}]\n                                             [--ids]\n                                             [--inventory-list]\n                                             [--name]\n                                             [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                             [--resource-group]\n                                             [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--authorization-code",
+                "--auto-discovery",
+                "--ids",
+                "--inventory-list",
+                "--name --security-connector-name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az security security-connectors devops update --name myConnector --resource-group myResourceGroup --auto-discovery Disabled",
+                "az security security-connectors devops update --name myConnector --resource-group myResourceGroup --auto-discovery Disabled --top-level-inventory-list org1,org2",
+                "az security security-connectors devops update --name myConnector --resource-group myResourceGroup --auto-discovery Enabled"
+            ]
+        },
+        {
+            "name": "az security security-connector devops wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az security security-connector devops wait [--created]\n                                           [--custom]\n                                           [--deleted]\n                                           [--exists]\n                                           [--ids]\n                                           [--interval]\n                                           [--name]\n                                           [--resource-group]\n                                           [--subscription]\n                                           [--timeout]\n                                           [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--name --security-connector-name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

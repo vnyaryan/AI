@@ -1,0 +1,110 @@
+{
+    "command_group": "az apic api deployment",
+    "description": "Commands to manage API deployments in API Center.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az apic api deployment create",
+            "summary": "Create a new API deployment or update an existing API deployment.",
+            "syntax": "az apic api deployment create --api-id\n                              --definition-id\n                              --deployment-id\n                              --environment-id\n                              --resource-group\n                              --server\n                              --service-name\n                              --title\n                              [--custom-properties]\n                              [--description]",
+            "required_parameters": [
+                "--api-id",
+                "--definition-id",
+                "--deployment-id",
+                "--environment-id",
+                "--resource-group -g",
+                "--server",
+                "--service-name -n",
+                "--title"
+            ],
+            "optional_parameters": [
+                "--custom-properties",
+                "--description"
+            ],
+            "examples": [
+                "az apic api deployment create -g api-center-test -n contoso --deployment-id production --title \"Production deployment\" --description \"Public cloud production deployment.\" --api-id echo-api --environment-id \"/workspaces/default/environments/production\" --definition-id \"/workspaces/default/apis/echo-api/versions/2023-01-01/definitions/openapi\" --server '{\"runtimeUri\":[\"https://example.com\"]}'",
+                "az apic api deployment create -g api-center-test -n contoso --deployment-id production --title \"Production deployment\" --description \"Public cloud production deployment.\" --api-id echo-api --environment-id \"/workspaces/default/environments/production\" --definition-id \"/workspaces/default/apis/echo-api/versions/2023-01-01/definitions/openapi\" --server '@server.json'"
+            ]
+        },
+        {
+            "name": "az apic api deployment delete",
+            "summary": "Delete API deployment.",
+            "syntax": "az apic api deployment delete [--api-id]\n                              [--deployment-id]\n                              [--ids]\n                              [--resource-group]\n                              [--service-name]\n                              [--subscription]\n                              [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--api-id",
+                "--deployment-id",
+                "--ids",
+                "--resource-group -g",
+                "--service-name -n",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az apic api deployment delete -g api-center-test -n contoso --deployment-id production --api-id echo-api"
+            ]
+        },
+        {
+            "name": "az apic api deployment list",
+            "summary": "List a collection of API deployments.",
+            "syntax": "az apic api deployment list --api-id\n                            --resource-group\n                            --service-name\n                            [--filter]\n                            [--max-items]\n                            [--next-token]",
+            "required_parameters": [
+                "--api-id",
+                "--resource-group -g",
+                "--service-name -n"
+            ],
+            "optional_parameters": [
+                "--filter",
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az apic api deployment list -g api-center-test -n contoso --api-id echo-api"
+            ]
+        },
+        {
+            "name": "az apic api deployment show",
+            "summary": "Get details of the API deployment.",
+            "syntax": "az apic api deployment show [--api-id]\n                            [--deployment-id]\n                            [--ids]\n                            [--resource-group]\n                            [--service-name]\n                            [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--api-id",
+                "--deployment-id",
+                "--ids",
+                "--resource-group -g",
+                "--service-name -n",
+                "--subscription"
+            ],
+            "examples": [
+                "az apic api deployment show -g api-center-test -n contoso --deployment-id production --api-id echo-api"
+            ]
+        },
+        {
+            "name": "az apic api deployment update",
+            "summary": "Update existing API deployment.",
+            "syntax": "az apic api deployment update [--add]\n                              [--api-id]\n                              [--custom-properties]\n                              [--definition-id]\n                              [--deployment-id]\n                              [--description]\n                              [--environment-id]\n                              [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                              [--ids]\n                              [--remove]\n                              [--resource-group]\n                              [--server]\n                              [--service-name]\n                              [--set]\n                              [--subscription]\n                              [--title]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--api-id",
+                "--custom-properties",
+                "--definition-id",
+                "--deployment-id",
+                "--description",
+                "--environment-id",
+                "--force-string",
+                "--ids",
+                "--remove",
+                "--resource-group -g",
+                "--server",
+                "--service-name -n",
+                "--set",
+                "--subscription",
+                "--title"
+            ],
+            "examples": [
+                "az apic api deployment update -g api-center-test -n contoso --deployment-id production --title \"Production deployment\" --api-id echo-api"
+            ]
+        }
+    ]
+}

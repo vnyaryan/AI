@@ -1,0 +1,98 @@
+{
+    "command_group": "az sql midb copy",
+    "description": "Start, complete, cancel and list managed database copy operations.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az sql midb copy cancel",
+            "summary": "Cancel managed database copy operation.",
+            "syntax": "az sql midb copy cancel --dest-mi\n                        [--dest-resource-group]\n                        [--dest-sub-id]\n                        [--ids]\n                        [--managed-instance]\n                        [--name]\n                        [--no-wait]\n                        [--resource-group]\n                        [--subscription]",
+            "required_parameters": [
+                "--dest-mi"
+            ],
+            "optional_parameters": [
+                "--dest-resource-group --dest-rg",
+                "--dest-sub-id --dest-subscription-id",
+                "--ids",
+                "--managed-instance --mi",
+                "--name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az sql midb copy cancel --name mydb --resource-group MyResourceGroup --managed-instance MyInstance --dest-mi DestinationInstance --dest-rg DestinationResourceGroup --dest-sub-id DestinationSubscriptionId",
+                "az sql midb copy cancel --name mydb --resource-group MyResourceGroup --managed-instance MyInstance --dest-mi DestinationInstance --dest-rg DestinationResourceGroup",
+                "az sql midb copy cancel --name mydb --resource-group MyResourceGroup --managed-instance MyInstance --dest-mi DestinationInstance"
+            ]
+        },
+        {
+            "name": "az sql midb copy complete",
+            "summary": "Complete managed database copy operation.",
+            "syntax": "az sql midb copy complete --dest-mi\n                          [--dest-resource-group]\n                          [--dest-sub-id]\n                          [--ids]\n                          [--managed-instance]\n                          [--name]\n                          [--no-wait]\n                          [--resource-group]\n                          [--subscription]",
+            "required_parameters": [
+                "--dest-mi"
+            ],
+            "optional_parameters": [
+                "--dest-resource-group --dest-rg",
+                "--dest-sub-id --dest-subscription-id",
+                "--ids",
+                "--managed-instance --mi",
+                "--name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az sql midb copy complete --name mydb --resource-group MyResourceGroup --managed-instance MyInstance --dest-mi DestinationInstance --dest-rg DestinationResourceGroup --dest-sub-id DestinationSubscriptionId",
+                "az sql midb copy complete --name mydb --resource-group MyResourceGroup --managed-instance MyInstance --dest-mi DestinationInstance --dest-rg DestinationResourceGroup",
+                "az sql midb copy complete --name mydb --resource-group MyResourceGroup --managed-instance MyInstance --dest-mi DestinationInstance"
+            ]
+        },
+        {
+            "name": "az sql midb copy list",
+            "summary": "List managed database copy operations.",
+            "syntax": "az sql midb copy list [--dest-mi]\n                      [--dest-resource-group]\n                      [--ids]\n                      [--latest]\n                      [--managed-instance]\n                      [--name]\n                      [--resource-group]\n                      [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--dest-mi",
+                "--dest-resource-group --dest-rg",
+                "--ids",
+                "--latest --only-latest-per-database",
+                "--managed-instance --mi",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az sql midb copy list --resource-group MyResourceGroup --managed-instance MyInstance",
+                "az sql midb copy list --name mydb --resource-group MyResourceGroup --managed-instance MyInstance",
+                "az sql midb copy list --name mydb --resource-group MyResourceGroup --managed-instance MyInstance --latest",
+                "az sql midb copy list --resource-group MyResourceGroup --managed-instance MyInstance --dest-mi DestinationInstance"
+            ]
+        },
+        {
+            "name": "az sql midb copy start",
+            "summary": "Start managed database copy operation.",
+            "syntax": "az sql midb copy start --dest-mi\n                       [--dest-resource-group]\n                       [--dest-sub-id]\n                       [--ids]\n                       [--managed-instance]\n                       [--name]\n                       [--no-wait]\n                       [--resource-group]\n                       [--subscription]",
+            "required_parameters": [
+                "--dest-mi"
+            ],
+            "optional_parameters": [
+                "--dest-resource-group --dest-rg",
+                "--dest-sub-id --dest-subscription-id",
+                "--ids",
+                "--managed-instance --mi",
+                "--name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az sql midb copy start --name mydb --resource-group MyResourceGroup --managed-instance MyInstance --dest-mi DestinationInstance --dest-rg DestinationResourceGroup --dest-sub-id DestinationSubscriptionId",
+                "az sql midb copy start --name mydb --resource-group MyResourceGroup --managed-instance MyInstance --dest-mi DestinationInstance --dest-rg DestinationResourceGroup",
+                "az sql midb copy start --name mydb --resource-group MyResourceGroup --managed-instance MyInstance --dest-mi DestinationInstance"
+            ]
+        }
+    ]
+}

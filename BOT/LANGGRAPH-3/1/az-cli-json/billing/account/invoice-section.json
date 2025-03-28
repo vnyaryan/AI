@@ -1,0 +1,34 @@
+{
+    "command_group": "az billing account invoice-section",
+    "description": "Manage account invoice section.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az billing account invoice-section list",
+            "summary": "List all invoice sections for which a user has access.",
+            "syntax": "az billing account invoice-section list --billing-account-name\n                                        [--expand]\n                                        [--max-items]\n                                        [--next-token]",
+            "required_parameters": [
+                "--billing-account-name"
+            ],
+            "optional_parameters": [
+                "--expand",
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az billing account invoice-section show",
+            "summary": "Get the InvoiceSection by id.",
+            "syntax": "az billing account invoice-section show --billing-account-name\n                                        --invoice-section-name\n                                        [--expand]",
+            "required_parameters": [
+                "--billing-account-name",
+                "--invoice-section-name"
+            ],
+            "optional_parameters": [
+                "--expand"
+            ],
+            "examples": []
+        }
+    ]
+}

@@ -1,0 +1,6 @@
+{
+    "command_group": "az aosm",
+    "description": "Manage Azure Operator Service Manager resources.",
+    "status": "Preview",
+    "commands": []
+}

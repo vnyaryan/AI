@@ -1,0 +1,140 @@
+{
+    "command_group": "az spring connection",
+    "description": "Commands to manage spring app connections.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az spring connection delete",
+            "summary": "Delete a spring app connection.",
+            "syntax": "az spring connection delete [--app]\n                            [--connection]\n                            [--deployment]\n                            [--id]\n                            [--no-wait]\n                            [--resource-group]\n                            [--service]\n                            [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--app",
+                "--connection",
+                "--deployment",
+                "--id",
+                "--no-wait",
+                "--resource-group -g",
+                "--service",
+                "--yes -y"
+            ],
+            "examples": [
+                "az spring connection delete",
+                "az spring connection delete -g SpringCloudRG --service MySpringService --app MyApp --connection MyConnection",
+                "az spring connection delete --id /subscriptions/{subscription}/resourceGroups/{source_resource_group}/providers/Microsoft.Web/sites/{site}/providers/Microsoft.ServiceLinker/linkers/{linker}"
+            ]
+        },
+        {
+            "name": "az spring connection list",
+            "summary": "List connections of a spring app.",
+            "syntax": "az spring connection list [--app]\n                          [--deployment]\n                          [--resource-group]\n                          [--service]\n                          [--source-id]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--app",
+                "--deployment",
+                "--resource-group -g",
+                "--service",
+                "--source-id"
+            ],
+            "examples": [
+                "az spring connection list",
+                "az spring connection list -g SpringCloudRG --service MySpringService --app MyApp",
+                "az spring connection list --source-id /subscriptions/{subscription}/resourceGroups/{source_resource_group}/providers/Microsoft.AppPlatform/Spring/{spring}/apps/{app}"
+            ]
+        },
+        {
+            "name": "az spring connection list-configuration",
+            "summary": "List source configurations of a spring app connection.",
+            "syntax": "az spring connection list-configuration [--app]\n                                        [--connection]\n                                        [--deployment]\n                                        [--id]\n                                        [--resource-group]\n                                        [--service]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--app",
+                "--connection",
+                "--deployment",
+                "--id",
+                "--resource-group -g",
+                "--service"
+            ],
+            "examples": [
+                "az spring connection list-configuration",
+                "az spring connection list-configuration -g SpringCloudRG --service MySpringService --app MyApp --connection MyConnection",
+                "az spring connection list-configuration --id /subscriptions/{subscription}/resourceGroups/{source_resource_group}/providers/Microsoft.Web/sites/{site}/providers/Microsoft.ServiceLinker/linkers/{linker}"
+            ]
+        },
+        {
+            "name": "az spring connection list-support-types",
+            "summary": "List client types and auth types supported by spring app connections.",
+            "syntax": "az spring connection list-support-types [--target-type {app-insights, appconfig, cognitiveservices, confluent-cloud, cosmos-cassandra, cosmos-gremlin, cosmos-mongo, cosmos-sql, cosmos-table, eventhub, fabric-sql, keyvault, mysql, mysql-flexible, postgres, postgres-flexible, redis, redis-enterprise, servicebus, signalr, sql, storage-blob, storage-file, storage-queue, storage-table, webpubsub}]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--target-type -t"
+            ],
+            "examples": [
+                "az spring connection list-support-types -o table",
+                "az spring connection list-support-types --target-type storage-blob -o table"
+            ]
+        },
+        {
+            "name": "az spring connection show",
+            "summary": "Get the details of a spring app connection.",
+            "syntax": "az spring connection show [--app]\n                          [--connection]\n                          [--deployment]\n                          [--id]\n                          [--resource-group]\n                          [--service]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--app",
+                "--connection",
+                "--deployment",
+                "--id",
+                "--resource-group -g",
+                "--service"
+            ],
+            "examples": [
+                "az spring connection show",
+                "az spring connection show -g SpringCloudRG --service MySpringService --app MyApp --connection MyConnection",
+                "az spring connection show --id /subscriptions/{subscription}/resourceGroups/{source_resource_group}/providers/Microsoft.Web/sites/{site}/providers/Microsoft.ServiceLinker/linkers/{linker}"
+            ]
+        },
+        {
+            "name": "az spring connection validate",
+            "summary": "Validate a spring app connection.",
+            "syntax": "az spring connection validate [--app]\n                              [--connection]\n                              [--deployment]\n                              [--id]\n                              [--resource-group]\n                              [--service]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--app",
+                "--connection",
+                "--deployment",
+                "--id",
+                "--resource-group -g",
+                "--service"
+            ],
+            "examples": [
+                "az spring connection validate",
+                "az spring connection validate -g SpringCloudRG --service MySpringService --app MyApp --connection MyConnection",
+                "az spring connection validate --id /subscriptions/{subscription}/resourceGroups/{source_resource_group}/providers/Microsoft.Web/sites/{site}/providers/Microsoft.ServiceLinker/linkers/{linker}"
+            ]
+        },
+        {
+            "name": "az spring connection wait",
+            "summary": "Place the CLI in a waiting state until a condition of the connection is met.",
+            "syntax": "az spring connection wait [--app]\n                          [--connection]\n                          [--created]\n                          [--custom]\n                          [--deleted]\n                          [--deployment]\n                          [--exists]\n                          [--id]\n                          [--interval]\n                          [--resource-group]\n                          [--service]\n                          [--timeout]\n                          [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--app",
+                "--connection",
+                "--created",
+                "--custom",
+                "--deleted",
+                "--deployment",
+                "--exists",
+                "--id",
+                "--interval",
+                "--resource-group -g",
+                "--service",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": [
+                "az spring connection wait --id /subscriptions/{subscription}/resourceGroups/{source_resource_group}/providers/Microsoft.Web/sites/{site}/providers/Microsoft.ServiceLinker/linkers/{linker} --created"
+            ]
+        }
+    ]
+}

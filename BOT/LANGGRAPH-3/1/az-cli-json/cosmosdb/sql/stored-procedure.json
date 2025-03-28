@@ -1,0 +1,82 @@
+{
+    "command_group": "az cosmosdb sql stored-procedure",
+    "description": "Manage Azure Cosmos DB SQL stored procedures.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az cosmosdb sql stored-procedure create",
+            "summary": "Create an SQL stored procedure under an Azure Cosmos DB SQL container.",
+            "syntax": "az cosmosdb sql stored-procedure create --account-name\n                                        --body\n                                        --container-name\n                                        --database-name\n                                        --name\n                                        --resource-group",
+            "required_parameters": [
+                "--account-name -a",
+                "--body -b",
+                "--container-name -c",
+                "--database-name -d",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az cosmosdb sql stored-procedure create -g MyResourceGroup -a MyAccount -d MyDatabase -c MyContainer -n MyStoredProcedure -b StoredProcedureBody"
+            ]
+        },
+        {
+            "name": "az cosmosdb sql stored-procedure delete",
+            "summary": "Delete the SQL stored procedure under an Azure Cosmos DB SQL container.",
+            "syntax": "az cosmosdb sql stored-procedure delete --account-name\n                                        --container-name\n                                        --database-name\n                                        --name\n                                        --resource-group\n                                        [--yes]",
+            "required_parameters": [
+                "--account-name -a",
+                "--container-name -c",
+                "--database-name -d",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--yes -y"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az cosmosdb sql stored-procedure list",
+            "summary": "List the SQL stored procedures under an Azure Cosmos DB SQL container.",
+            "syntax": "az cosmosdb sql stored-procedure list --account-name\n                                      --container-name\n                                      --database-name\n                                      --resource-group",
+            "required_parameters": [
+                "--account-name -a",
+                "--container-name -c",
+                "--database-name -d",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az cosmosdb sql stored-procedure show",
+            "summary": "Show the details of a SQL stored procedure under an Azure Cosmos DB SQL container.",
+            "syntax": "az cosmosdb sql stored-procedure show --account-name\n                                      --container-name\n                                      --database-name\n                                      --name\n                                      --resource-group",
+            "required_parameters": [
+                "--account-name -a",
+                "--container-name -c",
+                "--database-name -d",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az cosmosdb sql stored-procedure update",
+            "summary": "Creates or Updates an Azure Cosmos DB SQL stored procedure.",
+            "syntax": "az cosmosdb sql stored-procedure update --account-name\n                                        --body\n                                        --container-name\n                                        --database-name\n                                        --name\n                                        --resource-group",
+            "required_parameters": [
+                "--account-name -a",
+                "--body -b",
+                "--container-name -c",
+                "--database-name -d",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        }
+    ]
+}

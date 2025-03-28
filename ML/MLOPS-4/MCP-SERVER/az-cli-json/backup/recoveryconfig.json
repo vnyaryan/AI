@@ -1,0 +1,40 @@
+{
+    "command_group": "az backup recoveryconfig",
+    "description": "Manage recovery configuration of an Azure workload backed up item.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az backup recoveryconfig show",
+            "summary": "Construct the recovery configuration of an Azure workload backed up item.",
+            "syntax": "az backup recoveryconfig show --restore-mode {AlternateWorkloadRestore, OriginalWorkloadRestore, RestoreAsFiles}\n                              [--backup-management-type {AzureIaasVM, AzureStorage, AzureWorkload}]\n                              [--container-name]\n                              [--filepath]\n                              [--from-full-rp-name]\n                              [--ids]\n                              [--item-name]\n                              [--log-point-in-time]\n                              [--resource-group]\n                              [--rp-name]\n                              [--subscription]\n                              [--target-container-name]\n                              [--target-instance-name]\n                              [--target-item-name]\n                              [--target-resource-group]\n                              [--target-server-name]\n                              [--target-server-type {HANAInstance, SAPHanaDatabase, SAPHanaSystem, SQLAG, SQLDatabase, SQLInstance}]\n                              [--target-subscription-id]\n                              [--target-vault-name]\n                              [--vault-name]\n                              [--workload-type {MSSQL, SAPASE, SAPHANA, SAPHanaDatabase, SQLDataBase}]",
+            "required_parameters": [
+                "--restore-mode"
+            ],
+            "optional_parameters": [
+                "--backup-management-type",
+                "--container-name -c",
+                "--filepath",
+                "--from-full-rp-name",
+                "--ids",
+                "--item-name -i",
+                "--log-point-in-time",
+                "--resource-group -g",
+                "--rp-name -r",
+                "--subscription",
+                "--target-container-name",
+                "--target-instance-name",
+                "--target-item-name",
+                "--target-resource-group",
+                "--target-server-name",
+                "--target-server-type",
+                "--target-subscription-id",
+                "--target-vault-name",
+                "--vault-name -v",
+                "--workload-type"
+            ],
+            "examples": [
+                "az backup recoveryconfig show --container-name MyContainer --item-name MyItem --resource-group MyResourceGroup --vault-name MyVault --restore-mode OriginalWorkloadRestore"
+            ]
+        }
+    ]
+}

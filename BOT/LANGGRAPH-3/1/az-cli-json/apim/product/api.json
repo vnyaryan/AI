@@ -1,0 +1,66 @@
+{
+    "command_group": "az apim product api",
+    "description": "Manage Azure API Management Product's APIs.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az apim product api add",
+            "summary": "Add an API to the specified product.",
+            "syntax": "az apim product api add --api-id\n                        --product-id\n                        --resource-group\n                        --service-name",
+            "required_parameters": [
+                "--api-id",
+                "--product-id",
+                "--resource-group -g",
+                "--service-name -n"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az apim product api add --resource-group MyResourceGroup --service-name MyServiceName  --product-id MyProductID --api-id MyAPIID"
+            ]
+        },
+        {
+            "name": "az apim product api check",
+            "summary": "Checks that API entity specified by identifier is associated with the Product entity.",
+            "syntax": "az apim product api check --api-id\n                          --product-id\n                          --resource-group\n                          --service-name",
+            "required_parameters": [
+                "--api-id",
+                "--product-id",
+                "--resource-group -g",
+                "--service-name -n"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az apim product api check --resource-group MyResourceGroup  --service-name MyServiceName  --product-id MyProductID --api-id MyAPIID"
+            ]
+        },
+        {
+            "name": "az apim product api delete",
+            "summary": "Deletes the specified API from the specified product.",
+            "syntax": "az apim product api delete --api-id\n                           --product-id\n                           --resource-group\n                           --service-name",
+            "required_parameters": [
+                "--api-id",
+                "--product-id",
+                "--resource-group -g",
+                "--service-name -n"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az apim product api delete --resource-group MyResourceGroup --service-name MyServiceName  --product-id MyProductID --api-id MyAPIID"
+            ]
+        },
+        {
+            "name": "az apim product api list",
+            "summary": "Lists a collection of the APIs associated with a product.",
+            "syntax": "az apim product api list --product-id\n                         --resource-group\n                         --service-name",
+            "required_parameters": [
+                "--product-id",
+                "--resource-group -g",
+                "--service-name -n"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az apim product api list --resource-group MyResourceGroup  --service-name MyServiceName  --product-id MyProductID"
+            ]
+        }
+    ]
+}

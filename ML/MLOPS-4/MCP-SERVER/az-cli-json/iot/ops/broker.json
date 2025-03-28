@@ -1,0 +1,51 @@
+{
+    "command_group": "az iot ops broker",
+    "description": "Mqtt broker management.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az iot ops broker delete",
+            "summary": "Delete an mqtt broker.",
+            "syntax": "az iot ops broker delete --instance\n                         --name\n                         --resource-group\n                         [--yes {false, true}]",
+            "required_parameters": [
+                "--instance -i",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--yes -y"
+            ],
+            "examples": [
+                "az iot ops broker delete -n broker --in mycluster-ops-instance -g myresourcegroup",
+                "az iot ops broker delete -n broker --in mycluster-ops-instance -g myresourcegroup -y"
+            ]
+        },
+        {
+            "name": "az iot ops broker list",
+            "summary": "List mqtt brokers associated with an instance.",
+            "syntax": "az iot ops broker list --instance\n                       --resource-group",
+            "required_parameters": [
+                "--instance -i",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az iot ops broker list --in mycluster-ops-instance -g myresourcegroup"
+            ]
+        },
+        {
+            "name": "az iot ops broker show",
+            "summary": "Show details of an mqtt broker.",
+            "syntax": "az iot ops broker show --instance\n                       --name\n                       --resource-group",
+            "required_parameters": [
+                "--instance -i",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az iot ops broker show -n broker --in mycluster-ops-instance -g myresourcegroup"
+            ]
+        }
+    ]
+}

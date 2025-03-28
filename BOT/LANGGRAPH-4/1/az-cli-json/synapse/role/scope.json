@@ -1,0 +1,19 @@
+{
+    "command_group": "az synapse role scope",
+    "description": "Manage Synapse's role scopes.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az synapse role scope list",
+            "summary": "List role scopes.",
+            "syntax": "az synapse role scope list --workspace-name",
+            "required_parameters": [
+                "--workspace-name"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az synapse role scope list --workspace-name testsynapseworkspace"
+            ]
+        }
+    ]
+}

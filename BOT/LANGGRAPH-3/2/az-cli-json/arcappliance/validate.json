@@ -1,0 +1,64 @@
+{
+    "command_group": "az arcappliance validate",
+    "description": "Command group to perform validations on Arc resource bridge configuration files and network settings.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az arcappliance validate hci",
+            "summary": "Command to validate Arc resource bridge configuration files and network settings on Azure Stack HCI - should be done before 'prepare' command.",
+            "syntax": "az arcappliance validate hci --config-file\n                             [--cloudagent]\n                             [--location]\n                             [--loginconfigfile]\n                             [--name]\n                             [--resource-group]",
+            "required_parameters": [
+                "--config-file"
+            ],
+            "optional_parameters": [
+                "--cloudagent",
+                "--location -l",
+                "--loginconfigfile",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az arcappliance validate hci --config-file [REQUIRED] --cloudagent [OPTIONAL] --loginconfigfile [OPTIONAL]"
+            ]
+        },
+        {
+            "name": "az arcappliance validate scvmm",
+            "summary": "Command to validate Arc resource bridge configuration files and network settings for Arc-enabled SCVMM  - should be done before 'prepare' command.",
+            "syntax": "az arcappliance validate scvmm --config-file\n                               [--address]\n                               [--location]\n                               [--name]\n                               [--password]\n                               [--port]\n                               [--resource-group]\n                               [--username]",
+            "required_parameters": [
+                "--config-file"
+            ],
+            "optional_parameters": [
+                "--address",
+                "--location -l",
+                "--name -n",
+                "--password",
+                "--port",
+                "--resource-group -g",
+                "--username"
+            ],
+            "examples": [
+                "az arcappliance validate scvmm --config-file [REQUIRED] --address [OPTIONAL] --port [OPTIONAL] --username [OPTIONAL] --password [OPTIONAL]"
+            ]
+        },
+        {
+            "name": "az arcappliance validate vmware",
+            "summary": "Command to validate Arc resource bridge configuration files and network settings for Arc-enabled VMware - should be done before 'prepare' command.",
+            "syntax": "az arcappliance validate vmware --config-file\n                                [--address]\n                                [--location]\n                                [--name]\n                                [--password]\n                                [--resource-group]\n                                [--username]",
+            "required_parameters": [
+                "--config-file"
+            ],
+            "optional_parameters": [
+                "--address",
+                "--location -l",
+                "--name -n",
+                "--password",
+                "--resource-group -g",
+                "--username"
+            ],
+            "examples": [
+                "az arcappliance validate vmware --config-file [REQUIRED] --address [OPTIONAL] --username [OPTIONAL] --password [OPTIONAL]"
+            ]
+        }
+    ]
+}

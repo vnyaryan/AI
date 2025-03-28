@@ -1,0 +1,79 @@
+{
+    "command_group": "az mysql flexible-server parameter",
+    "description": "Commands for managing server parameter values for flexible server.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az mysql flexible-server parameter list",
+            "summary": "List the parameter values for a flexible server.",
+            "syntax": "az mysql flexible-server parameter list --resource-group\n                                        --server-name\n                                        [--keyword]\n                                        [--page]\n                                        [--page-size]\n                                        [--tags]",
+            "required_parameters": [
+                "--resource-group -g",
+                "--server-name -s"
+            ],
+            "optional_parameters": [
+                "--keyword",
+                "--page",
+                "--page-size",
+                "--tags"
+            ],
+            "examples": [
+                "az mysql flexible-server parameter list --resource-group testGroup --server-name testserver",
+                "az mysql flexible-server parameter list --resource-group testGroup --server-name testserver --output table"
+            ]
+        },
+        {
+            "name": "az mysql flexible-server parameter set",
+            "summary": "Update the parameter of a flexible server.",
+            "syntax": "az mysql flexible-server parameter set [--ids]\n                                       [--name]\n                                       [--resource-group]\n                                       [--server-name]\n                                       [--source]\n                                       [--subscription]\n                                       [--value]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--server-name -s",
+                "--source",
+                "--subscription",
+                "--value -v"
+            ],
+            "examples": [
+                "az mysql flexible-server parameter set --resource-group testGroup --server-name testserver --name parameterName --value parameterValue",
+                "az mysql flexible-server parameter set --resource-group testGroup --server-name testserver --name parameterName"
+            ]
+        },
+        {
+            "name": "az mysql flexible-server parameter set-batch",
+            "summary": "Batch update parameters of a flexible server.",
+            "syntax": "az mysql flexible-server parameter set-batch --args\n                                             [--ids]\n                                             [--resource-group]\n                                             [--server-name]\n                                             [--source]\n                                             [--subscription]",
+            "required_parameters": [
+                "--args"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--resource-group -g",
+                "--server-name -s",
+                "--source",
+                "--subscription"
+            ],
+            "examples": [
+                "az mysql flexible-server parameter set-batch --resource-group testGroup --server-name testserver --source \"user-override\" --args key1=\"value1\" key2=\"value2\""
+            ]
+        },
+        {
+            "name": "az mysql flexible-server parameter show",
+            "summary": "Get the parameter for a flexible server.\".",
+            "syntax": "az mysql flexible-server parameter show [--ids]\n                                        [--name]\n                                        [--resource-group]\n                                        [--server-name]\n                                        [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--server-name -s",
+                "--subscription"
+            ],
+            "examples": [
+                "az mysql flexible-server parameter show --resource-group testGroup --server-name testserver --name parameterName"
+            ]
+        }
+    ]
+}

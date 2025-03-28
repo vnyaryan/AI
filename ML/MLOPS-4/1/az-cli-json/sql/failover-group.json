@@ -1,0 +1,114 @@
+{
+    "command_group": "az sql failover-group",
+    "description": "Manage SQL Failover Groups.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az sql failover-group create",
+            "summary": "Creates a failover group.",
+            "syntax": "az sql failover-group create --name\n                             --partner-server\n                             --resource-group\n                             --server\n                             [--add-db]\n                             [--failover-policy {Automatic, Manual}]\n                             [--grace-period]\n                             [--partner-resource-group]\n                             [--secondary-type {Geo, Standby}]",
+            "required_parameters": [
+                "--name -n",
+                "--partner-server",
+                "--resource-group -g",
+                "--server -s"
+            ],
+            "optional_parameters": [
+                "--add-db",
+                "--failover-policy",
+                "--grace-period",
+                "--partner-resource-group",
+                "--secondary-type"
+            ],
+            "examples": [
+                "az sql failover-group create --name MyFailoverGroup --partner-server newDb --resource-group MyResourceGroup --server myserver --subscription MySubscription"
+            ]
+        },
+        {
+            "name": "az sql failover-group delete",
+            "summary": "Deletes a failover group.",
+            "syntax": "az sql failover-group delete --name\n                             [--ids]\n                             [--resource-group]\n                             [--server]\n                             [--subscription]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--resource-group -g",
+                "--server -s",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az sql failover-group list",
+            "summary": "Lists the failover groups in a server.",
+            "syntax": "az sql failover-group list [--ids]\n                           [--resource-group]\n                           [--server]\n                           [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--resource-group -g",
+                "--server -s",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az sql failover-group set-primary",
+            "summary": "Set the primary of the failover group by failing over all databases from the current primary server.",
+            "syntax": "az sql failover-group set-primary --name\n                                  [--allow-data-loss]\n                                  [--ids]\n                                  [--resource-group]\n                                  [--server]\n                                  [--subscription]\n                                  [--tpbff]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--allow-data-loss",
+                "--ids",
+                "--resource-group -g",
+                "--server -s",
+                "--subscription",
+                "--tpbff --try-planned-before-forced-failover"
+            ],
+            "examples": [
+                "az sql failover-group set-primary --name MyFailoverGroup --resource-group MyResourceGroup --server myserver"
+            ]
+        },
+        {
+            "name": "az sql failover-group show",
+            "summary": "Gets a failover group.",
+            "syntax": "az sql failover-group show --name\n                           [--ids]\n                           [--resource-group]\n                           [--server]\n                           [--subscription]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--resource-group -g",
+                "--server -s",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az sql failover-group update",
+            "summary": "Updates the failover group.",
+            "syntax": "az sql failover-group update --name\n                             [--add]\n                             [--add-db]\n                             [--failover-policy {Automatic, Manual}]\n                             [--force-string]\n                             [--grace-period]\n                             [--ids]\n                             [--remove]\n                             [--remove-db]\n                             [--resource-group]\n                             [--secondary-type {Geo, Standby}]\n                             [--server]\n                             [--set]\n                             [--subscription]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--add",
+                "--add-db",
+                "--failover-policy",
+                "--force-string",
+                "--grace-period",
+                "--ids",
+                "--remove",
+                "--remove-db",
+                "--resource-group -g",
+                "--secondary-type",
+                "--server -s",
+                "--set",
+                "--subscription"
+            ],
+            "examples": []
+        }
+    ]
+}

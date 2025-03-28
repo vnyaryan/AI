@@ -1,0 +1,42 @@
+{
+    "command_group": "az staticwebapp enterprise-edge",
+    "description": "Manage the Azure Front Door CDN for static webapps. For optimal experience and availability please check our documentation https://aka.ms/swaedge.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az staticwebapp enterprise-edge disable",
+            "summary": "Disable the Azure Front Door CDN for a static webapp. For optimal experience and availability please check our documentation https://aka.ms/swaedge.",
+            "syntax": "az staticwebapp enterprise-edge disable --name\n                                        --resource-group",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az staticwebapp enterprise-edge enable",
+            "summary": "Enable the Azure Front Door CDN for a static webapp. Enabling enterprise-grade edge requires re-registration for the Azure Front Door Microsoft.CDN resource provider. For optimal experience and availability please check our documentation https://aka.ms/swaedge.",
+            "syntax": "az staticwebapp enterprise-edge enable --name\n                                       --resource-group\n                                       [--no-register]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--no-register"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az staticwebapp enterprise-edge show",
+            "summary": "Show the status (Enabled, Disabled, Enabling, Disabling) of the Azure Front Door CDN for a webapp. For optimal experience and availability please check our documentation https://aka.ms/swaedge.",
+            "syntax": "az staticwebapp enterprise-edge show --name\n                                     --resource-group",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        }
+    ]
+}

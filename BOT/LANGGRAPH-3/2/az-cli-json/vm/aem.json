@@ -1,0 +1,53 @@
+{
+    "command_group": "az vm aem",
+    "description": "Manage Azure Enhanced Monitoring Extension for SAP.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az vm aem delete",
+            "summary": "Remove Azure Enhanced Monitoring Extension.",
+            "syntax": "az vm aem delete [--ids]\n                 [--name]\n                 [--resource-group]\n                 [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az vm aem set",
+            "summary": "Configure Azure Enhanced Monitoring Extension.",
+            "syntax": "az vm aem set [--debug-extension]\n              [--ids]\n              [--install-new-extension]\n              [--name]\n              [--proxy-uri]\n              [--resource-group]\n              [--set-access-to-individual-resources]\n              [--skip-storage-analytics]\n              [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--debug-extension",
+                "--ids",
+                "--install-new-extension -i",
+                "--name -n",
+                "--proxy-uri -p",
+                "--resource-group -g",
+                "--set-access-to-individual-resources -s",
+                "--skip-storage-analytics",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az vm aem verify",
+            "summary": "Verify Azure Enhanced Monitoring Extensions configured correctly.",
+            "syntax": "az vm aem verify [--ids]\n                 [--name]\n                 [--resource-group]\n                 [--skip-storage-check]\n                 [--subscription]\n                 [--wait-time-in-minutes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--skip-storage-check",
+                "--subscription",
+                "--wait-time-in-minutes"
+            ],
+            "examples": []
+        }
+    ]
+}

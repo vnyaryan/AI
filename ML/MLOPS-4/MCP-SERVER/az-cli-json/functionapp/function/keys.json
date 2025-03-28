@@ -1,0 +1,58 @@
+{
+    "command_group": "az functionapp function keys",
+    "description": "Manage function keys.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az functionapp function keys delete",
+            "summary": "Delete a function key.",
+            "syntax": "az functionapp function keys delete --key-name\n                                    --name\n                                    --resource-group\n                                    [--function-name]\n                                    [--slot]",
+            "required_parameters": [
+                "--key-name",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--function-name",
+                "--slot -s"
+            ],
+            "examples": [
+                "az functionapp function keys delete -g MyResourceGroup -n MyFunctionAppName --function-name MyFunctionName --key-name MyKeyName"
+            ]
+        },
+        {
+            "name": "az functionapp function keys list",
+            "summary": "List all function keys.",
+            "syntax": "az functionapp function keys list --function-name\n                                  --name\n                                  --resource-group\n                                  [--slot]",
+            "required_parameters": [
+                "--function-name",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--slot -s"
+            ],
+            "examples": [
+                "az functionapp function keys list -g MyResourceGroup -n MyFunctionAppName --function-name MyFunctionName"
+            ]
+        },
+        {
+            "name": "az functionapp function keys set",
+            "summary": "Create or update a function key.",
+            "syntax": "az functionapp function keys set --function-name\n                                 --key-name\n                                 --name\n                                 --resource-group\n                                 [--key-value]\n                                 [--slot]",
+            "required_parameters": [
+                "--function-name",
+                "--key-name",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--key-value",
+                "--slot -s"
+            ],
+            "examples": [
+                "az functionapp function keys set -g MyResourceGroup -n MyFunctionAppName --function-name MyFunctionName --key-name MyKeyName --key-value MyKeyValue"
+            ]
+        }
+    ]
+}

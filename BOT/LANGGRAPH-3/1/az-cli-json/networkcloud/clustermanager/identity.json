@@ -1,0 +1,68 @@
+{
+    "command_group": "az networkcloud clustermanager identity",
+    "description": "Manage cluster manager's identity.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az networkcloud clustermanager identity assign",
+            "summary": "Assign the user or system managed identities.",
+            "syntax": "az networkcloud clustermanager identity assign --cluster-manager-name\n                                               --resource-group\n                                               [--mi-system-assigned]\n                                               [--mi-user-assigned]\n                                               [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]",
+            "required_parameters": [
+                "--cluster-manager-name --name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--mi-system-assigned --system-assigned",
+                "--mi-user-assigned --user-assigned",
+                "--no-wait"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az networkcloud clustermanager identity remove",
+            "summary": "Remove the user or system managed identities.",
+            "syntax": "az networkcloud clustermanager identity remove --cluster-manager-name\n                                               --resource-group\n                                               [--mi-system-assigned]\n                                               [--mi-user-assigned]\n                                               [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]",
+            "required_parameters": [
+                "--cluster-manager-name --name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--mi-system-assigned --system-assigned",
+                "--mi-user-assigned --user-assigned",
+                "--no-wait"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az networkcloud clustermanager identity show",
+            "summary": "Show the details of managed identities.",
+            "syntax": "az networkcloud clustermanager identity show --cluster-manager-name\n                                             --resource-group",
+            "required_parameters": [
+                "--cluster-manager-name --name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az networkcloud clustermanager identity wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az networkcloud clustermanager identity wait [--cluster-manager-name]\n                                             [--created]\n                                             [--custom]\n                                             [--deleted]\n                                             [--exists]\n                                             [--ids]\n                                             [--interval]\n                                             [--resource-group]\n                                             [--subscription]\n                                             [--timeout]\n                                             [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--cluster-manager-name --name -n",
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

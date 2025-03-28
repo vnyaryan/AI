@@ -1,0 +1,112 @@
+{
+    "command_group": "az network vpn-server-config",
+    "description": "Manage VPN server configuration.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az network vpn-server-config create",
+            "summary": "Create a VPN server configuration.",
+            "syntax": "az network vpn-server-config create --name\n                                    --resource-group\n                                    [--aad-audience]\n                                    [--aad-issuer]\n                                    [--aad-tenant]\n                                    [--auth-types {AAD, Certificate, Radius}]\n                                    [--location]\n                                    [--no-wait]\n                                    [--protocols {IkeV2, OpenVPN}]\n                                    [--radius-client-root-certs]\n                                    [--radius-server-root-certs]\n                                    [--radius-servers]\n                                    [--vpn-client-revoked-certs]\n                                    [--vpn-client-root-certs]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--aad-audience",
+                "--aad-issuer",
+                "--aad-tenant",
+                "--auth-types",
+                "--location -l",
+                "--no-wait",
+                "--protocols",
+                "--radius-client-root-certs",
+                "--radius-server-root-certs",
+                "--radius-servers",
+                "--vpn-client-revoked-certs",
+                "--vpn-client-root-certs"
+            ],
+            "examples": [
+                "az network vpn-server-config create -n MyVPNServerConfig -g MyRG --vpn-client-root-certs \"ApplicationGatewayAuthCert.cer\" --vpn-client-revoked-certs \"ApplicationGatewayAuthCert.pem\""
+            ]
+        },
+        {
+            "name": "az network vpn-server-config delete",
+            "summary": "Delete a VPN server configuration.",
+            "syntax": "az network vpn-server-config delete --name\n                                    --resource-group\n                                    [--yes]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--yes -y"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az network vpn-server-config list",
+            "summary": "List all VPN server configuration.",
+            "syntax": "az network vpn-server-config list [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az network vpn-server-config set",
+            "summary": "Set settings of a VPN server configuration.",
+            "syntax": "az network vpn-server-config set --name\n                                 --resource-group\n                                 [--aad-audience]\n                                 [--aad-issuer]\n                                 [--aad-tenant]\n                                 [--auth-types {AAD, Certificate, Radius}]\n                                 [--location]\n                                 [--no-wait]\n                                 [--protocols {IkeV2, OpenVPN}]\n                                 [--radius-client-root-certs]\n                                 [--radius-server-root-certs]\n                                 [--radius-servers]\n                                 [--vpn-client-revoked-certs]\n                                 [--vpn-client-root-certs]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--aad-audience",
+                "--aad-issuer",
+                "--aad-tenant",
+                "--auth-types",
+                "--location -l",
+                "--no-wait",
+                "--protocols",
+                "--radius-client-root-certs",
+                "--radius-server-root-certs",
+                "--radius-servers",
+                "--vpn-client-revoked-certs",
+                "--vpn-client-root-certs"
+            ],
+            "examples": [
+                "az network vpn-server-config set -n MyVPNServerConfig -g MyRG --radius-client-root-certs \"ApplicationGatewayAuthCert.cer\" --radius-server-root-certs \"ApplicationGatewayAuthCert.pem\" --radius-servers address=test1 secret=clitest score=10 --radius-servers address=test2 secret=clitest score=10"
+            ]
+        },
+        {
+            "name": "az network vpn-server-config show",
+            "summary": "Show the details of a VPN server configuration.",
+            "syntax": "az network vpn-server-config show --name\n                                  --resource-group",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az network vpn-server-config wait",
+            "summary": "Place the CLI in a waiting state until a condition of the VPN server configuration is met.",
+            "syntax": "az network vpn-server-config wait --name\n                                  --resource-group\n                                  [--created]\n                                  [--custom]\n                                  [--deleted]\n                                  [--exists]\n                                  [--interval]\n                                  [--timeout]\n                                  [--updated]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--interval",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

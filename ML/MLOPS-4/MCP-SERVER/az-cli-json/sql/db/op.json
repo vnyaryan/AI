@@ -1,0 +1,39 @@
+{
+    "command_group": "az sql db op",
+    "description": "Manage operations on a database.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az sql db op cancel",
+            "summary": "Cancels the asynchronous operation on the database.",
+            "syntax": "az sql db op cancel --name\n                    [--database]\n                    [--ids]\n                    [--resource-group]\n                    [--server]\n                    [--subscription]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--database -d",
+                "--ids",
+                "--resource-group -g",
+                "--server -s",
+                "--subscription"
+            ],
+            "examples": [
+                "az sql db op cancel -g mygroup -s myserver -d mydb -n d2896mydb-2ba8-4c84-bac1-387c430cce40"
+            ]
+        },
+        {
+            "name": "az sql db op list",
+            "summary": "Gets a list of operations performed on the database.",
+            "syntax": "az sql db op list [--database]\n                  [--ids]\n                  [--resource-group]\n                  [--server]\n                  [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--database -d",
+                "--ids",
+                "--resource-group -g",
+                "--server -s",
+                "--subscription"
+            ],
+            "examples": []
+        }
+    ]
+}

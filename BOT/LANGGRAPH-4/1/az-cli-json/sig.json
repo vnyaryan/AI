@@ -1,0 +1,218 @@
+{
+    "command_group": "az sig",
+    "description": "Manage shared image gallery.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az sig create",
+            "summary": "Create a shared image gallery.",
+            "syntax": "az sig create --gallery-name\n              --resource-group\n              [--description]\n              [--eula]\n              [--location]\n              [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n              [--permissions {Community, Groups, Private}]\n              [--public-name-prefix]\n              [--publisher-contact]\n              [--publisher-uri]\n              [--soft-delete {0, 1, f, false, n, no, t, true, y, yes}]\n              [--tags]",
+            "required_parameters": [
+                "--gallery-name -r",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--description",
+                "--eula",
+                "--location -l",
+                "--no-wait",
+                "--permissions",
+                "--public-name-prefix",
+                "--publisher-contact --publisher-email",
+                "--publisher-uri",
+                "--soft-delete",
+                "--tags"
+            ],
+            "examples": [
+                "az sig create --resource-group MyResourceGroup --gallery-name MyGallery"
+            ]
+        },
+        {
+            "name": "az sig create",
+            "summary": "",
+            "syntax": "az sig create --gallery-name\n              --resource-group\n              [--description]\n              [--eula]\n              [--location]\n              [--permissions {Community, Groups, Private}]\n              [--public-name-prefix]\n              [--publisher-email]\n              [--publisher-uri]\n              [--soft-delete {false, true}]\n              [--tags]",
+            "required_parameters": [
+                "--gallery-name -r",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--description",
+                "--eula",
+                "--location -l",
+                "--permissions",
+                "--public-name-prefix",
+                "--publisher-email",
+                "--publisher-uri",
+                "--soft-delete",
+                "--tags"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az sig delete",
+            "summary": "Delete a Shared Image Gallery.",
+            "syntax": "az sig delete [--gallery-name]\n              [--ids]\n              [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n              [--resource-group]\n              [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--gallery-name -r",
+                "--ids",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az sig list",
+            "summary": "List galleries under a resource group.",
+            "syntax": "az sig list [--max-items]\n            [--next-token]\n            [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token",
+                "--resource-group -g"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az sig list-community",
+            "summary": "List all community galleries shared directly to your subscription or tenant.",
+            "syntax": "az sig list-community [--location]\n                      [--marker]\n                      [--show-next-marker]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--location -l",
+                "--marker",
+                "--show-next-marker"
+            ],
+            "examples": [
+                "az sig list-community --location myLocation",
+                "az sig list-community --location myLocation --marker nextMarker"
+            ]
+        },
+        {
+            "name": "az sig list-shared",
+            "summary": "List all shared galleries shared directly to your subscription or tenant.",
+            "syntax": "az sig list-shared --location\n                   [--max-items]\n                   [--next-token]\n                   [--shared-to {tenant}]",
+            "required_parameters": [
+                "--location -l"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token",
+                "--shared-to"
+            ],
+            "examples": [
+                "az sig list-shared --location myLocation",
+                "az sig list-shared --location myLocation --shared-to tenant"
+            ]
+        },
+        {
+            "name": "az sig show",
+            "summary": "Retrieve information about a Shared Image Gallery.",
+            "syntax": "az sig show [--gallery-name]\n            [--ids]\n            [--resource-group]\n            [--select {Permissions}]\n            [--sharing-groups {0, 1, f, false, n, no, t, true, y, yes}]\n            [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--gallery-name -r",
+                "--ids",
+                "--resource-group -g",
+                "--select",
+                "--sharing-groups",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az sig show-community",
+            "summary": "Get a community gallery by gallery public name.",
+            "syntax": "az sig show-community [--ids]\n                      [--location]\n                      [--name]\n                      [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--location -l",
+                "--name --public-gallery-name -n",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az sig show-community",
+            "summary": "Get a gallery that has been community (preview).",
+            "syntax": "az sig show-community [--ids]\n                      [--location]\n                      [--public-gallery-name]\n                      [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--location -l",
+                "--public-gallery-name",
+                "--subscription"
+            ],
+            "examples": [
+                "az sig show-community --public-gallery-name publicGalleryName --location myLocation"
+            ]
+        },
+        {
+            "name": "az sig show-shared",
+            "summary": "Get a gallery that has been shared directly to your subscription or tenant.",
+            "syntax": "az sig show-shared [--gallery-unique-name]\n                   [--ids]\n                   [--location]\n                   [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--gallery-unique-name --name -n",
+                "--ids",
+                "--location -l",
+                "--subscription"
+            ],
+            "examples": [
+                "az sig show-shared --gallery-unique-name MyGalleryUniqueName --location MyLocation"
+            ]
+        },
+        {
+            "name": "az sig update",
+            "summary": "Update a share image gallery.",
+            "syntax": "az sig update [--add]\n              [--eula]\n              [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n              [--gallery-name]\n              [--ids]\n              [--location]\n              [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n              [--permissions {Community, Groups, Private}]\n              [--public-name-prefix]\n              [--publisher-contact]\n              [--publisher-uri]\n              [--remove]\n              [--resource-group]\n              [--set]\n              [--soft-delete {0, 1, f, false, n, no, t, true, y, yes}]\n              [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--eula",
+                "--force-string",
+                "--gallery-name -r",
+                "--ids",
+                "--location -l",
+                "--no-wait",
+                "--permissions",
+                "--public-name-prefix",
+                "--publisher-contact --publisher-email",
+                "--publisher-uri",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--soft-delete",
+                "--subscription"
+            ],
+            "examples": [
+                "az sig update --resource-group myResourceGroup --gallery-name myGallery --permissions groups",
+                "az sig update -g myResourceGroup --gallery-name myGallery --permissions Community --publisher-uri myPublisherUri --publisher-email myPublisherEmail --eula myEula --public-name-prefix myPublicNamePrefix"
+            ]
+        },
+        {
+            "name": "az sig wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az sig wait [--created]\n            [--custom]\n            [--deleted]\n            [--exists]\n            [--expand {SharingProfile/Groups}]\n            [--gallery-name]\n            [--ids]\n            [--interval]\n            [--resource-group]\n            [--select {Permissions}]\n            [--subscription]\n            [--timeout]\n            [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--expand",
+                "--gallery-name -r",
+                "--ids",
+                "--interval",
+                "--resource-group -g",
+                "--select",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

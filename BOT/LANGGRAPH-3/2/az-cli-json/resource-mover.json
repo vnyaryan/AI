@@ -1,0 +1,6 @@
+{
+    "command_group": "az resource-mover",
+    "description": "Manage Resource Mover Service API.",
+    "status": "GA",
+    "commands": []
+}

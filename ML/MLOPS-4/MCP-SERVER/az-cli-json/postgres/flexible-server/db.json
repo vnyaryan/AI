@@ -1,0 +1,72 @@
+{
+    "command_group": "az postgres flexible-server db",
+    "description": "Manage PostgreSQL databases on a flexible server.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az postgres flexible-server db create",
+            "summary": "Create a PostgreSQL database on a flexible server.",
+            "syntax": "az postgres flexible-server db create --resource-group\n                                      --server-name\n                                      [--charset]\n                                      [--collation]\n                                      [--database-name]",
+            "required_parameters": [
+                "--resource-group -g",
+                "--server-name -s"
+            ],
+            "optional_parameters": [
+                "--charset",
+                "--collation",
+                "--database-name -d"
+            ],
+            "examples": [
+                "az postgres flexible-server db create --resource-group testGroup --server-name testserver --database-name testDatabase",
+                "az postgres flexible-server db create --resource-group testGroup --server-name testserver --database-name testDatabase \\ --charset validCharset --collation validCollation"
+            ]
+        },
+        {
+            "name": "az postgres flexible-server db delete",
+            "summary": "Delete a database on a flexible server.",
+            "syntax": "az postgres flexible-server db delete [--database-name]\n                                      [--ids]\n                                      [--resource-group]\n                                      [--server-name]\n                                      [--subscription]\n                                      [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--database-name -d",
+                "--ids",
+                "--resource-group -g",
+                "--server-name -s",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az postgres flexible-server db delete --resource-group testGroup --server-name testserver --database-name testDatabase"
+            ]
+        },
+        {
+            "name": "az postgres flexible-server db list",
+            "summary": "List the databases for a flexible server.",
+            "syntax": "az postgres flexible-server db list --resource-group\n                                    --server-name",
+            "required_parameters": [
+                "--resource-group -g",
+                "--server-name -s"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az postgres flexible-server db list --resource-group testGroup --server-name testserver",
+                "az postgres flexible-server db list --resource-group testGroup --server-name testserver --output table"
+            ]
+        },
+        {
+            "name": "az postgres flexible-server db show",
+            "summary": "Show the details of a database.",
+            "syntax": "az postgres flexible-server db show [--database-name]\n                                    [--ids]\n                                    [--resource-group]\n                                    [--server-name]\n                                    [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--database-name -d",
+                "--ids",
+                "--resource-group -g",
+                "--server-name -s",
+                "--subscription"
+            ],
+            "examples": [
+                "az postgres flexible-server db show --resource-group testGroup --server-name testserver --database-name testDatabase"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+{
+    "command_group": "az storagesync private-endpoint-connection",
+    "description": "Manage private endpoint connection.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az storagesync private-endpoint-connection list",
+            "summary": "List a PrivateEndpointConnection List.",
+            "syntax": "az storagesync private-endpoint-connection list --resource-group\n                                                --storage-sync-service",
+            "required_parameters": [
+                "--resource-group -g",
+                "--storage-sync-service --storage-sync-service-name"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        }
+    ]
+}

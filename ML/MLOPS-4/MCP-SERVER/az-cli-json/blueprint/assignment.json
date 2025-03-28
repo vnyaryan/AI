@@ -1,0 +1,140 @@
+{
+    "command_group": "az blueprint assignment",
+    "description": "Commands to manage blueprint assignment.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az blueprint assignment create",
+            "summary": "Create a blueprint assignment.",
+            "syntax": "az blueprint assignment create --name\n                               [--blueprint-version]\n                               [--description]\n                               [--display-name]\n                               [--identity-type {None, SystemAssigned, UserAssigned}]\n                               [--location]\n                               [--locks-excluded-principals]\n                               [--locks-mode {AllResourcesDoNotDelete, AllResourcesReadOnly, None}]\n                               [--management-group]\n                               [--parameters]\n                               [--resource-group-value]\n                               [--subscription]\n                               [--user-assigned-identity]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--blueprint-version",
+                "--description",
+                "--display-name",
+                "--identity-type",
+                "--location -l",
+                "--locks-excluded-principals",
+                "--locks-mode",
+                "--management-group -m",
+                "--parameters -p",
+                "--resource-group-value",
+                "--subscription -s",
+                "--user-assigned-identity"
+            ],
+            "examples": [
+                "az blueprint assignment create --subscription MySubscription --name \\\nMyBlueprintAssignment --location eastus --identity-type SystemAssigned \\\n--description \"Enforce pre-defined MyBlueprint to this subscription.\" \\\n--blueprint-version \"/providers/Microsoft.Management/managementGroups/ContosoOnlineGroup/provid \\\ners/Microsoft.Blueprint/blueprints/MyBlueprint/versions/v2\" \\\n--resource-group-value artifact_name=rg-art-1 name=rg1 location=westus \\\n--resource-group-value artifact_name=rg-art-2 name=rg2 location=eastus \\\n--parameters \"path/to/parameter/file\" \\",
+                "az blueprint assignment create --subscription MySubscription --name \\\nMyBlueprintAssignment --location eastus --identity-type UserAssigned \\\n--user-assigned-identity \"/subscriptions/00000000-0000-0000-0000-000000000000 \\\n/resourcegroups/myResourceGroup/providers/Microsoft.ManagedIdentity/userAssignedIdentities/myIdentity\"\\\n--description \"Enforce pre-defined MyBlueprint to this subscription.\" \\\n--blueprint-version \"/providers/Microsoft.Management/managementGroups/ContosoOnlineGroup \\\n/providers/Microsoft.Blueprint/blueprints/MyBlueprint/versions/v2\" \\\n--resource-group-value artifact_name=rg-art-1 name=rg1 location=eastus \\\n--parameters \"path/to/parameter/file\" \\"
+            ]
+        },
+        {
+            "name": "az blueprint assignment delete",
+            "summary": "Delete a blueprint assignment.",
+            "syntax": "az blueprint assignment delete --name\n                               [--delete-behavior {all, none}]\n                               [--management-group]\n                               [--subscription]\n                               [--yes]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--delete-behavior",
+                "--management-group -m",
+                "--subscription -s",
+                "--yes -y"
+            ],
+            "examples": [
+                "az blueprint assignment delete --subscription MySubscription --name MyBlueprintAssignment"
+            ]
+        },
+        {
+            "name": "az blueprint assignment list",
+            "summary": "List blueprint assignments within a subscription.",
+            "syntax": "az blueprint assignment list [--management-group]\n                             [--max-items]\n                             [--next-token]\n                             [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--management-group -m",
+                "--max-items",
+                "--next-token",
+                "--subscription -s"
+            ],
+            "examples": [
+                "az blueprint assignment list --subscription MySubscription"
+            ]
+        },
+        {
+            "name": "az blueprint assignment show",
+            "summary": "Get a blueprint assignment.",
+            "syntax": "az blueprint assignment show --name\n                             [--management-group]\n                             [--subscription]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--management-group -m",
+                "--subscription -s"
+            ],
+            "examples": [
+                "az blueprint assignment show --subscription MySubscription --name MyBlueprintAssignment"
+            ]
+        },
+        {
+            "name": "az blueprint assignment update",
+            "summary": "Update a blueprint assignment.",
+            "syntax": "az blueprint assignment update --name\n                               [--blueprint-version]\n                               [--description]\n                               [--display-name]\n                               [--identity-type {None, SystemAssigned, UserAssigned}]\n                               [--location]\n                               [--locks-excluded-principals]\n                               [--locks-mode {AllResourcesDoNotDelete, AllResourcesReadOnly, None}]\n                               [--management-group]\n                               [--parameters]\n                               [--resource-group-value]\n                               [--subscription]\n                               [--user-assigned-identity]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--blueprint-version",
+                "--description",
+                "--display-name",
+                "--identity-type",
+                "--location -l",
+                "--locks-excluded-principals",
+                "--locks-mode",
+                "--management-group -m",
+                "--parameters -p",
+                "--resource-group-value",
+                "--subscription -s",
+                "--user-assigned-identity"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az blueprint assignment wait",
+            "summary": "Place the CLI in a waiting state until a condition of the Blueprint Assignment is met.",
+            "syntax": "az blueprint assignment wait --name\n                             [--created]\n                             [--custom]\n                             [--deleted]\n                             [--exists]\n                             [--interval]\n                             [--management-group]\n                             [--subscription]\n                             [--timeout]\n                             [--updated]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--interval",
+                "--management-group -m",
+                "--subscription -s",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": [
+                "az blueprint assignment wait --subscription MySubscription \\ --name MyBlueprintAssignment --created"
+            ]
+        },
+        {
+            "name": "az blueprint assignment who",
+            "summary": "Get Blueprint Servie Principal Name objectId.",
+            "syntax": "az blueprint assignment who --name\n                            [--management-group]\n                            [--subscription]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--management-group -m",
+                "--subscription -s"
+            ],
+            "examples": [
+                "az blueprint assignment who --subscription MySubscription --name MyBlueprintAssignment"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,74 @@
+{
+    "command_group": "az billing-benefits savings-plan-order savings-plan",
+    "description": "Azure billing benefits savings plan in savings plan order commands.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az billing-benefits savings-plan-order savings-plan list",
+            "summary": "List savings plans in an order.",
+            "syntax": "az billing-benefits savings-plan-order savings-plan list --savings-plan-order-id",
+            "required_parameters": [
+                "--savings-plan-order-id"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az billing-benefits savings-plan-order savings-plan list --savings-plan-order-id 30000000-aaaa-bbbb-cccc-200000000017"
+            ]
+        },
+        {
+            "name": "az billing-benefits savings-plan-order savings-plan show",
+            "summary": "Get savings plan.",
+            "syntax": "az billing-benefits savings-plan-order savings-plan show --savings-plan-id\n                                                         --savings-plan-order-id\n                                                         [--expand]",
+            "required_parameters": [
+                "--savings-plan-id",
+                "--savings-plan-order-id"
+            ],
+            "optional_parameters": [
+                "--expand"
+            ],
+            "examples": [
+                "az billing-benefits savings-plan-order savings-plan show --savings-plan-order-id 30000000-aaaa-bbbb-cccc-200000000017 --savings-plan-id 30000000-aaaa-bbbb-cccc-200000000019",
+                "az billing-benefits savings-plan-order savings-plan show --savings-plan-order-id 30000000-aaaa-bbbb-cccc-200000000017 --savings-plan-id 30000000-aaaa-bbbb-cccc-200000000019 --expand renewProperties"
+            ]
+        },
+        {
+            "name": "az billing-benefits savings-plan-order savings-plan update",
+            "summary": "Update savings plan.",
+            "syntax": "az billing-benefits savings-plan-order savings-plan update --savings-plan-id\n                                                           --savings-plan-order-id\n                                                           [--applied-scope-prop]\n                                                           [--applied-scope-type {ManagementGroup, Shared, Single}]\n                                                           [--display-name]\n                                                           [--renew {0, 1, f, false, n, no, t, true, y, yes}]\n                                                           [--renew-properties]",
+            "required_parameters": [
+                "--savings-plan-id",
+                "--savings-plan-order-id"
+            ],
+            "optional_parameters": [
+                "--applied-scope-prop",
+                "--applied-scope-type",
+                "--display-name",
+                "--renew",
+                "--renew-properties"
+            ],
+            "examples": [
+                "az billing-benefits savings-plan-order savings-plan update --savings-plan-order-id 30000000-aaaa-bbbb-cccc-200000000017 --savings-plan-id 30000000-aaaa-bbbb-cccc-200000000019 --display-name \"cliTest\"",
+                "az billing-benefits savings-plan-order savings-plan update --savings-plan-order-id 30000000-aaaa-bbbb-cccc-200000000017 --savings-plan-id 30000000-aaaa-bbbb-cccc-200000000019 --applied-scope-type Shared",
+                "az billing-benefits savings-plan-order savings-plan update --savings-plan-order-id 30000000-aaaa-bbbb-cccc-200000000017 --savings-plan-id 30000000-aaaa-bbbb-cccc-200000000019 --applied-scope-type Single --applied-scope-prop \"{subscription-id:/subscriptions/30000000-aaaa-bbbb-cccc-200000000004}\"",
+                "az billing-benefits savings-plan-order savings-plan update --savings-plan-order-id 30000000-aaaa-bbbb-cccc-200000000017 --savings-plan-id 30000000-aaaa-bbbb-cccc-200000000019 --applied-scope-type Single --applied-scope-prop \"{subscription-id:/subscriptions/30000000-aaaa-bbbb-cccc-200000000004/resourceGroups/rgName}\"",
+                "az billing-benefits savings-plan-order savings-plan update --savings-plan-order-id 30000000-aaaa-bbbb-cccc-200000000017 --savings-plan-id 30000000-aaaa-bbbb-cccc-200000000019 --applied-scope-type ManagementGroup --applied-scope-prop \"{tenantId:10000000-aaaa-bbbb-cccc-20000000006,managementGroupId:/providers/Microsoft.Management/managementGroups/TestRg}\"",
+                "az billing-benefits savings-plan-order savings-plan update --savings-plan-order-id 30000000-aaaa-bbbb-cccc-200000000017 --savings-plan-id 30000000-aaaa-bbbb-cccc-200000000019 --renew true --renew-properties \"{purchase-properties:{applied-scope-type:Shared,billing-plan:P1M,billing-scope-id:/subscriptions/30000000-aaaa-bbbb-cccc-200000000015,commitment:{amount:10.0,currency-code:USD,grain:Hourly},display-name:name1,renew:true,term:P1Y,sku:Compute_Savings_Plan}}\""
+            ]
+        },
+        {
+            "name": "az billing-benefits savings-plan-order savings-plan validate-update",
+            "summary": "Validate savings plan patch.",
+            "syntax": "az billing-benefits savings-plan-order savings-plan validate-update --savings-plan-id\n                                                                    --savings-plan-order-id\n                                                                    [--benefits]",
+            "required_parameters": [
+                "--savings-plan-id",
+                "--savings-plan-order-id"
+            ],
+            "optional_parameters": [
+                "--benefits"
+            ],
+            "examples": [
+                "az billing-benefits savings-plan-order savings-plan validate-update --savings-plan-order-id 30000000-aaaa-bbbb-cccc-200000000006 --savings-plan-id 30000000-aaaa-bbbb-cccc-200000000004 --benefits \"[{applied-scope-type:Shared,display-name:name1}]\""
+            ]
+        }
+    ]
+}

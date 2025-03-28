@@ -1,0 +1,22 @@
+{
+    "command_group": "az mdp sku",
+    "description": "Manage sku resources.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az mdp sku list",
+            "summary": "List sku resources in given location.",
+            "syntax": "az mdp sku list --location\n                [--max-items]\n                [--next-token]",
+            "required_parameters": [
+                "--location"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az mdp sku list --location eastus"
+            ]
+        }
+    ]
+}

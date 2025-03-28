@@ -1,0 +1,39 @@
+{
+    "command_group": "az communication chat message receipt",
+    "description": "Commands to manage message read-receipts in a chat thread of a Communication Service resource.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az communication chat message receipt list",
+            "summary": "Gets read receipts of a chat thread.",
+            "syntax": "az communication chat message receipt list --thread\n                                           [--access-token]\n                                           [--endpoint]\n                                           [--skip]",
+            "required_parameters": [
+                "--thread -t"
+            ],
+            "optional_parameters": [
+                "--access-token",
+                "--endpoint",
+                "--skip"
+            ],
+            "examples": [
+                "az communication chat message receipt list --thread \"19:a-bcd=xyz\" --skip \"4\""
+            ]
+        },
+        {
+            "name": "az communication chat message receipt send",
+            "summary": "Posts a read receipt event to a chat thread, on behalf of a user.",
+            "syntax": "az communication chat message receipt send --message-id\n                                           --thread\n                                           [--access-token]\n                                           [--endpoint]",
+            "required_parameters": [
+                "--message-id",
+                "--thread -t"
+            ],
+            "optional_parameters": [
+                "--access-token",
+                "--endpoint"
+            ],
+            "examples": [
+                "az communication chat message receipt send --thread \"19:a-bcd=xyz\" --message-id \"12345678\""
+            ]
+        }
+    ]
+}

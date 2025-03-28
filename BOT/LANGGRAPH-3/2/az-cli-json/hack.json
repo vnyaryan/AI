@@ -1,0 +1,37 @@
+{
+    "command_group": "az hack",
+    "description": "Commands to manage resources commonly used for student hacks.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az hack create",
+            "summary": "Create resources commonly used for a student hack, including a website, database, and artificial intelligence.",
+            "syntax": "az hack create --location\n               --name\n               --runtime {aspnet, jetty, node, php, python, tomcat}\n               [--ai]\n               [--database {cosmosdb, mysql, sql}]",
+            "required_parameters": [
+                "--location -l",
+                "--name -n",
+                "--runtime -r"
+            ],
+            "optional_parameters": [
+                "--ai",
+                "--database -d"
+            ],
+            "examples": [
+                "az hack create --name samplename --runtime python --location westus2 --database mysql",
+                "az hack create --name samplename --runtime node --location westus2 --database sql --ai"
+            ]
+        },
+        {
+            "name": "az hack show",
+            "summary": "Display settings for created resources, including database name and password, Git url, and website url.",
+            "syntax": "az hack show --name",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az hack show --name samplename"
+            ]
+        }
+    ]
+}

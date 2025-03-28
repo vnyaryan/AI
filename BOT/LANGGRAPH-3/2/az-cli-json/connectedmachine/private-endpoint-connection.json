@@ -1,0 +1,102 @@
+{
+    "command_group": "az connectedmachine private-endpoint-connection",
+    "description": "Manage private endpoint connection with an Azure Arc-Enabled Server.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az connectedmachine private-endpoint-connection delete",
+            "summary": "Delete a private endpoint connection with a given name.",
+            "syntax": "az connectedmachine private-endpoint-connection delete [--ids]\n                                                       [--name]\n                                                       [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                                       [--resource-group]\n                                                       [--scope-name]\n                                                       [--subscription]\n                                                       [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --private-endpoint-connection-name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--scope-name",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az connectedmachine private-endpoint-connection delete --name private-endpoint-connection-name --resource-group myResourceGroup --scope-name myPrivateLinkScope"
+            ]
+        },
+        {
+            "name": "az connectedmachine private-endpoint-connection list",
+            "summary": "List all private endpoint connections on a private link scope.",
+            "syntax": "az connectedmachine private-endpoint-connection list --resource-group\n                                                     --scope-name\n                                                     [--max-items]\n                                                     [--next-token]",
+            "required_parameters": [
+                "--resource-group -g",
+                "--scope-name"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az connectedmachine private-endpoint-connection list --resource-group myResourceGroup --scope-name myPrivateLinkScope"
+            ]
+        },
+        {
+            "name": "az connectedmachine private-endpoint-connection show",
+            "summary": "Get a private endpoint connection.",
+            "syntax": "az connectedmachine private-endpoint-connection show [--ids]\n                                                     [--name]\n                                                     [--resource-group]\n                                                     [--scope-name]\n                                                     [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --private-endpoint-connection-name -n",
+                "--resource-group -g",
+                "--scope-name",
+                "--subscription"
+            ],
+            "examples": [
+                "az connectedmachine private-endpoint-connection show --name private-endpoint-connection-name --resource-group myResourceGroup --scope-name myPrivateLinkScope"
+            ]
+        },
+        {
+            "name": "az connectedmachine private-endpoint-connection update",
+            "summary": "Update a private endpoint connection with a given name.",
+            "syntax": "az connectedmachine private-endpoint-connection update [--add]\n                                                       [--description]\n                                                       [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                                       [--ids]\n                                                       [--name]\n                                                       [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                                       [--private-endpoint]\n                                                       [--remove]\n                                                       [--resource-group]\n                                                       [--scope-name]\n                                                       [--set]\n                                                       [--status]\n                                                       [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--description",
+                "--force-string",
+                "--ids",
+                "--name --private-endpoint-connection-name -n",
+                "--no-wait",
+                "--private-endpoint",
+                "--remove",
+                "--resource-group -g",
+                "--scope-name",
+                "--set",
+                "--status",
+                "--subscription"
+            ],
+            "examples": [
+                "az connectedmachine private-endpoint-connection update --description \"Rejected by AZ CLI\" --status \"Rejected\" --name private-endpoint-connection-name --resource-group myResourceGroup --scope-name myPrivateLinkScope"
+            ]
+        },
+        {
+            "name": "az connectedmachine private-endpoint-connection wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az connectedmachine private-endpoint-connection wait [--created]\n                                                     [--custom]\n                                                     [--deleted]\n                                                     [--exists]\n                                                     [--ids]\n                                                     [--interval]\n                                                     [--name]\n                                                     [--resource-group]\n                                                     [--scope-name]\n                                                     [--subscription]\n                                                     [--timeout]\n                                                     [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--name --private-endpoint-connection-name -n",
+                "--resource-group -g",
+                "--scope-name",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

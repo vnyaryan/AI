@@ -1,0 +1,193 @@
+{
+    "command_group": "az fabric capacity",
+    "description": "Manage Microsoft Fabric capacities.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az fabric capacity check-name-availability",
+            "summary": "Implements local CheckNameAvailability operations.",
+            "syntax": "az fabric capacity check-name-availability [--ids]\n                                           [--location]\n                                           [--name]\n                                           [--subscription]\n                                           [--type]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--location -l",
+                "--name",
+                "--subscription",
+                "--type"
+            ],
+            "examples": [
+                "az fabric capacity check-name-availability --location westcentralus --name azsdktest --type Microsoft.Fabric/capacities"
+            ]
+        },
+        {
+            "name": "az fabric capacity create",
+            "summary": "Create a FabricCapacity.",
+            "syntax": "az fabric capacity create --capacity-name\n                          --resource-group\n                          --sku\n                          [--administration]\n                          [--location]\n                          [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                          [--tags]",
+            "required_parameters": [
+                "--capacity-name --name -n",
+                "--resource-group -g",
+                "--sku"
+            ],
+            "optional_parameters": [
+                "--administration",
+                "--location -l",
+                "--no-wait",
+                "--tags"
+            ],
+            "examples": [
+                "az fabric capacity create --resource-group TestRG --capacity-name azsdktest --administration \"{members:[azsdktest@microsoft.com,azsdktest2@microsoft.com]}\" --sku \"{name:F2,tier:Fabric}\" --location westcentralus"
+            ]
+        },
+        {
+            "name": "az fabric capacity delete",
+            "summary": "Delete a FabricCapacity.",
+            "syntax": "az fabric capacity delete [--capacity-name]\n                          [--ids]\n                          [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                          [--resource-group]\n                          [--subscription]\n                          [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--capacity-name --name -n",
+                "--ids",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az fabric capacity delete --resource-group TestRG --capacity-name azsdktest"
+            ]
+        },
+        {
+            "name": "az fabric capacity list",
+            "summary": "List FabricCapacity resources by subscription ID.",
+            "syntax": "az fabric capacity list [--max-items]\n                        [--next-token]\n                        [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az fabric capacity list",
+                "az fabric capacity list --resource-group TestRG"
+            ]
+        },
+        {
+            "name": "az fabric capacity list-skus",
+            "summary": "List eligible SKUs for Microsoft Fabric resource provider.",
+            "syntax": "az fabric capacity list-skus [--max-items]\n                             [--next-token]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az fabric capacity list-skus"
+            ]
+        },
+        {
+            "name": "az fabric capacity list-skus-for-capacity",
+            "summary": "List eligible SKUs for a Microsoft Fabric resource.",
+            "syntax": "az fabric capacity list-skus-for-capacity --capacity-name\n                                          --resource-group\n                                          [--max-items]\n                                          [--next-token]",
+            "required_parameters": [
+                "--capacity-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az fabric capacity list-skus-for-capacity --resource-group TestRG --capacity-name azsdktest"
+            ]
+        },
+        {
+            "name": "az fabric capacity resume",
+            "summary": "Resume operation of the specified Fabric capacity instance.",
+            "syntax": "az fabric capacity resume [--capacity-name]\n                          [--ids]\n                          [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                          [--resource-group]\n                          [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--capacity-name",
+                "--ids",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az fabric capacity resume --resource-group TestRG --capacity-name azsdktest"
+            ]
+        },
+        {
+            "name": "az fabric capacity show",
+            "summary": "Get a FabricCapacity.",
+            "syntax": "az fabric capacity show [--capacity-name]\n                        [--ids]\n                        [--resource-group]\n                        [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--capacity-name --name -n",
+                "--ids",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az fabric capacity show --resource-group TestRG --capacity-name azsdktest"
+            ]
+        },
+        {
+            "name": "az fabric capacity suspend",
+            "summary": "Suspend operation of the specified Fabric capacity instance.",
+            "syntax": "az fabric capacity suspend [--capacity-name]\n                           [--ids]\n                           [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                           [--resource-group]\n                           [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--capacity-name",
+                "--ids",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az fabric capacity suspend --resource-group TestRG --capacity-name azsdktest"
+            ]
+        },
+        {
+            "name": "az fabric capacity update",
+            "summary": "Update a FabricCapacity.",
+            "syntax": "az fabric capacity update [--add]\n                          [--administration]\n                          [--capacity-name]\n                          [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                          [--ids]\n                          [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                          [--remove]\n                          [--resource-group]\n                          [--set]\n                          [--sku]\n                          [--subscription]\n                          [--tags]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--administration",
+                "--capacity-name --name -n",
+                "--force-string",
+                "--ids",
+                "--no-wait",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--sku",
+                "--subscription",
+                "--tags"
+            ],
+            "examples": [
+                "az fabric capacity update --resource-group TestRG --capacity-name azsdktest --administration \"{members:[azsdktest@microsoft.com,azsdktest2@microsoft.com]}\" --sku \"{name:F4,tier:Fabric}\""
+            ]
+        },
+        {
+            "name": "az fabric capacity wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az fabric capacity wait [--capacity-name]\n                        [--created]\n                        [--custom]\n                        [--deleted]\n                        [--exists]\n                        [--ids]\n                        [--interval]\n                        [--resource-group]\n                        [--subscription]\n                        [--timeout]\n                        [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--capacity-name --name -n",
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

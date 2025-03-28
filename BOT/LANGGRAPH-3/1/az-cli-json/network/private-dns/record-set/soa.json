@@ -1,0 +1,43 @@
+{
+    "command_group": "az network private-dns record-set soa",
+    "description": "Manage Private DNS SOA record.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az network private-dns record-set soa show",
+            "summary": "Get the details of an SOA record.",
+            "syntax": "az network private-dns record-set soa show [--ids]\n                                           [--resource-group]\n                                           [--subscription]\n                                           [--zone-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--resource-group -g",
+                "--subscription",
+                "--zone-name -z"
+            ],
+            "examples": [
+                "az network private-dns record-set soa show -g MyResourceGroup -z www.mysite.com"
+            ]
+        },
+        {
+            "name": "az network private-dns record-set soa update",
+            "summary": "Update properties of an SOA record.",
+            "syntax": "az network private-dns record-set soa update --resource-group\n                                             --zone-name\n                                             [--email]\n                                             [--expire-time]\n                                             [--host]\n                                             [--minimum-ttl]\n                                             [--refresh-time]\n                                             [--retry-time]\n                                             [--serial-number]",
+            "required_parameters": [
+                "--resource-group -g",
+                "--zone-name -z"
+            ],
+            "optional_parameters": [
+                "--email -e",
+                "--expire-time -x",
+                "--host -t",
+                "--minimum-ttl -m",
+                "--refresh-time -f",
+                "--retry-time -r",
+                "--serial-number -s"
+            ],
+            "examples": [
+                "az network private-dns record-set soa update -g MyResourceGroup -z www.mysite.com \\\n    -e myhostmaster.mysite.com"
+            ]
+        }
+    ]
+}

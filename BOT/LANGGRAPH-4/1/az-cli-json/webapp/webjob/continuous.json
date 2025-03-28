@@ -1,0 +1,76 @@
+{
+    "command_group": "az webapp webjob continuous",
+    "description": "Allows management operations of continuous webjobs on a web app.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az webapp webjob continuous list",
+            "summary": "List all continuous webjobs on a selected web app.",
+            "syntax": "az webapp webjob continuous list --name\n                                 --resource-group\n                                 [--slot]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--slot -s"
+            ],
+            "examples": [
+                "az webapp webjob continuous list --name MyWebapp --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az webapp webjob continuous remove",
+            "summary": "Delete a specific continuous webjob.",
+            "syntax": "az webapp webjob continuous remove --webjob-name\n                                   [--ids]\n                                   [--name]\n                                   [--resource-group]\n                                   [--slot]\n                                   [--subscription]",
+            "required_parameters": [
+                "--webjob-name -w"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--slot -s",
+                "--subscription"
+            ],
+            "examples": [
+                "az webapp webjob continuous remove --name MyWebApp --resource-group MyResourceGroup --webjob-name MyWebjob"
+            ]
+        },
+        {
+            "name": "az webapp webjob continuous start",
+            "summary": "Start a specific continuous webjob on a selected web app.",
+            "syntax": "az webapp webjob continuous start --webjob-name\n                                  [--ids]\n                                  [--name]\n                                  [--resource-group]\n                                  [--slot]\n                                  [--subscription]",
+            "required_parameters": [
+                "--webjob-name -w"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--slot -s",
+                "--subscription"
+            ],
+            "examples": [
+                "az webapp webjob continuous start --name MyWebApp --resource-group MyResourceGroup --webjob-name MyWebjob"
+            ]
+        },
+        {
+            "name": "az webapp webjob continuous stop",
+            "summary": "Stop a specific continuous webjob.",
+            "syntax": "az webapp webjob continuous stop --webjob-name\n                                 [--ids]\n                                 [--name]\n                                 [--resource-group]\n                                 [--slot]\n                                 [--subscription]",
+            "required_parameters": [
+                "--webjob-name -w"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--slot -s",
+                "--subscription"
+            ],
+            "examples": [
+                "az webapp webjob continuous stop --name MyWebApp --resource-group MyResourceGroup --webjob-name MyWebjob"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,124 @@
+{
+    "command_group": "az dns-resolver inbound-endpoint",
+    "description": "Manage inbound endpoint with dns resolver.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az dns-resolver inbound-endpoint create",
+            "summary": "Create an inbound endpoint for a DNS resolver.",
+            "syntax": "az dns-resolver inbound-endpoint create --dns-resolver-name\n                                        --inbound-endpoint-name\n                                        --ip-configurations\n                                        --resource-group\n                                        [--if-match]\n                                        [--if-none-match]\n                                        [--location]\n                                        [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                        [--tags]",
+            "required_parameters": [
+                "--dns-resolver-name",
+                "--inbound-endpoint-name --name -n",
+                "--ip-configurations",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--if-match",
+                "--if-none-match",
+                "--location -l",
+                "--no-wait",
+                "--tags"
+            ],
+            "examples": [
+                "az dns-resolver inbound-endpoint create --dns-resolver-name \"sampleDnsResolver\" --name \"sampleInboundEndpoint\" --location \"westus2\" --ip-configurations [{private-ip-address:'',private-ip-allocation-method:\"Dynamic\",id:\"/subscriptions/0403cfa9-9659-4f33-9f30-1f191c51d111/resourceGroups/sampleVnetResourceGroupName/providers/Microsoft.Network/virtualNetworks/sa mpleVirtualNetwork/subnets/sampleSubnet\"}] --tags key1=\"value1\" --resource-group \"sampleResourceGroup\""
+            ]
+        },
+        {
+            "name": "az dns-resolver inbound-endpoint delete",
+            "summary": "Deletes an inbound endpoint for a DNS resolver. WARNING: This operation cannot be undone.",
+            "syntax": "az dns-resolver inbound-endpoint delete [--dns-resolver-name]\n                                        [--ids]\n                                        [--if-match]\n                                        [--inbound-endpoint-name]\n                                        [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                        [--resource-group]\n                                        [--subscription]\n                                        [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--dns-resolver-name",
+                "--ids",
+                "--if-match",
+                "--inbound-endpoint-name --name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az dns-resolver inbound-endpoint delete --dns-resolver-name \"sampleDnsResolver\" --name \"sampleInboundEndpoint\" --resource-group \"sampleResourceGroup\""
+            ]
+        },
+        {
+            "name": "az dns-resolver inbound-endpoint list",
+            "summary": "Lists inbound endpoints for a DNS resolver.",
+            "syntax": "az dns-resolver inbound-endpoint list --dns-resolver-name\n                                      --resource-group\n                                      [--max-items]\n                                      [--next-token]\n                                      [--top]",
+            "required_parameters": [
+                "--dns-resolver-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token",
+                "--top"
+            ],
+            "examples": [
+                "az dns-resolver inbound-endpoint list --dns-resolver-name \"sampleDnsResolver\" --resource- group \"sampleResourceGroup\""
+            ]
+        },
+        {
+            "name": "az dns-resolver inbound-endpoint show",
+            "summary": "Gets properties of an inbound endpoint for a DNS resolver.",
+            "syntax": "az dns-resolver inbound-endpoint show [--dns-resolver-name]\n                                      [--ids]\n                                      [--inbound-endpoint-name]\n                                      [--resource-group]\n                                      [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--dns-resolver-name",
+                "--ids",
+                "--inbound-endpoint-name --name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az dns-resolver inbound-endpoint show --dns-resolver-name \"sampleDnsResolver\" --name \"sampleInboundEndpoint\" --resource-group \"sampleResourceGroup\""
+            ]
+        },
+        {
+            "name": "az dns-resolver inbound-endpoint update",
+            "summary": "Updates an inbound endpoint for a DNS resolver.",
+            "syntax": "az dns-resolver inbound-endpoint update [--add]\n                                        [--dns-resolver-name]\n                                        [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                        [--ids]\n                                        [--if-match]\n                                        [--inbound-endpoint-name]\n                                        [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                        [--remove]\n                                        [--resource-group]\n                                        [--set]\n                                        [--subscription]\n                                        [--tags]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--dns-resolver-name",
+                "--force-string",
+                "--ids",
+                "--if-match",
+                "--inbound-endpoint-name --name -n",
+                "--no-wait",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--subscription",
+                "--tags"
+            ],
+            "examples": [
+                "az dns-resolver inbound-endpoint update --dns-resolver-name \"sampleDnsResolver\" --name \"sampleInboundEndpoint\" --tags key1=\"value1\" --resource-group \"sampleResourceGroup\""
+            ]
+        },
+        {
+            "name": "az dns-resolver inbound-endpoint wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az dns-resolver inbound-endpoint wait [--created]\n                                      [--custom]\n                                      [--deleted]\n                                      [--dns-resolver-name]\n                                      [--exists]\n                                      [--ids]\n                                      [--inbound-endpoint-name]\n                                      [--interval]\n                                      [--resource-group]\n                                      [--subscription]\n                                      [--timeout]\n                                      [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--dns-resolver-name",
+                "--exists",
+                "--ids",
+                "--inbound-endpoint-name --name -n",
+                "--interval",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

@@ -1,0 +1,267 @@
+{
+    "command_group": "az netappfiles account backup-vault backup",
+    "description": "Manage Azure NetApp Files (ANF) Backup Resources.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az netappfiles account backup-vault backup create",
+            "summary": "Create a backup under the Backup Vault.",
+            "syntax": "az netappfiles account backup-vault backup create --account-name\n                                                  --backup-name\n                                                  --backup-vault-name\n                                                  --resource-group\n                                                  --volume-resource-id\n                                                  [--label]\n                                                  [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                                  [--snapshot-name]\n                                                  [--use-existing-snapshot {0, 1, f, false, n, no, t, true, y, yes}]",
+            "required_parameters": [
+                "--account-name -a",
+                "--backup-name --name -b -n",
+                "--backup-vault-name -v",
+                "--resource-group -g",
+                "--volume-resource-id"
+            ],
+            "optional_parameters": [
+                "--label",
+                "--no-wait",
+                "--snapshot-name",
+                "--use-existing-snapshot"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az netappfiles account backup-vault backup create",
+            "summary": "Create a backup under the Backup Vault.",
+            "syntax": "az netappfiles account backup-vault backup create --account-name\n                                                  --backup-name\n                                                  --backup-vault-name\n                                                  --resource-group\n                                                  --volume-resource-id\n                                                  [--label]\n                                                  [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                                  [--snapshot-name]\n                                                  [--use-existing-snapshot {0, 1, f, false, n, no, t, true, y, yes}]",
+            "required_parameters": [
+                "--account-name -a",
+                "--backup-name --name -b -n",
+                "--backup-vault-name -v",
+                "--resource-group -g",
+                "--volume-resource-id"
+            ],
+            "optional_parameters": [
+                "--label",
+                "--no-wait",
+                "--snapshot-name",
+                "--use-existing-snapshot"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az netappfiles account backup-vault backup delete",
+            "summary": "Delete a Backup under the Backup Vault.",
+            "syntax": "az netappfiles account backup-vault backup delete [--account-name]\n                                                  [--backup-name]\n                                                  [--backup-vault-name]\n                                                  [--ids]\n                                                  [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                                  [--resource-group]\n                                                  [--subscription]\n                                                  [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account-name -a",
+                "--backup-name --name -b -n",
+                "--backup-vault-name -v",
+                "--ids",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az netappfiles account backup-vault backup delete",
+            "summary": "Delete a Backup under the Backup Vault.",
+            "syntax": "az netappfiles account backup-vault backup delete [--account-name]\n                                                  [--backup-name]\n                                                  [--backup-vault-name]\n                                                  [--ids]\n                                                  [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                                  [--resource-group]\n                                                  [--subscription]\n                                                  [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account-name -a",
+                "--backup-name --name -b -n",
+                "--backup-vault-name -v",
+                "--ids",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az netappfiles account backup-vault backup list",
+            "summary": "List all backups Under a Backup Vault.",
+            "syntax": "az netappfiles account backup-vault backup list --account-name\n                                                --backup-vault-name\n                                                --resource-group\n                                                [--filter]\n                                                [--max-items]\n                                                [--next-token]",
+            "required_parameters": [
+                "--account-name -a",
+                "--backup-vault-name -v",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--filter",
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az netappfiles account backup-vault backup list",
+            "summary": "List all backups Under a Backup Vault.",
+            "syntax": "az netappfiles account backup-vault backup list --account-name\n                                                --backup-vault-name\n                                                --resource-group\n                                                [--filter]\n                                                [--max-items]\n                                                [--next-token]",
+            "required_parameters": [
+                "--account-name -a",
+                "--backup-vault-name -v",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--filter",
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az netappfiles account backup-vault backup restore-file",
+            "summary": "Restore the specified files from the specified backup to the active filesystem.",
+            "syntax": "az netappfiles account backup-vault backup restore-file --destination-volume-id\n                                                        --file-list\n                                                        [--account-name]\n                                                        [--backup-name]\n                                                        [--backup-vault-name]\n                                                        [--ids]\n                                                        [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                                        [--resource-group]\n                                                        [--restore-file-path]\n                                                        [--subscription]",
+            "required_parameters": [
+                "--destination-volume-id",
+                "--file-list"
+            ],
+            "optional_parameters": [
+                "--account-name -a",
+                "--backup-name -b",
+                "--backup-vault-name -v",
+                "--ids",
+                "--no-wait",
+                "--resource-group -g",
+                "--restore-file-path",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az netappfiles account backup-vault backup restore-file",
+            "summary": "Restore the specified files from the specified backup to the active filesystem.",
+            "syntax": "az netappfiles account backup-vault backup restore-file --destination-volume-id\n                                                        --file-list\n                                                        [--account-name]\n                                                        [--backup-name]\n                                                        [--backup-vault-name]\n                                                        [--ids]\n                                                        [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                                        [--resource-group]\n                                                        [--restore-file-path]\n                                                        [--subscription]",
+            "required_parameters": [
+                "--destination-volume-id",
+                "--file-list"
+            ],
+            "optional_parameters": [
+                "--account-name -a",
+                "--backup-name -b",
+                "--backup-vault-name -v",
+                "--ids",
+                "--no-wait",
+                "--resource-group -g",
+                "--restore-file-path",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az netappfiles account backup-vault backup show",
+            "summary": "Get the specified Backup under Backup Vault.",
+            "syntax": "az netappfiles account backup-vault backup show [--account-name]\n                                                [--backup-name]\n                                                [--backup-vault-name]\n                                                [--ids]\n                                                [--resource-group]\n                                                [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account-name -a",
+                "--backup-name --name -b -n",
+                "--backup-vault-name -v",
+                "--ids",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az netappfiles account backup-vault backup show",
+            "summary": "Get the specified Backup under Backup Vault.",
+            "syntax": "az netappfiles account backup-vault backup show [--account-name]\n                                                [--backup-name]\n                                                [--backup-vault-name]\n                                                [--ids]\n                                                [--resource-group]\n                                                [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account-name -a",
+                "--backup-name --name -b -n",
+                "--backup-vault-name -v",
+                "--ids",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az netappfiles account backup-vault backup update",
+            "summary": "Update a backup under the Backup Vault.",
+            "syntax": "az netappfiles account backup-vault backup update [--account-name]\n                                                  [--add]\n                                                  [--backup-name]\n                                                  [--backup-vault-name]\n                                                  [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                                  [--ids]\n                                                  [--label]\n                                                  [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                                  [--remove]\n                                                  [--resource-group]\n                                                  [--set]\n                                                  [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account-name -a",
+                "--add",
+                "--backup-name --name -b -n",
+                "--backup-vault-name -v",
+                "--force-string",
+                "--ids",
+                "--label",
+                "--no-wait",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az netappfiles account backup-vault backup update",
+            "summary": "Update a backup under the Backup Vault.",
+            "syntax": "az netappfiles account backup-vault backup update [--account-name]\n                                                  [--add]\n                                                  [--backup-name]\n                                                  [--backup-vault-name]\n                                                  [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                                  [--ids]\n                                                  [--label]\n                                                  [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                                  [--remove]\n                                                  [--resource-group]\n                                                  [--set]\n                                                  [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account-name -a",
+                "--add",
+                "--backup-name --name -b -n",
+                "--backup-vault-name -v",
+                "--force-string",
+                "--ids",
+                "--label",
+                "--no-wait",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az netappfiles account backup-vault backup wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az netappfiles account backup-vault backup wait [--account-name]\n                                                [--backup-name]\n                                                [--backup-vault-name]\n                                                [--created]\n                                                [--custom]\n                                                [--deleted]\n                                                [--exists]\n                                                [--ids]\n                                                [--interval]\n                                                [--resource-group]\n                                                [--subscription]\n                                                [--timeout]\n                                                [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account-name -a",
+                "--backup-name --name -b -n",
+                "--backup-vault-name -v",
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az netappfiles account backup-vault backup wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az netappfiles account backup-vault backup wait [--account-name]\n                                                [--backup-name]\n                                                [--backup-vault-name]\n                                                [--created]\n                                                [--custom]\n                                                [--deleted]\n                                                [--exists]\n                                                [--ids]\n                                                [--interval]\n                                                [--resource-group]\n                                                [--subscription]\n                                                [--timeout]\n                                                [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account-name -a",
+                "--backup-name --name -b -n",
+                "--backup-vault-name -v",
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

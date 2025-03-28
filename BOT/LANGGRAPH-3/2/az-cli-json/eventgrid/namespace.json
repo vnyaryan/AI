@@ -1,0 +1,155 @@
+{
+    "command_group": "az eventgrid namespace",
+    "description": "Manage eventgrid namespace.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az eventgrid namespace create",
+            "summary": "Create a new namespace.",
+            "syntax": "az eventgrid namespace create --name\n                              --resource-group\n                              [--identity]\n                              [--inbound-ip-rules]\n                              [--is-zone-redundant {0, 1, f, false, n, no, t, true, y, yes}]\n                              [--location]\n                              [--minimum-tls-version-allowed {1.0, 1.1, 1.2}]\n                              [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                              [--private-endpoint-connections]\n                              [--public-network-access {Disabled, Enabled}]\n                              [--sku]\n                              [--tags]\n                              [--topic-spaces-configuration]",
+            "required_parameters": [
+                "--name --namespace-name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--identity",
+                "--inbound-ip-rules",
+                "--is-zone-redundant",
+                "--location -l",
+                "--minimum-tls-version-allowed",
+                "--no-wait",
+                "--private-endpoint-connections",
+                "--public-network-access",
+                "--sku",
+                "--tags",
+                "--topic-spaces-configuration"
+            ],
+            "examples": [
+                "az eventgrid namespace create -g rg -n namespace"
+            ]
+        },
+        {
+            "name": "az eventgrid namespace delete",
+            "summary": "Delete existing namespace.",
+            "syntax": "az eventgrid namespace delete [--ids]\n                              [--name]\n                              [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                              [--resource-group]\n                              [--subscription]\n                              [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --namespace-name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az eventgrid namespace delete -g rg -n namespace"
+            ]
+        },
+        {
+            "name": "az eventgrid namespace list",
+            "summary": "List all the namespaces under an Azure subscription.",
+            "syntax": "az eventgrid namespace list [--filter]\n                            [--max-items]\n                            [--next-token]\n                            [--resource-group]\n                            [--top]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--filter",
+                "--max-items",
+                "--next-token",
+                "--resource-group -g",
+                "--top"
+            ],
+            "examples": [
+                "az eventgrid namespace list -g rg"
+            ]
+        },
+        {
+            "name": "az eventgrid namespace list-key",
+            "summary": "List the two keys used to publish to a namespace.",
+            "syntax": "az eventgrid namespace list-key [--ids]\n                                [--namespace-name]\n                                [--resource-group]\n                                [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--namespace-name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az eventgrid namespace list-key -g rg --namespace-name name"
+            ]
+        },
+        {
+            "name": "az eventgrid namespace regenerate-key",
+            "summary": "Regenerate a shared access key for a namespace.",
+            "syntax": "az eventgrid namespace regenerate-key --key-name\n                                      [--ids]\n                                      [--namespace-name]\n                                      [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                      [--resource-group]\n                                      [--subscription]",
+            "required_parameters": [
+                "--key-name"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--namespace-name",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az eventgrid namespace regenerate-key -g rg --namespace-name name --key-name key1"
+            ]
+        },
+        {
+            "name": "az eventgrid namespace show",
+            "summary": "Show a namespace.",
+            "syntax": "az eventgrid namespace show [--ids]\n                            [--name]\n                            [--resource-group]\n                            [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --namespace-name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az eventgrid namespace show -g rg -n namespace"
+            ]
+        },
+        {
+            "name": "az eventgrid namespace update",
+            "summary": "Update a namespace.",
+            "syntax": "az eventgrid namespace update [--identity]\n                              [--ids]\n                              [--inbound-ip-rules]\n                              [--name]\n                              [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                              [--public-network-access {Disabled, Enabled}]\n                              [--resource-group]\n                              [--sku]\n                              [--subscription]\n                              [--tags]\n                              [--topic-spaces-configuration]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--identity",
+                "--ids",
+                "--inbound-ip-rules",
+                "--name --namespace-name -n",
+                "--no-wait",
+                "--public-network-access",
+                "--resource-group -g",
+                "--sku",
+                "--subscription",
+                "--tags",
+                "--topic-spaces-configuration"
+            ],
+            "examples": [
+                "az eventgrid namespace update -g rg -n namespoace --tags \"{tag:test}\" --sku \"{name:standard,capacity:2}\" --topic-spaces-configuration \"{maximumSessionExpiryInHours:1}\""
+            ]
+        },
+        {
+            "name": "az eventgrid namespace wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az eventgrid namespace wait [--created]\n                            [--custom]\n                            [--deleted]\n                            [--exists]\n                            [--ids]\n                            [--interval]\n                            [--name]\n                            [--resource-group]\n                            [--subscription]\n                            [--timeout]\n                            [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--name --namespace-name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

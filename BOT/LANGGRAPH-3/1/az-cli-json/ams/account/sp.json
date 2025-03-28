@@ -1,0 +1,46 @@
+{
+    "command_group": "az ams account sp",
+    "description": "Manage service principal and role based access for an Azure Media Services account.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az ams account sp create",
+            "summary": "Create or update a service principal and configure its access to an Azure Media Services account.",
+            "syntax": "az ams account sp create --account-name\n                         --resource-group\n                         [--name]\n                         [--new-sp-name]\n                         [--password]\n                         [--role]\n                         [--xml]\n                         [--years]",
+            "required_parameters": [
+                "--account-name -a",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--name -n",
+                "--new-sp-name",
+                "--password -p",
+                "--role",
+                "--xml",
+                "--years"
+            ],
+            "examples": [
+                "az ams account sp create -a myAmsAccount -g myRG -n mySpName --password mySecret --role Owner --xml",
+                "az ams account sp create -a myAmsAccount -g myRG -n mySpName --new-sp-name myNewSpName --role newRole"
+            ]
+        },
+        {
+            "name": "az ams account sp reset-credentials",
+            "summary": "Generate a new client secret for a service principal configured for an Azure Media Services account.",
+            "syntax": "az ams account sp reset-credentials [--account-name]\n                                    [--ids]\n                                    [--name]\n                                    [--password]\n                                    [--resource-group]\n                                    [--role]\n                                    [--subscription]\n                                    [--xml]\n                                    [--years]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account-name -a",
+                "--ids",
+                "--name -n",
+                "--password -p",
+                "--resource-group -g",
+                "--role",
+                "--subscription",
+                "--xml",
+                "--years"
+            ],
+            "examples": []
+        }
+    ]
+}

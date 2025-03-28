@@ -1,0 +1,57 @@
+{
+    "command_group": "az sql midb ledger-digest-uploads",
+    "description": "Manage ledger digest upload settings.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az sql midb ledger-digest-uploads disable",
+            "summary": "Disable uploading ledger digests.",
+            "syntax": "az sql midb ledger-digest-uploads disable [--ids]\n                                          [--managed-instance]\n                                          [--name]\n                                          [--resource-group]\n                                          [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--managed-instance --mi",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az sql midb ledger-digest-uploads disable --n midb -g MyResourceGroup --mi myinstance"
+            ]
+        },
+        {
+            "name": "az sql midb ledger-digest-uploads enable",
+            "summary": "Enable uploading ledger digests to an Azure Storage account or to Azure Confidential Ledger. If uploading ledger digests is already enabled, the cmdlet resets the digest storage endpoint to a new value.",
+            "syntax": "az sql midb ledger-digest-uploads enable --endpoint\n                                         [--ids]\n                                         [--managed-instance]\n                                         [--name]\n                                         [--resource-group]\n                                         [--subscription]",
+            "required_parameters": [
+                "--endpoint"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--managed-instance --mi",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az sql midb ledger-digest-uploads enable --n midb -g MyResourceGroup --mi myinstance --endpoint https://mystorage.blob.core.windows.net"
+            ]
+        },
+        {
+            "name": "az sql midb ledger-digest-uploads show",
+            "summary": "Show the current ledger digest settings.",
+            "syntax": "az sql midb ledger-digest-uploads show [--ids]\n                                       [--managed-instance]\n                                       [--name]\n                                       [--resource-group]\n                                       [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--managed-instance --mi",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az sql midb ledger-digest-uploads show --n midb -g MyResourceGroup --mi myinstance"
+            ]
+        }
+    ]
+}

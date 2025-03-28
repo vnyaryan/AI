@@ -1,0 +1,29 @@
+{
+    "command_group": "az automanage best-practice",
+    "description": "Manage Automanage best practice.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az automanage best-practice list",
+            "summary": "List Automanage best practices.",
+            "syntax": "az automanage best-practice list",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "examples": [
+                "az automanage best-practice list"
+            ]
+        },
+        {
+            "name": "az automanage best-practice show",
+            "summary": "Get information about a Automanage best practice.",
+            "syntax": "az automanage best-practice show --best-practice-name",
+            "required_parameters": [
+                "--best-practice-name"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az automanage best-practice show --best-practice-name {}"
+            ]
+        }
+    ]
+}

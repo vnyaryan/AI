@@ -1,0 +1,93 @@
+{
+    "command_group": "az acr replication",
+    "description": "Manage geo-replicated regions of Azure Container Registries.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az acr replication create",
+            "summary": "Create a replicated region for an Azure Container Registry.",
+            "syntax": "az acr replication create --location\n                          --registry\n                          [--name]\n                          [--region-endpoint-enabled {false, true}]\n                          [--resource-group]\n                          [--tags]\n                          [--zone-redundancy {Disabled, Enabled}]",
+            "required_parameters": [
+                "--location -l",
+                "--registry -r"
+            ],
+            "optional_parameters": [
+                "--name -n",
+                "--region-endpoint-enabled",
+                "--resource-group -g",
+                "--tags",
+                "--zone-redundancy"
+            ],
+            "examples": [
+                "az acr replication create -r myregistry -l westus",
+                "az acr replication create --location westus --registry myregistry --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az acr replication delete",
+            "summary": "Delete a replicated region from an Azure Container Registry.",
+            "syntax": "az acr replication delete --name\n                          --registry\n                          [--resource-group]",
+            "required_parameters": [
+                "--name -n",
+                "--registry -r"
+            ],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az acr replication delete -n MyReplication -r myregistry"
+            ]
+        },
+        {
+            "name": "az acr replication list",
+            "summary": "List all of the regions for a geo-replicated Azure Container Registry.",
+            "syntax": "az acr replication list --registry\n                        [--resource-group]",
+            "required_parameters": [
+                "--registry -r"
+            ],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az acr replication list -r myregistry -o table"
+            ]
+        },
+        {
+            "name": "az acr replication show",
+            "summary": "Get the details of a replicated region.",
+            "syntax": "az acr replication show --name\n                        --registry\n                        [--resource-group]",
+            "required_parameters": [
+                "--name -n",
+                "--registry -r"
+            ],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az acr replication show -n MyReplication -r myregistry"
+            ]
+        },
+        {
+            "name": "az acr replication update",
+            "summary": "Updates a replication.",
+            "syntax": "az acr replication update --name\n                          --registry\n                          [--add]\n                          [--force-string]\n                          [--region-endpoint-enabled {false, true}]\n                          [--remove]\n                          [--resource-group]\n                          [--set]\n                          [--tags]",
+            "required_parameters": [
+                "--name -n",
+                "--registry -r"
+            ],
+            "optional_parameters": [
+                "--add",
+                "--force-string",
+                "--region-endpoint-enabled",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--tags"
+            ],
+            "examples": [
+                "az acr replication update -n MyReplication -r myregistry --tags key1=value1 key2=value2",
+                "az acr replication update --name MyReplication --registry myregistry --resource-group MyResourceGroup --tags key1=value1 key2=value2"
+            ]
+        }
+    ]
+}

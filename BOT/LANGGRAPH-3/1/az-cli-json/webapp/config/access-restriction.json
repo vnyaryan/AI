@@ -1,0 +1,108 @@
+{
+    "command_group": "az webapp config access-restriction",
+    "description": "Methods that show, set, add, and remove access restrictions on a webapp.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az webapp config access-restriction add",
+            "summary": "Adds an Access Restriction to the webapp.",
+            "syntax": "az webapp config access-restriction add --priority\n                                        [--action {Allow, Deny}]\n                                        [--description]\n                                        [--http-headers]\n                                        [--ids]\n                                        [--ignore-missing-endpoint {false, true}]\n                                        [--ip-address]\n                                        [--name]\n                                        [--resource-group]\n                                        [--rule-name]\n                                        [--scm-site {false, true}]\n                                        [--service-tag]\n                                        [--skip-service-tag-validation {false, true}]\n                                        [--slot]\n                                        [--subnet]\n                                        [--subscription]\n                                        [--vnet-name]\n                                        [--vnet-resource-group]",
+            "required_parameters": [
+                "--priority -p"
+            ],
+            "optional_parameters": [
+                "--action",
+                "--description",
+                "--http-headers",
+                "--ids",
+                "--ignore-missing-endpoint -i",
+                "--ip-address",
+                "--name -n",
+                "--resource-group -g",
+                "--rule-name -r",
+                "--scm-site",
+                "--service-tag",
+                "--skip-service-tag-validation -k",
+                "--slot -s",
+                "--subnet",
+                "--subscription",
+                "--vnet-name",
+                "--vnet-resource-group"
+            ],
+            "examples": [
+                "az webapp config access-restriction add -g ResourceGroup -n AppName --rule-name developers --action Allow --ip-address 130.220.0.0/27 --priority 200",
+                "az webapp config access-restriction add -g ResourceGroup -n AppName --rule-name build_server --action Allow --ip-address 192.168.0.0/27 --priority 250 --scm-site true",
+                "az webapp config access-restriction add -g ResourceGroup -n AppName --rule-name app_gateway --action Allow --vnet-name core_weu --subnet app_gateway --priority 300",
+                "az webapp config access-restriction add -g ResourceGroup -n AppName --rule-name internal_agents --action Allow --vnet-name corp01 --subnet build_agents --priority 500 --scm-site true --ignore-missing-endpoint true",
+                "az webapp config access-restriction add -g ResourceGroup -n AppName --rule-name remote_agents --action Allow --vnet-name corp01 --subnet agents --priority 500 --vnet-resource-group vnets",
+                "az webapp config access-restriction add -g ResourceGroup -n AppName --rule-name remote_agents --action Allow --priority 800 --subnet '/subscriptions/<subscription-id>/resourceGroups/vnets/providers/Microsoft.Network/virtualNetworks/corp01/subnets/agents'",
+                "az webapp config access-restriction add -g ResourceGroup -n AppName --priority 400 --service-tag AzureCloud",
+                "az webapp config access-restriction add -g ResourceGroup -n AppName --priority 400 --service-tag AzureFrontDoor.Backend --http-header x-azure-fdid=12345678-abcd-1234-abcd-12345678910a",
+                "az webapp config access-restriction add -g ResourceGroup -n AppName --priority 400 --service-tag AzureFrontDoor.Backend --http-header x-azure-fdid=12345678-abcd-1234-abcd-12345678910a x-azure-fdid=11111111-abcd-1234-abcd-222222222222"
+            ]
+        },
+        {
+            "name": "az webapp config access-restriction remove",
+            "summary": "Removes an Access Restriction from the webapp.",
+            "syntax": "az webapp config access-restriction remove [--action {Allow, Deny}]\n                                           [--ids]\n                                           [--ip-address]\n                                           [--name]\n                                           [--resource-group]\n                                           [--rule-name]\n                                           [--scm-site {false, true}]\n                                           [--service-tag]\n                                           [--skip-service-tag-validation {false, true}]\n                                           [--slot]\n                                           [--subnet]\n                                           [--subscription]\n                                           [--vnet-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--action",
+                "--ids",
+                "--ip-address",
+                "--name -n",
+                "--resource-group -g",
+                "--rule-name -r",
+                "--scm-site",
+                "--service-tag",
+                "--skip-service-tag-validation -k",
+                "--slot -s",
+                "--subnet",
+                "--subscription",
+                "--vnet-name"
+            ],
+            "examples": [
+                "az webapp config access-restriction remove -g ResourceGroup -n AppName --rule-name developers",
+                "az webapp config access-restriction remove -g ResourceGroup -n AppName --rule-name internal_agents --scm-site true",
+                "az webapp config access-restriction remove -g ResourceGroup -n AppName --service-tag AzureFrontDoor.Backend"
+            ]
+        },
+        {
+            "name": "az webapp config access-restriction set",
+            "summary": "Sets if SCM site is using the same restrictions as the main site and default actions.",
+            "syntax": "az webapp config access-restriction set [--default-action {Allow, Deny}]\n                                        [--ids]\n                                        [--name]\n                                        [--resource-group]\n                                        [--scm-default-action {Allow, Deny}]\n                                        [--slot]\n                                        [--subscription]\n                                        [--use-same-restrictions-for-scm-site {false, true}]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--default-action",
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--scm-default-action",
+                "--slot -s",
+                "--subscription",
+                "--use-same-restrictions-for-scm-site"
+            ],
+            "examples": [
+                "az webapp config access-restriction set -g ResourceGroup -n AppName --use-same-restrictions-for-scm-site true",
+                "az webapp config access-restriction set -g ResourceGroup -n AppName --default-action Allow",
+                "az webapp config access-restriction set -g ResourceGroup -n AppName --scm-default-action Deny"
+            ]
+        },
+        {
+            "name": "az webapp config access-restriction show",
+            "summary": "Show Access Restriction settings for webapp.",
+            "syntax": "az webapp config access-restriction show [--ids]\n                                         [--name]\n                                         [--resource-group]\n                                         [--slot]\n                                         [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--slot -s",
+                "--subscription"
+            ],
+            "examples": [
+                "az webapp config access-restriction show -g ResourceGroup -n AppName"
+            ]
+        }
+    ]
+}

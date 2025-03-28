@@ -1,0 +1,20 @@
+{
+    "command_group": "az batch pool node-counts",
+    "description": "Get node counts for Batch pools.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az batch pool node-counts list",
+            "summary": "Gets the number of Compute Nodes in each state, grouped by Pool.",
+            "syntax": "az batch pool node-counts list [--account-endpoint]\n                               [--account-key]\n                               [--account-name]\n                               [--filter]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account-endpoint",
+                "--account-key",
+                "--account-name",
+                "--filter"
+            ],
+            "examples": []
+        }
+    ]
+}

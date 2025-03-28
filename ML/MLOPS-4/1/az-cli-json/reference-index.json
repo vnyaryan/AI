@@ -1,0 +1,167 @@
+{
+    "command_group": "az",
+    "description": "",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az configure",
+            "summary": "Manage Azure CLI configuration. This command is interactive.",
+            "syntax": "az configure [--defaults]\n             [--list-defaults {false, true}]\n             [--scope {global, local}]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--defaults -d",
+                "--list-defaults -l",
+                "--scope"
+            ],
+            "examples": [
+                "az configure --defaults group=myRG web=myweb vm=myvm",
+                "az configure --defaults vm='' web=''"
+            ]
+        },
+        {
+            "name": "az feedback",
+            "summary": "Send feedback to the Azure CLI Team.",
+            "syntax": "az feedback",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az find",
+            "summary": "I'm an AI robot, my advice is based on our Azure documentation as well as the usage patterns of Azure CLI and Azure ARM users. Using me improves Azure products and documentation.",
+            "syntax": "az find [<CLI_TERM>]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "<CLI_TERM>"
+            ],
+            "examples": [
+                "az find \"az storage\"",
+                "az find \"az monitor activity-log list\"",
+                "az find \"arm template\""
+            ]
+        },
+        {
+            "name": "az init",
+            "summary": "It's an effortless setting up tool for configs.",
+            "syntax": "az init",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az interactive",
+            "summary": "Start interactive mode. Installs the Interactive extension if not installed already.",
+            "syntax": "az interactive [--style {bg, br, contrast, default, grey, halloween, neon, none, pastel, primary, purple, quiet}]\n               [--update]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--style -s",
+                "--update"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az login",
+            "summary": "Log in to Azure.",
+            "syntax": "az login [--allow-no-subscriptions]\n         [--certificate]\n         [--client-id]\n         [--federated-token]\n         [--identity]\n         [--object-id]\n         [--password]\n         [--resource-id]\n         [--scope]\n         [--service-principal]\n         [--tenant]\n         [--use-cert-sn-issuer]\n         [--use-device-code]\n         [--username]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--allow-no-subscriptions",
+                "--certificate",
+                "--client-id",
+                "--federated-token",
+                "--identity -i",
+                "--object-id",
+                "--password -p",
+                "--resource-id",
+                "--scope",
+                "--service-principal",
+                "--tenant -t",
+                "--use-cert-sn-issuer",
+                "--use-device-code",
+                "--username -u"
+            ],
+            "examples": [
+                "az login",
+                "az login --username johndoe@contoso.com --password VerySecret",
+                "az login --service-principal --username APP_ID --password CLIENT_SECRET --tenant TENANT_ID",
+                "az login --service-principal --username APP_ID --certificate /path/to/cert.pem --tenant TENANT_ID",
+                "az login --identity",
+                "az login --identity --client-id 00000000-0000-0000-0000-000000000000",
+                "az login --identity --resource-id /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/MyResourceGroup/providers/Microsoft.ManagedIdentity/userAssignedIdentities/MyIdentity"
+            ]
+        },
+        {
+            "name": "az logout",
+            "summary": "Log out to remove access to Azure subscriptions.",
+            "syntax": "az logout [--username]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--username"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az next",
+            "summary": "Recommend the possible next set of commands to take.",
+            "syntax": "az next [--command]\n        [--scenario]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--command -c",
+                "--scenario -s"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az rest",
+            "summary": "Invoke a custom request.",
+            "syntax": "az rest --uri\n        [--body]\n        [--headers]\n        [--method {delete, get, head, options, patch, post, put}]\n        [--output-file]\n        [--resource]\n        [--skip-authorization-header]\n        [--uri-parameters]",
+            "required_parameters": [
+                "--uri --url -u"
+            ],
+            "optional_parameters": [
+                "--body -b",
+                "--headers",
+                "--method -m",
+                "--output-file",
+                "--resource",
+                "--skip-authorization-header",
+                "--uri-parameters --url-parameters"
+            ],
+            "examples": [
+                "az rest --method get --url https://graph.microsoft.com/beta/auditLogs/directoryAudits",
+                "(Bash or CMD)\naz rest --method patch --url \"https://graph.microsoft.com/v1.0/users/johndoe@azuresdkteam.onmicrosoft.com\" --body \"{\\\"displayName\\\": \\\"johndoe2\\\"}\"\n\n(Bash)\naz rest --method patch --url \"https://graph.microsoft.com/v1.0/users/johndoe@azuresdkteam.onmicrosoft.com\" --body '{\"displayName\": \"johndoe2\"}'\n\n(PowerShell)\naz rest --method patch --url \"https://graph.microsoft.com/v1.0/users/johndoe@azuresdkteam.onmicrosoft.com\" --body '{\\\"displayName\\\": \\\"johndoe2\\\"}'",
+                "az rest --method get --uri /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/virtualMachines/{vmName}?api-version=2019-03-01",
+                "az rest --method put --url https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/publicIPAddresses/{publicIpAddressName}?api-version=2019-09-01 --body @body.json",
+                "az rest --method get --url https://management.azure.com/subscriptions/{subscriptionId}/resources?api-version=2019-07-01 --url-parameters \\$top=3"
+            ]
+        },
+        {
+            "name": "az survey",
+            "summary": "Take Azure CLI survey.",
+            "syntax": "az survey",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az upgrade",
+            "summary": "Upgrade Azure CLI and extensions.",
+            "syntax": "az upgrade [--all {false, true}]\n           [--allow-preview {false, true}]\n           [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--all",
+                "--allow-preview --allow-preview-extensions",
+                "--yes -y"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az version",
+            "summary": "Show the versions of Azure CLI modules and extensions in JSON format by default or format configured by --output.",
+            "syntax": "az version",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "examples": []
+        }
+    ]
+}

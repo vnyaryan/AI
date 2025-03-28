@@ -1,0 +1,165 @@
+{
+    "command_group": "az deployment sub",
+    "description": "Manage Azure Resource Manager template deployment at subscription scope.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az deployment sub cancel",
+            "summary": "Cancel a deployment at subscription scope.",
+            "syntax": "az deployment sub cancel --name",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az deployment sub cancel -n deployment01"
+            ]
+        },
+        {
+            "name": "az deployment sub create",
+            "summary": "Start a deployment at subscription scope.",
+            "syntax": "az deployment sub create --location\n                         [--confirm-with-what-if]\n                         [--handle-extended-json-format]\n                         [--name]\n                         [--no-prompt {false, true}]\n                         [--no-wait]\n                         [--parameters]\n                         [--proceed-if-no-change]\n                         [--query-string]\n                         [--template-file]\n                         [--template-spec]\n                         [--template-uri]\n                         [--what-if]\n                         [--what-if-exclude-change-types {Create, Delete, Deploy, Ignore, Modify, NoChange, Unsupported}]\n                         [--what-if-result-format {FullResourcePayloads, ResourceIdOnly}]",
+            "required_parameters": [
+                "--location -l"
+            ],
+            "optional_parameters": [
+                "--confirm-with-what-if -c",
+                "--handle-extended-json-format -j",
+                "--name -n",
+                "--no-prompt",
+                "--no-wait",
+                "--parameters -p",
+                "--proceed-if-no-change",
+                "--query-string -q",
+                "--template-file -f",
+                "--template-spec -s",
+                "--template-uri -u",
+                "--what-if -w",
+                "--what-if-exclude-change-types -x",
+                "--what-if-result-format -r"
+            ],
+            "examples": [
+                "az deployment sub create --location WestUS --template-uri https://myresource/azuredeploy.json --parameters @myparameters.json",
+                "az deployment sub create --location WestUS --template-file azuredeploy.json  \\\n    --parameters '{ \\\"policyName\\\": { \\\"value\\\": \\\"policy2\\\" } }'",
+                "az deployment sub create --location WestUS --template-file azuredeploy.json  \\\n    --parameters @params.json --parameters https://mysite/params.json --parameters MyValue=This MyArray=@array.json"
+            ]
+        },
+        {
+            "name": "az deployment sub delete",
+            "summary": "Delete a deployment at subscription scope.",
+            "syntax": "az deployment sub delete --name\n                         [--no-wait]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--no-wait"
+            ],
+            "examples": [
+                "az deployment sub delete -n deployment01"
+            ]
+        },
+        {
+            "name": "az deployment sub export",
+            "summary": "Export the template used for a deployment.",
+            "syntax": "az deployment sub export --name",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az deployment sub export --name MyDeployment"
+            ]
+        },
+        {
+            "name": "az deployment sub list",
+            "summary": "List deployments at subscription scope.",
+            "syntax": "az deployment sub list [--filter]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--filter"
+            ],
+            "examples": [
+                "az deployment sub list"
+            ]
+        },
+        {
+            "name": "az deployment sub show",
+            "summary": "Show a deployment at subscription scope.",
+            "syntax": "az deployment sub show --name",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az deployment sub show -n deployment01"
+            ]
+        },
+        {
+            "name": "az deployment sub validate",
+            "summary": "Validate whether a template is valid at subscription scope.",
+            "syntax": "az deployment sub validate --location\n                           [--handle-extended-json-format]\n                           [--name]\n                           [--no-prompt {false, true}]\n                           [--parameters]\n                           [--query-string]\n                           [--template-file]\n                           [--template-spec]\n                           [--template-uri]",
+            "required_parameters": [
+                "--location -l"
+            ],
+            "optional_parameters": [
+                "--handle-extended-json-format -j",
+                "--name -n",
+                "--no-prompt",
+                "--parameters -p",
+                "--query-string -q",
+                "--template-file -f",
+                "--template-spec -s",
+                "--template-uri -u"
+            ],
+            "examples": [
+                "az deployment sub validate --location westus2 --template-file {template-file}",
+                "az deployment sub validate --location westus2 --parameters MyValue=This MyArray=@array.json --template-file azuredeploy.json"
+            ]
+        },
+        {
+            "name": "az deployment sub wait",
+            "summary": "Place the CLI in a waiting state until a deployment condition is met.",
+            "syntax": "az deployment sub wait --name\n                       [--created]\n                       [--custom]\n                       [--deleted]\n                       [--exists]\n                       [--interval]\n                       [--timeout]\n                       [--updated]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--interval",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": [
+                "az deployment sub wait --created --name MyDeployment"
+            ]
+        },
+        {
+            "name": "az deployment sub what-if",
+            "summary": "Execute a deployment What-If operation at subscription scope.",
+            "syntax": "az deployment sub what-if --location\n                          [--exclude-change-types {Create, Delete, Deploy, Ignore, Modify, NoChange, Unsupported}]\n                          [--name]\n                          [--no-pretty-print]\n                          [--no-prompt {false, true}]\n                          [--parameters]\n                          [--query-string]\n                          [--result-format {FullResourcePayloads, ResourceIdOnly}]\n                          [--template-file]\n                          [--template-spec]\n                          [--template-uri]",
+            "required_parameters": [
+                "--location -l"
+            ],
+            "optional_parameters": [
+                "--exclude-change-types -x",
+                "--name -n",
+                "--no-pretty-print",
+                "--no-prompt",
+                "--parameters -p",
+                "--query-string -q",
+                "--result-format -r",
+                "--template-file -f",
+                "--template-spec -s",
+                "--template-uri -u"
+            ],
+            "examples": [
+                "az deployment sub what-if --location WestUS --template-uri https://myresource/azuredeploy.json --parameters @myparameters.json",
+                "az deployment sub what-if --location WestUS --template-uri https://myresource/azuredeploy.json --parameters @myparameters.json --result-format ResourceIdOnly",
+                "az deployment sub what-if --location WestUS --template-uri https://myresource/azuredeploy.json --parameters @myparameters.json --no-pretty-print"
+            ]
+        }
+    ]
+}

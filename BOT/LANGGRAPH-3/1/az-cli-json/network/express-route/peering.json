@@ -1,0 +1,155 @@
+{
+    "command_group": "az network express-route peering",
+    "description": "Manage ExpressRoute peering of an ExpressRoute circuit.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az network express-route peering create",
+            "summary": "Create peering settings for an ExpressRoute circuit.",
+            "syntax": "az network express-route peering create --circuit-name\n                                        --resource-group\n                                        [--advertised-public-prefixes]\n                                        [--customer-asn]\n                                        [--ip-version]\n                                        [--legacy-mode]\n                                        [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                        [--peer-asn]\n                                        [--peering-type {AzurePrivatePeering, AzurePublicPeering, MicrosoftPeering}]\n                                        [--primary-peer-subnet]\n                                        [--route-filter]\n                                        [--routing-registry-name {AFRINIC, ALTDB, APNIC, ARIN, LACNIC, LEVEL3, RADB, RIPENCC}]\n                                        [--secondary-peer-subnet]\n                                        [--shared-key]\n                                        [--vlan-id]",
+            "required_parameters": [
+                "--circuit-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--advertised-public-prefixes",
+                "--customer-asn",
+                "--ip-version",
+                "--legacy-mode",
+                "--no-wait",
+                "--peer-asn",
+                "--peering-type",
+                "--primary-peer-subnet",
+                "--route-filter",
+                "--routing-registry-name",
+                "--secondary-peer-subnet",
+                "--shared-key",
+                "--vlan-id"
+            ],
+            "examples": [
+                "az network express-route peering create -g MyResourceGroup --circuit-name MyCircuit --peering-type MicrosoftPeering --peer-asn 10002 --vlan-id 103 --primary-peer-subnet 101.0.0.0/30 --secondary-peer-subnet 102.0.0.0/30 --advertised-public-prefixes 101.0.0.0/30",
+                "az network express-route peering create -g MyResourceGroup --circuit-name MyCircuit --peering-type AzurePrivatePeering --peer-asn 10002 --vlan-id 103 --ip-version ipv6 --primary-peer-subnet 2002:db00::/126 --secondary-peer-subnet 2003:db00::/126",
+                "az network express-route peering create --circuit-name MyCircuit --peer-asn 10002 --peering-type AzurePublicPeering --primary-peer-subnet 101.0.0.0/30 --resource-group MyResourceGroup --secondary-peer-subnet 102.0.0.0/30 --shared-key Abc123 --vlan-id 103"
+            ]
+        },
+        {
+            "name": "az network express-route peering delete",
+            "summary": "Delete peering settings.",
+            "syntax": "az network express-route peering delete [--circuit-name]\n                                        [--ids]\n                                        [--name]\n                                        [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                        [--resource-group]\n                                        [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--circuit-name",
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az network express-route peering delete -g MyResourceGroup --circuit-name MyCircuit -n AzurePrivatePeering"
+            ]
+        },
+        {
+            "name": "az network express-route peering get-stats",
+            "summary": "Get all traffic stats of an ExpressRoute peering.",
+            "syntax": "az network express-route peering get-stats [--circuit-name]\n                                           [--ids]\n                                           [--name]\n                                           [--resource-group]\n                                           [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--circuit-name",
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az network express-route peering get-stats --circuit-name MyCircuit --name MyPeering --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az network express-route peering list",
+            "summary": "List peering settings of an ExpressRoute circuit.",
+            "syntax": "az network express-route peering list --circuit-name\n                                      --resource-group\n                                      [--max-items]\n                                      [--next-token]",
+            "required_parameters": [
+                "--circuit-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az network express-route peering list -g MyResourceGroup --circuit-name MyCircuit"
+            ]
+        },
+        {
+            "name": "az network express-route peering show",
+            "summary": "Get the details of an express route peering.",
+            "syntax": "az network express-route peering show [--circuit-name]\n                                      [--ids]\n                                      [--name]\n                                      [--resource-group]\n                                      [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--circuit-name",
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az network express-route peering show -g MyResourceGroup --circuit-name MyCircuit -n AzurePrivatePeering"
+            ]
+        },
+        {
+            "name": "az network express-route peering update",
+            "summary": "Update peering settings of an ExpressRoute circuit.",
+            "syntax": "az network express-route peering update [--add]\n                                        [--advertised-public-prefixes]\n                                        [--circuit-name]\n                                        [--customer-asn]\n                                        [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                        [--ids]\n                                        [--ip-version]\n                                        [--legacy-mode]\n                                        [--name]\n                                        [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                        [--peer-asn]\n                                        [--primary-peer-subnet]\n                                        [--remove]\n                                        [--resource-group]\n                                        [--route-filter]\n                                        [--routing-registry-name {AFRINIC, ALTDB, APNIC, ARIN, LACNIC, LEVEL3, RADB, RIPENCC}]\n                                        [--secondary-peer-subnet]\n                                        [--set]\n                                        [--shared-key]\n                                        [--subscription]\n                                        [--vlan-id]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--advertised-public-prefixes",
+                "--circuit-name",
+                "--customer-asn",
+                "--force-string",
+                "--ids",
+                "--ip-version",
+                "--legacy-mode",
+                "--name -n",
+                "--no-wait",
+                "--peer-asn",
+                "--primary-peer-subnet",
+                "--remove",
+                "--resource-group -g",
+                "--route-filter",
+                "--routing-registry-name",
+                "--secondary-peer-subnet",
+                "--set",
+                "--shared-key",
+                "--subscription",
+                "--vlan-id"
+            ],
+            "examples": [
+                "az network express-route peering update -g MyResourceGroup --circuit-name MyCircuit --ip-version ipv6 --primary-peer-subnet 2002:db00::/126 --secondary-peer-subnet 2003:db00::/126 --advertised-public-prefixes 2002:db00::/126",
+                "az network express-route peering update --circuit-name MyCircuit --name MyPeering --peer-asn 10002 --primary-peer-subnet 2002:db00::/126 --resource-group MyResourceGroup --secondary-peer-subnet 2003:db00::/126 --shared-key Abc123 --vlan-id 103"
+            ]
+        },
+        {
+            "name": "az network express-route peering wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az network express-route peering wait [--circuit-name]\n                                      [--created]\n                                      [--custom]\n                                      [--deleted]\n                                      [--exists]\n                                      [--ids]\n                                      [--interval]\n                                      [--name]\n                                      [--resource-group]\n                                      [--subscription]\n                                      [--timeout]\n                                      [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--circuit-name",
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

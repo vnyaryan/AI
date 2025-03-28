@@ -1,0 +1,24 @@
+{
+    "command_group": "az iot central",
+    "description": "Manage IoT Central resources.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az iot central query",
+            "summary": "Query device telemetry or property data with IoT Central Query Language.",
+            "syntax": "az iot central query --app-id\n                     --qs\n                     [--api-version {2022-06-30-preview}]\n                     [--central-api-uri]\n                     [--token]",
+            "required_parameters": [
+                "--app-id -n",
+                "--qs --query-string"
+            ],
+            "optional_parameters": [
+                "--api-version --av",
+                "--central-api-uri --central-dns-suffix",
+                "--token"
+            ],
+            "examples": [
+                "az iot central query --app-id {appid} --query-string {query_string}"
+            ]
+        }
+    ]
+}

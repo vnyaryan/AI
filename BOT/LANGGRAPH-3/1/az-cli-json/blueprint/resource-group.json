@@ -1,0 +1,99 @@
+{
+    "command_group": "az blueprint resource-group",
+    "description": "Commands to manage blueprint resource group artifact.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az blueprint resource-group add",
+            "summary": "Add a resource group artifact to the blueprint.",
+            "syntax": "az blueprint resource-group add --blueprint-name\n                                [--artifact-name]\n                                [--depends-on]\n                                [--description]\n                                [--display-name]\n                                [--management-group]\n                                [--rg-location]\n                                [--rg-name]\n                                [--subscription]\n                                [--tags]",
+            "required_parameters": [
+                "--blueprint-name"
+            ],
+            "optional_parameters": [
+                "--artifact-name",
+                "--depends-on",
+                "--description",
+                "--display-name",
+                "--management-group -m",
+                "--rg-location",
+                "--rg-name",
+                "--subscription -s",
+                "--tags"
+            ],
+            "examples": [
+                "az blueprint resource-group add \\\n--blueprint-name MyBlueprint --artifact-name MyResourceGroupArt"
+            ]
+        },
+        {
+            "name": "az blueprint resource-group list",
+            "summary": "List blueprint resource group artifact.",
+            "syntax": "az blueprint resource-group list --blueprint-name\n                                 [--management-group]\n                                 [--subscription]",
+            "required_parameters": [
+                "--blueprint-name"
+            ],
+            "optional_parameters": [
+                "--management-group -m",
+                "--subscription -s"
+            ],
+            "examples": [
+                "az blueprint resource-group list \\\n--blueprint-name MyBlueprint"
+            ]
+        },
+        {
+            "name": "az blueprint resource-group remove",
+            "summary": "Remove a blueprint resource group artifact.",
+            "syntax": "az blueprint resource-group remove --artifact-name\n                                   --blueprint-name\n                                   [--management-group]\n                                   [--subscription]\n                                   [--yes]",
+            "required_parameters": [
+                "--artifact-name",
+                "--blueprint-name"
+            ],
+            "optional_parameters": [
+                "--management-group -m",
+                "--subscription -s",
+                "--yes -y"
+            ],
+            "examples": [
+                "az blueprint resource-group remove \\\n--blueprint-name MyBlueprint --artifact-name MyResourceGroupArt"
+            ]
+        },
+        {
+            "name": "az blueprint resource-group show",
+            "summary": "Show blueprint resource group artifact.",
+            "syntax": "az blueprint resource-group show --artifact-name\n                                 --blueprint-name\n                                 [--management-group]\n                                 [--subscription]",
+            "required_parameters": [
+                "--artifact-name",
+                "--blueprint-name"
+            ],
+            "optional_parameters": [
+                "--management-group -m",
+                "--subscription -s"
+            ],
+            "examples": [
+                "az blueprint resource-group show \\\n--blueprint-name MyBlueprint --artifact-name MyResourceGroupArt"
+            ]
+        },
+        {
+            "name": "az blueprint resource-group update",
+            "summary": "Update blueprint resource group artifact.",
+            "syntax": "az blueprint resource-group update --artifact-name\n                                   --blueprint-name\n                                   [--depends-on]\n                                   [--description]\n                                   [--display-name]\n                                   [--management-group]\n                                   [--rg-location]\n                                   [--rg-name]\n                                   [--subscription]\n                                   [--tags]",
+            "required_parameters": [
+                "--artifact-name",
+                "--blueprint-name"
+            ],
+            "optional_parameters": [
+                "--depends-on",
+                "--description",
+                "--display-name",
+                "--management-group -m",
+                "--rg-location",
+                "--rg-name",
+                "--subscription -s",
+                "--tags"
+            ],
+            "examples": [
+                "az blueprint resource-group update \\\n--blueprint-name MyBlueprint --artifact-name MyResourceGroupArt --display-name \"My Resource Group\""
+            ]
+        }
+    ]
+}

@@ -1,0 +1,34 @@
+{
+    "command_group": "az security jit-policy",
+    "description": "Manage your Just in Time network access policies.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az security jit-policy list",
+            "summary": "List your Just in Time network access policies.",
+            "syntax": "az security jit-policy list [--location]\n                            [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--location -l",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az security jit-policy list"
+            ]
+        },
+        {
+            "name": "az security jit-policy show",
+            "summary": "Shows a Just in Time network access policy.",
+            "syntax": "az security jit-policy show --location\n                            --name\n                            --resource-group",
+            "required_parameters": [
+                "--location -l",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az security jit-policy show -l northeurope -n default -g myService1"
+            ]
+        }
+    ]
+}

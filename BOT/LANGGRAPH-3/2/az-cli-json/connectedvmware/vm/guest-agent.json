@@ -1,0 +1,40 @@
+{
+    "command_group": "az connectedvmware vm guest-agent",
+    "description": "Vm guest agent.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az connectedvmware vm guest-agent enable",
+            "summary": "Enable guest agent on the vm.",
+            "syntax": "az connectedvmware vm guest-agent enable --resource-group\n                                         --vm-name\n                                         [--https-proxy]\n                                         [--no-wait]\n                                         [--password]\n                                         [--private-link-scope]\n                                         [--username]",
+            "required_parameters": [
+                "--resource-group -g",
+                "--vm-name"
+            ],
+            "optional_parameters": [
+                "--https-proxy",
+                "--no-wait",
+                "--password",
+                "--private-link-scope",
+                "--username"
+            ],
+            "examples": [
+                "az connectedvmware vm guest-agent enable --username \"vm user name\" --password \"vm password\" --resource-group \"resource group name\" --subscription \"Name or ID of subscription\" --vm-name \"vm name\"",
+                "az connectedvmware vm guest-agent enable --username \"vm user name\" --password \"vm password\" --resource-group \"resource group name\" --subscription \"Name or ID of subscription\" --vm-name \"vm name\" --private-link-scope \"/subscriptions/fedcba98-7654-3210-0123-456789abcdef/resourceGroups/contoso-rg/providers/Microsoft.HybirdCompute/privateLinkScopes/contoso-private-link-scope\""
+            ]
+        },
+        {
+            "name": "az connectedvmware vm guest-agent show",
+            "summary": "Get details of a guest agent by guest agent name, resource-group and vm name.",
+            "syntax": "az connectedvmware vm guest-agent show --resource-group\n                                       --vm-name",
+            "required_parameters": [
+                "--resource-group -g",
+                "--vm-name"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az connectedvmware vm guest-agent show --resource-group \"resource group name\"                --vm-name \"name of the vm\""
+            ]
+        }
+    ]
+}

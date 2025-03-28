@@ -1,0 +1,109 @@
+{
+    "command_group": "az servicebus queue",
+    "description": "Servicebus queue.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az servicebus queue create",
+            "summary": "Create a Service Bus queue. This operation is idempotent.",
+            "syntax": "az servicebus queue create --name\n                           --namespace-name\n                           --resource-group\n                           [--auto-delete-on-idle]\n                           [--default-message-time-to-live]\n                           [--duplicate-detection {0, 1, f, false, n, no, t, true, y, yes}]\n                           [--duplicate-detection-history-time-window]\n                           [--enable-batched-operations {0, 1, f, false, n, no, t, true, y, yes}]\n                           [--enable-dead-lettering-on-message-expiration {0, 1, f, false, n, no, t, true, y, yes}]\n                           [--enable-express {0, 1, f, false, n, no, t, true, y, yes}]\n                           [--enable-partitioning {0, 1, f, false, n, no, t, true, y, yes}]\n                           [--enable-session {0, 1, f, false, n, no, t, true, y, yes}]\n                           [--forward-dead-lettered-messages-to]\n                           [--forward-to]\n                           [--lock-duration]\n                           [--max-delivery-count]\n                           [--max-message-size]\n                           [--max-size]\n                           [--status {Active, Creating, Deleting, Disabled, ReceiveDisabled, Renaming, Restoring, SendDisabled, Unknown}]",
+            "required_parameters": [
+                "--name --queue-name -n",
+                "--namespace-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--auto-delete-on-idle",
+                "--default-message-time-to-live",
+                "--duplicate-detection --enable-duplicate-detection",
+                "--duplicate-detection-history-time-window -d",
+                "--enable-batched-operations",
+                "--enable-dead-lettering-on-message-expiration --message-expiration",
+                "--enable-express",
+                "--enable-partitioning",
+                "--enable-session",
+                "--forward-dead-lettered-messages-to",
+                "--forward-to",
+                "--lock-duration",
+                "--max-delivery-count",
+                "--max-message-size --max-message-size-in-kilobytes",
+                "--max-size --max-size-in-megabytes",
+                "--status"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az servicebus queue delete",
+            "summary": "Delete a queue from the specified namespace in a resource group.",
+            "syntax": "az servicebus queue delete [--ids]\n                           [--name]\n                           [--namespace-name]\n                           [--resource-group]\n                           [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --queue-name -n",
+                "--namespace-name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az servicebus queue list",
+            "summary": "List the queues within a namespace.",
+            "syntax": "az servicebus queue list --namespace-name\n                         --resource-group\n                         [--skip]\n                         [--top]",
+            "required_parameters": [
+                "--namespace-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--skip",
+                "--top"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az servicebus queue show",
+            "summary": "Get a description for the specified queue.",
+            "syntax": "az servicebus queue show [--ids]\n                         [--name]\n                         [--namespace-name]\n                         [--resource-group]\n                         [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --queue-name -n",
+                "--namespace-name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az servicebus queue update",
+            "summary": "Update a Service Bus queue. This operation is idempotent.",
+            "syntax": "az servicebus queue update [--add]\n                           [--auto-delete-on-idle]\n                           [--default-message-time-to-live]\n                           [--duplicate-detection-history-time-window]\n                           [--enable-batched-operations {0, 1, f, false, n, no, t, true, y, yes}]\n                           [--enable-dead-lettering-on-message-expiration {0, 1, f, false, n, no, t, true, y, yes}]\n                           [--enable-express {0, 1, f, false, n, no, t, true, y, yes}]\n                           [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                           [--forward-dead-lettered-messages-to]\n                           [--forward-to]\n                           [--ids]\n                           [--lock-duration]\n                           [--max-delivery-count]\n                           [--max-message-size]\n                           [--max-size]\n                           [--name]\n                           [--namespace-name]\n                           [--remove]\n                           [--resource-group]\n                           [--set]\n                           [--status {Active, Creating, Deleting, Disabled, ReceiveDisabled, Renaming, Restoring, SendDisabled, Unknown}]\n                           [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--auto-delete-on-idle",
+                "--default-message-time-to-live",
+                "--duplicate-detection-history-time-window -d",
+                "--enable-batched-operations",
+                "--enable-dead-lettering-on-message-expiration --message-expiration",
+                "--enable-express",
+                "--force-string",
+                "--forward-dead-lettered-messages-to",
+                "--forward-to",
+                "--ids",
+                "--lock-duration",
+                "--max-delivery-count",
+                "--max-message-size --max-message-size-in-kilobytes",
+                "--max-size --max-size-in-megabytes",
+                "--name --queue-name -n",
+                "--namespace-name",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--status",
+                "--subscription"
+            ],
+            "examples": []
+        }
+    ]
+}

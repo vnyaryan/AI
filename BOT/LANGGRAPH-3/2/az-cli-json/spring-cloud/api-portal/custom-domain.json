@@ -1,0 +1,76 @@
+{
+    "command_group": "az spring-cloud api-portal custom-domain",
+    "description": "Commands to manage custom domains for API portal.",
+    "status": "Preview and Deprecated",
+    "commands": [
+        {
+            "name": "az spring-cloud api-portal custom-domain bind",
+            "summary": "Bind a custom domain with the API portal.",
+            "syntax": "az spring-cloud api-portal custom-domain bind --domain-name\n                                              --resource-group\n                                              --service\n                                              [--certificate]",
+            "required_parameters": [
+                "--domain-name",
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [
+                "--certificate"
+            ],
+            "examples": [
+                "az spring-cloud api-portal custom-domain bind --domain-name MyDomainName --certificate MyCertName --service MyCluster --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az spring-cloud api-portal custom-domain list",
+            "summary": "List all custom domains of the API portal.",
+            "syntax": "az spring-cloud api-portal custom-domain list --resource-group\n                                              --service",
+            "required_parameters": [
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az spring-cloud api-portal custom-domain list --service MyCluster --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az spring-cloud api-portal custom-domain show",
+            "summary": "Show details of a custom domain.",
+            "syntax": "az spring-cloud api-portal custom-domain show --domain-name\n                                              --resource-group\n                                              --service",
+            "required_parameters": [
+                "--domain-name",
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az spring-cloud api-portal custom-domain unbind",
+            "summary": "Unbind a custom-domain of the API portal.",
+            "syntax": "az spring-cloud api-portal custom-domain unbind --domain-name\n                                                --resource-group\n                                                --service",
+            "required_parameters": [
+                "--domain-name",
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az spring-cloud api-portal custom-domain update",
+            "summary": "Update a custom domain of the API portal.",
+            "syntax": "az spring-cloud api-portal custom-domain update --domain-name\n                                                --resource-group\n                                                --service\n                                                [--certificate]",
+            "required_parameters": [
+                "--domain-name",
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [
+                "--certificate"
+            ],
+            "examples": [
+                "az spring-cloud api-portal custom-domain update --domain-name MyDomainName --certificate MCertName --service MyCluster --resource-group MyResourceGroup"
+            ]
+        }
+    ]
+}

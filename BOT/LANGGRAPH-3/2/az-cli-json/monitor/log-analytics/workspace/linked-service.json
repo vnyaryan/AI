@@ -1,0 +1,118 @@
+{
+    "command_group": "az monitor log-analytics workspace linked-service",
+    "description": "Manage linked service for log analytics workspace.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az monitor log-analytics workspace linked-service create",
+            "summary": "Create a linked service.",
+            "syntax": "az monitor log-analytics workspace linked-service create --linked-service-name\n                                                         --resource-group\n                                                         --workspace-name\n                                                         [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                                         [--resource-id]\n                                                         [--tags]\n                                                         [--write-access-resource-id]",
+            "required_parameters": [
+                "--linked-service-name --name -n",
+                "--resource-group -g",
+                "--workspace-name"
+            ],
+            "optional_parameters": [
+                "--no-wait",
+                "--resource-id",
+                "--tags",
+                "--write-access-resource-id"
+            ],
+            "examples": [
+                "az monitor log-analytics workspace linked-service create -g MyResourceGroup -n cluster --workspace-name MyWorkspace --write-access-resource-id /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/MyResourceGroup/providers/Microsoft.OperationalInsights/clusters/MyCluster"
+            ]
+        },
+        {
+            "name": "az monitor log-analytics workspace linked-service delete",
+            "summary": "Delete a linked service.",
+            "syntax": "az monitor log-analytics workspace linked-service delete [--ids]\n                                                         [--linked-service-name]\n                                                         [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                                         [--resource-group]\n                                                         [--subscription]\n                                                         [--workspace-name]\n                                                         [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--linked-service-name --name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--workspace-name",
+                "--yes -y"
+            ],
+            "examples": [
+                "az monitor log-analytics workspace linked-service delete -g MyResourceGroup -n cluster --workspace-name MyWorkspace"
+            ]
+        },
+        {
+            "name": "az monitor log-analytics workspace linked-service list",
+            "summary": "Get all the linked services in a workspace.",
+            "syntax": "az monitor log-analytics workspace linked-service list --resource-group\n                                                       --workspace-name",
+            "required_parameters": [
+                "--resource-group -g",
+                "--workspace-name"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az monitor log-analytics workspace linked-service list -g MyResourceGroup --workspace-name MyWorkspace"
+            ]
+        },
+        {
+            "name": "az monitor log-analytics workspace linked-service show",
+            "summary": "Show the properties of a linked service.",
+            "syntax": "az monitor log-analytics workspace linked-service show [--ids]\n                                                       [--linked-service-name]\n                                                       [--resource-group]\n                                                       [--subscription]\n                                                       [--workspace-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--linked-service-name --name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--workspace-name"
+            ],
+            "examples": [
+                "az monitor log-analytics workspace linked-service show -g MyResourceGroup -n cluster --workspace-name MyWorkspace"
+            ]
+        },
+        {
+            "name": "az monitor log-analytics workspace linked-service update",
+            "summary": "Update a linked service.",
+            "syntax": "az monitor log-analytics workspace linked-service update [--add]\n                                                         [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                                         [--ids]\n                                                         [--linked-service-name]\n                                                         [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                                         [--remove]\n                                                         [--resource-group]\n                                                         [--resource-id]\n                                                         [--set]\n                                                         [--subscription]\n                                                         [--tags]\n                                                         [--workspace-name]\n                                                         [--write-access-resource-id]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--force-string",
+                "--ids",
+                "--linked-service-name --name -n",
+                "--no-wait",
+                "--remove",
+                "--resource-group -g",
+                "--resource-id",
+                "--set",
+                "--subscription",
+                "--tags",
+                "--workspace-name",
+                "--write-access-resource-id"
+            ],
+            "examples": [
+                "az monitor log-analytics workspace linked-service update -g MyResourceGroup -n cluster --workspace-name MyWorkspace --write-access-resource-id /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/MyResourceGroup/providers/Microsoft.OperationalInsights/clusters/MyCluster"
+            ]
+        },
+        {
+            "name": "az monitor log-analytics workspace linked-service wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az monitor log-analytics workspace linked-service wait [--created]\n                                                       [--custom]\n                                                       [--deleted]\n                                                       [--exists]\n                                                       [--ids]\n                                                       [--interval]\n                                                       [--linked-service-name]\n                                                       [--resource-group]\n                                                       [--subscription]\n                                                       [--timeout]\n                                                       [--updated]\n                                                       [--workspace-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--linked-service-name --name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated",
+                "--workspace-name"
+            ],
+            "examples": []
+        }
+    ]
+}

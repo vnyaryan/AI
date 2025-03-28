@@ -1,0 +1,24 @@
+{
+    "command_group": "az datafactory integration-runtime managed",
+    "description": "Manage integration runtime with datafactory sub group managed.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az datafactory integration-runtime managed create",
+            "summary": "Create an integration runtime.",
+            "syntax": "az datafactory integration-runtime managed create --factory-name\n                                                  --integration-runtime-name\n                                                  --resource-group\n                                                  [--compute-properties]\n                                                  [--description]\n                                                  [--if-match]\n                                                  [--ssis-properties]",
+            "required_parameters": [
+                "--factory-name",
+                "--integration-runtime-name --name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--compute-properties",
+                "--description",
+                "--if-match",
+                "--ssis-properties"
+            ],
+            "examples": []
+        }
+    ]
+}

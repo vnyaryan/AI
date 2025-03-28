@@ -1,0 +1,6 @@
+{
+    "command_group": "az netappfiles volume latest-restore-status",
+    "description": "Get the latest backup status of a volume.",
+    "status": "GA",
+    "commands": []
+}

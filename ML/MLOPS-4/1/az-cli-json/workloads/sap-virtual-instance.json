@@ -1,0 +1,168 @@
+{
+    "command_group": "az workloads sap-virtual-instance",
+    "description": "Manage virtual instance.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az workloads sap-virtual-instance create",
+            "summary": "Create a Virtual Instance for SAP solutions (VIS) resource.",
+            "syntax": "az workloads sap-virtual-instance create --name\n                                         --resource-group\n                                         [--central-server-vm]\n                                         [--configuration]\n                                         [--environment {NonProd, Prod}]\n                                         [--identity]\n                                         [--location]\n                                         [--managed-resources-network-access-type {Private, Public}]\n                                         [--managed-rg-name]\n                                         [--managed-rg-sa-name]\n                                         [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                         [--sap-product {ECC, Other, S4HANA}]\n                                         [--tags]",
+            "required_parameters": [
+                "--name --sap-virtual-instance-name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--central-server-vm",
+                "--configuration",
+                "--environment",
+                "--identity",
+                "--location -l",
+                "--managed-resources-network-access-type --mrg-network-access-typ",
+                "--managed-rg-name",
+                "--managed-rg-sa-name",
+                "--no-wait",
+                "--sap-product",
+                "--tags"
+            ],
+            "examples": [
+                "az workloads sap-virtual-instance create -g <resource-group-name> -n <vis-name> --environment NonProd --sap-product s4hana --configuration <payload-file-path> --identity \"{type:UserAssigned,userAssignedIdentities:{<managed-identity-resource-id>:{}}}\"",
+                "az workloads sap-virtual-instance create -g <resource-group-name> -n <vis-name> --environment NonProd --sap-product s4hana --configuration <payload-file-path> --identity \"{type:UserAssigned,userAssignedIdentities:{<managed-Identity-resource-id>:{}}}\"",
+                "az workloads sap-virtual-instance create -g <resource-group-name> -n <vis-name> --environment NonProd --sap-product s4hana --configuration <payload-file-path> --identity \"{type:UserAssigned,userAssignedIdentities:{<managed-identity-resource-id>:{}}}\"",
+                "az workloads sap-virtual-instance create -g <resource-group-name> -n <vis-name> --environment NonProd --sap-product s4hana --configuration <payload-file-path> --identity \"{type:UserAssigned,userAssignedIdentities:{<managed-identity-resource-id>:{}}}\"",
+                "az workloads sap-virtual-instance create -g <resource-group-name> -n <vis-name> --environment NonProd --sap-product s4hana --central-server-vm <virtual-machine-id> --identity \"{type:UserAssigned,userAssignedIdentities:{<managed-identity-resource-id>:{}}}\"",
+                "az workloads sap-virtual-instance create -g <resource-group-name> -n <vis-name> --environment NonProd --sap-product s4hana --central-server-vm <virtual-machine-id> --identity \"{type:UserAssigned,userAssignedIdentities:{<managed-identity-resource-id>:{}}}\" --managed-rg-name <managed-rg-name> --managed-rg-sa-name <managed-rg-storage-account-name> --managed-resources-network-access-type <public/private>",
+                "az workloads sap-virtual-instance create -g <resource-group-name> -n <vis-name> --environment NonProd --sap-product s4hana --configuration <payload-file-path> --identity \"{type:UserAssigned,userAssignedIdentities:{<managed-identity-resource-id>:{}}}\""
+            ]
+        },
+        {
+            "name": "az workloads sap-virtual-instance delete",
+            "summary": "Delete a Virtual Instance for SAP solutions resource and its child resources, that is the associated Central Services Instance, Application Server Instances and Database Instance.",
+            "syntax": "az workloads sap-virtual-instance delete [--ids]\n                                         [--name]\n                                         [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                         [--resource-group]\n                                         [--subscription]\n                                         [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --sap-virtual-instance-name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az workloads sap-virtual-instance delete -g <resource-group-name> -n <vis-name>",
+                "az workloads sap-virtual-instance delete --id <resource-id>"
+            ]
+        },
+        {
+            "name": "az workloads sap-virtual-instance list",
+            "summary": "List all Virtual Instances for SAP solutions resources in a Resource Group.",
+            "syntax": "az workloads sap-virtual-instance list --resource-group\n                                       [--max-items]\n                                       [--next-token]",
+            "required_parameters": [
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az workloads sap-virtual-instance list -g <resource-group-name>"
+            ]
+        },
+        {
+            "name": "az workloads sap-virtual-instance show",
+            "summary": "Show a Virtual Instance for SAP solutions resource.",
+            "syntax": "az workloads sap-virtual-instance show [--ids]\n                                       [--name]\n                                       [--resource-group]\n                                       [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --sap-virtual-instance-name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az workloads sap-virtual-instance show -g <resource-group-name> -n <vis-name>",
+                "az workloads sap-virtual-instance show --id <resource-id>"
+            ]
+        },
+        {
+            "name": "az workloads sap-virtual-instance start",
+            "summary": "Starts the SAP application, that is the Central Services instance and Application server instances.",
+            "syntax": "az workloads sap-virtual-instance start [--ids]\n                                        [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                        [--resource-group]\n                                        [--sap-virtual-instance-name]\n                                        [--start-vm {0, 1, f, false, n, no, t, true, y, yes}]\n                                        [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--no-wait",
+                "--resource-group -g",
+                "--sap-virtual-instance-name --vis-name",
+                "--start-vm",
+                "--subscription"
+            ],
+            "examples": [
+                "az workloads sap-virtual-instance start -g <resource-group-name> -n <vis-name>",
+                "az workloads sap-virtual-instance start --id <resource-id>",
+                "az workloads sap-virtual-instance start -g <resource-group-name> -n <vis-name> --start-vm"
+            ]
+        },
+        {
+            "name": "az workloads sap-virtual-instance stop",
+            "summary": "Stops the SAP Application, that is the Application server instances and Central Services instance.",
+            "syntax": "az workloads sap-virtual-instance stop [--deallocate-vm {0, 1, f, false, n, no, t, true, y, yes}]\n                                       [--ids]\n                                       [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                       [--resource-group]\n                                       [--sap-virtual-instance-name]\n                                       [--soft-stop-timeout-seconds]\n                                       [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--deallocate-vm",
+                "--ids",
+                "--no-wait",
+                "--resource-group -g",
+                "--sap-virtual-instance-name --vis-name",
+                "--soft-stop-timeout-seconds",
+                "--subscription"
+            ],
+            "examples": [
+                "az workloads sap-virtual-instance stop -g <resource-group-name> -n <vis-name>",
+                "az workloads sap-virtual-instance stop --id <resource-id>",
+                "az workloads sap-virtual-instance stop -g <resource-group-name> -n <vis-name> --deallocate-vm",
+                "az workloads sap-virtual-instance stop -g <resource-group-name> -n <vis-name> --soft-stop-timeout-seconds <timeout-in-seconds>"
+            ]
+        },
+        {
+            "name": "az workloads sap-virtual-instance update",
+            "summary": "Update a Virtual Instance for SAP solutions (VIS) resource.",
+            "syntax": "az workloads sap-virtual-instance update [--identity]\n                                         [--ids]\n                                         [--managed-resources-network-access-type {Private, Public}]\n                                         [--name]\n                                         [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                         [--resource-group]\n                                         [--subscription]\n                                         [--tags]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--identity",
+                "--ids",
+                "--managed-resources-network-access-type",
+                "--name --sap-virtual-instance-name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--tags"
+            ],
+            "examples": [
+                "az workloads sap-virtual-instance update -g <resource-group-name> -n <vis-name> --tags tag1=test1 tag2=test2",
+                "az workloads sap-virtual-instance update --id <resource-id> --tags tag1=test1",
+                "az workloads sap-virtual-instance update -g <resource-group-name> -n <vis-name> --identity \"{type:UserAssigned,userAssignedIdentities:{<managed-identity-resource-id>:{}}}\" --managed-resources-network-access-type <public/private>"
+            ]
+        },
+        {
+            "name": "az workloads sap-virtual-instance wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az workloads sap-virtual-instance wait [--created]\n                                       [--custom]\n                                       [--deleted]\n                                       [--exists]\n                                       [--ids]\n                                       [--interval]\n                                       [--name]\n                                       [--resource-group]\n                                       [--subscription]\n                                       [--timeout]\n                                       [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--name --sap-virtual-instance-name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

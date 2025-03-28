@@ -1,0 +1,43 @@
+{
+    "command_group": "az containerapp auth facebook",
+    "description": "Manage containerapp authentication and authorization of the Facebook identity provider.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az containerapp auth facebook show",
+            "summary": "Show the authentication settings for the Facebook identity provider.",
+            "syntax": "az containerapp auth facebook show [--ids]\n                                   [--name]\n                                   [--resource-group]\n                                   [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az containerapp auth facebook show --name my-containerapp --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az containerapp auth facebook update",
+            "summary": "Update the app id and app secret for the Facebook identity provider.",
+            "syntax": "az containerapp auth facebook update [--app-id]\n                                     [--app-secret]\n                                     [--app-secret-name]\n                                     [--graph-api-version]\n                                     [--ids]\n                                     [--name]\n                                     [--resource-group]\n                                     [--scopes]\n                                     [--subscription]\n                                     [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--app-id",
+                "--app-secret",
+                "--app-secret-name --secret-name",
+                "--graph-api-version",
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--scopes",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az containerapp auth facebook update  -g myResourceGroup --name my-containerapp \\\n  --app-id my-client-id --app-secret very_secret_password"
+            ]
+        }
+    ]
+}

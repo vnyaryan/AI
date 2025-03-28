@@ -1,0 +1,50 @@
+{
+    "command_group": "az spring-cloud api-portal",
+    "description": "(Enterprise Tier Only) Commands to manage API portal in Azure Spring Cloud.",
+    "status": "Preview and Deprecated",
+    "commands": [
+        {
+            "name": "az spring-cloud api-portal clear",
+            "summary": "Clear all settings of API portal.",
+            "syntax": "az spring-cloud api-portal clear --resource-group\n                                 --service",
+            "required_parameters": [
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az spring-cloud api-portal show",
+            "summary": "Show the settings, provisioning status and runtime status of API portal.",
+            "syntax": "az spring-cloud api-portal show --resource-group\n                                --service",
+            "required_parameters": [
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az spring-cloud api-portal update",
+            "summary": "Update an existing API portal properties.",
+            "syntax": "az spring-cloud api-portal update --resource-group\n                                  --service\n                                  [--assign-endpoint {false, true}]\n                                  [--client-id]\n                                  [--client-secret]\n                                  [--https-only {false, true}]\n                                  [--instance-count]\n                                  [--issuer-uri]\n                                  [--scope]",
+            "required_parameters": [
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [
+                "--assign-endpoint",
+                "--client-id",
+                "--client-secret",
+                "--https-only",
+                "--instance-count",
+                "--issuer-uri",
+                "--scope"
+            ],
+            "examples": [
+                "az spring-cloud api-portal update -s MyService -g MyResourceGroup --assign-endpoint true --https-only true"
+            ]
+        }
+    ]
+}

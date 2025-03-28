@@ -1,0 +1,6 @@
+{
+    "command_group": "az tsi",
+    "description": "Manage Azure Time Series Insights.",
+    "status": "GA",
+    "commands": []
+}

@@ -1,0 +1,6 @@
+{
+    "command_group": "az new-relic",
+    "description": "Manage Azure NewRelic resources.",
+    "status": "GA",
+    "commands": []
+}

@@ -1,0 +1,116 @@
+{
+    "command_group": "az healthcareapis workspace private-endpoint-connection",
+    "description": "Manage workspace private endpoint connection with healthcareapis.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az healthcareapis workspace private-endpoint-connection create",
+            "summary": "Update the state of the specified private endpoint connection associated with the workspace.",
+            "syntax": "az healthcareapis workspace private-endpoint-connection create --name\n                                                               --resource-group\n                                                               --workspace-name\n                                                               [--no-wait]\n                                                               [--private-link-service-connection-state]",
+            "required_parameters": [
+                "--name --private-endpoint-connection-name -n",
+                "--resource-group -g",
+                "--workspace-name"
+            ],
+            "optional_parameters": [
+                "--no-wait",
+                "--private-link-service-connection-state -s"
+            ],
+            "examples": [
+                "az healthcareapis workspace private-endpoint-connection create --private-endpoint-connection-name \"myConnection\" --private-link-service-connection-state description=\"Auto-Approved\" status=\"Approved\" --resource-group \"testRG\" --workspace-name \"workspace1\""
+            ]
+        },
+        {
+            "name": "az healthcareapis workspace private-endpoint-connection delete",
+            "summary": "Deletes a private endpoint connection.",
+            "syntax": "az healthcareapis workspace private-endpoint-connection delete [--ids]\n                                                               [--name]\n                                                               [--no-wait]\n                                                               [--resource-group]\n                                                               [--subscription]\n                                                               [--workspace-name]\n                                                               [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --private-endpoint-connection-name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--workspace-name",
+                "--yes -y"
+            ],
+            "examples": [
+                "az healthcareapis workspace private-endpoint-connection delete --private-endpoint-connection-name \"myConnection\" --resource-group \"testRG\" --workspace-name \"workspace1\""
+            ]
+        },
+        {
+            "name": "az healthcareapis workspace private-endpoint-connection list",
+            "summary": "Lists all private endpoint connections for a workspace.",
+            "syntax": "az healthcareapis workspace private-endpoint-connection list --resource-group\n                                                             --workspace-name",
+            "required_parameters": [
+                "--resource-group -g",
+                "--workspace-name"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az healthcareapis workspace private-endpoint-connection list --resource-group \"testRG\" --workspace-name \"workspace1\""
+            ]
+        },
+        {
+            "name": "az healthcareapis workspace private-endpoint-connection show",
+            "summary": "Gets the specified private endpoint connection associated with the workspace.",
+            "syntax": "az healthcareapis workspace private-endpoint-connection show [--ids]\n                                                             [--name]\n                                                             [--resource-group]\n                                                             [--subscription]\n                                                             [--workspace-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --private-endpoint-connection-name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--workspace-name"
+            ],
+            "examples": [
+                "az healthcareapis workspace private-endpoint-connection show --private-endpoint-connection-name \"myConnection\" --resource-group \"testRG\" --workspace-name \"workspace1\""
+            ]
+        },
+        {
+            "name": "az healthcareapis workspace private-endpoint-connection update",
+            "summary": "Update the state of the specified private endpoint connection associated with the workspace.",
+            "syntax": "az healthcareapis workspace private-endpoint-connection update [--add]\n                                                               [--force-string]\n                                                               [--ids]\n                                                               [--name]\n                                                               [--no-wait]\n                                                               [--private-link-service-connection-state]\n                                                               [--remove]\n                                                               [--resource-group]\n                                                               [--set]\n                                                               [--subscription]\n                                                               [--workspace-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--force-string",
+                "--ids",
+                "--name --private-endpoint-connection-name -n",
+                "--no-wait",
+                "--private-link-service-connection-state -s",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--subscription",
+                "--workspace-name"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az healthcareapis workspace private-endpoint-connection wait",
+            "summary": "Place the CLI in a waiting state until a condition of the healthcareapis workspace private-endpoint-connection is met.",
+            "syntax": "az healthcareapis workspace private-endpoint-connection wait [--created]\n                                                             [--custom]\n                                                             [--deleted]\n                                                             [--exists]\n                                                             [--ids]\n                                                             [--interval]\n                                                             [--name]\n                                                             [--resource-group]\n                                                             [--subscription]\n                                                             [--timeout]\n                                                             [--updated]\n                                                             [--workspace-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--name --private-endpoint-connection-name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated",
+                "--workspace-name"
+            ],
+            "examples": [
+                "az healthcareapis workspace private-endpoint-connection wait --private-endpoint-connection-name \"myConnection\" --resource-group \"testRG\" --workspace-name \"workspace1\" --created",
+                "az healthcareapis workspace private-endpoint-connection wait --private-endpoint-connection-name \"myConnection\" --resource-group \"testRG\" --workspace-name \"workspace1\" --updated",
+                "az healthcareapis workspace private-endpoint-connection wait --private-endpoint-connection-name \"myConnection\" --resource-group \"testRG\" --workspace-name \"workspace1\" --deleted"
+            ]
+        }
+    ]
+}

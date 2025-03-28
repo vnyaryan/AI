@@ -1,0 +1,145 @@
+{
+    "command_group": "az bot",
+    "description": "Manage Microsoft Azure Bot Service.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az bot create",
+            "summary": "Create a new v4 SDK bot.",
+            "syntax": "az bot create --app-type\n              --appid\n              --name\n              --resource-group\n              [--cmk]\n              [--description]\n              [--display-name]\n              [--endpoint]\n              [--location]\n              [--msi-resource-id]\n              [--sku {F0, S1}]\n              [--tags]\n              [--tenant-id]",
+            "required_parameters": [
+                "--app-type",
+                "--appid",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--cmk --cmk-key-vault-key-url",
+                "--description -d",
+                "--display-name",
+                "--endpoint -e",
+                "--location -l",
+                "--msi-resource-id",
+                "--sku",
+                "--tags",
+                "--tenant-id"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az bot delete",
+            "summary": "Delete an existing bot.",
+            "syntax": "az bot delete --name\n              --resource-group",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az bot download",
+            "summary": "Download an existing bot.",
+            "syntax": "az bot download --name\n                --resource-group\n                [--save-path]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--save-path"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az bot prepare-deploy",
+            "summary": "Add scripts/config files for publishing with `az webapp deployment`.",
+            "syntax": "az bot prepare-deploy --lang {Csharp, Javascript, Typescript}\n                      [--code-dir]\n                      [--proj-file-path]",
+            "required_parameters": [
+                "--lang"
+            ],
+            "optional_parameters": [
+                "--code-dir",
+                "--proj-file-path"
+            ],
+            "examples": [
+                "az bot prepare-deploy --lang Javascript --code-dir \"MyBotCode\"",
+                "az bot prepare-deploy --lang Csharp --code-dir \".\" --proj-file-path \"MyBot.csproj\""
+            ]
+        },
+        {
+            "name": "az bot prepare-publish",
+            "summary": "(Maintenance mode) Add scripts to your local source code directory to be able to publish back using `az bot publish` for v3 SDK bots.",
+            "syntax": "az bot prepare-publish --name\n                       --proj-file-path\n                       --resource-group\n                       --sln-name\n                       [--code-dir]\n                       [--version {v3, v4}]",
+            "required_parameters": [
+                "--name -n",
+                "--proj-file-path",
+                "--resource-group -g",
+                "--sln-name"
+            ],
+            "optional_parameters": [
+                "--code-dir",
+                "--version -v"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az bot publish",
+            "summary": "Publish to a bot's associated app service.",
+            "syntax": "az bot publish --name\n               --resource-group\n               [--code-dir]\n               [--keep-node-modules {false, true}]\n               [--proj-file-path]\n               [--timeout]\n               [--version]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--code-dir",
+                "--keep-node-modules",
+                "--proj-file-path",
+                "--timeout -t",
+                "--version -v"
+            ],
+            "examples": [
+                "az bot publish -n botName -g MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az bot show",
+            "summary": "Get an existing bot.",
+            "syntax": "az bot show --name\n            --resource-group\n            [--msbot {false, true}]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--msbot"
+            ],
+            "examples": [
+                "az bot show -n botName -g MyResourceGroup --msbot"
+            ]
+        },
+        {
+            "name": "az bot update",
+            "summary": "Update an existing bot.",
+            "syntax": "az bot update --name\n              --resource-group\n              [--ai-api-key]\n              [--ai-app-id]\n              [--ai-key]\n              [--cmk]\n              [--cmk-off]\n              [--description]\n              [--display-name]\n              [--endpoint]\n              [--icon-url]\n              [--sku {F0, S1}]\n              [--tags]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--ai-api-key --app-insights-api-key",
+                "--ai-app-id --app-insights-app-id",
+                "--ai-key --app-insights-key",
+                "--cmk --cmk-key-vault-key-url",
+                "--cmk-off",
+                "--description",
+                "--display-name -d",
+                "--endpoint -e",
+                "--icon-url",
+                "--sku",
+                "--tags"
+            ],
+            "examples": [
+                "az bot update -n botName -g MyResourceGroup --endpoint \"https://bing.com/api/messages\" --display-name \"Hello World\""
+            ]
+        }
+    ]
+}

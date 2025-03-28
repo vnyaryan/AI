@@ -1,0 +1,57 @@
+{
+    "command_group": "az iot central device edge module",
+    "description": "Manage IoT Edge device modules.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az iot central device edge module list",
+            "summary": "Get the list of modules in an IoT Edge device.",
+            "syntax": "az iot central device edge module list --app-id\n                                       --device-id\n                                       [--central-api-uri]\n                                       [--token]",
+            "required_parameters": [
+                "--app-id -n",
+                "--device-id -d"
+            ],
+            "optional_parameters": [
+                "--central-api-uri --central-dns-suffix",
+                "--token"
+            ],
+            "examples": [
+                "az iot central device edge module list --app-id {appid} --device-id {deviceId}"
+            ]
+        },
+        {
+            "name": "az iot central device edge module restart",
+            "summary": "Restart a module in an IoT Edge device.",
+            "syntax": "az iot central device edge module restart --app-id\n                                          --device-id\n                                          --module-id\n                                          [--central-api-uri]\n                                          [--token]",
+            "required_parameters": [
+                "--app-id -n",
+                "--device-id -d",
+                "--module-id -m"
+            ],
+            "optional_parameters": [
+                "--central-api-uri --central-dns-suffix",
+                "--token"
+            ],
+            "examples": [
+                "az iot central device edge module restart --app-id {appid} --device-id {deviceId} --module-id {moduleId}"
+            ]
+        },
+        {
+            "name": "az iot central device edge module show",
+            "summary": "Get a module in an IoT Edge device.",
+            "syntax": "az iot central device edge module show --app-id\n                                       --device-id\n                                       --module-id\n                                       [--central-api-uri]\n                                       [--token]",
+            "required_parameters": [
+                "--app-id -n",
+                "--device-id -d",
+                "--module-id -m"
+            ],
+            "optional_parameters": [
+                "--central-api-uri --central-dns-suffix",
+                "--token"
+            ],
+            "examples": [
+                "az iot central device edge module show --app-id {appid} --device-id {deviceId} --module-id {moduleId}"
+            ]
+        }
+    ]
+}

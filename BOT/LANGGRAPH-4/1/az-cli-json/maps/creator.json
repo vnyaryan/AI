@@ -1,0 +1,89 @@
+{
+    "command_group": "az maps creator",
+    "description": "Manage creator with maps.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az maps creator create",
+            "summary": "Create a Maps Creator resource. Creator resource will manage Azure resources required to populate a custom set of mapping data. It requires an account to exist before it can be created.",
+            "syntax": "az maps creator create --account-name\n                       --creator-name\n                       --resource-group\n                       --storage-units\n                       [--location]\n                       [--tags]",
+            "required_parameters": [
+                "--account-name --name -n",
+                "--creator-name",
+                "--resource-group -g",
+                "--storage-units"
+            ],
+            "optional_parameters": [
+                "--location -l",
+                "--tags"
+            ],
+            "examples": [
+                "az maps creator create --location \"eastus2\" --storage-units 5 --tags test=\"true\" --account-name \"myMapsAccount\" --creator-name \"myCreator\" --resource-group \"myResourceGroup\""
+            ]
+        },
+        {
+            "name": "az maps creator delete",
+            "summary": "Delete a Maps Creator resource.",
+            "syntax": "az maps creator delete [--account-name]\n                       [--creator-name]\n                       [--ids]\n                       [--resource-group]\n                       [--subscription]\n                       [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account-name --name -n",
+                "--creator-name",
+                "--ids",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az maps creator delete --account-name \"myMapsAccount\" --creator-name \"myCreator\" --resource-group \"myResourceGroup\""
+            ]
+        },
+        {
+            "name": "az maps creator list",
+            "summary": "Get all Creator instances for an Azure Maps Account.",
+            "syntax": "az maps creator list --account-name\n                     --resource-group",
+            "required_parameters": [
+                "--account-name --name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az maps creator list --account-name \"myMapsAccount\" --resource-group \"myResourceGroup\""
+            ]
+        },
+        {
+            "name": "az maps creator show",
+            "summary": "Get a Maps Creator resource.",
+            "syntax": "az maps creator show [--account-name]\n                     [--creator-name]\n                     [--ids]\n                     [--resource-group]\n                     [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account-name --name -n",
+                "--creator-name",
+                "--ids",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az maps creator show --account-name \"myMapsAccount\" --creator-name \"myCreator\" --resource-group \"myResourceGroup\""
+            ]
+        },
+        {
+            "name": "az maps creator update",
+            "summary": "Updates the Maps Creator resource. Only a subset of the parameters may be updated after creation, such as Tags.",
+            "syntax": "az maps creator update [--account-name]\n                       [--creator-name]\n                       [--ids]\n                       [--resource-group]\n                       [--storage-units]\n                       [--subscription]\n                       [--tags]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account-name --name -n",
+                "--creator-name",
+                "--ids",
+                "--resource-group -g",
+                "--storage-units",
+                "--subscription",
+                "--tags"
+            ],
+            "examples": [
+                "az maps creator update --storage-units 10 --tags specialTag=\"true\" --account-name \"myMapsAccount\" --creator-name \"myCreator\" --resource-group \"myResourceGroup\""
+            ]
+        }
+    ]
+}

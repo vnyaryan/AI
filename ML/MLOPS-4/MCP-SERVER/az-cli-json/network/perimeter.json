@@ -1,0 +1,70 @@
+{
+    "command_group": "az network perimeter",
+    "description": "Manage Network Security Perimeters.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az network perimeter create",
+            "summary": "Creates a Network Security Perimeter.",
+            "syntax": "az network perimeter create --name\n                            --resource-group\n                            [--location]\n                            [--tags]",
+            "required_parameters": [
+                "--name --perimeter-name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--location -l",
+                "--tags"
+            ],
+            "examples": [
+                "az network perimeter create -n MyPerimeter -g MyResourceGroup -l northcentralus"
+            ]
+        },
+        {
+            "name": "az network perimeter delete",
+            "summary": "Deletes a network security perimeter.",
+            "syntax": "az network perimeter delete [--ids]\n                            [--name]\n                            [--resource-group]\n                            [--subscription]\n                            [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --perimeter-name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az network perimeter delete -g MyResourceGroup -n MyPerimeter"
+            ]
+        },
+        {
+            "name": "az network perimeter list",
+            "summary": "List all network security perimeters in a subscription.",
+            "syntax": "az network perimeter list [--max-items]\n                          [--next-token]\n                          [--resource-group]\n                          [--skip-token]\n                          [--top]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token",
+                "--resource-group -g",
+                "--skip-token",
+                "--top"
+            ],
+            "examples": [
+                "az network perimeter list -g MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az network perimeter show",
+            "summary": "Gets the specified network security perimeter by the name.",
+            "syntax": "az network perimeter show [--ids]\n                          [--name]\n                          [--resource-group]\n                          [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --perimeter-name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az network perimeter show -g MyResourceGroup -n MyPerimeter"
+            ]
+        }
+    ]
+}

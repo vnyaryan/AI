@@ -1,0 +1,68 @@
+{
+    "command_group": "az vmware workload-network dhcp relay",
+    "description": "Commands to manage a DHCP (Data Host Configuration Protocol) workload network.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az vmware workload-network dhcp relay create",
+            "summary": "Create DHCP by ID in a private cloud workload network.",
+            "syntax": "az vmware workload-network dhcp relay create --dhcp\n                                             --private-cloud\n                                             --resource-group\n                                             [--display-name]\n                                             [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                             [--revision]\n                                             [--server-addresses]",
+            "required_parameters": [
+                "--dhcp --name -n",
+                "--private-cloud -c",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--display-name",
+                "--no-wait",
+                "--revision",
+                "--server-addresses"
+            ],
+            "examples": [
+                "az vmware workload-network dhcp relay create --resource-group group1 --private-cloud cloud1 --dhcp dhcp1 --display-name dhcpConfigurations1 --revision 1 --server-addresses 40.1.5.1/24"
+            ]
+        },
+        {
+            "name": "az vmware workload-network dhcp relay delete",
+            "summary": "Delete DHCP by ID in a private cloud workload network.",
+            "syntax": "az vmware workload-network dhcp relay delete [--dhcp]\n                                             [--ids]\n                                             [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                             [--private-cloud]\n                                             [--resource-group]\n                                             [--subscription]\n                                             [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--dhcp --name -n",
+                "--ids",
+                "--no-wait",
+                "--private-cloud -c",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az vmware workload-network dhcp relay delete --resource-group group1 --private-cloud cloud1 --dhcp dhcp1"
+            ]
+        },
+        {
+            "name": "az vmware workload-network dhcp relay update",
+            "summary": "Create DHCP by ID in a private cloud workload network.",
+            "syntax": "az vmware workload-network dhcp relay update [--add]\n                                             [--dhcp]\n                                             [--display-name]\n                                             [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                             [--ids]\n                                             [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                             [--private-cloud]\n                                             [--remove]\n                                             [--resource-group]\n                                             [--revision]\n                                             [--server-addresses]\n                                             [--set]\n                                             [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--dhcp --name -n",
+                "--display-name",
+                "--force-string",
+                "--ids",
+                "--no-wait",
+                "--private-cloud -c",
+                "--remove",
+                "--resource-group -g",
+                "--revision",
+                "--server-addresses",
+                "--set",
+                "--subscription"
+            ],
+            "examples": [
+                "az vmware workload-network dhcp relay update --resource-group group1 --private-cloud cloud1 --dhcp dhcp1 --display-name dhcpConfigurations1 --revision 1 --server-addresses 40.1.5.1/24"
+            ]
+        }
+    ]
+}

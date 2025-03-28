@@ -1,0 +1,190 @@
+{
+    "command_group": "az datashare share-subscription",
+    "description": "Manage share subscription with datashare.",
+    "status": "Experimental",
+    "commands": [
+        {
+            "name": "az datashare share-subscription cancel-synchronization",
+            "summary": "Request to cancel a synchronization.",
+            "syntax": "az datashare share-subscription cancel-synchronization --synchronization-id\n                                                       [--account-name]\n                                                       [--ids]\n                                                       [--name]\n                                                       [--no-wait]\n                                                       [--resource-group]\n                                                       [--subscription]",
+            "required_parameters": [
+                "--synchronization-id"
+            ],
+            "optional_parameters": [
+                "--account-name",
+                "--ids",
+                "--name --share-subscription-name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az datashare share-subscription cancel-synchronization --account-name \"Account1\" --resource-group \"SampleResourceGroup\" --name \"ShareSubscription1\" --synchronization-id \"7d0536a6-3fa5-43de-b152-3d07c4f6b2bb\""
+            ]
+        },
+        {
+            "name": "az datashare share-subscription create",
+            "summary": "Create a shareSubscription in an account.",
+            "syntax": "az datashare share-subscription create --account-name\n                                       --invitation-id\n                                       --name\n                                       --resource-group\n                                       --source-share-location\n                                       [--expiration-date]",
+            "required_parameters": [
+                "--account-name",
+                "--invitation-id",
+                "--name --share-subscription-name -n",
+                "--resource-group -g",
+                "--source-share-location"
+            ],
+            "optional_parameters": [
+                "--expiration-date"
+            ],
+            "examples": [
+                "az datashare share-subscription create --account-name \"Account1\" --resource-group \"SampleResourceGroup\" --expiration-date \"2020-08-26T22:33:24.5785265Z\" --invitation-id \"12345678-1234-1234-12345678abd\" --source-share-location \"eastus2\" --name \"ShareSubscription1\""
+            ]
+        },
+        {
+            "name": "az datashare share-subscription delete",
+            "summary": "Delete a shareSubscription in an account.",
+            "syntax": "az datashare share-subscription delete [--account-name]\n                                       [--ids]\n                                       [--name]\n                                       [--no-wait]\n                                       [--resource-group]\n                                       [--subscription]\n                                       [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account-name",
+                "--ids",
+                "--name --share-subscription-name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az datashare share-subscription delete --account-name \"Account1\" --resource-group \"SampleResourceGroup\" --name \"ShareSubscription1\""
+            ]
+        },
+        {
+            "name": "az datashare share-subscription list",
+            "summary": "List share subscriptions in an account.",
+            "syntax": "az datashare share-subscription list --account-name\n                                     --resource-group\n                                     [--filter]\n                                     [--orderby]\n                                     [--skip-token]",
+            "required_parameters": [
+                "--account-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--filter",
+                "--orderby",
+                "--skip-token"
+            ],
+            "examples": [
+                "az datashare share-subscription list --account-name \"Account1\" --resource-group \"SampleResourceGroup\""
+            ]
+        },
+        {
+            "name": "az datashare share-subscription list-source-share-synchronization-setting",
+            "summary": "Get synchronization settings set on a share.",
+            "syntax": "az datashare share-subscription list-source-share-synchronization-setting --account-name\n                                                                          --name\n                                                                          --resource-group\n                                                                          [--skip-token]",
+            "required_parameters": [
+                "--account-name",
+                "--name --share-subscription-name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--skip-token"
+            ],
+            "examples": [
+                "az datashare share-subscription list-source-share-synchronization-setting --account-name \"Account1\" --resource-group \"SampleResourceGroup\" --name \"ShareSub1\""
+            ]
+        },
+        {
+            "name": "az datashare share-subscription list-synchronization",
+            "summary": "List synchronizations of a share subscription.",
+            "syntax": "az datashare share-subscription list-synchronization --account-name\n                                                     --name\n                                                     --resource-group\n                                                     [--filter]\n                                                     [--orderby]\n                                                     [--skip-token]",
+            "required_parameters": [
+                "--account-name",
+                "--name --share-subscription-name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--filter",
+                "--orderby",
+                "--skip-token"
+            ],
+            "examples": [
+                "az datashare share-subscription list-synchronization --account-name \"Account1\" --resource-group \"SampleResourceGroup\" --name \"ShareSub1\""
+            ]
+        },
+        {
+            "name": "az datashare share-subscription list-synchronization-detail",
+            "summary": "List synchronization details.",
+            "syntax": "az datashare share-subscription list-synchronization-detail --account-name\n                                                            --name\n                                                            --resource-group\n                                                            --synchronization-id\n                                                            [--filter]\n                                                            [--orderby]\n                                                            [--skip-token]",
+            "required_parameters": [
+                "--account-name",
+                "--name --share-subscription-name -n",
+                "--resource-group -g",
+                "--synchronization-id"
+            ],
+            "optional_parameters": [
+                "--filter",
+                "--orderby",
+                "--skip-token"
+            ],
+            "examples": [
+                "az datashare share-subscription list-synchronization-detail --account-name \"Account1\" --resource-group \"SampleResourceGroup\" --name \"ShareSub1\" --synchronization-id \"7d0536a6-3fa5-43de-b152-3d07c4f6b2bb\""
+            ]
+        },
+        {
+            "name": "az datashare share-subscription show",
+            "summary": "Get a shareSubscription in an account.",
+            "syntax": "az datashare share-subscription show [--account-name]\n                                     [--ids]\n                                     [--name]\n                                     [--resource-group]\n                                     [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account-name",
+                "--ids",
+                "--name --share-subscription-name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az datashare share-subscription show --account-name \"Account1\" --resource-group \"SampleResourceGroup\" --name \"ShareSubscription1\""
+            ]
+        },
+        {
+            "name": "az datashare share-subscription synchronize",
+            "summary": "Initiate a copy.",
+            "syntax": "az datashare share-subscription synchronize [--account-name]\n                                            [--ids]\n                                            [--name]\n                                            [--no-wait]\n                                            [--resource-group]\n                                            [--subscription]\n                                            [--synchronization-mode {FullSync, Incremental}]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account-name",
+                "--ids",
+                "--name --share-subscription-name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--synchronization-mode"
+            ],
+            "examples": [
+                "az datashare share-subscription synchronize --account-name \"Account1\" --resource-group \"SampleResourceGroup\" --name \"ShareSubscription1\" --synchronization-mode \"Incremental\""
+            ]
+        },
+        {
+            "name": "az datashare share-subscription wait",
+            "summary": "Place the CLI in a waiting state until a condition of the datashare share-subscription is met.",
+            "syntax": "az datashare share-subscription wait [--account-name]\n                                     [--created]\n                                     [--custom]\n                                     [--deleted]\n                                     [--exists]\n                                     [--ids]\n                                     [--interval]\n                                     [--name]\n                                     [--resource-group]\n                                     [--subscription]\n                                     [--timeout]\n                                     [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account-name",
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--name --share-subscription-name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": [
+                "az datashare share-subscription wait --account-name \"Account1\" --resource-group \"SampleResourceGroup\" --name \"ShareSubscription1\" --deleted",
+                "az datashare share-subscription wait --account-name \"Account1\" --resource-group \"SampleResourceGroup\" --name \"ShareSubscription1\" --created"
+            ]
+        }
+    ]
+}

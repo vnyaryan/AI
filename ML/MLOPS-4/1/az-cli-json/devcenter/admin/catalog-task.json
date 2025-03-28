@@ -1,0 +1,58 @@
+{
+    "command_group": "az devcenter admin catalog-task",
+    "description": "Manage tasks in catalog.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az devcenter admin catalog-task get-error-detail",
+            "summary": "Gets customization task error details.",
+            "syntax": "az devcenter admin catalog-task get-error-detail [--catalog-name]\n                                                 [--dev-center]\n                                                 [--ids]\n                                                 [--name]\n                                                 [--resource-group]\n                                                 [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--catalog-name",
+                "--dev-center --dev-center-name -d",
+                "--ids",
+                "--name --task-name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az devcenter admin catalog-task get-error-detail --catalog-name \"CentralCatalog\" --task-name \"SampleTask\" --dev-center-name \"Contoso\" --resource-group \"rg1\""
+            ]
+        },
+        {
+            "name": "az devcenter admin catalog-task list",
+            "summary": "List tasks in the catalog.",
+            "syntax": "az devcenter admin catalog-task list --catalog-name\n                                     --dev-center\n                                     --resource-group\n                                     [--max-items]\n                                     [--next-token]",
+            "required_parameters": [
+                "--catalog-name",
+                "--dev-center --dev-center-name -d",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az devcenter admin catalog-task list --catalog-name \"CentralCatalog\" --dev-center-name \"Contoso\" --resource-group \"rg1\""
+            ]
+        },
+        {
+            "name": "az devcenter admin catalog-task show",
+            "summary": "Get a task from the catalog.",
+            "syntax": "az devcenter admin catalog-task show [--catalog-name]\n                                     [--dev-center]\n                                     [--ids]\n                                     [--name]\n                                     [--resource-group]\n                                     [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--catalog-name",
+                "--dev-center --dev-center-name -d",
+                "--ids",
+                "--name --task-name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az devcenter admin catalog-task show --catalog-name \"CentralCatalog\" --task-name \"SampleTask\" --dev-center-name \"Contoso\" --resource-group \"rg1\""
+            ]
+        }
+    ]
+}

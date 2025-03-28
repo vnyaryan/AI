@@ -1,0 +1,62 @@
+{
+    "command_group": "az network vpn-site link",
+    "description": "Manage VPN site link.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az network vpn-site link add",
+            "summary": "Add a VPN site link to VPN site configuration.",
+            "syntax": "az network vpn-site link add --ip-address\n                             --name\n                             [--asn]\n                             [--bgp-peering-address]\n                             [--fqdn]\n                             [--ids]\n                             [--link-provider-name]\n                             [--link-speed-in-mbps]\n                             [--no-wait]\n                             [--resource-group]\n                             [--site-name]\n                             [--subscription]",
+            "required_parameters": [
+                "--ip-address",
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--asn",
+                "--bgp-peering-address",
+                "--fqdn",
+                "--ids",
+                "--link-provider-name",
+                "--link-speed-in-mbps",
+                "--no-wait",
+                "--resource-group -g",
+                "--site-name",
+                "--subscription"
+            ],
+            "examples": [
+                "az network vpn-site link add -g MyRG --site-name VpnSite -n VpnSiteLinkName --ip-address 10.0.1.111 --asn 1234 --bgp-peering-address 192.168.0.0"
+            ]
+        },
+        {
+            "name": "az network vpn-site link list",
+            "summary": "List VPN site links on VPN site configuration.",
+            "syntax": "az network vpn-site link list --resource-group\n                              --site-name",
+            "required_parameters": [
+                "--resource-group -g",
+                "--site-name"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az network vpn-site link list -g MyRG --site-name VpnSite"
+            ]
+        },
+        {
+            "name": "az network vpn-site link remove",
+            "summary": "Remove a VPN site link from VPN site configuration.",
+            "syntax": "az network vpn-site link remove --index\n                                [--ids]\n                                [--no-wait]\n                                [--resource-group]\n                                [--site-name]\n                                [--subscription]",
+            "required_parameters": [
+                "--index"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--no-wait",
+                "--resource-group -g",
+                "--site-name",
+                "--subscription"
+            ],
+            "examples": [
+                "az network vpn-site link remove -g MyRG --site-name VpnSite --index 1"
+            ]
+        }
+    ]
+}

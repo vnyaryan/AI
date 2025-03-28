@@ -1,0 +1,138 @@
+{
+    "command_group": "az storage blob lease",
+    "description": "Manage storage blob leases.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az storage blob lease acquire",
+            "summary": "Request a new lease.",
+            "syntax": "az storage blob lease acquire --blob-name\n                              --container-name\n                              [--account-key]\n                              [--account-name]\n                              [--auth-mode {key, login}]\n                              [--blob-endpoint]\n                              [--connection-string]\n                              [--if-match]\n                              [--if-modified-since]\n                              [--if-none-match]\n                              [--if-unmodified-since]\n                              [--lease-duration]\n                              [--proposed-lease-id]\n                              [--sas-token]\n                              [--tags-condition]\n                              [--timeout]",
+            "required_parameters": [
+                "--blob-name -b",
+                "--container-name -c"
+            ],
+            "optional_parameters": [
+                "--account-key",
+                "--account-name",
+                "--auth-mode",
+                "--blob-endpoint",
+                "--connection-string",
+                "--if-match",
+                "--if-modified-since",
+                "--if-none-match",
+                "--if-unmodified-since",
+                "--lease-duration",
+                "--proposed-lease-id",
+                "--sas-token",
+                "--tags-condition",
+                "--timeout"
+            ],
+            "examples": [
+                "az storage blob lease acquire -b myblob -c mycontainer --account-name mystorageaccount --account-key 0000-0000"
+            ]
+        },
+        {
+            "name": "az storage blob lease break",
+            "summary": "Break the lease, if the container or blob has an active lease.",
+            "syntax": "az storage blob lease break --blob-name\n                            --container-name\n                            [--account-key]\n                            [--account-name]\n                            [--auth-mode {key, login}]\n                            [--blob-endpoint]\n                            [--connection-string]\n                            [--if-match]\n                            [--if-modified-since]\n                            [--if-none-match]\n                            [--if-unmodified-since]\n                            [--lease-break-period]\n                            [--sas-token]\n                            [--tags-condition]\n                            [--timeout]",
+            "required_parameters": [
+                "--blob-name -b",
+                "--container-name -c"
+            ],
+            "optional_parameters": [
+                "--account-key",
+                "--account-name",
+                "--auth-mode",
+                "--blob-endpoint",
+                "--connection-string",
+                "--if-match",
+                "--if-modified-since",
+                "--if-none-match",
+                "--if-unmodified-since",
+                "--lease-break-period",
+                "--sas-token",
+                "--tags-condition",
+                "--timeout"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az storage blob lease change",
+            "summary": "Change the lease ID of an active lease.",
+            "syntax": "az storage blob lease change --blob-name\n                             --container-name\n                             --lease-id\n                             --proposed-lease-id\n                             [--account-key]\n                             [--account-name]\n                             [--auth-mode {key, login}]\n                             [--blob-endpoint]\n                             [--connection-string]\n                             [--if-match]\n                             [--if-modified-since]\n                             [--if-none-match]\n                             [--if-unmodified-since]\n                             [--sas-token]\n                             [--tags-condition]\n                             [--timeout]",
+            "required_parameters": [
+                "--blob-name -b",
+                "--container-name -c",
+                "--lease-id",
+                "--proposed-lease-id"
+            ],
+            "optional_parameters": [
+                "--account-key",
+                "--account-name",
+                "--auth-mode",
+                "--blob-endpoint",
+                "--connection-string",
+                "--if-match",
+                "--if-modified-since",
+                "--if-none-match",
+                "--if-unmodified-since",
+                "--sas-token",
+                "--tags-condition",
+                "--timeout"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az storage blob lease release",
+            "summary": "Release the lease.",
+            "syntax": "az storage blob lease release --blob-name\n                              --container-name\n                              --lease-id\n                              [--account-key]\n                              [--account-name]\n                              [--auth-mode {key, login}]\n                              [--blob-endpoint]\n                              [--connection-string]\n                              [--if-match]\n                              [--if-modified-since]\n                              [--if-none-match]\n                              [--if-unmodified-since]\n                              [--sas-token]\n                              [--tags-condition]\n                              [--timeout]",
+            "required_parameters": [
+                "--blob-name -b",
+                "--container-name -c",
+                "--lease-id"
+            ],
+            "optional_parameters": [
+                "--account-key",
+                "--account-name",
+                "--auth-mode",
+                "--blob-endpoint",
+                "--connection-string",
+                "--if-match",
+                "--if-modified-since",
+                "--if-none-match",
+                "--if-unmodified-since",
+                "--sas-token",
+                "--tags-condition",
+                "--timeout"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az storage blob lease renew",
+            "summary": "Renew the lease.",
+            "syntax": "az storage blob lease renew --blob-name\n                            --container-name\n                            --lease-id\n                            [--account-key]\n                            [--account-name]\n                            [--auth-mode {key, login}]\n                            [--blob-endpoint]\n                            [--connection-string]\n                            [--if-match]\n                            [--if-modified-since]\n                            [--if-none-match]\n                            [--if-unmodified-since]\n                            [--sas-token]\n                            [--tags-condition]\n                            [--timeout]",
+            "required_parameters": [
+                "--blob-name -b",
+                "--container-name -c",
+                "--lease-id"
+            ],
+            "optional_parameters": [
+                "--account-key",
+                "--account-name",
+                "--auth-mode",
+                "--blob-endpoint",
+                "--connection-string",
+                "--if-match",
+                "--if-modified-since",
+                "--if-none-match",
+                "--if-unmodified-since",
+                "--sas-token",
+                "--tags-condition",
+                "--timeout"
+            ],
+            "examples": [
+                "az storage blob lease renew -b myblob -c mycontainer --lease-id \"32fe23cd-4779-4919-adb3-357e76c9b1bb\" --account-name mystorageaccount --account-key 0000-0000"
+            ]
+        }
+    ]
+}

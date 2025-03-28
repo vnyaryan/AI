@@ -1,0 +1,133 @@
+{
+    "command_group": "az powerbi embedded-capacity",
+    "description": "Manage PowerBI embedded capacity.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az powerbi embedded-capacity create",
+            "summary": "Create a new PowerBI embedded capacity.",
+            "syntax": "az powerbi embedded-capacity create --name\n                                    --resource-group\n                                    --sku-name\n                                    [--administration-members]\n                                    [--location]\n                                    [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                    [--sku-tier {PBIE_Azure}]\n                                    [--tags]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g",
+                "--sku-name"
+            ],
+            "optional_parameters": [
+                "--administration-members",
+                "--location -l",
+                "--no-wait",
+                "--sku-tier",
+                "--tags"
+            ],
+            "examples": [
+                "az powerbi embedded-capacity create --resource-group \"TestRG\" --name \"azsdktest\" --location eastus --sku-name \"A1\" --sku-tier \"PBIE_Azure\" --administration-members \"azsdktest@microsoft.com\" \"azsdktest2@microsoft.com\"",
+                "az powerbi embedded-capacity create --resource-group \"TestRG\" --name \"azsdktest\" --location eastus --sku-name \"A1\" --sku-tier \"PBIE_Azure\" --administration-members \"azsdktest@microsoft.com\" \"azsdktest2@microsoft.com\" --no-wait"
+            ]
+        },
+        {
+            "name": "az powerbi embedded-capacity delete",
+            "summary": "Delete the specified PowerBI embedded capacity.",
+            "syntax": "az powerbi embedded-capacity delete [--ids]\n                                    [--name]\n                                    [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                    [--resource-group]\n                                    [--subscription]\n                                    [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az powerbi embedded-capacity delete --resource-group \"TestRG\" --name \"azsdktest\"",
+                "az powerbi embedded-capacity delete --resource-group \"TestRG\" --name \"azsdktest\" -y",
+                "az powerbi embedded-capacity delete --resource-group \"TestRG\" --name \"azsdktest\" --no-wait"
+            ]
+        },
+        {
+            "name": "az powerbi embedded-capacity list",
+            "summary": "List all the embedded capacities for the given resource group.",
+            "syntax": "az powerbi embedded-capacity list [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az powerbi embedded-capacity list --resource-group \"TestRG\"",
+                "az powerbi embedded-capacity list"
+            ]
+        },
+        {
+            "name": "az powerbi embedded-capacity list-sku",
+            "summary": "List eligible SKUs for a PowerBI Dedicated resource.",
+            "syntax": "az powerbi embedded-capacity list-sku [--dedicated-capacity-name]\n                                      [--ids]\n                                      [--resource-group]\n                                      [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--dedicated-capacity-name --name -n",
+                "--ids",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az powerbi embedded-capacity show",
+            "summary": "Get details about the specified PowerBI embedded capacity.",
+            "syntax": "az powerbi embedded-capacity show [--ids]\n                                  [--name]\n                                  [--resource-group]\n                                  [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az powerbi embedded-capacity show --resource-group \"TestRG\" --name \"azsdktest\""
+            ]
+        },
+        {
+            "name": "az powerbi embedded-capacity update",
+            "summary": "Update the specified PowerBI embedded capacity.",
+            "syntax": "az powerbi embedded-capacity update [--add]\n                                    [--administration-members]\n                                    [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                    [--ids]\n                                    [--name]\n                                    [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                    [--remove]\n                                    [--resource-group]\n                                    [--set]\n                                    [--sku-name]\n                                    [--sku-tier {PBIE_Azure}]\n                                    [--subscription]\n                                    [--tags]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--administration-members",
+                "--force-string",
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--sku-name",
+                "--sku-tier",
+                "--subscription",
+                "--tags"
+            ],
+            "examples": [
+                "az powerbi embedded-capacity update --resource-group \"TestRG\" --name \"azsdktest\" --sku-name \"A1\"",
+                "az powerbi embedded-capacity update --resource-group \"TestRG\" --name \"azsdktest\" --sku-name \"A1\" --administration-members \"azsdktest3@microsoft.com\" --no-wait"
+            ]
+        },
+        {
+            "name": "az powerbi embedded-capacity wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az powerbi embedded-capacity wait [--created]\n                                  [--custom]\n                                  [--deleted]\n                                  [--exists]\n                                  [--ids]\n                                  [--interval]\n                                  [--name]\n                                  [--resource-group]\n                                  [--subscription]\n                                  [--timeout]\n                                  [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

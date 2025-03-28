@@ -1,0 +1,139 @@
+{
+    "command_group": "az storage message",
+    "description": "Manage queue storage messages.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az storage message clear",
+            "summary": "Delete all messages from the specified queue.",
+            "syntax": "az storage message clear --queue-name\n                         [--account-key]\n                         [--account-name]\n                         [--auth-mode {key, login}]\n                         [--connection-string]\n                         [--queue-endpoint]\n                         [--sas-token]\n                         [--timeout]",
+            "required_parameters": [
+                "--queue-name -q"
+            ],
+            "optional_parameters": [
+                "--account-key",
+                "--account-name",
+                "--auth-mode",
+                "--connection-string",
+                "--queue-endpoint",
+                "--sas-token",
+                "--timeout"
+            ],
+            "examples": [
+                "az storage message clear -q myqueue --account-name mystorageaccount"
+            ]
+        },
+        {
+            "name": "az storage message delete",
+            "summary": "Delete the specified message.",
+            "syntax": "az storage message delete --id\n                          --pop-receipt\n                          --queue-name\n                          [--account-key]\n                          [--account-name]\n                          [--auth-mode {key, login}]\n                          [--connection-string]\n                          [--queue-endpoint]\n                          [--sas-token]\n                          [--timeout]",
+            "required_parameters": [
+                "--id",
+                "--pop-receipt",
+                "--queue-name -q"
+            ],
+            "optional_parameters": [
+                "--account-key",
+                "--account-name",
+                "--auth-mode",
+                "--connection-string",
+                "--queue-endpoint",
+                "--sas-token",
+                "--timeout"
+            ],
+            "examples": [
+                "az storage message delete --id messageid --pop-receipt popreceiptreturned -q myqueue --account-name mystorageaccount"
+            ]
+        },
+        {
+            "name": "az storage message get",
+            "summary": "Retrieve one or more messages from the front of the queue.",
+            "syntax": "az storage message get --queue-name\n                       [--account-key]\n                       [--account-name]\n                       [--auth-mode {key, login}]\n                       [--connection-string]\n                       [--num-messages]\n                       [--queue-endpoint]\n                       [--sas-token]\n                       [--timeout]\n                       [--visibility-timeout]",
+            "required_parameters": [
+                "--queue-name -q"
+            ],
+            "optional_parameters": [
+                "--account-key",
+                "--account-name",
+                "--auth-mode",
+                "--connection-string",
+                "--num-messages",
+                "--queue-endpoint",
+                "--sas-token",
+                "--timeout",
+                "--visibility-timeout"
+            ],
+            "examples": [
+                "az storage message get -q myqueue --visibility-timeout 300 --account-name mystorageaccount"
+            ]
+        },
+        {
+            "name": "az storage message peek",
+            "summary": "Retrieve one or more messages from the front of the queue, but do not alter the visibility of the message.",
+            "syntax": "az storage message peek --queue-name\n                        [--account-key]\n                        [--account-name]\n                        [--auth-mode {key, login}]\n                        [--connection-string]\n                        [--num-messages]\n                        [--queue-endpoint]\n                        [--sas-token]\n                        [--timeout]",
+            "required_parameters": [
+                "--queue-name -q"
+            ],
+            "optional_parameters": [
+                "--account-key",
+                "--account-name",
+                "--auth-mode",
+                "--connection-string",
+                "--num-messages",
+                "--queue-endpoint",
+                "--sas-token",
+                "--timeout"
+            ],
+            "examples": [
+                "az storage message peek -q myqueue --num-messages 5 --account-name mystorageaccount"
+            ]
+        },
+        {
+            "name": "az storage message put",
+            "summary": "Add a new message to the back of the message queue.",
+            "syntax": "az storage message put --content\n                       --queue-name\n                       [--account-key]\n                       [--account-name]\n                       [--auth-mode {key, login}]\n                       [--connection-string]\n                       [--queue-endpoint]\n                       [--sas-token]\n                       [--time-to-live]\n                       [--timeout]\n                       [--visibility-timeout]",
+            "required_parameters": [
+                "--content",
+                "--queue-name -q"
+            ],
+            "optional_parameters": [
+                "--account-key",
+                "--account-name",
+                "--auth-mode",
+                "--connection-string",
+                "--queue-endpoint",
+                "--sas-token",
+                "--time-to-live",
+                "--timeout",
+                "--visibility-timeout"
+            ],
+            "examples": [
+                "az storage message put -q myqueue --content mymessagecontent --time-to-live 86400 --account-name mystorageaccount"
+            ]
+        },
+        {
+            "name": "az storage message update",
+            "summary": "Update the visibility timeout of a message.",
+            "syntax": "az storage message update --id\n                          --pop-receipt\n                          --queue-name\n                          [--account-key]\n                          [--account-name]\n                          [--auth-mode {key, login}]\n                          [--connection-string]\n                          [--content]\n                          [--queue-endpoint]\n                          [--sas-token]\n                          [--timeout]\n                          [--visibility-timeout]",
+            "required_parameters": [
+                "--id",
+                "--pop-receipt",
+                "--queue-name -q"
+            ],
+            "optional_parameters": [
+                "--account-key",
+                "--account-name",
+                "--auth-mode",
+                "--connection-string",
+                "--content",
+                "--queue-endpoint",
+                "--sas-token",
+                "--timeout",
+                "--visibility-timeout"
+            ],
+            "examples": [
+                "az storage message update --id messageid --pop-receipt popreceiptreturned -q myqueue\n--visibility-timeout 3600 --content newmessagecontent --account-name mystorageaccount"
+            ]
+        }
+    ]
+}

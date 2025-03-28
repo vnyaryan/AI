@@ -1,0 +1,22 @@
+{
+    "command_group": "az iot hub devicestream",
+    "description": "Manage device streams of an IoT hub.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az iot hub devicestream show",
+            "summary": "Get IoT Hub's device streams endpoints.",
+            "syntax": "az iot hub devicestream show [--ids]\n                             [--name]\n                             [--resource-group]\n                             [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az iot hub devicestream show -n MyIotHub"
+            ]
+        }
+    ]
+}

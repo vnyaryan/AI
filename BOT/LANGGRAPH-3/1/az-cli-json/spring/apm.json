@@ -1,0 +1,149 @@
+{
+    "command_group": "az spring apm",
+    "description": "(Enterprise Tier Only) Commands to manage APMs in Azure Spring Apps.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az spring apm create",
+            "summary": "(Enterprise Tier Only) Create an APM.",
+            "syntax": "az spring apm create --name\n                     --resource-group\n                     --service\n                     --type\n                     [--no-wait]\n                     [--properties]\n                     [--secrets]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g",
+                "--service -s",
+                "--type"
+            ],
+            "optional_parameters": [
+                "--no-wait",
+                "--properties",
+                "--secrets"
+            ],
+            "examples": [
+                "az spring apm create --name first-apm --type ApplicationInsights --secrets k1=v1 k2=v2 --service MyCluster --resource-group MyResourceGroup",
+                "az spring apm create --name first-apm --type ApplicationInsights --properties a=b c=d --service MyCluster --resource-group MyResourceGroup",
+                "az spring apm create --name first-apm --type ApplicationInsights --properties a=b c=d --secrets k1=v1 k2=v2 --service MyCluster --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az spring apm delete",
+            "summary": "(Enterprise Tier Only) Delete an APM.",
+            "syntax": "az spring apm delete --name\n                     --resource-group\n                     --service\n                     [--no-wait]\n                     [--yes]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [
+                "--no-wait",
+                "--yes -y"
+            ],
+            "examples": [
+                "az spring apm delete --name first-apm --service MyCluster --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az spring apm disable-globally",
+            "summary": "(Enterprise Tier Only) Disable an APM globally.",
+            "syntax": "az spring apm disable-globally --name\n                               --resource-group\n                               --service\n                               [--no-wait]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [
+                "--no-wait"
+            ],
+            "examples": [
+                "az spring apm disable-globally --name first-apm --service MyCluster --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az spring apm enable-globally",
+            "summary": "(Enterprise Tier Only) Enable an APM globally.",
+            "syntax": "az spring apm enable-globally --name\n                              --resource-group\n                              --service\n                              [--no-wait]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [
+                "--no-wait"
+            ],
+            "examples": [
+                "az spring apm enable-globally --name first-apm --service MyCluster --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az spring apm list",
+            "summary": "(Enterprise Tier Only) List all the APMs in the Azure Spring Apps. The secrets will be omitted.",
+            "syntax": "az spring apm list --resource-group\n                   --service",
+            "required_parameters": [
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az spring apm list --service MyCluster --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az spring apm list-enabled-globally",
+            "summary": "(Enterprise Tier Only) List all the APMs enabled globally in the Azure Spring Apps.",
+            "syntax": "az spring apm list-enabled-globally --resource-group\n                                    --service",
+            "required_parameters": [
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az spring apm list-enabled-globally --service MyCluster --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az spring apm list-support-types",
+            "summary": "(Enterprise Tier Only) List all the supported APM types in the Azure Spring Apps.",
+            "syntax": "az spring apm list-support-types --resource-group\n                                 --service",
+            "required_parameters": [
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az spring apm list-support-types --service MyCluster --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az spring apm show",
+            "summary": "(Enterprise Tier Only) Show an APM. The secrets will be masked.",
+            "syntax": "az spring apm show --name\n                   --resource-group\n                   --service",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az spring apm show --name first-apm --service MyCluster --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az spring apm update",
+            "summary": "(Enterprise Tier Only) Update an APM.",
+            "syntax": "az spring apm update --name\n                     --resource-group\n                     --service\n                     --type\n                     [--no-wait]\n                     [--properties]\n                     [--secrets]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g",
+                "--service -s",
+                "--type"
+            ],
+            "optional_parameters": [
+                "--no-wait",
+                "--properties",
+                "--secrets"
+            ],
+            "examples": [
+                "az spring apm update --name first-apm --type ApplicationInsights --properties a=b c=d --secrets k1=v1 k2=v2 --service MyCluster --resource-group MyResourceGroup"
+            ]
+        }
+    ]
+}

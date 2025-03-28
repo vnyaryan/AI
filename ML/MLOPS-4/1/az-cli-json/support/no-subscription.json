@@ -1,0 +1,6 @@
+{
+    "command_group": "az support no-subscription",
+    "description": "Manage Azure support resource without a subscription.",
+    "status": "GA",
+    "commands": []
+}

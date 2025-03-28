@@ -1,0 +1,24 @@
+{
+    "command_group": "az billing account reservation",
+    "description": "Manage account reservation.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az billing account reservation list",
+            "summary": "List the reservations for a billing account and the roll up counts of reservations group by provisioning states.",
+            "syntax": "az billing account reservation list --billing-account-name\n                                    [--filter]\n                                    [--max-items]\n                                    [--next-token]\n                                    [--orderby]\n                                    [--refresh-summary]\n                                    [--selected-state]",
+            "required_parameters": [
+                "--billing-account-name"
+            ],
+            "optional_parameters": [
+                "--filter",
+                "--max-items",
+                "--next-token",
+                "--orderby",
+                "--refresh-summary",
+                "--selected-state"
+            ],
+            "examples": []
+        }
+    ]
+}

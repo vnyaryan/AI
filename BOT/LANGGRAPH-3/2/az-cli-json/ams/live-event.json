@@ -1,0 +1,195 @@
+{
+    "command_group": "az ams live-event",
+    "description": "Manage live events for an Azure Media Service account.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az ams live-event create",
+            "summary": "Create a live event.",
+            "syntax": "az ams live-event create --account-name\n                         --ips\n                         --name\n                         --resource-group\n                         --streaming-protocol {FragmentedMP4, RTMP}\n                         [--access-token]\n                         [--alternative-media-id]\n                         [--auto-start]\n                         [--client-access-policy]\n                         [--cross-domain-policy]\n                         [--description]\n                         [--encoding-type]\n                         [--hostname-prefix]\n                         [--key-frame-interval]\n                         [--key-frame-interval-duration]\n                         [--no-wait]\n                         [--preset-name]\n                         [--preview-ips]\n                         [--preview-locator]\n                         [--stream-options {Default, LowLatency, LowLatencyV2}]\n                         [--streaming-policy-name]\n                         [--stretch-mode]\n                         [--tags]\n                         [--transcription-lang]\n                         [--use-static-hostname]",
+            "required_parameters": [
+                "--account-name -a",
+                "--ips",
+                "--name -n",
+                "--resource-group -g",
+                "--streaming-protocol"
+            ],
+            "optional_parameters": [
+                "--access-token",
+                "--alternative-media-id",
+                "--auto-start",
+                "--client-access-policy",
+                "--cross-domain-policy",
+                "--description",
+                "--encoding-type",
+                "--hostname-prefix",
+                "--key-frame-interval",
+                "--key-frame-interval-duration",
+                "--no-wait",
+                "--preset-name",
+                "--preview-ips",
+                "--preview-locator",
+                "--stream-options",
+                "--streaming-policy-name",
+                "--stretch-mode",
+                "--tags",
+                "--transcription-lang",
+                "--use-static-hostname"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az ams live-event delete",
+            "summary": "Delete a live event.",
+            "syntax": "az ams live-event delete [--account-name]\n                         [--ids]\n                         [--name]\n                         [--resource-group]\n                         [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account-name -a",
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az ams live-event list",
+            "summary": "List all the live events of an Azure Media Services account.",
+            "syntax": "az ams live-event list --account-name\n                       --resource-group",
+            "required_parameters": [
+                "--account-name -a",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az ams live-event list -a amsAccount -g resourceGroup --query [].{liveEventName:name,state:resourceState}"
+            ]
+        },
+        {
+            "name": "az ams live-event reset",
+            "summary": "Reset a live event.",
+            "syntax": "az ams live-event reset [--account-name]\n                        [--ids]\n                        [--name]\n                        [--no-wait]\n                        [--resource-group]\n                        [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account-name -a",
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az ams live-event show",
+            "summary": "Show the details of a live event.",
+            "syntax": "az ams live-event show [--account-name]\n                       [--ids]\n                       [--name]\n                       [--resource-group]\n                       [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account-name -a",
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az ams live-event standby",
+            "summary": "Allocate a live event to be started later.",
+            "syntax": "az ams live-event standby [--account-name]\n                          [--ids]\n                          [--name]\n                          [--no-wait]\n                          [--resource-group]\n                          [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account-name -a",
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az ams live-event start",
+            "summary": "Start a live event.",
+            "syntax": "az ams live-event start [--account-name]\n                        [--ids]\n                        [--name]\n                        [--no-wait]\n                        [--resource-group]\n                        [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account-name -a",
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az ams live-event stop",
+            "summary": "Stop a live event.",
+            "syntax": "az ams live-event stop [--account-name]\n                       [--ids]\n                       [--name]\n                       [--no-wait]\n                       [--remove-outputs-on-stop]\n                       [--resource-group]\n                       [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account-name -a",
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--remove-outputs-on-stop",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az ams live-event update",
+            "summary": "Update the details of a live event.",
+            "syntax": "az ams live-event update [--account-name]\n                         [--add]\n                         [--client-access-policy]\n                         [--cross-domain-policy]\n                         [--description]\n                         [--force-string]\n                         [--ids]\n                         [--ips]\n                         [--key-frame-interval-duration]\n                         [--name]\n                         [--preview-ips]\n                         [--remove]\n                         [--resource-group]\n                         [--set]\n                         [--subscription]\n                         [--tags]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account-name -a",
+                "--add",
+                "--client-access-policy",
+                "--cross-domain-policy",
+                "--description",
+                "--force-string",
+                "--ids",
+                "--ips",
+                "--key-frame-interval-duration",
+                "--name -n",
+                "--preview-ips",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--subscription",
+                "--tags"
+            ],
+            "examples": [
+                "az ams live-event update -a amsAccount -g resourceGroup -n liveEventName --remove input.accessControl.ip.allow 0 --add input.accessControl.ip.allow 1.2.3.4/22",
+                "az ams live-event update -a amsAccount -g resourceGroup -n liveEventName --ips 1.2.3.4/22 5.6.7.8/30"
+            ]
+        },
+        {
+            "name": "az ams live-event wait",
+            "summary": "Place the CLI in a waiting state until a condition of the live event is met.",
+            "syntax": "az ams live-event wait [--account-name]\n                       [--created]\n                       [--custom]\n                       [--deleted]\n                       [--exists]\n                       [--ids]\n                       [--interval]\n                       [--name]\n                       [--resource-group]\n                       [--subscription]\n                       [--timeout]\n                       [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account-name -a",
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": [
+                "az ams live-event wait -g MyResourceGroup -a MyAmsAccount -n MyLiveEvent --created"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,75 @@
+{
+    "command_group": "az postgres flexible-server replica",
+    "description": "Manage read replicas.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az postgres flexible-server replica create",
+            "summary": "Create a read replica for a server.",
+            "syntax": "az postgres flexible-server replica create --replica-name\n                                           --resource-group\n                                           --source-server\n                                           [--address-prefixes]\n                                           [--identity]\n                                           [--key]\n                                           [--location]\n                                           [--no-wait]\n                                           [--performance-tier]\n                                           [--private-dns-zone]\n                                           [--sku-name]\n                                           [--storage-size]\n                                           [--subnet]\n                                           [--subnet-prefixes]\n                                           [--tags]\n                                           [--tier]\n                                           [--vnet]\n                                           [--yes]\n                                           [--zone]",
+            "required_parameters": [
+                "--replica-name",
+                "--resource-group -g",
+                "--source-server"
+            ],
+            "optional_parameters": [
+                "--address-prefixes",
+                "--identity",
+                "--key",
+                "--location -l",
+                "--no-wait",
+                "--performance-tier",
+                "--private-dns-zone",
+                "--sku-name",
+                "--storage-size",
+                "--subnet",
+                "--subnet-prefixes",
+                "--tags",
+                "--tier",
+                "--vnet",
+                "--yes -y",
+                "--zone -z"
+            ],
+            "examples": [
+                "az postgres flexible-server replica create --replica-name testreplicaserver -g testGroup --source-server testserver --zone 3 --location testLocation",
+                "az postgres flexible-server replica create --replica-name testreplicaserver -g testGroup \\\n  --source-server testserver --zone 3 --location testLocation \\\n  --vnet newVnet --subnet newSubnet \\\n  --address-prefixes 172.0.0.0/16 --subnet-prefixes 172.0.0.0/24 \\\n  --private-dns-zone testDNS.postgres.database.azure.com \\\n  --tags \"key=value\"",
+                "az postgres flexible-server replica create --replica-name testreplicaserver -g testGroup --source-server testserver --location testLocation",
+                "az postgres flexible-server replica create --replica-name testreplicaserver -g testGroup --source-server testserver --sku-name Standard_D4ds_v5 --storage-size 256",
+                "az postgres flexible-server replica create --replica-name testreplicaserver -g newTestGroup         --source-server /subscriptions/{sourceSubscriptionId}/resourceGroups/{sourceResourceGroup}/providers/Microsoft.DBforPostgreSQL/flexibleServers/{sourceServerName} --location testLocation"
+            ]
+        },
+        {
+            "name": "az postgres flexible-server replica list",
+            "summary": "List all read replicas for a given server.",
+            "syntax": "az postgres flexible-server replica list --name\n                                         --resource-group",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az postgres flexible-server replica list -g testGroup -n testserver"
+            ]
+        },
+        {
+            "name": "az postgres flexible-server replica promote",
+            "summary": "Stop replication of a read replica and promote it to an independent server or as a primary server.",
+            "syntax": "az postgres flexible-server replica promote [--ids]\n                                            [--name]\n                                            [--promote-mode {standalone, switchover}]\n                                            [--promote-option {forced, planned}]\n                                            [--resource-group]\n                                            [--subscription]\n                                            [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--promote-mode",
+                "--promote-option",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az postgres flexible-server replica promote -g testGroup -n testreplicaserver",
+                "az postgres flexible-server replica promote -g testGroup -n testreplicaserver --promote-mode standalone --promote-option forced",
+                "az postgres flexible-server replica promote -g testGroup -n testreplicaserver --promote-mode switchover --promote-option planned"
+            ]
+        }
+    ]
+}

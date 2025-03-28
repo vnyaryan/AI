@@ -1,0 +1,112 @@
+{
+    "command_group": "az automation source-control",
+    "description": "Manage source control.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az automation source-control create",
+            "summary": "Create a source control.",
+            "syntax": "az automation source-control create --account\n                                    --name\n                                    --resource-group\n                                    [--access-token]\n                                    [--auto-sync {0, 1, f, false, n, no, t, true, y, yes}]\n                                    [--branch]\n                                    [--description]\n                                    [--folder-path]\n                                    [--publish-runbook {0, 1, f, false, n, no, t, true, y, yes}]\n                                    [--refresh-token]\n                                    [--repo-url]\n                                    [--source-type {GitHub, VsoGit, VsoTfvc}]\n                                    [--token-type {Oauth, PersonalAccessToken}]",
+            "required_parameters": [
+                "--account --automation-account-name",
+                "--name --source-control-name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--access-token",
+                "--auto-sync",
+                "--branch",
+                "--description",
+                "--folder-path",
+                "--publish-runbook",
+                "--refresh-token",
+                "--repo-url",
+                "--source-type",
+                "--token-type"
+            ],
+            "examples": [
+                "az automation source-control create -g rg --automation-account-name myAutomationAccount --name source-control --repo-url https://github.com/myAccount/myRepo.git --branch master --source-type GitHub --folder-path / --access-token ghp_MOCKED_GITHUB_TOKEN --token-type PersonalAccessToken --publish-runbook false"
+            ]
+        },
+        {
+            "name": "az automation source-control delete",
+            "summary": "Delete the source control.",
+            "syntax": "az automation source-control delete [--account]\n                                    [--ids]\n                                    [--name]\n                                    [--resource-group]\n                                    [--subscription]\n                                    [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account --automation-account-name",
+                "--ids",
+                "--name --source-control-name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az automation source-control delete -g rg --automation-account-name myAutomationAccount --name sourceControl -y"
+            ]
+        },
+        {
+            "name": "az automation source-control list",
+            "summary": "List a list of source controls.",
+            "syntax": "az automation source-control list --account\n                                  --resource-group\n                                  [--filter]\n                                  [--max-items]\n                                  [--next-token]",
+            "required_parameters": [
+                "--account --automation-account-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--filter",
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az automation source-control list -g rg --automation-account-name myAutomationAccount"
+            ]
+        },
+        {
+            "name": "az automation source-control show",
+            "summary": "Get the source control identified by source control name.",
+            "syntax": "az automation source-control show [--account]\n                                  [--ids]\n                                  [--name]\n                                  [--resource-group]\n                                  [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account --automation-account-name",
+                "--ids",
+                "--name --source-control-name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az automation source-control show -g rg --automation-account-name myAutomationAccount --name sourceControl"
+            ]
+        },
+        {
+            "name": "az automation source-control update",
+            "summary": "Update a source control.",
+            "syntax": "az automation source-control update [--access-token]\n                                    [--account]\n                                    [--add]\n                                    [--auto-sync {0, 1, f, false, n, no, t, true, y, yes}]\n                                    [--branch]\n                                    [--description]\n                                    [--folder-path]\n                                    [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                    [--ids]\n                                    [--name]\n                                    [--publish-runbook {0, 1, f, false, n, no, t, true, y, yes}]\n                                    [--refresh-token]\n                                    [--remove]\n                                    [--repo-url]\n                                    [--resource-group]\n                                    [--set]\n                                    [--source-type {GitHub, VsoGit, VsoTfvc}]\n                                    [--subscription]\n                                    [--token-type {Oauth, PersonalAccessToken}]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--access-token",
+                "--account --automation-account-name",
+                "--add",
+                "--auto-sync",
+                "--branch",
+                "--description",
+                "--folder-path",
+                "--force-string",
+                "--ids",
+                "--name --source-control-name -n",
+                "--publish-runbook",
+                "--refresh-token",
+                "--remove",
+                "--repo-url",
+                "--resource-group -g",
+                "--set",
+                "--source-type",
+                "--subscription",
+                "--token-type"
+            ],
+            "examples": [
+                "az automation source-control update -g rg --automation-account-name myAutomationAccount --name sourceControl --access-token ghp_GITHUB_TOKEN --token-type PersonalAccessToken --publish-runbook True"
+            ]
+        }
+    ]
+}

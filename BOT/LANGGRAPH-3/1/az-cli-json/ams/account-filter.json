@@ -1,0 +1,95 @@
+{
+    "command_group": "az ams account-filter",
+    "description": "Manage account filters for an Azure Media Services account.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az ams account-filter create",
+            "summary": "Create an account filter.",
+            "syntax": "az ams account-filter create --account-name\n                             --name\n                             --resource-group\n                             [--end-timestamp]\n                             [--first-quality]\n                             [--force-end-timestamp {false, true}]\n                             [--live-backoff-duration]\n                             [--presentation-window-duration]\n                             [--start-timestamp]\n                             [--timescale]\n                             [--tracks]",
+            "required_parameters": [
+                "--account-name -a",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--end-timestamp",
+                "--first-quality",
+                "--force-end-timestamp",
+                "--live-backoff-duration",
+                "--presentation-window-duration",
+                "--start-timestamp",
+                "--timescale",
+                "--tracks"
+            ],
+            "examples": [
+                "az ams account-filter create -a amsAccount -g resourceGroup -n filterName --force-end-timestamp=False --end-timestamp 200000 --start-timestamp 100000 --live-backoff-duration 60 --presentation-window-duration 600000 --timescale 1000 --first-quality 720 --tracks @C:\\tracks.json"
+            ]
+        },
+        {
+            "name": "az ams account-filter delete",
+            "summary": "Delete an account filter.",
+            "syntax": "az ams account-filter delete [--account-name]\n                             [--ids]\n                             [--name]\n                             [--resource-group]\n                             [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account-name -a",
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az ams account-filter list",
+            "summary": "List all the account filters of an Azure Media Services account.",
+            "syntax": "az ams account-filter list --account-name\n                           --resource-group",
+            "required_parameters": [
+                "--account-name -a",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az ams account-filter show",
+            "summary": "Show the details of an account filter.",
+            "syntax": "az ams account-filter show [--account-name]\n                           [--ids]\n                           [--name]\n                           [--resource-group]\n                           [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account-name -a",
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az ams account-filter update",
+            "summary": "Update the details of an account filter.",
+            "syntax": "az ams account-filter update [--account-name]\n                             [--add]\n                             [--end-timestamp]\n                             [--first-quality]\n                             [--force-end-timestamp {false, true}]\n                             [--force-string]\n                             [--ids]\n                             [--live-backoff-duration]\n                             [--name]\n                             [--presentation-window-duration]\n                             [--remove]\n                             [--resource-group]\n                             [--set]\n                             [--start-timestamp]\n                             [--subscription]\n                             [--timescale]\n                             [--tracks]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account-name -a",
+                "--add",
+                "--end-timestamp",
+                "--first-quality",
+                "--force-end-timestamp",
+                "--force-string",
+                "--ids",
+                "--live-backoff-duration",
+                "--name -n",
+                "--presentation-window-duration",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--start-timestamp",
+                "--subscription",
+                "--timescale",
+                "--tracks"
+            ],
+            "examples": []
+        }
+    ]
+}

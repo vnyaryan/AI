@@ -1,0 +1,60 @@
+{
+    "command_group": "az vmss identity",
+    "description": "Manage service identities of a VM scaleset.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az vmss identity assign",
+            "summary": "Enable managed service identity on a VMSS.",
+            "syntax": "az vmss identity assign [--identities]\n                        [--ids]\n                        [--name]\n                        [--resource-group]\n                        [--role]\n                        [--scope]\n                        [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--identities",
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--role",
+                "--scope",
+                "--subscription"
+            ],
+            "examples": [
+                "az vmss identity assign -g MyResourceGroup -n MyVmss --role Owner --scope /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/MyResourceGroup",
+                "az vmss identity assign -g MyResourceGroup -n MyVmss --role Owner --identities [system] myAssignedId --scope /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/MyResourceGroup",
+                "az vmss identity assign --identities readerId writerId --name MyVmss --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az vmss identity remove",
+            "summary": "Remove user assigned identities from a VM scaleset.",
+            "syntax": "az vmss identity remove [--identities]\n                        [--ids]\n                        [--name]\n                        [--resource-group]\n                        [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--identities",
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az vmss identity remove -g MyResourceGroup -n MyVmss",
+                "az vmss identity remove -g MyResourceGroup -n MyVmss --identities readerId writerId",
+                "az vmss identity remove -g MyResourceGroup -n MyVmss --identities [system] readerId"
+            ]
+        },
+        {
+            "name": "az vmss identity show",
+            "summary": "Display VM scaleset's managed identity info.",
+            "syntax": "az vmss identity show [--ids]\n                      [--name]\n                      [--resource-group]\n                      [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az vmss identity show --name MyVirtualMachine --resource-group MyResourceGroup"
+            ]
+        }
+    ]
+}

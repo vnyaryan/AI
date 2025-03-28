@@ -1,0 +1,22 @@
+{
+    "command_group": "az spring job execution instance",
+    "description": "(Enterprise Tier Only) Commands to manage job execution instances of Azure Spring Apps service.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az spring job execution instance list",
+            "summary": "List all instances of the job execution.",
+            "syntax": "az spring job execution instance list --execution\n                                      --job\n                                      --resource-group\n                                      --service",
+            "required_parameters": [
+                "--execution",
+                "--job",
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az spring job execution instance list --job job-name --execution job-execution-name -s MyService -g MyResourceGroup"
+            ]
+        }
+    ]
+}

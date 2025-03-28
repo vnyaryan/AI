@@ -1,0 +1,94 @@
+{
+    "command_group": "az policy set-definition",
+    "description": "Manage resource policy set definitions.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az policy set-definition create",
+            "summary": "Create a policy set definition.",
+            "syntax": "az policy set-definition create --definitions\n                                --name\n                                [--definition-groups]\n                                [--description]\n                                [--display-name]\n                                [--management-group]\n                                [--metadata]\n                                [--params]\n                                [--subscription]",
+            "required_parameters": [
+                "--definitions",
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--definition-groups",
+                "--description",
+                "--display-name",
+                "--management-group",
+                "--metadata",
+                "--params",
+                "--subscription"
+            ],
+            "examples": [
+                "az policy set-definition create -n readOnlyStorage \\\n    --definitions '[ { \\\"policyDefinitionId\\\": \\\"/subscriptions/mySubId/providers/ \\\n        Microsoft.Authorization/policyDefinitions/storagePolicy\\\" } ]'",
+                "az policy set-definition create -n readOnlyStorage \\\n    --definitions \"[ { \\\"policyDefinitionId\\\": \\\"/subscriptions/mySubId/providers/ \\\n        Microsoft.Authorization/policyDefinitions/storagePolicy\\\", \\\"parameters\\\": \\\n            { \\\"storageSku\\\": { \\\"value\\\": \\\"[parameters(\\\\\"requiredSku\\\\\")]\\\" } } }]\" \\\n    --params \"{ \\\"requiredSku\\\": { \\\"type\\\": \\\"String\\\" } }\"",
+                "az policy set-definition create -n readOnlyStorage \\\n    --subscription '0b1f6471-1bf0-4dda-aec3-111122223333' \\\n    --definitions '[ { \\\"policyDefinitionId\\\": \\\"/subscriptions/ \\\n        0b1f6471-1bf0-4dda-aec3-111122223333/providers/Microsoft.Authorization/ \\\n            policyDefinitions/storagePolicy\\\" } ]'",
+                "az policy set-definition create -n computeRequirements \\\n    --definitions \"[ { \\\"policyDefinitionId \\\": \\\"/subscriptions/mySubId/providers/ \\\n        Microsoft.Authorization/policyDefinitions/storagePolicy\\\", \\\"groupNames\\\": \\\n            [ \\\"CostSaving\\\", \\\"Organizational\\\" ] }, { \\\"policyDefinitionId\\\": \\\n                \\\"/subscriptions/mySubId/providers/Microsoft.Authorization/ \\\n                    policyDefinitions/tagPolicy\\\", \\\"groupNames\\\": [ \\\n                        \\\"Organizational\\\" ] } ]\" \\\n    --definition-groups \"[{ \\\"name\\\": \\\"CostSaving\\\" }, { \\\"name\\\": \\\"Organizational\\\" } ]\""
+            ]
+        },
+        {
+            "name": "az policy set-definition delete",
+            "summary": "Delete a policy set definition.",
+            "syntax": "az policy set-definition delete --name\n                                [--management-group]\n                                [--subscription]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--management-group",
+                "--subscription"
+            ],
+            "examples": [
+                "az policy set-definition delete --management-group myMg --name MyPolicySetDefinition"
+            ]
+        },
+        {
+            "name": "az policy set-definition list",
+            "summary": "List policy set definitions.",
+            "syntax": "az policy set-definition list [--management-group]\n                              [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--management-group",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az policy set-definition show",
+            "summary": "Show a policy set definition.",
+            "syntax": "az policy set-definition show --name\n                              [--management-group]\n                              [--subscription]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--management-group",
+                "--subscription"
+            ],
+            "examples": [
+                "az policy set-definition show --name MyPolicySetDefinition --management-group MyManagementGroup"
+            ]
+        },
+        {
+            "name": "az policy set-definition update",
+            "summary": "Update a policy set definition.",
+            "syntax": "az policy set-definition update --name\n                                [--definition-groups]\n                                [--definitions]\n                                [--description]\n                                [--display-name]\n                                [--management-group]\n                                [--metadata]\n                                [--params]\n                                [--subscription]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--definition-groups",
+                "--definitions",
+                "--description",
+                "--display-name",
+                "--management-group",
+                "--metadata",
+                "--params",
+                "--subscription"
+            ],
+            "examples": [
+                "az policy set-definition update \\\n    --definitions '[ { \\\"policyDefinitionId\\\": \\\"/subscriptions/mySubId/providers/ \\\n        Microsoft.Authorization/policyDefinitions/storagePolicy\\\" } ]' \\\n    --name MyPolicySetDefinition",
+                "az policy set-definition update -n computeRequirements \\\n    --definitions \"[ { \\\"policyDefinitionId\\\": \\\"/subscriptions/mySubId/providers/ \\\n        Microsoft.Authorization/policyDefinitions/storagePolicy\\\", \\\"groupNames\\\": [ \\\n            \\\"CostSaving\\\", \\\"Organizational\\\" ] }, { \\\"policyDefinitionId\\\": \\\n                \\\"/subscriptions/mySubId/providers/Microsoft.Authorization/ \\\n                    policyDefinitions/tagPolicy\\\", \\\n                        \\\"groupNames\\\": [ \\\"Organizational\\\" ] } ]\" \\\n    --definition-groups \"[{ \\\"name\\\": \\\"CostSaving\\\" }, { \\\"name\\\": \\\"Organizational\\\" } ]\""
+            ]
+        }
+    ]
+}

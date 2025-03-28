@@ -1,0 +1,128 @@
+{
+    "command_group": "az aks connection",
+    "description": "Commands to manage aks connections.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az aks connection delete",
+            "summary": "Delete a aks connection.",
+            "syntax": "az aks connection delete [--connection]\n                         [--id]\n                         [--name]\n                         [--no-wait]\n                         [--resource-group]\n                         [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--connection",
+                "--id",
+                "--name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--yes -y"
+            ],
+            "examples": [
+                "az aks connection delete",
+                "az aks connection delete -g ClusterRG -n MyCluster --connection MyConnection",
+                "az aks connection delete --id /subscriptions/{subscription}/resourceGroups/{source_resource_group}/providers/Microsoft.Web/sites/{site}/providers/Microsoft.ServiceLinker/linkers/{linker}"
+            ]
+        },
+        {
+            "name": "az aks connection list",
+            "summary": "List connections of a aks.",
+            "syntax": "az aks connection list [--name]\n                       [--resource-group]\n                       [--source-id]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--name -n",
+                "--resource-group -g",
+                "--source-id"
+            ],
+            "examples": [
+                "az aks connection list",
+                "az aks connection list -g ClusterRG -n MyCluster",
+                "az aks connection list --source-id /subscriptions/{subscription}/resourceGroups/{source_resource_group}/providers/Microsoft.ContainerService/managedClusters/{cluster}"
+            ]
+        },
+        {
+            "name": "az aks connection list-configuration",
+            "summary": "List source configurations of a aks connection.",
+            "syntax": "az aks connection list-configuration [--connection]\n                                     [--id]\n                                     [--name]\n                                     [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--connection",
+                "--id",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az aks connection list-configuration",
+                "az aks connection list-configuration -g ClusterRG -n MyCluster --connection MyConnection",
+                "az aks connection list-configuration --id /subscriptions/{subscription}/resourceGroups/{source_resource_group}/providers/Microsoft.Web/sites/{site}/providers/Microsoft.ServiceLinker/linkers/{linker}"
+            ]
+        },
+        {
+            "name": "az aks connection list-support-types",
+            "summary": "List client types and auth types supported by aks connections.",
+            "syntax": "az aks connection list-support-types [--target-type {app-insights, appconfig, cognitiveservices, confluent-cloud, cosmos-cassandra, cosmos-gremlin, cosmos-mongo, cosmos-sql, cosmos-table, eventhub, keyvault, mysql, mysql-flexible, postgres, postgres-flexible, redis, redis-enterprise, servicebus, signalr, sql, storage-blob, storage-file, storage-queue, storage-table, webpubsub}]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--target-type -t"
+            ],
+            "examples": [
+                "az aks connection list-support-types -o table",
+                "az aks connection list-support-types --target-type storage-blob -o table"
+            ]
+        },
+        {
+            "name": "az aks connection show",
+            "summary": "Get the details of a aks connection.",
+            "syntax": "az aks connection show [--connection]\n                       [--id]\n                       [--name]\n                       [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--connection",
+                "--id",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az aks connection show",
+                "az aks connection show -g ClusterRG -n MyCluster --connection MyConnection",
+                "az aks connection show --id /subscriptions/{subscription}/resourceGroups/{source_resource_group}/providers/Microsoft.Web/sites/{site}/providers/Microsoft.ServiceLinker/linkers/{linker}"
+            ]
+        },
+        {
+            "name": "az aks connection validate",
+            "summary": "Validate a aks connection.",
+            "syntax": "az aks connection validate [--connection]\n                           [--id]\n                           [--name]\n                           [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--connection",
+                "--id",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az aks connection validate",
+                "az aks connection validate -g ClusterRG -n MyCluster --connection MyConnection",
+                "az aks connection validate --id /subscriptions/{subscription}/resourceGroups/{source_resource_group}/providers/Microsoft.Web/sites/{site}/providers/Microsoft.ServiceLinker/linkers/{linker}"
+            ]
+        },
+        {
+            "name": "az aks connection wait",
+            "summary": "Place the CLI in a waiting state until a condition of the connection is met.",
+            "syntax": "az aks connection wait [--connection]\n                       [--created]\n                       [--custom]\n                       [--deleted]\n                       [--exists]\n                       [--id]\n                       [--interval]\n                       [--name]\n                       [--resource-group]\n                       [--timeout]\n                       [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--connection",
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--id",
+                "--interval",
+                "--name -n",
+                "--resource-group -g",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": [
+                "az aks connection wait --id /subscriptions/{subscription}/resourceGroups/{source_resource_group}/providers/Microsoft.Web/sites/{site}/providers/Microsoft.ServiceLinker/linkers/{linker} --created"
+            ]
+        }
+    ]
+}

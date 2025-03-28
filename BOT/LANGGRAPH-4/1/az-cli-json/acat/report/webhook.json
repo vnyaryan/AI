@@ -1,0 +1,89 @@
+{
+    "command_group": "az acat report webhook",
+    "description": "Manage ACAT report webhooks.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az acat report webhook create",
+            "summary": "Create a new AppComplianceAutomation webhook or update an exiting AppComplianceAutomation webhook.",
+            "syntax": "az acat report webhook create --payload-url\n                              --report-name\n                              --webhook-name\n                              [--content-type-hidden {application/json}]\n                              [--disable {false, true}]\n                              [--enable-ssl {false, true}]\n                              [--events]\n                              [--secret]\n                              [--trigger-mode {all, customize}]",
+            "required_parameters": [
+                "--payload-url",
+                "--report-name",
+                "--webhook-name"
+            ],
+            "optional_parameters": [
+                "--content-type-hidden",
+                "--disable",
+                "--enable-ssl",
+                "--events",
+                "--secret",
+                "--trigger-mode"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az acat report webhook delete",
+            "summary": "Delete an AppComplianceAutomation webhook.",
+            "syntax": "az acat report webhook delete --report-name\n                              --webhook-name\n                              [--yes]",
+            "required_parameters": [
+                "--report-name",
+                "--webhook-name"
+            ],
+            "optional_parameters": [
+                "--yes -y"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az acat report webhook list",
+            "summary": "List the AppComplianceAutomation webhook list.",
+            "syntax": "az acat report webhook list --report-name\n                            [--filter]\n                            [--max-items]\n                            [--next-token]\n                            [--offer-guid]\n                            [--orderby]\n                            [--select]\n                            [--skip-token]\n                            [--tenant]\n                            [--top]",
+            "required_parameters": [
+                "--report-name"
+            ],
+            "optional_parameters": [
+                "--filter",
+                "--max-items",
+                "--next-token",
+                "--offer-guid",
+                "--orderby",
+                "--select",
+                "--skip-token",
+                "--tenant",
+                "--top"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az acat report webhook show",
+            "summary": "Get the AppComplianceAutomation webhook and its properties.",
+            "syntax": "az acat report webhook show --report-name\n                            --webhook-name",
+            "required_parameters": [
+                "--report-name",
+                "--webhook-name"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az acat report webhook update",
+            "summary": "Update an exiting AppComplianceAutomation webhook.",
+            "syntax": "az acat report webhook update --report-name\n                              --webhook-name\n                              [--content-type {application/json}]\n                              [--disable {false, true}]\n                              [--enable-ssl {false, true}]\n                              [--events-hidden]\n                              [--payload-url-hidden]\n                              [--secret]\n                              [--trigger-mode {all, customize}]",
+            "required_parameters": [
+                "--report-name",
+                "--webhook-name"
+            ],
+            "optional_parameters": [
+                "--content-type",
+                "--disable",
+                "--enable-ssl",
+                "--events-hidden",
+                "--payload-url-hidden",
+                "--secret",
+                "--trigger-mode"
+            ],
+            "examples": []
+        }
+    ]
+}

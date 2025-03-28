@@ -1,0 +1,40 @@
+{
+    "command_group": "az webpubsub service user",
+    "description": "Commands to manage Webpubsub service users.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az webpubsub service user exist",
+            "summary": "Check if there are any client connections connected for the given user.",
+            "syntax": "az webpubsub service user exist --hub-name\n                                --user-id\n                                [--ids]\n                                [--name]\n                                [--resource-group]\n                                [--subscription]",
+            "required_parameters": [
+                "--hub-name",
+                "--user-id"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az webpubsub service user send",
+            "summary": "Send a message to user. Error throws if operation fails.",
+            "syntax": "az webpubsub service user send --hub-name\n                               --payload\n                               --user-id\n                               [--ids]\n                               [--name]\n                               [--resource-group]\n                               [--subscription]",
+            "required_parameters": [
+                "--hub-name",
+                "--payload",
+                "--user-id"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        }
+    ]
+}

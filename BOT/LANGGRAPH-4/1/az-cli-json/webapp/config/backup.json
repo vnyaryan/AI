@@ -1,0 +1,114 @@
+{
+    "command_group": "az webapp config backup",
+    "description": "Manage backups for web apps.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az webapp config backup create",
+            "summary": "Create a backup of a web app.",
+            "syntax": "az webapp config backup create --container-url\n                               --resource-group\n                               --webapp-name\n                               [--backup-name]\n                               [--db-connection-string]\n                               [--db-name]\n                               [--db-type {LocalMySql, MySql, PostgreSql, SqlAzure}]\n                               [--slot]",
+            "required_parameters": [
+                "--container-url",
+                "--resource-group -g",
+                "--webapp-name"
+            ],
+            "optional_parameters": [
+                "--backup-name",
+                "--db-connection-string",
+                "--db-name",
+                "--db-type",
+                "--slot -s"
+            ],
+            "examples": [
+                "az webapp config backup create --container-url {container-url} --resource-group MyResourceGroup --webapp-name MyWebapp"
+            ]
+        },
+        {
+            "name": "az webapp config backup delete",
+            "summary": "Delete a web app backup.",
+            "syntax": "az webapp config backup delete --backup-id\n                               --resource-group\n                               --webapp-name\n                               [--slot]\n                               [--yes]",
+            "required_parameters": [
+                "--backup-id",
+                "--resource-group -g",
+                "--webapp-name"
+            ],
+            "optional_parameters": [
+                "--slot -s",
+                "--yes -y"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az webapp config backup list",
+            "summary": "List backups of a web app.",
+            "syntax": "az webapp config backup list --resource-group\n                             --webapp-name\n                             [--slot]",
+            "required_parameters": [
+                "--resource-group -g",
+                "--webapp-name"
+            ],
+            "optional_parameters": [
+                "--slot -s"
+            ],
+            "examples": [
+                "az webapp config backup list --resource-group MyResourceGroup --webapp-name MyWebapp"
+            ]
+        },
+        {
+            "name": "az webapp config backup restore",
+            "summary": "Restore a web app from a backup.",
+            "syntax": "az webapp config backup restore --backup-name\n                                --container-url\n                                --resource-group\n                                --webapp-name\n                                [--db-connection-string]\n                                [--db-name]\n                                [--db-type {LocalMySql, MySql, PostgreSql, SqlAzure}]\n                                [--ignore-hostname-conflict]\n                                [--overwrite]\n                                [--slot]\n                                [--target-name]",
+            "required_parameters": [
+                "--backup-name",
+                "--container-url",
+                "--resource-group -g",
+                "--webapp-name"
+            ],
+            "optional_parameters": [
+                "--db-connection-string",
+                "--db-name",
+                "--db-type",
+                "--ignore-hostname-conflict",
+                "--overwrite",
+                "--slot -s",
+                "--target-name"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az webapp config backup show",
+            "summary": "Show the backup schedule for a web app.",
+            "syntax": "az webapp config backup show --resource-group\n                             --webapp-name\n                             [--slot]",
+            "required_parameters": [
+                "--resource-group -g",
+                "--webapp-name"
+            ],
+            "optional_parameters": [
+                "--slot -s"
+            ],
+            "examples": [
+                "az webapp config backup show --resource-group MyResourceGroup --webapp-name MyWebapp"
+            ]
+        },
+        {
+            "name": "az webapp config backup update",
+            "summary": "Configure a new backup schedule for a web app.",
+            "syntax": "az webapp config backup update --resource-group\n                               --webapp-name\n                               [--backup-name]\n                               [--container-url]\n                               [--db-connection-string]\n                               [--db-name]\n                               [--db-type {LocalMySql, MySql, PostgreSql, SqlAzure}]\n                               [--frequency]\n                               [--retain-one {false, true}]\n                               [--retention]\n                               [--slot]",
+            "required_parameters": [
+                "--resource-group -g",
+                "--webapp-name"
+            ],
+            "optional_parameters": [
+                "--backup-name",
+                "--container-url",
+                "--db-connection-string",
+                "--db-name",
+                "--db-type",
+                "--frequency",
+                "--retain-one",
+                "--retention",
+                "--slot -s"
+            ],
+            "examples": []
+        }
+    ]
+}

@@ -1,0 +1,103 @@
+{
+    "command_group": "az aks mesh upgrade",
+    "description": "Commands to manage the upgrades for Azure Service Mesh.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az aks mesh upgrade complete",
+            "summary": "Complete Azure Service Mesh upgrade.",
+            "syntax": "az aks mesh upgrade complete --name\n                             --resource-group\n                             [--no-wait]\n                             [--yes]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--no-wait",
+                "--yes -y"
+            ],
+            "examples": [
+                "az aks mesh upgrade complete --resource-group MyResourceGroup --name MyManagedCluster"
+            ]
+        },
+        {
+            "name": "az aks mesh upgrade complete",
+            "summary": "Complete Azure Service Mesh upgrade.",
+            "syntax": "az aks mesh upgrade complete --name\n                             --resource-group\n                             [--no-wait]\n                             [--yes]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--no-wait",
+                "--yes -y"
+            ],
+            "examples": [
+                "az aks mesh upgrade complete --resource-group MyResourceGroup --name MyManagedCluster"
+            ]
+        },
+        {
+            "name": "az aks mesh upgrade rollback",
+            "summary": "Rollback Azure Service Mesh upgrade.",
+            "syntax": "az aks mesh upgrade rollback --name\n                             --resource-group\n                             [--no-wait]\n                             [--yes]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--no-wait",
+                "--yes -y"
+            ],
+            "examples": [
+                "az aks mesh upgrade rollback --resource-group MyResourceGroup --name MyManagedCluster"
+            ]
+        },
+        {
+            "name": "az aks mesh upgrade rollback",
+            "summary": "Rollback Azure Service Mesh upgrade.",
+            "syntax": "az aks mesh upgrade rollback --name\n                             --resource-group\n                             [--no-wait]\n                             [--yes]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--no-wait",
+                "--yes -y"
+            ],
+            "examples": [
+                "az aks mesh upgrade rollback --resource-group MyResourceGroup --name MyManagedCluster"
+            ]
+        },
+        {
+            "name": "az aks mesh upgrade start",
+            "summary": "Initiate Azure Service Mesh upgrade.",
+            "syntax": "az aks mesh upgrade start --name\n                          --resource-group\n                          --revision\n                          [--no-wait]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g",
+                "--revision"
+            ],
+            "optional_parameters": [
+                "--no-wait"
+            ],
+            "examples": [
+                "az aks mesh upgrade start --resource-group MyResourceGroup --name MyManagedCluster --revision asm-1-18"
+            ]
+        },
+        {
+            "name": "az aks mesh upgrade start",
+            "summary": "Initiate Azure Service Mesh upgrade.",
+            "syntax": "az aks mesh upgrade start --name\n                          --resource-group\n                          --revision\n                          [--no-wait]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g",
+                "--revision"
+            ],
+            "optional_parameters": [
+                "--no-wait"
+            ],
+            "examples": [
+                "az aks mesh upgrade start --resource-group MyResourceGroup --name MyManagedCluster --revision asm-1-18"
+            ]
+        }
+    ]
+}

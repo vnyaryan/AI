@@ -1,0 +1,6 @@
+{
+    "command_group": "az cosmosdb mongodb user",
+    "description": "Manage Azure Cosmos DB Mongo user resources.",
+    "status": "GA",
+    "commands": []
+}

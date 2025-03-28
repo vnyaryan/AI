@@ -1,0 +1,109 @@
+{
+    "command_group": "az networkcloud volume",
+    "description": "Manage volume.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az networkcloud volume create",
+            "summary": "Create a new volume or update the properties of the existing one.",
+            "syntax": "az networkcloud volume create --extended-location\n                              --name\n                              --resource-group\n                              --size\n                              [--location]\n                              [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                              [--tags]",
+            "required_parameters": [
+                "--extended-location",
+                "--name --volume-name -n",
+                "--resource-group -g",
+                "--size --size-mib"
+            ],
+            "optional_parameters": [
+                "--location -l",
+                "--no-wait",
+                "--tags"
+            ],
+            "examples": [
+                "az networkcloud volume create --resource-group \"resourceGroupName\" --name \"volumeName\" --extended-location name=\"/subscriptions/subscriptionId/resourceGroups/resourceGroupName/providers/Microsoft.ExtendedLocation/customLocations/clusterExtendedLocationName\" type=\"CustomLocation\" --location \"location\" --size 10000 --tags key1=\"myvalue1\" key2=\"myvalue2\""
+            ]
+        },
+        {
+            "name": "az networkcloud volume delete",
+            "summary": "Delete the provided volume.",
+            "syntax": "az networkcloud volume delete [--ids]\n                              [--name]\n                              [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                              [--resource-group]\n                              [--subscription]\n                              [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --volume-name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az networkcloud volume delete --resource-group \"resourceGroupName\" --name \"volumeName\""
+            ]
+        },
+        {
+            "name": "az networkcloud volume list",
+            "summary": "List volumes in the provided resource group or subscription.",
+            "syntax": "az networkcloud volume list [--max-items]\n                            [--next-token]\n                            [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az networkcloud volume list --resource-group \"resourceGroupName\"",
+                "az networkcloud volume list"
+            ]
+        },
+        {
+            "name": "az networkcloud volume show",
+            "summary": "Get properties of the provided volume.",
+            "syntax": "az networkcloud volume show [--ids]\n                            [--name]\n                            [--resource-group]\n                            [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --volume-name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az networkcloud volume show --resource-group \"resourceGroupName\" --name \"volumeName\""
+            ]
+        },
+        {
+            "name": "az networkcloud volume update",
+            "summary": "Update tags associated with the provided volume.",
+            "syntax": "az networkcloud volume update [--ids]\n                              [--name]\n                              [--resource-group]\n                              [--subscription]\n                              [--tags]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --volume-name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--tags"
+            ],
+            "examples": [
+                "az networkcloud volume update --resource-group \"resourceGroupName\" --name \"volumeName\" --tags key1=\"myvalue1\" key2=\"myvalue2\""
+            ]
+        },
+        {
+            "name": "az networkcloud volume wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az networkcloud volume wait [--created]\n                            [--custom]\n                            [--deleted]\n                            [--exists]\n                            [--ids]\n                            [--interval]\n                            [--name]\n                            [--resource-group]\n                            [--subscription]\n                            [--timeout]\n                            [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--name --volume-name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

@@ -1,0 +1,92 @@
+{
+    "command_group": "az acr agentpool",
+    "description": "Manage private Tasks agent pools with Azure Container Registries.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az acr agentpool create",
+            "summary": "Create an agent pool for an Azure Container Registry.",
+            "syntax": "az acr agentpool create --name\n                        --registry\n                        [--count]\n                        [--no-wait]\n                        [--resource-group]\n                        [--subnet-id]\n                        [--tier]",
+            "required_parameters": [
+                "--name -n",
+                "--registry -r"
+            ],
+            "optional_parameters": [
+                "--count -c",
+                "--no-wait",
+                "--resource-group -g",
+                "--subnet-id",
+                "--tier"
+            ],
+            "examples": [
+                "az acr agentpool create -n MyAgentName -r myregistry",
+                "az acr agentpool create -n MyAgentName -r myregistry --count 2",
+                "az acr agentpool create -n MyAgentName -r myregistry --subnet-id /subscriptions/<SubscriptionId>/resourceGroups/<ResourceGroupName>/providers/Microsoft.ClassicNetwork/virtualNetworks/<myNetwork>/subnets/<subNet>"
+            ]
+        },
+        {
+            "name": "az acr agentpool delete",
+            "summary": "Delete an agent pool.",
+            "syntax": "az acr agentpool delete --name\n                        --registry\n                        [--no-wait]\n                        [--resource-group]\n                        [--yes]",
+            "required_parameters": [
+                "--name -n",
+                "--registry -r"
+            ],
+            "optional_parameters": [
+                "--no-wait",
+                "--resource-group -g",
+                "--yes -y"
+            ],
+            "examples": [
+                "az acr agentpool delete -n MyAgentName -r myregistry"
+            ]
+        },
+        {
+            "name": "az acr agentpool list",
+            "summary": "List the agent pools for an Azure Container Registry.",
+            "syntax": "az acr agentpool list --registry\n                      [--resource-group]",
+            "required_parameters": [
+                "--registry -r"
+            ],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az acr agentpool list -r myregistry -o table"
+            ]
+        },
+        {
+            "name": "az acr agentpool show",
+            "summary": "Get the properties of a specified agent pool for an Azure Container Registry.",
+            "syntax": "az acr agentpool show --name\n                      --registry\n                      [--queue-count]\n                      [--resource-group]",
+            "required_parameters": [
+                "--name -n",
+                "--registry -r"
+            ],
+            "optional_parameters": [
+                "--queue-count",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az acr agentpool show -n MyAgentName -r myregistry -o table"
+            ]
+        },
+        {
+            "name": "az acr agentpool update",
+            "summary": "Update an agent pool for an Azure Container Registry.",
+            "syntax": "az acr agentpool update --name\n                        --registry\n                        [--count]\n                        [--no-wait]\n                        [--resource-group]",
+            "required_parameters": [
+                "--name -n",
+                "--registry -r"
+            ],
+            "optional_parameters": [
+                "--count -c",
+                "--no-wait",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az acr agentpool update -n MyAgentName -r myregistry --count 5"
+            ]
+        }
+    ]
+}

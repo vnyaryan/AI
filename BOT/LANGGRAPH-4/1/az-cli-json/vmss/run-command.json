@@ -1,0 +1,148 @@
+{
+    "command_group": "az vmss run-command",
+    "description": "Manage run commands on a Virtual Machine Scale Set.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az vmss run-command create",
+            "summary": "The operation to Create the VMSS VM run command.",
+            "syntax": "az vmss run-command create --instance-id\n                           --name\n                           --resource-group\n                           --vmss-name\n                           [--async-execution {false, true}]\n                           [--command-id]\n                           [--error-blob-uri]\n                           [--location]\n                           [--no-wait]\n                           [--output-blob-uri]\n                           [--parameters]\n                           [--protected-parameters]\n                           [--run-as-password]\n                           [--run-as-user]\n                           [--script]\n                           [--script-uri]\n                           [--tags]\n                           [--timeout-in-seconds]",
+            "required_parameters": [
+                "--instance-id",
+                "--name --run-command-name",
+                "--resource-group -g",
+                "--vmss-name"
+            ],
+            "optional_parameters": [
+                "--async-execution",
+                "--command-id",
+                "--error-blob-uri",
+                "--location -l",
+                "--no-wait",
+                "--output-blob-uri",
+                "--parameters",
+                "--protected-parameters",
+                "--run-as-password",
+                "--run-as-user",
+                "--script",
+                "--script-uri",
+                "--tags",
+                "--timeout-in-seconds"
+            ],
+            "examples": [
+                "az vmss run-command create --resource-group \"myResourceGroup\" --instance-id \"0\" --location \"West US\" --async-execution false --parameters arg1=param1 arg2=value1 --run-as-password \"<runAsPassword>\" --run-as-user \"user1\" --script \"Write-Host Hello World!\" --timeout-in-seconds 3600 --run-command-name \"myRunCommand\" --vmss-name \"myVMSS\""
+            ]
+        },
+        {
+            "name": "az vmss run-command delete",
+            "summary": "The operation to delete the run command.",
+            "syntax": "az vmss run-command delete --name\n                           [--ids]\n                           [--instance-id]\n                           [--no-wait]\n                           [--resource-group]\n                           [--subscription]\n                           [--vmss-name]\n                           [--yes]",
+            "required_parameters": [
+                "--name --run-command-name"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--instance-id",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--vmss-name",
+                "--yes -y"
+            ],
+            "examples": [
+                "az vmss run-command delete --resource-group \"myResourceGroup\" --instance-id \"0\" --run-command-name \"myRunCommand\" --vmss-name \"myVMSS\""
+            ]
+        },
+        {
+            "name": "az vmss run-command invoke",
+            "summary": "Execute a specific run command on a Virtual Machine Scale Set instance.",
+            "syntax": "az vmss run-command invoke --command-id\n                           [--ids]\n                           [--instance-id]\n                           [--name]\n                           [--parameters]\n                           [--resource-group]\n                           [--scripts]\n                           [--subscription]",
+            "required_parameters": [
+                "--command-id"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--instance-id",
+                "--name -n",
+                "--parameters",
+                "--resource-group -g",
+                "--scripts",
+                "--subscription"
+            ],
+            "examples": [
+                "az vmss run-command invoke -g MyResourceGroup -n MyVMSS --command-id RunShellScript \\ --instance-id 0 --scripts \"sudo apt-get update && sudo apt-get install -y nginx\"",
+                "az vmss run-command invoke -g MyResourceGroup -n MyVMSS --command-id RunShellScript \\ --instance-id 4 --scripts 'echo $1 $2' --parameters hello world",
+                "az vmss list-instances -n MyVMSS -g my-rg --query \"[].id\" --output tsv | \\\naz vmss run-command invoke --scripts 'echo $1 $2' --parameters hello world  \\\n    --command-id RunShellScript --ids @-",
+                "az vmss run-command invoke  --command-id RunPowerShellScript --name win-vm -g my-resource-group \\\n    --scripts 'param([string]$arg1,[string]$arg2)' \\\n    'Write-Host This is a sample script with parameters $arg1 and $arg2' \\\n    --parameters 'arg1=somefoo' 'arg2=somebar' --instance-id 2",
+                "# script.ps1\n#   param(\n#       [string]$arg1,\n#       [string]$arg2\n#   )\n#   Write-Host This is a sample script with parameters $arg1 and $arg2\n\naz vmss run-command invoke  --command-id RunPowerShellScript --name win-vm -g my-resource-group \\\n    --scripts @script.ps1 --parameters \"arg1=somefoo\" \"arg2=somebar\" --instance-id 5"
+            ]
+        },
+        {
+            "name": "az vmss run-command list",
+            "summary": "The operation to get all run commands of an instance in Virtual Machine Scaleset.",
+            "syntax": "az vmss run-command list --instance-id\n                         --resource-group\n                         --vmss-name\n                         [--expand]",
+            "required_parameters": [
+                "--instance-id",
+                "--resource-group -g",
+                "--vmss-name"
+            ],
+            "optional_parameters": [
+                "--expand"
+            ],
+            "examples": [
+                "az vmss run-command list --resource-group \"myResourceGroup\" --vmss-name \"myVMSS\" --instance-id \"0\""
+            ]
+        },
+        {
+            "name": "az vmss run-command show",
+            "summary": "The operation to get the VMSS run command.",
+            "syntax": "az vmss run-command show --name\n                         [--ids]\n                         [--instance-id]\n                         [--instance-view]\n                         [--resource-group]\n                         [--subscription]\n                         [--vmss-name]",
+            "required_parameters": [
+                "--name --run-command-name"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--instance-id",
+                "--instance-view",
+                "--resource-group -g",
+                "--subscription",
+                "--vmss-name"
+            ],
+            "examples": [
+                "az vmss run-command show --instance-id \"0\" --resource-group \"myResourceGroup\" --run-command-name \"myRunCommand\" --vmss-name \"myVMSS\""
+            ]
+        },
+        {
+            "name": "az vmss run-command update",
+            "summary": "The operation to update the VMSS run command.",
+            "syntax": "az vmss run-command update --name\n                           [--async-execution {false, true}]\n                           [--command-id]\n                           [--error-blob-uri]\n                           [--ids]\n                           [--instance-id]\n                           [--location]\n                           [--no-wait]\n                           [--output-blob-uri]\n                           [--parameters]\n                           [--protected-parameters]\n                           [--resource-group]\n                           [--run-as-password]\n                           [--run-as-user]\n                           [--script]\n                           [--script-uri]\n                           [--subscription]\n                           [--tags]\n                           [--timeout-in-seconds]\n                           [--vmss-name]",
+            "required_parameters": [
+                "--name --run-command-name"
+            ],
+            "optional_parameters": [
+                "--async-execution",
+                "--command-id",
+                "--error-blob-uri",
+                "--ids",
+                "--instance-id",
+                "--location -l",
+                "--no-wait",
+                "--output-blob-uri",
+                "--parameters",
+                "--protected-parameters",
+                "--resource-group -g",
+                "--run-as-password",
+                "--run-as-user",
+                "--script",
+                "--script-uri",
+                "--subscription",
+                "--tags",
+                "--timeout-in-seconds",
+                "--vmss-name"
+            ],
+            "examples": [
+                "az vmss run-command update --resource-group \"myResourceGroup\" --instance-id \"0\" --location \"West US\" --async-execution false --parameters arg1=param1 arg2=value1 --run-as-password \"<runAsPassword>\" --run-as-user \"user1\" --script \"Write-Host Hello World!\" --timeout-in-seconds 3600 --run-command-name \"myRunCommand\" --vmss-name \"myVMSS\""
+            ]
+        }
+    ]
+}

@@ -1,0 +1,99 @@
+{
+    "command_group": "az policy assignment",
+    "description": "Manage resource policy assignments.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az policy assignment create",
+            "summary": "Create a resource policy assignment.",
+            "syntax": "az policy assignment create [--description]\n                            [--display-name]\n                            [--enforcement-mode {Default, DoNotEnforce}]\n                            [--identity-scope]\n                            [--location]\n                            [--mi-system-assigned]\n                            [--mi-user-assigned]\n                            [--name]\n                            [--not-scopes]\n                            [--params]\n                            [--policy]\n                            [--policy-set-definition]\n                            [--resource-group]\n                            [--role]\n                            [--scope]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--description",
+                "--display-name",
+                "--enforcement-mode -e",
+                "--identity-scope",
+                "--location -l",
+                "--mi-system-assigned",
+                "--mi-user-assigned",
+                "--name -n",
+                "--not-scopes",
+                "--params -p",
+                "--policy",
+                "--policy-set-definition -d",
+                "--resource-group -g",
+                "--role",
+                "--scope"
+            ],
+            "examples": [
+                "Valid scopes are management group, subscription, resource group, and resource, for example\n   management group:  /providers/Microsoft.Management/managementGroups/MyManagementGroup\n   subscription:      /subscriptions/0b1f6471-1bf0-4dda-aec3-111122223333\n   resource group:    /subscriptions/0b1f6471-1bf0-4dda-aec3-111122223333/resourceGroups/myGroup\n   resource:          /subscriptions/0b1f6471-1bf0-4dda-aec3-111122223333/resourceGroups/myGroup/providers/Microsoft.Compute/virtualMachines/myVM\n     az policy assignment create --scope \\\n        \"/providers/Microsoft.Management/managementGroups/MyManagementGroup\" \\\n            --policy {PolicyName} -p \"{ \\\"allowedLocations\\\": \\\n                { \\\"value\\\": [ \\\"australiaeast\\\", \\\"eastus\\\", \\\"japaneast\\\" ] } }\"",
+                "az policy assignment create --policy {PolicyName} -p \"{ \\\"allowedLocations\\\": \\\n    { \\\"value\\\": [ \\\"australiaeast\\\", \\\"eastus\\\", \\\"japaneast\\\" ] } }\"",
+                "az policy assignment create --name myPolicy --policy {PolicyName} --mi-system-assigned --location eastus",
+                "az policy assignment create --name myPolicy --policy {PolicyName} --mi-system-assigned --identity-scope /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx --role Contributor --location eastus",
+                "az policy assignment create --name myPolicy --policy {PolicyName} -g MyResourceGroup --mi-user-assigned myAssignedId --location westus",
+                "az policy assignment create --name myPolicy --policy {PolicyName} --enforcement-mode 'DoNotEnforce'"
+            ]
+        },
+        {
+            "name": "az policy assignment delete",
+            "summary": "Delete a resource policy assignment.",
+            "syntax": "az policy assignment delete --name\n                            [--resource-group]\n                            [--scope]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--resource-group -g",
+                "--scope"
+            ],
+            "examples": [
+                "az policy assignment delete --name MyPolicyAssignment"
+            ]
+        },
+        {
+            "name": "az policy assignment list",
+            "summary": "List resource policy assignments.",
+            "syntax": "az policy assignment list [--disable-scope-strict-match]\n                          [--resource-group]\n                          [--scope]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--disable-scope-strict-match",
+                "--resource-group -g",
+                "--scope"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az policy assignment show",
+            "summary": "Show a resource policy assignment.",
+            "syntax": "az policy assignment show --name\n                          [--resource-group]\n                          [--scope]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--resource-group -g",
+                "--scope"
+            ],
+            "examples": [
+                "az policy assignment show --name MyPolicyAssignment"
+            ]
+        },
+        {
+            "name": "az policy assignment update",
+            "summary": "Update a resource policy assignment.",
+            "syntax": "az policy assignment update [--description]\n                            [--display-name]\n                            [--enforcement-mode {Default, DoNotEnforce}]\n                            [--name]\n                            [--not-scopes]\n                            [--params]\n                            [--resource-group]\n                            [--scope]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--description",
+                "--display-name",
+                "--enforcement-mode -e",
+                "--name -n",
+                "--not-scopes",
+                "--params -p",
+                "--resource-group -g",
+                "--scope"
+            ],
+            "examples": [
+                "az policy assignment update --name myPolicy --description 'My policy description'"
+            ]
+        }
+    ]
+}

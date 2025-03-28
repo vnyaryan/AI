@@ -1,0 +1,132 @@
+{
+    "command_group": "az network express-route gateway connection",
+    "description": "Manage ExpressRoute gateway connections.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az network express-route gateway connection create",
+            "summary": "Create an ExpressRoute gateway connection.",
+            "syntax": "az network express-route gateway connection create --gateway-name\n                                                   --name\n                                                   --resource-group\n                                                   [--associated]\n                                                   [--authorization-key]\n                                                   [--circuit-name]\n                                                   [--inbound-route-map]\n                                                   [--internet-security {0, 1, f, false, n, no, t, true, y, yes}]\n                                                   [--labels]\n                                                   [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                                   [--outbound-route-map]\n                                                   [--peering]\n                                                   [--propagated]\n                                                   [--routing-weight]",
+            "required_parameters": [
+                "--gateway-name",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--associated --associated-route-table",
+                "--authorization-key",
+                "--circuit-name",
+                "--inbound-route-map",
+                "--internet-security",
+                "--labels",
+                "--no-wait",
+                "--outbound-route-map",
+                "--peering",
+                "--propagated --propagated-route-tables",
+                "--routing-weight"
+            ],
+            "examples": [
+                "az network express-route gateway connection create --gateway-name MyGateway -n MyExpressRouteConnection -g MyResourceGroup --peering /subscriptions/MySub/resourceGroups/MyResourceGroup/providers/Microsoft.Network/expressRouteCircuits/MyCircuit/peerings/AzurePrivatePeering --associated-route-table /MySub/resourceGroups/MyResourceGroup/providers/Microsoft.Network/virtualHubs/MyHub/hubRouteTables/MyRouteTable1 --propagated-route-tables [/MySub/resourceGroups/MyResourceGroup/providers/Microsoft.Network/virtualHubs/MyHub/hubRouteTables/MyRouteTable1,/MySub/resourceGroups/MyResourceGroup/providers/Microsoft.Network/virtualHubs/MyHub/hubRouteTables/MyRouteTable2] --labels [label1,label2]",
+                "az network express-route gateway connection create --gateway-name MyGateway --name MyExpressRouteConnection --peering /subscriptions/MySub/resourceGroups/MyResourceGroup/provi ders/Microsoft.Network/expressRouteCircuits/MyCircuit/peerings/AzurePrivatePeering --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az network express-route gateway connection delete",
+            "summary": "Delete an ExpressRoute gateway connection.",
+            "syntax": "az network express-route gateway connection delete [--gateway-name]\n                                                   [--ids]\n                                                   [--name]\n                                                   [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                                   [--resource-group]\n                                                   [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--gateway-name",
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az network express-route gateway connection delete --gateway-name MyGateway --name MyExpressRouteConnection --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az network express-route gateway connection list",
+            "summary": "List ExpressRoute gateway connections.",
+            "syntax": "az network express-route gateway connection list --gateway-name\n                                                 --resource-group",
+            "required_parameters": [
+                "--gateway-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az network express-route gateway connection list --gateway-name MyGateway --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az network express-route gateway connection show",
+            "summary": "Get the details of an ExpressRoute gateway connection.",
+            "syntax": "az network express-route gateway connection show [--gateway-name]\n                                                 [--ids]\n                                                 [--name]\n                                                 [--resource-group]\n                                                 [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--gateway-name",
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az network express-route gateway connection show --gateway-name MyGateway --name MyExpressRouteConnection --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az network express-route gateway connection update",
+            "summary": "Update an ExpressRoute gateway connection.",
+            "syntax": "az network express-route gateway connection update [--add]\n                                                   [--associated]\n                                                   [--authorization-key]\n                                                   [--circuit-name]\n                                                   [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                                   [--gateway-name]\n                                                   [--ids]\n                                                   [--inbound-route-map]\n                                                   [--internet-security {0, 1, f, false, n, no, t, true, y, yes}]\n                                                   [--labels]\n                                                   [--name]\n                                                   [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                                   [--outbound-route-map]\n                                                   [--peering]\n                                                   [--propagated]\n                                                   [--remove]\n                                                   [--resource-group]\n                                                   [--routing-weight]\n                                                   [--set]\n                                                   [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--associated --associated-route-table",
+                "--authorization-key",
+                "--circuit-name",
+                "--force-string",
+                "--gateway-name",
+                "--ids",
+                "--inbound-route-map",
+                "--internet-security",
+                "--labels",
+                "--name -n",
+                "--no-wait",
+                "--outbound-route-map",
+                "--peering",
+                "--propagated --propagated-route-tables",
+                "--remove",
+                "--resource-group -g",
+                "--routing-weight",
+                "--set",
+                "--subscription"
+            ],
+            "examples": [
+                "az network express-route gateway connection update --gateway-name MyGateway -n MyExpressRouteConnection -g MyResourceGroup --peering /subscriptions/MySub/resourceGroups/MyResourceGroup/providers/Microsoft.Network/expressRouteCircuits/MyCircuit/peerings/AzurePrivatePeering --associated-route-table /MySub/resourceGroups/MyResourceGroup/providers/Microsoft.Network/virtualHubs/MyHub/hubRouteTables/MyRouteTable1 --propagated-route-tables [/MySub/resourceGroups/MyResourceGroup/providers/Microsoft.Network/virtualHubs/MyHub/hubRouteTables/MyRouteTable1,/MySub/resourceGroups/MyResourceGroup/providers/Microsoft.Network/virtualHubs/MyHub/hubRouteTables/MyRouteTable2] --labels [label1,label2]"
+            ]
+        },
+        {
+            "name": "az network express-route gateway connection wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az network express-route gateway connection wait [--created]\n                                                 [--custom]\n                                                 [--deleted]\n                                                 [--exists]\n                                                 [--gateway-name]\n                                                 [--ids]\n                                                 [--interval]\n                                                 [--name]\n                                                 [--resource-group]\n                                                 [--subscription]\n                                                 [--timeout]\n                                                 [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--gateway-name",
+                "--ids",
+                "--interval",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

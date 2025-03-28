@@ -1,0 +1,122 @@
+{
+    "command_group": "az kusto attached-database-configuration",
+    "description": "Manage attached database configuration with kusto.",
+    "status": "Experimental",
+    "commands": [
+        {
+            "name": "az kusto attached-database-configuration create",
+            "summary": "Create an attached database configuration.",
+            "syntax": "az kusto attached-database-configuration create --attached-database-configuration-name\n                                                --cluster-name\n                                                --resource-group\n                                                [--cluster-resource-id]\n                                                [--database-name]\n                                                [--default-principals-modification-kind {None, Replace, Union}]\n                                                [--location]\n                                                [--no-wait]\n                                                [--table-level]",
+            "required_parameters": [
+                "--attached-database-configuration-name --name -n",
+                "--cluster-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--cluster-resource-id",
+                "--database-name",
+                "--default-principals-modification-kind",
+                "--location -l",
+                "--no-wait",
+                "--table-level --table-level-sharing-properties"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az kusto attached-database-configuration delete",
+            "summary": "Deletes the attached database configuration with the given name.",
+            "syntax": "az kusto attached-database-configuration delete [--attached-database-configuration-name]\n                                                [--cluster-name]\n                                                [--ids]\n                                                [--no-wait]\n                                                [--resource-group]\n                                                [--subscription]\n                                                [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--attached-database-configuration-name --name -n",
+                "--cluster-name",
+                "--ids",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az kusto attached-database-configuration delete --name \"attachedDatabaseConfigurations1\" --cluster-name \"kustoclusterrptest4\" --resource-group \"kustorptest\""
+            ]
+        },
+        {
+            "name": "az kusto attached-database-configuration list",
+            "summary": "Returns the list of attached database configurations of the given Kusto cluster.",
+            "syntax": "az kusto attached-database-configuration list --cluster-name\n                                              --resource-group",
+            "required_parameters": [
+                "--cluster-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az kusto attached-database-configuration list --cluster-name \"kustoclusterrptest4\" --resource-group \"kustorptest\""
+            ]
+        },
+        {
+            "name": "az kusto attached-database-configuration show",
+            "summary": "Returns an attached database configuration.",
+            "syntax": "az kusto attached-database-configuration show [--attached-database-configuration-name]\n                                              [--cluster-name]\n                                              [--ids]\n                                              [--resource-group]\n                                              [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--attached-database-configuration-name --name -n",
+                "--cluster-name",
+                "--ids",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az kusto attached-database-configuration show --name \"attachedDatabaseConfigurations1\" --cluster-name \"kustoclusterrptest4\" --resource-group \"kustorptest\""
+            ]
+        },
+        {
+            "name": "az kusto attached-database-configuration update",
+            "summary": "Update an attached database configuration.",
+            "syntax": "az kusto attached-database-configuration update [--add]\n                                                [--attached-database-configuration-name]\n                                                [--cluster-name]\n                                                [--cluster-resource-id]\n                                                [--database-name]\n                                                [--default-principals-modification-kind {None, Replace, Union}]\n                                                [--force-string]\n                                                [--ids]\n                                                [--location]\n                                                [--no-wait]\n                                                [--remove]\n                                                [--resource-group]\n                                                [--set]\n                                                [--subscription]\n                                                [--table-level]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--attached-database-configuration-name --name -n",
+                "--cluster-name",
+                "--cluster-resource-id",
+                "--database-name",
+                "--default-principals-modification-kind",
+                "--force-string",
+                "--ids",
+                "--location -l",
+                "--no-wait",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--subscription",
+                "--table-level --table-level-sharing-properties"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az kusto attached-database-configuration wait",
+            "summary": "Place the CLI in a waiting state until a condition of the kusto attached-database-configuration is met.",
+            "syntax": "az kusto attached-database-configuration wait [--attached-database-configuration-name]\n                                              [--cluster-name]\n                                              [--created]\n                                              [--custom]\n                                              [--deleted]\n                                              [--exists]\n                                              [--ids]\n                                              [--interval]\n                                              [--resource-group]\n                                              [--subscription]\n                                              [--timeout]\n                                              [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--attached-database-configuration-name --name -n",
+                "--cluster-name",
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": [
+                "az kusto attached-database-configuration wait --name \"attachedDatabaseConfigurations1\" --cluster-name \"kustoclusterrptest4\" --resource-group \"kustorptest\" --created",
+                "az kusto attached-database-configuration wait --name \"attachedDatabaseConfigurations1\" --cluster-name \"kustoclusterrptest4\" --resource-group \"kustorptest\" --updated",
+                "az kusto attached-database-configuration wait --name \"attachedDatabaseConfigurations1\" --cluster-name \"kustoclusterrptest4\" --resource-group \"kustorptest\" --deleted"
+            ]
+        }
+    ]
+}

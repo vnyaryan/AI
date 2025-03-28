@@ -1,0 +1,179 @@
+{
+    "command_group": "az sentinel incident",
+    "description": "Manage incident with sentinel.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az sentinel incident create",
+            "summary": "Create the incident.",
+            "syntax": "az sentinel incident create --incident-id\n                            --resource-group\n                            --workspace-name\n                            [--classification {BenignPositive, FalsePositive, TruePositive, Undetermined}]\n                            [--classification-comment]\n                            [--classification-reason {InaccurateData, IncorrectAlertLogic, SuspiciousActivity, SuspiciousButExpected}]\n                            [--description]\n                            [--etag]\n                            [--first-activity-time-utc]\n                            [--labels]\n                            [--last-activity-time-utc]\n                            [--owner]\n                            [--provider-incident-id]\n                            [--provider-name]\n                            [--severity {High, Informational, Low, Medium}]\n                            [--status {Active, Closed, New}]\n                            [--title]",
+            "required_parameters": [
+                "--incident-id --name -n",
+                "--resource-group -g",
+                "--workspace-name -w"
+            ],
+            "optional_parameters": [
+                "--classification",
+                "--classification-comment",
+                "--classification-reason",
+                "--description",
+                "--etag",
+                "--first-activity-time-utc",
+                "--labels",
+                "--last-activity-time-utc",
+                "--owner",
+                "--provider-incident-id",
+                "--provider-name",
+                "--severity",
+                "--status",
+                "--title"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az sentinel incident create-team",
+            "summary": "Create a Microsoft team to investigate the incident by sharing information and insights between participants.",
+            "syntax": "az sentinel incident create-team --incident-id\n                                 --resource-group\n                                 --team-name\n                                 --workspace-name\n                                 [--group-ids]\n                                 [--member-ids]\n                                 [--team-description]",
+            "required_parameters": [
+                "--incident-id",
+                "--resource-group -g",
+                "--team-name",
+                "--workspace-name -w"
+            ],
+            "optional_parameters": [
+                "--group-ids",
+                "--member-ids",
+                "--team-description"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az sentinel incident delete",
+            "summary": "Delete the incident.",
+            "syntax": "az sentinel incident delete [--ids]\n                            [--incident-id]\n                            [--resource-group]\n                            [--subscription]\n                            [--workspace-name]\n                            [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--incident-id --name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--workspace-name -w",
+                "--yes -y"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az sentinel incident list",
+            "summary": "Get all incidents.",
+            "syntax": "az sentinel incident list --resource-group\n                          --workspace-name\n                          [--filter]\n                          [--orderby]\n                          [--skip-token]\n                          [--top]",
+            "required_parameters": [
+                "--resource-group -g",
+                "--workspace-name -w"
+            ],
+            "optional_parameters": [
+                "--filter",
+                "--orderby",
+                "--skip-token",
+                "--top"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az sentinel incident list-alert",
+            "summary": "Get all incident alerts.",
+            "syntax": "az sentinel incident list-alert --incident-id\n                                --resource-group\n                                --workspace-name",
+            "required_parameters": [
+                "--incident-id",
+                "--resource-group -g",
+                "--workspace-name -w"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az sentinel incident list-bookmark",
+            "summary": "Get all incident bookmarks.",
+            "syntax": "az sentinel incident list-bookmark --incident-id\n                                   --resource-group\n                                   --workspace-name",
+            "required_parameters": [
+                "--incident-id",
+                "--resource-group -g",
+                "--workspace-name -w"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az sentinel incident list-entity",
+            "summary": "Get all incident related entities.",
+            "syntax": "az sentinel incident list-entity --incident-id\n                                 --resource-group\n                                 --workspace-name",
+            "required_parameters": [
+                "--incident-id",
+                "--resource-group -g",
+                "--workspace-name -w"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az sentinel incident run-playbook",
+            "summary": "Trigger playbook on a specific incident.",
+            "syntax": "az sentinel incident run-playbook --incident-identifier\n                                  --resource-group\n                                  --workspace-name\n                                  [--logic-apps-resource-id]\n                                  [--tenant-id]",
+            "required_parameters": [
+                "--incident-identifier",
+                "--resource-group -g",
+                "--workspace-name -w"
+            ],
+            "optional_parameters": [
+                "--logic-apps-resource-id",
+                "--tenant-id"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az sentinel incident show",
+            "summary": "Get an incident.",
+            "syntax": "az sentinel incident show [--ids]\n                          [--incident-id]\n                          [--resource-group]\n                          [--subscription]\n                          [--workspace-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--incident-id --name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--workspace-name -w"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az sentinel incident update",
+            "summary": "Update the incident.",
+            "syntax": "az sentinel incident update [--add]\n                            [--classification {BenignPositive, FalsePositive, TruePositive, Undetermined}]\n                            [--classification-comment]\n                            [--classification-reason {InaccurateData, IncorrectAlertLogic, SuspiciousActivity, SuspiciousButExpected}]\n                            [--description]\n                            [--etag]\n                            [--first-activity-time-utc]\n                            [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                            [--ids]\n                            [--incident-id]\n                            [--labels]\n                            [--last-activity-time-utc]\n                            [--owner]\n                            [--provider-incident-id]\n                            [--provider-name]\n                            [--remove]\n                            [--resource-group]\n                            [--set]\n                            [--severity {High, Informational, Low, Medium}]\n                            [--status {Active, Closed, New}]\n                            [--subscription]\n                            [--title]\n                            [--workspace-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--classification",
+                "--classification-comment",
+                "--classification-reason",
+                "--description",
+                "--etag",
+                "--first-activity-time-utc",
+                "--force-string",
+                "--ids",
+                "--incident-id --name -n",
+                "--labels",
+                "--last-activity-time-utc",
+                "--owner",
+                "--provider-incident-id",
+                "--provider-name",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--severity",
+                "--status",
+                "--subscription",
+                "--title",
+                "--workspace-name -w"
+            ],
+            "examples": []
+        }
+    ]
+}

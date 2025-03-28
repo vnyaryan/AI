@@ -1,0 +1,6 @@
+{
+    "command_group": "az monitor data-collection",
+    "description": "Manage data collection for monitor control service.",
+    "status": "GA",
+    "commands": []
+}

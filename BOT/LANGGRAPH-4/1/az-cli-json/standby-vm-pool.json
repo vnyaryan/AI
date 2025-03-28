@@ -1,0 +1,130 @@
+{
+    "command_group": "az standby-vm-pool",
+    "description": "Standby Virtual Machine Pool Operations.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az standby-vm-pool create",
+            "summary": "Create a StandbyVirtualMachinePoolResource.",
+            "syntax": "az standby-vm-pool create --name\n                          --resource-group\n                          [--location]\n                          [--max-ready-capacity]\n                          [--min-ready-capacity]\n                          [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                          [--tags]\n                          [--vm-state {Deallocated, Running}]\n                          [--vmss-id]",
+            "required_parameters": [
+                "--name --standby-virtual-machine-pool-name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--location -l",
+                "--max-ready-capacity",
+                "--min-ready-capacity",
+                "--no-wait",
+                "--tags",
+                "--vm-state",
+                "--vmss-id"
+            ],
+            "examples": [
+                "az standby-vm-pool create --subscription 461fa159-654a-415f-853a-40b801021944 --resource-group myrg --name mypool --max-ready-capacity 20 --min-ready-capacity 10 --vm-state Running --vmss-id /subscriptions/461fa159-654a-415f-853a-40b801021944/resourceGroups/myrg/providers/Microsoft.Compute/virtualMachineScaleSets/myvmss --location eastus"
+            ]
+        },
+        {
+            "name": "az standby-vm-pool delete",
+            "summary": "Delete a StandbyVirtualMachinePoolResource.",
+            "syntax": "az standby-vm-pool delete [--ids]\n                          [--name]\n                          [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                          [--resource-group]\n                          [--subscription]\n                          [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --standby-virtual-machine-pool-name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az standby-vm-pool delete --subscription 461fa159-654a-415f-853a-40b801021944 --resource-group myrg --name mypool"
+            ]
+        },
+        {
+            "name": "az standby-vm-pool list",
+            "summary": "List StandbyVirtualMachinePoolResource resources by subscription ID or by resource group.",
+            "syntax": "az standby-vm-pool list [--max-items]\n                        [--next-token]\n                        [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az standby-vm-pool list --subscription 461fa159-654a-415f-853a-40b801021944 --resource-group myrg"
+            ]
+        },
+        {
+            "name": "az standby-vm-pool show",
+            "summary": "Get a StandbyVirtualMachinePoolResource.",
+            "syntax": "az standby-vm-pool show [--ids]\n                        [--name]\n                        [--resource-group]\n                        [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --standby-virtual-machine-pool-name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az standby-vm-pool show --subscription 461fa159-654a-415f-853a-40b801021944 --resource-group myrg --name mypool"
+            ]
+        },
+        {
+            "name": "az standby-vm-pool status",
+            "summary": "Get a StandbyVirtualMachinePoolRuntimeViewResource.",
+            "syntax": "az standby-vm-pool status [--ids]\n                          [--name]\n                          [--resource-group]\n                          [--subscription]\n                          [--version]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--version"
+            ],
+            "examples": [
+                "az standby-vm-pool status --resource-group myrg --name mypool --subscription 461fa159-654a-415f-853a-40b801021944 --version latest"
+            ]
+        },
+        {
+            "name": "az standby-vm-pool update",
+            "summary": "Update a StandbyVirtualMachinePoolResource.",
+            "syntax": "az standby-vm-pool update [--ids]\n                          [--max-ready-capacity]\n                          [--min-ready-capacity]\n                          [--name]\n                          [--resource-group]\n                          [--subscription]\n                          [--tags]\n                          [--vm-state {Deallocated, Running}]\n                          [--vmss-id]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--max-ready-capacity",
+                "--min-ready-capacity",
+                "--name --standby-virtual-machine-pool-name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--tags",
+                "--vm-state",
+                "--vmss-id"
+            ],
+            "examples": [
+                "az standby-vm-pool update --subscription 461fa159-654a-415f-853a-40b801021944 --resource-group myrg --name mypool --max-ready-capacity 3"
+            ]
+        },
+        {
+            "name": "az standby-vm-pool wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az standby-vm-pool wait [--created]\n                        [--custom]\n                        [--deleted]\n                        [--exists]\n                        [--ids]\n                        [--interval]\n                        [--name]\n                        [--resource-group]\n                        [--subscription]\n                        [--timeout]\n                        [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--name --standby-virtual-machine-pool-name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

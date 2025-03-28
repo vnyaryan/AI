@@ -1,0 +1,66 @@
+{
+    "command_group": "az sql db str-policy",
+    "description": "Manage SQL database short term retention policy.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az sql db str-policy set",
+            "summary": "Update short term retention settings for a live database.",
+            "syntax": "az sql db str-policy set --retention-days\n                         [--diffbackup-hours]\n                         [--ids]\n                         [--name]\n                         [--no-wait]\n                         [--resource-group]\n                         [--server]\n                         [--subscription]",
+            "required_parameters": [
+                "--retention-days"
+            ],
+            "optional_parameters": [
+                "--diffbackup-hours",
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--server -s",
+                "--subscription"
+            ],
+            "examples": [
+                "az sql db str-policy set -g mygroup -s myserver -n mydb --retention-days retentionindays --diffbackup-hours diffbackuphours"
+            ]
+        },
+        {
+            "name": "az sql db str-policy show",
+            "summary": "Show the short term retention policy for a live database.",
+            "syntax": "az sql db str-policy show [--ids]\n                          [--name]\n                          [--resource-group]\n                          [--server]\n                          [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--server -s",
+                "--subscription"
+            ],
+            "examples": [
+                "az sql db str-policy show -g mygroup -s myserver -n mydb"
+            ]
+        },
+        {
+            "name": "az sql db str-policy wait",
+            "summary": "Place the CLI in a waiting state until the policy is set.",
+            "syntax": "az sql db str-policy wait --policy-name\n                          [--created]\n                          [--custom]\n                          [--deleted]\n                          [--exists]\n                          [--ids]\n                          [--interval]\n                          [--name]\n                          [--resource-group]\n                          [--server]\n                          [--subscription]\n                          [--timeout]\n                          [--updated]",
+            "required_parameters": [
+                "--policy-name"
+            ],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--name -n",
+                "--resource-group -g",
+                "--server -s",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

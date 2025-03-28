@@ -1,0 +1,21 @@
+{
+    "command_group": "az security automation-source",
+    "description": "Creates security automation source.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az security automation-source create",
+            "summary": "Creates security automation source.",
+            "syntax": "az security automation-source create --event-source\n                                     [--rule-sets]",
+            "required_parameters": [
+                "--event-source"
+            ],
+            "optional_parameters": [
+                "--rule-sets"
+            ],
+            "examples": [
+                "az security automation-source create --event-source 'Assessments'"
+            ]
+        }
+    ]
+}

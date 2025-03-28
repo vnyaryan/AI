@@ -1,0 +1,150 @@
+{
+    "command_group": "az network p2s-vpn-gateway",
+    "description": "Manage point-to-site VPN gateway.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az network p2s-vpn-gateway create",
+            "summary": "Create a point-to-site VPN gateway.",
+            "syntax": "az network p2s-vpn-gateway create --name\n                                  --resource-group\n                                  --scale-unit\n                                  --vhub\n                                  [--address-space]\n                                  [--associated]\n                                  [--associated-inbound-routemap]\n                                  [--associated-outbound-routemap]\n                                  [--config-name]\n                                  [--labels]\n                                  [--location]\n                                  [--no-wait]\n                                  [--propagated]\n                                  [--tags]\n                                  [--vpn-server-config]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g",
+                "--scale-unit",
+                "--vhub"
+            ],
+            "optional_parameters": [
+                "--address-space",
+                "--associated --associated-route-table",
+                "--associated-inbound-routemap",
+                "--associated-outbound-routemap",
+                "--config-name",
+                "--labels",
+                "--location -l",
+                "--no-wait",
+                "--propagated --propagated-route-tables",
+                "--tags",
+                "--vpn-server-config"
+            ],
+            "examples": [
+                "az network p2s-vpn-gateway create -g MyRG -n MyP2SVPNGateway --scale-unit 2 --vhub MyVhub --vpn-server-config MyVPNServerConfig --address-space 10.0.0.0/24 11.0.0.0/24",
+                "az network p2s-vpn-gateway create -g MyRG -n MyP2SVPNGateway --scale-unit 2 --vhub MyVhub --vpn-server-config MyVPNServerConfig --address-space 10.0.0.0/24 11.0.0.0/24 --associated-route-table /subscriptions/MySub/resourceGroups/MyRG/providers/Microsoft.Network/virtualHubs/MyHub/hubRouteTables/MyRouteTable1 --propagated-route-tables /subscriptions/MySub/resourceGroups/MyRG/providers/Microsoft.Network/virtualHubs/MyHub/hubRouteTables/MyRouteTable1 /subscriptions/MySub/resourceGroups/MyRG/providers/Microsoft.Network/virtualHubs/MyHub/hubRouteTables/MyRouteTable2 --labels label1 label2"
+            ]
+        },
+        {
+            "name": "az network p2s-vpn-gateway delete",
+            "summary": "Delete a point-to-site VPN gateway.",
+            "syntax": "az network p2s-vpn-gateway delete --name\n                                  --resource-group\n                                  [--yes]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--yes -y"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az network p2s-vpn-gateway disconnect",
+            "summary": "Disconnect P2S vpn connections of the virtual wan P2SVpnGateway in the specified resource group.",
+            "syntax": "az network p2s-vpn-gateway disconnect [--ids]\n                                      [--name]\n                                      [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                      [--resource-group]\n                                      [--subscription]\n                                      [--vpn-connection-ids]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--vpn-connection-ids"
+            ],
+            "examples": [
+                "az network p2s-vpn-gateway disconnect -g MyResourceGroup -n MyP2sGateway --vpn-connection-ids \"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/MyResourceGroup/providers/Microsoft.Network/p2sVpnGateways/MyP2sGateway/p2sConnectionConfigurations/P2SConnectionConfigDefault\""
+            ]
+        },
+        {
+            "name": "az network p2s-vpn-gateway list",
+            "summary": "List all point-to-site VPN gateway.",
+            "syntax": "az network p2s-vpn-gateway list [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az network p2s-vpn-gateway reset",
+            "summary": "Resets the primary of the p2s vpn gateway in the specified resource group.",
+            "syntax": "az network p2s-vpn-gateway reset [--ids]\n                                 [--name]\n                                 [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                 [--resource-group]\n                                 [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az network p2s-vpn-gateway reset -g MyResourceGroup -n MyP2sGateway"
+            ]
+        },
+        {
+            "name": "az network p2s-vpn-gateway show",
+            "summary": "Show the details of a point-to-site VPN gateway.",
+            "syntax": "az network p2s-vpn-gateway show --name\n                                --resource-group",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az network p2s-vpn-gateway update",
+            "summary": "Update settings of a point-to-site VPN gateway.",
+            "syntax": "az network p2s-vpn-gateway update --name\n                                  --resource-group\n                                  [--add]\n                                  [--address-space]\n                                  [--associated]\n                                  [--associated-inbound-routemap]\n                                  [--associated-outbound-routemap]\n                                  [--config-name]\n                                  [--force-string]\n                                  [--labels]\n                                  [--no-wait]\n                                  [--propagated]\n                                  [--remove]\n                                  [--scale-unit]\n                                  [--set]\n                                  [--tags]\n                                  [--vpn-server-config]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--add",
+                "--address-space",
+                "--associated --associated-route-table",
+                "--associated-inbound-routemap",
+                "--associated-outbound-routemap",
+                "--config-name",
+                "--force-string",
+                "--labels",
+                "--no-wait",
+                "--propagated --propagated-route-tables",
+                "--remove",
+                "--scale-unit",
+                "--set",
+                "--tags",
+                "--vpn-server-config"
+            ],
+            "examples": [
+                "az network p2s-vpn-gateway update -g MyRG -n MyP2SVPNGateway --labels Newlabel1 Newlabel2 Newlabel3"
+            ]
+        },
+        {
+            "name": "az network p2s-vpn-gateway wait",
+            "summary": "Place the CLI in a waiting state until a condition of the point-to-site VPN gateway is met.",
+            "syntax": "az network p2s-vpn-gateway wait --name\n                                --resource-group\n                                [--created]\n                                [--custom]\n                                [--deleted]\n                                [--exists]\n                                [--interval]\n                                [--timeout]\n                                [--updated]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--interval",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

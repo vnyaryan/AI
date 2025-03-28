@@ -1,0 +1,113 @@
+{
+    "command_group": "az scvmm vm nic",
+    "description": "Managing the NICs of Arc for SCVMM Virtual Machine.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az scvmm vm nic add",
+            "summary": "Add a network interface card to a virtual machine.",
+            "syntax": "az scvmm vm nic add --name\n                    --resource-group\n                    --vm-name\n                    [--ipv4-address-type {Dynamic, Static}]\n                    [--ipv6-address-type {Dynamic, Static}]\n                    [--mac-address]\n                    [--mac-address-type {Dynamic, Static}]\n                    [--network]\n                    [--no-wait]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g",
+                "--vm-name"
+            ],
+            "optional_parameters": [
+                "--ipv4-address-type",
+                "--ipv6-address-type",
+                "--mac-address",
+                "--mac-address-type",
+                "--network",
+                "--no-wait"
+            ],
+            "examples": [
+                "az scvmm vm nic add --subscription contoso-sub --resource-group contoso-rg --vm-name contoso-vm --name nic_1 --network contoso-vnet --ipv4-address-type Dynamic --mac-address-type Dynamic"
+            ]
+        },
+        {
+            "name": "az scvmm vm nic delete",
+            "summary": "Delete NICs of a virtual machine.",
+            "syntax": "az scvmm vm nic delete --nics\n                       --resource-group\n                       --vm-name\n                       [--no-wait]\n                       [--yes]",
+            "required_parameters": [
+                "--nics",
+                "--resource-group -g",
+                "--vm-name"
+            ],
+            "optional_parameters": [
+                "--no-wait",
+                "--yes -y"
+            ],
+            "examples": [
+                "az scvmm vm nic delete --subscription contoso-sub --resource-group contoso-rg --vm-name contoso-vm --nics nic_1 nic_2"
+            ]
+        },
+        {
+            "name": "az scvmm vm nic list",
+            "summary": "Retrieve the list of NICs present in a VM.",
+            "syntax": "az scvmm vm nic list --resource-group\n                     --vm-name",
+            "required_parameters": [
+                "--resource-group -g",
+                "--vm-name"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az scvmm vm nic list --subscription contoso-sub --resource-group contoso-rg --vm-name contoso-vm"
+            ]
+        },
+        {
+            "name": "az scvmm vm nic show",
+            "summary": "Get the details of a NIC present in a VM.",
+            "syntax": "az scvmm vm nic show --name\n                     --resource-group\n                     --vm-name",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g",
+                "--vm-name"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az scvmm vm nic show --subscription contoso-sub --resource-group contoso-rg --vm-name contoso-vm --name nic_1"
+            ]
+        },
+        {
+            "name": "az scvmm vm nic update",
+            "summary": "Update a NIC of a VM.",
+            "syntax": "az scvmm vm nic update --resource-group\n                       --vm-name\n                       [--disconnect {false, true}]\n                       [--ipv4-address-type {Dynamic, Static}]\n                       [--ipv6-address-type {Dynamic, Static}]\n                       [--mac-address-type {Dynamic, Static}]\n                       [--name]\n                       [--network]\n                       [--nic-id]\n                       [--no-wait]",
+            "required_parameters": [
+                "--resource-group -g",
+                "--vm-name"
+            ],
+            "optional_parameters": [
+                "--disconnect",
+                "--ipv4-address-type",
+                "--ipv6-address-type",
+                "--mac-address-type",
+                "--name -n",
+                "--network",
+                "--nic-id",
+                "--no-wait"
+            ],
+            "examples": [
+                "az scvmm vm nic update --subscription contoso-sub --resource-group contoso-rg --vm-name contoso-vm --name nic_1 --network contoso-vnet --ipv4-address-type Dynamic --mac-address-type Dynamic"
+            ]
+        },
+        {
+            "name": "az scvmm vm nic wait",
+            "summary": "Place the CLI in a waiting state until a condition of the vm nic is met.",
+            "syntax": "az scvmm vm nic wait --resource-group\n                     --virtual-machine-name\n                     [--created]\n                     [--custom]\n                     [--deleted]\n                     [--exists]\n                     [--interval]\n                     [--timeout]\n                     [--updated]",
+            "required_parameters": [
+                "--resource-group -g",
+                "--virtual-machine-name"
+            ],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--interval",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

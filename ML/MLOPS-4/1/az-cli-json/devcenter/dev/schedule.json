@@ -1,0 +1,43 @@
+{
+    "command_group": "az devcenter dev schedule",
+    "description": "Manage schedules.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az devcenter dev schedule list",
+            "summary": "List schedules.",
+            "syntax": "az devcenter dev schedule list --project\n                               [--dev-center]\n                               [--endpoint]\n                               [--pool]",
+            "required_parameters": [
+                "--project --project-name"
+            ],
+            "optional_parameters": [
+                "--dev-center --dev-center-name -d",
+                "--endpoint",
+                "--pool --pool-name"
+            ],
+            "examples": [
+                "az devcenter dev schedule list --dev-center-name \"ContosoDevCenter\" --project-name \"DevProject\"",
+                "az devcenter dev schedule list --endpoint \"https://8a40af38-3b4c-4672-a6a4-5e964b1870ed-contosodevcenter.centralus.devcenter.azure.com/\" --project-name \"DevProject\"",
+                "az devcenter dev schedule list --dev-center-name \"ContosoDevCenter\" --pool-name \"DevPool\" --project-name \"DevProject\"",
+                "az devcenter dev schedule list --endpoint \"https://8a40af38-3b4c-4672-a6a4-5e964b1870ed-contosodevcenter.centralus.devcenter.azure.com/\" --pool-name \"DevPool\" --project-name \"DevProject\""
+            ]
+        },
+        {
+            "name": "az devcenter dev schedule show",
+            "summary": "Get a schedule.",
+            "syntax": "az devcenter dev schedule show --pool\n                               --project\n                               [--dev-center]\n                               [--endpoint]",
+            "required_parameters": [
+                "--pool --pool-name",
+                "--project --project-name"
+            ],
+            "optional_parameters": [
+                "--dev-center --dev-center-name -d",
+                "--endpoint"
+            ],
+            "examples": [
+                "az devcenter dev schedule show --dev-center-name \"ContosoDevCenter\" --pool-name \"DevPool\" --project-name \"DevProject\"",
+                "az devcenter dev schedule show --endpoint \"https://8a40af38-3b4c-4672-a6a4-5e964b1870ed-contosodevcenter.centralus.devcenter.azure.com/\" --pool-name \"DevPool\" --project-name \"DevProject\""
+            ]
+        }
+    ]
+}

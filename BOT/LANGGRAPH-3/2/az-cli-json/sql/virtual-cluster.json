@@ -1,0 +1,51 @@
+{
+    "command_group": "az sql virtual-cluster",
+    "description": "Manage SQL virtual clusters.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az sql virtual-cluster delete",
+            "summary": "Delete a virtual cluster.",
+            "syntax": "az sql virtual-cluster delete [--ids]\n                              [--name]\n                              [--no-wait]\n                              [--resource-group]\n                              [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az sql virtual-cluster delete -g mygroup -n mycluster"
+            ]
+        },
+        {
+            "name": "az sql virtual-cluster list",
+            "summary": "List available virtual clusters.",
+            "syntax": "az sql virtual-cluster list [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az sql virtual-cluster list",
+                "az sql virtual-cluster list -g mygroup"
+            ]
+        },
+        {
+            "name": "az sql virtual-cluster show",
+            "summary": "Get the details for a virtual cluster.",
+            "syntax": "az sql virtual-cluster show [--ids]\n                            [--name]\n                            [--resource-group]\n                            [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az sql virtual-cluster show -g mygroup -n mycluster"
+            ]
+        }
+    ]
+}

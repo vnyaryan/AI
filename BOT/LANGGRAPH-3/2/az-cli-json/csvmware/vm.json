@@ -1,0 +1,122 @@
+{
+    "command_group": "az csvmware vm",
+    "description": "Manage VMware virtual machines.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az csvmware vm create",
+            "summary": "Create a VMware virtual machine.",
+            "syntax": "az csvmware vm create --name\n                      --private-cloud\n                      --resource-group\n                      --resource-pool\n                      --template\n                      [--cores]\n                      [--disk]\n                      [--expose-to-guest-vm {false, true}]\n                      [--location]\n                      [--nic]\n                      [--ram]",
+            "required_parameters": [
+                "--name -n",
+                "--private-cloud -p",
+                "--resource-group -g",
+                "--resource-pool -r",
+                "--template"
+            ],
+            "optional_parameters": [
+                "--cores",
+                "--disk",
+                "--expose-to-guest-vm",
+                "--location -l",
+                "--nic",
+                "--ram"
+            ],
+            "examples": [
+                "az csvmware vm create -n MyVm -g MyResourceGroup -p MyPrivateCloud -r MyResourcePool --template MyVmTemplate",
+                "az csvmware vm create -n MyVm -g MyResourceGroup -p MyPrivateCloud -r MyResourcePool --template MyVmTemplate --nic name=NicNameWouldBeAssigned virtual-network=MyVirtualNetwork adapter=VMXNET3 power-on-boot=True",
+                "az csvmware vm create -n MyVm -g MyResourceGroup -p MyPrivateCloud -r MyResourcePool --template MyVmTemplate --cores 2 --nic name=\"Network adapter 1\" adapter=E1000E",
+                "az csvmware vm create -n MyVm -g MyResourceGroup -p MyPrivateCloud -r MyResourcePool --template MyVmTemplate --nic name=\"Network adapter 1\" adapter=E1000E --nic name=NicNameWouldBeAssigned virtual-network=MyVirtualNetwork adapter=VMXNET3 power-on-boot=True",
+                "az csvmware vm create -n MyVm -g MyResourceGroup -p MyPrivateCloud -r MyResourcePool --template MyVmTemplate --disk name=DiskNameWouldBeAssigned controller=1000 mode=persistent size=41943040",
+                "az csvmware vm create -n MyVm -g MyResourceGroup -p MyPrivateCloud -r MyResourcePool --template MyVmTemplate --disk name=\"Hard disk 1\" size=21943040 --disk name=DiskNameWouldBeAssigned controller=1000 mode=persistent size=41943040"
+            ]
+        },
+        {
+            "name": "az csvmware vm delete",
+            "summary": "Delete a VMware virtual machine.",
+            "syntax": "az csvmware vm delete --name\n                      --resource-group",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az csvmware vm delete -n MyVm -g MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az csvmware vm list",
+            "summary": "List details of VMware virtual machines in the current subscription. If resource group is specified, only the details of virtual machines in that resource group would be listed.",
+            "syntax": "az csvmware vm list [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az csvmware vm list",
+                "az csvmware vm list -g MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az csvmware vm show",
+            "summary": "Get the details of a VMware virtual machine.",
+            "syntax": "az csvmware vm show --name\n                    --resource-group",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az csvmware vm show -n MyVm -g MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az csvmware vm start",
+            "summary": "Start a VMware virtual machine.",
+            "syntax": "az csvmware vm start --name\n                     --resource-group",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az csvmware vm start -n MyVm -g MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az csvmware vm stop",
+            "summary": "Stop/Reboot/Suspend a VMware virtual machine.",
+            "syntax": "az csvmware vm stop --mode {poweroff, reboot, shutdown, suspend}\n                    --name\n                    --resource-group",
+            "required_parameters": [
+                "--mode",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az csvmware vm stop -n MyVm -g MyResourceGroup --mode poweroff",
+                "az csvmware vm stop -n MyVm -g MyResourceGroup --mode reboot"
+            ]
+        },
+        {
+            "name": "az csvmware vm update",
+            "summary": "Update the tags field of a VMware virtual machine.",
+            "syntax": "az csvmware vm update --name\n                      --resource-group\n                      [--add]\n                      [--force-string]\n                      [--no-wait]\n                      [--remove]\n                      [--set]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--add",
+                "--force-string",
+                "--no-wait",
+                "--remove",
+                "--set"
+            ],
+            "examples": [
+                "az csvmware vm update -n MyVm -g MyResourceGroup --set tags.tagName=tagValue",
+                "az csvmware vm update -n MyVm -g MyResourceGroup --remove tags.tagName"
+            ]
+        }
+    ]
+}

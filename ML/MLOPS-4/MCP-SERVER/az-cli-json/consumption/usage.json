@@ -1,0 +1,24 @@
+{
+    "command_group": "az consumption usage",
+    "description": "Inspect the usage of Azure resources.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az consumption usage list",
+            "summary": "List the details of Azure resource consumption, either as an invoice or within a billing period.",
+            "syntax": "az consumption usage list [--billing-period-name]\n                          [--end-date]\n                          [--include-additional-properties]\n                          [--include-meter-details]\n                          [--max-items]\n                          [--next-token]\n                          [--start-date]\n                          [--top]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--billing-period-name -p",
+                "--end-date -e",
+                "--include-additional-properties -a",
+                "--include-meter-details -m",
+                "--max-items",
+                "--next-token",
+                "--start-date -s",
+                "--top -t"
+            ],
+            "examples": []
+        }
+    ]
+}

@@ -1,0 +1,74 @@
+{
+    "command_group": "az network firewall policy rule-collection-group draft",
+    "description": "Manage and configure Azure firewall policy rule-collection-group draft.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az network firewall policy rule-collection-group draft create",
+            "summary": "Create an Azure firewall policy rule collection group draft.",
+            "syntax": "az network firewall policy rule-collection-group draft create --policy-name\n                                                              --priority\n                                                              --resource-group\n                                                              --rule-collection-group-name\n                                                              [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]",
+            "required_parameters": [
+                "--policy-name",
+                "--priority",
+                "--resource-group -g",
+                "--rule-collection-group-name"
+            ],
+            "optional_parameters": [
+                "--no-wait"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az network firewall policy rule-collection-group draft delete",
+            "summary": "Delete Rule Collection Group Draft.",
+            "syntax": "az network firewall policy rule-collection-group draft delete [--ids]\n                                                              [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                                              [--policy-name]\n                                                              [--resource-group]\n                                                              [--rule-collection-group-name]\n                                                              [--subscription]\n                                                              [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--no-wait",
+                "--policy-name",
+                "--resource-group -g",
+                "--rule-collection-group-name",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az network firewall policy rule-collection-group draft show",
+            "summary": "Get Rule Collection Group Draft.",
+            "syntax": "az network firewall policy rule-collection-group draft show [--ids]\n                                                            [--policy-name]\n                                                            [--resource-group]\n                                                            [--rule-collection-group-name]\n                                                            [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--policy-name",
+                "--resource-group -g",
+                "--rule-collection-group-name",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az network firewall policy rule-collection-group draft update",
+            "summary": "Update an Azure firewall policy rule collection group.",
+            "syntax": "az network firewall policy rule-collection-group draft update [--add]\n                                                              [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                                              [--ids]\n                                                              [--name]\n                                                              [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                                              [--policy-name]\n                                                              [--priority]\n                                                              [--remove]\n                                                              [--resource-group]\n                                                              [--rule-collection-group-name]\n                                                              [--set]\n                                                              [--subscription]\n                                                              [--tags]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--force-string",
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--policy-name",
+                "--priority",
+                "--remove",
+                "--resource-group -g",
+                "--rule-collection-group-name",
+                "--set",
+                "--subscription",
+                "--tags"
+            ],
+            "examples": []
+        }
+    ]
+}

@@ -1,0 +1,78 @@
+{
+    "command_group": "az webapp log",
+    "description": "Manage web app logs.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az webapp log config",
+            "summary": "Configure logging for a web app.",
+            "syntax": "az webapp log config [--application-logging {azureblobstorage, filesystem, off}]\n                     [--detailed-error-messages {false, true}]\n                     [--docker-container-logging {filesystem, off}]\n                     [--failed-request-tracing {false, true}]\n                     [--ids]\n                     [--level {error, information, verbose, warning}]\n                     [--name]\n                     [--resource-group]\n                     [--slot]\n                     [--subscription]\n                     [--web-server-logging {filesystem, off}]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--application-logging",
+                "--detailed-error-messages",
+                "--docker-container-logging",
+                "--failed-request-tracing",
+                "--ids",
+                "--level",
+                "--name -n",
+                "--resource-group -g",
+                "--slot -s",
+                "--subscription",
+                "--web-server-logging"
+            ],
+            "examples": [
+                "az webapp log config --name MyWebapp --resource-group MyResourceGroup --web-server-logging off",
+                "az webapp log config --docker-container-logging off --name MyWebapp --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az webapp log download",
+            "summary": "Download a web app's log history as a zip file.",
+            "syntax": "az webapp log download [--ids]\n                       [--log-file]\n                       [--name]\n                       [--resource-group]\n                       [--slot]\n                       [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--log-file",
+                "--name -n",
+                "--resource-group -g",
+                "--slot -s",
+                "--subscription"
+            ],
+            "examples": [
+                "az webapp log download --name MyWebApp --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az webapp log show",
+            "summary": "Get the details of a web app's logging configuration.",
+            "syntax": "az webapp log show [--ids]\n                   [--name]\n                   [--resource-group]\n                   [--slot]\n                   [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--slot -s",
+                "--subscription"
+            ],
+            "examples": [
+                "az webapp log show --name MyWebApp --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az webapp log tail",
+            "summary": "Start live log tracing for a web app.",
+            "syntax": "az webapp log tail [--ids]\n                   [--name]\n                   [--provider]\n                   [--resource-group]\n                   [--slot]\n                   [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--provider",
+                "--resource-group -g",
+                "--slot -s",
+                "--subscription"
+            ],
+            "examples": []
+        }
+    ]
+}

@@ -1,0 +1,106 @@
+{
+    "command_group": "az attestation",
+    "description": "Manage Microsoft Azure Attestation (MAA).",
+    "status": "Experimental",
+    "commands": [
+        {
+            "name": "az attestation create",
+            "summary": "Creates a new Attestation Provider instance.",
+            "syntax": "az attestation create [--certs-input-path]\n                      [--id]\n                      [--location]\n                      [--name]\n                      [--resource-group]\n                      [--tags]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--certs-input-path",
+                "--id",
+                "--location -l",
+                "--name -n",
+                "--resource-group -g",
+                "--tags"
+            ],
+            "examples": [
+                "az attestation create --name \"myattestationprovider\" --resource-group \"MyResourceGroup\" -l westus"
+            ]
+        },
+        {
+            "name": "az attestation delete",
+            "summary": "Delete Attestation Service.",
+            "syntax": "az attestation delete [--id]\n                      [--name]\n                      [--resource-group]\n                      [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--id",
+                "--name -n",
+                "--resource-group -g",
+                "--yes -y"
+            ],
+            "examples": [
+                "az attestation delete --name \"myattestationprovider\" --resource-group \"sample-resource-group\""
+            ]
+        },
+        {
+            "name": "az attestation get-default-by-location",
+            "summary": "Get the default provider by location.",
+            "syntax": "az attestation get-default-by-location [--ids]\n                                       [--location]\n                                       [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--location -l",
+                "--subscription"
+            ],
+            "examples": [
+                "az attestation get-default-by-location --location \"Central US\""
+            ]
+        },
+        {
+            "name": "az attestation list",
+            "summary": "Returns a list of attestation providers in a subscription.",
+            "syntax": "az attestation list [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az attestation list --resource-group \"testrg1\"",
+                "az attestation list"
+            ]
+        },
+        {
+            "name": "az attestation list-default",
+            "summary": "Get the default provider.",
+            "syntax": "az attestation list-default",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "examples": [
+                "az attestation list-default"
+            ]
+        },
+        {
+            "name": "az attestation show",
+            "summary": "Get the status of Attestation Provider.",
+            "syntax": "az attestation show [--id]\n                    [--name]\n                    [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--id",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az attestation show --name \"myattestationprovider\" --resource-group \"MyResourceGroup\""
+            ]
+        },
+        {
+            "name": "az attestation update",
+            "summary": "Updates the Attestation Provider.",
+            "syntax": "az attestation update [--ids]\n                      [--name]\n                      [--resource-group]\n                      [--subscription]\n                      [--tags]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--tags"
+            ],
+            "examples": [
+                "az attestation update --name \"myattestationprovider\" --resource-group \"MyResourceGroup\" --tags Property1=\"Value1\" Property2=\"Value2\" Property3=\"Value3\""
+            ]
+        }
+    ]
+}

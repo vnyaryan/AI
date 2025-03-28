@@ -1,0 +1,62 @@
+{
+    "command_group": "az network front-door waf-policy managed-rules exclusion",
+    "description": "View and alter exclusions on a managed rule set, rule group, or rule within a managed rule set.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az network front-door waf-policy managed-rules exclusion add",
+            "summary": "Add an exclusion on a managed rule set, rule group, or rule within a managed rule set.",
+            "syntax": "az network front-door waf-policy managed-rules exclusion add --match-variable\n                                                             --operator\n                                                             --type\n                                                             --value\n                                                             [--ids]\n                                                             [--policy-name]\n                                                             [--resource-group]\n                                                             [--rule-group-id]\n                                                             [--rule-id]\n                                                             [--subscription]",
+            "required_parameters": [
+                "--match-variable",
+                "--operator",
+                "--type",
+                "--value"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--policy-name",
+                "--resource-group -g",
+                "--rule-group-id",
+                "--rule-id",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az network front-door waf-policy managed-rules exclusion list",
+            "summary": "List the exclusions on managed rule set, rule group, or rule within a managed rule set.",
+            "syntax": "az network front-door waf-policy managed-rules exclusion list --policy-name\n                                                              --resource-group\n                                                              --type\n                                                              [--rule-group-id]\n                                                              [--rule-id]",
+            "required_parameters": [
+                "--policy-name",
+                "--resource-group -g",
+                "--type"
+            ],
+            "optional_parameters": [
+                "--rule-group-id",
+                "--rule-id"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az network front-door waf-policy managed-rules exclusion remove",
+            "summary": "Remove an exclusion on a managed rule set, rule group, or rule within a managed rule set.",
+            "syntax": "az network front-door waf-policy managed-rules exclusion remove --match-variable\n                                                                --operator\n                                                                --type\n                                                                --value\n                                                                [--ids]\n                                                                [--policy-name]\n                                                                [--resource-group]\n                                                                [--rule-group-id]\n                                                                [--rule-id]\n                                                                [--subscription]",
+            "required_parameters": [
+                "--match-variable",
+                "--operator",
+                "--type",
+                "--value"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--policy-name",
+                "--resource-group -g",
+                "--rule-group-id",
+                "--rule-id",
+                "--subscription"
+            ],
+            "examples": []
+        }
+    ]
+}

@@ -1,0 +1,47 @@
+{
+    "command_group": "az grafana user",
+    "description": "Commands to manage users of an instance.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az grafana user actual-user",
+            "summary": "Get the details of the current user.",
+            "syntax": "az grafana user actual-user --name\n                            [--api-key]\n                            [--resource-group]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--api-key --token -t",
+                "--resource-group -g"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az grafana user list",
+            "summary": "List users.",
+            "syntax": "az grafana user list --name\n                     [--api-key]\n                     [--resource-group]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--api-key --token -t",
+                "--resource-group -g"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az grafana user show",
+            "summary": "Get the details of a user.",
+            "syntax": "az grafana user show --name\n                     --user\n                     [--api-key]\n                     [--resource-group]",
+            "required_parameters": [
+                "--name -n",
+                "--user"
+            ],
+            "optional_parameters": [
+                "--api-key --token -t",
+                "--resource-group -g"
+            ],
+            "examples": []
+        }
+    ]
+}

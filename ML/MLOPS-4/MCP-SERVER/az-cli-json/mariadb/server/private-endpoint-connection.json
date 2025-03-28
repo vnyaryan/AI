@@ -1,0 +1,69 @@
+{
+    "command_group": "az mariadb server private-endpoint-connection",
+    "description": "Manage MariaDB server private endpoint connections.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az mariadb server private-endpoint-connection approve",
+            "summary": "Approve the specified private endpoint connection associated with a MariaDB server.",
+            "syntax": "az mariadb server private-endpoint-connection approve [--description]\n                                                      [--id]\n                                                      [--ids]\n                                                      [--name]\n                                                      [--resource-group]\n                                                      [--server-name]\n                                                      [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--description",
+                "--id",
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--server-name -s",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az mariadb server private-endpoint-connection delete",
+            "summary": "Delete the specified private endpoint connection associated with a MariaDB server.",
+            "syntax": "az mariadb server private-endpoint-connection delete [--id]\n                                                     [--ids]\n                                                     [--name]\n                                                     [--resource-group]\n                                                     [--server-name]\n                                                     [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--id",
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--server-name -s",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az mariadb server private-endpoint-connection reject",
+            "summary": "Reject the specified private endpoint connection associated with a MariaDB server.",
+            "syntax": "az mariadb server private-endpoint-connection reject [--description]\n                                                     [--id]\n                                                     [--ids]\n                                                     [--name]\n                                                     [--resource-group]\n                                                     [--server-name]\n                                                     [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--description",
+                "--id",
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--server-name -s",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az mariadb server private-endpoint-connection show",
+            "summary": "Show details of a private endpoint connection associated with a MariaDB server.",
+            "syntax": "az mariadb server private-endpoint-connection show [--id]\n                                                   [--ids]\n                                                   [--name]\n                                                   [--resource-group]\n                                                   [--server-name]\n                                                   [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--id",
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--server-name -s",
+                "--subscription"
+            ],
+            "examples": []
+        }
+    ]
+}

@@ -1,0 +1,85 @@
+{
+    "command_group": "az network vwan",
+    "description": "Manage virtual WANs.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az network vwan create",
+            "summary": "Create a virtual WAN.",
+            "syntax": "az network vwan create --name\n                       --resource-group\n                       [--branch-to-branch-traffic {false, true}]\n                       [--disable-vpn-encryption {false, true}]\n                       [--location]\n                       [--office365-category]\n                       [--security-provider-name]\n                       [--tags]\n                       [--type {Basic, Standard}]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--branch-to-branch-traffic",
+                "--disable-vpn-encryption",
+                "--location -l",
+                "--office365-category",
+                "--security-provider-name",
+                "--tags",
+                "--type"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az network vwan delete",
+            "summary": "Delete a virtual WAN.",
+            "syntax": "az network vwan delete [--ids]\n                       [--name]\n                       [--resource-group]\n                       [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az network vwan list",
+            "summary": "List virtual WANs.",
+            "syntax": "az network vwan list [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az network vwan show",
+            "summary": "Get the details of a virtual WAN.",
+            "syntax": "az network vwan show [--ids]\n                     [--name]\n                     [--resource-group]\n                     [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az network vwan update",
+            "summary": "Update settings of a virtual WAN.",
+            "syntax": "az network vwan update [--add]\n                       [--branch-to-branch-traffic {false, true}]\n                       [--disable-vpn-encryption {false, true}]\n                       [--force-string]\n                       [--ids]\n                       [--name]\n                       [--office365-category]\n                       [--remove]\n                       [--resource-group]\n                       [--security-provider-name]\n                       [--set]\n                       [--subscription]\n                       [--tags]\n                       [--type {Basic, Standard}]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--branch-to-branch-traffic",
+                "--disable-vpn-encryption",
+                "--force-string",
+                "--ids",
+                "--name -n",
+                "--office365-category",
+                "--remove",
+                "--resource-group -g",
+                "--security-provider-name",
+                "--set",
+                "--subscription",
+                "--tags",
+                "--type"
+            ],
+            "examples": []
+        }
+    ]
+}

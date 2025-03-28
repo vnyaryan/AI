@@ -1,0 +1,118 @@
+{
+    "command_group": "az storage table",
+    "description": "Manage NoSQL key-value storage.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az storage table create",
+            "summary": "Create a new table in the storage account.",
+            "syntax": "az storage table create --name\n                        [--account-key]\n                        [--account-name]\n                        [--auth-mode {key, login}]\n                        [--connection-string]\n                        [--fail-on-exist]\n                        [--sas-token]\n                        [--table-endpoint]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--account-key",
+                "--account-name",
+                "--auth-mode",
+                "--connection-string",
+                "--fail-on-exist",
+                "--sas-token",
+                "--table-endpoint"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az storage table delete",
+            "summary": "Delete the specified table and any data it contains.",
+            "syntax": "az storage table delete --name\n                        [--account-key]\n                        [--account-name]\n                        [--auth-mode {key, login}]\n                        [--connection-string]\n                        [--fail-not-exist]\n                        [--sas-token]\n                        [--table-endpoint]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--account-key",
+                "--account-name",
+                "--auth-mode",
+                "--connection-string",
+                "--fail-not-exist",
+                "--sas-token",
+                "--table-endpoint"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az storage table exists",
+            "summary": "Return a boolean indicating whether the table exists.",
+            "syntax": "az storage table exists --name\n                        [--account-key]\n                        [--account-name]\n                        [--auth-mode {key, login}]\n                        [--connection-string]\n                        [--sas-token]\n                        [--table-endpoint]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--account-key",
+                "--account-name",
+                "--auth-mode",
+                "--connection-string",
+                "--sas-token",
+                "--table-endpoint"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az storage table generate-sas",
+            "summary": "Generate a shared access signature for the table.",
+            "syntax": "az storage table generate-sas --name\n                              [--account-key]\n                              [--account-name]\n                              [--connection-string]\n                              [--end-pk]\n                              [--end-rk]\n                              [--expiry]\n                              [--https-only]\n                              [--ip]\n                              [--permissions]\n                              [--policy-name]\n                              [--start]\n                              [--start-pk]\n                              [--start-rk]\n                              [--table-endpoint]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--account-key",
+                "--account-name",
+                "--connection-string",
+                "--end-pk",
+                "--end-rk",
+                "--expiry",
+                "--https-only",
+                "--ip",
+                "--permissions",
+                "--policy-name",
+                "--start",
+                "--start-pk",
+                "--start-rk",
+                "--table-endpoint"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az storage table list",
+            "summary": "List tables in a storage account.",
+            "syntax": "az storage table list [--account-key]\n                      [--account-name]\n                      [--auth-mode {key, login}]\n                      [--connection-string]\n                      [--marker]\n                      [--num-results]\n                      [--sas-token]\n                      [--show-next-marker]\n                      [--table-endpoint]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account-key",
+                "--account-name",
+                "--auth-mode",
+                "--connection-string",
+                "--marker",
+                "--num-results",
+                "--sas-token",
+                "--show-next-marker",
+                "--table-endpoint"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az storage table stats",
+            "summary": "Retrieves statistics related to replication for the Table service.",
+            "syntax": "az storage table stats [--account-key]\n                       [--account-name]\n                       [--auth-mode {key, login}]\n                       [--connection-string]\n                       [--sas-token]\n                       [--table-endpoint]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account-key",
+                "--account-name",
+                "--auth-mode",
+                "--connection-string",
+                "--sas-token",
+                "--table-endpoint"
+            ],
+            "examples": []
+        }
+    ]
+}

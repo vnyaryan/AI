@@ -1,0 +1,114 @@
+{
+    "command_group": "az site-recovery fabric",
+    "description": "Manage Fabric.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az site-recovery fabric create",
+            "summary": "Create operation to create an Azure Site Recovery fabric (for e.g. Hyper-V site).",
+            "syntax": "az site-recovery fabric create --fabric-name\n                               --resource-group\n                               --vault-name\n                               [--custom-details]\n                               [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]",
+            "required_parameters": [
+                "--fabric-name --name -n",
+                "--resource-group -g",
+                "--vault-name"
+            ],
+            "optional_parameters": [
+                "--custom-details",
+                "--no-wait"
+            ],
+            "examples": [
+                "az site-recovery fabric create -n fabric1_name -g rg --vault-name vault_name --custom-details '{azure:{location:eastus}}'"
+            ]
+        },
+        {
+            "name": "az site-recovery fabric delete",
+            "summary": "Delete operation to purge(force delete) an Azure Site Recovery fabric.",
+            "syntax": "az site-recovery fabric delete [--fabric-name]\n                               [--ids]\n                               [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                               [--resource-group]\n                               [--subscription]\n                               [--vault-name]\n                               [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--fabric-name --name -n",
+                "--ids",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--vault-name",
+                "--yes -y"
+            ],
+            "examples": [
+                "az site-recovery fabric delete -n fabric1_name -g rg --vault-name vault_name"
+            ]
+        },
+        {
+            "name": "az site-recovery fabric list",
+            "summary": "List a list of the Azure Site Recovery fabrics in the vault.",
+            "syntax": "az site-recovery fabric list --resource-group\n                             --vault-name\n                             [--max-items]\n                             [--next-token]",
+            "required_parameters": [
+                "--resource-group -g",
+                "--vault-name"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az site-recovery fabric list -g rg --vault-name vault_name"
+            ]
+        },
+        {
+            "name": "az site-recovery fabric remove",
+            "summary": "The operation to delete or remove an Azure Site Recovery fabric.",
+            "syntax": "az site-recovery fabric remove [--fabric-name]\n                               [--ids]\n                               [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                               [--resource-group]\n                               [--subscription]\n                               [--vault-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--fabric-name --name -n",
+                "--ids",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--vault-name"
+            ],
+            "examples": [
+                "az site-recovery fabric remove -n fabric_source_name -g rg --vault-name vault_name"
+            ]
+        },
+        {
+            "name": "az site-recovery fabric show",
+            "summary": "Get the details of an Azure Site Recovery fabric.",
+            "syntax": "az site-recovery fabric show [--fabric-name]\n                             [--filter]\n                             [--ids]\n                             [--resource-group]\n                             [--subscription]\n                             [--vault-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--fabric-name --name -n",
+                "--filter",
+                "--ids",
+                "--resource-group -g",
+                "--subscription",
+                "--vault-name"
+            ],
+            "examples": [
+                "az site-recovery fabric show -n fabric1_name -g rg --vault-name vault_name"
+            ]
+        },
+        {
+            "name": "az site-recovery fabric update",
+            "summary": "Update operation to create an Azure Site Recovery fabric (for e.g. Hyper-V site).",
+            "syntax": "az site-recovery fabric update [--add]\n                               [--custom-details]\n                               [--fabric-name]\n                               [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                               [--ids]\n                               [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                               [--remove]\n                               [--resource-group]\n                               [--set]\n                               [--subscription]\n                               [--vault-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--custom-details",
+                "--fabric-name --name -n",
+                "--force-string",
+                "--ids",
+                "--no-wait",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--subscription",
+                "--vault-name"
+            ],
+            "examples": [
+                "az site-recovery fabric update -n fabric_source_name -g rg --vault-name vault_name --custom-details '{azure:{location:eastus}}'"
+            ]
+        }
+    ]
+}

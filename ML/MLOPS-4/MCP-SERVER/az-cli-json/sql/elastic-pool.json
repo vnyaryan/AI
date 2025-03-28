@@ -1,0 +1,152 @@
+{
+    "command_group": "az sql elastic-pool",
+    "description": "Manage elastic pools.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az sql elastic-pool create",
+            "summary": "Create an elastic pool.",
+            "syntax": "az sql elastic-pool create --name\n                           --resource-group\n                           --server\n                           [--capacity]\n                           [--db-dtu-max]\n                           [--db-dtu-min]\n                           [--edition]\n                           [--family]\n                           [--ha-replicas]\n                           [--license-type {BasePrice, LicenseIncluded}]\n                           [--maint-config-id]\n                           [--max-size]\n                           [--no-wait]\n                           [--preferred-enclave-type {Default, VBS}]\n                           [--tags]\n                           [--zone-redundant {false, true}]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g",
+                "--server -s"
+            ],
+            "optional_parameters": [
+                "--capacity --dtu -c",
+                "--db-dtu-max --db-max-capacity --db-max-dtu",
+                "--db-dtu-min --db-min-capacity --db-min-dtu",
+                "--edition --tier -e",
+                "--family -f",
+                "--ha-replicas --read-replicas",
+                "--license-type",
+                "--maint-config-id -m",
+                "--max-size --storage",
+                "--no-wait",
+                "--preferred-enclave-type",
+                "--tags",
+                "--zone-redundant -z"
+            ],
+            "examples": [
+                "az sql elastic-pool create -g mygroup -s myserver -n mypool -z",
+                "az sql elastic-pool create -g mygroup -s myserver -n mypool -z false",
+                "az sql elastic-pool create -g mygroup -s myserver -n mydb -e Standard -c 100",
+                "az sql elastic-pool create -g mygroup -s myserver -n mydb -e GeneralPurpose -f Gen4 -c 1",
+                "az sql elastic-pool create -g mygroup -s myserver -n mydb -e Hyperscale -f Gen5 -c 4 --ha-replicas 2",
+                "az sql elastic-pool create -g mygroup -s myserver -n mydb --preferred-enclave-type VBS"
+            ]
+        },
+        {
+            "name": "az sql elastic-pool delete",
+            "summary": "Deletes an elastic pool.",
+            "syntax": "az sql elastic-pool delete [--ids]\n                           [--name]\n                           [--no-wait]\n                           [--resource-group]\n                           [--server]\n                           [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--server -s",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az sql elastic-pool list",
+            "summary": "Gets all elastic pools in a server.",
+            "syntax": "az sql elastic-pool list [--ids]\n                         [--resource-group]\n                         [--server]\n                         [--skip]\n                         [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--resource-group -g",
+                "--server -s",
+                "--skip",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az sql elastic-pool list-dbs",
+            "summary": "Gets a list of databases in an elastic pool.",
+            "syntax": "az sql elastic-pool list-dbs [--ids]\n                             [--name]\n                             [--resource-group]\n                             [--server]\n                             [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--server -s",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az sql elastic-pool list-editions",
+            "summary": "List elastic pool editions available for the active subscription.",
+            "syntax": "az sql elastic-pool list-editions --location\n                                  [--available]\n                                  [--dtu]\n                                  [--edition]\n                                  [--show-details {db-max-dtu, db-max-size, db-min-dtu, max-size}]\n                                  [--vcores]",
+            "required_parameters": [
+                "--location -l"
+            ],
+            "optional_parameters": [
+                "--available -a",
+                "--dtu",
+                "--edition --tier -e",
+                "--show-details -d",
+                "--vcores"
+            ],
+            "examples": [
+                "az sql elastic-pool list-editions -l westus -o table",
+                "az sql elastic-pool list-editions -l westus --edition Standard -o table",
+                "az sql elastic-pool list-editions -l westus --dtu 100 --show-details max-size -o table",
+                "az sql elastic-pool list-editions -l westus --edition Standard --dtu 100 -o table --show-details db-min-dtu db-max-dtu db-max-size"
+            ]
+        },
+        {
+            "name": "az sql elastic-pool show",
+            "summary": "Gets an elastic pool.",
+            "syntax": "az sql elastic-pool show [--ids]\n                         [--name]\n                         [--resource-group]\n                         [--server]\n                         [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--server -s",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az sql elastic-pool update",
+            "summary": "Update an elastic pool.",
+            "syntax": "az sql elastic-pool update [--add]\n                           [--capacity]\n                           [--db-dtu-max]\n                           [--db-dtu-min]\n                           [--edition]\n                           [--family]\n                           [--force-string]\n                           [--ha-replicas]\n                           [--ids]\n                           [--maint-config-id]\n                           [--max-size]\n                           [--name]\n                           [--no-wait]\n                           [--preferred-enclave-type {Default, VBS}]\n                           [--remove]\n                           [--resource-group]\n                           [--server]\n                           [--set]\n                           [--subscription]\n                           [--zone-redundant {false, true}]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--capacity --dtu -c",
+                "--db-dtu-max --db-max-capacity --db-max-dtu",
+                "--db-dtu-min --db-min-capacity --db-min-dtu",
+                "--edition --tier -e",
+                "--family -f",
+                "--force-string",
+                "--ha-replicas --read-replicas",
+                "--ids",
+                "--maint-config-id -m",
+                "--max-size --storage",
+                "--name -n",
+                "--no-wait",
+                "--preferred-enclave-type",
+                "--remove",
+                "--resource-group -g",
+                "--server -s",
+                "--set",
+                "--subscription",
+                "--zone-redundant -z"
+            ],
+            "examples": [
+                "az sql elastic-pool update -g mygroup -s myserver -n mypool -z",
+                "az sql elastic-pool update -g mygroup -s myserver -n mypool -z false",
+                "az sql elastic-pool update -g mygroup -s myserver -n mypool --ha-replicas 2",
+                "az sql elastic-pool update -g mygroup -s myserver -n mypool --preferred-enclave-type VBS"
+            ]
+        }
+    ]
+}

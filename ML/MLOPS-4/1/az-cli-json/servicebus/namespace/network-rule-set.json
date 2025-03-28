@@ -1,0 +1,70 @@
+{
+    "command_group": "az servicebus namespace network-rule-set",
+    "description": "Servicebus namespace network-rule-set.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az servicebus namespace network-rule-set create",
+            "summary": "Create NetworkRuleSet for a Namespace.",
+            "syntax": "az servicebus namespace network-rule-set create --namespace-name\n                                                --resource-group\n                                                [--default-action {Allow, Deny}]\n                                                [--enable-trusted-service-access {0, 1, f, false, n, no, t, true, y, yes}]\n                                                [--ip-rules]\n                                                [--public-network-access {Disabled, Enabled}]\n                                                [--virtual-network-rules]",
+            "required_parameters": [
+                "--namespace-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--default-action",
+                "--enable-trusted-service-access -t",
+                "--ip-rules",
+                "--public-network-access",
+                "--virtual-network-rules"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az servicebus namespace network-rule-set list",
+            "summary": "List list of NetworkRuleSet for a Namespace.",
+            "syntax": "az servicebus namespace network-rule-set list --namespace-name\n                                              --resource-group",
+            "required_parameters": [
+                "--namespace-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az servicebus namespace network-rule-set show",
+            "summary": "Get NetworkRuleSet for a Namespace.",
+            "syntax": "az servicebus namespace network-rule-set show [--ids]\n                                              [--namespace-name]\n                                              [--resource-group]\n                                              [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--namespace-name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az servicebus namespace network-rule-set update",
+            "summary": "Update NetworkRuleSet for a Namespace.",
+            "syntax": "az servicebus namespace network-rule-set update [--add]\n                                                [--default-action {Allow, Deny}]\n                                                [--enable-trusted-service-access {0, 1, f, false, n, no, t, true, y, yes}]\n                                                [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                                [--ids]\n                                                [--ip-rules]\n                                                [--namespace-name]\n                                                [--public-network-access {Disabled, Enabled}]\n                                                [--remove]\n                                                [--resource-group]\n                                                [--set]\n                                                [--subscription]\n                                                [--virtual-network-rules]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--default-action",
+                "--enable-trusted-service-access -t",
+                "--force-string",
+                "--ids",
+                "--ip-rules",
+                "--namespace-name",
+                "--public-network-access",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--subscription",
+                "--virtual-network-rules"
+            ],
+            "examples": []
+        }
+    ]
+}

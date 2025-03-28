@@ -1,0 +1,50 @@
+{
+    "command_group": "az cosmosdb gremlin graph throughput",
+    "description": "Manage throughput of Gremlin graph under an Azure Cosmos DB account.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az cosmosdb gremlin graph throughput migrate",
+            "summary": "Migrate the throughput of the Gremlin Graph between autoscale and manually provisioned.",
+            "syntax": "az cosmosdb gremlin graph throughput migrate --account-name\n                                             --database-name\n                                             --name\n                                             --resource-group\n                                             --throughput-type {autoscale, manual}",
+            "required_parameters": [
+                "--account-name -a",
+                "--database-name -d",
+                "--name -n",
+                "--resource-group -g",
+                "--throughput-type -t"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az cosmosdb gremlin graph throughput show",
+            "summary": "Get the throughput of the Gremlin graph under an Azure Cosmos DB Gremlin database.",
+            "syntax": "az cosmosdb gremlin graph throughput show --account-name\n                                          --database-name\n                                          --name\n                                          --resource-group",
+            "required_parameters": [
+                "--account-name -a",
+                "--database-name -d",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az cosmosdb gremlin graph throughput update",
+            "summary": "Update the throughput of the Gremlin graph under an Azure Cosmos DB Gremlin database.",
+            "syntax": "az cosmosdb gremlin graph throughput update --account-name\n                                            --database-name\n                                            --name\n                                            --resource-group\n                                            [--max-throughput]\n                                            [--throughput]",
+            "required_parameters": [
+                "--account-name -a",
+                "--database-name -d",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--max-throughput",
+                "--throughput"
+            ],
+            "examples": []
+        }
+    ]
+}

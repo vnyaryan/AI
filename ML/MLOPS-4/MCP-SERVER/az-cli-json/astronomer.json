@@ -1,0 +1,6 @@
+{
+    "command_group": "az astronomer",
+    "description": "Manage Azure Astronomer resources.",
+    "status": "GA",
+    "commands": []
+}

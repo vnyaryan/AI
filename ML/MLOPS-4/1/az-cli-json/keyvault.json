@@ -1,0 +1,288 @@
+{
+    "command_group": "az keyvault",
+    "description": "Manage KeyVault keys, secrets, and certificates.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az keyvault check-name",
+            "summary": "Check that the given name is valid and is not already in use.",
+            "syntax": "az keyvault check-name --name\n                       [--resource-type {hsm}]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--resource-type"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az keyvault create",
+            "summary": "Create a Vault or HSM.",
+            "syntax": "az keyvault create --resource-group\n                   [--administrators]\n                   [--bypass {AzureServices, None}]\n                   [--default-action {Allow, Deny}]\n                   [--enable-purge-protection {false, true}]\n                   [--enable-rbac-authorization {false, true}]\n                   [--enabled-for-deployment {false, true}]\n                   [--enabled-for-disk-encryption {false, true}]\n                   [--enabled-for-template-deployment {false, true}]\n                   [--hsm-name]\n                   [--location]\n                   [--mi-user-assigned]\n                   [--name]\n                   [--network-acls]\n                   [--network-acls-ips]\n                   [--network-acls-vnets]\n                   [--no-self-perms {false, true}]\n                   [--no-wait]\n                   [--public-network-access {Disabled, Enabled}]\n                   [--retention-days]\n                   [--sku]\n                   [--tags]",
+            "required_parameters": [
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--administrators",
+                "--bypass",
+                "--default-action",
+                "--enable-purge-protection",
+                "--enable-rbac-authorization",
+                "--enabled-for-deployment",
+                "--enabled-for-disk-encryption",
+                "--enabled-for-template-deployment",
+                "--hsm-name",
+                "--location -l",
+                "--mi-user-assigned",
+                "--name -n",
+                "--network-acls",
+                "--network-acls-ips",
+                "--network-acls-vnets",
+                "--no-self-perms",
+                "--no-wait",
+                "--public-network-access",
+                "--retention-days",
+                "--sku",
+                "--tags"
+            ],
+            "examples": [
+                "az keyvault create --location westus2 --name MyKeyVault --resource-group MyResourceGroup --network-acls \"{\\\"ip\\\": [\\\"1.2.3.4\\\", \\\"2.3.4.0/24\\\"], \\\"vnet\\\": [\\\"vnet_name_1/subnet_name1\\\", \\\"vnet_name_2/subnet_name2\\\", \\\"/subscriptions/000000-0000-0000/resourceGroups/MyResourceGroup/providers/Microsoft.Network/virtualNetworks/MyVNet/subnets/MySubnet\\\"]}\"",
+                "az keyvault create --location westus2 --name MyKeyVault --resource-group MyResourceGroup --network-acls network-acls-example.json",
+                "az keyvault create --location westus2 --name MyKeyVault --resource-group MyResourceGroup --network-acls-ips 3.4.5.0/24 4.5.6.0/24",
+                "az keyvault create --location westus2 --name MyKeyVault --resource-group MyResourceGroup --network-acls-vnets vnet_name_2/subnet_name_2 vnet_name_3/subnet_name_3 /subscriptions/000000-0000-0000/resourceGroups/MyResourceGroup/providers/Microsoft.Network/virtualNetworks/vnet_name_4/subnets/subnet_name_4",
+                "az keyvault create --location westus2 --name MyKeyVault --resource-group MyResourceGroup --network-acls \"{\\\"ip\\\": [\\\"1.2.3.4\\\", \\\"2.3.4.0/24\\\"], \\\"vnet\\\": [\\\"vnet_name_1/subnet_name1\\\", \\\"vnet_name_2/subnet_name2\\\"]}\" --network-acls-ips 3.4.5.0/24 4.5.6.0/24 --network-acls-vnets vnet_name_2/subnet_name_2 vnet_name_3/subnet_name_3 /subscriptions/000000-0000-0000/resourceGroups/MyResourceGroup/providers/Microsoft.Network/virtualNetworks/vnet_name_4/subnets/subnet_name_4",
+                "az keyvault create --location westus2 --name MyKeyVault --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az keyvault delete",
+            "summary": "Delete a Vault or HSM.",
+            "syntax": "az keyvault delete [--hsm-name]\n                   [--name]\n                   [--no-wait]\n                   [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--hsm-name",
+                "--name -n",
+                "--no-wait",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az keyvault delete --name MyKeyVault --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az keyvault delete-policy",
+            "summary": "Delete security policy settings for a Key Vault.",
+            "syntax": "az keyvault delete-policy --name\n                          [--application-id]\n                          [--no-wait]\n                          [--object-id]\n                          [--resource-group]\n                          [--spn]\n                          [--upn]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--application-id",
+                "--no-wait",
+                "--object-id",
+                "--resource-group -g",
+                "--spn",
+                "--upn"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az keyvault list",
+            "summary": "List Vaults and/or HSMs.",
+            "syntax": "az keyvault list [--resource-group]\n                 [--resource-type]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--resource-group -g",
+                "--resource-type"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az keyvault list-deleted",
+            "summary": "Get information about the deleted Vaults or HSMs in a subscription.",
+            "syntax": "az keyvault list-deleted [--resource-type]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--resource-type"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az keyvault purge",
+            "summary": "Permanently delete the specified Vault or HSM. Aka Purges the deleted Vault or HSM.",
+            "syntax": "az keyvault purge [--hsm-name]\n                  [--location]\n                  [--name]\n                  [--no-wait]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--hsm-name",
+                "--location -l",
+                "--name -n",
+                "--no-wait"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az keyvault recover",
+            "summary": "Recover a Vault or HSM.",
+            "syntax": "az keyvault recover [--hsm-name]\n                    [--location]\n                    [--name]\n                    [--no-wait]\n                    [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--hsm-name",
+                "--location -l",
+                "--name -n",
+                "--no-wait",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az keyvault recover --location westus2 --name MyKeyVault --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az keyvault set-policy",
+            "summary": "Update security policy settings for a Key Vault.",
+            "syntax": "az keyvault set-policy --name\n                       [--application-id]\n                       [--certificate-permissions {all, backup, create, delete, deleteissuers, get, getissuers, import, list, listissuers, managecontacts, manageissuers, purge, recover, restore, setissuers, update}]\n                       [--key-permissions {all, backup, create, decrypt, delete, encrypt, get, getrotationpolicy, import, list, purge, recover, release, restore, rotate, setrotationpolicy, sign, unwrapKey, update, verify, wrapKey}]\n                       [--no-wait]\n                       [--object-id]\n                       [--resource-group]\n                       [--secret-permissions {all, backup, delete, get, list, purge, recover, restore, set}]\n                       [--spn]\n                       [--storage-permissions {all, backup, delete, deletesas, get, getsas, list, listsas, purge, recover, regeneratekey, restore, set, setsas, update}]\n                       [--upn]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--application-id",
+                "--certificate-permissions",
+                "--key-permissions",
+                "--no-wait",
+                "--object-id",
+                "--resource-group -g",
+                "--secret-permissions",
+                "--spn",
+                "--storage-permissions",
+                "--upn"
+            ],
+            "examples": [
+                "az keyvault set-policy -n MyVault --key-permissions get list import --secret-permissions backup restore --object-id {GUID}",
+                "az keyvault set-policy -n MyVault --key-permissions get list --upn {UPN}",
+                "az keyvault set-policy -n MyVault --key-permissions get list --spn {SPN}"
+            ]
+        },
+        {
+            "name": "az keyvault show",
+            "summary": "Show details of a Vault or HSM.",
+            "syntax": "az keyvault show [--hsm-name]\n                 [--name]\n                 [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--hsm-name",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az keyvault show --name MyKeyVault"
+            ]
+        },
+        {
+            "name": "az keyvault show-deleted",
+            "summary": "Show details of a deleted Vault or HSM.",
+            "syntax": "az keyvault show-deleted [--hsm-name]\n                         [--location]\n                         [--name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--hsm-name",
+                "--location -l",
+                "--name -n"
+            ],
+            "examples": [
+                "az keyvault show-deleted --name MyKeyVault"
+            ]
+        },
+        {
+            "name": "az keyvault update",
+            "summary": "Update the properties of a Vault.",
+            "syntax": "az keyvault update --name\n                   [--add]\n                   [--bypass {AzureServices, None}]\n                   [--default-action {Allow, Deny}]\n                   [--enable-purge-protection {false, true}]\n                   [--enable-rbac-authorization {false, true}]\n                   [--enabled-for-deployment {false, true}]\n                   [--enabled-for-disk-encryption {false, true}]\n                   [--enabled-for-template-deployment {false, true}]\n                   [--force-string]\n                   [--no-wait]\n                   [--public-network-access {Disabled, Enabled}]\n                   [--remove]\n                   [--resource-group]\n                   [--retention-days]\n                   [--set]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--add",
+                "--bypass",
+                "--default-action",
+                "--enable-purge-protection",
+                "--enable-rbac-authorization",
+                "--enabled-for-deployment",
+                "--enabled-for-disk-encryption",
+                "--enabled-for-template-deployment",
+                "--force-string",
+                "--no-wait",
+                "--public-network-access",
+                "--remove",
+                "--resource-group -g",
+                "--retention-days",
+                "--set"
+            ],
+            "examples": [
+                "az keyvault update --enabled-for-disk-encryption true --name MyKeyVault --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az keyvault update-hsm",
+            "summary": "Update the properties of a HSM.",
+            "syntax": "az keyvault update-hsm --hsm-name\n                       [--add]\n                       [--bypass {AzureServices, None}]\n                       [--default-action {Allow, Deny}]\n                       [--enable-purge-protection {false, true}]\n                       [--force-string]\n                       [--mi-user-assigned]\n                       [--no-wait]\n                       [--public-network-access {Disabled, Enabled}]\n                       [--remove]\n                       [--resource-group]\n                       [--secondary-locations]\n                       [--set]",
+            "required_parameters": [
+                "--hsm-name"
+            ],
+            "optional_parameters": [
+                "--add",
+                "--bypass",
+                "--default-action",
+                "--enable-purge-protection -e",
+                "--force-string",
+                "--mi-user-assigned",
+                "--no-wait",
+                "--public-network-access",
+                "--remove",
+                "--resource-group -g",
+                "--secondary-locations",
+                "--set"
+            ],
+            "examples": [
+                "az keyvault update-hsm --enable-purge-protection true --hsm-name MyHSM --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az keyvault wait",
+            "summary": "Place the CLI in a waiting state until a condition of the Vault is met.",
+            "syntax": "az keyvault wait --name\n                 [--created]\n                 [--custom]\n                 [--deleted]\n                 [--exists]\n                 [--interval]\n                 [--resource-group]\n                 [--timeout]\n                 [--updated]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--interval",
+                "--resource-group -g",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": [
+                "az keyvault wait --name MyVault --created"
+            ]
+        },
+        {
+            "name": "az keyvault wait-hsm",
+            "summary": "Place the CLI in a waiting state until a condition of the HSM is met.",
+            "syntax": "az keyvault wait-hsm --hsm-name\n                     [--created]\n                     [--custom]\n                     [--deleted]\n                     [--exists]\n                     [--interval]\n                     [--resource-group]\n                     [--timeout]\n                     [--updated]",
+            "required_parameters": [
+                "--hsm-name"
+            ],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--interval",
+                "--resource-group -g",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": [
+                "az keyvault wait-hsm --hsm-name MyHSM --created"
+            ]
+        }
+    ]
+}

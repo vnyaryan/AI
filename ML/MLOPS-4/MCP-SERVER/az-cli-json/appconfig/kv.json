@@ -1,0 +1,279 @@
+{
+    "command_group": "az appconfig kv",
+    "description": "Manage key-values stored in an App Configuration store.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az appconfig kv delete",
+            "summary": "Delete key-values.",
+            "syntax": "az appconfig kv delete --key\n                       [--auth-mode {key, login}]\n                       [--connection-string]\n                       [--endpoint]\n                       [--label]\n                       [--name]\n                       [--yes]",
+            "required_parameters": [
+                "--key"
+            ],
+            "optional_parameters": [
+                "--auth-mode",
+                "--connection-string",
+                "--endpoint",
+                "--label",
+                "--name -n",
+                "--yes -y"
+            ],
+            "examples": [
+                "az appconfig kv delete -n MyAppConfiguration --key color --label MyLabel --yes",
+                "az appconfig kv delete --connection-string Endpoint=https://contoso.azconfig.io;Id=xxx;Secret=xxx --key color --label MyLabel",
+                "az appconfig kv delete --endpoint https://myappconfiguration.azconfig.io --key color --auth-mode login --yes"
+            ]
+        },
+        {
+            "name": "az appconfig kv export",
+            "summary": "Export configurations to another place from your App Configuration store.",
+            "syntax": "az appconfig kv export --destination {appconfig, appservice, file}\n                       [--appservice-account]\n                       [--auth-mode {key, login}]\n                       [--connection-string]\n                       [--dest-auth-mode {key, login}]\n                       [--dest-connection-string]\n                       [--dest-endpoint]\n                       [--dest-label]\n                       [--dest-name]\n                       [--endpoint]\n                       [--export-as-reference {false, true}]\n                       [--format {json, properties, yaml}]\n                       [--key]\n                       [--label]\n                       [--name]\n                       [--naming-convention {camel, hyphen, pascal, underscore}]\n                       [--path]\n                       [--prefix]\n                       [--preserve-labels {false, true}]\n                       [--profile {appconfig/default, appconfig/kvset}]\n                       [--resolve-keyvault {false, true}]\n                       [--separator]\n                       [--skip-features {false, true}]\n                       [--skip-keyvault {false, true}]\n                       [--snapshot]\n                       [--yes]",
+            "required_parameters": [
+                "--destination -d"
+            ],
+            "optional_parameters": [
+                "--appservice-account",
+                "--auth-mode",
+                "--connection-string",
+                "--dest-auth-mode",
+                "--dest-connection-string",
+                "--dest-endpoint",
+                "--dest-label",
+                "--dest-name",
+                "--endpoint",
+                "--export-as-reference -r",
+                "--format",
+                "--key",
+                "--label",
+                "--name -n",
+                "--naming-convention",
+                "--path",
+                "--prefix",
+                "--preserve-labels",
+                "--profile",
+                "--resolve-keyvault",
+                "--separator",
+                "--skip-features",
+                "--skip-keyvault",
+                "--snapshot",
+                "--yes -y"
+            ],
+            "examples": [
+                "az appconfig kv export -n MyAppConfiguration --label test -d file --path D:/abc.json --format json",
+                "az appconfig kv export -n MyAppConfiguration -d appservice --appservice-account MyAppService",
+                "az appconfig kv export -n MyAppConfiguration --label test -d file --path D:/abc.json --format json --skip-features",
+                "az appconfig kv export -n MyAppConfiguration -d appconfig --dest-name AnotherAppConfiguration --key * --label * --preserve-labels",
+                "az appconfig kv export -n MyAppConfiguration -d appconfig --dest-name AnotherAppConfiguration --key * --label * --dest-label ExportedKeys",
+                "az appconfig kv export -d appconfig --endpoint https://myappconfiguration.azconfig.io --auth-mode login --dest-endpoint https://anotherappconfiguration.azconfig.io --dest-auth-mode login --key * --label * --preserve-labels",
+                "az appconfig kv export -n MyAppConfiguration --label test -d file --path D:/abc.json --format json --profile appconfig/kvset",
+                "az appconfig kv export -n MyAppConfiguration -d appconfig --dest-name AnotherAppConfiguration --snapshot MySnapshot"
+            ]
+        },
+        {
+            "name": "az appconfig kv import",
+            "summary": "Import configurations into your App Configuration store from another place.",
+            "syntax": "az appconfig kv import --source {appconfig, appservice, file}\n                       [--appservice-account]\n                       [--auth-mode {key, login}]\n                       [--connection-string]\n                       [--content-type]\n                       [--depth]\n                       [--endpoint]\n                       [--format {json, properties, yaml}]\n                       [--import-mode {all, ignore-match}]\n                       [--label]\n                       [--name]\n                       [--path]\n                       [--prefix]\n                       [--preserve-labels {false, true}]\n                       [--profile {appconfig/default, appconfig/kvset}]\n                       [--separator]\n                       [--skip-features {false, true}]\n                       [--src-auth-mode {key, login}]\n                       [--src-connection-string]\n                       [--src-endpoint]\n                       [--src-key]\n                       [--src-label]\n                       [--src-name]\n                       [--src-snapshot]\n                       [--strict {false, true}]\n                       [--yes]",
+            "required_parameters": [
+                "--source -s"
+            ],
+            "optional_parameters": [
+                "--appservice-account",
+                "--auth-mode",
+                "--connection-string",
+                "--content-type",
+                "--depth",
+                "--endpoint",
+                "--format",
+                "--import-mode",
+                "--label",
+                "--name -n",
+                "--path",
+                "--prefix",
+                "--preserve-labels",
+                "--profile",
+                "--separator",
+                "--skip-features",
+                "--src-auth-mode",
+                "--src-connection-string",
+                "--src-endpoint",
+                "--src-key",
+                "--src-label",
+                "--src-name",
+                "--src-snapshot",
+                "--strict",
+                "--yes -y"
+            ],
+            "examples": [
+                "az appconfig kv import -n MyAppConfiguration --label test -s file --path D:/abc.json --format json",
+                "az appconfig kv import -n MyAppConfiguration -s appconfig --src-name AnotherAppConfiguration --label ImportedKeys",
+                "az appconfig kv import -n MyAppConfiguration -s appconfig --src-name AnotherAppConfiguration --src-snapshot MySnapshot",
+                "az appconfig kv import -n MyAppConfiguration -s appservice --appservice-account MyAppService",
+                "az appconfig kv import -n MyAppConfiguration -s appconfig --src-label test --label test2 --src-name AnotherAppConfiguration --skip-features",
+                "az appconfig kv import -n MyAppConfiguration -s appconfig --src-name AnotherAppConfiguration --src-key * --src-label * --preserve-labels",
+                "az appconfig kv import -n MyAppConfiguration -s file --path D:/abc.json --format json --separator . --content-type application/json",
+                "az appconfig kv import -s appconfig --endpoint https://myappconfiguration.azconfig.io --auth-mode login --src-endpoint https://anotherappconfiguration.azconfig.io --src-auth-mode login --src-key * --src-label * --preserve-labels",
+                "az appconfig kv import -n MyAppConfiguration -s file --path D:/abc.json --format json --profile appconfig/kvset"
+            ]
+        },
+        {
+            "name": "az appconfig kv list",
+            "summary": "List key-values.",
+            "syntax": "az appconfig kv list [--all]\n                     [--auth-mode {key, login}]\n                     [--connection-string]\n                     [--datetime]\n                     [--endpoint]\n                     [--fields {content_type, etag, key, label, last_modified, locked, tags, value}]\n                     [--key]\n                     [--label]\n                     [--name]\n                     [--resolve-keyvault {false, true}]\n                     [--snapshot]\n                     [--top]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--all",
+                "--auth-mode",
+                "--connection-string",
+                "--datetime",
+                "--endpoint",
+                "--fields",
+                "--key",
+                "--label",
+                "--name -n",
+                "--resolve-keyvault",
+                "--snapshot",
+                "--top -t"
+            ],
+            "examples": [
+                "az appconfig kv list -n MyAppConfiguration --label \\0",
+                "az appconfig kv list --key color --connection-string Endpoint=https://contoso.azconfig.io;Id=xxx;Secret=xxx --label v1.*",
+                "az appconfig kv list --connection-string Endpoint=https://contoso.azconfig.io;Id=xxx;Secret=xxx --fields key value tags --datetime \"2019-05-01T11:24:12Z\"",
+                "az appconfig kv list -n MyAppConfiguration --key \"KVRef_*\" --resolve-keyvault --query \"[*].{key:key, value:value}\"",
+                "az appconfig kv list --label test,prod,\\0 -n MyAppConfiguration",
+                "az appconfig kv list --endpoint https://myappconfiguration.azconfig.io --auth-mode login",
+                "az appconfig kv list --connection-string Endpoint=https://contoso.azconfig.io;Id=xxx;Secret=xxx --snapshot MySnapshot"
+            ]
+        },
+        {
+            "name": "az appconfig kv lock",
+            "summary": "Lock a key-value to prohibit write operations.",
+            "syntax": "az appconfig kv lock --key\n                     [--auth-mode {key, login}]\n                     [--connection-string]\n                     [--endpoint]\n                     [--label]\n                     [--name]\n                     [--yes]",
+            "required_parameters": [
+                "--key"
+            ],
+            "optional_parameters": [
+                "--auth-mode",
+                "--connection-string",
+                "--endpoint",
+                "--label",
+                "--name -n",
+                "--yes -y"
+            ],
+            "examples": [
+                "az appconfig kv lock -n MyAppConfiguration --key color --label test",
+                "az appconfig kv lock --connection-string Endpoint=https://contoso.azconfig.io;Id=xxx;Secret=xxx --key color --label test --yes"
+            ]
+        },
+        {
+            "name": "az appconfig kv restore",
+            "summary": "Restore key-values.",
+            "syntax": "az appconfig kv restore --datetime\n                        [--auth-mode {key, login}]\n                        [--connection-string]\n                        [--endpoint]\n                        [--key]\n                        [--label]\n                        [--name]\n                        [--yes]",
+            "required_parameters": [
+                "--datetime"
+            ],
+            "optional_parameters": [
+                "--auth-mode",
+                "--connection-string",
+                "--endpoint",
+                "--key",
+                "--label",
+                "--name -n",
+                "--yes -y"
+            ],
+            "examples": [
+                "az appconfig kv restore -n MyAppConfiguration --datetime \"2019-05-01T11:24:12Z\"",
+                "az appconfig kv restore --key color --connection-string Endpoint=https://contoso.azconfig.io;Id=xxx;Secret=xxx --label v1.* --datetime \"2019-05-01T11:24:12Z\""
+            ]
+        },
+        {
+            "name": "az appconfig kv set",
+            "summary": "Set a key-value.",
+            "syntax": "az appconfig kv set --key\n                    [--auth-mode {key, login}]\n                    [--connection-string]\n                    [--content-type]\n                    [--endpoint]\n                    [--label]\n                    [--name]\n                    [--tags]\n                    [--value]\n                    [--yes]",
+            "required_parameters": [
+                "--key"
+            ],
+            "optional_parameters": [
+                "--auth-mode",
+                "--connection-string",
+                "--content-type",
+                "--endpoint",
+                "--label",
+                "--name -n",
+                "--tags",
+                "--value",
+                "--yes -y"
+            ],
+            "examples": [
+                "az appconfig kv set -n MyAppConfiguration --key color --label MyLabel --value red",
+                "az appconfig kv set --connection-string Endpoint=https://contoso.azconfig.io;Id=xxx;Secret=xxx --key color --value red --tags key1=value1 key2=value2",
+                "az appconfig kv set -n MyAppConfiguration --key color --value \\\"red\\\" --content-type application/json",
+                "az appconfig kv set -n MyAppConfiguration --key options --value [1,2,3] --content-type application/activity+json;charset=utf-8",
+                "az appconfig kv set -n MyAppConfiguration --key foo --value null --content-type application/json",
+                "az appconfig kv set --endpoint https://myappconfiguration.azconfig.io --key color --value red --auth-mode login"
+            ]
+        },
+        {
+            "name": "az appconfig kv set-keyvault",
+            "summary": "Set a keyvault reference.",
+            "syntax": "az appconfig kv set-keyvault --key\n                             --secret-identifier\n                             [--auth-mode {key, login}]\n                             [--connection-string]\n                             [--endpoint]\n                             [--label]\n                             [--name]\n                             [--tags]\n                             [--yes]",
+            "required_parameters": [
+                "--key",
+                "--secret-identifier"
+            ],
+            "optional_parameters": [
+                "--auth-mode",
+                "--connection-string",
+                "--endpoint",
+                "--label",
+                "--name -n",
+                "--tags",
+                "--yes -y"
+            ],
+            "examples": [
+                "az appconfig kv set-keyvault -n MyAppConfiguration --key HostSecret --label MyLabel --secret-identifier https://contoso.vault.azure.net/Secrets/DummySecret/Dummyversion",
+                "az appconfig kv set-keyvault --connection-string Endpoint=https://contoso.azconfig.io;Id=xxx;Secret=xxx --key HostSecret --secret-identifier https://contoso.vault.azure.net/Secrets/DummySecret --tags tag1=value1 tag2=value2"
+            ]
+        },
+        {
+            "name": "az appconfig kv show",
+            "summary": "Show all attributes of a key-value.",
+            "syntax": "az appconfig kv show --key\n                     [--auth-mode {key, login}]\n                     [--connection-string]\n                     [--datetime]\n                     [--endpoint]\n                     [--label]\n                     [--name]",
+            "required_parameters": [
+                "--key"
+            ],
+            "optional_parameters": [
+                "--auth-mode",
+                "--connection-string",
+                "--datetime",
+                "--endpoint",
+                "--label",
+                "--name -n"
+            ],
+            "examples": [
+                "az appconfig kv show -n MyAppConfiguration --key color --label MyLabel --datetime \"2019-05-01T11:24:12Z\"",
+                "az appconfig kv show --connection-string Endpoint=https://contoso.azconfig.io;Id=xxx;Secret=xxx --key color --label MyLabel",
+                "az appconfig kv show --key color --auth-mode login --endpoint https://myappconfiguration.azconfig.io"
+            ]
+        },
+        {
+            "name": "az appconfig kv unlock",
+            "summary": "Unlock a key-value to gain write operations.",
+            "syntax": "az appconfig kv unlock --key\n                       [--auth-mode {key, login}]\n                       [--connection-string]\n                       [--endpoint]\n                       [--label]\n                       [--name]\n                       [--yes]",
+            "required_parameters": [
+                "--key"
+            ],
+            "optional_parameters": [
+                "--auth-mode",
+                "--connection-string",
+                "--endpoint",
+                "--label",
+                "--name -n",
+                "--yes -y"
+            ],
+            "examples": [
+                "az appconfig kv unlock -n MyAppConfiguration --key color --label test",
+                "az appconfig kv unlock --connection-string Endpoint=https://contoso.azconfig.io;Id=xxx;Secret=xxx --key color --label test --yes"
+            ]
+        }
+    ]
+}

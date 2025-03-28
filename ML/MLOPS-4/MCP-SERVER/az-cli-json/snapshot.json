@@ -1,0 +1,171 @@
+{
+    "command_group": "az snapshot",
+    "description": "Manage point-in-time copies of managed disks, native blobs, or other snapshots.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az snapshot create",
+            "summary": "Create a snapshot.",
+            "syntax": "az snapshot create --name\n                   --resource-group\n                   [--accelerated-network {false, true}]\n                   [--architecture {Arm64, x64}]\n                   [--bandwidth-copy-speed {Enhanced, None}]\n                   [--copy-start {false, true}]\n                   [--disk-access]\n                   [--disk-encryption-set]\n                   [--edge-zone]\n                   [--elastic-san-id]\n                   [--encryption-type {EncryptionAtRestWithCustomerKey, EncryptionAtRestWithPlatformAndCustomerKeys, EncryptionAtRestWithPlatformKey}]\n                   [--for-upload {false, true}]\n                   [--hyper-v-generation {V1, V2}]\n                   [--incremental {false, true}]\n                   [--location]\n                   [--network-access-policy {AllowAll, AllowPrivate, DenyAll}]\n                   [--no-wait]\n                   [--public-network-access {Disabled, Enabled}]\n                   [--size-gb]\n                   [--sku {Premium_LRS, Standard_LRS, Standard_ZRS}]\n                   [--source]\n                   [--source-storage-account-id]\n                   [--tags]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--accelerated-network",
+                "--architecture",
+                "--bandwidth-copy-speed",
+                "--copy-start",
+                "--disk-access",
+                "--disk-encryption-set",
+                "--edge-zone",
+                "--elastic-san-id --elastic-san-resource-id",
+                "--encryption-type",
+                "--for-upload",
+                "--hyper-v-generation",
+                "--incremental",
+                "--location -l",
+                "--network-access-policy",
+                "--no-wait",
+                "--public-network-access",
+                "--size-gb -z",
+                "--sku",
+                "--source",
+                "--source-storage-account-id",
+                "--tags"
+            ],
+            "examples": [
+                "az snapshot create -g MyResourceGroup -n MySnapshot --source https://vhd1234.blob.core.windows.net/vhds/osdisk1234.vhd",
+                "az snapshot create -g MyResourceGroup -n MySnapshot --size-gb 10",
+                "az snapshot create -g MyResourceGroup -n MySnapshot2 --source MyDisk",
+                "az snapshot create -g MyResourceGroup -n MySnapshot2 --source \"/subscriptions/00000/resourceGroups/AnotherResourceGroup/providers/Microsoft.Compute/disks/MyDisk\"",
+                "az snapshot create -g MyResourceGroup -n MySnapshot --size-gb 10 --network-access-policy AllowPrivate --disk-access MyDiskAccessID"
+            ]
+        },
+        {
+            "name": "az snapshot delete",
+            "summary": "Delete a snapshot.",
+            "syntax": "az snapshot delete [--ids]\n                   [--name]\n                   [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                   [--resource-group]\n                   [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --snapshot-name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az snapshot grant-access",
+            "summary": "Grant read access to a snapshot.",
+            "syntax": "az snapshot grant-access --duration-in-seconds\n                         [--access {Read, Write}]\n                         [--file-format {VHD, VHDX}]\n                         [--ids]\n                         [--name]\n                         [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                         [--resource-group]\n                         [--subscription]",
+            "required_parameters": [
+                "--duration-in-seconds"
+            ],
+            "optional_parameters": [
+                "--access --access-level",
+                "--file-format",
+                "--ids",
+                "--name --snapshot-name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az snapshot grant-access --duration-in-seconds 3600 --name MySnapshot --resource-group MyResourceGroup",
+                "az snapshot grant-access --duration-in-seconds 3600 --name MySnapshot --resource-group MyResourceGroup --file-format VHDX"
+            ]
+        },
+        {
+            "name": "az snapshot list",
+            "summary": "List snapshots under a resource group.",
+            "syntax": "az snapshot list [--max-items]\n                 [--next-token]\n                 [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token",
+                "--resource-group -g"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az snapshot revoke-access",
+            "summary": "Revoke access to a snapshot.",
+            "syntax": "az snapshot revoke-access [--ids]\n                          [--name]\n                          [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                          [--resource-group]\n                          [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --snapshot-name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az snapshot revoke-access --name MySnapshot --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az snapshot show",
+            "summary": "Get information about a snapshot.",
+            "syntax": "az snapshot show [--ids]\n                 [--name]\n                 [--resource-group]\n                 [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --snapshot-name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az snapshot update",
+            "summary": "Update a snapshot.",
+            "syntax": "az snapshot update [--accelerated-network {0, 1, f, false, n, no, t, true, y, yes}]\n                   [--add]\n                   [--architecture {Arm64, x64}]\n                   [--disk-access]\n                   [--disk-encryption-set]\n                   [--encryption-type {EncryptionAtRestWithCustomerKey, EncryptionAtRestWithPlatformAndCustomerKeys, EncryptionAtRestWithPlatformKey}]\n                   [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                   [--ids]\n                   [--name]\n                   [--network-access-policy {AllowAll, AllowPrivate, DenyAll}]\n                   [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                   [--public-network-access {Disabled, Enabled}]\n                   [--remove]\n                   [--resource-group]\n                   [--set]\n                   [--sku {Premium_LRS, Standard_LRS, Standard_ZRS}]\n                   [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--accelerated-network",
+                "--add",
+                "--architecture",
+                "--disk-access",
+                "--disk-encryption-set",
+                "--encryption-type",
+                "--force-string",
+                "--ids",
+                "--name --snapshot-name -n",
+                "--network-access-policy",
+                "--no-wait",
+                "--public-network-access",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--sku",
+                "--subscription"
+            ],
+            "examples": [
+                "az snapshot update --name MySnapshot --resource-group MyResourceGroup --network-access-policy AllowPrivate --disk-access MyDiskAccessID",
+                "az snapshot update --name MySnapshot --resource-group MyResourceGroup --subscription MySubscription"
+            ]
+        },
+        {
+            "name": "az snapshot wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az snapshot wait [--created]\n                 [--custom]\n                 [--deleted]\n                 [--exists]\n                 [--ids]\n                 [--interval]\n                 [--name]\n                 [--resource-group]\n                 [--subscription]\n                 [--timeout]\n                 [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--name --snapshot-name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

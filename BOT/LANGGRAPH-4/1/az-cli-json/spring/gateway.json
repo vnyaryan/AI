@@ -1,0 +1,142 @@
+{
+    "command_group": "az spring gateway",
+    "description": "(Enterprise Tier Only) Commands to manage gateway in Azure Spring Apps.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az spring gateway clear",
+            "summary": "Clear all settings of gateway.",
+            "syntax": "az spring gateway clear --resource-group\n                        --service\n                        [--no-wait]",
+            "required_parameters": [
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [
+                "--no-wait"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az spring gateway create",
+            "summary": "Create Spring Cloud Gateway.",
+            "syntax": "az spring gateway create --resource-group\n                         --service\n                         [--instance-count]",
+            "required_parameters": [
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [
+                "--instance-count"
+            ],
+            "examples": [
+                "az spring gateway create -s MyService -g MyResourceGroup --instance-count 2"
+            ]
+        },
+        {
+            "name": "az spring gateway delete",
+            "summary": "Delete Spring Cloud Gateway.",
+            "syntax": "az spring gateway delete --resource-group\n                         --service\n                         [--yes]",
+            "required_parameters": [
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [
+                "--yes -y"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az spring gateway restart",
+            "summary": "Restart Spring Cloud Gateway.",
+            "syntax": "az spring gateway restart --resource-group\n                          --service\n                          [--no-wait]\n                          [--yes]",
+            "required_parameters": [
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [
+                "--no-wait",
+                "--yes -y"
+            ],
+            "examples": [
+                "az spring gateway restart -s MyService -g MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az spring gateway show",
+            "summary": "Show the settings, provisioning status and runtime status of gateway.",
+            "syntax": "az spring gateway show --resource-group\n                       --service",
+            "required_parameters": [
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az spring gateway sync-cert",
+            "summary": "Sync certificate of gateway.",
+            "syntax": "az spring gateway sync-cert --resource-group\n                            --service\n                            [--no-wait]\n                            [--yes]",
+            "required_parameters": [
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [
+                "--no-wait",
+                "--yes -y"
+            ],
+            "examples": [
+                "az spring gateway sync-cert -s MyService -g MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az spring gateway update",
+            "summary": "Update an existing gateway properties.",
+            "syntax": "az spring gateway update --resource-group\n                         --service\n                         [--addon-configs-file]\n                         [--addon-configs-json]\n                         [--allow-credentials {false, true}]\n                         [--allow-origin-patterns]\n                         [--allowed-headers]\n                         [--allowed-methods]\n                         [--allowed-origins]\n                         [--api-description]\n                         [--api-doc-location]\n                         [--api-title]\n                         [--api-version]\n                         [--apm-types]\n                         [--apms]\n                         [--assign-endpoint {false, true}]\n                         [--certificate-names]\n                         [--client-id]\n                         [--client-secret]\n                         [--cpu]\n                         [--enable-cert-verify {false, true}]\n                         [--enable-response-cache {false, true}]\n                         [--exposed-headers]\n                         [--https-only {false, true}]\n                         [--instance-count]\n                         [--issuer-uri]\n                         [--max-age]\n                         [--memory]\n                         [--no-wait]\n                         [--properties]\n                         [--response-cache-scope]\n                         [--response-cache-size]\n                         [--response-cache-ttl]\n                         [--scope]\n                         [--secrets]\n                         [--server-url]",
+            "required_parameters": [
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [
+                "--addon-configs-file",
+                "--addon-configs-json",
+                "--allow-credentials",
+                "--allow-origin-patterns --allowed-origin-patterns",
+                "--allowed-headers",
+                "--allowed-methods",
+                "--allowed-origins",
+                "--api-description",
+                "--api-doc-location",
+                "--api-title",
+                "--api-version",
+                "--apm-types",
+                "--apms",
+                "--assign-endpoint",
+                "--certificate-names",
+                "--client-id",
+                "--client-secret",
+                "--cpu",
+                "--enable-cert-verify --enable-certificate-verification",
+                "--enable-response-cache",
+                "--exposed-headers",
+                "--https-only",
+                "--instance-count",
+                "--issuer-uri",
+                "--max-age",
+                "--memory",
+                "--no-wait",
+                "--properties",
+                "--response-cache-scope",
+                "--response-cache-size",
+                "--response-cache-ttl",
+                "--scope",
+                "--secrets",
+                "--server-url"
+            ],
+            "examples": [
+                "az spring gateway update -s MyService -g MyResourceGroup --assign-endpoint true --https-only true",
+                "az spring gateway update -s MyService -g MyResourceGroup --enable-response-cache --response-cache-scope Route --response-cache-ttl 5m",
+                "az spring gateway update -s MyService -g MyResourceGroup --response-cache-ttl 3m",
+                "az spring gateway update -s MyService -g MyResourceGroup --enable-response-cache false"
+            ]
+        }
+    ]
+}

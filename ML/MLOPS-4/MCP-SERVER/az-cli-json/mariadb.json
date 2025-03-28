@@ -1,0 +1,6 @@
+{
+    "command_group": "az mariadb",
+    "description": "Manage Azure Database for MariaDB servers.",
+    "status": "GA",
+    "commands": []
+}

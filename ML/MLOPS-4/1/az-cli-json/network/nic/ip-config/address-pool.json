@@ -1,0 +1,45 @@
+{
+    "command_group": "az network nic ip-config address-pool",
+    "description": "Manage address pools in an IP configuration.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az network nic ip-config address-pool add",
+            "summary": "Add an address pool to an IP configuration.",
+            "syntax": "az network nic ip-config address-pool add --address-pool\n                                          --ip-config-name\n                                          --nic-name\n                                          --resource-group\n                                          [--gateway-name]\n                                          [--lb-name]",
+            "required_parameters": [
+                "--address-pool",
+                "--ip-config-name -n",
+                "--nic-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--gateway-name",
+                "--lb-name"
+            ],
+            "examples": [
+                "az network nic ip-config address-pool add -g MyResourceGroup --nic-name MyNic \\\n    -n MyIpConfig --address-pool MyAddressPool",
+                "az network nic ip-config address-pool add --address-pool MyAddressPool --ip-config-name MyIpConfig --lb-name MyLb --nic-name MyNic --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az network nic ip-config address-pool remove",
+            "summary": "Remove an address pool of an IP configuration.",
+            "syntax": "az network nic ip-config address-pool remove --address-pool\n                                             --ip-config-name\n                                             --nic-name\n                                             --resource-group\n                                             [--gateway-name]\n                                             [--lb-name]",
+            "required_parameters": [
+                "--address-pool",
+                "--ip-config-name -n",
+                "--nic-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--gateway-name",
+                "--lb-name"
+            ],
+            "examples": [
+                "az network nic ip-config address-pool remove -g MyResourceGroup --nic-name MyNic \\\n    -n MyIpConfig --address-pool MyAddressPool",
+                "az network nic ip-config address-pool remove --address-pool MyAddressPool --ip-config-name MyIpConfig --lb-name MyLb --nic-name MyNic --resource-group MyResourceGroup"
+            ]
+        }
+    ]
+}

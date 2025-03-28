@@ -1,0 +1,27 @@
+{
+    "command_group": "az automanage service-principal",
+    "description": "Manage Automanage AAD first party Application Service Principal.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az automanage service-principal list",
+            "summary": "List the Automanage AAD first party Application Service Principal details for the subscription id.",
+            "syntax": "az automanage service-principal list",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "examples": [
+                "az automanage service-principal list"
+            ]
+        },
+        {
+            "name": "az automanage service-principal show-default",
+            "summary": "Get the Automanage AAD first party Application Service Principal details for the subscription id.",
+            "syntax": "az automanage service-principal show-default",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "examples": [
+                "az automanage service-principal show-default"
+            ]
+        }
+    ]
+}

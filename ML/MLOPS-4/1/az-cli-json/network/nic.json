@@ -1,0 +1,172 @@
+{
+    "command_group": "az network nic",
+    "description": "Manage network interfaces.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az network nic create",
+            "summary": "Create a network interface.",
+            "syntax": "az network nic create --name\n                      --resource-group\n                      --subnet\n                      [--accelerated-networking {0, 1, f, false, n, no, t, true, y, yes}]\n                      [--ag-address-pools]\n                      [--application-security-groups]\n                      [--auxiliary-mode {AcceleratedConnections, Floating, MaxConnections, None}]\n                      [--auxiliary-sku {A1, A2, A4, A8, None}]\n                      [--dns-servers]\n                      [--edge-zone]\n                      [--gateway-name]\n                      [--internal-dns-name]\n                      [--ip-forwarding {0, 1, f, false, n, no, t, true, y, yes}]\n                      [--lb-address-pools]\n                      [--lb-inbound-nat-rules]\n                      [--lb-name]\n                      [--location]\n                      [--network-security-group]\n                      [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                      [--private-ip-address]\n                      [--private-ip-address-version {IPv4, IPv6}]\n                      [--public-ip-address]\n                      [--tags]\n                      [--vnet-name]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g",
+                "--subnet"
+            ],
+            "optional_parameters": [
+                "--accelerated-networking",
+                "--ag-address-pools --app-gateway-address-pools",
+                "--application-security-groups --asgs",
+                "--auxiliary-mode",
+                "--auxiliary-sku",
+                "--dns-servers",
+                "--edge-zone",
+                "--gateway-name",
+                "--internal-dns-name",
+                "--ip-forwarding",
+                "--lb-address-pools",
+                "--lb-inbound-nat-rules",
+                "--lb-name",
+                "--location -l",
+                "--network-security-group",
+                "--no-wait",
+                "--private-ip-address",
+                "--private-ip-address-version",
+                "--public-ip-address",
+                "--tags",
+                "--vnet-name"
+            ],
+            "examples": [
+                "az network nic create -g MyResourceGroup --vnet-name MyVnet --subnet MySubnet -n MyNic",
+                "az network nic create -g MyResourceGroup --vnet-name MyVnet --subnet MySubnet -n MyNic --ip-forwarding --network-security-group MyNsg",
+                "az network nic create -g MyResourceGroup --vnet-name MyVnet --subnet MySubnet -n MyNic --network-security-group MyNsg --application-security-groups Web App"
+            ]
+        },
+        {
+            "name": "az network nic delete",
+            "summary": "Delete a network interface.",
+            "syntax": "az network nic delete [--ids]\n                      [--name]\n                      [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                      [--resource-group]\n                      [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az network nic delete -g MyResourceGroup -n MyNic"
+            ]
+        },
+        {
+            "name": "az network nic list",
+            "summary": "List network interfaces.",
+            "syntax": "az network nic list [--max-items]\n                    [--next-token]\n                    [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az network nic list --query \"[?dnsSettings.internalDomainNameSuffix=`{dnsSuffix}`]\""
+            ]
+        },
+        {
+            "name": "az network nic list-effective-nsg",
+            "summary": "List all effective network security groups applied to a network interface.",
+            "syntax": "az network nic list-effective-nsg [--ids]\n                                  [--name]\n                                  [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                  [--resource-group]\n                                  [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az network nic list-effective-nsg -g MyResourceGroup -n MyNic"
+            ]
+        },
+        {
+            "name": "az network nic show",
+            "summary": "Get the details of a network interface.",
+            "syntax": "az network nic show [--expand]\n                    [--ids]\n                    [--name]\n                    [--resource-group]\n                    [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--expand",
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az network nic show -g MyResourceGroup -n MyNic --query \"dnsSettings.internalDomainNameSuffix\""
+            ]
+        },
+        {
+            "name": "az network nic show-effective-route-table",
+            "summary": "Show the effective route table applied to a network interface.",
+            "syntax": "az network nic show-effective-route-table [--ids]\n                                          [--name]\n                                          [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                          [--resource-group]\n                                          [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az network nic show-effective-route-table -g MyResourceGroup -n MyNic"
+            ]
+        },
+        {
+            "name": "az network nic update",
+            "summary": "Update a network interface.",
+            "syntax": "az network nic update [--accelerated-networking {0, 1, f, false, n, no, t, true, y, yes}]\n                      [--add]\n                      [--auxiliary-mode {AcceleratedConnections, Floating, MaxConnections, None}]\n                      [--auxiliary-sku {A1, A2, A4, A8, None}]\n                      [--dns-servers]\n                      [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                      [--ids]\n                      [--internal-dns-name]\n                      [--ip-configurations]\n                      [--ip-forwarding {0, 1, f, false, n, no, t, true, y, yes}]\n                      [--name]\n                      [--network-security-group]\n                      [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                      [--remove]\n                      [--resource-group]\n                      [--set]\n                      [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--accelerated-networking",
+                "--add",
+                "--auxiliary-mode",
+                "--auxiliary-sku",
+                "--dns-servers",
+                "--force-string",
+                "--ids",
+                "--internal-dns-name",
+                "--ip-configurations",
+                "--ip-forwarding",
+                "--name -n",
+                "--network-security-group",
+                "--no-wait",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--subscription"
+            ],
+            "examples": [
+                "az network nic update -g MyResourceGroup -n MyNic --network-security-group MyNewNsg"
+            ]
+        },
+        {
+            "name": "az network nic wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az network nic wait [--created]\n                    [--custom]\n                    [--deleted]\n                    [--exists]\n                    [--expand]\n                    [--ids]\n                    [--interval]\n                    [--name]\n                    [--resource-group]\n                    [--subscription]\n                    [--timeout]\n                    [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--expand",
+                "--ids",
+                "--interval",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

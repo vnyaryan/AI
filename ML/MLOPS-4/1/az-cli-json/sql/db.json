@@ -1,0 +1,416 @@
+{
+    "command_group": "az sql db",
+    "description": "Manage databases.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az sql db copy",
+            "summary": "Create a copy of a database.",
+            "syntax": "az sql db copy --dest-name\n               [--assign-identity {false, true}]\n               [--auto-pause-delay]\n               [--availability-zone]\n               [--backup-storage-redundancy]\n               [--capacity]\n               [--compute-model {Provisioned, Serverless}]\n               [--dest-resource-group]\n               [--dest-server]\n               [--elastic-pool]\n               [--encryption-protector]\n               [--encryption-protector-auto-rotation {false, true}]\n               [--family]\n               [--federated-client-id]\n               [--ha-replicas]\n               [--ids]\n               [--keys]\n               [--license-type {BasePrice, LicenseIncluded}]\n               [--min-capacity]\n               [--name]\n               [--no-wait]\n               [--preferred-enclave-type {Default, VBS}]\n               [--read-scale {Disabled, Enabled}]\n               [--resource-group]\n               [--server]\n               [--service-level-objective]\n               [--subscription]\n               [--tags]\n               [--umi]\n               [--zone-redundant {false, true}]",
+            "required_parameters": [
+                "--dest-name"
+            ],
+            "optional_parameters": [
+                "--assign-identity -i",
+                "--auto-pause-delay",
+                "--availability-zone",
+                "--backup-storage-redundancy --bsr",
+                "--capacity -c",
+                "--compute-model",
+                "--dest-resource-group",
+                "--dest-server",
+                "--elastic-pool",
+                "--encryption-protector",
+                "--encryption-protector-auto-rotation --epauto",
+                "--family -f",
+                "--federated-client-id",
+                "--ha-replicas --read-replicas",
+                "--ids",
+                "--keys",
+                "--license-type",
+                "--min-capacity",
+                "--name -n",
+                "--no-wait",
+                "--preferred-enclave-type",
+                "--read-scale",
+                "--resource-group -g",
+                "--server -s",
+                "--service-level-objective --service-objective",
+                "--subscription",
+                "--tags",
+                "--umi --user-assigned-identity-id",
+                "--zone-redundant -z"
+            ],
+            "examples": [
+                "az sql db copy -g mygroup -s myserver -n originalDb --dest-name newDb --service-objective S0",
+                "az sql db copy -g mygroup -s myserver -n originalDb --dest-name newDb -f Gen4 -c 1",
+                "az sql db copy -g mygroup -s myserver -n originalDb --dest-name newDb --backup-storage-redundancy Local"
+            ]
+        },
+        {
+            "name": "az sql db create",
+            "summary": "Create a database.",
+            "syntax": "az sql db create --name\n                 --resource-group\n                 --server\n                 [--assign-identity {false, true}]\n                 [--auto-pause-delay]\n                 [--availability-zone]\n                 [--backup-storage-redundancy]\n                 [--capacity]\n                 [--catalog-collation {DATABASE_DEFAULT, SQL_Latin1_General_CP1_CI_AS}]\n                 [--collation]\n                 [--compute-model {Provisioned, Serverless}]\n                 [--edition]\n                 [--elastic-pool]\n                 [--encryption-protector]\n                 [--encryption-protector-auto-rotation {false, true}]\n                 [--exhaustion-behavior {AutoPause, BillOverUsage}]\n                 [--family]\n                 [--federated-client-id]\n                 [--free-limit {false, true}]\n                 [--ha-replicas]\n                 [--keys]\n                 [--ledger-on {Disabled, Enabled}]\n                 [--license-type {BasePrice, LicenseIncluded}]\n                 [--maint-config-id]\n                 [--max-size]\n                 [--min-capacity]\n                 [--no-wait]\n                 [--preferred-enclave-type {Default, VBS}]\n                 [--read-scale {Disabled, Enabled}]\n                 [--sample-name {AdventureWorksLT}]\n                 [--service-level-objective]\n                 [--tags]\n                 [--umi]\n                 [--yes]\n                 [--zone-redundant {false, true}]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g",
+                "--server -s"
+            ],
+            "optional_parameters": [
+                "--assign-identity -i",
+                "--auto-pause-delay",
+                "--availability-zone",
+                "--backup-storage-redundancy --bsr",
+                "--capacity -c",
+                "--catalog-collation",
+                "--collation",
+                "--compute-model",
+                "--edition --tier -e",
+                "--elastic-pool",
+                "--encryption-protector",
+                "--encryption-protector-auto-rotation --epauto",
+                "--exhaustion-behavior --fleb --free-limit-exhaustion-behavior",
+                "--family -f",
+                "--federated-client-id",
+                "--free-limit --use-free-limit",
+                "--ha-replicas --read-replicas",
+                "--keys",
+                "--ledger-on",
+                "--license-type",
+                "--maint-config-id -m",
+                "--max-size",
+                "--min-capacity",
+                "--no-wait",
+                "--preferred-enclave-type",
+                "--read-scale",
+                "--sample-name",
+                "--service-level-objective --service-objective",
+                "--tags",
+                "--umi --user-assigned-identity-id",
+                "--yes -y",
+                "--zone-redundant -z"
+            ],
+            "examples": [
+                "az sql db create -g mygroup -s myserver -n mydb --service-objective S0",
+                "az sql db create -g mygroup -s myserver -n mydb -e GeneralPurpose -f Gen4 -c 1",
+                "az sql db create -g mygroup -s myserver -n mydb -z",
+                "az sql db create -g mygroup -s myserver -n mydb -z false",
+                "az sql db create -g mygroup -s myserver -n mydb -e GeneralPurpose -f Gen5 -c 2 --compute-model Serverless --auto-pause-delay 120",
+                "az sql db create -g mygroup -s myserver -n mydb -e Hyperscale -f Gen5 -c 2 --read-replicas 2",
+                "az sql db create -g mygroup -s myserver -n mydb -e GeneralPurpose --backup-storage-redundancy Local",
+                "az sql db create -g mygroup -s myserver -n mydb --preferred-enclave-type VBS",
+                "az sql db create -g mygroup -s myserver -n mydb -e GeneralPurpose -f Gen5 -c 2 --compute-model Serverless --use-free-limit --free-limit-exhaustion-behavior AutoPause"
+            ]
+        },
+        {
+            "name": "az sql db delete",
+            "summary": "Delete a database.",
+            "syntax": "az sql db delete [--ids]\n                 [--name]\n                 [--no-wait]\n                 [--resource-group]\n                 [--server]\n                 [--subscription]\n                 [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--server -s",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az sql db delete --name MyAzureSQLDatabase --resource-group MyResourceGroup --server myserver"
+            ]
+        },
+        {
+            "name": "az sql db export",
+            "summary": "Export a database to a bacpac.",
+            "syntax": "az sql db export --admin-password\n                 --admin-user\n                 --storage-key\n                 --storage-key-type {SharedAccessKey, StorageAccessKey}\n                 --storage-uri\n                 [--auth-type {ADPassword, SQL}]\n                 [--ids]\n                 [--name]\n                 [--no-wait]\n                 [--resource-group]\n                 [--server]\n                 [--subscription]",
+            "required_parameters": [
+                "--admin-password -p",
+                "--admin-user -u",
+                "--storage-key",
+                "--storage-key-type",
+                "--storage-uri"
+            ],
+            "optional_parameters": [
+                "--auth-type -a",
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--server -s",
+                "--subscription"
+            ],
+            "examples": [
+                "az storage blob generate-sas --account-name myAccountName -c myContainer -n myBacpac.bacpac \\\n    --permissions rw --expiry 2018-01-01T00:00:00Z",
+                "az sql db export -s myserver -n mydatabase -g mygroup -p password -u login \\\n    --storage-key \"?sr=b&sp=rw&se=2018-01-01T00%3A00%3A00Z&sig=mysignature&sv=2015-07-08\" \\\n    --storage-key-type SharedAccessKey \\\n    --storage-uri https://myAccountName.blob.core.windows.net/myContainer/myBacpac.bacpac",
+                "az sql db export -s myserver -n mydatabase -g mygroup -p password -u login \\\n    --storage-key MYKEY== --storage-key-type StorageAccessKey \\\n    --storage-uri https://myAccountName.blob.core.windows.net/myContainer/myBacpac.bacpac"
+            ]
+        },
+        {
+            "name": "az sql db import",
+            "summary": "Imports a bacpac into a new database, or an existing empty database.",
+            "syntax": "az sql db import --admin-password\n                 --admin-user\n                 --storage-key\n                 --storage-key-type {SharedAccessKey, StorageAccessKey}\n                 --storage-uri\n                 [--auth-type {ADPassword, SQL}]\n                 [--ids]\n                 [--name]\n                 [--no-wait]\n                 [--resource-group]\n                 [--server]\n                 [--subscription]",
+            "required_parameters": [
+                "--admin-password -p",
+                "--admin-user -u",
+                "--storage-key",
+                "--storage-key-type",
+                "--storage-uri"
+            ],
+            "optional_parameters": [
+                "--auth-type -a",
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--server -s",
+                "--subscription"
+            ],
+            "examples": [
+                "az storage blob generate-sas --account-name myAccountName -c myContainer -n myBacpac.bacpac \\\n    --permissions rw --expiry 2018-01-01T00:00:00Z",
+                "az sql db import -s myserver -n mydatabase -g mygroup -p password -u login \\\n    --storage-key \"?sr=b&sp=rw&se=2018-01-01T00%3A00%3A00Z&sig=mysignature&sv=2015-07-08\" \\\n    --storage-key-type SharedAccessKey \\\n    --storage-uri https://myAccountName.blob.core.windows.net/myContainer/myBacpac.bacpac",
+                "az sql db import -s myserver -n mydatabase -g mygroup -p password -u login --storage-key MYKEY== \\\n    --storage-key-type StorageAccessKey \\\n    --storage-uri https://myAccountName.blob.core.windows.net/myContainer/myBacpac.bacpac"
+            ]
+        },
+        {
+            "name": "az sql db list",
+            "summary": "List databases on a server or elastic pool.",
+            "syntax": "az sql db list [--elastic-pool]\n               [--ids]\n               [--resource-group]\n               [--server]\n               [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--elastic-pool",
+                "--ids",
+                "--resource-group -g",
+                "--server -s",
+                "--subscription"
+            ],
+            "examples": [
+                "az sql db list --resource-group MyResourceGroup --server myserver"
+            ]
+        },
+        {
+            "name": "az sql db list-deleted",
+            "summary": "Gets a list of restorable dropped databases.",
+            "syntax": "az sql db list-deleted [--ids]\n                       [--resource-group]\n                       [--server]\n                       [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--resource-group -g",
+                "--server -s",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az sql db list-editions",
+            "summary": "Show database editions available for the currently active subscription.",
+            "syntax": "az sql db list-editions --location\n                        [--available]\n                        [--dtu]\n                        [--edition]\n                        [--service-objective]\n                        [--show-details {max-size}]\n                        [--vcores]",
+            "required_parameters": [
+                "--location -l"
+            ],
+            "optional_parameters": [
+                "--available -a",
+                "--dtu",
+                "--edition --tier -e",
+                "--service-objective",
+                "--show-details -d",
+                "--vcores"
+            ],
+            "examples": [
+                "az sql db list-editions -l westus -o table",
+                "az sql db list-editions -l westus --edition Standard -o table",
+                "az sql db list-editions -l westus --service-objective P1 --show-details max-size"
+            ]
+        },
+        {
+            "name": "az sql db list-usages",
+            "summary": "Gets database usages.",
+            "syntax": "az sql db list-usages [--ids]\n                      [--name]\n                      [--resource-group]\n                      [--server]\n                      [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--server -s",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az sql db rename",
+            "summary": "Rename a database.",
+            "syntax": "az sql db rename --new-name\n                 [--ids]\n                 [--name]\n                 [--resource-group]\n                 [--server]\n                 [--subscription]",
+            "required_parameters": [
+                "--new-name"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--server -s",
+                "--subscription"
+            ],
+            "examples": [
+                "az sql db rename --name MyAzureSQLDatabase --new-name MyNew --resource-group MyResourceGroup --server myserver"
+            ]
+        },
+        {
+            "name": "az sql db restore",
+            "summary": "Create a new database by restoring from a backup.",
+            "syntax": "az sql db restore --dest-name\n                  [--assign-identity {false, true}]\n                  [--auto-pause-delay]\n                  [--availability-zone]\n                  [--backup-storage-redundancy]\n                  [--capacity]\n                  [--compute-model {Provisioned, Serverless}]\n                  [--deleted-time]\n                  [--edition]\n                  [--elastic-pool]\n                  [--encryption-protector]\n                  [--encryption-protector-auto-rotation {false, true}]\n                  [--family]\n                  [--federated-client-id]\n                  [--ha-replicas]\n                  [--ids]\n                  [--keys]\n                  [--license-type {BasePrice, LicenseIncluded}]\n                  [--min-capacity]\n                  [--name]\n                  [--no-wait]\n                  [--preferred-enclave-type {Default, VBS}]\n                  [--read-scale {Disabled, Enabled}]\n                  [--resource-group]\n                  [--server]\n                  [--service-level-objective]\n                  [--subscription]\n                  [--tags]\n                  [--time]\n                  [--umi]\n                  [--zone-redundant {false, true}]",
+            "required_parameters": [
+                "--dest-name"
+            ],
+            "optional_parameters": [
+                "--assign-identity -i",
+                "--auto-pause-delay",
+                "--availability-zone",
+                "--backup-storage-redundancy --bsr",
+                "--capacity -c",
+                "--compute-model",
+                "--deleted-time",
+                "--edition --tier -e",
+                "--elastic-pool",
+                "--encryption-protector",
+                "--encryption-protector-auto-rotation --epauto",
+                "--family -f",
+                "--federated-client-id",
+                "--ha-replicas --read-replicas",
+                "--ids",
+                "--keys",
+                "--license-type",
+                "--min-capacity",
+                "--name -n",
+                "--no-wait",
+                "--preferred-enclave-type",
+                "--read-scale",
+                "--resource-group -g",
+                "--server -s",
+                "--service-level-objective --service-objective",
+                "--subscription",
+                "--tags",
+                "--time -t",
+                "--umi --user-assigned-identity-id",
+                "--zone-redundant -z"
+            ],
+            "examples": [
+                "az sql db restore --dest-name MyDest --edition GeneralPurpose --name MyAzureSQLDatabase --resource-group MyResourceGroup --server myserver --subscription MySubscription --time \"2018-05-20T05:34:22\"",
+                "az sql db restore --dest-name MyDest --edition GeneralPurpose --name MyAzureSQLDatabase --resource-group MyResourceGroup --server myserver --subscription MySubscription --time \"2018-05-20T05:34:22\" --backup-storage-redundancy Geo"
+            ]
+        },
+        {
+            "name": "az sql db show",
+            "summary": "Get the details for a database.",
+            "syntax": "az sql db show [--expand-keys {false, true}]\n               [--ids]\n               [--keys-filter]\n               [--name]\n               [--resource-group]\n               [--server]\n               [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--expand-keys",
+                "--ids",
+                "--keys-filter",
+                "--name -n",
+                "--resource-group -g",
+                "--server -s",
+                "--subscription"
+            ],
+            "examples": [
+                "az sql db show --name MyAzureSQLDatabase --resource-group MyResourceGroup --server myserver"
+            ]
+        },
+        {
+            "name": "az sql db show-connection-string",
+            "summary": "Generates a connection string to a database.",
+            "syntax": "az sql db show-connection-string --client {ado.net, jdbc, odbc, php, php_pdo, sqlcmd}\n                                 [--auth-type {ADIntegrated, ADPassword, SqlPassword}]\n                                 [--ids]\n                                 [--name]\n                                 [--server]\n                                 [--subscription]",
+            "required_parameters": [
+                "--client -c"
+            ],
+            "optional_parameters": [
+                "--auth-type -a",
+                "--ids",
+                "--name -n",
+                "--server -s",
+                "--subscription"
+            ],
+            "examples": [
+                "az sql db show-connection-string -s myserver -n mydb -c ado.net"
+            ]
+        },
+        {
+            "name": "az sql db show-deleted",
+            "summary": "Get the details for a deleted database.",
+            "syntax": "az sql db show-deleted --restorable-dropped-database-id\n                       [--expand-keys {false, true}]\n                       [--ids]\n                       [--keys-filter]\n                       [--resource-group]\n                       [--server]\n                       [--subscription]",
+            "required_parameters": [
+                "--restorable-dropped-database-id -r"
+            ],
+            "optional_parameters": [
+                "--expand-keys",
+                "--ids",
+                "--keys-filter",
+                "--resource-group -g",
+                "--server -s",
+                "--subscription"
+            ],
+            "examples": [
+                "az sql db show-deleted --resource-group MyResourceGroup --server myserver --restorable-dropped-database-id \"MyAzureSQLDatabase,133203966918270000\""
+            ]
+        },
+        {
+            "name": "az sql db update",
+            "summary": "Update a database.",
+            "syntax": "az sql db update [--add]\n                 [--assign-identity {false, true}]\n                 [--auto-pause-delay]\n                 [--backup-storage-redundancy]\n                 [--capacity]\n                 [--compute-model {Provisioned, Serverless}]\n                 [--edition]\n                 [--elastic-pool]\n                 [--encryption-protector]\n                 [--encryption-protector-auto-rotation {false, true}]\n                 [--exhaustion-behavior {AutoPause, BillOverUsage}]\n                 [--family]\n                 [--federated-client-id]\n                 [--filter]\n                 [--force-string]\n                 [--free-limit {false, true}]\n                 [--ha-replicas]\n                 [--ids]\n                 [--keys]\n                 [--keys-to-remove]\n                 [--maint-config-id]\n                 [--manual-cutover {false, true}]\n                 [--max-size]\n                 [--min-capacity]\n                 [--name]\n                 [--no-wait]\n                 [--perform-cutover {false, true}]\n                 [--preferred-enclave-type {Default, VBS}]\n                 [--read-scale {Disabled, Enabled}]\n                 [--remove]\n                 [--resource-group]\n                 [--server]\n                 [--service-objective]\n                 [--set]\n                 [--subscription]\n                 [--umi]\n                 [--zone-redundant {false, true}]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--assign-identity -i",
+                "--auto-pause-delay",
+                "--backup-storage-redundancy --bsr",
+                "--capacity -c",
+                "--compute-model",
+                "--edition --tier -e",
+                "--elastic-pool",
+                "--encryption-protector",
+                "--encryption-protector-auto-rotation --epauto",
+                "--exhaustion-behavior --fleb --free-limit-exhaustion-behavior",
+                "--family -f",
+                "--federated-client-id",
+                "--filter",
+                "--force-string",
+                "--free-limit --use-free-limit",
+                "--ha-replicas --read-replicas",
+                "--ids",
+                "--keys",
+                "--keys-to-remove",
+                "--maint-config-id -m",
+                "--manual-cutover",
+                "--max-size",
+                "--min-capacity",
+                "--name -n",
+                "--no-wait",
+                "--perform-cutover",
+                "--preferred-enclave-type",
+                "--read-scale",
+                "--remove",
+                "--resource-group -g",
+                "--server -s",
+                "--service-objective",
+                "--set",
+                "--subscription",
+                "--umi --user-assigned-identity-id",
+                "--zone-redundant -z"
+            ],
+            "examples": [
+                "az sql db update -g mygroup -s myserver -n mydb --edition Standard --capacity 10 --max-size 250GB",
+                "az sql db update -g mygroup -s myserver -n mydb --edition Standard --service-objective S1 --max-size 250GB",
+                "az sql db update -g mygroup -s myserver -n mydb --edition GeneralPurpose --capacity 4 --family Gen5",
+                "az sql db update -g mygroup -s myserver -n mydb --max-size 500GB",
+                "az sql db update -g mygroup -s myserver -n mydb -z",
+                "az sql db update -g mygroup -s myserver -n mydb -z false",
+                "az sql db update -g mygroup -s myserver -n mydb --edition GeneralPurpose --capacity 2 --family Gen5 --compute-model Serverless",
+                "az sql db update -g mygroup -s myserver -n mydb --backup-storage-redundancy Local",
+                "az sql db update -g mygroup -s myserver -n mydb --preferred-enclave-type VBS",
+                "az sql db update -g mygroup -s myserver -n mydb --free-limit-exhaustion-behavior BillOverUsage",
+                "az sql db update -g mygroup -s myserver -n mydb --edition Hyperscale --service-objective HS_Gen5_2 --manual-cutover",
+                "az sql db update -g mygroup -s myserver -n mydb --perform-cutover"
+            ]
+        }
+    ]
+}

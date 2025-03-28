@@ -1,0 +1,186 @@
+{
+    "command_group": "az iot ops",
+    "description": "Manage Azure IoT Operations.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az iot ops check",
+            "summary": "Evaluate cluster-side readiness and runtime health of deployed IoT Operations services.",
+            "syntax": "az iot ops check [--as-object {false, true}]\n                 [--context]\n                 [--detail-level {0, 1, 2}]\n                 [--ops-service {akri, broker, dataflow, deviceregistry, opcua}]\n                 [--post {false, true}]\n                 [--pre {false, true}]\n                 [--resource-name]\n                 [--resources {asset, assetendpointprofile, assettype, broker, brokerauthentication, brokerauthorization, brokerlistener, dataflow, dataflowendpoint, dataflowprofile}]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--as-object",
+                "--context",
+                "--detail-level",
+                "--ops-service --svc",
+                "--post",
+                "--pre",
+                "--resource-name --rn",
+                "--resources"
+            ],
+            "examples": [
+                "az iot ops check",
+                "az iot ops check --svc broker --detail-level 1",
+                "az iot ops check --svc dataflow --as-object",
+                "az iot ops check --svc deviceregistry --detail-level 2 --resources asset",
+                "az iot ops check --svc deviceregistry --resources asset --resource-name 'my-asset-*'"
+            ]
+        },
+        {
+            "name": "az iot ops create",
+            "summary": "Create an IoT Operations instance.",
+            "syntax": "az iot ops create --cluster\n                  --name\n                  --resource-group\n                  --sr-resource-id\n                  [--add-insecure-listener {false, true}]\n                  [--bp]\n                  [--br]\n                  [--broker-backend-workers]\n                  [--broker-config-file]\n                  [--broker-frontend-replicas]\n                  [--broker-frontend-workers]\n                  [--broker-listener-type {ClusterIp, LoadBalancer, NodePort}]\n                  [--broker-mem-profile {High, Low, Medium, Tiny}]\n                  [--cluster-namespace]\n                  [--custom-location]\n                  [--description]\n                  [--df-profile-instances]\n                  [--enable-rsync {false, true}]\n                  [--kubernetes-distro {K3s, K8s, MicroK8s}]\n                  [--location]\n                  [--no-progress {false, true}]\n                  [--ops-config]\n                  [--runtime-socket]\n                  [--tags]\n                  [--trust-settings]\n                  [--yes {false, true}]",
+            "required_parameters": [
+                "--cluster",
+                "--name -n",
+                "--resource-group -g",
+                "--sr-resource-id"
+            ],
+            "optional_parameters": [
+                "--add-insecure-listener",
+                "--bp --broker-backend-part",
+                "--br --broker-backend-rf",
+                "--broker-backend-workers --bw",
+                "--broker-config-file",
+                "--broker-frontend-replicas --fr",
+                "--broker-frontend-workers --fw",
+                "--broker-listener-type --lt",
+                "--broker-mem-profile --mp",
+                "--cluster-namespace",
+                "--custom-location",
+                "--description",
+                "--df-profile-instances",
+                "--enable-rsync",
+                "--kubernetes-distro",
+                "--location",
+                "--no-progress",
+                "--ops-config",
+                "--runtime-socket",
+                "--tags",
+                "--trust-settings",
+                "--yes -y"
+            ],
+            "examples": [
+                "az iot ops create --cluster mycluster -g myresourcegroup --name myinstance --sr-resource-id $SCHEMA_REGISTRY_RESOURCE_ID",
+                "az iot ops create --cluster mycluster -g myresourcegroup --name myinstance --sr-resource-id $SCHEMA_REGISTRY_RESOURCE_ID --broker-mem-profile High --broker-backend-workers 4 --description 'Contoso Factory' --tags tier=testX1",
+                "az iot ops create --cluster mycluster -g myresourcegroup --name myinstance --sr-resource-id $SCHEMA_REGISTRY_RESOURCE_ID --add-insecure-listener",
+                "az iot ops create --cluster mycluster -g myresourcegroup --name myinstance --sr-resource-id $SCHEMA_REGISTRY_RESOURCE_ID --enable-rsync",
+                "az iot ops create --cluster mycluster -g myresourcegroup --name myinstance --sr-resource-id $SCHEMA_REGISTRY_RESOURCE_ID --trust-settings configMapName=example-bundle configMapKey=trust-bundle.pem issuerKind=ClusterIssuer issuerName=trust-manager-selfsigned-issuer"
+            ]
+        },
+        {
+            "name": "az iot ops delete",
+            "summary": "Delete IoT Operations from the cluster.",
+            "syntax": "az iot ops delete --resource-group\n                  [--cluster]\n                  [--force {false, true}]\n                  [--include-deps {false, true}]\n                  [--name]\n                  [--no-progress {false, true}]\n                  [--yes {false, true}]",
+            "required_parameters": [
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--cluster",
+                "--force",
+                "--include-deps",
+                "--name -n",
+                "--no-progress",
+                "--yes -y"
+            ],
+            "examples": [
+                "az iot ops delete -n myinstance -g myresourcegroup",
+                "az iot ops delete -n myinstance -g myresourcegroup -y",
+                "az iot ops delete -n myinstance -g myresourcegroup --force",
+                "az iot ops delete --cluster mycluster -g myresourcegroup",
+                "az iot ops delete -n myinstance -g myresourcegroup --include-deps"
+            ]
+        },
+        {
+            "name": "az iot ops init",
+            "summary": "Bootstrap the Arc-enabled cluster for IoT Operations deployment.",
+            "syntax": "az iot ops init --cluster\n                --resource-group\n                [--enable-fault-tolerance {false, true}]\n                [--ensure-latest {false, true}]\n                [--no-progress {false, true}]\n                [--user-trust {false, true}]",
+            "required_parameters": [
+                "--cluster",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--enable-fault-tolerance",
+                "--ensure-latest",
+                "--no-progress",
+                "--user-trust --ut"
+            ],
+            "examples": [
+                "az iot ops init --cluster mycluster -g myresourcegroup",
+                "az iot ops init --cluster mycluster -g myresourcegroup --enable-fault-tolerance",
+                "az iot ops init --cluster mycluster -g myresourcegroup --user-trust"
+            ]
+        },
+        {
+            "name": "az iot ops list",
+            "summary": "List IoT Operations instances.",
+            "syntax": "az iot ops list [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az iot ops list",
+                "az iot ops list -g myresourcegroup",
+                "az iot ops list -g myresourcegroup --query \"[?tags.env == 'prod']\""
+            ]
+        },
+        {
+            "name": "az iot ops show",
+            "summary": "Show an IoT Operations instance.",
+            "syntax": "az iot ops show --name\n                --resource-group\n                [--tree {false, true}]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--tree"
+            ],
+            "examples": [
+                "az iot ops show --name myinstance -g myresourcegroup",
+                "az iot ops show --name myinstance -g myresourcegroup --tree"
+            ]
+        },
+        {
+            "name": "az iot ops update",
+            "summary": "Update an IoT Operations instance.",
+            "syntax": "az iot ops update --name\n                  --resource-group\n                  [--description]\n                  [--tags]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--description",
+                "--tags"
+            ],
+            "examples": [
+                "az iot ops update --name myinstance -g myresourcegroup --tags a=b c=d",
+                "az iot ops update --name myinstance -g myresourcegroup --tags \"\"",
+                "az iot ops update --name myinstance -g myresourcegroup --desc \"Fabrikam Widget Factory B42\""
+            ]
+        },
+        {
+            "name": "az iot ops upgrade",
+            "summary": "Upgrade an IoT Operations instance.",
+            "syntax": "az iot ops upgrade --name\n                   --resource-group\n                   [--acs-config]\n                   [--no-progress {false, true}]\n                   [--ops-config]\n                   [--osm-config]\n                   [--plat-config]\n                   [--ssc-config]\n                   [--yes {false, true}]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--acs-config",
+                "--no-progress",
+                "--ops-config",
+                "--osm-config",
+                "--plat-config",
+                "--ssc-config",
+                "--yes -y"
+            ],
+            "examples": [
+                "az iot ops upgrade --name myinstance -g myresourcegroup",
+                "az iot ops upgrade --name myinstance -g myresourcegroup -y",
+                "az iot ops upgrade --name myinstance -g myresourcegroup --ops-config key1=value1 deletekey"
+            ]
+        }
+    ]
+}

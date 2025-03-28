@@ -1,0 +1,87 @@
+{
+    "command_group": "az stack-hci-vm storagepath",
+    "description": "Manage storagepath with stack-hci-vm.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az stack-hci-vm storagepath create",
+            "summary": "Create a storage path.",
+            "syntax": "az stack-hci-vm storagepath create --custom-location\n                                   --name\n                                   --path\n                                   --resource-group\n                                   [--location]\n                                   [--polling-interval]\n                                   [--tags]",
+            "required_parameters": [
+                "--custom-location",
+                "--name",
+                "--path",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--location -l",
+                "--polling-interval",
+                "--tags"
+            ],
+            "examples": [
+                "az stack-hci-vm storagepath create --resource-group \"test-rg\" --custom-location \"/subscriptions/a95612cb-f1fa-4daa-a4fd-272844fa512c/resourceGroups/dogfoodarc/providers/Microsoft.ExtendedLocation/customLocations/dogfood-location\" --location \"West US2\" --path \"C:\\\\path_storage\" --name \"Default_StoragePath\""
+            ]
+        },
+        {
+            "name": "az stack-hci-vm storagepath delete",
+            "summary": "Delete a storage path.",
+            "syntax": "az stack-hci-vm storagepath delete [--ids]\n                                   [--name]\n                                   [--polling-interval]\n                                   [--resource-group]\n                                   [--subscription]\n                                   [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name",
+                "--polling-interval",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az stack-hci-vm storagepath delete --resource-group \"test-rg\" --name \"Default_StoragePath\""
+            ]
+        },
+        {
+            "name": "az stack-hci-vm storagepath list",
+            "summary": "List all the storage paths.",
+            "syntax": "az stack-hci-vm storagepath list [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az stack-hci-vm storagepath list --resource-group \"test-rg\"",
+                "az stack-hci-vm storagepath list"
+            ]
+        },
+        {
+            "name": "az stack-hci-vm storagepath show",
+            "summary": "Get the details of a storage path.",
+            "syntax": "az stack-hci-vm storagepath show [--ids]\n                                 [--name]\n                                 [--resource-group]\n                                 [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az stack-hci-vm storagepath show --resource-group \"test-rg\" --name \"Default_StoragePath\""
+            ]
+        },
+        {
+            "name": "az stack-hci-vm storagepath update",
+            "summary": "Update a storage path.",
+            "syntax": "az stack-hci-vm storagepath update [--ids]\n                                   [--name]\n                                   [--resource-group]\n                                   [--subscription]\n                                   [--tags]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name",
+                "--resource-group -g",
+                "--subscription",
+                "--tags"
+            ],
+            "examples": [
+                "az stack-hci-vm storagepath update --resource-group \"test-rg\" --tags additionalProperties=\"sample\" --name \"Default_StoragePath\""
+            ]
+        }
+    ]
+}

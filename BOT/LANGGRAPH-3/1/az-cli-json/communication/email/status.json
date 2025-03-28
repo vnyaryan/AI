@@ -1,0 +1,20 @@
+{
+    "command_group": "az communication email status",
+    "description": "Commands to get the status of emails previously sent using Azure Communication Services Email service.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az communication email status get",
+            "summary": "Get status of an email previously sent.",
+            "syntax": "az communication email status get --connection-string\n                                  --operation-id",
+            "required_parameters": [
+                "--connection-string",
+                "--operation-id"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az communication email status get --operation-id \"01234567-89ab-cdef-0123-012345678901\" --connection-string \"endpoint=XXXXXXXXXXXXXXXX;accesskey=XXXXXXXXXXXXXXXXXXXXXX\""
+            ]
+        }
+    ]
+}

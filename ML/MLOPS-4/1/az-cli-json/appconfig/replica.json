@@ -1,0 +1,68 @@
+{
+    "command_group": "az appconfig replica",
+    "description": "Manage replicas of an App Configuration store.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az appconfig replica create",
+            "summary": "Create a new replica of an App Configuration store.",
+            "syntax": "az appconfig replica create --location\n                            --name\n                            --store-name\n                            [--resource-group]",
+            "required_parameters": [
+                "--location -l",
+                "--name -n",
+                "--store-name -s"
+            ],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az appconfig replica create --store-name MyAppConfiguration --name MyReplicaName --location westus"
+            ]
+        },
+        {
+            "name": "az appconfig replica delete",
+            "summary": "Delete a replica of an App Configuration store.",
+            "syntax": "az appconfig replica delete --name\n                            --store-name\n                            [--resource-group]\n                            [--yes]",
+            "required_parameters": [
+                "--name -n",
+                "--store-name -s"
+            ],
+            "optional_parameters": [
+                "--resource-group -g",
+                "--yes -y"
+            ],
+            "examples": [
+                "az appconfig replica delete --store-name MyAppConfiguration --name MyReplicaName"
+            ]
+        },
+        {
+            "name": "az appconfig replica list",
+            "summary": "List replicas of an App Configuration store.",
+            "syntax": "az appconfig replica list --store-name\n                          [--resource-group]",
+            "required_parameters": [
+                "--store-name -s"
+            ],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az appconfig replica list --store-name MyAppConfiguration"
+            ]
+        },
+        {
+            "name": "az appconfig replica show",
+            "summary": "Show details of a replica of an App Configuration store.",
+            "syntax": "az appconfig replica show --name\n                          --store-name\n                          [--resource-group]",
+            "required_parameters": [
+                "--name -n",
+                "--store-name -s"
+            ],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az appconfig replica show --store-name MyAppConfiguration --name MyReplicaName"
+            ]
+        }
+    ]
+}

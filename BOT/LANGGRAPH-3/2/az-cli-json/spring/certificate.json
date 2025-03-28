@@ -1,0 +1,97 @@
+{
+    "command_group": "az spring certificate",
+    "description": "Commands to manage certificates.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az spring certificate add",
+            "summary": "Add a certificate in Azure Spring Apps.",
+            "syntax": "az spring certificate add --name\n                          --resource-group\n                          --service\n                          [--enable-auto-sync {false, true}]\n                          [--only-public-cert {false, true}]\n                          [--public-certificate-file]\n                          [--vault-certificate-name]\n                          [--vault-uri]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [
+                "--enable-auto-sync",
+                "--only-public-cert",
+                "--public-certificate-file -f",
+                "--vault-certificate-name",
+                "--vault-uri"
+            ],
+            "examples": [
+                "az spring certificate add --name MyCertName --vault-uri MyKeyVaultUri --vault-certificate-name MyKeyVaultCertName --service MyCluster --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az spring certificate list",
+            "summary": "List all certificates in Azure Spring Apps.",
+            "syntax": "az spring certificate list --resource-group\n                           --service\n                           [--certificate-type {ContentCertificate, KeyVaultCertificate}]",
+            "required_parameters": [
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [
+                "--certificate-type"
+            ],
+            "examples": [
+                "az spring certificate list --service MyCluster --resource-group MyResourceGroup -o table"
+            ]
+        },
+        {
+            "name": "az spring certificate list-reference-app",
+            "summary": "List all the apps reference an existing certificate in the Azure Spring Apps.",
+            "syntax": "az spring certificate list-reference-app --name\n                                         --resource-group\n                                         --service",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az spring certificate list-reference-app --service MyCluster --resource-group MyResourceGroup --name MyCertName"
+            ]
+        },
+        {
+            "name": "az spring certificate remove",
+            "summary": "Remove a certificate in Azure Spring Apps.",
+            "syntax": "az spring certificate remove --name\n                             --resource-group\n                             --service",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az spring certificate show",
+            "summary": "Show a certificate in Azure Spring Apps.",
+            "syntax": "az spring certificate show --name\n                           --resource-group\n                           --service",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az spring certificate update",
+            "summary": "Update a certificate in Azure Spring Apps.",
+            "syntax": "az spring certificate update --name\n                             --resource-group\n                             --service\n                             [--enable-auto-sync {false, true}]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [
+                "--enable-auto-sync"
+            ],
+            "examples": [
+                "az spring certificate update --name MyCertName --service MyCluster --resource-group MyResourceGroup --enable-auto-sync true",
+                "az spring certificate update --name MyCertName --service MyCluster --resource-group MyResourceGroup --enable-auto-sync false"
+            ]
+        }
+    ]
+}

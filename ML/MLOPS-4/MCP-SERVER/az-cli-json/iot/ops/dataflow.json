@@ -1,0 +1,36 @@
+{
+    "command_group": "az iot ops dataflow",
+    "description": "Dataflow management.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az iot ops dataflow list",
+            "summary": "List dataflows associated with a dataflow profile.",
+            "syntax": "az iot ops dataflow list --instance\n                         --profile\n                         --resource-group",
+            "required_parameters": [
+                "--instance -i",
+                "--profile -p",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az iot ops dataflow list -p myprofile --in mycluster-ops-instance -g myresourcegroup"
+            ]
+        },
+        {
+            "name": "az iot ops dataflow show",
+            "summary": "Show details of a dataflow associated with a dataflow profile.",
+            "syntax": "az iot ops dataflow show --instance\n                         --name\n                         --profile\n                         --resource-group",
+            "required_parameters": [
+                "--instance -i",
+                "--name -n",
+                "--profile -p",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az iot ops dataflow show -n mydataflow -p myprofile --in mycluster-ops-instance -g myresourcegroup"
+            ]
+        }
+    ]
+}

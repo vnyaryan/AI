@@ -1,0 +1,22 @@
+{
+    "command_group": "az kusto operation-result-location",
+    "description": "Manage operation result location with kusto.",
+    "status": "Experimental",
+    "commands": [
+        {
+            "name": "az kusto operation-result-location show",
+            "summary": "Returns operation results.",
+            "syntax": "az kusto operation-result-location show [--ids]\n                                        [--location]\n                                        [--operation-id]\n                                        [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--location -l",
+                "--operation-id",
+                "--subscription"
+            ],
+            "examples": [
+                "az kusto operation-result-location show --operation-id \"30972f1b-b61d-4fd8-bd34-3dcfa24670f3\" --location \"westus\""
+            ]
+        }
+    ]
+}

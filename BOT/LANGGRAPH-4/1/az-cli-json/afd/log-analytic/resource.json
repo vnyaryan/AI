@@ -1,0 +1,18 @@
+{
+    "command_group": "az afd log-analytic resource",
+    "description": "Manage endpoints and custom domains available for AFD log analysis.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az afd log-analytic resource list",
+            "summary": "Get all endpoints and custom domains available for AFD log report.",
+            "syntax": "az afd log-analytic resource list --profile-name\n                                  --resource-group",
+            "required_parameters": [
+                "--profile-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        }
+    ]
+}

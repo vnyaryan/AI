@@ -1,0 +1,126 @@
+{
+    "command_group": "az connection",
+    "description": "Commands to manage Service Connector local connections which allow local environment to connect Azure Resource. If you want to manage connection for compute service, please run 'az webapp/containerapp/spring connection'.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az connection delete",
+            "summary": "Delete a Service Connector local connection.",
+            "syntax": "az connection delete [--connection]\n                     [--id]\n                     [--location]\n                     [--no-wait]\n                     [--resource-group]\n                     [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--connection",
+                "--id",
+                "--location -l",
+                "--no-wait",
+                "--resource-group -g",
+                "--yes -y"
+            ],
+            "examples": [
+                "az connection delete",
+                "az connection delete -g resourceGroup --connection MyConnection",
+                "az connection delete --id /subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.ServiceLinker/locations/{location}/connectors/{connectorName}"
+            ]
+        },
+        {
+            "name": "az connection generate-configuration",
+            "summary": "Generate configurations of a Service Connector local connection. The result should be put to application configuration file or set as environment variables.",
+            "syntax": "az connection generate-configuration [--connection]\n                                     [--id]\n                                     [--location]\n                                     [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--connection",
+                "--id",
+                "--location -l",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az connection generate-configuration -g resource_group --connection MyConnection",
+                "az connection generate-configuration --id /subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.ServiceLinker/locations/{location}/connectors/{connectorName}"
+            ]
+        },
+        {
+            "name": "az connection list",
+            "summary": "List local connections of Service Connector.",
+            "syntax": "az connection list --resource-group\n                   [--location]",
+            "required_parameters": [
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--location -l"
+            ],
+            "examples": [
+                "az connection list -g resource_group",
+                "az connection list -g resource_group --location eastus"
+            ]
+        },
+        {
+            "name": "az connection list-support-types",
+            "summary": "List client types and auth types supported by local connections.",
+            "syntax": "az connection list-support-types [--target-type {app-insights, appconfig, cognitiveservices, confluent-cloud, containerapp, cosmos-cassandra, cosmos-gremlin, cosmos-mongo, cosmos-sql, cosmos-table, eventhub, fabric-sql, keyvault, mysql, mysql-flexible, postgres, postgres-flexible, redis, redis-enterprise, servicebus, signalr, sql, storage-blob, storage-file, storage-queue, storage-table, webpubsub}]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--target-type -t"
+            ],
+            "examples": [
+                "az connection list-support-types -o table",
+                "az connection list-support-types --target-type storage-blob -o table"
+            ]
+        },
+        {
+            "name": "az connection show",
+            "summary": "Get the details of a Service Connector local connection.",
+            "syntax": "az connection show [--connection]\n                   [--id]\n                   [--location]\n                   [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--connection",
+                "--id",
+                "--location -l",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az connection show",
+                "az connection show -g resourceGroup --connection MyConnection",
+                "az connection show --id /subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.ServiceLinker/locations/{location}/connectors/{connectorName}"
+            ]
+        },
+        {
+            "name": "az connection validate",
+            "summary": "Validate a Service Connector local connection.",
+            "syntax": "az connection validate [--connection]\n                       [--id]\n                       [--location]\n                       [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--connection",
+                "--id",
+                "--location -l",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az connection validate",
+                "az connection validate -g resourceGroup --connection MyConnection",
+                "az connection validate --id /subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.ServiceLinker/locations/{location}/connectors/{connectorName}"
+            ]
+        },
+        {
+            "name": "az connection wait",
+            "summary": "Place the CLI in a waiting state until a condition of the connection is met.",
+            "syntax": "az connection wait [--connection]\n                   [--created]\n                   [--custom]\n                   [--deleted]\n                   [--exists]\n                   [--id]\n                   [--interval]\n                   [--location]\n                   [--resource-group]\n                   [--timeout]\n                   [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--connection",
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--id",
+                "--interval",
+                "--location -l",
+                "--resource-group -g",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": [
+                "az connection wait --id /subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.ServiceLinker/locations/{location}/connectors/{connectorName} --created"
+            ]
+        }
+    ]
+}

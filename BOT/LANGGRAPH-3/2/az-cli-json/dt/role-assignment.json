@@ -1,0 +1,59 @@
+{
+    "command_group": "az dt role-assignment",
+    "description": "Manage RBAC role assignments for a Digital Twins instance.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az dt role-assignment create",
+            "summary": "Assign a user, group or service principal to a role against a Digital Twins instance.",
+            "syntax": "az dt role-assignment create --assignee\n                             --dt-name\n                             --role\n                             [--resource-group]",
+            "required_parameters": [
+                "--assignee",
+                "--dt-name --dtn -n",
+                "--role"
+            ],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az dt role-assignment create -n {instance_name} --assignee \"owneruser@microsoft.com\" --role \"Azure Digital Twins Data Owner\"",
+                "az dt role-assignment create -n {instance_name} --assignee \"97a89267-0966-4054-a156-b7d86ef8e216\" --role \"Azure Digital Twins Data Reader\"",
+                "az dt role-assignment create -n {instance_name} --assignee {service_principal_name_or_id} --role {role_name_or_id}"
+            ]
+        },
+        {
+            "name": "az dt role-assignment delete",
+            "summary": "Remove a user, group or service principal role assignment from a Digital Twins instance.",
+            "syntax": "az dt role-assignment delete --dt-name\n                             [--assignee]\n                             [--resource-group]\n                             [--role]",
+            "required_parameters": [
+                "--dt-name --dtn -n"
+            ],
+            "optional_parameters": [
+                "--assignee",
+                "--resource-group -g",
+                "--role"
+            ],
+            "examples": [
+                "az dt role-assignment delete -n {instance_name} --assignee \"removeuser@microsoft.com\" --role \"Azure Digital Twins Data Reader\"",
+                "az dt role-assignment delete -n {instance_name} --assignee \"removeuser@microsoft.com\""
+            ]
+        },
+        {
+            "name": "az dt role-assignment list",
+            "summary": "List the existing role assignments of a Digital Twins instance.",
+            "syntax": "az dt role-assignment list --dt-name\n                           [--include-inherited {false, true}]\n                           [--resource-group]\n                           [--role]",
+            "required_parameters": [
+                "--dt-name --dtn -n"
+            ],
+            "optional_parameters": [
+                "--include-inherited",
+                "--resource-group -g",
+                "--role"
+            ],
+            "examples": [
+                "az dt role-assignment list -n {instance_name}",
+                "az dt role-assignment list -n {instance_name} --role {role_name_or_id}"
+            ]
+        }
+    ]
+}

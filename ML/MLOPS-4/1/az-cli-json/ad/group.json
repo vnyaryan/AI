@@ -1,0 +1,66 @@
+{
+    "command_group": "az ad group",
+    "description": "Manage Microsoft Entra groups.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az ad group create",
+            "summary": "Create a group.",
+            "syntax": "az ad group create --display-name\n                   --mail-nickname\n                   [--description]\n                   [--force {false, true}]",
+            "required_parameters": [
+                "--display-name",
+                "--mail-nickname"
+            ],
+            "optional_parameters": [
+                "--description",
+                "--force"
+            ],
+            "examples": [
+                "az ad group create --display-name MyDisplay --mail-nickname MyDisplay"
+            ]
+        },
+        {
+            "name": "az ad group delete",
+            "summary": "Delete a group.",
+            "syntax": "az ad group delete --group",
+            "required_parameters": [
+                "--group -g"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az ad group get-member-groups",
+            "summary": "Get a collection of object IDs of groups of which the specified group is a member.",
+            "syntax": "az ad group get-member-groups --group\n                              [--security-enabled-only {false, true}]",
+            "required_parameters": [
+                "--group -g"
+            ],
+            "optional_parameters": [
+                "--security-enabled-only"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az ad group list",
+            "summary": "List groups in the directory.",
+            "syntax": "az ad group list [--display-name]\n                 [--filter]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--display-name",
+                "--filter"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az ad group show",
+            "summary": "Get the details of a group.",
+            "syntax": "az ad group show --group",
+            "required_parameters": [
+                "--group -g"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        }
+    ]
+}

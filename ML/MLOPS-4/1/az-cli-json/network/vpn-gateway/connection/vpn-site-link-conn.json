@@ -1,0 +1,69 @@
+{
+    "command_group": "az network vpn-gateway connection vpn-site-link-conn",
+    "description": "Manage site-to-site VPN gateway connection VPN site link connection.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az network vpn-gateway connection vpn-site-link-conn add",
+            "summary": "Add a VPN site link connection to a site-to-site VPN gateway connection.",
+            "syntax": "az network vpn-gateway connection vpn-site-link-conn add --vpn-site-link\n                                                         [--connection-bandwidth]\n                                                         [--connection-name]\n                                                         [--enable-bgp {false, true}]\n                                                         [--gateway-name]\n                                                         [--ids]\n                                                         [--name]\n                                                         [--no-wait]\n                                                         [--rate-limiting {false, true}]\n                                                         [--resource-group]\n                                                         [--routing-weight]\n                                                         [--shared-key]\n                                                         [--subscription]\n                                                         [--use-local-azure-ip-address {false, true}]\n                                                         [--use-policy-based-traffic-selectors {false, true}]\n                                                         [--vpn-connection-protocol-type {IKEv1, IKEv2}]\n                                                         [--vpn-link-connection-mode {Default, InitiatorOnly, ResponderOnly}]",
+            "required_parameters": [
+                "--vpn-site-link"
+            ],
+            "optional_parameters": [
+                "--connection-bandwidth",
+                "--connection-name",
+                "--enable-bgp",
+                "--gateway-name",
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--rate-limiting",
+                "--resource-group -g",
+                "--routing-weight",
+                "--shared-key",
+                "--subscription",
+                "--use-local-azure-ip-address",
+                "--use-policy-based-traffic-selectors",
+                "--vpn-connection-protocol-type",
+                "--vpn-link-connection-mode"
+            ],
+            "examples": [
+                "az network vpn-gateway connection vpn-site-link-conn add -g MyRG --connection-name MyConnection --gateway-name MyGateway -n MyVPNSiteLinkConn --vpn-site-link /subscriptions/MySub/resourceGroups/MyRG/providers/Microsoft.Network/vpnSites/MyVPNSite/vpnSiteLinks/vpnsitelink --vpn-connection-protocol-type IKEv2"
+            ]
+        },
+        {
+            "name": "az network vpn-gateway connection vpn-site-link-conn list",
+            "summary": "List site-to-site VPN gateway connection VPN site link connection.",
+            "syntax": "az network vpn-gateway connection vpn-site-link-conn list --connection-name\n                                                          --gateway-name\n                                                          --resource-group",
+            "required_parameters": [
+                "--connection-name",
+                "--gateway-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az network vpn-gateway connection vpn-site-link-conn list -g MyRG --connection-name MyConnection --gateway-name MyGateway"
+            ]
+        },
+        {
+            "name": "az network vpn-gateway connection vpn-site-link-conn remove",
+            "summary": "Remove a VPN site link connection from a site-to-site VPN gateway connection.",
+            "syntax": "az network vpn-gateway connection vpn-site-link-conn remove --index\n                                                            [--connection-name]\n                                                            [--gateway-name]\n                                                            [--ids]\n                                                            [--no-wait]\n                                                            [--resource-group]\n                                                            [--subscription]",
+            "required_parameters": [
+                "--index"
+            ],
+            "optional_parameters": [
+                "--connection-name",
+                "--gateway-name",
+                "--ids",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az network vpn-gateway connection vpn-site-link-conn remove -g MyRG --connection-name MyConnection --gateway-name MyGateway --index 1"
+            ]
+        }
+    ]
+}

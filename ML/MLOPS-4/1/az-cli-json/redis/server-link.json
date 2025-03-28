@@ -1,0 +1,55 @@
+{
+    "command_group": "az redis server-link",
+    "description": "Manage Redis server links.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az redis server-link create",
+            "summary": "Adds a server link to the Redis cache (requires Premium SKU).",
+            "syntax": "az redis server-link create --name\n                            --replication-role {Primary, Secondary}\n                            --resource-group\n                            --server-to-link",
+            "required_parameters": [
+                "--name -n",
+                "--replication-role",
+                "--resource-group -g",
+                "--server-to-link"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az redis server-link delete",
+            "summary": "Deletes the linked server from a redis cache (requires Premium SKU).",
+            "syntax": "az redis server-link delete --linked-server-name\n                            --name\n                            --resource-group",
+            "required_parameters": [
+                "--linked-server-name",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az redis server-link list",
+            "summary": "Gets the list of linked servers associated with this redis cache (requires Premium SKU).",
+            "syntax": "az redis server-link list --name\n                          --resource-group",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az redis server-link show",
+            "summary": "Gets the detailed information about a linked server of a redis cache (requires Premium SKU).",
+            "syntax": "az redis server-link show --linked-server-name\n                          --name\n                          --resource-group",
+            "required_parameters": [
+                "--linked-server-name",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        }
+    ]
+}

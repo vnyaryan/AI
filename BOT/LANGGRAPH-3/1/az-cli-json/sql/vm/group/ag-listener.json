@@ -1,0 +1,97 @@
+{
+    "command_group": "az sql vm group ag-listener",
+    "description": "Manage SQL availability group listeners.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az sql vm group ag-listener create",
+            "summary": "Creates an availability group listener.",
+            "syntax": "az sql vm group ag-listener create --ag-name\n                                   --group-name\n                                   --ip-address\n                                   --load-balancer\n                                   --name\n                                   --probe-port\n                                   --resource-group\n                                   --sqlvms\n                                   --subnet\n                                   [--port]\n                                   [--public-ip]\n                                   [--vnet-name]",
+            "required_parameters": [
+                "--ag-name -a",
+                "--group-name -r",
+                "--ip-address -i",
+                "--load-balancer -b",
+                "--name -n",
+                "--probe-port -e",
+                "--resource-group -g",
+                "--sqlvms -q",
+                "--subnet -u"
+            ],
+            "optional_parameters": [
+                "--port -p",
+                "--public-ip -c",
+                "--vnet-name"
+            ],
+            "examples": [
+                "az sql vm group ag-listener create -n aglistenertest -g myresourcegroup --ag-name agname --group-name sqlvmgroup --ip-address 10.0.0.11 --load-balancer '/subscriptions/{yoursubscription}/resourceGroups/{yourrg}/providers/Microsoft.Network/loadBalancers/{lbname}' --probe-port 59999 --subnet '/subscriptions/{yoursubscription}/resourceGroups/{yourrg}/providers/Microsoft.Network/virtualNetworks/{vnname}/subnets/{subnetname}' --sqlvms sqlvm1 sqlvm2",
+                "az sql vm group ag-listener create -n aglistenertest -g myresourcegroup --ag-name agname --group-name sqlvmgroup --ip-address 10.0.0.11 --load-balancer {lbname} --probe-port 59999 --subnet {subnetname} --vnet-name {vnname} --sqlvms sqlvm1 sqlvm2"
+            ]
+        },
+        {
+            "name": "az sql vm group ag-listener delete",
+            "summary": "Deletes an availability group listener.",
+            "syntax": "az sql vm group ag-listener delete --group-name\n                                   [--ids]\n                                   [--name]\n                                   [--resource-group]\n                                   [--subscription]\n                                   [--yes]",
+            "required_parameters": [
+                "--group-name -r"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az sql vm group ag-listener list",
+            "summary": "Lists all availability group listeners in a SQL virtual machine group.",
+            "syntax": "az sql vm group ag-listener list --group-name\n                                 --resource-group",
+            "required_parameters": [
+                "--group-name -r",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az sql vm group ag-listener show",
+            "summary": "Gets an availability group listener.",
+            "syntax": "az sql vm group ag-listener show --group-name\n                                 [--expand {*, AssessmentSettings, AutoBackupSettings, AutoPatchingSettings, KeyVaultCredentialSettings, ServerConfigurationsManagementSettings}]\n                                 [--ids]\n                                 [--name]\n                                 [--resource-group]\n                                 [--subscription]",
+            "required_parameters": [
+                "--group-name -r"
+            ],
+            "optional_parameters": [
+                "--expand",
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az sql vm group ag-listener update",
+            "summary": "Updates an availability group listener.",
+            "syntax": "az sql vm group ag-listener update --group-name\n                                   [--add]\n                                   [--force-string]\n                                   [--ids]\n                                   [--name]\n                                   [--remove]\n                                   [--resource-group]\n                                   [--set]\n                                   [--sqlvms]\n                                   [--subscription]",
+            "required_parameters": [
+                "--group-name -r"
+            ],
+            "optional_parameters": [
+                "--add",
+                "--force-string",
+                "--ids",
+                "--name -n",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--sqlvms -q",
+                "--subscription"
+            ],
+            "examples": [
+                "az sql vm group ag-listener update -n aglistenertest -g myresourcegroup --sqlvms sqlvm3 sqlvm4 --group-name mygroup"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,218 @@
+{
+    "command_group": "az datadog monitor",
+    "description": "Manage monitor with datadog.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az datadog monitor create",
+            "summary": "Create a monitor resource.",
+            "syntax": "az datadog monitor create --monitor-name\n                          --resource-group\n                          [--datadog-organization-properties]\n                          [--location]\n                          [--no-wait]\n                          [--sku-name]\n                          [--tags]\n                          [--type {SystemAssigned, UserAssigned}]\n                          [--user-info]",
+            "required_parameters": [
+                "--monitor-name --name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--datadog-organization-properties",
+                "--location -l",
+                "--no-wait",
+                "--sku-name",
+                "--tags",
+                "--type",
+                "--user-info"
+            ],
+            "examples": [
+                "az datadog monitor create --name \"myMonitor\" --resource-group \"myResourceGroup\" --location \"West US 2\" --tags Environment=\"Dev\" --user-info name=\"Alice\" email-address=\"alice@microsoft.com\" phone-number=\"123-456-7890\" --type \"SystemAssigned\" --sku-name \"payg_v2_Monthly\"",
+                "az datadog monitor create --name \"myMonitor\" --resource-group \"myResourceGroup\" --location \"West US 2\" --datadog-organization-properties api-key=XX application-key=XX --tags Environment=\"Dev\" --user-info name=\"Alice\" email-address=\"alice@microsoft.com\" phone-number=\"123-456-7890\" --type \"SystemAssigned\" --sku-name \"Linked\""
+            ]
+        },
+        {
+            "name": "az datadog monitor delete",
+            "summary": "Delete a monitor resource.",
+            "syntax": "az datadog monitor delete [--ids]\n                          [--monitor-name]\n                          [--no-wait]\n                          [--resource-group]\n                          [--subscription]\n                          [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--monitor-name --name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az datadog monitor delete --name \"myMonitor\" --resource-group \"myResourceGroup\""
+            ]
+        },
+        {
+            "name": "az datadog monitor get-default-key",
+            "summary": "Get the default api key.",
+            "syntax": "az datadog monitor get-default-key [--ids]\n                                   [--monitor-name]\n                                   [--resource-group]\n                                   [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--monitor-name --name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az datadog monitor get-default-key --name \"myMonitor\" --resource-group \"myResourceGroup\""
+            ]
+        },
+        {
+            "name": "az datadog monitor list",
+            "summary": "List all monitors under the specified resource group. And List all monitors under the specified subscription.",
+            "syntax": "az datadog monitor list [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az datadog monitor list --resource-group \"myResourceGroup\"",
+                "az datadog monitor list"
+            ]
+        },
+        {
+            "name": "az datadog monitor list-api-key",
+            "summary": "List the api keys for a given monitor resource.",
+            "syntax": "az datadog monitor list-api-key --monitor-name\n                                --resource-group",
+            "required_parameters": [
+                "--monitor-name --name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az datadog monitor list-api-key --name \"myMonitor\" --resource-group \"myResourceGroup\""
+            ]
+        },
+        {
+            "name": "az datadog monitor list-host",
+            "summary": "List the hosts for a given monitor resource.",
+            "syntax": "az datadog monitor list-host --monitor-name\n                             --resource-group",
+            "required_parameters": [
+                "--monitor-name --name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az datadog monitor list-host --name \"myMonitor\" --resource-group \"myResourceGroup\""
+            ]
+        },
+        {
+            "name": "az datadog monitor list-linked-resource",
+            "summary": "List all Azure resources associated to the same Datadog organization as the target resource.",
+            "syntax": "az datadog monitor list-linked-resource --monitor-name\n                                        --resource-group",
+            "required_parameters": [
+                "--monitor-name --name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az datadog monitor list-linked-resource --name \"myMonitor\" --resource-group \"myResourceGroup\""
+            ]
+        },
+        {
+            "name": "az datadog monitor list-monitored-resource",
+            "summary": "List the resources currently being monitored by the Datadog monitor resource.",
+            "syntax": "az datadog monitor list-monitored-resource --monitor-name\n                                           --resource-group",
+            "required_parameters": [
+                "--monitor-name --name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az datadog monitor list-monitored-resource --name \"myMonitor\" --resource-group \"myResourceGroup\""
+            ]
+        },
+        {
+            "name": "az datadog monitor refresh-set-password-link",
+            "summary": "Refresh the set password link and return a latest one.",
+            "syntax": "az datadog monitor refresh-set-password-link [--ids]\n                                             [--monitor-name]\n                                             [--resource-group]\n                                             [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--monitor-name --name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az datadog monitor refresh-set-password-link --name \"myMonitor\" --resource-group \"myResourceGroup\""
+            ]
+        },
+        {
+            "name": "az datadog monitor set-default-key",
+            "summary": "Set the default api key.",
+            "syntax": "az datadog monitor set-default-key [--created]\n                                   [--created-by]\n                                   [--ids]\n                                   [--key]\n                                   [--monitor-name]\n                                   [--name]\n                                   [--resource-group]\n                                   [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--created-by",
+                "--ids",
+                "--key",
+                "--monitor-name",
+                "--name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az datadog monitor set-default-key --monitor-name \"myMonitor\" --key \"1111111111111111aaaaaaaaaaaaaaaa\" --resource-group \"myResourceGroup\""
+            ]
+        },
+        {
+            "name": "az datadog monitor show",
+            "summary": "Get the properties of a specific monitor resource.",
+            "syntax": "az datadog monitor show [--ids]\n                        [--monitor-name]\n                        [--resource-group]\n                        [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--monitor-name --name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az datadog monitor show --name \"myMonitor\" --resource-group \"myResourceGroup\""
+            ]
+        },
+        {
+            "name": "az datadog monitor update",
+            "summary": "Update a monitor resource.",
+            "syntax": "az datadog monitor update [--ids]\n                          [--monitor-name]\n                          [--monitoring-status]\n                          [--no-wait]\n                          [--resource-group]\n                          [--sku-name]\n                          [--subscription]\n                          [--tags]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--monitor-name --name -n",
+                "--monitoring-status",
+                "--no-wait",
+                "--resource-group -g",
+                "--sku-name",
+                "--subscription",
+                "--tags"
+            ],
+            "examples": [
+                "az datadog monitor update --name \"myMonitor\" --tags Environment=\"Dev\" --monitoring-status \"Disabled\" --resource-group \"myResourceGroup\""
+            ]
+        },
+        {
+            "name": "az datadog monitor wait",
+            "summary": "Place the CLI in a waiting state until a condition of the datadog monitor is met.",
+            "syntax": "az datadog monitor wait [--created]\n                        [--custom]\n                        [--deleted]\n                        [--exists]\n                        [--ids]\n                        [--interval]\n                        [--monitor-name]\n                        [--resource-group]\n                        [--subscription]\n                        [--timeout]\n                        [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--monitor-name --name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": [
+                "az datadog monitor wait --name \"myMonitor\" --resource-group \"myResourceGroup\" --created",
+                "az datadog monitor wait --name \"myMonitor\" --resource-group \"myResourceGroup\" --updated",
+                "az datadog monitor wait --name \"myMonitor\" --resource-group \"myResourceGroup\" --deleted"
+            ]
+        }
+    ]
+}

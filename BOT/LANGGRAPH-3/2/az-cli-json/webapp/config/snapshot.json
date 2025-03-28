@@ -1,0 +1,45 @@
+{
+    "command_group": "az webapp config snapshot",
+    "description": "Manage web app snapshots.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az webapp config snapshot list",
+            "summary": "List the restorable snapshots for a web app.",
+            "syntax": "az webapp config snapshot list --name\n                               --resource-group\n                               [--slot]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--slot -s"
+            ],
+            "examples": [
+                "az webapp config snapshot list --name MyWebApp --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az webapp config snapshot restore",
+            "summary": "Restore a web app snapshot.",
+            "syntax": "az webapp config snapshot restore --time\n                                  [--ids]\n                                  [--name]\n                                  [--resource-group]\n                                  [--restore-content-only]\n                                  [--slot]\n                                  [--source-name]\n                                  [--source-resource-group]\n                                  [--source-slot]\n                                  [--subscription]",
+            "required_parameters": [
+                "--time"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--restore-content-only",
+                "--slot -s",
+                "--source-name",
+                "--source-resource-group",
+                "--source-slot",
+                "--subscription"
+            ],
+            "examples": [
+                "az webapp config snapshot restore -g MyResourceGroup -n MySite --time 2018-12-11T23:34:16.8388367",
+                "az webapp config snapshot restore -g TargetResourceGroup -n TargetApp --source-name SourceApp --source-resource-group OriginalResourceGroup --time 2018-12-11T23:34:16.8388367 --restore-content-only"
+            ]
+        }
+    ]
+}

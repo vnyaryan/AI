@@ -1,0 +1,110 @@
+{
+    "command_group": "az aks draft",
+    "description": "Commands to build deployment files in a project directory and deploy to an AKS cluster.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az aks draft create",
+            "summary": "Generate a Dockerfile and the minimum required Kubernetes deployment files (helm, kustomize, manifests) for your project directory.",
+            "syntax": "az aks draft create [--app]\n                    [--create-config]\n                    [--deployment-only]\n                    [--destination]\n                    [--dockerfile-only]\n                    [--language]\n                    [--path]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--app",
+                "--create-config",
+                "--deployment-only",
+                "--destination",
+                "--dockerfile-only",
+                "--language",
+                "--path"
+            ],
+            "examples": [
+                "az aks draft create",
+                "az aks draft create --dockerfile-only=true",
+                "az aks draft create --deployment-only=true",
+                "az aks draft create --language=java --app=some_app --destination=/projects/some_project"
+            ]
+        },
+        {
+            "name": "az aks draft generate-workflow",
+            "summary": "Generate a GitHub workflow for automatic build and deploy to AKS.",
+            "syntax": "az aks draft generate-workflow [--branch]\n                               [--cluster-name]\n                               [--container-name]\n                               [--destination]\n                               [--path]\n                               [--registry-name]\n                               [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--branch",
+                "--cluster-name",
+                "--container-name",
+                "--destination",
+                "--path",
+                "--registry-name",
+                "--resource-group"
+            ],
+            "examples": [
+                "az aks draft generate-workflow",
+                "az aks draft generate-workflow --destination=/projects/some_project",
+                "az aks draft generate-workflow --resource-group=some_rg --cluster-name=some_cluster --registry-name=some_registry --destination=/projects/some_project",
+                "az aks draft generate-workflow --branch=main --resource-group=some_rg --cluster-name=some_cluster --registry-name=some_registry --container-name=some_image --destination=/projects/some_project"
+            ]
+        },
+        {
+            "name": "az aks draft setup-gh",
+            "summary": "Set up GitHub OIDC for your application.",
+            "syntax": "az aks draft setup-gh [--app]\n                      [--gh-repo]\n                      [--path]\n                      [--provider]\n                      [--resource-group]\n                      [--subscription-id]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--app",
+                "--gh-repo",
+                "--path",
+                "--provider",
+                "--resource-group",
+                "--subscription-id"
+            ],
+            "examples": [
+                "az aks draft setup-gh",
+                "az aks draft setup-gh --provider=azure --gh-repo=some_organization/some_repo",
+                "az aks draft setup-gh --provider=azure --subscription-id=some_subscription --resource-group=some_rg",
+                "az aks draft setup-gh --app=some_app --provider=azure --subscription-id=some_subscription --resource-group=some_rg --gh-repo=some_organization/some_repo"
+            ]
+        },
+        {
+            "name": "az aks draft up",
+            "summary": "Run `az aks draft setup-gh` then `az aks draft generate-workflow`.",
+            "syntax": "az aks draft up [--app]\n                [--branch]\n                [--cluster-name]\n                [--container-name]\n                [--destination]\n                [--gh-repo]\n                [--path]\n                [--provider]\n                [--registry-name]\n                [--resource-group]\n                [--subscription-id]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--app",
+                "--branch",
+                "--cluster-name",
+                "--container-name",
+                "--destination",
+                "--gh-repo",
+                "--path",
+                "--provider",
+                "--registry-name",
+                "--resource-group",
+                "--subscription-id"
+            ],
+            "examples": [
+                "az aks draft up",
+                "az aks draft up --destination=/projects/some_project",
+                "az aks draft up --gh-repo=some_organization/some_repo --destination=/projects/some_project"
+            ]
+        },
+        {
+            "name": "az aks draft update",
+            "summary": "Update your application to be internet accessible.",
+            "syntax": "az aks draft update [--certificate]\n                    [--destination]\n                    [--host]\n                    [--path]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--certificate",
+                "--destination",
+                "--host",
+                "--path"
+            ],
+            "examples": [
+                "az aks draft update",
+                "az aks draft update --destination=/projects/some_project",
+                "az aks draft update --host=some_host --certificate=some_certificate --destination=/projects/some_project"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,6 @@
+{
+    "command_group": "az security atp",
+    "description": "View and manage Advanced Threat Protection settings.",
+    "status": "GA",
+    "commands": []
+}

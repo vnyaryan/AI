@@ -1,0 +1,34 @@
+{
+    "command_group": "az security regulatory-compliance-assessments",
+    "description": "Regulatory compliance assessments.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az security regulatory-compliance-assessments list",
+            "summary": "Get details and state of assessments mapped to selected regulatory compliance control.",
+            "syntax": "az security regulatory-compliance-assessments list --control-name\n                                                   --standard-name",
+            "required_parameters": [
+                "--control-name",
+                "--standard-name"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az security regulatory-compliance-assessments list --standard-name 'Azure-CIS-1.1.0' --control-name '1.1'"
+            ]
+        },
+        {
+            "name": "az security regulatory-compliance-assessments show",
+            "summary": "Shows supported regulatory compliance details and state for selected assessment.",
+            "syntax": "az security regulatory-compliance-assessments show --control-name\n                                                   --name\n                                                   --standard-name",
+            "required_parameters": [
+                "--control-name",
+                "--name -n",
+                "--standard-name"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az security regulatory-compliance-assessments show --standard-name 'Azure-CIS-1.1.0' --control-name '1.1' -n '94290b00-4d0c-d7b4-7cea-064a9554e681'"
+            ]
+        }
+    ]
+}

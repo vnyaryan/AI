@@ -1,0 +1,124 @@
+{
+    "command_group": "az containerapp resiliency",
+    "description": "Commands to manage resiliency policies for a container app.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az containerapp resiliency create",
+            "summary": "Create resiliency policies for a container app.",
+            "syntax": "az containerapp resiliency create --container-app-name\n                                  --name\n                                  --resource-group\n                                  [--cb-interval]\n                                  [--cb-max-ejection]\n                                  [--cb-sequential-errors]\n                                  [--http-codes]\n                                  [--http-delay]\n                                  [--http-errors]\n                                  [--http-interval]\n                                  [--http-retries]\n                                  [--http1-pending]\n                                  [--http2-parallel]\n                                  [--no-wait]\n                                  [--recommended]\n                                  [--tcp-connections]\n                                  [--tcp-retries]\n                                  [--timeout]\n                                  [--timeout-connect]\n                                  [--yaml]",
+            "required_parameters": [
+                "--container-app-name",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--cb-interval",
+                "--cb-max-ejection",
+                "--cb-sequential-errors",
+                "--http-codes",
+                "--http-delay",
+                "--http-errors",
+                "--http-interval",
+                "--http-retries",
+                "--http1-pending",
+                "--http2-parallel",
+                "--no-wait",
+                "--recommended",
+                "--tcp-connections",
+                "--tcp-retries",
+                "--timeout",
+                "--timeout-connect",
+                "--yaml"
+            ],
+            "examples": [
+                "az containerapp resiliency create -g MyResourceGroup \\\n  -n MyResiliencyName --container-app-name my-containerapp --recommended",
+                "az containerapp resiliency create -g MyResourceGroup \\\n  -n MyResiliencyName --container-app-name my-containerapp \\\n  --timeout 15 --timeout-connect 5",
+                "az containerapp resiliency create -g MyResourceGroup \\\n  -n MyResiliencyName --container-app-name my-containerapp \\\n  --yaml \"path/to/yaml/file.yml\""
+            ]
+        },
+        {
+            "name": "az containerapp resiliency delete",
+            "summary": "Delete resiliency policies for a container app.",
+            "syntax": "az containerapp resiliency delete --container-app-name\n                                  --resource-group\n                                  [--ids]\n                                  [--name]\n                                  [--no-wait]\n                                  [--subscription]\n                                  [--yes]",
+            "required_parameters": [
+                "--container-app-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az containerapp resiliency delete -g MyResourceGroup \\\n  -n MyResiliencyName --container-app-name MyContainerApp"
+            ]
+        },
+        {
+            "name": "az containerapp resiliency list",
+            "summary": "List resiliency policies for a container app.",
+            "syntax": "az containerapp resiliency list --container-app-name\n                                --resource-group",
+            "required_parameters": [
+                "--container-app-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az containerapp resiliency list -g MyResourceGroup \\\n  --container-app-name MyContainerApp"
+            ]
+        },
+        {
+            "name": "az containerapp resiliency show",
+            "summary": "Show resiliency policies for a container app.",
+            "syntax": "az containerapp resiliency show --container-app-name\n                                --resource-group\n                                [--ids]\n                                [--name]\n                                [--subscription]",
+            "required_parameters": [
+                "--container-app-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--subscription"
+            ],
+            "examples": [
+                "az containerapp resiliency show -g MyResourceGroup \\\n  -n MyResiliencyName --container-app-name MyContainerApp"
+            ]
+        },
+        {
+            "name": "az containerapp resiliency update",
+            "summary": "Update resiliency policies for a container app.",
+            "syntax": "az containerapp resiliency update --container-app-name\n                                  --resource-group\n                                  [--cb-interval]\n                                  [--cb-max-ejection]\n                                  [--cb-sequential-errors]\n                                  [--http-codes]\n                                  [--http-delay]\n                                  [--http-errors]\n                                  [--http-interval]\n                                  [--http-retries]\n                                  [--http1-pending]\n                                  [--http2-parallel]\n                                  [--ids]\n                                  [--name]\n                                  [--no-wait]\n                                  [--subscription]\n                                  [--tcp-connections]\n                                  [--tcp-retries]\n                                  [--timeout]\n                                  [--timeout-connect]\n                                  [--yaml]",
+            "required_parameters": [
+                "--container-app-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--cb-interval",
+                "--cb-max-ejection",
+                "--cb-sequential-errors",
+                "--http-codes",
+                "--http-delay",
+                "--http-errors",
+                "--http-interval",
+                "--http-retries",
+                "--http1-pending",
+                "--http2-parallel",
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--subscription",
+                "--tcp-connections",
+                "--tcp-retries",
+                "--timeout",
+                "--timeout-connect",
+                "--yaml"
+            ],
+            "examples": [
+                "az containerapp resiliency update -g MyResourceGroup \\\n  -n MyResiliencyName --container-app-name my-containerapp \\\n  --tcp-connections 1024",
+                "az containerapp resiliency update -g MyResourceGroup \\\n  -n MyResiliencyName --container-app-name my-containerapp \\\n  --yaml \"path/to/yaml/file.yml\""
+            ]
+        }
+    ]
+}

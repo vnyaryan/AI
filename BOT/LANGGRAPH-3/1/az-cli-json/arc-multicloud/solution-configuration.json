@@ -1,0 +1,98 @@
+{
+    "command_group": "az arc-multicloud solution-configuration",
+    "description": "Commands for solution-configuration.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az arc-multicloud solution-configuration create",
+            "summary": "Create a SolutionConfiguration.",
+            "syntax": "az arc-multicloud solution-configuration create --connector-id\n                                                --name\n                                                [--solution-settings]\n                                                [--solution-type]",
+            "required_parameters": [
+                "--connector-id",
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--solution-settings",
+                "--solution-type"
+            ],
+            "examples": [
+                "az arc-multicloud solution-configuration create --connector-id /subscriptions/{}/resourceGroups/{}/providers/Microsoft.HybridConnectivity/publicCloudConnectors/{} --name mySolutionConfig --solution-type \"Microsoft.AssetManagement\" --solution-settings periodicSync=\"true\" cloudProviderServiceTypes=\"ec2,s3\" awsGlobalReadOnly=\"true\" cloudProviderRegions=\"us-east-1,us-east-2\" periodicSyncTime=\"1\"",
+                "az arc-multicloud solution-configuration create --connector-id /subscriptions/{}/resourceGroups/{}/providers/Microsoft.HybridConnectivity/publicCloudConnectors/{} --name mySolutionConfig --solution-type \"Microsoft.HybridCompute.Onboard\" --solution-settings periodicSync=\"true\" cloudProviderRegions=\"us-east-1,us-east-2\" periodicSyncTime=\"1\""
+            ]
+        },
+        {
+            "name": "az arc-multicloud solution-configuration delete",
+            "summary": "Delete a SolutionConfiguration.",
+            "syntax": "az arc-multicloud solution-configuration delete --connector-id\n                                                --name\n                                                [--yes]",
+            "required_parameters": [
+                "--connector-id",
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--yes -y"
+            ],
+            "examples": [
+                "az arc-multicloud solution-configuration delete --connector-id  /subscriptions/{}/resourceGroups/{}/providers/Microsoft.HybridConnectivity/publicCloudConnectors/{} --name mySolutionConfig"
+            ]
+        },
+        {
+            "name": "az arc-multicloud solution-configuration list",
+            "summary": "List SolutionConfiguration resources by parent public cloud connector.",
+            "syntax": "az arc-multicloud solution-configuration list --connector-id\n                                              [--max-items]\n                                              [--next-token]",
+            "required_parameters": [
+                "--connector-id"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az arc-multicloud solution-configuration list --connector-id /subscriptions/{}/resourceGroups/{}/providers/Microsoft.HybridConnectivity/publicCloudConnectors/{}"
+            ]
+        },
+        {
+            "name": "az arc-multicloud solution-configuration show",
+            "summary": "Get a SolutionConfiguration.",
+            "syntax": "az arc-multicloud solution-configuration show --connector-id\n                                              --name",
+            "required_parameters": [
+                "--connector-id",
+                "--name -n"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az arc-multicloud solution-configuration show --connector-id /subscriptions/{}/resourceGroups/{}/providers/Microsoft.HybridConnectivity/publicCloudConnectors/{} --name mySolutionConfig"
+            ]
+        },
+        {
+            "name": "az arc-multicloud solution-configuration sync-now",
+            "summary": "Trigger immediate sync with source cloud.",
+            "syntax": "az arc-multicloud solution-configuration sync-now --connector-id\n                                                  --name\n                                                  [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]",
+            "required_parameters": [
+                "--connector-id",
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--no-wait"
+            ],
+            "examples": [
+                "az arc-multicloud solution-configuration sync-now --connector-id /subscriptions/{}/resourceGroups/{}/providers/Microsoft.HybridConnectivity/publicCloudConnectors/{} --name mySolutionConfig"
+            ]
+        },
+        {
+            "name": "az arc-multicloud solution-configuration update",
+            "summary": "Update a SolutionConfiguration.",
+            "syntax": "az arc-multicloud solution-configuration update --connector-id\n                                                --name\n                                                [--solution-settings]\n                                                [--solution-type]",
+            "required_parameters": [
+                "--connector-id",
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--solution-settings",
+                "--solution-type"
+            ],
+            "examples": [
+                "az arc-multicloud solution-configuration update --connector-id /subscriptions/{}/resourceGroups/{}/providers/Microsoft.HybridConnectivity/publicCloudConnectors/{} --name mySolutionConfig --solution-type \"Microsoft.AssetManagement\" --solution-settings periodicSync=\"true\" cloudProviderServiceTypes=\"ec2,s3\" awsGlobalReadOnly=\"true\" cloudProviderRegions=\"us-east-1,us-east-2\" periodicSyncTime=\"1\""
+            ]
+        }
+    ]
+}

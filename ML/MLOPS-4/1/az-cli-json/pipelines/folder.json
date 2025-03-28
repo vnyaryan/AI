@@ -1,0 +1,67 @@
+{
+    "command_group": "az pipelines folder",
+    "description": "Manage folders for organizing pipelines.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az pipelines folder create",
+            "summary": "Create a folder.",
+            "syntax": "az pipelines folder create --path\n                           [--description]\n                           [--detect {false, true}]\n                           [--org]\n                           [--project]",
+            "required_parameters": [
+                "--path"
+            ],
+            "optional_parameters": [
+                "--description",
+                "--detect",
+                "--org --organization",
+                "--project -p"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az pipelines folder delete",
+            "summary": "Delete a folder.",
+            "syntax": "az pipelines folder delete --path\n                           [--detect {false, true}]\n                           [--org]\n                           [--project]\n                           [--yes]",
+            "required_parameters": [
+                "--path"
+            ],
+            "optional_parameters": [
+                "--detect",
+                "--org --organization",
+                "--project -p",
+                "--yes -y"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az pipelines folder list",
+            "summary": "List all folders.",
+            "syntax": "az pipelines folder list [--detect {false, true}]\n                         [--org]\n                         [--path]\n                         [--project]\n                         [--query-order {Asc, Desc, None}]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--detect",
+                "--org --organization",
+                "--path",
+                "--project -p",
+                "--query-order"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az pipelines folder update",
+            "summary": "Update a folder name or description.",
+            "syntax": "az pipelines folder update --path\n                           [--detect {false, true}]\n                           [--new-description]\n                           [--new-path]\n                           [--org]\n                           [--project]",
+            "required_parameters": [
+                "--path"
+            ],
+            "optional_parameters": [
+                "--detect",
+                "--new-description",
+                "--new-path",
+                "--org --organization",
+                "--project -p"
+            ],
+            "examples": []
+        }
+    ]
+}

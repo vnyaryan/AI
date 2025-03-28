@@ -1,0 +1,140 @@
+{
+    "command_group": "az stack group",
+    "description": "Manage Deployment Stacks at resource group.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az stack group create",
+            "summary": "Create or update a deployment stack at resource group scope.",
+            "syntax": "az stack group create --action-on-unmanage {deleteAll, deleteResources, detachAll}\n                      --deny-settings-mode {denyDelete, denyWriteAndDelete, none}\n                      --name\n                      --resource-group\n                      [--bse {false, true}]\n                      [--cs]\n                      [--deny-settings-excluded-actions]\n                      [--deny-settings-excluded-principals]\n                      [--description]\n                      [--no-wait]\n                      [--parameters]\n                      [--query-string]\n                      [--tags]\n                      [--template-file]\n                      [--template-spec]\n                      [--template-uri]\n                      [--yes]",
+            "required_parameters": [
+                "--action-on-unmanage --aou",
+                "--deny-settings-mode --dm",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--bse --bypass-stack-out-of-sync-error",
+                "--cs --deny-settings-apply-to-child-scopes",
+                "--deny-settings-excluded-actions --ea",
+                "--deny-settings-excluded-principals --ep",
+                "--description",
+                "--no-wait",
+                "--parameters -p",
+                "--query-string -q",
+                "--tags",
+                "--template-file -f",
+                "--template-spec -s",
+                "--template-uri -u",
+                "--yes"
+            ],
+            "examples": [
+                "az stack group create --name StackName --resource-group ResourceGroup --action-on-unmanage deleteResources --template-file simpleTemplate.json --description description --deny-settings-mode None",
+                "az stack group create --name StackName --resource-group ResourceGroup --action-on-unmanage detachAll --template-file simpleTemplate.json --parameters simpleTemplateParams.json --description description --deny-settings-mode None",
+                "az stack group create --name StackName --resource-group ResourceGroup --action-on-unmanage deleteAll --template-spec TemplateSpecResourceIDWithVersion --description description --deny-settings-mode None",
+                "az stack group create --name StackName --resource-group ResourceGroup --template-file simple.bicep --description description --deny-settings-mode None --action-on-unmanage deleteResources",
+                "az stack group create --name StackName --resource-group ResourceGroup --template-file simpleTemplate.json --description description --subscription subscriptionId --deny-settings-mode None --action-on-unmanage deleteResources",
+                "az stack group create --name StackName --template-file simpleTemplate.json --resource-group ResourceGroup --description description --parameters simpleTemplateParams.json value1=foo value2=bar --deny-settings-mode None --action-on-unmanage deleteResources",
+                "az stack group create --name StackName --template-file azuredeploy.json --parameters @params.json --parameters https://mysite/params.json --parameters MyValue=This MyArray=@array.json --resource-group ResourceGroup --deny-settings-mode None --action-on-unmanage deleteResources",
+                "az stack group create --name StackName --resource-group ResourceGroup --template-file azuredeploy.json --deny-settings-mode denyDelete --deny-settings-excluded-actions Microsoft.Compute/virtualMachines/write --deny-settings-excluded-principals \"test1 test2\" --action-on-unmanage deleteResources",
+                "az stack group create --name StackName --resource-group ResourceGroup --template-file azuredeploy.json --deny-settings-mode denyDelete --deny-settings-excluded-actions Microsoft.Compute/virtualMachines/write --deny-settings-apply-to-child-scopes --action-on-unmanage deleteResources"
+            ]
+        },
+        {
+            "name": "az stack group delete",
+            "summary": "Delete specified deployment stack from resource group scope.",
+            "syntax": "az stack group delete --action-on-unmanage {deleteAll, deleteResources, detachAll}\n                      [--bse {false, true}]\n                      [--id]\n                      [--name]\n                      [--resource-group]\n                      [--yes]",
+            "required_parameters": [
+                "--action-on-unmanage --aou"
+            ],
+            "optional_parameters": [
+                "--bse --bypass-stack-out-of-sync-error",
+                "--id",
+                "--name -n",
+                "--resource-group -g",
+                "--yes"
+            ],
+            "examples": [
+                "az stack group delete --name StackName --resource-group ResourceGroup --action-on-unmanage deleteResources",
+                "az stack group delete --id /subscriptions/111111111111/resourceGroups/ResourceGroup/providers/Microsoft.Resources/deploymentStacks/StackName --action-on-unmanage detachAll"
+            ]
+        },
+        {
+            "name": "az stack group export",
+            "summary": "Export the template used to create the deployment stack from resource group scope.",
+            "syntax": "az stack group export [--id]\n                      [--name]\n                      [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--id",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az stack group export --name StackName --resource-group ResourceGroup",
+                "az stack group export --id /subscriptions/111111111111/resourceGroups/ResourceGroup/providers/Microsoft.Resources/deploymentStacks/StackName"
+            ]
+        },
+        {
+            "name": "az stack group list",
+            "summary": "List all deployment stacks in resource group.",
+            "syntax": "az stack group list --resource-group",
+            "required_parameters": [
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az stack group list --resource-group ResourceGroup"
+            ]
+        },
+        {
+            "name": "az stack group show",
+            "summary": "Get specified deployment stack from resource group scope.",
+            "syntax": "az stack group show [--id]\n                    [--name]\n                    [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--id",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az stack group show --name StackName --resource-group ResourceGroup",
+                "az stack group show --id /subscriptions/111111111111/resourceGroups/ResourceGroup/providers/Microsoft.Resources/deploymentStacks/StackName"
+            ]
+        },
+        {
+            "name": "az stack group validate",
+            "summary": "Validate a deployment stack at resource group scope.",
+            "syntax": "az stack group validate --action-on-unmanage {deleteAll, deleteResources, detachAll}\n                        --deny-settings-mode {denyDelete, denyWriteAndDelete, none}\n                        --name\n                        --resource-group\n                        [--bse {false, true}]\n                        [--cs]\n                        [--deny-settings-excluded-actions]\n                        [--deny-settings-excluded-principals]\n                        [--description]\n                        [--parameters]\n                        [--query-string]\n                        [--tags]\n                        [--template-file]\n                        [--template-spec]\n                        [--template-uri]",
+            "required_parameters": [
+                "--action-on-unmanage --aou",
+                "--deny-settings-mode --dm",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--bse --bypass-stack-out-of-sync-error",
+                "--cs --deny-settings-apply-to-child-scopes",
+                "--deny-settings-excluded-actions --ea",
+                "--deny-settings-excluded-principals --ep",
+                "--description",
+                "--parameters -p",
+                "--query-string -q",
+                "--tags",
+                "--template-file -f",
+                "--template-spec -s",
+                "--template-uri -u"
+            ],
+            "examples": [
+                "az stack group validate --name StackName --resource-group ResourceGroup --action-on-unmanage deleteResources --template-file simpleTemplate.json --description description --deny-settings-mode None",
+                "az stack group validate --name StackName --resource-group ResourceGroup --action-on-unmanage detachAll --template-file simpleTemplate.json --parameters simpleTemplateParams.json --description description --deny-settings-mode None",
+                "az stack group validate --name StackName --resource-group ResourceGroup --action-on-unmanage deleteAll --template-spec TemplateSpecResourceIDWithVersion --description description --deny-settings-mode None",
+                "az stack group validate --name StackName --resource-group ResourceGroup --template-file simple.bicep --description description --deny-settings-mode None --action-on-unmanage deleteResources",
+                "az stack group validate --name StackName --resource-group ResourceGroup --template-file simpleTemplate.json --description description --subscription subscriptionId --deny-settings-mode None --action-on-unmanage deleteResources",
+                "az stack group validate --name StackName --template-file simpleTemplate.json --resource-group ResourceGroup --description description --parameters simpleTemplateParams.json value1=foo value2=bar --deny-settings-mode None --action-on-unmanage deleteResources",
+                "az stack group validate --name StackName --template-file azuredeploy.json --parameters @params.json --parameters https://mysite/params.json --parameters MyValue=This MyArray=@array.json --resource-group ResourceGroup --deny-settings-mode None --action-on-unmanage deleteResources",
+                "az stack group validate --name StackName --resource-group ResourceGroup --template-file azuredeploy.json --deny-settings-mode denyDelete --deny-settings-excluded-actions Microsoft.Compute/virtualMachines/write --deny-settings-excluded-principals \"test1 test2\" --action-on-unmanage deleteResources",
+                "az stack group validate --name StackName --resource-group ResourceGroup --template-file azuredeploy.json --deny-settings-mode denyDelete --deny-settings-excluded-actions Microsoft.Compute/virtualMachines/write --deny-settings-apply-to-child-scopes --action-on-unmanage deleteResources"
+            ]
+        }
+    ]
+}

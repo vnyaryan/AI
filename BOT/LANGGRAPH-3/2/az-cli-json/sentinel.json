@@ -1,0 +1,6 @@
+{
+    "command_group": "az sentinel",
+    "description": "Manage Microsoft Sentinel.",
+    "status": "GA",
+    "commands": []
+}

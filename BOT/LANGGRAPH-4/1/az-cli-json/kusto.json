@@ -1,0 +1,6 @@
+{
+    "command_group": "az kusto",
+    "description": "Manage Kusto.",
+    "status": "Experimental",
+    "commands": []
+}

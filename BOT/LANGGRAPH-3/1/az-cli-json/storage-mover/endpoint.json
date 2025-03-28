@@ -1,0 +1,219 @@
+{
+    "command_group": "az storage-mover endpoint",
+    "description": "Manage Endpoint resource, which represents a data transfer source or destination.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az storage-mover endpoint create-for-nfs",
+            "summary": "Creates an Endpoint resource for nfs.",
+            "syntax": "az storage-mover endpoint create-for-nfs --endpoint-name\n                                         --export\n                                         --host\n                                         --resource-group\n                                         --storage-mover-name\n                                         [--description]\n                                         [--nfs-version {NFSauto, NFSv3, NFSv4}]",
+            "required_parameters": [
+                "--endpoint-name --name -n",
+                "--export",
+                "--host",
+                "--resource-group -g",
+                "--storage-mover-name"
+            ],
+            "optional_parameters": [
+                "--description",
+                "--nfs-version"
+            ],
+            "examples": [
+                "az storage-mover endpoint create-for-nfs -g \"rg\" --storage-mover-name \"mover_name\" -n \"endpoint_nfs\" --description endpointDesc --export exportfolder --nfs-version NFSv4 --host \"vm_ip\""
+            ]
+        },
+        {
+            "name": "az storage-mover endpoint create-for-smb",
+            "summary": "Creates an Endpoint resource for smb mount.",
+            "syntax": "az storage-mover endpoint create-for-smb --endpoint-name\n                                         --host\n                                         --resource-group\n                                         --share-name\n                                         --storage-mover-name\n                                         [--description]\n                                         [--password-uri]\n                                         [--username-uri]",
+            "required_parameters": [
+                "--endpoint-name --name -n",
+                "--host",
+                "--resource-group -g",
+                "--share-name",
+                "--storage-mover-name"
+            ],
+            "optional_parameters": [
+                "--description",
+                "--password-uri",
+                "--username-uri"
+            ],
+            "examples": [
+                "az storage-mover endpoint create-for-smb -g \"rg\" --storage-mover-name \"mover_name\" -n \"endpoint_smb\" --description endpointSmbDesc --share-name \"smb_share_name\" --username-uri username --password-uri Password!23 --host \"vm_ip\""
+            ]
+        },
+        {
+            "name": "az storage-mover endpoint create-for-storage-container",
+            "summary": "Creates an Endpoint resource for storage blob container.",
+            "syntax": "az storage-mover endpoint create-for-storage-container --container-name\n                                                       --endpoint-name\n                                                       --resource-group\n                                                       --storage-account-id\n                                                       --storage-mover-name\n                                                       [--description]",
+            "required_parameters": [
+                "--container-name",
+                "--endpoint-name --name -n",
+                "--resource-group -g",
+                "--storage-account-id",
+                "--storage-mover-name"
+            ],
+            "optional_parameters": [
+                "--description"
+            ],
+            "examples": [
+                "az storage-mover endpoint create-for-storage-container -g \"rg\" --storage-mover-name \"mover_name\" -n \"endpoint_container\" --container-name \"container_name\" --storage-account-id \"account_id\" --description endpointDesc"
+            ]
+        },
+        {
+            "name": "az storage-mover endpoint create-for-storage-smb-file-share",
+            "summary": "Creates an Endpoint resource for storage smb file share.",
+            "syntax": "az storage-mover endpoint create-for-storage-smb-file-share --endpoint-name\n                                                            --file-share-name\n                                                            --resource-group\n                                                            --storage-account-id\n                                                            --storage-mover-name\n                                                            [--description]",
+            "required_parameters": [
+                "--endpoint-name --name -n",
+                "--file-share-name",
+                "--resource-group -g",
+                "--storage-account-id",
+                "--storage-mover-name"
+            ],
+            "optional_parameters": [
+                "--description"
+            ],
+            "examples": [
+                "az storage-mover endpoint create-for-storage-smb-file-share -g \"rg\" --storage-mover-name \"mover_name\" -n \"endpoint_file_share\" --file-share-name \"file_share_name\" --storage-account-id \"account_id\" --description endpointFileShareDesc"
+            ]
+        },
+        {
+            "name": "az storage-mover endpoint delete",
+            "summary": "Deletes an Endpoint resource.",
+            "syntax": "az storage-mover endpoint delete [--endpoint-name]\n                                 [--ids]\n                                 [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                 [--resource-group]\n                                 [--storage-mover-name]\n                                 [--subscription]\n                                 [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--endpoint-name --name -n",
+                "--ids",
+                "--no-wait",
+                "--resource-group -g",
+                "--storage-mover-name",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az storage-mover endpoint delete -g {rg} --storage-mover-name {mover_name} -n {endpoint_nfs}"
+            ]
+        },
+        {
+            "name": "az storage-mover endpoint list",
+            "summary": "Lists all Endpoints in a Storage Mover.",
+            "syntax": "az storage-mover endpoint list --resource-group\n                               --storage-mover-name\n                               [--max-items]\n                               [--next-token]",
+            "required_parameters": [
+                "--resource-group -g",
+                "--storage-mover-name"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az storage-mover endpoint list -g {rg} --storage-mover-name {mover_name}"
+            ]
+        },
+        {
+            "name": "az storage-mover endpoint show",
+            "summary": "Gets an Endpoint resource.",
+            "syntax": "az storage-mover endpoint show [--endpoint-name]\n                               [--ids]\n                               [--resource-group]\n                               [--storage-mover-name]\n                               [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--endpoint-name --name -n",
+                "--ids",
+                "--resource-group -g",
+                "--storage-mover-name",
+                "--subscription"
+            ],
+            "examples": [
+                "az storage-mover endpoint show -g {rg} --storage-mover-name {mover_name} -n {endpoint_nfs}"
+            ]
+        },
+        {
+            "name": "az storage-mover endpoint update-for-nfs",
+            "summary": "Updates an Endpoint resource for nfs.",
+            "syntax": "az storage-mover endpoint update-for-nfs --endpoint-name\n                                         --resource-group\n                                         --storage-mover-name\n                                         [--description]",
+            "required_parameters": [
+                "--endpoint-name --name -n",
+                "--resource-group -g",
+                "--storage-mover-name"
+            ],
+            "optional_parameters": [
+                "--description"
+            ],
+            "examples": [
+                "az storage-mover endpoint update-for-nfs -g \"rg\" --storage-mover-name \"mover_name\" -n \"endpoint_nfs\" --description endpointDescUpdate"
+            ]
+        },
+        {
+            "name": "az storage-mover endpoint update-for-smb",
+            "summary": "Updates an Endpoint resource for smb mount.",
+            "syntax": "az storage-mover endpoint update-for-smb --endpoint-name\n                                         --resource-group\n                                         --storage-mover-name\n                                         [--description]\n                                         [--password-uri]\n                                         [--username-uri]",
+            "required_parameters": [
+                "--endpoint-name --name -n",
+                "--resource-group -g",
+                "--storage-mover-name"
+            ],
+            "optional_parameters": [
+                "--description",
+                "--password-uri",
+                "--username-uri"
+            ],
+            "examples": [
+                "az storage-mover endpoint update-for-smb -g \"rg\" --storage-mover-name \"mover_name\" -n \"endpoint_smb\" --description endpointSmbDescUpdate"
+            ]
+        },
+        {
+            "name": "az storage-mover endpoint update-for-storage-container",
+            "summary": "Updates an Endpoint resource for storage blob container.",
+            "syntax": "az storage-mover endpoint update-for-storage-container --endpoint-name\n                                                       --resource-group\n                                                       --storage-mover-name\n                                                       [--description]",
+            "required_parameters": [
+                "--endpoint-name --name -n",
+                "--resource-group -g",
+                "--storage-mover-name"
+            ],
+            "optional_parameters": [
+                "--description"
+            ],
+            "examples": [
+                "az storage-mover endpoint update-for-storage-container -g \"rg\" --storage-mover-name \"mover_name\" -n \"endpoint_container\" --description endpointDescUpdate"
+            ]
+        },
+        {
+            "name": "az storage-mover endpoint update-for-storage-smb-file-share",
+            "summary": "Updates an Endpoint resource for storage smb file share.",
+            "syntax": "az storage-mover endpoint update-for-storage-smb-file-share --endpoint-name\n                                                            --resource-group\n                                                            --storage-mover-name\n                                                            [--description]",
+            "required_parameters": [
+                "--endpoint-name --name -n",
+                "--resource-group -g",
+                "--storage-mover-name"
+            ],
+            "optional_parameters": [
+                "--description"
+            ],
+            "examples": [
+                "az storage-mover endpoint update-for-storage-smb-file-share -g \"rg\" --storage-mover-name \"mover_name\" -n \"endpoint_file_share\" --description endpointFileShareDescUpdate"
+            ]
+        },
+        {
+            "name": "az storage-mover endpoint wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az storage-mover endpoint wait [--created]\n                               [--custom]\n                               [--deleted]\n                               [--endpoint-name]\n                               [--exists]\n                               [--ids]\n                               [--interval]\n                               [--resource-group]\n                               [--storage-mover-name]\n                               [--subscription]\n                               [--timeout]\n                               [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--endpoint-name --name -n",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--resource-group -g",
+                "--storage-mover-name",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

@@ -1,0 +1,136 @@
+{
+    "command_group": "az spring config-server",
+    "description": "(Support Standard Tier and Basic Tier) Commands to manage Config Server in Azure Spring Apps.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az spring config-server bind",
+            "summary": "(Enterprise Tier Only) Bind an app to Config Server.",
+            "syntax": "az spring config-server bind --resource-group\n                             --service\n                             [--app]\n                             [--job]",
+            "required_parameters": [
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [
+                "--app",
+                "--job"
+            ],
+            "examples": [
+                "az spring config-server bind --app MyApp -s MyService -g MyResourceGroup",
+                "az spring config-server bind --job job-name -s MyService -g MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az spring config-server clear",
+            "summary": "Erase all settings in Config Server.",
+            "syntax": "az spring config-server clear --resource-group\n                              --service\n                              [--yes]",
+            "required_parameters": [
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [
+                "--yes -y"
+            ],
+            "examples": [
+                "az spring config-server clear -s MyService -g MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az spring config-server create",
+            "summary": "(Enterprise Tier Only) Create Config Server.",
+            "syntax": "az spring config-server create --resource-group\n                               --service",
+            "required_parameters": [
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az spring config-server create -s MyService -g MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az spring config-server delete",
+            "summary": "(Enterprise Tier Only) Delete Config Server.",
+            "syntax": "az spring config-server delete --resource-group\n                               --service\n                               [--yes]",
+            "required_parameters": [
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [
+                "--yes -y"
+            ],
+            "examples": [
+                "az spring config-server delete -s MyService -g MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az spring config-server disable",
+            "summary": "(Standard consumption Tier Only) Disable Config Server.",
+            "syntax": "az spring config-server disable --resource-group\n                                --service",
+            "required_parameters": [
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az spring config-server enable",
+            "summary": "(Standard consumption Tier Only) Enable Config Server.",
+            "syntax": "az spring config-server enable --resource-group\n                               --service",
+            "required_parameters": [
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az spring config-server set",
+            "summary": "Set Config Server from a yaml file.",
+            "syntax": "az spring config-server set --config-file\n                            --resource-group\n                            --service\n                            [--no-wait]",
+            "required_parameters": [
+                "--config-file",
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [
+                "--no-wait"
+            ],
+            "examples": [
+                "az spring config-server set -s MyService -g MyResourceGroup --config-file MyConfigFile.yaml"
+            ]
+        },
+        {
+            "name": "az spring config-server show",
+            "summary": "Show Config Server.",
+            "syntax": "az spring config-server show --resource-group\n                             --service",
+            "required_parameters": [
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az spring config-server show -s MyService -g MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az spring config-server unbind",
+            "summary": "(Enterprise Tier Only) Unbind an app from Config Server.",
+            "syntax": "az spring config-server unbind --resource-group\n                               --service\n                               [--app]\n                               [--job]\n                               [--yes]",
+            "required_parameters": [
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [
+                "--app",
+                "--job",
+                "--yes -y"
+            ],
+            "examples": [
+                "az spring config-server unbind --app MyApp -s MyService -g MyResourceGroup",
+                "az spring config-server unbind --job job-name -s MyService -g MyResourceGroup"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,46 @@
+{
+    "command_group": "az cognitiveservices account identity",
+    "description": "Manage identity of Cognitive Services accounts.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az cognitiveservices account identity assign",
+            "summary": "Assign an identity of a Cognitive Services account.",
+            "syntax": "az cognitiveservices account identity assign --name\n                                             --resource-group",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az cognitiveservices account identity assign --name myresource --resource-group cognitive-services-resource-group"
+            ]
+        },
+        {
+            "name": "az cognitiveservices account identity remove",
+            "summary": "Remove the identity from a Cognitive Services account.",
+            "syntax": "az cognitiveservices account identity remove --name\n                                             --resource-group",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az cognitiveservices account identity remove --name myresource --resource-group cognitive-services-resource-group"
+            ]
+        },
+        {
+            "name": "az cognitiveservices account identity show",
+            "summary": "Show the identity of a Cognitive Services account.",
+            "syntax": "az cognitiveservices account identity show --name\n                                           --resource-group",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az cognitiveservices account identity show --name myresource --resource-group cognitive-services-resource-group"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,77 @@
+{
+    "command_group": "az datafactory integration-runtime-node",
+    "description": "Manage integration runtime node with datafactory.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az datafactory integration-runtime-node delete",
+            "summary": "Deletes a self-hosted integration runtime node.",
+            "syntax": "az datafactory integration-runtime-node delete [--factory-name]\n                                               [--ids]\n                                               [--integration-runtime-name]\n                                               [--node-name]\n                                               [--resource-group]\n                                               [--subscription]\n                                               [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--factory-name",
+                "--ids",
+                "--integration-runtime-name",
+                "--node-name",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az datafactory integration-runtime-node delete --factory-name \"exampleFactoryName\" --integration-runtime-name \"exampleIntegrationRuntime\" --node-name \"Node_1\" --resource-group \"exampleResourceGroup\""
+            ]
+        },
+        {
+            "name": "az datafactory integration-runtime-node get-ip-address",
+            "summary": "Get the IP address of self-hosted integration runtime node.",
+            "syntax": "az datafactory integration-runtime-node get-ip-address [--factory-name]\n                                                       [--ids]\n                                                       [--integration-runtime-name]\n                                                       [--node-name]\n                                                       [--resource-group]\n                                                       [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--factory-name",
+                "--ids",
+                "--integration-runtime-name",
+                "--node-name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az datafactory integration-runtime-node get-ip-address --factory-name \"exampleFactoryName\" --integration-runtime-name \"exampleIntegrationRuntime\" --node-name \"Node_1\" --resource-group \"exampleResourceGroup\""
+            ]
+        },
+        {
+            "name": "az datafactory integration-runtime-node show",
+            "summary": "Gets a self-hosted integration runtime node.",
+            "syntax": "az datafactory integration-runtime-node show [--factory-name]\n                                             [--ids]\n                                             [--integration-runtime-name]\n                                             [--node-name]\n                                             [--resource-group]\n                                             [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--factory-name",
+                "--ids",
+                "--integration-runtime-name",
+                "--node-name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az datafactory integration-runtime-node show --factory-name \"exampleFactoryName\" --integration-runtime-name \"exampleIntegrationRuntime\" --node-name \"Node_1\" --resource-group \"exampleResourceGroup\""
+            ]
+        },
+        {
+            "name": "az datafactory integration-runtime-node update",
+            "summary": "Updates a self-hosted integration runtime node.",
+            "syntax": "az datafactory integration-runtime-node update [--concurrent-jobs-limit]\n                                               [--factory-name]\n                                               [--ids]\n                                               [--integration-runtime-name]\n                                               [--node-name]\n                                               [--resource-group]\n                                               [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--concurrent-jobs-limit",
+                "--factory-name",
+                "--ids",
+                "--integration-runtime-name",
+                "--node-name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az datafactory integration-runtime-node update --factory-name \"exampleFactoryName\" --integration-runtime-name \"exampleIntegrationRuntime\" --node-name \"Node_1\" --resource-group \"exampleResourceGroup\" --concurrent-jobs-limit 2"
+            ]
+        }
+    ]
+}

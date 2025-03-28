@@ -1,0 +1,23 @@
+{
+    "command_group": "az keyvault backup",
+    "description": "Manage full HSM backup.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az keyvault backup start",
+            "summary": "Begin a full backup of the HSM.",
+            "syntax": "az keyvault backup start [--blob-container-name]\n                         [--hsm-name]\n                         [--id]\n                         [--storage-account-name]\n                         [--storage-container-SAS-token]\n                         [--storage-resource-uri]\n                         [--use-managed-identity {false, true}]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--blob-container-name",
+                "--hsm-name",
+                "--id",
+                "--storage-account-name",
+                "--storage-container-SAS-token -t",
+                "--storage-resource-uri",
+                "--use-managed-identity"
+            ],
+            "examples": []
+        }
+    ]
+}

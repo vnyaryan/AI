@@ -1,0 +1,57 @@
+{
+    "command_group": "az containerapp ingress access-restriction",
+    "description": "Commands to manage IP access restrictions.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az containerapp ingress access-restriction list",
+            "summary": "List IP access restrictions for a container app.",
+            "syntax": "az containerapp ingress access-restriction list --name\n                                                --resource-group",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az containerapp ingress access-restriction list -n my-containerapp -g MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az containerapp ingress access-restriction remove",
+            "summary": "Remove IP access restrictions from a container app.",
+            "syntax": "az containerapp ingress access-restriction remove --rule-name\n                                                  [--ids]\n                                                  [--name]\n                                                  [--resource-group]\n                                                  [--subscription]",
+            "required_parameters": [
+                "--rule-name"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az containerapp ingress access-restriction remove -n my-containerapp -g MyResourceGroup --rule-name restrictionName"
+            ]
+        },
+        {
+            "name": "az containerapp ingress access-restriction set",
+            "summary": "Configure IP access restrictions for a container app.",
+            "syntax": "az containerapp ingress access-restriction set --action {Allow, Deny}\n                                               --ip-address\n                                               --rule-name\n                                               [--description]\n                                               [--ids]\n                                               [--name]\n                                               [--resource-group]\n                                               [--subscription]",
+            "required_parameters": [
+                "--action",
+                "--ip-address",
+                "--rule-name"
+            ],
+            "optional_parameters": [
+                "--description",
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az containerapp ingress access-restriction set -n my-containerapp -g MyResourceGroup --rule-name restrictionName --ip-address 192.168.1.1/32 --description \"Restriction description.\" --action Allow"
+            ]
+        }
+    ]
+}

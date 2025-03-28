@@ -1,0 +1,123 @@
+{
+    "command_group": "az redisenterprise database access-policy-assignment",
+    "description": "Manage database access policy assignment for redis enterprise databases.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az redisenterprise database access-policy-assignment create",
+            "summary": "Create access policy assignment for database.",
+            "syntax": "az redisenterprise database access-policy-assignment create --access-policy-assignment-name\n                                                            --cluster-name\n                                                            --database-name\n                                                            --object-id\n                                                            --resource-group\n                                                            [--access-policy-name]\n                                                            [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]",
+            "required_parameters": [
+                "--access-policy-assignment-name --name -n",
+                "--cluster-name",
+                "--database-name",
+                "--object-id",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--access-policy-name",
+                "--no-wait"
+            ],
+            "examples": [
+                "az redisenterprise database access-policy-assignment create --resource-group rg1 --cluster-name cache1 --database-name default --access-policy-assignment-name defaultTestEntraApp1 --access-policy-name default --object-id 6497c918-11ad-41e7-1b0f-7c518a87d0b0"
+            ]
+        },
+        {
+            "name": "az redisenterprise database access-policy-assignment delete",
+            "summary": "Delete a single access policy assignment.",
+            "syntax": "az redisenterprise database access-policy-assignment delete [--access-policy-assignment-name]\n                                                            [--cluster-name]\n                                                            [--database-name]\n                                                            [--ids]\n                                                            [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                                            [--resource-group]\n                                                            [--subscription]\n                                                            [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--access-policy-assignment-name --name -n",
+                "--cluster-name",
+                "--database-name",
+                "--ids",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az redisenterprise database access-policy-assignment delete --resource-group rg1 --cluster-name cache1 --database-name default --access-policy-assignment-name defaultTestEntraApp1"
+            ]
+        },
+        {
+            "name": "az redisenterprise database access-policy-assignment list",
+            "summary": "List all databases in the specified Redis Enterprise cluster.",
+            "syntax": "az redisenterprise database access-policy-assignment list --cluster-name\n                                                          --database-name\n                                                          --resource-group\n                                                          [--max-items]\n                                                          [--next-token]",
+            "required_parameters": [
+                "--cluster-name",
+                "--database-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az redisenterprise database access-policy-assignment list --resource-group rg1 --cluster-name cache1 --database-name default"
+            ]
+        },
+        {
+            "name": "az redisenterprise database access-policy-assignment show",
+            "summary": "Get information about access policy assignment for database.",
+            "syntax": "az redisenterprise database access-policy-assignment show [--access-policy-assignment-name]\n                                                          [--cluster-name]\n                                                          [--database-name]\n                                                          [--ids]\n                                                          [--resource-group]\n                                                          [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--access-policy-assignment-name --name -n",
+                "--cluster-name",
+                "--database-name",
+                "--ids",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az redisenterprise database access-policy-assignment show --resource-group rg1 --cluster-name cache1 --database-name default --access-policy-assignment-name accessPolicyAssignmentName1"
+            ]
+        },
+        {
+            "name": "az redisenterprise database access-policy-assignment update",
+            "summary": "Update access policy assignment for database.",
+            "syntax": "az redisenterprise database access-policy-assignment update [--access-policy-assignment-name]\n                                                            [--access-policy-name]\n                                                            [--add]\n                                                            [--cluster-name]\n                                                            [--database-name]\n                                                            [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                                            [--ids]\n                                                            [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                                            [--object-id]\n                                                            [--remove]\n                                                            [--resource-group]\n                                                            [--set]\n                                                            [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--access-policy-assignment-name --name -n",
+                "--access-policy-name",
+                "--add",
+                "--cluster-name",
+                "--database-name",
+                "--force-string",
+                "--ids",
+                "--no-wait",
+                "--object-id",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az redisenterprise database access-policy-assignment wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az redisenterprise database access-policy-assignment wait [--access-policy-assignment-name]\n                                                          [--cluster-name]\n                                                          [--created]\n                                                          [--custom]\n                                                          [--database-name]\n                                                          [--deleted]\n                                                          [--exists]\n                                                          [--ids]\n                                                          [--interval]\n                                                          [--resource-group]\n                                                          [--subscription]\n                                                          [--timeout]\n                                                          [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--access-policy-assignment-name --name -n",
+                "--cluster-name",
+                "--created",
+                "--custom",
+                "--database-name",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

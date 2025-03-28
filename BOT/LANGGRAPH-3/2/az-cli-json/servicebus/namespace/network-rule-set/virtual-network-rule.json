@@ -1,0 +1,37 @@
+{
+    "command_group": "az servicebus namespace network-rule-set virtual-network-rule",
+    "description": "Manage Azure ServiceBus subnet-rule in networkruleSet for namespace.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az servicebus namespace network-rule-set virtual-network-rule add",
+            "summary": "Add a Virtual-Network-Rule for network rule of namespace.",
+            "syntax": "az servicebus namespace network-rule-set virtual-network-rule add --namespace-name\n                                                                  --resource-group\n                                                                  [--subnet]",
+            "required_parameters": [
+                "--namespace-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--subnet"
+            ],
+            "examples": [
+                "az servicebus namespace network-rule-set virtual-network-rule add --resource-group myresourcegroup --namespace-name mynamespace --subnet id={subnetId} ignore-missing-endpoint=True"
+            ]
+        },
+        {
+            "name": "az servicebus namespace network-rule-set virtual-network-rule remove",
+            "summary": "Remove network rule for a namespace.",
+            "syntax": "az servicebus namespace network-rule-set virtual-network-rule remove --namespace-name\n                                                                     --resource-group\n                                                                     [--subnet]",
+            "required_parameters": [
+                "--namespace-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--subnet"
+            ],
+            "examples": [
+                "az servicebus namespace network-rule-set virtual-network-rule remove --resource-group myresourcegroup --namespace-name mynamespace --subnet id=/subscriptions/{subscriptionId}/resourceGroups/{resourcegroup}/providers/Microsoft.Network/virtualNetworks/{vnetname}/subnets/{subnetname}"
+            ]
+        }
+    ]
+}

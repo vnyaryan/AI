@@ -1,0 +1,84 @@
+{
+    "command_group": "az monitor data-collection rule log-analytics",
+    "description": "Manage Log Analytics destinations.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az monitor data-collection rule log-analytics add",
+            "summary": "Add Log Analytics destinations of a data collection rule.",
+            "syntax": "az monitor data-collection rule log-analytics add --data-collection-rule-name\n                                                  --name\n                                                  --resource-group\n                                                  [--resource-id]",
+            "required_parameters": [
+                "--data-collection-rule-name --rule-name",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--resource-id --workspace-resource-id"
+            ],
+            "examples": [
+                "az monitor data-collection rule log-analytics add --rule-name myCollectionRule --resource-group myResourceGroup --name workspace2 --resource-id /subscriptions/703362b3-f2784e4b-9179-c76eaf41ffc2/resourceGroups/myResourceGroup/providers/Microsoft.OperationalInsights/workspaces/workspace2"
+            ]
+        },
+        {
+            "name": "az monitor data-collection rule log-analytics delete",
+            "summary": "Delete a Log Analytics destinations of a data collection rule.",
+            "syntax": "az monitor data-collection rule log-analytics delete --data-collection-rule-name\n                                                     --name\n                                                     --resource-group",
+            "required_parameters": [
+                "--data-collection-rule-name --rule-name",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az monitor data-collection rule log-analytics delete --rule-name myCollectionRule --resource-group myResourceGroup --name workspace2"
+            ]
+        },
+        {
+            "name": "az monitor data-collection rule log-analytics list",
+            "summary": "List Log Analytics destinations of a data collection rule.",
+            "syntax": "az monitor data-collection rule log-analytics list --data-collection-rule-name\n                                                   --resource-group",
+            "required_parameters": [
+                "--data-collection-rule-name --rule-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az monitor data-collection rule log-analytics list --rule-name myCollectionRule --resource-group myResourceGroup"
+            ]
+        },
+        {
+            "name": "az monitor data-collection rule log-analytics show",
+            "summary": "Show a Log Analytics destination of a data collection rule.",
+            "syntax": "az monitor data-collection rule log-analytics show --data-collection-rule-name\n                                                   --name\n                                                   --resource-group",
+            "required_parameters": [
+                "--data-collection-rule-name --rule-name",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az monitor data-collection rule log-analytics show --rule-name myCollectionRule --resource-group myResourceGroup --name centralWorkspace"
+            ]
+        },
+        {
+            "name": "az monitor data-collection rule log-analytics update",
+            "summary": "Update a Log Analytics destination of a data collection rule.",
+            "syntax": "az monitor data-collection rule log-analytics update --data-collection-rule-name\n                                                     --name\n                                                     --resource-group\n                                                     [--add]\n                                                     [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                                     [--remove]\n                                                     [--resource-id]\n                                                     [--set]",
+            "required_parameters": [
+                "--data-collection-rule-name --rule-name",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--add",
+                "--force-string",
+                "--remove",
+                "--resource-id --workspace-resource-id",
+                "--set"
+            ],
+            "examples": [
+                "az monitor data-collection rule log-analytics update --rule-name myCollectionRule --resource-group myResourceGroup --name workspace2 --resource-id \"/subscriptions/703362b3-f278-4e4b-9179-c76eaf41ffc2/resourceGroups/myResourceGroup/providers/Microsoft.OperationalInsights/workspaces/anotherWorkspace\""
+            ]
+        }
+    ]
+}

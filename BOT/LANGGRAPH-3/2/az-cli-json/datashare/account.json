@@ -1,0 +1,109 @@
+{
+    "command_group": "az datashare account",
+    "description": "Manage account with datashare.",
+    "status": "Experimental",
+    "commands": [
+        {
+            "name": "az datashare account create",
+            "summary": "Create an account.",
+            "syntax": "az datashare account create --account-name\n                            --resource-group\n                            [--location]\n                            [--no-wait]\n                            [--tags]",
+            "required_parameters": [
+                "--account-name --name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--location -l",
+                "--no-wait",
+                "--tags"
+            ],
+            "examples": [
+                "az datashare account create --location \"West US 2\" --tags tag1=\"Red\" tag2=\"White\" --name \"Account1\" --resource-group \"SampleResourceGroup\""
+            ]
+        },
+        {
+            "name": "az datashare account delete",
+            "summary": "DeleteAccount.",
+            "syntax": "az datashare account delete [--account-name]\n                            [--ids]\n                            [--no-wait]\n                            [--resource-group]\n                            [--subscription]\n                            [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account-name --name -n",
+                "--ids",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az datashare account delete --name \"Account1\" --resource-group \"SampleResourceGroup\""
+            ]
+        },
+        {
+            "name": "az datashare account list",
+            "summary": "List Accounts in ResourceGroup And List Accounts in Subscription.",
+            "syntax": "az datashare account list [--resource-group]\n                          [--skip-token]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--resource-group -g",
+                "--skip-token"
+            ],
+            "examples": [
+                "az datashare account list --resource-group \"SampleResourceGroup\"",
+                "az datashare account list"
+            ]
+        },
+        {
+            "name": "az datashare account show",
+            "summary": "Get an account.",
+            "syntax": "az datashare account show [--account-name]\n                          [--ids]\n                          [--resource-group]\n                          [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account-name --name -n",
+                "--ids",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az datashare account show --name \"Account1\" --resource-group \"SampleResourceGroup\""
+            ]
+        },
+        {
+            "name": "az datashare account update",
+            "summary": "Patch an account.",
+            "syntax": "az datashare account update [--account-name]\n                            [--ids]\n                            [--resource-group]\n                            [--subscription]\n                            [--tags]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account-name --name -n",
+                "--ids",
+                "--resource-group -g",
+                "--subscription",
+                "--tags"
+            ],
+            "examples": [
+                "az datashare account update --name \"Account1\" --tags tag1=\"Red\" tag2=\"White\" --resource-group \"SampleResourceGroup\""
+            ]
+        },
+        {
+            "name": "az datashare account wait",
+            "summary": "Place the CLI in a waiting state until a condition of the datashare account is met.",
+            "syntax": "az datashare account wait [--account-name]\n                          [--created]\n                          [--custom]\n                          [--deleted]\n                          [--exists]\n                          [--ids]\n                          [--interval]\n                          [--resource-group]\n                          [--subscription]\n                          [--timeout]\n                          [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account-name --name -n",
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": [
+                "az datashare account wait --name \"Account1\" --resource-group \"SampleResourceGroup\" --created",
+                "az datashare account wait --name \"Account1\" --resource-group \"SampleResourceGroup\" --deleted"
+            ]
+        }
+    ]
+}

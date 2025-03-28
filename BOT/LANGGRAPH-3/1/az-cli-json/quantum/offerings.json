@@ -1,0 +1,50 @@
+{
+    "command_group": "az quantum offerings",
+    "description": "Manage provider offerings for Azure Quantum.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az quantum offerings accept-terms",
+            "summary": "Accept the terms of a provider and SKU combination to enable it for workspace creation.",
+            "syntax": "az quantum offerings accept-terms --location\n                                  --provider-id\n                                  --sku",
+            "required_parameters": [
+                "--location -l",
+                "--provider-id -p",
+                "--sku -k"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az quantum offerings accept-terms -p MyProviderId -k MySKU -l MyLocation"
+            ]
+        },
+        {
+            "name": "az quantum offerings list",
+            "summary": "Get the list of all provider offerings available on the given location.",
+            "syntax": "az quantum offerings list --location\n                          [--autoadd-only]",
+            "required_parameters": [
+                "--location -l"
+            ],
+            "optional_parameters": [
+                "--autoadd-only"
+            ],
+            "examples": [
+                "az quantum offerings list -l MyLocation -o table",
+                "az quantum offerings list -l MyLocation --autoadd-only -o table"
+            ]
+        },
+        {
+            "name": "az quantum offerings show-terms",
+            "summary": "Show the terms of a provider and SKU combination including license URL and acceptance status.",
+            "syntax": "az quantum offerings show-terms --location\n                                --provider-id\n                                --sku",
+            "required_parameters": [
+                "--location -l",
+                "--provider-id -p",
+                "--sku -k"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az quantum offerings show-terms -p MyProviderId -k MySKU -l MyLocation"
+            ]
+        }
+    ]
+}

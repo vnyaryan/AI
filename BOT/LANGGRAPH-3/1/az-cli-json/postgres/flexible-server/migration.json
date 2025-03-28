@@ -1,0 +1,104 @@
+{
+    "command_group": "az postgres flexible-server migration",
+    "description": "Manage migration workflows for PostgreSQL Flexible Servers.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az postgres flexible-server migration check-name-availability",
+            "summary": "Checks if the provided migration-name can be used.",
+            "syntax": "az postgres flexible-server migration check-name-availability --migration-name\n                                                              [--ids]\n                                                              [--name]\n                                                              [--resource-group]\n                                                              [--subscription]",
+            "required_parameters": [
+                "--migration-name"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az postgres flexible-server migration check-name-availability --subscription xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx --resource-group testGroup --name testserver --migration-name xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+            ]
+        },
+        {
+            "name": "az postgres flexible-server migration create",
+            "summary": "Create a new migration workflow for a flexible server.",
+            "syntax": "az postgres flexible-server migration create --name\n                                             --properties\n                                             --resource-group\n                                             [--location]\n                                             [--migration-mode {offline, online}]\n                                             [--migration-name]\n                                             [--migration-option {Migrate, Validate, ValidateAndMigrate}]\n                                             [--tags]",
+            "required_parameters": [
+                "--name -n",
+                "--properties -b",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--location -l",
+                "--migration-mode",
+                "--migration-name",
+                "--migration-option",
+                "--tags"
+            ],
+            "examples": [
+                "az postgres flexible-server migration create --subscription xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx --resource-group testGroup --name testserver       --migration-name testmigration --properties \"migrationConfig.json\"",
+                "az postgres flexible-server migration create --subscription xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx --resource-group testGroup --name testserver       --migration-name testmigration --properties \"migrationConfig.json\" --migration-mode offline",
+                "az postgres flexible-server migration create --subscription xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx --resource-group testGroup --name testserver       --migration-name testmigration --properties \"migrationConfig.json\" --migration-mode online --migration-option Validate",
+                "az postgres flexible-server migration create --subscription xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx --resource-group testGroup --name testserver       --migration-name testmigration --properties \"migrationConfig.json\" --migration-option Migrate",
+                "az postgres flexible-server migration create --subscription xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx --resource-group testGroup --name testserver         --migration-name testmigration --properties \"migrationConfig.json\"",
+                "az postgres flexible-server migration create --subscription xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx --resource-group testGroup --name testserver --migration-name testmigration --properties \"migrationConfig.json\""
+            ]
+        },
+        {
+            "name": "az postgres flexible-server migration list",
+            "summary": "List the migrations of a flexible server.",
+            "syntax": "az postgres flexible-server migration list --name\n                                           --resource-group\n                                           [--filter {Active, All}]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--filter"
+            ],
+            "examples": [
+                "az postgres flexible-server migration list --subscription xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx --resource-group testGroup --name testserver --filter Active",
+                "az postgres flexible-server migration list --subscription xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx --resource-group testGroup --name testserver --filter All"
+            ]
+        },
+        {
+            "name": "az postgres flexible-server migration show",
+            "summary": "Get the details of a specific migration.",
+            "syntax": "az postgres flexible-server migration show --migration-name\n                                           [--ids]\n                                           [--name]\n                                           [--resource-group]\n                                           [--subscription]",
+            "required_parameters": [
+                "--migration-name"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az postgres flexible-server migration show --subscription xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx --resource-group testGroup --name testserver --migration-name testmigration"
+            ]
+        },
+        {
+            "name": "az postgres flexible-server migration update",
+            "summary": "Update a specific migration.",
+            "syntax": "az postgres flexible-server migration update --migration-name\n                                             [--cancel]\n                                             [--cutover]\n                                             [--ids]\n                                             [--name]\n                                             [--resource-group]\n                                             [--setup-replication]\n                                             [--subscription]",
+            "required_parameters": [
+                "--migration-name"
+            ],
+            "optional_parameters": [
+                "--cancel",
+                "--cutover",
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--setup-replication",
+                "--subscription"
+            ],
+            "examples": [
+                "az postgres flexible-server migration update --subscription xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx --resource-group testGroup --name testserver --migration-name testmigration --setup-replication",
+                "az postgres flexible-server migration update --subscription xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx --resource-group testGroup --name testserver --migration-name testmigration --cutover",
+                "az postgres flexible-server migration update --subscription xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx --resource-group testGroup --name testserver --migration-name testmigration --cancel"
+            ]
+        }
+    ]
+}

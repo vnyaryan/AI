@@ -1,0 +1,58 @@
+{
+    "command_group": "az load test app-component",
+    "description": "Command group to manage app components.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az load test app-component add",
+            "summary": "Add an app component to a test.",
+            "syntax": "az load test app-component add --app-component-id\n                               --app-component-name\n                               --app-component-type\n                               --load-test-resource\n                               --test-id\n                               [--app-component-kind]\n                               [--resource-group]",
+            "required_parameters": [
+                "--app-component-id",
+                "--app-component-name",
+                "--app-component-type",
+                "--load-test-resource --name -n",
+                "--test-id -t"
+            ],
+            "optional_parameters": [
+                "--app-component-kind",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az load test app-component add --test-id sample-test-id --load-test-resource sample-alt-resource --resource-group sample-rg --app-component-name appcomponentresource --app-component-type microsoft.insights/components --app-component-id \"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/samplerg/providers/microsoft.insights/components/appcomponentresource\" --app-component-kind web"
+            ]
+        },
+        {
+            "name": "az load test app-component list",
+            "summary": "List all app components for a test.",
+            "syntax": "az load test app-component list --load-test-resource\n                                --test-id\n                                [--resource-group]",
+            "required_parameters": [
+                "--load-test-resource --name -n",
+                "--test-id -t"
+            ],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az load test app-component list --test-id sample-test-id --load-test-resource sample-alt-resource --resource-group sample-rg"
+            ]
+        },
+        {
+            "name": "az load test app-component remove",
+            "summary": "Remove the given app component from a test.",
+            "syntax": "az load test app-component remove --app-component-id\n                                  --load-test-resource\n                                  --test-id\n                                  [--resource-group]\n                                  [--yes]",
+            "required_parameters": [
+                "--app-component-id",
+                "--load-test-resource --name -n",
+                "--test-id -t"
+            ],
+            "optional_parameters": [
+                "--resource-group -g",
+                "--yes -y"
+            ],
+            "examples": [
+                "az load test app-component remove --test-id sample-test-id --load-test-resource sample-alt-resource --resource-group sample-rg --app-component-id /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/sample-rg/providers/Microsoft.Compute/virtualMachineScaleSets/app-comp-name --yes"
+            ]
+        }
+    ]
+}

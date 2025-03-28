@@ -1,0 +1,55 @@
+{
+    "command_group": "az iot central device command",
+    "description": "Run device commands.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az iot central device command history",
+            "summary": "Get the details for the latest command request and response sent to the device.",
+            "syntax": "az iot central device command history --app-id\n                                      --cn\n                                      --device-id\n                                      [--api-version {2022-06-30-preview, 2022-07-31}]\n                                      [--central-api-uri]\n                                      [--co]\n                                      [--interface-id]\n                                      [--mn]\n                                      [--token]",
+            "required_parameters": [
+                "--app-id -n",
+                "--cn --command-name",
+                "--device-id -d"
+            ],
+            "optional_parameters": [
+                "--api-version --av",
+                "--central-api-uri --central-dns-suffix",
+                "--co --component-name",
+                "--interface-id -i",
+                "--mn --module-name",
+                "--token"
+            ],
+            "examples": [
+                "az iot central device command history --app-id {appid} --device-id {deviceid} --interface-id {interfaceid} --command-name {commandname}",
+                "az iot central device command history --app-id {appid} --device-id {deviceid} --component-name {componentname} --command-name {commandname}",
+                "az iot central device command history --app-id {appid} --device-id {deviceid} --module-name {modulename} --component-name {componentname} --command-name {commandname}"
+            ]
+        },
+        {
+            "name": "az iot central device command run",
+            "summary": "Run a command on a device and view associated response. Does NOT monitor property updates that the command may perform.",
+            "syntax": "az iot central device command run --app-id\n                                  --cn\n                                  --content\n                                  --device-id\n                                  [--api-version {2022-06-30-preview, 2022-07-31}]\n                                  [--central-api-uri]\n                                  [--co]\n                                  [--interface-id]\n                                  [--mn]\n                                  [--token]",
+            "required_parameters": [
+                "--app-id -n",
+                "--cn --command-name",
+                "--content -k",
+                "--device-id -d"
+            ],
+            "optional_parameters": [
+                "--api-version --av",
+                "--central-api-uri --central-dns-suffix",
+                "--co --component-name",
+                "--interface-id -i",
+                "--mn --module-name",
+                "--token"
+            ],
+            "examples": [
+                "az iot central device command run --app-id {appid} --device-id {deviceid} --interface-id {interfaceid} --command-name {commandname} --content '{\"request\": {payload}}'",
+                "az iot central device command run -n {appid} -d {deviceid} -i {interfaceid} --cn {commandname} -k {payload_file_path}",
+                "az iot central device command run -n {appid} -d {deviceid} --co {componentname} --cn {commandname} -k {payload}",
+                "az iot central device command run -n {appid} -d {deviceid} --mn {modulename} --co {componentname} --cn {commandname} -k {payload}"
+            ]
+        }
+    ]
+}

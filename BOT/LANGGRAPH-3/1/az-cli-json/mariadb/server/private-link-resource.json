@@ -1,0 +1,20 @@
+{
+    "command_group": "az mariadb server private-link-resource",
+    "description": "Manage MariaDB server private link resources.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az mariadb server private-link-resource list",
+            "summary": "List the private link resources supported for a MariaDB server.",
+            "syntax": "az mariadb server private-link-resource list [--ids]\n                                             [--resource-group]\n                                             [--server-name]\n                                             [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--resource-group -g",
+                "--server-name -s",
+                "--subscription"
+            ],
+            "examples": []
+        }
+    ]
+}

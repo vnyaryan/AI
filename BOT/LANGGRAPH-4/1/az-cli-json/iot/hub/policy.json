@@ -1,0 +1,89 @@
+{
+    "command_group": "az iot hub policy",
+    "description": "Manage shared access policies of an IoT hub.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az iot hub policy create",
+            "summary": "Create a new shared access policy in an IoT hub.",
+            "syntax": "az iot hub policy create --hub-name\n                         --name\n                         --permissions\n                         [--resource-group]",
+            "required_parameters": [
+                "--hub-name",
+                "--name -n",
+                "--permissions"
+            ],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az iot hub policy create --hub-name MyIotHub --name new-policy --permissions RegistryWrite ServiceConnect DeviceConnect"
+            ]
+        },
+        {
+            "name": "az iot hub policy delete",
+            "summary": "Delete a shared access policy from an IoT hub.",
+            "syntax": "az iot hub policy delete [--hub-name]\n                         [--ids]\n                         [--name]\n                         [--resource-group]\n                         [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--hub-name",
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az iot hub policy delete --hub-name MyHub --name MySharedAccessPolicy"
+            ]
+        },
+        {
+            "name": "az iot hub policy list",
+            "summary": "List shared access policies of an IoT hub.",
+            "syntax": "az iot hub policy list [--hub-name]\n                       [--ids]\n                       [--resource-group]\n                       [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--hub-name",
+                "--ids",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az iot hub policy list --hub-name MyHub --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az iot hub policy renew-key",
+            "summary": "Regenerate keys of a shared access policy of an IoT hub.",
+            "syntax": "az iot hub policy renew-key --renew-key {primary, secondary, swap}\n                            [--hub-name]\n                            [--ids]\n                            [--name]\n                            [--no-wait]\n                            [--resource-group]\n                            [--subscription]",
+            "required_parameters": [
+                "--renew-key --rk"
+            ],
+            "optional_parameters": [
+                "--hub-name",
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az iot hub policy renew-key --hub-name MyHub --name MySharedAccessPolicy --rk Primary"
+            ]
+        },
+        {
+            "name": "az iot hub policy show",
+            "summary": "Get the details of a shared access policy of an IoT hub.",
+            "syntax": "az iot hub policy show [--hub-name]\n                       [--ids]\n                       [--name]\n                       [--resource-group]\n                       [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--hub-name",
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az iot hub policy show --hub-name MyHub --name MySharedAccessPolicy"
+            ]
+        }
+    ]
+}

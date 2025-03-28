@@ -1,0 +1,56 @@
+{
+    "command_group": "az self-help discovery-solution",
+    "description": "Discovery-solution command will help you discover available solutions based on your resource type and problem classification Id.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az self-help discovery-solution list",
+            "summary": "List the relevant Azure diagnostics and solutions using problemClassificationId API.",
+            "syntax": "az self-help discovery-solution list [--filter]\n                                     [--max-items]\n                                     [--next-token]\n                                     [--skiptoken]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--filter",
+                "--max-items",
+                "--next-token",
+                "--skiptoken"
+            ],
+            "examples": [
+                "az self-help discovery-solution list --filter \"ProblemClassificationId eq '00000000-0000-0000-0000-000000000000'\""
+            ]
+        },
+        {
+            "name": "az self-help discovery-solution list-nlp",
+            "summary": "List the relevant Azure diagnostics and solutions using issue summary.",
+            "syntax": "az self-help discovery-solution list-nlp [--additional-context]\n                                         [--issue-summary]\n                                         [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                         [--resource-id]\n                                         [--service-id]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--additional-context",
+                "--issue-summary",
+                "--no-wait",
+                "--resource-id",
+                "--service-id"
+            ],
+            "examples": [
+                "az self-help discovery-solution list-nlp --resource-id resource-id --issue-summary issue-summary\n--service-id service-id additional-context additional-context\""
+            ]
+        },
+        {
+            "name": "az self-help discovery-solution list-nlp-subscription",
+            "summary": "List the relevant Azure diagnostics and solutions using issue summary.",
+            "syntax": "az self-help discovery-solution list-nlp-subscription --subscription-id\n                                                      [--additional-context]\n                                                      [--issue-summary]\n                                                      [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                                      [--resource-id]\n                                                      [--service-id]",
+            "required_parameters": [
+                "--subscription-id"
+            ],
+            "optional_parameters": [
+                "--additional-context",
+                "--issue-summary",
+                "--no-wait",
+                "--resource-id",
+                "--service-id"
+            ],
+            "examples": [
+                "az self-help discovery-solution list-nlp-subscription --subscription-id subscription-id --resource-id resource-id --issue-summary issue-summary\n--service-id service-id additional-context additional-context\""
+            ]
+        }
+    ]
+}

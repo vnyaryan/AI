@@ -1,0 +1,42 @@
+{
+    "command_group": "az internet-analyzer",
+    "description": "Commands to manage internet analyzer.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az internet-analyzer show-scorecard",
+            "summary": "Show latency scorecard for a test.",
+            "syntax": "az internet-analyzer show-scorecard --aggregation-interval\n                                    --profile-name\n                                    --resource-group\n                                    --test-name\n                                    [--country]\n                                    [--end-date-time-utc]",
+            "required_parameters": [
+                "--aggregation-interval",
+                "--profile-name",
+                "--resource-group -g",
+                "--test-name"
+            ],
+            "optional_parameters": [
+                "--country",
+                "--end-date-time-utc"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az internet-analyzer show-timeseries",
+            "summary": "Show timeseries for a test.",
+            "syntax": "az internet-analyzer show-timeseries --aggregation-interval\n                                     --end-date-time-utc\n                                     --endpoint\n                                     --profile-name\n                                     --resource-group\n                                     --start-date-time-utc\n                                     --test-name\n                                     --timeseries-type\n                                     [--country]",
+            "required_parameters": [
+                "--aggregation-interval",
+                "--end-date-time-utc",
+                "--endpoint",
+                "--profile-name",
+                "--resource-group -g",
+                "--start-date-time-utc",
+                "--test-name",
+                "--timeseries-type"
+            ],
+            "optional_parameters": [
+                "--country"
+            ],
+            "examples": []
+        }
+    ]
+}

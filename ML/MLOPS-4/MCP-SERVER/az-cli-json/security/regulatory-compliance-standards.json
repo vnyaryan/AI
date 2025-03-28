@@ -1,0 +1,29 @@
+{
+    "command_group": "az security regulatory-compliance-standards",
+    "description": "Regulatory compliance standards.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az security regulatory-compliance-standards list",
+            "summary": "List supported regulatory compliance standards details and state results.",
+            "syntax": "az security regulatory-compliance-standards list",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "examples": [
+                "az security regulatory-compliance-standards list"
+            ]
+        },
+        {
+            "name": "az security regulatory-compliance-standards show",
+            "summary": "Shows a regulatory compliance details state for selected standard.",
+            "syntax": "az security regulatory-compliance-standards show --name",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az security regulatory-compliance-standards show -n 'Azure-CIS-1.1.0'"
+            ]
+        }
+    ]
+}

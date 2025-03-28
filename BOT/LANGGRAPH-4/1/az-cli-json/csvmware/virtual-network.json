@@ -1,0 +1,35 @@
+{
+    "command_group": "az csvmware virtual-network",
+    "description": "Manage virtual networks.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az csvmware virtual-network list",
+            "summary": "List details of available virtual networks in a private cloud.",
+            "syntax": "az csvmware virtual-network list --location\n                                 --private-cloud\n                                 --resource-pool",
+            "required_parameters": [
+                "--location -l",
+                "--private-cloud -p",
+                "--resource-pool -r"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az csvmware virtual-network list -p MyPrivateCloud -r MyResourcePool --location eastus"
+            ]
+        },
+        {
+            "name": "az csvmware virtual-network show",
+            "summary": "Get the details of a virtual network in a private cloud.",
+            "syntax": "az csvmware virtual-network show --location\n                                 --name\n                                 --private-cloud",
+            "required_parameters": [
+                "--location -l",
+                "--name -n",
+                "--private-cloud -p"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az csvmware virtual-network show -n MyVirtualNetwork -p MyPrivateCloud --location eastus"
+            ]
+        }
+    ]
+}

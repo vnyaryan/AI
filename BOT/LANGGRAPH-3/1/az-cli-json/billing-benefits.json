@@ -1,0 +1,19 @@
+{
+    "command_group": "az billing-benefits",
+    "description": "Azure billing benefits commands.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az billing-benefits validate-purchase",
+            "summary": "Validate savings plan purchase.",
+            "syntax": "az billing-benefits validate-purchase [--benefits]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--benefits"
+            ],
+            "examples": [
+                "az billing-benefits validate-purchase --benefits \"[{applied-scope-type:Shared,billing-plan:P1M,billing-scope-id:50000000-aaaa-bbbb-cccc-200000000012,display-name:name1,sku:Compute_Savings_Plan,term:P1Y,commitment:{amount:10.0,currency-code:USD,grain:Hourly}}]\""
+            ]
+        }
+    ]
+}

@@ -1,0 +1,22 @@
+{
+    "command_group": "az keyvault private-link-resource",
+    "description": "Manage vault/HSM private link resources.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az keyvault private-link-resource list",
+            "summary": "List the private link resources supported for a Key Vault/HSM.",
+            "syntax": "az keyvault private-link-resource list [--hsm-name]\n                                       [--resource-group]\n                                       [--vault-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--hsm-name",
+                "--resource-group -g",
+                "--vault-name"
+            ],
+            "examples": [
+                "az keyvault private-link-resource list --vault-name mykv",
+                "az keyvault private-link-resource list --hsm-name myhsm"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,32 @@
+{
+    "command_group": "az monitor metrics alert condition",
+    "description": "Manage near-realtime metric alert rule conditions.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az monitor metrics alert condition create",
+            "summary": "Build a metric alert rule condition.",
+            "syntax": "az monitor metrics alert condition create --aggregation {Average, Count, Maximum, Minimum, Total}\n                                          --metric\n                                          --op {Equals, GreaterOrLessThan, GreaterThan, GreaterThanOrEqual, LessThan, LessThanOrEqual, NotEquals}\n                                          --type {dynamic, static}\n                                          [--dimension]\n                                          [--namespace]\n                                          [--num-periods]\n                                          [--num-violations]\n                                          [--sensitivity {High, Low, Medium}]\n                                          [--since]\n                                          [--skip-metric-validation {false, true}]\n                                          [--threshold]",
+            "required_parameters": [
+                "--aggregation",
+                "--metric",
+                "--op --operator",
+                "--type -t"
+            ],
+            "optional_parameters": [
+                "--dimension",
+                "--namespace",
+                "--num-periods",
+                "--num-violations",
+                "--sensitivity",
+                "--since",
+                "--skip-metric-validation",
+                "--threshold"
+            ],
+            "examples": [
+                "$dim1 = az monitor metrics alert dimension create -n dimName --op Include -v GetBlob PutBlob\n$dim2 = az monitor metrics alert dimension create -n Instance --op Exclude -v Get Put\n$condition = az monitor metrics alert condition create -t static \n\n--aggregation Count \n\n--metric \"CPU Percentage\" \n\n--op GreaterThan  \n\n--threshold 95 \n\n--dimension \"$dim1\" \"$dim2\"",
+                "$condition = az monitor metrics alert condition create -t dynamic \n\n--aggregation Average \n\n--metric \"CPU Percentage\" \n\n--op GreaterOrLessThan \n\n--num-violations 4 \n\n--num-periods 4 \n\n--since 2020-11-02T12:11"
+            ]
+        }
+    ]
+}

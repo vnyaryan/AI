@@ -1,0 +1,88 @@
+{
+    "command_group": "az devops wiki page",
+    "description": "Manage wiki pages.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az devops wiki page create",
+            "summary": "Add a new page.",
+            "syntax": "az devops wiki page create --path\n                           --wiki\n                           [--comment]\n                           [--content]\n                           [--detect {false, true}]\n                           [--encoding {ascii, utf-16be, utf-16le, utf-8}]\n                           [--file-path]\n                           [--org]\n                           [--project]",
+            "required_parameters": [
+                "--path",
+                "--wiki"
+            ],
+            "optional_parameters": [
+                "--comment",
+                "--content",
+                "--detect",
+                "--encoding",
+                "--file-path",
+                "--org --organization",
+                "--project -p"
+            ],
+            "examples": [
+                "az devops wiki page create --path 'my page' --wiki myprojectwiki --content \"Hello World\"",
+                "az devops wiki page create --path 'my page' --wiki myprojectwiki --file-path a.txt            --encoding utf-8"
+            ]
+        },
+        {
+            "name": "az devops wiki page delete",
+            "summary": "Delete a page.",
+            "syntax": "az devops wiki page delete --path\n                           --wiki\n                           [--comment]\n                           [--detect {false, true}]\n                           [--org]\n                           [--project]\n                           [--yes]",
+            "required_parameters": [
+                "--path",
+                "--wiki"
+            ],
+            "optional_parameters": [
+                "--comment",
+                "--detect",
+                "--org --organization",
+                "--project -p",
+                "--yes -y"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az devops wiki page show",
+            "summary": "Get the content of a page or open a page.",
+            "syntax": "az devops wiki page show --path\n                         --wiki\n                         [--detect {false, true}]\n                         [--include-content]\n                         [--open]\n                         [--org]\n                         [--project]\n                         [--recursion-level]\n                         [--version]",
+            "required_parameters": [
+                "--path",
+                "--wiki"
+            ],
+            "optional_parameters": [
+                "--detect",
+                "--include-content",
+                "--open",
+                "--org --organization",
+                "--project -p",
+                "--recursion-level",
+                "--version -v"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az devops wiki page update",
+            "summary": "Edit a page.",
+            "syntax": "az devops wiki page update --path\n                           --version\n                           --wiki\n                           [--comment]\n                           [--content]\n                           [--detect {false, true}]\n                           [--encoding {ascii, utf-16be, utf-16le, utf-8}]\n                           [--file-path]\n                           [--org]\n                           [--project]",
+            "required_parameters": [
+                "--path",
+                "--version -v",
+                "--wiki"
+            ],
+            "optional_parameters": [
+                "--comment",
+                "--content",
+                "--detect",
+                "--encoding",
+                "--file-path",
+                "--org --organization",
+                "--project -p"
+            ],
+            "examples": [
+                "az devops wiki page update --path 'my page' --wiki myprojectwiki --content \"Hello World\"            --version 4ae78ad5835cb7dd55072fe210c9ee7eb6d6413b",
+                "az devops wiki page update --path 'my page' --wiki myprojectwiki --file-path a.txt            --encoding utf-8 --version 4ae78ad5835cb7dd55072fe210c9ee7eb6d6413b"
+            ]
+        }
+    ]
+}

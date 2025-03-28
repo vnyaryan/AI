@@ -1,0 +1,78 @@
+{
+    "command_group": "az dnc controller",
+    "description": "Manage controller with dnc.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az dnc controller create",
+            "summary": "Create a dnc controller.",
+            "syntax": "az dnc controller create --name\n                         --resource-group\n                         [--location]\n                         [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                         [--purpose {prod, test}]\n                         [--tags]",
+            "required_parameters": [
+                "--name --resource-name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--location -l",
+                "--no-wait",
+                "--purpose",
+                "--tags"
+            ],
+            "examples": [
+                "az dnc controller create --location \"West US\" --resource-group \"TestRG\" --resource-name \"testcontroller\"",
+                "az dnc controller create --location \"West US\" --resource-group \"TestRG\" --resource-name \"testcontroller\" --purpose \"test\""
+            ]
+        },
+        {
+            "name": "az dnc controller delete",
+            "summary": "Delete the DNC controller.",
+            "syntax": "az dnc controller delete [--ids]\n                         [--name]\n                         [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                         [--resource-group]\n                         [--subscription]\n                         [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --resource-name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az dnc controller delete --resource-group \"TestRG\" --resource-name \"testcontroller\""
+            ]
+        },
+        {
+            "name": "az dnc controller show",
+            "summary": "Get details about the specified dnc controller.",
+            "syntax": "az dnc controller show [--ids]\n                       [--name]\n                       [--resource-group]\n                       [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --resource-name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az dnc controller show --resource-group \"TestRG\" --resource-name \"testcontroller\""
+            ]
+        },
+        {
+            "name": "az dnc controller wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az dnc controller wait [--created]\n                       [--custom]\n                       [--deleted]\n                       [--exists]\n                       [--ids]\n                       [--interval]\n                       [--name]\n                       [--resource-group]\n                       [--subscription]\n                       [--timeout]\n                       [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--name --resource-name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

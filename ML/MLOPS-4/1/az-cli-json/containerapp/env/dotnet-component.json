@@ -1,0 +1,68 @@
+{
+    "command_group": "az containerapp env dotnet-component",
+    "description": "Commands to manage DotNet components within the environment.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az containerapp env dotnet-component create",
+            "summary": "Command to create DotNet component to enable Aspire Dashboard. Supported DotNet component type is Aspire Dashboard.",
+            "syntax": "az containerapp env dotnet-component create --environment\n                                            --name\n                                            --resource-group\n                                            [--no-wait]\n                                            [--type {AspireDashboard}]",
+            "required_parameters": [
+                "--environment",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--no-wait",
+                "--type"
+            ],
+            "examples": [
+                "az containerapp env dotnet-component create -g MyResourceGroup \\\n    -n MyDotNetComponentName \\\n    --environment MyEnvironment \\\n    --type AspireDashboard"
+            ]
+        },
+        {
+            "name": "az containerapp env dotnet-component delete",
+            "summary": "Command to delete DotNet component to disable Aspire Dashboard.",
+            "syntax": "az containerapp env dotnet-component delete --environment\n                                            --name\n                                            --resource-group\n                                            [--no-wait]\n                                            [--yes]",
+            "required_parameters": [
+                "--environment",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--no-wait",
+                "--yes -y"
+            ],
+            "examples": [
+                "az containerapp env dotnet-component delete -g MyResourceGroup \\\n    -n MyDotNetComponentName \\\n    --environment MyEnvironment"
+            ]
+        },
+        {
+            "name": "az containerapp env dotnet-component list",
+            "summary": "Command to list DotNet components within the environment.",
+            "syntax": "az containerapp env dotnet-component list --environment\n                                          --resource-group",
+            "required_parameters": [
+                "--environment",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az containerapp env dotnet-component list -g MyResourceGroup --environment MyEnvironment"
+            ]
+        },
+        {
+            "name": "az containerapp env dotnet-component show",
+            "summary": "Command to show DotNet component in environment.",
+            "syntax": "az containerapp env dotnet-component show --environment\n                                          --name\n                                          --resource-group",
+            "required_parameters": [
+                "--environment",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az containerapp env dotnet-component show -n MyDotNetComponentName --environment MyContainerappEnvironment -g MyResourceGroup"
+            ]
+        }
+    ]
+}

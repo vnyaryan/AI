@@ -1,0 +1,160 @@
+{
+    "command_group": "az spring app deployment",
+    "description": "Commands to manage life cycle of deployments of an app in Azure Spring Apps. More operations on deployments can be done on app level with parameter --deployment. e.g. `az spring app deploy --deployment <staging deployment>`.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az spring app deployment create",
+            "summary": "Create a staging deployment for the app. To deploy code or update setting to an existing deployment, use `az spring app deploy/update --deployment <staging deployment>`.",
+            "syntax": "az spring app deployment create --app\n                                --name\n                                --resource-group\n                                --service\n                                [--apms]\n                                [--artifact-path]\n                                [--build-certificates]\n                                [--build-env]\n                                [--builder]\n                                [--config-file-patterns]\n                                [--container-args]\n                                [--container-command]\n                                [--container-image]\n                                [--container-registry]\n                                [--cpu]\n                                [--custom-actuator-path]\n                                [--custom-actuator-port]\n                                [--disable-app-log]\n                                [--disable-probe {false, true}]\n                                [--disable-validation {false, true}]\n                                [--enable-liveness-probe {false, true}]\n                                [--enable-readiness-probe {false, true}]\n                                [--enable-startup-probe {false, true}]\n                                [--env]\n                                [--grace-period]\n                                [--instance-count]\n                                [--jvm-options]\n                                [--language-framework]\n                                [--liveness-probe-config]\n                                [--main-entry]\n                                [--max-replicas]\n                                [--memory]\n                                [--min-replicas]\n                                [--no-wait]\n                                [--readiness-probe-config]\n                                [--registry-password]\n                                [--registry-username]\n                                [--runtime-version {Java_11, Java_17, Java_21, Java_8, NetCore_31}]\n                                [--scale-rule-auth]\n                                [--scale-rule-http-concurrency]\n                                [--scale-rule-metadata]\n                                [--scale-rule-name]\n                                [--scale-rule-type]\n                                [--server-version]\n                                [--skip-clone-settings]\n                                [--source-path]\n                                [--startup-probe-config]\n                                [--target-module]\n                                [--version]",
+            "required_parameters": [
+                "--app",
+                "--name -n",
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [
+                "--apms",
+                "--artifact-path",
+                "--build-certificates",
+                "--build-env",
+                "--builder",
+                "--config-file-patterns",
+                "--container-args",
+                "--container-command",
+                "--container-image",
+                "--container-registry",
+                "--cpu",
+                "--custom-actuator-path",
+                "--custom-actuator-port",
+                "--disable-app-log",
+                "--disable-probe",
+                "--disable-validation",
+                "--enable-liveness-probe",
+                "--enable-readiness-probe",
+                "--enable-startup-probe",
+                "--env",
+                "--grace-period --termination-grace-period-seconds",
+                "--instance-count",
+                "--jvm-options",
+                "--language-framework",
+                "--liveness-probe-config",
+                "--main-entry -m",
+                "--max-replicas",
+                "--memory",
+                "--min-replicas",
+                "--no-wait",
+                "--readiness-probe-config",
+                "--registry-password",
+                "--registry-username",
+                "--runtime-version",
+                "--scale-rule-auth --sra",
+                "--scale-rule-http-concurrency --scale-rule-tcp-concurrency --srhc --srtc",
+                "--scale-rule-metadata --srm",
+                "--scale-rule-name --srn",
+                "--scale-rule-type --srt",
+                "--server-version",
+                "--skip-clone-settings",
+                "--source-path",
+                "--startup-probe-config",
+                "--target-module",
+                "--version"
+            ],
+            "examples": [
+                "az spring app deployment create -n green-deployment --app MyApp -s MyCluster -g MyResourceGroup --source-path",
+                "az spring app deployment create -n green-deployment --app MyApp -s MyCluster -g MyResourceGroup --artifact-path app.jar --jvm-options=\"-XX:+UseG1GC -XX:+UseStringDeduplication\" --env foo=bar",
+                "az spring app deployment create -n green-deployment --app MyApp -s MyCluster -g MyResourceGroup --container-image contoso/your-app:v1",
+                "az spring app deployment create -n green-deployment --app MyApp -s MyCluster -g MyResourceGroup --container-image contoso/your-app:v1 --container-registry myacr.azurecr.io --registry-username <username> --registry-password <password>"
+            ]
+        },
+        {
+            "name": "az spring app deployment delete",
+            "summary": "Delete a deployment of the app.",
+            "syntax": "az spring app deployment delete --app\n                                --name\n                                --resource-group\n                                --service\n                                [--no-wait]",
+            "required_parameters": [
+                "--app",
+                "--name -n",
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [
+                "--no-wait"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az spring app deployment generate-heap-dump",
+            "summary": "Generate a heap dump of your target app instance to given file path.",
+            "syntax": "az spring app deployment generate-heap-dump --app\n                                            --app-instance\n                                            --file-path\n                                            --resource-group\n                                            --service\n                                            [--deployment]",
+            "required_parameters": [
+                "--app",
+                "--app-instance",
+                "--file-path",
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [
+                "--deployment -d"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az spring app deployment generate-thread-dump",
+            "summary": "Generate a thread dump of your target app instance to given file path.",
+            "syntax": "az spring app deployment generate-thread-dump --app\n                                              --app-instance\n                                              --file-path\n                                              --resource-group\n                                              --service\n                                              [--deployment]",
+            "required_parameters": [
+                "--app",
+                "--app-instance",
+                "--file-path",
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [
+                "--deployment -d"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az spring app deployment list",
+            "summary": "List all deployments in an app.",
+            "syntax": "az spring app deployment list --app\n                              --resource-group\n                              --service",
+            "required_parameters": [
+                "--app",
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az spring app deployment show",
+            "summary": "Show details of a deployment.",
+            "syntax": "az spring app deployment show --app\n                              --name\n                              --resource-group\n                              --service",
+            "required_parameters": [
+                "--app",
+                "--name -n",
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az spring app deployment start-jfr",
+            "summary": "Start a JFR on your target app instance to given file path.",
+            "syntax": "az spring app deployment start-jfr --app\n                                   --app-instance\n                                   --file-path\n                                   --resource-group\n                                   --service\n                                   [--deployment]\n                                   [--duration]",
+            "required_parameters": [
+                "--app",
+                "--app-instance",
+                "--file-path",
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [
+                "--deployment -d",
+                "--duration"
+            ],
+            "examples": []
+        }
+    ]
+}

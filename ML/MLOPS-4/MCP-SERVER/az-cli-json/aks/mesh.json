@@ -1,0 +1,195 @@
+{
+    "command_group": "az aks mesh",
+    "description": "Commands to manage Azure Service Mesh.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az aks mesh disable",
+            "summary": "Disable Azure Service Mesh.",
+            "syntax": "az aks mesh disable --name\n                    --resource-group\n                    [--no-wait]\n                    [--yes]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--no-wait",
+                "--yes -y"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az aks mesh disable",
+            "summary": "Disable Azure Service Mesh.",
+            "syntax": "az aks mesh disable --name\n                    --resource-group\n                    [--no-wait]\n                    [--yes]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--no-wait",
+                "--yes -y"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az aks mesh disable-ingress-gateway",
+            "summary": "Disable an Azure Service Mesh ingress gateway.",
+            "syntax": "az aks mesh disable-ingress-gateway --ingress-gateway-type {External, Internal}\n                                    --name\n                                    --resource-group\n                                    [--no-wait]\n                                    [--yes]",
+            "required_parameters": [
+                "--ingress-gateway-type",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--no-wait",
+                "--yes -y"
+            ],
+            "examples": [
+                "az aks mesh disable-ingress-gateway --resource-group MyResourceGroup --name MyManagedCluster --ingress-gateway-type Internal"
+            ]
+        },
+        {
+            "name": "az aks mesh disable-ingress-gateway",
+            "summary": "Disable an Azure Service Mesh ingress gateway.",
+            "syntax": "az aks mesh disable-ingress-gateway --ingress-gateway-type {External, Internal}\n                                    --name\n                                    --resource-group\n                                    [--no-wait]\n                                    [--yes]",
+            "required_parameters": [
+                "--ingress-gateway-type",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--no-wait",
+                "--yes -y"
+            ],
+            "examples": [
+                "az aks mesh disable-ingress-gateway --resource-group MyResourceGroup --name MyManagedCluster --ingress-gateway-type Internal"
+            ]
+        },
+        {
+            "name": "az aks mesh enable",
+            "summary": "Enable Azure Service Mesh.",
+            "syntax": "az aks mesh enable --name\n                   --resource-group\n                   [--ca-cert-object-name]\n                   [--ca-key-object-name]\n                   [--cert-chain-object-name]\n                   [--key-vault-id]\n                   [--no-wait]\n                   [--revision]\n                   [--root-cert-object-name]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--ca-cert-object-name",
+                "--ca-key-object-name",
+                "--cert-chain-object-name",
+                "--key-vault-id",
+                "--no-wait",
+                "--revision",
+                "--root-cert-object-name"
+            ],
+            "examples": [
+                "az aks mesh enable --resource-group MyResourceGroup --name MyManagedCluster",
+                "az aks mesh enable --resource-group MyResourceGroup --name MyManagedCluster --key-vault-id /subscriptions/00000/resourceGroups/foo/providers/Microsoft.KeyVault/vaults/foo --ca-cert-object-name my-ca-cert --ca-key-object-name my-ca-key --cert-chain-object-name my-cert-chain --root-cert-object-name my-root-cert"
+            ]
+        },
+        {
+            "name": "az aks mesh enable",
+            "summary": "Enable Azure Service Mesh.",
+            "syntax": "az aks mesh enable --name\n                   --resource-group\n                   [--ca-cert-object-name]\n                   [--ca-key-object-name]\n                   [--cert-chain-object-name]\n                   [--key-vault-id]\n                   [--no-wait]\n                   [--revision]\n                   [--root-cert-object-name]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--ca-cert-object-name",
+                "--ca-key-object-name",
+                "--cert-chain-object-name",
+                "--key-vault-id",
+                "--no-wait",
+                "--revision",
+                "--root-cert-object-name"
+            ],
+            "examples": [
+                "az aks mesh enable --resource-group MyResourceGroup --name MyManagedCluster",
+                "az aks mesh enable --resource-group MyResourceGroup --name MyManagedCluster --key-vault-id /subscriptions/8ecadfc9-d1a3-4ea4-b844-0d9f87e4d7c8/resourceGroups/foo/providers/Microsoft.KeyVault/vaults/foo --ca-cert-object-name my-ca-cert --ca-key-object-name my-ca-key --cert-chain-object-name my-cert-chain --root-cert-object-name my-root-cert"
+            ]
+        },
+        {
+            "name": "az aks mesh enable-ingress-gateway",
+            "summary": "Enable an Azure Service Mesh ingress gateway.",
+            "syntax": "az aks mesh enable-ingress-gateway --ingress-gateway-type {External, Internal}\n                                   --name\n                                   --resource-group\n                                   [--no-wait]",
+            "required_parameters": [
+                "--ingress-gateway-type",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--no-wait"
+            ],
+            "examples": [
+                "az aks mesh enable-ingress-gateway --resource-group MyResourceGroup --name MyManagedCluster --ingress-gateway-type Internal"
+            ]
+        },
+        {
+            "name": "az aks mesh enable-ingress-gateway",
+            "summary": "Enable an Azure Service Mesh ingress gateway.",
+            "syntax": "az aks mesh enable-ingress-gateway --ingress-gateway-type {External, Internal}\n                                   --name\n                                   --resource-group\n                                   [--no-wait]",
+            "required_parameters": [
+                "--ingress-gateway-type",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--no-wait"
+            ],
+            "examples": [
+                "az aks mesh enable-ingress-gateway --resource-group MyResourceGroup --name MyManagedCluster --ingress-gateway-type Internal"
+            ]
+        },
+        {
+            "name": "az aks mesh get-revisions",
+            "summary": "Discover available Azure Service Mesh revisions and their compatibility.",
+            "syntax": "az aks mesh get-revisions --location",
+            "required_parameters": [
+                "--location -l"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az aks mesh get-revisions --location westus2"
+            ]
+        },
+        {
+            "name": "az aks mesh get-revisions",
+            "summary": "Discover available Azure Service Mesh revisions and their compatibility.",
+            "syntax": "az aks mesh get-revisions --location",
+            "required_parameters": [
+                "--location -l"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az aks mesh get-revisions --location westus2"
+            ]
+        },
+        {
+            "name": "az aks mesh get-upgrades",
+            "summary": "Discover available Azure Service Mesh upgrades.",
+            "syntax": "az aks mesh get-upgrades --name\n                         --resource-group",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az aks mesh get-upgrades --resource-group MyResourceGroup --name MyManagedCluster"
+            ]
+        },
+        {
+            "name": "az aks mesh get-upgrades",
+            "summary": "Discover available Azure Service Mesh upgrades.",
+            "syntax": "az aks mesh get-upgrades --name\n                         --resource-group",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az aks mesh get-upgrades --resource-group MyResourceGroup --name MyManagedCluster"
+            ]
+        }
+    ]
+}

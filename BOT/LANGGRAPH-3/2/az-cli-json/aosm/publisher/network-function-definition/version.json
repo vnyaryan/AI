@@ -1,0 +1,58 @@
+{
+    "command_group": "az aosm publisher network-function-definition version",
+    "description": "Commands to manage network function definition version resources.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az aosm publisher network-function-definition version list",
+            "summary": "List information about the network function definition versions available in the specified network function definition group.",
+            "syntax": "az aosm publisher network-function-definition version list --group-name\n                                                           --publisher-name\n                                                           --resource-group\n                                                           [--max-items]\n                                                           [--next-token]",
+            "required_parameters": [
+                "--group-name -n",
+                "--publisher-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az aosm publisher network-function-definition version list --resource-group contoso-aosm --publisher-name contoso --group-name nginx"
+            ]
+        },
+        {
+            "name": "az aosm publisher network-function-definition version show",
+            "summary": "Get information about a network function definition version.",
+            "syntax": "az aosm publisher network-function-definition version show [--group-name]\n                                                           [--ids]\n                                                           [--publisher-name]\n                                                           [--resource-group]\n                                                           [--subscription]\n                                                           [--version-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--group-name -n",
+                "--ids",
+                "--publisher-name",
+                "--resource-group -g",
+                "--subscription",
+                "--version-name"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az aosm publisher network-function-definition version update-state",
+            "summary": "Update network function definition version state.",
+            "syntax": "az aosm publisher network-function-definition version update-state [--group-name]\n                                                                   [--ids]\n                                                                   [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                                                   [--publisher-name]\n                                                                   [--resource-group]\n                                                                   [--subscription]\n                                                                   [--version-name]\n                                                                   [--version-state {Active, Deprecated, Preview, Unknown, Validating, ValidationFailed}]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--group-name -n",
+                "--ids",
+                "--no-wait",
+                "--publisher-name",
+                "--resource-group -g",
+                "--subscription",
+                "--version-name",
+                "--version-state"
+            ],
+            "examples": [
+                "az aosm publisher network-function-definition version update-state --resource-group contoso-aosm --publisher-name contoso --group-name nginx --version-name 2.0.0 --version-state Active"
+            ]
+        }
+    ]
+}

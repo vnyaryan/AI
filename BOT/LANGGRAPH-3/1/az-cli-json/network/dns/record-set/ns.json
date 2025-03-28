@@ -1,0 +1,142 @@
+{
+    "command_group": "az network dns record-set ns",
+    "description": "Manage DNS NS records.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az network dns record-set ns add-record",
+            "summary": "Add an NS record.",
+            "syntax": "az network dns record-set ns add-record --nsdname\n                                        --record-set-name\n                                        --resource-group\n                                        --zone-name\n                                        [--if-none-match]\n                                        [--subscriptionid]\n                                        [--ttl]",
+            "required_parameters": [
+                "--nsdname -d",
+                "--record-set-name -n",
+                "--resource-group -g",
+                "--zone-name -z"
+            ],
+            "optional_parameters": [
+                "--if-none-match",
+                "--subscriptionid -s",
+                "--ttl"
+            ],
+            "examples": [
+                "az network dns record-set ns add-record -g MyResourceGroup -z www.mysite.com \\\n    -n MyRecordSet -d ns.mysite.com"
+            ]
+        },
+        {
+            "name": "az network dns record-set ns create",
+            "summary": "Create an NS record set.",
+            "syntax": "az network dns record-set ns create --name\n                                    --resource-group\n                                    --zone-name\n                                    [--if-match]\n                                    [--if-none-match]\n                                    [--metadata]\n                                    [--target-resource]\n                                    [--tm-profile]\n                                    [--ttl]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g",
+                "--zone-name -z"
+            ],
+            "optional_parameters": [
+                "--if-match",
+                "--if-none-match",
+                "--metadata",
+                "--target-resource",
+                "--tm-profile --traffic-management-profile",
+                "--ttl"
+            ],
+            "examples": [
+                "az network dns record-set ns create -g MyResourceGroup -z www.mysite.com -n MyRecordSet --metadata owner=WebTeam"
+            ]
+        },
+        {
+            "name": "az network dns record-set ns delete",
+            "summary": "Delete an NS record set.",
+            "syntax": "az network dns record-set ns delete [--ids]\n                                    [--if-match]\n                                    [--name]\n                                    [--resource-group]\n                                    [--subscription]\n                                    [--yes]\n                                    [--zone-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--if-match",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y",
+                "--zone-name -z"
+            ],
+            "examples": [
+                "az network dns record-set ns delete -g MyResourceGroup -z www.mysite.com -n MyRecordSet"
+            ]
+        },
+        {
+            "name": "az network dns record-set ns list",
+            "summary": "List NS record sets in a zone.",
+            "syntax": "az network dns record-set ns list --resource-group\n                                  --zone-name\n                                  [--max-items]\n                                  [--next-token]\n                                  [--recordsetnamesuffix]\n                                  [--top]",
+            "required_parameters": [
+                "--resource-group -g",
+                "--zone-name -z"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token",
+                "--recordsetnamesuffix",
+                "--top"
+            ],
+            "examples": [
+                "az network dns record-set ns list -g MyResourceGroup -z www.mysite.com"
+            ]
+        },
+        {
+            "name": "az network dns record-set ns remove-record",
+            "summary": "Remove an NS record from its record set.",
+            "syntax": "az network dns record-set ns remove-record --nsdname\n                                           --record-set-name\n                                           --resource-group\n                                           --zone-name\n                                           [--keep-empty-record-set]",
+            "required_parameters": [
+                "--nsdname -d",
+                "--record-set-name -n",
+                "--resource-group -g",
+                "--zone-name -z"
+            ],
+            "optional_parameters": [
+                "--keep-empty-record-set"
+            ],
+            "examples": [
+                "az network dns record-set ns remove-record -g MyResourceGroup -z www.mysite.com \\\n    -n MyRecordSet -d ns.mysite.com",
+                "az network dns record-set ns remove-record --keep-empty-record-set --nsdname ns.mysite.com --record-set-name MyRecordSet --resource-group MyResourceGroup --subscription MySubscription --zone-name www.mysite.com"
+            ]
+        },
+        {
+            "name": "az network dns record-set ns show",
+            "summary": "Get an NS record set.",
+            "syntax": "az network dns record-set ns show [--ids]\n                                  [--name]\n                                  [--resource-group]\n                                  [--subscription]\n                                  [--zone-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--zone-name -z"
+            ],
+            "examples": [
+                "az network dns record-set ns show -g MyResourceGroup -z www.mysite.com -n MyRecordSet"
+            ]
+        },
+        {
+            "name": "az network dns record-set ns update",
+            "summary": "Update an NS record set.",
+            "syntax": "az network dns record-set ns update [--add]\n                                    [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                    [--ids]\n                                    [--if-match]\n                                    [--if-none-match]\n                                    [--metadata]\n                                    [--name]\n                                    [--remove]\n                                    [--resource-group]\n                                    [--set]\n                                    [--subscription]\n                                    [--target-resource]\n                                    [--tm-profile]\n                                    [--zone-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--force-string",
+                "--ids",
+                "--if-match",
+                "--if-none-match",
+                "--metadata",
+                "--name -n",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--subscription",
+                "--target-resource",
+                "--tm-profile --traffic-management-profile",
+                "--zone-name -z"
+            ],
+            "examples": [
+                "az network dns record-set ns update -g MyResourceGroup -z www.mysite.com -n MyRecordSet --metadata owner=WebTeam"
+            ]
+        }
+    ]
+}

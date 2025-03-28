@@ -1,0 +1,20 @@
+{
+    "command_group": "az security automation-scope",
+    "description": "Creates security automation scope.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az security automation-scope create",
+            "summary": "Creates security automation scope.",
+            "syntax": "az security automation-scope create --description\n                                    --scope-path",
+            "required_parameters": [
+                "--description",
+                "--scope-path"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az security automation-scope create --description 'this is a sample description' --scope-path '/subscriptions/03b601f1-7eca-4496-8f8d-355219eee254/'"
+            ]
+        }
+    ]
+}

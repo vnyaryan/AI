@@ -1,0 +1,79 @@
+{
+    "command_group": "az datadog tag-rule",
+    "description": "Manage tag rule with datadog.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az datadog tag-rule create",
+            "summary": "Create a tag rule set for a given monitor resource.",
+            "syntax": "az datadog tag-rule create --monitor-name\n                           --resource-group\n                           --rule-set-name\n                           [--filtering-tags]\n                           [--log-rules-filtering-tags]\n                           [--send-aad-logs {false, true}]\n                           [--send-resource-logs {false, true}]\n                           [--send-subscription-logs {false, true}]",
+            "required_parameters": [
+                "--monitor-name",
+                "--resource-group -g",
+                "--rule-set-name"
+            ],
+            "optional_parameters": [
+                "--filtering-tags",
+                "--log-rules-filtering-tags",
+                "--send-aad-logs",
+                "--send-resource-logs",
+                "--send-subscription-logs"
+            ],
+            "examples": [
+                "az datadog tag-rule create --monitor-name \"myMonitor\" --log-rules-filtering-tags name=\"Environment\" action=\"Include\" value=\"Prod\" --log-rules-filtering-tags name=\"Environment\" action=\"Exclude\" value=\"Dev\" --send-aad-logs false --send-resource-logs true --send-subscription-logs true --resource-group \"myResourceGroup\" --rule-set-name \"default\""
+            ]
+        },
+        {
+            "name": "az datadog tag-rule list",
+            "summary": "List the tag rules for a given monitor resource.",
+            "syntax": "az datadog tag-rule list --monitor-name\n                         --resource-group",
+            "required_parameters": [
+                "--monitor-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az datadog tag-rule list --monitor-name \"myMonitor\" --resource-group \"myResourceGroup\""
+            ]
+        },
+        {
+            "name": "az datadog tag-rule show",
+            "summary": "Get a tag rule set for a given monitor resource.",
+            "syntax": "az datadog tag-rule show [--ids]\n                         [--monitor-name]\n                         [--resource-group]\n                         [--rule-set-name]\n                         [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--monitor-name",
+                "--resource-group -g",
+                "--rule-set-name",
+                "--subscription"
+            ],
+            "examples": [
+                "az datadog tag-rule show --monitor-name \"myMonitor\" --resource-group \"myResourceGroup\" --rule-set-name \"default\""
+            ]
+        },
+        {
+            "name": "az datadog tag-rule update",
+            "summary": "Update a tag rule set for a given monitor resource.",
+            "syntax": "az datadog tag-rule update [--add]\n                           [--filtering-tags]\n                           [--force-string]\n                           [--ids]\n                           [--log-rules-filtering-tags]\n                           [--monitor-name]\n                           [--remove]\n                           [--resource-group]\n                           [--rule-set-name]\n                           [--send-aad-logs {false, true}]\n                           [--send-resource-logs {false, true}]\n                           [--send-subscription-logs {false, true}]\n                           [--set]\n                           [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--filtering-tags",
+                "--force-string",
+                "--ids",
+                "--log-rules-filtering-tags",
+                "--monitor-name",
+                "--remove",
+                "--resource-group -g",
+                "--rule-set-name",
+                "--send-aad-logs",
+                "--send-resource-logs",
+                "--send-subscription-logs",
+                "--set",
+                "--subscription"
+            ],
+            "examples": []
+        }
+    ]
+}

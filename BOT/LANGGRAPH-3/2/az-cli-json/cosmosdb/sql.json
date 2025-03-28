@@ -1,0 +1,21 @@
+{
+    "command_group": "az cosmosdb sql",
+    "description": "Manage SQL resources of Azure Cosmos DB account.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az cosmosdb sql retrieve-latest-backup-time",
+            "summary": "Retrieves latest restorable timestamp for the given sql container in given region.",
+            "syntax": "az cosmosdb sql retrieve-latest-backup-time --account-name\n                                            --container-name\n                                            --database-name\n                                            --location\n                                            --resource-group",
+            "required_parameters": [
+                "--account-name -a",
+                "--container-name -c",
+                "--database-name -d",
+                "--location -l",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        }
+    ]
+}

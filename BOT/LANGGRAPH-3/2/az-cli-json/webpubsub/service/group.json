@@ -1,0 +1,92 @@
+{
+    "command_group": "az webpubsub service group",
+    "description": "Commands to manage Webpubsub service groups.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az webpubsub service group add-connection",
+            "summary": "Add a connection to group. Error throws if operation fails.",
+            "syntax": "az webpubsub service group add-connection --connection-id\n                                          --group-name\n                                          --hub-name\n                                          [--ids]\n                                          [--name]\n                                          [--resource-group]\n                                          [--subscription]",
+            "required_parameters": [
+                "--connection-id",
+                "--group-name",
+                "--hub-name"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az webpubsub service group add-user",
+            "summary": "Add a user to group. Error throws if operation fails.",
+            "syntax": "az webpubsub service group add-user --group-name\n                                    --hub-name\n                                    --user-id\n                                    [--ids]\n                                    [--name]\n                                    [--resource-group]\n                                    [--subscription]",
+            "required_parameters": [
+                "--group-name",
+                "--hub-name",
+                "--user-id"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az webpubsub service group remove-connection",
+            "summary": "Remove a connection from group. Error throws if operation fails.",
+            "syntax": "az webpubsub service group remove-connection --connection-id\n                                             --group-name\n                                             --hub-name\n                                             [--ids]\n                                             [--name]\n                                             [--resource-group]\n                                             [--subscription]",
+            "required_parameters": [
+                "--connection-id",
+                "--group-name",
+                "--hub-name"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az webpubsub service group remove-user",
+            "summary": "Remove a user from group. Error throws if operation fails.",
+            "syntax": "az webpubsub service group remove-user --hub-name\n                                       --user-id\n                                       [--group-name]\n                                       [--ids]\n                                       [--name]\n                                       [--resource-group]\n                                       [--subscription]",
+            "required_parameters": [
+                "--hub-name",
+                "--user-id"
+            ],
+            "optional_parameters": [
+                "--group-name",
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az webpubsub service group send",
+            "summary": "Send a message to group. Error throws if operation fails.",
+            "syntax": "az webpubsub service group send --group-name\n                                --hub-name\n                                --payload\n                                [--ids]\n                                [--name]\n                                [--resource-group]\n                                [--subscription]",
+            "required_parameters": [
+                "--group-name",
+                "--hub-name",
+                "--payload"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        }
+    ]
+}

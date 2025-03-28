@@ -1,0 +1,76 @@
+{
+    "command_group": "az webapp webjob triggered",
+    "description": "Allows management operations of triggered webjobs on a web app.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az webapp webjob triggered list",
+            "summary": "List all triggered webjobs hosted on a web app.",
+            "syntax": "az webapp webjob triggered list --name\n                                --resource-group\n                                [--slot]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--slot -s"
+            ],
+            "examples": [
+                "az webapp webjob triggered list --name MyWebApp --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az webapp webjob triggered log",
+            "summary": "Get history of a specific triggered webjob hosted on a web app.",
+            "syntax": "az webapp webjob triggered log --webjob-name\n                               [--ids]\n                               [--name]\n                               [--resource-group]\n                               [--slot]\n                               [--subscription]",
+            "required_parameters": [
+                "--webjob-name -w"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--slot -s",
+                "--subscription"
+            ],
+            "examples": [
+                "az webapp webjob triggered log --name MyWebApp --resource-group MyResourceGroup --subscription MySubscription --webjob-name MyWebjob"
+            ]
+        },
+        {
+            "name": "az webapp webjob triggered remove",
+            "summary": "Delete a specific triggered webjob hosted on a web app.",
+            "syntax": "az webapp webjob triggered remove --webjob-name\n                                  [--ids]\n                                  [--name]\n                                  [--resource-group]\n                                  [--slot]\n                                  [--subscription]",
+            "required_parameters": [
+                "--webjob-name -w"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--slot -s",
+                "--subscription"
+            ],
+            "examples": [
+                "az webapp webjob triggered remove --name MyWebApp --resource-group MyResourceGroup --webjob-name MyWebjob"
+            ]
+        },
+        {
+            "name": "az webapp webjob triggered run",
+            "summary": "Run a specific triggered webjob hosted on a web app.",
+            "syntax": "az webapp webjob triggered run --webjob-name\n                               [--ids]\n                               [--name]\n                               [--resource-group]\n                               [--slot]\n                               [--subscription]",
+            "required_parameters": [
+                "--webjob-name -w"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--slot -s",
+                "--subscription"
+            ],
+            "examples": [
+                "az webapp webjob triggered run --name MyWebApp --resource-group MyResourceGroup --webjob-name MyWebjob"
+            ]
+        }
+    ]
+}

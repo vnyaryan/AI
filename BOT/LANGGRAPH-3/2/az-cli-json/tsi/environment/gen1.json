@@ -1,0 +1,48 @@
+{
+    "command_group": "az tsi environment gen1",
+    "description": "Manage a gen1 environment in the specified subscription and resource group.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az tsi environment gen1 create",
+            "summary": "Create a gen1 environment in the specified subscription and resource group.",
+            "syntax": "az tsi environment gen1 create --data-retention-time\n                               --environment-name\n                               --location\n                               --resource-group\n                               --sku\n                               [--exceeded-behavior {PauseIngress, PurgeOldData}]\n                               [--key-properties]\n                               [--no-wait]\n                               [--tags]",
+            "required_parameters": [
+                "--data-retention-time",
+                "--environment-name --name -n",
+                "--location -l",
+                "--resource-group -g",
+                "--sku"
+            ],
+            "optional_parameters": [
+                "--exceeded-behavior --storage-limit-exceeded-behavior",
+                "--key-properties --partition-key-properties",
+                "--no-wait",
+                "--tags"
+            ],
+            "examples": [
+                "az tsi environment gen1 create --name \"env1\" --location westus --data-retention-time \"P31D\" --partition-key-properties name=\"DeviceId1\" type=\"String\" --sku name=\"S1\" capacity=1 --resource-group \"rg1\""
+            ]
+        },
+        {
+            "name": "az tsi environment gen1 update",
+            "summary": "Update a gen1 environment in the specified subscription and resource group.",
+            "syntax": "az tsi environment gen1 update [--data-retention-time]\n                               [--environment-name]\n                               [--exceeded-behavior {PauseIngress, PurgeOldData}]\n                               [--ids]\n                               [--no-wait]\n                               [--resource-group]\n                               [--sku]\n                               [--subscription]\n                               [--tags]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--data-retention-time",
+                "--environment-name --name -n",
+                "--exceeded-behavior --storage-limit-exceeded-behavior",
+                "--ids",
+                "--no-wait",
+                "--resource-group -g",
+                "--sku",
+                "--subscription",
+                "--tags"
+            ],
+            "examples": [
+                "az tsi environment gen1 update --name \"env1\" --sku name=\"S1\" capacity=2                --resource-group \"rg1\" --data-retention-time \"P30D\" --storage-limit-exceeded-behavior PurgeOldData"
+            ]
+        }
+    ]
+}

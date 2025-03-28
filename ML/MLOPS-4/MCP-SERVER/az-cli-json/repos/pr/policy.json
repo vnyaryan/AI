@@ -1,0 +1,36 @@
+{
+    "command_group": "az repos pr policy",
+    "description": "Manage pull request policy.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az repos pr policy list",
+            "summary": "List policies of a pull request.",
+            "syntax": "az repos pr policy list --id\n                        [--detect {false, true}]\n                        [--org]\n                        [--skip]\n                        [--top]",
+            "required_parameters": [
+                "--id"
+            ],
+            "optional_parameters": [
+                "--detect",
+                "--org --organization",
+                "--skip",
+                "--top"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az repos pr policy queue",
+            "summary": "Queue an evaluation of a policy for a pull request.",
+            "syntax": "az repos pr policy queue --evaluation-id\n                         --id\n                         [--detect {false, true}]\n                         [--org]",
+            "required_parameters": [
+                "--evaluation-id -e",
+                "--id"
+            ],
+            "optional_parameters": [
+                "--detect",
+                "--org --organization"
+            ],
+            "examples": []
+        }
+    ]
+}

@@ -1,0 +1,6 @@
+{
+    "command_group": "az consumption",
+    "description": "Manage consumption of Azure resources.",
+    "status": "Preview",
+    "commands": []
+}

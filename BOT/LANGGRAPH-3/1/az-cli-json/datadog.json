@@ -1,0 +1,6 @@
+{
+    "command_group": "az datadog",
+    "description": "Manage datadog.",
+    "status": "GA",
+    "commands": []
+}

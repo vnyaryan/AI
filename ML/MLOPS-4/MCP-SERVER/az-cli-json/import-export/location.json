@@ -1,0 +1,29 @@
+{
+    "command_group": "az import-export location",
+    "description": "Import-export location.",
+    "status": "Experimental",
+    "commands": [
+        {
+            "name": "az import-export location list",
+            "summary": "Returns a list of locations to which you can ship the disks associated with an import or export job. A location is a Microsoft data center region.",
+            "syntax": "az import-export location list",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "examples": [
+                "az import-export location list"
+            ]
+        },
+        {
+            "name": "az import-export location show",
+            "summary": "Returns the details about a location to which you can ship the disks associated with an import or export job. A location is an Azure region.",
+            "syntax": "az import-export location show --location",
+            "required_parameters": [
+                "--location -l"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az import-export location show --location \"West US 2\""
+            ]
+        }
+    ]
+}

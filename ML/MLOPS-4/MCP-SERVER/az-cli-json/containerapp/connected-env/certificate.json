@@ -1,0 +1,71 @@
+{
+    "command_group": "az containerapp connected-env certificate",
+    "description": "Commands to manage certificates for the Container Apps connected environment.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az containerapp connected-env certificate delete",
+            "summary": "Delete a certificate from the Container Apps connected environment.",
+            "syntax": "az containerapp connected-env certificate delete [--certificate]\n                                                 [--ids]\n                                                 [--name]\n                                                 [--no-wait]\n                                                 [--resource-group]\n                                                 [--subscription]\n                                                 [--thumbprint]\n                                                 [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--certificate -c",
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--thumbprint -t",
+                "--yes -y"
+            ],
+            "examples": [
+                "az containerapp connected-env certificate delete -g MyResourceGroup --name MyConnectedEnv --certificate MyCertificateName",
+                "az containerapp connected-env certificate delete -g MyResourceGroup --name MyConnectedEnv --certificate MyCertificateId",
+                "az containerapp connected-env certificate delete -g MyResourceGroup --name MyConnectedEnv --thumbprint MyCertificateThumbprint"
+            ]
+        },
+        {
+            "name": "az containerapp connected-env certificate list",
+            "summary": "List certificates for a connected environment.",
+            "syntax": "az containerapp connected-env certificate list --name\n                                               --resource-group\n                                               [--certificate]\n                                               [--location]\n                                               [--thumbprint]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--certificate -c",
+                "--location -l",
+                "--thumbprint -t"
+            ],
+            "examples": [
+                "az containerapp connected-env certificate list -g MyResourceGroup --name MyConnectedEnv",
+                "az containerapp connected-env certificate list -g MyResourceGroup --name MyConnectedEnv --certificate MyCertificateId",
+                "az containerapp connected-env certificate list -g MyResourceGroup --name MyConnectedEnv --certificate MyCertificateName",
+                "az containerapp connected-env certificate list -g MyResourceGroup --name MyConnectedEnv --thumbprint MyCertificateThumbprint"
+            ]
+        },
+        {
+            "name": "az containerapp connected-env certificate upload",
+            "summary": "Add or update a certificate.",
+            "syntax": "az containerapp connected-env certificate upload --certificate-file\n                                                 [--certificate-name]\n                                                 [--ids]\n                                                 [--location]\n                                                 [--name]\n                                                 [--no-wait]\n                                                 [--password]\n                                                 [--resource-group]\n                                                 [--show-prompt]\n                                                 [--subscription]",
+            "required_parameters": [
+                "--certificate-file -f"
+            ],
+            "optional_parameters": [
+                "--certificate-name -c",
+                "--ids",
+                "--location -l",
+                "--name -n",
+                "--no-wait",
+                "--password -p",
+                "--resource-group -g",
+                "--show-prompt",
+                "--subscription"
+            ],
+            "examples": [
+                "az containerapp connected-env certificate upload -g MyResourceGroup --name MyConnectedEnv --certificate-file MyFilepath",
+                "az containerapp connected-env certificate upload -g MyResourceGroup --name MyConnectedEnv --certificate-file MyFilepath --certificate-name MyCertificateName"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,37 @@
+{
+    "command_group": "az iot hub message-route fallback",
+    "description": "Manage the fallback route of an IoT hub.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az iot hub message-route fallback set",
+            "summary": "Enable or disable the fallback route in an IoT Hub.",
+            "syntax": "az iot hub message-route fallback set --enabled {false, true}\n                                      --hub-name\n                                      [--resource-group]",
+            "required_parameters": [
+                "--enabled -e",
+                "--hub-name -n"
+            ],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az iot hub message-route fallback set -n {iothub_name} --enabled true",
+                "az iot hub message-route fallback set -n {iothub_name} --enabled false"
+            ]
+        },
+        {
+            "name": "az iot hub message-route fallback show",
+            "summary": "Show the fallback route of an IoT Hub.",
+            "syntax": "az iot hub message-route fallback show --hub-name\n                                       [--resource-group]",
+            "required_parameters": [
+                "--hub-name -n"
+            ],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az iot hub message-route fallback show -n {iothub_name}"
+            ]
+        }
+    ]
+}

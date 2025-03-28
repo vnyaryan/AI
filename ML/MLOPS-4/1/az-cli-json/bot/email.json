@@ -1,0 +1,49 @@
+{
+    "command_group": "az bot email",
+    "description": "Manage the email Channel on a bot.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az bot email create",
+            "summary": "Create the Email Channel on a bot.",
+            "syntax": "az bot email create --email-address\n                    --name\n                    --password\n                    --resource-group\n                    [--add-disabled {false, true}]\n                    [--location]",
+            "required_parameters": [
+                "--email-address -a",
+                "--name -n",
+                "--password -p",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--add-disabled",
+                "--location -l"
+            ],
+            "examples": [
+                "az bot email create -n botName -g MyResourceGroup -a abc@outlook.com \\\n-p password"
+            ]
+        },
+        {
+            "name": "az bot email delete",
+            "summary": "Delete the email Channel on a bot.",
+            "syntax": "az bot email delete --name\n                    --resource-group",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az bot email show",
+            "summary": "Get details of the email Channel on a bot.",
+            "syntax": "az bot email show --name\n                  --resource-group\n                  [--with-secrets {false, true}]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--with-secrets"
+            ],
+            "examples": []
+        }
+    ]
+}

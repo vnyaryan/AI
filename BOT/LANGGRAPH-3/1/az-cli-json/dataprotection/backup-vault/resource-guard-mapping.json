@@ -1,0 +1,56 @@
+{
+    "command_group": "az dataprotection backup-vault resource-guard-mapping",
+    "description": "Manage ResourceGuard mappings for a backup vault.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az dataprotection backup-vault resource-guard-mapping create",
+            "summary": "Create a ResourceGuard mapping.",
+            "syntax": "az dataprotection backup-vault resource-guard-mapping create --resource-group\n                                                             --vault-name\n                                                             [--name]\n                                                             [--resource-guard-id]",
+            "required_parameters": [
+                "--resource-group -g",
+                "--vault-name -v"
+            ],
+            "optional_parameters": [
+                "--name --resource-guard-mapping-name -n",
+                "--resource-guard-id --resource-guard-resource-id"
+            ],
+            "examples": [
+                "az dataprotection backup-vault resource-guard-mapping create -n \"DppResourceGuardProxy\" -g \"sampleRG\" --vault-name \"sampleVault\" --resource-guard-id \"/subscription/00000000-0000-0000-0000-000000000000/resourcegroups/sampleRG/providers/Microsoft.DataProtection/resourceGuards/sampleResourceGuard\""
+            ]
+        },
+        {
+            "name": "az dataprotection backup-vault resource-guard-mapping delete",
+            "summary": "Delete the ResourceGuard mapping.",
+            "syntax": "az dataprotection backup-vault resource-guard-mapping delete [--ids]\n                                                             [--name]\n                                                             [--resource-group]\n                                                             [--subscription]\n                                                             [--vault-name]\n                                                             [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --resource-guard-mapping-name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--vault-name -v",
+                "--yes -y"
+            ],
+            "examples": [
+                "az dataprotection backup-vault resource-guard-mapping delete -n \"DppResourceGuardProxy\" -g \"sampleRG\" -v \"sampleVault\""
+            ]
+        },
+        {
+            "name": "az dataprotection backup-vault resource-guard-mapping show",
+            "summary": "Get the ResourceGuard mapping object associated with the vault, and that matches the name in the request.",
+            "syntax": "az dataprotection backup-vault resource-guard-mapping show [--ids]\n                                                           [--name]\n                                                           [--resource-group]\n                                                           [--subscription]\n                                                           [--vault-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --resource-guard-mapping-name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--vault-name -v"
+            ],
+            "examples": [
+                "az dataprotection backup-vault resource-guard-mapping show -n \"DppResourceGuardProxy\" -g \"sampleRG\" -v \"sampleVault\""
+            ]
+        }
+    ]
+}

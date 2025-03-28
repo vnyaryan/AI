@@ -1,0 +1,21 @@
+{
+    "command_group": "az netappfiles resource",
+    "description": "Provides operations for Azure NetApp Files (ANF) Account Resources.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az netappfiles resource query-region-info",
+            "summary": "Provides storage to network proximity and logical zone mapping information.",
+            "syntax": "az netappfiles resource query-region-info [--ids]\n                                          [--location]\n                                          [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--location -l",
+                "--subscription"
+            ],
+            "examples": [
+                "az netappfiles resource query-region-info -l westus"
+            ]
+        }
+    ]
+}

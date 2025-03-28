@@ -1,0 +1,22 @@
+{
+    "command_group": "az automanage configuration-profile-assignment",
+    "description": "Manage configuration profile assignment.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az automanage configuration-profile-assignment list",
+            "summary": "List configuration profile assignments under a given subscription.",
+            "syntax": "az automanage configuration-profile-assignment list [--cluster-name]\n                                                    [--machine-name]\n                                                    [--resource-group]\n                                                    [--vm-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--cluster-name",
+                "--machine-name",
+                "--resource-group -g",
+                "--vm-name"
+            ],
+            "examples": [
+                "az automanage configuration-profile-assignment list -g {rg}"
+            ]
+        }
+    ]
+}

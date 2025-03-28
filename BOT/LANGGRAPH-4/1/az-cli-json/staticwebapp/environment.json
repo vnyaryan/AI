@@ -1,0 +1,67 @@
+{
+    "command_group": "az staticwebapp environment",
+    "description": "Manage environment of the static app.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az staticwebapp environment delete",
+            "summary": "Delete the static app production environment or the specified environment.",
+            "syntax": "az staticwebapp environment delete --name\n                                   [--environment-name]\n                                   [--resource-group]\n                                   [--yes]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--environment-name",
+                "--resource-group -g",
+                "--yes -y"
+            ],
+            "examples": [
+                "az staticwebapp environment delete -n MyStaticAppName"
+            ]
+        },
+        {
+            "name": "az staticwebapp environment functions",
+            "summary": "Show information about functions.",
+            "syntax": "az staticwebapp environment functions --name\n                                      [--environment-name]\n                                      [--resource-group]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--environment-name",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az staticwebapp environment functions -n MyStaticAppName"
+            ]
+        },
+        {
+            "name": "az staticwebapp environment list",
+            "summary": "List all environment of the static app including production.",
+            "syntax": "az staticwebapp environment list --name\n                                 [--resource-group]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az staticwebapp environment list -n MyStaticAppName"
+            ]
+        },
+        {
+            "name": "az staticwebapp environment show",
+            "summary": "Show information about the production environment or the specified environment.",
+            "syntax": "az staticwebapp environment show --name\n                                 [--environment-name]\n                                 [--resource-group]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--environment-name",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az staticwebapp environment show -n MyStaticAppName"
+            ]
+        }
+    ]
+}

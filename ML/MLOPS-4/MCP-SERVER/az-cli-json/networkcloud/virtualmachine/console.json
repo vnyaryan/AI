@@ -1,0 +1,119 @@
+{
+    "command_group": "az networkcloud virtualmachine console",
+    "description": "Manage virtual machine's console.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az networkcloud virtualmachine console create",
+            "summary": "Create a new virtual machine console or update the properties of the existing virtual machine console.",
+            "syntax": "az networkcloud virtualmachine console create --enabled {False, True}\n                                              --extended-location\n                                              --resource-group\n                                              --ssh-public-key\n                                              --virtual-machine-name\n                                              [--expiration]\n                                              [--location]\n                                              [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                              [--tags]",
+            "required_parameters": [
+                "--enabled",
+                "--extended-location",
+                "--resource-group -g",
+                "--ssh-public-key",
+                "--virtual-machine-name"
+            ],
+            "optional_parameters": [
+                "--expiration",
+                "--location -l",
+                "--no-wait",
+                "--tags"
+            ],
+            "examples": [
+                "az networkcloud virtualmachine console create --extended-location name=\"/subscriptions/subscriptionId/resourceGroups/resourceGroupName/providers/Microsoft.ExtendedLocation/customLocations/clusterManagerExtendedLocationName\" type=\"CustomLocation\" --location \"location\" --enabled \"True\" --expiration \"2024-06-01T01:27:03.008Z\" --ssh-public-key key-data=\"ssh-rsa AAtsE3njSONzDYRIZv/WLjVuMfrUSByHp+jfaaOLHTIIB4fJvo6dQUZxE20w2iDHV3tEkmnTo84eba97VMueQD6OzJPEyWZMRpz8UYWOd0IXeRqiFu1lawNblZhwNT/ojNZfpB3af/YDzwQCZgTcTRyNNhL4o/blKUmug0daSsSXISTRnIDpcf5qytjs1Xo+yYyJMvzLL59mhAyb3p/cD+Y3/s3WhAx+l0XOKpzXnblrv9d3q4c2tWmm/SyFqthaqd0= admin@vm\" --tags key1=\"myvalue1\" key2=\"myvalue2\" --resource-group \"resourceGroupName\" --virtual-machine-name \"virtualMachineName\"",
+                "az networkcloud virtualmachine console create --extended-location name=\"/subscriptions/subscriptionId/resourceGroups/resourceGroupName/providers/Microsoft.ExtendedLocation/customLocations/clusterManagerExtendedLocationName\" type=\"CustomLocation\" --location \"location\" --enabled \"True\" --expiration \"2024-06-01T01:27:03.008Z\" --ssh-public-key key-data=~/.ssh/id_rsa.pub --tags key1=\"myvalue1\" key2=\"myvalue2\" --resource-group \"resourceGroupName\" --virtual-machine-name \"virtualMachineName\""
+            ]
+        },
+        {
+            "name": "az networkcloud virtualmachine console delete",
+            "summary": "Delete the provided virtual machine console.",
+            "syntax": "az networkcloud virtualmachine console delete [--ids]\n                                              [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                              [--resource-group]\n                                              [--subscription]\n                                              [--virtual-machine-name]\n                                              [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--virtual-machine-name",
+                "--yes -y"
+            ],
+            "examples": [
+                "az networkcloud virtualmachine console delete --resource-group \"resourceGroupName\" --virtual-machine-name \"virtualMachineName\""
+            ]
+        },
+        {
+            "name": "az networkcloud virtualmachine console list",
+            "summary": "List consoles of the virtual machine.",
+            "syntax": "az networkcloud virtualmachine console list --resource-group\n                                            --virtual-machine-name\n                                            [--max-items]\n                                            [--next-token]",
+            "required_parameters": [
+                "--resource-group -g",
+                "--virtual-machine-name"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az networkcloud virtualmachine console list --resource-group \"resourceGroupName\" --virtual-machine-name \"virtualMachineName\""
+            ]
+        },
+        {
+            "name": "az networkcloud virtualmachine console show",
+            "summary": "Get properties of the provided virtual machine console.",
+            "syntax": "az networkcloud virtualmachine console show [--ids]\n                                            [--resource-group]\n                                            [--subscription]\n                                            [--virtual-machine-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--resource-group -g",
+                "--subscription",
+                "--virtual-machine-name"
+            ],
+            "examples": [
+                "az networkcloud virtualmachine console show --resource-group \"resourceGroupName\" --virtual-machine-name \"virtualMachineName\""
+            ]
+        },
+        {
+            "name": "az networkcloud virtualmachine console update",
+            "summary": "Update the properties of the provided virtual machine console, or update the tags associated with the virtual machine console. Properties and tag updates can be done independently.",
+            "syntax": "az networkcloud virtualmachine console update [--enabled {False, True}]\n                                              [--expiration]\n                                              [--ids]\n                                              [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                              [--resource-group]\n                                              [--ssh-public-key]\n                                              [--subscription]\n                                              [--tags]\n                                              [--virtual-machine-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--enabled",
+                "--expiration",
+                "--ids",
+                "--no-wait",
+                "--resource-group -g",
+                "--ssh-public-key",
+                "--subscription",
+                "--tags",
+                "--virtual-machine-name"
+            ],
+            "examples": [
+                "az networkcloud virtualmachine console update --enabled \"True\" --expiration \"2022-06-01T01:27:03.008Z\" --ssh-public-key key-data=\"ssh-rsa AAtsE3njSONzDYRIZv/WLjVuMfrUSByHp+jfaaOLHTIIB4fJvo6dQUZxE20w2iDHV3tEkmnTo84eba97VMueQD6OzJPEyWZMRpz8UYWOd0IXeRqiFu1lawNblZhwNT/ojNZfpB3af/YDzwQCZgTcTRyNNhL4o/blKUmug0daSsSXISTRnIDpcf5qytjs1Xo+yYyJMvzLL59mhAyb3p/cD+Y3/s3WhAx+l0XOKpzXnblrv9d3q4c2tWmm/SyFqthaqd0= admin@vm\" --tags key1=\"myvalue1\" key2=\"myvalue2\" --resource-group \"resourceGroupName\" --virtual-machine-name \"virtualMachineName\"",
+                "az networkcloud virtualmachine console update --enabled \"True\" --expiration \"2022-06-01T01:27:03.008Z\" --ssh-public-key key-data=~/.ssh/id_rsa.pub --tags key1=\"myvalue1\" key2=\"myvalue2\" --resource-group \"resourceGroupName\" --virtual-machine-name \"virtualMachineName\""
+            ]
+        },
+        {
+            "name": "az networkcloud virtualmachine console wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az networkcloud virtualmachine console wait [--console-name]\n                                            [--created]\n                                            [--custom]\n                                            [--deleted]\n                                            [--exists]\n                                            [--ids]\n                                            [--interval]\n                                            [--resource-group]\n                                            [--subscription]\n                                            [--timeout]\n                                            [--updated]\n                                            [--virtual-machine-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--console-name --name -n",
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated",
+                "--virtual-machine-name"
+            ],
+            "examples": []
+        }
+    ]
+}

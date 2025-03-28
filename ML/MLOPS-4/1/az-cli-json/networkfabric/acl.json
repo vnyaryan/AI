@@ -1,0 +1,121 @@
+{
+    "command_group": "az networkfabric acl",
+    "description": "Manage Access Control List Resource.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az networkfabric acl create",
+            "summary": "Create a Access Control List resource.",
+            "syntax": "az networkfabric acl create --configuration-type {File, Inline}\n                            --resource-group\n                            --resource-name\n                            [--acls-url]\n                            [--annotation]\n                            [--default-action {Deny, Permit}]\n                            [--dynamic-match-configurations]\n                            [--location]\n                            [--match-configurations]\n                            [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                            [--tags]",
+            "required_parameters": [
+                "--configuration-type",
+                "--resource-group -g",
+                "--resource-name"
+            ],
+            "optional_parameters": [
+                "--acls-url",
+                "--annotation",
+                "--default-action",
+                "--dynamic-match-configurations",
+                "--location -l",
+                "--match-configurations",
+                "--no-wait",
+                "--tags"
+            ],
+            "examples": [
+                "az networkfabric acl create --resource-group \"example-rg\" --location \"westus3\" --resource-name \"example-accesscontrollist\" --configuration-type \"File\" --acls-url \"https://ACL-Storage-URL\"",
+                "az networkfabric acl create --resource-group \"example-rg\" --location \"westus3\" --resource-name \"example-accesscontrollist\" --configuration-type \"Inline\" --default-action \"Permit\" --dynamic-match-configurations \"[{ipGroups:[{name:'example-ipGroup',ipAddressType:IPv4,ipPrefixes:['10.20.3.1/20']}],vlanGroups:[{name:'example-vlanGroup',vlans:['20-30']}],portGroups:[{name:'example-portGroup',ports:['100-200']}]}]\" --match-configurations \"[{matchConfigurationName:'example-match',sequenceNumber:123,ipAddressType:IPv4,matchConditions:[{etherTypes:['0x1'],fragments:['0xff00-0xffff'],ipLengths:['4094-9214'],ttlValues:[23],dscpMarkings:[32],portCondition:{flags:[established],portType:SourcePort,layer4Protocol:TCP,ports:['1-20'],portGroupNames:['example-portGroup']},protocolTypes:[TCP],vlanMatchCondition:{vlans:['20-30'],innerVlans:[30],vlanGroupNames:['example-vlanGroup']},ipCondition:{type:SourceIP,prefixType:Prefix,ipPrefixValues:['10.20.20.20/12'],ipGroupNames:['example-ipGroup']}}],actions:[{type:Count,counterName:'example-counter'}]}]\"",
+                "az networkfabric acl create --dynamic-match-configurations \"??\""
+            ]
+        },
+        {
+            "name": "az networkfabric acl delete",
+            "summary": "Delete the Access Control List resource.",
+            "syntax": "az networkfabric acl delete [--ids]\n                            [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                            [--resource-group]\n                            [--resource-name]\n                            [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--no-wait",
+                "--resource-group -g",
+                "--resource-name",
+                "--subscription"
+            ],
+            "examples": [
+                "az networkfabric acl delete --resource-group \"example-rg\" --resource-name \"example-acl\""
+            ]
+        },
+        {
+            "name": "az networkfabric acl list",
+            "summary": "List all Access Control Lists in the provided resource group or subscription.",
+            "syntax": "az networkfabric acl list [--max-items]\n                          [--next-token]\n                          [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az networkfabric acl list --resource-group \"example-rg\"",
+                "az networkfabric acl list --subscription \"<subscriptionId>\""
+            ]
+        },
+        {
+            "name": "az networkfabric acl show",
+            "summary": "Show details of the provided Access Control List resource.",
+            "syntax": "az networkfabric acl show [--ids]\n                          [--resource-group]\n                          [--resource-name]\n                          [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--resource-group -g",
+                "--resource-name",
+                "--subscription"
+            ],
+            "examples": [
+                "az networkfabric acl show --resource-group \"example-rg\" --resource-name \"example-acl\""
+            ]
+        },
+        {
+            "name": "az networkfabric acl update",
+            "summary": "Update the Access Control List resource.",
+            "syntax": "az networkfabric acl update [--acls-url]\n                            [--annotation]\n                            [--configuration-type {File, Inline}]\n                            [--default-action {Deny, Permit}]\n                            [--dynamic-match-configurations]\n                            [--ids]\n                            [--match-configurations]\n                            [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                            [--resource-group]\n                            [--resource-name]\n                            [--subscription]\n                            [--tags]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--acls-url",
+                "--annotation",
+                "--configuration-type",
+                "--default-action",
+                "--dynamic-match-configurations",
+                "--ids",
+                "--match-configurations",
+                "--no-wait",
+                "--resource-group -g",
+                "--resource-name",
+                "--subscription",
+                "--tags"
+            ],
+            "examples": [
+                "az networkfabric acl update -g \"example-rg\" --resource-name \"example-acl\" --configuration-type \"Inline\" --default-action \"Permit\"  --dynamic-match-configurations \"[{ipGroups:[{name:'example-ipGroup',ipAddressType:IPv4,ipPrefixes:['10.20.3.1/20']}],vlanGroups:[{name:'example-vlanGroup',vlans:['20-30']}],portGroups:[{name:'example-portGroup',ports:['100-200']}]}]\" --match-configurations \"[{matchConfigurationName:'example-match',sequenceNumber:123,ipAddressType:IPv4,matchConditions:[{etherTypes:['0x1'],fragments:['0xff00-0xffff'],ipLengths:['4094-9214'],ttlValues:[23],dscpMarkings:[32],portCondition:{flags:[established],portType:SourcePort,layer4Protocol:TCP,ports:['1-20'],portGroupNames:['example-portGroup']},protocolTypes:[TCP],vlanMatchCondition:{vlans:['20-30'],innerVlans:[30],vlanGroupNames:['example-vlanGroup']},ipCondition:{type:SourceIP,prefixType:Prefix,ipPrefixValues:['10.20.20.20/12'],ipGroupNames:['example-ipGroup']}}],actions:[{type:Count,counterName:'example-counter'}]}]\""
+            ]
+        },
+        {
+            "name": "az networkfabric acl wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az networkfabric acl wait [--created]\n                          [--custom]\n                          [--deleted]\n                          [--exists]\n                          [--ids]\n                          [--interval]\n                          [--resource-group]\n                          [--resource-name]\n                          [--subscription]\n                          [--timeout]\n                          [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--resource-group -g",
+                "--resource-name",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

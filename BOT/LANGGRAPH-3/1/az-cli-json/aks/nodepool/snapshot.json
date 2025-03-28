@@ -1,0 +1,168 @@
+{
+    "command_group": "az aks nodepool snapshot",
+    "description": "Commands to manage nodepool snapshots.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az aks nodepool snapshot create",
+            "summary": "Create a nodepool snapshot.",
+            "syntax": "az aks nodepool snapshot create --name\n                                --nodepool-id\n                                --resource-group\n                                [--aks-custom-headers]\n                                [--location]\n                                [--no-wait]\n                                [--tags]",
+            "required_parameters": [
+                "--name -n",
+                "--nodepool-id",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--aks-custom-headers",
+                "--location -l",
+                "--no-wait",
+                "--tags"
+            ],
+            "examples": [
+                "az aks nodepool snapshot create -g MyResourceGroup -n snapshot1 --nodepool-id \"/subscriptions/00000/resourceGroups/AnotherResourceGroup/providers/Microsoft.ContainerService/managedClusters/akscluster1/agentPools/nodepool1\"",
+                "az aks nodepool snapshot create -g MyResourceGroup -n snapshot1 --nodepool-id \"/subscriptions/00000/resourceGroups/AnotherResourceGroup/providers/Microsoft.ContainerService/managedClusters/akscluster1/agentPools/nodepool1\" --tags \"foo=bar\" \"key1=val1\""
+            ]
+        },
+        {
+            "name": "az aks nodepool snapshot create",
+            "summary": "Create a nodepool snapshot.",
+            "syntax": "az aks nodepool snapshot create --name\n                                --nodepool-id\n                                --resource-group\n                                [--aks-custom-headers]\n                                [--location]\n                                [--no-wait]\n                                [--tags]",
+            "required_parameters": [
+                "--name -n",
+                "--nodepool-id",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--aks-custom-headers",
+                "--location -l",
+                "--no-wait",
+                "--tags"
+            ],
+            "examples": [
+                "az aks nodepool snapshot create -g MyResourceGroup -n snapshot1 --nodepool-id \"/subscriptions/00000/resourceGroups/AnotherResourceGroup/providers/Microsoft.ContainerService/managedClusters/akscluster1/agentPools/nodepool1\"",
+                "az aks nodepool snapshot create -g MyResourceGroup -n snapshot1 --nodepool-id \"/subscriptions/00000/resourceGroups/AnotherResourceGroup/providers/Microsoft.ContainerService/managedClusters/akscluster1/agentPools/nodepool1\" --tags \"foo=bar\" \"key1=val1\""
+            ]
+        },
+        {
+            "name": "az aks nodepool snapshot delete",
+            "summary": "Delete a nodepool snapshot.",
+            "syntax": "az aks nodepool snapshot delete --name\n                                --resource-group\n                                [--no-wait]\n                                [--yes]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--no-wait",
+                "--yes -y"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az aks nodepool snapshot delete",
+            "summary": "Delete a nodepool snapshot.",
+            "syntax": "az aks nodepool snapshot delete --name\n                                --resource-group\n                                [--no-wait]\n                                [--yes]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--no-wait",
+                "--yes -y"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az aks nodepool snapshot list",
+            "summary": "List nodepool snapshots.",
+            "syntax": "az aks nodepool snapshot list [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az aks nodepool snapshot list",
+            "summary": "List nodepool snapshots.",
+            "syntax": "az aks nodepool snapshot list [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az aks nodepool snapshot show",
+            "summary": "Show the details of a nodepool snapshot.",
+            "syntax": "az aks nodepool snapshot show --name\n                              --resource-group",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az aks nodepool snapshot show",
+            "summary": "Show the details of a nodepool snapshot.",
+            "syntax": "az aks nodepool snapshot show --name\n                              --resource-group",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az aks nodepool snapshot update",
+            "summary": "Update tags on a snapshot of a nodepool.",
+            "syntax": "az aks nodepool snapshot update --name\n                                --resource-group\n                                --tags",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g",
+                "--tags"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az aks nodepool snapshot update -g MyResourceGroup -n snapshot1 --tags \"foo=bar\" \"key1=val1\"",
+                "az aks nodepool snapshot update -g MyResourceGroup -n snapshot1 --tags \"\""
+            ]
+        },
+        {
+            "name": "az aks nodepool snapshot update",
+            "summary": "Update tags on a snapshot of a nodepool.",
+            "syntax": "az aks nodepool snapshot update --name\n                                --resource-group\n                                --tags",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g",
+                "--tags"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az aks nodepool snapshot update -g MyResourceGroup -n snapshot1 --tags \"foo=bar\" \"key1=val1\"",
+                "az aks nodepool snapshot update -g MyResourceGroup -n snapshot1 --tags \"\""
+            ]
+        },
+        {
+            "name": "az aks nodepool snapshot wait",
+            "summary": "Wait for a nodepool snapshot to reach a desired state.",
+            "syntax": "az aks nodepool snapshot wait --name\n                              --resource-group\n                              [--created]\n                              [--custom]\n                              [--deleted]\n                              [--exists]\n                              [--interval]\n                              [--timeout]\n                              [--updated]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--interval",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": [
+                "az aks nodepool snapshot wait --created --interval 60 --name MySnapshot --resource-group MyResourceGroup --timeout 1800"
+            ]
+        }
+    ]
+}

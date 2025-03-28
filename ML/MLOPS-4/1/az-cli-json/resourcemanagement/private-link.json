@@ -1,0 +1,62 @@
+{
+    "command_group": "az resourcemanagement private-link",
+    "description": "Resourcemanagement private-link management on a resource.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az resourcemanagement private-link create",
+            "summary": "Create a resource management group private link.",
+            "syntax": "az resourcemanagement private-link create --location\n                                          --name\n                                          --resource-group",
+            "required_parameters": [
+                "--location -l",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az resourcemanagement private-link create --resource-group testRG --name TestRMPL --location WestUS"
+            ]
+        },
+        {
+            "name": "az resourcemanagement private-link delete",
+            "summary": "Delete a resource management private link.",
+            "syntax": "az resourcemanagement private-link delete --name\n                                          --resource-group\n                                          [--yes]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--yes -y"
+            ],
+            "examples": [
+                "az resourcemanagement private-link delete --resource-group TestRG --name testRMPL"
+            ]
+        },
+        {
+            "name": "az resourcemanagement private-link list",
+            "summary": "Get all the resource management private links at scope.",
+            "syntax": "az resourcemanagement private-link list [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az resourcemanagement private-link list",
+                "az resourcemanagement private-link list --resource-group testRG"
+            ]
+        },
+        {
+            "name": "az resourcemanagement private-link show",
+            "summary": "Get resource management private.",
+            "syntax": "az resourcemanagement private-link show --name\n                                        --resource-group",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az resourcemanagement private-link show --resource-group testRG --name TestRMPL"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,23 @@
+{
+    "command_group": "az appservice hybrid-connection",
+    "description": "A method that sets the key a hybrid-connection uses.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az appservice hybrid-connection set-key",
+            "summary": "Set the key that all apps in an appservice plan use to connect to the hybrid-connections in that appservice plan.",
+            "syntax": "az appservice hybrid-connection set-key --hybrid-connection\n                                        --key-type\n                                        --namespace\n                                        --plan\n                                        --resource-group",
+            "required_parameters": [
+                "--hybrid-connection",
+                "--key-type",
+                "--namespace",
+                "--plan",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az appservice hybrid-connection set-key -g MyResourceGroup --plan MyAppServicePlan --namespace [HybridConectionNamespace] --hybrid-connection [HybridConnectionName] --key-type [\"primary\"/\"secondary\"]"
+            ]
+        }
+    ]
+}

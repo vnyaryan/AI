@@ -1,0 +1,90 @@
+{
+    "command_group": "az devops security permission",
+    "description": "Manage security permissions.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az devops security permission list",
+            "summary": "List tokens for given user/group and namespace.",
+            "syntax": "az devops security permission list --id\n                                   --subject\n                                   [--detect {false, true}]\n                                   [--org]\n                                   [--recurse]\n                                   [--token]",
+            "required_parameters": [
+                "--id --namespace-id",
+                "--subject"
+            ],
+            "optional_parameters": [
+                "--detect",
+                "--org --organization",
+                "--recurse",
+                "--token"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az devops security permission reset",
+            "summary": "Reset permission for given permission bit(s).",
+            "syntax": "az devops security permission reset --id\n                                    --permission-bit\n                                    --subject\n                                    --token\n                                    [--detect {false, true}]\n                                    [--org]",
+            "required_parameters": [
+                "--id --namespace-id",
+                "--permission-bit",
+                "--subject",
+                "--token"
+            ],
+            "optional_parameters": [
+                "--detect",
+                "--org --organization"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az devops security permission reset-all",
+            "summary": "Clear all permissions of this token for a user/group.",
+            "syntax": "az devops security permission reset-all --id\n                                        --subject\n                                        --token\n                                        [--detect {false, true}]\n                                        [--org]\n                                        [--yes]",
+            "required_parameters": [
+                "--id --namespace-id",
+                "--subject",
+                "--token"
+            ],
+            "optional_parameters": [
+                "--detect",
+                "--org --organization",
+                "--yes -y"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az devops security permission show",
+            "summary": "Show permissions for given token, namespace and user/group.",
+            "syntax": "az devops security permission show --id\n                                   --subject\n                                   --token\n                                   [--detect {false, true}]\n                                   [--org]",
+            "required_parameters": [
+                "--id --namespace-id",
+                "--subject",
+                "--token"
+            ],
+            "optional_parameters": [
+                "--detect",
+                "--org --organization"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az devops security permission update",
+            "summary": "Assign allow or deny permission to given user/group.",
+            "syntax": "az devops security permission update --id\n                                     --subject\n                                     --token\n                                     [--allow-bit]\n                                     [--deny-bit]\n                                     [--detect {false, true}]\n                                     [--merge {false, true}]\n                                     [--org]",
+            "required_parameters": [
+                "--id --namespace-id",
+                "--subject",
+                "--token"
+            ],
+            "optional_parameters": [
+                "--allow-bit",
+                "--deny-bit",
+                "--detect",
+                "--merge",
+                "--org --organization"
+            ],
+            "examples": [
+                "az devops security permission update  --allow-bit 7 --namespace-id            52d39943-cb85-4d7f-8fa8-c6baac873819 --subject user@fabrikam.com            --token \"`$PROJECT:vstfs:///Classification/TeamProject/e479xxxx-2be8-xxxx-bb0b-3a0209cxxxx\"\n\nYou would need to add the bit value of the various permission bits to\nsimultaneously allow/deny multiple permissions."
+            ]
+        }
+    ]
+}

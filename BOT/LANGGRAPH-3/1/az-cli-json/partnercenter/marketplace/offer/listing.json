@@ -1,0 +1,39 @@
+{
+    "command_group": "az partnercenter marketplace offer listing",
+    "description": "Manage a Marketplace Offer's listing.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az partnercenter marketplace offer listing show",
+            "summary": "Get the listing of a marketplace offer.",
+            "syntax": "az partnercenter marketplace offer listing show --offer-id",
+            "required_parameters": [
+                "--offer-id"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az partnercenter marketplace offer listing show --offer-id MyOfferId"
+            ]
+        },
+        {
+            "name": "az partnercenter marketplace offer listing update",
+            "summary": "Update the listing of a marketplace offer.",
+            "syntax": "az partnercenter marketplace offer listing update --offer-id\n                                                  [--add]\n                                                  [--description]\n                                                  [--force-string]\n                                                  [--remove]\n                                                  [--set]\n                                                  [--short-description]\n                                                  [--summary]",
+            "required_parameters": [
+                "--offer-id"
+            ],
+            "optional_parameters": [
+                "--add",
+                "--description",
+                "--force-string",
+                "--remove",
+                "--set",
+                "--short-description",
+                "--summary"
+            ],
+            "examples": [
+                "az partnercenter marketplace offer listing update --offer-id MyOfferId --summary \"My offer summary\""
+            ]
+        }
+    ]
+}

@@ -1,0 +1,51 @@
+{
+    "command_group": "az fzf",
+    "description": "Commands to select active or default objects via fzf.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az fzf group",
+            "summary": "Select default resource group.",
+            "syntax": "az fzf group [--filter]\n             [--no-default]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--filter -f",
+                "--no-default -d"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az fzf install",
+            "summary": "Download and install the fzf command.",
+            "syntax": "az fzf install [--install-dir]\n               [--version]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--install-dir -i",
+                "--version -v"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az fzf location",
+            "summary": "Select default location.",
+            "syntax": "az fzf location [--filter]\n                [--no-default]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--filter -f",
+                "--no-default -d"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az fzf subscription",
+            "summary": "Select default subscription.",
+            "syntax": "az fzf subscription [--filter]\n                    [--no-default]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--filter -f",
+                "--no-default -d"
+            ],
+            "examples": []
+        }
+    ]
+}

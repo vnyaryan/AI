@@ -1,0 +1,108 @@
+{
+    "command_group": "az monitor scheduled-query",
+    "description": "Commands to manage scheduled queries.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az monitor scheduled-query create",
+            "summary": "Create a scheduled query.",
+            "syntax": "az monitor scheduled-query create --condition\n                                  --name\n                                  --resource-group\n                                  --scopes\n                                  [--action-groups]\n                                  [--auto-mitigate {false, true}]\n                                  [--check-ws-alerts-storage {false, true}]\n                                  [--condition-query]\n                                  [--custom-properties]\n                                  [--description]\n                                  [--disabled {false, true}]\n                                  [--evaluation-frequency]\n                                  [--location]\n                                  [--mad]\n                                  [--severity]\n                                  [--skip-query-validation {false, true}]\n                                  [--tags]\n                                  [--target-resource-type]\n                                  [--window-size]",
+            "required_parameters": [
+                "--condition",
+                "--name -n",
+                "--resource-group -g",
+                "--scopes"
+            ],
+            "optional_parameters": [
+                "--action-groups",
+                "--auto-mitigate",
+                "--check-ws-alerts-storage --cwas",
+                "--condition-query",
+                "--custom-properties",
+                "--description",
+                "--disabled",
+                "--evaluation-frequency",
+                "--location -l",
+                "--mad --mute-actions-duration",
+                "--severity",
+                "--skip-query-validation",
+                "--tags",
+                "--target-resource-type --type",
+                "--window-size"
+            ],
+            "examples": [
+                "az monitor scheduled-query create -g {rg} -n {name1} --scopes {vm_id} --condition \"count 'Placeholder_1' > 360 resource id _ResourceId at least 1 violations out of 5 aggregated points\" --condition-query Placeholder_1=\"union Event, Syslog | where TimeGenerated > ago(1h) | where EventLevelName=='Error' or SeverityLevel=='err'\" --description \"Test rule\"",
+                "az monitor scheduled-query create -g {rg} -n {name1} --scopes {rg_id} --condition \"count 'Placeholder_1' > 360 resource id _ResourceId at least 1 violations out of 5 aggregated points\" --condition-query Placeholder_1=\"union Event, Syslog | where TimeGenerated > ago(1h) | where EventLevelName=='Error' or SeverityLevel=='err'\" --description \"Test rule\""
+            ]
+        },
+        {
+            "name": "az monitor scheduled-query delete",
+            "summary": "Delete a scheduled query.",
+            "syntax": "az monitor scheduled-query delete [--ids]\n                                  [--name]\n                                  [--resource-group]\n                                  [--subscription]\n                                  [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az monitor scheduled-query list",
+            "summary": "List all scheduled queries.",
+            "syntax": "az monitor scheduled-query list [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az monitor scheduled-query show",
+            "summary": "Show detail of a scheduled query.",
+            "syntax": "az monitor scheduled-query show [--ids]\n                                [--name]\n                                [--resource-group]\n                                [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az monitor scheduled-query update",
+            "summary": "Update a scheduled query.",
+            "syntax": "az monitor scheduled-query update [--action-groups]\n                                  [--add]\n                                  [--auto-mitigate {false, true}]\n                                  [--check-ws-alerts-storage {false, true}]\n                                  [--condition]\n                                  [--condition-query]\n                                  [--custom-properties]\n                                  [--description]\n                                  [--disabled {false, true}]\n                                  [--evaluation-frequency]\n                                  [--force-string]\n                                  [--ids]\n                                  [--mad]\n                                  [--name]\n                                  [--remove]\n                                  [--resource-group]\n                                  [--set]\n                                  [--severity]\n                                  [--skip-query-validation {false, true}]\n                                  [--subscription]\n                                  [--tags]\n                                  [--target-resource-type]\n                                  [--window-size]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--action-groups",
+                "--add",
+                "--auto-mitigate",
+                "--check-ws-alerts-storage --cwas",
+                "--condition",
+                "--condition-query",
+                "--custom-properties",
+                "--description",
+                "--disabled",
+                "--evaluation-frequency",
+                "--force-string",
+                "--ids",
+                "--mad --mute-actions-duration",
+                "--name -n",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--severity",
+                "--skip-query-validation",
+                "--subscription",
+                "--tags",
+                "--target-resource-type --type",
+                "--window-size"
+            ],
+            "examples": []
+        }
+    ]
+}

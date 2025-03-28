@@ -1,0 +1,79 @@
+{
+    "command_group": "az devops service-endpoint",
+    "description": "Manage service endpoints/connections.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az devops service-endpoint create",
+            "summary": "Create a service endpoint using configuration file.",
+            "syntax": "az devops service-endpoint create --service-endpoint-configuration\n                                  [--detect {false, true}]\n                                  [--encoding {ascii, utf-16be, utf-16le, utf-8}]\n                                  [--org]\n                                  [--project]",
+            "required_parameters": [
+                "--service-endpoint-configuration"
+            ],
+            "optional_parameters": [
+                "--detect",
+                "--encoding",
+                "--org --organization",
+                "--project -p"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az devops service-endpoint delete",
+            "summary": "Deletes service endpoint.",
+            "syntax": "az devops service-endpoint delete --id\n                                  [--deep]\n                                  [--detect {false, true}]\n                                  [--org]\n                                  [--project]\n                                  [--yes]",
+            "required_parameters": [
+                "--id"
+            ],
+            "optional_parameters": [
+                "--deep",
+                "--detect",
+                "--org --organization",
+                "--project -p",
+                "--yes -y"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az devops service-endpoint list",
+            "summary": "List service endpoints in a project.",
+            "syntax": "az devops service-endpoint list [--detect {false, true}]\n                                [--org]\n                                [--project]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--detect",
+                "--org --organization",
+                "--project -p"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az devops service-endpoint show",
+            "summary": "Get the details of a service endpoint.",
+            "syntax": "az devops service-endpoint show --id\n                                [--detect {false, true}]\n                                [--org]\n                                [--project]",
+            "required_parameters": [
+                "--id"
+            ],
+            "optional_parameters": [
+                "--detect",
+                "--org --organization",
+                "--project -p"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az devops service-endpoint update",
+            "summary": "Update a service endpoint.",
+            "syntax": "az devops service-endpoint update --id\n                                  [--detect {false, true}]\n                                  [--enable-for-all {false, true}]\n                                  [--org]\n                                  [--project]",
+            "required_parameters": [
+                "--id"
+            ],
+            "optional_parameters": [
+                "--detect",
+                "--enable-for-all",
+                "--org --organization",
+                "--project -p"
+            ],
+            "examples": []
+        }
+    ]
+}

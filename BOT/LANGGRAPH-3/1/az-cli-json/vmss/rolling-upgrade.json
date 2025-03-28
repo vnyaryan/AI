@@ -1,0 +1,48 @@
+{
+    "command_group": "az vmss rolling-upgrade",
+    "description": "Manage rolling upgrades.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az vmss rolling-upgrade cancel",
+            "summary": "Cancel the current virtual machine scale set rolling upgrade.",
+            "syntax": "az vmss rolling-upgrade cancel [--ids]\n                               [--name]\n                               [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                               [--resource-group]\n                               [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --virtual-machine-scale-set-name --vm-scale-set-name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az vmss rolling-upgrade get-latest",
+            "summary": "Get the status of the latest virtual machine scale set rolling upgrade.",
+            "syntax": "az vmss rolling-upgrade get-latest [--ids]\n                                   [--name]\n                                   [--resource-group]\n                                   [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --virtual-machine-scale-set-name --vm-scale-set-name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az vmss rolling-upgrade start",
+            "summary": "Start a rolling upgrade to move all virtual machine scale set instances to the latest available Platform Image OS version. Instances which are already running the latest available OS version are not affected.",
+            "syntax": "az vmss rolling-upgrade start [--ids]\n                              [--name]\n                              [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                              [--resource-group]\n                              [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --virtual-machine-scale-set-name --vm-scale-set-name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        }
+    ]
+}

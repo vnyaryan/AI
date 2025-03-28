@@ -1,0 +1,43 @@
+{
+    "command_group": "az relay hyco authorization-rule keys",
+    "description": "Manage Azure Authorization Rule keys for Relay Service Hybrid Connection.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az relay hyco authorization-rule keys list",
+            "summary": "List the keys and connection strings of Authorization Rule for Relay Service Hybrid Connection.",
+            "syntax": "az relay hyco authorization-rule keys list --hybrid-connection-name\n                                           --name\n                                           --namespace-name\n                                           --resource-group",
+            "required_parameters": [
+                "--hybrid-connection-name",
+                "--name -n",
+                "--namespace-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az relay hyco authorization-rule keys list --resource-group myresourcegroup --namespace-name mynamespace --hybrid-connection-name myhyco --name myauthorule",
+                "az relay hyco authorization-rule keys list --hybrid-connection-name myhyco --name myauthorule --namespace-name mynamespace --resource-group myresourcegroup --subscription MySubscription"
+            ]
+        },
+        {
+            "name": "az relay hyco authorization-rule keys renew",
+            "summary": "Regenerate keys of Authorization Rule for Relay Service Hybrid Connection.",
+            "syntax": "az relay hyco authorization-rule keys renew --key {PrimaryKey, SecondaryKey}\n                                            [--hybrid-connection-name]\n                                            [--ids]\n                                            [--key-value]\n                                            [--name]\n                                            [--namespace-name]\n                                            [--resource-group]\n                                            [--subscription]",
+            "required_parameters": [
+                "--key"
+            ],
+            "optional_parameters": [
+                "--hybrid-connection-name",
+                "--ids",
+                "--key-value",
+                "--name -n",
+                "--namespace-name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az relay hyco authorization-rule keys renew --resource-group myresourcegroup --namespace- name mynamespace --hybrid-connection-name myhyco --name myauthorule --key PrimaryKey"
+            ]
+        }
+    ]
+}

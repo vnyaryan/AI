@@ -1,0 +1,157 @@
+{
+    "command_group": "az network front-door",
+    "description": "Manage Classical Azure Front Doors. For managing Azure Front Door Standard/Premium, please refer https://docs.microsoft.com/en-us/cli/azure/afd?view=azure-cli-latest.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az network front-door check-custom-domain",
+            "summary": "Validates the custom domain mapping to ensure it maps to the correct Front Door endpoint in DNS.",
+            "syntax": "az network front-door check-custom-domain --host-name\n                                          [--ids]\n                                          [--name]\n                                          [--resource-group]\n                                          [--subscription]",
+            "required_parameters": [
+                "--host-name"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az network front-door check-name-availability",
+            "summary": "Check the availability of a Front Door resource name.",
+            "syntax": "az network front-door check-name-availability --name\n                                              --resource-type {Microsoft.Network/frontDoors, Microsoft.Network/frontDoors/frontendEndpoints}",
+            "required_parameters": [
+                "--name",
+                "--resource-type"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az network front-door check-name-availability --name frontdoor1 --resource-type Microsoft.Network/frontDoors"
+            ]
+        },
+        {
+            "name": "az network front-door create",
+            "summary": "Create a Front Door.",
+            "syntax": "az network front-door create --backend-address\n                             --name\n                             --resource-group\n                             [--accepted-protocols]\n                             [--backend-host-header]\n                             [--disabled {false, true}]\n                             [--enforce-certificate-name-check {Disabled, Enabled}]\n                             [--forwarding-protocol {HttpOnly, HttpsOnly, MatchRequest}]\n                             [--friendly-name]\n                             [--frontend-host-name]\n                             [--interval]\n                             [--no-wait]\n                             [--path]\n                             [--patterns]\n                             [--probeMethod {GET, HEAD}]\n                             [--protocol {Http, Https}]\n                             [--send-recv-timeout]\n                             [--tags]",
+            "required_parameters": [
+                "--backend-address",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--accepted-protocols",
+                "--backend-host-header",
+                "--disabled",
+                "--enforce-certificate-name-check",
+                "--forwarding-protocol",
+                "--friendly-name",
+                "--frontend-host-name",
+                "--interval",
+                "--no-wait",
+                "--path",
+                "--patterns",
+                "--probeMethod",
+                "--protocol",
+                "--send-recv-timeout",
+                "--tags"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az network front-door delete",
+            "summary": "Delete a Front Door.",
+            "syntax": "az network front-door delete [--ids]\n                             [--name]\n                             [--no-wait]\n                             [--resource-group]\n                             [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az network front-door list",
+            "summary": "List Front Doors.",
+            "syntax": "az network front-door list [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az network front-door purge-endpoint",
+            "summary": "Removes a content from Front Door.",
+            "syntax": "az network front-door purge-endpoint --content-paths\n                                     [--ids]\n                                     [--name]\n                                     [--resource-group]\n                                     [--subscription]",
+            "required_parameters": [
+                "--content-paths"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az network front-door show",
+            "summary": "Get the details of a Front Door.",
+            "syntax": "az network front-door show [--ids]\n                           [--name]\n                           [--resource-group]\n                           [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az network front-door update",
+            "summary": "Update settings of a Front Door.",
+            "syntax": "az network front-door update [--add]\n                             [--enforce-certificate-name-check {Disabled, Enabled}]\n                             [--force-string]\n                             [--ids]\n                             [--name]\n                             [--remove]\n                             [--resource-group]\n                             [--send-recv-timeout]\n                             [--set]\n                             [--subscription]\n                             [--tags]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--enforce-certificate-name-check",
+                "--force-string",
+                "--ids",
+                "--name -n",
+                "--remove",
+                "--resource-group -g",
+                "--send-recv-timeout",
+                "--set",
+                "--subscription",
+                "--tags"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az network front-door wait",
+            "summary": "Place the CLI in a waiting state until a condition of the Front Door is met.",
+            "syntax": "az network front-door wait [--created]\n                           [--custom]\n                           [--deleted]\n                           [--exists]\n                           [--ids]\n                           [--interval]\n                           [--name]\n                           [--resource-group]\n                           [--subscription]\n                           [--timeout]\n                           [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": [
+                "az network front-door wait -g MyResourceGroup --name frontdoor1 --created"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,28 @@
+{
+    "command_group": "az network firewall policy draft rule-collection-group",
+    "description": "",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az network firewall policy draft rule-collection-group wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az network firewall policy draft rule-collection-group wait [--created]\n                                                            [--custom]\n                                                            [--deleted]\n                                                            [--exists]\n                                                            [--ids]\n                                                            [--interval]\n                                                            [--name]\n                                                            [--policy-name]\n                                                            [--resource-group]\n                                                            [--subscription]\n                                                            [--timeout]\n                                                            [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--name -n",
+                "--policy-name",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

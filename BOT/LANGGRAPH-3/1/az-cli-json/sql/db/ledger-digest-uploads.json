@@ -1,0 +1,57 @@
+{
+    "command_group": "az sql db ledger-digest-uploads",
+    "description": "Manage ledger digest upload settings.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az sql db ledger-digest-uploads disable",
+            "summary": "Disable uploading ledger digests.",
+            "syntax": "az sql db ledger-digest-uploads disable [--ids]\n                                        [--name]\n                                        [--resource-group]\n                                        [--server]\n                                        [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--server -s",
+                "--subscription"
+            ],
+            "examples": [
+                "az sql db ledger-digest-uploads disable --name mydb --resource-group MyResourceGroup --server myserver"
+            ]
+        },
+        {
+            "name": "az sql db ledger-digest-uploads enable",
+            "summary": "Enable uploading ledger digests to an Azure Storage account or to Azure Confidential Ledger. If uploading ledger digests is already enabled, the cmdlet resets the digest storage endpoint to a new value.",
+            "syntax": "az sql db ledger-digest-uploads enable --endpoint\n                                       [--ids]\n                                       [--name]\n                                       [--resource-group]\n                                       [--server]\n                                       [--subscription]",
+            "required_parameters": [
+                "--endpoint"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--server -s",
+                "--subscription"
+            ],
+            "examples": [
+                "az sql db ledger-digest-uploads enable --name mydb --resource-group MyResourceGroup --server myserver --endpoint https://mystorage.blob.core.windows.net"
+            ]
+        },
+        {
+            "name": "az sql db ledger-digest-uploads show",
+            "summary": "Show the current ledger digest settings.",
+            "syntax": "az sql db ledger-digest-uploads show [--ids]\n                                     [--name]\n                                     [--resource-group]\n                                     [--server]\n                                     [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--server -s",
+                "--subscription"
+            ],
+            "examples": [
+                "az sql db ledger-digest-uploads show --name mydb --resource-group MyResourceGroup --server myserver"
+            ]
+        }
+    ]
+}

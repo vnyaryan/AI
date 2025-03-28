@@ -1,0 +1,51 @@
+{
+    "command_group": "az pipelines runs tag",
+    "description": "Manage pipeline run tags.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az pipelines runs tag add",
+            "summary": "Add tag(s) for a pipeline run.",
+            "syntax": "az pipelines runs tag add --run-id\n                          --tags\n                          [--detect {false, true}]\n                          [--org]\n                          [--project]",
+            "required_parameters": [
+                "--run-id",
+                "--tags"
+            ],
+            "optional_parameters": [
+                "--detect",
+                "--org --organization",
+                "--project -p"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az pipelines runs tag delete",
+            "summary": "Delete a pipeline run tag.",
+            "syntax": "az pipelines runs tag delete --run-id\n                             --tag\n                             [--detect {false, true}]\n                             [--org]\n                             [--project]",
+            "required_parameters": [
+                "--run-id",
+                "--tag"
+            ],
+            "optional_parameters": [
+                "--detect",
+                "--org --organization",
+                "--project -p"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az pipelines runs tag list",
+            "summary": "Get tags for a pipeline run.",
+            "syntax": "az pipelines runs tag list --run-id\n                           [--detect {false, true}]\n                           [--org]\n                           [--project]",
+            "required_parameters": [
+                "--run-id"
+            ],
+            "optional_parameters": [
+                "--detect",
+                "--org --organization",
+                "--project -p"
+            ],
+            "examples": []
+        }
+    ]
+}

@@ -1,0 +1,125 @@
+{
+    "command_group": "az dns-resolver policy vnet-link",
+    "description": "Manage DNS resolver policy virtual network links.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az dns-resolver policy vnet-link create",
+            "summary": "Create a DNS resolver policy virtual network link.",
+            "syntax": "az dns-resolver policy vnet-link create --dns-resolver-policy-virtual-network-link-name\n                                        --policy-name\n                                        --resource-group\n                                        --virtual-network\n                                        [--if-match]\n                                        [--if-none-match]\n                                        [--location]\n                                        [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                        [--tags]",
+            "required_parameters": [
+                "--dns-resolver-policy-virtual-network-link-name --name -n",
+                "--policy-name",
+                "--resource-group -g",
+                "--virtual-network"
+            ],
+            "optional_parameters": [
+                "--if-match",
+                "--if-none-match",
+                "--location -l",
+                "--no-wait",
+                "--tags"
+            ],
+            "examples": [
+                "az dns-resolver policy vnet-link create --resource-group sampleResourceGroup --policy-name sampleDnsResolverPolicy --dns-resolver-policy-virtual-network-link-name sampleVirtualNetworkLink --location westus2 --tags \"{key1:value1}\" --virtual-network \"{id:/subscriptions/0403cfa9-9659-4f33-9f30-1f191c51d111/resourceGroups/sampleVnetResourceGroupName/providers/Microsoft.Network/virtualNetworks/sampleVirtualNetwork}\""
+            ]
+        },
+        {
+            "name": "az dns-resolver policy vnet-link delete",
+            "summary": "Delete a DNS resolver policy virtual network link. WARNING: This operation cannot be undone.",
+            "syntax": "az dns-resolver policy vnet-link delete [--dns-resolver-policy-virtual-network-link-name]\n                                        [--ids]\n                                        [--if-match]\n                                        [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                        [--policy-name]\n                                        [--resource-group]\n                                        [--subscription]\n                                        [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--dns-resolver-policy-virtual-network-link-name --name -n",
+                "--ids",
+                "--if-match",
+                "--no-wait",
+                "--policy-name",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az dns-resolver policy dns-resolver-policy-link delete --resource-group sampleResourceGroup --policy-name sampleDnsResolverPolicy --dns-resolver-policy-virtual-network-link-name sampleVirtualNetworkLink"
+            ]
+        },
+        {
+            "name": "az dns-resolver policy vnet-link list",
+            "summary": "List DNS resolver policy virtual network links.",
+            "syntax": "az dns-resolver policy vnet-link list --policy-name\n                                      --resource-group\n                                      [--max-items]\n                                      [--next-token]\n                                      [--top]",
+            "required_parameters": [
+                "--policy-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token",
+                "--top"
+            ],
+            "examples": [
+                "az dns-resolver policy dns-resolver-policy-link list --resource-group sampleResourceGroup --policy-name sampleDnsResolverPolicy"
+            ]
+        },
+        {
+            "name": "az dns-resolver policy vnet-link show",
+            "summary": "Get properties of a DNS resolver policy virtual network link.",
+            "syntax": "az dns-resolver policy vnet-link show [--dns-resolver-policy-virtual-network-link-name]\n                                      [--ids]\n                                      [--policy-name]\n                                      [--resource-group]\n                                      [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--dns-resolver-policy-virtual-network-link-name --name -n",
+                "--ids",
+                "--policy-name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az dns-resolver policy dns-resolver-policy-link show --resource-group sampleResourceGroup --policy-name sampleDnsResolverPolicy --dns-resolver-policy-virtual-network-link-name sampleVirtualNetworkLink"
+            ]
+        },
+        {
+            "name": "az dns-resolver policy vnet-link update",
+            "summary": "Update a DNS resolver policy virtual network link.",
+            "syntax": "az dns-resolver policy vnet-link update [--add]\n                                        [--dns-resolver-policy-virtual-network-link-name]\n                                        [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                        [--ids]\n                                        [--if-match]\n                                        [--if-none-match]\n                                        [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                        [--policy-name]\n                                        [--remove]\n                                        [--resource-group]\n                                        [--set]\n                                        [--subscription]\n                                        [--tags]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--dns-resolver-policy-virtual-network-link-name --name -n",
+                "--force-string",
+                "--ids",
+                "--if-match",
+                "--if-none-match",
+                "--no-wait",
+                "--policy-name",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--subscription",
+                "--tags"
+            ],
+            "examples": [
+                "az dns-resolver policy vnet-link update --resource-group sampleResourceGroup --policy-name sampleDnsResolverPolicy --dns-resolver-policy-virtual-network-link-name sampleVirtualNetworkLink --location westus2 --tags \"{key2:value2}\""
+            ]
+        },
+        {
+            "name": "az dns-resolver policy vnet-link wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az dns-resolver policy vnet-link wait [--created]\n                                      [--custom]\n                                      [--deleted]\n                                      [--dns-resolver-policy-virtual-network-link-name]\n                                      [--exists]\n                                      [--ids]\n                                      [--interval]\n                                      [--policy-name]\n                                      [--resource-group]\n                                      [--subscription]\n                                      [--timeout]\n                                      [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--dns-resolver-policy-virtual-network-link-name --name -n",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--policy-name",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

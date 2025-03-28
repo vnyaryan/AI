@@ -1,0 +1,69 @@
+{
+    "command_group": "az healthcareapis acr",
+    "description": "Healthcareapis acr.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az healthcareapis acr add",
+            "summary": "Add a list of registries to the service, repeated ones will be ignored.",
+            "syntax": "az healthcareapis acr add [--ids]\n                          [--login-servers]\n                          [--resource-group]\n                          [--resource-name]\n                          [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--login-servers",
+                "--resource-group -g",
+                "--resource-name",
+                "--subscription"
+            ],
+            "examples": [
+                "az healthcareapis acr add --login-servers \"test1.azurecr.io test2.azurecr.io test3.azurecr.io\" --resource-group \"rgname\" --resource-name \"service1\""
+            ]
+        },
+        {
+            "name": "az healthcareapis acr list",
+            "summary": "Lists all container registries associated with the service.",
+            "syntax": "az healthcareapis acr list --resource-group\n                           --resource-name",
+            "required_parameters": [
+                "--resource-group -g",
+                "--resource-name"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az healthcareapis acr list --resource-group \"rgname\" --resource-name \"service1\""
+            ]
+        },
+        {
+            "name": "az healthcareapis acr remove",
+            "summary": "Remove a list of registries from the service, non-existing ones will be ignored.",
+            "syntax": "az healthcareapis acr remove [--ids]\n                             [--login-servers]\n                             [--resource-group]\n                             [--resource-name]\n                             [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--login-servers",
+                "--resource-group -g",
+                "--resource-name",
+                "--subscription"
+            ],
+            "examples": [
+                "az healthcareapis acr remove --login-servers \"test1.azurecr.io test2.azurecr.io\"  --resource-group \"rgname\" --resource-name \"service1\""
+            ]
+        },
+        {
+            "name": "az healthcareapis acr reset",
+            "summary": "Reset the container registries associated with the service to a new list.",
+            "syntax": "az healthcareapis acr reset [--ids]\n                            [--login-servers]\n                            [--resource-group]\n                            [--resource-name]\n                            [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--login-servers",
+                "--resource-group -g",
+                "--resource-name",
+                "--subscription"
+            ],
+            "examples": [
+                "az healthcareapis acr reset --login-servers \"test1.azurecr.io\" --resource-group \"rgname\" --resource-name \"service1\"",
+                "az healthcareapis acr reset --resource-group \"rgname\" --resource-name \"service1\""
+            ]
+        }
+    ]
+}

@@ -1,0 +1,57 @@
+{
+    "command_group": "az sql server-arc availability-group",
+    "description": "Manage availability groups.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az sql server-arc availability-group create",
+            "summary": "Create an availability group.",
+            "syntax": "az sql server-arc availability-group create --mirroring-port\n                                            --name\n                                            --replica-ids\n                                            --resource-group\n                                            [--automated-backup-preference]\n                                            [--availability-mode]\n                                            [--certificate-name]\n                                            [--cluster-type]\n                                            [--databases]\n                                            [--db-failover]\n                                            [--dtc-support]\n                                            [--endpoint-auth-mode]\n                                            [--endpoint-login]\n                                            [--failover-mode]\n                                            [--failure-condition-level]\n                                            [--health-check-timeout]\n                                            [--listener-ipv4-addresses]\n                                            [--listener-ipv4-masks]\n                                            [--listener-ipv6-addresses]\n                                            [--listener-name]\n                                            [--listener-port]\n                                            [--no-wait]\n                                            [--required-synchronized-secondaries]\n                                            [--seeding-mode]",
+            "required_parameters": [
+                "--mirroring-port",
+                "--name -n",
+                "--replica-ids",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--automated-backup-preference",
+                "--availability-mode",
+                "--certificate-name",
+                "--cluster-type",
+                "--databases",
+                "--db-failover",
+                "--dtc-support",
+                "--endpoint-auth-mode",
+                "--endpoint-login",
+                "--failover-mode",
+                "--failure-condition-level",
+                "--health-check-timeout",
+                "--listener-ipv4-addresses",
+                "--listener-ipv4-masks",
+                "--listener-ipv6-addresses",
+                "--listener-name",
+                "--listener-port",
+                "--no-wait",
+                "--required-synchronized-secondaries",
+                "--seeding-mode"
+            ],
+            "examples": [
+                "az sql server-arc availability-group create --name myAvailabilityGroupName --resource-group myResourceGroup --replica-ids \"/subscriptions/.../resourceGroups/.../providers/Microsoft.AzureArcData/sqlServerInstances/mySqlServerInstance\" --mirroring-port 5022"
+            ]
+        },
+        {
+            "name": "az sql server-arc availability-group failover",
+            "summary": "Request manual failover of an availability group.",
+            "syntax": "az sql server-arc availability-group failover --name\n                                              --resource-group\n                                              --server-name",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g",
+                "--server-name"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az sql server-arc availability-group failover --name myAvailabilityGroupName --resource-group myResourceGroup --server-name myServerName"
+            ]
+        }
+    ]
+}

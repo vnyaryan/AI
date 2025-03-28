@@ -1,0 +1,78 @@
+{
+    "command_group": "az sql db geo-backup",
+    "description": "Manage SQL database geo redundant backups.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az sql db geo-backup list",
+            "summary": "Gets a list of recoverable databases.",
+            "syntax": "az sql db geo-backup list [--ids]\n                          [--resource-group]\n                          [--server]\n                          [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--resource-group -g",
+                "--server --server-name -s",
+                "--subscription"
+            ],
+            "examples": [
+                "az sql db geo-backup list -s myserver -g mygroup"
+            ]
+        },
+        {
+            "name": "az sql db geo-backup restore",
+            "summary": "Restore a geo-redundant backup to a new database.",
+            "syntax": "az sql db geo-backup restore --dest-database\n                             --dest-server\n                             --geo-backup-id\n                             --resource-group\n                             [--assign-identity {false, true}]\n                             [--auto-pause-delay]\n                             [--availability-zone]\n                             [--backup-storage-redundancy]\n                             [--capacity]\n                             [--compute-model {Provisioned, Serverless}]\n                             [--edition]\n                             [--elastic-pool]\n                             [--encryption-protector]\n                             [--encryption-protector-auto-rotation {false, true}]\n                             [--family]\n                             [--federated-client-id]\n                             [--ha-replicas]\n                             [--keys]\n                             [--license-type {BasePrice, LicenseIncluded}]\n                             [--min-capacity]\n                             [--preferred-enclave-type {Default, VBS}]\n                             [--read-scale {Disabled, Enabled}]\n                             [--service-level-objective]\n                             [--tags]\n                             [--umi]\n                             [--zone-redundant {false, true}]",
+            "required_parameters": [
+                "--dest-database",
+                "--dest-server",
+                "--geo-backup-id",
+                "--resource-group"
+            ],
+            "optional_parameters": [
+                "--assign-identity -i",
+                "--auto-pause-delay",
+                "--availability-zone",
+                "--backup-storage-redundancy --bsr",
+                "--capacity -c",
+                "--compute-model",
+                "--edition --tier -e",
+                "--elastic-pool",
+                "--encryption-protector",
+                "--encryption-protector-auto-rotation --epauto",
+                "--family -f",
+                "--federated-client-id",
+                "--ha-replicas --read-replicas",
+                "--keys",
+                "--license-type",
+                "--min-capacity",
+                "--preferred-enclave-type",
+                "--read-scale",
+                "--service-level-objective --service-objective",
+                "--tags",
+                "--umi --user-assigned-identity-id",
+                "--zone-redundant -z"
+            ],
+            "examples": [
+                "az sql db geo-backup restore \\\n--dest-database targetdb --dest-server myserver --resource-group mygroup \\\n--geo-backup-id \"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/mygroup/providers/Microsoft.Sql/servers/myserver/databases/mydb/geoBackupPolicies/Default\""
+            ]
+        },
+        {
+            "name": "az sql db geo-backup show",
+            "summary": "Gets a recoverable database, which is a resource representing a database's geo backup.",
+            "syntax": "az sql db geo-backup show [--database]\n                          [--expand-keys {false, true}]\n                          [--ids]\n                          [--keys-filter]\n                          [--resource-group]\n                          [--server]\n                          [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--database --database-name -d",
+                "--expand-keys",
+                "--ids",
+                "--keys-filter",
+                "--resource-group -g",
+                "--server --server-name -s",
+                "--subscription"
+            ],
+            "examples": [
+                "az sql db geo-backup show --server myserver --database mydb --resource-group mygroup"
+            ]
+        }
+    ]
+}

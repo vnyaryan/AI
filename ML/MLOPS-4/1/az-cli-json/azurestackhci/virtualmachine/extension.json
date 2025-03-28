@@ -1,0 +1,132 @@
+{
+    "command_group": "az azurestackhci virtualmachine extension",
+    "description": "Manage virtualmachine extension with azurestackhci.",
+    "status": "Experimental",
+    "commands": [
+        {
+            "name": "az azurestackhci virtualmachine extension create",
+            "summary": "Create a virtualmachine extension.",
+            "syntax": "az azurestackhci virtualmachine extension create --name\n                                                 --resource-group\n                                                 --virtualmachine-name\n                                                 [--auto-upgrade-minor {false, true}]\n                                                 [--enable-auto-upgrade {false, true}]\n                                                 [--extension-type]\n                                                 [--force-update-tag]\n                                                 [--inst-handler-version]\n                                                 [--instance-view-type]\n                                                 [--location]\n                                                 [--protected-settings]\n                                                 [--publisher]\n                                                 [--settings]\n                                                 [--status]\n                                                 [--tags]\n                                                 [--type-handler-version]",
+            "required_parameters": [
+                "--name",
+                "--resource-group -g",
+                "--virtualmachine-name"
+            ],
+            "optional_parameters": [
+                "--auto-upgrade-minor",
+                "--enable-auto-upgrade",
+                "--extension-type",
+                "--force-update-tag",
+                "--inst-handler-version",
+                "--instance-view-type",
+                "--location -l",
+                "--protected-settings",
+                "--publisher",
+                "--settings",
+                "--status",
+                "--tags",
+                "--type-handler-version"
+            ],
+            "examples": [
+                "az azurestackhci virtualmachine extension create --resource-group \"test-rg\" --location \"West US2\" --name \"test-extension\" --extension-type \"CustomScriptExtension\" --publisher \"Microsoft.Compute\" --settings '{\"commandToExecute\":\"hostname\"}' --type-handler-version \"1.10\" --virtualmachine-name \"test-virtualmachine\""
+            ]
+        },
+        {
+            "name": "az azurestackhci virtualmachine extension delete",
+            "summary": "Delete a virtualmachine extension.",
+            "syntax": "az azurestackhci virtualmachine extension delete [--ids]\n                                                 [--name]\n                                                 [--resource-group]\n                                                 [--subscription]\n                                                 [--virtualmachine-name]\n                                                 [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name",
+                "--resource-group -g",
+                "--subscription",
+                "--virtualmachine-name",
+                "--yes -y"
+            ],
+            "examples": [
+                "az azurestackhci virtualmachine extension delete --name \"test-extension\" --virtualmachine-name \"test-virtualmachine\" --resource-group \"test-rg\""
+            ]
+        },
+        {
+            "name": "az azurestackhci virtualmachine extension list",
+            "summary": "List all the extensions for a virtualmachine.",
+            "syntax": "az azurestackhci virtualmachine extension list --resource-group\n                                               --virtualmachine-name",
+            "required_parameters": [
+                "--resource-group -g",
+                "--virtualmachine-name"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az azurestackhci virtualmachine extension list --virtualmachine-name \"test-virtualmachine\" --resource-group \"test-rg\""
+            ]
+        },
+        {
+            "name": "az azurestackhci virtualmachine extension show",
+            "summary": "Get the details of a virtualmachine extension.",
+            "syntax": "az azurestackhci virtualmachine extension show [--ids]\n                                               [--name]\n                                               [--resource-group]\n                                               [--subscription]\n                                               [--virtualmachine-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name",
+                "--resource-group -g",
+                "--subscription",
+                "--virtualmachine-name"
+            ],
+            "examples": [
+                "az azurestackhci virtualmachine extension show --name \"test-extension\" --virtualmachine-name \"test-virtualmachine\" --resource-group \"test-rg\""
+            ]
+        },
+        {
+            "name": "az azurestackhci virtualmachine extension update",
+            "summary": "Update a virtualmachine extension.",
+            "syntax": "az azurestackhci virtualmachine extension update --name\n                                                 [--auto-upgrade-minor {false, true}]\n                                                 [--enable-auto-upgrade {false, true}]\n                                                 [--extension-type]\n                                                 [--force-update-tag]\n                                                 [--ids]\n                                                 [--protected-settings]\n                                                 [--publisher]\n                                                 [--resource-group]\n                                                 [--settings]\n                                                 [--subscription]\n                                                 [--tags]\n                                                 [--type-handler-version]\n                                                 [--virtualmachine-name]",
+            "required_parameters": [
+                "--name"
+            ],
+            "optional_parameters": [
+                "--auto-upgrade-minor",
+                "--enable-auto-upgrade",
+                "--extension-type",
+                "--force-update-tag",
+                "--ids",
+                "--protected-settings",
+                "--publisher",
+                "--resource-group -g",
+                "--settings",
+                "--subscription",
+                "--tags",
+                "--type-handler-version",
+                "--virtualmachine-name"
+            ],
+            "examples": [
+                "az azurestackhci virtualmachine extension update --resource-group \"test-rg\" --name \"test-extension\" --extension-type \"CustomScriptExtension\" --virtualmachine-name \"test-virtualmachine\" --publisher \"Microsoft.Compute\" --settings '{\"commandToExecute\":\"hostname\"}' --type-handler-version \"1.10\""
+            ]
+        },
+        {
+            "name": "az azurestackhci virtualmachine extension wait",
+            "summary": "Place the CLI in a waiting state until a condition of the virtualmachine extension is met.",
+            "syntax": "az azurestackhci virtualmachine extension wait [--created]\n                                               [--custom]\n                                               [--deleted]\n                                               [--exists]\n                                               [--ids]\n                                               [--interval]\n                                               [--name]\n                                               [--resource-group]\n                                               [--subscription]\n                                               [--timeout]\n                                               [--updated]\n                                               [--virtualmachine-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--name",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated",
+                "--virtualmachine-name"
+            ],
+            "examples": [
+                "az azurestackhci virtualmachine extension wait --name \"test-extension\" --virtualmachine-name \"test-virtualmachine\" --resource-group \"test-rg\" --created",
+                "az azurestackhci virtualmachine extension wait --name \"test-extension\" --virtualmachine-name \"test-virtualmachine\" --resource-group \"test-rg\" --updated",
+                "az azurestackhci virtualmachine extension wait --name \"test-extension\" --virtualmachine-name \"test-virtualmachine\" --resource-group \"test-rg\" --deleted"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,92 @@
+{
+    "command_group": "az connectedvmware vm disk",
+    "description": "Vm disk.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az connectedvmware vm disk add",
+            "summary": "Add virtual disk to a virtual machine.",
+            "syntax": "az connectedvmware vm disk add --controller-key\n                               --disk-size\n                               --name\n                               --resource-group\n                               --vm-name\n                               [--disk-mode]\n                               [--no-wait]\n                               [--unit-number]",
+            "required_parameters": [
+                "--controller-key",
+                "--disk-size",
+                "--name -n",
+                "--resource-group -g",
+                "--vm-name"
+            ],
+            "optional_parameters": [
+                "--disk-mode",
+                "--no-wait",
+                "--unit-number"
+            ],
+            "examples": [
+                "az connectedvmware vm disk add --controller-key \"The controller key of the disk\"                --disk-size \"The disk size in GBs\" --name \"Name of the Disk\" --resource-group                \"resource group name\" --vm-name \"Name of the virtual machine\""
+            ]
+        },
+        {
+            "name": "az connectedvmware vm disk delete",
+            "summary": "Delete virtual disks to a virtual machine.",
+            "syntax": "az connectedvmware vm disk delete --disks\n                                  --resource-group\n                                  --vm-name\n                                  [--no-wait]\n                                  [--yes]",
+            "required_parameters": [
+                "--disks",
+                "--resource-group -g",
+                "--vm-name"
+            ],
+            "optional_parameters": [
+                "--no-wait",
+                "--yes -y"
+            ],
+            "examples": [
+                "az connectedvmware vm disk delete --disk \"Names of the Disks\" --resource-group                \"resource group name\" --vm-name \"Name of the virtual machine\""
+            ]
+        },
+        {
+            "name": "az connectedvmware vm disk list",
+            "summary": "Retrieve a list of vm disk from given resource group name and vm name.",
+            "syntax": "az connectedvmware vm disk list --resource-group\n                                --vm-name",
+            "required_parameters": [
+                "--resource-group -g",
+                "--vm-name"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az connectedvmware vm disk list --resource-group \"resource group name\" --vm-name                \"Name of the virtual machine\""
+            ]
+        },
+        {
+            "name": "az connectedvmware vm disk show",
+            "summary": "Get details of a vm disk by it's name, resource-group and vm name.",
+            "syntax": "az connectedvmware vm disk show --name\n                                --resource-group\n                                --vm-name",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g",
+                "--vm-name"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az connectedvmware vm disk show --name \"Name of the Disk\" --resource-group                \"resource group name\" --vm-name \"Name of the virtual machine\""
+            ]
+        },
+        {
+            "name": "az connectedvmware vm disk update",
+            "summary": "Update virtual disk to a virtual machine.",
+            "syntax": "az connectedvmware vm disk update --resource-group\n                                  --vm-name\n                                  [--controller-key]\n                                  [--device-key]\n                                  [--disk-mode]\n                                  [--disk-size]\n                                  [--name]\n                                  [--no-wait]\n                                  [--unit-number]",
+            "required_parameters": [
+                "--resource-group -g",
+                "--vm-name"
+            ],
+            "optional_parameters": [
+                "--controller-key",
+                "--device-key",
+                "--disk-mode",
+                "--disk-size",
+                "--name -n",
+                "--no-wait",
+                "--unit-number"
+            ],
+            "examples": [
+                "az connectedvmware vm disk update --controller-key \"The controller key of the disk\"                --disk-size \"The disk size in GBs\" --name \"Name of the Disk\" --resource-group                \"resource group name\" --vm-name \"Name of the virtual machine\""
+            ]
+        }
+    ]
+}

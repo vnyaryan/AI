@@ -1,0 +1,66 @@
+{
+    "command_group": "az csvmware vm disk",
+    "description": "Manage VMware virtual machine's disks.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az csvmware vm disk add",
+            "summary": "Add disk to a VMware virtual machine.",
+            "syntax": "az csvmware vm disk add --resource-group\n                        --vm-name\n                        [--controller]\n                        [--mode {independent_nonpersistent, independent_persistent, persistent}]\n                        [--size]",
+            "required_parameters": [
+                "--resource-group -g",
+                "--vm-name"
+            ],
+            "optional_parameters": [
+                "--controller",
+                "--mode",
+                "--size"
+            ],
+            "examples": [
+                "az csvmware vm disk add --vm-name MyVm -g MyResourceGroup",
+                "az csvmware vm disk add --vm-name MyVm -g MyResourceGroup --controller 15000 --size 67108864"
+            ]
+        },
+        {
+            "name": "az csvmware vm disk delete",
+            "summary": "Delete disks from a VM.",
+            "syntax": "az csvmware vm disk delete --disks\n                           --resource-group\n                           --vm-name",
+            "required_parameters": [
+                "--disks",
+                "--resource-group -g",
+                "--vm-name"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az csvmware vm disk delete --vm-name MyVm -g MyResourceGroup --disks \"My Disk Name 1\" \"My Disk Name 2\""
+            ]
+        },
+        {
+            "name": "az csvmware vm disk list",
+            "summary": "List details of disks available on a VMware virtual machine.",
+            "syntax": "az csvmware vm disk list --resource-group\n                         --vm-name",
+            "required_parameters": [
+                "--resource-group -g",
+                "--vm-name"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az csvmware vm disk list --vm-name MyVm -g MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az csvmware vm disk show",
+            "summary": "Get the details of a VMware virtual machine's disk.",
+            "syntax": "az csvmware vm disk show --name\n                         --resource-group\n                         --vm-name",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g",
+                "--vm-name"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az csvmware vm disk show --vm-name MyVm -g MyResourceGroup -n \"My Disk Name\""
+            ]
+        }
+    ]
+}

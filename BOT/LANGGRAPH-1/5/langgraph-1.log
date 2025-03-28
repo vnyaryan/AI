@@ -1,0 +1,199 @@
+2025-01-15 18:48:23,631 - DEBUG - Logging setup completed.
+2025-01-15 18:48:23,631 - DEBUG - Starting multi-turn conversation.
+2025-01-15 18:48:23,632 - DEBUG - Defining the workflow graph.
+2025-01-15 18:48:23,637 - DEBUG - Workflow graph compiled successfully.
+2025-01-15 18:48:23,637 - DEBUG - START ITERATION - 1
+2025-01-15 18:48:23,643 - DEBUG - NODE1 EXECUTION STARTED.
+2025-01-15 18:48:26,228 - DEBUG - User message: hi
+2025-01-15 18:48:26,229 - DEBUG - User message added to state: hi
+2025-01-15 18:48:26,229 - DEBUG - NODE1 EXECUTION COMPLETED.
+2025-01-15 18:48:26,232 - DEBUG - NODE2: EVALUATE_AND_REFINE_QUERY STARTED.
+2025-01-15 18:48:26,232 - DEBUG - Full message history:
+SystemMessage: 
+You are an intelligent assistant.
+
+you will check each user input and respond accordingly and in case more informatoion required then you will ask for more  information.
+
+HumanMessage: hi
+2025-01-15 18:48:26,240 - DEBUG - Request options: {'method': 'post', 'url': '/chat/completions', 'files': None, 'json_data': {'messages': [{'content': "You are an intelligent assistant. Analyze the following conversation history and determine if latest human message related azure cli commands or notRespond with 'Yes' if it's related to azure az cli command, or 'No' if not related to azure az cli.", 'role': 'system'}, {'content': 'Conversation History:\nSystemMessage: \nYou are an intelligent assistant.\n\nyou will check each user input and respond accordingly and in case more informatoion required then you will ask for more  information.\n\nHumanMessage: hi', 'role': 'user'}], 'model': 'gpt-3.5-turbo', 'n': 1, 'stream': False, 'temperature': 0.7}}
+2025-01-15 18:48:26,338 - DEBUG - Sending HTTP Request: POST https://api.openai.com/v1/chat/completions
+2025-01-15 18:48:26,339 - DEBUG - connect_tcp.started host='api.openai.com' port=443 local_address=None timeout=None socket_options=None
+2025-01-15 18:48:26,355 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000002094C819730>
+2025-01-15 18:48:26,355 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x000002094C8859D0> server_hostname='api.openai.com' timeout=None
+2025-01-15 18:48:26,368 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000002094D908680>
+2025-01-15 18:48:26,369 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-01-15 18:48:26,369 - DEBUG - send_request_headers.complete
+2025-01-15 18:48:26,369 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-01-15 18:48:26,370 - DEBUG - send_request_body.complete
+2025-01-15 18:48:26,370 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-01-15 18:48:26,908 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Wed, 15 Jan 2025 13:18:28 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-expose-headers', b'X-Request-ID'), (b'openai-organization', b'user-rklj2utpmtctnh7muirfmmzu'), (b'openai-processing-ms', b'248'), (b'openai-version', b'2020-10-01'), (b'x-ratelimit-limit-requests', b'10000'), (b'x-ratelimit-limit-tokens', b'200000'), (b'x-ratelimit-remaining-requests', b'9999'), (b'x-ratelimit-remaining-tokens', b'199863'), (b'x-ratelimit-reset-requests', b'8.64s'), (b'x-ratelimit-reset-tokens', b'40ms'), (b'x-request-id', b'req_b8bba91f485bc11c6d662641404b3bd9'), (b'strict-transport-security', b'max-age=31536000; includeSubDomains; preload'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Set-Cookie', b'__cf_bm=raZylnJb43ZA1R2Uwy.q6D.uHQ3UXF4MZQwNnczO5EI-1736947108-1.0.1.1-FgQyGuZRH.3U1naNTQpjLc5lC2Ht87spGJVz4QAeBRX6Qaz_NkyFSTPl4wEAcCXq9etR8bH3M16aYdGn.ELjZw; path=/; expires=Wed, 15-Jan-25 13:48:28 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'X-Content-Type-Options', b'nosniff'), (b'Set-Cookie', b'_cfuvid=7y.hsr7M.c6mLd14wSc2Ezknj.VHKbvoG_OtF2PBscM-1736947108264-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'Server', b'cloudflare'), (b'CF-RAY', b'902626df5ffd5486-DEL'), (b'Content-Encoding', b'gzip')])
+2025-01-15 18:48:26,911 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-15 18:48:26,912 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-01-15 18:48:26,912 - DEBUG - receive_response_body.complete
+2025-01-15 18:48:26,913 - DEBUG - response_closed.started
+2025-01-15 18:48:26,913 - DEBUG - response_closed.complete
+2025-01-15 18:48:26,913 - DEBUG - HTTP Response: POST https://api.openai.com/v1/chat/completions "200 OK" Headers([('date', 'Wed, 15 Jan 2025 13:18:28 GMT'), ('content-type', 'application/json'), ('transfer-encoding', 'chunked'), ('connection', 'keep-alive'), ('access-control-expose-headers', 'X-Request-ID'), ('openai-organization', 'user-rklj2utpmtctnh7muirfmmzu'), ('openai-processing-ms', '248'), ('openai-version', '2020-10-01'), ('x-ratelimit-limit-requests', '10000'), ('x-ratelimit-limit-tokens', '200000'), ('x-ratelimit-remaining-requests', '9999'), ('x-ratelimit-remaining-tokens', '199863'), ('x-ratelimit-reset-requests', '8.64s'), ('x-ratelimit-reset-tokens', '40ms'), ('x-request-id', 'req_b8bba91f485bc11c6d662641404b3bd9'), ('strict-transport-security', 'max-age=31536000; includeSubDomains; preload'), ('cf-cache-status', 'DYNAMIC'), ('set-cookie', '__cf_bm=raZylnJb43ZA1R2Uwy.q6D.uHQ3UXF4MZQwNnczO5EI-1736947108-1.0.1.1-FgQyGuZRH.3U1naNTQpjLc5lC2Ht87spGJVz4QAeBRX6Qaz_NkyFSTPl4wEAcCXq9etR8bH3M16aYdGn.ELjZw; path=/; expires=Wed, 15-Jan-25 13:48:28 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), ('x-content-type-options', 'nosniff'), ('set-cookie', '_cfuvid=7y.hsr7M.c6mLd14wSc2Ezknj.VHKbvoG_OtF2PBscM-1736947108264-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), ('server', 'cloudflare'), ('cf-ray', '902626df5ffd5486-DEL'), ('content-encoding', 'gzip')])
+2025-01-15 18:48:26,913 - DEBUG - request_id: req_b8bba91f485bc11c6d662641404b3bd9
+2025-01-15 18:48:26,938 - DEBUG - LLM evaluation result: no
+2025-01-15 18:48:26,938 - DEBUG - LLM decided similarity search is not required.
+2025-01-15 18:48:26,938 - DEBUG - NODE2: EVALUATE_AND_REFINE_QUERY COMPLETED.
+2025-01-15 18:48:26,943 - DEBUG - NODE5 EXECUTION STARTED.
+2025-01-15 18:48:26,943 - DEBUG - Full message history:
+SystemMessage: 
+You are an intelligent assistant.
+
+you will check each user input and respond accordingly and in case more informatoion required then you will ask for more  information.
+
+HumanMessage: hi
+2025-01-15 18:48:26,943 - DEBUG - No additional context available. Proceeding with message history only.
+2025-01-15 18:48:26,955 - DEBUG - Request options: {'method': 'post', 'url': '/chat/completions', 'files': None, 'json_data': {'messages': [{'content': "You are an intelligent assistant skilled in Azure and az CLI commands. Using the provided conversation history and any additional context, generate the most appropriate response to address the user's task or query.", 'role': 'system'}, {'content': 'Conversation History:\nSystemMessage: \nYou are an intelligent assistant.\n\nyou will check each user input and respond accordingly and in case more informatoion required then you will ask for more  information.\n\nHumanMessage: hi\n\nAdditional Context:\n', 'role': 'user'}], 'model': 'gpt-3.5-turbo', 'n': 1, 'stream': False, 'temperature': 0.7}}
+2025-01-15 18:48:26,956 - DEBUG - Sending HTTP Request: POST https://api.openai.com/v1/chat/completions
+2025-01-15 18:48:26,957 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-01-15 18:48:26,957 - DEBUG - send_request_headers.complete
+2025-01-15 18:48:26,958 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-01-15 18:48:26,958 - DEBUG - send_request_body.complete
+2025-01-15 18:48:26,958 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-01-15 18:48:27,500 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Wed, 15 Jan 2025 13:18:28 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-expose-headers', b'X-Request-ID'), (b'openai-organization', b'user-rklj2utpmtctnh7muirfmmzu'), (b'openai-processing-ms', b'257'), (b'openai-version', b'2020-10-01'), (b'x-ratelimit-limit-requests', b'10000'), (b'x-ratelimit-limit-tokens', b'200000'), (b'x-ratelimit-remaining-requests', b'9998'), (b'x-ratelimit-remaining-tokens', b'199866'), (b'x-ratelimit-reset-requests', b'16.693s'), (b'x-ratelimit-reset-tokens', b'40ms'), (b'x-request-id', b'req_fef1921fff77dd11446a05ff0eabc3e5'), (b'strict-transport-security', b'max-age=31536000; includeSubDomains; preload'), (b'CF-Cache-Status', b'DYNAMIC'), (b'X-Content-Type-Options', b'nosniff'), (b'Server', b'cloudflare'), (b'CF-RAY', b'902626e2fb8d5486-DEL'), (b'Content-Encoding', b'gzip')])
+2025-01-15 18:48:27,500 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-15 18:48:27,501 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-01-15 18:48:27,502 - DEBUG - receive_response_body.complete
+2025-01-15 18:48:27,502 - DEBUG - response_closed.started
+2025-01-15 18:48:27,502 - DEBUG - response_closed.complete
+2025-01-15 18:48:27,502 - DEBUG - HTTP Response: POST https://api.openai.com/v1/chat/completions "200 OK" Headers({'date': 'Wed, 15 Jan 2025 13:18:28 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'access-control-expose-headers': 'X-Request-ID', 'openai-organization': 'user-rklj2utpmtctnh7muirfmmzu', 'openai-processing-ms': '257', 'openai-version': '2020-10-01', 'x-ratelimit-limit-requests': '10000', 'x-ratelimit-limit-tokens': '200000', 'x-ratelimit-remaining-requests': '9998', 'x-ratelimit-remaining-tokens': '199866', 'x-ratelimit-reset-requests': '16.693s', 'x-ratelimit-reset-tokens': '40ms', 'x-request-id': 'req_fef1921fff77dd11446a05ff0eabc3e5', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'cf-cache-status': 'DYNAMIC', 'x-content-type-options': 'nosniff', 'server': 'cloudflare', 'cf-ray': '902626e2fb8d5486-DEL', 'content-encoding': 'gzip'})
+2025-01-15 18:48:27,502 - DEBUG - request_id: req_fef1921fff77dd11446a05ff0eabc3e5
+2025-01-15 18:48:27,503 - DEBUG - LLM response: Hello! How can I assist you today?
+2025-01-15 18:48:27,504 - DEBUG - AI response successfully added to the state.
+2025-01-15 18:48:27,504 - DEBUG - NODE5 EXECUTION COMPLETED.
+2025-01-15 18:48:27,505 - DEBUG - NODE6: RELEVANCE ASSESSMENT STARTED.
+2025-01-15 18:48:27,514 - DEBUG - Request options: {'method': 'post', 'url': '/chat/completions', 'files': None, 'json_data': {'messages': [{'content': "You are an intelligent assistant. Determine if the following AI response is a good fit for the user's query based on the conversation history. Respond with 'GOOD' or 'BAD'.", 'role': 'system'}, {'content': 'User Question:\nhi\n\nAI Response:\nHello! How can I assist you today?\n\nConversation History:\nSystemMessage: \nYou are an intelligent assistant.\n\nyou will check each user input and respond accordingly and in case more informatoion required then you will ask for more  information.\n\nHumanMessage: hi\nAIMessage: Hello! How can I assist you today?', 'role': 'user'}], 'model': 'gpt-3.5-turbo', 'n': 1, 'stream': False, 'temperature': 0.7}}
+2025-01-15 18:48:27,516 - DEBUG - Sending HTTP Request: POST https://api.openai.com/v1/chat/completions
+2025-01-15 18:48:27,517 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-01-15 18:48:27,517 - DEBUG - send_request_headers.complete
+2025-01-15 18:48:27,518 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-01-15 18:48:27,518 - DEBUG - send_request_body.complete
+2025-01-15 18:48:27,518 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-01-15 18:48:28,014 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Wed, 15 Jan 2025 13:18:29 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-expose-headers', b'X-Request-ID'), (b'openai-organization', b'user-rklj2utpmtctnh7muirfmmzu'), (b'openai-processing-ms', b'201'), (b'openai-version', b'2020-10-01'), (b'x-ratelimit-limit-requests', b'10000'), (b'x-ratelimit-limit-tokens', b'200000'), (b'x-ratelimit-remaining-requests', b'9997'), (b'x-ratelimit-remaining-tokens', b'199853'), (b'x-ratelimit-reset-requests', b'24.767s'), (b'x-ratelimit-reset-tokens', b'43ms'), (b'x-request-id', b'req_1ea70a1e1b3e3a36380bc36a5f1c8c93'), (b'strict-transport-security', b'max-age=31536000; includeSubDomains; preload'), (b'CF-Cache-Status', b'DYNAMIC'), (b'X-Content-Type-Options', b'nosniff'), (b'Server', b'cloudflare'), (b'CF-RAY', b'902626e68f055486-DEL'), (b'Content-Encoding', b'gzip')])
+2025-01-15 18:48:28,015 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-15 18:48:28,015 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-01-15 18:48:28,016 - DEBUG - receive_response_body.complete
+2025-01-15 18:48:28,016 - DEBUG - response_closed.started
+2025-01-15 18:48:28,017 - DEBUG - response_closed.complete
+2025-01-15 18:48:28,017 - DEBUG - HTTP Response: POST https://api.openai.com/v1/chat/completions "200 OK" Headers({'date': 'Wed, 15 Jan 2025 13:18:29 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'access-control-expose-headers': 'X-Request-ID', 'openai-organization': 'user-rklj2utpmtctnh7muirfmmzu', 'openai-processing-ms': '201', 'openai-version': '2020-10-01', 'x-ratelimit-limit-requests': '10000', 'x-ratelimit-limit-tokens': '200000', 'x-ratelimit-remaining-requests': '9997', 'x-ratelimit-remaining-tokens': '199853', 'x-ratelimit-reset-requests': '24.767s', 'x-ratelimit-reset-tokens': '43ms', 'x-request-id': 'req_1ea70a1e1b3e3a36380bc36a5f1c8c93', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'cf-cache-status': 'DYNAMIC', 'x-content-type-options': 'nosniff', 'server': 'cloudflare', 'cf-ray': '902626e68f055486-DEL', 'content-encoding': 'gzip'})
+2025-01-15 18:48:28,018 - DEBUG - request_id: req_1ea70a1e1b3e3a36380bc36a5f1c8c93
+2025-01-15 18:48:28,019 - DEBUG - AI response is relevant and appropriate.
+2025-01-15 18:48:28,020 - DEBUG - AI response printed successfully.
+2025-01-15 18:48:28,020 - DEBUG - NODE6: RELEVANCE ASSESSMENT COMPLETED.
+2025-01-15 18:48:28,028 - DEBUG - Messages state successfully logged to msg_details.txt.
+2025-01-15 18:48:28,031 - DEBUG - All message types successfully written to all_msg.txt
+2025-01-15 18:48:28,031 - DEBUG - ENDING ITERATION - 1
+2025-01-15 18:48:28,031 - DEBUG - START ITERATION - 2
+2025-01-15 18:48:28,038 - DEBUG - NODE1 EXECUTION STARTED.
+2025-01-15 18:48:37,594 - DEBUG - User message: how are  you
+2025-01-15 18:48:37,595 - DEBUG - User message added to state: how are  you
+2025-01-15 18:48:37,595 - DEBUG - NODE1 EXECUTION COMPLETED.
+2025-01-15 18:48:37,597 - DEBUG - NODE2: EVALUATE_AND_REFINE_QUERY STARTED.
+2025-01-15 18:48:37,598 - DEBUG - Full message history:
+SystemMessage: 
+You are an intelligent assistant.
+
+you will check each user input and respond accordingly and in case more informatoion required then you will ask for more  information.
+
+HumanMessage: hi
+AIMessage: Hello! How can I assist you today?
+HumanMessage: how are  you
+2025-01-15 18:48:37,603 - DEBUG - Request options: {'method': 'post', 'url': '/chat/completions', 'files': None, 'json_data': {'messages': [{'content': "You are an intelligent assistant. Analyze the following conversation history and determine if latest human message related azure cli commands or notRespond with 'Yes' if it's related to azure az cli command, or 'No' if not related to azure az cli.", 'role': 'system'}, {'content': 'Conversation History:\nSystemMessage: \nYou are an intelligent assistant.\n\nyou will check each user input and respond accordingly and in case more informatoion required then you will ask for more  information.\n\nHumanMessage: hi\nAIMessage: Hello! How can I assist you today?\nHumanMessage: how are  you', 'role': 'user'}], 'model': 'gpt-3.5-turbo', 'n': 1, 'stream': False, 'temperature': 0.7}}
+2025-01-15 18:48:37,604 - DEBUG - Sending HTTP Request: POST https://api.openai.com/v1/chat/completions
+2025-01-15 18:48:37,605 - DEBUG - close.started
+2025-01-15 18:48:37,605 - DEBUG - close.complete
+2025-01-15 18:48:37,606 - DEBUG - connect_tcp.started host='api.openai.com' port=443 local_address=None timeout=None socket_options=None
+2025-01-15 18:48:37,612 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000002094D95C770>
+2025-01-15 18:48:37,612 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x000002094C8859D0> server_hostname='api.openai.com' timeout=None
+2025-01-15 18:48:37,624 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000002094D95E4B0>
+2025-01-15 18:48:37,624 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-01-15 18:48:37,624 - DEBUG - send_request_headers.complete
+2025-01-15 18:48:37,625 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-01-15 18:48:37,625 - DEBUG - send_request_body.complete
+2025-01-15 18:48:37,625 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-01-15 18:48:38,135 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Wed, 15 Jan 2025 13:18:39 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-expose-headers', b'X-Request-ID'), (b'openai-organization', b'user-rklj2utpmtctnh7muirfmmzu'), (b'openai-processing-ms', b'173'), (b'openai-version', b'2020-10-01'), (b'x-ratelimit-limit-requests', b'10000'), (b'x-ratelimit-limit-tokens', b'200000'), (b'x-ratelimit-remaining-requests', b'9997'), (b'x-ratelimit-remaining-tokens', b'199845'), (b'x-ratelimit-reset-requests', b'23.297s'), (b'x-ratelimit-reset-tokens', b'46ms'), (b'x-request-id', b'req_94650b7700ee08795eafaf235390d446'), (b'strict-transport-security', b'max-age=31536000; includeSubDomains; preload'), (b'CF-Cache-Status', b'DYNAMIC'), (b'X-Content-Type-Options', b'nosniff'), (b'Server', b'cloudflare'), (b'CF-RAY', b'90262725aeb291b8-DEL'), (b'Content-Encoding', b'gzip')])
+2025-01-15 18:48:38,136 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-15 18:48:38,137 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-01-15 18:48:38,138 - DEBUG - receive_response_body.complete
+2025-01-15 18:48:38,138 - DEBUG - response_closed.started
+2025-01-15 18:48:38,138 - DEBUG - response_closed.complete
+2025-01-15 18:48:38,138 - DEBUG - HTTP Response: POST https://api.openai.com/v1/chat/completions "200 OK" Headers({'date': 'Wed, 15 Jan 2025 13:18:39 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'access-control-expose-headers': 'X-Request-ID', 'openai-organization': 'user-rklj2utpmtctnh7muirfmmzu', 'openai-processing-ms': '173', 'openai-version': '2020-10-01', 'x-ratelimit-limit-requests': '10000', 'x-ratelimit-limit-tokens': '200000', 'x-ratelimit-remaining-requests': '9997', 'x-ratelimit-remaining-tokens': '199845', 'x-ratelimit-reset-requests': '23.297s', 'x-ratelimit-reset-tokens': '46ms', 'x-request-id': 'req_94650b7700ee08795eafaf235390d446', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'cf-cache-status': 'DYNAMIC', 'x-content-type-options': 'nosniff', 'server': 'cloudflare', 'cf-ray': '90262725aeb291b8-DEL', 'content-encoding': 'gzip'})
+2025-01-15 18:48:38,139 - DEBUG - request_id: req_94650b7700ee08795eafaf235390d446
+2025-01-15 18:48:38,142 - DEBUG - LLM evaluation result: no
+2025-01-15 18:48:38,143 - DEBUG - LLM decided similarity search is not required.
+2025-01-15 18:48:38,144 - DEBUG - NODE2: EVALUATE_AND_REFINE_QUERY COMPLETED.
+2025-01-15 18:48:38,214 - DEBUG - NODE5 EXECUTION STARTED.
+2025-01-15 18:48:38,215 - DEBUG - Full message history:
+SystemMessage: 
+You are an intelligent assistant.
+
+you will check each user input and respond accordingly and in case more informatoion required then you will ask for more  information.
+
+HumanMessage: hi
+AIMessage: Hello! How can I assist you today?
+HumanMessage: how are  you
+2025-01-15 18:48:38,215 - DEBUG - No additional context available. Proceeding with message history only.
+2025-01-15 18:48:38,239 - DEBUG - Request options: {'method': 'post', 'url': '/chat/completions', 'files': None, 'json_data': {'messages': [{'content': "You are an intelligent assistant skilled in Azure and az CLI commands. Using the provided conversation history and any additional context, generate the most appropriate response to address the user's task or query.", 'role': 'system'}, {'content': 'Conversation History:\nSystemMessage: \nYou are an intelligent assistant.\n\nyou will check each user input and respond accordingly and in case more informatoion required then you will ask for more  information.\n\nHumanMessage: hi\nAIMessage: Hello! How can I assist you today?\nHumanMessage: how are  you\n\nAdditional Context:\n', 'role': 'user'}], 'model': 'gpt-3.5-turbo', 'n': 1, 'stream': False, 'temperature': 0.7}}
+2025-01-15 18:48:38,243 - DEBUG - Sending HTTP Request: POST https://api.openai.com/v1/chat/completions
+2025-01-15 18:48:38,244 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-01-15 18:48:38,245 - DEBUG - send_request_headers.complete
+2025-01-15 18:48:38,245 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-01-15 18:48:38,246 - DEBUG - send_request_body.complete
+2025-01-15 18:48:38,246 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-01-15 18:48:39,070 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Wed, 15 Jan 2025 13:18:40 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-expose-headers', b'X-Request-ID'), (b'openai-organization', b'user-rklj2utpmtctnh7muirfmmzu'), (b'openai-processing-ms', b'503'), (b'openai-version', b'2020-10-01'), (b'x-ratelimit-limit-requests', b'10000'), (b'x-ratelimit-limit-tokens', b'200000'), (b'x-ratelimit-remaining-requests', b'9996'), (b'x-ratelimit-remaining-tokens', b'199847'), (b'x-ratelimit-reset-requests', b'31.302s'), (b'x-ratelimit-reset-tokens', b'45ms'), (b'x-request-id', b'req_16cb7d2a772a4c5f0b908d2ec9d4485c'), (b'strict-transport-security', b'max-age=31536000; includeSubDomains; preload'), (b'CF-Cache-Status', b'DYNAMIC'), (b'X-Content-Type-Options', b'nosniff'), (b'Server', b'cloudflare'), (b'CF-RAY', b'902627298a7e91b8-DEL'), (b'Content-Encoding', b'gzip')])
+2025-01-15 18:48:39,071 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-15 18:48:39,071 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-01-15 18:48:39,071 - DEBUG - receive_response_body.complete
+2025-01-15 18:48:39,072 - DEBUG - response_closed.started
+2025-01-15 18:48:39,072 - DEBUG - response_closed.complete
+2025-01-15 18:48:39,072 - DEBUG - HTTP Response: POST https://api.openai.com/v1/chat/completions "200 OK" Headers({'date': 'Wed, 15 Jan 2025 13:18:40 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'access-control-expose-headers': 'X-Request-ID', 'openai-organization': 'user-rklj2utpmtctnh7muirfmmzu', 'openai-processing-ms': '503', 'openai-version': '2020-10-01', 'x-ratelimit-limit-requests': '10000', 'x-ratelimit-limit-tokens': '200000', 'x-ratelimit-remaining-requests': '9996', 'x-ratelimit-remaining-tokens': '199847', 'x-ratelimit-reset-requests': '31.302s', 'x-ratelimit-reset-tokens': '45ms', 'x-request-id': 'req_16cb7d2a772a4c5f0b908d2ec9d4485c', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'cf-cache-status': 'DYNAMIC', 'x-content-type-options': 'nosniff', 'server': 'cloudflare', 'cf-ray': '902627298a7e91b8-DEL', 'content-encoding': 'gzip'})
+2025-01-15 18:48:39,072 - DEBUG - request_id: req_16cb7d2a772a4c5f0b908d2ec9d4485c
+2025-01-15 18:48:39,073 - DEBUG - LLM response: Hello! I'm just a virtual assistant, so I don't have feelings, but I'm here to help you. How can I assist you today?
+2025-01-15 18:48:39,073 - DEBUG - AI response successfully added to the state.
+2025-01-15 18:48:39,073 - DEBUG - NODE5 EXECUTION COMPLETED.
+2025-01-15 18:48:39,075 - DEBUG - NODE6: RELEVANCE ASSESSMENT STARTED.
+2025-01-15 18:48:39,080 - DEBUG - Request options: {'method': 'post', 'url': '/chat/completions', 'files': None, 'json_data': {'messages': [{'content': "You are an intelligent assistant. Determine if the following AI response is a good fit for the user's query based on the conversation history. Respond with 'GOOD' or 'BAD'.", 'role': 'system'}, {'content': "User Question:\nhow are  you\n\nAI Response:\nHello! I'm just a virtual assistant, so I don't have feelings, but I'm here to help you. How can I assist you today?\n\nConversation History:\nSystemMessage: \nYou are an intelligent assistant.\n\nyou will check each user input and respond accordingly and in case more informatoion required then you will ask for more  information.\n\nHumanMessage: hi\nAIMessage: Hello! How can I assist you today?\nHumanMessage: how are  you\nAIMessage: Hello! I'm just a virtual assistant, so I don't have feelings, but I'm here to help you. How can I assist you today?", 'role': 'user'}], 'model': 'gpt-3.5-turbo', 'n': 1, 'stream': False, 'temperature': 0.7}}
+2025-01-15 18:48:39,082 - DEBUG - Sending HTTP Request: POST https://api.openai.com/v1/chat/completions
+2025-01-15 18:48:39,083 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-01-15 18:48:39,083 - DEBUG - send_request_headers.complete
+2025-01-15 18:48:39,084 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-01-15 18:48:39,085 - DEBUG - send_request_body.complete
+2025-01-15 18:48:39,086 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-01-15 18:48:39,840 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Wed, 15 Jan 2025 13:18:41 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-expose-headers', b'X-Request-ID'), (b'openai-organization', b'user-rklj2utpmtctnh7muirfmmzu'), (b'openai-processing-ms', b'403'), (b'openai-version', b'2020-10-01'), (b'x-ratelimit-limit-requests', b'10000'), (b'x-ratelimit-limit-tokens', b'200000'), (b'x-ratelimit-remaining-requests', b'9995'), (b'x-ratelimit-remaining-tokens', b'199792'), (b'x-ratelimit-reset-requests', b'39.115s'), (b'x-ratelimit-reset-tokens', b'62ms'), (b'x-request-id', b'req_24aebda4652487b482362461363d5cab'), (b'strict-transport-security', b'max-age=31536000; includeSubDomains; preload'), (b'CF-Cache-Status', b'DYNAMIC'), (b'X-Content-Type-Options', b'nosniff'), (b'Server', b'cloudflare'), (b'CF-RAY', b'9026272ecf9491b8-DEL'), (b'Content-Encoding', b'gzip')])
+2025-01-15 18:48:39,841 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-15 18:48:39,841 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-01-15 18:48:39,842 - DEBUG - receive_response_body.complete
+2025-01-15 18:48:39,842 - DEBUG - response_closed.started
+2025-01-15 18:48:39,842 - DEBUG - response_closed.complete
+2025-01-15 18:48:39,842 - DEBUG - HTTP Response: POST https://api.openai.com/v1/chat/completions "200 OK" Headers({'date': 'Wed, 15 Jan 2025 13:18:41 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'access-control-expose-headers': 'X-Request-ID', 'openai-organization': 'user-rklj2utpmtctnh7muirfmmzu', 'openai-processing-ms': '403', 'openai-version': '2020-10-01', 'x-ratelimit-limit-requests': '10000', 'x-ratelimit-limit-tokens': '200000', 'x-ratelimit-remaining-requests': '9995', 'x-ratelimit-remaining-tokens': '199792', 'x-ratelimit-reset-requests': '39.115s', 'x-ratelimit-reset-tokens': '62ms', 'x-request-id': 'req_24aebda4652487b482362461363d5cab', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'cf-cache-status': 'DYNAMIC', 'x-content-type-options': 'nosniff', 'server': 'cloudflare', 'cf-ray': '9026272ecf9491b8-DEL', 'content-encoding': 'gzip'})
+2025-01-15 18:48:39,842 - DEBUG - request_id: req_24aebda4652487b482362461363d5cab
+2025-01-15 18:48:39,844 - WARNING - AI response is not relevant. Redirecting to clarification node.
+2025-01-15 18:48:39,844 - DEBUG - Relevance assessment marked as BAD. Moving to clarification node.
+2025-01-15 18:48:39,844 - DEBUG - NODE6: RELEVANCE ASSESSMENT COMPLETED.
+2025-01-15 18:48:39,847 - DEBUG - NODE7: CLARIFICATION NODE STARTED.
+2025-01-15 18:48:39,853 - DEBUG - Request options: {'method': 'post', 'url': '/chat/completions', 'files': None, 'json_data': {'messages': [{'content': "The user's query may need more clarity. Based on the conversation history and the AI's response, generate a clarification question to ask the user for more details.", 'role': 'system'}, {'content': "AI Response:\nHello! I'm just a virtual assistant, so I don't have feelings, but I'm here to help you. How can I assist you today?\n\nConversation History:\nSystemMessage: \nYou are an intelligent assistant.\n\nyou will check each user input and respond accordingly and in case more informatoion required then you will ask for more  information.\n\nHumanMessage: hi\nAIMessage: Hello! How can I assist you today?\nHumanMessage: how are  you\nAIMessage: Hello! I'm just a virtual assistant, so I don't have feelings, but I'm here to help you. How can I assist you today?", 'role': 'user'}], 'model': 'gpt-3.5-turbo', 'n': 1, 'stream': False, 'temperature': 0.7}}
+2025-01-15 18:48:39,854 - DEBUG - Sending HTTP Request: POST https://api.openai.com/v1/chat/completions
+2025-01-15 18:48:39,855 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-01-15 18:48:39,855 - DEBUG - send_request_headers.complete
+2025-01-15 18:48:39,855 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-01-15 18:48:39,855 - DEBUG - send_request_body.complete
+2025-01-15 18:48:39,856 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-01-15 18:48:41,191 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Wed, 15 Jan 2025 13:18:42 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-expose-headers', b'X-Request-ID'), (b'openai-organization', b'user-rklj2utpmtctnh7muirfmmzu'), (b'openai-processing-ms', b'1035'), (b'openai-version', b'2020-10-01'), (b'x-ratelimit-limit-requests', b'10000'), (b'x-ratelimit-limit-tokens', b'200000'), (b'x-ratelimit-remaining-requests', b'9994'), (b'x-ratelimit-remaining-tokens', b'199801'), (b'x-ratelimit-reset-requests', b'46.984s'), (b'x-ratelimit-reset-tokens', b'59ms'), (b'x-request-id', b'req_49aa5a253ba04293215db69f8193858d'), (b'strict-transport-security', b'max-age=31536000; includeSubDomains; preload'), (b'CF-Cache-Status', b'DYNAMIC'), (b'X-Content-Type-Options', b'nosniff'), (b'Server', b'cloudflare'), (b'CF-RAY', b'902627339bca91b8-DEL'), (b'Content-Encoding', b'gzip')])
+2025-01-15 18:48:41,192 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-15 18:48:41,192 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-01-15 18:48:41,195 - DEBUG - receive_response_body.complete
+2025-01-15 18:48:41,195 - DEBUG - response_closed.started
+2025-01-15 18:48:41,195 - DEBUG - response_closed.complete
+2025-01-15 18:48:41,195 - DEBUG - HTTP Response: POST https://api.openai.com/v1/chat/completions "200 OK" Headers({'date': 'Wed, 15 Jan 2025 13:18:42 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'access-control-expose-headers': 'X-Request-ID', 'openai-organization': 'user-rklj2utpmtctnh7muirfmmzu', 'openai-processing-ms': '1035', 'openai-version': '2020-10-01', 'x-ratelimit-limit-requests': '10000', 'x-ratelimit-limit-tokens': '200000', 'x-ratelimit-remaining-requests': '9994', 'x-ratelimit-remaining-tokens': '199801', 'x-ratelimit-reset-requests': '46.984s', 'x-ratelimit-reset-tokens': '59ms', 'x-request-id': 'req_49aa5a253ba04293215db69f8193858d', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'cf-cache-status': 'DYNAMIC', 'x-content-type-options': 'nosniff', 'server': 'cloudflare', 'cf-ray': '902627339bca91b8-DEL', 'content-encoding': 'gzip'})
+2025-01-15 18:48:41,196 - DEBUG - request_id: req_49aa5a253ba04293215db69f8193858d
+2025-01-15 18:48:41,197 - DEBUG - Generated clarification question: Clarification Question:
+What specific assistance are you seeking or what information do you require help with?
+2025-01-15 18:48:41,204 - DEBUG - NODE7: CLARIFICATION NODE COMPLETED.
+2025-01-15 18:48:41,209 - DEBUG - Messages state successfully logged to msg_details.txt.
+2025-01-15 18:48:41,211 - DEBUG - All message types successfully written to all_msg.txt
+2025-01-15 18:48:41,212 - DEBUG - ENDING ITERATION - 2
+2025-01-15 18:48:41,212 - DEBUG - START ITERATION - 3
+2025-01-15 18:48:41,218 - DEBUG - NODE1 EXECUTION STARTED.

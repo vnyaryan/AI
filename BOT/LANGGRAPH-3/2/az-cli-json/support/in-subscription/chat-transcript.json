@@ -1,0 +1,35 @@
+{
+    "command_group": "az support in-subscription chat-transcript",
+    "description": "Manage support ticket chat transcript.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az support in-subscription chat-transcript list",
+            "summary": "List all chat transcripts for a support ticket under subscription.",
+            "syntax": "az support in-subscription chat-transcript list --ticket-name\n                                                [--max-items]\n                                                [--next-token]",
+            "required_parameters": [
+                "--ticket-name"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az support in-subscription chat-transcript list --ticket-name \"TestTicketName\""
+            ]
+        },
+        {
+            "name": "az support in-subscription chat-transcript show",
+            "summary": "Get chatTranscript details for a support ticket under a subscription.",
+            "syntax": "az support in-subscription chat-transcript show --chat-transcript-name\n                                                --ticket-name",
+            "required_parameters": [
+                "--chat-transcript-name",
+                "--ticket-name"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az support in-subscription chat-transcript show --ticket-name \"TestTicketName\" --chat-transcript-name \"TestChatTranscriptName\""
+            ]
+        }
+    ]
+}

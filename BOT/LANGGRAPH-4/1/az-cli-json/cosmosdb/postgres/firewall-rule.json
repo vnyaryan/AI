@@ -1,0 +1,116 @@
+{
+    "command_group": "az cosmosdb postgres firewall-rule",
+    "description": "Manage Azure Cosmos DB for PostgreSQL firewall rules.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az cosmosdb postgres firewall-rule create",
+            "summary": "Create a new cluster firewall rule or updates an existing cluster firewall rule.",
+            "syntax": "az cosmosdb postgres firewall-rule create --cluster-name\n                                          --end-ip-address\n                                          --firewall-rule-name\n                                          --resource-group\n                                          --start-ip-address\n                                          [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]",
+            "required_parameters": [
+                "--cluster-name",
+                "--end-ip-address",
+                "--firewall-rule-name --name -n",
+                "--resource-group -g",
+                "--start-ip-address"
+            ],
+            "optional_parameters": [
+                "--no-wait"
+            ],
+            "examples": [
+                "az cosmosdb postgres firewall-rule create -n \"rule1\" --start-ip-address \"0.0.0.0\" --end-ip-address \"255.255.255.255\" --cluster-name \"test-cluster\" -g \"testGroup\" --subscription \"ffffffff-ffff-ffff-ffff-ffffffffffff\""
+            ]
+        },
+        {
+            "name": "az cosmosdb postgres firewall-rule delete",
+            "summary": "Delete a cluster firewall rule.",
+            "syntax": "az cosmosdb postgres firewall-rule delete [--cluster-name]\n                                          [--firewall-rule-name]\n                                          [--ids]\n                                          [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                          [--resource-group]\n                                          [--subscription]\n                                          [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--cluster-name",
+                "--firewall-rule-name --name -n",
+                "--ids",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az cosmosdb postgres firewall-rule delete -n \"rule1\" --cluster-name \"test-cluster\" -g \"testGroup\" --subscription \"ffffffff-ffff-ffff-ffff-ffffffffffff\""
+            ]
+        },
+        {
+            "name": "az cosmosdb postgres firewall-rule list",
+            "summary": "List all the firewall rules on cluster.",
+            "syntax": "az cosmosdb postgres firewall-rule list --cluster-name\n                                        --resource-group",
+            "required_parameters": [
+                "--cluster-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az cosmosdb postgres firewall-rule list --cluster-name \"test-cluster\" -g \"testGroup\" --subscription \"ffffffff-ffff-ffff-ffff-ffffffffffff\""
+            ]
+        },
+        {
+            "name": "az cosmosdb postgres firewall-rule show",
+            "summary": "Get information about a cluster firewall rule.",
+            "syntax": "az cosmosdb postgres firewall-rule show [--cluster-name]\n                                        [--firewall-rule-name]\n                                        [--ids]\n                                        [--resource-group]\n                                        [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--cluster-name",
+                "--firewall-rule-name --name -n",
+                "--ids",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az cosmosdb postgres firewall-rule show -n \"rule1\" --cluster-name \"test-cluster\" -g \"testGroup\" --subscription \"ffffffff-ffff-ffff-ffff-ffffffffffff\""
+            ]
+        },
+        {
+            "name": "az cosmosdb postgres firewall-rule update",
+            "summary": "Update an existing cluster firewall rule.",
+            "syntax": "az cosmosdb postgres firewall-rule update [--add]\n                                          [--cluster-name]\n                                          [--end-ip-address]\n                                          [--firewall-rule-name]\n                                          [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                          [--ids]\n                                          [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                          [--remove]\n                                          [--resource-group]\n                                          [--set]\n                                          [--start-ip-address]\n                                          [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--cluster-name",
+                "--end-ip-address",
+                "--firewall-rule-name --name -n",
+                "--force-string",
+                "--ids",
+                "--no-wait",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--start-ip-address",
+                "--subscription"
+            ],
+            "examples": [
+                "az cosmosdb postgres firewall-rule update -n \"rule1\" --start-ip-address \"0.0.0.1\" --cluster-name \"test-cluster\" -g \"testGroup\" --subscription \"ffffffff-ffff-ffff-ffff-ffffffffffff\""
+            ]
+        },
+        {
+            "name": "az cosmosdb postgres firewall-rule wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az cosmosdb postgres firewall-rule wait [--cluster-name]\n                                        [--created]\n                                        [--custom]\n                                        [--deleted]\n                                        [--exists]\n                                        [--firewall-rule-name]\n                                        [--ids]\n                                        [--interval]\n                                        [--resource-group]\n                                        [--subscription]\n                                        [--timeout]\n                                        [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--cluster-name",
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--firewall-rule-name --name -n",
+                "--ids",
+                "--interval",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

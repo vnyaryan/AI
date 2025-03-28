@@ -1,0 +1,85 @@
+{
+    "command_group": "az dnc orchestrator-instance-service",
+    "description": "Manage orchestrator instance service with dnc.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az dnc orchestrator-instance-service create",
+            "summary": "Create a orchestrator instance.",
+            "syntax": "az dnc orchestrator-instance-service create --name\n                                            --resource-group\n                                            [--api-server-endpoint]\n                                            [--cluster-root-ca]\n                                            [--id]\n                                            [--kind {Kubernetes}]\n                                            [--location]\n                                            [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                            [--orchestrator-app-id]\n                                            [--orchestrator-tenant-id]\n                                            [--priv-link-resource-id]\n                                            [--tags]\n                                            [--type {None, SystemAssigned}]",
+            "required_parameters": [
+                "--name --resource-name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--api-server-endpoint",
+                "--cluster-root-ca",
+                "--id",
+                "--kind",
+                "--location -l",
+                "--no-wait",
+                "--orchestrator-app-id",
+                "--orchestrator-tenant-id",
+                "--priv-link-resource-id",
+                "--tags",
+                "--type"
+            ],
+            "examples": [
+                "az dnc orchestrator-instance-service create --type \"SystemAssigned\" --location \"West US\" --kind \"Kubernetes\" --api-server-endpoint \"https://testk8s.cloudapp.net\" --cluster-root-ca \"ddsadsad344mfdsfdl\" --id \"/subscriptions/613192d7-503f-477a-9cfe-4efc3ee2bd60/resourceGroups/TestRG/providers/Microsoft.DelegatedNetwork/controller/testcontroller\" --orchestrator-app-id \"546192d7-503f-477a-9cfe-4efc3ee2b6e1\" --orchestrator-tenant-id \"da6192d7-503f-477a-9cfe-4efc3ee2b6c3\" --priv-link-resource-id \"/subscriptions/613192d7-503f-477a-9cfe-4efc3ee2bd60/resourceGroups/TestRG/providers/Microsoft.Network/privateLinkServices/plresource1\" --resource-group \"TestRG\" --resource-name \"testk8s1\""
+            ]
+        },
+        {
+            "name": "az dnc orchestrator-instance-service delete",
+            "summary": "Delete the Orchestrator Instance.",
+            "syntax": "az dnc orchestrator-instance-service delete [--force-delete {0, 1, f, false, n, no, t, true, y, yes}]\n                                            [--ids]\n                                            [--name]\n                                            [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                            [--resource-group]\n                                            [--subscription]\n                                            [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--force-delete",
+                "--ids",
+                "--name --resource-name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az dnc orchestrator-instance-service delete --resource-group \"TestRG\" --resource-name \"testk8s1\""
+            ]
+        },
+        {
+            "name": "az dnc orchestrator-instance-service show",
+            "summary": "Get details about the orchestrator instance.",
+            "syntax": "az dnc orchestrator-instance-service show [--ids]\n                                          [--name]\n                                          [--resource-group]\n                                          [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --resource-name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az dnc orchestrator-instance-service show --resource-group \"TestRG\" --resource-name \"testk8s1\""
+            ]
+        },
+        {
+            "name": "az dnc orchestrator-instance-service wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az dnc orchestrator-instance-service wait [--created]\n                                          [--custom]\n                                          [--deleted]\n                                          [--exists]\n                                          [--ids]\n                                          [--interval]\n                                          [--name]\n                                          [--resource-group]\n                                          [--subscription]\n                                          [--timeout]\n                                          [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--name --resource-name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

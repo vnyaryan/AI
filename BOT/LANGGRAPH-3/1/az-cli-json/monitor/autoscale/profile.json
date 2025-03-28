@@ -1,0 +1,83 @@
+{
+    "command_group": "az monitor autoscale profile",
+    "description": "Manage autoscaling profiles.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az monitor autoscale profile create",
+            "summary": "Create a fixed or recurring autoscale profile.",
+            "syntax": "az monitor autoscale profile create --autoscale-name\n                                    --count\n                                    --name\n                                    --resource-group\n                                    --timezone\n                                    [--copy-rules]\n                                    [--end]\n                                    [--max-count]\n                                    [--min-count]\n                                    [--recurrence]\n                                    [--start]",
+            "required_parameters": [
+                "--autoscale-name",
+                "--count",
+                "--name -n",
+                "--resource-group -g",
+                "--timezone"
+            ],
+            "optional_parameters": [
+                "--copy-rules",
+                "--end",
+                "--max-count",
+                "--min-count",
+                "--recurrence -r",
+                "--start"
+            ],
+            "examples": [
+                "az monitor autoscale create -g {myrg} --resource {resource-id} --min-count 2 --count 3 \\\n  --max-count 5\n\naz monitor autoscale rule create -g {myrg} --autoscale-name {name} --scale out 1 \\\n  --condition \"Percentage CPU > 75 avg 5m\"\n\naz monitor autoscale rule create -g {myrg} --autoscale-name {name} --scale in 1 \\\n  --condition \"Percentage CPU < 25 avg 5m\"\n\naz monitor autoscale profile create -g {myrg} --autoscale-name {name} -n Christmas \\\n  --copy-rules default --min-count 3 --count 6 --max-count 10 --start 2018-12-24 \\\n  --end 2018-12-26 --timezone \"Pacific Standard Time\"",
+                "az monitor autoscale create -g {myrg} --resource {resource-id} --min-count 2 --count 3 \\\n  --max-count 5\n\naz monitor autoscale rule create -g {myrg} --autoscale-name {name} --scale out 1 \\\n  --condition \"Percentage CPU > 75 avg 5m\"\n\naz monitor autoscale rule create -g {myrg} --autoscale-name {name} --scale in 1 \\\n  --condition \"Percentage CPU < 25 avg 5m\"\n\naz monitor autoscale profile create -g {myrg} --autoscale-name {name} -n weeekend \\\n  --copy-rules default --min-count 1 --count 2 --max-count 2 \\\n  --recurrence week sat sun --timezone \"Pacific Standard Time\"",
+                "az monitor autoscale profile create --autoscale-name MyAutoscale --copy-rules default --count 2 --end 2018-12-26 --max-count 10 --min-count 1 --name Christmas --recurrence week sat sun --resource-group MyResourceGroup --start 2018-12-24 --timezone \"Pacific Standard Time\"",
+                "az monitor autoscale profile create --autoscale-name MyAutoscale --count 2 --max-count 10 --min-count 1 --name Christmas --recurrence week sat sun --resource-group MyResourceGroup --start 2018-12-24 --subscription MySubscription --timezone \"Pacific Standard Time\""
+            ]
+        },
+        {
+            "name": "az monitor autoscale profile delete",
+            "summary": "Delete an autoscale profile.",
+            "syntax": "az monitor autoscale profile delete --autoscale-name\n                                    --name\n                                    --resource-group",
+            "required_parameters": [
+                "--autoscale-name",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az monitor autoscale profile delete --autoscale-name MyAutoscale --name MyAutoscaleProfile --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az monitor autoscale profile list",
+            "summary": "List autoscale profiles.",
+            "syntax": "az monitor autoscale profile list --autoscale-name\n                                  --resource-group",
+            "required_parameters": [
+                "--autoscale-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az monitor autoscale profile list --autoscale-name MyAutoscale --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az monitor autoscale profile list-timezones",
+            "summary": "Look up time zone information.",
+            "syntax": "az monitor autoscale profile list-timezones [--offset]\n                                            [--search-query]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--offset",
+                "--search-query -q"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az monitor autoscale profile show",
+            "summary": "Show details of an autoscale profile.",
+            "syntax": "az monitor autoscale profile show --autoscale-name\n                                  --name\n                                  --resource-group",
+            "required_parameters": [
+                "--autoscale-name",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        }
+    ]
+}

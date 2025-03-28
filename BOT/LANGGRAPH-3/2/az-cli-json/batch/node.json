@@ -1,0 +1,81 @@
+{
+    "command_group": "az batch node",
+    "description": "Manage Batch compute nodes.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az batch node delete",
+            "summary": "Removes Compute Nodes from the specified Pool.",
+            "syntax": "az batch node delete --pool-id\n                     [--account-endpoint]\n                     [--account-key]\n                     [--account-name]\n                     [--if-match]\n                     [--if-modified-since]\n                     [--if-none-match]\n                     [--if-unmodified-since]\n                     [--json-file]\n                     [--node-deallocation-option]\n                     [--node-list]\n                     [--resize-timeout]",
+            "required_parameters": [
+                "--pool-id"
+            ],
+            "optional_parameters": [
+                "--account-endpoint",
+                "--account-key",
+                "--account-name",
+                "--if-match",
+                "--if-modified-since",
+                "--if-none-match",
+                "--if-unmodified-since",
+                "--json-file",
+                "--node-deallocation-option",
+                "--node-list",
+                "--resize-timeout"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az batch node list",
+            "summary": "Lists the Compute Nodes in the specified Pool.",
+            "syntax": "az batch node list --pool-id\n                   [--account-endpoint]\n                   [--account-key]\n                   [--account-name]\n                   [--filter]\n                   [--select]",
+            "required_parameters": [
+                "--pool-id"
+            ],
+            "optional_parameters": [
+                "--account-endpoint",
+                "--account-key",
+                "--account-name",
+                "--filter",
+                "--select"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az batch node reboot",
+            "summary": "Reboot a Batch compute node.",
+            "syntax": "az batch node reboot --node-id\n                     --pool-id\n                     [--account-endpoint]\n                     [--account-key]\n                     [--account-name]\n                     [--json-file]\n                     [--node-reboot-option]",
+            "required_parameters": [
+                "--node-id",
+                "--pool-id"
+            ],
+            "optional_parameters": [
+                "--account-endpoint",
+                "--account-key",
+                "--account-name",
+                "--json-file",
+                "--node-reboot-option"
+            ],
+            "examples": [
+                "az batch node reboot --pool-id pool1 --node-id node1",
+                "az batch node reboot --pool-id pool1 --node-id node1 --node-reboot-option taskcompletion"
+            ]
+        },
+        {
+            "name": "az batch node show",
+            "summary": "Gets information about the specified Compute Node.",
+            "syntax": "az batch node show --node-id\n                   --pool-id\n                   [--account-endpoint]\n                   [--account-key]\n                   [--account-name]\n                   [--select]",
+            "required_parameters": [
+                "--node-id",
+                "--pool-id"
+            ],
+            "optional_parameters": [
+                "--account-endpoint",
+                "--account-key",
+                "--account-name",
+                "--select"
+            ],
+            "examples": []
+        }
+    ]
+}

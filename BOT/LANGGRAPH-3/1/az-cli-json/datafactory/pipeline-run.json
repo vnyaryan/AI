@@ -1,0 +1,61 @@
+{
+    "command_group": "az datafactory pipeline-run",
+    "description": "Manage pipeline run with datafactory.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az datafactory pipeline-run cancel",
+            "summary": "Cancel a pipeline run by its run ID.",
+            "syntax": "az datafactory pipeline-run cancel [--factory-name]\n                                   [--ids]\n                                   [--is-recursive {false, true}]\n                                   [--resource-group]\n                                   [--run-id]\n                                   [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--factory-name",
+                "--ids",
+                "--is-recursive",
+                "--resource-group -g",
+                "--run-id",
+                "--subscription"
+            ],
+            "examples": [
+                "az datafactory pipeline-run cancel --factory-name \"exampleFactoryName\" --resource-group \"exampleResourceGroup\" --run-id \"16ac5348-ff82-4f95-a80d-638c1d47b721\""
+            ]
+        },
+        {
+            "name": "az datafactory pipeline-run query-by-factory",
+            "summary": "Query pipeline runs in the factory based on input filter conditions.",
+            "syntax": "az datafactory pipeline-run query-by-factory --last-updated-after\n                                             --last-updated-before\n                                             [--continuation-token]\n                                             [--factory-name]\n                                             [--filters]\n                                             [--ids]\n                                             [--order-by]\n                                             [--resource-group]\n                                             [--subscription]",
+            "required_parameters": [
+                "--last-updated-after",
+                "--last-updated-before"
+            ],
+            "optional_parameters": [
+                "--continuation-token",
+                "--factory-name",
+                "--filters",
+                "--ids",
+                "--order-by",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az datafactory pipeline-run query-by-factory --factory-name \"exampleFactoryName\" --filters operand=\"PipelineName\" operator=\"Equals\" values=\"examplePipeline\" --last-updated-after \"2018-06-16T00:36:44.3345758Z\" --last-updated-before \"2018-06-16T00:49:48.3686473Z\" --resource-group \"exampleResourceGroup\""
+            ]
+        },
+        {
+            "name": "az datafactory pipeline-run show",
+            "summary": "Get a pipeline run by its run ID.",
+            "syntax": "az datafactory pipeline-run show [--factory-name]\n                                 [--ids]\n                                 [--resource-group]\n                                 [--run-id]\n                                 [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--factory-name",
+                "--ids",
+                "--resource-group -g",
+                "--run-id",
+                "--subscription"
+            ],
+            "examples": [
+                "az datafactory pipeline-run show --factory-name \"exampleFactoryName\" --resource-group \"exampleResourceGroup\" --run-id \"2f7fdb90-5df1-4b8e-ac2f-064cfa58202b\""
+            ]
+        }
+    ]
+}

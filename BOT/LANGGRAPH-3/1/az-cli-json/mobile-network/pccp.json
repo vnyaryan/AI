@@ -1,0 +1,179 @@
+{
+    "command_group": "az mobile-network pccp",
+    "description": "Manage packet core control plane.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az mobile-network pccp collect-diagnostics-package",
+            "summary": "Collect a diagnostics package for the specified packet core control plane. This action will upload the diagnostics to a storage account.",
+            "syntax": "az mobile-network pccp collect-diagnostics-package --blob-url\n                                                   [--ids]\n                                                   [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                                   [--pccp-name]\n                                                   [--resource-group]\n                                                   [--subscription]",
+            "required_parameters": [
+                "--blob-url"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--no-wait",
+                "--pccp-name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az mobile-network pccp collect-diagnostics-package --pccp-name pccp -g rg --blob-url https://contosoaccount.blob.core.windows.net/container/diagnosticsPackage.zip"
+            ]
+        },
+        {
+            "name": "az mobile-network pccp create",
+            "summary": "Create a packet core control plane.",
+            "syntax": "az mobile-network pccp create --access-interface\n                              --local-diagnostics\n                              --name\n                              --platform\n                              --resource-group\n                              --sites\n                              --sku {G0, G1, G10, G2, G5}\n                              [--core-network-tec {5GC, EPC, EPC + 5GC}]\n                              [--identity]\n                              [--location]\n                              [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                              [--tags]\n                              [--ue-mtu]\n                              [--version]",
+            "required_parameters": [
+                "--access-interface",
+                "--local-diagnostics",
+                "--name --pccp-name -n",
+                "--platform",
+                "--resource-group -g",
+                "--sites",
+                "--sku"
+            ],
+            "optional_parameters": [
+                "--core-network-tec",
+                "--identity",
+                "--location -l",
+                "--no-wait",
+                "--tags",
+                "--ue-mtu",
+                "--version"
+            ],
+            "examples": [
+                "az mobile-network pccp create -n pccp-name -g rg --access-interface \"{name:N2,ipv4Address:10.28.128.2,ipv4Subnet:10.28.128.0/24,ipv4Gateway:10.28.128.1}\" --local-diagnostics \"{authentication-type:AAD}\" --platform \"{type:AKS-HCI}\" --sites \"[{id:site-id}]\" --sku G0"
+            ]
+        },
+        {
+            "name": "az mobile-network pccp delete",
+            "summary": "Delete the specified packet core control plane.",
+            "syntax": "az mobile-network pccp delete [--ids]\n                              [--name]\n                              [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                              [--resource-group]\n                              [--subscription]\n                              [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --pccp-name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az mobile-network pccp delete -n pccp-name -g rg -y"
+            ]
+        },
+        {
+            "name": "az mobile-network pccp list",
+            "summary": "List all the packet core control planes in a subscription.",
+            "syntax": "az mobile-network pccp list [--max-items]\n                            [--next-token]\n                            [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az mobile-network pccp list -g rg"
+            ]
+        },
+        {
+            "name": "az mobile-network pccp reinstall",
+            "summary": "Reinstall the specified packet core control plane. This action will remove any transaction state from the packet core to return it to a known state. This action will cause a service outage.",
+            "syntax": "az mobile-network pccp reinstall [--ids]\n                                 [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                 [--pccp-name]\n                                 [--resource-group]\n                                 [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--no-wait",
+                "--pccp-name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az mobile-network pccp reinstall --pccp-name pccp-name -g rg"
+            ]
+        },
+        {
+            "name": "az mobile-network pccp rollback",
+            "summary": "Roll back the specified packet core control plane to the previous version, \"rollbackVersion\". Multiple consecutive rollbacks are not possible. This action may cause a service outage.",
+            "syntax": "az mobile-network pccp rollback [--ids]\n                                [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                [--pccp-name]\n                                [--resource-group]\n                                [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--no-wait",
+                "--pccp-name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az mobile-network pccp rollback --pccp-name pccp-name -g rg"
+            ]
+        },
+        {
+            "name": "az mobile-network pccp show",
+            "summary": "Get information about the specified packet core control plane.",
+            "syntax": "az mobile-network pccp show [--ids]\n                            [--name]\n                            [--resource-group]\n                            [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --pccp-name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az mobile-network pccp show -n pccp-name -g rg"
+            ]
+        },
+        {
+            "name": "az mobile-network pccp update",
+            "summary": "Update a packet core control plane.",
+            "syntax": "az mobile-network pccp update [--access-interface]\n                              [--add]\n                              [--core-network-tec {5GC, EPC, EPC + 5GC}]\n                              [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                              [--identity]\n                              [--ids]\n                              [--local-diagnostics]\n                              [--name]\n                              [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                              [--platform]\n                              [--remove]\n                              [--resource-group]\n                              [--set]\n                              [--sites]\n                              [--sku {G0, G1, G10, G2, G5}]\n                              [--subscription]\n                              [--tags]\n                              [--ue-mtu]\n                              [--version]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--access-interface",
+                "--add",
+                "--core-network-tec",
+                "--force-string",
+                "--identity",
+                "--ids",
+                "--local-diagnostics",
+                "--name --pccp-name -n",
+                "--no-wait",
+                "--platform",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--sites",
+                "--sku",
+                "--subscription",
+                "--tags",
+                "--ue-mtu",
+                "--version"
+            ],
+            "examples": [
+                "az mobile-network pccp update -n pccp-name -g rg --ue-mtu 1500 --tags \"{tag:test,tag2:test2}\""
+            ]
+        },
+        {
+            "name": "az mobile-network pccp wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az mobile-network pccp wait [--created]\n                            [--custom]\n                            [--deleted]\n                            [--exists]\n                            [--ids]\n                            [--interval]\n                            [--name]\n                            [--resource-group]\n                            [--subscription]\n                            [--timeout]\n                            [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--name --pccp-name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

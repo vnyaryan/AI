@@ -1,0 +1,111 @@
+{
+    "command_group": "az storage-mover",
+    "description": "Manage top-level Storage Mover resource.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az storage-mover create",
+            "summary": "Creates a top-level Storage Mover resource.",
+            "syntax": "az storage-mover create --name\n                        --resource-group\n                        [--description]\n                        [--location]\n                        [--tags]",
+            "required_parameters": [
+                "--name --storage-mover-name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--description",
+                "--location -l",
+                "--tags"
+            ],
+            "examples": [
+                "az storage-mover create -g {rg} -n {mover_name} -l eastus2 --tags {{key1:value1}} --description ExampleDesc"
+            ]
+        },
+        {
+            "name": "az storage-mover delete",
+            "summary": "Deletes a Storage Mover resource.",
+            "syntax": "az storage-mover delete [--ids]\n                        [--name]\n                        [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                        [--resource-group]\n                        [--subscription]\n                        [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --storage-mover-name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az storage-mover delete -g {rg} -n {mover_name}"
+            ]
+        },
+        {
+            "name": "az storage-mover list",
+            "summary": "Lists all Storage Movers in a subscription.",
+            "syntax": "az storage-mover list [--max-items]\n                      [--next-token]\n                      [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az storage-mover list -g {rg}"
+            ]
+        },
+        {
+            "name": "az storage-mover show",
+            "summary": "Gets a Storage Mover resource.",
+            "syntax": "az storage-mover show [--ids]\n                      [--name]\n                      [--resource-group]\n                      [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --storage-mover-name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az storage-mover show -g {rg} -n {mover_name}"
+            ]
+        },
+        {
+            "name": "az storage-mover update",
+            "summary": "Update a top-level Storage Mover resource.",
+            "syntax": "az storage-mover update [--add]\n                        [--description]\n                        [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                        [--ids]\n                        [--name]\n                        [--remove]\n                        [--resource-group]\n                        [--set]\n                        [--subscription]\n                        [--tags]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--description",
+                "--force-string",
+                "--ids",
+                "--name --storage-mover-name -n",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--subscription",
+                "--tags"
+            ],
+            "examples": [
+                "az storage-mover update -g {rg} -n {mover_name} --tags {{key2:value2}} --description ExampleDesc2"
+            ]
+        },
+        {
+            "name": "az storage-mover wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az storage-mover wait [--created]\n                      [--custom]\n                      [--deleted]\n                      [--exists]\n                      [--ids]\n                      [--interval]\n                      [--name]\n                      [--resource-group]\n                      [--subscription]\n                      [--timeout]\n                      [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--name --storage-mover-name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

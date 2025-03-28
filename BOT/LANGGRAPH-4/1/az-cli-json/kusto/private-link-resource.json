@@ -1,0 +1,36 @@
+{
+    "command_group": "az kusto private-link-resource",
+    "description": "Manage private link resource with kusto.",
+    "status": "Experimental",
+    "commands": [
+        {
+            "name": "az kusto private-link-resource list",
+            "summary": "Returns the list of private link resources.",
+            "syntax": "az kusto private-link-resource list --cluster-name\n                                    --resource-group",
+            "required_parameters": [
+                "--cluster-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az kusto private-link-resource list --cluster-name \"kustoCluster\" --resource-group \"kustorptest\""
+            ]
+        },
+        {
+            "name": "az kusto private-link-resource show",
+            "summary": "Gets a private link resource.",
+            "syntax": "az kusto private-link-resource show [--cluster-name]\n                                    [--ids]\n                                    [--name]\n                                    [--resource-group]\n                                    [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--cluster-name",
+                "--ids",
+                "--name --private-link-resource-name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az kusto private-link-resource show --cluster-name \"kustoCluster\" --name \"cluster\" --resource-group \"kustorptest\""
+            ]
+        }
+    ]
+}

@@ -1,0 +1,290 @@
+{
+    "command_group": "az sig image-version",
+    "description": "Manage shared gallery image version with VM.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az sig image-version create",
+            "summary": "Create a new image version.",
+            "syntax": "az sig image-version create --gallery-image-definition\n                            --gallery-image-version\n                            --gallery-name\n                            --resource-group\n                            [--allow-replicated-location-deletion {false, true}]\n                            [--data-snapshot-luns]\n                            [--data-snapshots]\n                            [--data-vhds-luns]\n                            [--data-vhds-sa]\n                            [--data-vhds-uris]\n                            [--end-of-life-date]\n                            [--exclude-from-latest {false, true}]\n                            [--image-version]\n                            [--location]\n                            [--managed-image]\n                            [--no-wait]\n                            [--os-snapshot]\n                            [--os-vhd-storage-account]\n                            [--os-vhd-uri]\n                            [--replica-count]\n                            [--replication-mode {Full, Shallow}]\n                            [--storage-account-type {Premium_LRS, Standard_LRS, Standard_ZRS}]\n                            [--tags]\n                            [--target-edge-zone-encryption]\n                            [--target-edge-zones]\n                            [--target-region-cvm-encryption]\n                            [--target-region-encryption]\n                            [--target-regions]\n                            [--virtual-machine]",
+            "required_parameters": [
+                "--gallery-image-definition -i",
+                "--gallery-image-version -e",
+                "--gallery-name -r",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--allow-replicated-location-deletion",
+                "--data-snapshot-luns",
+                "--data-snapshots",
+                "--data-vhds-luns",
+                "--data-vhds-sa --data-vhds-storage-accounts",
+                "--data-vhds-uris",
+                "--end-of-life-date",
+                "--exclude-from-latest",
+                "--image-version",
+                "--location -l",
+                "--managed-image",
+                "--no-wait",
+                "--os-snapshot",
+                "--os-vhd-storage-account",
+                "--os-vhd-uri",
+                "--replica-count",
+                "--replication-mode",
+                "--storage-account-type",
+                "--tags",
+                "--target-edge-zone-encryption --zone-encryption",
+                "--target-edge-zones",
+                "--target-region-cvm-encryption",
+                "--target-region-encryption",
+                "--target-regions",
+                "--virtual-machine"
+            ],
+            "examples": [
+                "az sig image-version create --resource-group MyResourceGroup \\\n--gallery-name MyGallery --gallery-image-definition MyImage \\\n--gallery-image-version 1.0.0 \\\n--virtual-machine /subscriptions/00000000-0000-0000-0000-00000000xxxx/resourceGroups/imageGroups/providers/Microsoft.Compute/virtualMachines/MyVM",
+                "az sig image-version create --resource-group MyResourceGroup \\\n--gallery-name MyGallery --gallery-image-definition MyImage \\\n--gallery-image-version 1.0.0 \\\n--managed-image /subscriptions/00000000-0000-0000-0000-00000000xxxx/resourceGroups/imageGroups/providers/Microsoft.Compute/images/MyManagedImage",
+                "az sig image-version create --resource-group MyResourceGroup \\\n--gallery-name MyGallery --gallery-image-definition MyImage \\\n--gallery-image-version 1.0.0 \\\n--image-version /subscriptions/00000000-0000-0000-0000-00000000xxxx/resourceGroups/imageGroups/providers/Microsoft.Compute/galleries/MyGallery/images/MyImageDefinition/versions/1.0.0",
+                "az sig image-version create --resource-group MyResourceGroup \\\n--gallery-name MyGallery --gallery-image-definition MyImage \\\n--gallery-image-version 1.0.0 \\\n--os-snapshot /subscriptions/00000000-0000-0000-0000-00000000xxxx/resourceGroups/imageGroups/providers/Microsoft.Compute/disks/MyOSDisk",
+                "az sig image-version create --resource-group MyResourceGroup \\\n--gallery-name MyGallery --gallery-image-definition MyImage \\\n--gallery-image-version 1.0.0 \\\n--os-snapshot /subscriptions/00000000-0000-0000-0000-00000000xxxx/resourceGroups/imageGroups/providers/Microsoft.Compute/disks/MyOSDisk \\\n--data-snapshots /subscriptions/00000000-0000-0000-0000-00000000xxxx/resourceGroups/imageGroups/providers/Microsoft.Compute/disks/MyDataDisk \\\n--data-snapshot-luns 0",
+                "az sig image-version create --resource-group MyResourceGroup \\\n--gallery-name MyGallery --gallery-image-definition MyImage \\\n--gallery-image-version 1.0.0 \\\n--os-snapshot /subscriptions/00000000-0000-0000-0000-00000000xxxx/resourceGroups/imageGroups/providers/Microsoft.Compute/snapshots/MyOsDiskSnapshot",
+                "az sig image-version create --resource-group MyResourceGroup \\\n--gallery-name MyGallery --gallery-image-definition MyImage \\\n--gallery-image-version 1.0.0 \\\n--os-snapshot /subscriptions/00000000-0000-0000-0000-00000000xxxx/resourceGroups/imageGroups/providers/Microsoft.Compute/snapshots/MyOsDiskSnapshot \\\n--data-snapshots /subscriptions/00000000-0000-0000-0000-00000000xxxx/resourceGroups/imageGroups/providers/Microsoft.Compute/snapshots/MyDiskSnapshot \\\n--data-snapshot-luns 0",
+                "az sig image-version create --resource-group MyResourceGroup \\\n--gallery-name MyGallery --gallery-image-definition MyImage \\\n--gallery-image-version 1.0.0 \\\n--os-vhd-storage-account /subscriptions/00000000-0000-0000-0000-00000000xxxx/resourceGroups/imageGroups/providers/Microsoft.Storage/storageAccounts/mystorageaccount \\\n--os-vhd-uri https://mystorageaccount.blob.core.windows.net/container/path_to_vhd_file",
+                "az sig image-version create --resource-group MyResourceGroup \\\n--gallery-name MyGallery --gallery-image-definition MyImage \\\n--gallery-image-version 1.0.0 \\\n--os-vhd-storage-account /subscriptions/00000000-0000-0000-0000-00000000xxxx/resourceGroups/imageGroups/providers/Microsoft.Storage/storageAccounts/mystorageaccount \\\n--os-vhd-uri https://mystorageaccount.blob.core.windows.net/container/path_to_vhd_file \\\n--data-vhds-sa /subscriptions/00000000-0000-0000-0000-00000000xxxx/resourceGroups/imageGroups/providers/Microsoft.Storage/storageAccounts/myotherstorageaccount \\\n--data-vhds-uris https://myotherstorageaccount.blob.core.windows.net/container/path_to_vhd_file \\\n--data-vhds-luns 0",
+                "az sig image-version create --resource-group MyResourceGroup \\\n--gallery-name MyGallery --gallery-image-definition MyImage \\\n--gallery-image-version 1.0.0 \\\n--os-vhd-storage-account /subscriptions/00000000-0000-0000-0000-00000000xxxx/resourceGroups/imageGroups/providers/Microsoft.Storage/storageAccounts/mystorageaccount \\\n--os-vhd-uri https://mystorageaccount.blob.core.windows.net/container/path_to_vhd_file \\\n--data-snapshots /subscriptions/00000000-0000-0000-0000-00000000xxxx/resourceGroups/imageGroups/providers/Microsoft.Compute/disks/MyDataDisk subscriptions/00000000-0000-0000-0000-00000000xxxx/resourceGroups/imageGroups/providers/Microsoft.Compute/snapshots/MyDiskSnapshot \\\n--data-snapshot-luns 0 1",
+                "az sig image-version create --resource-group MyResourceGroup \\\n--gallery-name MyGallery --gallery-image-definition MyImage \\\n--gallery-image-version 1.0.0 --replica-count 1 \\\n--storage-account-type Standard_ZRS --managed-image image-name \\\n--target-regions eastus2 ukwest=3 southindia=standard_lrs \\\nbrazilsouth=2=standard_lrs",
+                "az sig image-version create --resource-group MyResourceGroup \\\n--gallery-name MyGallery --gallery-image-definition MyImage \\\n--gallery-image-version 1.0.0 \\\n--virtual-machine /subscriptions/00000000-0000-0000-0000-00000000xxxx/resourceGroups/imageGroups/providers/Microsoft.Compute/virtualMachines/MyVM \\\n--target-regions westus=2=standard eastus \\\n--target-region-encryption WestUSDiskEncryptionSet1,0,WestUSDiskEncryptionSet2 \\\nEastUSDiskEncryptionSet1,0,EastUSDiskEncryptionSet2",
+                "az sig image-version create --resource-group MyResourceGroup \\\n--gallery-name MyGallery --gallery-image-definition MyImage \\\n--gallery-image-version 1.0.0 --replica-count 1 \\\n--storage-account-type Standard_ZRS --managed-image image-name \\\n--target-edge-zones westus=microsoftlosangeles1 eastus=microsoftlosangeles2=1 \\\nbrazilsouth=2=standard_lrs",
+                "az sig image-version create --resource-group MyResourceGroup \\\n--gallery-name MyGallery --gallery-image-definition MyImage \\\n--gallery-image-version 1.0.0 \\\n--virtual-machine /subscriptions/00000000-0000-0000-0000-00000000xxxx/resourceGroups/imageGroups/providers/Microsoft.Compute/virtualMachines/MyVM \\\n--target-edge-zones westus=microsoftlosangeles1 \\\n--target-edge-zone-encryption microsoftlosangeles1,WestUSDiskEncryptionSet1,0,WestUSDiskEncryptionSet2",
+                "az sig image-version create --resource-group MyResourceGroup \\\n--gallery-name MyGallery --gallery-image-definition MyImage \\\n--gallery-image-version 1.0.0 \\\n--virtual-machine /subscriptions/00000000-0000-0000-0000-00000000xxxx/resourceGroups/imageGroups/providers/Microsoft.Compute/virtualMachines/MyVM \\\n--no-wait",
+                "az sig image-version create --resource-group MyResourceGroup \\\n--gallery-name MyGallery --gallery-image-definition MyImage \\\n--gallery-image-version 1.0.0 \\\n--virtual-machine /subscriptions/00000000-0000-0000-0000-00000000xxxx/resourceGroups/imageGroups/providers/Microsoft.Compute/virtualMachines/MyVM \\\n--exclude-from-latest true",
+                "az sig image-version create --resource-group MyResourceGroup \\\n--gallery-name MyGallery --gallery-image-definition MyImage \\\n--gallery-image-version 1.0.0 \\\n--virtual-machine /subscriptions/00000000-0000-0000-0000-00000000xxxx/resourceGroups/imageGroups/providers/Microsoft.Compute/virtualMachines/MyVM \\\n--end-of-life-date 2024-08-02T00:00:00+00:00"
+            ]
+        },
+        {
+            "name": "az sig image-version delete",
+            "summary": "Delete a gallery image version.",
+            "syntax": "az sig image-version delete [--gallery-image-definition]\n                            [--gallery-image-version]\n                            [--gallery-name]\n                            [--ids]\n                            [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                            [--resource-group]\n                            [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--gallery-image-definition --gallery-image-name -i",
+                "--gallery-image-version --gallery-image-version-name -e",
+                "--gallery-name -r",
+                "--ids",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az sig image-version list",
+            "summary": "List gallery image versions in a gallery image definition.",
+            "syntax": "az sig image-version list --gallery-image-definition\n                          --gallery-name\n                          --resource-group\n                          [--max-items]\n                          [--next-token]",
+            "required_parameters": [
+                "--gallery-image-definition --gallery-image-name -i",
+                "--gallery-name -r",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az sig image-version list-community",
+            "summary": "List VM Image Versions in a gallery community.",
+            "syntax": "az sig image-version list-community [--gallery-image-definition]\n                                    [--ids]\n                                    [--location]\n                                    [--marker]\n                                    [--public-gallery-name]\n                                    [--show-next-marker]\n                                    [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--gallery-image-definition -i",
+                "--ids",
+                "--location -l",
+                "--marker",
+                "--public-gallery-name",
+                "--show-next-marker",
+                "--subscription"
+            ],
+            "examples": [
+                "az sig image-version list-community --public-gallery-name publicGalleryName \\\n--gallery-image-definition MyImage --location myLocation"
+            ]
+        },
+        {
+            "name": "az sig image-version list-community",
+            "summary": "List VM Image Versions in a gallery community (preview).",
+            "syntax": "az sig image-version list-community [--gallery-image-definition]\n                                    [--ids]\n                                    [--location]\n                                    [--marker]\n                                    [--public-gallery-name]\n                                    [--show-next-marker]\n                                    [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--gallery-image-definition -i",
+                "--ids",
+                "--location -l",
+                "--marker",
+                "--public-gallery-name",
+                "--show-next-marker",
+                "--subscription"
+            ],
+            "examples": [
+                "az sig image-version list-community --public-gallery-name publicGalleryName \\\n--gallery-image-definition MyImage --location myLocation"
+            ]
+        },
+        {
+            "name": "az sig image-version list-shared",
+            "summary": "List VM Image Versions in a gallery shared directly to your subscription or tenant.",
+            "syntax": "az sig image-version list-shared [--gallery-image-definition]\n                                 [--gallery-unique-name]\n                                 [--ids]\n                                 [--location]\n                                 [--marker]\n                                 [--shared-to {tenant}]\n                                 [--show-next-marker]\n                                 [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--gallery-image-definition -i",
+                "--gallery-unique-name",
+                "--ids",
+                "--location -l",
+                "--marker",
+                "--shared-to",
+                "--show-next-marker",
+                "--subscription"
+            ],
+            "examples": [
+                "az sig image-version list-shared --gallery-unique-name galleryUniqueName \\\n--gallery-image-definition MyImage --location myLocation",
+                "az sig image-version list-shared --gallery-unique-name galleryUniqueName \\\n--gallery-image-definition MyImage --location myLocation --shared-to tenant"
+            ]
+        },
+        {
+            "name": "az sig image-version show",
+            "summary": "Get information about a gallery image version.",
+            "syntax": "az sig image-version show [--expand {ReplicationStatus, UefiSettings}]\n                          [--gallery-image-definition]\n                          [--gallery-image-version]\n                          [--gallery-name]\n                          [--ids]\n                          [--resource-group]\n                          [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--expand",
+                "--gallery-image-definition -i",
+                "--gallery-image-version --gallery-image-version-name -e",
+                "--gallery-name -r",
+                "--ids",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az sig image-version show-community",
+            "summary": "Get a community gallery image version.",
+            "syntax": "az sig image-version show-community [--gallery-image-definition]\n                                    [--gallery-image-version]\n                                    [--ids]\n                                    [--location]\n                                    [--public-gallery-name]\n                                    [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--gallery-image-definition --gallery-image-name -i",
+                "--gallery-image-version --gallery-image-version-name -e",
+                "--ids",
+                "--location -l",
+                "--public-gallery-name",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az sig image-version show-community",
+            "summary": "Get an image version in a gallery community (preview).",
+            "syntax": "az sig image-version show-community [--gallery-image-definition]\n                                    [--gallery-image-version]\n                                    [--ids]\n                                    [--location]\n                                    [--public-gallery-name]\n                                    [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--gallery-image-definition -i",
+                "--gallery-image-version -e",
+                "--ids",
+                "--location -l",
+                "--public-gallery-name",
+                "--subscription"
+            ],
+            "examples": [
+                "az sig image-version show-community --public-gallery-name publicGalleryName \\\n--gallery-image-definition MyImage --gallery-image-version 1.0.0 --location myLocation"
+            ]
+        },
+        {
+            "name": "az sig image-version show-shared",
+            "summary": "Get an image version in a gallery shared directly to your subscription or tenant.",
+            "syntax": "az sig image-version show-shared [--gallery-image-definition]\n                                 [--gallery-image-version]\n                                 [--gallery-unique-name]\n                                 [--ids]\n                                 [--location]\n                                 [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--gallery-image-definition --gallery-image-name -i",
+                "--gallery-image-version --gallery-image-version-name -e",
+                "--gallery-unique-name",
+                "--ids",
+                "--location -l",
+                "--subscription"
+            ],
+            "examples": [
+                "az sig image-version show-shared --gallery-unique-name galleryUniqueName --gallery-image-definition MyImage --gallery-image-version 1.0.0 --location myLocation"
+            ]
+        },
+        {
+            "name": "az sig image-version undelete",
+            "summary": "Restore soft deleted Image Version.",
+            "syntax": "az sig image-version undelete --gallery-image-definition\n                              --gallery-image-version\n                              --gallery-name\n                              --resource-group\n                              [--allow-replicated-location-deletion {false, true}]\n                              [--location]\n                              [--no-wait]\n                              [--tags]",
+            "required_parameters": [
+                "--gallery-image-definition -i",
+                "--gallery-image-version -e",
+                "--gallery-name -r",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--allow-replicated-location-deletion",
+                "--location -l",
+                "--no-wait",
+                "--tags"
+            ],
+            "examples": [
+                "az sig image-version undelete --resource-group MyResourceGroup \\\n--gallery-name MyGallery --gallery-image-definition MyImage \\\n--gallery-image-version 1.1.1"
+            ]
+        },
+        {
+            "name": "az sig image-version update",
+            "summary": "Update a share image version.",
+            "syntax": "az sig image-version update --gallery-image-definition\n                            --gallery-image-version\n                            --gallery-name\n                            --resource-group\n                            [--add]\n                            [--allow-replicated-location-deletion {false, true}]\n                            [--force-string]\n                            [--no-wait]\n                            [--remove]\n                            [--replica-count]\n                            [--set]\n                            [--target-edge-zones]\n                            [--target-regions]",
+            "required_parameters": [
+                "--gallery-image-definition -i",
+                "--gallery-image-version -e",
+                "--gallery-name -r",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--add",
+                "--allow-replicated-location-deletion",
+                "--force-string",
+                "--no-wait",
+                "--remove",
+                "--replica-count",
+                "--set",
+                "--target-edge-zones",
+                "--target-regions"
+            ],
+            "examples": [
+                "az sig image-version update --resource-group MyResourceGroup \\\n--gallery-name MyGallery --gallery-image-definition MyImage \\\n--gallery-image-version 1.0.0 \\\n--target-regions westcentralus=2 eastus2",
+                "az sig image-version update --resource-group MyResourceGroup \\\n--gallery-name MyGallery --gallery-image-definition MyImage \\\n--gallery-image-version 1.0.0 \\\n--target-edge-zones westus=microsoftlosangeles1 eastus=microsoftlosangeles2=1",
+                "az sig image-version update --resource-group MyResourceGroup \\\n--gallery-name MyGallery --gallery-image-definition MyImage \\\n--gallery-image-version 1.0.0 \\\n--target-edge-zones None",
+                "az sig image-version update --resource-group MyResourceGroup \\\n--gallery-name MyGallery --gallery-image-definition MyImage \\\n--gallery-image-version 1.0.0 \\\n--add publishingProfile.targetRegions name=westcentralus \\\nregionalReplicaCount=3 excludeFromLatest=true",
+                "az sig image-version update -g MyResourceGroup --gallery-name MyGallery \\\n--gallery-image-definition MyImage --gallery-image-version 1.0.0 \\\n--set publishingProfile.excludeFromLatest=true",
+                "az sig image-version update -g MyResourceGroup --gallery-name MyGallery \\\n--gallery-image-definition MyImage --gallery-image-version 1.0.0 \\\n--set publishingProfile.endOfLifeDate=2024-08-02T00:00:00+00:00",
+                "az sig image-version update -g MyResourceGroup --gallery-name MyGallery \\\n--gallery-image-definition MyImage --gallery-image-version 1.0.0 \\\n--set safetyProfile.allowDeletionOfReplicatedLocations=true"
+            ]
+        },
+        {
+            "name": "az sig image-version wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az sig image-version wait [--created]\n                          [--custom]\n                          [--deleted]\n                          [--exists]\n                          [--expand {ReplicationStatus, UefiSettings}]\n                          [--gallery-image-definition]\n                          [--gallery-image-version]\n                          [--gallery-name]\n                          [--ids]\n                          [--interval]\n                          [--resource-group]\n                          [--subscription]\n                          [--timeout]\n                          [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--expand",
+                "--gallery-image-definition -i",
+                "--gallery-image-version --gallery-image-version-name -e",
+                "--gallery-name -r",
+                "--ids",
+                "--interval",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

@@ -1,0 +1,104 @@
+{
+    "command_group": "az sf managed-node-type",
+    "description": "Manage a node type of an Azure Service Fabric managed cluster.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az sf managed-node-type create",
+            "summary": "Create node type on a managed cluster.",
+            "syntax": "az sf managed-node-type create --cluster-name\n                               --instance-count\n                               --name\n                               --resource-group\n                               [--app-end-port]\n                               [--app-start-port]\n                               [--capacity]\n                               [--data-disk-size]\n                               [--data-disk-type {Premium_LRS, StandardSSD_LRS, Standard_LRS}]\n                               [--ephemeral-end-port]\n                               [--ephemeral-start-port]\n                               [--is-stateless {false, true}]\n                               [--multi-place-groups {false, true}]\n                               [--placement-property]\n                               [--primary {false, true}]\n                               [--vm-image-offer]\n                               [--vm-image-publisher]\n                               [--vm-image-sku]\n                               [--vm-image-version]\n                               [--vm-size]",
+            "required_parameters": [
+                "--cluster-name -c",
+                "--instance-count",
+                "--name --node-type-name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--app-end-port --application-end-port",
+                "--app-start-port --application-start-port",
+                "--capacity",
+                "--data-disk-size --disk-size",
+                "--data-disk-type --disk-type",
+                "--ephemeral-end-port",
+                "--ephemeral-start-port",
+                "--is-stateless",
+                "--multi-place-groups --multiple-placement-groups",
+                "--placement-property",
+                "--primary",
+                "--vm-image-offer",
+                "--vm-image-publisher",
+                "--vm-image-sku",
+                "--vm-image-version",
+                "--vm-size"
+            ],
+            "examples": [
+                "az sf managed-node-type create -g testRG -c testCluster -n pnt --instance-count 5 --primary",
+                "az sf managed-node-type create -g testRG -c testCluster -n snt --instance-count 5 --placement-property NodeColor=Green SomeProperty=5 --capacity ClientConnections=65536 --app-start-port 20575 --app-end-port 20605 --ephemeral-start-port 20606 --ephemeral-end-port 20861"
+            ]
+        },
+        {
+            "name": "az sf managed-node-type delete",
+            "summary": "Delete node type from a cluster.",
+            "syntax": "az sf managed-node-type delete --cluster-name\n                               --name\n                               --resource-group",
+            "required_parameters": [
+                "--cluster-name -c",
+                "--name --node-type-name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az sf managed-node-type delete -g testRG -c testCluster -n snt"
+            ]
+        },
+        {
+            "name": "az sf managed-node-type list",
+            "summary": "List node types of a managed cluster.",
+            "syntax": "az sf managed-node-type list --cluster-name\n                             --resource-group",
+            "required_parameters": [
+                "--cluster-name -c",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az sf managed-node-type list -g testRG -c testCluster"
+            ]
+        },
+        {
+            "name": "az sf managed-node-type show",
+            "summary": "Show the properties of a node type.",
+            "syntax": "az sf managed-node-type show --cluster-name\n                             --name\n                             --resource-group",
+            "required_parameters": [
+                "--cluster-name -c",
+                "--name --node-type-name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az sf managed-node-type show -g testRG -c testCluster -n pnt"
+            ]
+        },
+        {
+            "name": "az sf managed-node-type update",
+            "summary": "Update node type on a managed cluster.",
+            "syntax": "az sf managed-node-type update --cluster-name\n                               --name\n                               --resource-group\n                               [--app-end-port]\n                               [--app-start-port]\n                               [--capacity]\n                               [--ephemeral-end-port]\n                               [--ephemeral-start-port]\n                               [--instance-count]\n                               [--placement-property]",
+            "required_parameters": [
+                "--cluster-name -c",
+                "--name --node-type-name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--app-end-port --application-end-port",
+                "--app-start-port --application-start-port",
+                "--capacity",
+                "--ephemeral-end-port",
+                "--ephemeral-start-port",
+                "--instance-count",
+                "--placement-property"
+            ],
+            "examples": [
+                "az sf managed-node-type update -g testRG -c testCluster -n snt --instance-count 7",
+                "az sf managed-node-type update -g testRG -c testCluster -n snt --placement-property NodeColor=Red SomeProperty=6"
+            ]
+        }
+    ]
+}

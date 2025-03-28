@@ -1,0 +1,75 @@
+{
+    "command_group": "az bot authsetting",
+    "description": "Manage OAuth connection settings on a bot.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az bot authsetting create",
+            "summary": "Create an OAuth connection setting on a bot.",
+            "syntax": "az bot authsetting create --client-id\n                          --client-secret\n                          --name\n                          --provider-scope-string\n                          --resource-group\n                          --service\n                          --setting-name\n                          [--parameters]",
+            "required_parameters": [
+                "--client-id",
+                "--client-secret",
+                "--name -n",
+                "--provider-scope-string",
+                "--resource-group -g",
+                "--service",
+                "--setting-name -c"
+            ],
+            "optional_parameters": [
+                "--parameters"
+            ],
+            "examples": [
+                "az bot authsetting create -g MyResourceGroup -n botName -c myConnectionName \\\n--client-id clientId --client-secret secret --provider-scope-string \"scope1 scope2\"\\\n--service google --parameters id=myid"
+            ]
+        },
+        {
+            "name": "az bot authsetting delete",
+            "summary": "Delete an OAuth connection setting on a bot.",
+            "syntax": "az bot authsetting delete --name\n                          --resource-group\n                          --setting-name",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g",
+                "--setting-name -c"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az bot authsetting list",
+            "summary": "Show all OAuth connection settings on a bot.",
+            "syntax": "az bot authsetting list --name\n                        --resource-group",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az bot authsetting list-providers",
+            "summary": "List details for all service providers available for creating OAuth connection settings.",
+            "syntax": "az bot authsetting list-providers [--provider-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--provider-name"
+            ],
+            "examples": [
+                "az bot authsetting list-providers",
+                "az bot authsetting list-providers --provider-name google"
+            ]
+        },
+        {
+            "name": "az bot authsetting show",
+            "summary": "Show details of an OAuth connection setting on a bot.",
+            "syntax": "az bot authsetting show --name\n                        --resource-group\n                        --setting-name",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g",
+                "--setting-name -c"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        }
+    ]
+}

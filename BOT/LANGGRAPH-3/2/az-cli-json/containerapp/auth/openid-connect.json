@@ -1,0 +1,88 @@
+{
+    "command_group": "az containerapp auth openid-connect",
+    "description": "Manage containerapp authentication and authorization of the custom OpenID Connect identity providers.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az containerapp auth openid-connect add",
+            "summary": "Configure a new custom OpenID Connect identity provider.",
+            "syntax": "az containerapp auth openid-connect add --provider-name\n                                        [--client-id]\n                                        [--client-secret]\n                                        [--client-secret-name]\n                                        [--ids]\n                                        [--name]\n                                        [--openid-configuration]\n                                        [--resource-group]\n                                        [--scopes]\n                                        [--subscription]\n                                        [--yes]",
+            "required_parameters": [
+                "--provider-name"
+            ],
+            "optional_parameters": [
+                "--client-id",
+                "--client-secret",
+                "--client-secret-name",
+                "--ids",
+                "--name -n",
+                "--openid-configuration",
+                "--resource-group -g",
+                "--scopes",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az containerapp auth openid-connect add -g myResourceGroup --name my-containerapp \\\n  --provider-name myOpenIdConnectProvider --client-id my-client-id \\\n  --client-secret-name MY_SECRET_APP_SETTING \\\n  --openid-configuration https://myopenidprovider.net/.well-known/openid-configuration"
+            ]
+        },
+        {
+            "name": "az containerapp auth openid-connect remove",
+            "summary": "Removes an existing custom OpenID Connect identity provider.",
+            "syntax": "az containerapp auth openid-connect remove --provider-name\n                                           [--ids]\n                                           [--name]\n                                           [--resource-group]\n                                           [--subscription]\n                                           [--yes]",
+            "required_parameters": [
+                "--provider-name"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az containerapp auth openid-connect remove --name my-containerapp --resource-group MyResourceGroup \\\n  --provider-name myOpenIdConnectProvider"
+            ]
+        },
+        {
+            "name": "az containerapp auth openid-connect show",
+            "summary": "Show the authentication settings for the custom OpenID Connect identity provider.",
+            "syntax": "az containerapp auth openid-connect show --provider-name\n                                         [--ids]\n                                         [--name]\n                                         [--resource-group]\n                                         [--subscription]",
+            "required_parameters": [
+                "--provider-name"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az containerapp auth openid-connect show --name my-containerapp --resource-group MyResourceGroup \\ --provider-name myOpenIdConnectProvider"
+            ]
+        },
+        {
+            "name": "az containerapp auth openid-connect update",
+            "summary": "Update the client id and client secret setting name for an existing custom OpenID Connect identity provider.",
+            "syntax": "az containerapp auth openid-connect update --provider-name\n                                           [--client-id]\n                                           [--client-secret]\n                                           [--client-secret-name]\n                                           [--ids]\n                                           [--name]\n                                           [--openid-configuration]\n                                           [--resource-group]\n                                           [--scopes]\n                                           [--subscription]\n                                           [--yes]",
+            "required_parameters": [
+                "--provider-name"
+            ],
+            "optional_parameters": [
+                "--client-id",
+                "--client-secret",
+                "--client-secret-name",
+                "--ids",
+                "--name -n",
+                "--openid-configuration",
+                "--resource-group -g",
+                "--scopes",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az containerapp auth openid-connect update -g myResourceGroup --name my-containerapp \\\n  --provider-name myOpenIdConnectProvider --client-id my-client-id \\\n  --client-secret-name MY_SECRET_APP_SETTING"
+            ]
+        }
+    ]
+}

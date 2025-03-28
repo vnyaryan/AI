@@ -1,0 +1,316 @@
+{
+    "command_group": "az netappfiles account",
+    "description": "Manage Azure NetApp Files (ANF) Account Resources.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az netappfiles account create",
+            "summary": "Create the specified NetApp account within the resource group.",
+            "syntax": "az netappfiles account create --account-name\n                              --resource-group\n                              [--active-directories]\n                              [--identity-type {None, SystemAssigned, SystemAssigned,UserAssigned, UserAssigned}]\n                              [--key-name]\n                              [--key-source {Microsoft.KeyVault, Microsoft.NetApp}]\n                              [--key-vault-resource-id]\n                              [--key-vault-uri]\n                              [--location]\n                              [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                              [--tags]\n                              [--user-assigned-identity]",
+            "required_parameters": [
+                "--account-name --name -a -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--active-directories",
+                "--identity-type --type",
+                "--key-name",
+                "--key-source",
+                "--key-vault-resource-id --keyvault-resource-id",
+                "--key-vault-uri -v",
+                "--location -l",
+                "--no-wait",
+                "--tags",
+                "--user-assigned-identity -u"
+            ],
+            "examples": [
+                "az netappfiles account create -g mygroup --name myname -l location --tags testtag1=mytag1 testtag3=mytagg",
+                "az netappfiles account create -g mygroup --name myname -l location --key-source Microsoft.KeyVault --key-name cmkKey --key-vault-uri https://mykvuri.vault.azure.net/ --keyvault-resource-id myKeyVaultResourceId --identity-type UserAssigned --user-assigned-identity '/subscriptions/xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourcegroups/myrg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/anf-mi'"
+            ]
+        },
+        {
+            "name": "az netappfiles account create",
+            "summary": "Create the specified NetApp account within the resource group.",
+            "syntax": "az netappfiles account create --account-name\n                              --resource-group\n                              [--active-directories]\n                              [--federated-client-id]\n                              [--identity-type {None, SystemAssigned, SystemAssigned,UserAssigned, UserAssigned}]\n                              [--key-name]\n                              [--key-source {Microsoft.KeyVault, Microsoft.NetApp}]\n                              [--key-vault-resource-id]\n                              [--key-vault-uri]\n                              [--location]\n                              [--nfs-v4-id-domain]\n                              [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                              [--tags]\n                              [--user-assigned-identities]\n                              [--user-assigned-identity]",
+            "required_parameters": [
+                "--account-name --name -a -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--active-directories",
+                "--federated-client-id",
+                "--identity-type --type",
+                "--key-name",
+                "--key-source",
+                "--key-vault-resource-id --keyvault-resource-id",
+                "--key-vault-uri -v",
+                "--location -l",
+                "--nfs-v4-id-domain",
+                "--no-wait",
+                "--tags",
+                "--user-assigned-identities --user-ids",
+                "--user-assigned-identity"
+            ],
+            "examples": [
+                "az netappfiles account create -g mygroup --name myname -l location --tags testtag1=mytag1 testtag3=mytagg",
+                "az netappfiles account create -g mygroup --name myname -l location --key-source Microsoft.KeyVault --key-name cmkKey --key-vault-uri https://mykvuri.vault.azure.net/ --keyvault-resource-id myKeyVaultResourceId --identity-type UserAssigned --user-assigned-identity '/subscriptions/xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourcegroups/myrg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/anf-mi'"
+            ]
+        },
+        {
+            "name": "az netappfiles account delete",
+            "summary": "Delete the specified NetApp account.",
+            "syntax": "az netappfiles account delete [--account-name]\n                              [--ids]\n                              [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                              [--resource-group]\n                              [--subscription]\n                              [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account-name --name -a -n",
+                "--ids",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az netappfiles account delete -g mygroup --name myname"
+            ]
+        },
+        {
+            "name": "az netappfiles account delete",
+            "summary": "Delete the specified NetApp account.",
+            "syntax": "az netappfiles account delete [--account-name]\n                              [--ids]\n                              [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                              [--resource-group]\n                              [--subscription]\n                              [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account-name --name -a -n",
+                "--ids",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az netappfiles account delete -g mygroup --name myname"
+            ]
+        },
+        {
+            "name": "az netappfiles account list",
+            "summary": "List and describe all NetApp accounts in the subscription.",
+            "syntax": "az netappfiles account list [--max-items]\n                            [--next-token]\n                            [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az netappfiles account list -g mygroup"
+            ]
+        },
+        {
+            "name": "az netappfiles account list",
+            "summary": "List and describe all NetApp accounts in the subscription.",
+            "syntax": "az netappfiles account list [--max-items]\n                            [--next-token]\n                            [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az netappfiles account list -g mygroup"
+            ]
+        },
+        {
+            "name": "az netappfiles account migrate-backup",
+            "summary": "Migrate the backups under a NetApp account to backup vault.",
+            "syntax": "az netappfiles account migrate-backup --backup-vault-id\n                                      [--account-name]\n                                      [--ids]\n                                      [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                      [--resource-group]\n                                      [--subscription]",
+            "required_parameters": [
+                "--backup-vault-id"
+            ],
+            "optional_parameters": [
+                "--account-name -a",
+                "--ids",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az netappfiles account migrate-backup",
+            "summary": "Migrate the backups under a NetApp account to backup vault.",
+            "syntax": "az netappfiles account migrate-backup --backup-vault-id\n                                      [--account-name]\n                                      [--ids]\n                                      [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                      [--resource-group]\n                                      [--subscription]",
+            "required_parameters": [
+                "--backup-vault-id"
+            ],
+            "optional_parameters": [
+                "--account-name -a",
+                "--ids",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az netappfiles account renew-credentials",
+            "summary": "Renew identity credentials that are used to authenticate to key vault, for customer-managed key encryption. If encryption.identity.principalId does not match identity.principalId, running this operation will fix it.",
+            "syntax": "az netappfiles account renew-credentials [--account-name]\n                                         [--ids]\n                                         [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                         [--resource-group]\n                                         [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account-name -a",
+                "--ids",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az netappfiles account renew-credentials -g mygroup --a myname"
+            ]
+        },
+        {
+            "name": "az netappfiles account renew-credentials",
+            "summary": "Renew identity credentials that are used to authenticate to key vault, for customer-managed key encryption. If encryption.identity.principalId does not match identity.principalId, running this operation will fix it.",
+            "syntax": "az netappfiles account renew-credentials [--account-name]\n                                         [--ids]\n                                         [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                         [--resource-group]\n                                         [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account-name -a",
+                "--ids",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az netappfiles account renew-credentials -g mygroup --a myname"
+            ]
+        },
+        {
+            "name": "az netappfiles account show",
+            "summary": "Get the NetApp account.",
+            "syntax": "az netappfiles account show [--account-name]\n                            [--ids]\n                            [--resource-group]\n                            [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account-name --name -a -n",
+                "--ids",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az netappfiles account show -g mygroup --name myname"
+            ]
+        },
+        {
+            "name": "az netappfiles account show",
+            "summary": "Get the NetApp account.",
+            "syntax": "az netappfiles account show [--account-name]\n                            [--ids]\n                            [--resource-group]\n                            [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account-name --name -a -n",
+                "--ids",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az netappfiles account show -g mygroup --name myname"
+            ]
+        },
+        {
+            "name": "az netappfiles account update",
+            "summary": "Update the specified NetApp account within the resource group.",
+            "syntax": "az netappfiles account update [--account-name]\n                              [--active-directories]\n                              [--add]\n                              [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                              [--identity-type {None, SystemAssigned, SystemAssigned,UserAssigned, UserAssigned}]\n                              [--ids]\n                              [--key-name]\n                              [--key-source {Microsoft.KeyVault, Microsoft.NetApp}]\n                              [--key-vault-resource-id]\n                              [--key-vault-uri]\n                              [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                              [--remove]\n                              [--resource-group]\n                              [--set]\n                              [--subscription]\n                              [--tags]\n                              [--user-assigned-identity]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account-name --name -a -n",
+                "--active-directories",
+                "--add",
+                "--force-string",
+                "--identity-type --type",
+                "--ids",
+                "--key-name",
+                "--key-source",
+                "--key-vault-resource-id --keyvault-resource-id",
+                "--key-vault-uri -v",
+                "--no-wait",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--subscription",
+                "--tags",
+                "--user-assigned-identity -u"
+            ],
+            "examples": [
+                "az netappfiles account update -g mygroup --name myname --tags testtag2=mytagb",
+                "az netappfiles account update -g mygroup -a myname --key-source Microsoft.KeyVault --key-name cmkKey --key-vault-uri https://mykvuri.vault.azure.net/ --keyvault-resource-id myKeyVaultResourceId --identity-type UserAssigned --user-assigned-identity '/subscriptions/xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourcegroups/myrg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/anf-mi'"
+            ]
+        },
+        {
+            "name": "az netappfiles account update",
+            "summary": "Update the specified NetApp account within the resource group.",
+            "syntax": "az netappfiles account update [--account-name]\n                              [--active-directories]\n                              [--add]\n                              [--encryption-identity]\n                              [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                              [--identity-type {None, SystemAssigned, SystemAssigned,UserAssigned, UserAssigned}]\n                              [--ids]\n                              [--key-name]\n                              [--key-source {Microsoft.KeyVault, Microsoft.NetApp}]\n                              [--key-vault-resource-id]\n                              [--key-vault-uri]\n                              [--nfs-v4-id-domain]\n                              [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                              [--remove]\n                              [--resource-group]\n                              [--set]\n                              [--subscription]\n                              [--tags]\n                              [--user-assigned-identities]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account-name --name -a -n",
+                "--active-directories",
+                "--add",
+                "--encryption-identity",
+                "--force-string",
+                "--identity-type --type",
+                "--ids",
+                "--key-name",
+                "--key-source",
+                "--key-vault-resource-id --keyvault-resource-id",
+                "--key-vault-uri -v",
+                "--nfs-v4-id-domain",
+                "--no-wait",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--subscription",
+                "--tags",
+                "--user-assigned-identities --user-ids"
+            ],
+            "examples": [
+                "az netappfiles account update -g mygroup --name myname --tags testtag2=mytagb",
+                "az netappfiles account update -g mygroup -a myname --key-source Microsoft.KeyVault --key-name cmkKey --key-vault-uri https://mykvuri.vault.azure.net/ --keyvault-resource-id myKeyVaultResourceId --identity-type UserAssigned --user-assigned-identity '/subscriptions/xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourcegroups/myrg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/anf-mi'"
+            ]
+        },
+        {
+            "name": "az netappfiles account wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az netappfiles account wait [--account-name]\n                            [--created]\n                            [--custom]\n                            [--deleted]\n                            [--exists]\n                            [--ids]\n                            [--interval]\n                            [--resource-group]\n                            [--subscription]\n                            [--timeout]\n                            [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account-name --name -a -n",
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az netappfiles account wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az netappfiles account wait [--account-name]\n                            [--created]\n                            [--custom]\n                            [--deleted]\n                            [--exists]\n                            [--ids]\n                            [--interval]\n                            [--resource-group]\n                            [--subscription]\n                            [--timeout]\n                            [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account-name --name -a -n",
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

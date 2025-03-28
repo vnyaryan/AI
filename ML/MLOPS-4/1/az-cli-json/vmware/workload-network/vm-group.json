@@ -1,0 +1,121 @@
+{
+    "command_group": "az vmware workload-network vm-group",
+    "description": "Commands to manage a VM Group workload network.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az vmware workload-network vm-group create",
+            "summary": "Create a vm group by id in a private cloud workload network.",
+            "syntax": "az vmware workload-network vm-group create --name\n                                           --private-cloud\n                                           --resource-group\n                                           [--display-name]\n                                           [--members]\n                                           [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                           [--revision]",
+            "required_parameters": [
+                "--name --vm-group -n",
+                "--private-cloud -c",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--display-name",
+                "--members",
+                "--no-wait",
+                "--revision"
+            ],
+            "examples": [
+                "az vmware workload-network vm-group create --resource-group group1 --private-cloud cloud1 --vm-group vmGroup1 --display-name vmGroup1 --members 564d43da-fefc-2a3b-1d92-42855622fa50 --revision 1"
+            ]
+        },
+        {
+            "name": "az vmware workload-network vm-group delete",
+            "summary": "Delete a vm group by id in a private cloud workload network.",
+            "syntax": "az vmware workload-network vm-group delete [--ids]\n                                           [--name]\n                                           [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                           [--private-cloud]\n                                           [--resource-group]\n                                           [--subscription]\n                                           [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --vm-group -n",
+                "--no-wait",
+                "--private-cloud -c",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az vmware workload-network vm-group delete --resource-group group1 --private-cloud cloud1 --vm-group vmGroup1"
+            ]
+        },
+        {
+            "name": "az vmware workload-network vm-group list",
+            "summary": "List of vm groups in a private cloud workload network.",
+            "syntax": "az vmware workload-network vm-group list --private-cloud\n                                         --resource-group\n                                         [--max-items]\n                                         [--next-token]",
+            "required_parameters": [
+                "--private-cloud -c",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az vmware workload-network vm-group list --resource-group group1 --private-cloud cloud1"
+            ]
+        },
+        {
+            "name": "az vmware workload-network vm-group show",
+            "summary": "Get a vm group by id in a private cloud workload network.",
+            "syntax": "az vmware workload-network vm-group show [--ids]\n                                         [--name]\n                                         [--private-cloud]\n                                         [--resource-group]\n                                         [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --vm-group -n",
+                "--private-cloud -c",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az vmware workload-network vm-group show --resource-group group1 --private-cloud cloud1 --vm-group vmGroup1"
+            ]
+        },
+        {
+            "name": "az vmware workload-network vm-group update",
+            "summary": "Update a vm group by id in a private cloud workload network.",
+            "syntax": "az vmware workload-network vm-group update [--add]\n                                           [--display-name]\n                                           [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                           [--ids]\n                                           [--members]\n                                           [--name]\n                                           [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                           [--private-cloud]\n                                           [--remove]\n                                           [--resource-group]\n                                           [--revision]\n                                           [--set]\n                                           [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--display-name",
+                "--force-string",
+                "--ids",
+                "--members",
+                "--name --vm-group -n",
+                "--no-wait",
+                "--private-cloud -c",
+                "--remove",
+                "--resource-group -g",
+                "--revision",
+                "--set",
+                "--subscription"
+            ],
+            "examples": [
+                "az vmware workload-network vm-group update --resource-group group1 --private-cloud cloud1 --vm-group vmGroup1 --display-name vmGroup1 --members 564d43da-fefc-2a3b-1d92-42855622fa50 --revision 1"
+            ]
+        },
+        {
+            "name": "az vmware workload-network vm-group wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az vmware workload-network vm-group wait [--created]\n                                         [--custom]\n                                         [--deleted]\n                                         [--exists]\n                                         [--ids]\n                                         [--interval]\n                                         [--name]\n                                         [--private-cloud]\n                                         [--resource-group]\n                                         [--subscription]\n                                         [--timeout]\n                                         [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--name --vm-group -n",
+                "--private-cloud -c",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

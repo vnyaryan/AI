@@ -1,0 +1,86 @@
+{
+    "command_group": "az sql server vnet-rule",
+    "description": "Manage a server's virtual network rules.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az sql server vnet-rule create",
+            "summary": "Create a virtual network rule to allows access to an Azure SQL Server.",
+            "syntax": "az sql server vnet-rule create --name\n                               --resource-group\n                               --server\n                               --subnet\n                               [--ignore-missing-endpoint {false, true}]\n                               [--vnet-name]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g",
+                "--server -s",
+                "--subnet"
+            ],
+            "optional_parameters": [
+                "--ignore-missing-endpoint -i",
+                "--vnet-name"
+            ],
+            "examples": [
+                "az sql server vnet-rule create --server MyAzureSqlServer --name MyVNetRule \\\n  -g MyResourceGroup --subnet /subscriptions/{SubID}/resourceGroups/{ResourceGroup}/providers/Microsoft.Network/virtualNetworks/{VNETName}/subnets/{SubnetName}",
+                "az sql server vnet-rule create --server MyAzureSqlServer --name MyVNetRule \\\n    -g MyResourceGroup --subnet subnetName --vnet-name vnetName"
+            ]
+        },
+        {
+            "name": "az sql server vnet-rule delete",
+            "summary": "Deletes the virtual network rule with the given name.",
+            "syntax": "az sql server vnet-rule delete --name\n                               [--ids]\n                               [--resource-group]\n                               [--server]\n                               [--subscription]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--resource-group -g",
+                "--server -s",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az sql server vnet-rule list",
+            "summary": "Gets a list of virtual network rules in a server.",
+            "syntax": "az sql server vnet-rule list [--ids]\n                             [--resource-group]\n                             [--server]\n                             [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--resource-group -g",
+                "--server -s",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az sql server vnet-rule show",
+            "summary": "Gets a virtual network rule.",
+            "syntax": "az sql server vnet-rule show --name\n                             [--ids]\n                             [--resource-group]\n                             [--server]\n                             [--subscription]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--resource-group -g",
+                "--server -s",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az sql server vnet-rule update",
+            "summary": "Update a virtual network rule.",
+            "syntax": "az sql server vnet-rule update --name\n                               --subnet\n                               [--ids]\n                               [--ignore-missing-endpoint {false, true}]\n                               [--resource-group]\n                               [--server]\n                               [--subscription]",
+            "required_parameters": [
+                "--name -n",
+                "--subnet"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--ignore-missing-endpoint -i",
+                "--resource-group -g",
+                "--server -s",
+                "--subscription"
+            ],
+            "examples": []
+        }
+    ]
+}

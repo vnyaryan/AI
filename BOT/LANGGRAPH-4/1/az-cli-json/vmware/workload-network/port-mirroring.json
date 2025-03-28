@@ -1,0 +1,125 @@
+{
+    "command_group": "az vmware workload-network port-mirroring",
+    "description": "Commands to manage a Port Mirroring workload network.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az vmware workload-network port-mirroring create",
+            "summary": "Create a port mirroring profile by id in a private cloud workload network.",
+            "syntax": "az vmware workload-network port-mirroring create --name\n                                                 --private-cloud\n                                                 --resource-group\n                                                 [--destination]\n                                                 [--direction {BIDIRECTIONAL, EGRESS, INGRESS}]\n                                                 [--display-name]\n                                                 [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                                 [--revision]\n                                                 [--source]",
+            "required_parameters": [
+                "--name --port-mirroring -n",
+                "--private-cloud -c",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--destination",
+                "--direction",
+                "--display-name",
+                "--no-wait",
+                "--revision",
+                "--source"
+            ],
+            "examples": [
+                "az vmware workload-network port-mirroring create --resource-group group1 --private-cloud cloud1 --port-mirroring portMirroring1 --display-name portMirroring1 --direction BIDIRECTIONAL --source vmGroup1 --destination vmGroup2 --revision 1"
+            ]
+        },
+        {
+            "name": "az vmware workload-network port-mirroring delete",
+            "summary": "Delete a port mirroring profile by id in a private cloud workload network.",
+            "syntax": "az vmware workload-network port-mirroring delete [--ids]\n                                                 [--name]\n                                                 [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                                 [--private-cloud]\n                                                 [--resource-group]\n                                                 [--subscription]\n                                                 [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --port-mirroring -n",
+                "--no-wait",
+                "--private-cloud -c",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az vmware workload-network port-mirroring delete --resource-group group1 --private-cloud cloud1 --port-mirroring portMirroring1"
+            ]
+        },
+        {
+            "name": "az vmware workload-network port-mirroring list",
+            "summary": "List of port mirroring profiles in a private cloud workload network.",
+            "syntax": "az vmware workload-network port-mirroring list --private-cloud\n                                               --resource-group\n                                               [--max-items]\n                                               [--next-token]",
+            "required_parameters": [
+                "--private-cloud -c",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az vmware workload-network port-mirroring list --resource-group group1 --private-cloud cloud1"
+            ]
+        },
+        {
+            "name": "az vmware workload-network port-mirroring show",
+            "summary": "Get a port mirroring profile by id in a private cloud workload network.",
+            "syntax": "az vmware workload-network port-mirroring show [--ids]\n                                               [--name]\n                                               [--private-cloud]\n                                               [--resource-group]\n                                               [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --port-mirroring -n",
+                "--private-cloud -c",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az vmware workload-network port-mirroring show --resource-group group1 --private-cloud cloud1 --port-mirroring portMirroring1"
+            ]
+        },
+        {
+            "name": "az vmware workload-network port-mirroring update",
+            "summary": "Update a port mirroring profile by id in a private cloud workload network.",
+            "syntax": "az vmware workload-network port-mirroring update [--add]\n                                                 [--destination]\n                                                 [--direction {BIDIRECTIONAL, EGRESS, INGRESS}]\n                                                 [--display-name]\n                                                 [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                                 [--ids]\n                                                 [--name]\n                                                 [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                                 [--private-cloud]\n                                                 [--remove]\n                                                 [--resource-group]\n                                                 [--revision]\n                                                 [--set]\n                                                 [--source]\n                                                 [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--destination",
+                "--direction",
+                "--display-name",
+                "--force-string",
+                "--ids",
+                "--name --port-mirroring -n",
+                "--no-wait",
+                "--private-cloud -c",
+                "--remove",
+                "--resource-group -g",
+                "--revision",
+                "--set",
+                "--source",
+                "--subscription"
+            ],
+            "examples": [
+                "az vmware workload-network port-mirroring update --resource-group group1 --private-cloud cloud1 --port-mirroring portMirroring1 --display-name portMirroring1 --direction BIDIRECTIONAL --source vmGroup1 --destination vmGroup2 --revision 1"
+            ]
+        },
+        {
+            "name": "az vmware workload-network port-mirroring wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az vmware workload-network port-mirroring wait [--created]\n                                               [--custom]\n                                               [--deleted]\n                                               [--exists]\n                                               [--ids]\n                                               [--interval]\n                                               [--name]\n                                               [--private-cloud]\n                                               [--resource-group]\n                                               [--subscription]\n                                               [--timeout]\n                                               [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--name --port-mirroring -n",
+                "--private-cloud -c",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

@@ -1,0 +1,198 @@
+{
+    "command_group": "az iot hub device-identity",
+    "description": "Manage IoT devices.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az iot hub device-identity create",
+            "summary": "Create a device in an IoT Hub.",
+            "syntax": "az iot hub device-identity create --device-id\n                                  [--am {shared_private_key, x509_ca, x509_thumbprint}]\n                                  [--auth-type {key, login}]\n                                  [--device-scope]\n                                  [--edge-enabled {false, true}]\n                                  [--hub-name]\n                                  [--login]\n                                  [--od]\n                                  [--pk]\n                                  [--primary-thumbprint]\n                                  [--resource-group]\n                                  [--secondary-key]\n                                  [--secondary-thumbprint]\n                                  [--sta {disabled, enabled}]\n                                  [--star]\n                                  [--valid-days]",
+            "required_parameters": [
+                "--device-id -d"
+            ],
+            "optional_parameters": [
+                "--am --auth-method",
+                "--auth-type",
+                "--device-scope",
+                "--edge-enabled --ee",
+                "--hub-name -n",
+                "--login -l",
+                "--od --output-dir",
+                "--pk --primary-key",
+                "--primary-thumbprint --ptp",
+                "--resource-group -g",
+                "--secondary-key --sk",
+                "--secondary-thumbprint --stp",
+                "--sta --status",
+                "--star --status-reason",
+                "--valid-days --vd"
+            ],
+            "examples": [
+                "az iot hub device-identity create -n {iothub_name} -d {device_id} --ee",
+                "az iot hub device-identity create -n {iothub_name} -d {device_id} --am x509_thumbprint --valid-days 10",
+                "az iot hub device-identity create -n {iothub_name} -d {device_id} --am x509_thumbprint --output-dir /path/to/output",
+                "az iot hub device-identity create -n {iothub_name} -d {device_id} --am x509_thumbprint --ptp {thumbprint_1} --stp {thumbprint_2}",
+                "az iot hub device-identity create -n {iothub_name} -d {device_id} --am x509_ca --status disabled --status-reason 'for reasons'",
+                "az iot hub device-identity create -n {iothub_name} -d {device_id} --device-scope 'ms-azure-iot-edge://edge0-123456789123456789'"
+            ]
+        },
+        {
+            "name": "az iot hub device-identity delete",
+            "summary": "Delete an IoT Hub device.",
+            "syntax": "az iot hub device-identity delete --device-id\n                                  [--auth-type {key, login}]\n                                  [--etag]\n                                  [--hub-name]\n                                  [--login]\n                                  [--resource-group]",
+            "required_parameters": [
+                "--device-id -d"
+            ],
+            "optional_parameters": [
+                "--auth-type",
+                "--etag -e",
+                "--hub-name -n",
+                "--login -l",
+                "--resource-group -g"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az iot hub device-identity export",
+            "summary": "Export all device identities from an IoT Hub to an Azure Storage blob container.",
+            "syntax": "az iot hub device-identity export [--auth-type {key, login}]\n                                  [--bc]\n                                  [--bcu]\n                                  [--hub-name]\n                                  [--identity]\n                                  [--ik {false, true}]\n                                  [--login]\n                                  [--resource-group]\n                                  [--sa]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--auth-type",
+                "--bc --blob-container",
+                "--bcu --blob-container-uri",
+                "--hub-name -n",
+                "--identity",
+                "--ik --include-keys",
+                "--login -l",
+                "--resource-group -g",
+                "--sa --storage-account"
+            ],
+            "examples": [
+                "az iot hub device-identity export -n {iothub_name} --ik --bc {blob_container_name} --sa {storage_account_name}",
+                "az iot hub device-identity export -n {iothub_name} --ik --bcu 'https://mystorageaccount.blob.core.windows.net/devices?sv=2019-02-02&st=2020-08-23T22%3A35%3A00Z&se=2020-08-24T22%3A35%3A00Z&sr=c&sp=rwd&sig=VrmJ5sQtW3kLzYg10VqmALGCp4vtYKSLNjZDDJBSh9s%3D'",
+                "az iot hub device-identity export -n {iothub_name} --bcu {sas_uri_filepath}",
+                "az iot hub device-identity export -n {iothub_name} --ik --bc {blob_container_name} --sa {storage_account_name} --identity [system]",
+                "az iot hub device-identity export -n {iothub_name} --ik --bcu 'https://mystorageaccount.blob.core.windows.net/devices' --identity [system]",
+                "az iot hub device-identity export -n {iothub_name} --ik --bc {blob_container_name} --sa {storage_account_name} --identity {managed_identity_resource_id}",
+                "az iot hub device-identity export -n {iothub_name} --ik --bcu 'https://mystorageaccount.blob.core.windows.net/devices' --identity {managed_identity_resource_id}"
+            ]
+        },
+        {
+            "name": "az iot hub device-identity import",
+            "summary": "Import device identities to an IoT Hub from a storage container blob.",
+            "syntax": "az iot hub device-identity import [--auth-type {key, login}]\n                                  [--hub-name]\n                                  [--ibc]\n                                  [--ibcu]\n                                  [--identity]\n                                  [--input-storage-account]\n                                  [--login]\n                                  [--obc]\n                                  [--obcu]\n                                  [--osa]\n                                  [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--auth-type",
+                "--hub-name -n",
+                "--ibc --input-blob-container",
+                "--ibcu --input-blob-container-uri",
+                "--identity",
+                "--input-storage-account --isa",
+                "--login -l",
+                "--obc --output-blob-container",
+                "--obcu --output-blob-container-uri",
+                "--osa --output-storage-account",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az iot hub device-identity import -n {iothub_name} --ibc {input_blob_container_name} --isa {input_storage_account_name} --obc {output_blob_container_name} --osa {output_storage_account_name}",
+                "az iot hub device-identity import -n {iothub_name} --ibcu {input_sas_uri} --obcu {output_sas_uri}",
+                "az iot hub device-identity import -n {iothub_name} --ibcu {input_sas_uri_filepath} --obcu {output_sas_uri_filepath}",
+                "az iot hub device-identity import -n {iothub_name} --ibc {input_blob_container_name} --isa {input_storage_account_name} --obc {output_blob_container_name} --osa {output_storage_account_name} --identity [system]",
+                "az iot hub device-identity import -n {iothub_name} --ibcu {input_sas_uri} --obcu {output_sas_uri} --identity [system]",
+                "az iot hub device-identity import -n {iothub_name} --ibc {input_blob_container_name} --isa {input_storage_account_name} --obc {output_blob_container_name} --osa {output_storage_account_name} --identity {managed_identity_resource_id}",
+                "az iot hub device-identity import -n {iothub_name} --ibcu {input_sas_uri} --obcu {output_sas_uri} --identity {managed_identity_resource_id}"
+            ]
+        },
+        {
+            "name": "az iot hub device-identity list",
+            "summary": "List devices in an IoT Hub.",
+            "syntax": "az iot hub device-identity list [--auth-type {key, login}]\n                                [--edge-enabled {false, true}]\n                                [--hub-name]\n                                [--login]\n                                [--resource-group]\n                                [--top]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--auth-type",
+                "--edge-enabled --ee",
+                "--hub-name -n",
+                "--login -l",
+                "--resource-group -g",
+                "--top"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az iot hub device-identity renew-key",
+            "summary": "Renew target keys of IoT Hub devices with sas authentication.",
+            "syntax": "az iot hub device-identity renew-key --device-id\n                                     --hub-name\n                                     --key-type {both, primary, secondary, swap}\n                                     [--auth-type {key, login}]\n                                     [--etag]\n                                     [--im {false, true}]\n                                     [--login]\n                                     [--no-progress {false, true}]\n                                     [--resource-group]",
+            "required_parameters": [
+                "--device-id -d",
+                "--hub-name -n",
+                "--key-type --kt"
+            ],
+            "optional_parameters": [
+                "--auth-type",
+                "--etag -e",
+                "--im --include-modules",
+                "--login -l",
+                "--no-progress",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az iot hub device-identity renew-key -d {device_id} -n {iothub_name} --kt primary",
+                "az iot hub device-identity renew-key -d {device_id} -n {iothub_name} --kt swap",
+                "az iot hub device-identity renew-key -d {device_id} {device_id} -n {iothub_name} --kt secondary --include-modules",
+                "az iot hub device-identity renew-key -d * -n {iothub_name} --kt both"
+            ]
+        },
+        {
+            "name": "az iot hub device-identity show",
+            "summary": "Get the details of an IoT Hub device.",
+            "syntax": "az iot hub device-identity show --device-id\n                                [--auth-type {key, login}]\n                                [--hub-name]\n                                [--login]\n                                [--resource-group]",
+            "required_parameters": [
+                "--device-id -d"
+            ],
+            "optional_parameters": [
+                "--auth-type",
+                "--hub-name -n",
+                "--login -l",
+                "--resource-group -g"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az iot hub device-identity update",
+            "summary": "Update an IoT Hub device.",
+            "syntax": "az iot hub device-identity update --device-id\n                                  [--add]\n                                  [--am {shared_private_key, x509_ca, x509_thumbprint}]\n                                  [--auth-type {key, login}]\n                                  [--edge-enabled {false, true}]\n                                  [--etag]\n                                  [--force-string]\n                                  [--hub-name]\n                                  [--login]\n                                  [--pk]\n                                  [--primary-thumbprint]\n                                  [--remove]\n                                  [--resource-group]\n                                  [--secondary-key]\n                                  [--secondary-thumbprint]\n                                  [--set]\n                                  [--sta {disabled, enabled}]\n                                  [--star]",
+            "required_parameters": [
+                "--device-id -d"
+            ],
+            "optional_parameters": [
+                "--add",
+                "--am --auth-method",
+                "--auth-type",
+                "--edge-enabled --ee",
+                "--etag -e",
+                "--force-string",
+                "--hub-name -n",
+                "--login -l",
+                "--pk --primary-key",
+                "--primary-thumbprint --ptp",
+                "--remove",
+                "--resource-group -g",
+                "--secondary-key --sk",
+                "--secondary-thumbprint --stp",
+                "--set",
+                "--sta --status",
+                "--star --status-reason"
+            ],
+            "examples": [
+                "az iot hub device-identity update -d {device_id} -n {iothub_name} --set capabilities.iotEdge=true",
+                "az iot hub device-identity update -d {device_id} -n {iothub_name} --ee",
+                "az iot hub device-identity update -d {device_id} -n {iothub_name} --set status=disabled",
+                "az iot hub device-identity update -d {device_id} -n {iothub_name} --status disabled",
+                "az iot hub device-identity update -d {device_id} -n {iothub_name} --set status=disabled capabilities.iotEdge=true"
+            ]
+        }
+    ]
+}

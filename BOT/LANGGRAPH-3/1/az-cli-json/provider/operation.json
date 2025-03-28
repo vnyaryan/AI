@@ -1,0 +1,27 @@
+{
+    "command_group": "az provider operation",
+    "description": "Get provider operations metadatas.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az provider operation list",
+            "summary": "Get operations from all providers.",
+            "syntax": "az provider operation list",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az provider operation show",
+            "summary": "Get an individual provider's operations.",
+            "syntax": "az provider operation show --namespace",
+            "required_parameters": [
+                "--namespace -n"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az provider operation show --namespace Microsoft.Storage"
+            ]
+        }
+    ]
+}

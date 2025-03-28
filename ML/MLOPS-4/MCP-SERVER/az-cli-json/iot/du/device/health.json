@@ -1,0 +1,25 @@
+{
+    "command_group": "az iot du device health",
+    "description": "Device health-check utilities.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az iot du device health list",
+            "summary": "List device health with respect to a target filter.",
+            "syntax": "az iot du device health list --account\n                             --filter\n                             --instance\n                             [--resource-group]",
+            "required_parameters": [
+                "--account -n",
+                "--filter",
+                "--instance -i"
+            ],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az iot du device health list -n {account_name} -i {instance_name} --filter \"state eq 'Healthy'\"",
+                "az iot du device health list -n {account_name} -i {instance_name} --filter \"state eq 'Unhealthy'\"",
+                "az iot du device health list -n {account_name} -i {instance_name} --filter \"deviceId eq 'd0'\""
+            ]
+        }
+    ]
+}

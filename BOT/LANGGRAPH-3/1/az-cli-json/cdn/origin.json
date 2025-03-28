@@ -1,0 +1,142 @@
+{
+    "command_group": "az cdn origin",
+    "description": "List or show existing origins related to CDN endpoints.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az cdn origin create",
+            "summary": "Create a new origin within the specified endpoint.",
+            "syntax": "az cdn origin create --endpoint-name\n                     --name\n                     --profile-name\n                     --resource-group\n                     [--disabled {0, 1, f, false, n, no, t, true, y, yes}]\n                     [--enabled {0, 1, f, false, n, no, t, true, y, yes}]\n                     [--host-name]\n                     [--http-port]\n                     [--https-port]\n                     [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                     [--origin-host-header]\n                     [--priority]\n                     [--private-link-alias]\n                     [--private-link-approval-message]\n                     [--private-link-location]\n                     [--private-link-resource-id]\n                     [--weight]",
+            "required_parameters": [
+                "--endpoint-name",
+                "--name --origin-name -n",
+                "--profile-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--disabled",
+                "--enabled",
+                "--host-name",
+                "--http-port",
+                "--https-port",
+                "--no-wait",
+                "--origin-host-header",
+                "--priority",
+                "--private-link-alias",
+                "--private-link-approval-message -m",
+                "--private-link-location -l",
+                "--private-link-resource-id -p",
+                "--weight"
+            ],
+            "examples": [
+                "az cdn origin create -g group --host-name example.contoso.com --profile-name profile --endpoint-name endpoint -n origin --host-name example.contoso.com --origin-host-header example.contoso.com --http-port 80 --https-port 443",
+                "az cdn origin create -g group --host-name example.contoso.com --profile-name profile --endpoint-name endpoint -n origin --http-port 80 --https-port 443 --private-link-resource-id /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/group/providers/Microsoft.Network/privateLinkServices/pls --private-link-location EastUS --private-link-approval-message 'Please approve this request'"
+            ]
+        },
+        {
+            "name": "az cdn origin delete",
+            "summary": "Delete an existing origin within an endpoint.",
+            "syntax": "az cdn origin delete [--endpoint-name]\n                     [--ids]\n                     [--name]\n                     [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                     [--profile-name]\n                     [--resource-group]\n                     [--subscription]\n                     [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--endpoint-name",
+                "--ids",
+                "--name --origin-name -n",
+                "--no-wait",
+                "--profile-name",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az cdn origin list",
+            "summary": "List all of the existing origins within an endpoint.",
+            "syntax": "az cdn origin list --endpoint-name\n                   --profile-name\n                   --resource-group\n                   [--max-items]\n                   [--next-token]",
+            "required_parameters": [
+                "--endpoint-name",
+                "--profile-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az cdn origin show",
+            "summary": "Get an existing origin within an endpoint.",
+            "syntax": "az cdn origin show [--endpoint-name]\n                   [--ids]\n                   [--name]\n                   [--profile-name]\n                   [--resource-group]\n                   [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--endpoint-name",
+                "--ids",
+                "--name --origin-name -n",
+                "--profile-name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az cdn origin update",
+            "summary": "Update a new origin within the specified endpoint.",
+            "syntax": "az cdn origin update [--add]\n                     [--disabled {0, 1, f, false, n, no, t, true, y, yes}]\n                     [--enabled {0, 1, f, false, n, no, t, true, y, yes}]\n                     [--endpoint-name]\n                     [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                     [--host-name]\n                     [--http-port]\n                     [--https-port]\n                     [--ids]\n                     [--name]\n                     [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                     [--origin-host-header]\n                     [--priority]\n                     [--private-link-alias]\n                     [--private-link-approval-message]\n                     [--private-link-location]\n                     [--private-link-resource-id]\n                     [--profile-name]\n                     [--remove]\n                     [--resource-group]\n                     [--set]\n                     [--subscription]\n                     [--weight]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--disabled",
+                "--enabled",
+                "--endpoint-name",
+                "--force-string",
+                "--host-name",
+                "--http-port",
+                "--https-port",
+                "--ids",
+                "--name --origin-name -n",
+                "--no-wait",
+                "--origin-host-header",
+                "--priority",
+                "--private-link-alias",
+                "--private-link-approval-message -m",
+                "--private-link-location -l",
+                "--private-link-resource-id -p",
+                "--profile-name",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--subscription",
+                "--weight"
+            ],
+            "examples": [
+                "az cdn origin update -g group --profile-name profile --endpoint-name endpoint -n origin --http-port 80 --https-port 443 --priority 3 --weight 500 --host-name example.contoso.com",
+                "az cdn origin update -g group --profile-name profile --endpoint-name endpoint -n origin --disabled",
+                "az cdn origin update -g group --profile-name profile --endpoint-name endpoint -n origin --http-port 80 --https-port 443 --private-link-resource-id /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/group/providers/Microsoft.Network/privateLinkServices/pls --private-link-location EastUS --private-link-approval-message 'Please approve this request'"
+            ]
+        },
+        {
+            "name": "az cdn origin wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az cdn origin wait [--created]\n                   [--custom]\n                   [--deleted]\n                   [--endpoint-name]\n                   [--exists]\n                   [--ids]\n                   [--interval]\n                   [--name]\n                   [--profile-name]\n                   [--resource-group]\n                   [--subscription]\n                   [--timeout]\n                   [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--endpoint-name",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--name --origin-name -n",
+                "--profile-name",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

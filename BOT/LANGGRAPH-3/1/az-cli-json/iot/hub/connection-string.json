@@ -1,0 +1,29 @@
+{
+    "command_group": "az iot hub connection-string",
+    "description": "Manage IoT Hub connection strings.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az iot hub connection-string show",
+            "summary": "Show the connection strings for the specified IoT Hubs using the given policy name and key.",
+            "syntax": "az iot hub connection-string show [--all]\n                                  [--default-eventhub {false, true}]\n                                  [--hub-name]\n                                  [--key-type {primary, secondary}]\n                                  [--pn]\n                                  [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--all --show-all",
+                "--default-eventhub --eh",
+                "--hub-name -n",
+                "--key-type --kt",
+                "--pn --policy-name",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az iot hub connection-string show",
+                "az iot hub connection-string show --resource-group MyResourceGroup",
+                "az iot hub connection-string show -n MyIotHub --all",
+                "az iot hub connection-string show -n MyIotHub",
+                "az iot hub connection-string show -n MyIotHub --policy-name service --key-type secondary",
+                "az iot hub connection-string show -n MyIotHub --default-eventhub"
+            ]
+        }
+    ]
+}

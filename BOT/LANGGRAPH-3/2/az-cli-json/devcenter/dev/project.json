@@ -1,0 +1,71 @@
+{
+    "command_group": "az devcenter dev project",
+    "description": "Manage projects.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az devcenter dev project list",
+            "summary": "List all projects.",
+            "syntax": "az devcenter dev project list [--dev-center]\n                              [--endpoint]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--dev-center --dev-center-name -d",
+                "--endpoint"
+            ],
+            "examples": [
+                "az devcenter dev project list --dev-center-name \"ContosoDevCenter\"",
+                "az devcenter dev project list --endpoint \"https://8a40af38-3b4c-4672-a6a4-5e964b1870ed-contosodevcenter.centralus.devcenter.azure.com/\""
+            ]
+        },
+        {
+            "name": "az devcenter dev project list-abilities",
+            "summary": "List the signed-in user's permitted abilities in a project.",
+            "syntax": "az devcenter dev project list-abilities --name\n                                        [--dev-center]\n                                        [--endpoint]\n                                        [--user-id]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--dev-center --dev-center-name -d",
+                "--endpoint",
+                "--user-id"
+            ],
+            "examples": [
+                "az devcenter dev project list-abilities --dev-center-name \"ContosoDevCenter\" --user-id \"00000000-0000-0000-0000-000000000000\" --name \"DevProject\"",
+                "az devcenter dev project list-abilities --endpoint \"https://8a40af38-3b4c-4672-a6a4-5e964b1870ed-contosodevcenter.centralus.devcenter.azure.com/\" --user-id \"00000000-0000-0000-0000-000000000000\" --name \"DevProject\""
+            ]
+        },
+        {
+            "name": "az devcenter dev project show",
+            "summary": "Get a project.",
+            "syntax": "az devcenter dev project show --name\n                              [--dev-center]\n                              [--endpoint]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--dev-center --dev-center-name -d",
+                "--endpoint"
+            ],
+            "examples": [
+                "az devcenter dev project show --dev-center-name \"ContosoDevCenter\" --name \"DevProject\"",
+                "az devcenter dev project show --endpoint \"https://8a40af38-3b4c-4672-a6a4-5e964b1870ed-contosodevcenter.centralus.devcenter.azure.com/\" --name \"DevProject\""
+            ]
+        },
+        {
+            "name": "az devcenter dev project show-operation",
+            "summary": "Get the status of an operation.",
+            "syntax": "az devcenter dev project show-operation --name\n                                        --operation-id\n                                        [--dev-center]\n                                        [--endpoint]",
+            "required_parameters": [
+                "--name -n",
+                "--operation-id"
+            ],
+            "optional_parameters": [
+                "--dev-center --dev-center-name -d",
+                "--endpoint"
+            ],
+            "examples": [
+                "az devcenter dev project show-operation --dev-center-name \"ContosoDevCenter\" --name \"DevProject\" --operation-id \"f5dbdfab-fa0e-4831-8d13-25359aa5e680\"",
+                "az devcenter dev project show-operation --endpoint \"https://8a40af38-3b4c-4672-a6a4-5e964b1870ed-contosodevcenter.centralus.devcenter.azure.com/\" --name \"DevProject\" --operation-id \"f5dbdfab-fa0e-4831-8d13-25359aa5e680\""
+            ]
+        }
+    ]
+}

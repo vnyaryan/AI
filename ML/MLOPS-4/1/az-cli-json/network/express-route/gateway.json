@@ -1,0 +1,117 @@
+{
+    "command_group": "az network express-route gateway",
+    "description": "Manage ExpressRoute gateways.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az network express-route gateway create",
+            "summary": "Create an ExpressRoute gateway.",
+            "syntax": "az network express-route gateway create --name\n                                        --resource-group\n                                        [--allow-non-vwan-traffic {0, 1, f, false, n, no, t, true, y, yes}]\n                                        [--location]\n                                        [--max-val]\n                                        [--min-val]\n                                        [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                        [--tags]\n                                        [--virtual-hub]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--allow-non-vwan-traffic",
+                "--location -l",
+                "--max-val",
+                "--min-val",
+                "--no-wait",
+                "--tags",
+                "--virtual-hub"
+            ],
+            "examples": [
+                "az network express-route gateway create --name MyExpressRouteGateway --resource-group MyResourceGroup --min-val 5"
+            ]
+        },
+        {
+            "name": "az network express-route gateway delete",
+            "summary": "Delete an ExpressRoute gateway.",
+            "syntax": "az network express-route gateway delete [--ids]\n                                        [--name]\n                                        [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                        [--resource-group]\n                                        [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az network express-route gateway delete --name MyExpressRouteGateway --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az network express-route gateway list",
+            "summary": "List ExpressRoute gateways.",
+            "syntax": "az network express-route gateway list [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az network express-route gateway list --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az network express-route gateway show",
+            "summary": "Get the details of an ExpressRoute gateway.",
+            "syntax": "az network express-route gateway show [--ids]\n                                      [--name]\n                                      [--resource-group]\n                                      [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az network express-route gateway show --name MyExpressRouteGateway --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az network express-route gateway update",
+            "summary": "Update settings of an ExpressRoute gateway.",
+            "syntax": "az network express-route gateway update [--add]\n                                        [--allow-non-vwan-traffic {0, 1, f, false, n, no, t, true, y, yes}]\n                                        [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                        [--ids]\n                                        [--location]\n                                        [--max-val]\n                                        [--min-val]\n                                        [--name]\n                                        [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                        [--remove]\n                                        [--resource-group]\n                                        [--set]\n                                        [--subscription]\n                                        [--tags]\n                                        [--virtual-hub]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--allow-non-vwan-traffic",
+                "--force-string",
+                "--ids",
+                "--location -l",
+                "--max-val",
+                "--min-val",
+                "--name -n",
+                "--no-wait",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--subscription",
+                "--tags",
+                "--virtual-hub"
+            ],
+            "examples": [
+                "az network express-route gateway update --name MyExpressRouteGateway --resource-group MyResourceGroup --min-val 3"
+            ]
+        },
+        {
+            "name": "az network express-route gateway wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az network express-route gateway wait [--created]\n                                      [--custom]\n                                      [--deleted]\n                                      [--exists]\n                                      [--ids]\n                                      [--interval]\n                                      [--name]\n                                      [--resource-group]\n                                      [--subscription]\n                                      [--timeout]\n                                      [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

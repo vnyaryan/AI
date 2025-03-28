@@ -1,0 +1,23 @@
+{
+    "command_group": "az devcenter admin project-sku",
+    "description": "Manage project skus.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az devcenter admin project-sku list",
+            "summary": "Lists SKUs available to the project.",
+            "syntax": "az devcenter admin project-sku list --project\n                                    --resource-group\n                                    [--max-items]\n                                    [--next-token]",
+            "required_parameters": [
+                "--project --project-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az devcenter admin project-sku list --project-name \"DevProject\" --resource-group \"rg1\""
+            ]
+        }
+    ]
+}

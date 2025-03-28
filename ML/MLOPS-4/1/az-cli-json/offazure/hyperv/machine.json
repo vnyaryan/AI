@@ -1,0 +1,36 @@
+{
+    "command_group": "az offazure hyperv machine",
+    "description": "Manage Hyper-V machine.",
+    "status": "Experimental",
+    "commands": [
+        {
+            "name": "az offazure hyperv machine list",
+            "summary": "List all machines on the on-premise site.",
+            "syntax": "az offazure hyperv machine list --resource-group\n                                --site-name",
+            "required_parameters": [
+                "--resource-group -g",
+                "--site-name"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az offazure hyperv machine list --resource-group MyResourceGroup --site-name MySiteName"
+            ]
+        },
+        {
+            "name": "az offazure hyperv machine show",
+            "summary": "Get the details of a machine.",
+            "syntax": "az offazure hyperv machine show [--ids]\n                                [--machine-name]\n                                [--resource-group]\n                                [--site-name]\n                                [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--machine-name --name -n",
+                "--resource-group -g",
+                "--site-name",
+                "--subscription"
+            ],
+            "examples": [
+                "az offazure hyperv machine show --machine-name MyMachineName --resource-group                  MyResourceGroup --site-name MySiteName"
+            ]
+        }
+    ]
+}

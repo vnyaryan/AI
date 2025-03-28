@@ -1,0 +1,40 @@
+{
+    "command_group": "az billing transfer",
+    "description": "Manage transfer.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az billing transfer accept-transfer",
+            "summary": "Accepts a transfer request.",
+            "syntax": "az billing transfer accept-transfer --transfer-name\n                                    [--product-details]",
+            "required_parameters": [
+                "--transfer-name"
+            ],
+            "optional_parameters": [
+                "--product-details"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az billing transfer list",
+            "summary": "List the transfer requests received by the caller.",
+            "syntax": "az billing transfer list [--max-items]\n                         [--next-token]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az billing transfer show",
+            "summary": "Get a transfer request by ID. The caller must be the recipient of the transfer request.",
+            "syntax": "az billing transfer show --transfer-name",
+            "required_parameters": [
+                "--transfer-name"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        }
+    ]
+}

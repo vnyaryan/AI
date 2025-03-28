@@ -1,0 +1,78 @@
+{
+    "command_group": "az network front-door load-balancing",
+    "description": "Manage Front Door load-balancing settings.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az network front-door load-balancing create",
+            "summary": "Create Front Door load-balancing settings.",
+            "syntax": "az network front-door load-balancing create --front-door-name\n                                            --name\n                                            --resource-group\n                                            --sample-size\n                                            --successful-samples-required\n                                            [--additional-latency]",
+            "required_parameters": [
+                "--front-door-name -f",
+                "--name -n",
+                "--resource-group -g",
+                "--sample-size",
+                "--successful-samples-required -s"
+            ],
+            "optional_parameters": [
+                "--additional-latency"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az network front-door load-balancing delete",
+            "summary": "Delete Front Door load-balancing settings.",
+            "syntax": "az network front-door load-balancing delete --front-door-name\n                                            --name\n                                            --resource-group",
+            "required_parameters": [
+                "--front-door-name -f",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az network front-door load-balancing list",
+            "summary": "List Front Door load-balancing settingss.",
+            "syntax": "az network front-door load-balancing list --front-door-name\n                                          --resource-group",
+            "required_parameters": [
+                "--front-door-name -f",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az network front-door load-balancing show",
+            "summary": "Get the details of a Front Door load-balancing settings bundle.",
+            "syntax": "az network front-door load-balancing show --front-door-name\n                                          --name\n                                          --resource-group",
+            "required_parameters": [
+                "--front-door-name -f",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az network front-door load-balancing update",
+            "summary": "Update Front Door load-balancing settings.",
+            "syntax": "az network front-door load-balancing update --front-door-name\n                                            --name\n                                            --resource-group\n                                            [--add]\n                                            [--additional-latency]\n                                            [--force-string]\n                                            [--remove]\n                                            [--sample-size]\n                                            [--set]\n                                            [--successful-samples-required]",
+            "required_parameters": [
+                "--front-door-name -f",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--add",
+                "--additional-latency",
+                "--force-string",
+                "--remove",
+                "--sample-size",
+                "--set",
+                "--successful-samples-required -s"
+            ],
+            "examples": []
+        }
+    ]
+}

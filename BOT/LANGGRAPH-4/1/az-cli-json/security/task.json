@@ -1,0 +1,35 @@
+{
+    "command_group": "az security task",
+    "description": "View security tasks (recommendations).",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az security task list",
+            "summary": "List security tasks (recommendations).",
+            "syntax": "az security task list [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az security task list",
+                "az security task list -g \"myRg\""
+            ]
+        },
+        {
+            "name": "az security task show",
+            "summary": "Shows a security task (recommendation).",
+            "syntax": "az security task show --name\n                      [--resource-group]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az security task show -n \"taskName\"",
+                "az security task show -g \"myRg\" -n \"taskName\""
+            ]
+        }
+    ]
+}

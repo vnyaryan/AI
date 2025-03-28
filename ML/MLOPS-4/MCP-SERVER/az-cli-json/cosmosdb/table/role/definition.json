@@ -1,0 +1,93 @@
+{
+    "command_group": "az cosmosdb table role definition",
+    "description": "Manage Azure Cosmos DB Table role definitions.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az cosmosdb table role definition create",
+            "summary": "Create a Table role definition under an Azure Cosmos DB account.",
+            "syntax": "az cosmosdb table role definition create --account-name\n                                         --body\n                                         --resource-group",
+            "required_parameters": [
+                "--account-name -a",
+                "--body -b",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az cosmosdb table role definition create --account-name MyAccount --resource-group MyResourceGroup --body '{\n  \"Id\": \"be79875a-2cc4-40d5-8958-566017875b39\",\n  \"RoleName\": \"My Read Only Role\",\n  \"Type\": \"CustomRole\",\n  \"AssignableScopes\": [\"/dbs/mydb/colls/mycontainer\"],\n  \"Permissions\": [{\n    \"DataActions\": [\n      \"Microsoft.DocumentDB/databaseAccounts/readMetadata\",\n      \"Microsoft.DocumentDB/databaseAccounts/tables/containers/entities/read\",\n      \"Microsoft.DocumentDB/databaseAccounts/tables/containers/executeQuery\",\n      \"Microsoft.DocumentDB/databaseAccounts/tables/containers/readChangeFeed\"\n    ]\n  }]\n}'",
+                "az cosmosdb table role definition create --account-name MyAccount --resource-group MyResourceGroup --body @role-definition.json"
+            ]
+        },
+        {
+            "name": "az cosmosdb table role definition delete",
+            "summary": "Delete a Table role definition under an Azure Cosmos DB account.",
+            "syntax": "az cosmosdb table role definition delete --account-name\n                                         --resource-group\n                                         --role-definition-id\n                                         [--yes]",
+            "required_parameters": [
+                "--account-name -a",
+                "--resource-group -g",
+                "--role-definition-id -i"
+            ],
+            "optional_parameters": [
+                "--yes -y"
+            ],
+            "examples": [
+                "az cosmosdb table role definition delete --account-name MyAccount --resource-group MyResourceGroup --role-definition-id be79875a-2cc4-40d5-8958-566017875b39"
+            ]
+        },
+        {
+            "name": "az cosmosdb table role definition exists",
+            "summary": "Check if an Azure Cosmos DB role definition exists.",
+            "syntax": "az cosmosdb table role definition exists --account-name\n                                         --resource-group\n                                         --role-definition-id",
+            "required_parameters": [
+                "--account-name -a",
+                "--resource-group -g",
+                "--role-definition-id -i"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az cosmosdb table role definition exists --account-name MyAccount --resource-group MyResourceGroup --role-definition-id be79875a-2cc4-40d5-8958-566017875b39"
+            ]
+        },
+        {
+            "name": "az cosmosdb table role definition list",
+            "summary": "List all Table role definitions under an Azure Cosmos DB account.",
+            "syntax": "az cosmosdb table role definition list --account-name\n                                       --resource-group",
+            "required_parameters": [
+                "--account-name -a",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az cosmosdb table role definition list --account-name MyAccount --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az cosmosdb table role definition show",
+            "summary": "Show the properties of a Table role definition under an Azure Cosmos DB account.",
+            "syntax": "az cosmosdb table role definition show --account-name\n                                       --resource-group\n                                       --role-definition-id",
+            "required_parameters": [
+                "--account-name -a",
+                "--resource-group -g",
+                "--role-definition-id -i"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az cosmosdb table role definition show --account-name MyAccount --resource-group MyResourceGroup --role-definition-id be79875a-2cc4-40d5-8958-566017875b39"
+            ]
+        },
+        {
+            "name": "az cosmosdb table role definition update",
+            "summary": "Update a Table role definition under an Azure Cosmos DB account.",
+            "syntax": "az cosmosdb table role definition update --account-name\n                                         --body\n                                         --resource-group",
+            "required_parameters": [
+                "--account-name -a",
+                "--body -b",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az cosmosdb table role definition update --account-name MyAccount --resource-group MyResourceGroup --body @role-definition.json"
+            ]
+        }
+    ]
+}

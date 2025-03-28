@@ -1,0 +1,94 @@
+{
+    "command_group": "az servicebus queue authorization-rule",
+    "description": "Servicebus queue authorization-rule.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az servicebus queue authorization-rule create",
+            "summary": "Create an authorization rule for a queue.",
+            "syntax": "az servicebus queue authorization-rule create --authorization-rule-name\n                                              --namespace-name\n                                              --queue-name\n                                              --resource-group\n                                              [--rights]",
+            "required_parameters": [
+                "--authorization-rule-name --name -n",
+                "--namespace-name",
+                "--queue-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--rights"
+            ],
+            "examples": [
+                "az servicebus queue authorization-rule create --resource-group myresourcegroup --namespace-name mynamespace --queue-name myqueue --name myauthorule --rights Listen"
+            ]
+        },
+        {
+            "name": "az servicebus queue authorization-rule delete",
+            "summary": "Delete a queue authorization rule.",
+            "syntax": "az servicebus queue authorization-rule delete [--authorization-rule-name]\n                                              [--ids]\n                                              [--namespace-name]\n                                              [--queue-name]\n                                              [--resource-group]\n                                              [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--authorization-rule-name --name -n",
+                "--ids",
+                "--namespace-name",
+                "--queue-name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az servicebus queue authorization-rule delete --resource-group myresourcegroup --namespace-name mynamespace --queue-name myqueue --name myauthorule"
+            ]
+        },
+        {
+            "name": "az servicebus queue authorization-rule list",
+            "summary": "List all authorization rules for a queue.",
+            "syntax": "az servicebus queue authorization-rule list --namespace-name\n                                            --queue-name\n                                            --resource-group",
+            "required_parameters": [
+                "--namespace-name",
+                "--queue-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az servicebus queue authorization-rule list --resource-group myresourcegroup --namespace-name mynamespace --queue-name myqueue"
+            ]
+        },
+        {
+            "name": "az servicebus queue authorization-rule show",
+            "summary": "Get an authorization rule for a queue by rule name.",
+            "syntax": "az servicebus queue authorization-rule show [--authorization-rule-name]\n                                            [--ids]\n                                            [--namespace-name]\n                                            [--queue-name]\n                                            [--resource-group]\n                                            [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--authorization-rule-name --name -n",
+                "--ids",
+                "--namespace-name",
+                "--queue-name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az servicebus queue authorization-rule show --resource-group myresourcegroup --namespace-name mynamespace --queue-name myqueue --name myauthorule"
+            ]
+        },
+        {
+            "name": "az servicebus queue authorization-rule update",
+            "summary": "Update an authorization rule for a queue.",
+            "syntax": "az servicebus queue authorization-rule update [--add]\n                                              [--authorization-rule-name]\n                                              [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                              [--ids]\n                                              [--namespace-name]\n                                              [--queue-name]\n                                              [--remove]\n                                              [--resource-group]\n                                              [--rights]\n                                              [--set]\n                                              [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--authorization-rule-name --name -n",
+                "--force-string",
+                "--ids",
+                "--namespace-name",
+                "--queue-name",
+                "--remove",
+                "--resource-group -g",
+                "--rights",
+                "--set",
+                "--subscription"
+            ],
+            "examples": [
+                "az servicebus queue authorization-rule update --resource-group myresourcegroup --namespace-name mynamespace --queue-name myqueue --name myauthorule --rights Send"
+            ]
+        }
+    ]
+}

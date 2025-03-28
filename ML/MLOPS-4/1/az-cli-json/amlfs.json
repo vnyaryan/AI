@@ -1,0 +1,178 @@
+{
+    "command_group": "az amlfs",
+    "description": "Manage lustre file system.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az amlfs archive",
+            "summary": "Archive data from the AML file system.",
+            "syntax": "az amlfs archive [--amlfs-name]\n                 [--filesystem-path]\n                 [--ids]\n                 [--resource-group]\n                 [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--amlfs-name",
+                "--filesystem-path",
+                "--ids",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az amlfs archive --amlfs-name name -g rg"
+            ]
+        },
+        {
+            "name": "az amlfs cancel-archive",
+            "summary": "Cancel archiving data from the AML file system.",
+            "syntax": "az amlfs cancel-archive [--amlfs-name]\n                        [--ids]\n                        [--resource-group]\n                        [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--amlfs-name",
+                "--ids",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az amlfs cancel-archive --amlfs-name name -g rg"
+            ]
+        },
+        {
+            "name": "az amlfs check-amlfs-subnet",
+            "summary": "Check that subnets will be valid for AML file system create calls.",
+            "syntax": "az amlfs check-amlfs-subnet [--filesystem-subnet]\n                            [--location]\n                            [--sku]\n                            [--storage-capacity]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--filesystem-subnet",
+                "--location",
+                "--sku",
+                "--storage-capacity"
+            ],
+            "examples": [
+                "az amlfs check-amlfs-subnet --filesystem-subnet subnet_id --sku AMLFS-Durable-Premium-250 --location eastus --storage-capacity-tb 16"
+            ]
+        },
+        {
+            "name": "az amlfs create",
+            "summary": "Create an AML file system.",
+            "syntax": "az amlfs create --aml-filesystem-name\n                --resource-group\n                [--encryption-setting]\n                [--filesystem-subnet]\n                [--hsm-settings]\n                [--location]\n                [--maintenance-window]\n                [--mi-user-assigned]\n                [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                [--sku]\n                [--storage-capacity]\n                [--tags]\n                [--zones]",
+            "required_parameters": [
+                "--aml-filesystem-name --name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--encryption-setting",
+                "--filesystem-subnet",
+                "--hsm-settings",
+                "--location -l",
+                "--maintenance-window",
+                "--mi-user-assigned",
+                "--no-wait",
+                "--sku",
+                "--storage-capacity",
+                "--tags",
+                "--zones"
+            ],
+            "examples": [
+                "az amlfs create -n amlfs_name -g rg --sku AMLFS-Durable-Premium-250 --storage-capacity 16 --zones [1] --maintenance-window \"{dayOfWeek:friday,timeOfDayUtc:'22:00'}\" --filesystem-subnet subnet_id"
+            ]
+        },
+        {
+            "name": "az amlfs delete",
+            "summary": "Delete an AML file system for deletion.",
+            "syntax": "az amlfs delete [--aml-filesystem-name]\n                [--ids]\n                [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                [--resource-group]\n                [--subscription]\n                [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--aml-filesystem-name --name -n",
+                "--ids",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az amlfs delete -n amlfs_name -g rg"
+            ]
+        },
+        {
+            "name": "az amlfs get-subnets-size",
+            "summary": "Get the number of available IP addresses needed for the AML file system information provided.",
+            "syntax": "az amlfs get-subnets-size [--sku]\n                          [--storage-capacity]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--sku",
+                "--storage-capacity"
+            ],
+            "examples": [
+                "az amlfs get-subnets-size --sku AMLFS-Durable-Premium-250 --storage-capacity-tb 16"
+            ]
+        },
+        {
+            "name": "az amlfs list",
+            "summary": "List all AML file systems the user has access to under a resource group.",
+            "syntax": "az amlfs list [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az amlfs list -g rg"
+            ]
+        },
+        {
+            "name": "az amlfs show",
+            "summary": "Get an AML file system.",
+            "syntax": "az amlfs show [--aml-filesystem-name]\n              [--ids]\n              [--resource-group]\n              [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--aml-filesystem-name --name -n",
+                "--ids",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az amlfs show -n name -g rg"
+            ]
+        },
+        {
+            "name": "az amlfs update",
+            "summary": "Update an AML file system.",
+            "syntax": "az amlfs update [--add]\n                [--aml-filesystem-name]\n                [--encryption-setting]\n                [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                [--ids]\n                [--maintenance-window]\n                [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                [--remove]\n                [--resource-group]\n                [--set]\n                [--subscription]\n                [--tags]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--aml-filesystem-name --name -n",
+                "--encryption-setting",
+                "--force-string",
+                "--ids",
+                "--maintenance-window",
+                "--no-wait",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--subscription",
+                "--tags"
+            ],
+            "examples": [
+                "az amlfs update -n name -g rg --tags \"{tag:test}\""
+            ]
+        },
+        {
+            "name": "az amlfs wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az amlfs wait [--aml-filesystem-name]\n              [--created]\n              [--custom]\n              [--deleted]\n              [--exists]\n              [--ids]\n              [--interval]\n              [--resource-group]\n              [--subscription]\n              [--timeout]\n              [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--aml-filesystem-name --name -n",
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

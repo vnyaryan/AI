@@ -1,0 +1,6 @@
+{
+    "command_group": "az stack-hci-vm network",
+    "description": "Manage network with stack-hvi-vm.",
+    "status": "GA",
+    "commands": []
+}

@@ -1,0 +1,68 @@
+{
+    "command_group": "az acr export-pipeline",
+    "description": "Manage ACR export pipelines.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az acr export-pipeline create",
+            "summary": "Create an export pipeline.",
+            "syntax": "az acr export-pipeline create --name\n                              --registry\n                              --resource-group\n                              --secret-uri\n                              --storage-container-uri\n                              [--assign-identity]\n                              [--options]",
+            "required_parameters": [
+                "--name -n",
+                "--registry -r",
+                "--resource-group -g",
+                "--secret-uri -s",
+                "--storage-container-uri -c"
+            ],
+            "optional_parameters": [
+                "--assign-identity -i",
+                "--options -z"
+            ],
+            "examples": [
+                "az acr export-pipeline create --resource-group $MyRG --registry $MyReg --name $MyPipeline --secret-uri https://$MyKV.vault.azure.net/secrets/$MySecret --storage-container-uri https://$MyStorage.blob.core.windows.net/$MyContainer",
+                "az acr export-pipeline create --resource-group $MyRG --registry $MyReg --name $MyPipeline --secret-uri https://$MyKV.vault.azure.net/secrets/$MySecret --storage-container-uri https://$MyStorage.blob.core.windows.net/$MyContainer --options OverwriteBlobs ContinueOnErrors --assign-identity /subscriptions/$MySubID/resourceGroups/$MyRG/providers/Microsoft.ManagedIdentity/userAssignedIdentities/$MyIdentity"
+            ]
+        },
+        {
+            "name": "az acr export-pipeline delete",
+            "summary": "Delete an export pipeline.",
+            "syntax": "az acr export-pipeline delete --name\n                              --registry\n                              --resource-group",
+            "required_parameters": [
+                "--name -n",
+                "--registry -r",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az acr export-pipeline delete --resource-group $MyRG --registry $MyReg --name $MyPipeline"
+            ]
+        },
+        {
+            "name": "az acr export-pipeline list",
+            "summary": "List export pipelines on a Container Registry.",
+            "syntax": "az acr export-pipeline list --registry\n                            --resource-group",
+            "required_parameters": [
+                "--registry -r",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az acr export-pipeline list --resource-group $MyRG --registry $MyReg"
+            ]
+        },
+        {
+            "name": "az acr export-pipeline show",
+            "summary": "Show an export pipeline in detail.",
+            "syntax": "az acr export-pipeline show --name\n                            --registry\n                            --resource-group",
+            "required_parameters": [
+                "--name -n",
+                "--registry -r",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az acr export-pipeline show --resource-group $MyRG --registry $MyReg --name $MyPipeline"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,141 @@
+{
+    "command_group": "az providerhub custom-rollout",
+    "description": "Manage custom rollout with providerhub.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az providerhub custom-rollout create",
+            "summary": "Create the rollout details.",
+            "syntax": "az providerhub custom-rollout create --name\n                                     --provider-namespace\n                                     [--auto-provision-config]\n                                     [--canary]\n                                     [--manifest-checkin-spec]\n                                     [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                     [--provider-registration]\n                                     [--refresh-sub-reg {0, 1, f, false, n, no, t, true, y, yes}]\n                                     [--release-scopes]\n                                     [--resource-type-registrations]\n                                     [--skip-release-scope-validation {0, 1, f, false, n, no, t, true, y, yes}]\n                                     [--status]",
+            "required_parameters": [
+                "--name --rollout-name -n",
+                "--provider-namespace"
+            ],
+            "optional_parameters": [
+                "--auto-provision-config",
+                "--canary",
+                "--manifest-checkin-spec --manifest-checkin-specification",
+                "--no-wait",
+                "--provider-registration",
+                "--refresh-sub-reg --refresh-subscription-registration",
+                "--release-scopes",
+                "--resource-type-registrations --rt-regs",
+                "--skip-release-scope-validation --skip-validation",
+                "--status"
+            ],
+            "examples": [
+                "az providerhub custom-rollout create --provider-namespace \"{providerNamespace}\" --rollout-name \"{customRolloutName}\" --canary region=\"EastUS2EUAP\" region=\"centraluseuap\""
+            ]
+        },
+        {
+            "name": "az providerhub custom-rollout delete",
+            "summary": "Delete the custom rollout resource. Custom rollout must be in terminal state.",
+            "syntax": "az providerhub custom-rollout delete [--ids]\n                                     [--name]\n                                     [--provider-namespace]\n                                     [--subscription]\n                                     [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --rollout-name -n",
+                "--provider-namespace",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az providerhub custom-rollout delete --provider-namespace \"{providerNamespace}\" --rollout-name \"{customRolloutName}\""
+            ]
+        },
+        {
+            "name": "az providerhub custom-rollout list",
+            "summary": "List the list of the custom rollouts for the given provider.",
+            "syntax": "az providerhub custom-rollout list --provider-namespace\n                                   [--max-items]\n                                   [--next-token]",
+            "required_parameters": [
+                "--provider-namespace"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az providerhub custom-rollout list --provider-namespace \"{providerNamespace}\""
+            ]
+        },
+        {
+            "name": "az providerhub custom-rollout show",
+            "summary": "Get the custom rollout details.",
+            "syntax": "az providerhub custom-rollout show [--ids]\n                                   [--name]\n                                   [--provider-namespace]\n                                   [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --rollout-name -n",
+                "--provider-namespace",
+                "--subscription"
+            ],
+            "examples": [
+                "az providerhub custom-rollout show --provider-namespace \"{providerNamespace}\" --rollout-name \"{customRolloutName}\""
+            ]
+        },
+        {
+            "name": "az providerhub custom-rollout stop",
+            "summary": "Stops or cancels the custom rollout, if in progress.",
+            "syntax": "az providerhub custom-rollout stop [--ids]\n                                   [--provider-namespace]\n                                   [--rollout-name]\n                                   [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--provider-namespace",
+                "--rollout-name",
+                "--subscription"
+            ],
+            "examples": [
+                "az providerhub custom-rollout stop --provider-namespace \"{providerNamespace}\" --rollout-name \"{customRolloutName}\""
+            ]
+        },
+        {
+            "name": "az providerhub custom-rollout update",
+            "summary": "Update the rollout details.",
+            "syntax": "az providerhub custom-rollout update [--add]\n                                     [--auto-provision-config]\n                                     [--canary]\n                                     [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                     [--ids]\n                                     [--manifest-checkin-spec]\n                                     [--name]\n                                     [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                     [--provider-namespace]\n                                     [--provider-registration]\n                                     [--refresh-sub-reg {0, 1, f, false, n, no, t, true, y, yes}]\n                                     [--release-scopes]\n                                     [--remove]\n                                     [--resource-type-registrations]\n                                     [--set]\n                                     [--skip-release-scope-validation {0, 1, f, false, n, no, t, true, y, yes}]\n                                     [--status]\n                                     [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--auto-provision-config",
+                "--canary",
+                "--force-string",
+                "--ids",
+                "--manifest-checkin-spec --manifest-checkin-specification",
+                "--name --rollout-name -n",
+                "--no-wait",
+                "--provider-namespace",
+                "--provider-registration",
+                "--refresh-sub-reg --refresh-subscription-registration",
+                "--release-scopes",
+                "--remove",
+                "--resource-type-registrations --rt-regs",
+                "--set",
+                "--skip-release-scope-validation --skip-validation",
+                "--status",
+                "--subscription"
+            ],
+            "examples": [
+                "az providerhub custom-rollout update --provider-namespace \"{providerNamespace}\" --rollout-name \"{customRolloutName}\" --canary region=\"EastUS2EUAP\" region=\"centraluseuap\""
+            ]
+        },
+        {
+            "name": "az providerhub custom-rollout wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az providerhub custom-rollout wait [--created]\n                                   [--custom]\n                                   [--deleted]\n                                   [--exists]\n                                   [--ids]\n                                   [--interval]\n                                   [--name]\n                                   [--provider-namespace]\n                                   [--subscription]\n                                   [--timeout]\n                                   [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--name --rollout-name -n",
+                "--provider-namespace",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

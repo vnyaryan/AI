@@ -1,0 +1,26 @@
+{
+    "command_group": "az monitor log-analytics workspace table restore",
+    "description": "Manage tables for log analytics workspace restore logs table.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az monitor log-analytics workspace table restore create",
+            "summary": "Create a Log Analytics workspace restore logs table. The table name needs to end with '_RST'.",
+            "syntax": "az monitor log-analytics workspace table restore create --end-restore-time\n                                                        --name\n                                                        --resource-group\n                                                        --restore-source-table\n                                                        --start-restore-time\n                                                        --workspace-name\n                                                        [--no-wait]",
+            "required_parameters": [
+                "--end-restore-time",
+                "--name -n",
+                "--resource-group -g",
+                "--restore-source-table",
+                "--start-restore-time",
+                "--workspace-name"
+            ],
+            "optional_parameters": [
+                "--no-wait"
+            ],
+            "examples": [
+                "az monitor log-analytics workspace table restore create --resource-group MyResourceGroup --workspace-name MyWorkspace -n MyTable_RST --start-restore-time \"Sat, 28 Aug 2021 05:29:18 GMT\" --end-restore-time \"Sat, 28 Aug 2021 08:29:18 GMT\" --restore-source-table MyTable"
+            ]
+        }
+    ]
+}

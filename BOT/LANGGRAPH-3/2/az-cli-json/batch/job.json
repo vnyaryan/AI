@@ -1,0 +1,221 @@
+{
+    "command_group": "az batch job",
+    "description": "Manage Batch jobs.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az batch job create",
+            "summary": "Add a job to a Batch account.",
+            "syntax": "az batch job create [--account-endpoint]\n                    [--account-key]\n                    [--account-name]\n                    [--allow-task-preemption]\n                    [--id]\n                    [--job-manager-task-application-package-references]\n                    [--job-manager-task-command-line]\n                    [--job-manager-task-environment-settings]\n                    [--job-manager-task-id]\n                    [--job-manager-task-resource-files]\n                    [--job-max-task-retry-count]\n                    [--job-max-wall-clock-time]\n                    [--json-file]\n                    [--max-parallel-tasks]\n                    [--metadata]\n                    [--on-all-tasks-complete]\n                    [--pool-id]\n                    [--priority]\n                    [--required-slots]\n                    [--uses-task-dependencies]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account-endpoint",
+                "--account-key",
+                "--account-name",
+                "--allow-task-preemption",
+                "--id",
+                "--job-manager-task-application-package-references",
+                "--job-manager-task-command-line",
+                "--job-manager-task-environment-settings",
+                "--job-manager-task-id",
+                "--job-manager-task-resource-files",
+                "--job-max-task-retry-count",
+                "--job-max-wall-clock-time",
+                "--json-file",
+                "--max-parallel-tasks",
+                "--metadata",
+                "--on-all-tasks-complete",
+                "--pool-id",
+                "--priority",
+                "--required-slots",
+                "--uses-task-dependencies"
+            ],
+            "examples": [
+                "az batch job create --id job1 --pool-id pool1"
+            ]
+        },
+        {
+            "name": "az batch job delete",
+            "summary": "Deletes a job from a Batch account.",
+            "syntax": "az batch job delete --job-id\n                    [--account-endpoint]\n                    [--account-key]\n                    [--account-name]\n                    [--if-match]\n                    [--if-modified-since]\n                    [--if-none-match]\n                    [--if-unmodified-since]\n                    [--yes]",
+            "required_parameters": [
+                "--job-id"
+            ],
+            "optional_parameters": [
+                "--account-endpoint",
+                "--account-key",
+                "--account-name",
+                "--if-match",
+                "--if-modified-since",
+                "--if-none-match",
+                "--if-unmodified-since",
+                "--yes -y"
+            ],
+            "examples": [
+                "az batch job delete --job-id job1 --yes"
+            ]
+        },
+        {
+            "name": "az batch job disable",
+            "summary": "Disable a Batch job.",
+            "syntax": "az batch job disable --job-id\n                     [--account-endpoint]\n                     [--account-key]\n                     [--account-name]\n                     [--disable-tasks]\n                     [--if-match]\n                     [--if-modified-since]\n                     [--if-none-match]\n                     [--if-unmodified-since]\n                     [--json-file]",
+            "required_parameters": [
+                "--job-id"
+            ],
+            "optional_parameters": [
+                "--account-endpoint",
+                "--account-key",
+                "--account-name",
+                "--disable-tasks",
+                "--if-match",
+                "--if-modified-since",
+                "--if-none-match",
+                "--if-unmodified-since",
+                "--json-file"
+            ],
+            "examples": [
+                "az batch job disable --job-id job1 --disable-tasks requeue"
+            ]
+        },
+        {
+            "name": "az batch job enable",
+            "summary": "Enable a Batch job.",
+            "syntax": "az batch job enable --job-id\n                    [--account-endpoint]\n                    [--account-key]\n                    [--account-name]\n                    [--if-match]\n                    [--if-modified-since]\n                    [--if-none-match]\n                    [--if-unmodified-since]",
+            "required_parameters": [
+                "--job-id"
+            ],
+            "optional_parameters": [
+                "--account-endpoint",
+                "--account-key",
+                "--account-name",
+                "--if-match",
+                "--if-modified-since",
+                "--if-none-match",
+                "--if-unmodified-since"
+            ],
+            "examples": [
+                "az batch job enable --job-id job1"
+            ]
+        },
+        {
+            "name": "az batch job list",
+            "summary": "List all of the jobs or job schedule in a Batch account.",
+            "syntax": "az batch job list [--account-endpoint]\n                  [--account-key]\n                  [--account-name]\n                  [--expand]\n                  [--filter]\n                  [--job-schedule-id]\n                  [--select]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account-endpoint",
+                "--account-key",
+                "--account-name",
+                "--expand",
+                "--filter",
+                "--job-schedule-id",
+                "--select"
+            ],
+            "examples": [
+                "az batch job list",
+                "az batch job list --job-schedule-id jobschedule1"
+            ]
+        },
+        {
+            "name": "az batch job reset",
+            "summary": "Update the properties of a Batch job. Unspecified properties which can be updated are reset to their defaults.",
+            "syntax": "az batch job reset --job-id\n                   [--account-endpoint]\n                   [--account-key]\n                   [--account-name]\n                   [--allow-task-preemption]\n                   [--if-match]\n                   [--if-modified-since]\n                   [--if-none-match]\n                   [--if-unmodified-since]\n                   [--job-max-task-retry-count]\n                   [--job-max-wall-clock-time]\n                   [--json-file]\n                   [--max-parallel-tasks]\n                   [--metadata]\n                   [--on-all-tasks-complete]\n                   [--pool-id]\n                   [--priority]",
+            "required_parameters": [
+                "--job-id"
+            ],
+            "optional_parameters": [
+                "--account-endpoint",
+                "--account-key",
+                "--account-name",
+                "--allow-task-preemption",
+                "--if-match",
+                "--if-modified-since",
+                "--if-none-match",
+                "--if-unmodified-since",
+                "--job-max-task-retry-count",
+                "--job-max-wall-clock-time",
+                "--json-file",
+                "--max-parallel-tasks",
+                "--metadata",
+                "--on-all-tasks-complete",
+                "--pool-id",
+                "--priority"
+            ],
+            "examples": [
+                "az batch job reset --job-id job1 --priority 100"
+            ]
+        },
+        {
+            "name": "az batch job set",
+            "summary": "Update the properties of a Batch job. Updating a property in a subgroup will reset the unspecified properties of that group.",
+            "syntax": "az batch job set --job-id\n                 [--account-endpoint]\n                 [--account-key]\n                 [--account-name]\n                 [--allow-task-preemption]\n                 [--if-match]\n                 [--if-modified-since]\n                 [--if-none-match]\n                 [--if-unmodified-since]\n                 [--job-max-task-retry-count]\n                 [--job-max-wall-clock-time]\n                 [--json-file]\n                 [--max-parallel-tasks]\n                 [--metadata]\n                 [--on-all-tasks-complete]\n                 [--pool-id]\n                 [--priority]",
+            "required_parameters": [
+                "--job-id"
+            ],
+            "optional_parameters": [
+                "--account-endpoint",
+                "--account-key",
+                "--account-name",
+                "--allow-task-preemption",
+                "--if-match",
+                "--if-modified-since",
+                "--if-none-match",
+                "--if-unmodified-since",
+                "--job-max-task-retry-count",
+                "--job-max-wall-clock-time",
+                "--json-file",
+                "--max-parallel-tasks",
+                "--metadata",
+                "--on-all-tasks-complete",
+                "--pool-id",
+                "--priority"
+            ],
+            "examples": [
+                "az batch job set --job-id job1 --priority 100"
+            ]
+        },
+        {
+            "name": "az batch job show",
+            "summary": "Gets information about the specified Batch job.",
+            "syntax": "az batch job show --job-id\n                  [--account-endpoint]\n                  [--account-key]\n                  [--account-name]\n                  [--expand]\n                  [--if-match]\n                  [--if-modified-since]\n                  [--if-none-match]\n                  [--if-unmodified-since]\n                  [--select]",
+            "required_parameters": [
+                "--job-id"
+            ],
+            "optional_parameters": [
+                "--account-endpoint",
+                "--account-key",
+                "--account-name",
+                "--expand",
+                "--if-match",
+                "--if-modified-since",
+                "--if-none-match",
+                "--if-unmodified-since",
+                "--select"
+            ],
+            "examples": [
+                "az batch job show --job-id job1"
+            ]
+        },
+        {
+            "name": "az batch job stop",
+            "summary": "Stop a running Batch job.",
+            "syntax": "az batch job stop --job-id\n                  [--account-endpoint]\n                  [--account-key]\n                  [--account-name]\n                  [--if-match]\n                  [--if-modified-since]\n                  [--if-none-match]\n                  [--if-unmodified-since]\n                  [--terminate-reason]",
+            "required_parameters": [
+                "--job-id"
+            ],
+            "optional_parameters": [
+                "--account-endpoint",
+                "--account-key",
+                "--account-name",
+                "--if-match",
+                "--if-modified-since",
+                "--if-none-match",
+                "--if-unmodified-since",
+                "--terminate-reason"
+            ],
+            "examples": [
+                "az batch job stop --job-id job1 --terminate-reason \"Completed workflow\""
+            ]
+        }
+    ]
+}

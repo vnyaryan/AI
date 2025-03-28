@@ -1,0 +1,32 @@
+{
+    "command_group": "az policy metadata",
+    "description": "Get policy metadata resources.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az policy metadata list",
+            "summary": "List policy metadata resources.",
+            "syntax": "az policy metadata list [--top]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--top"
+            ],
+            "examples": [
+                "az policy metadata list",
+                "az policy metadata list --top 5"
+            ]
+        },
+        {
+            "name": "az policy metadata show",
+            "summary": "Get a single policy metadata resource.",
+            "syntax": "az policy metadata show --name",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az policy metadata show --name ACF1000"
+            ]
+        }
+    ]
+}

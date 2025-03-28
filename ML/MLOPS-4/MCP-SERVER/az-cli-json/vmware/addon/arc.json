@@ -1,0 +1,76 @@
+{
+    "command_group": "az vmware addon arc",
+    "description": "Commands to manage a Arc addon.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az vmware addon arc create",
+            "summary": "Create an Arc addon for a private cloud.",
+            "syntax": "az vmware addon arc create --private-cloud\n                           --resource-group\n                           [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                           [--vcenter]",
+            "required_parameters": [
+                "--private-cloud -c",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--no-wait",
+                "--vcenter"
+            ],
+            "examples": [
+                "az vmware addon vr show --resource-group MyResourceGroup --private-cloud MyPrivateCloud"
+            ]
+        },
+        {
+            "name": "az vmware addon arc delete",
+            "summary": "Delete an Arc addon for a private cloud.",
+            "syntax": "az vmware addon arc delete [--ids]\n                           [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                           [--private-cloud]\n                           [--resource-group]\n                           [--subscription]\n                           [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--no-wait",
+                "--private-cloud -c",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az vmware addon arc delete --resource-group MyResourceGroup --private-cloud MyPrivateCloud"
+            ]
+        },
+        {
+            "name": "az vmware addon arc show",
+            "summary": "Show details of an Arc addon for a private cloud.",
+            "syntax": "az vmware addon arc show [--ids]\n                         [--private-cloud]\n                         [--resource-group]\n                         [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--private-cloud -c",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az vmware addon arc show --resource-group MyResourceGroup --private-cloud MyPrivateCloud"
+            ]
+        },
+        {
+            "name": "az vmware addon arc update",
+            "summary": "Update an Arc addon for a private cloud.",
+            "syntax": "az vmware addon arc update [--add]\n                           [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                           [--ids]\n                           [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                           [--private-cloud]\n                           [--remove]\n                           [--resource-group]\n                           [--set]\n                           [--subscription]\n                           [--vcenter]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--force-string",
+                "--ids",
+                "--no-wait",
+                "--private-cloud -c",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--subscription",
+                "--vcenter"
+            ],
+            "examples": [
+                "az vmware addon arc update --resource-group MyResourceGroup --private-cloud MyPrivateCloud --vcenter \"00000000-0000-0000-0000-000000000000\""
+            ]
+        }
+    ]
+}

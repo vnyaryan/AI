@@ -1,0 +1,161 @@
+{
+    "command_group": "az akshybrid",
+    "description": "Manage provisioned clusters.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az akshybrid create",
+            "summary": "Creates the provisioned cluster.",
+            "syntax": "az akshybrid create --custom-location\n                    --name\n                    --resource-group\n                    [--aad-admin-group-object-ids]\n                    [--arc-agent-auto-upgrade]\n                    [--arc-agent-version]\n                    [--control-plane-count]\n                    [--control-plane-ip]\n                    [--control-plane-vm-size]\n                    [--generate-ssh-keys]\n                    [--kubernetes-version]\n                    [--load-balancer-count]\n                    [--location]\n                    [--no-ssh-key]\n                    [--no-wait]\n                    [--node-count]\n                    [--node-vm-size]\n                    [--pod-cidr]\n                    [--ssh-key-value]\n                    [--tags]\n                    [--vnet-ids]",
+            "required_parameters": [
+                "--custom-location",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--aad-admin-group-object-ids -i",
+                "--arc-agent-auto-upgrade",
+                "--arc-agent-version",
+                "--control-plane-count",
+                "--control-plane-ip",
+                "--control-plane-vm-size",
+                "--generate-ssh-keys",
+                "--kubernetes-version -k",
+                "--load-balancer-count",
+                "--location -l",
+                "--no-ssh-key -x",
+                "--no-wait",
+                "--node-count -c",
+                "--node-vm-size",
+                "--pod-cidr",
+                "--ssh-key-value",
+                "--tags",
+                "--vnet-ids"
+            ],
+            "examples": [
+                "az akshybrid create -g sample-rg --custom-location sample-cl -n sample-akshybridcluster --vnet-id vnet1"
+            ]
+        },
+        {
+            "name": "az akshybrid delete",
+            "summary": "Deletes the provisioned cluster.",
+            "syntax": "az akshybrid delete --name\n                    --resource-group\n                    [--no-wait]\n                    [--yes]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--no-wait",
+                "--yes -y"
+            ],
+            "examples": [
+                "az akshybrid delete --name \"sample-akshybridcluster\" --resource-group \"sample-rg\""
+            ]
+        },
+        {
+            "name": "az akshybrid get-credentials",
+            "summary": "Get local kubeconfig of the provisioned cluster.",
+            "syntax": "az akshybrid get-credentials --name\n                             --resource-group\n                             [--admin]\n                             [--context]\n                             [--file]\n                             [--overwrite-existing]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--admin -a",
+                "--context",
+                "--file -f",
+                "--overwrite-existing"
+            ],
+            "examples": [
+                "az akshybrid get-credentials --name \"sample-akshybridcluster\" --resource-group \"sample-rg\" --admin",
+                "az akshybrid get-credentials --name \"sample-akshybridcluster\" --resource-group \"sample-rg\""
+            ]
+        },
+        {
+            "name": "az akshybrid get-upgrades",
+            "summary": "Get the upgrade versions available for the provisioned cluster.",
+            "syntax": "az akshybrid get-upgrades --name\n                          --resource-group",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az akshybrid get-upgrades --name \"samplecluster\" --resource-group \"sample-rg\""
+            ]
+        },
+        {
+            "name": "az akshybrid get-versions",
+            "summary": "List the supported Kubernetes versions in the specified custom location.",
+            "syntax": "az akshybrid get-versions --custom-location\n                          --resource-group",
+            "required_parameters": [
+                "--custom-location",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az akshybrid get-versions -g sample-rg --custom-location sample-cl"
+            ]
+        },
+        {
+            "name": "az akshybrid notice",
+            "summary": "Output NOTICE file to user specified filepath.",
+            "syntax": "az akshybrid notice --output-filepath",
+            "required_parameters": [
+                "--output-filepath"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az akshybrid notice --output-filepath \"./Notice\""
+            ]
+        },
+        {
+            "name": "az akshybrid show",
+            "summary": "Gets the provisioned cluster.",
+            "syntax": "az akshybrid show --name\n                  --resource-group",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az akshybrid show --name \"sample-akshybridcluster\" --resource-group \"sample-rg\""
+            ]
+        },
+        {
+            "name": "az akshybrid update",
+            "summary": "Updates the provisioned cluster.",
+            "syntax": "az akshybrid update --name\n                    --resource-group\n                    [--aad-admin-group-object-ids]\n                    [--tags]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--aad-admin-group-object-ids -i",
+                "--tags"
+            ],
+            "examples": [
+                "az akshybrid update --tags additionalProperties=\"sample\" --name \"sample-akshybridcluster\" --resource-group \"sample-rg\""
+            ]
+        },
+        {
+            "name": "az akshybrid upgrade",
+            "summary": "Upgrades the provisioned cluster.",
+            "syntax": "az akshybrid upgrade --name\n                     --resource-group\n                     [--kubernetes-version]\n                     [--no-wait]\n                     [--node-image-only]\n                     [--yes]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--kubernetes-version -k",
+                "--no-wait",
+                "--node-image-only",
+                "--yes"
+            ],
+            "examples": [
+                "az akshybrid upgrade --name \"sample-akshybridcluster\" --resource-group \"sample-rg\" --kubernetes-version v1.22.2",
+                "az akshybrid upgrade --name \"sample-akshybridcluster\" --resource-group \"sample-rg\" --node-image-only"
+            ]
+        }
+    ]
+}

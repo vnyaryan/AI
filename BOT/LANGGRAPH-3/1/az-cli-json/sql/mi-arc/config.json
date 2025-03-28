@@ -1,0 +1,73 @@
+{
+    "command_group": "az sql mi-arc config",
+    "description": "Configuration commands.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az sql mi-arc config add",
+            "summary": "Add a value for a json path in a config file.",
+            "syntax": "az sql mi-arc config add --json-values\n                         --path",
+            "required_parameters": [
+                "--json-values -j",
+                "--path -p"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az sql mi-arc config add --path custom/spec.json --json-values 'spec.storage={\"accessMode\":\"ReadWriteOnce\",\"className\":\"managed-premium\",\"size\":\"10Gi\"}'"
+            ]
+        },
+        {
+            "name": "az sql mi-arc config init",
+            "summary": "Initialize the CRD and specification files for a SQL managed instance.",
+            "syntax": "az sql mi-arc config init --path",
+            "required_parameters": [
+                "--path -p"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az sql mi-arc config init --path ./template"
+            ]
+        },
+        {
+            "name": "az sql mi-arc config patch",
+            "summary": "Patch a config file based on a json patch file.",
+            "syntax": "az sql mi-arc config patch --patch-file\n                           --path",
+            "required_parameters": [
+                "--patch-file",
+                "--path -p"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az sql mi-arc config patch --path custom/spec.json --patch ./patch.json\n\n    Patch File Example (patch.json):\n        {\"patch\":[{\"op\":\"replace\",\"path\":\"$.spec.endpoints[?(@.name=='Controller')].port\",\"value\":30080}]}",
+                "az sql mi-arc config patch --path custom/spec.json --patch ./patch.json\n\n    Patch File Example (patch.json):\n        {\"patch\":[{\"op\":\"replace\",\"path\":\".spec.storage\",\"value\":{\"accessMode\":\"ReadWriteMany\",\"className\":\"managed-premium\",\"size\":\"10Gi\"}}]}"
+            ]
+        },
+        {
+            "name": "az sql mi-arc config remove",
+            "summary": "Remove a value for a json path in a config file.",
+            "syntax": "az sql mi-arc config remove --json-path\n                            --path",
+            "required_parameters": [
+                "--json-path -j",
+                "--path -p"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az sql mi-arc config remove --path custom/spec.json --json-path '.spec.storage'"
+            ]
+        },
+        {
+            "name": "az sql mi-arc config replace",
+            "summary": "Replace a value for a json path in a config file.",
+            "syntax": "az sql mi-arc config replace --json-values\n                             --path",
+            "required_parameters": [
+                "--json-values -j",
+                "--path -p"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az sql mi-arc config replace --path custom/spec.json --json-values '$.spec.endpoints[?(@.name==\"Controller\")].port=30080'",
+                "az sql mi-arc config replace --path custom/spec.json --json-values 'spec.storage={\"accessMode\":\"ReadWriteOnce\",\"className\":\"managed-premium\",\"size\":\"10Gi\"}'"
+            ]
+        }
+    ]
+}

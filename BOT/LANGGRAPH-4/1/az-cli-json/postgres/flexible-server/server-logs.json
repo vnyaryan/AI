@@ -1,0 +1,45 @@
+{
+    "command_group": "az postgres flexible-server server-logs",
+    "description": "Manage server logs (log files) for a PostgreSQL flexible server.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az postgres flexible-server server-logs download",
+            "summary": "Download log files for a PostgreSQL flexible server.",
+            "syntax": "az postgres flexible-server server-logs download --name\n                                                 [--ids]\n                                                 [--resource-group]\n                                                 [--server-name]\n                                                 [--subscription]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--resource-group -g",
+                "--server-name -s",
+                "--subscription"
+            ],
+            "examples": [
+                "az postgres flexible-server server-logs download -g testgroup -s testsvr -n serverlogs/f1.log serverlogs/f2.log"
+            ]
+        },
+        {
+            "name": "az postgres flexible-server server-logs list",
+            "summary": "List log files for a PostgreSQL flexible server.",
+            "syntax": "az postgres flexible-server server-logs list [--file-last-written]\n                                             [--filename-contains]\n                                             [--ids]\n                                             [--max-file-size]\n                                             [--resource-group]\n                                             [--server-name]\n                                             [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--file-last-written",
+                "--filename-contains",
+                "--ids",
+                "--max-file-size",
+                "--resource-group -g",
+                "--server-name -s",
+                "--subscription"
+            ],
+            "examples": [
+                "az postgres flexible-server server-logs list -g testgroup -s testsvr",
+                "az postgres flexible-server server-logs list -g testgroup -s testsvr --file-last-written 10",
+                "az postgres flexible-server server-logs list -g testgroup -s testsvr --max-file-size 30",
+                "az postgres flexible-server server-logs list -g testgroup -s testsvr --subscription testSubscription --filename-contains serverlogs"
+            ]
+        }
+    ]
+}

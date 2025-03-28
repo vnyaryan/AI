@@ -1,0 +1,37 @@
+{
+    "command_group": "az site-recovery logical-network",
+    "description": "Manage logical-network.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az site-recovery logical-network list",
+            "summary": "List all the logical networks of the Azure Site Recovery fabric.",
+            "syntax": "az site-recovery logical-network list --fabric-name\n                                      --resource-group\n                                      --vault-name\n                                      [--max-items]\n                                      [--next-token]",
+            "required_parameters": [
+                "--fabric-name",
+                "--resource-group -g",
+                "--vault-name"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az site-recovery logical-network show",
+            "summary": "Get the details of a logical network.",
+            "syntax": "az site-recovery logical-network show [--fabric-name]\n                                      [--ids]\n                                      [--logical-network-name]\n                                      [--resource-group]\n                                      [--subscription]\n                                      [--vault-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--fabric-name",
+                "--ids",
+                "--logical-network-name --name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--vault-name"
+            ],
+            "examples": []
+        }
+    ]
+}

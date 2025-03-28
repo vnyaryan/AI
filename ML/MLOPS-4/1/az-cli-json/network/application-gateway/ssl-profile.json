@@ -1,0 +1,120 @@
+{
+    "command_group": "az network application-gateway ssl-profile",
+    "description": "Manage SSL profiles of application gateway.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az network application-gateway ssl-profile add",
+            "summary": "Add an SSL profile of the application gateway.",
+            "syntax": "az network application-gateway ssl-profile add --gateway-name\n                                               --name\n                                               --resource-group\n                                               [--cipher-suites]\n                                               [--client-auth-config {0, 1, f, false, n, no, t, true, y, yes}]\n                                               [--disabled-protocols]\n                                               [--min-protocol-version {TLSv1_0, TLSv1_1, TLSv1_2, TLSv1_3}]\n                                               [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                               [--policy-name {AppGwSslPolicy20150501, AppGwSslPolicy20170401, AppGwSslPolicy20170401S, AppGwSslPolicy20220101, AppGwSslPolicy20220101S}]\n                                               [--policy-type {Custom, CustomV2, Predefined}]\n                                               [--trusted-client-cert]",
+            "required_parameters": [
+                "--gateway-name",
+                "--name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--cipher-suites",
+                "--client-auth-config --client-auth-configuration",
+                "--disabled-protocols --disabled-ssl-protocols",
+                "--min-protocol-version",
+                "--no-wait",
+                "--policy-name",
+                "--policy-type",
+                "--trusted-client-cert --trusted-client-certificates"
+            ],
+            "examples": [
+                "az network application-gateway ssl-profile update --gateway-name MyAppGateway -g MyResourceGroup --name MySslProfile --client-auth-configuration False"
+            ]
+        },
+        {
+            "name": "az network application-gateway ssl-profile list",
+            "summary": "List the existing SSL profiles of the application gateway.",
+            "syntax": "az network application-gateway ssl-profile list --gateway-name\n                                                --resource-group",
+            "required_parameters": [
+                "--gateway-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az network application-gateway ssl-profile list --gateway-name MyAppGateway -g MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az network application-gateway ssl-profile remove",
+            "summary": "Remove an existing SSL profile of the application gateway.",
+            "syntax": "az network application-gateway ssl-profile remove --gateway-name\n                                                  --name\n                                                  --resource-group\n                                                  [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]",
+            "required_parameters": [
+                "--gateway-name",
+                "--name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--no-wait"
+            ],
+            "examples": [
+                "az network application-gateway ssl-profile remove --gateway-name MyAppGateway -g MyResourceGroup --name MySslProfile"
+            ]
+        },
+        {
+            "name": "az network application-gateway ssl-profile show",
+            "summary": "Show an existing SSL profile of the application gateway.",
+            "syntax": "az network application-gateway ssl-profile show --gateway-name\n                                                --name\n                                                --resource-group",
+            "required_parameters": [
+                "--gateway-name",
+                "--name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az network application-gateway ssl-profile show --gateway-name MyAppGateway -g MyResourceGroup --name MySslProfile"
+            ]
+        },
+        {
+            "name": "az network application-gateway ssl-profile update",
+            "summary": "Update SSL profile of the application gateway.",
+            "syntax": "az network application-gateway ssl-profile update --gateway-name\n                                                  --name\n                                                  --resource-group\n                                                  [--add]\n                                                  [--cipher-suites]\n                                                  [--client-auth-config {0, 1, f, false, n, no, t, true, y, yes}]\n                                                  [--disabled-protocols]\n                                                  [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                                  [--min-protocol-version {TLSv1_0, TLSv1_1, TLSv1_2, TLSv1_3}]\n                                                  [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                                  [--policy-name {AppGwSslPolicy20150501, AppGwSslPolicy20170401, AppGwSslPolicy20170401S, AppGwSslPolicy20220101, AppGwSslPolicy20220101S}]\n                                                  [--policy-type {Custom, CustomV2, Predefined}]\n                                                  [--remove]\n                                                  [--set]\n                                                  [--trusted-client-cert]",
+            "required_parameters": [
+                "--gateway-name",
+                "--name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--add",
+                "--cipher-suites",
+                "--client-auth-config --client-auth-configuration",
+                "--disabled-protocols --disabled-ssl-protocols",
+                "--force-string",
+                "--min-protocol-version",
+                "--no-wait",
+                "--policy-name",
+                "--policy-type",
+                "--remove",
+                "--set",
+                "--trusted-client-cert --trusted-client-certificates"
+            ],
+            "examples": [
+                "az network application-gateway ssl-profile update --gateway-name MyAppGateway -g MyResourceGroup --name MySslProfile --client-auth-configuration False"
+            ]
+        },
+        {
+            "name": "az network application-gateway ssl-profile wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az network application-gateway ssl-profile wait [--created]\n                                                [--custom]\n                                                [--deleted]\n                                                [--exists]\n                                                [--gateway-name]\n                                                [--ids]\n                                                [--interval]\n                                                [--resource-group]\n                                                [--subscription]\n                                                [--timeout]\n                                                [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--gateway-name",
+                "--ids",
+                "--interval",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

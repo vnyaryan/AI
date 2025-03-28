@@ -1,0 +1,43 @@
+{
+    "command_group": "az sql server-arc extension",
+    "description": "Manage extension level properties.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az sql server-arc extension set",
+            "summary": "Update common host properties.",
+            "syntax": "az sql server-arc extension set --resource-group\n                                [--esu-enabled]\n                                [--license-type]\n                                [--machine-name]\n                                [--skip-instances]\n                                [--sql-server-arc-name]",
+            "required_parameters": [
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--esu-enabled",
+                "--license-type",
+                "--machine-name -m",
+                "--skip-instances",
+                "--sql-server-arc-name"
+            ],
+            "examples": [
+                "az sql server-arc extension set --resource-group MyResourceGroup --machine-name MyArcServerName --license-type LicenseTypeValue",
+                "az sql server-arc extension set --resource-group MyResourceGroup --machine-name MyArcServerName --esu-enabled True",
+                "az sql server-arc extension set --resource-group MyResourceGroup --machine-name MyArcServerName --skip-instances \"InstanceName1, InstanceName2\""
+            ]
+        },
+        {
+            "name": "az sql server-arc extension show",
+            "summary": "Show host properties.",
+            "syntax": "az sql server-arc extension show --resource-group\n                                 [--machine-name]\n                                 [--sql-server-arc-name]",
+            "required_parameters": [
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--machine-name -m",
+                "--sql-server-arc-name"
+            ],
+            "examples": [
+                "az sql server-arc extension show --resource-group MyResourceGroup --machine-name MyArcServerName",
+                "az sql server-arc extension show --resource-group MyResourceGroup --sql-server-arc-name MyArcSqlInstanceName"
+            ]
+        }
+    ]
+}

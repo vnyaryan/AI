@@ -1,0 +1,45 @@
+{
+    "command_group": "az webapp auth google",
+    "description": "Manage webapp authentication and authorization of the Google identity provider.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az webapp auth google show",
+            "summary": "Show the authentication settings for the Google identity provider.",
+            "syntax": "az webapp auth google show [--ids]\n                           [--name]\n                           [--resource-group]\n                           [--slot]\n                           [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--slot -s",
+                "--subscription"
+            ],
+            "examples": [
+                "az webapp auth google show --name MyWebApp --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az webapp auth google update",
+            "summary": "Update the client id and client secret for the Google identity provider.",
+            "syntax": "az webapp auth google update [--allowed-audiences]\n                             [--client-id]\n                             [--client-secret]\n                             [--client-secret-setting-name]\n                             [--ids]\n                             [--name]\n                             [--resource-group]\n                             [--scopes]\n                             [--slot]\n                             [--subscription]\n                             [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--allowed-audiences --allowed-token-audiences",
+                "--client-id",
+                "--client-secret",
+                "--client-secret-setting-name --secret-setting",
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--scopes",
+                "--slot -s",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az webapp auth google update  -g myResourceGroup --name MyWebApp \\\n  --client-id my-client-id --client-secret very_secret_password"
+            ]
+        }
+    ]
+}

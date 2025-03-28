@@ -1,0 +1,84 @@
+{
+    "command_group": "az spring application-configuration-service git repo",
+    "description": "Commands to manage Application Configuration Service git repository in Azure Spring Apps.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az spring application-configuration-service git repo add",
+            "summary": "Add a Git property to the Application Configuration Service settings.",
+            "syntax": "az spring application-configuration-service git repo add --label\n                                                         --name\n                                                         --patterns\n                                                         --resource-group\n                                                         --service\n                                                         --uri\n                                                         [--ca-cert-name]\n                                                         [--host-key]\n                                                         [--host-key-algorithm]\n                                                         [--host-key-check]\n                                                         [--password]\n                                                         [--private-key]\n                                                         [--search-paths]\n                                                         [--username]",
+            "required_parameters": [
+                "--label",
+                "--name -n",
+                "--patterns",
+                "--resource-group -g",
+                "--service -s",
+                "--uri"
+            ],
+            "optional_parameters": [
+                "--ca-cert-name",
+                "--host-key",
+                "--host-key-algorithm",
+                "--host-key-check",
+                "--password",
+                "--private-key",
+                "--search-paths",
+                "--username"
+            ],
+            "examples": [
+                "az spring application-configuration-service git repo add -s MyService -g MyResourceGroup --name MyName --patterns MyPattern --uri https://MyURI --label master"
+            ]
+        },
+        {
+            "name": "az spring application-configuration-service git repo list",
+            "summary": "List all Git settings of Application Configuration Service.",
+            "syntax": "az spring application-configuration-service git repo list --resource-group\n                                                          --service",
+            "required_parameters": [
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az spring application-configuration-service git repo remove",
+            "summary": "Delete an existing Git property from the Application Configuration Service settings.",
+            "syntax": "az spring application-configuration-service git repo remove --name\n                                                            --resource-group\n                                                            --service",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az spring application-configuration-service git repo remove -s MyService -g MyResourceGroup --name MyName"
+            ]
+        },
+        {
+            "name": "az spring application-configuration-service git repo update",
+            "summary": "Update an existing Git property in the Application Configuration Service settings.",
+            "syntax": "az spring application-configuration-service git repo update --name\n                                                            --resource-group\n                                                            --service\n                                                            [--ca-cert-name]\n                                                            [--host-key]\n                                                            [--host-key-algorithm]\n                                                            [--host-key-check]\n                                                            [--label]\n                                                            [--password]\n                                                            [--patterns]\n                                                            [--private-key]\n                                                            [--search-paths]\n                                                            [--uri]\n                                                            [--username]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [
+                "--ca-cert-name",
+                "--host-key",
+                "--host-key-algorithm",
+                "--host-key-check",
+                "--label",
+                "--password",
+                "--patterns",
+                "--private-key",
+                "--search-paths",
+                "--uri",
+                "--username"
+            ],
+            "examples": [
+                "az spring application-configuration-service git repo update -s MyService -g MyResourceGroup --name MyName --patterns MyPattern"
+            ]
+        }
+    ]
+}

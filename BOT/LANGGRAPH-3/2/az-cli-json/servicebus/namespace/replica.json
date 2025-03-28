@@ -1,0 +1,35 @@
+{
+    "command_group": "az servicebus namespace replica",
+    "description": "Manage servicebus namespace replicas.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az servicebus namespace replica add",
+            "summary": "Add one or more Replica properties to a namespace.",
+            "syntax": "az servicebus namespace replica add --geo-data-replication-config\n                                    --namespace-name\n                                    --resource-group",
+            "required_parameters": [
+                "--geo-data-replication-config --replica-config",
+                "--namespace-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az servicebus namespace replica add --namespace-name mynamespace -g MyResourceGroup --geo-data-replication-config role-type=Secondary location-name=mylocation"
+            ]
+        },
+        {
+            "name": "az servicebus namespace replica remove",
+            "summary": "Remove one or more Replica properties to a namespace.",
+            "syntax": "az servicebus namespace replica remove --geo-data-replication-config\n                                       --namespace-name\n                                       --resource-group",
+            "required_parameters": [
+                "--geo-data-replication-config --replica-config",
+                "--namespace-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az servicebus namespace replica remove --namespace-name mynamespace -g MyResourceGroup --geo-data-replication-config role-type=Secondary location-name=mylocation"
+            ]
+        }
+    ]
+}

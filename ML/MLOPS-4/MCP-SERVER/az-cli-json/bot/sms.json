@@ -1,0 +1,51 @@
+{
+    "command_group": "az bot sms",
+    "description": "Manage the SMS Channel on a bot.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az bot sms create",
+            "summary": "Create the SMS Channel on a bot.",
+            "syntax": "az bot sms create --account-sid\n                  --auth-token\n                  --name\n                  --phone\n                  --resource-group\n                  [--add-disabled {false, true}]\n                  [--is-validated {false, true}]\n                  [--location]",
+            "required_parameters": [
+                "--account-sid",
+                "--auth-token",
+                "--name -n",
+                "--phone",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--add-disabled",
+                "--is-validated",
+                "--location -l"
+            ],
+            "examples": [
+                "az bot sms create -n botName -g MyResourceGroup --account-sid sid \\\n--auth-token token --is-validated --phone 1234567890"
+            ]
+        },
+        {
+            "name": "az bot sms delete",
+            "summary": "Delete the SMS Channel on a bot.",
+            "syntax": "az bot sms delete --name\n                  --resource-group",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az bot sms show",
+            "summary": "Get details of the SMS Channel on a bot.",
+            "syntax": "az bot sms show --name\n                --resource-group\n                [--with-secrets {false, true}]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--with-secrets"
+            ],
+            "examples": []
+        }
+    ]
+}

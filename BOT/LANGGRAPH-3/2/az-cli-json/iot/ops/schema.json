@@ -1,0 +1,93 @@
+{
+    "command_group": "az iot ops schema",
+    "description": "Schema and registry management.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az iot ops schema create",
+            "summary": "Create a schema within a schema registry.",
+            "syntax": "az iot ops schema create --format {delta, json}\n                         --name\n                         --registry\n                         --resource-group\n                         --type {message}\n                         --vc\n                         [--desc]\n                         [--display-name]\n                         [--vd]\n                         [--ver]",
+            "required_parameters": [
+                "--format",
+                "--name -n",
+                "--registry",
+                "--resource-group -g",
+                "--type",
+                "--vc --version-content"
+            ],
+            "optional_parameters": [
+                "--desc",
+                "--display-name",
+                "--vd --version-desc",
+                "--ver --version"
+            ],
+            "examples": [
+                "az iot ops schema create -n myschema -g myresourcegroup --registry myregistry --format json --type message --version-content myschema.json",
+                "az iot ops schema create -n myschema -g myresourcegroup --registry myregistry --format delta --type message --desc \"Schema for Assets\" --display-name myassetschema --version-content '{\"hello\": \"world\"}' --ver 14 --vd \"14th version\""
+            ]
+        },
+        {
+            "name": "az iot ops schema delete",
+            "summary": "Delete a target schema within a schema registry.",
+            "syntax": "az iot ops schema delete --name\n                         --registry\n                         --resource-group\n                         [--yes {false, true}]",
+            "required_parameters": [
+                "--name -n",
+                "--registry",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--yes -y"
+            ],
+            "examples": [
+                "az iot ops schema delete --name myschema --registry myregistry -g myresourcegroup"
+            ]
+        },
+        {
+            "name": "az iot ops schema list",
+            "summary": "List schemas within a schema registry.",
+            "syntax": "az iot ops schema list --registry\n                       --resource-group",
+            "required_parameters": [
+                "--registry",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az iot ops schema list -g myresourcegroup --registry myregistry"
+            ]
+        },
+        {
+            "name": "az iot ops schema show",
+            "summary": "Show details of a schema within a schema registry.",
+            "syntax": "az iot ops schema show --name\n                       --registry\n                       --resource-group",
+            "required_parameters": [
+                "--name -n",
+                "--registry",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az iot ops schema show --name myschema --registry myregistry -g myresourcegroup"
+            ]
+        },
+        {
+            "name": "az iot ops schema show-dataflow-refs",
+            "summary": "Show the schema references used for dataflows.",
+            "syntax": "az iot ops schema show-dataflow-refs --registry\n                                     --resource-group\n                                     [--latest {false, true}]\n                                     [--schema]\n                                     [--ver]",
+            "required_parameters": [
+                "--registry",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--latest",
+                "--schema",
+                "--ver --version"
+            ],
+            "examples": [
+                "az iot ops schema show-dataflow-refs --version 1 --schema myschema --registry myregistry -g myresourcegroup",
+                "az iot ops schema show-dataflow-refs --schema myschema --registry myregistry -g myresourcegroup",
+                "az iot ops schema show-dataflow-refs --registry myregistry -g myresourcegroup",
+                "az iot ops schema show-dataflow-refs --registry myregistry -g myresourcegroup --latest"
+            ]
+        }
+    ]
+}

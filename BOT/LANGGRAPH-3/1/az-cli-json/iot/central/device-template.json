@@ -1,0 +1,96 @@
+{
+    "command_group": "az iot central device-template",
+    "description": "Manage and configure IoT Central device templates.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az iot central device-template create",
+            "summary": "Create a device template in IoT Central.",
+            "syntax": "az iot central device-template create --app-id\n                                      --content\n                                      --device-template-id\n                                      [--api-version {2022-06-30-preview, 2022-07-31}]\n                                      [--central-api-uri]\n                                      [--token]",
+            "required_parameters": [
+                "--app-id -n",
+                "--content -k",
+                "--device-template-id --dtid"
+            ],
+            "optional_parameters": [
+                "--api-version --av",
+                "--central-api-uri --central-dns-suffix",
+                "--token"
+            ],
+            "examples": [
+                "az iot central device-template create --app-id {appid} --content {pathtofile} --device-template-id {devicetemplateid}",
+                "az iot central device-template create --app-id {appid} --content {json} --device-template-id {devicetemplateid}"
+            ]
+        },
+        {
+            "name": "az iot central device-template delete",
+            "summary": "Delete a device template from IoT Central.",
+            "syntax": "az iot central device-template delete --app-id\n                                      --device-template-id\n                                      [--api-version {2022-06-30-preview, 2022-07-31}]\n                                      [--central-api-uri]\n                                      [--token]",
+            "required_parameters": [
+                "--app-id -n",
+                "--device-template-id --dtid"
+            ],
+            "optional_parameters": [
+                "--api-version --av",
+                "--central-api-uri --central-dns-suffix",
+                "--token"
+            ],
+            "examples": [
+                "az iot central device-template delete --app-id {appid} --device-template-id {devicetemplateid}"
+            ]
+        },
+        {
+            "name": "az iot central device-template list",
+            "summary": "Get the list of device templates for an IoT Central application.",
+            "syntax": "az iot central device-template list --app-id\n                                    [--api-version {2022-06-30-preview, 2022-07-31}]\n                                    [--central-api-uri]\n                                    [--compact]\n                                    [--token]",
+            "required_parameters": [
+                "--app-id -n"
+            ],
+            "optional_parameters": [
+                "--api-version --av",
+                "--central-api-uri --central-dns-suffix",
+                "--compact -c",
+                "--token"
+            ],
+            "examples": [
+                "az iot central device-template list --app-id {appid}"
+            ]
+        },
+        {
+            "name": "az iot central device-template show",
+            "summary": "Get a device template from IoT Central.",
+            "syntax": "az iot central device-template show --app-id\n                                    --device-template-id\n                                    [--api-version {2022-06-30-preview, 2022-07-31}]\n                                    [--central-api-uri]\n                                    [--token]",
+            "required_parameters": [
+                "--app-id -n",
+                "--device-template-id --dtid"
+            ],
+            "optional_parameters": [
+                "--api-version --av",
+                "--central-api-uri --central-dns-suffix",
+                "--token"
+            ],
+            "examples": [
+                "az iot central device-template show --app-id {appid} --device-template-id {devicetemplateid}"
+            ]
+        },
+        {
+            "name": "az iot central device-template update",
+            "summary": "Update a device template in IoT Central.",
+            "syntax": "az iot central device-template update --app-id\n                                      --content\n                                      --device-template-id\n                                      [--api-version {2022-06-30-preview, 2022-07-31}]\n                                      [--central-api-uri]\n                                      [--token]",
+            "required_parameters": [
+                "--app-id -n",
+                "--content -k",
+                "--device-template-id --dtid"
+            ],
+            "optional_parameters": [
+                "--api-version --av",
+                "--central-api-uri --central-dns-suffix",
+                "--token"
+            ],
+            "examples": [
+                "az iot central device-template update --app-id {appid} --content {pathtofile} --device-template-id {devicetemplateid}",
+                "az iot central device-template update --app-id {appid} --content {json} --device-template-id {devicetemplateid}"
+            ]
+        }
+    ]
+}

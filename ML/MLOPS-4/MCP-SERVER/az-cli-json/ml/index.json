@@ -1,0 +1,68 @@
+{
+    "command_group": "az ml index",
+    "description": "Manage Azure ML indexes.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az ml index create",
+            "summary": "Create an index.",
+            "syntax": "az ml index create [--datastore]\n                   [--description]\n                   [--file]\n                   [--name]\n                   [--path]\n                   [--registry-name]\n                   [--resource-group]\n                   [--set]\n                   [--stage]\n                   [--tags]\n                   [--version]\n                   [--workspace-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--datastore",
+                "--description",
+                "--file -f",
+                "--name -n",
+                "--path -p",
+                "--registry-name",
+                "--resource-group -g",
+                "--set",
+                "--stage -s",
+                "--tags",
+                "--version -v",
+                "--workspace-name -w"
+            ],
+            "examples": [
+                "az ml index create --file index.yml --resource-group my-resource-group --workspace-name my-workspace",
+                "az ml index create --name my-index --version 1 --path ./my-index --resource-group my-resource-group --workspace-name my-workspace",
+                "az ml index create --name my-index --version 1 --path azureml://datastores/myblobstore/paths/indexes/MLIndex --resource-group my-resource-group --workspace-name my-workspace"
+            ]
+        },
+        {
+            "name": "az ml index list",
+            "summary": "List indexes in a workspace.",
+            "syntax": "az ml index list [--max-results]\n                 [--name]\n                 [--registry-name]\n                 [--resource-group]\n                 [--workspace-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--max-results -r",
+                "--name -n",
+                "--registry-name",
+                "--resource-group -g",
+                "--workspace-name -w"
+            ],
+            "examples": [
+                "az ml index list --resource-group my-resource-group --workspace-name my-workspace",
+                "az ml index list --name my-index --resource-group my-resource-group --workspace-name my-workspace",
+                "az ml index list --query \"[].{Name:name}\"  --output table --resource-group my-resource-group --workspace-name my-workspace"
+            ]
+        },
+        {
+            "name": "az ml index show",
+            "summary": "Show details for an index in a workspace.",
+            "syntax": "az ml index show --name\n                 [--label]\n                 [--registry-name]\n                 [--resource-group]\n                 [--version]\n                 [--workspace-name]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--label -l",
+                "--registry-name",
+                "--resource-group -g",
+                "--version -v",
+                "--workspace-name -w"
+            ],
+            "examples": [
+                "az ml index show --name my-index --version 1 --resource-group my-resource-group --workspace-name my-workspace"
+            ]
+        }
+    ]
+}

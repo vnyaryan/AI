@@ -1,0 +1,95 @@
+{
+    "command_group": "az datafactory linked-service",
+    "description": "Manage linked service with datafactory.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az datafactory linked-service create",
+            "summary": "Create a linked service.",
+            "syntax": "az datafactory linked-service create --factory-name\n                                     --linked-service-name\n                                     --properties\n                                     --resource-group\n                                     [--if-match]",
+            "required_parameters": [
+                "--factory-name",
+                "--linked-service-name --name -n",
+                "--properties",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--if-match"
+            ],
+            "examples": [
+                "az datafactory linked-service create --factory-name \"exampleFactoryName\" --properties \"{\\\"type\\\":\\\"AzureStorage\\\",\\\"typeProperties\\\":{\\\"connectionString\\\":{\\\"type\\\":\\\"SecureString\\\",\\\"value\\\":\\\"DefaultEndpointsProtocol=https;AccountName=examplestorageaccount;AccountKey=<storage key>\\\"}}}\" --name \"exampleLinkedService\" --resource-group \"exampleResourceGroup\""
+            ]
+        },
+        {
+            "name": "az datafactory linked-service delete",
+            "summary": "Deletes a linked service.",
+            "syntax": "az datafactory linked-service delete [--factory-name]\n                                     [--ids]\n                                     [--linked-service-name]\n                                     [--resource-group]\n                                     [--subscription]\n                                     [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--factory-name",
+                "--ids",
+                "--linked-service-name --name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az datafactory linked-service delete --factory-name \"exampleFactoryName\" --name \"exampleLinkedService\" --resource-group \"exampleResourceGroup\""
+            ]
+        },
+        {
+            "name": "az datafactory linked-service list",
+            "summary": "Lists linked services.",
+            "syntax": "az datafactory linked-service list --factory-name\n                                   --resource-group",
+            "required_parameters": [
+                "--factory-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az datafactory linked-service list --factory-name \"exampleFactoryName\" --resource-group \"exampleResourceGroup\""
+            ]
+        },
+        {
+            "name": "az datafactory linked-service show",
+            "summary": "Gets a linked service.",
+            "syntax": "az datafactory linked-service show [--factory-name]\n                                   [--ids]\n                                   [--if-none-match]\n                                   [--linked-service-name]\n                                   [--resource-group]\n                                   [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--factory-name",
+                "--ids",
+                "--if-none-match",
+                "--linked-service-name --name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az datafactory linked-service show --factory-name \"exampleFactoryName\" --name \"exampleLinkedService\" --resource-group \"exampleResourceGroup\""
+            ]
+        },
+        {
+            "name": "az datafactory linked-service update",
+            "summary": "Update a linked service.",
+            "syntax": "az datafactory linked-service update [--add]\n                                     [--annotations]\n                                     [--connect-via]\n                                     [--description]\n                                     [--factory-name]\n                                     [--force-string]\n                                     [--ids]\n                                     [--if-match]\n                                     [--if-none-match]\n                                     [--linked-service-name]\n                                     [--parameters]\n                                     [--remove]\n                                     [--resource-group]\n                                     [--set]\n                                     [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--annotations",
+                "--connect-via",
+                "--description",
+                "--factory-name",
+                "--force-string",
+                "--ids",
+                "--if-match",
+                "--if-none-match",
+                "--linked-service-name --name -n",
+                "--parameters",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--subscription"
+            ],
+            "examples": []
+        }
+    ]
+}

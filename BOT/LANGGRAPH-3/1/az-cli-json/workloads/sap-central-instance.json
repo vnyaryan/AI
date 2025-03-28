@@ -1,0 +1,119 @@
+{
+    "command_group": "az workloads sap-central-instance",
+    "description": "Manage central instance.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az workloads sap-central-instance list",
+            "summary": "List the SAP Central Services Instance resource for the given Virtual Instance for SAP solutions resource.",
+            "syntax": "az workloads sap-central-instance list --resource-group\n                                       --sap-virtual-instance-name\n                                       [--max-items]\n                                       [--next-token]",
+            "required_parameters": [
+                "--resource-group -g",
+                "--sap-virtual-instance-name --vis-name"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az workloads sap-central-instance list -g <resource-group-name> --sap-virtual-instance-name <vis-name>"
+            ]
+        },
+        {
+            "name": "az workloads sap-central-instance show",
+            "summary": "Show the SAP Central Services Instance resource.",
+            "syntax": "az workloads sap-central-instance show [--central-instance-name]\n                                       [--ids]\n                                       [--resource-group]\n                                       [--sap-virtual-instance-name]\n                                       [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--central-instance-name --name -n",
+                "--ids",
+                "--resource-group -g",
+                "--sap-virtual-instance-name --vis-name",
+                "--subscription"
+            ],
+            "examples": [
+                "az workloads sap-central-instance show --id <resource-id>"
+            ]
+        },
+        {
+            "name": "az workloads sap-central-instance start",
+            "summary": "Starts the SAP Central Services Instance.",
+            "syntax": "az workloads sap-central-instance start [--central-instance-name]\n                                        [--ids]\n                                        [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                        [--resource-group]\n                                        [--sap-virtual-instance-name]\n                                        [--start-vm {0, 1, f, false, n, no, t, true, y, yes}]\n                                        [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--central-instance-name --name -n",
+                "--ids",
+                "--no-wait",
+                "--resource-group -g",
+                "--sap-virtual-instance-name --vis-name",
+                "--start-vm",
+                "--subscription"
+            ],
+            "examples": [
+                "az workloads sap-central-instance start --sap-virtual-instance-name <vis-name> -g <resource-group-name> -n <cs-instance-name>",
+                "az workloads sap-central-instance start --id <resource-id>",
+                "az workloads sap-central-instance start --sap-virtual-instance-name <vis-name> -g <resource-group-name> -n <cs-instance-name> --start-vm"
+            ]
+        },
+        {
+            "name": "az workloads sap-central-instance stop",
+            "summary": "Stops the SAP Central Services Instance.",
+            "syntax": "az workloads sap-central-instance stop [--central-instance-name]\n                                       [--deallocate-vm {0, 1, f, false, n, no, t, true, y, yes}]\n                                       [--ids]\n                                       [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                       [--resource-group]\n                                       [--sap-virtual-instance-name]\n                                       [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--central-instance-name --name -n",
+                "--deallocate-vm",
+                "--ids",
+                "--no-wait",
+                "--resource-group -g",
+                "--sap-virtual-instance-name --vis-name",
+                "--subscription"
+            ],
+            "examples": [
+                "az workloads sap-central-instance stop --sap-virtual-instance-name <vis-name> -g <resource-group-name> -n <cs-instance-name>",
+                "az workloads sap-central-instance stop --id <resource-id>",
+                "az workloads sap-central-instance stop --sap-virtual-instance-name <vis-name> -g <resource-group-name> -n <cs-instance-name> --deallocate-vm"
+            ]
+        },
+        {
+            "name": "az workloads sap-central-instance update",
+            "summary": "Update the SAP Central Services Instance resource. This can be used to update tags on the resource.",
+            "syntax": "az workloads sap-central-instance update [--central-instance-name]\n                                         [--ids]\n                                         [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                         [--resource-group]\n                                         [--sap-virtual-instance-name]\n                                         [--subscription]\n                                         [--tags]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--central-instance-name --name -n",
+                "--ids",
+                "--no-wait",
+                "--resource-group -g",
+                "--sap-virtual-instance-name --vis-name",
+                "--subscription",
+                "--tags"
+            ],
+            "examples": [
+                "az workloads sap-central-instance update --sap-virtual-instance-name <VIS name> -g <Resource-group-name> -n <ResourceName> --tags tag=test tag2=test2",
+                "az workloads sap-central-instance update --id <ResourceID> --tags tag=test1"
+            ]
+        },
+        {
+            "name": "az workloads sap-central-instance wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az workloads sap-central-instance wait [--central-instance-name]\n                                       [--created]\n                                       [--custom]\n                                       [--deleted]\n                                       [--exists]\n                                       [--ids]\n                                       [--interval]\n                                       [--resource-group]\n                                       [--sap-virtual-instance-name]\n                                       [--subscription]\n                                       [--timeout]\n                                       [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--central-instance-name --name -n",
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--resource-group -g",
+                "--sap-virtual-instance-name --vis-name",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

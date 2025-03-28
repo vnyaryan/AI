@@ -1,0 +1,125 @@
+{
+    "command_group": "az network perimeter association",
+    "description": "Manage NSP Associations.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az network perimeter association create",
+            "summary": "Creates or updates a NSP resource association.",
+            "syntax": "az network perimeter association create --association-name\n                                        --perimeter-name\n                                        --resource-group\n                                        [--access-mode {Audit, Enforced, Learning}]\n                                        [--location]\n                                        [--private-link-resource]\n                                        [--profile]\n                                        [--tags]",
+            "required_parameters": [
+                "--association-name --name -n",
+                "--perimeter-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--access-mode",
+                "--location -l",
+                "--private-link-resource",
+                "--profile",
+                "--tags"
+            ],
+            "examples": [
+                "az network perimeter association create -n MyAssociation --perimeter-name MyPerimeter -g MyResourceGroup --access-mode Learning --private-link-resource \"{id:<PaaSArmID>}\" --profile \"{id:<ProfileArmID>}\""
+            ]
+        },
+        {
+            "name": "az network perimeter association delete",
+            "summary": "Deletes an NSP association resource.",
+            "syntax": "az network perimeter association delete [--association-name]\n                                        [--ids]\n                                        [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                        [--perimeter-name]\n                                        [--resource-group]\n                                        [--subscription]\n                                        [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--association-name --name -n",
+                "--ids",
+                "--no-wait",
+                "--perimeter-name",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az network perimeter association delete -n MyAssociation --perimeter-name MyPerimeter -g MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az network perimeter association list",
+            "summary": "Lists the NSP resource associations.",
+            "syntax": "az network perimeter association list --perimeter-name\n                                      --resource-group\n                                      [--max-items]\n                                      [--next-token]\n                                      [--skip-token]\n                                      [--top]",
+            "required_parameters": [
+                "--perimeter-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token",
+                "--skip-token",
+                "--top"
+            ],
+            "examples": [
+                "az network perimeter association list --perimeter-name MyPerimeter -g MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az network perimeter association show",
+            "summary": "Gets the specified NSP association by name.",
+            "syntax": "az network perimeter association show [--association-name]\n                                      [--ids]\n                                      [--perimeter-name]\n                                      [--resource-group]\n                                      [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--association-name --name -n",
+                "--ids",
+                "--perimeter-name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az network perimeter association show -n MyAssociation --perimeter-name MyPerimeter -g MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az network perimeter association update",
+            "summary": "Updates a NSP resource association.",
+            "syntax": "az network perimeter association update [--access-mode {Audit, Enforced, Learning}]\n                                        [--add]\n                                        [--association-name]\n                                        [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                        [--ids]\n                                        [--location]\n                                        [--perimeter-name]\n                                        [--private-link-resource]\n                                        [--profile]\n                                        [--remove]\n                                        [--resource-group]\n                                        [--set]\n                                        [--subscription]\n                                        [--tags]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--access-mode",
+                "--add",
+                "--association-name --name -n",
+                "--force-string",
+                "--ids",
+                "--location -l",
+                "--perimeter-name",
+                "--private-link-resource",
+                "--profile",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--subscription",
+                "--tags"
+            ],
+            "examples": [
+                "az network perimeter association update --name MyAssociation --perimeter-name MyPerimeter --resource-group MyResourceGroup --access-mode Enforced --private-link-resource id=\"<PaaSArmID> --profile id=\"ProfileArmID\""
+            ]
+        },
+        {
+            "name": "az network perimeter association wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az network perimeter association wait [--association-name]\n                                      [--created]\n                                      [--custom]\n                                      [--deleted]\n                                      [--exists]\n                                      [--ids]\n                                      [--interval]\n                                      [--perimeter-name]\n                                      [--resource-group]\n                                      [--subscription]\n                                      [--timeout]\n                                      [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--association-name --name -n",
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--perimeter-name",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

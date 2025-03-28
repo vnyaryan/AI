@@ -1,0 +1,109 @@
+{
+    "command_group": "az monitor metrics",
+    "description": "View Azure resource metrics.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az monitor metrics list",
+            "summary": "List the metric values for a resource.",
+            "syntax": "az monitor metrics list --resource\n                        [--aggregation {Average, Count, Maximum, Minimum, None, Total}]\n                        [--dimension]\n                        [--end-time]\n                        [--filter]\n                        [--interval]\n                        [--metadata]\n                        [--metrics]\n                        [--namespace]\n                        [--offset]\n                        [--orderby]\n                        [--resource-group]\n                        [--resource-namespace]\n                        [--resource-parent]\n                        [--resource-type]\n                        [--start-time]\n                        [--top]",
+            "required_parameters": [
+                "--resource"
+            ],
+            "optional_parameters": [
+                "--aggregation",
+                "--dimension",
+                "--end-time",
+                "--filter",
+                "--interval",
+                "--metadata",
+                "--metrics",
+                "--namespace",
+                "--offset",
+                "--orderby",
+                "--resource-group -g",
+                "--resource-namespace",
+                "--resource-parent",
+                "--resource-type",
+                "--start-time",
+                "--top"
+            ],
+            "examples": [
+                "az monitor metrics list --resource {ResourceName} --metric \"Percentage CPU\"",
+                "az monitor metrics list --resource {ResourceName} --metric SuccessE2ELatency \\\n                        --dimension ApiName",
+                "az monitor metrics list --resource {ResourceName} --metric SuccessE2ELatency \\\n                        --dimension ApiName GeoType",
+                "az monitor metrics list --resource {ResourceName} --metric SuccessE2ELatency \\\n                        --filter \"ApiName eq '*' and GeoType eq '*'\"",
+                "az monitor metrics list --resource {ResourceName} --metric SuccessE2ELatency \\\n                        --filter \"ApiName eq 'DeleteContainer' and GeoType eq '*'\"",
+                "az monitor metrics list --resource {ResourceName} --metric Transactions \\\n                        --start-time 2017-01-01T00:00:00Z \\\n                        --interval PT24H",
+                "az monitor metrics list --resource {ResourceName} --metric Transactions \\\n                        --filter \"ApiName eq '*'\" \\\n                        --start-time 2017-01-01T00:00:00Z"
+            ]
+        },
+        {
+            "name": "az monitor metrics list-definitions",
+            "summary": "List the metric definitions for the resource.",
+            "syntax": "az monitor metrics list-definitions --resource\n                                    [--namespace]\n                                    [--resource-group]\n                                    [--resource-namespace]\n                                    [--resource-parent]\n                                    [--resource-type]",
+            "required_parameters": [
+                "--resource"
+            ],
+            "optional_parameters": [
+                "--namespace",
+                "--resource-group -g",
+                "--resource-namespace",
+                "--resource-parent",
+                "--resource-type"
+            ],
+            "examples": [
+                "az monitor metrics list-definitions --resource /subscriptions/{subscriptionID}/resourceGroups/{resourceGroup}/Microsoft.Network/networkSecurityGroups/{resourceName}"
+            ]
+        },
+        {
+            "name": "az monitor metrics list-namespaces",
+            "summary": "List the metric namespaces for the resource.",
+            "syntax": "az monitor metrics list-namespaces --resource-uri\n                                   [--start-time]",
+            "required_parameters": [
+                "--resource-uri"
+            ],
+            "optional_parameters": [
+                "--start-time"
+            ],
+            "examples": [
+                "az monitor metrics list-namespaces --resource /subscriptions/{subscriptionID}/resourceGroups/{resourceGroup}/Microsoft.Network/networkSecurityGroups/{resourceName} --start-time 2021-03-01T00:00:00Z"
+            ]
+        },
+        {
+            "name": "az monitor metrics list-sub",
+            "summary": "Lists the metric data for a subscription. Parameters can be specified on the body.",
+            "syntax": "az monitor metrics list-sub --region\n                            [--aggregation]\n                            [--auto-adjust-timegrain {0, 1, f, false, n, no, t, true, y, yes}]\n                            [--filter]\n                            [--interval]\n                            [--metricnames]\n                            [--metricnamespace]\n                            [--order-by]\n                            [--result-type {Data, Metadata}]\n                            [--roll-up-by]\n                            [--timespan]\n                            [--top]\n                            [--validate-dimensions {0, 1, f, false, n, no, t, true, y, yes}]",
+            "required_parameters": [
+                "--region"
+            ],
+            "optional_parameters": [
+                "--aggregation",
+                "--auto-adjust-timegrain",
+                "--filter",
+                "--interval",
+                "--metricnames",
+                "--metricnamespace",
+                "--order-by",
+                "--result-type",
+                "--roll-up-by",
+                "--timespan",
+                "--top",
+                "--validate-dimensions"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az monitor metrics list-sub-definitions",
+            "summary": "List the metric definitions for the subscription.",
+            "syntax": "az monitor metrics list-sub-definitions --region\n                                        [--metricnamespace]",
+            "required_parameters": [
+                "--region"
+            ],
+            "optional_parameters": [
+                "--metricnamespace"
+            ],
+            "examples": []
+        }
+    ]
+}

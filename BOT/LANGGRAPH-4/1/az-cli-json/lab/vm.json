@@ -1,0 +1,190 @@
+{
+    "command_group": "az lab vm",
+    "description": "Manage VMs in an azure devtest lab.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az lab vm apply-artifacts",
+            "summary": "Apply artifacts to virtual machine. This operation can take a while to complete.",
+            "syntax": "az lab vm apply-artifacts --lab-name\n                          --name\n                          --resource-group\n                          [--artifacts]\n                          [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]",
+            "required_parameters": [
+                "--lab-name",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--artifacts",
+                "--no-wait"
+            ],
+            "examples": [
+                "az lab vm apply-artifacts --artifacts artifacts.json --lab-name MyLab --name MyVirtualMachine --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az lab vm claim",
+            "summary": "Command to claim a VM in the Azure DevTest Lab.",
+            "syntax": "az lab vm claim [--ids]\n                [--lab-name]\n                [--name]\n                [--resource-group]\n                [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--lab-name",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az lab vm create",
+            "summary": "Create a VM in a lab.",
+            "syntax": "az lab vm create --lab-name\n                 --name\n                 --resource-group\n                 [--admin-password]\n                 [--admin-username]\n                 [--allow-claim {0, 1, f, false, n, no, t, true, y, yes}]\n                 [--artifacts]\n                 [--authentication-type {password, ssh}]\n                 [--disk-type {Premium, Standard, StandardSSD}]\n                 [--expiration-date]\n                 [--formula]\n                 [--generate-ssh-keys {0, 1, f, false, n, no, t, true, y, yes}]\n                 [--image]\n                 [--image-type {custom, gallery}]\n                 [--ip-configuration {private, public, shared}]\n                 [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                 [--notes]\n                 [--saved-secret]\n                 [--size]\n                 [--ssh-key]\n                 [--subnet]\n                 [--tags]\n                 [--vnet-name]",
+            "required_parameters": [
+                "--lab-name",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--admin-password",
+                "--admin-username",
+                "--allow-claim",
+                "--artifacts",
+                "--authentication-type",
+                "--disk-type",
+                "--expiration-date",
+                "--formula",
+                "--generate-ssh-keys",
+                "--image",
+                "--image-type",
+                "--ip-configuration",
+                "--no-wait",
+                "--notes",
+                "--saved-secret",
+                "--size",
+                "--ssh-key",
+                "--subnet",
+                "--tags",
+                "--vnet-name"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az lab vm delete",
+            "summary": "Delete virtual machine. This operation can take a while to complete.",
+            "syntax": "az lab vm delete --lab-name\n                 --name\n                 --resource-group\n                 [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                 [--yes]",
+            "required_parameters": [
+                "--lab-name",
+                "--name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--no-wait",
+                "--yes -y"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az lab vm hibernate",
+            "summary": "Hibernate a virtual machine This operation can take a while to complete.",
+            "syntax": "az lab vm hibernate --lab-name\n                    --name\n                    --resource-group\n                    [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]",
+            "required_parameters": [
+                "--lab-name",
+                "--name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--no-wait"
+            ],
+            "examples": [
+                "az lab vm hibernate --resource-group MyResourceGroup --lab-name MyLab --name MyVM"
+            ]
+        },
+        {
+            "name": "az lab vm list",
+            "summary": "List virtual machines in a given lab.",
+            "syntax": "az lab vm list --lab-name\n               --resource-group\n               [--all {0, 1, f, false, n, no, t, true, y, yes}]\n               [--claimable {0, 1, f, false, n, no, t, true, y, yes}]\n               [--environment]\n               [--expand]\n               [--filters]\n               [--max-items]\n               [--next-token]\n               [--object-id]\n               [--order-by]\n               [--top]",
+            "required_parameters": [
+                "--lab-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--all",
+                "--claimable",
+                "--environment",
+                "--expand",
+                "--filters",
+                "--max-items",
+                "--next-token",
+                "--object-id",
+                "--order-by",
+                "--top"
+            ],
+            "examples": [
+                "az lab vm list --lab-name MyLab --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az lab vm show",
+            "summary": "Show virtual machine.",
+            "syntax": "az lab vm show --lab-name\n               --name\n               --resource-group\n               [--expand]",
+            "required_parameters": [
+                "--lab-name",
+                "--name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--expand"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az lab vm start",
+            "summary": "Start a virtual machine. This operation can take a while to complete.",
+            "syntax": "az lab vm start --lab-name\n                --name\n                --resource-group\n                [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]",
+            "required_parameters": [
+                "--lab-name",
+                "--name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--no-wait"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az lab vm stop",
+            "summary": "Stop a virtual machine This operation can take a while to complete.",
+            "syntax": "az lab vm stop --lab-name\n               --name\n               --resource-group\n               [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]",
+            "required_parameters": [
+                "--lab-name",
+                "--name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--no-wait"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az lab vm wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az lab vm wait [--created]\n               [--custom]\n               [--deleted]\n               [--exists]\n               [--expand]\n               [--ids]\n               [--interval]\n               [--lab-name]\n               [--name]\n               [--resource-group]\n               [--subscription]\n               [--timeout]\n               [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--expand",
+                "--ids",
+                "--interval",
+                "--lab-name",
+                "--name",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

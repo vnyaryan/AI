@@ -1,0 +1,94 @@
+{
+    "command_group": "az hdinsight autoscale condition",
+    "description": "Manage schedule condition of the HDInsight cluster which enabled Schedule-based Autoscale.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az hdinsight autoscale condition create",
+            "summary": "Add a new schedule condition.",
+            "syntax": "az hdinsight autoscale condition create --cluster-name\n                                        --days {Friday, Monday, Saturday, Sunday, Thursday, Tuesday, Wednesday}\n                                        --resource-group\n                                        --time\n                                        --workernode-count\n                                        [--no-wait]",
+            "required_parameters": [
+                "--cluster-name",
+                "--days",
+                "--resource-group -g",
+                "--time",
+                "--workernode-count"
+            ],
+            "optional_parameters": [
+                "--no-wait"
+            ],
+            "examples": [
+                "az hdinsight autoscale condition create --resource-group MyResourceGroup --cluster-name MyCluster \\\n--days Monday Tuesday --time 09:00 --workernode-count 5"
+            ]
+        },
+        {
+            "name": "az hdinsight autoscale condition delete",
+            "summary": "Delete schedule condition.",
+            "syntax": "az hdinsight autoscale condition delete --cluster-name\n                                        --index\n                                        --resource-group\n                                        [--no-wait]\n                                        [--yes]",
+            "required_parameters": [
+                "--cluster-name",
+                "--index",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--no-wait",
+                "--yes -y"
+            ],
+            "examples": [
+                "az hdinsight autoscale condition delete --resource-group MyResourceGroup --cluster-name MyCluster --index 0",
+                "az hdinsight autoscale condition delete --resource-group MyResourceGroup --cluster-name MyCluster --index 0 1"
+            ]
+        },
+        {
+            "name": "az hdinsight autoscale condition list",
+            "summary": "List all schedule conditions.",
+            "syntax": "az hdinsight autoscale condition list --cluster-name\n                                      --resource-group",
+            "required_parameters": [
+                "--cluster-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az hdinsight autoscale condition list --resource-group MyResourceGroup --cluster-name MyCluster"
+            ]
+        },
+        {
+            "name": "az hdinsight autoscale condition update",
+            "summary": "Update a schedule condition.",
+            "syntax": "az hdinsight autoscale condition update --cluster-name\n                                        --index\n                                        --resource-group\n                                        [--days {Friday, Monday, Saturday, Sunday, Thursday, Tuesday, Wednesday}]\n                                        [--no-wait]\n                                        [--time]\n                                        [--workernode-count]",
+            "required_parameters": [
+                "--cluster-name",
+                "--index",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--days",
+                "--no-wait",
+                "--time",
+                "--workernode-count"
+            ],
+            "examples": [
+                "az hdinsight autoscale condition update --resource-group MyResourceGroup --cluster-name MyCluster --index 0 \\\n--time 10:00 --workernode-count 5"
+            ]
+        },
+        {
+            "name": "az hdinsight autoscale condition wait",
+            "summary": "Place the CLI in a waiting state until an operation is complete.",
+            "syntax": "az hdinsight autoscale condition wait --name\n                                      --resource-group\n                                      [--created]\n                                      [--custom]\n                                      [--deleted]\n                                      [--exists]\n                                      [--interval]\n                                      [--timeout]\n                                      [--updated]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--interval",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

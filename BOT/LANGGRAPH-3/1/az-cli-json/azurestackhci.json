@@ -1,0 +1,6 @@
+{
+    "command_group": "az azurestackhci",
+    "description": "Manage azurestackhci.",
+    "status": "Experimental",
+    "commands": []
+}

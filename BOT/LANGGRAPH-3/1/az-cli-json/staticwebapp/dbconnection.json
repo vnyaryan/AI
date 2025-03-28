@@ -1,0 +1,54 @@
+{
+    "command_group": "az staticwebapp dbconnection",
+    "description": "Manage Static Web App database connections.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az staticwebapp dbconnection create",
+            "summary": "Create a Static Web App database connection.",
+            "syntax": "az staticwebapp dbconnection create --db-resource-id\n                                    --name\n                                    --resource-group\n                                    [--db-name]\n                                    [--environment]\n                                    [--mi-system-assigned]\n                                    [--mi-user-assigned]\n                                    [--password]\n                                    [--username]",
+            "required_parameters": [
+                "--db-resource-id -d",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--db-name -b",
+                "--environment -e",
+                "--mi-system-assigned -s",
+                "--mi-user-assigned -i",
+                "--password -p",
+                "--username -u"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az staticwebapp dbconnection delete",
+            "summary": "Delete a Static Web App database connection.",
+            "syntax": "az staticwebapp dbconnection delete --name\n                                    --resource-group\n                                    [--environment]\n                                    [--yes]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--environment -e",
+                "--yes -y"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az staticwebapp dbconnection show",
+            "summary": "Get details for a Static Web App database connection.",
+            "syntax": "az staticwebapp dbconnection show --name\n                                  --resource-group\n                                  [--detailed]\n                                  [--environment]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--detailed -d",
+                "--environment -e"
+            ],
+            "examples": []
+        }
+    ]
+}

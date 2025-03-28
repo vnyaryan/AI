@@ -1,0 +1,109 @@
+{
+    "command_group": "az network asg",
+    "description": "Manage application security groups (ASGs).",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az network asg create",
+            "summary": "Create an application security group.",
+            "syntax": "az network asg create --name\n                      --resource-group\n                      [--location]\n                      [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                      [--tags]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--location -l",
+                "--no-wait",
+                "--tags"
+            ],
+            "examples": [
+                "az network asg create -g MyResourceGroup -n MyAsg --tags MyWebApp, CostCenter=Marketing"
+            ]
+        },
+        {
+            "name": "az network asg delete",
+            "summary": "Delete an application security group.",
+            "syntax": "az network asg delete [--ids]\n                      [--name]\n                      [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                      [--resource-group]\n                      [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az network asg delete -g MyResourceGroup -n MyAsg"
+            ]
+        },
+        {
+            "name": "az network asg list",
+            "summary": "List all application security groups.",
+            "syntax": "az network asg list [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az network asg list -g MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az network asg show",
+            "summary": "Get details of an application security group.",
+            "syntax": "az network asg show [--ids]\n                    [--name]\n                    [--resource-group]\n                    [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az network asg show -g MyResourceGroup -n MyAsg"
+            ]
+        },
+        {
+            "name": "az network asg update",
+            "summary": "Update an application security group.",
+            "syntax": "az network asg update [--add]\n                      [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                      [--ids]\n                      [--location]\n                      [--name]\n                      [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                      [--remove]\n                      [--resource-group]\n                      [--set]\n                      [--subscription]\n                      [--tags]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--force-string",
+                "--ids",
+                "--location -l",
+                "--name -n",
+                "--no-wait",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--subscription",
+                "--tags"
+            ],
+            "examples": [
+                "az network asg update -g MyResourceGroup -n MyAsg --tags CostCenter=MyBusinessGroup"
+            ]
+        },
+        {
+            "name": "az network asg wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az network asg wait [--created]\n                    [--custom]\n                    [--deleted]\n                    [--exists]\n                    [--ids]\n                    [--interval]\n                    [--name]\n                    [--resource-group]\n                    [--subscription]\n                    [--timeout]\n                    [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

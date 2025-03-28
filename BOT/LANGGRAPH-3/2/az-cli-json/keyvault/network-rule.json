@@ -1,0 +1,72 @@
+{
+    "command_group": "az keyvault network-rule",
+    "description": "Manage vault network ACLs.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az keyvault network-rule add",
+            "summary": "Add a network rule to the network ACLs for a Key Vault.",
+            "syntax": "az keyvault network-rule add --name\n                             [--ip-address]\n                             [--no-wait]\n                             [--resource-group]\n                             [--subnet]\n                             [--vnet-name]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--ip-address",
+                "--no-wait",
+                "--resource-group -g",
+                "--subnet",
+                "--vnet-name"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az keyvault network-rule list",
+            "summary": "List the network rules from the network ACLs for a Key Vault.",
+            "syntax": "az keyvault network-rule list --name\n                              [--resource-group]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az keyvault network-rule remove",
+            "summary": "Remove a network rule from the network ACLs for a Key Vault.",
+            "syntax": "az keyvault network-rule remove --name\n                                [--ip-address]\n                                [--no-wait]\n                                [--resource-group]\n                                [--subnet]\n                                [--vnet-name]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--ip-address",
+                "--no-wait",
+                "--resource-group -g",
+                "--subnet",
+                "--vnet-name"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az keyvault network-rule wait",
+            "summary": "Place the CLI in a waiting state until a condition of the vault is met.",
+            "syntax": "az keyvault network-rule wait --name\n                              [--created]\n                              [--custom]\n                              [--deleted]\n                              [--exists]\n                              [--interval]\n                              [--resource-group]\n                              [--timeout]\n                              [--updated]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--interval",
+                "--resource-group -g",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": [
+                "az keyvault network-rule wait --name MyVault --updated"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,6 @@
+{
+    "command_group": "az desktopvirtualization",
+    "description": "Manage desktop virtualization.",
+    "status": "GA",
+    "commands": []
+}

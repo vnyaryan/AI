@@ -1,0 +1,46 @@
+{
+    "command_group": "az site-recovery protectable-item",
+    "description": "Manage Protectable Item.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az site-recovery protectable-item list",
+            "summary": "List the protectable items in a protection container.",
+            "syntax": "az site-recovery protectable-item list --fabric-name\n                                       --protection-container\n                                       --resource-group\n                                       --vault-name\n                                       [--filter]\n                                       [--max-items]\n                                       [--next-token]\n                                       [--skip-token]\n                                       [--take]",
+            "required_parameters": [
+                "--fabric-name",
+                "--protection-container --protection-container-name",
+                "--resource-group -g",
+                "--vault-name"
+            ],
+            "optional_parameters": [
+                "--filter",
+                "--max-items",
+                "--next-token",
+                "--skip-token",
+                "--take"
+            ],
+            "examples": [
+                "az site-recovery protectable-item list --fabric-name \"fabric\" --protection-container \"container_name\" -g \"rg_name\" --vault-name \"vault_name\""
+            ]
+        },
+        {
+            "name": "az site-recovery protectable-item show",
+            "summary": "Get operation to get the details of a protectable item.",
+            "syntax": "az site-recovery protectable-item show [--fabric-name]\n                                       [--ids]\n                                       [--name]\n                                       [--protection-container]\n                                       [--resource-group]\n                                       [--subscription]\n                                       [--vault-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--fabric-name",
+                "--ids",
+                "--name --protectable-item-name -n",
+                "--protection-container --protection-container-name",
+                "--resource-group -g",
+                "--subscription",
+                "--vault-name"
+            ],
+            "examples": [
+                "az site-recovery protectable-item show --fabric-name \"fabric\" --protection-container \"container_name\" -g \"rg_name\" --vault-name \"vault_name\" -n \"protectable_item_name\""
+            ]
+        }
+    ]
+}

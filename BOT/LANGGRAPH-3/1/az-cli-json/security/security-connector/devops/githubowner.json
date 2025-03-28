@@ -1,0 +1,35 @@
+{
+    "command_group": "az security security-connector devops githubowner",
+    "description": "GitHub Owners.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az security security-connector devops githubowner list",
+            "summary": "List a list of GitHub owners onboarded to the connector.",
+            "syntax": "az security security-connector devops githubowner list --name\n                                                       --resource-group\n                                                       [--max-items]\n                                                       [--next-token]",
+            "required_parameters": [
+                "--name --security-connector-name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az security security-connector devops githubowner show",
+            "summary": "Get a monitored GitHub owner.",
+            "syntax": "az security security-connector devops githubowner show [--ids]\n                                                       [--name]\n                                                       [--owner-name]\n                                                       [--resource-group]\n                                                       [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --security-connector-name -n",
+                "--owner-name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        }
+    ]
+}

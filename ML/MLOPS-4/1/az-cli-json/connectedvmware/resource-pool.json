@@ -1,0 +1,72 @@
+{
+    "command_group": "az connectedvmware resource-pool",
+    "description": "Resource pool resource.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az connectedvmware resource-pool create",
+            "summary": "Create a resource pool resource.",
+            "syntax": "az connectedvmware resource-pool create --custom-location\n                                        --inventory-item\n                                        --location\n                                        --name\n                                        --resource-group\n                                        --vcenter\n                                        [--no-wait]\n                                        [--tags]",
+            "required_parameters": [
+                "--custom-location -c",
+                "--inventory-item -i",
+                "--location -l",
+                "--name -n",
+                "--resource-group -g",
+                "--vcenter -v"
+            ],
+            "optional_parameters": [
+                "--no-wait",
+                "--tags"
+            ],
+            "examples": [
+                "az connectedvmware resource-pool create --custom-location \"custom location name\"                --location \"location name\" --inventory-item \"name or id the inventory item\"                --name \"resource pool name\" --resource-group \"resource group name\"                --vcenter \"name or id of the vcenter\""
+            ]
+        },
+        {
+            "name": "az connectedvmware resource-pool delete",
+            "summary": "Delete resource pool resource.",
+            "syntax": "az connectedvmware resource-pool delete [--force]\n                                        [--ids]\n                                        [--name]\n                                        [--no-wait]\n                                        [--resource-group]\n                                        [--subscription]\n                                        [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--force",
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az connectedvmware resource-pool delete --ids \"resource id\" --name \"resource pool name\"                --resource-group \"resource group name\" --subscription \"Name or ID of subscription\""
+            ]
+        },
+        {
+            "name": "az connectedvmware resource-pool list",
+            "summary": "Retrieve a list of resource pool of given resource group.",
+            "syntax": "az connectedvmware resource-pool list [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az connectedvmware resource-pool list --resource-group \"resource group name\""
+            ]
+        },
+        {
+            "name": "az connectedvmware resource-pool show",
+            "summary": "Get details of a resource pool by id, resource-group, resource pool name, or subscription.",
+            "syntax": "az connectedvmware resource-pool show [--ids]\n                                      [--name]\n                                      [--resource-group]\n                                      [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az connectedvmware resource-pool show --ids \"resource id\" --name \"resource pool name\"                --resource-group \"resource group name\" --subscription \"Name or ID of subscription\""
+            ]
+        }
+    ]
+}

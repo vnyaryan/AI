@@ -1,0 +1,40 @@
+{
+    "command_group": "az containerapp ingress sticky-sessions",
+    "description": "Commands to set Sticky session affinity for a container app.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az containerapp ingress sticky-sessions set",
+            "summary": "Configure Sticky session for a container app.",
+            "syntax": "az containerapp ingress sticky-sessions set --affinity {none, sticky}\n                                            [--ids]\n                                            [--name]\n                                            [--resource-group]\n                                            [--subscription]",
+            "required_parameters": [
+                "--affinity"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az containerapp ingress sticky-sessions set -n my-containerapp -g MyResourceGroup --affinity sticky",
+                "az containerapp ingress sticky-sessions set -n my-containerapp -g MyResourceGroup --affinity none"
+            ]
+        },
+        {
+            "name": "az containerapp ingress sticky-sessions show",
+            "summary": "Show the Affinity for a container app.",
+            "syntax": "az containerapp ingress sticky-sessions show [--ids]\n                                             [--name]\n                                             [--resource-group]\n                                             [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az containerapp ingress sticky-sessions show -n my-containerapp -g MyResourceGroup"
+            ]
+        }
+    ]
+}

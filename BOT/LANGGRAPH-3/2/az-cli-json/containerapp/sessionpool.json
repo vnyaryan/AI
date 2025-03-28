@@ -1,0 +1,132 @@
+{
+    "command_group": "az containerapp sessionpool",
+    "description": "Commands to manage session pools.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az containerapp sessionpool create",
+            "summary": "Create or update a Session pool.",
+            "syntax": "az containerapp sessionpool create --name\n                                   --resource-group\n                                   [--args]\n                                   [--command]\n                                   [--container-name]\n                                   [--container-type {CustomContainer, NodeLTS, PythonLTS}]\n                                   [--cooldown-period]\n                                   [--cpu]\n                                   [--env-vars]\n                                   [--environment]\n                                   [--image]\n                                   [--location]\n                                   [--max-sessions]\n                                   [--memory]\n                                   [--mi-system-assigned]\n                                   [--mi-user-assigned]\n                                   [--network-status {EgressDisabled, EgressEnabled}]\n                                   [--no-wait]\n                                   [--ready-sessions]\n                                   [--registry-identity]\n                                   [--registry-password]\n                                   [--registry-server]\n                                   [--registry-username]\n                                   [--secrets]\n                                   [--target-port]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--args",
+                "--command",
+                "--container-name",
+                "--container-type",
+                "--cooldown-period",
+                "--cpu",
+                "--env-vars",
+                "--environment",
+                "--image -i",
+                "--location -l",
+                "--max-sessions",
+                "--memory",
+                "--mi-system-assigned",
+                "--mi-user-assigned",
+                "--network-status",
+                "--no-wait",
+                "--ready-sessions",
+                "--registry-identity",
+                "--registry-password",
+                "--registry-server",
+                "--registry-username",
+                "--secrets -s",
+                "--target-port"
+            ],
+            "examples": [
+                "az containerapp sessionpool create -n mysessionpool -g MyResourceGroup \\\n    --location eastasia",
+                "az containerapp sessionpool create -n mysessionpool -g MyResourceGroup \\\n    --container-type PythonLTS --max-sessions 30 --ready-sessions 20 \\\n    --location eastasia",
+                "az containerapp sessionpool create -n mysessionpool -g MyResourceGroup \\\n    --container-type CustomContainer --environment MyEnvironment \\\n    --cpu 0.5 --memory 1Gi --target-port 80 --location eastasia --image mcr.microsoft.com/k8se/quickstart:latest",
+                "az containerapp sessionpool create -n mysessionpool -g MyResourceGroup \\\n    --container-type CustomContainer --environment MyEnvironment \\\n    --cpu 0.5 --memory 1Gi --target-port 80 --image MyImage \\\n    --env-vars GREETING=\"Hello, world\" SECRETENV=secretref:anothersecret \\\n    --secrets mysecret=secretvalue1 anothersecret=\"secret value 2\" --location eastasia",
+                "az containerapp sessionpool create -n mysessionpool -g MyResourceGroup \\\n    --container-type CustomContainer --environment MyEnvironment --image MyImage \\\n    --cpu 0.5 --memory 1Gi --target-port 80 --registry-server myregistry.azurecr.io \\\n    --registry-username myregistry --registry-password $REGISTRY_PASSWORD \\\n    --location eastasia",
+                "az containerapp sessionpool create -n mysessionpool -g MyResourceGroup \\\n    --container-type CustomContainer --environment MyEnvironment --image MyImage \\\n    --cpu 0.5 --memory 1Gi --target-port 80 --registry-server myregistry.azurecr.io \\\n    --registry-identity  MyUserIdentityResourceId \\\n    --location eastasia",
+                "az containerapp sessionpool create -n mysessionpool -g MyResourceGroup \\\n    --container-type CustomContainer --environment MyEnvironment --image MyImage \\\n    --cpu 0.5 --memory 1Gi --target-port 80 \\\n    --mi-system-assigned --mi-user-assigned MyUserIdentityResourceId \\\n    --location eastasia",
+                "az containerapp sessionpool create -n mysessionpool -g MyResourceGroup \\\n    --environment MyEnvironment --cpu 0.5 --memory 1Gi --target-port 80 --container-type CustomContainer \\\n    --cooldown-period 360 --location eastasia"
+            ]
+        },
+        {
+            "name": "az containerapp sessionpool delete",
+            "summary": "Delete a session pool.",
+            "syntax": "az containerapp sessionpool delete --resource-group\n                                   [--ids]\n                                   [--name]\n                                   [--no-wait]\n                                   [--subscription]\n                                   [--yes]",
+            "required_parameters": [
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az containerapp sessionpool delete -n mysessionpool -g MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az containerapp sessionpool list",
+            "summary": "List Session Pools by subscription or resource group.",
+            "syntax": "az containerapp sessionpool list [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az containerapp sessionpool list",
+                "az containerapp sessionpool list -g MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az containerapp sessionpool show",
+            "summary": "Show details of a Session Pool.",
+            "syntax": "az containerapp sessionpool show --resource-group\n                                 [--ids]\n                                 [--name]\n                                 [--subscription]",
+            "required_parameters": [
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--subscription"
+            ],
+            "examples": [
+                "az containerapp sessionpool show -n mysessionpool -g MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az containerapp sessionpool update",
+            "summary": "Update a Session pool.",
+            "syntax": "az containerapp sessionpool update --resource-group\n                                   [--args]\n                                   [--command]\n                                   [--container-name]\n                                   [--cooldown-period]\n                                   [--cpu]\n                                   [--env-vars]\n                                   [--ids]\n                                   [--image]\n                                   [--location]\n                                   [--max-sessions]\n                                   [--memory]\n                                   [--name]\n                                   [--network-status {EgressDisabled, EgressEnabled}]\n                                   [--no-wait]\n                                   [--ready-sessions]\n                                   [--registry-password]\n                                   [--registry-server]\n                                   [--registry-username]\n                                   [--secrets]\n                                   [--subscription]\n                                   [--target-port]",
+            "required_parameters": [
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--args",
+                "--command",
+                "--container-name",
+                "--cooldown-period",
+                "--cpu",
+                "--env-vars",
+                "--ids",
+                "--image -i",
+                "--location -l",
+                "--max-sessions",
+                "--memory",
+                "--name -n",
+                "--network-status",
+                "--no-wait",
+                "--ready-sessions",
+                "--registry-password",
+                "--registry-server",
+                "--registry-username",
+                "--secrets -s",
+                "--subscription",
+                "--target-port"
+            ],
+            "examples": [
+                "az containerapp sessionpool update -n mysessionpool -g MyResourceGroup --max-sessions 20 --image MyNewImage"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,133 @@
+{
+    "command_group": "az ams asset",
+    "description": "Manage assets for an Azure Media Services account.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az ams asset create",
+            "summary": "Create an asset.",
+            "syntax": "az ams asset create --account-name\n                    --name\n                    --resource-group\n                    [--alternate-id]\n                    [--container]\n                    [--description]\n                    [--storage-account]",
+            "required_parameters": [
+                "--account-name -a",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--alternate-id",
+                "--container",
+                "--description",
+                "--storage-account"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az ams asset delete",
+            "summary": "Delete an asset.",
+            "syntax": "az ams asset delete [--account-name]\n                    [--ids]\n                    [--name]\n                    [--resource-group]\n                    [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account-name -a",
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az ams asset get-encryption-key",
+            "summary": "Get the asset storage encryption keys used to decrypt content created by version 2 of the Media Services API.",
+            "syntax": "az ams asset get-encryption-key [--account-name]\n                                [--ids]\n                                [--name]\n                                [--resource-group]\n                                [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account-name -a",
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az ams asset get-sas-urls",
+            "summary": "Lists storage container URLs with shared access signatures (SAS) for uploading and downloading Asset content. The signatures are derived from the storage account keys.",
+            "syntax": "az ams asset get-sas-urls [--account-name]\n                          [--expiry]\n                          [--ids]\n                          [--name]\n                          [--permissions {Read, ReadWrite, ReadWriteDelete}]\n                          [--resource-group]\n                          [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account-name -a",
+                "--expiry",
+                "--ids",
+                "--name -n",
+                "--permissions",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az ams asset list",
+            "summary": "List all the assets of an Azure Media Services account.",
+            "syntax": "az ams asset list --account-name\n                  --resource-group\n                  [--filter]\n                  [--orderby]\n                  [--top]",
+            "required_parameters": [
+                "--account-name -a",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--filter",
+                "--orderby",
+                "--top"
+            ],
+            "examples": [
+                "az ams asset list -a amsAccount -g resourceGroup --query [?starts_with(name,'Something')]"
+            ]
+        },
+        {
+            "name": "az ams asset list-streaming-locators",
+            "summary": "List streaming locators which are associated with this asset.",
+            "syntax": "az ams asset list-streaming-locators [--account-name]\n                                     [--ids]\n                                     [--name]\n                                     [--resource-group]\n                                     [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account-name -a",
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az ams asset show",
+            "summary": "Show the details of an asset.",
+            "syntax": "az ams asset show [--account-name]\n                  [--ids]\n                  [--name]\n                  [--resource-group]\n                  [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account-name -a",
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az ams asset update",
+            "summary": "Update the details of an asset.",
+            "syntax": "az ams asset update [--account-name]\n                    [--add]\n                    [--alternate-id]\n                    [--description]\n                    [--force-string]\n                    [--ids]\n                    [--name]\n                    [--remove]\n                    [--resource-group]\n                    [--set]\n                    [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account-name -a",
+                "--add",
+                "--alternate-id",
+                "--description",
+                "--force-string",
+                "--ids",
+                "--name -n",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--subscription"
+            ],
+            "examples": []
+        }
+    ]
+}

@@ -1,0 +1,64 @@
+{
+    "command_group": "az vmss encryption",
+    "description": "Manage encryption of VMSS.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az vmss encryption disable",
+            "summary": "Disable the encryption on a VMSS with managed disks.",
+            "syntax": "az vmss encryption disable [--force]\n                           [--ids]\n                           [--name]\n                           [--resource-group]\n                           [--subscription]\n                           [--volume-type {ALL, DATA, OS}]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--force",
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--volume-type"
+            ],
+            "examples": [
+                "az vmss encryption disable -g MyResourceGroup -n MyVm"
+            ]
+        },
+        {
+            "name": "az vmss encryption enable",
+            "summary": "Encrypt a VMSS with managed disks.",
+            "syntax": "az vmss encryption enable --disk-encryption-keyvault\n                          [--encryption-identity]\n                          [--force]\n                          [--ids]\n                          [--key-encryption-algorithm]\n                          [--key-encryption-key]\n                          [--key-encryption-keyvault]\n                          [--name]\n                          [--resource-group]\n                          [--subscription]\n                          [--volume-type {ALL, DATA, OS}]",
+            "required_parameters": [
+                "--disk-encryption-keyvault"
+            ],
+            "optional_parameters": [
+                "--encryption-identity",
+                "--force",
+                "--ids",
+                "--key-encryption-algorithm",
+                "--key-encryption-key",
+                "--key-encryption-keyvault",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--volume-type"
+            ],
+            "examples": [
+                "az vmss encryption enable -g MyResourceGroup -n MyVmss --disk-encryption-keyvault MyVault",
+                "az vmss encryption enable --disk-encryption-keyvault MyVault --name MyVm --resource-group MyResourceGroup --encryption-identity EncryptionIdentity",
+                "az vmss encryption enable --disk-encryption-keyvault MyVault --name MyVmss --resource-group MyResourceGroup --volume-type DATA"
+            ]
+        },
+        {
+            "name": "az vmss encryption show",
+            "summary": "Show encryption status.",
+            "syntax": "az vmss encryption show [--ids]\n                        [--name]\n                        [--resource-group]\n                        [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az vmss encryption show --name MyScaleSet --resource-group MyResourceGroup"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,124 @@
+{
+    "command_group": "az networkcloud cluster baremetalmachinekeyset",
+    "description": "Manage cluster's bare metal machine key set.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az networkcloud cluster baremetalmachinekeyset create",
+            "summary": "Create a new bare metal machine key set or update the existing one for the provided cluster.",
+            "syntax": "az networkcloud cluster baremetalmachinekeyset create --azure-group-id\n                                                      --bare-metal-machine-key-set-name\n                                                      --cluster-name\n                                                      --expiration\n                                                      --extended-location\n                                                      --jump-hosts-allowed\n                                                      --privilege-level {Standard, Superuser}\n                                                      --resource-group\n                                                      --user-list\n                                                      [--location]\n                                                      [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                                      [--os-group-name]\n                                                      [--tags]",
+            "required_parameters": [
+                "--azure-group-id",
+                "--bare-metal-machine-key-set-name --name -n",
+                "--cluster-name",
+                "--expiration",
+                "--extended-location",
+                "--jump-hosts-allowed",
+                "--privilege-level",
+                "--resource-group -g",
+                "--user-list"
+            ],
+            "optional_parameters": [
+                "--location -l",
+                "--no-wait",
+                "--os-group-name",
+                "--tags"
+            ],
+            "examples": [
+                "az networkcloud cluster baremetalmachinekeyset create --name \"bareMetalMachineKeySetName\" --extended-location name=\"/subscriptions/subscriptionId/resourceGroups/resourceGroupName/providers/Microsoft.ExtendedLocation/customLocations/clusterExtendedLocationName\" type=\"CustomLocation\" --location \"location\" --azure-group-id \"f110271b-XXXX-4163-9b99-214d91660f0e\" --expiration \"2022-12-31T23:59:59.008Z\" --jump-hosts-allowed \"192.0.2.1\" \"192.0.2.5\" --os-group-name \"standardAccessGroup\" --privilege-level \"Standard\" --user-list \"[{description:'User description',azureUserName:userABC,userPrincipalName:'userABC@myorg.com',sshPublicKey:{keyData:'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDWtG2RiEGfXs+RK19UmovAJiIVUbT6YaYc/t5SjWU=admin@vm'}}]\" --tags key1=\"myvalue1\" key2=\"myvalue2\" --cluster-name \"clusterName\" --resource-group \"resourceGroupName"
+            ]
+        },
+        {
+            "name": "az networkcloud cluster baremetalmachinekeyset delete",
+            "summary": "Delete the bare metal machine key set of the provided cluster.",
+            "syntax": "az networkcloud cluster baremetalmachinekeyset delete [--bare-metal-machine-key-set-name]\n                                                      [--cluster-name]\n                                                      [--ids]\n                                                      [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                                      [--resource-group]\n                                                      [--subscription]\n                                                      [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--bare-metal-machine-key-set-name --name -n",
+                "--cluster-name",
+                "--ids",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az networkcloud cluster baremetalmachinekeyset delete --name \"bareMetalMachineKeySetName\" --cluster-name \"clusterName\" --resource-group \"resourceGroupName"
+            ]
+        },
+        {
+            "name": "az networkcloud cluster baremetalmachinekeyset list",
+            "summary": "List bare metal machine key sets of the cluster.",
+            "syntax": "az networkcloud cluster baremetalmachinekeyset list --cluster-name\n                                                    --resource-group\n                                                    [--max-items]\n                                                    [--next-token]",
+            "required_parameters": [
+                "--cluster-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az networkcloud cluster baremetalmachinekeyset list --cluster-name \"clusterName\" --resource-group \"resourceGroupName\""
+            ]
+        },
+        {
+            "name": "az networkcloud cluster baremetalmachinekeyset show",
+            "summary": "Get bare metal machine key set of the provided cluster.",
+            "syntax": "az networkcloud cluster baremetalmachinekeyset show [--bare-metal-machine-key-set-name]\n                                                    [--cluster-name]\n                                                    [--ids]\n                                                    [--resource-group]\n                                                    [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--bare-metal-machine-key-set-name --name -n",
+                "--cluster-name",
+                "--ids",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az networkcloud cluster baremetalmachinekeyset show --name \"bareMetalMachineKeySetName\" --cluster-name \"clusterName\" --resource-group \"resourceGroupName"
+            ]
+        },
+        {
+            "name": "az networkcloud cluster baremetalmachinekeyset update",
+            "summary": "Update properties of bare metal machine key set for the provided cluster, or update the tags associated with it. Properties and tag updates can be done independently.",
+            "syntax": "az networkcloud cluster baremetalmachinekeyset update [--bare-metal-machine-key-set-name]\n                                                      [--cluster-name]\n                                                      [--expiration]\n                                                      [--ids]\n                                                      [--jump-hosts-allowed]\n                                                      [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                                      [--resource-group]\n                                                      [--subscription]\n                                                      [--tags]\n                                                      [--user-list]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--bare-metal-machine-key-set-name --name -n",
+                "--cluster-name",
+                "--expiration",
+                "--ids",
+                "--jump-hosts-allowed",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--tags",
+                "--user-list"
+            ],
+            "examples": [
+                "az networkcloud cluster baremetalmachinekeyset update --name \"bareMetalMachineKeySetName\" --expiration \"2022-12-31T23:59:59.008Z\" --jump-hosts-allowed \"192.0.2.1\" \"192.0.2.5\" --user-list \"[{description:'User description',azureUserName:userABC,userPrincipalName:'userABC@myorg.com',sshPublicKey:{keyData:'ssh-rsa AAtsE3njSONzDYRIZv/WLjVuMfrUSByHp+/ojNZfpB3af/YDzwQCZzXnblrv9d3q4c2tWmm/SyFqthaqd0= admin@vm'}}]\" --tags key1=\"myvalue1\" key2=\"myvalue2\" --cluster-name \"clusterName\" --resource-group \"resourceGroupName\""
+            ]
+        },
+        {
+            "name": "az networkcloud cluster baremetalmachinekeyset wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az networkcloud cluster baremetalmachinekeyset wait [--bare-metal-machine-key-set-name]\n                                                    [--cluster-name]\n                                                    [--created]\n                                                    [--custom]\n                                                    [--deleted]\n                                                    [--exists]\n                                                    [--ids]\n                                                    [--interval]\n                                                    [--resource-group]\n                                                    [--subscription]\n                                                    [--timeout]\n                                                    [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--bare-metal-machine-key-set-name --name -n",
+                "--cluster-name",
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

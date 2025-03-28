@@ -1,0 +1,42 @@
+{
+    "command_group": "az storage account hns-migration",
+    "description": "Manage storage account migration to enable hierarchical namespace.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az storage account hns-migration start",
+            "summary": "Validate/Begin migrating a storage account to enable hierarchical namespace.",
+            "syntax": "az storage account hns-migration start --request-type {upgrade, validation}\n                                       [--ids]\n                                       [--name]\n                                       [--no-wait]\n                                       [--resource-group]\n                                       [--subscription]",
+            "required_parameters": [
+                "--request-type --type"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az storage account hns-migration start --type validation --name mystorageaccount --resource-group myresourcegroup",
+                "az storage account hns-migration start --type upgrade --name mystorageaccount --resource-group myresourcegroup"
+            ]
+        },
+        {
+            "name": "az storage account hns-migration stop",
+            "summary": "Stop the enabling hierarchical namespace migration of a storage account.",
+            "syntax": "az storage account hns-migration stop [--ids]\n                                      [--name]\n                                      [--no-wait]\n                                      [--resource-group]\n                                      [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az storage account hns-migration stop --name mystorageaccount --resource-group myresourcegroup"
+            ]
+        }
+    ]
+}

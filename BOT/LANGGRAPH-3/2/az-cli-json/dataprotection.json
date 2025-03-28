@@ -1,0 +1,6 @@
+{
+    "command_group": "az dataprotection",
+    "description": "Manage dataprotection.",
+    "status": "GA",
+    "commands": []
+}

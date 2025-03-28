@@ -1,0 +1,6 @@
+{
+    "command_group": "az deployment operation",
+    "description": "Manage deployment operations at subscription scope.",
+    "status": "GA",
+    "commands": []
+}

@@ -1,0 +1,102 @@
+{
+    "command_group": "az automation runtime-environment",
+    "description": "Manage RuntimeEnvironment.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az automation runtime-environment create",
+            "summary": "Create Runtime Environment.",
+            "syntax": "az automation runtime-environment create --account\n                                         --name\n                                         --resource-group\n                                         [--default-packages]\n                                         [--description]\n                                         [--language]\n                                         [--location]\n                                         [--tags]\n                                         [--version]",
+            "required_parameters": [
+                "--account --automation-account-name",
+                "--name --runtime-environment-name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--default-packages",
+                "--description",
+                "--language",
+                "--location -l",
+                "--tags",
+                "--version"
+            ],
+            "examples": [
+                "az automation runtime-environment create -g rg --automation-account-name myAutomationAccount --name rt --location westus2 --language PowerShell --version 7.1 --default-packages \"{Az:7.3.2}\""
+            ]
+        },
+        {
+            "name": "az automation runtime-environment delete",
+            "summary": "Delete the Runtime Environment.",
+            "syntax": "az automation runtime-environment delete [--account]\n                                         [--ids]\n                                         [--name]\n                                         [--resource-group]\n                                         [--subscription]\n                                         [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account --automation-account-name",
+                "--ids",
+                "--name --runtime-environment-name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az automation runtime-environment delete -g rg --automation-account-name myAutomationAccount --name rt -y"
+            ]
+        },
+        {
+            "name": "az automation runtime-environment list",
+            "summary": "List a list of RuntimeEnvironments.",
+            "syntax": "az automation runtime-environment list --account\n                                       --resource-group\n                                       [--max-items]\n                                       [--next-token]",
+            "required_parameters": [
+                "--account --automation-account-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az automation runtime-environment list -g rg --automation-account-name myAutomationAccount"
+            ]
+        },
+        {
+            "name": "az automation runtime-environment show",
+            "summary": "Get information about the Runtime Environment.",
+            "syntax": "az automation runtime-environment show [--account]\n                                       [--ids]\n                                       [--name]\n                                       [--resource-group]\n                                       [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account --automation-account-name",
+                "--ids",
+                "--name --runtime-environment-name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az automation runtime-environment show -g rg --automation-account-name myAutomationAccount --name rt"
+            ]
+        },
+        {
+            "name": "az automation runtime-environment update",
+            "summary": "Update Runtime Environment.",
+            "syntax": "az automation runtime-environment update [--account]\n                                         [--add]\n                                         [--default-packages]\n                                         [--description]\n                                         [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                         [--ids]\n                                         [--language]\n                                         [--name]\n                                         [--remove]\n                                         [--resource-group]\n                                         [--set]\n                                         [--subscription]\n                                         [--tags]\n                                         [--version]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account --automation-account-name",
+                "--add",
+                "--default-packages",
+                "--description",
+                "--force-string",
+                "--ids",
+                "--language",
+                "--name --runtime-environment-name -n",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--subscription",
+                "--tags",
+                "--version"
+            ],
+            "examples": [
+                "az automation runtime-environment update -g rg --automation-account-name myAutomationAccount --name rt --default-packages \"{Az:8.0.0}\""
+            ]
+        }
+    ]
+}

@@ -1,0 +1,49 @@
+{
+    "command_group": "az repos pr reviewer",
+    "description": "Manage pull request reviewers.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az repos pr reviewer add",
+            "summary": "Add one or more reviewers to a pull request.",
+            "syntax": "az repos pr reviewer add --id\n                         --reviewers\n                         [--detect {false, true}]\n                         [--org]\n                         [--required {false, true}]",
+            "required_parameters": [
+                "--id",
+                "--reviewers"
+            ],
+            "optional_parameters": [
+                "--detect",
+                "--org --organization",
+                "--required"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az repos pr reviewer list",
+            "summary": "List reviewers of a pull request.",
+            "syntax": "az repos pr reviewer list --id\n                          [--detect {false, true}]\n                          [--org]",
+            "required_parameters": [
+                "--id"
+            ],
+            "optional_parameters": [
+                "--detect",
+                "--org --organization"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az repos pr reviewer remove",
+            "summary": "Remove one or more reviewers from a pull request.",
+            "syntax": "az repos pr reviewer remove --id\n                            --reviewers\n                            [--detect {false, true}]\n                            [--org]",
+            "required_parameters": [
+                "--id",
+                "--reviewers"
+            ],
+            "optional_parameters": [
+                "--detect",
+                "--org --organization"
+            ],
+            "examples": []
+        }
+    ]
+}

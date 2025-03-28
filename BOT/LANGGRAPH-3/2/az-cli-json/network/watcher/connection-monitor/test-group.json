@@ -1,0 +1,108 @@
+{
+    "command_group": "az network watcher connection-monitor test-group",
+    "description": "Manage a test group of a connection monitor.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az network watcher connection-monitor test-group add",
+            "summary": "Add a test group along with new-added/existing endpoint and test configuration to a connection monitor.",
+            "syntax": "az network watcher connection-monitor test-group add --connection-monitor\n                                                     --endpoint-dest-name\n                                                     --endpoint-source-name\n                                                     --location\n                                                     --name\n                                                     --test-config-name\n                                                     [--disable {0, 1, f, false, n, no, t, true, y, yes}]\n                                                     [--endpoint-dest-address]\n                                                     [--endpoint-dest-resource-id]\n                                                     [--endpoint-source-address]\n                                                     [--endpoint-source-resource-id]\n                                                     [--frequency]\n                                                     [--http-method {Get, Post}]\n                                                     [--http-path]\n                                                     [--http-port]\n                                                     [--http-valid-status-codes]\n                                                     [--https-prefer {0, 1, f, false, n, no, t, true, y, yes}]\n                                                     [--icmp-disable-trace-route {0, 1, f, false, n, no, t, true, y, yes}]\n                                                     [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                                     [--preferred-ip-version {IPv4, IPv6}]\n                                                     [--protocol {Http, Icmp, Tcp}]\n                                                     [--tcp-disable-trace-route {0, 1, f, false, n, no, t, true, y, yes}]\n                                                     [--tcp-port]\n                                                     [--threshold-failed-percent]\n                                                     [--threshold-round-trip-time]",
+            "required_parameters": [
+                "--connection-monitor",
+                "--endpoint-dest-name",
+                "--endpoint-source-name",
+                "--location -l",
+                "--name --test-group-name -n",
+                "--test-config-name"
+            ],
+            "optional_parameters": [
+                "--disable",
+                "--endpoint-dest-address",
+                "--endpoint-dest-resource-id",
+                "--endpoint-source-address",
+                "--endpoint-source-resource-id",
+                "--frequency",
+                "--http-method",
+                "--http-path",
+                "--http-port",
+                "--http-valid-status-codes",
+                "--https-prefer",
+                "--icmp-disable-trace-route",
+                "--no-wait",
+                "--preferred-ip-version",
+                "--protocol",
+                "--tcp-disable-trace-route",
+                "--tcp-port",
+                "--threshold-failed-percent",
+                "--threshold-round-trip-time"
+            ],
+            "examples": [
+                "az network watcher connection-monitor test-group add --connection-monitor MyConnectionMonitor --location westus --name MyHTTPTestGroup --endpoint-source-name MySourceEndpoint --endpoint-dest-name MyDestinationEndpoint --test-config-name MyTestConfiguration",
+                "az network watcher connection-monitor test-group add --connection-monitor MyConnectionMonitor --location westus --name MyAccessibilityTestGroup --endpoint-source-name MySourceEndpoint --endpoint-source-resource-id MyLogAnalysisWorkspaceID --endpoint-dest-name MyExistingDestinationEndpoint --test-config-name MyExistingTestConfiguration",
+                "az network watcher connection-monitor test-group add --connection-monitor MyConnectionMonitor --location westus --name MyAccessibilityTestGroup --endpoint-source-name MySourceEndpoint --endpoint-source-resource-id MyVMResourceID --endpoint-dest-name bing --endpoint-dest-address bing.com --test-config-name MyNewTestConfiguration --protocol Tcp --tcp-port 4096"
+            ]
+        },
+        {
+            "name": "az network watcher connection-monitor test-group list",
+            "summary": "List all test groups of a connection     monitor.",
+            "syntax": "az network watcher connection-monitor test-group list --connection-monitor\n                                                      --location",
+            "required_parameters": [
+                "--connection-monitor",
+                "--location -l"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az network watcher connection-monitor test-group list --connection-monitor MyConnectionMonitor --location westus2"
+            ]
+        },
+        {
+            "name": "az network watcher connection-monitor test-group remove",
+            "summary": "Remove test group from a connection monitor.",
+            "syntax": "az network watcher connection-monitor test-group remove --connection-monitor\n                                                        --location\n                                                        --name",
+            "required_parameters": [
+                "--connection-monitor",
+                "--location -l",
+                "--name -n"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az network watcher connection-monitor test-group remove --connection-monitor MyConnectionMonitor --location westus2 --name MyConnectionMonitorTestGroup"
+            ]
+        },
+        {
+            "name": "az network watcher connection-monitor test-group show",
+            "summary": "Show a test group of a connection monitor.",
+            "syntax": "az network watcher connection-monitor test-group show --connection-monitor\n                                                      --location\n                                                      --name",
+            "required_parameters": [
+                "--connection-monitor",
+                "--location -l",
+                "--name --test-group-name -n"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az network watcher connection-monitor test-group show --connection-monitor MyConnectionMonitor --location westus2 --name MyConnectionMonitorTestGroup --subscription MySubscription"
+            ]
+        },
+        {
+            "name": "az network watcher connection-monitor test-group wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az network watcher connection-monitor test-group wait [--connection-monitor]\n                                                      [--created]\n                                                      [--custom]\n                                                      [--deleted]\n                                                      [--exists]\n                                                      [--ids]\n                                                      [--interval]\n                                                      [--subscription]\n                                                      [--timeout]\n                                                      [--updated]\n                                                      [--watcher-name]\n                                                      [--watcher-rg]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--connection-monitor",
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--subscription",
+                "--timeout",
+                "--updated",
+                "--watcher-name",
+                "--watcher-rg -g"
+            ],
+            "examples": []
+        }
+    ]
+}

@@ -1,0 +1,87 @@
+{
+    "command_group": "az acr pipeline-run",
+    "description": "Manage ACR import and export pipeline-runs.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az acr pipeline-run clean",
+            "summary": "Delete all failed pipeline-runs on the registry.",
+            "syntax": "az acr pipeline-run clean --registry\n                          --resource-group\n                          [--dry-run]",
+            "required_parameters": [
+                "--registry -r",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--dry-run"
+            ],
+            "examples": [
+                "az acr pipeline-run clean --resource-group $MyRG --registry $MyReg",
+                "az acr pipeline-run clean --resource-group $MyRG --registry $MyReg --dry-run -o table"
+            ]
+        },
+        {
+            "name": "az acr pipeline-run create",
+            "summary": "Create a pipeline-run.",
+            "syntax": "az acr pipeline-run create --name\n                           --pipeline\n                           --pipeline-type\n                           --registry\n                           --resource-group\n                           --storage-blob\n                           [--artifacts]\n                           [--force-redeploy]",
+            "required_parameters": [
+                "--name -n",
+                "--pipeline -p",
+                "--pipeline-type -t",
+                "--registry -r",
+                "--resource-group -g",
+                "--storage-blob -b"
+            ],
+            "optional_parameters": [
+                "--artifacts -a",
+                "--force-redeploy -f"
+            ],
+            "examples": [
+                "az acr pipeline-run create --resource-group $MyRG --registry $MyReg --pipeline $MyPipeline --name $MyPipelineRunName --pipeline-type import --storage-blob $MyBlob",
+                "az acr pipeline-run create --resource-group $MyRG --registry $MyReg --pipeline $MyPipeline --name $MyPipelineRunName --pipeline-type export --storage-blob $MyBlob --artifacts hello-world:latest hello-world@sha256:90659bf80b44ce6be8234e6ff90a1ac34acbeb826903b02cfa0da11c82cbc042 --force-redeploy"
+            ]
+        },
+        {
+            "name": "az acr pipeline-run delete",
+            "summary": "Delete a pipeline-run.",
+            "syntax": "az acr pipeline-run delete --name\n                           --registry\n                           --resource-group",
+            "required_parameters": [
+                "--name -n",
+                "--registry -r",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az acr pipeline-run delete --resource-group $MyRG --registry $MyReg --name $MyPipelineRun"
+            ]
+        },
+        {
+            "name": "az acr pipeline-run list",
+            "summary": "List pipeline-runs of all pipelines on a container registry.",
+            "syntax": "az acr pipeline-run list --registry\n                         --resource-group\n                         [--top]",
+            "required_parameters": [
+                "--registry -r",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--top"
+            ],
+            "examples": [
+                "az acr pipeline-run list --resource-group $MyRG --registry $MyReg"
+            ]
+        },
+        {
+            "name": "az acr pipeline-run show",
+            "summary": "Show a pipeline-run in detail.",
+            "syntax": "az acr pipeline-run show --name\n                         --registry\n                         --resource-group",
+            "required_parameters": [
+                "--name -n",
+                "--registry -r",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az acr pipeline-run show --resource-group $MyRG --registry $MyReg --name $MyPipelineRun"
+            ]
+        }
+    ]
+}

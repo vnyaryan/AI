@@ -1,0 +1,6 @@
+{
+    "command_group": "az backup",
+    "description": "Manage Azure Backups.",
+    "status": "GA",
+    "commands": []
+}

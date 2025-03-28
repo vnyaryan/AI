@@ -1,0 +1,91 @@
+{
+    "command_group": "az redis access-policy-assignment",
+    "description": "Manage Access Policy Assignments (Redis Users) for Redis Cache.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az redis access-policy-assignment create",
+            "summary": "Add an Access Policy Assignment (Redis User) to the Redis Cache.",
+            "syntax": "az redis access-policy-assignment create --access-policy-name\n                                         --name\n                                         --object-id\n                                         --object-id-alias\n                                         --policy-assignment-name\n                                         --resource-group",
+            "required_parameters": [
+                "--access-policy-name",
+                "--name -n",
+                "--object-id",
+                "--object-id-alias",
+                "--policy-assignment-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az redis access-policy-assignment create -g testResourceGroup -n testCacheName --object-id 932b5c60-66e4-4fbf-b8b0-xxxxxxxxxxxx --object-id-alias testAlias --access-policy-name testAccessPolicy --policy-assignment-name testAccessPolicyAssignment"
+            ]
+        },
+        {
+            "name": "az redis access-policy-assignment delete",
+            "summary": "Delete the Access Policy Assignment (Redis User).",
+            "syntax": "az redis access-policy-assignment delete --policy-assignment-name\n                                         [--ids]\n                                         [--name]\n                                         [--resource-group]\n                                         [--subscription]",
+            "required_parameters": [
+                "--policy-assignment-name"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az redis access-policy-assignment delete -g testResourceGroup -n testCacheName --policy-assignment-name testAccessPolicyAssignment"
+            ]
+        },
+        {
+            "name": "az redis access-policy-assignment list",
+            "summary": "Get the list of Access Policy Assignments (Redis Users) associated with the Redis Cache.",
+            "syntax": "az redis access-policy-assignment list --name\n                                       --resource-group",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az redis access-policy-assignment list -g testResourceGroup -n testCacheName"
+            ]
+        },
+        {
+            "name": "az redis access-policy-assignment show",
+            "summary": "Get the detailed information about an Access Policy Assignment (Redis User) of the Redis Cache.",
+            "syntax": "az redis access-policy-assignment show --policy-assignment-name\n                                       [--ids]\n                                       [--name]\n                                       [--resource-group]\n                                       [--subscription]",
+            "required_parameters": [
+                "--policy-assignment-name"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az redis access-policy-assignment show -g testResourceGroup -n testCacheName --policy-assignment-name testAccessPolicyAssignment"
+            ]
+        },
+        {
+            "name": "az redis access-policy-assignment update",
+            "summary": "Update an Access Policy Assignment (Redis User) of the Redis Cache.",
+            "syntax": "az redis access-policy-assignment update --access-policy-name\n                                         --object-id\n                                         --object-id-alias\n                                         --policy-assignment-name\n                                         [--ids]\n                                         [--name]\n                                         [--resource-group]\n                                         [--subscription]",
+            "required_parameters": [
+                "--access-policy-name",
+                "--object-id",
+                "--object-id-alias",
+                "--policy-assignment-name"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az redis access-policy-assignment update -g testResourceGroup -n testCacheName --object-id 932b5c60-66e4-4fbf-b8b0-xxxxxxxxxxxx --object-id-alias testAlias --access-policy-name testAccessPolicy --policy-assignment-name testAccessPolicyAssignment"
+            ]
+        }
+    ]
+}

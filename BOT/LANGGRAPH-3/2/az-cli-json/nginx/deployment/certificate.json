@@ -1,0 +1,121 @@
+{
+    "command_group": "az nginx deployment certificate",
+    "description": "Manage NGINX certificate resources.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az nginx deployment certificate create",
+            "summary": "Create a certificate for an NGINX deployment.",
+            "syntax": "az nginx deployment certificate create --certificate-name\n                                       --deployment-name\n                                       --resource-group\n                                       [--certificate-path]\n                                       [--key-path]\n                                       [--key-vault-secret-id]\n                                       [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]",
+            "required_parameters": [
+                "--certificate-name --name -n",
+                "--deployment-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--certificate-path",
+                "--key-path",
+                "--key-vault-secret-id",
+                "--no-wait"
+            ],
+            "examples": [
+                "az nginx deployment certificate create --certificate-name myCertificate --deployment-name myDeployment --resource-group myResourceGroup --certificate-path /etc/nginx/test.cert --key-path /etc/nginx/test.key --key-vault-secret-id keyVaultSecretId"
+            ]
+        },
+        {
+            "name": "az nginx deployment certificate delete",
+            "summary": "Delete an NGINX deployment certificate.",
+            "syntax": "az nginx deployment certificate delete [--certificate-name]\n                                       [--deployment-name]\n                                       [--ids]\n                                       [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                       [--resource-group]\n                                       [--subscription]\n                                       [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--certificate-name --name -n",
+                "--deployment-name",
+                "--ids",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az nginx deployment certificate delete --certificate-name myCertificate --deployment-name myDeployment --resource-group myResourceGroup"
+            ]
+        },
+        {
+            "name": "az nginx deployment certificate list",
+            "summary": "List all certificates under the specified deployment and resource group.",
+            "syntax": "az nginx deployment certificate list --deployment-name\n                                     --resource-group\n                                     [--max-items]\n                                     [--next-token]",
+            "required_parameters": [
+                "--deployment-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az nginx deployment certificate list --deployment-name myDeployment --resource-group myResourceGroup"
+            ]
+        },
+        {
+            "name": "az nginx deployment certificate show",
+            "summary": "Get the properties of a specific NGINX certificate.",
+            "syntax": "az nginx deployment certificate show [--certificate-name]\n                                     [--deployment-name]\n                                     [--ids]\n                                     [--resource-group]\n                                     [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--certificate-name --name -n",
+                "--deployment-name",
+                "--ids",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az nginx deployment certificate show --certificate-name myCertificate --deployment-name myDeployment --resource-group myResourceGroup"
+            ]
+        },
+        {
+            "name": "az nginx deployment certificate update",
+            "summary": "Update an NGINX deployment certificate.",
+            "syntax": "az nginx deployment certificate update [--add]\n                                       [--certificate-name]\n                                       [--certificate-path]\n                                       [--deployment-name]\n                                       [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                       [--ids]\n                                       [--key-path]\n                                       [--key-vault-secret-id]\n                                       [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                       [--remove]\n                                       [--resource-group]\n                                       [--set]\n                                       [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--certificate-name --name -n",
+                "--certificate-path",
+                "--deployment-name",
+                "--force-string",
+                "--ids",
+                "--key-path",
+                "--key-vault-secret-id",
+                "--no-wait",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--subscription"
+            ],
+            "examples": [
+                "az nginx deployment certificate update --certificate-name myCertificate --deployment-name myDeployment --resource-group myResourceGroup --certificate-path /etc/nginx/testupdated.cert --key-path /etc/nginx/testupdated.key --key-vault-secret-id newKeyVaultSecretId"
+            ]
+        },
+        {
+            "name": "az nginx deployment certificate wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az nginx deployment certificate wait [--certificate-name]\n                                     [--created]\n                                     [--custom]\n                                     [--deleted]\n                                     [--deployment-name]\n                                     [--exists]\n                                     [--ids]\n                                     [--interval]\n                                     [--resource-group]\n                                     [--subscription]\n                                     [--timeout]\n                                     [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--certificate-name --name -n",
+                "--created",
+                "--custom",
+                "--deleted",
+                "--deployment-name",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

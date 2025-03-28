@@ -1,0 +1,44 @@
+{
+    "command_group": "az containerapp dapr",
+    "description": "Commands to manage Dapr. To manage Dapr components, see `az containerapp env dapr-component`.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az containerapp dapr disable",
+            "summary": "Disable Dapr for a container app. Removes existing values.",
+            "syntax": "az containerapp dapr disable [--ids]\n                             [--name]\n                             [--resource-group]\n                             [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az containerapp dapr disable -n my-containerapp -g MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az containerapp dapr enable",
+            "summary": "Enable Dapr for a container app. Updates existing values.",
+            "syntax": "az containerapp dapr enable [--dal]\n                            [--dapr-app-id]\n                            [--dapr-app-port]\n                            [--dapr-app-protocol {grpc, http}]\n                            [--dapr-http-max-request-size]\n                            [--dapr-http-read-buffer-size]\n                            [--dapr-log-level {debug, error, info, warn}]\n                            [--ids]\n                            [--name]\n                            [--resource-group]\n                            [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--dal --dapr-enable-api-logging",
+                "--dapr-app-id",
+                "--dapr-app-port",
+                "--dapr-app-protocol",
+                "--dapr-http-max-request-size --dhmrs",
+                "--dapr-http-read-buffer-size --dhrbs",
+                "--dapr-log-level",
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az containerapp dapr enable -n my-containerapp -g MyResourceGroup --dapr-app-id my-app-id --dapr-app-port 8080"
+            ]
+        }
+    ]
+}

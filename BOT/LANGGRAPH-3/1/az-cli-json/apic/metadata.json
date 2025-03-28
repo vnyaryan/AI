@@ -1,0 +1,123 @@
+{
+    "command_group": "az apic metadata",
+    "description": "Commands to manage metadata schemas in API Center.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az apic metadata create",
+            "summary": "Create a new metadata schema or update an existing metadata schema.",
+            "syntax": "az apic metadata create --assignments\n                        --metadata-name\n                        --resource-group\n                        --schema\n                        --service-name",
+            "required_parameters": [
+                "--assignments",
+                "--metadata-name",
+                "--resource-group -g",
+                "--schema",
+                "--service-name -n"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az apic metadata create --resource-group api-center-test --service-name contoso --metadata-name \"test1\" --schema '{\"type\":\"string\", \"title\":\"First name\", \"pattern\": \"^[a-zA-Z0-9]+$\"}' --assignments '[{entity:api,required:true,deprecated:false}]'",
+                "az apic metadata create --resource-group api-center-test --service-name contoso  --metadata-name testregion --schema '{\"type\":\"string\",\"title\":\"testregion\",\"oneOf\":[{\"const\":\"Region1\",\"description\":\"\"},{\"const\":\"Region2\",\"description\":\"\"},{\"const\":\"Region3\",\"description\":\"\"}]}' --assignments '[{entity:api,required:true,deprecated:false},{entity:environment,required:true,deprecated:false}]'",
+                "az apic metadata create --resource-group api-center-test --service-name contoso --metadata-name \"test\" --schema '@schema.json' --assignments '@assignments.json'"
+            ]
+        },
+        {
+            "name": "az apic metadata delete",
+            "summary": "Delete specified metadata schema.",
+            "syntax": "az apic metadata delete [--ids]\n                        [--metadata-name]\n                        [--resource-group]\n                        [--service-name]\n                        [--subscription]\n                        [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--metadata-name",
+                "--resource-group -g",
+                "--service-name -n",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az apic metadata delete --resource-group api-center-test --service-name contoso --metadata-name \"test1\"",
+                "az apic metadata delete -g api-center-test -n contosoeuap --metadata-name \"approver\""
+            ]
+        },
+        {
+            "name": "az apic metadata export",
+            "summary": "Exports the metadata schema.",
+            "syntax": "az apic metadata export --assignments {api, deployment, environment}\n                        --file-name\n                        [--custom-metadata-only {0, 1, f, false, n, no, t, true, y, yes}]\n                        [--ids]\n                        [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                        [--resource-group]\n                        [--service-name]\n                        [--subscription]",
+            "required_parameters": [
+                "--assignments",
+                "--file-name"
+            ],
+            "optional_parameters": [
+                "--custom-metadata-only",
+                "--ids",
+                "--no-wait",
+                "--resource-group -g",
+                "--service-name -n",
+                "--subscription"
+            ],
+            "examples": [
+                "az apic metadata export -g api-center-test -n contosoeuap --assignments api --file-name filename.json",
+                "az apic metadata export -g api-center-test -n contosoeuap --assignments deployment --file-name filename.json",
+                "az apic metadata export -g api-center-test -n contosoeuap --assignments environment --file-name filename.json",
+                "az apic metadata export -g api-center-test -n contosoeuap --assignments api --file-name filename.json --custom-metadata-only"
+            ]
+        },
+        {
+            "name": "az apic metadata list",
+            "summary": "List a collection of metadata schemas.",
+            "syntax": "az apic metadata list --resource-group\n                      --service-name\n                      [--filter]\n                      [--max-items]\n                      [--next-token]",
+            "required_parameters": [
+                "--resource-group -g",
+                "--service-name -n"
+            ],
+            "optional_parameters": [
+                "--filter",
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az apic metadata list -g api-center-test -n contosoeuap"
+            ]
+        },
+        {
+            "name": "az apic metadata show",
+            "summary": "Get details of the metadata schema.",
+            "syntax": "az apic metadata show [--ids]\n                      [--metadata-name]\n                      [--resource-group]\n                      [--service-name]\n                      [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--metadata-name",
+                "--resource-group -g",
+                "--service-name -n",
+                "--subscription"
+            ],
+            "examples": [
+                "az apic metadata show -g api-center-test -n contosoeuap --metadata-name approver",
+                "az apic metadata show --resource-group api-center-test --service-name contoso --metadata-name \"testchoices\""
+            ]
+        },
+        {
+            "name": "az apic metadata update",
+            "summary": "Update existing metadata schema.",
+            "syntax": "az apic metadata update [--add]\n                        [--assignments]\n                        [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                        [--ids]\n                        [--metadata-name]\n                        [--remove]\n                        [--resource-group]\n                        [--schema]\n                        [--service-name]\n                        [--set]\n                        [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--assignments",
+                "--force-string",
+                "--ids",
+                "--metadata-name",
+                "--remove",
+                "--resource-group -g",
+                "--schema",
+                "--service-name -n",
+                "--set",
+                "--subscription"
+            ],
+            "examples": [
+                "az apic metadata update --resource-group api-center-test --service-name contoso --metadata-name \"test1\" --schema '{\"type\":\"string\", \"title\":\"Last name\", \"pattern\": \"^[a-zA-Z0-9]+$\"}'",
+                "az apic metadata update --resource-group api-center-test --service-name contoso --metadata-name \"test1\" --schema '@schema.json'"
+            ]
+        }
+    ]
+}

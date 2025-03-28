@@ -1,0 +1,18 @@
+{
+    "command_group": "az playwright-testing",
+    "description": "Manage Microsoft Playwright Testing service.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az playwright-testing check-name-availability",
+            "summary": "Adds check global name availability operation, normally used if a resource name must be globally unique.",
+            "syntax": "az playwright-testing check-name-availability [--name]\n                                              [--type]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--name",
+                "--type"
+            ],
+            "examples": []
+        }
+    ]
+}

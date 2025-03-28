@@ -1,0 +1,6 @@
+{
+    "command_group": "az synapse sql",
+    "description": "Manage SQL pools.",
+    "status": "GA",
+    "commands": []
+}

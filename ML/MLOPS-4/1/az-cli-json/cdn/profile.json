@@ -1,0 +1,96 @@
+{
+    "command_group": "az cdn profile",
+    "description": "",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az cdn profile create",
+            "summary": "Create a new Azure Front Door Standard or Azure Front Door Premium or CDN profile with a profile name under the specified subscription and resource group.",
+            "syntax": "az cdn profile create --name\n                      --resource-group\n                      [--identity]\n                      [--log-scrubbing]\n                      [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                      [--origin-response-timeout-seconds]\n                      [--sku {Custom_Verizon, Premium_AzureFrontDoor, Premium_Verizon, StandardPlus_955BandWidth_ChinaCdn, StandardPlus_AvgBandWidth_ChinaCdn, StandardPlus_ChinaCdn, Standard_955BandWidth_ChinaCdn, Standard_Akamai, Standard_AvgBandWidth_ChinaCdn, Standard_AzureFrontDoor, Standard_ChinaCdn, Standard_Microsoft, Standard_Verizon}]\n                      [--tags]",
+            "required_parameters": [
+                "--name --profile-name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--identity",
+                "--log-scrubbing",
+                "--no-wait",
+                "--origin-response-timeout-seconds",
+                "--sku",
+                "--tags"
+            ],
+            "examples": [
+                "az afd profile create -g group --profile-name profile --sku Standard_AzureFrontDoor"
+            ]
+        },
+        {
+            "name": "az cdn profile delete",
+            "summary": "Delete an existing  Azure Front Door Standard or Azure Front Door Premium or CDN profile with the specified parameters. Deleting a profile will result in the deletion of all of the sub-resources including endpoints, origins and custom domains.",
+            "syntax": "az cdn profile delete [--ids]\n                      [--name]\n                      [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                      [--resource-group]\n                      [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --profile-name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az profile delete -g group --profile-name profile"
+            ]
+        },
+        {
+            "name": "az cdn profile list",
+            "summary": "List all of the Azure Front Door Standard, Azure Front Door Premium, and CDN profiles within an Azure subscription.",
+            "syntax": "az cdn profile list [--max-items]\n                    [--next-token]\n                    [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az afd profile list -g group"
+            ]
+        },
+        {
+            "name": "az cdn profile show",
+            "summary": "Get an Azure Front Door Standard or Azure Front Door Premium or CDN profile with the specified profile name under the specified subscription and resource group.",
+            "syntax": "az cdn profile show [--ids]\n                    [--name]\n                    [--resource-group]\n                    [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --profile-name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az afd profile show -g group --profile-name profile"
+            ]
+        },
+        {
+            "name": "az cdn profile update",
+            "summary": "Update a new Azure Front Door Standard or Azure Front Door Premium or CDN profile with a profile name under the specified subscription and resource group.",
+            "syntax": "az cdn profile update [--add]\n                      [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                      [--identity]\n                      [--ids]\n                      [--log-scrubbing]\n                      [--name]\n                      [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                      [--origin-response-timeout-seconds]\n                      [--remove]\n                      [--resource-group]\n                      [--set]\n                      [--subscription]\n                      [--tags]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--force-string",
+                "--identity",
+                "--ids",
+                "--log-scrubbing",
+                "--name --profile-name -n",
+                "--no-wait",
+                "--origin-response-timeout-seconds",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--subscription",
+                "--tags"
+            ],
+            "examples": [
+                "az afd profile update --profile-name profile --resource-group MyResourceGroup --tags tag1=value1"
+            ]
+        }
+    ]
+}

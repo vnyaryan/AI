@@ -1,0 +1,98 @@
+{
+    "command_group": "az relay wcfrelay authorization-rule",
+    "description": "Manage Azure Relay Service WCF Relay Authorization Rule.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az relay wcfrelay authorization-rule create",
+            "summary": "Create Authorization Rule for the given Relay Service WCF Relay.",
+            "syntax": "az relay wcfrelay authorization-rule create --name\n                                            --namespace-name\n                                            --relay-name\n                                            --resource-group\n                                            [--rights]",
+            "required_parameters": [
+                "--name -n",
+                "--namespace-name",
+                "--relay-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--rights"
+            ],
+            "examples": [
+                "az relay wcfrelay authorization-rule create --resource-group myresourcegroup --namespace- name mynamespace --relay-name myrelay --name myauthorule --rights Listen"
+            ]
+        },
+        {
+            "name": "az relay wcfrelay authorization-rule delete",
+            "summary": "Delete the Authorization Rule of Relay Service WCF Relay.",
+            "syntax": "az relay wcfrelay authorization-rule delete [--ids]\n                                            [--name]\n                                            [--namespace-name]\n                                            [--relay-name]\n                                            [--resource-group]\n                                            [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--namespace-name",
+                "--relay-name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az relay wcfrelay authorization-rule delete --resource-group myresourcegroup --namespace- name mynamespace --relay-name myrelay --name myauthorule"
+            ]
+        },
+        {
+            "name": "az relay wcfrelay authorization-rule list",
+            "summary": "List of Authorization Rule by Relay Service WCF Relay.",
+            "syntax": "az relay wcfrelay authorization-rule list --namespace-name\n                                          --relay-name\n                                          --resource-group\n                                          [--max-items]\n                                          [--next-token]",
+            "required_parameters": [
+                "--namespace-name",
+                "--relay-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az relay wcfrelay authorization-rule list --resource-group myresourcegroup --namespace-name mynamespace --relay-name myrelay"
+            ]
+        },
+        {
+            "name": "az relay wcfrelay authorization-rule show",
+            "summary": "Show properties of Authorization Rule for the given Relay Service WCF Relay.",
+            "syntax": "az relay wcfrelay authorization-rule show [--ids]\n                                          [--name]\n                                          [--namespace-name]\n                                          [--relay-name]\n                                          [--resource-group]\n                                          [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--namespace-name",
+                "--relay-name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az relay wcfrelay authorization-rule show --resource-group myresourcegroup --namespace-name mynamespace --relay-name myrelay --name myauthorule"
+            ]
+        },
+        {
+            "name": "az relay wcfrelay authorization-rule update",
+            "summary": "Update Authorization Rule for the given Relay Service WCF Relay.",
+            "syntax": "az relay wcfrelay authorization-rule update --rights\n                                            [--add]\n                                            [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                            [--ids]\n                                            [--name]\n                                            [--namespace-name]\n                                            [--relay-name]\n                                            [--remove]\n                                            [--resource-group]\n                                            [--set]\n                                            [--subscription]",
+            "required_parameters": [
+                "--rights"
+            ],
+            "optional_parameters": [
+                "--add",
+                "--force-string",
+                "--ids",
+                "--name -n",
+                "--namespace-name",
+                "--relay-name",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--subscription"
+            ],
+            "examples": [
+                "az relay wcfrelay authorization-rule update --resource-group myresourcegroup --namespace- name mynamespace --relay-name myrelay --name myauthorule --rights Send"
+            ]
+        }
+    ]
+}

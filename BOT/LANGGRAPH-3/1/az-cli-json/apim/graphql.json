@@ -1,0 +1,6 @@
+{
+    "command_group": "az apim graphql",
+    "description": "Manage Azure API Management GraphQL API's.",
+    "status": "GA",
+    "commands": []
+}

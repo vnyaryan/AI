@@ -1,0 +1,6 @@
+{
+    "command_group": "az mesh",
+    "description": "(PREVIEW) Manage Azure Service Fabric Mesh Resources.",
+    "status": "Preview",
+    "commands": []
+}

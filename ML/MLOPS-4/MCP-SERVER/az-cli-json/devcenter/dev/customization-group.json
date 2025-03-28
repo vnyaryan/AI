@@ -1,0 +1,65 @@
+{
+    "command_group": "az devcenter dev customization-group",
+    "description": "Manage customization groups.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az devcenter dev customization-group create",
+            "summary": "Create a customization group.",
+            "syntax": "az devcenter dev customization-group create --customization-group-name\n                                            --dev-box\n                                            --project\n                                            [--dev-center]\n                                            [--endpoint]\n                                            [--tasks]\n                                            [--user-id]",
+            "required_parameters": [
+                "--customization-group-name --name -n",
+                "--dev-box --dev-box-name",
+                "--project --project-name"
+            ],
+            "optional_parameters": [
+                "--dev-center --dev-center-name -d",
+                "--endpoint",
+                "--tasks",
+                "--user-id"
+            ],
+            "examples": [
+                "az devcenter dev customization-group create --dev-center-name \"ContosoDevCenter\" --project-name \"DevProject\" --dev-box-name \"myDevBox\" --tasks \"[{\\\"name\\\": \\\"catalogName/choco\\\", \\\"displayName\\\": \\\"Install VS Code\\\", \\\"parameters\\\": {\\\"packageName\\\": \\\"vscode\\\", \\\"packageVersion\\\": \\\"1.0.0\\\"}}, {\\\"name\\\": \\\"catalogName/write-to-file\\\", \\\"runAs\\\": \\\"User\\\"}]\" --name \"Provisioning\" --user-id \"00000000-0000-0000-0000-000000000000\"",
+                "az devcenter dev customization-group create --endpoint \"https://8a40af38-3b4c-4672-a6a4-5e964b1870ed-contosodevcenter.centralus.devcenter.azure.com/\" --project-name \"DevProject\" --dev-box-name \"myDevBox\" --tasks \"[{\\\"name\\\": \\\"catalogName/choco\\\", \\\"displayName\\\": \\\"Install VS Code\\\", \\\"parameters\\\": {\\\"packageName\\\": \\\"vscode\\\", \\\"packageVersion\\\": \\\"1.0.0\\\"}}, {\\\"name\\\": \\\"catalogName/write-to-file\\\", \\\"runAs\\\": \\\"User\\\"}]\" --name \"Provisioning\" --user-id \"00000000-0000-0000-0000-000000000000\""
+            ]
+        },
+        {
+            "name": "az devcenter dev customization-group list",
+            "summary": "List customization groups on the dev box.",
+            "syntax": "az devcenter dev customization-group list --dev-box\n                                          --project\n                                          [--dev-center]\n                                          [--endpoint]\n                                          [--include-tasks {false, true}]\n                                          [--user-id]",
+            "required_parameters": [
+                "--dev-box --dev-box-name",
+                "--project --project-name"
+            ],
+            "optional_parameters": [
+                "--dev-center --dev-center-name -d",
+                "--endpoint",
+                "--include-tasks",
+                "--user-id"
+            ],
+            "examples": [
+                "az devcenter dev customization-group list --dev-center-name \"ContosoDevCenter\" --project-name \"DevProject\" --dev-box-name \"myDevBox\" --user-id \"00000000-0000-0000-0000-000000000000\" --include-tasks",
+                "az devcenter dev customization-group list --endpoint \"https://8a40af38-3b4c-4672-a6a4-5e964b1870ed-contosodevcenter.centralus.devcenter.azure.com/\" --project-name \"DevProject\" --dev-box-name \"myDevBox\" --user-id \"00000000-0000-0000-0000-000000000000\" --include-tasks"
+            ]
+        },
+        {
+            "name": "az devcenter dev customization-group show",
+            "summary": "Get a customization group.",
+            "syntax": "az devcenter dev customization-group show --customization-group-name\n                                          --dev-box\n                                          --project\n                                          [--dev-center]\n                                          [--endpoint]\n                                          [--user-id]",
+            "required_parameters": [
+                "--customization-group-name --name -n",
+                "--dev-box --dev-box-name",
+                "--project --project-name"
+            ],
+            "optional_parameters": [
+                "--dev-center --dev-center-name -d",
+                "--endpoint",
+                "--user-id"
+            ],
+            "examples": [
+                "az devcenter dev customization-group show --dev-center-name \"ContosoDevCenter\" --project-name \"DevProject\" --dev-box-name \"myDevBox\" --name \"Provisioning\" --user-id \"00000000-0000-0000-0000-000000000000\"",
+                "az devcenter dev customization-group show --endpoint \"https://8a40af38-3b4c-4672-a6a4-5e964b1870ed-contosodevcenter.centralus.devcenter.azure.com/\" --project-name \"DevProject\" --dev-box-name \"myDevBox\" --name \"Provisioning\" --user-id \"00000000-0000-0000-0000-000000000000\""
+            ]
+        }
+    ]
+}

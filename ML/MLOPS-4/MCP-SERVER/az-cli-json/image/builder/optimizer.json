@@ -1,0 +1,73 @@
+{
+    "command_group": "az image builder optimizer",
+    "description": "Manage image builder template optimizer.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az image builder optimizer add",
+            "summary": "Add optimizer to an existing image builder template.",
+            "syntax": "az image builder optimizer add [--defer]\n                               [--enable-vm-boot {false, true}]\n                               [--ids]\n                               [--name]\n                               [--resource-group]\n                               [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--defer",
+                "--enable-vm-boot",
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az image builder optimizer add -n myTemplate -g myGroup --enable-vm-boot true --defer"
+            ]
+        },
+        {
+            "name": "az image builder optimizer remove",
+            "summary": "Remove optimizer from an existing image builder template.",
+            "syntax": "az image builder optimizer remove [--defer]\n                                  [--ids]\n                                  [--name]\n                                  [--resource-group]\n                                  [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--defer",
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az image builder optimizer remove -n myTemplate -g myGroup --defer"
+            ]
+        },
+        {
+            "name": "az image builder optimizer show",
+            "summary": "Show optimizer of an existing image builder template.",
+            "syntax": "az image builder optimizer show [--defer]\n                                [--ids]\n                                [--name]\n                                [--resource-group]\n                                [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--defer",
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az image builder optimizer show -n myTemplate -g myGroup --defer"
+            ]
+        },
+        {
+            "name": "az image builder optimizer update",
+            "summary": "Update an optimizer from an existing image builder template.",
+            "syntax": "az image builder optimizer update [--defer]\n                                  [--enable-vm-boot {false, true}]\n                                  [--ids]\n                                  [--name]\n                                  [--resource-group]\n                                  [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--defer",
+                "--enable-vm-boot",
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az image builder optimizer update -n myTemplate -g myGroup --enable-vm-boot true --defer"
+            ]
+        }
+    ]
+}

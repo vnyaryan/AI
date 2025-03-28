@@ -1,0 +1,77 @@
+{
+    "command_group": "az eventgrid partner registration",
+    "description": "Manage partner registrations.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az eventgrid partner registration create",
+            "summary": "Create a new partner registration.",
+            "syntax": "az eventgrid partner registration create --name\n                                         --resource-group\n                                         [--authorized-subscription-ids]\n                                         [--customer-service-extension]\n                                         [--customer-service-number]\n                                         [--customer-service-uri]\n                                         [--description]\n                                         [--display-name]\n                                         [--logo-uri]\n                                         [--long-description]\n                                         [--partner-name]\n                                         [--resource-type-name]\n                                         [--setup-uri]\n                                         [--tags]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--authorized-subscription-ids",
+                "--customer-service-extension",
+                "--customer-service-number",
+                "--customer-service-uri",
+                "--description",
+                "--display-name",
+                "--logo-uri",
+                "--long-description",
+                "--partner-name",
+                "--resource-type-name",
+                "--setup-uri",
+                "--tags"
+            ],
+            "examples": [
+                "az eventgrid partner registration create -g rg1 --name partnerRegistrationName1 --partner-name Contoso --resource-type-name Accounts --authorized-subscription-ids 533ad9de-25db-46e2-b94a-d00c37cf022b 05aa2228-7d34-4635-922d-2b582c422445",
+                "az eventgrid partner registration create -g rg1 --name partnerRegistrationName1 --partner-name Contoso --resource-type-name Accounts --authorized-subscription-ids 533ad9de-25db-46e2-b94a-d00c37cf022b 05aa2228-7d34-4635-922d-2b582c422445 --description ExampleDescription --display-name ExampleDisplayName1 --logo-uri 'https://www.example.com/logo.png' --setup-uri 'https://www.example.com' --long-description 'This is sample description}' --customer-service-number '+1 800 123 4567' --customer-service-extension '125' --customer-service-uri 'https://www.example.com/customerservice'"
+            ]
+        },
+        {
+            "name": "az eventgrid partner registration delete",
+            "summary": "Delete a partner registration.",
+            "syntax": "az eventgrid partner registration delete [--ids]\n                                         [--name]\n                                         [--resource-group]\n                                         [--subscription]\n                                         [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az eventgrid partner registration list",
+            "summary": "List all partner registrations in specific resource group or all under the specified azure subscription.",
+            "syntax": "az eventgrid partner registration list [--odata-query]\n                                       [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--odata-query",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az eventgrid partner registration list",
+                "az eventgrid partner registration list -g rg1",
+                "az eventgrid partner registration list -g rg1 --odata-query \"Contains(name, 'XYZ')\"",
+                "az eventgrid partner registration list -g rg1 --odata-query \"NOT (name eq 'name1')\""
+            ]
+        },
+        {
+            "name": "az eventgrid partner registration show",
+            "summary": "Get a partner registration.",
+            "syntax": "az eventgrid partner registration show [--ids]\n                                       [--name]\n                                       [--resource-group]\n                                       [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        }
+    ]
+}

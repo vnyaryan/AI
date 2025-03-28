@@ -1,0 +1,6 @@
+{
+    "command_group": "az partnercenter",
+    "description": "Partner Center management.",
+    "status": "GA",
+    "commands": []
+}

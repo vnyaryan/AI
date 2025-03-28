@@ -1,0 +1,35 @@
+{
+    "command_group": "az dataprotection backup-policy trigger",
+    "description": "Manage backup schedule of a backup policy.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az dataprotection backup-policy trigger create-schedule",
+            "summary": "Create backup schedule of a policy.",
+            "syntax": "az dataprotection backup-policy trigger create-schedule --interval-count\n                                                        --interval-type {Daily, Hourly, Weekly}\n                                                        --schedule-days",
+            "required_parameters": [
+                "--interval-count",
+                "--interval-type",
+                "--schedule-days"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az dataprotection backup-policy trigger create-schedule --interval-type Weekly --interval-count 1 --schedule-days 2021-05-02T05:30:00 2021-05-03T05:30:00",
+                "az dataprotection backup-policy trigger create-schedule --interval-type Hourly --interval-count 6 --schedule-days 2021-05-02T05:30:00"
+            ]
+        },
+        {
+            "name": "az dataprotection backup-policy trigger set",
+            "summary": "Associate backup schedule to a backup policy.",
+            "syntax": "az dataprotection backup-policy trigger set --policy\n                                            --schedule",
+            "required_parameters": [
+                "--policy",
+                "--schedule"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az dataprotection backup-policy trigger set --policy policy.json --schedule R/2021-05-02T05:30:00+00:00/P1D"
+            ]
+        }
+    ]
+}

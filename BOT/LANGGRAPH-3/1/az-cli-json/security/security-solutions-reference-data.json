@@ -1,0 +1,17 @@
+{
+    "command_group": "az security security-solutions-reference-data",
+    "description": "Display all security solutions reference data at the subscription level.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az security security-solutions-reference-data list",
+            "summary": "Display all security solutions reference data at the subscription level.",
+            "syntax": "az security security-solutions-reference-data list",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "examples": [
+                "az security security-solutions-reference-data list"
+            ]
+        }
+    ]
+}

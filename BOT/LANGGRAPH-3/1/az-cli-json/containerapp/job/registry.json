@@ -1,0 +1,95 @@
+{
+    "command_group": "az containerapp job registry",
+    "description": "Commands to manage container registry information of a Container App Job.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az containerapp job registry list",
+            "summary": "List container registries configured in a Container App Job.",
+            "syntax": "az containerapp job registry list --name\n                                  --resource-group",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az containerapp job registry list -n my-containerapp-job -g MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az containerapp job registry remove",
+            "summary": "Remove a container registry's details in a Container App Job.",
+            "syntax": "az containerapp job registry remove --server\n                                    [--ids]\n                                    [--name]\n                                    [--resource-group]\n                                    [--subscription]",
+            "required_parameters": [
+                "--server"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az containerapp job registry remove -n my-containerapp -g MyResourceGroup --server MyContainerappRegistry.azurecr.io"
+            ]
+        },
+        {
+            "name": "az containerapp job registry set",
+            "summary": "Add or update a container registry's details in a Container App Job.",
+            "syntax": "az containerapp job registry set --server\n                                 [--identity]\n                                 [--ids]\n                                 [--name]\n                                 [--password]\n                                 [--resource-group]\n                                 [--subscription]\n                                 [--username]",
+            "required_parameters": [
+                "--server"
+            ],
+            "optional_parameters": [
+                "--identity",
+                "--ids",
+                "--name -n",
+                "--password",
+                "--resource-group -g",
+                "--subscription",
+                "--username"
+            ],
+            "examples": [
+                "az containerapp job registry set -n my-containerapp-job -g MyResourceGroup \\\n    --server MyContainerappJobRegistry.azurecr.io --username MyRegistryUsername --password MyRegistryPassword"
+            ]
+        },
+        {
+            "name": "az containerapp job registry set",
+            "summary": "Add or update a container registry's details in a Container App Job.",
+            "syntax": "az containerapp job registry set --server\n                                 [--identity]\n                                 [--ids]\n                                 [--name]\n                                 [--password]\n                                 [--resource-group]\n                                 [--subscription]\n                                 [--username]",
+            "required_parameters": [
+                "--server"
+            ],
+            "optional_parameters": [
+                "--identity",
+                "--ids",
+                "--name -n",
+                "--password",
+                "--resource-group -g",
+                "--subscription",
+                "--username"
+            ],
+            "examples": [
+                "az containerapp job registry set -n my-containerapp-job -g MyResourceGroup \\\n    --server MyContainerappJobRegistry.azurecr.io --username MyRegistryUsername --password MyRegistryPassword",
+                "az containerapp job registry set -n my-containerapp-job -g MyResourceGroup \\\n    --server MyContainerappJobRegistry.azurecr.io --identity system-environment"
+            ]
+        },
+        {
+            "name": "az containerapp job registry show",
+            "summary": "Show details of a container registry from a Container App Job.",
+            "syntax": "az containerapp job registry show --server\n                                  [--ids]\n                                  [--name]\n                                  [--resource-group]\n                                  [--subscription]",
+            "required_parameters": [
+                "--server"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az containerapp job registry show -n my-containerapp-job -g MyResourceGroup --server MyContainerappJobRegistry.azurecr.io"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,133 @@
+{
+    "command_group": "az notification-hub",
+    "description": "Manage notification hubs.",
+    "status": "Experimental",
+    "commands": [
+        {
+            "name": "az notification-hub check-availability",
+            "summary": "Checks the availability of the given notification hub in a namespace.",
+            "syntax": "az notification-hub check-availability --name\n                                       [--ids]\n                                       [--namespace-name]\n                                       [--resource-group]\n                                       [--subscription]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--namespace-name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az notification-hub check-availability --resource-group MyResourceGroup --namespace-name \"locp-newns\" --name my-hub"
+            ]
+        },
+        {
+            "name": "az notification-hub create",
+            "summary": "Create a notification hub in a namespace.",
+            "syntax": "az notification-hub create --name\n                           --namespace-name\n                           --resource-group\n                           [--location]\n                           [--registration-ttl]\n                           [--tags]",
+            "required_parameters": [
+                "--name -n",
+                "--namespace-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--location -l",
+                "--registration-ttl",
+                "--tags"
+            ],
+            "examples": [
+                "az notification-hub create --resource-group MyResourceGroup --namespace-name my-namespace --name my-hub --location \"South Central US\""
+            ]
+        },
+        {
+            "name": "az notification-hub delete",
+            "summary": "Delete a notification hub associated with a namespace.",
+            "syntax": "az notification-hub delete [--ids]\n                           [--name]\n                           [--namespace-name]\n                           [--resource-group]\n                           [--subscription]\n                           [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--namespace-name",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az notification-hub delete --resource-group MyResourceGroup --namespace-name my-namespace --name my-hub"
+            ]
+        },
+        {
+            "name": "az notification-hub list",
+            "summary": "List the notification hubs associated with a namespace.",
+            "syntax": "az notification-hub list --namespace-name\n                         --resource-group\n                         [--max-items]\n                         [--next-token]",
+            "required_parameters": [
+                "--namespace-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az notification-hub list --resource-group MyResourceGroup --namespace-name my-namespace"
+            ]
+        },
+        {
+            "name": "az notification-hub show",
+            "summary": "Show the notification hub information.",
+            "syntax": "az notification-hub show [--ids]\n                         [--name]\n                         [--namespace-name]\n                         [--resource-group]\n                         [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--namespace-name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az notification-hub test-send",
+            "summary": "Test send a push notification.",
+            "syntax": "az notification-hub test-send --namespace-name\n                              --notification-format {apple, baidu, gcm, template, windows, windowsphone}\n                              --notification-hub-name\n                              --resource-group\n                              [--message]\n                              [--payload]\n                              [--tag]\n                              [--title]",
+            "required_parameters": [
+                "--namespace-name",
+                "--notification-format",
+                "--notification-hub-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--message",
+                "--payload",
+                "--tag",
+                "--title"
+            ],
+            "examples": [
+                "az notification-hub test-send --resource-group MyResourceGroup --namespace-name \\\nmy-namespace --notification-hub-name my-hub --notification-format gcm \\\n--message \"test notification\"",
+                "az notification-hub test-send --resource-group MyResourceGroup --namespace-name \\\nmy-namespace --notification-hub-name my-hub --notification-format gcm \\\n--payload @path/to/file",
+                "az notification-hub test-send --resource-group MyResourceGroup --namespace-name \\\nmy-namespace --notification-hub-name my-hub --notification-format gcm \\\n--payload \"{\\\"data\\\":{\\\"message\\\":\\\"test notification\\\"}}\""
+            ]
+        },
+        {
+            "name": "az notification-hub update",
+            "summary": "Update a notification hub in a namespace.",
+            "syntax": "az notification-hub update [--add]\n                           [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                           [--ids]\n                           [--location]\n                           [--name]\n                           [--namespace-name]\n                           [--remove]\n                           [--resource-group]\n                           [--set]\n                           [--subscription]\n                           [--tags]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--force-string",
+                "--ids",
+                "--location -l",
+                "--name --notification-hub-name -n",
+                "--namespace-name",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--subscription",
+                "--tags"
+            ],
+            "examples": [
+                "az notification-hub update --resource-group MyResourceGroup --namespace-name my-namespace --name \"sdk-notificationHubs-8708\""
+            ]
+        }
+    ]
+}

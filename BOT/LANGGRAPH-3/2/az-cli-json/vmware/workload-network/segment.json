@@ -1,0 +1,125 @@
+{
+    "command_group": "az vmware workload-network segment",
+    "description": "Commands to manage a Segment workload network.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az vmware workload-network segment create",
+            "summary": "Create a segment by id in a private cloud workload network.",
+            "syntax": "az vmware workload-network segment create --name\n                                          --private-cloud\n                                          --resource-group\n                                          [--connected-gateway]\n                                          [--dhcp-ranges]\n                                          [--display-name]\n                                          [--gateway-address]\n                                          [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                          [--revision]",
+            "required_parameters": [
+                "--name --segment -n",
+                "--private-cloud -c",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--connected-gateway",
+                "--dhcp-ranges",
+                "--display-name",
+                "--gateway-address",
+                "--no-wait",
+                "--revision"
+            ],
+            "examples": [
+                "az vmware workload-network segment create --resource-group group1 --private-cloud cloud1 --segment segment1 --display-name segment1 --connected-gateway /infra/tier-1s/gateway --revision 1 --dhcp-ranges 40.20.0.0 40.20.0.1 --gateway-address 40.20.20.20/16"
+            ]
+        },
+        {
+            "name": "az vmware workload-network segment delete",
+            "summary": "Delete a segment by id in a private cloud workload network.",
+            "syntax": "az vmware workload-network segment delete [--ids]\n                                          [--name]\n                                          [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                          [--private-cloud]\n                                          [--resource-group]\n                                          [--subscription]\n                                          [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --segment -n",
+                "--no-wait",
+                "--private-cloud -c",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az vmware workload-network segment delete --resource-group group1 --private-cloud cloud1 --segment segment1"
+            ]
+        },
+        {
+            "name": "az vmware workload-network segment list",
+            "summary": "List of segments in a private cloud workload network.",
+            "syntax": "az vmware workload-network segment list --private-cloud\n                                        --resource-group\n                                        [--max-items]\n                                        [--next-token]",
+            "required_parameters": [
+                "--private-cloud -c",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az vmware workload-network segment list --resource-group group1 --private-cloud cloud1"
+            ]
+        },
+        {
+            "name": "az vmware workload-network segment show",
+            "summary": "Get a segment by id in a private cloud workload network.",
+            "syntax": "az vmware workload-network segment show [--ids]\n                                        [--name]\n                                        [--private-cloud]\n                                        [--resource-group]\n                                        [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --segment -n",
+                "--private-cloud -c",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az vmware workload-network segment show --resource-group group1 --private-cloud cloud1 --segment segment1"
+            ]
+        },
+        {
+            "name": "az vmware workload-network segment update",
+            "summary": "Update a segment by id in a private cloud workload network.",
+            "syntax": "az vmware workload-network segment update [--add]\n                                          [--connected-gateway]\n                                          [--dhcp-ranges]\n                                          [--display-name]\n                                          [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                          [--gateway-address]\n                                          [--ids]\n                                          [--name]\n                                          [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                          [--private-cloud]\n                                          [--remove]\n                                          [--resource-group]\n                                          [--revision]\n                                          [--set]\n                                          [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--connected-gateway",
+                "--dhcp-ranges",
+                "--display-name",
+                "--force-string",
+                "--gateway-address",
+                "--ids",
+                "--name --segment -n",
+                "--no-wait",
+                "--private-cloud -c",
+                "--remove",
+                "--resource-group -g",
+                "--revision",
+                "--set",
+                "--subscription"
+            ],
+            "examples": [
+                "az vmware workload-network segment update --resource-group group1 --private-cloud cloud1 --segment segment1 --display-name segment1 --connected-gateway /infra/tier-1s/gateway --revision 1 --dhcp-ranges 40.20.0.0 40.20.0.1 --gateway-address 40.20.20.20/16"
+            ]
+        },
+        {
+            "name": "az vmware workload-network segment wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az vmware workload-network segment wait [--created]\n                                        [--custom]\n                                        [--deleted]\n                                        [--exists]\n                                        [--ids]\n                                        [--interval]\n                                        [--name]\n                                        [--private-cloud]\n                                        [--resource-group]\n                                        [--subscription]\n                                        [--timeout]\n                                        [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--name --segment -n",
+                "--private-cloud -c",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

@@ -1,0 +1,89 @@
+{
+    "command_group": "az mysql flexible-server ad-admin",
+    "description": "Manage server Active Directory administrator.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az mysql flexible-server ad-admin create",
+            "summary": "Create an Active Directory administrator.",
+            "syntax": "az mysql flexible-server ad-admin create --display-name\n                                         --identity\n                                         --object-id\n                                         --resource-group\n                                         --server-name\n                                         [--no-wait]",
+            "required_parameters": [
+                "--display-name -u",
+                "--identity",
+                "--object-id -i",
+                "--resource-group -g",
+                "--server-name -s"
+            ],
+            "optional_parameters": [
+                "--no-wait"
+            ],
+            "examples": [
+                "az mysql flexible-server ad-admin create -g testgroup -s testsvr -u john@contoso.com -i 00000000-0000-0000-0000-000000000000 --identity test-identity"
+            ]
+        },
+        {
+            "name": "az mysql flexible-server ad-admin delete",
+            "summary": "Delete an Active Directory administrator.",
+            "syntax": "az mysql flexible-server ad-admin delete --resource-group\n                                         --server-name\n                                         [--no-wait]\n                                         [--yes]",
+            "required_parameters": [
+                "--resource-group -g",
+                "--server-name -s"
+            ],
+            "optional_parameters": [
+                "--no-wait",
+                "--yes -y"
+            ],
+            "examples": [
+                "az mysql flexible-server ad-admin delete -g testgroup -s testsvr"
+            ]
+        },
+        {
+            "name": "az mysql flexible-server ad-admin list",
+            "summary": "List all Active Directory administrators.",
+            "syntax": "az mysql flexible-server ad-admin list --resource-group\n                                       --server-name",
+            "required_parameters": [
+                "--resource-group -g",
+                "--server-name -s"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az mysql flexible-server ad-admin list -g testgroup -s testsvr"
+            ]
+        },
+        {
+            "name": "az mysql flexible-server ad-admin show",
+            "summary": "Get an Active Directory administrator.",
+            "syntax": "az mysql flexible-server ad-admin show --resource-group\n                                       --server-name",
+            "required_parameters": [
+                "--resource-group -g",
+                "--server-name -s"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az mysql flexible-server ad-admin show -g testgroup -s testsvr"
+            ]
+        },
+        {
+            "name": "az mysql flexible-server ad-admin wait",
+            "summary": "Wait for the Active Directory administrator to satisfy certain conditions.",
+            "syntax": "az mysql flexible-server ad-admin wait --resource-group\n                                       --server-name\n                                       [--created]\n                                       [--custom]\n                                       [--deleted]\n                                       [--exists]\n                                       [--interval]\n                                       [--timeout]\n                                       [--updated]",
+            "required_parameters": [
+                "--resource-group -g",
+                "--server-name -s"
+            ],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--interval",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": [
+                "az mysql flexible-server ad-admin wait -g testgroup -s testsvr --exists",
+                "az mysql flexible-server ad-admin wait -g testgroup -s testsvr --deleted"
+            ]
+        }
+    ]
+}

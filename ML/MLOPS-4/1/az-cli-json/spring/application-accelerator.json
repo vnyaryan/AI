@@ -1,0 +1,51 @@
+{
+    "command_group": "az spring application-accelerator",
+    "description": "(Enterprise Tier Only) Commands to manage Application Accelerator in Azure Spring Apps.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az spring application-accelerator create",
+            "summary": "(Enterprise Tier Only) Create Application Accelerator in Azure Spring Apps instance.",
+            "syntax": "az spring application-accelerator create --resource-group\n                                         --service\n                                         [--no-wait]",
+            "required_parameters": [
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [
+                "--no-wait"
+            ],
+            "examples": [
+                "az spring application-accelerator create --service MyCluster --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az spring application-accelerator delete",
+            "summary": "(Enterprise Tier Only) Delete Application Accelerator from Azure Spring Apps instance.",
+            "syntax": "az spring application-accelerator delete --resource-group\n                                         --service\n                                         [--no-wait]\n                                         [--yes]",
+            "required_parameters": [
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [
+                "--no-wait",
+                "--yes -y"
+            ],
+            "examples": [
+                "az spring application-accelerator delete --service MyCluster --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az spring application-accelerator show",
+            "summary": "(Enterprise Tier Only) Show the settings, provisioning status and runtime status of Application Accelerator.",
+            "syntax": "az spring application-accelerator show --resource-group\n                                       --service",
+            "required_parameters": [
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az spring application-accelerator show --service MyCluster --resource-group MyResourceGroup"
+            ]
+        }
+    ]
+}

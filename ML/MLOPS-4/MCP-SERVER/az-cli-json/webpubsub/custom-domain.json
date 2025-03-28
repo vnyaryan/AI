@@ -1,0 +1,64 @@
+{
+    "command_group": "az webpubsub custom-domain",
+    "description": "Manage custom domain settings.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az webpubsub custom-domain create",
+            "summary": "Create a custom domain of WebPubSub Service.",
+            "syntax": "az webpubsub custom-domain create --certificate-resource-id\n                                  --domain-name\n                                  --name\n                                  --resource-group\n                                  --webpubsub-name",
+            "required_parameters": [
+                "--certificate-resource-id",
+                "--domain-name",
+                "--name",
+                "--resource-group -g",
+                "--webpubsub-name"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az webpubsub custom-domain create --webpubsub-name MyWebPubSub -g MyResourceGroup --name MyDomain --domain-name MyDomain.com --certificate-resource-id /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/MyResourceGroup/providers/Microsoft.Web/certificates/MyCertificate"
+            ]
+        },
+        {
+            "name": "az webpubsub custom-domain delete",
+            "summary": "Delete a custom domain of WebPubSub Service.",
+            "syntax": "az webpubsub custom-domain delete --name\n                                  --resource-group\n                                  --webpubsub-name",
+            "required_parameters": [
+                "--name",
+                "--resource-group -g",
+                "--webpubsub-name"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az webpubsub custom-domain delete --webpubsub-name MyWebPubSub -g MyResourceGroup --name MyDomain"
+            ]
+        },
+        {
+            "name": "az webpubsub custom-domain list",
+            "summary": "List custom domains of WebPubSub Service.",
+            "syntax": "az webpubsub custom-domain list --resource-group\n                                --webpubsub-name",
+            "required_parameters": [
+                "--resource-group -g",
+                "--webpubsub-name"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az webpubsub custom-domain list --webpubsub-name MyWebPubSub -g MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az webpubsub custom-domain show",
+            "summary": "Show the detail of a custom domain of WebPubSub Service.",
+            "syntax": "az webpubsub custom-domain show --name\n                                --resource-group\n                                --webpubsub-name",
+            "required_parameters": [
+                "--name",
+                "--resource-group -g",
+                "--webpubsub-name"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az webpubsub custom-domain show --webpubsub-name MyWebPubSub -g MyResourceGroup --name MyDomain"
+            ]
+        }
+    ]
+}

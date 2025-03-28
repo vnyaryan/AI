@@ -1,0 +1,81 @@
+{
+    "command_group": "az batch task file",
+    "description": "Manage Batch task files.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az batch task file delete",
+            "summary": "Deletes the specified Task file from the Compute Node where the Task ran.",
+            "syntax": "az batch task file delete --file-path\n                          --job-id\n                          --task-id\n                          [--account-endpoint]\n                          [--account-key]\n                          [--account-name]\n                          [--recursive {false, true}]\n                          [--yes]",
+            "required_parameters": [
+                "--file-path",
+                "--job-id",
+                "--task-id"
+            ],
+            "optional_parameters": [
+                "--account-endpoint",
+                "--account-key",
+                "--account-name",
+                "--recursive",
+                "--yes -y"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az batch task file download",
+            "summary": "Download the content of a Batch task file.",
+            "syntax": "az batch task file download --destination\n                            --file-path\n                            --job-id\n                            --task-id\n                            [--account-endpoint]\n                            [--account-key]\n                            [--account-name]\n                            [--end-range]\n                            [--if-modified-since]\n                            [--if-unmodified-since]\n                            [--start-range]",
+            "required_parameters": [
+                "--destination",
+                "--file-path",
+                "--job-id",
+                "--task-id"
+            ],
+            "optional_parameters": [
+                "--account-endpoint",
+                "--account-key",
+                "--account-name",
+                "--end-range",
+                "--if-modified-since",
+                "--if-unmodified-since",
+                "--start-range"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az batch task file list",
+            "summary": "Lists the files in a Task's directory on its Compute Node.",
+            "syntax": "az batch task file list --job-id\n                        --task-id\n                        [--account-endpoint]\n                        [--account-key]\n                        [--account-name]\n                        [--filter]\n                        [--recursive {false, true}]",
+            "required_parameters": [
+                "--job-id",
+                "--task-id"
+            ],
+            "optional_parameters": [
+                "--account-endpoint",
+                "--account-key",
+                "--account-name",
+                "--filter",
+                "--recursive"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az batch task file show",
+            "summary": "Gets the properties of the specified Task file.",
+            "syntax": "az batch task file show --file-path\n                        --job-id\n                        --task-id\n                        [--account-endpoint]\n                        [--account-key]\n                        [--account-name]\n                        [--if-modified-since]\n                        [--if-unmodified-since]",
+            "required_parameters": [
+                "--file-path",
+                "--job-id",
+                "--task-id"
+            ],
+            "optional_parameters": [
+                "--account-endpoint",
+                "--account-key",
+                "--account-name",
+                "--if-modified-since",
+                "--if-unmodified-since"
+            ],
+            "examples": []
+        }
+    ]
+}

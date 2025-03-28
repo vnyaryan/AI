@@ -1,0 +1,194 @@
+{
+    "command_group": "az dms project task",
+    "description": "Manage tasks for an Azure Database Migration Service (classic) instance's project.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az dms project task cancel",
+            "summary": "Cancel a task if it's currently queued or running.",
+            "syntax": "az dms project task cancel --name\n                           --project-name\n                           --resource-group\n                           --service-name",
+            "required_parameters": [
+                "--name -n",
+                "--project-name",
+                "--resource-group -g",
+                "--service-name"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az dms project task cancel",
+            "summary": "This command is being deprecated. Use the stop command instead.",
+            "syntax": "az dms project task cancel --name\n                           --project-name\n                           --resource-group\n                           --service-name\n                           [--object-name]",
+            "required_parameters": [
+                "--name -n",
+                "--project-name",
+                "--resource-group -g",
+                "--service-name"
+            ],
+            "optional_parameters": [
+                "--object-name"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az dms project task check-name",
+            "summary": "Check if a given task name is available within a given instance of DMS as well as the name's validity.",
+            "syntax": "az dms project task check-name --name\n                               --project-name\n                               --resource-group\n                               --service-name",
+            "required_parameters": [
+                "--name -n",
+                "--project-name",
+                "--resource-group -g",
+                "--service-name"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az dms project task create",
+            "summary": "Create and start a migration task.",
+            "syntax": "az dms project task create --database-options-json\n                           --name\n                           --project-name\n                           --resource-group\n                           --service-name\n                           --source-connection-json\n                           --target-connection-json\n                           [--enable-data-integrity-validation]\n                           [--enable-query-analysis-validation]\n                           [--enable-schema-validation]\n                           [--task-type]",
+            "required_parameters": [
+                "--database-options-json",
+                "--name -n",
+                "--project-name",
+                "--resource-group -g",
+                "--service-name",
+                "--source-connection-json",
+                "--target-connection-json"
+            ],
+            "optional_parameters": [
+                "--enable-data-integrity-validation",
+                "--enable-query-analysis-validation",
+                "--enable-schema-validation",
+                "--task-type"
+            ],
+            "examples": [
+                "az dms project task create --task-type OfflineMigration --database-options-json \"C:\\CLI Files\\databaseOptions.json\" -n mytask --project-name myproject -g myresourcegroup --service-name mydms --source-connection-json \"{'dataSource': 'myserver', 'authentication': 'SqlAuthentication', 'encryptConnection': 'true', 'trustServerCertificate': 'true'}\" --target-connection-json \"C:\\CLI Files\\targetConnection.json\"",
+                "az dms project task create --task-type OfflineMigration --database-options-json \"C:\\CLI Files\\databaseOptions.json\" -n mytask --project-name myproject -g myresourcegroup --service-name mydms --source-connection-json \"C:\\CLI Files\\sourceConnection.json\" --target-connection-json \"C:\\CLI Files\\targetConnection.json\" --enable-data-integrity-validation --enable-query-analysis-validation --enable-schema-validation"
+            ]
+        },
+        {
+            "name": "az dms project task create",
+            "summary": "Create and start a migration task.",
+            "syntax": "az dms project task create --database-options-json\n                           --name\n                           --project-name\n                           --resource-group\n                           --service-name\n                           --source-connection-json\n                           --target-connection-json\n                           [--enable-data-integrity-validation]\n                           [--enable-query-analysis-validation]\n                           [--enable-schema-validation]\n                           [--task-type]\n                           [--validate-only]\n                           [--validated-task-name]",
+            "required_parameters": [
+                "--database-options-json",
+                "--name -n",
+                "--project-name",
+                "--resource-group -g",
+                "--service-name",
+                "--source-connection-json",
+                "--target-connection-json"
+            ],
+            "optional_parameters": [
+                "--enable-data-integrity-validation",
+                "--enable-query-analysis-validation",
+                "--enable-schema-validation",
+                "--task-type",
+                "--validate-only",
+                "--validated-task-name"
+            ],
+            "examples": [
+                "az dms project task create --database-options-json C:\\CliFiles\\databaseOptions.json -n mytask --project-name myproject -g myresourcegroup --service-name mydms --source-connection-json '{'dataSource': 'myserver', 'authentication': 'SqlAuthentication', 'encryptConnection': 'true', 'trustServerCertificate': 'true'}' --target-connection-json C:\\CliFiles\\targetConnection.json --task-type offlinemigration",
+                "az dms project task create --database-options-json C:\\CliFiles\\databaseOptions.json -n mytask --project-name myproject -g myresourcegroup --service-name mydms --source-connection-json C:\\CliFiles\\sourceConnection.json --target-connection-json C:\\CliFiles\\targetConnection.json --enable-data-integrity-validation --enable-query-analysis-validation --enable-schema-validation --task-type offlinemigration"
+            ]
+        },
+        {
+            "name": "az dms project task cutover",
+            "summary": "For an online migration task, complete the migration by performing a cutover.",
+            "syntax": "az dms project task cutover --name\n                            --object-name\n                            --project-name\n                            --resource-group\n                            --service-name",
+            "required_parameters": [
+                "--name -n",
+                "--object-name",
+                "--project-name",
+                "--resource-group -g",
+                "--service-name"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az dms project task delete",
+            "summary": "Delete a migration task.",
+            "syntax": "az dms project task delete --name\n                           --project-name\n                           --resource-group\n                           --service-name\n                           [--delete-running-tasks]\n                           [--yes]",
+            "required_parameters": [
+                "--name -n",
+                "--project-name",
+                "--resource-group -g",
+                "--service-name"
+            ],
+            "optional_parameters": [
+                "--delete-running-tasks",
+                "--yes -y"
+            ],
+            "examples": [
+                "az dms project task delete --name MyTask --project-name MyProject --resource-group MyResourceGroup --service-name MyService"
+            ]
+        },
+        {
+            "name": "az dms project task list",
+            "summary": "List the tasks within a project. Some tasks may have a status of Unknown, which indicates that an error occurred while querying the status of that task.",
+            "syntax": "az dms project task list --project-name\n                         --resource-group\n                         --service-name\n                         [--task-type]",
+            "required_parameters": [
+                "--project-name",
+                "--resource-group -g",
+                "--service-name"
+            ],
+            "optional_parameters": [
+                "--task-type"
+            ],
+            "examples": [
+                "az dms project task list --project-name myproject -g myresourcegroup --service-name mydms",
+                "az dms project task list --project-name myproject -g myresourcegroup --service-name mydms --task-type Migrate.SqlServer.SqlDb"
+            ]
+        },
+        {
+            "name": "az dms project task restart",
+            "summary": "Restart either the entire migration or just a specified object. Currently only supported by MongoDB migrations.",
+            "syntax": "az dms project task restart --name\n                            --project-name\n                            --resource-group\n                            --service-name\n                            [--object-name]",
+            "required_parameters": [
+                "--name -n",
+                "--project-name",
+                "--resource-group -g",
+                "--service-name"
+            ],
+            "optional_parameters": [
+                "--object-name"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az dms project task show",
+            "summary": "Show the details of a migration task. Use the \"--expand\" to get more details.",
+            "syntax": "az dms project task show --name\n                         --project-name\n                         --resource-group\n                         --service-name\n                         [--expand]",
+            "required_parameters": [
+                "--name -n",
+                "--project-name",
+                "--resource-group -g",
+                "--service-name"
+            ],
+            "optional_parameters": [
+                "--expand"
+            ],
+            "examples": [
+                "az dms project task show --name MyTask --project-name MyProject --resource-group MyResourceGroup --service-name MyService"
+            ]
+        },
+        {
+            "name": "az dms project task stop",
+            "summary": "Stops the task, or stops migration on the specified object (MongoDB migrations only).",
+            "syntax": "az dms project task stop --name\n                         --project-name\n                         --resource-group\n                         --service-name\n                         [--object-name]",
+            "required_parameters": [
+                "--name -n",
+                "--project-name",
+                "--resource-group -g",
+                "--service-name"
+            ],
+            "optional_parameters": [
+                "--object-name"
+            ],
+            "examples": []
+        }
+    ]
+}

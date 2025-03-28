@@ -1,0 +1,66 @@
+{
+    "command_group": "az webapp config",
+    "description": "Configure a web app.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az webapp config set",
+            "summary": "Set a web app's configuration.",
+            "syntax": "az webapp config set [--acr-identity]\n                     [--acr-use-identity {false, true}]\n                     [--always-on {false, true}]\n                     [--auto-heal-enabled {false, true}]\n                     [--ftps-state {AllAllowed, Disabled, FtpsOnly}]\n                     [--generic-configurations]\n                     [--http20-enabled {false, true}]\n                     [--ids]\n                     [--java-container]\n                     [--java-container-version]\n                     [--java-version]\n                     [--linux-fx-version]\n                     [--min-tls-cipher-suite]\n                     [--min-tls-version]\n                     [--name]\n                     [--net-framework-version]\n                     [--number-of-workers]\n                     [--php-version]\n                     [--powershell-version]\n                     [--prewarmed-instance-count]\n                     [--python-version]\n                     [--remote-debugging-enabled {false, true}]\n                     [--resource-group]\n                     [--runtime]\n                     [--slot]\n                     [--startup-file]\n                     [--subscription]\n                     [--use-32bit-worker-process {false, true}]\n                     [--vnet-route-all-enabled {false, true}]\n                     [--web-sockets-enabled {false, true}]\n                     [--windows-fx-version]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--acr-identity",
+                "--acr-use-identity",
+                "--always-on",
+                "--auto-heal-enabled",
+                "--ftps-state",
+                "--generic-configurations",
+                "--http20-enabled",
+                "--ids",
+                "--java-container",
+                "--java-container-version",
+                "--java-version",
+                "--linux-fx-version",
+                "--min-tls-cipher-suite",
+                "--min-tls-version",
+                "--name -n",
+                "--net-framework-version",
+                "--number-of-workers",
+                "--php-version",
+                "--powershell-version",
+                "--prewarmed-instance-count",
+                "--python-version",
+                "--remote-debugging-enabled",
+                "--resource-group -g",
+                "--runtime",
+                "--slot -s",
+                "--startup-file",
+                "--subscription",
+                "--use-32bit-worker-process",
+                "--vnet-route-all-enabled",
+                "--web-sockets-enabled",
+                "--windows-fx-version"
+            ],
+            "examples": [
+                "az webapp config set -g MyResourceGroup -n MyUniqueApp --always-on true",
+                "az webapp config set -g MyResourceGroup -n MyUniqueApp --generic-configurations \"@.\\params.json\""
+            ]
+        },
+        {
+            "name": "az webapp config show",
+            "summary": "Get the details of a web app's configuration.",
+            "syntax": "az webapp config show [--ids]\n                      [--name]\n                      [--resource-group]\n                      [--slot]\n                      [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--slot -s",
+                "--subscription"
+            ],
+            "examples": [
+                "az webapp config show --name MyWebapp --resource-group MyResourceGroup"
+            ]
+        }
+    ]
+}

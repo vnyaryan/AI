@@ -1,0 +1,6 @@
+{
+    "command_group": "az arcdata",
+    "description": "Commands for using Azure Arc-enabled data services.",
+    "status": "GA",
+    "commands": []
+}

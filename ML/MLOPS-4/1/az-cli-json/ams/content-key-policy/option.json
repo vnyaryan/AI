@@ -1,0 +1,97 @@
+{
+    "command_group": "az ams content-key-policy option",
+    "description": "Manage options for an existing content key policy.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az ams content-key-policy option add",
+            "summary": "Add a new option to an existing content key policy.",
+            "syntax": "az ams content-key-policy option add --policy-option-name\n                                     [--account-name]\n                                     [--alt-rsa-token-keys]\n                                     [--alt-symmetric-token-keys]\n                                     [--alt-x509-token-keys]\n                                     [--ask]\n                                     [--audience]\n                                     [--clear-key-configuration]\n                                     [--fair-play-pfx]\n                                     [--fair-play-pfx-password]\n                                     [--fp-playback-duration-seconds]\n                                     [--fp-storage-duration-seconds]\n                                     [--ids]\n                                     [--issuer]\n                                     [--name]\n                                     [--open-id-connect-discovery-document]\n                                     [--open-restriction]\n                                     [--play-ready-template]\n                                     [--rental-and-lease-key-type]\n                                     [--rental-duration]\n                                     [--resource-group]\n                                     [--subscription]\n                                     [--token-claims]\n                                     [--token-key]\n                                     [--token-key-type]\n                                     [--token-type]\n                                     [--widevine-template]",
+            "required_parameters": [
+                "--policy-option-name"
+            ],
+            "optional_parameters": [
+                "--account-name -a",
+                "--alt-rsa-token-keys",
+                "--alt-symmetric-token-keys",
+                "--alt-x509-token-keys",
+                "--ask",
+                "--audience",
+                "--clear-key-configuration",
+                "--fair-play-pfx",
+                "--fair-play-pfx-password",
+                "--fp-playback-duration-seconds",
+                "--fp-storage-duration-seconds",
+                "--ids",
+                "--issuer",
+                "--name -n",
+                "--open-id-connect-discovery-document",
+                "--open-restriction",
+                "--play-ready-template",
+                "--rental-and-lease-key-type",
+                "--rental-duration",
+                "--resource-group -g",
+                "--subscription",
+                "--token-claims",
+                "--token-key",
+                "--token-key-type",
+                "--token-type",
+                "--widevine-template"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az ams content-key-policy option remove",
+            "summary": "Remove an option from an existing content key policy.",
+            "syntax": "az ams content-key-policy option remove --policy-option-id\n                                        [--account-name]\n                                        [--ids]\n                                        [--name]\n                                        [--resource-group]\n                                        [--subscription]",
+            "required_parameters": [
+                "--policy-option-id"
+            ],
+            "optional_parameters": [
+                "--account-name -a",
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az ams content-key-policy option update",
+            "summary": "Update an option from an existing content key policy.",
+            "syntax": "az ams content-key-policy option update --policy-option-id\n                                        [--account-name]\n                                        [--add-alt-token-key]\n                                        [--add-alt-token-key-type]\n                                        [--ask]\n                                        [--audience]\n                                        [--fair-play-pfx]\n                                        [--fair-play-pfx-password]\n                                        [--fp-playback-duration-seconds]\n                                        [--fp-storage-duration-seconds]\n                                        [--ids]\n                                        [--issuer]\n                                        [--name]\n                                        [--open-id-connect-discovery-document]\n                                        [--play-ready-template]\n                                        [--policy-option-name]\n                                        [--rental-and-lease-key-type]\n                                        [--rental-duration]\n                                        [--resource-group]\n                                        [--subscription]\n                                        [--token-claims]\n                                        [--token-key]\n                                        [--token-key-type]\n                                        [--token-type]\n                                        [--widevine-template]",
+            "required_parameters": [
+                "--policy-option-id"
+            ],
+            "optional_parameters": [
+                "--account-name -a",
+                "--add-alt-token-key",
+                "--add-alt-token-key-type",
+                "--ask",
+                "--audience",
+                "--fair-play-pfx",
+                "--fair-play-pfx-password",
+                "--fp-playback-duration-seconds",
+                "--fp-storage-duration-seconds",
+                "--ids",
+                "--issuer",
+                "--name -n",
+                "--open-id-connect-discovery-document",
+                "--play-ready-template",
+                "--policy-option-name",
+                "--rental-and-lease-key-type",
+                "--rental-duration",
+                "--resource-group -g",
+                "--subscription",
+                "--token-claims",
+                "--token-key",
+                "--token-key-type",
+                "--token-type",
+                "--widevine-template"
+            ],
+            "examples": [
+                "az ams content-key-policy option update -n contentKeyPolicyName -g resourceGroup -a amsAccount --policy-option-id xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx --add-alt-token-key tokenKey --add-alt-token-key-type Symmetric"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,36 @@
+{
+    "command_group": "az offazure vmware vcenter",
+    "description": "Manage VMware vCenter.",
+    "status": "Experimental",
+    "commands": [
+        {
+            "name": "az offazure vmware vcenter list",
+            "summary": "List all vCenters on the on-premise site.",
+            "syntax": "az offazure vmware vcenter list --resource-group\n                                --site-name",
+            "required_parameters": [
+                "--resource-group -g",
+                "--site-name"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az offazure vmware vcenter list --resource-group MyResourceGroup --site-name MySiteName"
+            ]
+        },
+        {
+            "name": "az offazure vmware vcenter show",
+            "summary": "Get the details of a vCenter.",
+            "syntax": "az offazure vmware vcenter show [--ids]\n                                [--name]\n                                [--resource-group]\n                                [--site-name]\n                                [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --vcenter-name -n",
+                "--resource-group -g",
+                "--site-name",
+                "--subscription"
+            ],
+            "examples": [
+                "az offazure vmware vcenter show --resource-group MyResourceGroup --site-name MySiteName                  --name MyVCenterName"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,14 @@
+# Log file for SmolLM2 text generation
+2025-02-25 15:01:45,046 - DEBUG - Logging setup completed.
+2025-02-25 15:01:45,047 - DEBUG - Starting model and tokenizer loading for text generation.
+2025-02-25 15:01:45,047 - DEBUG - Loading tokenizer for model: HuggingFaceTB/SmolLM2-1.7B-Instruct
+2025-02-25 15:01:45,054 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-02-25 15:01:45,409 - DEBUG - https://huggingface.co:443 "HEAD /HuggingFaceTB/SmolLM2-1.7B-Instruct/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2025-02-25 15:01:45,623 - DEBUG - Tokenizer loaded successfully.
+2025-02-25 15:01:45,624 - DEBUG - Loading model: HuggingFaceTB/SmolLM2-1.7B-Instruct
+2025-02-25 15:01:45,875 - DEBUG - https://huggingface.co:443 "HEAD /HuggingFaceTB/SmolLM2-1.7B-Instruct/resolve/main/config.json HTTP/1.1" 200 0
+2025-02-25 15:02:33,061 - DEBUG - https://huggingface.co:443 "HEAD /HuggingFaceTB/SmolLM2-1.7B-Instruct/resolve/main/generation_config.json HTTP/1.1" 200 0
+2025-02-25 15:02:33,608 - DEBUG - Model loaded successfully.
+2025-02-25 15:02:33,609 - DEBUG - Tokenizing prompt: Hello, how can I assist you today?
+2025-02-25 15:02:33,830 - DEBUG - Generating text output from model.
+2025-02-25 15:03:40,745 - DEBUG - Generated text: Hello, how can I assist you today?

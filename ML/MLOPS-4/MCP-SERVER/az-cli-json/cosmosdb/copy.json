@@ -1,0 +1,118 @@
+{
+    "command_group": "az cosmosdb copy",
+    "description": "Manage container copy job.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az cosmosdb copy cancel",
+            "summary": "Cancel a container copy job.",
+            "syntax": "az cosmosdb copy cancel --account-name\n                        --job-name\n                        --resource-group",
+            "required_parameters": [
+                "--account-name -a",
+                "--job-name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az cosmosdb copy cancel -g \"rg1\" --account-name \"acc1\" --job-name \"j1\""
+            ]
+        },
+        {
+            "name": "az cosmosdb copy complete",
+            "summary": "Completes an online container copy job.",
+            "syntax": "az cosmosdb copy complete --account-name\n                          --job-name\n                          --resource-group",
+            "required_parameters": [
+                "--account-name -a",
+                "--job-name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az cosmosdb copy complete -g \"rg1\" --account-name \"acc1\" --job-name \"j1\""
+            ]
+        },
+        {
+            "name": "az cosmosdb copy create",
+            "summary": "Creates a container copy job.",
+            "syntax": "az cosmosdb copy create --resource-group\n                        --src-account\n                        [--dest-account]\n                        [--dest-cassandra]\n                        [--dest-mongo]\n                        [--dest-mongo-vcore]\n                        [--dest-nosql]\n                        [--job-name]\n                        [--mode]\n                        [--src-cassandra]\n                        [--src-mongo]\n                        [--src-nosql]",
+            "required_parameters": [
+                "--resource-group -g",
+                "--src-account"
+            ],
+            "optional_parameters": [
+                "--dest-account",
+                "--dest-cassandra",
+                "--dest-mongo",
+                "--dest-mongo-vcore",
+                "--dest-nosql",
+                "--job-name -n",
+                "--mode",
+                "--src-cassandra",
+                "--src-mongo",
+                "--src-nosql"
+            ],
+            "examples": [
+                "az cosmosdb copy create -g \"rg1\" --job-name \"j1\" --src-account \"acc1\" --dest-account \"acc1\" --src-nosql database=db1 container=c1 --dest-nosql database=db2 container=c2",
+                "az cosmosdb copy create -g \"rg1\" --job-name \"j1\" --src-account \"acc1\" --dest-account \"acc2\" --src-nosql database=db1 container=c1 --dest-nosql database=db2 container=c2",
+                "az cosmosdb copy create -g \"rg1\" --job-name \"j1\" --src-account \"acc1\" --dest-account \"acc1\" --src-cassandra keyspace=k1 table=t1 --dest-cassandra keyspace=k2 table=t2",
+                "az cosmosdb copy create -g \"rg1\" --job-name \"j1\" --src-account \"acc1\" --dest-account \"acc1\" --src-mongo database=d1 collection=c1 --dest-mongo database=d2 collection=c2",
+                "az cosmosdb copy create -g \"rg1\" --job-name \"j1\" --src-account \"acc1\" --src-mongo database=d1 collection=c1 --dest-mongo-vcore database=d2 collection=c2 connectionStringKeyVaultUri=<link_to_Azure_KeyVault_secret>"
+            ]
+        },
+        {
+            "name": "az cosmosdb copy list",
+            "summary": "Get a container copy job.",
+            "syntax": "az cosmosdb copy list --account-name\n                      --resource-group",
+            "required_parameters": [
+                "--account-name -a",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az cosmosdb copy list -g \"rg1\" --account-name \"acc1\""
+            ]
+        },
+        {
+            "name": "az cosmosdb copy pause",
+            "summary": "Pause a container copy job.",
+            "syntax": "az cosmosdb copy pause --account-name\n                       --job-name\n                       --resource-group",
+            "required_parameters": [
+                "--account-name -a",
+                "--job-name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az cosmosdb copy pause -g \"rg1\" --account-name \"acc1\" --job-name \"j1\""
+            ]
+        },
+        {
+            "name": "az cosmosdb copy resume",
+            "summary": "Resume a container copy job.",
+            "syntax": "az cosmosdb copy resume --account-name\n                        --job-name\n                        --resource-group",
+            "required_parameters": [
+                "--account-name -a",
+                "--job-name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az cosmosdb copy resume -g \"rg1\" --account-name \"acc1\" --job-name \"j1\""
+            ]
+        },
+        {
+            "name": "az cosmosdb copy show",
+            "summary": "Get a container copy job.",
+            "syntax": "az cosmosdb copy show --account-name\n                      --job-name\n                      --resource-group",
+            "required_parameters": [
+                "--account-name -a",
+                "--job-name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az cosmosdb copy show -g \"rg1\" --account-name \"acc1\" --job-name \"j1\""
+            ]
+        }
+    ]
+}

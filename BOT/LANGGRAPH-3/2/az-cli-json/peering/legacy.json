@@ -1,0 +1,22 @@
+{
+    "command_group": "az peering legacy",
+    "description": "Peering legacy.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az peering legacy list",
+            "summary": "Lists all of the legacy peerings under the given subscription matching the specified kind and location.",
+            "syntax": "az peering legacy list --kind {Direct, Exchange}\n                       --peering-location\n                       [--asn]",
+            "required_parameters": [
+                "--kind",
+                "--peering-location"
+            ],
+            "optional_parameters": [
+                "--asn"
+            ],
+            "examples": [
+                "az peering legacy list --kind \"Exchange\" --peering-location \"peeringLocation0\""
+            ]
+        }
+    ]
+}

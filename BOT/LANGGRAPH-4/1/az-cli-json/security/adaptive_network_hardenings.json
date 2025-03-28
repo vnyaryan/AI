@@ -1,0 +1,38 @@
+{
+    "command_group": "az security adaptive_network_hardenings",
+    "description": "View all Adaptive Network Hardening resources.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az security adaptive_network_hardenings list",
+            "summary": "Gets a list of Adaptive Network Hardenings resources in scope of an extended resource.",
+            "syntax": "az security adaptive_network_hardenings list --resource-group\n                                             --resource-name\n                                             --resource-namespace\n                                             --resource-type",
+            "required_parameters": [
+                "--resource-group -g",
+                "--resource-name",
+                "--resource-namespace",
+                "--resource-type"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az security adaptive_network_hardenings list --resource-group 'RG1' --resource-type 'virtualMachines' --resource-namespace 'Microsoft.Compute' --resource-name 'VM1'"
+            ]
+        },
+        {
+            "name": "az security adaptive_network_hardenings show",
+            "summary": "Gets a single Adaptive Network Hardening resource.",
+            "syntax": "az security adaptive_network_hardenings show --adaptive-network-hardenings-resource-name\n                                             --resource-group\n                                             --resource-name\n                                             --resource-namespace\n                                             --resource-type",
+            "required_parameters": [
+                "--adaptive-network-hardenings-resource-name",
+                "--resource-group -g",
+                "--resource-name",
+                "--resource-namespace",
+                "--resource-type"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az security adaptive_network_hardenings show --resource-group 'RG1' --resource-type 'virtualMachines' --resource-namespace 'Microsoft.Compute' --resource-name 'VM1' --adaptive-network-hardenings-resource-name 'default'"
+            ]
+        }
+    ]
+}

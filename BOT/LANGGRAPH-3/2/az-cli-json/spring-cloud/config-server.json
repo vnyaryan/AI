@@ -1,0 +1,43 @@
+{
+    "command_group": "az spring-cloud config-server",
+    "description": "(Support Standard Tier and Basic Tier) Commands to manage Config Server in Azure Spring Cloud.",
+    "status": "Deprecated",
+    "commands": [
+        {
+            "name": "az spring-cloud config-server clear",
+            "summary": "Erase all settings in Config Server.",
+            "syntax": "az spring-cloud config-server clear --name\n                                    --resource-group",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az spring-cloud config-server set",
+            "summary": "Set Config Server from a yaml file.",
+            "syntax": "az spring-cloud config-server set --config-file\n                                  --name\n                                  --resource-group\n                                  [--no-wait]",
+            "required_parameters": [
+                "--config-file",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--no-wait"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az spring-cloud config-server show",
+            "summary": "Show Config Server.",
+            "syntax": "az spring-cloud config-server show --name\n                                   --resource-group",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        }
+    ]
+}

@@ -1,0 +1,131 @@
+{
+    "command_group": "az redisenterprise",
+    "description": "Manage the redisenterprise cache.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az redisenterprise create",
+            "summary": "Create an existing (overwrite/recreate, with potential downtime) cache cluster.",
+            "syntax": "az redisenterprise create --cluster-name\n                          --resource-group\n                          --sku {Balanced_B0, Balanced_B1, Balanced_B10, Balanced_B100, Balanced_B1000, Balanced_B150, Balanced_B20, Balanced_B250, Balanced_B3, Balanced_B350, Balanced_B5, Balanced_B50, Balanced_B500, Balanced_B700, ComputeOptimized_X10, ComputeOptimized_X100, ComputeOptimized_X150, ComputeOptimized_X20, ComputeOptimized_X250, ComputeOptimized_X3, ComputeOptimized_X350, ComputeOptimized_X5, ComputeOptimized_X50, ComputeOptimized_X500, ComputeOptimized_X700, EnterpriseFlash_F1500, EnterpriseFlash_F300, EnterpriseFlash_F700, Enterprise_E1, Enterprise_E10, Enterprise_E100, Enterprise_E20, Enterprise_E200, Enterprise_E400, Enterprise_E5, Enterprise_E50, FlashOptimized_A1000, FlashOptimized_A1500, FlashOptimized_A2000, FlashOptimized_A250, FlashOptimized_A4500, FlashOptimized_A500, FlashOptimized_A700, MemoryOptimized_M10, MemoryOptimized_M100, MemoryOptimized_M1000, MemoryOptimized_M150, MemoryOptimized_M1500, MemoryOptimized_M20, MemoryOptimized_M2000, MemoryOptimized_M250, MemoryOptimized_M350, MemoryOptimized_M50, MemoryOptimized_M500, MemoryOptimized_M700}\n                          [--access-keys-auth {Disabled, Enabled}]\n                          [--assigned-identities]\n                          [--capacity]\n                          [--client-protocol {Encrypted, Plaintext}]\n                          [--clustering-policy {EnterpriseCluster, OSSCluster}]\n                          [--eviction-policy {AllKeysLFU, AllKeysLRU, AllKeysRandom, NoEviction, VolatileLFU, VolatileLRU, VolatileRandom, VolatileTTL}]\n                          [--group-nickname]\n                          [--high-availability {Disabled, Enabled}]\n                          [--identity-resource-id]\n                          [--identity-type {None, SystemAssigned, SystemAssigned, UserAssigned, UserAssigned}]\n                          [--key-encryption-identity-type {systemAssignedIdentity, userAssignedIdentity}]\n                          [--key-encryption-key-url]\n                          [--linked-databases]\n                          [--location]\n                          [--minimum-tls-version {1.0, 1.1, 1.2}]\n                          [--module]\n                          [--no-database]\n                          [--no-wait]\n                          [--persistence]\n                          [--port]\n                          [--tags]\n                          [--zones]",
+            "required_parameters": [
+                "--cluster-name --name -n",
+                "--resource-group -g",
+                "--sku"
+            ],
+            "optional_parameters": [
+                "--access-keys-auth --access-keys-authentication",
+                "--assigned-identities --user-assigned-identities",
+                "--capacity",
+                "--client-protocol",
+                "--clustering-policy",
+                "--eviction-policy",
+                "--group-nickname",
+                "--high-availability",
+                "--identity-resource-id --user-assigned-identity-resource-id",
+                "--identity-type",
+                "--key-encryption-identity-type --key-identity-type",
+                "--key-encryption-key-url",
+                "--linked-databases",
+                "--location -l",
+                "--minimum-tls-version",
+                "--module --modules",
+                "--no-database",
+                "--no-wait",
+                "--persistence",
+                "--port",
+                "--tags",
+                "--zones -z"
+            ],
+            "examples": [
+                "az redisenterprise create --cluster-name \"cache1\" --location \"East US\" --minimum-tls-version \"1.2\" --sku \"Enterprise_E20\" --capacity 4 --tags tag1=\"value1\" --zones \"1\" \"2\" \"3\" --client-protocol \"Encrypted\" --clustering-policy \"EnterpriseCluster\" --eviction-policy \"NoEviction\" --modules name=\"RedisBloom\" args=\"ERROR_RATE 0.02 INITIAL_SIZE 400\" --persistence aof-enabled=true aof-frequency=\"1s\" --port 10000 --resource-group \"rg1\""
+            ]
+        },
+        {
+            "name": "az redisenterprise delete",
+            "summary": "Delete a RedisEnterprise cache cluster.",
+            "syntax": "az redisenterprise delete [--cluster-name]\n                          [--ids]\n                          [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                          [--resource-group]\n                          [--subscription]\n                          [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--cluster-name --name -n",
+                "--ids",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az redisenterprise list",
+            "summary": "List all RedisEnterprise clusters in the specified subscription.",
+            "syntax": "az redisenterprise list [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az redisenterprise show",
+            "summary": "Get information about a RedisEnterprise cluster.",
+            "syntax": "az redisenterprise show [--cluster-name]\n                        [--ids]\n                        [--resource-group]\n                        [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--cluster-name --name -n",
+                "--ids",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az redisenterprise update",
+            "summary": "Update an existing (overwrite/recreate, with potential downtime) cache cluster.",
+            "syntax": "az redisenterprise update [--add]\n                          [--assigned-identities]\n                          [--capacity]\n                          [--cluster-name]\n                          [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                          [--high-availability {Disabled, Enabled}]\n                          [--identity-resource-id]\n                          [--identity-type {None, SystemAssigned, SystemAssigned, UserAssigned, UserAssigned}]\n                          [--ids]\n                          [--key-encryption-identity-type {systemAssignedIdentity, userAssignedIdentity}]\n                          [--key-encryption-key-url]\n                          [--minimum-tls-version {1.0, 1.1, 1.2}]\n                          [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                          [--remove]\n                          [--resource-group]\n                          [--set]\n                          [--sku {Balanced_B0, Balanced_B1, Balanced_B10, Balanced_B100, Balanced_B1000, Balanced_B150, Balanced_B20, Balanced_B250, Balanced_B3, Balanced_B350, Balanced_B5, Balanced_B50, Balanced_B500, Balanced_B700, ComputeOptimized_X10, ComputeOptimized_X100, ComputeOptimized_X150, ComputeOptimized_X20, ComputeOptimized_X250, ComputeOptimized_X3, ComputeOptimized_X350, ComputeOptimized_X5, ComputeOptimized_X50, ComputeOptimized_X500, ComputeOptimized_X700, EnterpriseFlash_F1500, EnterpriseFlash_F300, EnterpriseFlash_F700, Enterprise_E1, Enterprise_E10, Enterprise_E100, Enterprise_E20, Enterprise_E200, Enterprise_E400, Enterprise_E5, Enterprise_E50, FlashOptimized_A1000, FlashOptimized_A1500, FlashOptimized_A2000, FlashOptimized_A250, FlashOptimized_A4500, FlashOptimized_A500, FlashOptimized_A700, MemoryOptimized_M10, MemoryOptimized_M100, MemoryOptimized_M1000, MemoryOptimized_M150, MemoryOptimized_M1500, MemoryOptimized_M20, MemoryOptimized_M2000, MemoryOptimized_M250, MemoryOptimized_M350, MemoryOptimized_M50, MemoryOptimized_M500, MemoryOptimized_M700}]\n                          [--subscription]\n                          [--tags]\n                          [--zones]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--assigned-identities --user-assigned-identities",
+                "--capacity",
+                "--cluster-name --name -n",
+                "--force-string",
+                "--high-availability",
+                "--identity-resource-id --user-assigned-identity-resource-id",
+                "--identity-type",
+                "--ids",
+                "--key-encryption-identity-type --key-identity-type",
+                "--key-encryption-key-url",
+                "--minimum-tls-version",
+                "--no-wait",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--sku",
+                "--subscription",
+                "--tags",
+                "--zones"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az redisenterprise wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az redisenterprise wait [--cluster-name]\n                        [--created]\n                        [--custom]\n                        [--deleted]\n                        [--exists]\n                        [--ids]\n                        [--interval]\n                        [--resource-group]\n                        [--subscription]\n                        [--timeout]\n                        [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--cluster-name --name -n",
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

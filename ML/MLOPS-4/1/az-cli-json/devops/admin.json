@@ -1,0 +1,6 @@
+{
+    "command_group": "az devops admin",
+    "description": "Manage administration operations.",
+    "status": "GA",
+    "commands": []
+}

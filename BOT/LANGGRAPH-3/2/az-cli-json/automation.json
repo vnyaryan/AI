@@ -1,0 +1,6 @@
+{
+    "command_group": "az automation",
+    "description": "Manage Automation Account.",
+    "status": "GA",
+    "commands": []
+}

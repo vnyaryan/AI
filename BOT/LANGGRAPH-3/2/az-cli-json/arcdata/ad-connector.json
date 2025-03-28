@@ -1,0 +1,115 @@
+{
+    "command_group": "az arcdata ad-connector",
+    "description": "Manage Active Directory authentication for Azure Arc data services.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az arcdata ad-connector create",
+            "summary": "Create a new Active Directory connector.",
+            "syntax": "az arcdata ad-connector create --account-provisioning\n                               --name\n                               --nameserver-addresses\n                               --realm\n                               [--data-controller-name]\n                               [--dns-domain-name]\n                               [--dns-replicas]\n                               [--domain-service-account-secret]\n                               [--k8s-namespace]\n                               [--netbios-domain-name]\n                               [--no-wait]\n                               [--ou-distinguished-name]\n                               [--prefer-k8s-dns]\n                               [--primary-ad-dc-hostname]\n                               [--resource-group]\n                               [--secondary-ad-dc-hostnames]\n                               [--use-k8s]",
+            "required_parameters": [
+                "--account-provisioning",
+                "--name -n",
+                "--nameserver-addresses",
+                "--realm"
+            ],
+            "optional_parameters": [
+                "--data-controller-name",
+                "--dns-domain-name",
+                "--dns-replicas",
+                "--domain-service-account-secret",
+                "--k8s-namespace -k",
+                "--netbios-domain-name",
+                "--no-wait",
+                "--ou-distinguished-name",
+                "--prefer-k8s-dns",
+                "--primary-ad-dc-hostname",
+                "--resource-group -g",
+                "--secondary-ad-dc-hostnames",
+                "--use-k8s"
+            ],
+            "examples": [
+                "az arcdata ad-connector create --name arcadc  --k8s-namespace arc  --realm CONTOSO.LOCAL  --account-provisioning manual --primary-ad-dc-hostname azdc01.contoso.local  --secondary-ad-dc-hostnames \"azdc02.contoso.local, azdc03.contoso.local\"  --netbios-domain-name CONTOSO  --dns-domain-name contoso.local  --nameserver-addresses 10.10.10.11,10.10.10.12,10.10.10.13  --dns-replicas 2  --prefer-k8s-dns false  --use-k8s",
+                "az arcdata ad-connector create  --name arcadc --resource-group rg-name --data-controller-name dc-name --realm CONTOSO.LOCAL  --account-provisioning manual --primary-ad-dc-hostname azdc01.contoso.local  --secondary-ad-dc-hostnames \"azdc02.contoso.local, azdc03.contoso.local\"  --netbios-domain-name CONTOSO  --dns-domain-name contoso.local  --nameserver-addresses 10.10.10.11,10.10.10.12,10.10.10.13  --dns-replicas 2  --prefer-k8s-dns false"
+            ]
+        },
+        {
+            "name": "az arcdata ad-connector delete",
+            "summary": "Delete an existing Active Directory connector.",
+            "syntax": "az arcdata ad-connector delete --name\n                               [--data-controller-name]\n                               [--k8s-namespace]\n                               [--no-wait]\n                               [--resource-group]\n                               [--use-k8s]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--data-controller-name",
+                "--k8s-namespace -k",
+                "--no-wait",
+                "--resource-group -g",
+                "--use-k8s"
+            ],
+            "examples": [
+                "az arcdata ad-connector delete --name arcadc --k8s-namespace arc  --use-k8s",
+                "az arcdata ad-connector delete --name arcadc --resource-group rg-name  --data-controller-name dc-name"
+            ]
+        },
+        {
+            "name": "az arcdata ad-connector list",
+            "summary": "List all Active Directory connectors.",
+            "syntax": "az arcdata ad-connector list [--data-controller-name]\n                             [--k8s-namespace]\n                             [--resource-group]\n                             [--use-k8s]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--data-controller-name",
+                "--k8s-namespace -k",
+                "--resource-group -g",
+                "--use-k8s"
+            ],
+            "examples": [
+                "az arcdata ad-connector list --k8s-namespace arc --use-k8s",
+                "az arcdata ad-connector list --resource-group rg-name --data-controller-name dc-name"
+            ]
+        },
+        {
+            "name": "az arcdata ad-connector show",
+            "summary": "Get the details of an existing Active Directory connector.",
+            "syntax": "az arcdata ad-connector show --name\n                             [--data-controller-name]\n                             [--k8s-namespace]\n                             [--resource-group]\n                             [--use-k8s]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--data-controller-name",
+                "--k8s-namespace -k",
+                "--resource-group -g",
+                "--use-k8s"
+            ],
+            "examples": [
+                "az arcdata ad-connector show --name arcadc --k8s-namespace arc --use-k8s",
+                "az arcdata ad-connector show --name arcadc --resource-group rg-name --data-controller-name dc-name"
+            ]
+        },
+        {
+            "name": "az arcdata ad-connector update",
+            "summary": "Update the settings of an existing Active Directory connector.",
+            "syntax": "az arcdata ad-connector update --name\n                               [--data-controller-name]\n                               [--dns-replicas]\n                               [--domain-service-account-secret]\n                               [--k8s-namespace]\n                               [--nameserver-addresses]\n                               [--no-wait]\n                               [--prefer-k8s-dns]\n                               [--primary-ad-dc-hostname]\n                               [--resource-group]\n                               [--secondary-ad-dc-hostnames]\n                               [--use-k8s]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--data-controller-name",
+                "--dns-replicas",
+                "--domain-service-account-secret",
+                "--k8s-namespace -k",
+                "--nameserver-addresses",
+                "--no-wait",
+                "--prefer-k8s-dns",
+                "--primary-ad-dc-hostname",
+                "--resource-group -g",
+                "--secondary-ad-dc-hostnames",
+                "--use-k8s"
+            ],
+            "examples": [
+                "az arcdata ad-connector update --name arcadc  --k8s-namespace arc  --primary-ad-dc-hostname azdc01.contoso.local --secondary-ad-dc-hostname \"azdc02.contoso.local, azdc03.contoso.local\"  --nameserver-addresses 10.10.10.11,10.10.10.12,10.10.10.13 --dns-replicas 2  --prefer-k8s-dns false  --use-k8s",
+                "az arcdata ad-connector update --name arcadc --resource-group rg-name --data-controller-name dc-name --primary-ad-dc-hostname azdc01.contoso.local --secondary-ad-dc-hostname \"azdc02.contoso.local, azdc03.contoso.local\" --nameserver-addresses 10.10.10.11,10.10.10.12,10.10.10.13 --dns-replicas 2 --prefer-k8s-dns false"
+            ]
+        }
+    ]
+}

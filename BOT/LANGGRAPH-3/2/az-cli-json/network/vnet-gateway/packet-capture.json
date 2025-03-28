@@ -1,0 +1,61 @@
+{
+    "command_group": "az network vnet-gateway packet-capture",
+    "description": "Manage packet capture on a virtual network gateway.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az network vnet-gateway packet-capture start",
+            "summary": "Start packet capture on a virtual network gateway.",
+            "syntax": "az network vnet-gateway packet-capture start [--filter]\n                                             [--ids]\n                                             [--name]\n                                             [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                             [--resource-group]\n                                             [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--filter",
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az network vnet-gateway packet-capture start -g MyResourceGroup -n MyVnetGateway"
+            ]
+        },
+        {
+            "name": "az network vnet-gateway packet-capture stop",
+            "summary": "Stop packet capture on a virtual network gateway.",
+            "syntax": "az network vnet-gateway packet-capture stop [--ids]\n                                            [--name]\n                                            [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                            [--resource-group]\n                                            [--sas-url]\n                                            [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--sas-url",
+                "--subscription"
+            ],
+            "examples": [
+                "az network vnet-gateway packet-capture stop -g MyResourceGroup -n MyVnetGateway --sas-url https://myStorageAct.blob.azure.com/artifacts?st=2019-04-10T22%3A12Z&se=2019-04-11T09%3A12Z&sp=rl&sv=2018-03-28&sr=c&sig=0000000000"
+            ]
+        },
+        {
+            "name": "az network vnet-gateway packet-capture wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az network vnet-gateway packet-capture wait [--created]\n                                            [--custom]\n                                            [--deleted]\n                                            [--exists]\n                                            [--ids]\n                                            [--interval]\n                                            [--name]\n                                            [--resource-group]\n                                            [--subscription]\n                                            [--timeout]\n                                            [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

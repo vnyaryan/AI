@@ -1,0 +1,6 @@
+{
+    "command_group": "az batch",
+    "description": "Manage Azure Batch.",
+    "status": "GA",
+    "commands": []
+}

@@ -1,0 +1,114 @@
+{
+    "command_group": "az network vhub routing-intent",
+    "description": "Manage routing intent in the virtual hub.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az network vhub routing-intent create",
+            "summary": "Create a routing intent in the virtual hub.",
+            "syntax": "az network vhub routing-intent create --name\n                                      --resource-group\n                                      --vhub\n                                      [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                      [--routing-policies]",
+            "required_parameters": [
+                "--name --routing-intent-name -n",
+                "--resource-group -g",
+                "--vhub"
+            ],
+            "optional_parameters": [
+                "--no-wait",
+                "--routing-policies"
+            ],
+            "examples": [
+                "az network vhub routing-intent create -n MyRoutingIntent -g MyResourceGroup --vhub MyVirtualHub --routing-policies \"[{name:InternetTraffic,destinations:[Internet],next-hop:MyFirewallId},{name:PrivateTrafficPolicy,destinations:[PrivateTraffic],next-hop:MyFirewallId}]\""
+            ]
+        },
+        {
+            "name": "az network vhub routing-intent delete",
+            "summary": "Delete a routing intent in the virtual hub.",
+            "syntax": "az network vhub routing-intent delete [--ids]\n                                      [--name]\n                                      [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                      [--resource-group]\n                                      [--subscription]\n                                      [--vhub]\n                                      [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --routing-intent-name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--vhub",
+                "--yes -y"
+            ],
+            "examples": [
+                "az network vhub routing-intent delete -n MyRoutingIntent -g MyResourceGroup --vhub MyVirtualHub --yes"
+            ]
+        },
+        {
+            "name": "az network vhub routing-intent list",
+            "summary": "Retrieve the details of all routing intent resources of the virtual hub.",
+            "syntax": "az network vhub routing-intent list --resource-group\n                                    --vhub",
+            "required_parameters": [
+                "--resource-group -g",
+                "--vhub"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az network vhub routing-intent list -g MyResourceGroup --vhub MyVirtualHub"
+            ]
+        },
+        {
+            "name": "az network vhub routing-intent show",
+            "summary": "Retrieve the details of a routing intent.",
+            "syntax": "az network vhub routing-intent show [--ids]\n                                    [--name]\n                                    [--resource-group]\n                                    [--subscription]\n                                    [--vhub]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --routing-intent-name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--vhub"
+            ],
+            "examples": [
+                "az network vhub routing-intent show -n MyRoutingIntent -g MyResourceGroup --vhub MyVirtualHub"
+            ]
+        },
+        {
+            "name": "az network vhub routing-intent update",
+            "summary": "Update a routing intent in the virtual hub.",
+            "syntax": "az network vhub routing-intent update [--add]\n                                      [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                      [--ids]\n                                      [--name]\n                                      [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                      [--remove]\n                                      [--resource-group]\n                                      [--routing-policies]\n                                      [--set]\n                                      [--subscription]\n                                      [--vhub]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--force-string",
+                "--ids",
+                "--name --routing-intent-name -n",
+                "--no-wait",
+                "--remove",
+                "--resource-group -g",
+                "--routing-policies",
+                "--set",
+                "--subscription",
+                "--vhub"
+            ],
+            "examples": [
+                "az network vhub routing-intent create -n MyRoutingIntent -g MyResourceGroup --vhub MyVirtualHub --routing-policies \"[{name:InternetTraffic,destinations:[Internet],next-hop:MyFirewallId}]\""
+            ]
+        },
+        {
+            "name": "az network vhub routing-intent wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az network vhub routing-intent wait [--created]\n                                    [--custom]\n                                    [--deleted]\n                                    [--exists]\n                                    [--ids]\n                                    [--interval]\n                                    [--name]\n                                    [--resource-group]\n                                    [--subscription]\n                                    [--timeout]\n                                    [--updated]\n                                    [--vhub]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--name --routing-intent-name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated",
+                "--vhub"
+            ],
+            "examples": []
+        }
+    ]
+}

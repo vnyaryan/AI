@@ -1,0 +1,62 @@
+{
+    "command_group": "az webapp identity",
+    "description": "Manage web app's managed identity.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az webapp identity assign",
+            "summary": "Assign managed identity to the web app.",
+            "syntax": "az webapp identity assign [--identities]\n                          [--ids]\n                          [--name]\n                          [--resource-group]\n                          [--role]\n                          [--scope]\n                          [--slot]\n                          [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--identities",
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--role",
+                "--scope",
+                "--slot -s",
+                "--subscription"
+            ],
+            "examples": [
+                "az webapp identity assign -g MyResourceGroup -n MyUniqueApp --role reader --scope /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourcegroups/MyResourceGroup",
+                "az webapp identity assign -g MyResourceGroup -n MyUniqueApp",
+                "az webapp identity assign -g MyResourceGroup -n MyUniqueApp --identities [system] myAssignedId"
+            ]
+        },
+        {
+            "name": "az webapp identity remove",
+            "summary": "Disable web app's managed identity.",
+            "syntax": "az webapp identity remove [--identities]\n                          [--ids]\n                          [--name]\n                          [--resource-group]\n                          [--slot]\n                          [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--identities",
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--slot -s",
+                "--subscription"
+            ],
+            "examples": [
+                "az webapp identity remove --name MyWebApp --resource-group MyResourceGroup",
+                "az webapp identity remove --name MyWebApp --resource-group MyResourceGroup --identities [system] myAssignedId"
+            ]
+        },
+        {
+            "name": "az webapp identity show",
+            "summary": "Display web app's managed identity.",
+            "syntax": "az webapp identity show [--ids]\n                        [--name]\n                        [--resource-group]\n                        [--slot]\n                        [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--slot -s",
+                "--subscription"
+            ],
+            "examples": [
+                "az webapp identity show --name MyWebapp --resource-group MyResourceGroup"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,60 @@
+{
+    "command_group": "az vmware vm",
+    "description": "Commands to manage Virtual Machines.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az vmware vm list",
+            "summary": "List of virtual machines in a private cloud cluster.",
+            "syntax": "az vmware vm list --cluster-name\n                  --private-cloud\n                  --resource-group\n                  [--max-items]\n                  [--next-token]",
+            "required_parameters": [
+                "--cluster-name",
+                "--private-cloud -c",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az vmware vm list --resource-group group1 --private-cloud cloud1 --cluster-name cluster1"
+            ]
+        },
+        {
+            "name": "az vmware vm restrict-movement",
+            "summary": "Enable or disable DRS-driven VM movement restriction.",
+            "syntax": "az vmware vm restrict-movement [--cluster-name]\n                               [--ids]\n                               [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                               [--private-cloud]\n                               [--resource-group]\n                               [--restrict-movement {Disabled, Enabled}]\n                               [--subscription]\n                               [--virtual-machine]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--cluster-name",
+                "--ids",
+                "--no-wait",
+                "--private-cloud -c",
+                "--resource-group -g",
+                "--restrict-movement",
+                "--subscription",
+                "--virtual-machine"
+            ],
+            "examples": [
+                "az vmware vm restrict-movement --resource-group group1 --private-cloud cloud1 --cluster-name cluster1 --virtual-machine vm-209 --restrict-movement Enabled"
+            ]
+        },
+        {
+            "name": "az vmware vm show",
+            "summary": "Get a virtual machine by id in a private cloud cluster.",
+            "syntax": "az vmware vm show [--cluster-name]\n                  [--ids]\n                  [--name]\n                  [--private-cloud]\n                  [--resource-group]\n                  [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--cluster-name",
+                "--ids",
+                "--name --virtual-machine -n",
+                "--private-cloud -c",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az vmware vm show --resource-group group1 --private-cloud cloud1 --cluster-name cluster1 --virtual-machine vm-209"
+            ]
+        }
+    ]
+}

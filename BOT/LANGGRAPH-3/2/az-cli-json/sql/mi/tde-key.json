@@ -1,0 +1,37 @@
+{
+    "command_group": "az sql mi tde-key",
+    "description": "Manage a SQL Instance's encryption protector.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az sql mi tde-key set",
+            "summary": "Sets the SQL Instance's encryption protector.",
+            "syntax": "az sql mi tde-key set --server-key-type {AzureKeyVault, ServiceManaged}\n                      [--auto-rotation-enabled {false, true}]\n                      [--ids]\n                      [--kid]\n                      [--managed-instance]\n                      [--resource-group]\n                      [--subscription]",
+            "required_parameters": [
+                "--server-key-type -t"
+            ],
+            "optional_parameters": [
+                "--auto-rotation-enabled",
+                "--ids",
+                "--kid -k",
+                "--managed-instance --mi",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az sql mi tde-key show",
+            "summary": "Shows a server encryption protector.",
+            "syntax": "az sql mi tde-key show [--ids]\n                       [--managed-instance]\n                       [--resource-group]\n                       [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--managed-instance --mi",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        }
+    ]
+}

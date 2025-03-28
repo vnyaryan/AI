@@ -1,0 +1,116 @@
+{
+    "command_group": "az network application-gateway routing-rule",
+    "description": "Evaluate probe information and define TCP/TLS routing rules.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az network application-gateway routing-rule create",
+            "summary": "Create a rule.",
+            "syntax": "az network application-gateway routing-rule create --gateway-name\n                                                   --name\n                                                   --resource-group\n                                                   [--address-pool]\n                                                   [--listener]\n                                                   [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                                   [--priority]\n                                                   [--rule-type {Basic, PathBasedRouting}]\n                                                   [--settings]",
+            "required_parameters": [
+                "--gateway-name",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--address-pool",
+                "--listener",
+                "--no-wait",
+                "--priority",
+                "--rule-type",
+                "--settings"
+            ],
+            "examples": [
+                "az network application-gateway routing-rule create -g MyResourceGroup --gateway-name MyAppGateway -n MyRule --listener MyBackendListener --rule-type Basic --address-pool MyAddressPool --settings MySettings"
+            ]
+        },
+        {
+            "name": "az network application-gateway routing-rule delete",
+            "summary": "Delete a rule.",
+            "syntax": "az network application-gateway routing-rule delete --gateway-name\n                                                   --name\n                                                   --resource-group\n                                                   [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]",
+            "required_parameters": [
+                "--gateway-name",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--no-wait"
+            ],
+            "examples": [
+                "az network application-gateway routing-rule delete -g MyResourceGroup --gateway-name MyAppGateway -n MyRule"
+            ]
+        },
+        {
+            "name": "az network application-gateway routing-rule list",
+            "summary": "List rules.",
+            "syntax": "az network application-gateway routing-rule list --gateway-name\n                                                 --resource-group",
+            "required_parameters": [
+                "--gateway-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az network application-gateway routing-rule list -g MyResourceGroup --gateway-name MyAppGateway"
+            ]
+        },
+        {
+            "name": "az network application-gateway routing-rule show",
+            "summary": "Get the details of a rule.",
+            "syntax": "az network application-gateway routing-rule show --gateway-name\n                                                 --name\n                                                 --resource-group",
+            "required_parameters": [
+                "--gateway-name",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az network application-gateway routing-rule show -g MyResourceGroup --gateway-name MyAppGateway -n MyRule"
+            ]
+        },
+        {
+            "name": "az network application-gateway routing-rule update",
+            "summary": "Update a rule.",
+            "syntax": "az network application-gateway routing-rule update --gateway-name\n                                                   --name\n                                                   --resource-group\n                                                   [--add]\n                                                   [--address-pool]\n                                                   [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                                   [--listener]\n                                                   [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                                   [--priority]\n                                                   [--remove]\n                                                   [--rule-type {Basic, PathBasedRouting}]\n                                                   [--set]\n                                                   [--settings]",
+            "required_parameters": [
+                "--gateway-name",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--add",
+                "--address-pool",
+                "--force-string",
+                "--listener",
+                "--no-wait",
+                "--priority",
+                "--remove",
+                "--rule-type",
+                "--set",
+                "--settings"
+            ],
+            "examples": [
+                "az network application-gateway routing-rule update -g MyResourceGroup --gateway-name MyAppGateway -n MyRule --listener MyNewBackendListener"
+            ]
+        },
+        {
+            "name": "az network application-gateway routing-rule wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az network application-gateway routing-rule wait [--created]\n                                                 [--custom]\n                                                 [--deleted]\n                                                 [--exists]\n                                                 [--gateway-name]\n                                                 [--ids]\n                                                 [--interval]\n                                                 [--resource-group]\n                                                 [--subscription]\n                                                 [--timeout]\n                                                 [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--gateway-name",
+                "--ids",
+                "--interval",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

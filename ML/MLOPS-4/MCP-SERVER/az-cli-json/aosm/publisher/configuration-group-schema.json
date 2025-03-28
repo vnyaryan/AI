@@ -1,0 +1,55 @@
+{
+    "command_group": "az aosm publisher configuration-group-schema",
+    "description": "Commands to manage configuration group schema resources.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az aosm publisher configuration-group-schema list",
+            "summary": "List information of the configuration group schemas under a publisher.",
+            "syntax": "az aosm publisher configuration-group-schema list --publisher-name\n                                                  --resource-group\n                                                  [--max-items]\n                                                  [--next-token]",
+            "required_parameters": [
+                "--publisher-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az aosm publisher configuration-group-schema list --resource-group contoso-aosm --publisher-name contoso"
+            ]
+        },
+        {
+            "name": "az aosm publisher configuration-group-schema show",
+            "summary": "Get information about the specified configuration group schema.",
+            "syntax": "az aosm publisher configuration-group-schema show [--ids]\n                                                  [--name]\n                                                  [--publisher-name]\n                                                  [--resource-group]\n                                                  [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--publisher-name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az aosm publisher configuration-group-schema update-state",
+            "summary": "Update configuration group schema state.",
+            "syntax": "az aosm publisher configuration-group-schema update-state [--ids]\n                                                          [--name]\n                                                          [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                                          [--publisher-name]\n                                                          [--resource-group]\n                                                          [--subscription]\n                                                          [--version-state {Active, Deprecated, Preview, Unknown}]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--publisher-name",
+                "--resource-group -g",
+                "--subscription",
+                "--version-state"
+            ],
+            "examples": [
+                "az aosm publisher configuration-group-schema update-state --resource-group contoso-aosm --publisher-name contoso --name nginx-cgs --version-state Active"
+            ]
+        }
+    ]
+}

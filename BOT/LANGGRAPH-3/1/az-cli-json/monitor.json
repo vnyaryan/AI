@@ -1,0 +1,23 @@
+{
+    "command_group": "az monitor",
+    "description": "Manage the Azure Monitor Service.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az monitor clone",
+            "summary": "Clone metrics alert rules from one resource to another resource.",
+            "syntax": "az monitor clone --source-resource\n                 --target-resource\n                 [--always-clone]\n                 [--types {metricsAlert}]",
+            "required_parameters": [
+                "--source-resource",
+                "--target-resource"
+            ],
+            "optional_parameters": [
+                "--always-clone",
+                "--types -t"
+            ],
+            "examples": [
+                "az monitor clone --source-resource /subscriptions/{subscriptionID}/resourceGroups/Space1999/providers/Microsoft.Compute/virtualMachines/vm1 --target-resource /subscriptions/{subscriptionID}/resourceGroups/Space1999/providers/Microsoft.Compute/virtualMachines/vm2"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,77 @@
+{
+    "command_group": "az iot central device attestation",
+    "description": "Manage and configure IoT Central device attestation.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az iot central device attestation create",
+            "summary": "Create an individual device attestation.",
+            "syntax": "az iot central device attestation create --app-id\n                                         --content\n                                         --device-id\n                                         [--api-version {2022-06-30-preview, 2022-07-31}]\n                                         [--central-api-uri]\n                                         [--token]",
+            "required_parameters": [
+                "--app-id -n",
+                "--content -k",
+                "--device-id -d"
+            ],
+            "optional_parameters": [
+                "--api-version --av",
+                "--central-api-uri --central-dns-suffix",
+                "--token"
+            ],
+            "examples": [
+                "az iot central device attestation create --app-id {appid} --device-id {deviceid} --content {attestation}"
+            ]
+        },
+        {
+            "name": "az iot central device attestation delete",
+            "summary": "Remove an individual device attestation.",
+            "syntax": "az iot central device attestation delete --app-id\n                                         --device-id\n                                         [--api-version {2022-06-30-preview, 2022-07-31}]\n                                         [--central-api-uri]\n                                         [--token]",
+            "required_parameters": [
+                "--app-id -n",
+                "--device-id -d"
+            ],
+            "optional_parameters": [
+                "--api-version --av",
+                "--central-api-uri --central-dns-suffix",
+                "--token"
+            ],
+            "examples": [
+                "az iot central device attestation delete --app-id {appid} --device-id {deviceid}"
+            ]
+        },
+        {
+            "name": "az iot central device attestation show",
+            "summary": "Get device attestation.",
+            "syntax": "az iot central device attestation show --app-id\n                                       --device-id\n                                       [--api-version {2022-06-30-preview, 2022-07-31}]\n                                       [--central-api-uri]\n                                       [--token]",
+            "required_parameters": [
+                "--app-id -n",
+                "--device-id -d"
+            ],
+            "optional_parameters": [
+                "--api-version --av",
+                "--central-api-uri --central-dns-suffix",
+                "--token"
+            ],
+            "examples": [
+                "az iot central device attestation show --app-id {appid} --device-id {deviceid}"
+            ]
+        },
+        {
+            "name": "az iot central device attestation update",
+            "summary": "Update an individual device attestation via patch.",
+            "syntax": "az iot central device attestation update --app-id\n                                         --content\n                                         --device-id\n                                         [--api-version {2022-06-30-preview, 2022-07-31}]\n                                         [--central-api-uri]\n                                         [--token]",
+            "required_parameters": [
+                "--app-id -n",
+                "--content -k",
+                "--device-id -d"
+            ],
+            "optional_parameters": [
+                "--api-version --av",
+                "--central-api-uri --central-dns-suffix",
+                "--token"
+            ],
+            "examples": [
+                "az iot central device attestation update --app-id {appid} --device-id {deviceid} --content {attestation}"
+            ]
+        }
+    ]
+}

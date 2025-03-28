@@ -1,0 +1,6 @@
+{
+    "command_group": "az purview",
+    "description": "Manage Purview.",
+    "status": "Preview",
+    "commands": []
+}

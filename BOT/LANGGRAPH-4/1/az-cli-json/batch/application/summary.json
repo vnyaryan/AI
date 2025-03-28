@@ -1,0 +1,33 @@
+{
+    "command_group": "az batch application summary",
+    "description": "View a summary of Batch application packages.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az batch application summary list",
+            "summary": "Lists all of the applications available in the specified account.",
+            "syntax": "az batch application summary list [--account-endpoint]\n                                  [--account-key]\n                                  [--account-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account-endpoint",
+                "--account-key",
+                "--account-name"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az batch application summary show",
+            "summary": "Gets information about the specified application.",
+            "syntax": "az batch application summary show --application-id\n                                  [--account-endpoint]\n                                  [--account-key]\n                                  [--account-name]",
+            "required_parameters": [
+                "--application-id"
+            ],
+            "optional_parameters": [
+                "--account-endpoint",
+                "--account-key",
+                "--account-name"
+            ],
+            "examples": []
+        }
+    ]
+}

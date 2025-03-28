@@ -1,0 +1,99 @@
+{
+    "command_group": "az databoxedge device user",
+    "description": "Manage device user.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az databoxedge device user create",
+            "summary": "Create user on a Data Box Edge/Data Box Gateway device.",
+            "syntax": "az databoxedge device user create --device-name\n                                  --name\n                                  --resource-group\n                                  --user-type {ARM, LocalManagement, Share}\n                                  [--encrypted-password]\n                                  [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]",
+            "required_parameters": [
+                "--device-name",
+                "--name -n",
+                "--resource-group -g",
+                "--user-type"
+            ],
+            "optional_parameters": [
+                "--encrypted-password",
+                "--no-wait"
+            ],
+            "examples": [
+                "az databoxedge device user create -g rg --device-name name --user-type Share -n username --encrypted-password \"{value:xxx,encryptionCertThumbprint:xxx,encryptionAlgorithm:AES256}\""
+            ]
+        },
+        {
+            "name": "az databoxedge device user delete",
+            "summary": "Delete the user on a databox edge/gateway device.",
+            "syntax": "az databoxedge device user delete [--device-name]\n                                  [--ids]\n                                  [--name]\n                                  [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                  [--resource-group]\n                                  [--subscription]\n                                  [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--device-name",
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az databoxedge device user delete -g rg --device-name name  -n username"
+            ]
+        },
+        {
+            "name": "az databoxedge device user list",
+            "summary": "List all the users registered on a Data Box Edge/Data Box Gateway device.",
+            "syntax": "az databoxedge device user list --device-name\n                                --resource-group\n                                [--filter]\n                                [--max-items]\n                                [--next-token]",
+            "required_parameters": [
+                "--device-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--filter",
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az databoxedge device user list -g rg --device-name name"
+            ]
+        },
+        {
+            "name": "az databoxedge device user show",
+            "summary": "Show user.",
+            "syntax": "az databoxedge device user show [--device-name]\n                                [--ids]\n                                [--name]\n                                [--resource-group]\n                                [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--device-name",
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az databoxedge device user show -g rg --device-name name -n username"
+            ]
+        },
+        {
+            "name": "az databoxedge device user update",
+            "summary": "Update user on a Data Box Edge/Data Box Gateway device.",
+            "syntax": "az databoxedge device user update [--add]\n                                  [--device-name]\n                                  [--encrypted-password]\n                                  [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                  [--ids]\n                                  [--name]\n                                  [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                  [--remove]\n                                  [--resource-group]\n                                  [--set]\n                                  [--subscription]\n                                  [--user-type {ARM, LocalManagement, Share}]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--device-name",
+                "--encrypted-password",
+                "--force-string",
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--subscription",
+                "--user-type"
+            ],
+            "examples": [
+                "az databoxedge device user update -g rg --device-name name --user-type ARM-n username --encrypted-password \"{value:xxx,encryptionCertThumbprint:xxx,encryptionAlgorithm:AES256}\""
+            ]
+        }
+    ]
+}

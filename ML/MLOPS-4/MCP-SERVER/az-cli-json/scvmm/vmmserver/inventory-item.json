@@ -1,0 +1,34 @@
+{
+    "command_group": "az scvmm vmmserver inventory-item",
+    "description": "Inventory item resource.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az scvmm vmmserver inventory-item list",
+            "summary": "Retrieve a list of inventory items present in a vmmserver.",
+            "syntax": "az scvmm vmmserver inventory-item list --resource-group\n                                       --vmmserver",
+            "required_parameters": [
+                "--resource-group -g",
+                "--vmmserver -v"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az scvmm vmmserver inventory-item list --subscription contoso-sub --resource-group contoso-rg --vmmserver contoso-vmmserver"
+            ]
+        },
+        {
+            "name": "az scvmm vmmserver inventory-item show",
+            "summary": "Get details of an inventory item present in a vmmserver.",
+            "syntax": "az scvmm vmmserver inventory-item show --inventory-item\n                                       --resource-group\n                                       --vmmserver",
+            "required_parameters": [
+                "--inventory-item -i",
+                "--resource-group -g",
+                "--vmmserver -v"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az scvmm vmmserver inventory-item show --subscription contoso-sub --resource-group contoso-rg --vmmserver contoso-vmmserver --inventory-item 01234567-0123-0123-0123-0123456789ab"
+            ]
+        }
+    ]
+}

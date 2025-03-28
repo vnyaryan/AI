@@ -1,0 +1,37 @@
+{
+    "command_group": "az signalr key",
+    "description": "Manage keys for Azure SignalR Service.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az signalr key list",
+            "summary": "List the access keys for a SignalR Service.",
+            "syntax": "az signalr key list --name\n                    --resource-group",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az signalr key list -n MySignalR -g MyResourceGroup --query primaryKey -o tsv"
+            ]
+        },
+        {
+            "name": "az signalr key renew",
+            "summary": "Regenerate the access key for a SignalR Service.",
+            "syntax": "az signalr key renew --key-type {primary, secondary}\n                     [--ids]\n                     [--name]\n                     [--resource-group]\n                     [--subscription]",
+            "required_parameters": [
+                "--key-type"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az signalr key renew -n MySignalR -g MyResourceGroup --key-type secondary"
+            ]
+        }
+    ]
+}

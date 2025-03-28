@@ -1,0 +1,91 @@
+{
+    "command_group": "az iot ops asset event",
+    "description": "Manage events in an asset.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az iot ops asset event add",
+            "summary": "Add an event to an asset.",
+            "syntax": "az iot ops asset event add --asset\n                           --en\n                           --resource-group\n                           [--name]\n                           [--observability-mode]\n                           [--qs]\n                           [--replace {false, true}]\n                           [--sampling-interval]",
+            "required_parameters": [
+                "--asset -a",
+                "--en --event-notifier",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--name -n",
+                "--observability-mode --om",
+                "--qs --queue-size",
+                "--replace",
+                "--sampling-interval --si"
+            ],
+            "examples": [
+                "az iot ops asset event add --asset myasset -g myresourcegroup --event-notifier eventId --name eventName",
+                "az iot ops asset event add --asset MyAsset -g MyRG --event-notifier eventId --name eventName --observability-mode log --queue-size 2 --sampling-interval 500"
+            ]
+        },
+        {
+            "name": "az iot ops asset event export",
+            "summary": "Export events in an asset.",
+            "syntax": "az iot ops asset event export --asset\n                              --resource-group\n                              [--format {csv, json, yaml}]\n                              [--od]\n                              [--replace {false, true}]",
+            "required_parameters": [
+                "--asset -a",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--format -f",
+                "--od --output-dir",
+                "--replace"
+            ],
+            "examples": [
+                "az iot ops asset event export --asset myasset -g myresourcegroup",
+                "az iot ops asset event export --asset myasset -g myresourcegroup --format csv --output-dir myAssetFiles",
+                "az iot ops asset event export --asset myasset -g myresourcegroup --format yaml --replace"
+            ]
+        },
+        {
+            "name": "az iot ops asset event import",
+            "summary": "Import events in an asset.",
+            "syntax": "az iot ops asset event import --asset\n                              --if\n                              --resource-group\n                              [--replace {false, true}]",
+            "required_parameters": [
+                "--asset -a",
+                "--if --input-file",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--replace"
+            ],
+            "examples": [
+                "az iot ops asset event import --asset myasset -g myresourcegroup --input-file myasset_events.yaml",
+                "az iot ops asset event import --asset myasset -g myresourcegroup --input-file myasset_events.csv --replace"
+            ]
+        },
+        {
+            "name": "az iot ops asset event list",
+            "summary": "List events in an asset.",
+            "syntax": "az iot ops asset event list --asset\n                            --resource-group",
+            "required_parameters": [
+                "--asset -a",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az iot ops asset event list --asset myasset -g myresourcegroup"
+            ]
+        },
+        {
+            "name": "az iot ops asset event remove",
+            "summary": "Remove an event in an asset.",
+            "syntax": "az iot ops asset event remove --asset\n                              --name\n                              --resource-group",
+            "required_parameters": [
+                "--asset -a",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az iot ops asset event remove --asset myasset -g myresourcegroup --name myevent"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,97 @@
+{
+    "command_group": "az eventhubs eventhub authorization-rule",
+    "description": "Eventhub authorization rule.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az eventhubs eventhub authorization-rule create",
+            "summary": "Create an AuthorizationRule for the specified Event Hub. Creation/update of the AuthorizationRule will take a few seconds to take effect.",
+            "syntax": "az eventhubs eventhub authorization-rule create --authorization-rule-name\n                                                --eventhub-name\n                                                --namespace-name\n                                                --resource-group\n                                                [--rights]",
+            "required_parameters": [
+                "--authorization-rule-name --name -n",
+                "--eventhub-name",
+                "--namespace-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--rights"
+            ],
+            "examples": [
+                "az eventhub authorization-rule create --resource-group myresourcegroup --namespace-name mynamespace --eventhub-name myeventhub --name myauthorule --rights Listen"
+            ]
+        },
+        {
+            "name": "az eventhubs eventhub authorization-rule delete",
+            "summary": "Delete an Event Hub AuthorizationRule.",
+            "syntax": "az eventhubs eventhub authorization-rule delete [--authorization-rule-name]\n                                                [--eventhub-name]\n                                                [--ids]\n                                                [--namespace-name]\n                                                [--resource-group]\n                                                [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--authorization-rule-name --name -n",
+                "--eventhub-name",
+                "--ids",
+                "--namespace-name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az eventhubs eventhub authorization-rule delete --resource-group myresourcegroup --namespace-name mynamespace --eventhub-name myeventhub --name myauthorule"
+            ]
+        },
+        {
+            "name": "az eventhubs eventhub authorization-rule list",
+            "summary": "List the authorization rules for an Event Hub.",
+            "syntax": "az eventhubs eventhub authorization-rule list --eventhub-name\n                                              --namespace-name\n                                              --resource-group\n                                              [--max-items]\n                                              [--next-token]",
+            "required_parameters": [
+                "--eventhub-name",
+                "--namespace-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az eventhubs eventhub authorization-rule list --resource-group myresourcegroup --namespace-name mynamespace --eventhub-name myeventhub"
+            ]
+        },
+        {
+            "name": "az eventhubs eventhub authorization-rule show",
+            "summary": "Get an AuthorizationRule for an Event Hub by rule name.",
+            "syntax": "az eventhubs eventhub authorization-rule show [--authorization-rule-name]\n                                              [--eventhub-name]\n                                              [--ids]\n                                              [--namespace-name]\n                                              [--resource-group]\n                                              [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--authorization-rule-name --name -n",
+                "--eventhub-name",
+                "--ids",
+                "--namespace-name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az eventhubs eventhub authorization-rule show --resource-group myresourcegroup --namespace-name mynamespace --eventhub-name myeventhub --name myauthorule"
+            ]
+        },
+        {
+            "name": "az eventhubs eventhub authorization-rule update",
+            "summary": "Update an AuthorizationRule for the specified Event Hub. Creation/update of the AuthorizationRule will take a few seconds to take effect.",
+            "syntax": "az eventhubs eventhub authorization-rule update [--add]\n                                                [--authorization-rule-name]\n                                                [--eventhub-name]\n                                                [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                                [--ids]\n                                                [--namespace-name]\n                                                [--remove]\n                                                [--resource-group]\n                                                [--rights]\n                                                [--set]\n                                                [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--authorization-rule-name --name -n",
+                "--eventhub-name",
+                "--force-string",
+                "--ids",
+                "--namespace-name",
+                "--remove",
+                "--resource-group -g",
+                "--rights",
+                "--set",
+                "--subscription"
+            ],
+            "examples": [
+                "az eventhubs eventhub authorization-rule update --resource-group myresourcegroup --namespace-name mynamespace --eventhub-name myeventhub --name myauthorule --rights Send"
+            ]
+        }
+    ]
+}

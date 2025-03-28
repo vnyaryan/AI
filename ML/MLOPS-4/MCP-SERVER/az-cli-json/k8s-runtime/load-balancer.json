@@ -1,0 +1,125 @@
+{
+    "command_group": "az k8s-runtime load-balancer",
+    "description": "Manage load balancers of Arc Kubernetes clusters.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az k8s-runtime load-balancer create",
+            "summary": "Create a LoadBalancer.",
+            "syntax": "az k8s-runtime load-balancer create --load-balancer-name\n                                    --resource-uri\n                                    [--addresses]\n                                    [--advertise-mode {ARP, BGP, Both}]\n                                    [--bgp-peers]\n                                    [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                    [--service-selector]",
+            "required_parameters": [
+                "--load-balancer-name",
+                "--resource-uri"
+            ],
+            "optional_parameters": [
+                "--addresses",
+                "--advertise-mode",
+                "--bgp-peers",
+                "--no-wait",
+                "--service-selector"
+            ],
+            "examples": [
+                "az k8s-runtime load-balancer create --load-balancer-name testlb1 --resource-uri subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/example/providers/Microsoft.Kubernetes/connectedClusters/cluster1 --addresses \"192.168.50.1/32\" --advertise-mode ARP --service-selector \"\""
+            ]
+        },
+        {
+            "name": "az k8s-runtime load-balancer delete",
+            "summary": "Delete a LoadBalancer.",
+            "syntax": "az k8s-runtime load-balancer delete --load-balancer-name\n                                    --resource-uri\n                                    [--yes]",
+            "required_parameters": [
+                "--load-balancer-name",
+                "--resource-uri"
+            ],
+            "optional_parameters": [
+                "--yes -y"
+            ],
+            "examples": [
+                "az k8s-runtime load-balancer delete --load-balancer-name testlb1 --resource-uri subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/example/providers/Microsoft.Kubernetes/connectedClusters/cluster1"
+            ]
+        },
+        {
+            "name": "az k8s-runtime load-balancer disable",
+            "summary": "Disable load_balancer service in a connected cluster.",
+            "syntax": "az k8s-runtime load-balancer disable --resource-uri",
+            "required_parameters": [
+                "--resource-uri"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az k8s-runtime load-balancer enable",
+            "summary": "Enable load balancer service in a connected cluster.",
+            "syntax": "az k8s-runtime load-balancer enable --resource-uri",
+            "required_parameters": [
+                "--resource-uri"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az k8s-runtime load-balancer list",
+            "summary": "List LoadBalancer resources by parent.",
+            "syntax": "az k8s-runtime load-balancer list --resource-uri\n                                  [--max-items]\n                                  [--next-token]",
+            "required_parameters": [
+                "--resource-uri"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az k8s-runtime load-balancer list --resource-uri subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/example/providers/Microsoft.Kubernetes/connectedClusters/cluster1"
+            ]
+        },
+        {
+            "name": "az k8s-runtime load-balancer show",
+            "summary": "Get a LoadBalancer.",
+            "syntax": "az k8s-runtime load-balancer show --load-balancer-name\n                                  --resource-uri",
+            "required_parameters": [
+                "--load-balancer-name",
+                "--resource-uri"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az k8s-runtime load-balancer show --load-balancer-name testlb1 --resource-uri subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/example/providers/Microsoft.Kubernetes/connectedClusters/cluster1"
+            ]
+        },
+        {
+            "name": "az k8s-runtime load-balancer update",
+            "summary": "Update a LoadBalancer.",
+            "syntax": "az k8s-runtime load-balancer update --load-balancer-name\n                                    --resource-uri\n                                    [--add]\n                                    [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                    [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                    [--remove]\n                                    [--set]",
+            "required_parameters": [
+                "--load-balancer-name",
+                "--resource-uri"
+            ],
+            "optional_parameters": [
+                "--add",
+                "--force-string",
+                "--no-wait",
+                "--remove",
+                "--set"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az k8s-runtime load-balancer wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az k8s-runtime load-balancer wait --load-balancer-name\n                                  --resource-uri\n                                  [--created]\n                                  [--custom]\n                                  [--deleted]\n                                  [--exists]\n                                  [--interval]\n                                  [--timeout]\n                                  [--updated]",
+            "required_parameters": [
+                "--load-balancer-name",
+                "--resource-uri"
+            ],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--interval",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

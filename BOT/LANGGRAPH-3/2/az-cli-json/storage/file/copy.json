@@ -1,0 +1,184 @@
+{
+    "command_group": "az storage file copy",
+    "description": "Manage file copy operations.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az storage file copy cancel",
+            "summary": "Abort an ongoing copy operation.",
+            "syntax": "az storage file copy cancel --copy-id\n                            --destination-path\n                            --destination-share\n                            [--account-key]\n                            [--account-name]\n                            [--auth-mode {key, login}]\n                            [--backup-intent]\n                            [--connection-string]\n                            [--disallow-trailing-dot {false, true}]\n                            [--file-endpoint]\n                            [--sas-token]\n                            [--timeout]",
+            "required_parameters": [
+                "--copy-id",
+                "--destination-path -p",
+                "--destination-share -s"
+            ],
+            "optional_parameters": [
+                "--account-key",
+                "--account-name",
+                "--auth-mode",
+                "--backup-intent --enable-file-backup-request-intent",
+                "--connection-string",
+                "--disallow-trailing-dot",
+                "--file-endpoint",
+                "--sas-token",
+                "--timeout"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az storage file copy cancel",
+            "summary": "Abort an ongoing copy operation.",
+            "syntax": "az storage file copy cancel --copy-id\n                            --destination-path\n                            --destination-share\n                            [--account-key]\n                            [--account-name]\n                            [--auth-mode {key, login}]\n                            [--backup-intent]\n                            [--connection-string]\n                            [--disallow-trailing-dot {false, true}]\n                            [--sas-token]\n                            [--timeout]",
+            "required_parameters": [
+                "--copy-id",
+                "--destination-path -p",
+                "--destination-share -s"
+            ],
+            "optional_parameters": [
+                "--account-key",
+                "--account-name",
+                "--auth-mode",
+                "--backup-intent --enable-file-backup-request-intent",
+                "--connection-string",
+                "--disallow-trailing-dot",
+                "--sas-token",
+                "--timeout"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az storage file copy start",
+            "summary": "Copy a file asynchronously.",
+            "syntax": "az storage file copy start --destination-path\n                           --destination-share\n                           [--account-key]\n                           [--account-name]\n                           [--auth-mode {key, login}]\n                           [--backup-intent]\n                           [--connection-string]\n                           [--disallow-source-trailing-dot {false, true}]\n                           [--disallow-trailing-dot {false, true}]\n                           [--file-endpoint]\n                           [--file-snapshot]\n                           [--metadata]\n                           [--sas-token]\n                           [--source-account-key]\n                           [--source-account-name]\n                           [--source-blob]\n                           [--source-container]\n                           [--source-path]\n                           [--source-sas]\n                           [--source-share]\n                           [--source-snapshot]\n                           [--source-uri]\n                           [--timeout]",
+            "required_parameters": [
+                "--destination-path -p",
+                "--destination-share -s"
+            ],
+            "optional_parameters": [
+                "--account-key",
+                "--account-name",
+                "--auth-mode",
+                "--backup-intent --enable-file-backup-request-intent",
+                "--connection-string",
+                "--disallow-source-trailing-dot --disallow-src-trailing",
+                "--disallow-trailing-dot",
+                "--file-endpoint",
+                "--file-snapshot",
+                "--metadata",
+                "--sas-token",
+                "--source-account-key",
+                "--source-account-name",
+                "--source-blob",
+                "--source-container",
+                "--source-path",
+                "--source-sas",
+                "--source-share",
+                "--source-snapshot",
+                "--source-uri -u",
+                "--timeout"
+            ],
+            "examples": [
+                "az storage file copy start --source-account-name srcaccount --source-account-key 00000000 --source-path <srcpath-to-file> --source-share srcshare --destination-path <destpath-to-file> --destination-share destshare --account-name destaccount --account-key 00000000",
+                "az storage file copy start --source-uri \"https://srcaccount.file.core.windows.net/myshare/mydir/myfile?<sastoken>\" --destination-path <destpath-to-file> --destination-share destshare --account-name destaccount --sas-token <destination-sas>",
+                "az storage file copy start --source-account-name srcaccount --source-account-key 00000000 --source-path <srcpath-to-file> --source-share srcshare --file-snapshot \"2020-03-02T13:51:54.0000000Z\" --destination-path <destpath-to-file> --destination-share destshare --account-name destaccount --sas-token <destination-sas>"
+            ]
+        },
+        {
+            "name": "az storage file copy start",
+            "summary": "Copy a file asynchronously.",
+            "syntax": "az storage file copy start --destination-path\n                           --destination-share\n                           [--account-key]\n                           [--account-name]\n                           [--auth-mode {key, login}]\n                           [--backup-intent]\n                           [--connection-string]\n                           [--disallow-source-trailing-dot {false, true}]\n                           [--disallow-trailing-dot {false, true}]\n                           [--file-snapshot]\n                           [--metadata]\n                           [--sas-token]\n                           [--source-account-key]\n                           [--source-account-name]\n                           [--source-blob]\n                           [--source-container]\n                           [--source-path]\n                           [--source-sas]\n                           [--source-share]\n                           [--source-snapshot]\n                           [--source-uri]\n                           [--timeout]",
+            "required_parameters": [
+                "--destination-path -p",
+                "--destination-share -s"
+            ],
+            "optional_parameters": [
+                "--account-key",
+                "--account-name",
+                "--auth-mode",
+                "--backup-intent --enable-file-backup-request-intent",
+                "--connection-string",
+                "--disallow-source-trailing-dot --disallow-src-trailing",
+                "--disallow-trailing-dot",
+                "--file-snapshot",
+                "--metadata",
+                "--sas-token",
+                "--source-account-key",
+                "--source-account-name",
+                "--source-blob",
+                "--source-container",
+                "--source-path",
+                "--source-sas",
+                "--source-share",
+                "--source-snapshot",
+                "--source-uri -u",
+                "--timeout"
+            ],
+            "examples": [
+                "az storage file copy start --source-account-name srcaccount --source-account-key 00000000 --source-path <srcpath-to-file> --source-share srcshare --destination-path <destpath-to-file> --destination-share destshare --account-name destaccount --account-key 00000000",
+                "az storage file copy start --source-uri \"https://srcaccount.file.core.windows.net/myshare/mydir/myfile?<sastoken>\" --destination-path <destpath-to-file> --destination-share destshare --account-name destaccount --sas-token <destination-sas>",
+                "az storage file copy start --source-account-name srcaccount --source-account-key 00000000 --source-path <srcpath-to-file> --source-share srcshare --file-snapshot \"2020-03-02T13:51:54.0000000Z\" --destination-path <destpath-to-file> --destination-share destshare --account-name destaccount --sas-token <destination-sas>"
+            ]
+        },
+        {
+            "name": "az storage file copy start-batch",
+            "summary": "Copy multiple files or blobs to a file share.",
+            "syntax": "az storage file copy start-batch [--account-key]\n                                 [--account-name]\n                                 [--connection-string]\n                                 [--destination-path]\n                                 [--destination-share]\n                                 [--disallow-source-trailing-dot {false, true}]\n                                 [--disallow-trailing-dot {false, true}]\n                                 [--dryrun]\n                                 [--file-endpoint]\n                                 [--metadata]\n                                 [--pattern]\n                                 [--sas-token]\n                                 [--source-account-key]\n                                 [--source-account-name]\n                                 [--source-container]\n                                 [--source-sas]\n                                 [--source-share]\n                                 [--source-uri]\n                                 [--timeout]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account-key",
+                "--account-name",
+                "--connection-string",
+                "--destination-path",
+                "--destination-share",
+                "--disallow-source-trailing-dot --disallow-src-trailing",
+                "--disallow-trailing-dot",
+                "--dryrun",
+                "--file-endpoint",
+                "--metadata",
+                "--pattern",
+                "--sas-token",
+                "--source-account-key",
+                "--source-account-name",
+                "--source-container",
+                "--source-sas",
+                "--source-share",
+                "--source-uri",
+                "--timeout"
+            ],
+            "examples": [
+                "az storage file copy start-batch --source-account-name srcaccount --source-account-key 00000000 --source-share srcshare --destination-path <destpath-to-directory> --destination-share destshare --account-name destaccount --account-key 00000000",
+                "az storage file copy start-batch --source-uri \"https://srcaccount.file.core.windows.net/myshare?<sastoken>\" --destination-path <destpath-to-directory> --destination-share destshare --account-name destaccount --sas-token <destination-sas>"
+            ]
+        },
+        {
+            "name": "az storage file copy start-batch",
+            "summary": "Copy multiple files or blobs to a file share.",
+            "syntax": "az storage file copy start-batch [--account-key]\n                                 [--account-name]\n                                 [--connection-string]\n                                 [--destination-path]\n                                 [--destination-share]\n                                 [--disallow-source-trailing-dot {false, true}]\n                                 [--disallow-trailing-dot {false, true}]\n                                 [--dryrun]\n                                 [--metadata]\n                                 [--pattern]\n                                 [--sas-token]\n                                 [--source-account-key]\n                                 [--source-account-name]\n                                 [--source-container]\n                                 [--source-sas]\n                                 [--source-share]\n                                 [--source-uri]\n                                 [--timeout]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account-key",
+                "--account-name",
+                "--connection-string",
+                "--destination-path",
+                "--destination-share",
+                "--disallow-source-trailing-dot --disallow-src-trailing",
+                "--disallow-trailing-dot",
+                "--dryrun",
+                "--metadata",
+                "--pattern",
+                "--sas-token",
+                "--source-account-key",
+                "--source-account-name",
+                "--source-container",
+                "--source-sas",
+                "--source-share",
+                "--source-uri",
+                "--timeout"
+            ],
+            "examples": [
+                "az storage file copy start-batch --source-account-name srcaccount --source-account-key 00000000 --source-share srcshare --destination-path <destpath-to-directory> --destination-share destshare --account-name destaccount --account-key 00000000",
+                "az storage file copy start-batch --source-uri \"https://srcaccount.file.core.windows.net/myshare?<sastoken>\" --destination-path <destpath-to-directory> --destination-share destshare --account-name destaccount --sas-token <destination-sas>"
+            ]
+        }
+    ]
+}

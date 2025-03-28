@@ -1,0 +1,48 @@
+{
+    "command_group": "az functionapp function",
+    "description": "Manage function app functions.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az functionapp function delete",
+            "summary": "Delete a function.",
+            "syntax": "az functionapp function delete --function-name\n                               --name\n                               --resource-group",
+            "required_parameters": [
+                "--function-name",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az functionapp function delete -g MyResourceGroup -n MyFunctionAppName --function-name MyFunctionName"
+            ]
+        },
+        {
+            "name": "az functionapp function list",
+            "summary": "List functions in a function app.",
+            "syntax": "az functionapp function list --name\n                             --resource-group",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az functionapp function list -g MyResourceGroup -n MyFunctionAppName"
+            ]
+        },
+        {
+            "name": "az functionapp function show",
+            "summary": "Get the details of a function.",
+            "syntax": "az functionapp function show --function-name\n                             --name\n                             --resource-group",
+            "required_parameters": [
+                "--function-name",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az functionapp function show -g MyResourceGroup -n MyFunctionAppName --function-name MyFunctionName"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,88 @@
+{
+    "command_group": "az postgres flexible-server virtual-endpoint",
+    "description": "Manage virtual endpoints for a PostgreSQL flexible server.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az postgres flexible-server virtual-endpoint create",
+            "summary": "Create a new virtual endpoint for a flexible server.",
+            "syntax": "az postgres flexible-server virtual-endpoint create --endpoint-type {ReadWrite}\n                                                    --members\n                                                    --name\n                                                    --resource-group\n                                                    --server-name",
+            "required_parameters": [
+                "--endpoint-type -t",
+                "--members -m",
+                "--name -n",
+                "--resource-group -g",
+                "--server-name -s"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az postgres flexible-server virtual-endpoint create --resource-group testGroup --server-name testserver --name test-virtual-endpoint --endpoint-type ReadWrite --members testReplica1"
+            ]
+        },
+        {
+            "name": "az postgres flexible-server virtual-endpoint delete",
+            "summary": "Delete a virtual endpoint.",
+            "syntax": "az postgres flexible-server virtual-endpoint delete [--ids]\n                                                    [--name]\n                                                    [--resource-group]\n                                                    [--server-name]\n                                                    [--subscription]\n                                                    [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--server-name -s",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az postgres flexible-server virtual-endpoint delete --resource-group testGroup --server-name testserver --name test-virtual-endpoint"
+            ]
+        },
+        {
+            "name": "az postgres flexible-server virtual-endpoint list",
+            "summary": "List all virtual endpoints for a flexible server.",
+            "syntax": "az postgres flexible-server virtual-endpoint list [--ids]\n                                                  [--resource-group]\n                                                  [--server-name]\n                                                  [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--resource-group -g",
+                "--server-name -s",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az postgres flexible-server virtual-endpoint show",
+            "summary": "Get the details of a virtual endpoint.",
+            "syntax": "az postgres flexible-server virtual-endpoint show [--ids]\n                                                  [--name]\n                                                  [--resource-group]\n                                                  [--server-name]\n                                                  [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--server-name -s",
+                "--subscription"
+            ],
+            "examples": [
+                "az postgres flexible-server virtual-endpoint show --resource-group testGroup --server-name testserver --name test-virtual-endpoint"
+            ]
+        },
+        {
+            "name": "az postgres flexible-server virtual-endpoint update",
+            "summary": "Update a virtual endpoint.",
+            "syntax": "az postgres flexible-server virtual-endpoint update --endpoint-type {ReadWrite}\n                                                    --members\n                                                    [--ids]\n                                                    [--name]\n                                                    [--resource-group]\n                                                    [--server-name]\n                                                    [--subscription]",
+            "required_parameters": [
+                "--endpoint-type -t",
+                "--members -m"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--server-name -s",
+                "--subscription"
+            ],
+            "examples": [
+                "az postgres flexible-server virtual-endpoint update --resource-group testGroup --server-name testserver --name test-virtual-endpoint --endpoint-type ReadWrite --members testReplica1"
+            ]
+        }
+    ]
+}

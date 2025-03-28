@@ -1,0 +1,56 @@
+{
+    "command_group": "az policy assignment identity",
+    "description": "Manage a policy assignment's managed identity.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az policy assignment identity assign",
+            "summary": "Add a system assigned identity or a user assigned identity to a policy assignment.",
+            "syntax": "az policy assignment identity assign --name\n                                     [--identity-scope]\n                                     [--resource-group]\n                                     [--role]\n                                     [--scope]\n                                     [--system-assigned]\n                                     [--user-assigned]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--identity-scope",
+                "--resource-group -g",
+                "--role",
+                "--scope",
+                "--system-assigned",
+                "--user-assigned"
+            ],
+            "examples": [
+                "az policy assignment identity assign --system-assigned -g MyResourceGroup -n MyPolicyAssignment",
+                "az policy assignment identity assign --system-assigned -g MyResourceGroup -n MyPolicyAssignment --role Contributor --identity-scope /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/MyResourceGroup",
+                "az policy assignment identity assign --user-assigned MyAssignedId -g MyResourceGroup -n MyPolicyAssignment"
+            ]
+        },
+        {
+            "name": "az policy assignment identity remove",
+            "summary": "Remove a managed identity from a policy assignment.",
+            "syntax": "az policy assignment identity remove --name\n                                     [--resource-group]\n                                     [--scope]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--resource-group -g",
+                "--scope"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az policy assignment identity show",
+            "summary": "Show a policy assignment's managed identity.",
+            "syntax": "az policy assignment identity show --name\n                                   [--resource-group]\n                                   [--scope]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--resource-group -g",
+                "--scope"
+            ],
+            "examples": [
+                "az policy assignment identity show --name MyPolicyAssignment --scope '/providers/Microsoft.Management/managementGroups/MyManagementGroup'"
+            ]
+        }
+    ]
+}

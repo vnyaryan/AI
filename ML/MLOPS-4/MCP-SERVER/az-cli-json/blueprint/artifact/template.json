@@ -1,0 +1,51 @@
+{
+    "command_group": "az blueprint artifact template",
+    "description": "Commands to manage blueprint ARM template artifact.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az blueprint artifact template create",
+            "summary": "Create blueprint arm artifact.",
+            "syntax": "az blueprint artifact template create --artifact-name\n                                      --blueprint-name\n                                      --template\n                                      [--depends-on]\n                                      [--description]\n                                      [--display-name]\n                                      [--management-group]\n                                      [--parameters]\n                                      [--resource-group-art]\n                                      [--subscription]",
+            "required_parameters": [
+                "--artifact-name",
+                "--blueprint-name",
+                "--template -t"
+            ],
+            "optional_parameters": [
+                "--depends-on",
+                "--description",
+                "--display-name",
+                "--management-group -m",
+                "--parameters -p",
+                "--resource-group-art",
+                "--subscription -s"
+            ],
+            "examples": [
+                "az blueprint artifact template create \\\n--blueprint-name MyBlueprint --artifact-name MyTemplate \\\n--parameters path/to/parameter/file --template path/to/template"
+            ]
+        },
+        {
+            "name": "az blueprint artifact template update",
+            "summary": "Update blueprint arm artifact.",
+            "syntax": "az blueprint artifact template update --artifact-name\n                                      --blueprint-name\n                                      [--depends-on]\n                                      [--description]\n                                      [--display-name]\n                                      [--management-group]\n                                      [--parameters]\n                                      [--resource-group-art]\n                                      [--subscription]\n                                      [--template]",
+            "required_parameters": [
+                "--artifact-name",
+                "--blueprint-name"
+            ],
+            "optional_parameters": [
+                "--depends-on",
+                "--description",
+                "--display-name",
+                "--management-group -m",
+                "--parameters -p",
+                "--resource-group-art",
+                "--subscription -s",
+                "--template -t"
+            ],
+            "examples": [
+                "az blueprint artifact template update \\\n--blueprint-name MyBlueprint --artifact-name MyTemplate --display-name \"My Template\""
+            ]
+        }
+    ]
+}

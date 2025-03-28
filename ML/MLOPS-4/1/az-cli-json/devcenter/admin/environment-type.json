@@ -1,0 +1,95 @@
+{
+    "command_group": "az devcenter admin environment-type",
+    "description": "Manage environment types.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az devcenter admin environment-type create",
+            "summary": "Create an environment type.",
+            "syntax": "az devcenter admin environment-type create --dev-center\n                                           --environment-type-name\n                                           --resource-group\n                                           [--display-name]\n                                           [--tags]",
+            "required_parameters": [
+                "--dev-center --dev-center-name -d",
+                "--environment-type-name --name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--display-name",
+                "--tags"
+            ],
+            "examples": [
+                "az devcenter admin environment-type create --tags Owner=\"superuser\" --dev-center-name \"Contoso\" --name \"DevTest\" --resource-group \"rg1\""
+            ]
+        },
+        {
+            "name": "az devcenter admin environment-type delete",
+            "summary": "Delete an environment type.",
+            "syntax": "az devcenter admin environment-type delete [--dev-center]\n                                           [--environment-type-name]\n                                           [--ids]\n                                           [--resource-group]\n                                           [--subscription]\n                                           [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--dev-center --dev-center-name -d",
+                "--environment-type-name --name -n",
+                "--ids",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az devcenter admin environment-type delete --dev-center-name \"Contoso\" --name \"DevTest\" --resource-group \"rg1\""
+            ]
+        },
+        {
+            "name": "az devcenter admin environment-type list",
+            "summary": "List environment types for the devcenter.",
+            "syntax": "az devcenter admin environment-type list --dev-center\n                                         --resource-group\n                                         [--max-items]\n                                         [--next-token]",
+            "required_parameters": [
+                "--dev-center --dev-center-name -d",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az devcenter admin environment-type list --dev-center-name \"Contoso\" --resource-group \"rg1\""
+            ]
+        },
+        {
+            "name": "az devcenter admin environment-type show",
+            "summary": "Get an environment type.",
+            "syntax": "az devcenter admin environment-type show [--dev-center]\n                                         [--environment-type-name]\n                                         [--ids]\n                                         [--resource-group]\n                                         [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--dev-center --dev-center-name -d",
+                "--environment-type-name --name -n",
+                "--ids",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az devcenter admin environment-type show --dev-center-name \"Contoso\" --name \"DevTest\" --resource-group \"rg1\""
+            ]
+        },
+        {
+            "name": "az devcenter admin environment-type update",
+            "summary": "Update an environment type.",
+            "syntax": "az devcenter admin environment-type update [--add]\n                                           [--dev-center]\n                                           [--display-name]\n                                           [--environment-type-name]\n                                           [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                           [--ids]\n                                           [--remove]\n                                           [--resource-group]\n                                           [--set]\n                                           [--subscription]\n                                           [--tags]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--dev-center --dev-center-name -d",
+                "--display-name",
+                "--environment-type-name --name -n",
+                "--force-string",
+                "--ids",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--subscription",
+                "--tags"
+            ],
+            "examples": [
+                "az devcenter admin environment-type update --tags Owner=\"superuser\" --dev-center-name \"Contoso\" --name \"DevTest\" --resource-group \"rg1\""
+            ]
+        }
+    ]
+}

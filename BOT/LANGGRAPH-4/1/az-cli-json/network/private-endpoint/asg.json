@@ -1,0 +1,72 @@
+{
+    "command_group": "az network private-endpoint asg",
+    "description": "Manage private endpoint application security groups.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az network private-endpoint asg add",
+            "summary": "Add a private endpoint application security group.",
+            "syntax": "az network private-endpoint asg add --endpoint-name\n                                    --resource-group\n                                    [--asg-id]\n                                    [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]",
+            "required_parameters": [
+                "--endpoint-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--asg-id",
+                "--no-wait"
+            ],
+            "examples": [
+                "az network private-endpoint asg add --endpoint-name MyPE -g MyRG --asg-id MyApplicationSecurityGroupId"
+            ]
+        },
+        {
+            "name": "az network private-endpoint asg list",
+            "summary": "List application security group within a private endpoint.",
+            "syntax": "az network private-endpoint asg list --endpoint-name\n                                     --resource-group",
+            "required_parameters": [
+                "--endpoint-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az network private-endpoint asg list --endpoint-name MyPE -g MyRG"
+            ]
+        },
+        {
+            "name": "az network private-endpoint asg remove",
+            "summary": "Remove a private endpoint application security group.",
+            "syntax": "az network private-endpoint asg remove --asg-id\n                                       --endpoint-name\n                                       --resource-group\n                                       [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]",
+            "required_parameters": [
+                "--asg-id",
+                "--endpoint-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--no-wait"
+            ],
+            "examples": [
+                "az network private-endpoint asg remove --endpoint-name MyPE -g MyRG --asg-id MyApplicationSecurityGroupId"
+            ]
+        },
+        {
+            "name": "az network private-endpoint asg wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az network private-endpoint asg wait [--created]\n                                     [--custom]\n                                     [--deleted]\n                                     [--endpoint-name]\n                                     [--exists]\n                                     [--ids]\n                                     [--interval]\n                                     [--resource-group]\n                                     [--subscription]\n                                     [--timeout]\n                                     [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--endpoint-name",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

@@ -1,0 +1,705 @@
+{
+    "command_group": "az netappfiles volume",
+    "description": "Manage Azure NetApp Files (ANF) Volume Resources.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az netappfiles volume break-file-locks",
+            "summary": "Break all the file locks on a volume.",
+            "syntax": "az netappfiles volume break-file-locks [--account-name]\n                                       [--client-ip]\n                                       [--confirm {0, 1, f, false, n, no, t, true, y, yes}]\n                                       [--ids]\n                                       [--name]\n                                       [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                       [--pool-name]\n                                       [--resource-group]\n                                       [--subscription]\n                                       [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account-name -a",
+                "--client-ip",
+                "--confirm --confirm-running-disruptive-operation",
+                "--ids",
+                "--name --volume-name -n -v",
+                "--no-wait",
+                "--pool-name -p",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az netappfiles volume break-file-locks -g mygroup --account-name myaccname --pool-name mypoolname --name myvolname"
+            ]
+        },
+        {
+            "name": "az netappfiles volume create",
+            "summary": "Create or Update a volume.",
+            "syntax": "az netappfiles volume create --account-name\n                             --creation-token\n                             --name\n                             --pool-name\n                             --resource-group\n                             [--allowed-clients]\n                             [--avs-data-store {Disabled, Enabled}]\n                             [--backup-id]\n                             [--backup-policy-id]\n                             [--backup-vault-id]\n                             [--ca-retrieval-policy {Default, Never, OnRead}]\n                             [--capacity-pool-resource-id]\n                             [--chown-mode {Restricted, Unrestricted}]\n                             [--cifs {0, 1, f, false, n, no, t, true, y, yes}]\n                             [--cool-access {0, 1, f, false, n, no, t, true, y, yes}]\n                             [--coolness-period]\n                             [--default-group-quota]\n                             [--default-quota-enabled {0, 1, f, false, n, no, t, true, y, yes}]\n                             [--default-user-quota]\n                             [--delete-base-snapshot {0, 1, f, false, n, no, t, true, y, yes}]\n                             [--enable-subvolumes {Disabled, Enabled}]\n                             [--encryption-key-source {Microsoft.KeyVault, Microsoft.NetApp}]\n                             [--endpoint-type {dst, src}]\n                             [--export-policy-rules]\n                             [--external-host-name]\n                             [--external-server-name]\n                             [--external-volume-name]\n                             [--has-root-access {0, 1, f, false, n, no, t, true, y, yes}]\n                             [--is-large-volume {0, 1, f, false, n, no, t, true, y, yes}]\n                             [--is-restoring {0, 1, f, false, n, no, t, true, y, yes}]\n                             [--kerberos-enabled {0, 1, f, false, n, no, t, true, y, yes}]\n                             [--kerberos5-r {0, 1, f, false, n, no, t, true, y, yes}]\n                             [--kerberos5-rw {0, 1, f, false, n, no, t, true, y, yes}]\n                             [--kerberos5i-r {0, 1, f, false, n, no, t, true, y, yes}]\n                             [--kerberos5i-rw {0, 1, f, false, n, no, t, true, y, yes}]\n                             [--kerberos5p-r {0, 1, f, false, n, no, t, true, y, yes}]\n                             [--kerberos5p-rw {0, 1, f, false, n, no, t, true, y, yes}]\n                             [--key-vault-private-endpoint-resource-id]\n                             [--ldap-enabled {0, 1, f, false, n, no, t, true, y, yes}]\n                             [--location]\n                             [--network-features {Basic, Standard}]\n                             [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                             [--placement-rules]\n                             [--policy-enforced {0, 1, f, false, n, no, t, true, y, yes}]\n                             [--ppg]\n                             [--protocol-types]\n                             [--relocation-requested {0, 1, f, false, n, no, t, true, y, yes}]\n                             [--remote-volume-id]\n                             [--remote-volume-region]\n                             [--replication-schedule {_10minutely, daily, hourly}]\n                             [--rule-index]\n                             [--security-style {ntfs, unix}]\n                             [--service-level {Premium, Standard, StandardZRS, Ultra}]\n                             [--smb-access-based-enumeration {Disabled, Enabled}]\n                             [--smb-ca {0, 1, f, false, n, no, t, true, y, yes}]\n                             [--smb-encryption {0, 1, f, false, n, no, t, true, y, yes}]\n                             [--smb-non-browsable {Disabled, Enabled}]\n                             [--snapshot-dir-visible {0, 1, f, false, n, no, t, true, y, yes}]\n                             [--snapshot-id]\n                             [--snapshot-policy-id]\n                             [--subnet]\n                             [--tags]\n                             [--throughput-mibps]\n                             [--unix-permissions]\n                             [--unix-read-only {0, 1, f, false, n, no, t, true, y, yes}]\n                             [--unix-read-write {0, 1, f, false, n, no, t, true, y, yes}]\n                             [--usage-threshold]\n                             [--vnet]\n                             [--volume-spec-name]\n                             [--volume-type]\n                             [--zones]",
+            "required_parameters": [
+                "--account-name -a",
+                "--creation-token --file-path",
+                "--name --volume-name -n -v",
+                "--pool-name -p",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--allowed-clients",
+                "--avs-data-store",
+                "--backup-id",
+                "--backup-policy-id",
+                "--backup-vault-id",
+                "--ca-retrieval-policy --cool-access-retrieval-policy",
+                "--capacity-pool-resource-id --pool-resource-id",
+                "--chown-mode",
+                "--cifs",
+                "--cool-access",
+                "--coolness-period",
+                "--default-group-quota --default-group-quota-in-ki-bs",
+                "--default-quota-enabled --is-def-quota-enabled --is-default-quota-enabled",
+                "--default-user-quota --default-user-quota-in-ki-bs",
+                "--delete-base-snapshot",
+                "--enable-subvolumes",
+                "--encryption-key-source",
+                "--endpoint-type",
+                "--export-policy-rules --rules",
+                "--external-host-name",
+                "--external-server-name",
+                "--external-volume-name",
+                "--has-root-access",
+                "--is-large-volume",
+                "--is-restoring",
+                "--kerberos-enabled",
+                "--kerberos5-r",
+                "--kerberos5-rw",
+                "--kerberos5i-r",
+                "--kerberos5i-rw",
+                "--kerberos5p-r",
+                "--kerberos5p-rw",
+                "--key-vault-private-endpoint-resource-id --kv-private-endpoint-id",
+                "--ldap-enabled",
+                "--location -l",
+                "--network-features",
+                "--no-wait",
+                "--placement-rules",
+                "--policy-enforced",
+                "--ppg --proximity-placement-group",
+                "--protocol-types",
+                "--relocation-requested",
+                "--remote-volume-id --remote-volume-resource-id",
+                "--remote-volume-region",
+                "--replication-schedule",
+                "--rule-index",
+                "--security-style",
+                "--service-level",
+                "--smb-access-based-enumeration --smb-access-enumeration",
+                "--smb-ca --smb-continuously-available --smb-continuously-avl",
+                "--smb-encryption",
+                "--smb-non-browsable",
+                "--snapshot-dir-visible --snapshot-directory-visible",
+                "--snapshot-id",
+                "--snapshot-policy-id",
+                "--subnet --subnet-id",
+                "--tags",
+                "--throughput-mibps",
+                "--unix-permissions",
+                "--unix-read-only",
+                "--unix-read-write",
+                "--usage-threshold",
+                "--vnet",
+                "--volume-spec-name",
+                "--volume-type",
+                "--zones"
+            ],
+            "examples": [
+                "az netappfiles volume create -g group --account-name aname --pool-name pname --volume-name vname -l location --service-level \"Premium\" --usage-threshold 100 --creation-token \"unique-token\" --protocol-types NFSv3 --vnet myvnet --subnet-id \"/subscriptions/mysubsid/resourceGroups/myrg/providers/Microsoft.Network/virtualNetworks/myvnet/subnets/default\" --rules '[{\"allowed_clients\":\"0.0.0.0/0\",\"rule_index\":\"1\",\"unix_read_only\":\"true\",\"unix_read_write\":\"false\",\"cifs\":\"false\",\"nfsv3\":\"true\",\"nfsv41\":\"false\"}]'",
+                "az netappfiles volume create -g mygroup --account-name myaccname --pool-name mypoolname --name myvolname -l westus2 --service-level premium --usage-threshold 100 --file-path \"unique-file-path\" --vnet myvnet --subnet mysubnet --protocol-types NFSv3 --zones zone1",
+                "az netappfiles volume create -g mygroup --account-name myaccname --pool-name mypoolname --name myvolname -l westus2 --service-level premium --usage-threshold 100 --file-path \"unique-file-path\" --vnet myvnet --subnet mysubnet --protocol-types NFSv3 --network-features Standard --protocol-types NFSv4.1 --rule-index 1 --allowed-clients '10.7.0.0/24' --kerberos-enabled false --encryption-key-source  Microsoft.KeyVault --kv-private-endpoint-id myPrivateEndpointId"
+            ]
+        },
+        {
+            "name": "az netappfiles volume create",
+            "summary": "Create or Update a volume.",
+            "syntax": "az netappfiles volume create --account-name\n                             --creation-token\n                             --name\n                             --pool-name\n                             --resource-group\n                             --vnet\n                             [--accept-grow-capacity-pool-for-short-term-clone-split {Accepted, Declined}]\n                             [--allowed-clients]\n                             [--avs-data-store {Disabled, Enabled}]\n                             [--backup-id]\n                             [--backup-policy-id]\n                             [--backup-vault-id]\n                             [--ca-retrieval-policy {Default, Never, OnRead}]\n                             [--capacity-pool-resource-id]\n                             [--chown-mode {Restricted, Unrestricted}]\n                             [--cifs {0, 1, f, false, n, no, t, true, y, yes}]\n                             [--cool-access {0, 1, f, false, n, no, t, true, y, yes}]\n                             [--coolness-period]\n                             [--default-group-quota]\n                             [--default-quota-enabled {0, 1, f, false, n, no, t, true, y, yes}]\n                             [--default-user-quota]\n                             [--delete-base-snapshot {0, 1, f, false, n, no, t, true, y, yes}]\n                             [--enable-subvolumes {Disabled, Enabled}]\n                             [--encryption-key-source {Microsoft.KeyVault, Microsoft.NetApp}]\n                             [--endpoint-type {dst, src}]\n                             [--export-policy-rules]\n                             [--has-root-access {0, 1, f, false, n, no, t, true, y, yes}]\n                             [--is-large-volume {0, 1, f, false, n, no, t, true, y, yes}]\n                             [--is-restoring {0, 1, f, false, n, no, t, true, y, yes}]\n                             [--kerberos-enabled {0, 1, f, false, n, no, t, true, y, yes}]\n                             [--kerberos5-r {0, 1, f, false, n, no, t, true, y, yes}]\n                             [--kerberos5-rw {0, 1, f, false, n, no, t, true, y, yes}]\n                             [--kerberos5i-r {0, 1, f, false, n, no, t, true, y, yes}]\n                             [--kerberos5i-rw {0, 1, f, false, n, no, t, true, y, yes}]\n                             [--kerberos5p-r {0, 1, f, false, n, no, t, true, y, yes}]\n                             [--kerberos5p-rw {0, 1, f, false, n, no, t, true, y, yes}]\n                             [--key-vault-private-endpoint-resource-id]\n                             [--language {ar, ar.utf-8, c, c.utf-8, cs, cs.utf-8, da, da.utf-8, de, de.utf-8, en, en-us, en-us.utf-8, en.utf-8, es, es.utf-8, fi, fi.utf-8, fr, fr.utf-8, he, he.utf-8, hr, hr.utf-8, hu, hu.utf-8, it, it.utf-8, ja, ja-jp.932, ja-jp.932.utf-8, ja-jp.pck, ja-jp.pck-v2, ja-jp.pck-v2.utf-8, ja-jp.pck.utf-8, ja-v1, ja-v1.utf-8, ja.utf-8, ko, ko.utf-8, nl, nl.utf-8, no, no.utf-8, pl, pl.utf-8, pt, pt.utf-8, ro, ro.utf-8, ru, ru.utf-8, sk, sk.utf-8, sl, sl.utf-8, sv, sv.utf-8, tr, tr.utf-8, utf8mb4, zh, zh-tw, zh-tw.big5, zh-tw.big5.utf-8, zh-tw.utf-8, zh.gbk, zh.gbk.utf-8, zh.utf-8}]\n                             [--ldap-enabled {0, 1, f, false, n, no, t, true, y, yes}]\n                             [--location]\n                             [--network-features {Basic, Standard}]\n                             [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                             [--placement-rules]\n                             [--policy-enforced {0, 1, f, false, n, no, t, true, y, yes}]\n                             [--ppg]\n                             [--protocol-types]\n                             [--relocation-requested {0, 1, f, false, n, no, t, true, y, yes}]\n                             [--remote-path]\n                             [--remote-volume-id]\n                             [--remote-volume-region]\n                             [--replication-schedule {_10minutely, daily, hourly}]\n                             [--rule-index]\n                             [--security-style {ntfs, unix}]\n                             [--service-level {Premium, Standard, StandardZRS, Ultra}]\n                             [--smb-access-based-enumeration {Disabled, Enabled}]\n                             [--smb-ca {0, 1, f, false, n, no, t, true, y, yes}]\n                             [--smb-encryption {0, 1, f, false, n, no, t, true, y, yes}]\n                             [--smb-non-browsable {Disabled, Enabled}]\n                             [--snapshot-dir-visible {0, 1, f, false, n, no, t, true, y, yes}]\n                             [--snapshot-id]\n                             [--snapshot-policy-id]\n                             [--subnet]\n                             [--tags]\n                             [--throughput-mibps]\n                             [--unix-permissions]\n                             [--unix-read-only {0, 1, f, false, n, no, t, true, y, yes}]\n                             [--unix-read-write {0, 1, f, false, n, no, t, true, y, yes}]\n                             [--usage-threshold]\n                             [--volume-spec-name]\n                             [--volume-type]\n                             [--zones]",
+            "required_parameters": [
+                "--account-name -a",
+                "--creation-token --file-path",
+                "--name --volume-name -n -v",
+                "--pool-name -p",
+                "--resource-group -g",
+                "--vnet"
+            ],
+            "optional_parameters": [
+                "--accept-grow-capacity-pool-for-short-term-clone-split --grow-pool-clone-split",
+                "--allowed-clients",
+                "--avs-data-store",
+                "--backup-id",
+                "--backup-policy-id",
+                "--backup-vault-id",
+                "--ca-retrieval-policy --cool-access-retrieval-policy",
+                "--capacity-pool-resource-id --pool-resource-id",
+                "--chown-mode",
+                "--cifs",
+                "--cool-access",
+                "--coolness-period",
+                "--default-group-quota --default-group-quota-in-ki-bs",
+                "--default-quota-enabled --is-def-quota-enabled --is-default-quota-enabled",
+                "--default-user-quota --default-user-quota-in-ki-bs",
+                "--delete-base-snapshot",
+                "--enable-subvolumes",
+                "--encryption-key-source",
+                "--endpoint-type",
+                "--export-policy-rules --rules",
+                "--has-root-access",
+                "--is-large-volume",
+                "--is-restoring",
+                "--kerberos-enabled",
+                "--kerberos5-r",
+                "--kerberos5-rw",
+                "--kerberos5i-r",
+                "--kerberos5i-rw",
+                "--kerberos5p-r",
+                "--kerberos5p-rw",
+                "--key-vault-private-endpoint-resource-id --kv-private-endpoint-id",
+                "--language",
+                "--ldap-enabled",
+                "--location -l",
+                "--network-features",
+                "--no-wait",
+                "--placement-rules",
+                "--policy-enforced",
+                "--ppg --proximity-placement-group",
+                "--protocol-types",
+                "--relocation-requested",
+                "--remote-path",
+                "--remote-volume-id --remote-volume-resource-id",
+                "--remote-volume-region",
+                "--replication-schedule",
+                "--rule-index",
+                "--security-style",
+                "--service-level",
+                "--smb-access-based-enumeration --smb-access-enumeration",
+                "--smb-ca --smb-continuously-available --smb-continuously-avl",
+                "--smb-encryption",
+                "--smb-non-browsable",
+                "--snapshot-dir-visible --snapshot-directory-visible",
+                "--snapshot-id",
+                "--snapshot-policy-id",
+                "--subnet --subnet-id",
+                "--tags",
+                "--throughput-mibps",
+                "--unix-permissions",
+                "--unix-read-only",
+                "--unix-read-write",
+                "--usage-threshold",
+                "--volume-spec-name",
+                "--volume-type",
+                "--zones"
+            ],
+            "examples": [
+                "az netappfiles volume create -g group --account-name aname --pool-name pname --volume-name vname -l location --service-level \"Premium\" --usage-threshold 100 --creation-token \"unique-token\" --protocol-types NFSv3 --vnet myvnet --subnet-id \"/subscriptions/mysubsid/resourceGroups/myrg/providers/Microsoft.Network/virtualNetworks/myvnet/subnets/default\" --rules '[{\"allowed_clients\":\"0.0.0.0/0\",\"rule_index\":\"1\",\"unix_read_only\":\"true\",\"unix_read_write\":\"false\",\"cifs\":\"false\",\"nfsv3\":\"true\",\"nfsv41\":\"false\"}]'",
+                "az netappfiles volume create -g mygroup --account-name myaccname --pool-name mypoolname --name myvolname -l westus2 --service-level premium --usage-threshold 100 --file-path \"unique-file-path\" --vnet myvnet --subnet mysubnet --protocol-types NFSv3 --zones zone1",
+                "az netappfiles volume create -g mygroup --account-name myaccname --pool-name mypoolname --name myvolname -l westus2 --service-level premium --usage-threshold 100 --file-path \"unique-file-path\" --vnet myvnet --subnet mysubnet --protocol-types NFSv3 --network-features Standard --protocol-types NFSv4.1 --rule-index 1 --allowed-clients '10.7.0.0/24' --kerberos-enabled false --encryption-key-source  Microsoft.KeyVault --kv-private-endpoint-id myPrivateEndpointId"
+            ]
+        },
+        {
+            "name": "az netappfiles volume delete",
+            "summary": "Delete the specified volume.",
+            "syntax": "az netappfiles volume delete [--account-name]\n                             [--force {0, 1, f, false, n, no, t, true, y, yes}]\n                             [--ids]\n                             [--name]\n                             [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                             [--pool-name]\n                             [--resource-group]\n                             [--subscription]\n                             [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account-name -a",
+                "--force --force-delete",
+                "--ids",
+                "--name --volume-name -n -v",
+                "--no-wait",
+                "--pool-name -p",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az netappfiles volume delete -g mygroup --account-name myaccname --pool-name mypoolname --name myvolname"
+            ]
+        },
+        {
+            "name": "az netappfiles volume delete",
+            "summary": "Delete the specified volume.",
+            "syntax": "az netappfiles volume delete [--account-name]\n                             [--force {0, 1, f, false, n, no, t, true, y, yes}]\n                             [--ids]\n                             [--name]\n                             [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                             [--pool-name]\n                             [--resource-group]\n                             [--subscription]\n                             [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account-name -a",
+                "--force --force-delete",
+                "--ids",
+                "--name --volume-name -n -v",
+                "--no-wait",
+                "--pool-name -p",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az netappfiles volume delete -g mygroup --account-name myaccname --pool-name mypoolname --name myvolname"
+            ]
+        },
+        {
+            "name": "az netappfiles volume finalize-relocation",
+            "summary": "Finalizes the relocation of the volume and cleans up the old volume.",
+            "syntax": "az netappfiles volume finalize-relocation [--account-name]\n                                          [--ids]\n                                          [--name]\n                                          [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                          [--pool-name]\n                                          [--resource-group]\n                                          [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account-name -a",
+                "--ids",
+                "--name --volume-name -n -v",
+                "--no-wait",
+                "--pool-name -p",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az netappfiles volume finalize-relocation -g mygroup --account-name myaccname --pool-name mypoolname --name myvolname"
+            ]
+        },
+        {
+            "name": "az netappfiles volume get-groupid-list-for-ldapuser",
+            "summary": "Returns the list of group Ids for a specific LDAP User.",
+            "syntax": "az netappfiles volume get-groupid-list-for-ldapuser --username\n                                                    [--account-name]\n                                                    [--ids]\n                                                    [--name]\n                                                    [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                                    [--pool-name]\n                                                    [--resource-group]\n                                                    [--subscription]",
+            "required_parameters": [
+                "--username"
+            ],
+            "optional_parameters": [
+                "--account-name -a",
+                "--ids",
+                "--name --volume-name -n -v",
+                "--no-wait",
+                "--pool-name -p",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az netappfiles volume get-groupid-list-for-ldapuser -g mygroup --account-name myaccname --pool-name mypoolname --name myvolname --username myuser"
+            ]
+        },
+        {
+            "name": "az netappfiles volume list",
+            "summary": "List all volumes within the capacity pool.",
+            "syntax": "az netappfiles volume list --account-name\n                           --pool-name\n                           --resource-group\n                           [--max-items]\n                           [--next-token]",
+            "required_parameters": [
+                "--account-name -a",
+                "--pool-name -p",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az netappfiles subvolume list -g mygroup --account-name myaccountname  --pool-name mypoolname --volume-name myvolumename"
+            ]
+        },
+        {
+            "name": "az netappfiles volume list",
+            "summary": "List all volumes within the capacity pool.",
+            "syntax": "az netappfiles volume list --account-name\n                           --pool-name\n                           --resource-group\n                           [--max-items]\n                           [--next-token]",
+            "required_parameters": [
+                "--account-name -a",
+                "--pool-name -p",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az netappfiles subvolume list -g mygroup --account-name myaccountname  --pool-name mypoolname --volume-name myvolumename"
+            ]
+        },
+        {
+            "name": "az netappfiles volume list-quota-report",
+            "summary": "Returns report of quotas for the volume.",
+            "syntax": "az netappfiles volume list-quota-report [--account-name]\n                                        [--ids]\n                                        [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                        [--pool-name]\n                                        [--resource-group]\n                                        [--subscription]\n                                        [--volume-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account-name -a",
+                "--ids",
+                "--no-wait",
+                "--pool-name -p",
+                "--resource-group -g",
+                "--subscription",
+                "--volume-name -v"
+            ],
+            "examples": [
+                "az netappfiles volume list-quota-report --resource-group myRG --account-name account1 --pool-name pool1 --volume-name volume1"
+            ]
+        },
+        {
+            "name": "az netappfiles volume migrate-backup",
+            "summary": "Migrate the backups under volume to backup vault.",
+            "syntax": "az netappfiles volume migrate-backup --backup-vault-id\n                                     [--account-name]\n                                     [--ids]\n                                     [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                     [--pool-name]\n                                     [--resource-group]\n                                     [--subscription]\n                                     [--volume-name]",
+            "required_parameters": [
+                "--backup-vault-id"
+            ],
+            "optional_parameters": [
+                "--account-name -a",
+                "--ids",
+                "--no-wait",
+                "--pool-name -p",
+                "--resource-group -g",
+                "--subscription",
+                "--volume-name -v"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az netappfiles volume migrate-backup",
+            "summary": "Migrate the backups under volume to backup vault.",
+            "syntax": "az netappfiles volume migrate-backup --backup-vault-id\n                                     [--account-name]\n                                     [--ids]\n                                     [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                     [--pool-name]\n                                     [--resource-group]\n                                     [--subscription]\n                                     [--volume-name]",
+            "required_parameters": [
+                "--backup-vault-id"
+            ],
+            "optional_parameters": [
+                "--account-name -a",
+                "--ids",
+                "--no-wait",
+                "--pool-name -p",
+                "--resource-group -g",
+                "--subscription",
+                "--volume-name -v"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az netappfiles volume pool-change",
+            "summary": "Moves volume to another pool.",
+            "syntax": "az netappfiles volume pool-change --new-pool-resource-id\n                                  [--account-name]\n                                  [--ids]\n                                  [--name]\n                                  [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                  [--pool-name]\n                                  [--resource-group]\n                                  [--subscription]",
+            "required_parameters": [
+                "--new-pool-resource-id -d"
+            ],
+            "optional_parameters": [
+                "--account-name -a",
+                "--ids",
+                "--name --volume-name -n -v",
+                "--no-wait",
+                "--pool-name -p",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az netappfiles volume pool-change -g mygroup --account-name myaccname --pool-name mypoolname --name myvolname --new-pool-resource-id mynewresourceid"
+            ]
+        },
+        {
+            "name": "az netappfiles volume populate-availability-zone",
+            "summary": "This operation will populate availability zone information for a volume.",
+            "syntax": "az netappfiles volume populate-availability-zone [--account-name]\n                                                 [--ids]\n                                                 [--name]\n                                                 [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                                 [--pool-name]\n                                                 [--resource-group]\n                                                 [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account-name -a",
+                "--ids",
+                "--name --volume-name -n -v",
+                "--no-wait",
+                "--pool-name -p",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az netappfiles volume populate-availability-zone -g mygroup --account-name myaccname --pool-name mypoolname --name myvolname"
+            ]
+        },
+        {
+            "name": "az netappfiles volume relocate",
+            "summary": "Relocates volume to a new stamp.",
+            "syntax": "az netappfiles volume relocate [--account-name]\n                               [--creation-token]\n                               [--ids]\n                               [--name]\n                               [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                               [--pool-name]\n                               [--resource-group]\n                               [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account-name -a",
+                "--creation-token",
+                "--ids",
+                "--name --volume-name -n -v",
+                "--no-wait",
+                "--pool-name -p",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az netappfiles volume relocate -g mygroup --account-name myaccname --pool-name mypoolname --name myvolname"
+            ]
+        },
+        {
+            "name": "az netappfiles volume reset-cifs-pw",
+            "summary": "Reset cifs password from volume.",
+            "syntax": "az netappfiles volume reset-cifs-pw [--account-name]\n                                    [--ids]\n                                    [--name]\n                                    [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                    [--pool-name]\n                                    [--resource-group]\n                                    [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account-name -a",
+                "--ids",
+                "--name --volume-name -n -v",
+                "--no-wait",
+                "--pool-name -p",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az netappfiles volume reset-cifs-pw -g mygroup --account-name myaccname --pool-name mypoolname --name myvolname"
+            ]
+        },
+        {
+            "name": "az netappfiles volume revert",
+            "summary": "Revert a volume to the snapshot specified in the body.",
+            "syntax": "az netappfiles volume revert [--account-name]\n                             [--ids]\n                             [--name]\n                             [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                             [--pool-name]\n                             [--resource-group]\n                             [--snapshot-id]\n                             [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account-name -a",
+                "--ids",
+                "--name --volume-name -n -v",
+                "--no-wait",
+                "--pool-name -p",
+                "--resource-group -g",
+                "--snapshot-id -s",
+                "--subscription"
+            ],
+            "examples": [
+                "az netappfiles volume revert -g mygroup --account-name myaccname --pool-name mypoolname --name myvolname --snapshot-id 9760acf5-4638-11e7-9bdb-020073ca3333"
+            ]
+        },
+        {
+            "name": "az netappfiles volume revert-relocation",
+            "summary": "Reverts the volume relocation process, cleans up the new volume and starts using the former-existing volume.",
+            "syntax": "az netappfiles volume revert-relocation [--account-name]\n                                        [--ids]\n                                        [--name]\n                                        [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                        [--pool-name]\n                                        [--resource-group]\n                                        [--subscription]\n                                        [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account-name -a",
+                "--ids",
+                "--name --volume-name -n -v",
+                "--no-wait",
+                "--pool-name -p",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az netappfiles volume revert-relocation -g mygroup --account-name myaccname --pool-name mypoolname --name myvolname"
+            ]
+        },
+        {
+            "name": "az netappfiles volume show",
+            "summary": "Get the details of the specified volume.",
+            "syntax": "az netappfiles volume show [--account-name]\n                           [--ids]\n                           [--name]\n                           [--pool-name]\n                           [--resource-group]\n                           [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account-name -a",
+                "--ids",
+                "--name --volume-name -n -v",
+                "--pool-name -p",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az netappfiles volume show -g mygroup --account-name myaccname --pool-name mypoolname --name myvolname"
+            ]
+        },
+        {
+            "name": "az netappfiles volume show",
+            "summary": "Get the details of the specified volume.",
+            "syntax": "az netappfiles volume show [--account-name]\n                           [--ids]\n                           [--name]\n                           [--pool-name]\n                           [--resource-group]\n                           [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account-name -a",
+                "--ids",
+                "--name --volume-name -n -v",
+                "--pool-name -p",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az netappfiles volume show -g mygroup --account-name myaccname --pool-name mypoolname --name myvolname"
+            ]
+        },
+        {
+            "name": "az netappfiles volume splitclonefromparent",
+            "summary": "Split operation to convert clone volume to an independent volume.",
+            "syntax": "az netappfiles volume splitclonefromparent [--account-name]\n                                           [--ids]\n                                           [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                           [--pool-name]\n                                           [--resource-group]\n                                           [--subscription]\n                                           [--volume-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account-name -a",
+                "--ids",
+                "--no-wait",
+                "--pool-name -p",
+                "--resource-group -g",
+                "--subscription",
+                "--volume-name -n -v"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az netappfiles volume update",
+            "summary": "Update the specified volume within the capacity pool.",
+            "syntax": "az netappfiles volume update [--account-name]\n                             [--add]\n                             [--avs-data-store {Disabled, Enabled}]\n                             [--backup-policy-id]\n                             [--backup-vault-id]\n                             [--ca-retrieval-policy {Default, Never, OnRead}]\n                             [--capacity-pool-resource-id]\n                             [--cool-access {0, 1, f, false, n, no, t, true, y, yes}]\n                             [--coolness-period]\n                             [--creation-token]\n                             [--default-group-quota]\n                             [--default-quota-enabled {0, 1, f, false, n, no, t, true, y, yes}]\n                             [--default-user-quota]\n                             [--delete-base-snapshot {0, 1, f, false, n, no, t, true, y, yes}]\n                             [--enable-subvolumes {Disabled, Enabled}]\n                             [--encryption-key-source {Microsoft.KeyVault, Microsoft.NetApp}]\n                             [--endpoint-type {dst, src}]\n                             [--export-policy-rules]\n                             [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                             [--ids]\n                             [--is-large-volume {0, 1, f, false, n, no, t, true, y, yes}]\n                             [--is-restoring {0, 1, f, false, n, no, t, true, y, yes}]\n                             [--key-vault-private-endpoint-resource-id]\n                             [--ldap-enabled {0, 1, f, false, n, no, t, true, y, yes}]\n                             [--name]\n                             [--network-features {Basic, Basic_Standard, Standard, Standard_Basic}]\n                             [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                             [--placement-rules]\n                             [--policy-enforced {0, 1, f, false, n, no, t, true, y, yes}]\n                             [--pool-name]\n                             [--ppg]\n                             [--protocol-types]\n                             [--relocation-requested {0, 1, f, false, n, no, t, true, y, yes}]\n                             [--remote-volume-id]\n                             [--remote-volume-region]\n                             [--remove]\n                             [--replication-schedule {_10minutely, daily, hourly}]\n                             [--resource-group]\n                             [--security-style {ntfs, unix}]\n                             [--service-level {Premium, Standard, StandardZRS, Ultra}]\n                             [--set]\n                             [--smb-access-based-enumeration {Disabled, Enabled}]\n                             [--smb-ca {0, 1, f, false, n, no, t, true, y, yes}]\n                             [--smb-encryption {0, 1, f, false, n, no, t, true, y, yes}]\n                             [--smb-non-browsable {Disabled, Enabled}]\n                             [--snapshot-dir-visible {0, 1, f, false, n, no, t, true, y, yes}]\n                             [--snapshot-policy-id]\n                             [--subnet]\n                             [--subscription]\n                             [--tags]\n                             [--throughput-mibps]\n                             [--unix-permissions]\n                             [--usage-threshold]\n                             [--vnet]\n                             [--volume-spec-name]\n                             [--volume-type]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account-name -a",
+                "--add",
+                "--avs-data-store",
+                "--backup-policy-id",
+                "--backup-vault-id",
+                "--ca-retrieval-policy --cool-access-retrieval-policy",
+                "--capacity-pool-resource-id --pool-resource-id",
+                "--cool-access",
+                "--coolness-period",
+                "--creation-token",
+                "--default-group-quota --default-group-quota-in-ki-bs",
+                "--default-quota-enabled --is-def-quota-enabled --is-default-quota-enabled",
+                "--default-user-quota --default-user-quota-in-ki-bs",
+                "--delete-base-snapshot",
+                "--enable-subvolumes",
+                "--encryption-key-source",
+                "--endpoint-type",
+                "--export-policy-rules --rules",
+                "--force-string",
+                "--ids",
+                "--is-large-volume",
+                "--is-restoring",
+                "--key-vault-private-endpoint-resource-id --kv-private-endpoint-id",
+                "--ldap-enabled",
+                "--name --volume-name -n -v",
+                "--network-features",
+                "--no-wait",
+                "--placement-rules",
+                "--policy-enforced",
+                "--pool-name -p",
+                "--ppg --proximity-placement-group",
+                "--protocol-types",
+                "--relocation-requested",
+                "--remote-volume-id --remote-volume-resource-id",
+                "--remote-volume-region",
+                "--remove",
+                "--replication-schedule",
+                "--resource-group -g",
+                "--security-style",
+                "--service-level",
+                "--set",
+                "--smb-access-based-enumeration --smb-access-enumeration",
+                "--smb-ca --smb-continuously-available --smb-continuously-avl",
+                "--smb-encryption",
+                "--smb-non-browsable",
+                "--snapshot-dir-visible --snapshot-directory-visible",
+                "--snapshot-policy-id",
+                "--subnet --subnet-id",
+                "--subscription",
+                "--tags",
+                "--throughput-mibps",
+                "--unix-permissions",
+                "--usage-threshold",
+                "--vnet",
+                "--volume-spec-name",
+                "--volume-type"
+            ],
+            "examples": [
+                "az netappfiles volume update -g mygroup --account-name myaccname --pool-name mypoolname --name myvolname --service-level ultra --usage-threshold 100 --tags mytag=specialvol"
+            ]
+        },
+        {
+            "name": "az netappfiles volume update",
+            "summary": "Update the specified volume within the capacity pool.",
+            "syntax": "az netappfiles volume update [--account-name]\n                             [--add]\n                             [--avs-data-store {Disabled, Enabled}]\n                             [--backup-policy-id]\n                             [--backup-vault-id]\n                             [--ca-retrieval-policy {Default, Never, OnRead}]\n                             [--capacity-pool-resource-id]\n                             [--cool-access {0, 1, f, false, n, no, t, true, y, yes}]\n                             [--coolness-period]\n                             [--creation-token]\n                             [--default-group-quota]\n                             [--default-quota-enabled {0, 1, f, false, n, no, t, true, y, yes}]\n                             [--default-user-quota]\n                             [--delete-base-snapshot {0, 1, f, false, n, no, t, true, y, yes}]\n                             [--enable-subvolumes {Disabled, Enabled}]\n                             [--encryption-key-source {Microsoft.KeyVault, Microsoft.NetApp}]\n                             [--endpoint-type {dst, src}]\n                             [--export-policy-rules]\n                             [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                             [--ids]\n                             [--is-large-volume {0, 1, f, false, n, no, t, true, y, yes}]\n                             [--is-restoring {0, 1, f, false, n, no, t, true, y, yes}]\n                             [--key-vault-private-endpoint-resource-id]\n                             [--language {ar, ar.utf-8, c, c.utf-8, cs, cs.utf-8, da, da.utf-8, de, de.utf-8, en, en-us, en-us.utf-8, en.utf-8, es, es.utf-8, fi, fi.utf-8, fr, fr.utf-8, he, he.utf-8, hr, hr.utf-8, hu, hu.utf-8, it, it.utf-8, ja, ja-jp.932, ja-jp.932.utf-8, ja-jp.pck, ja-jp.pck-v2, ja-jp.pck-v2.utf-8, ja-jp.pck.utf-8, ja-v1, ja-v1.utf-8, ja.utf-8, ko, ko.utf-8, nl, nl.utf-8, no, no.utf-8, pl, pl.utf-8, pt, pt.utf-8, ro, ro.utf-8, ru, ru.utf-8, sk, sk.utf-8, sl, sl.utf-8, sv, sv.utf-8, tr, tr.utf-8, utf8mb4, zh, zh-tw, zh-tw.big5, zh-tw.big5.utf-8, zh-tw.utf-8, zh.gbk, zh.gbk.utf-8, zh.utf-8}]\n                             [--ldap-enabled {0, 1, f, false, n, no, t, true, y, yes}]\n                             [--name]\n                             [--network-features {Basic, Basic_Standard, Standard, Standard_Basic}]\n                             [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                             [--placement-rules]\n                             [--policy-enforced {0, 1, f, false, n, no, t, true, y, yes}]\n                             [--pool-name]\n                             [--ppg]\n                             [--protocol-types]\n                             [--relocation-requested {0, 1, f, false, n, no, t, true, y, yes}]\n                             [--remote-volume-region]\n                             [--remove]\n                             [--replication-schedule {_10minutely, daily, hourly}]\n                             [--resource-group]\n                             [--security-style {ntfs, unix}]\n                             [--service-level {Premium, Standard, StandardZRS, Ultra}]\n                             [--set]\n                             [--smb-access-based-enumeration {Disabled, Enabled}]\n                             [--smb-ca {0, 1, f, false, n, no, t, true, y, yes}]\n                             [--smb-encryption {0, 1, f, false, n, no, t, true, y, yes}]\n                             [--smb-non-browsable {Disabled, Enabled}]\n                             [--snapshot-dir-visible {0, 1, f, false, n, no, t, true, y, yes}]\n                             [--snapshot-policy-id]\n                             [--subnet]\n                             [--subscription]\n                             [--tags]\n                             [--throughput-mibps]\n                             [--unix-permissions]\n                             [--usage-threshold]\n                             [--vnet]\n                             [--volume-spec-name]\n                             [--volume-type]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account-name -a",
+                "--add",
+                "--avs-data-store",
+                "--backup-policy-id",
+                "--backup-vault-id",
+                "--ca-retrieval-policy --cool-access-retrieval-policy",
+                "--capacity-pool-resource-id --pool-resource-id",
+                "--cool-access",
+                "--coolness-period",
+                "--creation-token",
+                "--default-group-quota --default-group-quota-in-ki-bs",
+                "--default-quota-enabled --is-def-quota-enabled --is-default-quota-enabled",
+                "--default-user-quota --default-user-quota-in-ki-bs",
+                "--delete-base-snapshot",
+                "--enable-subvolumes",
+                "--encryption-key-source",
+                "--endpoint-type",
+                "--export-policy-rules --rules",
+                "--force-string",
+                "--ids",
+                "--is-large-volume",
+                "--is-restoring",
+                "--key-vault-private-endpoint-resource-id --kv-private-endpoint-id",
+                "--language",
+                "--ldap-enabled",
+                "--name --volume-name -n -v",
+                "--network-features",
+                "--no-wait",
+                "--placement-rules",
+                "--policy-enforced",
+                "--pool-name -p",
+                "--ppg --proximity-placement-group",
+                "--protocol-types",
+                "--relocation-requested",
+                "--remote-volume-region",
+                "--remove",
+                "--replication-schedule",
+                "--resource-group -g",
+                "--security-style",
+                "--service-level",
+                "--set",
+                "--smb-access-based-enumeration --smb-access-enumeration",
+                "--smb-ca --smb-continuously-available --smb-continuously-avl",
+                "--smb-encryption",
+                "--smb-non-browsable",
+                "--snapshot-dir-visible --snapshot-directory-visible",
+                "--snapshot-policy-id",
+                "--subnet --subnet-id",
+                "--subscription",
+                "--tags",
+                "--throughput-mibps",
+                "--unix-permissions",
+                "--usage-threshold",
+                "--vnet",
+                "--volume-spec-name",
+                "--volume-type"
+            ],
+            "examples": [
+                "az netappfiles volume update -g mygroup --account-name myaccname --pool-name mypoolname --name myvolname --service-level ultra --usage-threshold 100 --tags mytag=specialvol"
+            ]
+        },
+        {
+            "name": "az netappfiles volume wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az netappfiles volume wait [--account-name]\n                           [--created]\n                           [--custom]\n                           [--deleted]\n                           [--exists]\n                           [--ids]\n                           [--interval]\n                           [--name]\n                           [--pool-name]\n                           [--resource-group]\n                           [--subscription]\n                           [--timeout]\n                           [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account-name -a",
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--name --volume-name -n -v",
+                "--pool-name -p",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az netappfiles volume wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az netappfiles volume wait [--account-name]\n                           [--created]\n                           [--custom]\n                           [--deleted]\n                           [--exists]\n                           [--ids]\n                           [--interval]\n                           [--name]\n                           [--pool-name]\n                           [--resource-group]\n                           [--subscription]\n                           [--timeout]\n                           [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account-name -a",
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--name --volume-name -n -v",
+                "--pool-name -p",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

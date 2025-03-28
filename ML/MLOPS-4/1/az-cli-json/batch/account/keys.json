@@ -1,0 +1,32 @@
+{
+    "command_group": "az batch account keys",
+    "description": "Manage Batch account keys.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az batch account keys list",
+            "summary": "Gets the account keys for the specified Batch account. This operation applies only to Batch accounts with allowedAuthenticationModes containing 'SharedKey'. If the Batch account doesn't contain 'SharedKey' in its allowedAuthenticationMode, clients cannot use shared keys to authenticate, and must use another allowedAuthenticationModes instead. In this case, getting the keys will fail.",
+            "syntax": "az batch account keys list --name\n                           --resource-group",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az batch account keys renew",
+            "summary": "Renew keys for a Batch account.",
+            "syntax": "az batch account keys renew [--key-name {Primary, Secondary}]\n                            [--name]\n                            [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--key-name",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az batch account keys renew --name MyBatchAccount --resource-group MyResourceGroup --key-name primary"
+            ]
+        }
+    ]
+}

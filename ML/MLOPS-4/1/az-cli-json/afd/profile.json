@@ -1,0 +1,136 @@
+{
+    "command_group": "az afd profile",
+    "description": "Manage AFD profiles.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az afd profile create",
+            "summary": "Create a new Azure Front Door Standard or Azure Front Door Premium or CDN profile with a profile name under the specified subscription and resource group.",
+            "syntax": "az afd profile create --name\n                      --resource-group\n                      [--identity]\n                      [--identity-type {None, SystemAssigned, SystemAssigned, UserAssigned, UserAssigned}]\n                      [--log-scrubbing]\n                      [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                      [--origin-response-timeout-seconds]\n                      [--sku {Custom_Verizon, Premium_AzureFrontDoor, Premium_Verizon, StandardPlus_955BandWidth_ChinaCdn, StandardPlus_AvgBandWidth_ChinaCdn, StandardPlus_ChinaCdn, Standard_955BandWidth_ChinaCdn, Standard_Akamai, Standard_AvgBandWidth_ChinaCdn, Standard_AzureFrontDoor, Standard_ChinaCdn, Standard_Microsoft, Standard_Verizon}]\n                      [--tags]\n                      [--user-assigned-identities]",
+            "required_parameters": [
+                "--name --profile-name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--identity",
+                "--identity-type",
+                "--log-scrubbing",
+                "--no-wait",
+                "--origin-response-timeout-seconds",
+                "--sku",
+                "--tags",
+                "--user-assigned-identities"
+            ],
+            "examples": [
+                "az afd profile create -g group --profile-name profile --sku Standard_AzureFrontDoor"
+            ]
+        },
+        {
+            "name": "az afd profile delete",
+            "summary": "Delete an existing  Azure Front Door Standard or Azure Front Door Premium or CDN profile with the specified parameters. Deleting a profile will result in the deletion of all of the sub-resources including endpoints, origins and custom domains.",
+            "syntax": "az afd profile delete [--ids]\n                      [--name]\n                      [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                      [--resource-group]\n                      [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --profile-name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az profile delete -g group --profile-name profile"
+            ]
+        },
+        {
+            "name": "az afd profile list",
+            "summary": "List all of the Azure Front Door Standard, Azure Front Door Premium, and CDN profiles within an Azure subscription.",
+            "syntax": "az afd profile list [--max-items]\n                    [--next-token]\n                    [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az afd profile list -g group"
+            ]
+        },
+        {
+            "name": "az afd profile show",
+            "summary": "Get an Azure Front Door Standard or Azure Front Door Premium or CDN profile with the specified profile name under the specified subscription and resource group.",
+            "syntax": "az afd profile show [--ids]\n                    [--name]\n                    [--resource-group]\n                    [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --profile-name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az afd profile show -g group --profile-name profile"
+            ]
+        },
+        {
+            "name": "az afd profile update",
+            "summary": "Update a new Azure Front Door Standard or Azure Front Door Premium or CDN profile with a profile name under the specified subscription and resource group.",
+            "syntax": "az afd profile update [--add]\n                      [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                      [--identity]\n                      [--identity-type {None, SystemAssigned, SystemAssigned, UserAssigned, UserAssigned}]\n                      [--ids]\n                      [--log-scrubbing]\n                      [--name]\n                      [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                      [--origin-response-timeout-seconds]\n                      [--remove]\n                      [--resource-group]\n                      [--set]\n                      [--subscription]\n                      [--tags]\n                      [--user-assigned-identities]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--force-string",
+                "--identity",
+                "--identity-type",
+                "--ids",
+                "--log-scrubbing",
+                "--name --profile-name -n",
+                "--no-wait",
+                "--origin-response-timeout-seconds",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--subscription",
+                "--tags",
+                "--user-assigned-identities"
+            ],
+            "examples": [
+                "az afd profile update --profile-name profile --resource-group MyResourceGroup --tags tag1=value1"
+            ]
+        },
+        {
+            "name": "az afd profile usage",
+            "summary": "Checks the quota and actual usage of endpoints under the given Azure Front Door profile.",
+            "syntax": "az afd profile usage --profile-name\n                     --resource-group\n                     [--max-items]\n                     [--next-token]",
+            "required_parameters": [
+                "--profile-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az afd profile usage -g group --profile-name profile"
+            ]
+        },
+        {
+            "name": "az afd profile wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az afd profile wait [--created]\n                    [--custom]\n                    [--deleted]\n                    [--exists]\n                    [--ids]\n                    [--interval]\n                    [--name]\n                    [--resource-group]\n                    [--subscription]\n                    [--timeout]\n                    [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--name --profile-name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

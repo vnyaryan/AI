@@ -1,0 +1,149 @@
+{
+    "command_group": "az iot ops asset",
+    "description": "Asset management.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az iot ops asset create",
+            "summary": "Create an asset.",
+            "syntax": "az iot ops asset create --endpoint-profile\n                        --instance\n                        --name\n                        --resource-group\n                        [--attr]\n                        [--dataset-publish-int]\n                        [--dataset-queue-size]\n                        [--dataset-sample-int]\n                        [--description]\n                        [--disable {false, true}]\n                        [--display-name]\n                        [--documentation-uri]\n                        [--eai]\n                        [--ef]\n                        [--epi]\n                        [--eqs]\n                        [--esi]\n                        [--event]\n                        [--hardware-revision]\n                        [--ig]\n                        [--location]\n                        [--manufacturer]\n                        [--manufacturer-uri]\n                        [--model]\n                        [--pc]\n                        [--serial-number]\n                        [--software-revision]\n                        [--tags]\n                        [--topic-path]\n                        [--topic-retain {Keep, Never}]",
+            "required_parameters": [
+                "--endpoint-profile --ep",
+                "--instance",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--attr --custom-attribute",
+                "--dataset-publish-int --dpi",
+                "--dataset-queue-size --dqs",
+                "--dataset-sample-int --dsi",
+                "--description -d",
+                "--disable",
+                "--display-name --dn",
+                "--documentation-uri --du",
+                "--eai --external-asset-id",
+                "--ef --event-file",
+                "--epi --event-publish-int",
+                "--eqs --event-queue-size",
+                "--esi --event-sample-int",
+                "--event",
+                "--hardware-revision --hr",
+                "--ig --instance-resource-group",
+                "--location -l",
+                "--manufacturer",
+                "--manufacturer-uri --mu",
+                "--model",
+                "--pc --product-code",
+                "--serial-number --sn",
+                "--software-revision --sr",
+                "--tags",
+                "--topic-path --tp",
+                "--topic-retain --tr"
+            ],
+            "examples": [
+                "az iot ops asset create --name myasset -g myresourcegroup --endpoint-profile myassetendpoint --instance myinstance",
+                "az iot ops asset create --name myasset -g myresourcegroup --endpoint-profile myassetendpoint --instance myinstance --instance-resource-group myinstanceresourcegroup",
+                "az iot ops asset create --name myasset -g myresourcegroup --endpoint-profile myassetendpoint --instance myinstance --event-file /path/to/myasset_events.csv --disable",
+                "az iot ops asset create --name myasset -g myresourcegroup --endpoint-profile myassetendpoint --instance myinstance --event event_notifier=EventNotifier1 name=myEvent1 observability_mode=log sampling_interval=10 queue_size=2 --event event_notifier=EventNotifier2 name=myEvent2 --dataset-publish-int 1250 --dataset-queue-size 2 --dataset-sample-int 30 --event-publish-int 750 --event-queue-size 3 --event-sample-int 50 --description 'Description for a test asset.' --documentation-uri www.contoso.com --external-asset-id 000-000-1234 --hardware-revision 10.0 --product-code XXX100 --software-revision 0.1 --manufacturer Contoso --manufacturer-uri constoso.com --model AssetModel --serial-number 000-000-ABC10 --custom-attribute work_location=factory"
+            ]
+        },
+        {
+            "name": "az iot ops asset delete",
+            "summary": "Delete an asset.",
+            "syntax": "az iot ops asset delete --name\n                        --resource-group",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az iot ops asset delete --name myasset -g myresourcegroup"
+            ]
+        },
+        {
+            "name": "az iot ops asset query",
+            "summary": "Query the Resource Graph for assets.",
+            "syntax": "az iot ops asset query [--cq]\n                       [--description]\n                       [--disabled {false, true}]\n                       [--display-name]\n                       [--documentation-uri]\n                       [--eai]\n                       [--endpoint-profile]\n                       [--hardware-revision]\n                       [--ig]\n                       [--instance]\n                       [--location]\n                       [--manufacturer]\n                       [--manufacturer-uri]\n                       [--model]\n                       [--name]\n                       [--pc]\n                       [--resource-group]\n                       [--serial-number]\n                       [--software-revision]\n                       [--topic-path]\n                       [--topic-retain {Keep, Never}]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--cq --custom-query",
+                "--description -d",
+                "--disabled",
+                "--display-name --dn",
+                "--documentation-uri --du",
+                "--eai --external-asset-id",
+                "--endpoint-profile --ep",
+                "--hardware-revision --hr",
+                "--ig --instance-resource-group",
+                "--instance",
+                "--location -l",
+                "--manufacturer",
+                "--manufacturer-uri --mu",
+                "--model",
+                "--name -n",
+                "--pc --product-code",
+                "--resource-group -g",
+                "--serial-number --sn",
+                "--software-revision --sr",
+                "--topic-path --tp",
+                "--topic-retain --tr"
+            ],
+            "examples": [
+                "az iot ops asset query -g myresourcegroup --disabled",
+                "az iot ops asset query --model model1 --manufacturer contoso --serial-number 000-000-ABC10"
+            ]
+        },
+        {
+            "name": "az iot ops asset show",
+            "summary": "Show an asset.",
+            "syntax": "az iot ops asset show --name\n                      --resource-group",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az iot ops asset show --name myasset -g myresourcegroup"
+            ]
+        },
+        {
+            "name": "az iot ops asset update",
+            "summary": "Update an asset.",
+            "syntax": "az iot ops asset update --name\n                        --resource-group\n                        [--attr]\n                        [--dataset-publish-int]\n                        [--dataset-queue-size]\n                        [--dataset-sample-int]\n                        [--description]\n                        [--disable {false, true}]\n                        [--display-name]\n                        [--documentation-uri]\n                        [--epi]\n                        [--eqs]\n                        [--esi]\n                        [--hardware-revision]\n                        [--manufacturer]\n                        [--manufacturer-uri]\n                        [--model]\n                        [--pc]\n                        [--serial-number]\n                        [--software-revision]\n                        [--tags]\n                        [--topic-path]\n                        [--topic-retain {Keep, Never}]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--attr --custom-attribute",
+                "--dataset-publish-int --dpi",
+                "--dataset-queue-size --dqs",
+                "--dataset-sample-int --dsi",
+                "--description -d",
+                "--disable",
+                "--display-name --dn",
+                "--documentation-uri --du",
+                "--epi --event-publish-int",
+                "--eqs --event-queue-size",
+                "--esi --event-sample-int",
+                "--hardware-revision --hr",
+                "--manufacturer",
+                "--manufacturer-uri --mu",
+                "--model",
+                "--pc --product-code",
+                "--serial-number --sn",
+                "--software-revision --sr",
+                "--tags",
+                "--topic-path --tp",
+                "--topic-retain --tr"
+            ],
+            "examples": [
+                "az iot ops asset update --name myasset -g myresourcegroup --dataset-publish-int 1250 --dataset-queue-size 2 --dataset-sample-int 30 --event-publish-int 750 --event-queue-size 3 --event-sample-int 50",
+                "az iot ops asset update --name myasset -g myresourcegroup --description \"Updated test asset description.\" --documentation-uri www.contoso.com --hardware-revision 11.0 --product-code XXX102 --software-revision 0.2",
+                "az iot ops asset update --name myasset -g myresourcegroup --manufacturer Contoso --manufacturer-uri constoso2.com --model NewAssetModel --serial-number 000-000-ABC11 --custom-attribute work_location=new_factory --custom-attribute secondary_work_location=factory",
+                "az iot ops asset update --name myasset -g myresourcegroup --disable --custom-attribute work_site=\"\""
+            ]
+        }
+    ]
+}

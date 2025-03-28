@@ -1,0 +1,34 @@
+{
+    "command_group": "az managed-cassandra cluster backup",
+    "description": "Azure Managed Cassandra cluster Backup.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az managed-cassandra cluster backup list",
+            "summary": "List the backups of this cluster that are available to restore.",
+            "syntax": "az managed-cassandra cluster backup list --cluster-name\n                                         --resource-group",
+            "required_parameters": [
+                "--cluster-name -c",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az managed-cassandra cluster backup list --resource-group MyResourceGroup --cluster-name MyCluster"
+            ]
+        },
+        {
+            "name": "az managed-cassandra cluster backup show",
+            "summary": "Get a managed cassandra backup resource of this cluster.",
+            "syntax": "az managed-cassandra cluster backup show --backup-id\n                                         --cluster-name\n                                         --resource-group",
+            "required_parameters": [
+                "--backup-id",
+                "--cluster-name -c",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az managed-cassandra cluster backup show --resource-group MyResourceGroup --cluster-name MyCluster --backup-id BackUpId"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,121 @@
+{
+    "command_group": "az dt twin relationship",
+    "description": "Manage and configure the digital twin relationships of a Digital Twins instance.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az dt twin relationship create",
+            "summary": "Create a relationship between source and target digital twins.",
+            "syntax": "az dt twin relationship create --dt-name\n                               --kind\n                               --relationship-id\n                               --source\n                               --target\n                               [--if-none-match]\n                               [--properties]\n                               [--resource-group]",
+            "required_parameters": [
+                "--dt-name --dtn -n",
+                "--kind --relationship",
+                "--relationship-id -r",
+                "--source --twin-id -t",
+                "--target --target-twin-id"
+            ],
+            "optional_parameters": [
+                "--if-none-match",
+                "--properties -p",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az dt twin relationship create -n {instance_or_hostname} --relationship-id {relationship_id} --relationship contains --twin-id {source_twin_id} --target {target_twin_id}",
+                "az dt twin relationship create -n {instance_or_hostname} --relationship-id {relationship_id} --relationship contains --twin-id {source_twin_id} --target {target_twin_id} --if-none-match",
+                "az dt twin relationship create -n {instance_or_hostname} --relationship-id {relationship_id} --relationship contains --twin-id {source_twin_id} --target {target_twin_id} --properties '{\"ownershipUser\": \"me\", \"ownershipDepartment\": \"Computer Science\"}'"
+            ]
+        },
+        {
+            "name": "az dt twin relationship delete",
+            "summary": "Delete a digital twin relationship on a Digital Twins instance.",
+            "syntax": "az dt twin relationship delete --dt-name\n                               --relationship-id\n                               --source\n                               [--etag]\n                               [--resource-group]",
+            "required_parameters": [
+                "--dt-name --dtn -n",
+                "--relationship-id -r",
+                "--source --twin-id -t"
+            ],
+            "optional_parameters": [
+                "--etag -e",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az dt twin relationship delete -n {instance_or_hostname} --twin-id {twin_id} --relationship-id {relationship_id}",
+                "az dt twin relationship delete -n {instance_or_hostname} --twin-id {twin_id} --relationship-id {relationship_id} --etag {etag}"
+            ]
+        },
+        {
+            "name": "az dt twin relationship delete-all",
+            "summary": "Deletes all digital twin relationships within a Digital Twins instance, including incoming relationships.",
+            "syntax": "az dt twin relationship delete-all --dt-name\n                                   [--resource-group]\n                                   [--source]\n                                   [--yes]",
+            "required_parameters": [
+                "--dt-name --dtn -n"
+            ],
+            "optional_parameters": [
+                "--resource-group -g",
+                "--source --twin-id -t",
+                "--yes -y"
+            ],
+            "examples": [
+                "az dt twin relationship delete-all -n {instance_or_hostname} --twin-id {twin_id}",
+                "az dt twin relationship delete-all -n {instance_or_hostname}"
+            ]
+        },
+        {
+            "name": "az dt twin relationship list",
+            "summary": "List the relationships of a digital twin.",
+            "syntax": "az dt twin relationship list --dt-name\n                             --source\n                             [--incoming {false, true}]\n                             [--kind]\n                             [--resource-group]",
+            "required_parameters": [
+                "--dt-name --dtn -n",
+                "--source --twin-id -t"
+            ],
+            "optional_parameters": [
+                "--incoming",
+                "--kind --relationship",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az dt twin relationship list -n {instance_or_hostname} --twin-id {twin_id}",
+                "az dt twin relationship list -n {instance_or_hostname} --twin-id {twin_id} --relationship contains",
+                "az dt twin relationship list -n {instance_or_hostname} --twin-id {twin_id} --incoming",
+                "az dt twin relationship list -n {instance_or_hostname} --twin-id {twin_id} --relationship contains --incoming"
+            ]
+        },
+        {
+            "name": "az dt twin relationship show",
+            "summary": "Show details of a digital twin relationship.",
+            "syntax": "az dt twin relationship show --dt-name\n                             --relationship-id\n                             --source\n                             [--resource-group]",
+            "required_parameters": [
+                "--dt-name --dtn -n",
+                "--relationship-id -r",
+                "--source --twin-id -t"
+            ],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az dt twin relationship show -n {instance_or_hostname} --twin-id {twin_id} --relationship-id {relationship_id}"
+            ]
+        },
+        {
+            "name": "az dt twin relationship update",
+            "summary": "Updates the properties of a relationship between two digital twins via JSON patch specification.",
+            "syntax": "az dt twin relationship update --dt-name\n                               --json-patch\n                               --relationship-id\n                               --source\n                               [--etag]\n                               [--resource-group]",
+            "required_parameters": [
+                "--dt-name --dtn -n",
+                "--json-patch --patch",
+                "--relationship-id -r",
+                "--source --twin-id -t"
+            ],
+            "optional_parameters": [
+                "--etag -e",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az dt twin relationship update -n {instance_or_hostname} --twin-id {twin_id} --relationship-id {relationship_id} --relationship contains --json-patch '{\"op\":\"replace\", \"path\":\"/Temperature\", \"value\": 20.5}'",
+                "az dt twin relationship update -n {instance_or_hostname} --twin-id {twin_id} --relationship-id {relationship_id} --relationship contains --json-patch '{\"op\":\"replace\", \"path\":\"/Temperature\", \"value\": 20.5}' --etag {etag}",
+                "az dt twin relationship update -n {instance_or_hostname} --twin-id {twin_id} --relationship-id {relationship_id} --relationship contains --json-patch '[\n  {\"op\":\"replace\", \"path\":\"/Temperature\", \"value\": 20.5},\n  {\"op\":\"add\", \"path\":\"/Areas\", \"value\": [\"ControlSystem\"]}\n]'",
+                "az dt twin relationship update -n {instance_or_hostname} --twin-id {twin_id} --relationship-id {relationship_id} --relationship contains --json-patch ./my/patch/document.json"
+            ]
+        }
+    ]
+}

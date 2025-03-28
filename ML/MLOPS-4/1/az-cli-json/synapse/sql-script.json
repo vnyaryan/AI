@@ -1,0 +1,125 @@
+{
+    "command_group": "az synapse sql-script",
+    "description": "Manage SQL scripts in a synapse workspace.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az synapse sql-script create",
+            "summary": "Create or update a SQL script.",
+            "syntax": "az synapse sql-script create --file\n                             --name\n                             --workspace-name\n                             [--additional-properties]\n                             [--description]\n                             [--folder-name]\n                             [--no-wait]\n                             [--result-limit {-1, 5000}]\n                             [--sql-database-name]\n                             [--sql-pool-name]",
+            "required_parameters": [
+                "--file -f",
+                "--name -n",
+                "--workspace-name"
+            ],
+            "optional_parameters": [
+                "--additional-properties",
+                "--description",
+                "--folder-name",
+                "--no-wait",
+                "--result-limit",
+                "--sql-database-name",
+                "--sql-pool-name"
+            ],
+            "examples": [
+                "az synapse sql-script create --workspace-name testsynapseworkspace \\\n  --name testsqlscriptname \\\n  --file 'path/test.sql'"
+            ]
+        },
+        {
+            "name": "az synapse sql-script delete",
+            "summary": "Delete a SQL script.",
+            "syntax": "az synapse sql-script delete --name\n                             --workspace-name\n                             [--no-wait]",
+            "required_parameters": [
+                "--name -n",
+                "--workspace-name"
+            ],
+            "optional_parameters": [
+                "--no-wait"
+            ],
+            "examples": [
+                "az synapse sql-script delete --workspace-name testsynapseworkspace \\\n  --name testsqlscriptname"
+            ]
+        },
+        {
+            "name": "az synapse sql-script export",
+            "summary": "Export a SQL script.",
+            "syntax": "az synapse sql-script export --output-folder\n                             --workspace-name\n                             [--name]",
+            "required_parameters": [
+                "--output-folder",
+                "--workspace-name"
+            ],
+            "optional_parameters": [
+                "--name -n"
+            ],
+            "examples": [
+                "az synapse sql-script export --workspace-name testsynapseworkspace \\\n  --name testsqlscriptname \\\n  --output-folder 'path/folder'"
+            ]
+        },
+        {
+            "name": "az synapse sql-script import",
+            "summary": "Import a SQL script.",
+            "syntax": "az synapse sql-script import --file\n                             --name\n                             --workspace-name\n                             [--additional-properties]\n                             [--description]\n                             [--folder-name]\n                             [--no-wait]\n                             [--result-limit {-1, 5000}]\n                             [--sql-database-name]\n                             [--sql-pool-name]",
+            "required_parameters": [
+                "--file -f",
+                "--name -n",
+                "--workspace-name"
+            ],
+            "optional_parameters": [
+                "--additional-properties",
+                "--description",
+                "--folder-name",
+                "--no-wait",
+                "--result-limit",
+                "--sql-database-name",
+                "--sql-pool-name"
+            ],
+            "examples": [
+                "az synapse sql-script import --workspace-name testsynapseworkspace \\\n  --name testsqlscriptname \\\n  --file 'path/test.sql'"
+            ]
+        },
+        {
+            "name": "az synapse sql-script list",
+            "summary": "List SQL scripts in a synapse workspace.",
+            "syntax": "az synapse sql-script list --workspace-name",
+            "required_parameters": [
+                "--workspace-name"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az synapse sql-script list --workspace-name testsynapseworkspace"
+            ]
+        },
+        {
+            "name": "az synapse sql-script show",
+            "summary": "Get a SQL script.",
+            "syntax": "az synapse sql-script show --name\n                           --workspace-name",
+            "required_parameters": [
+                "--name -n",
+                "--workspace-name"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az synapse sql-script show --workspace-name testsynapseworkspace \\\n  --name testsqlscriptname"
+            ]
+        },
+        {
+            "name": "az synapse sql-script wait",
+            "summary": "Place the CLI in a waiting state until a condition of a sql script is met.",
+            "syntax": "az synapse sql-script wait --name\n                           --workspace-name\n                           [--created]\n                           [--custom]\n                           [--deleted]\n                           [--exists]\n                           [--interval]\n                           [--timeout]\n                           [--updated]",
+            "required_parameters": [
+                "--name -n",
+                "--workspace-name"
+            ],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--interval",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

@@ -1,0 +1,101 @@
+{
+    "command_group": "az trustedsigning certificate-profile",
+    "description": "Manage certificate profiles under a trusted signing account.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az trustedsigning certificate-profile create",
+            "summary": "Create a certificate profile.",
+            "syntax": "az trustedsigning certificate-profile create --account-name\n                                             --name\n                                             --resource-group\n                                             [--identity-validation-id]\n                                             [--include-city {0, 1, f, false, n, no, t, true, y, yes}]\n                                             [--include-country {0, 1, f, false, n, no, t, true, y, yes}]\n                                             [--include-postal-code {0, 1, f, false, n, no, t, true, y, yes}]\n                                             [--include-state {0, 1, f, false, n, no, t, true, y, yes}]\n                                             [--include-street-address {0, 1, f, false, n, no, t, true, y, yes}]\n                                             [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                             [--profile-type {PrivateTrust, PrivateTrustCIPolicy, PublicTrust, PublicTrustTest, VBSEnclave}]",
+            "required_parameters": [
+                "--account-name",
+                "--name --profile-name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--identity-validation-id",
+                "--include-city",
+                "--include-country",
+                "--include-postal-code",
+                "--include-state",
+                "--include-street-address",
+                "--no-wait",
+                "--profile-type"
+            ],
+            "examples": [
+                "az trustedsigning certificate-profile create -g MyResourceGroup --account-name MyAccount -n MyProfile --profile-type PublicTrust --identity-validation-id xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx --include-street true"
+            ]
+        },
+        {
+            "name": "az trustedsigning certificate-profile delete",
+            "summary": "Delete a certificate profile.",
+            "syntax": "az trustedsigning certificate-profile delete [--account-name]\n                                             [--ids]\n                                             [--name]\n                                             [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                             [--resource-group]\n                                             [--subscription]\n                                             [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account-name",
+                "--ids",
+                "--name --profile-name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az trustedsigning certificate-profile delete -g MyResourceGroup --account-name MyAccount -n MyProfile"
+            ]
+        },
+        {
+            "name": "az trustedsigning certificate-profile list",
+            "summary": "List certificate profiles under a trusted signing account.",
+            "syntax": "az trustedsigning certificate-profile list --account-name\n                                           --resource-group\n                                           [--max-items]\n                                           [--next-token]",
+            "required_parameters": [
+                "--account-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az trustedsigning certificate-profile list -g MyResourceGroup --account-name MyAccount"
+            ]
+        },
+        {
+            "name": "az trustedsigning certificate-profile show",
+            "summary": "Get details of a certificate profile.",
+            "syntax": "az trustedsigning certificate-profile show [--account-name]\n                                           [--ids]\n                                           [--name]\n                                           [--resource-group]\n                                           [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account-name",
+                "--ids",
+                "--name --profile-name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az trustedsigning certificate-profile show -g MyResourceGroup --account-name MyAccount -n MyProfile"
+            ]
+        },
+        {
+            "name": "az trustedsigning certificate-profile wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az trustedsigning certificate-profile wait [--account-name]\n                                           [--created]\n                                           [--custom]\n                                           [--deleted]\n                                           [--exists]\n                                           [--ids]\n                                           [--interval]\n                                           [--name]\n                                           [--resource-group]\n                                           [--subscription]\n                                           [--timeout]\n                                           [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account-name",
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--name --profile-name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

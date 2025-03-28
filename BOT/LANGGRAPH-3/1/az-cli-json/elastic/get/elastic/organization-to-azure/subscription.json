@@ -1,0 +1,17 @@
+{
+    "command_group": "az elastic get elastic organization-to-azure subscription",
+    "description": "Get Elastic Organization To Azure Subscription details for the logged-in user.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az elastic get elastic organization-to-azure subscription mapping",
+            "summary": "Get Elastic Organization To Azure Subscription Mapping details for the logged-in user.",
+            "syntax": "az elastic get elastic organization-to-azure subscription mapping",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "examples": [
+                "az elastic get elastic organization-to-azure subscription mapping"
+            ]
+        }
+    ]
+}

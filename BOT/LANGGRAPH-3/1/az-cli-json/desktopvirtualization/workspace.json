@@ -1,0 +1,94 @@
+{
+    "command_group": "az desktopvirtualization workspace",
+    "description": "Manage desktop virtualization workspace.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az desktopvirtualization workspace create",
+            "summary": "Create a workspace.",
+            "syntax": "az desktopvirtualization workspace create --name\n                                          --resource-group\n                                          [--application-group-references]\n                                          [--description]\n                                          [--friendly-name]\n                                          [--location]\n                                          [--tags]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--application-group-references",
+                "--description",
+                "--friendly-name",
+                "--location -l",
+                "--tags"
+            ],
+            "examples": [
+                "az desktopvirtualization workspace create -g rg -n workspace-name --friendly-name friendly"
+            ]
+        },
+        {
+            "name": "az desktopvirtualization workspace delete",
+            "summary": "Delete a workspace.",
+            "syntax": "az desktopvirtualization workspace delete [--ids]\n                                          [--name]\n                                          [--resource-group]\n                                          [--subscription]\n                                          [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az desktopvirtualization workspace delete -g rg -n workspace-name"
+            ]
+        },
+        {
+            "name": "az desktopvirtualization workspace list",
+            "summary": "List workspaces.",
+            "syntax": "az desktopvirtualization workspace list [--max-items]\n                                        [--next-token]\n                                        [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az desktopvirtualization workspace list -g rg"
+            ]
+        },
+        {
+            "name": "az desktopvirtualization workspace show",
+            "summary": "Show a workspace.",
+            "syntax": "az desktopvirtualization workspace show [--ids]\n                                        [--name]\n                                        [--resource-group]\n                                        [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az desktopvirtualization workspace show -g rg -n workspace-name"
+            ]
+        },
+        {
+            "name": "az desktopvirtualization workspace update",
+            "summary": "Update a workspace.",
+            "syntax": "az desktopvirtualization workspace update [--add]\n                                          [--application-group-references]\n                                          [--description]\n                                          [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                          [--friendly-name]\n                                          [--ids]\n                                          [--name]\n                                          [--remove]\n                                          [--resource-group]\n                                          [--set]\n                                          [--subscription]\n                                          [--tags]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--application-group-references",
+                "--description",
+                "--force-string",
+                "--friendly-name",
+                "--ids",
+                "--name -n",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--subscription",
+                "--tags"
+            ],
+            "examples": [
+                "az desktopvirtualization workspace update -g rg -n workspace-name --tags tag=test"
+            ]
+        }
+    ]
+}

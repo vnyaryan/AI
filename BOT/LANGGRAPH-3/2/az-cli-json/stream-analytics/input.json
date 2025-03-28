@@ -1,0 +1,136 @@
+{
+    "command_group": "az stream-analytics input",
+    "description": "Manage input with stream analytics.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az stream-analytics input create",
+            "summary": "Create an input or replaces an already existing input under an existing streaming job.",
+            "syntax": "az stream-analytics input create --input-name\n                                 --job-name\n                                 --resource-group\n                                 [--if-match]\n                                 [--if-none-match]\n                                 [--properties]",
+            "required_parameters": [
+                "--input-name --name -n",
+                "--job-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--if-match",
+                "--if-none-match",
+                "--properties"
+            ],
+            "examples": [
+                "az stream-analytics input create --properties \"{\\\"type\\\":\\\"Reference\\\",\\\"datasource\\\":{\\\"type\\\":\\\"Microsoft.Storage/Blob\\\",\\\"properties\\\":{\\\"container\\\":\\\"state\\\",\\\"dateFormat\\\":\\\"yyyy/MM/dd\\\",\\\"pathPattern\\\":\\\"{date}/{time}\\\",\\\"storageAccounts\\\":[{\\\"accountKey\\\":\\\"someAccountKey==\\\",\\\"accountName\\\":\\\"someAccountName\\\"}],\\\"timeFormat\\\":\\\"HH\\\"}},\\\"serialization\\\":{\\\"type\\\":\\\"Csv\\\",\\\"properties\\\":{\\\"encoding\\\":\\\"UTF8\\\",\\\"fieldDelimiter\\\":\\\",\\\"}}}\" --input-name \"input7225\" --job-name \"sj9597\" --resource-group \"sjrg8440\"",
+                "az stream-analytics input create --properties \"{\\\"type\\\":\\\"Stream\\\",\\\"datasource\\\":{\\\"type\\\":\\\"Microsoft.ServiceBus/EventHub\\\",\\\"properties\\\":{\\\"consumerGroupName\\\":\\\"sdkconsumergroup\\\",\\\"eventHubName\\\":\\\"sdkeventhub\\\",\\\"serviceBusNamespace\\\":\\\"sdktest\\\",\\\"sharedAccessPolicyKey\\\":\\\"someSharedAccessPolicyKey==\\\",\\\"sharedAccessPolicyName\\\":\\\"RootManageSharedAccessKey\\\"}},\\\"serialization\\\":{\\\"type\\\":\\\"Json\\\",\\\"properties\\\":{\\\"encoding\\\":\\\"UTF8\\\"}}}\" --input-name \"input7425\" --job-name \"sj197\" --resource-group \"sjrg3139\"",
+                "az stream-analytics input create --properties \"{\\\"type\\\":\\\"Stream\\\",\\\"datasource\\\":{\\\"type\\\":\\\"Microsoft.Devices/IotHubs\\\",\\\"properties\\\":{\\\"consumerGroupName\\\":\\\"sdkconsumergroup\\\",\\\"endpoint\\\":\\\"messages/events\\\",\\\"iotHubNamespace\\\":\\\"iothub\\\",\\\"sharedAccessPolicyKey\\\":\\\"sharedAccessPolicyKey=\\\",\\\"sharedAccessPolicyName\\\":\\\"owner\\\"}},\\\"serialization\\\":{\\\"type\\\":\\\"Avro\\\"}}\" --input-name \"input7970\" --job-name \"sj9742\" --resource-group \"sjrg3467\"",
+                "az stream-analytics input create --properties \"{\\\"type\\\":\\\"Stream\\\",\\\"datasource\\\":{\\\"type\\\":\\\"Microsoft.Storage/Blob\\\",\\\"properties\\\":{\\\"container\\\":\\\"state\\\",\\\"dateFormat\\\":\\\"yyyy/MM/dd\\\",\\\"pathPattern\\\":\\\"{date}/{time}\\\",\\\"sourcePartitionCount\\\":16,\\\"storageAccounts\\\":[{\\\"accountKey\\\":\\\"someAccountKey==\\\",\\\"accountName\\\":\\\"someAccountName\\\"}],\\\"timeFormat\\\":\\\"HH\\\"}},\\\"serialization\\\":{\\\"type\\\":\\\"Csv\\\",\\\"properties\\\":{\\\"encoding\\\":\\\"UTF8\\\",\\\"fieldDelimiter\\\":\\\",\\\"}}}\" --input-name \"input8899\" --job-name \"sj6695\" --resource-group \"sjrg8161\""
+            ]
+        },
+        {
+            "name": "az stream-analytics input delete",
+            "summary": "Delete an input from the streaming job.",
+            "syntax": "az stream-analytics input delete --input-name\n                                 --job-name\n                                 --resource-group\n                                 [--yes]",
+            "required_parameters": [
+                "--input-name --name -n",
+                "--job-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--yes -y"
+            ],
+            "examples": [
+                "az stream-analytics input delete --input-name \"input7225\" --job-name \"sj9597\" --resource-group \"sjrg8440\""
+            ]
+        },
+        {
+            "name": "az stream-analytics input list",
+            "summary": "List all of the inputs under the specified streaming job.",
+            "syntax": "az stream-analytics input list --job-name\n                               --resource-group\n                               [--select]",
+            "required_parameters": [
+                "--job-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--select"
+            ],
+            "examples": [
+                "az stream-analytics input list --job-name \"sj9597\" --resource-group \"sjrg8440\"",
+                "az stream-analytics input list --select \"*\" --job-name \"sj7804\" --resource-group \"sjrg3276\""
+            ]
+        },
+        {
+            "name": "az stream-analytics input show",
+            "summary": "Get details about the specified input.",
+            "syntax": "az stream-analytics input show --input-name\n                               --job-name\n                               --resource-group",
+            "required_parameters": [
+                "--input-name --name -n",
+                "--job-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az stream-analytics input show --input-name \"input7225\" --job-name \"sj9597\" --resource-group \"sjrg8440\"",
+                "az stream-analytics input show --input-name \"input7425\" --job-name \"sj197\" --resource-group \"sjrg3139\"",
+                "az stream-analytics input show --input-name \"input7970\" --job-name \"sj9742\" --resource-group \"sjrg3467\"",
+                "az stream-analytics input show --input-name \"input8899\" --job-name \"sj6695\" --resource-group \"sjrg8161\""
+            ]
+        },
+        {
+            "name": "az stream-analytics input test",
+            "summary": "Test whether an input’s datasource is reachable and usable by the Azure Stream Analytics service.",
+            "syntax": "az stream-analytics input test --input-name\n                               --job-name\n                               --resource-group\n                               [--no-wait]\n                               [--properties]",
+            "required_parameters": [
+                "--input-name --name -n",
+                "--job-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--no-wait",
+                "--properties"
+            ],
+            "examples": [
+                "az stream-analytics input test --input-name \"input7225\" --job-name \"sj9597\" --resource-group \"sjrg8440\""
+            ]
+        },
+        {
+            "name": "az stream-analytics input update",
+            "summary": "Update an existing input under an existing streaming job. This can be used to partially update (ie. update one or two properties) an input without affecting the rest the job or input definition.",
+            "syntax": "az stream-analytics input update --input-name\n                                 --job-name\n                                 --resource-group\n                                 [--if-match]\n                                 [--properties]",
+            "required_parameters": [
+                "--input-name --name -n",
+                "--job-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--if-match",
+                "--properties"
+            ],
+            "examples": [
+                "az stream-analytics input update --properties \"{\\\"type\\\":\\\"Reference\\\",\\\"datasource\\\":{\\\"type\\\":\\\"Microsoft.Storage/Blob\\\",\\\"properties\\\":{\\\"container\\\":\\\"differentContainer\\\"}},\\\"serialization\\\":{\\\"type\\\":\\\"Csv\\\",\\\"properties\\\":{\\\"encoding\\\":\\\"UTF8\\\",\\\"fieldDelimiter\\\":\\\"|\\\"}}}\" --input-name \"input7225\" --job-name \"sj9597\" --resource-group \"sjrg8440\"",
+                "az stream-analytics input update --properties \"{\\\"type\\\":\\\"Stream\\\",\\\"datasource\\\":{\\\"type\\\":\\\"Microsoft.ServiceBus/EventHub\\\",\\\"properties\\\":{\\\"consumerGroupName\\\":\\\"differentConsumerGroupName\\\"}},\\\"serialization\\\":{\\\"type\\\":\\\"Avro\\\"}}\" --input-name \"input7425\" --job-name \"sj197\" --resource-group \"sjrg3139\"",
+                "az stream-analytics input update --properties \"{\\\"type\\\":\\\"Stream\\\",\\\"datasource\\\":{\\\"type\\\":\\\"Microsoft.Devices/IotHubs\\\",\\\"properties\\\":{\\\"endpoint\\\":\\\"messages/operationsMonitoringEvents\\\"}},\\\"serialization\\\":{\\\"type\\\":\\\"Csv\\\",\\\"properties\\\":{\\\"encoding\\\":\\\"UTF8\\\",\\\"fieldDelimiter\\\":\\\"|\\\"}}}\" --input-name \"input7970\" --job-name \"sj9742\" --resource-group \"sjrg3467\"",
+                "az stream-analytics input update --properties \"{\\\"type\\\":\\\"Stream\\\",\\\"datasource\\\":{\\\"type\\\":\\\"Microsoft.Storage/Blob\\\",\\\"properties\\\":{\\\"sourcePartitionCount\\\":32}},\\\"serialization\\\":{\\\"type\\\":\\\"Csv\\\",\\\"properties\\\":{\\\"encoding\\\":\\\"UTF8\\\",\\\"fieldDelimiter\\\":\\\"|\\\"}}}\" --input-name \"input8899\" --job-name \"sj6695\" --resource-group \"sjrg8161\""
+            ]
+        },
+        {
+            "name": "az stream-analytics input wait",
+            "summary": "Place the CLI in a waiting state until a condition of the stream-analytics input is met.",
+            "syntax": "az stream-analytics input wait --input-name\n                               --job-name\n                               --resource-group\n                               [--created]\n                               [--custom]\n                               [--deleted]\n                               [--exists]\n                               [--interval]\n                               [--timeout]\n                               [--updated]",
+            "required_parameters": [
+                "--input-name --name -n",
+                "--job-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--interval",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": [
+                "az stream-analytics input wait --input-name \"input8899\" --job-name \"sj6695\" --resource-group \"sjrg8161\" --created"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,67 @@
+{
+    "command_group": "az containerapp connected-env dapr-component",
+    "description": "Commands to manage Dapr components for Container Apps connected environments.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az containerapp connected-env dapr-component list",
+            "summary": "List Dapr components for a connected environment.",
+            "syntax": "az containerapp connected-env dapr-component list --name\n                                                  --resource-group",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az containerapp connected-env dapr-component list -g MyResourceGroup --name MyConnectedEnv"
+            ]
+        },
+        {
+            "name": "az containerapp connected-env dapr-component remove",
+            "summary": "Remove a Dapr component from a connected environment.",
+            "syntax": "az containerapp connected-env dapr-component remove --dapr-component-name\n                                                    --name\n                                                    --resource-group\n                                                    [--no-wait]",
+            "required_parameters": [
+                "--dapr-component-name",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--no-wait"
+            ],
+            "examples": [
+                "az containerapp connected-env dapr-component remove -g MyResourceGroup --dapr-component-name MyDaprComponentName --name MyConnectedEnv"
+            ]
+        },
+        {
+            "name": "az containerapp connected-env dapr-component set",
+            "summary": "Create or update a Dapr component.",
+            "syntax": "az containerapp connected-env dapr-component set --dapr-component-name\n                                                 --name\n                                                 --resource-group\n                                                 --yaml\n                                                 [--no-wait]",
+            "required_parameters": [
+                "--dapr-component-name",
+                "--name -n",
+                "--resource-group -g",
+                "--yaml"
+            ],
+            "optional_parameters": [
+                "--no-wait"
+            ],
+            "examples": [
+                "az containerapp connected-env dapr-component set -g MyResourceGroup --name MyEnv --yaml MyYAMLPath --dapr-component-name MyDaprComponentName"
+            ]
+        },
+        {
+            "name": "az containerapp connected-env dapr-component show",
+            "summary": "Show the details of a Dapr component.",
+            "syntax": "az containerapp connected-env dapr-component show --dapr-component-name\n                                                  --name\n                                                  --resource-group",
+            "required_parameters": [
+                "--dapr-component-name",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az containerapp connected-env dapr-component show -g MyResourceGroup --dapr-component-name MyDaprComponentName --name MyConnectedEnv"
+            ]
+        }
+    ]
+}

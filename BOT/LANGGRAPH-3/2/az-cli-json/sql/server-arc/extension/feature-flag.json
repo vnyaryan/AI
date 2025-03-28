@@ -1,0 +1,63 @@
+{
+    "command_group": "az sql server-arc extension feature-flag",
+    "description": "Manage extension level feature flags.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az sql server-arc extension feature-flag delete",
+            "summary": "Delete feature flag.",
+            "syntax": "az sql server-arc extension feature-flag delete --name\n                                                --resource-group\n                                                [--machine-name]\n                                                [--sql-server-arc-name]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--machine-name",
+                "--sql-server-arc-name"
+            ],
+            "examples": [
+                "az sql server-arc extension feature-flag delete --name FeatureName --resource-group MyResourceGroup --machine-name MyArcServerName",
+                "az sql server-arc extension feature-flag delete --name FeatureName --resource-group MyResourceGroup --sql-server-arc-name MyArcSqlInstanceName"
+            ]
+        },
+        {
+            "name": "az sql server-arc extension feature-flag set",
+            "summary": "Set feature flag.",
+            "syntax": "az sql server-arc extension feature-flag set --enable\n                                             --name\n                                             --resource-group\n                                             [--machine-name]\n                                             [--sql-server-arc-name]",
+            "required_parameters": [
+                "--enable",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--machine-name",
+                "--sql-server-arc-name"
+            ],
+            "examples": [
+                "az sql server-arc extension feature-flag set --name FeatureName --enable true --resource-group MyResourceGroup --machine-name MyArcServerName",
+                "az sql server-arc extension feature-flag set --name FeatureName --enable true --resource-group MyResourceGroup --sql-server-arc-name MyArcSqlInstanceName",
+                "az sql server-arc extension feature-flag set --name FeatureName --enable false --resource-group MyResourceGroup --machine-name MyArcServerName",
+                "az sql server-arc extension feature-flag set --name FeatureName --enable false --resource-group MyResourceGroup --sql-server-arc-name MyArcSqlInstanceName"
+            ]
+        },
+        {
+            "name": "az sql server-arc extension feature-flag show",
+            "summary": "Show feature flag.",
+            "syntax": "az sql server-arc extension feature-flag show --resource-group\n                                              [--machine-name]\n                                              [--name]\n                                              [--sql-server-arc-name]",
+            "required_parameters": [
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--machine-name",
+                "--name -n",
+                "--sql-server-arc-name"
+            ],
+            "examples": [
+                "az sql server-arc extension feature-flag show --name FeatureName --resource-group MyResourceGroup --machine-name MyArcServerName",
+                "az sql server-arc extension feature-flag show --name FeatureName --resource-group MyResourceGroup --sql-server-arc-name MyArcSqlInstanceName",
+                "az sql server-arc extension feature-flag show --resource-group MyResourceGroup --machine-name MyArcServerName",
+                "az sql server-arc extension feature-flag show --resource-group MyResourceGroup --sql-server-arc-name MyArcSqlInstanceName"
+            ]
+        }
+    ]
+}

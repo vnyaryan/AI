@@ -1,0 +1,25 @@
+{
+    "command_group": "az ad signed-in-user",
+    "description": "Show graph information about current signed-in user in CLI.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az ad signed-in-user list-owned-objects",
+            "summary": "Get the list of directory objects that are owned by the user.",
+            "syntax": "az ad signed-in-user list-owned-objects [--type]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--type -t"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az ad signed-in-user show",
+            "summary": "Get the details for the currently logged-in user.",
+            "syntax": "az ad signed-in-user show",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "examples": []
+        }
+    ]
+}

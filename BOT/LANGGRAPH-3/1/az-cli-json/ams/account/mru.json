@@ -1,0 +1,35 @@
+{
+    "command_group": "az ams account mru",
+    "description": "Manage media reserved units for an Azure Media Services account. This doesn't work with accounts created with 2020-05-01 version of the Media Services API or later. Accounts created this way no longer need to set media reserved units as the system will automaticaly scale up and down based on load.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az ams account mru set",
+            "summary": "Set the type and number of media reserved units for an Azure Media Services account. This doesn't work with accounts created with 2020-05-01 version of the Media Services API or later. Accounts created this way no longer need to set media reserved units as the system will automaticaly scale up and down based on load.",
+            "syntax": "az ams account mru set [--count]\n                       [--ids]\n                       [--name]\n                       [--resource-group]\n                       [--subscription]\n                       [--type]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--count",
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--type"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az ams account mru show",
+            "summary": "Show the details of media reserved units for an Azure Media Services account. This doesn't work with accounts created with 2020-05-01 version of the Media Services API or later. Accounts created this way no longer need to set media reserved units as the system will automaticaly scale up and down based on load.",
+            "syntax": "az ams account mru show [--ids]\n                        [--name]\n                        [--resource-group]\n                        [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        }
+    ]
+}

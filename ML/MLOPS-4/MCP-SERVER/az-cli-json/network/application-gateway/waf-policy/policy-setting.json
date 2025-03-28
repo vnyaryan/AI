@@ -1,0 +1,52 @@
+{
+    "command_group": "az network application-gateway waf-policy policy-setting",
+    "description": "Define contents of a web application firewall global configuration.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az network application-gateway waf-policy policy-setting list",
+            "summary": "List properties of a web application firewall global configuration.",
+            "syntax": "az network application-gateway waf-policy policy-setting list --policy-name\n                                                              --resource-group",
+            "required_parameters": [
+                "--policy-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az network application-gateway waf-policy policy-setting list --policy-name MyPolicy --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az network application-gateway waf-policy policy-setting update",
+            "summary": "Update properties of a web application firewall global configuration.",
+            "syntax": "az network application-gateway waf-policy policy-setting update --policy-name\n                                                                --resource-group\n                                                                [--add]\n                                                                [--custom-body]\n                                                                [--custom-status-code]\n                                                                [--file-upload-enforce {0, 1, f, false, n, no, t, true, y, yes}]\n                                                                [--file-upload-limit-in-mb]\n                                                                [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                                                [--js-cookie-exp-time]\n                                                                [--log-scrubbing-state {Disabled, Enabled}]\n                                                                [--max-request-body-size-in-kb]\n                                                                [--mode {Detection, Prevention}]\n                                                                [--remove]\n                                                                [--request-body-check {0, 1, f, false, n, no, t, true, y, yes}]\n                                                                [--request-body-enforce {0, 1, f, false, n, no, t, true, y, yes}]\n                                                                [--request-body-inspect-limit-in-kb]\n                                                                [--scrubbing-rule]\n                                                                [--set]\n                                                                [--state {Disabled, Enabled}]",
+            "required_parameters": [
+                "--policy-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--add",
+                "--custom-body",
+                "--custom-status-code",
+                "--file-upload-enforce --file-upload-enforcement",
+                "--file-upload-limit-in-mb",
+                "--force-string",
+                "--js-cookie-exp-time",
+                "--log-scrubbing-state",
+                "--max-request-body-size-in-kb",
+                "--mode",
+                "--remove",
+                "--request-body-check",
+                "--request-body-enforce --request-body-enforcement",
+                "--request-body-inspect-limit-in-kb --request-limit-in-kb",
+                "--scrubbing-rule --scrubbing-rules",
+                "--set",
+                "--state"
+            ],
+            "examples": [
+                "az network application-gateway waf-policy policy-setting update --mode Prevention --policy-name MyPolicy --resource-group MyResourceGroup --state Disabled",
+                "az network application-gateway waf-policy policy-setting update -g MyResourceGroup --policy-name MyPolicySetting --request-body-inspect-limit-in-kb 64 --file-upload-enforcement True --request-body-enforcement False --log-scrubbing-state Enabled --scrubbing-rules \"[{state:Enabled,match-variable:RequestArgNames,selector-match-operator:Equals,selector:test},{state:Enabled,match-variable:RequestIPAddress,selector-match-operator:EqualsAny,selector:null}]\""
+            ]
+        }
+    ]
+}

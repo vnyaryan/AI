@@ -1,0 +1,37 @@
+{
+    "command_group": "az cosmosdb gremlin restorable-graph",
+    "description": "Manage different versions of gremlin graphs that are restorable in a database of a Azure Cosmos DB account.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az cosmosdb gremlin restorable-graph list",
+            "summary": "List all the versions of all the gremlin graphs that were created / modified / deleted in the given database and restorable account.",
+            "syntax": "az cosmosdb gremlin restorable-graph list --database-rid\n                                          --instance-id\n                                          --location\n                                          [--end-time]\n                                          [--start-time]",
+            "required_parameters": [
+                "--database-rid -d",
+                "--instance-id -i",
+                "--location -l"
+            ],
+            "optional_parameters": [
+                "--end-time -e",
+                "--start-time -s"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az cosmosdb gremlin restorable-graph list",
+            "summary": "List all the versions of all the gremlin graphs that were created / modified / deleted in the given database and restorable account.",
+            "syntax": "az cosmosdb gremlin restorable-graph list --database-rid\n                                          --instance-id\n                                          --location\n                                          [--end-time]\n                                          [--start-time]",
+            "required_parameters": [
+                "--database-rid -d",
+                "--instance-id -i",
+                "--location -l"
+            ],
+            "optional_parameters": [
+                "--end-time -e",
+                "--start-time -s"
+            ],
+            "examples": []
+        }
+    ]
+}

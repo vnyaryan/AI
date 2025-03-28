@@ -1,0 +1,123 @@
+{
+    "command_group": "az ad app",
+    "description": "Manage Microsoft Entra applications.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az ad app create",
+            "summary": "Create an application.",
+            "syntax": "az ad app create --display-name\n                 [--app-roles]\n                 [--enable-access-token-issuance {false, true}]\n                 [--enable-id-token-issuance {false, true}]\n                 [--end-date]\n                 [--identifier-uris]\n                 [--is-fallback-public-client {false, true}]\n                 [--key-display-name]\n                 [--key-type {AsymmetricX509Cert, Password, Symmetric}]\n                 [--key-usage {Sign, Verify}]\n                 [--key-value]\n                 [--optional-claims]\n                 [--public-client-redirect-uris]\n                 [--requested-access-token-version]\n                 [--required-resource-accesses]\n                 [--service-management-reference]\n                 [--sign-in-audience {AzureADMultipleOrgs, AzureADMyOrg, AzureADandPersonalMicrosoftAccount, PersonalMicrosoftAccount}]\n                 [--start-date]\n                 [--web-home-page-url]\n                 [--web-redirect-uris]",
+            "required_parameters": [
+                "--display-name"
+            ],
+            "optional_parameters": [
+                "--app-roles",
+                "--enable-access-token-issuance",
+                "--enable-id-token-issuance",
+                "--end-date",
+                "--identifier-uris",
+                "--is-fallback-public-client",
+                "--key-display-name",
+                "--key-type",
+                "--key-usage",
+                "--key-value",
+                "--optional-claims",
+                "--public-client-redirect-uris",
+                "--requested-access-token-version",
+                "--required-resource-accesses",
+                "--service-management-reference",
+                "--sign-in-audience",
+                "--start-date",
+                "--web-home-page-url",
+                "--web-redirect-uris"
+            ],
+            "examples": [
+                "az ad app create --display-name mytestapp",
+                "az ad app create --display-name my-public --is-fallback-public-client --required-resource-accesses @manifest.json\n(\"manifest.json\" contains the following content)\n[{\n    \"resourceAppId\": \"00000003-0000-0000-c000-000000000000\",\n    \"resourceAccess\": [\n        {\n            \"id\": \"e1fe6dd8-ba31-4d61-89e7-88639da4683d\",\n            \"type\": \"Scope\"\n        }\n   ]\n}]",
+                "az ad app create --display-name mytestapp --identifier-uris https://mytestapp.websites.net --app-roles @manifest.json\n(\"manifest.json\" contains the following content)\n[{\n    \"allowedMemberTypes\": [\n      \"User\"\n    ],\n    \"description\": \"Approvers can mark documents as approved\",\n    \"displayName\": \"Approver\",\n    \"isEnabled\": \"true\",\n    \"value\": \"approver\"\n}]",
+                "az ad app create --display-name mytestapp --optional-claims @manifest.json\n(\"manifest.json\" contains the following content)\n{\n    \"idToken\": [\n        {\n            \"name\": \"auth_time\",\n            \"essential\": false\n        }\n    ],\n    \"accessToken\": [\n        {\n            \"name\": \"ipaddr\",\n            \"essential\": false\n        }\n    ],\n    \"saml2Token\": [\n        {\n            \"name\": \"upn\",\n            \"essential\": false\n        },\n        {\n            \"name\": \"extension_ab603c56068041afb2f6832e2a17e237_skypeId\",\n            \"source\": \"user\",\n            \"essential\": false\n        }\n    ]\n}"
+            ]
+        },
+        {
+            "name": "az ad app delete",
+            "summary": "Delete an application.",
+            "syntax": "az ad app delete --id",
+            "required_parameters": [
+                "--id"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az ad app delete --id 00000000-0000-0000-0000-000000000000"
+            ]
+        },
+        {
+            "name": "az ad app list",
+            "summary": "List applications.",
+            "syntax": "az ad app list [--all]\n               [--app-id]\n               [--display-name]\n               [--filter]\n               [--identifier-uri]\n               [--show-mine]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--all",
+                "--app-id",
+                "--display-name",
+                "--filter",
+                "--identifier-uri",
+                "--show-mine"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az ad app show",
+            "summary": "Get the details of an application.",
+            "syntax": "az ad app show --id",
+            "required_parameters": [
+                "--id"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az ad app show --id 00000000-0000-0000-0000-000000000000",
+                "az ad app show --id 00000000-0000-0000-0000-000000000000",
+                "az ad app show --id api://myapp"
+            ]
+        },
+        {
+            "name": "az ad app update",
+            "summary": "Update an application.",
+            "syntax": "az ad app update --id\n                 [--add]\n                 [--app-roles]\n                 [--display-name]\n                 [--enable-access-token-issuance {false, true}]\n                 [--enable-id-token-issuance {false, true}]\n                 [--end-date]\n                 [--force-string]\n                 [--identifier-uris]\n                 [--is-fallback-public-client {false, true}]\n                 [--key-display-name]\n                 [--key-type {AsymmetricX509Cert, Password, Symmetric}]\n                 [--key-usage {Sign, Verify}]\n                 [--key-value]\n                 [--optional-claims]\n                 [--public-client-redirect-uris]\n                 [--remove]\n                 [--requested-access-token-version]\n                 [--required-resource-accesses]\n                 [--service-management-reference]\n                 [--set]\n                 [--sign-in-audience {AzureADMultipleOrgs, AzureADMyOrg, AzureADandPersonalMicrosoftAccount, PersonalMicrosoftAccount}]\n                 [--start-date]\n                 [--web-home-page-url]\n                 [--web-redirect-uris]",
+            "required_parameters": [
+                "--id"
+            ],
+            "optional_parameters": [
+                "--add",
+                "--app-roles",
+                "--display-name",
+                "--enable-access-token-issuance",
+                "--enable-id-token-issuance",
+                "--end-date",
+                "--force-string",
+                "--identifier-uris",
+                "--is-fallback-public-client",
+                "--key-display-name",
+                "--key-type",
+                "--key-usage",
+                "--key-value",
+                "--optional-claims",
+                "--public-client-redirect-uris",
+                "--remove",
+                "--requested-access-token-version",
+                "--required-resource-accesses",
+                "--service-management-reference",
+                "--set",
+                "--sign-in-audience",
+                "--start-date",
+                "--web-home-page-url",
+                "--web-redirect-uris"
+            ],
+            "examples": [
+                "az ad app update --id e042ec79-34cd-498f-9d9f-123456781234 --required-resource-accesses @manifest.json\n(\"manifest.json\" contains the following content)\n[{\n    \"resourceAppId\": \"00000003-0000-0000-c000-000000000000\",\n    \"resourceAccess\": [\n        {\n            \"id\": \"e1fe6dd8-ba31-4d61-89e7-88639da4683d\",\n            \"type\": \"Scope\"\n        }\n   ]\n}]",
+                "az ad app update --id e042ec79-34cd-498f-9d9f-123456781234 --app-roles @manifest.json\n(\"manifest.json\" contains the following content)\n[{\n    \"allowedMemberTypes\": [\n      \"User\"\n    ],\n    \"description\": \"Approvers can mark documents as approved\",\n    \"displayName\": \"Approver\",\n    \"isEnabled\": \"true\",\n    \"value\": \"approver\"\n}]",
+                "az ad app update --id e042ec79-34cd-498f-9d9f-123456781234 --optional-claims @manifest.json\n(\"manifest.json\" contains the following content)\n{\n    \"idToken\": [\n        {\n            \"name\": \"auth_time\",\n            \"essential\": false\n        }\n    ],\n    \"accessToken\": [\n        {\n            \"name\": \"ipaddr\",\n            \"essential\": false\n        }\n    ],\n    \"saml2Token\": [\n        {\n            \"name\": \"upn\",\n            \"essential\": false\n        },\n        {\n            \"name\": \"extension_ab603c56068041afb2f6832e2a17e237_skypeId\",\n            \"source\": \"user\",\n            \"essential\": false\n        }\n    ]\n}",
+                "az ad app update --id e042ec79-34cd-498f-9d9f-123456781234 --set groupMembershipClaims=All"
+            ]
+        }
+    ]
+}

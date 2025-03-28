@@ -1,0 +1,48 @@
+{
+    "command_group": "az monitor activity-log alert scope",
+    "description": "",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az monitor activity-log alert scope add",
+            "summary": "Add scopes to this activity log alert rule.",
+            "syntax": "az monitor activity-log alert scope add --scope\n                                        [--activity-log-alert-name]\n                                        [--add]\n                                        [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                        [--ids]\n                                        [--remove]\n                                        [--reset {0, 1, f, false, n, no, t, true, y, yes}]\n                                        [--resource-group]\n                                        [--set]\n                                        [--subscription]",
+            "required_parameters": [
+                "--scope -s"
+            ],
+            "optional_parameters": [
+                "--activity-log-alert-name --name -n",
+                "--add",
+                "--force-string",
+                "--ids",
+                "--remove",
+                "--reset",
+                "--resource-group -g",
+                "--set",
+                "--subscription"
+            ],
+            "examples": [
+                "az monitor activity-log alert scope add --name MyActivityLogAlerts --resource-group\nMyResourceGroup --scope /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx\n/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/myRG\n/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-\nxxxxxxxxxxxx/resourceGroups/myRG/Microsoft.KeyVault/vaults/mykey"
+            ]
+        },
+        {
+            "name": "az monitor activity-log alert scope remove",
+            "summary": "Removes scopes from this activity log alert rule.",
+            "syntax": "az monitor activity-log alert scope remove --scope\n                                           [--activity-log-alert-name]\n                                           [--add]\n                                           [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                           [--ids]\n                                           [--remove]\n                                           [--resource-group]\n                                           [--set]\n                                           [--subscription]",
+            "required_parameters": [
+                "--scope -s"
+            ],
+            "optional_parameters": [
+                "--activity-log-alert-name --name -n",
+                "--add",
+                "--force-string",
+                "--ids",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--subscription"
+            ],
+            "examples": []
+        }
+    ]
+}

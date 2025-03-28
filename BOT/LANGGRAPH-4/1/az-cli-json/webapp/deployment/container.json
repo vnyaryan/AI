@@ -1,0 +1,41 @@
+{
+    "command_group": "az webapp deployment container",
+    "description": "Manage container-based continuous deployment.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az webapp deployment container config",
+            "summary": "Configure continuous deployment via containers.",
+            "syntax": "az webapp deployment container config --enable-cd {false, true}\n                                      [--ids]\n                                      [--name]\n                                      [--resource-group]\n                                      [--slot]\n                                      [--subscription]",
+            "required_parameters": [
+                "--enable-cd -e"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--slot -s",
+                "--subscription"
+            ],
+            "examples": [
+                "az webapp deployment container config --enable-cd true --name MyWebapp --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az webapp deployment container show-cd-url",
+            "summary": "Get the URL which can be used to configure webhooks for continuous deployment.",
+            "syntax": "az webapp deployment container show-cd-url [--ids]\n                                           [--name]\n                                           [--resource-group]\n                                           [--slot]\n                                           [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--slot -s",
+                "--subscription"
+            ],
+            "examples": [
+                "az webapp deployment container show-cd-url --name MyWebApp --resource-group MyResourceGroup --slot staging"
+            ]
+        }
+    ]
+}

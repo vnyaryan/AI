@@ -1,0 +1,23 @@
+{
+    "command_group": "az batch job prep-release-status",
+    "description": "View the status of Batch job preparation and release tasks.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az batch job prep-release-status list",
+            "summary": "Lists the execution status of the Job Preparation and Job Release Task for the specified Job across the Compute Nodes where the Job has run.",
+            "syntax": "az batch job prep-release-status list --job-id\n                                      [--account-endpoint]\n                                      [--account-key]\n                                      [--account-name]\n                                      [--filter]\n                                      [--select]",
+            "required_parameters": [
+                "--job-id"
+            ],
+            "optional_parameters": [
+                "--account-endpoint",
+                "--account-key",
+                "--account-name",
+                "--filter",
+                "--select"
+            ],
+            "examples": []
+        }
+    ]
+}

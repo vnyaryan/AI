@@ -1,0 +1,36 @@
+{
+    "command_group": "az billing agreement",
+    "description": "Display billing agreement.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az billing agreement list",
+            "summary": "List the agreements for a billing account.",
+            "syntax": "az billing agreement list --account-name\n                          [--expand]",
+            "required_parameters": [
+                "--account-name"
+            ],
+            "optional_parameters": [
+                "--expand"
+            ],
+            "examples": [
+                "az billing agreement list --account-name \"{billingAccountName}\""
+            ]
+        },
+        {
+            "name": "az billing agreement show",
+            "summary": "Get an agreement by ID.",
+            "syntax": "az billing agreement show --account-name\n                          --name\n                          [--expand]",
+            "required_parameters": [
+                "--account-name",
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--expand"
+            ],
+            "examples": [
+                "az billing agreement show --name \"{agreementName}\" --account-name \"{billingAccountName}\""
+            ]
+        }
+    ]
+}

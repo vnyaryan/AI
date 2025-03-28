@@ -1,0 +1,62 @@
+{
+    "command_group": "az aks snapshot",
+    "description": "Commands to manage nodepool snapshots.",
+    "status": "Deprecated",
+    "commands": [
+        {
+            "name": "az aks snapshot create",
+            "summary": "Create a snapshot of a cluster.",
+            "syntax": "az aks snapshot create --cluster-id\n                       --name\n                       --resource-group\n                       [--aks-custom-headers]\n                       [--location]\n                       [--no-wait]\n                       [--tags]",
+            "required_parameters": [
+                "--cluster-id",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--aks-custom-headers",
+                "--location -l",
+                "--no-wait",
+                "--tags"
+            ],
+            "examples": [
+                "az aks snapshot create -g MyResourceGroup -n snapshot1 --cluster-id \"/subscriptions/00000/resourceGroups/AnotherResourceGroup/providers/Microsoft.ContainerService/managedClusters/akscluster1\"",
+                "az aks snapshot create -g MyResourceGroup -n snapshot1 --cluster-id \"/subscriptions/00000/resourceGroups/AnotherResourceGroup/providers/Microsoft.ContainerService/managedClusters/akscluster1\" --tags \"foo=bar\" \"key1=val1\""
+            ]
+        },
+        {
+            "name": "az aks snapshot delete",
+            "summary": "Delete a cluster snapshot.",
+            "syntax": "az aks snapshot delete --name\n                       --resource-group\n                       [--no-wait]\n                       [--yes]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--no-wait",
+                "--yes -y"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az aks snapshot list",
+            "summary": "List cluster snapshots.",
+            "syntax": "az aks snapshot list [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az aks snapshot show",
+            "summary": "Show the details of a cluster snapshot.",
+            "syntax": "az aks snapshot show --name\n                     --resource-group",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        }
+    ]
+}

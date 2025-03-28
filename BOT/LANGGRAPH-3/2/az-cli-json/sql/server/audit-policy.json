@@ -1,0 +1,83 @@
+{
+    "command_group": "az sql server audit-policy",
+    "description": "Manage a server's auditing policy.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az sql server audit-policy show",
+            "summary": "Show server audit policy.",
+            "syntax": "az sql server audit-policy show [--ids]\n                                [--name]\n                                [--resource-group]\n                                [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az sql server audit-policy update",
+            "summary": "Update a server's auditing policy.",
+            "syntax": "az sql server audit-policy update [--actions]\n                                  [--add]\n                                  [--blob-storage-target-state {Disabled, Enabled}]\n                                  [--eh]\n                                  [--ehari]\n                                  [--ehts {Disabled, Enabled}]\n                                  [--force-string]\n                                  [--ids]\n                                  [--lats {Disabled, Enabled}]\n                                  [--lawri]\n                                  [--name]\n                                  [--no-wait]\n                                  [--remove]\n                                  [--resource-group]\n                                  [--retention-days]\n                                  [--set]\n                                  [--state {Disabled, Enabled}]\n                                  [--storage-account]\n                                  [--storage-endpoint]\n                                  [--storage-key]\n                                  [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--actions",
+                "--add",
+                "--blob-storage-target-state --bsts",
+                "--eh --event-hub",
+                "--ehari --event-hub-authorization-rule-id",
+                "--ehts --event-hub-target-state",
+                "--force-string",
+                "--ids",
+                "--lats --log-analytics-target-state",
+                "--lawri --log-analytics-workspace-resource-id",
+                "--name -n",
+                "--no-wait",
+                "--remove",
+                "--resource-group -g",
+                "--retention-days",
+                "--set",
+                "--state",
+                "--storage-account",
+                "--storage-endpoint",
+                "--storage-key",
+                "--subscription"
+            ],
+            "examples": [
+                "az sql server audit-policy update -g mygroup -n myserver --state Enabled \\\n    --bsts Enabled --storage-account mystorage",
+                "az sql server audit-policy update -g mygroup -n myserver --state Enabled \\\n    --bsts Enabled --storage-endpoint https://mystorage.blob.core.windows.net \\\n    --storage-key MYKEY==",
+                "az sql server audit-policy update -g mygroup -n myserver \\\n    --actions FAILED_DATABASE_AUTHENTICATION_GROUP 'UPDATE on server::myserver by public'",
+                "az sql server audit-policy update -g mygroup -n myserver --state Disabled",
+                "az sql server audit-policy update -g mygroup -n myserver --bsts Disabled",
+                "az sql server audit-policy update -g mygroup -n myserver --state Enabled \\\n    --lats Enabled --lawri myworkspaceresourceid",
+                "az sql server audit-policy update -g mygroup -n myserver\n    --lats Disabled",
+                "az sql server audit-policy update -g mygroup -n myserver --state Enabled \\\n    --event-hub-target-state Enabled \\\n    --event-hub-authorization-rule-id eventhubauthorizationruleid \\\n    --event-hub eventhubname",
+                "az sql server audit-policy update -g mygroup -n myserver --state Enabled \\\n    --event-hub-target-state Enabled \\\n    --event-hub-authorization-rule-id eventhubauthorizationruleid",
+                "az sql server audit-policy update -g mygroup -n myserver\n    --event-hub-target-state Disabled"
+            ]
+        },
+        {
+            "name": "az sql server audit-policy wait",
+            "summary": "Place the CLI in a waiting state until a condition of the server's audit policy is met.",
+            "syntax": "az sql server audit-policy wait [--created]\n                                [--custom]\n                                [--deleted]\n                                [--exists]\n                                [--ids]\n                                [--interval]\n                                [--name]\n                                [--resource-group]\n                                [--subscription]\n                                [--timeout]\n                                [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": [
+                "az sql server audit-policy wait -g mygroup -n myserver --exists"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,130 @@
+{
+    "command_group": "az storage entity",
+    "description": "Manage table storage entities.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az storage entity delete",
+            "summary": "Delete an existing entity in a table.",
+            "syntax": "az storage entity delete --partition-key\n                         --row-key\n                         --table-name\n                         [--account-key]\n                         [--account-name]\n                         [--auth-mode {key, login}]\n                         [--connection-string]\n                         [--if-match]\n                         [--sas-token]\n                         [--table-endpoint]",
+            "required_parameters": [
+                "--partition-key",
+                "--row-key",
+                "--table-name -t"
+            ],
+            "optional_parameters": [
+                "--account-key",
+                "--account-name",
+                "--auth-mode",
+                "--connection-string",
+                "--if-match",
+                "--sas-token",
+                "--table-endpoint"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az storage entity insert",
+            "summary": "Insert an entity into a table.",
+            "syntax": "az storage entity insert --entity\n                         --table-name\n                         [--account-key]\n                         [--account-name]\n                         [--auth-mode {key, login}]\n                         [--connection-string]\n                         [--if-exists {fail, merge, replace}]\n                         [--sas-token]\n                         [--table-endpoint]",
+            "required_parameters": [
+                "--entity -e",
+                "--table-name -t"
+            ],
+            "optional_parameters": [
+                "--account-key",
+                "--account-name",
+                "--auth-mode",
+                "--connection-string",
+                "--if-exists",
+                "--sas-token",
+                "--table-endpoint"
+            ],
+            "examples": [
+                "az storage entity insert --connection-string $connectionString --entity PartitionKey=AAA RowKey=BBB Content=ASDF2 --if-exists fail --table-name MyTable",
+                "az storage entity insert --connection-string $connectionString --entity PartitionKey=AAA RowKey=BBB Content=0152 Content@odata.type=Edm.String --if-exists merge --table-name MyTable"
+            ]
+        },
+        {
+            "name": "az storage entity merge",
+            "summary": "Update an existing entity by merging the entity's properties.",
+            "syntax": "az storage entity merge --entity\n                        --table-name\n                        [--account-key]\n                        [--account-name]\n                        [--auth-mode {key, login}]\n                        [--connection-string]\n                        [--if-match]\n                        [--sas-token]\n                        [--table-endpoint]",
+            "required_parameters": [
+                "--entity -e",
+                "--table-name -t"
+            ],
+            "optional_parameters": [
+                "--account-key",
+                "--account-name",
+                "--auth-mode",
+                "--connection-string",
+                "--if-match",
+                "--sas-token",
+                "--table-endpoint"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az storage entity query",
+            "summary": "List entities which satisfy a query.",
+            "syntax": "az storage entity query --table-name\n                        [--account-key]\n                        [--account-name]\n                        [--auth-mode {key, login}]\n                        [--connection-string]\n                        [--filter]\n                        [--marker]\n                        [--num-results]\n                        [--sas-token]\n                        [--select]\n                        [--table-endpoint]",
+            "required_parameters": [
+                "--table-name -t"
+            ],
+            "optional_parameters": [
+                "--account-key",
+                "--account-name",
+                "--auth-mode",
+                "--connection-string",
+                "--filter",
+                "--marker",
+                "--num-results",
+                "--sas-token",
+                "--select",
+                "--table-endpoint"
+            ],
+            "examples": [
+                "az storage entity query --table-name MyTable"
+            ]
+        },
+        {
+            "name": "az storage entity replace",
+            "summary": "Update an existing entity in a table.",
+            "syntax": "az storage entity replace --entity\n                          --table-name\n                          [--account-key]\n                          [--account-name]\n                          [--auth-mode {key, login}]\n                          [--connection-string]\n                          [--if-match]\n                          [--sas-token]\n                          [--table-endpoint]",
+            "required_parameters": [
+                "--entity -e",
+                "--table-name -t"
+            ],
+            "optional_parameters": [
+                "--account-key",
+                "--account-name",
+                "--auth-mode",
+                "--connection-string",
+                "--if-match",
+                "--sas-token",
+                "--table-endpoint"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az storage entity show",
+            "summary": "Get a single entity in a table.",
+            "syntax": "az storage entity show --partition-key\n                       --row-key\n                       --table-name\n                       [--account-key]\n                       [--account-name]\n                       [--auth-mode {key, login}]\n                       [--connection-string]\n                       [--sas-token]\n                       [--select]\n                       [--table-endpoint]",
+            "required_parameters": [
+                "--partition-key",
+                "--row-key",
+                "--table-name -t"
+            ],
+            "optional_parameters": [
+                "--account-key",
+                "--account-name",
+                "--auth-mode",
+                "--connection-string",
+                "--sas-token",
+                "--select",
+                "--table-endpoint"
+            ],
+            "examples": []
+        }
+    ]
+}

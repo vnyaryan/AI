@@ -1,0 +1,105 @@
+{
+    "command_group": "az cosmosdb gremlin database",
+    "description": "Manage Azure Cosmos DB Gremlin databases.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az cosmosdb gremlin database create",
+            "summary": "Create an Gremlin database under an Azure Cosmos DB account.",
+            "syntax": "az cosmosdb gremlin database create --account-name\n                                    --name\n                                    --resource-group\n                                    [--max-throughput]\n                                    [--throughput]",
+            "required_parameters": [
+                "--account-name -a",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--max-throughput",
+                "--throughput"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az cosmosdb gremlin database delete",
+            "summary": "Delete the Gremlin database under an Azure Cosmos DB account.",
+            "syntax": "az cosmosdb gremlin database delete --account-name\n                                    --name\n                                    --resource-group\n                                    [--yes]",
+            "required_parameters": [
+                "--account-name -a",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--yes -y"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az cosmosdb gremlin database exists",
+            "summary": "Checks if an Azure Cosmos DB Gremlin database exists.",
+            "syntax": "az cosmosdb gremlin database exists --account-name\n                                    --name\n                                    --resource-group",
+            "required_parameters": [
+                "--account-name -a",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az cosmosdb gremlin database list",
+            "summary": "List the Gremlin databases under an Azure Cosmos DB account.",
+            "syntax": "az cosmosdb gremlin database list --account-name\n                                  --resource-group",
+            "required_parameters": [
+                "--account-name -a",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az cosmosdb gremlin database restore",
+            "summary": "Restore a deleted gremlin database within the same account.",
+            "syntax": "az cosmosdb gremlin database restore --account-name\n                                     --name\n                                     --resource-group\n                                     [--disable-ttl]\n                                     [--restore-timestamp]",
+            "required_parameters": [
+                "--account-name -a",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--disable-ttl",
+                "--restore-timestamp -t"
+            ],
+            "examples": [
+                "az cosmosdb gremlin database restore --resource-group resource_group --account-name database_account_name --name name_of_database_needs_to_be_restored --restore-timestamp 2020-07-13T16:03:41+0000"
+            ]
+        },
+        {
+            "name": "az cosmosdb gremlin database restore",
+            "summary": "Restore a deleted gremlin database within the same account.",
+            "syntax": "az cosmosdb gremlin database restore --account-name\n                                     --name\n                                     --resource-group\n                                     [--disable-ttl {false, true}]\n                                     [--restore-timestamp]",
+            "required_parameters": [
+                "--account-name -a",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--disable-ttl",
+                "--restore-timestamp -t"
+            ],
+            "examples": [
+                "az cosmosdb gremlin database restore --resource-group resource_group --account-name database_account_name --name name_of_database_needs_to_be_restored --restore-timestamp 2020-07-13T16:03:41+0000"
+            ]
+        },
+        {
+            "name": "az cosmosdb gremlin database show",
+            "summary": "Show the details of a Gremlin database under an Azure Cosmos DB account.",
+            "syntax": "az cosmosdb gremlin database show --account-name\n                                  --name\n                                  --resource-group",
+            "required_parameters": [
+                "--account-name -a",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        }
+    ]
+}

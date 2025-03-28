@@ -1,0 +1,39 @@
+{
+    "command_group": "az network firewall management-ip-config",
+    "description": "Manage and configure Azure Firewall Management IP configurations.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az network firewall management-ip-config show",
+            "summary": "Get the details of an Azure Firewall Management IP configuration.",
+            "syntax": "az network firewall management-ip-config show [--firewall-name]\n                                              [--ids]\n                                              [--resource-group]\n                                              [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--firewall-name -f",
+                "--ids",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az network firewall management-ip-config update",
+            "summary": "Update an Azure Firewall Management IP configuration.",
+            "syntax": "az network firewall management-ip-config update [--add]\n                                                [--firewall-name]\n                                                [--force-string]\n                                                [--ids]\n                                                [--public-ip-address]\n                                                [--remove]\n                                                [--resource-group]\n                                                [--set]\n                                                [--subscription]\n                                                [--vnet-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--firewall-name -f",
+                "--force-string",
+                "--ids",
+                "--public-ip-address",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--subscription",
+                "--vnet-name"
+            ],
+            "examples": []
+        }
+    ]
+}

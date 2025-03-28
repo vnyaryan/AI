@@ -1,0 +1,107 @@
+{
+    "command_group": "az maintenance configuration",
+    "description": "Manage maintenance configuration with maintenance.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az maintenance configuration create",
+            "summary": "Create configuration record.",
+            "syntax": "az maintenance configuration create --name\n                                    --resource-group\n                                    [--duration]\n                                    [--expiration-date-time]\n                                    [--extension-properties]\n                                    [--install-patches-linux-parameters]\n                                    [--install-patches-windows-parameters]\n                                    [--location]\n                                    [--maintenance-scope {Extension, Host, InGuestPatch, OSImage, Resource, SQLDB, SQLManagedInstance}]\n                                    [--maintenance-window-recur-every]\n                                    [--maintenance-window-start-date-time]\n                                    [--maintenance-window-time-zone]\n                                    [--namespace]\n                                    [--reboot-setting {Always, IfRequired, Never}]\n                                    [--tags]\n                                    [--visibility {Custom, Public}]",
+            "required_parameters": [
+                "--name --resource-name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--duration --maintenance-window-duration",
+                "--expiration-date-time --maintenance-window-expiration-date-time",
+                "--extension-properties",
+                "--install-patches-linux-parameters --linux-parameters",
+                "--install-patches-windows-parameters --windows-parameters",
+                "--location -l",
+                "--maintenance-scope",
+                "--maintenance-window-recur-every --recur-every",
+                "--maintenance-window-start-date-time --start-date-time",
+                "--maintenance-window-time-zone --time-zone",
+                "--namespace",
+                "--reboot-setting",
+                "--tags",
+                "--visibility"
+            ],
+            "examples": [
+                "az maintenance configuration create --location \"westus2\" --maintenance-scope \"OSImage\" --maintenance-window-duration \"05:00\" --maintenance-window-expiration-date-time \"9999-12-31 00:00\" --maintenance-window-recur-every \"Day\" --maintenance-window-start-date-time \"2020-04-30 08:00\" --maintenance-window-time-zone \"Pacific Standard Time\" --namespace \"Microsoft.Maintenance\" --visibility \"Custom\" --resource-group \"examplerg\" --resource-name \"configuration1\""
+            ]
+        },
+        {
+            "name": "az maintenance configuration delete",
+            "summary": "Delete Configuration record.",
+            "syntax": "az maintenance configuration delete [--ids]\n                                    [--name]\n                                    [--resource-group]\n                                    [--subscription]\n                                    [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --resource-name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az maintenance configuration delete --resource-group \"examplerg\" --resource-name \"example1\""
+            ]
+        },
+        {
+            "name": "az maintenance configuration list",
+            "summary": "List Configuration records within a subscription and resource group.",
+            "syntax": "az maintenance configuration list [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az maintenance configuration list"
+            ]
+        },
+        {
+            "name": "az maintenance configuration show",
+            "summary": "Get Configuration record.",
+            "syntax": "az maintenance configuration show [--ids]\n                                  [--name]\n                                  [--resource-group]\n                                  [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --resource-name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az maintenance configuration show --resource-group \"examplerg\" --resource-name \"configuration1\""
+            ]
+        },
+        {
+            "name": "az maintenance configuration update",
+            "summary": "Update configuration record.",
+            "syntax": "az maintenance configuration update [--duration]\n                                    [--expiration-date-time]\n                                    [--extension-properties]\n                                    [--ids]\n                                    [--install-patches-linux-parameters]\n                                    [--install-patches-windows-parameters]\n                                    [--location]\n                                    [--maintenance-scope {Extension, Host, InGuestPatch, OSImage, Resource, SQLDB, SQLManagedInstance}]\n                                    [--maintenance-window-recur-every]\n                                    [--maintenance-window-start-date-time]\n                                    [--maintenance-window-time-zone]\n                                    [--name]\n                                    [--namespace]\n                                    [--reboot-setting {Always, IfRequired, Never}]\n                                    [--resource-group]\n                                    [--subscription]\n                                    [--tags]\n                                    [--visibility {Custom, Public}]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--duration --maintenance-window-duration",
+                "--expiration-date-time --maintenance-window-expiration-date-time",
+                "--extension-properties",
+                "--ids",
+                "--install-patches-linux-parameters --linux-parameters",
+                "--install-patches-windows-parameters --windows-parameters",
+                "--location -l",
+                "--maintenance-scope",
+                "--maintenance-window-recur-every --recur-every",
+                "--maintenance-window-start-date-time --start-date-time",
+                "--maintenance-window-time-zone --time-zone",
+                "--name --resource-name -n",
+                "--namespace",
+                "--reboot-setting",
+                "--resource-group -g",
+                "--subscription",
+                "--tags",
+                "--visibility"
+            ],
+            "examples": [
+                "az maintenance configuration update --location \"westus2\" --maintenance-scope \"OSImage\" --maintenance-window-duration \"05:00\" --maintenance-window-expiration-date-time \"9999-12-31 00:00\" --maintenance-window-recur-every \"Month Third Sunday\" --maintenance-window-start-date-time \"2020-04-30 08:00\" --maintenance-window-time-zone \"Pacific Standard Time\" --namespace \"Microsoft.Maintenance\" --visibility \"Custom\" --resource-group \"examplerg\" --resource-name \"configuration1\""
+            ]
+        }
+    ]
+}

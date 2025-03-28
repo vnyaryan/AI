@@ -1,0 +1,23 @@
+{
+    "command_group": "az billing account transaction",
+    "description": "Manage billing acount transaction.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az billing account transaction list",
+            "summary": "List the billed and unbilled transactions by billing account name for given start and end date. Transactions include purchases, refunds and Azure usage charges. Unbilled transactions are listed under pending invoice ID and do not include tax. Tax is added to the amount once an invoice is generated.",
+            "syntax": "az billing account transaction list --billing-account-name\n                                    --period-end-date\n                                    --period-start-date\n                                    [--filter]\n                                    [--max-items]\n                                    [--next-token]",
+            "required_parameters": [
+                "--billing-account-name",
+                "--period-end-date",
+                "--period-start-date"
+            ],
+            "optional_parameters": [
+                "--filter",
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": []
+        }
+    ]
+}

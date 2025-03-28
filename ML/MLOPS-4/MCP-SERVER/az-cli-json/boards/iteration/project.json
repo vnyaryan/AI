@@ -1,0 +1,85 @@
+{
+    "command_group": "az boards iteration project",
+    "description": "Manage iterations for a project.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az boards iteration project create",
+            "summary": "Create iteration.",
+            "syntax": "az boards iteration project create --name\n                                   [--detect {false, true}]\n                                   [--finish-date]\n                                   [--org]\n                                   [--path]\n                                   [--project]\n                                   [--start-date]",
+            "required_parameters": [
+                "--name"
+            ],
+            "optional_parameters": [
+                "--detect",
+                "--finish-date",
+                "--org --organization",
+                "--path",
+                "--project -p",
+                "--start-date"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az boards iteration project delete",
+            "summary": "Delete iteration.",
+            "syntax": "az boards iteration project delete --path\n                                   [--detect {false, true}]\n                                   [--org]\n                                   [--project]\n                                   [--yes]",
+            "required_parameters": [
+                "--path"
+            ],
+            "optional_parameters": [
+                "--detect",
+                "--org --organization",
+                "--project -p",
+                "--yes -y"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az boards iteration project list",
+            "summary": "List iterations for a project.",
+            "syntax": "az boards iteration project list [--depth]\n                                 [--detect {false, true}]\n                                 [--org]\n                                 [--path]\n                                 [--project]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--depth",
+                "--detect",
+                "--org --organization",
+                "--path",
+                "--project -p"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az boards iteration project show",
+            "summary": "Show iteration details for a project.",
+            "syntax": "az boards iteration project show --id\n                                 [--detect {false, true}]\n                                 [--org]\n                                 [--project]",
+            "required_parameters": [
+                "--id"
+            ],
+            "optional_parameters": [
+                "--detect",
+                "--org --organization",
+                "--project -p"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az boards iteration project update",
+            "summary": "Update project iteration.",
+            "syntax": "az boards iteration project update --path\n                                   [--child-id]\n                                   [--detect {false, true}]\n                                   [--finish-date]\n                                   [--name]\n                                   [--org]\n                                   [--project]\n                                   [--start-date]",
+            "required_parameters": [
+                "--path"
+            ],
+            "optional_parameters": [
+                "--child-id",
+                "--detect",
+                "--finish-date",
+                "--name",
+                "--org --organization",
+                "--project -p",
+                "--start-date"
+            ],
+            "examples": []
+        }
+    ]
+}

@@ -1,0 +1,78 @@
+{
+    "command_group": "az sphere device certificate",
+    "description": "Manage certificates on the attached device.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az sphere device certificate add",
+            "summary": "Add a certificate in the attached device's certificate store.",
+            "syntax": "az sphere device certificate add --cert-type {client, rootca}\n                                 --certificate\n                                 --public-key-file\n                                 [--device]\n                                 [--private-key-file]\n                                 [--private-key-password]",
+            "required_parameters": [
+                "--cert-type -t",
+                "--certificate -c",
+                "--public-key-file -p"
+            ],
+            "optional_parameters": [
+                "--device -d",
+                "--private-key-file",
+                "--private-key-password -w"
+            ],
+            "examples": [
+                "az sphere device certificate add --certificate certSample --cert-type rootca --public-key-file pubcert.pem",
+                "az sphere device certificate add --certificate certSample --cert-type client --public-key-file pubcert.pem --private-key-file privkeycert.pem --private-key-password 1234"
+            ]
+        },
+        {
+            "name": "az sphere device certificate delete",
+            "summary": "Delete a certificate in the attached device's certificate store.",
+            "syntax": "az sphere device certificate delete --certificate\n                                    [--device]",
+            "required_parameters": [
+                "--certificate -c"
+            ],
+            "optional_parameters": [
+                "--device -d"
+            ],
+            "examples": [
+                "az sphere device certificate delete --certificate certSample"
+            ]
+        },
+        {
+            "name": "az sphere device certificate list",
+            "summary": "List certificates in the attached device's certificate store.",
+            "syntax": "az sphere device certificate list [--device]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--device -d"
+            ],
+            "examples": [
+                "az sphere device certificate list"
+            ]
+        },
+        {
+            "name": "az sphere device certificate show",
+            "summary": "Show details of a certificate in the attached device's certificate store.",
+            "syntax": "az sphere device certificate show --certificate\n                                  [--device]",
+            "required_parameters": [
+                "--certificate -c"
+            ],
+            "optional_parameters": [
+                "--device -d"
+            ],
+            "examples": [
+                "az sphere device certificate show --certificate certSample"
+            ]
+        },
+        {
+            "name": "az sphere device certificate show-quota",
+            "summary": "Show the available free space in the attached device's certificate store.",
+            "syntax": "az sphere device certificate show-quota [--device]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--device -d"
+            ],
+            "examples": [
+                "az sphere device certificate show-quota"
+            ]
+        }
+    ]
+}

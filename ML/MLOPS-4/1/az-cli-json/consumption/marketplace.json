@@ -1,0 +1,22 @@
+{
+    "command_group": "az consumption marketplace",
+    "description": "Inspect the marketplace usage data of an Azure subscription within a billing period.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az consumption marketplace list",
+            "summary": "List the marketplace for an Azure subscription within a billing period.",
+            "syntax": "az consumption marketplace list [--billing-period-name]\n                                [--end-date]\n                                [--max-items]\n                                [--next-token]\n                                [--start-date]\n                                [--top]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--billing-period-name -p",
+                "--end-date -e",
+                "--max-items",
+                "--next-token",
+                "--start-date -s",
+                "--top -t"
+            ],
+            "examples": []
+        }
+    ]
+}

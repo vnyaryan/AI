@@ -1,0 +1,65 @@
+{
+    "command_group": "az vm user",
+    "description": "Manage user accounts for a VM.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az vm user delete",
+            "summary": "Delete a user account from a VM.",
+            "syntax": "az vm user delete --username\n                  [--ids]\n                  [--name]\n                  [--no-wait]\n                  [--resource-group]\n                  [--subscription]",
+            "required_parameters": [
+                "--username -u"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az vm user delete -u username -n MyVm -g MyResourceGroup",
+                "az vm user delete -u username --ids $(az vm list -g MyResourceGroup --query \"[].id\" -o tsv)"
+            ]
+        },
+        {
+            "name": "az vm user reset-ssh",
+            "summary": "Reset the SSH configuration on a VM.",
+            "syntax": "az vm user reset-ssh [--ids]\n                     [--name]\n                     [--no-wait]\n                     [--resource-group]\n                     [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az vm user reset-ssh -n MyVm -g MyResourceGroup",
+                "az vm user reset-ssh --ids $(az vm list -g MyResourceGroup --query \"[].id\" -o tsv)"
+            ]
+        },
+        {
+            "name": "az vm user update",
+            "summary": "Update a user account for VM. You can use it to update password or ssh key value for VM user.",
+            "syntax": "az vm user update --username\n                  [--ids]\n                  [--name]\n                  [--no-wait]\n                  [--password]\n                  [--resource-group]\n                  [--ssh-key-value]\n                  [--subscription]",
+            "required_parameters": [
+                "--username -u"
+            ],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--password -p",
+                "--resource-group -g",
+                "--ssh-key-value",
+                "--subscription"
+            ],
+            "examples": [
+                "az vm user update -u username -p password -n MyVm -g MyResourceGroup",
+                "az vm user update -u username --ssh-key-value \"$(< ~/.ssh/id_rsa.pub)\" -n MyVm -g MyResourceGroup",
+                "az vm user update -u username --ssh-key-value \"$(< ~/.ssh/id_rsa.pub)\" --ids $(az vm list -g MyResourceGroup --query \"[].id\" -o tsv)"
+            ]
+        }
+    ]
+}

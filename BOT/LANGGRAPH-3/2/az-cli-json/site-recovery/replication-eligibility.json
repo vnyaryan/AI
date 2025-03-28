@@ -1,0 +1,35 @@
+{
+    "command_group": "az site-recovery replication-eligibility",
+    "description": "Manage Replication Eligibility.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az site-recovery replication-eligibility list",
+            "summary": "List whether a given VM can be protected or not in which case returns list of errors.",
+            "syntax": "az site-recovery replication-eligibility list --resource-group\n                                              --virtual-machine-name",
+            "required_parameters": [
+                "--resource-group -g",
+                "--virtual-machine-name"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az site-recovery replication-eligibility list -g rg --virtual-machine-name vm_name"
+            ]
+        },
+        {
+            "name": "az site-recovery replication-eligibility show-default",
+            "summary": "Get whether a given VM can be protected or not in which case returns list of errors.",
+            "syntax": "az site-recovery replication-eligibility show-default [--ids]\n                                                      [--resource-group]\n                                                      [--subscription]\n                                                      [--virtual-machine-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--resource-group -g",
+                "--subscription",
+                "--virtual-machine-name"
+            ],
+            "examples": [
+                "az site-recovery replication-eligibility show-default -g rg --virtual-machine-name vm_name"
+            ]
+        }
+    ]
+}

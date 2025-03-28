@@ -1,0 +1,42 @@
+{
+    "command_group": "az eventhubs eventhub authorization-rule keys",
+    "description": "Authorization-rule keys.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az eventhubs eventhub authorization-rule keys list",
+            "summary": "Gets the ACS and SAS connection strings for the Event Hub.",
+            "syntax": "az eventhubs eventhub authorization-rule keys list --authorization-rule-name\n                                                   --eventhub-name\n                                                   --namespace-name\n                                                   --resource-group",
+            "required_parameters": [
+                "--authorization-rule-name --name",
+                "--eventhub-name",
+                "--namespace-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az eventhubs eventhub authorization-rule keys list --resource-group myresourcegroup --namespace-name mynamespace --eventhub-name myeventhub --name myauthorule"
+            ]
+        },
+        {
+            "name": "az eventhubs eventhub authorization-rule keys renew",
+            "summary": "Regenerates the ACS and SAS connection strings for the Event Hub.",
+            "syntax": "az eventhubs eventhub authorization-rule keys renew --key {PrimaryKey, SecondaryKey}\n                                                    [--authorization-rule-name]\n                                                    [--eventhub-name]\n                                                    [--ids]\n                                                    [--key-value]\n                                                    [--namespace-name]\n                                                    [--resource-group]\n                                                    [--subscription]",
+            "required_parameters": [
+                "--key"
+            ],
+            "optional_parameters": [
+                "--authorization-rule-name --name",
+                "--eventhub-name",
+                "--ids",
+                "--key-value",
+                "--namespace-name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az eventhubs eventhub authorization-rule keys renew --resource-group myresourcegroup --namespace-name mynamespace --eventhub-name myeventhub --name myauthorule --key PrimaryKey"
+            ]
+        }
+    ]
+}

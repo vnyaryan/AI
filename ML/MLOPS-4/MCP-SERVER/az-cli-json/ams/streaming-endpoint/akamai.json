@@ -1,0 +1,40 @@
+{
+    "command_group": "az ams streaming-endpoint akamai",
+    "description": "Manage AkamaiAccessControl objects to be used on streaming endpoints.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az ams streaming-endpoint akamai add",
+            "summary": "Add an AkamaiAccessControl to an existing streaming endpoint.",
+            "syntax": "az ams streaming-endpoint akamai add [--account-name]\n                                     [--base64-key]\n                                     [--expiration]\n                                     [--identifier]\n                                     [--ids]\n                                     [--name]\n                                     [--resource-group]\n                                     [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account-name -a",
+                "--base64-key",
+                "--expiration",
+                "--identifier",
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az ams streaming-endpoint akamai remove",
+            "summary": "Remove an AkamaiAccessControl from an existing streaming endpoint.",
+            "syntax": "az ams streaming-endpoint akamai remove --identifier\n                                        [--account-name]\n                                        [--ids]\n                                        [--name]\n                                        [--resource-group]\n                                        [--subscription]",
+            "required_parameters": [
+                "--identifier"
+            ],
+            "optional_parameters": [
+                "--account-name -a",
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        }
+    ]
+}

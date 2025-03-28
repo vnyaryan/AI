@@ -1,0 +1,61 @@
+{
+    "command_group": "az functionapp config",
+    "description": "Configure a function app.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az functionapp config set",
+            "summary": "Set an existing function app's configuration.",
+            "syntax": "az functionapp config set [--always-on {false, true}]\n                          [--auto-heal-enabled {false, true}]\n                          [--ftps-state {AllAllowed, Disabled, FtpsOnly}]\n                          [--generic-configurations]\n                          [--http20-enabled {false, true}]\n                          [--ids]\n                          [--java-container]\n                          [--java-container-version]\n                          [--java-version]\n                          [--linux-fx-version]\n                          [--min-tls-version]\n                          [--name]\n                          [--net-framework-version]\n                          [--number-of-workers]\n                          [--php-version]\n                          [--powershell-version]\n                          [--prewarmed-instance-count]\n                          [--python-version]\n                          [--remote-debugging-enabled {false, true}]\n                          [--resource-group]\n                          [--slot]\n                          [--startup-file]\n                          [--subscription]\n                          [--use-32bit-worker-process {false, true}]\n                          [--vnet-route-all-enabled {false, true}]\n                          [--web-sockets-enabled {false, true}]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--always-on",
+                "--auto-heal-enabled",
+                "--ftps-state",
+                "--generic-configurations",
+                "--http20-enabled",
+                "--ids",
+                "--java-container",
+                "--java-container-version",
+                "--java-version",
+                "--linux-fx-version",
+                "--min-tls-version",
+                "--name -n",
+                "--net-framework-version",
+                "--number-of-workers",
+                "--php-version",
+                "--powershell-version",
+                "--prewarmed-instance-count",
+                "--python-version",
+                "--remote-debugging-enabled",
+                "--resource-group -g",
+                "--slot -s",
+                "--startup-file",
+                "--subscription",
+                "--use-32bit-worker-process",
+                "--vnet-route-all-enabled",
+                "--web-sockets-enabled"
+            ],
+            "examples": [
+                "az functionapp config set --always-on true --name MyFunctionApp --resource-group MyResourceGroup",
+                "az functionapp config set -g MyResourceGroup -n MyFunctionApp --generic-configurations \"@.\\params.json\""
+            ]
+        },
+        {
+            "name": "az functionapp config show",
+            "summary": "Get the details of an existing function app's configuration.",
+            "syntax": "az functionapp config show [--ids]\n                           [--name]\n                           [--resource-group]\n                           [--slot]\n                           [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--slot -s",
+                "--subscription"
+            ],
+            "examples": [
+                "az functionapp config show --name MyFunctionApp --resource-group MyResourceGroup"
+            ]
+        }
+    ]
+}

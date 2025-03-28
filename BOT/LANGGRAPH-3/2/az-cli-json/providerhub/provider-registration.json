@@ -1,0 +1,219 @@
+{
+    "command_group": "az providerhub provider-registration",
+    "description": "Manage provider registration with providerhub.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az providerhub provider-registration create",
+            "summary": "Create the provider registration.",
+            "syntax": "az providerhub provider-registration create --name\n                                            [--authorization-owners]\n                                            [--canary-manifest-owners]\n                                            [--capabilities]\n                                            [--cross-tenant-token-validation {EnsureSecureValidation, PassthroughInsecureToken}]\n                                            [--custom-manifest-vers]\n                                            [--dsts-configuration]\n                                            [--enable-linked-notif {0, 1, f, false, n, no, t, true, y, yes}]\n                                            [--error-response-message-options]\n                                            [--expedited-rollout-metadata]\n                                            [--expedited-rollout-submitters]\n                                            [--global-notif-endpoints]\n                                            [--incident-contact-email]\n                                            [--incident-routing-service]\n                                            [--incident-routing-team]\n                                            [--kind {Direct, Hybrid, Managed}]\n                                            [--legacy-namespace]\n                                            [--legacy-registrations]\n                                            [--linked-notif-rules]\n                                            [--management-group-global-notification-endpoints]\n                                            [--manifest-owner]\n                                            [--metadata]\n                                            [--namespace]\n                                            [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                            [--notification-options {EmitSpendingLimit, None, NotSpecified}]\n                                            [--notification-settings]\n                                            [--notifications]\n                                            [--opt-in-headers {ClientGroupMembership, ClientPrincipalNameEncoded, MSIResourceIdEncoded, ManagementGroupAncestorsEncoded, NotSpecified, PrivateLinkId, PrivateLinkResourceId, PrivateLinkVnetTrafficTag, ResourceGroupLocation, SignedAuxiliaryTokens, SignedUserToken, UnboundedClientGroupMembership}]\n                                            [--opt-out-headers {NotSpecified, SystemDataCreatedByLastModifiedBy}]\n                                            [--optional-features]\n                                            [--override-actions]\n                                            [--pc-code]\n                                            [--pc-program-id]\n                                            [--private-resource-provider-configuration]\n                                            [--provider-auth]\n                                            [--provider-authentication]\n                                            [--provider-hub-metadata]\n                                            [--provider-type {AuthorizationFree, External, Hidden, Internal, LegacyRegistrationRequired, NotSpecified, RegistrationFree, TenantOnly}]\n                                            [--provider-version]\n                                            [--req-features-policy {All, Any}]\n                                            [--required-features]\n                                            [--resc-hydration-accts]\n                                            [--resource-access-policy {AcisActionAllowed, AcisReadAllowed, NotSpecified}]\n                                            [--resource-access-roles]\n                                            [--resource-group-lock-option-during-move]\n                                            [--resource-provider-authorization-rules]\n                                            [--response-options]\n                                            [--schema-owner]\n                                            [--service-name]\n                                            [--service-tree-info]\n                                            [--services]\n                                            [--soft-delete-ttl]\n                                            [--template-deployment-options]\n                                            [--token-auth-config]",
+            "required_parameters": [
+                "--name --provider-namespace -n"
+            ],
+            "optional_parameters": [
+                "--authorization-owners",
+                "--canary-manifest-owners",
+                "--capabilities --capabilities --capability",
+                "--cross-tenant-token-validation --token-validation",
+                "--custom-manifest-vers --custom-manifest-version",
+                "--dsts-configuration",
+                "--enable-linked-notif --enable-tenant-linked-notification",
+                "--error-response-message-options --message-options",
+                "--expedited-rollout-metadata --rollout-metadata",
+                "--expedited-rollout-submitters --rollout-submitters",
+                "--global-notif-endpoints --global-notification-endpoints",
+                "--incident-contact-email",
+                "--incident-routing-service --incident-service",
+                "--incident-routing-team --incident-team",
+                "--kind",
+                "--legacy-namespace",
+                "--legacy-registrations",
+                "--linked-notif-rules --linked-notification-rules",
+                "--management-group-global-notification-endpoints --mg-notif-endpoints",
+                "--manifest-owner --manifest-owners",
+                "--metadata",
+                "--namespace",
+                "--no-wait",
+                "--notification-options",
+                "--notification-settings",
+                "--notifications",
+                "--opt-in-headers",
+                "--opt-out-headers",
+                "--optional-features",
+                "--override-actions --subscription-state-override-actions",
+                "--pc-code",
+                "--pc-program-id --profit-center-program-id",
+                "--private-resource-provider-configuration --private-rp-config",
+                "--provider-auth --provider-authorizations --provider-authorizations --provider-authz",
+                "--provider-authentication --provider-authn",
+                "--provider-hub-metadata",
+                "--provider-type",
+                "--provider-version",
+                "--req-features-policy --required-features-policy",
+                "--required-features",
+                "--resc-hydration-accts --resource-hydration-accounts",
+                "--resource-access-policy",
+                "--resource-access-roles",
+                "--resource-group-lock-option-during-move --rg-lock-option",
+                "--resource-provider-authorization-rules --rp-auth-rules",
+                "--response-options",
+                "--schema-owner --schema-owners --schema-owners",
+                "--service-name",
+                "--service-tree-info --service-tree-infos --service-tree-infos",
+                "--services",
+                "--soft-delete-ttl",
+                "--template-deployment-options --tmplt-deploy-opt",
+                "--token-auth-config --token-auth-configuration"
+            ],
+            "examples": [
+                "az providerhub provider-registration create --token-auth-configuration authentication-scheme=\"PoP\" signed-request-scope=\"ResourceUri\" --service-tree-infos service-id=\"d1b7d8ba-05e2-48e6-90d6-d781b99c6e69\" component-id=\"d1b7d8ba-05e2-48e6-90d6-d781b99c6e69\" --capabilities effect=\"Allow\" quota-id=\"CSP_2015-05-01\" --capabilities effect=\"Allow\" quota-id=\"CSP_MG_2017-12-01\" --manifest-owners \"SPARTA-PlatformServiceAdministrator\" --incident-contact-email \"rpaascore@microsoft.com\" --incident-routing-service \"Resource Provider Service as a Service\" --incident-routing-team \"RPaaS\" --provider-version \"2.0\" --provider-namespace \"{providerNamespace}\" --metadata \"BypassManifestValidation\":true"
+            ]
+        },
+        {
+            "name": "az providerhub provider-registration delete",
+            "summary": "Delete a provider registration.",
+            "syntax": "az providerhub provider-registration delete [--ids]\n                                            [--name]\n                                            [--subscription]\n                                            [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --provider-namespace -n",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az providerhub provider-registration delete -y --provider-namespace \"{providerNamespace}\""
+            ]
+        },
+        {
+            "name": "az providerhub provider-registration generate-operation",
+            "summary": "Generates the operations api for the given provider.",
+            "syntax": "az providerhub provider-registration generate-operation [--ids]\n                                                        [--provider-namespace]\n                                                        [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--provider-namespace",
+                "--subscription"
+            ],
+            "examples": [
+                "az providerhub provider-registration generate-operation --provider-namespace \"{providerNamespace}\""
+            ]
+        },
+        {
+            "name": "az providerhub provider-registration list",
+            "summary": "List the list of the provider registrations in the subscription.",
+            "syntax": "az providerhub provider-registration list [--max-items]\n                                          [--next-token]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az providerhub provider-registration list"
+            ]
+        },
+        {
+            "name": "az providerhub provider-registration show",
+            "summary": "Get the provider registration details.",
+            "syntax": "az providerhub provider-registration show [--ids]\n                                          [--name]\n                                          [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --provider-namespace -n",
+                "--subscription"
+            ],
+            "examples": [
+                "az providerhub provider-registration show --provider-namespace \"{providerNamespace}\""
+            ]
+        },
+        {
+            "name": "az providerhub provider-registration update",
+            "summary": "Update the provider registration.",
+            "syntax": "az providerhub provider-registration update [--add]\n                                            [--authorization-owners]\n                                            [--canary-manifest-owners]\n                                            [--capabilities]\n                                            [--cross-tenant-token-validation {EnsureSecureValidation, PassthroughInsecureToken}]\n                                            [--custom-manifest-vers]\n                                            [--dsts-configuration]\n                                            [--enable-linked-notif {0, 1, f, false, n, no, t, true, y, yes}]\n                                            [--error-response-message-options]\n                                            [--expedited-rollout-metadata]\n                                            [--expedited-rollout-submitters]\n                                            [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                            [--global-notif-endpoints]\n                                            [--ids]\n                                            [--incident-contact-email]\n                                            [--incident-routing-service]\n                                            [--incident-routing-team]\n                                            [--kind {Direct, Hybrid, Managed}]\n                                            [--legacy-namespace]\n                                            [--legacy-registrations]\n                                            [--linked-notif-rules]\n                                            [--management-group-global-notification-endpoints]\n                                            [--manifest-owner]\n                                            [--metadata]\n                                            [--name]\n                                            [--namespace]\n                                            [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                            [--notification-options {EmitSpendingLimit, None, NotSpecified}]\n                                            [--notification-settings]\n                                            [--notifications]\n                                            [--opt-in-headers {ClientGroupMembership, ClientPrincipalNameEncoded, MSIResourceIdEncoded, ManagementGroupAncestorsEncoded, NotSpecified, PrivateLinkId, PrivateLinkResourceId, PrivateLinkVnetTrafficTag, ResourceGroupLocation, SignedAuxiliaryTokens, SignedUserToken, UnboundedClientGroupMembership}]\n                                            [--opt-out-headers {NotSpecified, SystemDataCreatedByLastModifiedBy}]\n                                            [--optional-features]\n                                            [--override-actions]\n                                            [--pc-code]\n                                            [--pc-program-id]\n                                            [--private-resource-provider-configuration]\n                                            [--provider-auth]\n                                            [--provider-authentication]\n                                            [--provider-hub-metadata]\n                                            [--provider-type {AuthorizationFree, External, Hidden, Internal, LegacyRegistrationRequired, NotSpecified, RegistrationFree, TenantOnly}]\n                                            [--provider-version]\n                                            [--remove]\n                                            [--req-features-policy {All, Any}]\n                                            [--required-features]\n                                            [--resc-hydration-accts]\n                                            [--resource-access-policy {AcisActionAllowed, AcisReadAllowed, NotSpecified}]\n                                            [--resource-access-roles]\n                                            [--resource-group-lock-option-during-move]\n                                            [--resource-provider-authorization-rules]\n                                            [--response-options]\n                                            [--schema-owner]\n                                            [--service-name]\n                                            [--service-tree-info]\n                                            [--services]\n                                            [--set]\n                                            [--soft-delete-ttl]\n                                            [--subscription]\n                                            [--template-deployment-options]\n                                            [--token-auth-config]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--authorization-owners",
+                "--canary-manifest-owners",
+                "--capabilities --capabilities --capability",
+                "--cross-tenant-token-validation --token-validation",
+                "--custom-manifest-vers --custom-manifest-version",
+                "--dsts-configuration",
+                "--enable-linked-notif --enable-tenant-linked-notification",
+                "--error-response-message-options --message-options",
+                "--expedited-rollout-metadata --rollout-metadata",
+                "--expedited-rollout-submitters --rollout-submitters",
+                "--force-string",
+                "--global-notif-endpoints --global-notification-endpoints",
+                "--ids",
+                "--incident-contact-email",
+                "--incident-routing-service --incident-service",
+                "--incident-routing-team --incident-team",
+                "--kind",
+                "--legacy-namespace",
+                "--legacy-registrations",
+                "--linked-notif-rules --linked-notification-rules",
+                "--management-group-global-notification-endpoints --mg-notif-endpoints",
+                "--manifest-owner --manifest-owners",
+                "--metadata",
+                "--name --provider-namespace -n",
+                "--namespace",
+                "--no-wait",
+                "--notification-options",
+                "--notification-settings",
+                "--notifications",
+                "--opt-in-headers",
+                "--opt-out-headers",
+                "--optional-features",
+                "--override-actions --subscription-state-override-actions",
+                "--pc-code",
+                "--pc-program-id --profit-center-program-id",
+                "--private-resource-provider-configuration --private-rp-config",
+                "--provider-auth --provider-authorizations --provider-authorizations --provider-authz",
+                "--provider-authentication --provider-authn",
+                "--provider-hub-metadata",
+                "--provider-type",
+                "--provider-version",
+                "--remove",
+                "--req-features-policy --required-features-policy",
+                "--required-features",
+                "--resc-hydration-accts --resource-hydration-accounts",
+                "--resource-access-policy",
+                "--resource-access-roles",
+                "--resource-group-lock-option-during-move --rg-lock-option",
+                "--resource-provider-authorization-rules --rp-auth-rules",
+                "--response-options",
+                "--schema-owner --schema-owners --schema-owners",
+                "--service-name",
+                "--service-tree-info --service-tree-infos --service-tree-infos",
+                "--services",
+                "--set",
+                "--soft-delete-ttl",
+                "--subscription",
+                "--template-deployment-options --tmplt-deploy-opt",
+                "--token-auth-config --token-auth-configuration"
+            ],
+            "examples": [
+                "az providerhub provider-registration update --token-auth-configuration authentication-scheme=\"PoP\" signed-request-scope=\"ResourceUri\" --service-tree-infos service-id=\"d1b7d8ba-05e2-48e6-90d6-d781b99c6e69\" component-id=\"d1b7d8ba-05e2-48e6-90d6-d781b99c6e69\" --capabilities effect=\"Allow\" quota-id=\"CSP_2015-05-01\" --capabilities effect=\"Allow\" quota-id=\"CSP_MG_2017-12-01\" --manifest-owners \"SPARTA-PlatformServiceAdministrator\" --incident-contact-email \"rpaascore@microsoft.com\" --incident-routing-service \"Resource Provider Service as a Service\" --incident-routing-team \"RPaaS\" --provider-version \"2.0\" --provider-namespace \"{providerNamespace}\" --metadata \"BypassManifestValidation\":true"
+            ]
+        },
+        {
+            "name": "az providerhub provider-registration wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az providerhub provider-registration wait [--created]\n                                          [--custom]\n                                          [--deleted]\n                                          [--exists]\n                                          [--ids]\n                                          [--interval]\n                                          [--name]\n                                          [--subscription]\n                                          [--timeout]\n                                          [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--name --provider-namespace -n",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

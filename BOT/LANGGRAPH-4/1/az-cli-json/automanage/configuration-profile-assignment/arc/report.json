@@ -1,0 +1,38 @@
+{
+    "command_group": "az automanage configuration-profile-assignment arc report",
+    "description": "Manage report within a given ARC machine configuration profile assignment.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az automanage configuration-profile-assignment arc report list",
+            "summary": "List reports within a given ARC machine configuration profile assignment.",
+            "syntax": "az automanage configuration-profile-assignment arc report list --assignment-name\n                                                               --machine-name\n                                                               --resource-group",
+            "required_parameters": [
+                "--assignment-name --configuration-profile-assignment-name",
+                "--machine-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az automanage configuration-profile-assignment arc report list --assignment-name default -g {rg} --machine-name {arc_name}"
+            ]
+        },
+        {
+            "name": "az automanage configuration-profile-assignment arc report show",
+            "summary": "Get information about a report associated with an ARC machine configuration profile assignment run.",
+            "syntax": "az automanage configuration-profile-assignment arc report show [--assignment-name]\n                                                               [--ids]\n                                                               [--machine-name]\n                                                               [--name]\n                                                               [--resource-group]\n                                                               [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--assignment-name --configuration-profile-assignment-name",
+                "--ids",
+                "--machine-name",
+                "--name --report-name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az automanage configuration-profile-assignment arc report show -n {report_name} --assignment-name default -g {rg} --machine-name {arc_name}"
+            ]
+        }
+    ]
+}

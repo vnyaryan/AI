@@ -1,0 +1,37 @@
+{
+    "command_group": "az edgeorder order",
+    "description": "Manage order with edgeorder sub group order.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az edgeorder order list",
+            "summary": "List order at resource group level. And List order at subscription level.",
+            "syntax": "az edgeorder order list [--resource-group]\n                        [--skip-token]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--resource-group -g",
+                "--skip-token"
+            ],
+            "examples": [
+                "az edgeorder order list --resource-group \"TestRG\"",
+                "az edgeorder order list"
+            ]
+        },
+        {
+            "name": "az edgeorder order show",
+            "summary": "Get an order.",
+            "syntax": "az edgeorder order show [--ids]\n                        [--location]\n                        [--name]\n                        [--resource-group]\n                        [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--location -l",
+                "--name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az edgeorder order show --location \"TestLocation\" --name \"TestOrderItemName901\" --resource-group \"TestRG\""
+            ]
+        }
+    ]
+}

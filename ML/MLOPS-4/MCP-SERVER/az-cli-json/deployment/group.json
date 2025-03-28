@@ -1,0 +1,184 @@
+{
+    "command_group": "az deployment group",
+    "description": "Manage Azure Resource Manager template deployment at resource group.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az deployment group cancel",
+            "summary": "Cancel a deployment at resource group.",
+            "syntax": "az deployment group cancel --name\n                           --resource-group",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az deployment group cancel -g testrg -n deployment01"
+            ]
+        },
+        {
+            "name": "az deployment group create",
+            "summary": "Start a deployment at resource group.",
+            "syntax": "az deployment group create --resource-group\n                           [--aux-subs]\n                           [--aux-tenants]\n                           [--confirm-with-what-if]\n                           [--handle-extended-json-format]\n                           [--mode {Complete, Incremental}]\n                           [--name]\n                           [--no-prompt {false, true}]\n                           [--no-wait]\n                           [--parameters]\n                           [--proceed-if-no-change]\n                           [--query-string]\n                           [--rollback-on-error]\n                           [--template-file]\n                           [--template-spec]\n                           [--template-uri]\n                           [--what-if]\n                           [--what-if-exclude-change-types {Create, Delete, Deploy, Ignore, Modify, NoChange, Unsupported}]\n                           [--what-if-result-format {FullResourcePayloads, ResourceIdOnly}]",
+            "required_parameters": [
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--aux-subs",
+                "--aux-tenants",
+                "--confirm-with-what-if -c",
+                "--handle-extended-json-format -j",
+                "--mode",
+                "--name -n",
+                "--no-prompt",
+                "--no-wait",
+                "--parameters -p",
+                "--proceed-if-no-change",
+                "--query-string -q",
+                "--rollback-on-error",
+                "--template-file -f",
+                "--template-spec -s",
+                "--template-uri -u",
+                "--what-if -w",
+                "--what-if-exclude-change-types -x",
+                "--what-if-result-format -r"
+            ],
+            "examples": [
+                "az deployment group create --resource-group testrg --name rollout01 \\\n    --template-uri https://myresource/azuredeploy.json --parameters @myparameters.json",
+                "az deployment group create --resource-group testrg --name rollout01 \\\n    --template-file azuredeploy.json  \\\n    --parameters '{ \\\"policyName\\\": { \\\"value\\\": \\\"policy2\\\" } }'",
+                "az deployment group create --resource-group testgroup --template-file demotemplate.json --parameters exampleString='inline string' exampleArray='(\"value1\", \"value2\")'",
+                "az deployment group create --resource-group testrg --name rollout01 \\\n    --template-file azuredeploy.json  --parameters @params.json \\\n    --parameters https://mysite/params.json --parameters MyValue=This MyArray=@array.json",
+                "az deployment group create --resource-group testrg --template-spec \"/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/testrg/providers/Microsoft.Resources/templateSpecs/myTemplateSpec/versions/1.0\"",
+                "az deployment group create --resource-group testrg --parameters parameters.bicepparam",
+                "az deployment group create --resource-group testrg --name rollout01 \\\n    --template-file azuredeploy.json --parameters @myparameters.json --aux-tenants auxiliary_tenant01 auxiliary_tenant02"
+            ]
+        },
+        {
+            "name": "az deployment group delete",
+            "summary": "Delete a deployment at resource group.",
+            "syntax": "az deployment group delete --name\n                           --resource-group\n                           [--no-wait]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--no-wait"
+            ],
+            "examples": [
+                "az deployment group delete -g testrg -n deployment01"
+            ]
+        },
+        {
+            "name": "az deployment group export",
+            "summary": "Export the template used for a deployment.",
+            "syntax": "az deployment group export --name\n                           --resource-group",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az deployment group export --resource-group testrg --name MyDeployment"
+            ]
+        },
+        {
+            "name": "az deployment group list",
+            "summary": "List deployments at resource group.",
+            "syntax": "az deployment group list --resource-group\n                         [--filter]",
+            "required_parameters": [
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--filter"
+            ],
+            "examples": [
+                "az deployment group list -g testrg"
+            ]
+        },
+        {
+            "name": "az deployment group show",
+            "summary": "Show a deployment at resource group.",
+            "syntax": "az deployment group show --name\n                         --resource-group",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az deployment group show -g testrg -n deployment01"
+            ]
+        },
+        {
+            "name": "az deployment group validate",
+            "summary": "Validate whether a template is valid at resource group.",
+            "syntax": "az deployment group validate --resource-group\n                             [--handle-extended-json-format]\n                             [--mode {Complete, Incremental}]\n                             [--name]\n                             [--no-prompt {false, true}]\n                             [--parameters]\n                             [--query-string]\n                             [--rollback-on-error]\n                             [--template-file]\n                             [--template-spec]\n                             [--template-uri]",
+            "required_parameters": [
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--handle-extended-json-format -j",
+                "--mode",
+                "--name -n",
+                "--no-prompt",
+                "--parameters -p",
+                "--query-string -q",
+                "--rollback-on-error",
+                "--template-file -f",
+                "--template-spec -s",
+                "--template-uri -u"
+            ],
+            "examples": [
+                "az deployment group validate --resource-group testrg --template-file {template-file}",
+                "az deployment group validate --parameters MyValue=This MyArray=@array.json --resource-group testrg --template-file azuredeploy.json"
+            ]
+        },
+        {
+            "name": "az deployment group wait",
+            "summary": "Place the CLI in a waiting state until a deployment condition is met.",
+            "syntax": "az deployment group wait --name\n                         --resource-group\n                         [--created]\n                         [--custom]\n                         [--deleted]\n                         [--exists]\n                         [--interval]\n                         [--timeout]\n                         [--updated]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--interval",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": [
+                "az deployment group wait --created --name MyDeployment --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az deployment group what-if",
+            "summary": "Execute a deployment What-If operation at resource group scope.",
+            "syntax": "az deployment group what-if --resource-group\n                            [--aux-tenants]\n                            [--exclude-change-types {Create, Delete, Deploy, Ignore, Modify, NoChange, Unsupported}]\n                            [--mode {Complete, Incremental}]\n                            [--name]\n                            [--no-pretty-print]\n                            [--no-prompt {false, true}]\n                            [--parameters]\n                            [--query-string]\n                            [--result-format {FullResourcePayloads, ResourceIdOnly}]\n                            [--template-file]\n                            [--template-spec]\n                            [--template-uri]",
+            "required_parameters": [
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--aux-tenants",
+                "--exclude-change-types -x",
+                "--mode",
+                "--name -n",
+                "--no-pretty-print",
+                "--no-prompt",
+                "--parameters -p",
+                "--query-string -q",
+                "--result-format -r",
+                "--template-file -f",
+                "--template-spec -s",
+                "--template-uri -u"
+            ],
+            "examples": [
+                "az deployment group what-if --resource-group testrg --name rollout01 --template-uri https://myresource/azuredeploy.json --parameters @myparameters.json",
+                "az deployment group what-if --resource-group testrg --name rollout01 --template-uri https://myresource/azuredeploy.json --parameters @myparameters.json --result-format ResourceIdOnly",
+                "az deployment group what-if --resource-group testrg --name rollout01 --template-uri https://myresource/azuredeploy.json --parameters @myparameters.json --no-pretty-print"
+            ]
+        }
+    ]
+}

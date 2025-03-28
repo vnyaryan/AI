@@ -1,0 +1,76 @@
+{
+    "command_group": "az iot central api-token",
+    "description": "Manage API tokens for your IoT Central application.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az iot central api-token create",
+            "summary": "Generate an API token associated with your IoT Central application.",
+            "syntax": "az iot central api-token create --app-id\n                                --role\n                                --tkid\n                                [--api-version {2022-06-30-preview, 2022-07-31}]\n                                [--central-api-uri]\n                                [--org-id]\n                                [--token]",
+            "required_parameters": [
+                "--app-id -n",
+                "--role -r",
+                "--tkid --token-id"
+            ],
+            "optional_parameters": [
+                "--api-version --av",
+                "--central-api-uri --central-dns-suffix",
+                "--org-id --organization-id",
+                "--token"
+            ],
+            "examples": [
+                "az iot central api-token create --token-id {tokenId} --app-id {appId} --role admin"
+            ]
+        },
+        {
+            "name": "az iot central api-token delete",
+            "summary": "Delete an API token associated with your IoT Central application.",
+            "syntax": "az iot central api-token delete --app-id\n                                --tkid\n                                [--api-version {2022-06-30-preview, 2022-07-31}]\n                                [--central-api-uri]\n                                [--token]",
+            "required_parameters": [
+                "--app-id -n",
+                "--tkid --token-id"
+            ],
+            "optional_parameters": [
+                "--api-version --av",
+                "--central-api-uri --central-dns-suffix",
+                "--token"
+            ],
+            "examples": [
+                "az iot central api-token delete --app-id {appid} --token-id {tokenId}"
+            ]
+        },
+        {
+            "name": "az iot central api-token list",
+            "summary": "Get the list of API tokens associated with your IoT Central application.",
+            "syntax": "az iot central api-token list --app-id\n                              [--api-version {2022-06-30-preview, 2022-07-31}]\n                              [--central-api-uri]\n                              [--token]",
+            "required_parameters": [
+                "--app-id -n"
+            ],
+            "optional_parameters": [
+                "--api-version --av",
+                "--central-api-uri --central-dns-suffix",
+                "--token"
+            ],
+            "examples": [
+                "az iot central api-token list --app-id {appid}"
+            ]
+        },
+        {
+            "name": "az iot central api-token show",
+            "summary": "Get details for an API token associated with your IoT Central application.",
+            "syntax": "az iot central api-token show --app-id\n                              --tkid\n                              [--api-version {2022-06-30-preview, 2022-07-31}]\n                              [--central-api-uri]\n                              [--token]",
+            "required_parameters": [
+                "--app-id -n",
+                "--tkid --token-id"
+            ],
+            "optional_parameters": [
+                "--api-version --av",
+                "--central-api-uri --central-dns-suffix",
+                "--token"
+            ],
+            "examples": [
+                "az iot central api-token show --app-id {appid} --token-id {tokenId}"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,118 @@
+{
+    "command_group": "az mobile-network site",
+    "description": "Manage site.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az mobile-network site create",
+            "summary": "Create a mobile network site.",
+            "syntax": "az mobile-network site create --mobile-network-name\n                              --name\n                              --resource-group\n                              [--location]\n                              [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                              [--tags]",
+            "required_parameters": [
+                "--mobile-network-name",
+                "--name --site-name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--location -l",
+                "--no-wait",
+                "--tags"
+            ],
+            "examples": [
+                "az mobile-network site create --mobile-network-name mobile-network-name -n site-name -g rg"
+            ]
+        },
+        {
+            "name": "az mobile-network site delete",
+            "summary": "Delete the specified mobile network site.",
+            "syntax": "az mobile-network site delete [--ids]\n                              [--mobile-network-name]\n                              [--name]\n                              [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                              [--resource-group]\n                              [--subscription]\n                              [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--mobile-network-name",
+                "--name --site-name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az mobile-network site delete --mobile-network-name mobile-network-name -n site-name -g rg -y'"
+            ]
+        },
+        {
+            "name": "az mobile-network site list",
+            "summary": "List all sites in the mobile network.",
+            "syntax": "az mobile-network site list --mobile-network-name\n                            --resource-group\n                            [--max-items]\n                            [--next-token]",
+            "required_parameters": [
+                "--mobile-network-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az mobile-network site list --mobile-network-name mobile-network-name -g rg"
+            ]
+        },
+        {
+            "name": "az mobile-network site show",
+            "summary": "Get information about the specified mobile network site.",
+            "syntax": "az mobile-network site show [--ids]\n                            [--mobile-network-name]\n                            [--name]\n                            [--resource-group]\n                            [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--mobile-network-name",
+                "--name --site-name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az mobile-network site show--mobile-network-name mobile-network-name -n site-name -g rg"
+            ]
+        },
+        {
+            "name": "az mobile-network site update",
+            "summary": "Update a mobile network site.",
+            "syntax": "az mobile-network site update [--add]\n                              [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                              [--ids]\n                              [--mobile-network-name]\n                              [--name]\n                              [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                              [--remove]\n                              [--resource-group]\n                              [--set]\n                              [--subscription]\n                              [--tags]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--force-string",
+                "--ids",
+                "--mobile-network-name",
+                "--name --site-name -n",
+                "--no-wait",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--subscription",
+                "--tags"
+            ],
+            "examples": [
+                "az mobile-network site update --mobile-network-name mobile-network-name -n site-name -g rg --tags \"{tag:test,tag2:test2}\""
+            ]
+        },
+        {
+            "name": "az mobile-network site wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az mobile-network site wait [--created]\n                            [--custom]\n                            [--deleted]\n                            [--exists]\n                            [--ids]\n                            [--interval]\n                            [--mobile-network-name]\n                            [--name]\n                            [--resource-group]\n                            [--subscription]\n                            [--timeout]\n                            [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--mobile-network-name",
+                "--name --site-name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

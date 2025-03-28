@@ -1,0 +1,84 @@
+{
+    "command_group": "az firmwareanalysis workspace",
+    "description": "Commands to perform operation on a particular workspace of the firmware.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az firmwareanalysis workspace create",
+            "summary": "Create or update a firmware analysis workspace.",
+            "syntax": "az firmwareanalysis workspace create --name\n                                     --resource-group\n                                     [--location]\n                                     [--tags]",
+            "required_parameters": [
+                "--name --workspace-name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--location -l",
+                "--tags"
+            ],
+            "examples": [
+                "az firmwareanalysis workspace create --resource-group {resourceGroupName} --workspace-name {workspaceName} --location {location} --tags {<string>:<string>, <string>:<string>,..}"
+            ]
+        },
+        {
+            "name": "az firmwareanalysis workspace delete",
+            "summary": "Delete a firmware analysis workspace.",
+            "syntax": "az firmwareanalysis workspace delete [--ids]\n                                     [--name]\n                                     [--resource-group]\n                                     [--subscription]\n                                     [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --workspace-name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az firmwareanalysis workspace delete --resource-group {resourceGroupName} --workspace-name {workspaceName}"
+            ]
+        },
+        {
+            "name": "az firmwareanalysis workspace generate-upload-url",
+            "summary": "Get a url for file upload.",
+            "syntax": "az firmwareanalysis workspace generate-upload-url [--firmware-id]\n                                                  [--ids]\n                                                  [--resource-group]\n                                                  [--subscription]\n                                                  [--workspace-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--firmware-id",
+                "--ids",
+                "--resource-group -g",
+                "--subscription",
+                "--workspace-name"
+            ],
+            "examples": [
+                "az firmwareanalysis workspace generate-upload-url --resource-group {ResourceGroupName} --workspace-name {workspaceName} --firmware-id {firmwareId}"
+            ]
+        },
+        {
+            "name": "az firmwareanalysis workspace list",
+            "summary": "List all of the firmware analysis workspaces in the specified subscription.",
+            "syntax": "az firmwareanalysis workspace list [--max-items]\n                                   [--next-token]\n                                   [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az firmwareanalysis workspace list --resource-group {ResourceGroupName}"
+            ]
+        },
+        {
+            "name": "az firmwareanalysis workspace show",
+            "summary": "Get firmware analysis workspace.",
+            "syntax": "az firmwareanalysis workspace show [--ids]\n                                   [--name]\n                                   [--resource-group]\n                                   [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --workspace-name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az firmwareanalysis workspace show --resource-group {ResourceGroupName} --workspace-name {workspaceName}"
+            ]
+        }
+    ]
+}

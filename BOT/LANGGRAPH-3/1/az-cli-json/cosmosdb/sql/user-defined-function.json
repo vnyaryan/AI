@@ -1,0 +1,82 @@
+{
+    "command_group": "az cosmosdb sql user-defined-function",
+    "description": "Manage Azure Cosmos DB SQL user defined functions.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az cosmosdb sql user-defined-function create",
+            "summary": "Create an SQL user defined function under an Azure Cosmos DB SQL container.",
+            "syntax": "az cosmosdb sql user-defined-function create --account-name\n                                             --body\n                                             --container-name\n                                             --database-name\n                                             --name\n                                             --resource-group",
+            "required_parameters": [
+                "--account-name -a",
+                "--body -b",
+                "--container-name -c",
+                "--database-name -d",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az cosmosdb sql user-defined-function create -g MyResourceGroup -a MyAccount -d MyDatabase -c MyContainer -n MyUserDefinedFunction -b UserDefinedFunctionBody"
+            ]
+        },
+        {
+            "name": "az cosmosdb sql user-defined-function delete",
+            "summary": "Delete the SQL user defined function under an Azure Cosmos DB SQL container.",
+            "syntax": "az cosmosdb sql user-defined-function delete --account-name\n                                             --container-name\n                                             --database-name\n                                             --name\n                                             --resource-group\n                                             [--yes]",
+            "required_parameters": [
+                "--account-name -a",
+                "--container-name -c",
+                "--database-name -d",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--yes -y"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az cosmosdb sql user-defined-function list",
+            "summary": "List the SQL user defined functions under an Azure Cosmos DB SQL container.",
+            "syntax": "az cosmosdb sql user-defined-function list --account-name\n                                           --container-name\n                                           --database-name\n                                           --resource-group",
+            "required_parameters": [
+                "--account-name -a",
+                "--container-name -c",
+                "--database-name -d",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az cosmosdb sql user-defined-function show",
+            "summary": "Show the details of a SQL user defined function under an Azure Cosmos DB SQL container.",
+            "syntax": "az cosmosdb sql user-defined-function show --account-name\n                                           --container-name\n                                           --database-name\n                                           --name\n                                           --resource-group",
+            "required_parameters": [
+                "--account-name -a",
+                "--container-name -c",
+                "--database-name -d",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az cosmosdb sql user-defined-function update",
+            "summary": "Creates or Updates an Azure Cosmos DB SQL user defined function.",
+            "syntax": "az cosmosdb sql user-defined-function update --account-name\n                                             --body\n                                             --container-name\n                                             --database-name\n                                             --name\n                                             --resource-group",
+            "required_parameters": [
+                "--account-name -a",
+                "--body -b",
+                "--container-name -c",
+                "--database-name -d",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        }
+    ]
+}

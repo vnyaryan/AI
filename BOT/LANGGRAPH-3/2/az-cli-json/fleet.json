@@ -1,0 +1,150 @@
+{
+    "command_group": "az fleet",
+    "description": "Commands to manage fleet.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az fleet create",
+            "summary": "Creates or updates a fleet.",
+            "syntax": "az fleet create --name\n                --resource-group\n                [--agent-subnet-id]\n                [--apiserver-subnet-id]\n                [--assign-identity]\n                [--dns-name-prefix]\n                [--enable-hub]\n                [--enable-managed-identity]\n                [--enable-private-cluster]\n                [--enable-vnet-integration]\n                [--location]\n                [--no-wait]\n                [--tags]\n                [--vm-size]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--agent-subnet-id",
+                "--apiserver-subnet-id",
+                "--assign-identity",
+                "--dns-name-prefix -p",
+                "--enable-hub",
+                "--enable-managed-identity",
+                "--enable-private-cluster",
+                "--enable-vnet-integration",
+                "--location -l",
+                "--no-wait",
+                "--tags",
+                "--vm-size"
+            ],
+            "examples": [
+                "az fleet create -g MyFleetResourceGroup -l MyLocation -n MyFleetName --tags \"TagKey=TagValue\"",
+                "az fleet create -g MyFleetResourceGroup -l MyLocation -n MyFleetName --enable-hub --tags \"TagKey=TagValue\"",
+                "az fleet create -g MyFleetResourceGroup -l MyLocation -n MyFleetName --enable-managed-identity",
+                "az fleet create -g MyFleetResourceGroup -l MyLocation -n MyFleetName --enable-managed-identity --assign-identity \"/subscription/00000000-0000-0000-0000-000000000000/resourcegroup/MyFleetResourceGroup/providers/Microsoft.ManagedIdentity/userAssignedIdentities/MyIdentity\""
+            ]
+        },
+        {
+            "name": "az fleet delete",
+            "summary": "Deletes a fleet.",
+            "syntax": "az fleet delete --name\n                --resource-group\n                [--no-wait]\n                [--yes]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--no-wait",
+                "--yes -y"
+            ],
+            "examples": [
+                "az fleet delete -g MyFleetResourceGroup -n MyFleetName"
+            ]
+        },
+        {
+            "name": "az fleet get-credentials",
+            "summary": "For hubful fleets, gets the kubeconfig for the fleet's hub cluster.",
+            "syntax": "az fleet get-credentials --name\n                         --resource-group\n                         [--context]\n                         [--file]\n                         [--overwrite-existing]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--context",
+                "--file -f",
+                "--overwrite-existing"
+            ],
+            "examples": [
+                "az fleet get-credentials -g MyFleetResourceGroup -n MyFleetName",
+                "az fleet get-credentials -g MyFleetResourceGroup -n MyFleetName -f ~/mykubeconfigfile.txt"
+            ]
+        },
+        {
+            "name": "az fleet list",
+            "summary": "Lists all fleets within a resource group.",
+            "syntax": "az fleet list [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az fleet list",
+                "az fleet list -g MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az fleet reconcile",
+            "summary": "Reconciles a fleet.",
+            "syntax": "az fleet reconcile --name\n                   --resource-group\n                   [--no-wait]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--no-wait"
+            ],
+            "examples": [
+                "az fleet reconcile -g MyFleetResourceGroup -n MyFleetName"
+            ]
+        },
+        {
+            "name": "az fleet show",
+            "summary": "Gets a fleet.",
+            "syntax": "az fleet show --name\n              --resource-group",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az fleet show -g MyFleetResourceGroup -n MyFleetName"
+            ]
+        },
+        {
+            "name": "az fleet update",
+            "summary": "Patches a fleet resource.",
+            "syntax": "az fleet update --name\n                --resource-group\n                [--assign-identity]\n                [--enable-managed-identity {false, true}]\n                [--no-wait]\n                [--tags]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--assign-identity",
+                "--enable-managed-identity",
+                "--no-wait",
+                "--tags"
+            ],
+            "examples": [
+                "az fleet update -g MyFleetResourceGroup -n MyFleetName --tags Key=Value",
+                "az fleet update -g MyFleetResourceGroup -n MyFleetName --enable-managed-identity --tags Key=Value",
+                "az fleet update -g MyFleetResourceGroup -n MyFleetName --enable-managed-identity --assign-identity \"/subscription/00000000-0000-0000-0000-000000000000/resourcegroup/MyFleetResourceGroup/providers/Microsoft.ManagedIdentity/userAssignedIdentities/MyIdentity\" --tags Key=Value"
+            ]
+        },
+        {
+            "name": "az fleet wait",
+            "summary": "Wait for a fleet resource to reach a desired state.",
+            "syntax": "az fleet wait --fleet-name\n              --resource-group\n              [--created]\n              [--custom]\n              [--deleted]\n              [--exists]\n              [--interval]\n              [--timeout]\n              [--updated]",
+            "required_parameters": [
+                "--fleet-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--interval",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

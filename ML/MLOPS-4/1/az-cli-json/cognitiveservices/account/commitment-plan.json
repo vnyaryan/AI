@@ -1,0 +1,70 @@
+{
+    "command_group": "az cognitiveservices account commitment-plan",
+    "description": "Manage commitment plans for Azure Cognitive Services accounts.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az cognitiveservices account commitment-plan create",
+            "summary": "Create a commitment plan for Azure Cognitive Services account.",
+            "syntax": "az cognitiveservices account commitment-plan create --auto-renew {false, true}\n                                                    --commitment-plan-name\n                                                    --hosting-model {ConnectedContainer, DisconnectedContainer, ProvisionedWeb, Web}\n                                                    --name\n                                                    --plan-type\n                                                    --resource-group\n                                                    [--current-count]\n                                                    [--current-tier]\n                                                    [--next-count]\n                                                    [--next-tier]",
+            "required_parameters": [
+                "--auto-renew",
+                "--commitment-plan-name",
+                "--hosting-model",
+                "--name -n",
+                "--plan-type",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--current-count",
+                "--current-tier",
+                "--next-count",
+                "--next-tier"
+            ],
+            "examples": [
+                "az cognitiveservices account commitment-plan create -g yuanyang-test-sdk -n yytest-ta --commitment-plan-name \"plan\" --hosting-model \"Web\" --plan-type \"TA\" --auto-renew false --current-tier \"T1\" --next-tier \"T2\""
+            ]
+        },
+        {
+            "name": "az cognitiveservices account commitment-plan delete",
+            "summary": "Delete a commitment plan from Azure Cognitive Services account.",
+            "syntax": "az cognitiveservices account commitment-plan delete --commitment-plan-name\n                                                    --name\n                                                    --resource-group",
+            "required_parameters": [
+                "--commitment-plan-name",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az cognitiveservices account commitment-plan delete -g yuanyang-test-sdk -n yytest-ta --commitment-plan-name \"plan\""
+            ]
+        },
+        {
+            "name": "az cognitiveservices account commitment-plan list",
+            "summary": "Show all commitment plans from Azure Cognitive Services account.",
+            "syntax": "az cognitiveservices account commitment-plan list --name\n                                                  --resource-group",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az cognitiveservices account commitment-plan list -g yuanyang-test-sdk -n yytest-ta"
+            ]
+        },
+        {
+            "name": "az cognitiveservices account commitment-plan show",
+            "summary": "Show a commitment plan from Azure Cognitive Services account.",
+            "syntax": "az cognitiveservices account commitment-plan show --commitment-plan-name\n                                                  --name\n                                                  --resource-group",
+            "required_parameters": [
+                "--commitment-plan-name",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az cognitiveservices account commitment-plan show -g yuanyang-test-sdk -n yytest-ta --commitment-plan-name \"plan\""
+            ]
+        }
+    ]
+}

@@ -1,0 +1,48 @@
+{
+    "command_group": "az partnercenter marketplace offer submission",
+    "description": "Manage a Marketplace Offer's submissions.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az partnercenter marketplace offer submission list",
+            "summary": "List the submissions of a marketplace offer.",
+            "syntax": "az partnercenter marketplace offer submission list --offer-id",
+            "required_parameters": [
+                "--offer-id"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az partnercenter marketplace offer submission list --offer-id MyOfferId"
+            ]
+        },
+        {
+            "name": "az partnercenter marketplace offer submission publish",
+            "summary": "Publish the submissions of a marketplace offer.",
+            "syntax": "az partnercenter marketplace offer submission publish --offer-id\n                                                      --submission-id\n                                                      --target {draft, live, preview}",
+            "required_parameters": [
+                "--offer-id",
+                "--submission-id",
+                "--target"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az partnercenter marketplace offer submission publish --offer-id MyOfferId  --submission-id 11521167929065 --target draft",
+                "az partnercenter marketplace offer submission publish --offer-id MyOfferId  --submission-id 11521167929065 --target preview",
+                "az partnercenter marketplace offer submission publish --offer-id MyOfferId  --submission-id 11521167929065 --target live"
+            ]
+        },
+        {
+            "name": "az partnercenter marketplace offer submission show",
+            "summary": "Get the submission of a marketplace offer.",
+            "syntax": "az partnercenter marketplace offer submission show --offer-id\n                                                   --submission-id",
+            "required_parameters": [
+                "--offer-id",
+                "--submission-id"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az partnercenter marketplace offer submission show --offer-id MyOfferId --submission-id 11521167929065"
+            ]
+        }
+    ]
+}

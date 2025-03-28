@@ -1,0 +1,25 @@
+{
+    "command_group": "az repos import",
+    "description": "Manage Git repositories import.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az repos import create",
+            "summary": "Create a git import request.",
+            "syntax": "az repos import create --git-source-url\n                       [--detect {false, true}]\n                       [--git-service-endpoint-id]\n                       [--org]\n                       [--project]\n                       [--repository]\n                       [--requires-authorization]\n                       [--user-name]",
+            "required_parameters": [
+                "--git-source-url --git-url"
+            ],
+            "optional_parameters": [
+                "--detect",
+                "--git-service-endpoint-id",
+                "--org --organization",
+                "--project -p",
+                "--repository -r",
+                "--requires-authorization",
+                "--user-name"
+            ],
+            "examples": []
+        }
+    ]
+}

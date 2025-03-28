@@ -1,0 +1,150 @@
+{
+    "command_group": "az network dns record-set naptr",
+    "description": "Manage DNS NAPTR records.",
+    "status": "Experimental",
+    "commands": [
+        {
+            "name": "az network dns record-set naptr add-record",
+            "summary": "Add a NAPTR record.",
+            "syntax": "az network dns record-set naptr add-record --flags\n                                           --order\n                                           --preference\n                                           --record-set-name\n                                           --regexp\n                                           --replacement\n                                           --resource-group\n                                           --services\n                                           --zone-name\n                                           [--if-none-match]\n                                           [--ttl]",
+            "required_parameters": [
+                "--flags",
+                "--order",
+                "--preference",
+                "--record-set-name -n",
+                "--regexp",
+                "--replacement",
+                "--resource-group -g",
+                "--services",
+                "--zone-name -z"
+            ],
+            "optional_parameters": [
+                "--if-none-match",
+                "--ttl"
+            ],
+            "examples": [
+                "az network dns record-set naptr add-record -g MyResourceGroup -z www.mysite.com \\\n    -n MyRecordSet --flags \"U\" --order 10 --preference 20 --services \"E2U+sip\" --regexp \"!^.*$!sip:customer-service@example.com!\" --replacement ."
+            ]
+        },
+        {
+            "name": "az network dns record-set naptr create",
+            "summary": "Create an NAPTR record set.",
+            "syntax": "az network dns record-set naptr create --name\n                                       --resource-group\n                                       --zone-name\n                                       [--if-match]\n                                       [--if-none-match]\n                                       [--metadata]\n                                       [--target-resource]\n                                       [--tm-profile]\n                                       [--ttl]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g",
+                "--zone-name -z"
+            ],
+            "optional_parameters": [
+                "--if-match",
+                "--if-none-match",
+                "--metadata",
+                "--target-resource",
+                "--tm-profile --traffic-management-profile",
+                "--ttl"
+            ],
+            "examples": [
+                "az network dns record-set naptr create -g MyResourceGroup -z www.mysite.com -n MyRecordSet --metadata owner=WebTeam"
+            ]
+        },
+        {
+            "name": "az network dns record-set naptr delete",
+            "summary": "Delete an NAPTR record set.",
+            "syntax": "az network dns record-set naptr delete [--ids]\n                                       [--if-match]\n                                       [--name]\n                                       [--resource-group]\n                                       [--subscription]\n                                       [--yes]\n                                       [--zone-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--if-match",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y",
+                "--zone-name -z"
+            ],
+            "examples": [
+                "az network dns record-set naptr delete -g MyResourceGroup -z www.mysite.com -n MyRecordSet"
+            ]
+        },
+        {
+            "name": "az network dns record-set naptr list",
+            "summary": "List NAPTR record sets in a zone.",
+            "syntax": "az network dns record-set naptr list --resource-group\n                                     --zone-name\n                                     [--max-items]\n                                     [--next-token]\n                                     [--recordsetnamesuffix]\n                                     [--top]",
+            "required_parameters": [
+                "--resource-group -g",
+                "--zone-name -z"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token",
+                "--recordsetnamesuffix",
+                "--top"
+            ],
+            "examples": [
+                "az network dns record-set naptr list -g MyResourceGroup -z www.mysite.com"
+            ]
+        },
+        {
+            "name": "az network dns record-set naptr remove-record",
+            "summary": "Remove a NAPTR record from its record set.",
+            "syntax": "az network dns record-set naptr remove-record --flags\n                                              --order\n                                              --preference\n                                              --record-set-name\n                                              --regexp\n                                              --replacement\n                                              --resource-group\n                                              --services\n                                              --zone-name\n                                              [--keep-empty-record-set]",
+            "required_parameters": [
+                "--flags",
+                "--order",
+                "--preference",
+                "--record-set-name -n",
+                "--regexp",
+                "--replacement",
+                "--resource-group -g",
+                "--services",
+                "--zone-name -z"
+            ],
+            "optional_parameters": [
+                "--keep-empty-record-set"
+            ],
+            "examples": [
+                "az network dns record-set naptr remove-record -g MyResourceGroup -z www.mysite.com \\\n    -n MyRecordSet --flags \"U\" --order 10 --preference 20 --services \"E2U+sip\" --regexp \"!^.*$!sip:customer-service@example.com!\" --replacement ."
+            ]
+        },
+        {
+            "name": "az network dns record-set naptr show",
+            "summary": "Get an NAPTR record set.",
+            "syntax": "az network dns record-set naptr show [--ids]\n                                     [--name]\n                                     [--resource-group]\n                                     [--subscription]\n                                     [--zone-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--zone-name -z"
+            ],
+            "examples": [
+                "az network dns record-set naptr show -g MyResourceGroup -z www.mysite.com -n MyRecordSet"
+            ]
+        },
+        {
+            "name": "az network dns record-set naptr update",
+            "summary": "Update an NAPTR record set.",
+            "syntax": "az network dns record-set naptr update [--add]\n                                       [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                       [--ids]\n                                       [--if-match]\n                                       [--if-none-match]\n                                       [--metadata]\n                                       [--name]\n                                       [--remove]\n                                       [--resource-group]\n                                       [--set]\n                                       [--subscription]\n                                       [--target-resource]\n                                       [--tm-profile]\n                                       [--zone-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--force-string",
+                "--ids",
+                "--if-match",
+                "--if-none-match",
+                "--metadata",
+                "--name -n",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--subscription",
+                "--target-resource",
+                "--tm-profile --traffic-management-profile",
+                "--zone-name -z"
+            ],
+            "examples": [
+                "az network dns record-set naptr update -g MyResourceGroup -z www.mysite.com -n MyRecordSet --metadata owner=WebTeam"
+            ]
+        }
+    ]
+}

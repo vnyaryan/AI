@@ -1,0 +1,6 @@
+{
+    "command_group": "az spring application-configuration-service git",
+    "description": "Commands to manage Application Configuration Service git property in Azure Spring Apps.",
+    "status": "GA",
+    "commands": []
+}

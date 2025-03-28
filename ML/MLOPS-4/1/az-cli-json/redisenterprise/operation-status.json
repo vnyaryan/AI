@@ -1,0 +1,22 @@
+{
+    "command_group": "az redisenterprise operation-status",
+    "description": "Get the status of an operation.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az redisenterprise operation-status show",
+            "summary": "Get the status of operation.",
+            "syntax": "az redisenterprise operation-status show [--ids]\n                                         [--location]\n                                         [--name]\n                                         [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--location -l",
+                "--name --operation-id -n",
+                "--subscription"
+            ],
+            "examples": [
+                "az redisenterprise operation-status show --operation-id \"testoperationid\" --location \"West US\""
+            ]
+        }
+    ]
+}

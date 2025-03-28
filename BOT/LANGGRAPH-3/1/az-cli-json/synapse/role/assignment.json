@@ -1,0 +1,97 @@
+{
+    "command_group": "az synapse role assignment",
+    "description": "Manage Synapse's role assignments.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az synapse role assignment create",
+            "summary": "Create a role assignment.",
+            "syntax": "az synapse role assignment create --role\n                                  --workspace-name\n                                  [--assignee]\n                                  [--assignee-object-id]\n                                  [--assignee-principal-type {Group, ServicePrincipal, User}]\n                                  [--assignment-id]\n                                  [--item]\n                                  [--item-type {bigDataPools, credentials, integrationRuntimes, linkedServices}]\n                                  [--scope]",
+            "required_parameters": [
+                "--role",
+                "--workspace-name"
+            ],
+            "optional_parameters": [
+                "--assignee",
+                "--assignee-object-id",
+                "--assignee-principal-type --assignee-type",
+                "--assignment-id",
+                "--item",
+                "--item-type",
+                "--scope"
+            ],
+            "examples": [
+                "az synapse role assignment create --workspace-name testsynapseworkspace \\\n--role \"Synapse Administrator\" --assignee sp_name",
+                "az synapse role assignment create --workspace-name testsynapseworkspace \\\n--role \"Synapse Administrator\" --assignee username@contoso.com",
+                "az synapse role assignment create --workspace-name testsynapseworkspace \\\n--role \"Synapse Administrator\" --assignee 00000000-0000-0000-0000-000000000000",
+                "az synapse role assignment create --workspace-name testsynapseworkspace \\\n--scope \"workspaces/{workspaceName}\" --role \"Synapse Administrator\" --assignee username@contoso.com",
+                "az synapse role assignment create --workspace-name testsynapseworkspace \\\n--item-type \"bigDataPools\" --item \"bigDataPoolName\" --role \"Synapse Administrator\" \\\n--assignee username@contoso.com",
+                "az synapse role assignment create \\\n--workspace-name testsynapseworkspace \\\n--role \"6e4bf58a-b8e1-4cc3-bbf9-d73143322b78\" \\\n--assignee username@contoso.com"
+            ]
+        },
+        {
+            "name": "az synapse role assignment delete",
+            "summary": "Delete role assignments of workspace.",
+            "syntax": "az synapse role assignment delete --workspace-name\n                                  [--assignee]\n                                  [--assignee-object-id]\n                                  [--ids]\n                                  [--item]\n                                  [--item-type {bigDataPools, credentials, integrationRuntimes, linkedServices}]\n                                  [--role]\n                                  [--scope]\n                                  [--yes]",
+            "required_parameters": [
+                "--workspace-name"
+            ],
+            "optional_parameters": [
+                "--assignee",
+                "--assignee-object-id",
+                "--ids",
+                "--item",
+                "--item-type",
+                "--role",
+                "--scope",
+                "--yes -y"
+            ],
+            "examples": [
+                "az synapse role assignment delete --workspace-name testsynapseworkspace \\\n--role \"Synapse Administrator\" --assignee sp_name",
+                "az synapse role assignment delete --workspace-name testsynapseworkspace \\\n--role \"Synapse Administrator\"",
+                "az synapse role assignment delete --workspace-name testsynapseworkspace \\\n--assignee sp_name",
+                "az synapse role assignment delete --workspace-name testsynapseworkspace \\\n--assignee username@contoso.com",
+                "az synapse role assignment delete --workspace-name testsynapseworkspace \\\n--assignee 00000000-0000-0000-0000-000000000001",
+                "az synapse role assignment delete --workspace-name testsynapseworkspace \\\n--ids 10000000-0000-0000-0000-10000000-10000000-0000-0000-0000-10000000",
+                "az synapse role assignment delete --workspace-name testsynapseworkspace \\\n--scope \"workspaces/testsynapseworkspace/linkedServices/testlinkedServices\""
+            ]
+        },
+        {
+            "name": "az synapse role assignment list",
+            "summary": "List role assignments.",
+            "syntax": "az synapse role assignment list --workspace-name\n                                [--assignee]\n                                [--assignee-object-id]\n                                [--item]\n                                [--item-type {bigDataPools, credentials, integrationRuntimes, linkedServices}]\n                                [--role]\n                                [--scope]",
+            "required_parameters": [
+                "--workspace-name"
+            ],
+            "optional_parameters": [
+                "--assignee",
+                "--assignee-object-id",
+                "--item",
+                "--item-type",
+                "--role",
+                "--scope"
+            ],
+            "examples": [
+                "az synapse role assignment list --workspace-name testsynapseworkspace",
+                "az synapse role assignment list --workspace-name testsynapseworkspace \\\n--role \"Synapse Apache Spark Administrator\"",
+                "az synapse role assignment list --workspace-name testsynapseworkspace \\\n--assignee sp_name",
+                "az synapse role assignment list --workspace-name testsynapseworkspace \\\n--assignee-object-id 00000000-0000-0000-0000-000000000000",
+                "az synapse role assignment list --workspace-name testsynapseworkspace \\\n--scope \"workspaces/{workspaceName}\"",
+                "az synapse role assignment list --workspace-name testsynapseworkspace \\\n--item-type \"bigDataPools\" --item \"bigDataPoolName\""
+            ]
+        },
+        {
+            "name": "az synapse role assignment show",
+            "summary": "Get a role assignment by id.",
+            "syntax": "az synapse role assignment show --id\n                                --workspace-name",
+            "required_parameters": [
+                "--id",
+                "--workspace-name"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az synapse role assignment show --workspace-name testsynapseworkspace \\\n--id 00000000-0000-0000-0000-000000000000"
+            ]
+        }
+    ]
+}

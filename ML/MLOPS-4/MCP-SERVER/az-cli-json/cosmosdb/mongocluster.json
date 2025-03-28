@@ -1,0 +1,92 @@
+{
+    "command_group": "az cosmosdb mongocluster",
+    "description": "Mongo cluster.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az cosmosdb mongocluster create",
+            "summary": "Create a Mongo cluster.",
+            "syntax": "az cosmosdb mongocluster create --administrator-login\n                                --administrator-login-password\n                                --cluster-name\n                                --location\n                                --resource-group\n                                --server-version\n                                --shard-node-count\n                                --shard-node-disk-size-gb\n                                --shard-node-ha {false, true}\n                                --shard-node-tier\n                                [--tags]",
+            "required_parameters": [
+                "--administrator-login -a",
+                "--administrator-login-password -p",
+                "--cluster-name -c",
+                "--location -l",
+                "--resource-group -g",
+                "--server-version",
+                "--shard-node-count",
+                "--shard-node-disk-size-gb -d",
+                "--shard-node-ha",
+                "--shard-node-tier"
+            ],
+            "optional_parameters": [
+                "--tags"
+            ],
+            "examples": [
+                "az cosmosdb mongocluster create \\\n--cluster-name MyCluster \\\n--resource-group MyResourceGroup \\\n--location MyLocation \\\n--administrator-login MyAdminUser \\\n--administrator-login-password MyAdminPassword \\\n--server-version 5.0 \\\n--shard-node-tier \"M30\" \\\n--shard-node-ha true \\\n--shard-node-disk-size-gb 128 \\\n--shard-node-count 2"
+            ]
+        },
+        {
+            "name": "az cosmosdb mongocluster delete",
+            "summary": "Delete a Mongo Cluster Resource.",
+            "syntax": "az cosmosdb mongocluster delete --cluster-name\n                                --resource-group\n                                [--yes]",
+            "required_parameters": [
+                "--cluster-name -c",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--yes -y"
+            ],
+            "examples": [
+                "az cosmosdb mongocluster delete --cluster-name MyCluster --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az cosmosdb mongocluster list",
+            "summary": "List a Mongo Cluster Resource.",
+            "syntax": "az cosmosdb mongocluster list [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az cosmosdb mongocluster list --resource-group MyResourceGroup",
+                "az cosmosdb mongocluster list"
+            ]
+        },
+        {
+            "name": "az cosmosdb mongocluster show",
+            "summary": "Get a Mongo Cluster Resource.",
+            "syntax": "az cosmosdb mongocluster show --cluster-name\n                              --resource-group",
+            "required_parameters": [
+                "--cluster-name -c",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az cosmosdb mongocluster show --cluster-name MyCluster --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az cosmosdb mongocluster update",
+            "summary": "Update a Mongo cluster.",
+            "syntax": "az cosmosdb mongocluster update --cluster-name\n                                --resource-group\n                                [--administrator-login]\n                                [--administrator-login-password]\n                                [--server-version]\n                                [--shard-node-disk-size-gb]\n                                [--shard-node-ha {false, true}]\n                                [--shard-node-tier]\n                                [--tags]",
+            "required_parameters": [
+                "--cluster-name -c",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--administrator-login -a",
+                "--administrator-login-password -p",
+                "--server-version",
+                "--shard-node-disk-size-gb -d",
+                "--shard-node-ha",
+                "--shard-node-tier",
+                "--tags"
+            ],
+            "examples": [
+                "az cosmosdb mongocluster update \\\n--cluster-name MyCluster \\\n--resource-group MyResourceGroup \\\n--administrator-login MyAdminUser \\\n--administrator-login-password MyAdminPassword \\\n--server-version 5.0 \\\n--shard-node-tier \"M30\" \\\n--shard-node-ha true \\\n--shard-node-disk-size-gb 128"
+            ]
+        }
+    ]
+}

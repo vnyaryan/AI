@@ -1,0 +1,200 @@
+{
+    "command_group": "az aro",
+    "description": "Manage Azure Red Hat OpenShift clusters.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az aro create",
+            "summary": "Create a cluster.",
+            "syntax": "az aro create --master-subnet\n              --name\n              --resource-group\n              --worker-subnet\n              [--apiserver-visibility {Private, Public}]\n              [--client-id]\n              [--client-secret]\n              [--cluster-resource-group]\n              [--disk-encryption-set]\n              [--domain]\n              [--enable-preconfigured-nsg {false, true}]\n              [--fips {false, true}]\n              [--ingress-visibility {Private, Public}]\n              [--lb-ip-count]\n              [--location]\n              [--master-enc-host {false, true}]\n              [--master-vm-size]\n              [--no-wait]\n              [--outbound-type]\n              [--pod-cidr]\n              [--pull-secret]\n              [--service-cidr]\n              [--tags]\n              [--version]\n              [--vnet]\n              [--vnet-resource-group]\n              [--worker-count]\n              [--worker-enc-host {false, true}]\n              [--worker-vm-disk-size-gb]\n              [--worker-vm-size]",
+            "required_parameters": [
+                "--master-subnet",
+                "--name -n",
+                "--resource-group -g",
+                "--worker-subnet"
+            ],
+            "optional_parameters": [
+                "--apiserver-visibility",
+                "--client-id",
+                "--client-secret",
+                "--cluster-resource-group",
+                "--disk-encryption-set",
+                "--domain",
+                "--enable-preconfigured-nsg",
+                "--fips --fips-validated-modules",
+                "--ingress-visibility",
+                "--lb-ip-count --load-balancer-managed-outbound-ip-count",
+                "--location -l",
+                "--master-enc-host --master-encryption-at-host",
+                "--master-vm-size",
+                "--no-wait",
+                "--outbound-type",
+                "--pod-cidr",
+                "--pull-secret",
+                "--service-cidr",
+                "--tags",
+                "--version",
+                "--vnet",
+                "--vnet-resource-group",
+                "--worker-count",
+                "--worker-enc-host --worker-encryption-at-host",
+                "--worker-vm-disk-size-gb",
+                "--worker-vm-size"
+            ],
+            "examples": [
+                "az aro create --resource-group MyResourceGroup --name MyCluster --vnet MyVnet --master-subnet MyMasterSubnet --worker-subnet MyWorkerSubnet",
+                "az aro create --resource-group MyResourceGroup --name MyCluster --vnet MyVnet --master-subnet MyMasterSubnet --worker-subnet MyWorkerSubnet --version X.Y.Z",
+                "az aro create --resource-group MyResourceGroup --name MyCluster --vnet MyVnet --master-subnet MyMasterSubnet --worker-subnet MyWorkerSubnet --worker-count 5 --pull-secret pullsecret.txt",
+                "az aro create --resource-group MyResourceGroup --name MyCluster --vnet MyVnet --master-subnet MyMasterSubnet --worker-subnet MyWorkerSubnet --apiserver-visibility Private --ingress-visibility Private"
+            ]
+        },
+        {
+            "name": "az aro delete",
+            "summary": "Delete a cluster.",
+            "syntax": "az aro delete --name\n              --resource-group\n              [--no-wait]\n              [--yes]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--no-wait",
+                "--yes -y"
+            ],
+            "examples": [
+                "az aro delete --name MyCluster --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az aro get-admin-kubeconfig",
+            "summary": "List admin kubeconfig of a cluster.",
+            "syntax": "az aro get-admin-kubeconfig --name\n                            --resource-group\n                            [--file]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--file -f"
+            ],
+            "examples": [
+                "az aro get-admin-kubeconfig --name MyCluster --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az aro get-versions",
+            "summary": "List versions available for installation.",
+            "syntax": "az aro get-versions --location",
+            "required_parameters": [
+                "--location -l"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az aro get-versions --location eastus",
+                "az aro get-versions --location eastus -o table"
+            ]
+        },
+        {
+            "name": "az aro list",
+            "summary": "List clusters.",
+            "syntax": "az aro list [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az aro list",
+                "az aro list -o table"
+            ]
+        },
+        {
+            "name": "az aro list-credentials",
+            "summary": "List credentials of a cluster.",
+            "syntax": "az aro list-credentials --name\n                        --resource-group",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az aro list-credentials --name MyCluster --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az aro show",
+            "summary": "Get the details of a cluster.",
+            "syntax": "az aro show --name\n            --resource-group",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az aro show --name MyCluster --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az aro update",
+            "summary": "Update a cluster.",
+            "syntax": "az aro update --name\n              --resource-group\n              [--client-id]\n              [--client-secret]\n              [--lb-ip-count]\n              [--no-wait]\n              [--refresh-credentials {false, true}]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--client-id",
+                "--client-secret",
+                "--lb-ip-count --load-balancer-managed-outbound-ip-count",
+                "--no-wait",
+                "--refresh-credentials"
+            ],
+            "examples": [
+                "az aro update --name MyCluster --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az aro validate",
+            "summary": "Validate permissions required to create a cluster.",
+            "syntax": "az aro validate --master-subnet\n                --name\n                --resource-group\n                --worker-subnet\n                [--client-id]\n                [--client-secret]\n                [--cluster-resource-group]\n                [--disk-encryption-set]\n                [--location]\n                [--pod-cidr]\n                [--service-cidr]\n                [--version]\n                [--vnet]\n                [--vnet-resource-group]",
+            "required_parameters": [
+                "--master-subnet",
+                "--name -n",
+                "--resource-group -g",
+                "--worker-subnet"
+            ],
+            "optional_parameters": [
+                "--client-id",
+                "--client-secret",
+                "--cluster-resource-group",
+                "--disk-encryption-set",
+                "--location -l",
+                "--pod-cidr",
+                "--service-cidr",
+                "--version",
+                "--vnet",
+                "--vnet-resource-group"
+            ],
+            "examples": [
+                "az aro validate --resource-group MyGroup --name MyName --vnet MyVnet --master-subnet MyMasterSubnet --worker-subnet MyWorkerSubnet",
+                "az aro validate --resource-group MyGroup --name MyName --vnet MyVnet --master-subnet MyMasterSubnet --worker-subnet MyWorkerSubnet --version X.Y.Z"
+            ]
+        },
+        {
+            "name": "az aro wait",
+            "summary": "Wait for a cluster to reach a desired state.",
+            "syntax": "az aro wait --name\n            --resource-group\n            [--created]\n            [--custom]\n            [--deleted]\n            [--exists]\n            [--interval]\n            [--timeout]\n            [--updated]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--interval",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

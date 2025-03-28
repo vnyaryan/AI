@@ -1,0 +1,174 @@
+{
+    "command_group": "az devcenter admin catalog",
+    "description": "Manage catalogs.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az devcenter admin catalog connect",
+            "summary": "Connects a catalog to enable syncing.",
+            "syntax": "az devcenter admin catalog connect [--catalog-name]\n                                   [--dev-center]\n                                   [--ids]\n                                   [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                   [--resource-group]\n                                   [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--catalog-name --name -n",
+                "--dev-center --dev-center-name -d",
+                "--ids",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az devcenter admin catalog connect --name \"CentralCatalog\" --dev-center-name \"Contoso\" --resource-group \"rg1\""
+            ]
+        },
+        {
+            "name": "az devcenter admin catalog create",
+            "summary": "Create a catalog.",
+            "syntax": "az devcenter admin catalog create --catalog-name\n                                  --dev-center\n                                  --resource-group\n                                  [--ado-git]\n                                  [--git-hub]\n                                  [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                  [--sync-type {Manual, Scheduled}]\n                                  [--tags]",
+            "required_parameters": [
+                "--catalog-name --name -n",
+                "--dev-center --dev-center-name -d",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--ado-git",
+                "--git-hub",
+                "--no-wait",
+                "--sync-type",
+                "--tags"
+            ],
+            "examples": [
+                "az devcenter admin catalog create --ado-git path=\"/templates\" branch=\"main\" secret-identifier=\"https://contosokv.vault.azure.net/secrets/CentralRepoPat\" uri=\"https://contoso@dev.azure.com/contoso/contosoOrg/_git/centralrepo-fakecontoso\" --name \"CentralCatalog\" --dev-center-name \"Contoso\" --resource-group \"rg1\"",
+                "az devcenter admin catalog create --git-hub path=\"/templates\" branch=\"main\" secret-identifier=\"https://contosokv.vault.azure.net/secrets/CentralRepoPat\" uri=\"https://github.com/Contoso/centralrepo-fake.git\" --name \"CentralCatalog\" --dev-center-name \"Contoso\" --resource-group \"rg1\""
+            ]
+        },
+        {
+            "name": "az devcenter admin catalog delete",
+            "summary": "Delete a catalog resource.",
+            "syntax": "az devcenter admin catalog delete [--catalog-name]\n                                  [--dev-center]\n                                  [--ids]\n                                  [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                  [--resource-group]\n                                  [--subscription]\n                                  [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--catalog-name --name -n",
+                "--dev-center --dev-center-name -d",
+                "--ids",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az devcenter admin catalog delete --name \"CentralCatalog\" --dev-center-name \"Contoso\" --resource-group \"rg1\""
+            ]
+        },
+        {
+            "name": "az devcenter admin catalog get-sync-error-detail",
+            "summary": "Gets catalog synchronization error details.",
+            "syntax": "az devcenter admin catalog get-sync-error-detail [--catalog-name]\n                                                 [--dev-center]\n                                                 [--ids]\n                                                 [--resource-group]\n                                                 [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--catalog-name --name -n",
+                "--dev-center --dev-center-name -d",
+                "--ids",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az devcenter admin catalog get-sync-error-detail --name \"CentralCatalog\" --dev-center-name \"Contoso\" --resource-group \"rg1\""
+            ]
+        },
+        {
+            "name": "az devcenter admin catalog list",
+            "summary": "List catalogs for a dev center.",
+            "syntax": "az devcenter admin catalog list --dev-center\n                                --resource-group\n                                [--max-items]\n                                [--next-token]",
+            "required_parameters": [
+                "--dev-center --dev-center-name -d",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az devcenter admin catalog list --dev-center-name \"Contoso\" --resource-group \"rg1\""
+            ]
+        },
+        {
+            "name": "az devcenter admin catalog show",
+            "summary": "Get a catalog.",
+            "syntax": "az devcenter admin catalog show [--catalog-name]\n                                [--dev-center]\n                                [--ids]\n                                [--resource-group]\n                                [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--catalog-name --name -n",
+                "--dev-center --dev-center-name -d",
+                "--ids",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az devcenter admin catalog show --name \"CentralCatalog\" --dev-center-name \"Contoso\" --resource-group \"rg1\""
+            ]
+        },
+        {
+            "name": "az devcenter admin catalog sync",
+            "summary": "Syncs templates for a template source.",
+            "syntax": "az devcenter admin catalog sync [--catalog-name]\n                                [--dev-center]\n                                [--ids]\n                                [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                [--resource-group]\n                                [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--catalog-name --name -n",
+                "--dev-center --dev-center-name -d",
+                "--ids",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az devcenter admin catalog sync --name \"CentralCatalog\" --dev-center-name \"Contoso\" --resource-group \"rg1\""
+            ]
+        },
+        {
+            "name": "az devcenter admin catalog update",
+            "summary": "Update a catalog.",
+            "syntax": "az devcenter admin catalog update [--add]\n                                  [--ado-git]\n                                  [--catalog-name]\n                                  [--dev-center]\n                                  [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                  [--git-hub]\n                                  [--ids]\n                                  [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                  [--remove]\n                                  [--resource-group]\n                                  [--set]\n                                  [--subscription]\n                                  [--sync-type {Manual, Scheduled}]\n                                  [--tags]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--ado-git",
+                "--catalog-name --name -n",
+                "--dev-center --dev-center-name -d",
+                "--force-string",
+                "--git-hub",
+                "--ids",
+                "--no-wait",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--subscription",
+                "--sync-type",
+                "--tags"
+            ],
+            "examples": [
+                "az devcenter admin catalog update --git-hub path=\"/environments\" --name \"CentralCatalog\" --dev-center-name \"Contoso\" --resource-group \"rg1\""
+            ]
+        },
+        {
+            "name": "az devcenter admin catalog wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az devcenter admin catalog wait [--catalog-name]\n                                [--created]\n                                [--custom]\n                                [--deleted]\n                                [--dev-center]\n                                [--exists]\n                                [--ids]\n                                [--interval]\n                                [--resource-group]\n                                [--subscription]\n                                [--timeout]\n                                [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--catalog-name --name -n",
+                "--created",
+                "--custom",
+                "--deleted",
+                "--dev-center --dev-center-name -d",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

@@ -1,0 +1,6 @@
+{
+    "command_group": "az networkcloud",
+    "description": "Manage Network Cloud resources.",
+    "status": "GA",
+    "commands": []
+}

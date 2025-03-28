@@ -1,0 +1,112 @@
+{
+    "command_group": "az providerhub authorized-application",
+    "description": "Manage authorized application with providerhub.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az providerhub authorized-application create",
+            "summary": "Create the authorized application.",
+            "syntax": "az providerhub authorized-application create --application-id\n                                             --provider-namespace\n                                             [--data-authorizations]\n                                             [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                             [--provider-authorization]",
+            "required_parameters": [
+                "--application-id --name -n",
+                "--provider-namespace"
+            ],
+            "optional_parameters": [
+                "--data-authorizations",
+                "--no-wait",
+                "--provider-authorization"
+            ],
+            "examples": [
+                "az providerhub authorized-application create -n \"8b51e6a7-7814-42bd-aa17-3fb1837b3b7a\" --data-authorizations \"[{{role:ServiceOwner}}]\" --provider-namespace \"{providerNamespace}\""
+            ]
+        },
+        {
+            "name": "az providerhub authorized-application delete",
+            "summary": "Delete an authorized application.",
+            "syntax": "az providerhub authorized-application delete [--application-id]\n                                             [--ids]\n                                             [--provider-namespace]\n                                             [--subscription]\n                                             [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--application-id --name -n",
+                "--ids",
+                "--provider-namespace",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az providerhub authorized-application delete -y -n \"8b51e6a7-7814-42bd-aa17-3fb1837b3b7a\" --provider-namespace \"{providerNamespace}\""
+            ]
+        },
+        {
+            "name": "az providerhub authorized-application list",
+            "summary": "List the list of the authorized applications in the provider namespace.",
+            "syntax": "az providerhub authorized-application list --provider-namespace\n                                           [--max-items]\n                                           [--next-token]",
+            "required_parameters": [
+                "--provider-namespace"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az providerhub authorized-application list --provider-namespace \"{providerNamespace}\""
+            ]
+        },
+        {
+            "name": "az providerhub authorized-application show",
+            "summary": "Get the authorized application details.",
+            "syntax": "az providerhub authorized-application show [--application-id]\n                                           [--ids]\n                                           [--provider-namespace]\n                                           [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--application-id --name -n",
+                "--ids",
+                "--provider-namespace",
+                "--subscription"
+            ],
+            "examples": [
+                "az providerhub authorized-application show -n \"8b51e6a7-7814-42bd-aa17-3fb1837b3b7a\" --provider-namespace \"{providerNamespace}\""
+            ]
+        },
+        {
+            "name": "az providerhub authorized-application update",
+            "summary": "Update the authorized application.",
+            "syntax": "az providerhub authorized-application update [--add]\n                                             [--application-id]\n                                             [--data-authorizations]\n                                             [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                             [--ids]\n                                             [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                             [--provider-authorization]\n                                             [--provider-namespace]\n                                             [--remove]\n                                             [--set]\n                                             [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--application-id --name -n",
+                "--data-authorizations",
+                "--force-string",
+                "--ids",
+                "--no-wait",
+                "--provider-authorization",
+                "--provider-namespace",
+                "--remove",
+                "--set",
+                "--subscription"
+            ],
+            "examples": [
+                "az providerhub authorized-application update -n \"8b51e6a7-7814-42bd-aa17-3fb1837b3b7a\" --data-authorizations \"[{{role:ServiceOwner}}]\" --provider-namespace \"{providerNamespace}\""
+            ]
+        },
+        {
+            "name": "az providerhub authorized-application wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az providerhub authorized-application wait [--application-id]\n                                           [--created]\n                                           [--custom]\n                                           [--deleted]\n                                           [--exists]\n                                           [--ids]\n                                           [--interval]\n                                           [--provider-namespace]\n                                           [--subscription]\n                                           [--timeout]\n                                           [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--application-id --name -n",
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--provider-namespace",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

@@ -1,0 +1,43 @@
+{
+    "command_group": "az serial-console",
+    "description": "Connect to the Serial Console of a Linux/Windows Virtual Machine or VMSS Instance.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az serial-console connect",
+            "summary": "Connect to Serial Console VM or VMSS Instance.",
+            "syntax": "az serial-console connect --name\n                          --resource-group\n                          [--instance-id]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--instance-id"
+            ],
+            "examples": [
+                "az serial-console connect -n MyVM -g MyResourceGroup",
+                "az serial-console connect -n MyVMSS -g MyResourceGroup --instance-id 2"
+            ]
+        },
+        {
+            "name": "az serial-console disable",
+            "summary": "Disable the serial console service for an entire subscription.",
+            "syntax": "az serial-console disable",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "examples": [
+                "az serial-console disable"
+            ]
+        },
+        {
+            "name": "az serial-console enable",
+            "summary": "Enable the serial console service for an entire subscription.",
+            "syntax": "az serial-console enable",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "examples": [
+                "az serial-console enable"
+            ]
+        }
+    ]
+}

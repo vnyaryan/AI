@@ -1,0 +1,33 @@
+{
+    "command_group": "az stack-hci cluster identity",
+    "description": "Manage identity.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az stack-hci cluster identity assign",
+            "summary": "Assign identities.",
+            "syntax": "az stack-hci cluster identity assign --cluster-name\n                                     --resource-group\n                                     [--system-assigned {0, 1, f, false, n, no, t, true, y, yes}]",
+            "required_parameters": [
+                "--cluster-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--system-assigned"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az stack-hci cluster identity remove",
+            "summary": "Remove identities.",
+            "syntax": "az stack-hci cluster identity remove --cluster-name\n                                     --resource-group\n                                     [--system-assigned {0, 1, f, false, n, no, t, true, y, yes}]",
+            "required_parameters": [
+                "--cluster-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--system-assigned"
+            ],
+            "examples": []
+        }
+    ]
+}

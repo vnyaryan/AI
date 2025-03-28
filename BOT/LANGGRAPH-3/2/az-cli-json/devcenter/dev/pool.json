@@ -1,0 +1,40 @@
+{
+    "command_group": "az devcenter dev pool",
+    "description": "Manage pools.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az devcenter dev pool list",
+            "summary": "List available pools.",
+            "syntax": "az devcenter dev pool list --project\n                           [--dev-center]\n                           [--endpoint]",
+            "required_parameters": [
+                "--project --project-name"
+            ],
+            "optional_parameters": [
+                "--dev-center --dev-center-name -d",
+                "--endpoint"
+            ],
+            "examples": [
+                "az devcenter dev pool list --dev-center-name \"ContosoDevCenter\" --project-name \"DevProject\"",
+                "az devcenter dev pool list --endpoint \"https://8a40af38-3b4c-4672-a6a4-5e964b1870ed-contosodevcenter.centralus.devcenter.azure.com/\" --project-name \"DevProject\""
+            ]
+        },
+        {
+            "name": "az devcenter dev pool show",
+            "summary": "Get a pool.",
+            "syntax": "az devcenter dev pool show --name\n                           --project\n                           [--dev-center]\n                           [--endpoint]",
+            "required_parameters": [
+                "--name --pool-name -n",
+                "--project --project-name"
+            ],
+            "optional_parameters": [
+                "--dev-center --dev-center-name -d",
+                "--endpoint"
+            ],
+            "examples": [
+                "az devcenter dev pool show --dev-center-name \"ContosoDevCenter\" --name \"DevPool\" --project-name \"DevProject\"",
+                "az devcenter dev pool show --endpoint \"https://8a40af38-3b4c-4672-a6a4-5e964b1870ed-contosodevcenter.centralus.devcenter.azure.com/\" --name \"DevPool\" --project-name \"DevProject\""
+            ]
+        }
+    ]
+}

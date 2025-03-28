@@ -1,0 +1,75 @@
+{
+    "command_group": "az cosmosdb cassandra keyspace",
+    "description": "Manage Azure Cosmos DB Cassandra keyspaces.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az cosmosdb cassandra keyspace create",
+            "summary": "Create an Cassandra keyspace under an Azure Cosmos DB account.",
+            "syntax": "az cosmosdb cassandra keyspace create --account-name\n                                      --name\n                                      --resource-group\n                                      [--max-throughput]\n                                      [--throughput]",
+            "required_parameters": [
+                "--account-name -a",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--max-throughput",
+                "--throughput"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az cosmosdb cassandra keyspace delete",
+            "summary": "Delete the Cassandra keyspace under an Azure Cosmos DB account.",
+            "syntax": "az cosmosdb cassandra keyspace delete --account-name\n                                      --name\n                                      --resource-group\n                                      [--yes]",
+            "required_parameters": [
+                "--account-name -a",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--yes -y"
+            ],
+            "examples": [
+                "az cosmosdb cassandra keyspace delete --account-name MyAccount --name MyKeyspace --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az cosmosdb cassandra keyspace exists",
+            "summary": "Checks if an Azure Cosmos DB Cassandra keyspace exists.",
+            "syntax": "az cosmosdb cassandra keyspace exists --account-name\n                                      --name\n                                      --resource-group",
+            "required_parameters": [
+                "--account-name -a",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az cosmosdb cassandra keyspace list",
+            "summary": "List the Cassandra keyspaces under an Azure Cosmos DB account.",
+            "syntax": "az cosmosdb cassandra keyspace list --account-name\n                                    --resource-group",
+            "required_parameters": [
+                "--account-name -a",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az cosmosdb cassandra keyspace list --account-name MyAccount --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az cosmosdb cassandra keyspace show",
+            "summary": "Show the details of a Cassandra keyspace under an Azure Cosmos DB account.",
+            "syntax": "az cosmosdb cassandra keyspace show --account-name\n                                    --name\n                                    --resource-group",
+            "required_parameters": [
+                "--account-name -a",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        }
+    ]
+}

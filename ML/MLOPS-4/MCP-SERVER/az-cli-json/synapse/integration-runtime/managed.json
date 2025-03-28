@@ -1,0 +1,29 @@
+{
+    "command_group": "az synapse integration-runtime managed",
+    "description": "Manage integration runtime with synapse sub group managed.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az synapse integration-runtime managed create",
+            "summary": "Create an managed integration runtime.",
+            "syntax": "az synapse integration-runtime managed create --name\n                                              --resource-group\n                                              --workspace-name\n                                              [--compute-type {ComputeOptimized, General, MemoryOptimized}]\n                                              [--core-count]\n                                              [--description]\n                                              [--if-match]\n                                              [--location]\n                                              [--no-wait]\n                                              [--time-to-live]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g",
+                "--workspace-name"
+            ],
+            "optional_parameters": [
+                "--compute-type",
+                "--core-count",
+                "--description",
+                "--if-match",
+                "--location -l",
+                "--no-wait",
+                "--time-to-live"
+            ],
+            "examples": [
+                "az synapse integration-runtime managed create --workspace-name testsynapseworkspace --resource-group rg \\\n  --name testintegrationruntime"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,96 @@
+{
+    "command_group": "az backup container",
+    "description": "Resource which houses items or applications to be protected.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az backup container list",
+            "summary": "List containers registered to a Recovery services vault.",
+            "syntax": "az backup container list --backup-management-type {AzureIaasVM, AzureStorage, AzureWorkload, MAB}\n                         --resource-group\n                         --vault-name\n                         [--use-secondary-region]",
+            "required_parameters": [
+                "--backup-management-type",
+                "--resource-group -g",
+                "--vault-name -v"
+            ],
+            "optional_parameters": [
+                "--use-secondary-region"
+            ],
+            "examples": [
+                "az backup container list --resource-group MyResourceGroup --vault-name MyVault --backup-management-type AzureIaasVM"
+            ]
+        },
+        {
+            "name": "az backup container re-register",
+            "summary": "Reset the registration details for a given container.",
+            "syntax": "az backup container re-register --workload-type {MSSQL, SAPASE, SAPHANA, SAPHanaDatabase, SQLDataBase}\n                                [--backup-management-type {AzureIaasVM, AzureStorage, AzureWorkload}]\n                                [--container-name]\n                                [--ids]\n                                [--resource-group]\n                                [--subscription]\n                                [--vault-name]\n                                [--yes]",
+            "required_parameters": [
+                "--workload-type"
+            ],
+            "optional_parameters": [
+                "--backup-management-type",
+                "--container-name -c",
+                "--ids",
+                "--resource-group -g",
+                "--subscription",
+                "--vault-name -v",
+                "--yes -y"
+            ],
+            "examples": [
+                "az backup container re-register --resource-group MyResourceGroup --vault-name MyVault --container-name MyContainer --workload-type MSSQL --backup-management-type AzureWorkload --yes"
+            ]
+        },
+        {
+            "name": "az backup container register",
+            "summary": "Register a Resource to the given Recovery Services Vault.",
+            "syntax": "az backup container register --resource-group\n                             --resource-id\n                             --vault-name\n                             --workload-type {MSSQL, SAPASE, SAPHANA, SAPHanaDatabase, SQLDataBase}\n                             [--backup-management-type {AzureIaasVM, AzureStorage, AzureWorkload}]",
+            "required_parameters": [
+                "--resource-group -g",
+                "--resource-id",
+                "--vault-name -v",
+                "--workload-type"
+            ],
+            "optional_parameters": [
+                "--backup-management-type"
+            ],
+            "examples": [
+                "az backup container register --resource-group MyResourceGroup --vault-name MyVault --resource-id MyResourceId --workload-type MSSQL --backup-management-type AzureWorkload"
+            ]
+        },
+        {
+            "name": "az backup container show",
+            "summary": "Show details of a container registered to a Recovery services vault.",
+            "syntax": "az backup container show [--backup-management-type {AzureIaasVM, AzureStorage, AzureWorkload, MAB}]\n                         [--ids]\n                         [--name]\n                         [--resource-group]\n                         [--subscription]\n                         [--use-secondary-region]\n                         [--vault-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--backup-management-type",
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--use-secondary-region",
+                "--vault-name -v"
+            ],
+            "examples": [
+                "az backup container show --name MyContainer --resource-group MyResourceGroup --vault-name MyVault"
+            ]
+        },
+        {
+            "name": "az backup container unregister",
+            "summary": "Unregister a Backup Container to make the underlying 'resource' be protected by another vault.",
+            "syntax": "az backup container unregister [--backup-management-type {AzureIaasVM, AzureStorage, AzureWorkload, MAB}]\n                               [--container-name]\n                               [--ids]\n                               [--resource-group]\n                               [--subscription]\n                               [--vault-name]\n                               [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--backup-management-type",
+                "--container-name -c",
+                "--ids",
+                "--resource-group -g",
+                "--subscription",
+                "--vault-name -v",
+                "--yes -y"
+            ],
+            "examples": [
+                "az backup container unregister --container-name MyContainer --resource-group MyResourceGroup --vault-name MyVault --backup-management-type AzureStorage"
+            ]
+        }
+    ]
+}

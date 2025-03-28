@@ -1,0 +1,19 @@
+{
+    "command_group": "az peering service location",
+    "description": "Peering service location.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az peering service location list",
+            "summary": "Lists all of the available locations for peering service.",
+            "syntax": "az peering service location list [--country]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--country"
+            ],
+            "examples": [
+                "az peering service location list"
+            ]
+        }
+    ]
+}

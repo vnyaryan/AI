@@ -1,0 +1,6 @@
+{
+    "command_group": "az search",
+    "description": "Manage Azure Search services, admin keys and query keys.",
+    "status": "GA",
+    "commands": []
+}

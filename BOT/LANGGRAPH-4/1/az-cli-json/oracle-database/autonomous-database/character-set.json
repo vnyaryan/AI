@@ -1,0 +1,22 @@
+{
+    "command_group": "az oracle-database autonomous-database character-set",
+    "description": "Autonomous Databases Character Set.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az oracle-database autonomous-database character-set list",
+            "summary": "List AutonomousDatabaseCharacterSet resources by Location.",
+            "syntax": "az oracle-database autonomous-database character-set list --location\n                                                          [--max-items]\n                                                          [--next-token]",
+            "required_parameters": [
+                "--location -l"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az oracle-database autonomous-database character-set list --location <location>"
+            ]
+        }
+    ]
+}

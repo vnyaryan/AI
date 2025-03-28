@@ -1,0 +1,35 @@
+{
+    "command_group": "az eventhubs namespace replica",
+    "description": "Manage eventhubs namespace replicas.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az eventhubs namespace replica add",
+            "summary": "Add one or more Replica properties to a namespace.",
+            "syntax": "az eventhubs namespace replica add --geo-data-replication-config\n                                   --namespace-name\n                                   --resource-group",
+            "required_parameters": [
+                "--geo-data-replication-config --replica-config",
+                "--namespace-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az eventhubs namespace replica add --namespace-name mynamespace -g MyResourceGroup --geo-data-replication-config role-type=Secondary location-name=mylocation cluster-arm-id=/subscriptions/{mysubcriptionid}/resourceGroups/{myResourcegroup}/providers/Microsoft.EventHub/clusters/{clustername}"
+            ]
+        },
+        {
+            "name": "az eventhubs namespace replica remove",
+            "summary": "Remove one or more Replica properties to a namespace.",
+            "syntax": "az eventhubs namespace replica remove --geo-data-replication-config\n                                      --namespace-name\n                                      --resource-group",
+            "required_parameters": [
+                "--geo-data-replication-config --replica-config",
+                "--namespace-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az eventhubs namespace replica remove --namespace-name mynamespace -g MyResourceGroup --geo-data-replication-config role-type=Secondary location-name=mylocation cluster-arm-id=/subscriptions/{mysubcriptionid}/resourceGroups/{myResourcegroup}/providers/Microsoft.EventHub/clusters/{clustername}"
+            ]
+        }
+    ]
+}

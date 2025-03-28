@@ -1,0 +1,215 @@
+{
+    "command_group": "az cosmosdb postgres cluster",
+    "description": "Manage Azure Cosmos DB for PostgreSQL clusters.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az cosmosdb postgres cluster create",
+            "summary": "Create a new cluster with nodes.",
+            "syntax": "az cosmosdb postgres cluster create --cluster-name\n                                    --resource-group\n                                    [--administrator-login-password]\n                                    [--citus-version]\n                                    [--coord-public-ip-access {0, 1, f, false, n, no, t, true, y, yes}]\n                                    [--coord-server-edition]\n                                    [--coordinator-storage]\n                                    [--coordinator-v-cores]\n                                    [--enable-ha {0, 1, f, false, n, no, t, true, y, yes}]\n                                    [--enable-shards-on-coord {0, 1, f, false, n, no, t, true, y, yes}]\n                                    [--location]\n                                    [--maintenance-window]\n                                    [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                    [--node-count]\n                                    [--node-enable-public-ip-access {0, 1, f, false, n, no, t, true, y, yes}]\n                                    [--node-server-edition]\n                                    [--node-storage]\n                                    [--node-v-cores]\n                                    [--point-in-time-utc]\n                                    [--postgresql-version]\n                                    [--preferred-primary-zone]\n                                    [--source-location]\n                                    [--source-resource-id]\n                                    [--tags]",
+            "required_parameters": [
+                "--cluster-name --name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--administrator-login-password --login-password",
+                "--citus-version",
+                "--coord-public-ip-access --coordinator-enable-public-ip-access",
+                "--coord-server-edition --coordinator-server-edition",
+                "--coordinator-storage --coordinator-storage-quota-in-mb",
+                "--coordinator-v-cores",
+                "--enable-ha",
+                "--enable-shards-on-coord --enable-shards-on-coordinator",
+                "--location -l",
+                "--maintenance-window",
+                "--no-wait",
+                "--node-count",
+                "--node-enable-public-ip-access --node-public-ip-access",
+                "--node-server-edition",
+                "--node-storage --node-storage-quota-in-mb",
+                "--node-v-cores",
+                "--point-in-time-utc",
+                "--postgresql-version",
+                "--preferred-primary-zone",
+                "--source-location",
+                "--source-resource-id",
+                "--tags"
+            ],
+            "examples": [
+                "az cosmosdb postgres cluster create -n \"test-cluster\" -g \"testGroup\" --subscription \"ffffffff-ffff-ffff-ffff-ffffffffffff\" --enable-ha false --coordinator-v-cores 8 --coordinator-server-edition \"GeneralPurpose\" --coordinator-storage 131072 --enable-shards-on-coord true --node-count 0 --preferred-primary-zone \"1\" --administrator-login-password \"password\"",
+                "az cosmosdb postgres cluster create -n \"test-cluster\" -g \"testGroup\" --subscription \"ffffffff-ffff-ffff-ffff-ffffffffffff\" --point-in-time-utc \"2017-12-14T00:00:37.467Z\" --source-location \"eastus\" --source-resource-id \"/subscriptions/ffffffff-ffff-ffff-ffff-ffffffffffff/resourceGroups/testGroup/providers/Microsoft.DBforPostgreSQL/serverGroupsv2/source-cluster\"",
+                "az cosmosdb postgres cluster create -n \"test-cluster\" -g \"testGroup\" --subscription \"ffffffff-ffff-ffff-ffff-ffffffffffff\" --source-location \"eastus\" --source-resource-id \"/subscriptions/ffffffff-ffff-ffff-ffff-ffffffffffff/resourceGroups/testGroup/providers/Microsoft.DBforPostgreSQL/serverGroupsv2/source-cluster\"",
+                "az cosmosdb postgres cluster create -n \"test-cluster\" -g \"testGroup\" --subscription \"ffffffff-ffff-ffff-ffff-ffffffffffff\" --enable-ha false --coordinator-v-cores 8 --coordinator-server-edition \"GeneralPurpose\" --coordinator-storage 131072 --enable-shards-on-coord false --node-count 3 --node-server-edition \"MemoryOptimized\" --node-v-cores 8 --node-storage 131072 --postgresql-version \"15\" --preferred-primary-zone \"1\" --administrator-login-password \"password\"",
+                "az cosmosdb postgres cluster create -n \"test-cluster\" -g \"testGroup\" --subscription \"ffffffff-ffff-ffff-ffff-ffffffffffff\" --enable-ha false --coordinator-v-cores 1 --coordinator-server-edition \"BurstableMemoryOptimized\" --coord-public-ip-access true --coordinator-storage 131072 --enable-shards-on-coord true --node-count 0 --preferred-primary-zone \"1\" --administrator-login-password \"password\"",
+                "az cosmosdb postgres cluster create -n \"test-cluster\" -g \"testGroup\" --subscription \"ffffffff-ffff-ffff-ffff-ffffffffffff\" --enable-ha false --coordinator-v-cores 2 --coordinator-server-edition \"BurstableGeneralPurpose\" --coord-public-ip-access true --coordinator-storage 131072 --enable-shards-on-coord true --node-count 0 --preferred-primary-zone \"1\" --administrator-login-password \"password\""
+            ]
+        },
+        {
+            "name": "az cosmosdb postgres cluster delete",
+            "summary": "Delete a cluster together with nodes in it.",
+            "syntax": "az cosmosdb postgres cluster delete [--cluster-name]\n                                    [--ids]\n                                    [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                    [--resource-group]\n                                    [--subscription]\n                                    [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--cluster-name --name -n",
+                "--ids",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az cosmosdb postgres cluster delete -n \"test-cluster\" -g \"testGroup\" --subscription \"ffffffff-ffff-ffff-ffff-ffffffffffff\""
+            ]
+        },
+        {
+            "name": "az cosmosdb postgres cluster list",
+            "summary": "List all clusters in a subscription or a resource group.",
+            "syntax": "az cosmosdb postgres cluster list [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az cosmosdb postgres cluster list -g \"testGroup\" --subscription \"ffffffff-ffff-ffff-ffff-ffffffffffff\"",
+                "az cosmosdb postgres cluster list --subscription \"ffffffff-ffff-ffff-ffff-ffffffffffff\""
+            ]
+        },
+        {
+            "name": "az cosmosdb postgres cluster promote",
+            "summary": "Promotes read replica cluster to an independent read-write cluster.",
+            "syntax": "az cosmosdb postgres cluster promote [--cluster-name]\n                                     [--ids]\n                                     [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                     [--resource-group]\n                                     [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--cluster-name",
+                "--ids",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az cosmosdb postgres cluster promote -n \"test-cluster\" -g \"testGroup\" --subscription \"ffffffff-ffff-ffff-ffff-ffffffffffff\""
+            ]
+        },
+        {
+            "name": "az cosmosdb postgres cluster restart",
+            "summary": "Restarts all nodes in the cluster.",
+            "syntax": "az cosmosdb postgres cluster restart [--cluster-name]\n                                     [--ids]\n                                     [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                     [--resource-group]\n                                     [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--cluster-name",
+                "--ids",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az cosmosdb postgres cluster restart -n \"test-cluster\" -g \"testGroup\" --subscription \"ffffffff-ffff-ffff-ffff-ffffffffffff\""
+            ]
+        },
+        {
+            "name": "az cosmosdb postgres cluster show",
+            "summary": "Get information about a cluster such as compute and storage configuration and cluster lifecycle metadata such as cluster creation date and time.",
+            "syntax": "az cosmosdb postgres cluster show [--cluster-name]\n                                  [--ids]\n                                  [--resource-group]\n                                  [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--cluster-name --name -n",
+                "--ids",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az cosmosdb postgres cluster show -n \"test-cluster\" -g \"testGroup\" --subscription \"ffffffff-ffff-ffff-ffff-ffffffffffff\""
+            ]
+        },
+        {
+            "name": "az cosmosdb postgres cluster start",
+            "summary": "Starts stopped compute on all cluster nodes.",
+            "syntax": "az cosmosdb postgres cluster start [--cluster-name]\n                                   [--ids]\n                                   [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                   [--resource-group]\n                                   [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--cluster-name",
+                "--ids",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az cosmosdb postgres cluster start -n \"test-cluster\" -g \"testGroup\" --subscription \"ffffffff-ffff-ffff-ffff-ffffffffffff\""
+            ]
+        },
+        {
+            "name": "az cosmosdb postgres cluster stop",
+            "summary": "Stops compute on all cluster nodes.",
+            "syntax": "az cosmosdb postgres cluster stop [--cluster-name]\n                                  [--ids]\n                                  [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                  [--resource-group]\n                                  [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--cluster-name",
+                "--ids",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az cosmosdb postgres cluster stop -n \"test-cluster\" -g \"testGroup\" --subscription \"ffffffff-ffff-ffff-ffff-ffffffffffff\""
+            ]
+        },
+        {
+            "name": "az cosmosdb postgres cluster update",
+            "summary": "Update an existing cluster. The request body can contain one or several properties from the cluster definition.",
+            "syntax": "az cosmosdb postgres cluster update [--administrator-login-password]\n                                    [--citus-version]\n                                    [--cluster-name]\n                                    [--coord-public-ip-access {0, 1, f, false, n, no, t, true, y, yes}]\n                                    [--coord-server-edition]\n                                    [--coordinator-storage]\n                                    [--coordinator-v-cores]\n                                    [--enable-ha {0, 1, f, false, n, no, t, true, y, yes}]\n                                    [--enable-shards-on-coord {0, 1, f, false, n, no, t, true, y, yes}]\n                                    [--ids]\n                                    [--maintenance-window]\n                                    [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                    [--node-count]\n                                    [--node-server-edition]\n                                    [--node-storage]\n                                    [--node-v-cores]\n                                    [--postgresql-version]\n                                    [--preferred-primary-zone]\n                                    [--resource-group]\n                                    [--subscription]\n                                    [--tags]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--administrator-login-password --login-password",
+                "--citus-version",
+                "--cluster-name --name -n",
+                "--coord-public-ip-access --coordinator-enable-public-ip-access",
+                "--coord-server-edition --coordinator-server-edition",
+                "--coordinator-storage --coordinator-storage-quota-in-mb",
+                "--coordinator-v-cores",
+                "--enable-ha",
+                "--enable-shards-on-coord --enable-shards-on-coordinator",
+                "--ids",
+                "--maintenance-window",
+                "--no-wait",
+                "--node-count",
+                "--node-server-edition",
+                "--node-storage --node-storage-quota-in-mb",
+                "--node-v-cores",
+                "--postgresql-version",
+                "--preferred-primary-zone",
+                "--resource-group -g",
+                "--subscription",
+                "--tags"
+            ],
+            "examples": [
+                "az cosmosdb postgres cluster update -n \"test-cluster\" -g \"testGroup\" --subscription \"ffffffff-ffff-ffff-ffff-ffffffffffff\" --node-v-cores 16",
+                "az cosmosdb postgres cluster update -n \"test-cluster\" -g \"testGroup\" --subscription \"ffffffff-ffff-ffff-ffff-ffffffffffff\" --node-count 2",
+                "az cosmosdb postgres cluster update -n \"test-cluster\" -g \"testGroup\" --subscription \"ffffffff-ffff-ffff-ffff-ffffffffffff\" --node-storage 2097152",
+                "az cosmosdb postgres cluster update -n \"test-cluster\" -g \"testGroup\" --subscription \"ffffffff-ffff-ffff-ffff-ffffffffffff\" --node-v-cores 16 --node-count 4 coordinator-v-cores 16 --administrator-login-password \"newPassword\"",
+                "az cosmosdb postgres cluster update -n \"test-cluster\" -g \"testGroup\" --subscription \"ffffffff-ffff-ffff-ffff-ffffffffffff\" --maintenance-window day-of-week=1 start-hour=2 --start-minute=0 custom-window=\"Enabled\"",
+                "az cosmosdb postgres cluster update -n \"test-cluster\" -g \"testGroup\" --subscription \"ffffffff-ffff-ffff-ffff-ffffffffffff\" --postgresql-version \"15\"",
+                "az cosmosdb postgres cluster update -n \"test-cluster\" -g \"testGroup\" --subscription \"ffffffff-ffff-ffff-ffff-ffffffffffff\" --coordinator-storage 2097152"
+            ]
+        },
+        {
+            "name": "az cosmosdb postgres cluster wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az cosmosdb postgres cluster wait [--cluster-name]\n                                  [--created]\n                                  [--custom]\n                                  [--deleted]\n                                  [--exists]\n                                  [--ids]\n                                  [--interval]\n                                  [--resource-group]\n                                  [--subscription]\n                                  [--timeout]\n                                  [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--cluster-name --name -n",
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

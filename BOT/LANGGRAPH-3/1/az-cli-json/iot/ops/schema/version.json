@@ -1,0 +1,72 @@
+{
+    "command_group": "az iot ops schema version",
+    "description": "Schema version management.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az iot ops schema version add",
+            "summary": "Add a schema version to a schema.",
+            "syntax": "az iot ops schema version add --content\n                              --name\n                              --registry\n                              --resource-group\n                              --schema\n                              [--desc]",
+            "required_parameters": [
+                "--content",
+                "--name -n",
+                "--registry",
+                "--resource-group -g",
+                "--schema"
+            ],
+            "optional_parameters": [
+                "--desc"
+            ],
+            "examples": [
+                "az iot ops schema version add -n 1 -g myresourcegroup --registry myregistry --schema myschema --content '{\\\"hello\\\": \\\"world\\\"}'",
+                "az iot ops schema version add -n 1 -g myresourcegroup --registry myregistry --schema myschema --content \"{\\\"hello\\\": \\\"world\\\"}\"",
+                "az iot ops schema version add -n 1 -g myresourcegroup --registry myregistry --schema myschema --content '{\"hello\": \"world\"}'",
+                "az iot ops schema version add -n 2 -g myresourcegroup --registry myregistry --schema myschema --content myschemav2.json --desc \"New schema\""
+            ]
+        },
+        {
+            "name": "az iot ops schema version list",
+            "summary": "List schema versions for a specific schema.",
+            "syntax": "az iot ops schema version list --registry\n                               --resource-group\n                               --schema",
+            "required_parameters": [
+                "--registry",
+                "--resource-group -g",
+                "--schema"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az iot ops schema version list -g myresourcegroup --registry myregistry --schema myschema"
+            ]
+        },
+        {
+            "name": "az iot ops schema version remove",
+            "summary": "Remove a target schema version.",
+            "syntax": "az iot ops schema version remove --name\n                                 --registry\n                                 --resource-group\n                                 --schema",
+            "required_parameters": [
+                "--name -n",
+                "--registry",
+                "--resource-group -g",
+                "--schema"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az iot ops schema version remove -n 1 -g myresourcegroup --registry myregistry --schema myschema"
+            ]
+        },
+        {
+            "name": "az iot ops schema version show",
+            "summary": "Show details of a schema version.",
+            "syntax": "az iot ops schema version show --name\n                               --registry\n                               --resource-group\n                               --schema",
+            "required_parameters": [
+                "--name -n",
+                "--registry",
+                "--resource-group -g",
+                "--schema"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az iot ops schema version show --name 1 --schema myschema --registry myregistry -g myresourcegroup"
+            ]
+        }
+    ]
+}

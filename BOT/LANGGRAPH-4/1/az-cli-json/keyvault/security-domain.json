@@ -1,0 +1,92 @@
+{
+    "command_group": "az keyvault security-domain",
+    "description": "Manage security domain operations.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az keyvault security-domain download",
+            "summary": "Download the security domain file from the HSM.",
+            "syntax": "az keyvault security-domain download --sd-quorum\n                                     --sd-wrapping-keys\n                                     --security-domain-file\n                                     [--hsm-name]\n                                     [--id]\n                                     [--no-wait]",
+            "required_parameters": [
+                "--sd-quorum",
+                "--sd-wrapping-keys",
+                "--security-domain-file"
+            ],
+            "optional_parameters": [
+                "--hsm-name",
+                "--id",
+                "--no-wait"
+            ],
+            "examples": [
+                "az keyvault security-domain download --hsm-name MyHSM --security-domain-file \"{SD_FILE_NAME}\" --sd-quorum 2 --sd-wrapping-keys \"{PEM_PUBLIC_KEY1_FILE_NAME}\" \"{PEM_PUBLIC_KEY2_FILE_NAME}\" \"{PEM_PUBLIC_KEY3_FILE_NAME}\""
+            ]
+        },
+        {
+            "name": "az keyvault security-domain init-recovery",
+            "summary": "Retrieve the exchange key of the HSM.",
+            "syntax": "az keyvault security-domain init-recovery --sd-exchange-key\n                                          [--hsm-name]\n                                          [--id]",
+            "required_parameters": [
+                "--sd-exchange-key"
+            ],
+            "optional_parameters": [
+                "--hsm-name",
+                "--id"
+            ],
+            "examples": [
+                "az keyvault security-domain init-recovery --hsm-name MyHSM --sd-exchange-key \"{PATH_TO_RESTORE}\""
+            ]
+        },
+        {
+            "name": "az keyvault security-domain restore-blob",
+            "summary": "Enable to decrypt and encrypt security domain file as blob. Can be run in offline environment, before file is uploaded to HSM using security-domain upload.",
+            "syntax": "az keyvault security-domain restore-blob --sd-exchange-key\n                                         --sd-file\n                                         --sd-file-restore-blob\n                                         --sd-wrapping-keys\n                                         [--passwords]",
+            "required_parameters": [
+                "--sd-exchange-key",
+                "--sd-file",
+                "--sd-file-restore-blob",
+                "--sd-wrapping-keys"
+            ],
+            "optional_parameters": [
+                "--passwords"
+            ],
+            "examples": [
+                "az keyvault security-domain restore-blob --sd-file \"{SD_TRANSFER_FILE}\" --sd-exchange-key \"{PEM_FILE_NAME}\" --sd-wrapping-keys \"{PEM_PRIVATE_KEY1_FILE_NAME}\" \"{PEM_PRIVATE_KEY2_FILE_NAME}\" --sd-file-restore-blob \"{SD_TRANSFER_FILE_RESTORE_BLOB}\""
+            ]
+        },
+        {
+            "name": "az keyvault security-domain upload",
+            "summary": "Start to restore the HSM.",
+            "syntax": "az keyvault security-domain upload --sd-file\n                                   [--hsm-name]\n                                   [--id]\n                                   [--no-wait]\n                                   [--passwords]\n                                   [--restore-blob]\n                                   [--sd-exchange-key]\n                                   [--sd-wrapping-keys]",
+            "required_parameters": [
+                "--sd-file"
+            ],
+            "optional_parameters": [
+                "--hsm-name",
+                "--id",
+                "--no-wait",
+                "--passwords",
+                "--restore-blob",
+                "--sd-exchange-key",
+                "--sd-wrapping-keys"
+            ],
+            "examples": [
+                "az keyvault security-domain upload --hsm-name MyHSM --sd-file \"{SD_TRANSFER_FILE}\" --sd-exchange-key \"{PEM_FILE_NAME}\" --sd-wrapping-keys \"{PEM_PRIVATE_KEY1_FILE_NAME}\" \"{PEM_PRIVATE_KEY2_FILE_NAME}\"",
+                "az keyvault security-domain upload --hsm-name MyHSM --sd-file \"{SD_TRANSFER_FILE}\" --restore-blob"
+            ]
+        },
+        {
+            "name": "az keyvault security-domain wait",
+            "summary": "Place the CLI in a waiting state until HSM security domain operation is finished.",
+            "syntax": "az keyvault security-domain wait [--hsm-name]\n                                 [--id]\n                                 [--target-operation {download, restore_blob, upload}]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--hsm-name",
+                "--id",
+                "--target-operation"
+            ],
+            "examples": [
+                "az keyvault security-domain wait --hsm-name MyHSM"
+            ]
+        }
+    ]
+}

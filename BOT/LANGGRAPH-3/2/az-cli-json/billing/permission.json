@@ -1,0 +1,26 @@
+{
+    "command_group": "az billing permission",
+    "description": "List billing permissions.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az billing permission list",
+            "summary": "List the billing permissions the caller has on a billing account.",
+            "syntax": "az billing permission list --account-name\n                           [--customer-name]\n                           [--invoice-section-name]\n                           [--profile-name]",
+            "required_parameters": [
+                "--account-name"
+            ],
+            "optional_parameters": [
+                "--customer-name",
+                "--invoice-section-name",
+                "--profile-name"
+            ],
+            "examples": [
+                "az billing permission list --account-name \"{billingAccountName}\"",
+                "az billing permission list --account-name \"{billingAccountName}\" --profile-name \"{billingProfileName}\"",
+                "az billing permission list --account-name \"{billingAccountName}\" --profile-name \"{billingProfileName}\" --invoice-section-name \"{invoiceSectionName}\"",
+                "az billing permission list --account-name \"{billingAccountName}\" --customer-name \"{customerName}\""
+            ]
+        }
+    ]
+}

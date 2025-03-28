@@ -1,0 +1,85 @@
+{
+    "command_group": "az ml computetarget",
+    "description": "Computetarget subgroup commands.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az ml computetarget delete",
+            "summary": "Delete a compute target (aks or amlcompute or computeinstance).",
+            "syntax": "az ml computetarget delete --name\n                           [--path]\n                           [--resource-group]\n                           [--subscription-id]\n                           [--workspace-name]\n                           [-v]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--path",
+                "--resource-group -g",
+                "--subscription-id",
+                "--workspace-name -w",
+                "-v"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az ml computetarget detach",
+            "summary": "Detach a compute target (aks or remote) from a workspace.",
+            "syntax": "az ml computetarget detach --name\n                           [--path]\n                           [--resource-group]\n                           [--subscription-id]\n                           [--workspace-name]\n                           [-v]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--path",
+                "--resource-group -g",
+                "--subscription-id",
+                "--workspace-name -w",
+                "-v"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az ml computetarget get-credentials",
+            "summary": "Get credentials for a compute target (aks or remote).",
+            "syntax": "az ml computetarget get-credentials --name\n                                    [--path]\n                                    [--resource-group]\n                                    [--subscription-id]\n                                    [--workspace-name]\n                                    [-v]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--path",
+                "--resource-group -g",
+                "--subscription-id",
+                "--workspace-name -w",
+                "-v"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az ml computetarget list",
+            "summary": "List all the compute targets attached to a workspace.",
+            "syntax": "az ml computetarget list [--path]\n                         [--resource-group]\n                         [--subscription-id]\n                         [--workspace-name]\n                         [-v]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--path",
+                "--resource-group -g",
+                "--subscription-id",
+                "--workspace-name -w",
+                "-v"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az ml computetarget show",
+            "summary": "Show details of a specific compute target.",
+            "syntax": "az ml computetarget show --name\n                         [--path]\n                         [--resource-group]\n                         [--subscription-id]\n                         [--workspace-name]\n                         [-v]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--path",
+                "--resource-group -g",
+                "--subscription-id",
+                "--workspace-name -w",
+                "-v"
+            ],
+            "examples": []
+        }
+    ]
+}

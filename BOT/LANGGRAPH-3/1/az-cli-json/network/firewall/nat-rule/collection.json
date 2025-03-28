@@ -1,0 +1,46 @@
+{
+    "command_group": "az network firewall nat-rule collection",
+    "description": "Manage and configure Azure Firewall NAT rules.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az network firewall nat-rule collection delete",
+            "summary": "Delete an Azure Firewall NAT rule collection.",
+            "syntax": "az network firewall nat-rule collection delete [--collection-name]\n                                               [--firewall-name]\n                                               [--ids]\n                                               [--resource-group]\n                                               [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--collection-name -c",
+                "--firewall-name -f",
+                "--ids",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az network firewall nat-rule collection list",
+            "summary": "List Azure Firewall NAT rule collections.",
+            "syntax": "az network firewall nat-rule collection list --firewall-name\n                                             --resource-group",
+            "required_parameters": [
+                "--firewall-name -f",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az network firewall nat-rule collection show",
+            "summary": "Get the details of an Azure Firewall NAT rule collection.",
+            "syntax": "az network firewall nat-rule collection show [--collection-name]\n                                             [--firewall-name]\n                                             [--ids]\n                                             [--resource-group]\n                                             [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--collection-name -c",
+                "--firewall-name -f",
+                "--ids",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        }
+    ]
+}

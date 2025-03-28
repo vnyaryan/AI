@@ -1,0 +1,43 @@
+{
+    "command_group": "az apim deletedservice",
+    "description": "Manage soft-deleted Azure API Management services.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az apim deletedservice list",
+            "summary": "List all soft-deleted Api Management services instances available for undelete for the given subscription.",
+            "syntax": "az apim deletedservice list",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "examples": [
+                "az apim deletedservice list"
+            ]
+        },
+        {
+            "name": "az apim deletedservice purge",
+            "summary": "Purge soft-deleted Api Management service instance (deletes it with no option to undelete).",
+            "syntax": "az apim deletedservice purge --location\n                             --service-name",
+            "required_parameters": [
+                "--location -l",
+                "--service-name -n"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az apim deletedservice purge --service-name MyApim --location westus"
+            ]
+        },
+        {
+            "name": "az apim deletedservice show",
+            "summary": "Get soft-deleted Api Management service instances available for undelete by name.",
+            "syntax": "az apim deletedservice show --location\n                            --service-name",
+            "required_parameters": [
+                "--location -l",
+                "--service-name -n"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az apim deletedservice show --service-name MyApim --location westus"
+            ]
+        }
+    ]
+}

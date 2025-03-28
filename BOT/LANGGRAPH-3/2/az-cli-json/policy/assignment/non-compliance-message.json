@@ -1,0 +1,58 @@
+{
+    "command_group": "az policy assignment non-compliance-message",
+    "description": "Manage a policy assignment's non-compliance messages.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az policy assignment non-compliance-message create",
+            "summary": "Add a non-compliance message to a policy assignment.",
+            "syntax": "az policy assignment non-compliance-message create --message\n                                                   --name\n                                                   [--policy-definition-reference-id]\n                                                   [--resource-group]\n                                                   [--scope]",
+            "required_parameters": [
+                "--message -m",
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--policy-definition-reference-id -r",
+                "--resource-group -g",
+                "--scope"
+            ],
+            "examples": [
+                "az policy assignment non-compliance-message create -g MyResourceGroup -n MyPolicyAssignment -m 'Resources must follow naming standards'",
+                "az policy assignment non-compliance-message create -g MyResourceGroup -n MyPolicySetAssignment -m 'Resources must use allowed SKUs' --policy-definition-reference-id SkuPolicyRefId"
+            ]
+        },
+        {
+            "name": "az policy assignment non-compliance-message delete",
+            "summary": "Remove one or more non-compliance messages from a policy assignment.",
+            "syntax": "az policy assignment non-compliance-message delete --message\n                                                   --name\n                                                   [--policy-definition-reference-id]\n                                                   [--resource-group]\n                                                   [--scope]",
+            "required_parameters": [
+                "--message -m",
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--policy-definition-reference-id -r",
+                "--resource-group -g",
+                "--scope"
+            ],
+            "examples": [
+                "az policy assignment non-compliance-message delete -g MyResourceGroup -n MyPolicyAssignment -m 'Resources must follow naming standards'",
+                "az policy assignment non-compliance-message delete -g MyResourceGroup -n MyPolicySetAssignment -m 'Resources must use allowed SKUs' --policy-definition-reference-id SkuPolicyRefId"
+            ]
+        },
+        {
+            "name": "az policy assignment non-compliance-message list",
+            "summary": "List the non-compliance messages for a policy assignment.",
+            "syntax": "az policy assignment non-compliance-message list --name\n                                                 [--resource-group]\n                                                 [--scope]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--resource-group -g",
+                "--scope"
+            ],
+            "examples": [
+                "az policy assignment non-compliance-message list -g MyResourceGroup -n MyPolicyAssignment"
+            ]
+        }
+    ]
+}

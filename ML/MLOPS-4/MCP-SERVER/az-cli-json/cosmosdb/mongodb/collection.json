@@ -1,0 +1,187 @@
+{
+    "command_group": "az cosmosdb mongodb collection",
+    "description": "Manage Azure Cosmos DB MongoDB collections.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az cosmosdb mongodb collection create",
+            "summary": "Create an MongoDB collection under an Azure Cosmos DB MongoDB database.",
+            "syntax": "az cosmosdb mongodb collection create --account-name\n                                      --database-name\n                                      --name\n                                      --resource-group\n                                      [--analytical-storage-ttl]\n                                      [--idx]\n                                      [--max-throughput]\n                                      [--shard]\n                                      [--throughput]",
+            "required_parameters": [
+                "--account-name -a",
+                "--database-name -d",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--analytical-storage-ttl",
+                "--idx",
+                "--max-throughput",
+                "--shard",
+                "--throughput"
+            ],
+            "examples": [
+                "az cosmosdb mongodb collection create -g MyResourceGroup -a MyAccount -d MyDatabase -n MyCollection --shard \"ShardingKey\" --idx @indexes-file.json --throughput \"500\""
+            ]
+        },
+        {
+            "name": "az cosmosdb mongodb collection delete",
+            "summary": "Delete the MongoDB collection under an Azure Cosmos DB MongoDB database.",
+            "syntax": "az cosmosdb mongodb collection delete --account-name\n                                      --database-name\n                                      --name\n                                      --resource-group\n                                      [--yes]",
+            "required_parameters": [
+                "--account-name -a",
+                "--database-name -d",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--yes -y"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az cosmosdb mongodb collection exists",
+            "summary": "Checks if an Azure Cosmos DB MongoDB collection exists.",
+            "syntax": "az cosmosdb mongodb collection exists --account-name\n                                      --database-name\n                                      --name\n                                      --resource-group",
+            "required_parameters": [
+                "--account-name -a",
+                "--database-name -d",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az cosmosdb mongodb collection list",
+            "summary": "List the MongoDB collections under an Azure Cosmos DB MongoDB database.",
+            "syntax": "az cosmosdb mongodb collection list --account-name\n                                    --database-name\n                                    --resource-group",
+            "required_parameters": [
+                "--account-name -a",
+                "--database-name -d",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az cosmosdb mongodb collection merge",
+            "summary": "Merges the partitions of a mongodb collection.",
+            "syntax": "az cosmosdb mongodb collection merge --account-name\n                                     --database-name\n                                     --name\n                                     --resource-group",
+            "required_parameters": [
+                "--account-name -a",
+                "--database-name -d",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az cosmosdb mongodb collection merge -g my-resource-group -a my-account -d my-db --name my-mongodb-collection"
+            ]
+        },
+        {
+            "name": "az cosmosdb mongodb collection redistribute-partition-throughput",
+            "summary": "Redistributes the partition throughput of a mongodb collection.",
+            "syntax": "az cosmosdb mongodb collection redistribute-partition-throughput --account-name\n                                                                 --database-name\n                                                                 --name\n                                                                 --resource-group\n                                                                 [--evenly-distribute {false, true}]\n                                                                 [--source-partition-info]\n                                                                 [--target-partition-info]",
+            "required_parameters": [
+                "--account-name -a",
+                "--database-name -d",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--evenly-distribute",
+                "--source-partition-info",
+                "--target-partition-info"
+            ],
+            "examples": [
+                "az cosmosdb mongodb collection redistribute-partition-throughput --account-name account_name --database-name db_name --name container_name  --resource-group rg_name --evenly-distribute",
+                "az cosmosdb mongodb collection redistribute-partition-throughput --account-name account_name --database-name db_name --name container_name  --resource-group rg_name --target-partition-info 8=1200 6=1200' --source-partition-info 9'"
+            ]
+        },
+        {
+            "name": "az cosmosdb mongodb collection restore",
+            "summary": "Restore a deleted mongodb collection within the same account.",
+            "syntax": "az cosmosdb mongodb collection restore --account-name\n                                       --database-name\n                                       --name\n                                       --resource-group\n                                       [--disable-ttl]\n                                       [--restore-timestamp]",
+            "required_parameters": [
+                "--account-name -a",
+                "--database-name -d",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--disable-ttl",
+                "--restore-timestamp -t"
+            ],
+            "examples": [
+                "az cosmosdb mongodb collection restore --resource-group resource_group --account-name database_account_name --database-name parent_database_name --name name_of_collection_needs_to_be_restored --restore-timestamp 2020-07-13T16:03:41+0000"
+            ]
+        },
+        {
+            "name": "az cosmosdb mongodb collection restore",
+            "summary": "Restore a deleted mongodb collection within the same account.",
+            "syntax": "az cosmosdb mongodb collection restore --account-name\n                                       --database-name\n                                       --name\n                                       --resource-group\n                                       [--disable-ttl {false, true}]\n                                       [--restore-timestamp]",
+            "required_parameters": [
+                "--account-name -a",
+                "--database-name -d",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--disable-ttl",
+                "--restore-timestamp -t"
+            ],
+            "examples": [
+                "az cosmosdb mongodb collection restore --resource-group resource_group --account-name database_account_name --database-name parent_database_name --name name_of_collection_needs_to_be_restored --restore-timestamp 2020-07-13T16:03:41+0000"
+            ]
+        },
+        {
+            "name": "az cosmosdb mongodb collection retrieve-partition-throughput",
+            "summary": "Retrieve the partition throughput of a mongodb collection.",
+            "syntax": "az cosmosdb mongodb collection retrieve-partition-throughput --account-name\n                                                             --database-name\n                                                             --name\n                                                             --resource-group\n                                                             [--all-partitions {false, true}]\n                                                             [--physical-partition-ids]",
+            "required_parameters": [
+                "--account-name -a",
+                "--database-name -d",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--all-partitions",
+                "--physical-partition-ids -p"
+            ],
+            "examples": [
+                "az cosmosdb mongodb collection retrieve-partition-throughput --account-name account_name --database-name db_name --name container_name  --resource-group rg_name --physical-partition-ids 8 9",
+                "az cosmosdb mongodb collection retrieve-partition-throughput --account-name account_name --database-name db_name --name container_name  --resource-group rg_name --all-partitions"
+            ]
+        },
+        {
+            "name": "az cosmosdb mongodb collection show",
+            "summary": "Show the details of a MongoDB collection under an Azure Cosmos DB MongoDB database.",
+            "syntax": "az cosmosdb mongodb collection show --account-name\n                                    --database-name\n                                    --name\n                                    --resource-group",
+            "required_parameters": [
+                "--account-name -a",
+                "--database-name -d",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az cosmosdb mongodb collection update",
+            "summary": "Update an MongoDB collection under an Azure Cosmos DB MongoDB database.",
+            "syntax": "az cosmosdb mongodb collection update --account-name\n                                      --database-name\n                                      --name\n                                      --resource-group\n                                      [--analytical-storage-ttl]\n                                      [--idx]",
+            "required_parameters": [
+                "--account-name -a",
+                "--database-name -d",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--analytical-storage-ttl",
+                "--idx"
+            ],
+            "examples": []
+        }
+    ]
+}

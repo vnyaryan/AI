@@ -1,0 +1,154 @@
+{
+    "command_group": "az batch task",
+    "description": "Manage Batch tasks.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az batch task create",
+            "summary": "Create Batch tasks.",
+            "syntax": "az batch task create --job-id\n                     [--account-endpoint]\n                     [--account-key]\n                     [--account-name]\n                     [--affinity-id]\n                     [--application-package-references]\n                     [--command-line]\n                     [--environment-settings]\n                     [--json-file]\n                     [--max-task-retry-count]\n                     [--max-wall-clock-time]\n                     [--resource-files]\n                     [--retention-time]\n                     [--task-id]",
+            "required_parameters": [
+                "--job-id"
+            ],
+            "optional_parameters": [
+                "--account-endpoint",
+                "--account-key",
+                "--account-name",
+                "--affinity-id",
+                "--application-package-references",
+                "--command-line",
+                "--environment-settings",
+                "--json-file",
+                "--max-task-retry-count",
+                "--max-wall-clock-time",
+                "--resource-files",
+                "--retention-time",
+                "--task-id"
+            ],
+            "examples": [
+                "az batch task create --task-id task1 --job-id job1 --command-line \"sleep 60\""
+            ]
+        },
+        {
+            "name": "az batch task delete",
+            "summary": "Deletes a Task from the specified Job.",
+            "syntax": "az batch task delete --job-id\n                     --task-id\n                     [--account-endpoint]\n                     [--account-key]\n                     [--account-name]\n                     [--if-match]\n                     [--if-modified-since]\n                     [--if-none-match]\n                     [--if-unmodified-since]\n                     [--yes]",
+            "required_parameters": [
+                "--job-id",
+                "--task-id"
+            ],
+            "optional_parameters": [
+                "--account-endpoint",
+                "--account-key",
+                "--account-name",
+                "--if-match",
+                "--if-modified-since",
+                "--if-none-match",
+                "--if-unmodified-since",
+                "--yes -y"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az batch task list",
+            "summary": "Lists all of the Tasks that are associated with the specified Job.",
+            "syntax": "az batch task list --job-id\n                   [--account-endpoint]\n                   [--account-key]\n                   [--account-name]\n                   [--expand]\n                   [--filter]\n                   [--select]",
+            "required_parameters": [
+                "--job-id"
+            ],
+            "optional_parameters": [
+                "--account-endpoint",
+                "--account-key",
+                "--account-name",
+                "--expand",
+                "--filter",
+                "--select"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az batch task reactivate",
+            "summary": "Reactivates a Task, allowing it to run again even if its retry count has been exhausted.",
+            "syntax": "az batch task reactivate --job-id\n                         --task-id\n                         [--account-endpoint]\n                         [--account-key]\n                         [--account-name]\n                         [--if-match]\n                         [--if-modified-since]\n                         [--if-none-match]\n                         [--if-unmodified-since]",
+            "required_parameters": [
+                "--job-id",
+                "--task-id"
+            ],
+            "optional_parameters": [
+                "--account-endpoint",
+                "--account-key",
+                "--account-name",
+                "--if-match",
+                "--if-modified-since",
+                "--if-none-match",
+                "--if-unmodified-since"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az batch task reset",
+            "summary": "Reset the properties of a Batch task.",
+            "syntax": "az batch task reset --job-id\n                    --task-id\n                    [--account-endpoint]\n                    [--account-key]\n                    [--account-name]\n                    [--if-match]\n                    [--if-modified-since]\n                    [--if-none-match]\n                    [--if-unmodified-since]\n                    [--json-file]\n                    [--max-task-retry-count]\n                    [--max-wall-clock-time]\n                    [--retention-time]",
+            "required_parameters": [
+                "--job-id",
+                "--task-id"
+            ],
+            "optional_parameters": [
+                "--account-endpoint",
+                "--account-key",
+                "--account-name",
+                "--if-match",
+                "--if-modified-since",
+                "--if-none-match",
+                "--if-unmodified-since",
+                "--json-file",
+                "--max-task-retry-count",
+                "--max-wall-clock-time",
+                "--retention-time"
+            ],
+            "examples": [
+                "az batch task reset --task-id task1 --job-id job1 --max-task-retry-count 3"
+            ]
+        },
+        {
+            "name": "az batch task show",
+            "summary": "Gets information about the specified Task.",
+            "syntax": "az batch task show --job-id\n                   --task-id\n                   [--account-endpoint]\n                   [--account-key]\n                   [--account-name]\n                   [--expand]\n                   [--if-match]\n                   [--if-modified-since]\n                   [--if-none-match]\n                   [--if-unmodified-since]\n                   [--select]",
+            "required_parameters": [
+                "--job-id",
+                "--task-id"
+            ],
+            "optional_parameters": [
+                "--account-endpoint",
+                "--account-key",
+                "--account-name",
+                "--expand",
+                "--if-match",
+                "--if-modified-since",
+                "--if-none-match",
+                "--if-unmodified-since",
+                "--select"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az batch task stop",
+            "summary": "Terminates the specified Task.",
+            "syntax": "az batch task stop --job-id\n                   --task-id\n                   [--account-endpoint]\n                   [--account-key]\n                   [--account-name]\n                   [--if-match]\n                   [--if-modified-since]\n                   [--if-none-match]\n                   [--if-unmodified-since]",
+            "required_parameters": [
+                "--job-id",
+                "--task-id"
+            ],
+            "optional_parameters": [
+                "--account-endpoint",
+                "--account-key",
+                "--account-name",
+                "--if-match",
+                "--if-modified-since",
+                "--if-none-match",
+                "--if-unmodified-since"
+            ],
+            "examples": []
+        }
+    ]
+}

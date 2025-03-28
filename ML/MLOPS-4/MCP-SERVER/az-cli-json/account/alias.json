@@ -1,0 +1,80 @@
+{
+    "command_group": "az account alias",
+    "description": "Manage subscription alias.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az account alias create",
+            "summary": "Create Alias Subscription.",
+            "syntax": "az account alias create --name\n                        [--billing-scope]\n                        [--display-name]\n                        [--no-wait]\n                        [--reseller-id]\n                        [--subscription-id]\n                        [--workload {DevTest, Production}]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--billing-scope",
+                "--display-name",
+                "--no-wait",
+                "--reseller-id",
+                "--subscription-id",
+                "--workload"
+            ],
+            "examples": [
+                "az account alias create --name \"aliasForNewSub\" --billing-scope \"/providers/Microsoft.Billing/billingAccounts/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx:024cabf4-7321-4cf9-be59-df0c77ca51de_2019-05-31/billingProfiles/PE2Q-NOIT-BG7-TGB/invoiceSections/MTT4-OBS7-PJA-TGB\" --display-name \"Contoso MCA subscription\" --workload \"Production\""
+            ]
+        },
+        {
+            "name": "az account alias delete",
+            "summary": "Delete Alias.",
+            "syntax": "az account alias delete --name",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az account alias delete --name \"aliasForNewSub\""
+            ]
+        },
+        {
+            "name": "az account alias list",
+            "summary": "List Alias Subscriptions.",
+            "syntax": "az account alias list",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "examples": [
+                "az account alias list"
+            ]
+        },
+        {
+            "name": "az account alias show",
+            "summary": "Get Alias Subscription.",
+            "syntax": "az account alias show --name",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az account alias show --name \"aliasForNewSub\""
+            ]
+        },
+        {
+            "name": "az account alias wait",
+            "summary": "Place the CLI in a waiting state until a condition of the account alias is met.",
+            "syntax": "az account alias wait --name\n                      [--created]\n                      [--custom]\n                      [--deleted]\n                      [--exists]\n                      [--interval]\n                      [--timeout]\n                      [--updated]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--interval",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": [
+                "az account alias wait --name \"aliasForNewSub\" --created"
+            ]
+        }
+    ]
+}

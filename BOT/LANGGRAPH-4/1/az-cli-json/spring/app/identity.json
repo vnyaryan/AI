@@ -1,0 +1,79 @@
+{
+    "command_group": "az spring app identity",
+    "description": "Manage an app's managed identities.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az spring app identity assign",
+            "summary": "Enable system-assigned managed identity or assign user-assigned managed identities to an app.",
+            "syntax": "az spring app identity assign --name\n                              --resource-group\n                              --service\n                              [--role]\n                              [--scope]\n                              [--system-assigned {false, true}]\n                              [--user-assigned]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [
+                "--role",
+                "--scope",
+                "--system-assigned",
+                "--user-assigned"
+            ],
+            "examples": [
+                "az spring app identity assign -n MyApp -s MyCluster -g MyResourceGroup --system-assigned",
+                "az spring app identity assign -n MyApp -s MyCluster -g MyResourceGroup --system-assigned --role Reader --scope /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/xxxxx/providers/Microsoft.KeyVault/vaults/xxxxx",
+                "az spring app identity assign -n MyApp -s MyCluster -g MyResourceGroup --user-assigned IdentityResourceId1 IdentityResourceId2"
+            ]
+        },
+        {
+            "name": "az spring app identity force-set",
+            "summary": "Force set managed identities on an app.",
+            "syntax": "az spring app identity force-set --name\n                                 --resource-group\n                                 --service\n                                 --system-assigned\n                                 --user-assigned",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g",
+                "--service -s",
+                "--system-assigned",
+                "--user-assigned"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az spring app identity force-set -n MyApp -s MyCluster -g MyResourceGroup --system-assigned disable --user-assigned disable",
+                "az spring app identity force-set -n MyApp -s MyCluster -g MyResourceGroup --system-assigned enable --user-assigned disable",
+                "az spring app identity force-set -n MyApp -s MyCluster -g MyResourceGroup --system-assigned disable --user-assigned IdentityResourceId1 IdentityResourceId2"
+            ]
+        },
+        {
+            "name": "az spring app identity remove",
+            "summary": "Remove managed identity from an app.",
+            "syntax": "az spring app identity remove --name\n                              --resource-group\n                              --service\n                              [--system-assigned {false, true}]\n                              [--user-assigned]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [
+                "--system-assigned",
+                "--user-assigned"
+            ],
+            "examples": [
+                "az spring app identity remove -n MyApp -s MyCluster -g MyResourceGroup --system-assigned",
+                "az spring app identity remove -n MyApp -s MyCluster -g MyResourceGroup --system-assigned --user-assigned IdentityResourceId1 IdentityResourceId2",
+                "az spring app identity remove -n MyApp -s MyCluster -g MyResourceGroup --user-assigned"
+            ]
+        },
+        {
+            "name": "az spring app identity show",
+            "summary": "Display app's managed identity info.",
+            "syntax": "az spring app identity show --name\n                            --resource-group\n                            --service",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az spring app identity show -n MyApp -s MyCluster -g MyResourceGroup"
+            ]
+        }
+    ]
+}

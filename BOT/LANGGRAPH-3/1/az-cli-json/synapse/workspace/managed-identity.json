@@ -1,0 +1,74 @@
+{
+    "command_group": "az synapse workspace managed-identity",
+    "description": "Manage workspace's managed-identity.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az synapse workspace managed-identity grant-sql-access",
+            "summary": "Grant workspace's sql-access to managed-identity.",
+            "syntax": "az synapse workspace managed-identity grant-sql-access [--ids]\n                                                       [--no-wait]\n                                                       [--resource-group]\n                                                       [--subscription]\n                                                       [--workspace-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--workspace-name"
+            ],
+            "examples": [
+                "az synapse workspace managed-identity grant-sql-access --workspace-name testsynapseworkspace \\\n--resource-group rg"
+            ]
+        },
+        {
+            "name": "az synapse workspace managed-identity revoke-sql-access",
+            "summary": "Revoke workspace's sql-access to managed-identity.",
+            "syntax": "az synapse workspace managed-identity revoke-sql-access [--ids]\n                                                        [--no-wait]\n                                                        [--resource-group]\n                                                        [--subscription]\n                                                        [--workspace-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--workspace-name"
+            ],
+            "examples": [
+                "az synapse workspace managed-identity revoke-sql-access --workspace-name testsynapseworkspace \\\n--resource-group rg"
+            ]
+        },
+        {
+            "name": "az synapse workspace managed-identity show-sql-access",
+            "summary": "Show workspace's sql-access state to managed-identity.",
+            "syntax": "az synapse workspace managed-identity show-sql-access [--ids]\n                                                      [--resource-group]\n                                                      [--subscription]\n                                                      [--workspace-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--resource-group -g",
+                "--subscription",
+                "--workspace-name"
+            ],
+            "examples": [
+                "az synapse workspace managed-identity show-sql-access --workspace-name testsynapseworkspace \\\n--resource-group rg"
+            ]
+        },
+        {
+            "name": "az synapse workspace managed-identity wait",
+            "summary": "Place the CLI in a waiting state until a condition of sql-access state to managed-identity is met.",
+            "syntax": "az synapse workspace managed-identity wait [--created]\n                                           [--custom]\n                                           [--deleted]\n                                           [--exists]\n                                           [--ids]\n                                           [--interval]\n                                           [--resource-group]\n                                           [--subscription]\n                                           [--timeout]\n                                           [--updated]\n                                           [--workspace-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated",
+                "--workspace-name"
+            ],
+            "examples": []
+        }
+    ]
+}

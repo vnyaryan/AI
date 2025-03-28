@@ -1,0 +1,36 @@
+{
+    "command_group": "az cosmosdb postgres configuration",
+    "description": "Manage Azure Cosmos DB for PostgreSQL configurations.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az cosmosdb postgres configuration list",
+            "summary": "List all the configurations of a cluster.",
+            "syntax": "az cosmosdb postgres configuration list --cluster-name\n                                        --resource-group",
+            "required_parameters": [
+                "--cluster-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az cosmosdb postgres configuration list --cluster-name \"test-cluster\" -g \"testGroup\" --subscription \"ffffffff-ffff-ffff-ffff-ffffffffffff\""
+            ]
+        },
+        {
+            "name": "az cosmosdb postgres configuration show",
+            "summary": "Get information of a configuration for coordinator and nodes.",
+            "syntax": "az cosmosdb postgres configuration show [--cluster-name]\n                                        [--configuration-name]\n                                        [--ids]\n                                        [--resource-group]\n                                        [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--cluster-name",
+                "--configuration-name --name -n",
+                "--ids",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az cosmosdb postgres configuration show -n \"array-nulls\" --cluster-name \"test-cluster\" -g \"testGroup\" --subscription \"ffffffff-ffff-ffff-ffff-ffffffffffff\""
+            ]
+        }
+    ]
+}

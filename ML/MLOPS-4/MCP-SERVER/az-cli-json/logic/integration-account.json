@@ -1,0 +1,124 @@
+{
+    "command_group": "az logic integration-account",
+    "description": "Manage logic integration account.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az logic integration-account create",
+            "summary": "Create an integration account.",
+            "syntax": "az logic integration-account create --name\n                                    --resource-group\n                                    [--integration-service-environment]\n                                    [--location]\n                                    [--sku {Basic, Free, NotSpecified, Standard}]\n                                    [--state {Completed, Deleted, Disabled, Enabled, NotSpecified, Suspended}]\n                                    [--tags]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--integration-service-environment",
+                "--location -l",
+                "--sku",
+                "--state",
+                "--tags"
+            ],
+            "examples": [
+                "az logic integration-account create --sku Standard --name integration-account-name --resource-group rg"
+            ]
+        },
+        {
+            "name": "az logic integration-account delete",
+            "summary": "Delete an integration account.",
+            "syntax": "az logic integration-account delete [--ids]\n                                    [--name]\n                                    [--resource-group]\n                                    [--subscription]\n                                    [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az logic integration-account delete --name integration-account-name --resource-group rg"
+            ]
+        },
+        {
+            "name": "az logic integration-account import",
+            "summary": "Import an integration account.",
+            "syntax": "az logic integration-account import --input-path\n                                    --name\n                                    --resource-group\n                                    [--location]\n                                    [--sku {Basic, Free, NotSpecified, Standard}]\n                                    [--tags]",
+            "required_parameters": [
+                "--input-path",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--location -l",
+                "--sku",
+                "--tags"
+            ],
+            "examples": [
+                "az logic integration-account import --name integration-account-name --resource-group rg --input-path integration.json"
+            ]
+        },
+        {
+            "name": "az logic integration-account list",
+            "summary": "List integration accounts.",
+            "syntax": "az logic integration-account list [--max-items]\n                                  [--next-token]\n                                  [--resource-group]\n                                  [--top]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token",
+                "--resource-group -g",
+                "--top"
+            ],
+            "examples": [
+                "az logic integration-account list --resource-group rg"
+            ]
+        },
+        {
+            "name": "az logic integration-account list-callback-url",
+            "summary": "List the integration account callback URL.",
+            "syntax": "az logic integration-account list-callback-url [--ids]\n                                               [--integration-account-name]\n                                               [--key-type {NotSpecified, Primary, Secondary}]\n                                               [--not-after]\n                                               [--resource-group]\n                                               [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--integration-account-name",
+                "--key-type",
+                "--not-after",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az logic integration-account show",
+            "summary": "Show an integration account.",
+            "syntax": "az logic integration-account show [--ids]\n                                  [--name]\n                                  [--resource-group]\n                                  [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az logic integration-account show --name integration-account-name --resource-group rg"
+            ]
+        },
+        {
+            "name": "az logic integration-account update",
+            "summary": "Update an integration account.",
+            "syntax": "az logic integration-account update --name\n                                    --resource-group\n                                    [--integration-service-environment]\n                                    [--location]\n                                    [--sku {Basic, Free, NotSpecified, Standard}]\n                                    [--state {Completed, Deleted, Disabled, Enabled, NotSpecified, Suspended}]\n                                    [--tags]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--integration-service-environment",
+                "--location -l",
+                "--sku",
+                "--state",
+                "--tags"
+            ],
+            "examples": [
+                "az logic integration-account update --sku Basic --tag atag=123 --name integration-account-name --resource-group rg"
+            ]
+        }
+    ]
+}

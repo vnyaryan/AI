@@ -1,0 +1,81 @@
+{
+    "command_group": "az sphere device app",
+    "description": "Manage applications on the attached device.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az sphere device app show-memory-stats",
+            "summary": "Show the memory statistics for applications on the attached device.",
+            "syntax": "az sphere device app show-memory-stats [--device]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--device -d"
+            ],
+            "examples": [
+                "az sphere device app show-memory-stats",
+                "az sphere device app show-memory-stats --device <DeviceIdValue>"
+            ]
+        },
+        {
+            "name": "az sphere device app show-quota",
+            "summary": "Show the storage quota and usage for applications on the attached device.",
+            "syntax": "az sphere device app show-quota [--component-id]\n                                [--device]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--component-id -i",
+                "--device -d"
+            ],
+            "examples": [
+                "az sphere device app show-quota",
+                "az sphere device app show-quota --component-id 4d46953f-51d4-43d3-83a2-a808dc36cc53",
+                "az sphere device app show-quota --device <DeviceIdValue>"
+            ]
+        },
+        {
+            "name": "az sphere device app show-status",
+            "summary": "Show the status of applications on the attached device.",
+            "syntax": "az sphere device app show-status [--component-id]\n                                 [--device]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--component-id -i",
+                "--device -d"
+            ],
+            "examples": [
+                "az sphere device app show-status",
+                "az sphere device app show-status --component-id 4d46953f-51d4-43d3-83a2-a808dc36cc53",
+                "az sphere device app show-status --device <DeviceIdValue>"
+            ]
+        },
+        {
+            "name": "az sphere device app start",
+            "summary": "Start applications on the attached device.",
+            "syntax": "az sphere device app start [--component-id]\n                           [--debug-mode]\n                           [--device]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--component-id -i",
+                "--debug-mode",
+                "--device -d"
+            ],
+            "examples": [
+                "az sphere device app start",
+                "az sphere device app start --component-id 4d46953f-51d4-43d3-83a2-a808dc36cc53",
+                "az sphere device app start --device <DeviceIdValue>"
+            ]
+        },
+        {
+            "name": "az sphere device app stop",
+            "summary": "Stop applications on the attached device.",
+            "syntax": "az sphere device app stop [--component-id]\n                          [--device]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--component-id -i",
+                "--device -d"
+            ],
+            "examples": [
+                "az sphere device app stop",
+                "az sphere device app stop --component-id 4d46953f-51d4-43d3-83a2-a808dc36cc53",
+                "az sphere device app stop --device <DeviceIdValue>"
+            ]
+        }
+    ]
+}

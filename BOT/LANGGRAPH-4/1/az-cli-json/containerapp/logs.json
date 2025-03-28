@@ -1,0 +1,31 @@
+{
+    "command_group": "az containerapp logs",
+    "description": "Show container app logs.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az containerapp logs show",
+            "summary": "Show past logs and/or print logs in real time (with the --follow parameter). Note that the logs are only taken from one revision, replica, and container (for non-system logs).",
+            "syntax": "az containerapp logs show --name\n                          --resource-group\n                          [--container]\n                          [--follow {false, true}]\n                          [--format {json, text}]\n                          [--replica]\n                          [--revision]\n                          [--tail]\n                          [--type {console, system}]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--container",
+                "--follow",
+                "--format",
+                "--replica",
+                "--revision",
+                "--tail",
+                "--type -t"
+            ],
+            "examples": [
+                "az containerapp logs show -n my-containerapp -g MyResourceGroup",
+                "az containerapp logs show -n my-containerapp -g MyResourceGroup --type system",
+                "az containerapp logs show -n my-containerapp -g MyResourceGroup --follow --tail 30",
+                "az containerapp logs show -n my-containerapp -g MyResourceGroup --replica MyReplica --revision MyRevision --container MyContainer"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,34 @@
+{
+    "command_group": "az connectedvmware vcenter inventory-item",
+    "description": "Inventory item resource.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az connectedvmware vcenter inventory-item list",
+            "summary": "Retrieve a list of inventory item given by resource group and vcenter name.",
+            "syntax": "az connectedvmware vcenter inventory-item list --resource-group\n                                               --vcenter",
+            "required_parameters": [
+                "--resource-group -g",
+                "--vcenter -v"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az connectedvmware vcenter inventory-item list --resource-group \"resource group name\"                --vcenter \"name of the vcenter\""
+            ]
+        },
+        {
+            "name": "az connectedvmware vcenter inventory-item show",
+            "summary": "Get details of a inventory item by inventory item name or id, resource-group and vcenter name.",
+            "syntax": "az connectedvmware vcenter inventory-item show --inventory-item\n                                               --resource-group\n                                               --vcenter",
+            "required_parameters": [
+                "--inventory-item -i",
+                "--resource-group -g",
+                "--vcenter -v"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az connectedvmware vcenter inventory-item show --inventory-item \"inventory item name\"                --resource-group \"resource group name\" --vcenter \"name of the vcenter\""
+            ]
+        }
+    ]
+}

@@ -1,0 +1,99 @@
+{
+    "command_group": "az datafactory dataset",
+    "description": "Manage dataset with datafactory.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az datafactory dataset create",
+            "summary": "Create a dataset.",
+            "syntax": "az datafactory dataset create --dataset-name\n                              --factory-name\n                              --properties\n                              --resource-group\n                              [--if-match]",
+            "required_parameters": [
+                "--dataset-name --name -n",
+                "--factory-name",
+                "--properties",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--if-match"
+            ],
+            "examples": [
+                "az datafactory dataset create --properties \"{\\\"type\\\":\\\"AzureBlob\\\",\\\"linkedServiceName\\\":{\\\"type\\\":\\\"LinkedServiceReference\\\",\\\"referenceName\\\":\\\"exampleLinkedService\\\"},\\\"parameters\\\":{\\\"MyFileName\\\":{\\\"type\\\":\\\"String\\\"},\\\"MyFolderPath\\\":{\\\"type\\\":\\\"String\\\"}},\\\"typeProperties\\\":{\\\"format\\\":{\\\"type\\\":\\\"TextFormat\\\"},\\\"fileName\\\":{\\\"type\\\":\\\"Expression\\\",\\\"value\\\":\\\"@dataset().MyFileName\\\"},\\\"folderPath\\\":{\\\"type\\\":\\\"Expression\\\",\\\"value\\\":\\\"@dataset().MyFolderPath\\\"}}}\" --name \"exampleDataset\" --factory-name \"exampleFactoryName\" --resource-group \"exampleResourceGroup\""
+            ]
+        },
+        {
+            "name": "az datafactory dataset delete",
+            "summary": "Deletes a dataset.",
+            "syntax": "az datafactory dataset delete [--dataset-name]\n                              [--factory-name]\n                              [--ids]\n                              [--resource-group]\n                              [--subscription]\n                              [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--dataset-name --name -n",
+                "--factory-name",
+                "--ids",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az datafactory dataset delete --name \"exampleDataset\" --factory-name \"exampleFactoryName\" --resource-group \"exampleResourceGroup\""
+            ]
+        },
+        {
+            "name": "az datafactory dataset list",
+            "summary": "Lists datasets.",
+            "syntax": "az datafactory dataset list --factory-name\n                            --resource-group",
+            "required_parameters": [
+                "--factory-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az datafactory dataset list --factory-name \"exampleFactoryName\" --resource-group \"exampleResourceGroup\""
+            ]
+        },
+        {
+            "name": "az datafactory dataset show",
+            "summary": "Gets a dataset.",
+            "syntax": "az datafactory dataset show [--dataset-name]\n                            [--factory-name]\n                            [--ids]\n                            [--if-none-match]\n                            [--resource-group]\n                            [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--dataset-name --name -n",
+                "--factory-name",
+                "--ids",
+                "--if-none-match",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az datafactory dataset show --name \"exampleDataset\" --factory-name \"exampleFactoryName\" --resource-group \"exampleResourceGroup\""
+            ]
+        },
+        {
+            "name": "az datafactory dataset update",
+            "summary": "Update a dataset.",
+            "syntax": "az datafactory dataset update --linked-service-name\n                              [--add]\n                              [--annotations]\n                              [--dataset-name]\n                              [--description]\n                              [--factory-name]\n                              [--folder]\n                              [--force-string]\n                              [--ids]\n                              [--if-match]\n                              [--if-none-match]\n                              [--parameters]\n                              [--remove]\n                              [--resource-group]\n                              [--schema]\n                              [--set]\n                              [--structure]\n                              [--subscription]",
+            "required_parameters": [
+                "--linked-service-name"
+            ],
+            "optional_parameters": [
+                "--add",
+                "--annotations",
+                "--dataset-name --name -n",
+                "--description",
+                "--factory-name",
+                "--folder",
+                "--force-string",
+                "--ids",
+                "--if-match",
+                "--if-none-match",
+                "--parameters",
+                "--remove",
+                "--resource-group -g",
+                "--schema",
+                "--set",
+                "--structure",
+                "--subscription"
+            ],
+            "examples": []
+        }
+    ]
+}

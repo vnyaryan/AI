@@ -1,0 +1,19 @@
+{
+    "command_group": "az sphere image-package",
+    "description": "Manage image packages.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az sphere image-package show",
+            "summary": "Show details of a given image package.",
+            "syntax": "az sphere image-package show --image-package",
+            "required_parameters": [
+                "--image-package"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az sphere image-package show --image-package MyImage.imagepackage"
+            ]
+        }
+    ]
+}

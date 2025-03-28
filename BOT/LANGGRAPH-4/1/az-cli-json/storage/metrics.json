@@ -1,0 +1,48 @@
+{
+    "command_group": "az storage metrics",
+    "description": "Manage storage service metrics.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az storage metrics show",
+            "summary": "Show metrics settings for a storage account.",
+            "syntax": "az storage metrics show [--account-key]\n                        [--account-name]\n                        [--connection-string]\n                        [--interval {both, hour, minute}]\n                        [--sas-token]\n                        [--services]\n                        [--timeout]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account-key",
+                "--account-name",
+                "--connection-string",
+                "--interval",
+                "--sas-token",
+                "--services",
+                "--timeout"
+            ],
+            "examples": [
+                "az storage metrics show --account-key 00000000 --account-name MyAccount"
+            ]
+        },
+        {
+            "name": "az storage metrics update",
+            "summary": "Update metrics settings for a storage account.",
+            "syntax": "az storage metrics update --retention\n                          --services\n                          [--account-key]\n                          [--account-name]\n                          [--api {false, true}]\n                          [--connection-string]\n                          [--hour {false, true}]\n                          [--minute {false, true}]\n                          [--sas-token]\n                          [--timeout]",
+            "required_parameters": [
+                "--retention",
+                "--services"
+            ],
+            "optional_parameters": [
+                "--account-key",
+                "--account-name",
+                "--api",
+                "--connection-string",
+                "--hour",
+                "--minute",
+                "--sas-token",
+                "--timeout"
+            ],
+            "examples": [
+                "az storage metrics update --account-name MyAccount --api true --hour true --minute true --retention 10 --services bfqt",
+                "az storage metrics update --api true --connection-string $connectionString --hour true --minute true --retention 10 --services bfqt"
+            ]
+        }
+    ]
+}

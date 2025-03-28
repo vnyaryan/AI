@@ -1,0 +1,71 @@
+{
+    "command_group": "az webapp auth-classic",
+    "description": "Manage webapp authentication and authorization in the classic format.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az webapp auth-classic show",
+            "summary": "Show the authentication settings for the webapp in the classic format.",
+            "syntax": "az webapp auth-classic show [--ids]\n                            [--name]\n                            [--resource-group]\n                            [--slot]\n                            [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--slot -s",
+                "--subscription"
+            ],
+            "examples": [
+                "az webapp auth-classic show --name MyWebApp --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az webapp auth-classic update",
+            "summary": "Update the authentication settings for the webapp in the classic format.",
+            "syntax": "az webapp auth-classic update [--aad-allowed-token-audiences]\n                              [--aad-client-id]\n                              [--aad-client-secret]\n                              [--aad-client-secret-certificate-thumbprint]\n                              [--aad-client-secret-setting-name]\n                              [--aad-token-issuer-url]\n                              [--action {AllowAnonymous, LoginWithAzureActiveDirectory, LoginWithFacebook, LoginWithGoogle, LoginWithMicrosoftAccount, LoginWithTwitter}]\n                              [--allowed-redirect-urls]\n                              [--enabled {false, true}]\n                              [--facebook-app-id]\n                              [--facebook-app-secret]\n                              [--facebook-app-secret-setting-name]\n                              [--facebook-oauth-scopes]\n                              [--github-client-id]\n                              [--github-client-secret]\n                              [--github-client-secret-setting-name]\n                              [--github-oauth-scopes]\n                              [--google-client-id]\n                              [--google-client-secret]\n                              [--google-client-secret-setting-name]\n                              [--google-oauth-scopes]\n                              [--ids]\n                              [--microsoft-account-client-id]\n                              [--microsoft-account-client-secret]\n                              [--microsoft-account-client-secret-setting-name]\n                              [--microsoft-account-oauth-scopes]\n                              [--name]\n                              [--resource-group]\n                              [--runtime-version]\n                              [--slot]\n                              [--subscription]\n                              [--token-refresh-extension-hours]\n                              [--token-store {false, true}]\n                              [--twitter-consumer-key]\n                              [--twitter-consumer-secret]\n                              [--twitter-consumer-secret-setting-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--aad-allowed-token-audiences --allowed-audiences",
+                "--aad-client-id",
+                "--aad-client-secret",
+                "--aad-client-secret-certificate-thumbprint --thumbprint",
+                "--aad-client-secret-setting-name --aad-secret-setting",
+                "--aad-token-issuer-url",
+                "--action",
+                "--allowed-redirect-urls",
+                "--enabled",
+                "--facebook-app-id",
+                "--facebook-app-secret",
+                "--facebook-app-secret-setting-name --fb-secret-setting",
+                "--facebook-oauth-scopes",
+                "--github-client-id",
+                "--github-client-secret",
+                "--github-client-secret-setting-name --github-secret-setting",
+                "--github-oauth-scopes --github-scopes",
+                "--google-client-id",
+                "--google-client-secret",
+                "--google-client-secret-setting-name --google-secret-setting",
+                "--google-oauth-scopes",
+                "--ids",
+                "--microsoft-account-client-id --msa-client",
+                "--microsoft-account-client-secret --msa-secret",
+                "--microsoft-account-client-secret-setting-name --msa-secret-setting",
+                "--microsoft-account-oauth-scopes --msa-scopes",
+                "--name -n",
+                "--resource-group -g",
+                "--runtime-version",
+                "--slot -s",
+                "--subscription",
+                "--token-refresh-extension-hours --token-refresh-hours",
+                "--token-store",
+                "--twitter-consumer-key",
+                "--twitter-consumer-secret --twitter-secret",
+                "--twitter-consumer-secret-setting-name --twitter-secret-setting"
+            ],
+            "examples": [
+                "az webapp auth-classic update  -g myResourceGroup --name MyWebApp --enabled true \\\n  --action LoginWithAzureActiveDirectory \\\n  --aad-allowed-token-audiences https://webapp_name.azurewebsites.net/.auth/login/aad/callback \\\n  --aad-client-id my-client-id --aad-client-secret very_secret_password \\\n  --aad-token-issuer-url https://sts.windows.net/54826b22-38d6-4fb2-bad9-b7983a3e9c5a/",
+                "az webapp auth-classic update -g myResourceGroup --name MyWebApp --action AllowAnonymous \\\n  --facebook-app-id my_fb_id --facebook-app-secret my_fb_secret \\\n  --facebook-oauth-scopes public_profile email"
+            ]
+        }
+    ]
+}

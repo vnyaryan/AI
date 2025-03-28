@@ -1,0 +1,163 @@
+{
+    "command_group": "az storage-mover job-definition",
+    "description": "Manage Job Definition resource, which contains configuration for a single unit of managed data transfer.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az storage-mover job-definition create",
+            "summary": "Creates a Job Definition resource, which contains configuration for a single unit of managed data transfer.",
+            "syntax": "az storage-mover job-definition create --copy-mode {Additive, Mirror}\n                                       --job-definition-name\n                                       --project-name\n                                       --resource-group\n                                       --source-name\n                                       --storage-mover-name\n                                       --target-name\n                                       [--agent-name]\n                                       [--description]\n                                       [--source-subpath]\n                                       [--target-subpath]",
+            "required_parameters": [
+                "--copy-mode",
+                "--job-definition-name --name -n",
+                "--project-name",
+                "--resource-group -g",
+                "--source-name",
+                "--storage-mover-name",
+                "--target-name"
+            ],
+            "optional_parameters": [
+                "--agent-name",
+                "--description",
+                "--source-subpath",
+                "--target-subpath"
+            ],
+            "examples": [
+                "az storage-mover job-definition create -g {rg} -n {job_definition} --project-name {project_name} --storage-mover-name {mover_name} --copy-mode Additive --source-name {source_endpoint} --target-name {target_endpoint} --agent-name {agent_name} --description JobDefinitionDescription --source-subpath path1 --target-subpath path2"
+            ]
+        },
+        {
+            "name": "az storage-mover job-definition delete",
+            "summary": "Deletes a Job Definition resource.",
+            "syntax": "az storage-mover job-definition delete [--ids]\n                                       [--job-definition-name]\n                                       [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                       [--project-name]\n                                       [--resource-group]\n                                       [--storage-mover-name]\n                                       [--subscription]\n                                       [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--job-definition-name --name -n",
+                "--no-wait",
+                "--project-name",
+                "--resource-group -g",
+                "--storage-mover-name",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az storage-mover job-definition delete -g {rg} -n {job_definition} --project-name {project_name} --storage-mover-name {mover_name}"
+            ]
+        },
+        {
+            "name": "az storage-mover job-definition list",
+            "summary": "Lists all Job Definitions in a Project.",
+            "syntax": "az storage-mover job-definition list --project-name\n                                     --resource-group\n                                     --storage-mover-name\n                                     [--max-items]\n                                     [--next-token]",
+            "required_parameters": [
+                "--project-name",
+                "--resource-group -g",
+                "--storage-mover-name"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az storage-mover job-definition list -g {rg} --project-name {project_name} --storage-mover-name {mover_name}"
+            ]
+        },
+        {
+            "name": "az storage-mover job-definition show",
+            "summary": "Gets a Job Definition resource.",
+            "syntax": "az storage-mover job-definition show [--ids]\n                                     [--job-definition-name]\n                                     [--project-name]\n                                     [--resource-group]\n                                     [--storage-mover-name]\n                                     [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--job-definition-name --name -n",
+                "--project-name",
+                "--resource-group -g",
+                "--storage-mover-name",
+                "--subscription"
+            ],
+            "examples": [
+                "az storage-mover job-definition show -g {rg} -n {job_definition} --project-name {project_name} --storage-mover-name {mover_name}"
+            ]
+        },
+        {
+            "name": "az storage-mover job-definition start-job",
+            "summary": "Requests an Agent to start a new instance of this Job Definition, generating a new Job Run resource.",
+            "syntax": "az storage-mover job-definition start-job [--ids]\n                                          [--job-definition-name]\n                                          [--project-name]\n                                          [--resource-group]\n                                          [--storage-mover-name]\n                                          [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--job-definition-name",
+                "--project-name",
+                "--resource-group -g",
+                "--storage-mover-name",
+                "--subscription"
+            ],
+            "examples": [
+                "az storage-mover job-definition start-job -g {rg} --job-definition-name {job_definition} --project-name {project_name} --storage-mover-name {mover_name}"
+            ]
+        },
+        {
+            "name": "az storage-mover job-definition stop-job",
+            "summary": "Requests the Agent of any active instance of this Job Definition to stop.",
+            "syntax": "az storage-mover job-definition stop-job [--ids]\n                                         [--job-definition-name]\n                                         [--project-name]\n                                         [--resource-group]\n                                         [--storage-mover-name]\n                                         [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--job-definition-name",
+                "--project-name",
+                "--resource-group -g",
+                "--storage-mover-name",
+                "--subscription"
+            ],
+            "examples": [
+                "az storage-mover job-definition stop-job -g {rg} --job-definition-name {job_definition} --project-name {project_name} --storage-mover-name {mover_name}"
+            ]
+        },
+        {
+            "name": "az storage-mover job-definition update",
+            "summary": "Update a Job Definition resource, which contains configuration for a single unit of managed data transfer.",
+            "syntax": "az storage-mover job-definition update [--add]\n                                       [--agent-name]\n                                       [--copy-mode {Additive, Mirror}]\n                                       [--description]\n                                       [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                       [--ids]\n                                       [--job-definition-name]\n                                       [--project-name]\n                                       [--remove]\n                                       [--resource-group]\n                                       [--set]\n                                       [--storage-mover-name]\n                                       [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--agent-name",
+                "--copy-mode",
+                "--description",
+                "--force-string",
+                "--ids",
+                "--job-definition-name --name -n",
+                "--project-name",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--storage-mover-name",
+                "--subscription"
+            ],
+            "examples": [
+                "az storage-mover job-definition update -g {rg} -n {job_definition} --project-name {project_name} --storage-mover-name {mover_name} --copy-mode Mirror --agent-name {agent_name} --description JobDefinitionDescription2"
+            ]
+        },
+        {
+            "name": "az storage-mover job-definition wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az storage-mover job-definition wait [--created]\n                                     [--custom]\n                                     [--deleted]\n                                     [--exists]\n                                     [--ids]\n                                     [--interval]\n                                     [--job-definition-name]\n                                     [--project-name]\n                                     [--resource-group]\n                                     [--storage-mover-name]\n                                     [--subscription]\n                                     [--timeout]\n                                     [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--job-definition-name --name -n",
+                "--project-name",
+                "--resource-group -g",
+                "--storage-mover-name",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

@@ -1,0 +1,105 @@
+{
+    "command_group": "az appconfig snapshot",
+    "description": "Manage snapshots associated with an app configuration store.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az appconfig snapshot archive",
+            "summary": "Archive a snapshot.",
+            "syntax": "az appconfig snapshot archive --snapshot-name\n                              [--auth-mode {key, login}]\n                              [--connection-string]\n                              [--endpoint]\n                              [--name]",
+            "required_parameters": [
+                "--snapshot-name -s"
+            ],
+            "optional_parameters": [
+                "--auth-mode",
+                "--connection-string",
+                "--endpoint",
+                "--name -n"
+            ],
+            "examples": [
+                "az appconfig snapshot archive -s MySnapshot -n MyAppConfiguration"
+            ]
+        },
+        {
+            "name": "az appconfig snapshot create",
+            "summary": "Create an app configuration snapshot.",
+            "syntax": "az appconfig snapshot create --filters\n                             --snapshot-name\n                             [--auth-mode {key, login}]\n                             [--composition-type {key, key_label}]\n                             [--connection-string]\n                             [--endpoint]\n                             [--name]\n                             [--retention-period]\n                             [--tags]",
+            "required_parameters": [
+                "--filters",
+                "--snapshot-name -s"
+            ],
+            "optional_parameters": [
+                "--auth-mode",
+                "--composition-type",
+                "--connection-string",
+                "--endpoint",
+                "--name -n",
+                "--retention-period",
+                "--tags"
+            ],
+            "examples": [
+                "az appconfig snapshot create -s MySnapshot -n MyAppConfiguration --filters '{\\\"key\\\":\\\"Test*\\\"}'",
+                "az appconfig snapshot create -s MySnapshot -n MyAppConfiguration --filters '{\\\"key\\\":\\\"abc*\\\"}' --retention-period 3600",
+                "az appconfig snapshot create -s MySnapshot -n MyAppConfiguration --filters '{\\\"key\\\":\\\"app/*\\\"}' '{\\\"key\\\":\\\"app/*\\\", \\\"label\\\":\\\"prod\\\"}' --composition-type 'key'"
+            ]
+        },
+        {
+            "name": "az appconfig snapshot list",
+            "summary": "List snapshots.",
+            "syntax": "az appconfig snapshot list [--all]\n                           [--auth-mode {key, login}]\n                           [--connection-string]\n                           [--endpoint]\n                           [--fields {composition_type, created, etag, expires, filters, items_count, name, retention_period, size, status, tags}]\n                           [--name]\n                           [--snapshot-name]\n                           [--status {archived, failed, provisioning, ready}]\n                           [--top]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--all",
+                "--auth-mode",
+                "--connection-string",
+                "--endpoint",
+                "--fields",
+                "--name -n",
+                "--snapshot-name -s",
+                "--status",
+                "--top -t"
+            ],
+            "examples": [
+                "az appconfig snapshot list -s abc* -n MyAppConfiguration",
+                "az appconfig snapshot list --status archived -n MyAppConfiguration",
+                "az appconfig snapshot list -s app* --status provisioning -n MyAppConfiguration",
+                "az appconfig snapshot list --status failed provisioning -n MyAppConfiguration"
+            ]
+        },
+        {
+            "name": "az appconfig snapshot recover",
+            "summary": "Recover an archived snapshot.",
+            "syntax": "az appconfig snapshot recover --snapshot-name\n                              [--auth-mode {key, login}]\n                              [--connection-string]\n                              [--endpoint]\n                              [--name]",
+            "required_parameters": [
+                "--snapshot-name -s"
+            ],
+            "optional_parameters": [
+                "--auth-mode",
+                "--connection-string",
+                "--endpoint",
+                "--name -n"
+            ],
+            "examples": [
+                "az appconfig snapshot recover -s MySnapshot -n MyAppConfiguration"
+            ]
+        },
+        {
+            "name": "az appconfig snapshot show",
+            "summary": "Show all attributes of an app configuration snapshot.",
+            "syntax": "az appconfig snapshot show --snapshot-name\n                           [--auth-mode {key, login}]\n                           [--connection-string]\n                           [--endpoint]\n                           [--fields {composition_type, created, etag, expires, filters, items_count, name, retention_period, size, status, tags}]\n                           [--name]",
+            "required_parameters": [
+                "--snapshot-name -s"
+            ],
+            "optional_parameters": [
+                "--auth-mode",
+                "--connection-string",
+                "--endpoint",
+                "--fields",
+                "--name -n"
+            ],
+            "examples": [
+                "az appconfig snapshot show -s MySnapshot -n MyAppConfiguration"
+            ]
+        }
+    ]
+}

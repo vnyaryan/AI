@@ -1,0 +1,95 @@
+{
+    "command_group": "az security security-connector devops azuredevopsorg project",
+    "description": "Azure DevOps projects.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az security security-connector devops azuredevopsorg project create",
+            "summary": "Create a monitored Azure DevOps project resource.",
+            "syntax": "az security security-connector devops azuredevopsorg project create --name\n                                                                    --org-name\n                                                                    --project-name\n                                                                    --resource-group\n                                                                    [--actionable-remediation]\n                                                                    [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]",
+            "required_parameters": [
+                "--name --security-connector-name -n",
+                "--org-name",
+                "--project-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--actionable-remediation",
+                "--no-wait"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az security security-connector devops azuredevopsorg project list",
+            "summary": "List Azure DevOps projects onboarded to the connector.",
+            "syntax": "az security security-connector devops azuredevopsorg project list --name\n                                                                  --org-name\n                                                                  --resource-group\n                                                                  [--max-items]\n                                                                  [--next-token]",
+            "required_parameters": [
+                "--name --security-connector-name -n",
+                "--org-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az security security-connector devops azuredevopsorg project show",
+            "summary": "Get a monitored Azure DevOps project resource.",
+            "syntax": "az security security-connector devops azuredevopsorg project show [--ids]\n                                                                  [--name]\n                                                                  [--org-name]\n                                                                  [--project-name]\n                                                                  [--resource-group]\n                                                                  [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --security-connector-name -n",
+                "--org-name",
+                "--project-name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az security security-connector devops azuredevopsorg project update",
+            "summary": "Update a monitored Azure DevOps project resource.",
+            "syntax": "az security security-connector devops azuredevopsorg project update [--actionable-remediation]\n                                                                    [--ids]\n                                                                    [--name]\n                                                                    [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                                                    [--org-name]\n                                                                    [--project-name]\n                                                                    [--resource-group]\n                                                                    [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--actionable-remediation",
+                "--ids",
+                "--name --security-connector-name -n",
+                "--no-wait",
+                "--org-name",
+                "--project-name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az security security-connectors devops azuredevopsorgs projects repos update --security-connector-name myConnectorName --resource-group myResourceGroup --org-name myOrganization --project-name myProject --actionable-remediation state=Disabled",
+                "az security security-connectors devops azuredevopsorgs projects repos update --security-connector-name myConnectorName --resource-group myResourceGroup --org-name myOrganization --project-name myProject --actionable-remediation state=Enabled category-configurations[0].category=IaC category-configurations[0].minimum-severity-level=Low"
+            ]
+        },
+        {
+            "name": "az security security-connector devops azuredevopsorg project wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az security security-connector devops azuredevopsorg project wait [--created]\n                                                                  [--custom]\n                                                                  [--deleted]\n                                                                  [--exists]\n                                                                  [--ids]\n                                                                  [--interval]\n                                                                  [--name]\n                                                                  [--org-name]\n                                                                  [--project-name]\n                                                                  [--resource-group]\n                                                                  [--subscription]\n                                                                  [--timeout]\n                                                                  [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--name --security-connector-name -n",
+                "--org-name",
+                "--project-name",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

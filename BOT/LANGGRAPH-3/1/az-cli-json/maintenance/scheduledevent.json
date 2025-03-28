@@ -1,0 +1,26 @@
+{
+    "command_group": "az maintenance scheduledevent",
+    "description": "ScheduledEvents action.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az maintenance scheduledevent acknowledge",
+            "summary": "Acknowledge Scheduled Event.",
+            "syntax": "az maintenance scheduledevent acknowledge [--ids]\n                                          [--resource-group]\n                                          [--resource-name]\n                                          [--resource-type]\n                                          [--scheduled-event-id]\n                                          [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--resource-group -g",
+                "--resource-name",
+                "--resource-type",
+                "--scheduled-event-id",
+                "--subscription"
+            ],
+            "examples": [
+                "az maintenance scheduledevent acknowledge --resource-group {resourceGroupName} --resource-type \"virtualMachines\" --resource-name {VMname} --scheduled-event-id {scheduledEventId} --subscription {subscriptionId}\naz maintenance scheduledevent acknowledge --ids /subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/microsoft.compute/virtualMachines/{resourceName}/providers/microsoft.maintenance/scheduledevents/{scheduledEventId}",
+                "az maintenance scheduledevent acknowledge --resource-group {resourceGroup} --resource-type \"virtualMachineScaleSets\" --resource-name {VMSSname} --scheduled-event-id {scheduledEventId} --subscription {subscriptionId}\naz maintenance scheduledevent acknowledge --ids /subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/microsoft.compute/virtualMachineScaleSets/{resourceName}/providers/microsoft.maintenance/scheduledevents/{scheduledEventId}",
+                "az maintenance scheduledevent acknowledge--resource-group {resourceGroupName} --resource-type \"availabilitySets\"--resource-name {AVSetname} --scheduled-event-id {scheduledEventId} --subscription {subscriptionId}\naz maintenance scheduledevent acknowledge --ids /subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/microsoft.compute/AvalabilitySets/{resourceName}/providers/microsoft.maintenance/scheduledevents/{scheduledEventId}"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,111 @@
+{
+    "command_group": "az connectedmachine private-link-scope",
+    "description": "Manage private link scope of an Azure Arc-Enabled Server.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az connectedmachine private-link-scope create",
+            "summary": "Create an Azure Arc PrivateLinkScope. Note: You cannot specify a different value for InstrumentationKey nor AppId in the Put operation.",
+            "syntax": "az connectedmachine private-link-scope create --name\n                                              --resource-group\n                                              [--location]\n                                              [--public-network-access {Disabled, Enabled, SecuredByPerimeter}]\n                                              [--tags]",
+            "required_parameters": [
+                "--name --scope-name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--location -l",
+                "--public-network-access",
+                "--tags"
+            ],
+            "examples": [
+                "az connectedmachine private-link-scope create --location westus --resource-group my-resource-group --scope-name my-privatelinkscope"
+            ]
+        },
+        {
+            "name": "az connectedmachine private-link-scope delete",
+            "summary": "Delete an Azure Arc PrivateLinkScope.",
+            "syntax": "az connectedmachine private-link-scope delete [--ids]\n                                              [--name]\n                                              [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                              [--resource-group]\n                                              [--subscription]\n                                              [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --scope-name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az connectedmachine private-link-scope delete --resource-group my-resource-group --scope-name my-privatelinkscope"
+            ]
+        },
+        {
+            "name": "az connectedmachine private-link-scope list",
+            "summary": "Get a list of Azure Arc PrivateLinkScopes for a resource group or a subscription.",
+            "syntax": "az connectedmachine private-link-scope list [--max-items]\n                                            [--next-token]\n                                            [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az connectedmachine private-link-scope list --resource-group my-resource-group\naz connectedmachine private-link-scope list"
+            ]
+        },
+        {
+            "name": "az connectedmachine private-link-scope show",
+            "summary": "Get an Azure Arc PrivateLinkScope.",
+            "syntax": "az connectedmachine private-link-scope show [--ids]\n                                            [--name]\n                                            [--resource-group]\n                                            [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --scope-name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az connectedmachine private-link-scope show --resource-group my-resource-group --scope-name my-privatelinkscope"
+            ]
+        },
+        {
+            "name": "az connectedmachine private-link-scope update",
+            "summary": "Update an Azure Arc PrivateLinkScope. Note: You cannot specify a different value for InstrumentationKey nor AppId in the Put operation.",
+            "syntax": "az connectedmachine private-link-scope update [--add]\n                                              [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                              [--ids]\n                                              [--name]\n                                              [--public-network-access {Disabled, Enabled, SecuredByPerimeter}]\n                                              [--remove]\n                                              [--resource-group]\n                                              [--set]\n                                              [--subscription]\n                                              [--tags]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--force-string",
+                "--ids",
+                "--name --scope-name -n",
+                "--public-network-access",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--subscription",
+                "--tags"
+            ],
+            "examples": [
+                "az connectedmachine private-link-scope update --tags Tag1=Value1 --resource-group my-resource-group --scope-name my-privatelinkscope"
+            ]
+        },
+        {
+            "name": "az connectedmachine private-link-scope wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az connectedmachine private-link-scope wait [--created]\n                                            [--custom]\n                                            [--deleted]\n                                            [--exists]\n                                            [--ids]\n                                            [--interval]\n                                            [--name]\n                                            [--resource-group]\n                                            [--subscription]\n                                            [--timeout]\n                                            [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--name --scope-name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

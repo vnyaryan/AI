@@ -1,0 +1,179 @@
+{
+    "command_group": "az cosmosdb mongodb user definition",
+    "description": "Manage Azure Cosmos DB Mongo user definitions.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az cosmosdb mongodb user definition create",
+            "summary": "Create a Mongo DB user definition under an Azure Cosmos DB account.",
+            "syntax": "az cosmosdb mongodb user definition create --account-name\n                                           --body\n                                           --resource-group",
+            "required_parameters": [
+                "--account-name -a",
+                "--body -b",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az cosmosdb mongodb user definition create --account-name MyAccount --resource-group MyResourceGroup --body '{\n  \"Id\": \"MyDB.MyUName\",\n  \"UserName\": \"MyUName\",\n  \"Password\": \"MyPass\",\n  \"DatabaseName\": \"MyDB\",\n  \"CustomData\": \"TestCustomData\",\n  \"Mechanisms\": \"SCRAM-SHA-256\",\n  \"Roles\": [\n    {\n      \"Role\": \"myReadRole\",\n      \"Db\": \"MyDB\"\n    }\n  ]\n}'",
+                "az cosmosdb mongodb user definition create --account-name MyAccount --resource-group MyResourceGroup --body @mongo-user-definition.json"
+            ]
+        },
+        {
+            "name": "az cosmosdb mongodb user definition create",
+            "summary": "Create a Mongo DB user definition under an Azure Cosmos DB account.",
+            "syntax": "az cosmosdb mongodb user definition create --account-name\n                                           --body\n                                           --resource-group",
+            "required_parameters": [
+                "--account-name -a",
+                "--body -b",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az cosmosdb mongodb user definition create --account-name MyAccount --resource-group MyResourceGroup --body '{\n  \"Id\": \"MyDB.MyUName\",\n  \"UserName\": \"MyUName\",\n  \"Password\": \"MyPass\",\n  \"DatabaseName\": \"MyDB\",\n  \"CustomData\": \"TestCustomData\",\n  \"Mechanisms\": \"SCRAM-SHA-256\",\n  \"Roles\": [\n    {\n      \"Role\": \"myReadRole\",\n      \"Db\": \"MyDB\"\n    }\n  ]\n}'",
+                "az cosmosdb mongodb user definition create --account-name MyAccount --resource-group MyResourceGroup --body @mongo-user-definition.json"
+            ]
+        },
+        {
+            "name": "az cosmosdb mongodb user definition delete",
+            "summary": "Delete a CosmosDb MongoDb user definition under an Azure Cosmos DB account.",
+            "syntax": "az cosmosdb mongodb user definition delete --account-name\n                                           --id\n                                           --resource-group\n                                           [--yes]",
+            "required_parameters": [
+                "--account-name -a",
+                "--id -i",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--yes -y"
+            ],
+            "examples": [
+                "az cosmosdb mongodb user definition delete --account-name MyAccount --resource-group MyResourceGroup --id be79875a-2cc4-40d5-8958-566017875b39"
+            ]
+        },
+        {
+            "name": "az cosmosdb mongodb user definition delete",
+            "summary": "Delete a CosmosDb MongoDb user definition under an Azure Cosmos DB account.",
+            "syntax": "az cosmosdb mongodb user definition delete --account-name\n                                           --id\n                                           --resource-group\n                                           [--yes]",
+            "required_parameters": [
+                "--account-name -a",
+                "--id -i",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--yes -y"
+            ],
+            "examples": [
+                "az cosmosdb mongodb user definition delete --account-name MyAccount --resource-group MyResourceGroup --id be79875a-2cc4-40d5-8958-566017875b39"
+            ]
+        },
+        {
+            "name": "az cosmosdb mongodb user definition exists",
+            "summary": "Check if an Azure Cosmos DB MongoDb user definition exists.",
+            "syntax": "az cosmosdb mongodb user definition exists --account-name\n                                           --id\n                                           --resource-group",
+            "required_parameters": [
+                "--account-name -a",
+                "--id -i",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az cosmosdb mongodb user definition exists --account-name MyAccount --resource-group MyResourceGroup --id be79875a-2cc4-40d5-8958-566017875b39"
+            ]
+        },
+        {
+            "name": "az cosmosdb mongodb user definition exists",
+            "summary": "Check if an Azure Cosmos DB MongoDb user definition exists.",
+            "syntax": "az cosmosdb mongodb user definition exists --account-name\n                                           --id\n                                           --resource-group",
+            "required_parameters": [
+                "--account-name -a",
+                "--id -i",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az cosmosdb mongodb user definition exists --account-name MyAccount --resource-group MyResourceGroup --id be79875a-2cc4-40d5-8958-566017875b39"
+            ]
+        },
+        {
+            "name": "az cosmosdb mongodb user definition list",
+            "summary": "List all MongoDb user definitions under an Azure Cosmos DB account.",
+            "syntax": "az cosmosdb mongodb user definition list --account-name\n                                         --resource-group",
+            "required_parameters": [
+                "--account-name -a",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az cosmosdb mongodb user definition list --account-name MyAccount --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az cosmosdb mongodb user definition list",
+            "summary": "List all MongoDb user definitions under an Azure Cosmos DB account.",
+            "syntax": "az cosmosdb mongodb user definition list --account-name\n                                         --resource-group",
+            "required_parameters": [
+                "--account-name -a",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az cosmosdb mongodb user definition list --account-name MyAccount --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az cosmosdb mongodb user definition show",
+            "summary": "Show the properties of a MongoDb user definition under an Azure Cosmos DB account.",
+            "syntax": "az cosmosdb mongodb user definition show --account-name\n                                         --id\n                                         --resource-group",
+            "required_parameters": [
+                "--account-name -a",
+                "--id -i",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az cosmosdb mongodb user definition show --account-name MyAccount --resource-group MyResourceGroup --id be79875a-2cc4-40d5-8958-566017875b39"
+            ]
+        },
+        {
+            "name": "az cosmosdb mongodb user definition show",
+            "summary": "Show the properties of a MongoDb user definition under an Azure Cosmos DB account.",
+            "syntax": "az cosmosdb mongodb user definition show --account-name\n                                         --id\n                                         --resource-group",
+            "required_parameters": [
+                "--account-name -a",
+                "--id -i",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az cosmosdb mongodb user definition show --account-name MyAccount --resource-group MyResourceGroup --id be79875a-2cc4-40d5-8958-566017875b39"
+            ]
+        },
+        {
+            "name": "az cosmosdb mongodb user definition update",
+            "summary": "Update a MongoDb user definition under an Azure Cosmos DB account.",
+            "syntax": "az cosmosdb mongodb user definition update --account-name\n                                           --body\n                                           --resource-group",
+            "required_parameters": [
+                "--account-name -a",
+                "--body -b",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az cosmosdb mongodb user definition update --account-name MyAccount --resource-group MyResourceGroup --body @mongo-user-definition.json"
+            ]
+        },
+        {
+            "name": "az cosmosdb mongodb user definition update",
+            "summary": "Update a MongoDb user definition under an Azure Cosmos DB account.",
+            "syntax": "az cosmosdb mongodb user definition update --account-name\n                                           --body\n                                           --resource-group",
+            "required_parameters": [
+                "--account-name -a",
+                "--body -b",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az cosmosdb mongodb user definition update --account-name MyAccount --resource-group MyResourceGroup --body @mongo-user-definition.json"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,35 @@
+{
+    "command_group": "az cognitiveservices account keys",
+    "description": "Manage Azure Cognitive Services accounts.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az cognitiveservices account keys list",
+            "summary": "Manage Azure Cognitive Services accounts.",
+            "syntax": "az cognitiveservices account keys list --name\n                                       --resource-group",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az cognitiveservices account keys list --name myresource -g cognitive-services-resource-group",
+                "az cognitiveservices account keys list --name myresource --resource-group cognitive-services-resource-group --subscription MySubscription"
+            ]
+        },
+        {
+            "name": "az cognitiveservices account keys regenerate",
+            "summary": "Manage Azure Cognitive Services accounts.",
+            "syntax": "az cognitiveservices account keys regenerate --key-name {Key1, Key2}\n                                             --name\n                                             --resource-group",
+            "required_parameters": [
+                "--key-name",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az cognitiveservices account keys regenerate --name myresource -g cognitive-services-resource-group --key-name key1"
+            ]
+        }
+    ]
+}

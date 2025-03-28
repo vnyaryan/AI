@@ -1,0 +1,96 @@
+{
+    "command_group": "az spring-cloud build-service builder buildpack-binding",
+    "description": "(Enterprise Tier Only) Commands to manage buildpack-binding of builder.",
+    "status": "Preview and Deprecated",
+    "commands": [
+        {
+            "name": "az spring-cloud build-service builder buildpack-binding create",
+            "summary": "(Enterprise Tier Only) Create a buildpack binding.",
+            "syntax": "az spring-cloud build-service builder buildpack-binding create --name\n                                                               --resource-group\n                                                               --service\n                                                               --type {ApacheSkyWalking, AppDynamics, ApplicationInsights, Dynatrace, ElasticAPM, NewRelic}\n                                                               [--builder-name]\n                                                               [--properties]\n                                                               [--secrets]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g",
+                "--service -s",
+                "--type"
+            ],
+            "optional_parameters": [
+                "--builder-name",
+                "--properties",
+                "--secrets"
+            ],
+            "examples": [
+                "az spring-cloud build-service builder buildpack-binding create --name first-binding --builder-name first-builder --type ApplicationInsights --service MyCluster --resource-group MyResourceGroup",
+                "az spring-cloud build-service builder buildpack-binding create --name first-binding --builder-name first-builder --type ApplicationInsights --secrets k1=v1 k2=v2 --service MyCluster --resource-group MyResourceGroup",
+                "az spring-cloud build-service builder buildpack-binding create --name first-binding --builder-name first-builder --type ApplicationInsights --properties a=b c=d --service MyCluster --resource-group MyResourceGroup",
+                "az spring-cloud build-service builder buildpack-binding create --name first-binding --builder-name first-builder --type ApplicationInsights --properties a=b c=d --secrets k1=v1 k2=v2 --service MyCluster --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az spring-cloud build-service builder buildpack-binding delete",
+            "summary": "(Enterprise Tier Only) Delete a buildpack binding.",
+            "syntax": "az spring-cloud build-service builder buildpack-binding delete --name\n                                                               --resource-group\n                                                               --service\n                                                               [--builder-name]\n                                                               [--yes]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [
+                "--builder-name",
+                "--yes -y"
+            ],
+            "examples": [
+                "az spring-cloud build-service builder buildpack-binding delete --name first-binding --builder-name first-builder --service MyCluster --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az spring-cloud build-service builder buildpack-binding list",
+            "summary": "(Enterprise Tier Only) List all buildpack binding in a builder. The secrets will be masked.",
+            "syntax": "az spring-cloud build-service builder buildpack-binding list --resource-group\n                                                             --service\n                                                             [--builder-name]",
+            "required_parameters": [
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [
+                "--builder-name"
+            ],
+            "examples": [
+                "az spring-cloud build-service builder buildpack-binding list --builder-name first-builder --service MyCluster --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az spring-cloud build-service builder buildpack-binding set",
+            "summary": "(Enterprise Tier Only) Set a buildpack binding.",
+            "syntax": "az spring-cloud build-service builder buildpack-binding set --name\n                                                            --resource-group\n                                                            --service\n                                                            --type {ApacheSkyWalking, AppDynamics, ApplicationInsights, Dynatrace, ElasticAPM, NewRelic}\n                                                            [--builder-name]\n                                                            [--properties]\n                                                            [--secrets]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g",
+                "--service -s",
+                "--type"
+            ],
+            "optional_parameters": [
+                "--builder-name",
+                "--properties",
+                "--secrets"
+            ],
+            "examples": [
+                "az spring-cloud build-service builder buildpack-binding set --name first-binding --builder-name first-builder --type ApplicationInsights --properties a=b c=d --secrets k1=v1 k2=v2 --service MyCluster --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az spring-cloud build-service builder buildpack-binding show",
+            "summary": "(Enterprise Tier Only) Show a buildpack binding. The secrets will be masked.",
+            "syntax": "az spring-cloud build-service builder buildpack-binding show --name\n                                                             --resource-group\n                                                             --service\n                                                             [--builder-name]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [
+                "--builder-name"
+            ],
+            "examples": [
+                "az spring-cloud build-service builder buildpack-binding show --name first-binding --builder-name first-builder --service MyCluster --resource-group MyResourceGroup"
+            ]
+        }
+    ]
+}

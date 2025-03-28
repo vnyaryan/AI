@@ -1,0 +1,52 @@
+{
+    "command_group": "az storage blob immutability-policy",
+    "description": "Manage blob immutability policy.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az storage blob immutability-policy delete",
+            "summary": "Delete blob's immutability policy.",
+            "syntax": "az storage blob immutability-policy delete --container-name\n                                           --name\n                                           [--account-key]\n                                           [--account-name]\n                                           [--auth-mode {key, login}]\n                                           [--blob-endpoint]\n                                           [--connection-string]\n                                           [--sas-token]\n                                           [--timeout]",
+            "required_parameters": [
+                "--container-name -c",
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--account-key",
+                "--account-name",
+                "--auth-mode",
+                "--blob-endpoint",
+                "--connection-string",
+                "--sas-token",
+                "--timeout"
+            ],
+            "examples": [
+                "az storage blob immutability-policy delete -c mycontainer -n myblob --account-name mystorageaccount --account-key 0000-0000"
+            ]
+        },
+        {
+            "name": "az storage blob immutability-policy set",
+            "summary": "Set blob's immutability policy.",
+            "syntax": "az storage blob immutability-policy set --container-name\n                                        --name\n                                        [--account-key]\n                                        [--account-name]\n                                        [--auth-mode {key, login}]\n                                        [--blob-endpoint]\n                                        [--connection-string]\n                                        [--expiry-time]\n                                        [--policy-mode {Locked, Unlocked}]\n                                        [--sas-token]\n                                        [--timeout]",
+            "required_parameters": [
+                "--container-name -c",
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--account-key",
+                "--account-name",
+                "--auth-mode",
+                "--blob-endpoint",
+                "--connection-string",
+                "--expiry-time",
+                "--policy-mode",
+                "--sas-token",
+                "--timeout"
+            ],
+            "examples": [
+                "az storage blob immutability-policy set --expiry-time 2021-09-07T08:00:00Z --policy-mode Unlocked -c mycontainer -n myblob --account-name mystorageaccount",
+                "az storage blob immutability-policy set --policy-mode Locked -c mycontainer -n myblob --account-name mystorageaccount"
+            ]
+        }
+    ]
+}

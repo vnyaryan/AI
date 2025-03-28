@@ -1,0 +1,36 @@
+{
+    "command_group": "az vmss diagnostics",
+    "description": "Configure the Azure Virtual Machine Scale Set diagnostics extension.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az vmss diagnostics get-default-config",
+            "summary": "Show the default config file which defines data to be collected.",
+            "syntax": "az vmss diagnostics get-default-config [--is-windows-os]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--is-windows-os"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az vmss diagnostics set",
+            "summary": "Enable diagnostics on a VMSS.",
+            "syntax": "az vmss diagnostics set --resource-group\n                        --settings\n                        --vmss-name\n                        [--no-auto-upgrade {false, true}]\n                        [--no-auto-upgrade-minor-version {false, true}]\n                        [--protected-settings]\n                        [--version]",
+            "required_parameters": [
+                "--resource-group -g",
+                "--settings",
+                "--vmss-name"
+            ],
+            "optional_parameters": [
+                "--no-auto-upgrade",
+                "--no-auto-upgrade-minor-version",
+                "--protected-settings",
+                "--version"
+            ],
+            "examples": [
+                "az vmss diagnostics set --protected-settings {protected-settings} --resource-group MyResourceGroup --settings '{\"commandToExecute\": \"echo testing\"}' --vmss-name MyVmss"
+            ]
+        }
+    ]
+}

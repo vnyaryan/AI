@@ -1,0 +1,67 @@
+{
+    "command_group": "az arcappliance troubleshoot command",
+    "description": "Command group for troubleshooting an Appliance cluster by executing a shell command.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az arcappliance troubleshoot command hci",
+            "summary": "Command to execute a shell command on an HCI cluster for troubleshooting. Either --ip or --kubeconfig must be provided. If both are passed in, --ip will be used.",
+            "syntax": "az arcappliance troubleshoot command hci [--cloudagent]\n                                         [--command]\n                                         [--credentials-dir]\n                                         [--ip]\n                                         [--kubeconfig]\n                                         [--loginconfigfile]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--cloudagent",
+                "--command",
+                "--credentials-dir",
+                "--ip",
+                "--kubeconfig",
+                "--loginconfigfile"
+            ],
+            "examples": [
+                "az arcappliance troubleshoot command hci --command [REQUIRED] --ip [REQUIRED] --credentials-dir [OPTIONAL]",
+                "az arcappliance troubleshoot command hci --command [REQUIRED] --kubeconfig [REQUIRED] --credentials-dir [OPTIONAL]",
+                "az arcappliance troubleshoot command hci --command [REQUIRED] --ip [REQUIRED] --credentials-dir [OPTIONAL] --cloudagent [OPTIONAL] --loginconfigfile [OPTIONAL]"
+            ]
+        },
+        {
+            "name": "az arcappliance troubleshoot command scvmm",
+            "summary": "Command to execute a shell command on an SCVMM cluster for troubleshooting. Either --ip or --kubeconfig must be provided. If both are passed in, --ip will be used.",
+            "syntax": "az arcappliance troubleshoot command scvmm [--address]\n                                           [--command]\n                                           [--credentials-dir]\n                                           [--ip]\n                                           [--kubeconfig]\n                                           [--password]\n                                           [--port]\n                                           [--username]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--address",
+                "--command",
+                "--credentials-dir",
+                "--ip",
+                "--kubeconfig",
+                "--password",
+                "--port",
+                "--username"
+            ],
+            "examples": [
+                "az arcappliance troubleshoot command scvmm --command [REQUIRED] --ip [REQUIRED] --credentials-dir [OPTIONAL]",
+                "az arcappliance troubleshoot command scvmm --command [REQUIRED] --kubeconfig [REQUIRED] --credentials-dir [OPTIONAL]",
+                "az arcappliance troubleshoot command scvmm --command [REQUIRED] --ip [REQUIRED] --credentials-dir [OPTIONAL] --address [OPTIONAL] --port [OPTIONAL] --username [OPTIONAL] --password [OPTIONAL]"
+            ]
+        },
+        {
+            "name": "az arcappliance troubleshoot command vmware",
+            "summary": "Command to execute a shell command on an VMWare cluster for troubleshooting. Either --ip or --kubeconfig must be provided. If both are passed in, --ip will be used.",
+            "syntax": "az arcappliance troubleshoot command vmware [--address]\n                                            [--command]\n                                            [--credentials-dir]\n                                            [--ip]\n                                            [--kubeconfig]\n                                            [--password]\n                                            [--username]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--address",
+                "--command",
+                "--credentials-dir",
+                "--ip",
+                "--kubeconfig",
+                "--password",
+                "--username"
+            ],
+            "examples": [
+                "az arcappliance troubleshoot command vmware --command [REQUIRED] --ip [REQUIRED] --credentials-dir [OPTIONAL]",
+                "az arcappliance troubleshoot command vmware --command [REQUIRED] --kubeconfig [REQUIRED] --credentials-dir [OPTIONAL]",
+                "az arcappliance troubleshoot command vmware --command [REQUIRED] --ip [REQUIRED] --credentials-dir [OPTIONAL] --address [OPTIONAL] --username [OPTIONAL] --password [OPTIONAL]"
+            ]
+        }
+    ]
+}

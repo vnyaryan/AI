@@ -1,0 +1,56 @@
+{
+    "command_group": "az feature",
+    "description": "Manage resource provider features.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az feature list",
+            "summary": "List preview features.",
+            "syntax": "az feature list [--namespace]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--namespace"
+            ],
+            "examples": [
+                "az feature list"
+            ]
+        },
+        {
+            "name": "az feature register",
+            "summary": "Register a preview feature.",
+            "syntax": "az feature register --name\n                    --namespace",
+            "required_parameters": [
+                "--name -n",
+                "--namespace"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az feature register --namespace Microsoft.Compute --name GalleryPreview"
+            ]
+        },
+        {
+            "name": "az feature show",
+            "summary": "Gets the preview feature with the specified name.",
+            "syntax": "az feature show --name\n                --namespace",
+            "required_parameters": [
+                "--name -n",
+                "--namespace"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az feature unregister",
+            "summary": "Unregister a preview feature.",
+            "syntax": "az feature unregister --name\n                      --namespace",
+            "required_parameters": [
+                "--name -n",
+                "--namespace"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az feature unregister --namespace Microsoft.Compute --name GalleryPreview"
+            ]
+        }
+    ]
+}

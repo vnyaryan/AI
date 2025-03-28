@@ -1,0 +1,186 @@
+{
+    "command_group": "az stack-hci arc-setting",
+    "description": "Manage arc setting with stack hci.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az stack-hci arc-setting consent-and-install-default-extension",
+            "summary": "Add consent time for default extensions and initiate extensions installation.",
+            "syntax": "az stack-hci arc-setting consent-and-install-default-extension [--arc-setting-name]\n                                                               [--cluster-name]\n                                                               [--ids]\n                                                               [--resource-group]\n                                                               [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--arc-setting-name",
+                "--cluster-name",
+                "--ids",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az stack-hci arc-setting consent-and-install-default-extension -g rg --arc-setting-name default --cluster-name name"
+            ]
+        },
+        {
+            "name": "az stack-hci arc-setting create",
+            "summary": "Create arc setting for HCI cluster.",
+            "syntax": "az stack-hci arc-setting create --arc-setting-name\n                                --cluster-name\n                                --resource-group\n                                [--arc-application-client-id]\n                                [--arc-application-object-id]\n                                [--arc-application-tenant-id]\n                                [--arc-instance-rg]\n                                [--arc-service-principal-object-id]\n                                [--connectivity-properties]",
+            "required_parameters": [
+                "--arc-setting-name --name -n",
+                "--cluster-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--arc-application-client-id",
+                "--arc-application-object-id",
+                "--arc-application-tenant-id",
+                "--arc-instance-rg",
+                "--arc-service-principal-object-id",
+                "--connectivity-properties"
+            ],
+            "examples": [
+                "az stack-hci arc-setting create --name \"default\" --cluster-name \"myCluster\" --resource-group \"test-rg\""
+            ]
+        },
+        {
+            "name": "az stack-hci arc-setting create-identity",
+            "summary": "Create AAD identity for arc settings.",
+            "syntax": "az stack-hci arc-setting create-identity [--arc-setting-name]\n                                         [--cluster-name]\n                                         [--ids]\n                                         [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                         [--resource-group]\n                                         [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--arc-setting-name --name -n",
+                "--cluster-name",
+                "--ids",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az stack-hci arc-setting create-identity --name \"default\" --cluster-name \"myCluster\" --resource-group \"test-rg\""
+            ]
+        },
+        {
+            "name": "az stack-hci arc-setting delete",
+            "summary": "Delete arc setting resource details of HCI cluster.",
+            "syntax": "az stack-hci arc-setting delete [--arc-setting-name]\n                                [--cluster-name]\n                                [--ids]\n                                [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                [--resource-group]\n                                [--subscription]\n                                [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--arc-setting-name --name -n",
+                "--cluster-name",
+                "--ids",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az stack-hci arc-setting delete --name \"default\" --cluster-name \"myCluster\" --resource-group \"test-rg\""
+            ]
+        },
+        {
+            "name": "az stack-hci arc-setting generate-password",
+            "summary": "Generate password for arc settings.",
+            "syntax": "az stack-hci arc-setting generate-password [--arc-setting-name]\n                                           [--cluster-name]\n                                           [--ids]\n                                           [--resource-group]\n                                           [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--arc-setting-name --name -n",
+                "--cluster-name",
+                "--ids",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az stack-hci arc-setting generate-password --name \"default\" --cluster-name \"myCluster\" --resource-group \"test-rg\""
+            ]
+        },
+        {
+            "name": "az stack-hci arc-setting initialize-disable-proces",
+            "summary": "Initialize ARC Disable process on the cluster.",
+            "syntax": "az stack-hci arc-setting initialize-disable-proces [--arc-setting-name]\n                                                   [--cluster-name]\n                                                   [--ids]\n                                                   [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                                   [--resource-group]\n                                                   [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--arc-setting-name",
+                "--cluster-name",
+                "--ids",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az stack-hci arc-setting initialize-disable-proces -g rg --arc-setting-name default --cluster-name name"
+            ]
+        },
+        {
+            "name": "az stack-hci arc-setting list",
+            "summary": "List arc setting resources of HCI cluster.",
+            "syntax": "az stack-hci arc-setting list --cluster-name\n                              --resource-group\n                              [--max-items]\n                              [--next-token]",
+            "required_parameters": [
+                "--cluster-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az stack-hci arc-setting list --cluster-name \"myCluster\" --resource-group \"test-rg\""
+            ]
+        },
+        {
+            "name": "az stack-hci arc-setting show",
+            "summary": "Get arc setting resource details of HCI cluster.",
+            "syntax": "az stack-hci arc-setting show [--arc-setting-name]\n                              [--cluster-name]\n                              [--ids]\n                              [--resource-group]\n                              [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--arc-setting-name --name -n",
+                "--cluster-name",
+                "--ids",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az stack-hci arc-setting show --name \"default\" --cluster-name \"myCluster\" --resource-group \"test-rg\""
+            ]
+        },
+        {
+            "name": "az stack-hci arc-setting update",
+            "summary": "Update arc setting for HCI cluster.",
+            "syntax": "az stack-hci arc-setting update [--add]\n                                [--arc-setting-name]\n                                [--cluster-name]\n                                [--connectivity-properties]\n                                [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                [--ids]\n                                [--remove]\n                                [--resource-group]\n                                [--set]\n                                [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--arc-setting-name --name -n",
+                "--cluster-name",
+                "--connectivity-properties",
+                "--force-string",
+                "--ids",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--subscription"
+            ],
+            "examples": [
+                "az stack-hci arc-setting update --resource-group \"test-rg\" --cluster-name \"myCluster\" --name \"default\" --tags \"{tag:tag}\""
+            ]
+        },
+        {
+            "name": "az stack-hci arc-setting wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az stack-hci arc-setting wait [--arc-setting-name]\n                              [--cluster-name]\n                              [--created]\n                              [--custom]\n                              [--deleted]\n                              [--exists]\n                              [--ids]\n                              [--interval]\n                              [--resource-group]\n                              [--subscription]\n                              [--timeout]\n                              [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--arc-setting-name --name -n",
+                "--cluster-name",
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

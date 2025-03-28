@@ -1,0 +1,41 @@
+{
+    "command_group": "az vmware script-cmdlet",
+    "description": "Commands to list and show script cmdlet resources.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az vmware script-cmdlet list",
+            "summary": "List script cmdlet resources available for a private cloud to create a script execution resource on a private cloud.",
+            "syntax": "az vmware script-cmdlet list --private-cloud\n                             --resource-group\n                             --script-package\n                             [--max-items]\n                             [--next-token]",
+            "required_parameters": [
+                "--private-cloud -c",
+                "--resource-group -g",
+                "--script-package -p"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az vmware script-cmdlet list --resource-group group1 --private-cloud cloud1 --script-package package1"
+            ]
+        },
+        {
+            "name": "az vmware script-cmdlet show",
+            "summary": "Get information about a script cmdlet resource in a specific package on a private cloud.",
+            "syntax": "az vmware script-cmdlet show [--ids]\n                             [--name]\n                             [--private-cloud]\n                             [--resource-group]\n                             [--script-package]\n                             [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --script-cmdlet-name -n",
+                "--private-cloud -c",
+                "--resource-group -g",
+                "--script-package -p",
+                "--subscription"
+            ],
+            "examples": [
+                "az vmware script-cmdlet show --resource-group group1 --private-cloud cloud1 --script-package package1 --name cmdlet1"
+            ]
+        }
+    ]
+}

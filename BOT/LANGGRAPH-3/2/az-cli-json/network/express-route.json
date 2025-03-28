@@ -1,0 +1,209 @@
+{
+    "command_group": "az network express-route",
+    "description": "Manage dedicated private network fiber connections to Azure.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az network express-route create",
+            "summary": "Create an express route circuit.",
+            "syntax": "az network express-route create --name\n                                --resource-group\n                                [--allow-classic-operations {0, 1, f, false, n, no, t, true, y, yes}]\n                                [--allow-global-reach {0, 1, f, false, n, no, t, true, y, yes}]\n                                [--bandwidth]\n                                [--express-route-port]\n                                [--location]\n                                [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                [--peering-location]\n                                [--provider]\n                                [--sku-family {MeteredData, UnlimitedData}]\n                                [--sku-tier {Basic, Local, Premium, Standard}]\n                                [--tags]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--allow-classic-operations",
+                "--allow-global-reach",
+                "--bandwidth",
+                "--express-route-port",
+                "--location -l",
+                "--no-wait",
+                "--peering-location",
+                "--provider",
+                "--sku-family",
+                "--sku-tier",
+                "--tags"
+            ],
+            "examples": [
+                "az network express-route create --bandwidth 200 -n MyCircuit --peering-location \"SiliconValley\" -g MyResourceGroup --provider \"Equinix\" -l \"West US\" --sku-family MeteredData --sku-tier Standard"
+            ]
+        },
+        {
+            "name": "az network express-route delete",
+            "summary": "Delete an ExpressRoute circuit.",
+            "syntax": "az network express-route delete [--ids]\n                                [--name]\n                                [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                [--resource-group]\n                                [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az network express-route delete -n MyCircuit -g MyResourceGroup",
+                "az network express-route delete --name MyCircuit --resource-group MyResourceGroup --subscription MySubscription"
+            ]
+        },
+        {
+            "name": "az network express-route get-stats",
+            "summary": "Get the statistics of an ExpressRoute circuit.",
+            "syntax": "az network express-route get-stats [--ids]\n                                   [--name]\n                                   [--resource-group]\n                                   [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az network express-route get-stats -g MyResourceGroup -n MyCircuit"
+            ]
+        },
+        {
+            "name": "az network express-route list",
+            "summary": "List all ExpressRoute circuits for the current subscription.",
+            "syntax": "az network express-route list [--max-items]\n                              [--next-token]\n                              [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az network express-route list -g MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az network express-route list-arp-tables",
+            "summary": "Show the current Address Resolution Protocol (ARP) table of an ExpressRoute circuit.",
+            "syntax": "az network express-route list-arp-tables [--ids]\n                                         [--name]\n                                         [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                         [--path]\n                                         [--peering-name]\n                                         [--resource-group]\n                                         [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--path",
+                "--peering-name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az network express-route list-arp-tables -g MyResourceGroup -n MyCircuit --path primary --peering-name AzurePrivatePeering"
+            ]
+        },
+        {
+            "name": "az network express-route list-route-tables",
+            "summary": "Show the current routing table of an ExpressRoute circuit peering.",
+            "syntax": "az network express-route list-route-tables [--ids]\n                                           [--name]\n                                           [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                           [--path]\n                                           [--peering-name]\n                                           [--resource-group]\n                                           [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--path",
+                "--peering-name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az network express-route list-route-tables -g MyResourceGroup -n MyCircuit --path primary --peering-name AzurePrivatePeering"
+            ]
+        },
+        {
+            "name": "az network express-route list-route-tables-summary",
+            "summary": "Show the current routing table summary of an ExpressRoute circuit peering.",
+            "syntax": "az network express-route list-route-tables-summary [--ids]\n                                                   [--name]\n                                                   [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                                   [--path]\n                                                   [--peering-name]\n                                                   [--resource-group]\n                                                   [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--path",
+                "--peering-name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az network express-route list-route-tables-summary -g MyResourceGroup -n MyCircuit --path primary --peering-name AzurePrivatePeering"
+            ]
+        },
+        {
+            "name": "az network express-route list-service-providers",
+            "summary": "List available ExpressRoute service providers.",
+            "syntax": "az network express-route list-service-providers [--max-items]\n                                                [--next-token]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az network express-route list-service-providers"
+            ]
+        },
+        {
+            "name": "az network express-route show",
+            "summary": "Get the details of an ExpressRoute circuit.",
+            "syntax": "az network express-route show [--ids]\n                              [--name]\n                              [--resource-group]\n                              [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az network express-route show -n MyCircuit -g MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az network express-route update",
+            "summary": "Update settings of an ExpressRoute circuit.",
+            "syntax": "az network express-route update [--add]\n                                [--allow-classic-operations {0, 1, f, false, n, no, t, true, y, yes}]\n                                [--allow-global-reach {0, 1, f, false, n, no, t, true, y, yes}]\n                                [--bandwidth]\n                                [--express-route-port]\n                                [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                [--ids]\n                                [--name]\n                                [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                [--peering-location]\n                                [--provider]\n                                [--remove]\n                                [--resource-group]\n                                [--set]\n                                [--sku-family {MeteredData, UnlimitedData}]\n                                [--sku-tier {Basic, Local, Premium, Standard}]\n                                [--subscription]\n                                [--tags]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--allow-classic-operations",
+                "--allow-global-reach",
+                "--bandwidth",
+                "--express-route-port",
+                "--force-string",
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--peering-location",
+                "--provider",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--sku-family",
+                "--sku-tier",
+                "--subscription",
+                "--tags"
+            ],
+            "examples": [
+                "az network express-route update -n MyCircuit -g MyResourceGroup --sku-tier Premium"
+            ]
+        },
+        {
+            "name": "az network express-route wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az network express-route wait [--created]\n                              [--custom]\n                              [--deleted]\n                              [--exists]\n                              [--ids]\n                              [--interval]\n                              [--name]\n                              [--resource-group]\n                              [--subscription]\n                              [--timeout]\n                              [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

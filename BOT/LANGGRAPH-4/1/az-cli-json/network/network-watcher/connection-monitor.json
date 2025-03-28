@@ -1,0 +1,95 @@
+{
+    "command_group": "az network network-watcher connection-monitor",
+    "description": "Manage connection monitor.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az network network-watcher connection-monitor create",
+            "summary": "Create a connection monitor.",
+            "syntax": "az network network-watcher connection-monitor create --connection-monitor-name\n                                                     --network-watcher-name\n                                                     --resource-group\n                                                     [--auto-start {0, 1, f, false, n, no, t, true, y, yes}]\n                                                     [--endpoints]\n                                                     [--location]\n                                                     [--migrate]\n                                                     [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                                     [--notes]\n                                                     [--outputs]\n                                                     [--tags]\n                                                     [--test-configurations]\n                                                     [--test-groups]",
+            "required_parameters": [
+                "--connection-monitor-name --name -n",
+                "--network-watcher-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--auto-start",
+                "--endpoints",
+                "--location",
+                "--migrate",
+                "--no-wait",
+                "--notes",
+                "--outputs",
+                "--tags",
+                "--test-configurations",
+                "--test-groups"
+            ],
+            "examples": [
+                "az network network-watcher connection-monitor create --name cm12 --network-watcher-name networkwatcher_eastus --resource-group networkwatcherrg --location eastus --endpoints \"[{name:vmName,type:AzureVM,resourceId:/subscriptions/subid/resourceGroups/rg/providers/Microsoft.Compute/virtualMachines/TESTVM-LINUX},{address:8.8.8.8,name:google,type:ExternalAddress}]\" --test-configurations \"[{name:TestConfiguration04,protocol:Tcp,successThreshold:{},tcpConfiguration:{disableTraceRoute:false,port:53},testFrequencySec:30}]\" --test-groups \"[{destinations:[google],disable:false,name:TestingGroup04,sources:[vmName],testConfigurations:[TestConfiguration04]}]\"",
+                "az network network-watcher connection-monitor create --name cm12 --network-watcher-name networkwatcher_eastus --resource-group networkwatcherrg --location eastus --endpoints \"[{name:vmName,type:AzureVM,resourceId:/subscriptions/subid/resourceGroups/rg/providers/Microsoft.Compute/virtualMachines/TESTVM-LINUX},{address:8.8.8.8,name:google,type:ExternalAddress}]\" --test-configurations \"[{name:TestConfiguration04,protocol:Tcp,successThreshold:{},tcpConfiguration:{disableTraceRoute:false,port:53},testFrequencySec:30}]\" --test-groups \"[{destinations:[google],disable:false,name:TestingGroup04,sources:[vmName],testConfigurations:[TestConfiguration04]}]\" --outputs \"[{type:Workspace,workspaceSettings:{workspaceResourceId:/subscriptions/subid/resourceGroups/DefaultResourceGroup-EUS/providers/Microsoft.OperationalInsights/workspaces/DefaultWorkspace-sub-id-region}}]\""
+            ]
+        },
+        {
+            "name": "az network network-watcher connection-monitor delete",
+            "summary": "Delete the specified connection monitor.",
+            "syntax": "az network network-watcher connection-monitor delete [--connection-monitor-name]\n                                                     [--ids]\n                                                     [--network-watcher-name]\n                                                     [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                                     [--resource-group]\n                                                     [--subscription]\n                                                     [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--connection-monitor-name --name -n",
+                "--ids",
+                "--network-watcher-name",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az network network-watcher connection-monitor list",
+            "summary": "List all connection monitors for the specified Network Watcher.",
+            "syntax": "az network network-watcher connection-monitor list --network-watcher-name\n                                                   --resource-group",
+            "required_parameters": [
+                "--network-watcher-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az network network-watcher connection-monitor show",
+            "summary": "Get a connection monitor by name.",
+            "syntax": "az network network-watcher connection-monitor show [--connection-monitor-name]\n                                                   [--ids]\n                                                   [--network-watcher-name]\n                                                   [--resource-group]\n                                                   [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--connection-monitor-name --name -n",
+                "--ids",
+                "--network-watcher-name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az network network-watcher connection-monitor wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az network network-watcher connection-monitor wait [--connection-monitor-name]\n                                                   [--created]\n                                                   [--custom]\n                                                   [--deleted]\n                                                   [--exists]\n                                                   [--ids]\n                                                   [--interval]\n                                                   [--network-watcher-name]\n                                                   [--resource-group]\n                                                   [--subscription]\n                                                   [--timeout]\n                                                   [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--connection-monitor-name --name -n",
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--network-watcher-name",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

@@ -1,0 +1,95 @@
+{
+    "command_group": "az devcenter admin gallery",
+    "description": "Manage galleries.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az devcenter admin gallery create",
+            "summary": "Create a gallery.",
+            "syntax": "az devcenter admin gallery create --dev-center\n                                  --gallery-name\n                                  --gallery-resource-id\n                                  --resource-group\n                                  [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]",
+            "required_parameters": [
+                "--dev-center --dev-center-name -d",
+                "--gallery-name --name -n",
+                "--gallery-resource-id",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--no-wait"
+            ],
+            "examples": [
+                "az devcenter admin gallery create --gallery-resource-id \"/subscriptions/0ac520ee-14c0-480f-b6c9-0a90c58ffff/resourceGroups/rg1/providers/Microsoft.Compute/galleries/StandardGallery\" --dev-center-name \"Contoso\" --name \"StandardGallery\" --resource-group \"rg1\""
+            ]
+        },
+        {
+            "name": "az devcenter admin gallery delete",
+            "summary": "Delete a gallery.",
+            "syntax": "az devcenter admin gallery delete [--dev-center]\n                                  [--gallery-name]\n                                  [--ids]\n                                  [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                  [--resource-group]\n                                  [--subscription]\n                                  [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--dev-center --dev-center-name -d",
+                "--gallery-name --name -n",
+                "--ids",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az devcenter admin gallery delete --dev-center-name \"Contoso\" --name \"StandardGallery\" --resource-group \"rg1\""
+            ]
+        },
+        {
+            "name": "az devcenter admin gallery list",
+            "summary": "List galleries for a dev center.",
+            "syntax": "az devcenter admin gallery list --dev-center\n                                --resource-group\n                                [--max-items]\n                                [--next-token]",
+            "required_parameters": [
+                "--dev-center --dev-center-name -d",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az devcenter admin gallery list --dev-center-name \"Contoso\" --resource-group \"rg1\""
+            ]
+        },
+        {
+            "name": "az devcenter admin gallery show",
+            "summary": "Get a gallery.",
+            "syntax": "az devcenter admin gallery show [--dev-center]\n                                [--gallery-name]\n                                [--ids]\n                                [--resource-group]\n                                [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--dev-center --dev-center-name -d",
+                "--gallery-name --name -n",
+                "--ids",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az devcenter admin gallery show --dev-center-name \"Contoso\" --name \"StandardGallery\" --resource-group \"rg1\""
+            ]
+        },
+        {
+            "name": "az devcenter admin gallery wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az devcenter admin gallery wait [--created]\n                                [--custom]\n                                [--deleted]\n                                [--dev-center]\n                                [--exists]\n                                [--gallery-name]\n                                [--ids]\n                                [--interval]\n                                [--resource-group]\n                                [--subscription]\n                                [--timeout]\n                                [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--dev-center --dev-center-name -d",
+                "--exists",
+                "--gallery-name --name -n",
+                "--ids",
+                "--interval",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

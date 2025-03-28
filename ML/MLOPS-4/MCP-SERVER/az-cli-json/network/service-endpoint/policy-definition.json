@@ -1,0 +1,120 @@
+{
+    "command_group": "az network service-endpoint policy-definition",
+    "description": "Manage service endpoint policy definitions.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az network service-endpoint policy-definition create",
+            "summary": "Create a service endpoint policy definition.",
+            "syntax": "az network service-endpoint policy-definition create --name\n                                                     --policy-name\n                                                     --resource-group\n                                                     [--description]\n                                                     [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                                     [--service]\n                                                     [--service-resources]",
+            "required_parameters": [
+                "--name -n",
+                "--policy-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--description",
+                "--no-wait",
+                "--service",
+                "--service-resources"
+            ],
+            "examples": [
+                "az network service-endpoint policy-definition create -g MyResourceGroup --policy-name MyPolicy -n MyPolicyDefinition --service Microsoft.Storage --description \"Test Def\" --service-resources MyServiceResources"
+            ]
+        },
+        {
+            "name": "az network service-endpoint policy-definition delete",
+            "summary": "Delete a service endpoint policy definition.",
+            "syntax": "az network service-endpoint policy-definition delete [--ids]\n                                                     [--name]\n                                                     [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                                     [--policy-name]\n                                                     [--resource-group]\n                                                     [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--policy-name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az network service-endpoint policy-definition delete --name myserviceendpointpolicydefinition --policy-name mypolicy --resource-group myresourcegroup"
+            ]
+        },
+        {
+            "name": "az network service-endpoint policy-definition list",
+            "summary": "List service endpoint policy definitions.",
+            "syntax": "az network service-endpoint policy-definition list --policy-name\n                                                   --resource-group\n                                                   [--max-items]\n                                                   [--next-token]",
+            "required_parameters": [
+                "--policy-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az network service-endpoint policy-definition list --policy-name MyPolicy --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az network service-endpoint policy-definition show",
+            "summary": "Get the details of a service endpoint policy definition.",
+            "syntax": "az network service-endpoint policy-definition show [--ids]\n                                                   [--name]\n                                                   [--policy-name]\n                                                   [--resource-group]\n                                                   [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--policy-name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az network service-endpoint policy-definition show --name myserviceendpointpolicydefinition --policy-name mypolicy --resource-group myresourcegroup"
+            ]
+        },
+        {
+            "name": "az network service-endpoint policy-definition update",
+            "summary": "Update a service endpoint policy definition.",
+            "syntax": "az network service-endpoint policy-definition update [--add]\n                                                     [--description]\n                                                     [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                                     [--ids]\n                                                     [--name]\n                                                     [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                                     [--policy-name]\n                                                     [--remove]\n                                                     [--resource-group]\n                                                     [--service]\n                                                     [--service-resources]\n                                                     [--set]\n                                                     [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--description",
+                "--force-string",
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--policy-name",
+                "--remove",
+                "--resource-group -g",
+                "--service",
+                "--service-resources",
+                "--set",
+                "--subscription"
+            ],
+            "examples": [
+                "az network service-endpoint policy-definition update --add communities='12076:5010' --name MyServiceEndpointPolicyDefinition --policy-name MyPolicy --resource-group MyResourceGroup --subscription MySubscription"
+            ]
+        },
+        {
+            "name": "az network service-endpoint policy-definition wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az network service-endpoint policy-definition wait [--created]\n                                                   [--custom]\n                                                   [--deleted]\n                                                   [--exists]\n                                                   [--ids]\n                                                   [--interval]\n                                                   [--name]\n                                                   [--policy-name]\n                                                   [--resource-group]\n                                                   [--subscription]\n                                                   [--timeout]\n                                                   [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--name -n",
+                "--policy-name",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

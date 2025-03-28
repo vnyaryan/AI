@@ -1,0 +1,41 @@
+{
+    "command_group": "az sql mi advanced-threat-protection-setting",
+    "description": "Manage a SQL Managed Instance's advanced threat protection setting.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az sql mi advanced-threat-protection-setting show",
+            "summary": "Gets an advanced threat protection setting.",
+            "syntax": "az sql mi advanced-threat-protection-setting show [--ids]\n                                                  [--name]\n                                                  [--resource-group]\n                                                  [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az sql mi advanced-threat-protection-setting update",
+            "summary": "Update a SQL Managed Instance's advanced threat protection setting.",
+            "syntax": "az sql mi advanced-threat-protection-setting update [--add]\n                                                    [--force-string]\n                                                    [--ids]\n                                                    [--name]\n                                                    [--no-wait]\n                                                    [--remove]\n                                                    [--resource-group]\n                                                    [--set]\n                                                    [--state]\n                                                    [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--force-string",
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--state",
+                "--subscription"
+            ],
+            "examples": [
+                "az sql mi advanced-threat-protection-setting update -g mygroup -n myinstance --state Disabled"
+            ]
+        }
+    ]
+}

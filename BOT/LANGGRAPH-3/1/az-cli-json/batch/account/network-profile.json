@@ -1,0 +1,37 @@
+{
+    "command_group": "az batch account network-profile",
+    "description": "Manage Batch account Network profiles.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az batch account network-profile set",
+            "summary": "Set the Network profile for Batch account.",
+            "syntax": "az batch account network-profile set --resource-group\n                                     [--default-action {Allow, Deny}]\n                                     [--name]\n                                     [--profile {BatchAccount, NodeManagement}]",
+            "required_parameters": [
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--default-action",
+                "--name -n",
+                "--profile"
+            ],
+            "examples": [
+                "az batch account network-profile set -g MyResourceGroup -n MyBatchAccount --profile BatchAccount --default-action Allow"
+            ]
+        },
+        {
+            "name": "az batch account network-profile show",
+            "summary": "Get information about the Network profile for Batch account.",
+            "syntax": "az batch account network-profile show --resource-group\n                                      [--name]",
+            "required_parameters": [
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--name -n"
+            ],
+            "examples": [
+                "az batch account network-profile show -g MyResourceGroup -n MyBatchAccount"
+            ]
+        }
+    ]
+}

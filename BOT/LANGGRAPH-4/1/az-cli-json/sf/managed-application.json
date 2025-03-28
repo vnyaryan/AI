@@ -1,0 +1,105 @@
+{
+    "command_group": "az sf managed-application",
+    "description": "Manage applications running on an Azure Service Fabric managed cluster. Only support ARM deployed applications.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az sf managed-application create",
+            "summary": "Create a new managed application on an Azure Service Fabric managed cluster.",
+            "syntax": "az sf managed-application create --application-name\n                                 --application-type-name\n                                 --application-type-version\n                                 --cluster-name\n                                 --resource-group\n                                 [--application-parameters]\n                                 [--package-url]\n                                 [--tags]",
+            "required_parameters": [
+                "--application-name --name",
+                "--application-type-name --type-name",
+                "--application-type-version --version",
+                "--cluster-name -c",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--application-parameters --parameters",
+                "--package-url",
+                "--tags"
+            ],
+            "examples": [
+                "az sf managed-application create -g testRG -c testCluster --application-name testApp --application-type-name TestAppType \\\n  --application-type-version v1 --application-parameters key0=value0 --tags key1=value1",
+                "az sf managed-application create -g testRG -c testCluster --application-name testApp --application-type-name TestAppType \\\n  --application-type-version v1 --package-url \"https://sftestapp.blob.core.windows.net/sftestapp/testApp_1.0.sfpkg\" \\\n    --application-parameters key0=value0"
+            ]
+        },
+        {
+            "name": "az sf managed-application delete",
+            "summary": "Delete a managed application.",
+            "syntax": "az sf managed-application delete --application-name\n                                 --cluster-name\n                                 --resource-group",
+            "required_parameters": [
+                "--application-name --name",
+                "--cluster-name -c",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az sf managed-application delete -g testRG -c testCluster --application-name testApp"
+            ]
+        },
+        {
+            "name": "az sf managed-application list",
+            "summary": "List managed applications of a given managed cluster.",
+            "syntax": "az sf managed-application list --cluster-name\n                               --resource-group",
+            "required_parameters": [
+                "--cluster-name -c",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az sf managed-application list -g testRG -c testCluster"
+            ]
+        },
+        {
+            "name": "az sf managed-application show",
+            "summary": "Show the properties of a managed application on an Azure Service Fabric managed cluster.",
+            "syntax": "az sf managed-application show --application-name\n                               --cluster-name\n                               --resource-group",
+            "required_parameters": [
+                "--application-name --name",
+                "--cluster-name -c",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az sf managed-application show -g testRG -c testCluster --application-name testApp"
+            ]
+        },
+        {
+            "name": "az sf managed-application update",
+            "summary": "Update a Azure Service Fabric managed application.",
+            "syntax": "az sf managed-application update --application-name\n                                 --cluster-name\n                                 --resource-group\n                                 [--application-parameters]\n                                 [--application-type-version]\n                                 [--close-duration]\n                                 [--consider-warning-as-error {false, true}]\n                                 [--failure-action {Manual, Rollback}]\n                                 [--force-restart {false, true}]\n                                 [--hc-retry-timeout]\n                                 [--hc-stable-duration]\n                                 [--hc-wait-duration]\n                                 [--max-percent-unhealthy-apps]\n                                 [--max-percent-unhealthy-partitions]\n                                 [--max-percent-unhealthy-replicas]\n                                 [--max-percent-unhealthy-services]\n                                 [--recreate-application {false, true}]\n                                 [--rep-check-timeout]\n                                 [--service-type-health-policy-map]\n                                 [--tags]\n                                 [--ud-timeout]\n                                 [--upgrade-mode {Monitored, UnmonitoredAuto}]\n                                 [--upgrade-timeout]",
+            "required_parameters": [
+                "--application-name --name",
+                "--cluster-name -c",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--application-parameters --parameters",
+                "--application-type-version --version",
+                "--close-duration --instance-close-delay-duration --instance-close-duration",
+                "--consider-warning-as-error --warning-as-error",
+                "--failure-action",
+                "--force-restart",
+                "--hc-retry-timeout --health-check-retry-timeout",
+                "--hc-stable-duration --health-check-stable-duration",
+                "--hc-wait-duration --health-check-wait-duration",
+                "--max-percent-unhealthy-apps --max-percent-unhealthy-deployed-applications --max-unhealthy-apps",
+                "--max-percent-unhealthy-partitions --max-unhealthy-parts",
+                "--max-percent-unhealthy-replicas --max-unhealthy-reps",
+                "--max-percent-unhealthy-services --max-unhealthy-servs",
+                "--recreate-application",
+                "--rep-check-timeout --replica-check-timeout --upgrade-replica-set-check-timeout",
+                "--service-type-health-policy-map --service-type-policy",
+                "--tags",
+                "--ud-timeout --upgrade-domain-timeout",
+                "--upgrade-mode",
+                "--upgrade-timeout"
+            ],
+            "examples": [
+                "az sf managed-application update -g testRG -c testCluster --application-name testApp --application-type-version v2 \\\n  --application-parameters key0=value0 --health-check-stable-duration 0 --health-check-wait-duration 0 --health-check-retry-timeout 0 \\\n    --upgrade-domain-timeout 5000 --upgrade-timeout 7000 --failure-action Rollback --upgrade-replica-set-check-timeout 300 --force-restart",
+                "az sf managed-application update -g testRG -c testCluster --application-name testApp --service-type-health-policy-map  \"ServiceTypeName01\"=\"5,10,5\" \"ServiceTypeName02\"=\"5,5,5\""
+            ]
+        }
+    ]
+}

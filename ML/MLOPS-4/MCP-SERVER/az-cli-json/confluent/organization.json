@@ -1,0 +1,191 @@
+{
+    "command_group": "az confluent organization",
+    "description": "Commands to perform actions on a confluent organization.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az confluent organization create",
+            "summary": "Create Organization resource.",
+            "syntax": "az confluent organization create --name\n                                 --plan-id\n                                 --plan-name\n                                 --resource-group\n                                 --term-unit\n                                 [--location]\n                                 [--no-wait]\n                                 [--offer-id]\n                                 [--publisher-id]\n                                 [--tags]",
+            "required_parameters": [
+                "--name --organization-name -n",
+                "--plan-id",
+                "--plan-name",
+                "--resource-group -g",
+                "--term-unit"
+            ],
+            "optional_parameters": [
+                "--location -l",
+                "--no-wait",
+                "--offer-id",
+                "--publisher-id",
+                "--tags"
+            ],
+            "examples": [
+                "az confluent organization create --location \"West US\" --tags Environment=\"Dev\" --name \"myOrganization\" --resource-group \"myResourceGroup\" --offer-id \"confluent-cloud-azure-prod\" --plan-id \"confluent-cloud-azure-payg-prod\" --plan-name \"Confluent Cloud - Pay as you Go\" --publisher-id \"confluentinc\" --term-unit \"P1M\""
+            ]
+        },
+        {
+            "name": "az confluent organization create-role-binding",
+            "summary": "Organization role bindings.",
+            "syntax": "az confluent organization create-role-binding [--crn-pattern]\n                                              [--ids]\n                                              [--organization-name]\n                                              [--principal]\n                                              [--resource-group]\n                                              [--role-name]\n                                              [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--crn-pattern",
+                "--ids",
+                "--organization-name",
+                "--principal",
+                "--resource-group",
+                "--role-name",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az confluent organization create-user",
+            "summary": "Invite user to the organization.",
+            "syntax": "az confluent organization create-user [--auth-type]\n                                      [--email]\n                                      [--ids]\n                                      [--invited-email]\n                                      [--organization-id]\n                                      [--organization-name]\n                                      [--resource-group]\n                                      [--subscription]\n                                      [--upn]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--auth-type",
+                "--email",
+                "--ids",
+                "--invited-email",
+                "--organization-id",
+                "--organization-name",
+                "--resource-group -g",
+                "--subscription",
+                "--upn"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az confluent organization delete",
+            "summary": "Delete Organization resource.",
+            "syntax": "az confluent organization delete [--ids]\n                                 [--name]\n                                 [--no-wait]\n                                 [--resource-group]\n                                 [--subscription]\n                                 [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --organization-name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az confluent organization delete --name \"myOrganization\" --resource-group \"myResourceGroup\"",
+                "az confluent organization delete --ids \"/subscriptions/{SubID}/resourceGroups/{ResourceGroup}/providers/Microsoft.Confluent/organizations/{myOrganization}\""
+            ]
+        },
+        {
+            "name": "az confluent organization list",
+            "summary": "List all Organizations under the specified resource group. And List all organizations under the specified subscription.",
+            "syntax": "az confluent organization list [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az confluent organization list --resource-group \"myResourceGroup\"",
+                "az confluent organization list"
+            ]
+        },
+        {
+            "name": "az confluent organization list-role-binding",
+            "summary": "Organization role bindings.",
+            "syntax": "az confluent organization list-role-binding [--ids]\n                                            [--organization-name]\n                                            [--resource-group]\n                                            [--search-filters]\n                                            [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--organization-name",
+                "--resource-group",
+                "--search-filters",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az confluent organization list-service-accounts",
+            "summary": "Organization service accounts details.",
+            "syntax": "az confluent organization list-service-accounts [--ids]\n                                                [--organization-name]\n                                                [--resource-group]\n                                                [--search-filters]\n                                                [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--organization-name",
+                "--resource-group",
+                "--search-filters",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az confluent organization list-users",
+            "summary": "Organization users details.",
+            "syntax": "az confluent organization list-users [--ids]\n                                     [--organization-name]\n                                     [--resource-group]\n                                     [--search-filters]\n                                     [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--organization-name",
+                "--resource-group",
+                "--search-filters",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az confluent organization show",
+            "summary": "Get the properties of a specific Organization resource.",
+            "syntax": "az confluent organization show [--ids]\n                               [--name]\n                               [--resource-group]\n                               [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --organization-name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az confluent organization show --name \"myOrganization\" --resource-group \"myResourceGroup\"",
+                "az confluent organization show --ids \"/subscriptions/{SubID}/resourceGroups/{ResourceGroup}/providers/Microsoft.Confluent/organizations/{myOrganization}\""
+            ]
+        },
+        {
+            "name": "az confluent organization update",
+            "summary": "Update Organization resource.",
+            "syntax": "az confluent organization update [--ids]\n                                 [--name]\n                                 [--resource-group]\n                                 [--subscription]\n                                 [--tags]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --organization-name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--tags"
+            ],
+            "examples": [
+                "az confluent organization update --tags client=\"dev-client\" env=\"dev\" --name \"myOrganization\" --resource-group \"myResourceGroup\""
+            ]
+        },
+        {
+            "name": "az confluent organization wait",
+            "summary": "Place the CLI in a waiting state until a condition of the confluent organization is met.",
+            "syntax": "az confluent organization wait [--created]\n                               [--custom]\n                               [--deleted]\n                               [--exists]\n                               [--ids]\n                               [--interval]\n                               [--name]\n                               [--resource-group]\n                               [--subscription]\n                               [--timeout]\n                               [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--name --organization-name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": [
+                "az confluent organization wait --name \"myOrganization\" --resource-group \"myResourceGroup\" --created",
+                "az confluent organization wait --name \"myOrganization\" --resource-group \"myResourceGroup\" --deleted"
+            ]
+        }
+    ]
+}

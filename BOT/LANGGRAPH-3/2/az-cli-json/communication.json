@@ -1,0 +1,148 @@
+{
+    "command_group": "az communication",
+    "description": "Manage communication service with communication.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az communication create",
+            "summary": "Create a new CommunicationService or update an existing CommunicationService.",
+            "syntax": "az communication create --data-location\n                        --name\n                        --resource-group\n                        [--linked-domains]\n                        [--location]\n                        [--mi-system-assigned {0, 1, f, false, n, no, t, true, y, yes}]\n                        [--mi-user-assigned]\n                        [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                        [--tags]",
+            "required_parameters": [
+                "--data-location",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--linked-domains",
+                "--location -l",
+                "--mi-system-assigned",
+                "--mi-user-assigned",
+                "--no-wait",
+                "--tags"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az communication delete",
+            "summary": "Delete to delete a CommunicationService.",
+            "syntax": "az communication delete [--ids]\n                        [--name]\n                        [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                        [--resource-group]\n                        [--subscription]\n                        [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az communication link-notification-hub",
+            "summary": "Links an Azure Notification Hub to this communication service.",
+            "syntax": "az communication link-notification-hub [--connection-string]\n                                       [--ids]\n                                       [--name]\n                                       [--resource-group]\n                                       [--resource-id]\n                                       [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--connection-string",
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--resource-id",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az communication list",
+            "summary": "List requests to list all resources in a resource group.",
+            "syntax": "az communication list [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az communication list-key",
+            "summary": "Get the access keys of the CommunicationService resource.",
+            "syntax": "az communication list-key [--ids]\n                          [--name]\n                          [--resource-group]\n                          [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az communication regenerate-key",
+            "summary": "Regenerate CommunicationService access key. PrimaryKey and SecondaryKey cannot be regenerated at the same time.",
+            "syntax": "az communication regenerate-key [--ids]\n                                [--key-type {Primary, Secondary}]\n                                [--name]\n                                [--resource-group]\n                                [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--key-type",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az communication show",
+            "summary": "Get the CommunicationService and its properties.",
+            "syntax": "az communication show [--ids]\n                      [--name]\n                      [--resource-group]\n                      [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az communication update",
+            "summary": "Update a new CommunicationService or update an existing CommunicationService.",
+            "syntax": "az communication update [--add]\n                        [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                        [--ids]\n                        [--linked-domains]\n                        [--name]\n                        [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                        [--remove]\n                        [--resource-group]\n                        [--set]\n                        [--subscription]\n                        [--tags]\n                        [--type {None, SystemAssigned, SystemAssigned,UserAssigned, UserAssigned}]\n                        [--user-assigned-identities]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--force-string",
+                "--ids",
+                "--linked-domains",
+                "--name -n",
+                "--no-wait",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--subscription",
+                "--tags",
+                "--type",
+                "--user-assigned-identities -i"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az communication wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az communication wait [--created]\n                      [--custom]\n                      [--deleted]\n                      [--exists]\n                      [--ids]\n                      [--interval]\n                      [--name]\n                      [--resource-group]\n                      [--subscription]\n                      [--timeout]\n                      [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

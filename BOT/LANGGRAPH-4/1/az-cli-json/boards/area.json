@@ -1,0 +1,6 @@
+{
+    "command_group": "az boards area",
+    "description": "Manage area paths.",
+    "status": "GA",
+    "commands": []
+}

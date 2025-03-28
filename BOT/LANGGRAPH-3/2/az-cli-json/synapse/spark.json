@@ -1,0 +1,6 @@
+{
+    "command_group": "az synapse spark",
+    "description": "Manage Spark pools and Spark jobs.",
+    "status": "GA",
+    "commands": []
+}

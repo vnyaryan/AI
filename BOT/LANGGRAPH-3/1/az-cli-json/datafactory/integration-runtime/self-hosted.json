@@ -1,0 +1,26 @@
+{
+    "command_group": "az datafactory integration-runtime self-hosted",
+    "description": "Manage integration runtime with datafactory sub group self-hosted.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az datafactory integration-runtime self-hosted create",
+            "summary": "Create an integration runtime.",
+            "syntax": "az datafactory integration-runtime self-hosted create --factory-name\n                                                      --integration-runtime-name\n                                                      --resource-group\n                                                      [--description]\n                                                      [--enable-scia]\n                                                      [--if-match]\n                                                      [--linked-info]",
+            "required_parameters": [
+                "--factory-name",
+                "--integration-runtime-name --name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--description",
+                "--enable-scia --enable-self-contained-interactive-authoring",
+                "--if-match",
+                "--linked-info"
+            ],
+            "examples": [
+                "az datafactory integration-runtime self-hosted create --factory-name \"exampleFactoryName\" --description \"A selfhosted integration runtime\" --name \"exampleIntegrationRuntime\" --resource-group \"exampleResourceGroup\""
+            ]
+        }
+    ]
+}

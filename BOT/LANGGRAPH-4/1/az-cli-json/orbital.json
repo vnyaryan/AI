@@ -1,0 +1,6 @@
+{
+    "command_group": "az orbital",
+    "description": "Azure Orbital Ground Station as-a-Service (GSaaS).",
+    "status": "GA",
+    "commands": []
+}

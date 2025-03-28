@@ -1,0 +1,169 @@
+{
+    "command_group": "az appconfig",
+    "description": "Manage App Configurations.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az appconfig create",
+            "summary": "Create an App Configuration.",
+            "syntax": "az appconfig create --location\n                    --name\n                    --resource-group\n                    [--arm-auth-mode {local, pass-through}]\n                    [--assign-identity]\n                    [--disable-local-auth {false, true}]\n                    [--enable-arm-private-network-access {false, true}]\n                    [--enable-public-network {false, true}]\n                    [--enable-purge-protection {false, true}]\n                    [--no-replica {false, true}]\n                    [--replica-location]\n                    [--replica-name]\n                    [--retention-days]\n                    [--sku {Free, Premium, Standard}]\n                    [--tags]",
+            "required_parameters": [
+                "--location -l",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--arm-auth-mode",
+                "--assign-identity",
+                "--disable-local-auth",
+                "--enable-arm-private-network-access",
+                "--enable-public-network -e",
+                "--enable-purge-protection -p",
+                "--no-replica",
+                "--replica-location",
+                "--replica-name",
+                "--retention-days",
+                "--sku",
+                "--tags"
+            ],
+            "examples": [
+                "az appconfig create -g MyResourceGroup -n MyAppConfiguration -l westus --sku Standard --tags key1=value1 key2=value2",
+                "az appconfig create -g MyResourceGroup -n MyAppConfiguration -l westus --sku Premium --replica-name MyReplica --replica-location eastus",
+                "az appconfig create -g MyResourceGroup -n MyAppConfiguration -l westus --sku Premium --no-replica",
+                "az appconfig create -g MyResourceGroup -n MyAppConfiguration -l westus --sku Standard --assign-identity",
+                "az appconfig create -g MyResourceGroup -n MyAppConfiguration -l westus --sku Standard --assign-identity /subscriptions/<SUBSCRIPTON ID>/resourcegroups/<RESOURCEGROUP>/providers/Microsoft.ManagedIdentity/userAssignedIdentities/myUserAssignedIdentity",
+                "az appconfig create -g MyResourceGroup -n MyAppConfiguration -l westus --enable-public-network --disable-local-auth",
+                "az appconfig create -g MyResourceGroup -n MyAppConfiguration -l westus --arm-auth-mode pass-through",
+                "az appconfig create -g MyResourceGroup -n MyAppConfiguration -l westus --arm-auth-mode pass-through --enable-arm-private-network-access true"
+            ]
+        },
+        {
+            "name": "az appconfig delete",
+            "summary": "Delete an App Configuration store.",
+            "syntax": "az appconfig delete --name\n                    [--resource-group]\n                    [--yes]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--resource-group -g",
+                "--yes -y"
+            ],
+            "examples": [
+                "az appconfig delete -g MyResourceGroup -n MyAppConfiguration"
+            ]
+        },
+        {
+            "name": "az appconfig list",
+            "summary": "Lists all App Configuration stores under the current subscription.",
+            "syntax": "az appconfig list [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az appconfig list -g MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az appconfig list-deleted",
+            "summary": "List all deleted, but not yet purged App Configuration stores.",
+            "syntax": "az appconfig list-deleted",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "examples": [
+                "az appconfig list-deleted"
+            ]
+        },
+        {
+            "name": "az appconfig purge",
+            "summary": "Permanently delete an App Configuration store. Aka 'purge' the deleted App Configuration store.",
+            "syntax": "az appconfig purge --name\n                   [--location]\n                   [--yes]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--location -l",
+                "--yes -y"
+            ],
+            "examples": [
+                "az appconfig purge --name sample-app-configuration"
+            ]
+        },
+        {
+            "name": "az appconfig recover",
+            "summary": "Recover a previously deleted, but not yet purged App Configuration store.",
+            "syntax": "az appconfig recover --name\n                     [--location]\n                     [--resource-group]\n                     [--yes]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--location -l",
+                "--resource-group -g",
+                "--yes -y"
+            ],
+            "examples": [
+                "az appconfig recover --name sample-app-configuration"
+            ]
+        },
+        {
+            "name": "az appconfig show",
+            "summary": "Show properties of an App Configuration store.",
+            "syntax": "az appconfig show --name\n                  [--resource-group]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az appconfig show -g MyResourceGroup -n MyAppConfiguration"
+            ]
+        },
+        {
+            "name": "az appconfig show-deleted",
+            "summary": "Show properties of a deleted, but not yet purged App Configuration store.",
+            "syntax": "az appconfig show-deleted --name\n                          [--location]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--location -l"
+            ],
+            "examples": [
+                "az appconfig show-deleted --name sample-app-configuration"
+            ]
+        },
+        {
+            "name": "az appconfig update",
+            "summary": "Update an App Configuration store.",
+            "syntax": "az appconfig update --name\n                    [--arm-auth-mode {local, pass-through}]\n                    [--disable-local-auth {false, true}]\n                    [--enable-arm-private-network-access {false, true}]\n                    [--enable-public-network {false, true}]\n                    [--enable-purge-protection {false, true}]\n                    [--encryption-key-name]\n                    [--encryption-key-vault]\n                    [--encryption-key-version]\n                    [--identity-client-id]\n                    [--resource-group]\n                    [--sku {Free, Premium, Standard}]\n                    [--tags]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--arm-auth-mode",
+                "--disable-local-auth",
+                "--enable-arm-private-network-access",
+                "--enable-public-network -e",
+                "--enable-purge-protection -p",
+                "--encryption-key-name",
+                "--encryption-key-vault",
+                "--encryption-key-version",
+                "--identity-client-id",
+                "--resource-group -g",
+                "--sku",
+                "--tags"
+            ],
+            "examples": [
+                "az appconfig update -g MyResourceGroup -n MyAppConfiguration --tags key1=value1 key2=value2",
+                "az appconfig update -g MyResourceGroup -n MyAppConfiguration --sku Standard",
+                "az appconfig update -g MyResourceGroup -n MyAppConfiguration --sku Premium",
+                "az appconfig update -g MyResourceGroup -n MyAppConfiguration --encryption-key-name myKey --encryption-key-version keyVersion --encryption-key-vault https://keyVaultName.vault.azure.net",
+                "az appconfig update -g MyResourceGroup -n MyAppConfiguration --encryption-key-name \"\"",
+                "az appconfig update -g MyResourceGroup -n MyAppConfiguration --enable-public-network true --disable-local-auth true",
+                "az appconfig update -g MyResourceGroup -n MyAppConfiguration --arm-auth-mode pass-through",
+                "az appconfig update -g MyResourceGroup -n MyAppConfiguration --arm-auth-mode pass-through --enable-arm-private-network-access true"
+            ]
+        }
+    ]
+}

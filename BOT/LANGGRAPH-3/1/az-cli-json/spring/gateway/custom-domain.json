@@ -1,0 +1,76 @@
+{
+    "command_group": "az spring gateway custom-domain",
+    "description": "Commands to manage custom domains for gateway.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az spring gateway custom-domain bind",
+            "summary": "Bind a custom domain with the gateway.",
+            "syntax": "az spring gateway custom-domain bind --domain-name\n                                     --resource-group\n                                     --service\n                                     [--certificate]",
+            "required_parameters": [
+                "--domain-name",
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [
+                "--certificate"
+            ],
+            "examples": [
+                "az spring gateway custom-domain bind --domain-name MyDomainName --certificate MyCertName --service MyCluster --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az spring gateway custom-domain list",
+            "summary": "List all custom domains of the gateway.",
+            "syntax": "az spring gateway custom-domain list --resource-group\n                                     --service",
+            "required_parameters": [
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az spring gateway custom-domain list --service MyCluster --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az spring gateway custom-domain show",
+            "summary": "Show details of a custom domain.",
+            "syntax": "az spring gateway custom-domain show --domain-name\n                                     --resource-group\n                                     --service",
+            "required_parameters": [
+                "--domain-name",
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az spring gateway custom-domain unbind",
+            "summary": "Unbind a custom-domain of the gateway.",
+            "syntax": "az spring gateway custom-domain unbind --domain-name\n                                       --resource-group\n                                       --service",
+            "required_parameters": [
+                "--domain-name",
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az spring gateway custom-domain update",
+            "summary": "Update a custom domain of the gateway.",
+            "syntax": "az spring gateway custom-domain update --domain-name\n                                       --resource-group\n                                       --service\n                                       [--certificate]",
+            "required_parameters": [
+                "--domain-name",
+                "--resource-group -g",
+                "--service -s"
+            ],
+            "optional_parameters": [
+                "--certificate"
+            ],
+            "examples": [
+                "az spring gateway custom-domain update --domain-name MyDomainName --certificate MCertName --service MyCluster --resource-group MyResourceGroup"
+            ]
+        }
+    ]
+}

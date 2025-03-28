@@ -1,0 +1,88 @@
+{
+    "command_group": "az monitor data-collection rule windows-event-log",
+    "description": "Manage Windows Event Log data source.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az monitor data-collection rule windows-event-log add",
+            "summary": "Add a Windows Event Log data source.",
+            "syntax": "az monitor data-collection rule windows-event-log add --data-collection-rule-name\n                                                      --name\n                                                      --resource-group\n                                                      [--streams]\n                                                      [--transform-kql]\n                                                      [--x-path-queries]",
+            "required_parameters": [
+                "--data-collection-rule-name --rule-name",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--streams",
+                "--transform-kql",
+                "--x-path-queries"
+            ],
+            "examples": [
+                "az monitor data-collection rule windows-event-log add --rule-name myCollectionRule --resource-group myResourceGroup --name appTeam1AppEvents --streams Microsoft-WindowsEvent --x-path-queries \"Application!*[System[(Level = 1 or Level = 2 or Level = 3)]]\" \"System![System[(Level = 1 or Level = 2 or Level = 3)]]\""
+            ]
+        },
+        {
+            "name": "az monitor data-collection rule windows-event-log delete",
+            "summary": "Delete a Windows Event Log data source.",
+            "syntax": "az monitor data-collection rule windows-event-log delete --data-collection-rule-name\n                                                         --name\n                                                         --resource-group",
+            "required_parameters": [
+                "--data-collection-rule-name --rule-name",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az monitor data-collection rule windows-event-log delete --rule-name myCollectionRule --resource-group myResourceGroup --name appTeam1AppEvents"
+            ]
+        },
+        {
+            "name": "az monitor data-collection rule windows-event-log list",
+            "summary": "List Windows Event Log data sources.",
+            "syntax": "az monitor data-collection rule windows-event-log list --data-collection-rule-name\n                                                       --resource-group",
+            "required_parameters": [
+                "--data-collection-rule-name --rule-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az monitor data-collection rule windows-event-log list --rule-name myCollectionRule --resource-group myResourceGroup"
+            ]
+        },
+        {
+            "name": "az monitor data-collection rule windows-event-log show",
+            "summary": "Show a Windows Event Log data source.",
+            "syntax": "az monitor data-collection rule windows-event-log show --data-collection-rule-name\n                                                       --name\n                                                       --resource-group",
+            "required_parameters": [
+                "--data-collection-rule-name --rule-name",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az monitor data-collection rule windows-event-log show --rule-name myCollectionRule --resource-group myResourceGroup --name appTeam1AppEvents"
+            ]
+        },
+        {
+            "name": "az monitor data-collection rule windows-event-log update",
+            "summary": "Update a Windows Event Log data source.",
+            "syntax": "az monitor data-collection rule windows-event-log update --data-collection-rule-name\n                                                         --name\n                                                         --resource-group\n                                                         [--add]\n                                                         [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                                                         [--remove]\n                                                         [--set]\n                                                         [--streams]\n                                                         [--transform-kql]\n                                                         [--x-path-queries]",
+            "required_parameters": [
+                "--data-collection-rule-name --rule-name",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--add",
+                "--force-string",
+                "--remove",
+                "--set",
+                "--streams",
+                "--transform-kql",
+                "--x-path-queries"
+            ],
+            "examples": [
+                "az monitor data-collection rule windows-event-log update --rule-name myCollectionRule --resource-group myResourceGroup --name appTeam1AppEvents --x-path-queries \"Application!*[System[(Level = 1 or Level = 2 or Level = 3)]]\""
+            ]
+        }
+    ]
+}

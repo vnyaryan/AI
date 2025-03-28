@@ -1,0 +1,141 @@
+{
+    "command_group": "az k8s-runtime storage-class",
+    "description": "Manage storage classes of Arc Kubernetes clusters.",
+    "status": "Preview",
+    "commands": [
+        {
+            "name": "az k8s-runtime storage-class create",
+            "summary": "Create a StorageClass.",
+            "syntax": "az k8s-runtime storage-class create --resource-uri\n                                    --storage-class-name\n                                    [--access-modes]\n                                    [--allow-volume-expansion {Allow, Disallow}]\n                                    [--data-resilience {DataResilient, NotDataResilient}]\n                                    [--failover-speed {Fast, NotAvailable, Slow, Super}]\n                                    [--limitations]\n                                    [--mount-options]\n                                    [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                    [--performance {Basic, Premium, Standard, Ultra, Undefined}]\n                                    [--priority]\n                                    [--provisioner]\n                                    [--type-properties]\n                                    [--volume-binding-mode {Immediate, WaitForFirstConsumer}]",
+            "required_parameters": [
+                "--resource-uri",
+                "--storage-class-name"
+            ],
+            "optional_parameters": [
+                "--access-modes",
+                "--allow-volume-expansion",
+                "--data-resilience",
+                "--failover-speed",
+                "--limitations",
+                "--mount-options",
+                "--no-wait",
+                "--performance",
+                "--priority",
+                "--provisioner",
+                "--type-properties",
+                "--volume-binding-mode"
+            ],
+            "examples": [
+                "az k8s-runtime storage-class create --resource-uri subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/example/providers/Microsoft.Kubernetes/connectedClusters/cluster1 --storage-class-name rwxsc --type-properties rwx.backing-storage-class-name=managed-csi",
+                "az k8s-runtime storage-class create --resource-uri subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/example/providers/Microsoft.Kubernetes/connectedClusters/cluster1 --storage-class-name blobsc --type-properties blob.azure-storage-account-key=accountkey blob.azure-storage-account-name=accountname"
+            ]
+        },
+        {
+            "name": "az k8s-runtime storage-class delete",
+            "summary": "Delete a StorageClass.",
+            "syntax": "az k8s-runtime storage-class delete --resource-uri\n                                    --storage-class-name\n                                    [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                    [--yes]",
+            "required_parameters": [
+                "--resource-uri",
+                "--storage-class-name"
+            ],
+            "optional_parameters": [
+                "--no-wait",
+                "--yes -y"
+            ],
+            "examples": [
+                "az k8s-runtime storage-class delete --storage-class-name sc1 --resource-uri subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/example/providers/Microsoft.Kubernetes/connectedClusters/cluster1"
+            ]
+        },
+        {
+            "name": "az k8s-runtime storage-class disable",
+            "summary": "Disable storage class service in a connected cluster.",
+            "syntax": "az k8s-runtime storage-class disable --resource-uri",
+            "required_parameters": [
+                "--resource-uri"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az k8s-runtime storage-class enable",
+            "summary": "Enable storage class service in a connected cluster.",
+            "syntax": "az k8s-runtime storage-class enable --resource-uri",
+            "required_parameters": [
+                "--resource-uri"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az k8s-runtime storage-class list",
+            "summary": "List StorageClass resources by parent.",
+            "syntax": "az k8s-runtime storage-class list --resource-uri\n                                  [--max-items]\n                                  [--next-token]",
+            "required_parameters": [
+                "--resource-uri"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az k8s-runtime storage-class list --resource-uri subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/example/providers/Microsoft.Kubernetes/connectedClusters/cluster1"
+            ]
+        },
+        {
+            "name": "az k8s-runtime storage-class show",
+            "summary": "Get a StorageClass.",
+            "syntax": "az k8s-runtime storage-class show --resource-uri\n                                  --storage-class-name",
+            "required_parameters": [
+                "--resource-uri",
+                "--storage-class-name"
+            ],
+            "optional_parameters": [],
+            "examples": [
+                "az k8s-runtime storage-class show --storage-class-name sc1 --resource-uri subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/example/providers/Microsoft.Kubernetes/connectedClusters/cluster1"
+            ]
+        },
+        {
+            "name": "az k8s-runtime storage-class update",
+            "summary": "Update a StorageClass.",
+            "syntax": "az k8s-runtime storage-class update --resource-uri\n                                    --storage-class-name\n                                    [--access-modes]\n                                    [--allow-volume-expansion {Allow, Disallow}]\n                                    [--data-resilience {DataResilient, NotDataResilient}]\n                                    [--failover-speed {Fast, NotAvailable, Slow, Super}]\n                                    [--limitations]\n                                    [--mount-options]\n                                    [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                    [--performance {Basic, Premium, Standard, Ultra, Undefined}]\n                                    [--priority]\n                                    [--type-properties]",
+            "required_parameters": [
+                "--resource-uri",
+                "--storage-class-name"
+            ],
+            "optional_parameters": [
+                "--access-modes",
+                "--allow-volume-expansion",
+                "--data-resilience",
+                "--failover-speed",
+                "--limitations",
+                "--mount-options",
+                "--no-wait",
+                "--performance",
+                "--priority",
+                "--type-properties"
+            ],
+            "examples": [
+                "az k8s-runtime storage-class update --resource-uri subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/example/providers/Microsoft.Kubernetes/connectedClusters/cluster1 --storage-class-name blobsc --type-properties azure-storage-account-key=accountkey azure-storage-account-name=accountname"
+            ]
+        },
+        {
+            "name": "az k8s-runtime storage-class wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az k8s-runtime storage-class wait --resource-uri\n                                  --storage-class-name\n                                  [--created]\n                                  [--custom]\n                                  [--deleted]\n                                  [--exists]\n                                  [--interval]\n                                  [--timeout]\n                                  [--updated]",
+            "required_parameters": [
+                "--resource-uri",
+                "--storage-class-name"
+            ],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--interval",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

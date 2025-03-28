@@ -1,0 +1,89 @@
+{
+    "command_group": "az monitor log-analytics workspace saved-search",
+    "description": "Manage saved search for log analytics workspace.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az monitor log-analytics workspace saved-search create",
+            "summary": "Create a saved search for a given workspace.",
+            "syntax": "az monitor log-analytics workspace saved-search create --category\n                                                       --display-name\n                                                       --name\n                                                       --resource-group\n                                                       --saved-query\n                                                       --workspace-name\n                                                       [--fa]\n                                                       [--fp]\n                                                       [--tags]",
+            "required_parameters": [
+                "--category",
+                "--display-name",
+                "--name -n",
+                "--resource-group -g",
+                "--saved-query -q",
+                "--workspace-name"
+            ],
+            "optional_parameters": [
+                "--fa --func-alias",
+                "--fp --func-param",
+                "--tags"
+            ],
+            "examples": [
+                "az monitor log-analytics workspace saved-search create -g MyRG --workspace-name MyWS -n MySavedSearch --category Test1 --display-name TestSavedSearch -q \"AzureActivity | summarize count() by bin(TimeGenerated, 1h)\" --fa myfun --fp \"a:string = value\""
+            ]
+        },
+        {
+            "name": "az monitor log-analytics workspace saved-search delete",
+            "summary": "Delete a saved search for a given workspace.",
+            "syntax": "az monitor log-analytics workspace saved-search delete [--ids]\n                                                       [--name]\n                                                       [--resource-group]\n                                                       [--subscription]\n                                                       [--workspace-name]\n                                                       [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --saved-search-name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--workspace-name",
+                "--yes -y"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az monitor log-analytics workspace saved-search list",
+            "summary": "List all saved searches for a given workspace.",
+            "syntax": "az monitor log-analytics workspace saved-search list --resource-group\n                                                     --workspace-name",
+            "required_parameters": [
+                "--resource-group -g",
+                "--workspace-name"
+            ],
+            "optional_parameters": [],
+            "examples": []
+        },
+        {
+            "name": "az monitor log-analytics workspace saved-search show",
+            "summary": "Show a saved search for a given workspace.",
+            "syntax": "az monitor log-analytics workspace saved-search show [--ids]\n                                                     [--name]\n                                                     [--resource-group]\n                                                     [--subscription]\n                                                     [--workspace-name]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name --saved-search-name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--workspace-name"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az monitor log-analytics workspace saved-search update",
+            "summary": "Update a saved search for a given workspace.",
+            "syntax": "az monitor log-analytics workspace saved-search update --name\n                                                       --resource-group\n                                                       --workspace-name\n                                                       [--category]\n                                                       [--display-name]\n                                                       [--fa]\n                                                       [--fp]\n                                                       [--saved-query]\n                                                       [--tags]",
+            "required_parameters": [
+                "--name -n",
+                "--resource-group -g",
+                "--workspace-name"
+            ],
+            "optional_parameters": [
+                "--category",
+                "--display-name",
+                "--fa --func-alias",
+                "--fp --func-param",
+                "--saved-query -q",
+                "--tags"
+            ],
+            "examples": [
+                "az monitor log-analytics workspace saved-search update -g MyRG --workspace-name MyWS -n MySavedSearch --category Test1 --display-name TestSavedSearch -q \"AzureActivity | summarize count() by bin(TimeGenerated, 1h)\" --fa myfun --fp \"a:string = value\""
+            ]
+        }
+    ]
+}

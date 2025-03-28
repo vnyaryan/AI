@@ -1,0 +1,113 @@
+{
+    "command_group": "az scvmm vm-template",
+    "description": "Manage Arc for SCVMM Virtual Machine Template resources.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az scvmm vm-template create",
+            "summary": "Create vm-template resource.",
+            "syntax": "az scvmm vm-template create --custom-location\n                            --location\n                            --name\n                            --resource-group\n                            [--inventory-item]\n                            [--no-wait]\n                            [--tags]\n                            [--uuid]\n                            [--vmmserver]",
+            "required_parameters": [
+                "--custom-location",
+                "--location -l",
+                "--name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--inventory-item -i",
+                "--no-wait",
+                "--tags",
+                "--uuid",
+                "--vmmserver -v"
+            ],
+            "examples": [
+                "az scvmm vm-template create --subscription contoso-sub --resource-group contoso-rg --location eastus --custom-location contoso-cl --vmmserver contoso-vmmserver --inventory-item 01234567-0123-0123-0123-0123456789ab --name contoso-vmtemplate"
+            ]
+        },
+        {
+            "name": "az scvmm vm-template delete",
+            "summary": "Delete vm-template resource.",
+            "syntax": "az scvmm vm-template delete [--force]\n                            [--ids]\n                            [--name]\n                            [--no-wait]\n                            [--resource-group]\n                            [--subscription]\n                            [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--force",
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az scvmm vm-template delete --ids /subscriptions/01234567-0123-0123-0123-0123456789ab/resourceGroups/contoso-rg/providers/Microsoft.ScVmm/virtualMachineTemplates/contoso-vmtemplate",
+                "az scvmm vm-template delete --subscription contoso-sub --resource-group contoso-rg --name contoso-vmtemplate"
+            ]
+        },
+        {
+            "name": "az scvmm vm-template list",
+            "summary": "Retrieve a list of vm-templates.",
+            "syntax": "az scvmm vm-template list [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az scvmm vm-template list --subscription contoso-sub --resource-group contoso-rg",
+                "az scvmm vm-template list --subscription contoso-sub"
+            ]
+        },
+        {
+            "name": "az scvmm vm-template show",
+            "summary": "Get details of a vm-template.",
+            "syntax": "az scvmm vm-template show [--ids]\n                          [--name]\n                          [--resource-group]\n                          [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az scvmm vm-template show --ids /subscriptions/01234567-0123-0123-0123-0123456789ab/resourceGroups/contoso-rg/providers/Microsoft.ScVmm/virtualMachineTemplates/contoso-vmtemplate",
+                "az scvmm vm-template show --subscription contoso-sub --resource-group contoso-rg --name contoso-vmtemplate"
+            ]
+        },
+        {
+            "name": "az scvmm vm-template update",
+            "summary": "Update vm-template resource.",
+            "syntax": "az scvmm vm-template update [--ids]\n                            [--name]\n                            [--no-wait]\n                            [--resource-group]\n                            [--subscription]\n                            [--tags]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--tags"
+            ],
+            "examples": [
+                "az scvmm vm-template update --ids /subscriptions/01234567-0123-0123-0123-0123456789ab/resourceGroups/contoso-rg/providers/Microsoft.ScVmm/virtualMachineTemplates/contoso-vmtemplate --tags department=Sales",
+                "az scvmm vm-template update --subscription contoso-sub --resource-group contoso-rg --name contoso-vmtemplate --tags department=Sales"
+            ]
+        },
+        {
+            "name": "az scvmm vm-template wait",
+            "summary": "Place the CLI in a waiting state until a condition of the vm-template is met.",
+            "syntax": "az scvmm vm-template wait --resource-group\n                          --vm-template-name\n                          [--created]\n                          [--custom]\n                          [--deleted]\n                          [--exists]\n                          [--interval]\n                          [--timeout]\n                          [--updated]",
+            "required_parameters": [
+                "--resource-group -g",
+                "--vm-template-name"
+            ],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--interval",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

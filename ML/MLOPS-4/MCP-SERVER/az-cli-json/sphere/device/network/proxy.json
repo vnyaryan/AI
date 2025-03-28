@@ -1,0 +1,76 @@
+{
+    "command_group": "az sphere device network proxy",
+    "description": "Manage proxy address use for network connection.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az sphere device network proxy apply",
+            "summary": "Configure the network proxy on the attached device.",
+            "syntax": "az sphere device network proxy apply --address\n                                     --authentication\n                                     --port\n                                     [--device]\n                                     [--enable]\n                                     [--no-proxy-addresses]\n                                     [--password]\n                                     [--username]",
+            "required_parameters": [
+                "--address -a",
+                "--authentication -t",
+                "--port -r"
+            ],
+            "optional_parameters": [
+                "--device -d",
+                "--enable",
+                "--no-proxy-addresses -n",
+                "--password -p",
+                "--username -u"
+            ],
+            "examples": [
+                "az sphere device network proxy apply --address contoso.com --authentication basic --port 8080 --username ExampleUsername --password ExamplePassword --no-proxy-addresses badcontoso.com badcontoso2.com --enable",
+                "az sphere device network proxy apply --address contoso.com --authentication anonymous --port 8080 --enable --device 192.168.35.2"
+            ]
+        },
+        {
+            "name": "az sphere device network proxy delete",
+            "summary": "Delete proxy connection on the attached device.",
+            "syntax": "az sphere device network proxy delete [--device]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--device -d"
+            ],
+            "examples": [
+                "az sphere device network proxy delete"
+            ]
+        },
+        {
+            "name": "az sphere device network proxy disable",
+            "summary": "Disable network proxy on the attached device.",
+            "syntax": "az sphere device network proxy disable [--device]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--device -d"
+            ],
+            "examples": [
+                "az sphere device network proxy disable"
+            ]
+        },
+        {
+            "name": "az sphere device network proxy enable",
+            "summary": "Enable network proxy on the attached device.",
+            "syntax": "az sphere device network proxy enable [--device]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--device -d"
+            ],
+            "examples": [
+                "az sphere device network proxy enable"
+            ]
+        },
+        {
+            "name": "az sphere device network proxy show",
+            "summary": "Show proxy connection on the attached device.",
+            "syntax": "az sphere device network proxy show [--device]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--device -d"
+            ],
+            "examples": [
+                "az sphere device network proxy show --device <DeviceIdValue>"
+            ]
+        }
+    ]
+}

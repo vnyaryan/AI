@@ -1,0 +1,150 @@
+{
+    "command_group": "az baremetalinstance",
+    "description": "Handle Operations for Compute Azure Bare Instances.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az baremetalinstance create",
+            "summary": "Create an Azure Bare Metal Instance for the specified subscription, resource group, and instance name.",
+            "syntax": "az baremetalinstance create --instance-name\n                            --resource-group\n                            [--azure-bare-metal-instance-size {S112, S144, S144m, S192, S192m, S192xm, S224, S224m, S224om, S224oo, S224oom, S224ooo, S384, S384m, S384xm, S384xxm, S448, S448m, S448om, S448oo, S448oom, S448ooo, S448se, S576m, S576xm, S672, S672m, S672om, S672oo, S672oom, S672ooo, S72, S72m, S768, S768m, S768xm, S896, S896m, S896om, S896oo, S896oom, S896ooo, S96, S960m}]\n                            [--bmi-id]\n                            [--hardware-type {Cisco_UCS, HPE, SDFLEX}]\n                            [--hw-revision]\n                            [--location]\n                            [--network-profile]\n                            [--os-profile]\n                            [--power-state {restarting, started, starting, stopped, stopping, unknown}]\n                            [--ppg]\n                            [--storage-profile]\n                            [--tags]",
+            "required_parameters": [
+                "--instance-name -n",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--azure-bare-metal-instance-size --sku",
+                "--bmi-id --instance-id",
+                "--hardware-type",
+                "--hw-revision",
+                "--location -l",
+                "--network-profile",
+                "--os-profile",
+                "--power-state",
+                "--ppg --proximity-placement-group",
+                "--storage-profile",
+                "--tags"
+            ],
+            "examples": [
+                "az baremetalinstance create --resource-group myResourceGroup --instance-name myBMIInstance --location westus --sku S72"
+            ]
+        },
+        {
+            "name": "az baremetalinstance delete",
+            "summary": "Delete an Azure Bare Metal Instance for the specified subscription, resource group, and instance name.",
+            "syntax": "az baremetalinstance delete [--ids]\n                            [--instance-name]\n                            [--resource-group]\n                            [--subscription]\n                            [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--instance-name -n",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az baremetalinstance delete -g myResourceGroup -n myAzureBareMetalInstance"
+            ]
+        },
+        {
+            "name": "az baremetalinstance list",
+            "summary": "List a list of Azure Bare Metal Instances in the specified subscription. The operations returns various properties of each Azure Bare Metal Instance.",
+            "syntax": "az baremetalinstance list [--max-items]\n                          [--next-token]\n                          [--resource-group]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az baremetalinstance list",
+                "az baremetalinstance list -g myResourceGroup"
+            ]
+        },
+        {
+            "name": "az baremetalinstance restart",
+            "summary": "The operation to restart an Azure Bare Metal Instance.",
+            "syntax": "az baremetalinstance restart [--force-state {active, inactive}]\n                             [--ids]\n                             [--instance-name]\n                             [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                             [--resource-group]\n                             [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--force-state",
+                "--ids",
+                "--instance-name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az baremetalinstance restart -g myResourceGroup -n myABMInstance"
+            ]
+        },
+        {
+            "name": "az baremetalinstance show",
+            "summary": "Get an Azure Bare Metal Instance for the specified subscription, resource group, and instance name.",
+            "syntax": "az baremetalinstance show [--ids]\n                          [--instance-name]\n                          [--resource-group]\n                          [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--instance-name -n",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az baremetalinstance show -g myResourceGroup -n myAzureBareMetalInstance"
+            ]
+        },
+        {
+            "name": "az baremetalinstance shutdown",
+            "summary": "The operation to shutdown an Azure Bare Metal Instance.",
+            "syntax": "az baremetalinstance shutdown [--ids]\n                              [--instance-name]\n                              [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                              [--resource-group]\n                              [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--instance-name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az baremetalinstance shutdown --resource-group myResourceGroup --instance-name myABMInstance"
+            ]
+        },
+        {
+            "name": "az baremetalinstance start",
+            "summary": "The operation to start an Azure Bare Metal instance.",
+            "syntax": "az baremetalinstance start [--ids]\n                           [--instance-name]\n                           [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                           [--resource-group]\n                           [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--instance-name -n",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az baremetalinstance start --resource-group myResourceGroup --instance-name myABMInstance"
+            ]
+        },
+        {
+            "name": "az baremetalinstance update",
+            "summary": "Update an Azure Bare Metal Instance for the specified subscription, resource group, and instance name.",
+            "syntax": "az baremetalinstance update [--add]\n                            [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                            [--ids]\n                            [--instance-name]\n                            [--remove]\n                            [--resource-group]\n                            [--set]\n                            [--subscription]\n                            [--tags]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--add",
+                "--force-string",
+                "--ids",
+                "--instance-name -n",
+                "--remove",
+                "--resource-group -g",
+                "--set",
+                "--subscription",
+                "--tags"
+            ],
+            "examples": [
+                "az baremetalinstance update -g $RESOURCE_GROUP -n $BM_INSTANCE_NAME --set tags.newKey=value",
+                "az baremetalinstance update --resource-group $RESOURCE_GROUP --instance-name $BM_INSTANCE_NAME --set tags.key=updatedValue",
+                "az baremetalinstance update --resource-group $RESOURCE_GROUP --instance-name $BM_INSTANCE_NAME --remove tags.key",
+                "az baremetalinstance update --resource-group $RESOURCE_GROUP --instance-name $BM_INSTANCE_NAME --set tags={}"
+            ]
+        }
+    ]
+}

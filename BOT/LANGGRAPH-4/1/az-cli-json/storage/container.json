@@ -1,0 +1,250 @@
+{
+    "command_group": "az storage container",
+    "description": "Manage blob storage containers.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az storage container create",
+            "summary": "Create a container in a storage account.",
+            "syntax": "az storage container create --name\n                            [--account-key]\n                            [--account-name]\n                            [--auth-mode {key, login}]\n                            [--blob-endpoint]\n                            [--connection-string]\n                            [--default-encryption-scope]\n                            [--fail-on-exist]\n                            [--metadata]\n                            [--prevent-encryption-scope-override {false, true}]\n                            [--public-access {blob, container, off}]\n                            [--resource-group]\n                            [--sas-token]\n                            [--timeout]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--account-key",
+                "--account-name",
+                "--auth-mode",
+                "--blob-endpoint",
+                "--connection-string",
+                "--default-encryption-scope -d",
+                "--fail-on-exist",
+                "--metadata",
+                "--prevent-encryption-scope-override -p",
+                "--public-access",
+                "--resource-group -g",
+                "--sas-token",
+                "--timeout"
+            ],
+            "examples": [
+                "az storage container create -n mystoragecontainer",
+                "az storage container create -n mystoragecontainer --fail-on-exist",
+                "az storage container create -n mystoragecontainer --public-access blob"
+            ]
+        },
+        {
+            "name": "az storage container delete",
+            "summary": "Mark the specified container for deletion.",
+            "syntax": "az storage container delete --name\n                            [--account-key]\n                            [--account-name]\n                            [--auth-mode {key, login}]\n                            [--blob-endpoint]\n                            [--bypass-immutability-policy]\n                            [--connection-string]\n                            [--fail-not-exist]\n                            [--if-modified-since]\n                            [--if-unmodified-since]\n                            [--lease-id]\n                            [--sas-token]\n                            [--timeout]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--account-key",
+                "--account-name",
+                "--auth-mode",
+                "--blob-endpoint",
+                "--bypass-immutability-policy",
+                "--connection-string",
+                "--fail-not-exist",
+                "--if-modified-since",
+                "--if-unmodified-since",
+                "--lease-id",
+                "--sas-token",
+                "--timeout"
+            ],
+            "examples": [
+                "az storage container delete --account-key 00000000 --account-name MyAccount --name mycontainer"
+            ]
+        },
+        {
+            "name": "az storage container exists",
+            "summary": "Check for the existence of a storage container.",
+            "syntax": "az storage container exists --name\n                            [--account-key]\n                            [--account-name]\n                            [--auth-mode {key, login}]\n                            [--blob-endpoint]\n                            [--connection-string]\n                            [--sas-token]\n                            [--timeout]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--account-key",
+                "--account-name",
+                "--auth-mode",
+                "--blob-endpoint",
+                "--connection-string",
+                "--sas-token",
+                "--timeout"
+            ],
+            "examples": [
+                "az storage container exists --account-name mystorageccount --account-key 00000000 --name mycontainer"
+            ]
+        },
+        {
+            "name": "az storage container generate-sas",
+            "summary": "Generate a SAS token for a storage container.",
+            "syntax": "az storage container generate-sas --name\n                                  [--account-key]\n                                  [--account-name]\n                                  [--as-user]\n                                  [--auth-mode {key, login}]\n                                  [--blob-endpoint]\n                                  [--cache-control]\n                                  [--connection-string]\n                                  [--content-disposition]\n                                  [--content-encoding]\n                                  [--content-language]\n                                  [--content-type]\n                                  [--encryption-scope]\n                                  [--expiry]\n                                  [--https-only]\n                                  [--ip]\n                                  [--permissions]\n                                  [--policy-name]\n                                  [--start]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--account-key",
+                "--account-name",
+                "--as-user",
+                "--auth-mode",
+                "--blob-endpoint",
+                "--cache-control",
+                "--connection-string",
+                "--content-disposition",
+                "--content-encoding",
+                "--content-language",
+                "--content-type",
+                "--encryption-scope",
+                "--expiry",
+                "--https-only",
+                "--ip",
+                "--permissions",
+                "--policy-name",
+                "--start"
+            ],
+            "examples": [
+                "end=`date -u -d \"30 minutes\" '+%Y-%m-%dT%H:%MZ'`\nsas=`az storage container generate-sas -n mycontainer --https-only --permissions dlrw --expiry $end -o tsv`\naz storage blob upload -n MyBlob -c mycontainer -f file.txt --sas-token $sas",
+                "az storage container generate-sas --account-key 00000000 --account-name mystorageaccount --expiry 2020-01-01 --name mycontainer --permissions dlrw",
+                "az storage container generate-sas --account-name mystorageaccount --as-user --auth-mode login --expiry 2020-01-01 --name container1 --permissions dlrw"
+            ]
+        },
+        {
+            "name": "az storage container generate-sas",
+            "summary": "Generate a SAS token for a storage container.",
+            "syntax": "az storage container generate-sas --name\n                                  [--account-key]\n                                  [--account-name]\n                                  [--as-user]\n                                  [--auth-mode {key, login}]\n                                  [--blob-endpoint]\n                                  [--cache-control]\n                                  [--connection-string]\n                                  [--content-disposition]\n                                  [--content-encoding]\n                                  [--content-language]\n                                  [--content-type]\n                                  [--expiry]\n                                  [--full-uri]\n                                  [--https-only]\n                                  [--ip]\n                                  [--permissions]\n                                  [--policy-name]\n                                  [--start]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--account-key",
+                "--account-name",
+                "--as-user",
+                "--auth-mode",
+                "--blob-endpoint",
+                "--cache-control",
+                "--connection-string",
+                "--content-disposition",
+                "--content-encoding",
+                "--content-language",
+                "--content-type",
+                "--expiry",
+                "--full-uri",
+                "--https-only",
+                "--ip",
+                "--permissions",
+                "--policy-name",
+                "--start"
+            ],
+            "examples": [
+                "end=`date -u -d \"30 minutes\" '+%Y-%m-%dT%H:%MZ'`\nsas=`az storage container generate-sas -n mycontainer --https-only --permissions dlrw --expiry $end -o tsv`\naz storage blob upload -n MyBlob -c mycontainer -f file.txt --sas-token $sas",
+                "az storage container generate-sas --account-key 00000000 --account-name mystorageaccount --expiry 2020-01-01 --name mycontainer --permissions dlrw",
+                "az storage container generate-sas --account-name mystorageaccount --as-user --auth-mode login --expiry 2020-01-01 --name container1 --permissions dlrw"
+            ]
+        },
+        {
+            "name": "az storage container list",
+            "summary": "List containers in a storage account.",
+            "syntax": "az storage container list [--account-key]\n                          [--account-name]\n                          [--auth-mode {key, login}]\n                          [--blob-endpoint]\n                          [--connection-string]\n                          [--include-deleted {false, true}]\n                          [--include-metadata {false, true}]\n                          [--marker]\n                          [--num-results]\n                          [--prefix]\n                          [--sas-token]\n                          [--show-next-marker]\n                          [--timeout]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account-key",
+                "--account-name",
+                "--auth-mode",
+                "--blob-endpoint",
+                "--connection-string",
+                "--include-deleted",
+                "--include-metadata",
+                "--marker",
+                "--num-results",
+                "--prefix",
+                "--sas-token",
+                "--show-next-marker",
+                "--timeout"
+            ],
+            "examples": [
+                "az storage container list",
+                "az storage container list --include-deleted"
+            ]
+        },
+        {
+            "name": "az storage container restore",
+            "summary": "Restore soft-deleted container.",
+            "syntax": "az storage container restore --deleted-version\n                             --name\n                             [--account-key]\n                             [--account-name]\n                             [--auth-mode {key, login}]\n                             [--blob-endpoint]\n                             [--connection-string]\n                             [--sas-token]\n                             [--timeout]",
+            "required_parameters": [
+                "--deleted-version",
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--account-key",
+                "--account-name",
+                "--auth-mode",
+                "--blob-endpoint",
+                "--connection-string",
+                "--sas-token",
+                "--timeout"
+            ],
+            "examples": [
+                "az storage container list --include-deleted\naz storage container restore -n deletedcontainer --deleted-version deletedversion"
+            ]
+        },
+        {
+            "name": "az storage container set-permission",
+            "summary": "Set the permissions for the specified container.",
+            "syntax": "az storage container set-permission --name\n                                    [--account-key]\n                                    [--account-name]\n                                    [--auth-mode {key}]\n                                    [--blob-endpoint]\n                                    [--connection-string]\n                                    [--if-modified-since]\n                                    [--if-unmodified-since]\n                                    [--lease-id]\n                                    [--public-access {blob, container, off}]\n                                    [--timeout]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--account-key",
+                "--account-name",
+                "--auth-mode",
+                "--blob-endpoint",
+                "--connection-string",
+                "--if-modified-since",
+                "--if-unmodified-since",
+                "--lease-id",
+                "--public-access",
+                "--timeout"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az storage container show",
+            "summary": "Return all user-defined metadata and system properties for the specified container.",
+            "syntax": "az storage container show --name\n                          [--account-key]\n                          [--account-name]\n                          [--auth-mode {key, login}]\n                          [--blob-endpoint]\n                          [--connection-string]\n                          [--lease-id]\n                          [--sas-token]\n                          [--timeout]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--account-key",
+                "--account-name",
+                "--auth-mode",
+                "--blob-endpoint",
+                "--connection-string",
+                "--lease-id",
+                "--sas-token",
+                "--timeout"
+            ],
+            "examples": []
+        },
+        {
+            "name": "az storage container show-permission",
+            "summary": "Get the permissions for the specified container.",
+            "syntax": "az storage container show-permission --name\n                                     [--account-key]\n                                     [--account-name]\n                                     [--auth-mode {key}]\n                                     [--blob-endpoint]\n                                     [--connection-string]\n                                     [--lease-id]\n                                     [--timeout]",
+            "required_parameters": [
+                "--name -n"
+            ],
+            "optional_parameters": [
+                "--account-key",
+                "--account-name",
+                "--auth-mode",
+                "--blob-endpoint",
+                "--connection-string",
+                "--lease-id",
+                "--timeout"
+            ],
+            "examples": []
+        }
+    ]
+}

@@ -1,0 +1,91 @@
+{
+    "command_group": "az iot dps policy",
+    "description": "Manage shared access policies for an Azure IoT Hub Device Provisioning Service instance.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az iot dps policy create",
+            "summary": "Create a new shared access policy in an Azure IoT Hub Device Provisioning Service instance.",
+            "syntax": "az iot dps policy create --dps-name\n                         --pn\n                         --rights {DeviceConnect, EnrollmentRead, EnrollmentWrite, RegistrationStatusRead, RegistrationStatusWrite, ServiceConfig}\n                         [--no-wait]\n                         [--primary-key]\n                         [--resource-group]\n                         [--secondary-key]",
+            "required_parameters": [
+                "--dps-name -n",
+                "--pn --policy-name",
+                "--rights -r"
+            ],
+            "optional_parameters": [
+                "--no-wait",
+                "--primary-key",
+                "--resource-group -g",
+                "--secondary-key"
+            ],
+            "examples": [
+                "az iot dps policy create --dps-name MyDps --resource-group MyResourceGroup --policy-name MyPolicy --rights EnrollmentRead"
+            ]
+        },
+        {
+            "name": "az iot dps policy delete",
+            "summary": "Delete a shared access policies in an Azure IoT Hub Device Provisioning Service instance.",
+            "syntax": "az iot dps policy delete --dps-name\n                         --pn\n                         [--no-wait]\n                         [--resource-group]",
+            "required_parameters": [
+                "--dps-name -n",
+                "--pn --policy-name"
+            ],
+            "optional_parameters": [
+                "--no-wait",
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az iot dps policy delete --dps-name MyDps --resource-group MyResourceGroup --policy-name MyPolicy"
+            ]
+        },
+        {
+            "name": "az iot dps policy list",
+            "summary": "List all shared access policies in an Azure IoT Hub Device Provisioning Service instance.",
+            "syntax": "az iot dps policy list --dps-name\n                       [--resource-group]",
+            "required_parameters": [
+                "--dps-name -n"
+            ],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az iot dps policy list --dps-name MyDps --resource-group MyResourceGroup"
+            ]
+        },
+        {
+            "name": "az iot dps policy show",
+            "summary": "Show details of a shared access policies in an Azure IoT Hub Device Provisioning Service instance.",
+            "syntax": "az iot dps policy show --dps-name\n                       --pn\n                       [--resource-group]",
+            "required_parameters": [
+                "--dps-name -n",
+                "--pn --policy-name"
+            ],
+            "optional_parameters": [
+                "--resource-group -g"
+            ],
+            "examples": [
+                "az iot dps policy show --dps-name MyDps --resource-group MyResourceGroup --policy-name MyPolicy"
+            ]
+        },
+        {
+            "name": "az iot dps policy update",
+            "summary": "Update a shared access policy in an Azure IoT Hub Device Provisioning Service instance.",
+            "syntax": "az iot dps policy update --dps-name\n                         --pn\n                         [--no-wait]\n                         [--primary-key]\n                         [--resource-group]\n                         [--rights {DeviceConnect, EnrollmentRead, EnrollmentWrite, RegistrationStatusRead, RegistrationStatusWrite, ServiceConfig}]\n                         [--secondary-key]",
+            "required_parameters": [
+                "--dps-name -n",
+                "--pn --policy-name"
+            ],
+            "optional_parameters": [
+                "--no-wait",
+                "--primary-key",
+                "--resource-group -g",
+                "--rights -r",
+                "--secondary-key"
+            ],
+            "examples": [
+                "az iot dps policy update --dps-name MyDps --resource-group MyResourceGroup --policy-name MyPolicy --rights EnrollmentWrite",
+                "az iot dps policy update --dps-name MyDps --resource-group MyResourceGroup --policy-name MyPolicy --primary-key \"\" --secondary-key \"\""
+            ]
+        }
+    ]
+}

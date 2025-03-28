@@ -1,0 +1,80 @@
+{
+    "command_group": "az network perimeter link-reference",
+    "description": "Manage network security perimeter link reference.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az network perimeter link-reference delete",
+            "summary": "Delete an NSP LinkReference resource.",
+            "syntax": "az network perimeter link-reference delete [--ids]\n                                           [--link-reference-name]\n                                           [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                                           [--perimeter-name]\n                                           [--resource-group]\n                                           [--subscription]\n                                           [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--link-reference-name --name -n",
+                "--no-wait",
+                "--perimeter-name",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az network perimeter link-reference delete --perimeter-name nsp2 --resource-group rg1 --name linkref2"
+            ]
+        },
+        {
+            "name": "az network perimeter link-reference list",
+            "summary": "List the NSP LinkReference resources in the specified network security perimeter.",
+            "syntax": "az network perimeter link-reference list --perimeter-name\n                                         --resource-group\n                                         [--max-items]\n                                         [--next-token]\n                                         [--skip-token]\n                                         [--top]",
+            "required_parameters": [
+                "--perimeter-name",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token",
+                "--skip-token",
+                "--top"
+            ],
+            "examples": [
+                "az network perimeter link-reference list --perimeter-name nsp2 --resource-group rg1"
+            ]
+        },
+        {
+            "name": "az network perimeter link-reference show",
+            "summary": "Get the specified NSP linkReference resource.",
+            "syntax": "az network perimeter link-reference show [--ids]\n                                         [--link-reference-name]\n                                         [--perimeter-name]\n                                         [--resource-group]\n                                         [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--ids",
+                "--link-reference-name --name -n",
+                "--perimeter-name",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az network perimeter link-reference show --perimeter-name nsp2 --resource-group rg1 --name linkref2"
+            ]
+        },
+        {
+            "name": "az network perimeter link-reference wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az network perimeter link-reference wait [--created]\n                                         [--custom]\n                                         [--deleted]\n                                         [--exists]\n                                         [--ids]\n                                         [--interval]\n                                         [--link-reference-name]\n                                         [--perimeter-name]\n                                         [--resource-group]\n                                         [--subscription]\n                                         [--timeout]\n                                         [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--link-reference-name --name -n",
+                "--perimeter-name",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}

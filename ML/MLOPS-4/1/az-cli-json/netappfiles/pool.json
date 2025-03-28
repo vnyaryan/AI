@@ -1,0 +1,127 @@
+{
+    "command_group": "az netappfiles pool",
+    "description": "Manage Azure NetApp Files (ANF) Capacity Pool Resources.",
+    "status": "GA",
+    "commands": [
+        {
+            "name": "az netappfiles pool create",
+            "summary": "Create a capacity pool.",
+            "syntax": "az netappfiles pool create --account-name\n                           --name\n                           --resource-group\n                           [--cool-access {0, 1, f, false, n, no, t, true, y, yes}]\n                           [--encryption-type {Double, Single}]\n                           [--location]\n                           [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                           [--qos-type {Auto, Manual}]\n                           [--service-level {Premium, Standard, StandardZRS, Ultra}]\n                           [--size]\n                           [--tags]",
+            "required_parameters": [
+                "--account-name -a",
+                "--name --pool-name -n -p",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--cool-access",
+                "--encryption-type",
+                "--location -l",
+                "--no-wait",
+                "--qos-type",
+                "--service-level",
+                "--size",
+                "--tags"
+            ],
+            "examples": [
+                "az netappfiles pool create -g mygroup --account-name myaccountname --name mypoolname -l westus2 --size 8 --service-level premium"
+            ]
+        },
+        {
+            "name": "az netappfiles pool delete",
+            "summary": "Delete the specified capacity pool.",
+            "syntax": "az netappfiles pool delete [--account-name]\n                           [--ids]\n                           [--name]\n                           [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                           [--resource-group]\n                           [--subscription]\n                           [--yes]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account-name -a",
+                "--ids",
+                "--name --pool-name -n -p",
+                "--no-wait",
+                "--resource-group -g",
+                "--subscription",
+                "--yes -y"
+            ],
+            "examples": [
+                "az netappfiles pool delete -g mygroup --account-name myaccname --name mypoolname"
+            ]
+        },
+        {
+            "name": "az netappfiles pool list",
+            "summary": "List all capacity pools in the NetApp Account.",
+            "syntax": "az netappfiles pool list --account-name\n                         --resource-group\n                         [--max-items]\n                         [--next-token]",
+            "required_parameters": [
+                "--account-name -a",
+                "--resource-group -g"
+            ],
+            "optional_parameters": [
+                "--max-items",
+                "--next-token"
+            ],
+            "examples": [
+                "az netappfiles pool list -g mygroup --account-name myname"
+            ]
+        },
+        {
+            "name": "az netappfiles pool show",
+            "summary": "Get details of the specified capacity pool.",
+            "syntax": "az netappfiles pool show [--account-name]\n                         [--ids]\n                         [--name]\n                         [--resource-group]\n                         [--subscription]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account-name -a",
+                "--ids",
+                "--name --pool-name -n -p",
+                "--resource-group -g",
+                "--subscription"
+            ],
+            "examples": [
+                "az netappfiles pool show -g mygroup --account-name myaccname --name mypoolname"
+            ]
+        },
+        {
+            "name": "az netappfiles pool update",
+            "summary": "Update a capacity pool.",
+            "syntax": "az netappfiles pool update [--account-name]\n                           [--add]\n                           [--cool-access {0, 1, f, false, n, no, t, true, y, yes}]\n                           [--force-string {0, 1, f, false, n, no, t, true, y, yes}]\n                           [--ids]\n                           [--name]\n                           [--no-wait {0, 1, f, false, n, no, t, true, y, yes}]\n                           [--qos-type {Auto, Manual}]\n                           [--remove]\n                           [--resource-group]\n                           [--service-level {Premium, Standard, StandardZRS, Ultra}]\n                           [--set]\n                           [--size]\n                           [--subscription]\n                           [--tags]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account-name -a",
+                "--add",
+                "--cool-access",
+                "--force-string",
+                "--ids",
+                "--name --pool-name -n -p",
+                "--no-wait",
+                "--qos-type",
+                "--remove",
+                "--resource-group -g",
+                "--service-level",
+                "--set",
+                "--size",
+                "--subscription",
+                "--tags"
+            ],
+            "examples": [
+                "az netappfiles pool update -g mygroup --account-name myaccname --name mypoolname --tags mytag1=abcd mytag2=efgh"
+            ]
+        },
+        {
+            "name": "az netappfiles pool wait",
+            "summary": "Place the CLI in a waiting state until a condition is met.",
+            "syntax": "az netappfiles pool wait [--account-name]\n                         [--created]\n                         [--custom]\n                         [--deleted]\n                         [--exists]\n                         [--ids]\n                         [--interval]\n                         [--name]\n                         [--resource-group]\n                         [--subscription]\n                         [--timeout]\n                         [--updated]",
+            "required_parameters": [],
+            "optional_parameters": [
+                "--account-name -a",
+                "--created",
+                "--custom",
+                "--deleted",
+                "--exists",
+                "--ids",
+                "--interval",
+                "--name --pool-name -n -p",
+                "--resource-group -g",
+                "--subscription",
+                "--timeout",
+                "--updated"
+            ],
+            "examples": []
+        }
+    ]
+}
